@@ -14,6 +14,7 @@ import shutil
 import subprocess
 import tempfile
 import hashlib
+import datetime
 
 GITHUB_REPO = "https://github.com/reltio-ai/reltio-ai-ready-docs.git"
 GITHUB_BRANCH = "main"
@@ -31,33 +32,46 @@ for f in FILES:
         print(f"ERROR: {f} not found in current directory — run after sync.py")
         sys.exit(1)
 
-# Authenticated remote URL
+# Authenticated remote URL (Bitbucket masks this value in logs automatically)
 auth_url = GITHUB_REPO.replace("https://", f"https://x-access-token:{GITHUB_TOKEN}@")
 
 def run(cmd, cwd=None):
+    # Redact token from any printed error output
     result = subprocess.run(cmd, cwd=cwd, capture_output=True, text=True)
     if result.returncode != 0:
-        print(f"ERROR running {' '.join(cmd)}:\n{result.stderr}")
+        stderr = result.stderr.replace(GITHUB_TOKEN, "***")
+        safe_cmd = [c.replace(GITHUB_TOKEN, "***") for c in cmd]
+        print(f"ERROR running {' '.join(safe_cmd)}:\n{stderr}")
         sys.exit(1)
     return result.stdout.strip()
 
 tmpdir = tempfile.mkdtemp()
 try:
-    # Try cloning with branch; if repo is empty/new, clone without --branch
     print(f"Cloning {GITHUB_REPO}...")
-    result = subprocess.run(
-        ["git", "clone", "--depth", "1", "--branch", GITHUB_BRANCH, auth_url, tmpdir],
+
+    # Clone without --branch so it works even on empty repos
+    clone_result = subprocess.run(
+        ["git", "clone", "--depth", "1", auth_url, tmpdir],
         capture_output=True, text=True
     )
-    empty_repo = result.returncode != 0
 
-    if empty_repo:
-        print("  Repo appears empty — initializing fresh clone...")
+    if clone_result.returncode != 0:
+        # Completely empty repo (no commits at all)
+        print("  Empty repo detected — initializing from scratch...")
         shutil.rmtree(tmpdir, ignore_errors=True)
         os.makedirs(tmpdir)
-        run(["git", "init"], cwd=tmpdir)
+        run(["git", "init", "--initial-branch", GITHUB_BRANCH], cwd=tmpdir)
         run(["git", "remote", "add", "origin", auth_url], cwd=tmpdir)
-        run(["git", "checkout", "-b", GITHUB_BRANCH], cwd=tmpdir)
+        is_empty = True
+    else:
+        # Cloned OK — make sure we're on the right branch
+        current = subprocess.run(
+            ["git", "rev-parse", "--abbrev-ref", "HEAD"],
+            cwd=tmpdir, capture_output=True, text=True
+        ).stdout.strip()
+        if current != GITHUB_BRANCH:
+            run(["git", "checkout", "-b", GITHUB_BRANCH], cwd=tmpdir)
+        is_empty = False
 
     run(["git", "config", "user.email", GITHUB_EMAIL], cwd=tmpdir)
     run(["git", "config", "user.name", "Bitbucket Pipelines"], cwd=tmpdir)
@@ -82,20 +96,15 @@ try:
         print(f"  {filename}: updated ({size_mb:.1f} MB)")
         changed = True
 
-    if not changed and not empty_repo:
+    if not changed and not is_empty:
         print("No changes detected. Nothing to push to GitHub.")
         sys.exit(0)
 
     run(["git", "add"] + FILES, cwd=tmpdir)
 
-    import datetime
     timestamp = datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC")
     run(["git", "commit", "-m", f"chore: weekly docs sync [{timestamp}]"], cwd=tmpdir)
-
-    push_cmd = ["git", "push", "origin", GITHUB_BRANCH]
-    if empty_repo:
-        push_cmd.append("--set-upstream")
-    run(push_cmd, cwd=tmpdir)
+    run(["git", "push", "--set-upstream", "origin", GITHUB_BRANCH], cwd=tmpdir)
     print("Successfully pushed to GitHub.")
 
 finally:
