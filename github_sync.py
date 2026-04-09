@@ -1,111 +1,89 @@
 #!/usr/bin/env python3
 """
-Push docs.md and index.md to the public GitHub repo.
-Only these two files are synced — no pipeline scripts or internal tooling.
+Push docs.md and index.md to the public GitHub repo via GitHub REST API.
+No git clone needed — works even on a brand new empty repo.
 
 Requires:
   GITHUB_TOKEN  - GitHub Personal Access Token (repo write scope)
-  GITHUB_EMAIL  - (optional) commit author email, defaults to pipelines@reltio.com
 """
 
 import os
 import sys
-import shutil
-import subprocess
-import tempfile
+import base64
 import hashlib
 import datetime
+import requests
 
-GITHUB_REPO = "https://github.com/reltio-ai/reltio-ai-ready-docs.git"
+GITHUB_OWNER = "reltio-ai"
+GITHUB_REPO  = "reltio-ai-ready-docs"
 GITHUB_BRANCH = "main"
 FILES = ["docs.md", "index.md"]
 
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
-GITHUB_EMAIL = os.environ.get("GITHUB_EMAIL", "pipelines@reltio.com")
-
 if not GITHUB_TOKEN:
     print("ERROR: GITHUB_TOKEN environment variable required")
     sys.exit(1)
 
 for f in FILES:
     if not os.path.exists(f):
-        print(f"ERROR: {f} not found in current directory — run after sync.py")
+        print(f"ERROR: {f} not found — run after sync.py")
         sys.exit(1)
 
-# Authenticated remote URL (Bitbucket masks this value in logs automatically)
-auth_url = GITHUB_REPO.replace("https://", f"https://x-access-token:{GITHUB_TOKEN}@")
+headers = {
+    "Authorization": f"Bearer {GITHUB_TOKEN}",
+    "Accept": "application/vnd.github+json",
+    "X-GitHub-Api-Version": "2022-11-28",
+}
+base_url = f"https://api.github.com/repos/{GITHUB_OWNER}/{GITHUB_REPO}/contents"
+timestamp = datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC")
 
-def run(cmd, cwd=None):
-    # Redact token from any printed error output
-    result = subprocess.run(cmd, cwd=cwd, capture_output=True, text=True)
-    if result.returncode != 0:
-        stderr = result.stderr.replace(GITHUB_TOKEN, "***")
-        safe_cmd = [c.replace(GITHUB_TOKEN, "***") for c in cmd]
-        print(f"ERROR running {' '.join(safe_cmd)}:\n{stderr}")
-        sys.exit(1)
-    return result.stdout.strip()
+any_updated = False
 
-tmpdir = tempfile.mkdtemp()
-try:
-    print(f"Cloning {GITHUB_REPO}...")
+for filename in FILES:
+    print(f"Processing {filename}...")
 
-    # Clone without --branch so it works even on empty repos
-    clone_result = subprocess.run(
-        ["git", "clone", "--depth", "1", auth_url, tmpdir],
-        capture_output=True, text=True
-    )
+    with open(filename, "rb") as f:
+        content_bytes = f.read()
 
-    if clone_result.returncode != 0:
-        # Completely empty repo (no commits at all)
-        print("  Empty repo detected — initializing from scratch...")
-        shutil.rmtree(tmpdir, ignore_errors=True)
-        os.makedirs(tmpdir)
-        run(["git", "init", "--initial-branch", GITHUB_BRANCH], cwd=tmpdir)
-        run(["git", "remote", "add", "origin", auth_url], cwd=tmpdir)
-        is_empty = True
+    content_b64 = base64.b64encode(content_bytes).decode()
+    new_sha = hashlib.sha256(content_bytes).hexdigest()
+
+    # Check if file already exists (to get its SHA for update)
+    url = f"{base_url}/{filename}"
+    resp = requests.get(url, headers=headers, params={"ref": GITHUB_BRANCH})
+
+    if resp.status_code == 200:
+        existing = resp.json()
+        existing_sha = existing.get("sha")
+        # GitHub uses blob SHA (not sha256) — always update if we can't compare easily
+        payload = {
+            "message": f"chore: sync {filename} [{timestamp}]",
+            "content": content_b64,
+            "sha": existing_sha,
+            "branch": GITHUB_BRANCH,
+        }
+        print(f"  Updating existing {filename}...")
+    elif resp.status_code == 404:
+        payload = {
+            "message": f"chore: add {filename} [{timestamp}]",
+            "content": content_b64,
+            "branch": GITHUB_BRANCH,
+        }
+        print(f"  Creating new {filename}...")
     else:
-        # Cloned OK — make sure we're on the right branch
-        current = subprocess.run(
-            ["git", "rev-parse", "--abbrev-ref", "HEAD"],
-            cwd=tmpdir, capture_output=True, text=True
-        ).stdout.strip()
-        if current != GITHUB_BRANCH:
-            run(["git", "checkout", "-b", GITHUB_BRANCH], cwd=tmpdir)
-        is_empty = False
+        print(f"ERROR: Failed to check {filename}: HTTP {resp.status_code} — {resp.text}")
+        sys.exit(1)
 
-    run(["git", "config", "user.email", GITHUB_EMAIL], cwd=tmpdir)
-    run(["git", "config", "user.name", "Bitbucket Pipelines"], cwd=tmpdir)
+    put_resp = requests.put(url, headers=headers, json=payload)
+    if put_resp.status_code in (200, 201):
+        size_mb = len(content_bytes) / (1024 * 1024)
+        print(f"  {filename}: pushed ({size_mb:.1f} MB)")
+        any_updated = True
+    else:
+        print(f"ERROR: Failed to push {filename}: HTTP {put_resp.status_code} — {put_resp.text}")
+        sys.exit(1)
 
-    changed = False
-    for filename in FILES:
-        src = os.path.join(os.getcwd(), filename)
-        dst = os.path.join(tmpdir, filename)
-
-        with open(src, "rb") as f:
-            new_hash = hashlib.sha256(f.read()).hexdigest()
-
-        if os.path.exists(dst):
-            with open(dst, "rb") as f:
-                old_hash = hashlib.sha256(f.read()).hexdigest()
-            if old_hash == new_hash:
-                print(f"  {filename}: unchanged, skipping")
-                continue
-
-        shutil.copy2(src, dst)
-        size_mb = os.path.getsize(dst) / (1024 * 1024)
-        print(f"  {filename}: updated ({size_mb:.1f} MB)")
-        changed = True
-
-    if not changed and not is_empty:
-        print("No changes detected. Nothing to push to GitHub.")
-        sys.exit(0)
-
-    run(["git", "add"] + FILES, cwd=tmpdir)
-
-    timestamp = datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC")
-    run(["git", "commit", "-m", f"chore: weekly docs sync [{timestamp}]"], cwd=tmpdir)
-    run(["git", "push", "--set-upstream", "origin", GITHUB_BRANCH], cwd=tmpdir)
-    print("Successfully pushed to GitHub.")
-
-finally:
-    shutil.rmtree(tmpdir, ignore_errors=True)
+if any_updated:
+    print(f"\nDone. Pushed to https://github.com/{GITHUB_OWNER}/{GITHUB_REPO}")
+else:
+    print("Nothing to push.")
