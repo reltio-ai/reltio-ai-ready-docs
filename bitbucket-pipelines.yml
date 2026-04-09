@@ -26,17 +26,27 @@ definitions:
               echo "Pushed updated files."
             fi
 
+    - step: &push-github
+        name: Push docs.md and index.md to public GitHub repo
+        script:
+          - apt-get update -qq && apt-get install -y -qq git
+          - python github_sync.py
+
 pipelines:
   custom:
     manual-sync:
       - step: *sync-docs
 
+    manual-github-push:
+      - step: *push-github
+
   branches:
     main:
       - step:
-          name: Validate sync script
+          name: Validate sync scripts
           script:
             - python -m py_compile sync.py && echo "sync.py OK"
+            - python -m py_compile github_sync.py && echo "github_sync.py OK"
 
 schedules:
   - cron: "0 11 * * *"
@@ -44,3 +54,10 @@ schedules:
     branches:
       main:
         - step: *sync-docs
+
+  - cron: "0 14 * * 5"
+    name: Weekly push to GitHub on Friday 3pm Lisbon (14:00 UTC)
+    branches:
+      main:
+        - step: *sync-docs
+        - step: *push-github
