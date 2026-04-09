@@ -5,6 +5,7 @@ definitions:
     - step: &sync-docs
         name: Sync docs.md and index.md from reltio-docs-sync
         script:
+          - apt-get update -qq && apt-get install -y -qq git
           - pip install requests --quiet
           - python sync.py
           - |
