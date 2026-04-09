@@ -1,0 +1,45 @@
+image: python:3.11-slim
+
+definitions:
+  steps:
+    - step: &sync-docs
+        name: Sync docs.md and index.md from reltio-docs-sync
+        script:
+          - pip install requests --quiet
+          - python sync.py
+          - |
+            if git diff --quiet && git diff --cached --quiet; then
+              echo "No changes to commit."
+            else
+              git config user.email "pipelines@reltio.com"
+              git config user.name "Bitbucket Pipelines"
+              git add docs.md index.md
+              git commit -m "chore: sync docs from reltio-docs-sync [skip ci]
+
+            $(python -c "
+            import datetime
+            now = datetime.datetime.utcnow()
+            print(f'Generated: {now.strftime(\"%Y-%m-%d %H:%M UTC\")}')
+            ")"
+              git push origin main
+              echo "Pushed updated files."
+            fi
+
+pipelines:
+  custom:
+    manual-sync:
+      - step: *sync-docs
+
+  branches:
+    main:
+      - step:
+          name: Validate sync script
+          script:
+            - python -m py_compile sync.py && echo "sync.py OK"
+
+schedules:
+  - cron: "0 11 * * *"
+    name: Daily sync at 4am PDT (11am UTC)
+    branches:
+      main:
+        - step: *sync-docs
