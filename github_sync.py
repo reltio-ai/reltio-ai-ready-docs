@@ -18,6 +18,7 @@ GITHUB_OWNER = "reltio-ai"
 GITHUB_REPO  = "reltio-ai-ready-docs"
 GITHUB_BRANCH = "main"
 FILES = ["docs.md", "index.md"]
+README_FILE = "README.md"
 
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
 if not GITHUB_TOKEN:
@@ -29,6 +30,10 @@ for f in FILES:
         print(f"ERROR: {f} not found — run after sync.py")
         sys.exit(1)
 
+if not os.path.exists(README_FILE):
+    print(f"ERROR: {README_FILE} not found in current directory")
+    sys.exit(1)
+
 headers = {
     "Authorization": f"Bearer {GITHUB_TOKEN}",
     "Accept": "application/vnd.github+json",
@@ -36,10 +41,24 @@ headers = {
 }
 base_url = f"https://api.github.com/repos/{GITHUB_OWNER}/{GITHUB_REPO}/contents"
 timestamp = datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC")
+sync_date = datetime.datetime.utcnow().strftime("%Y---%m---%d")  # badge-safe format
+
+# Stamp sync date into README
+with open(README_FILE, "r") as f:
+    readme_content = f.read()
+import re
+readme_content = re.sub(
+    r"!\[Last synced\]\(https://img\.shields\.io/badge/Last%20synced-[^)]*\)",
+    f"![Last synced](https://img.shields.io/badge/Last%20synced-{sync_date.replace('-', '--')}-blue)",
+    readme_content
+)
+with open(README_FILE, "w") as f:
+    f.write(readme_content)
+print(f"README.md: stamped sync date {timestamp}")
 
 any_updated = False
 
-for filename in FILES:
+for filename in FILES + [README_FILE]:
     print(f"Processing {filename}...")
 
     with open(filename, "rb") as f:
