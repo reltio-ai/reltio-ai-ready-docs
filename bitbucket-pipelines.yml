@@ -29,7 +29,7 @@ definitions:
     - step: &push-github
         name: Push docs.md and index.md to public GitHub repo
         script:
-          - apt-get update -qq && apt-get install -y -qq git
+          - pip install requests --quiet
           - python github_sync.py
 
 pipelines:
