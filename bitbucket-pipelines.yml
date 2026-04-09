@@ -9,12 +9,12 @@ definitions:
           - pip install requests --quiet
           - python sync.py
           - |
-            if git diff --quiet && git diff --cached --quiet; then
+            git config user.email "pipelines@reltio.com"
+            git config user.name "Bitbucket Pipelines"
+            git add docs.md index.md
+            if git diff --cached --quiet; then
               echo "No changes to commit."
             else
-              git config user.email "pipelines@reltio.com"
-              git config user.name "Bitbucket Pipelines"
-              git add docs.md index.md
               git commit -m "chore: sync docs from reltio-docs-sync [skip ci]
 
             $(python -c "
