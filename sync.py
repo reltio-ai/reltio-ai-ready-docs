@@ -16,13 +16,13 @@ SOURCE_BRANCH = "main"
 FILES = ["docs.md", "index.md"]
 
 BB_USERNAME = os.environ.get("BB_USERNAME")
-BB_APP_PASSWORD = os.environ.get("BB_APP_PASSWORD")
+BB_TOKEN = os.environ.get("BB_TOKEN")
 
-if not BB_USERNAME or not BB_APP_PASSWORD:
-    print("ERROR: BB_USERNAME and BB_APP_PASSWORD environment variables required")
+if not BB_USERNAME or not BB_TOKEN:
+    print("ERROR: BB_USERNAME and BB_TOKEN environment variables required")
     sys.exit(1)
 
-auth = (BB_USERNAME, BB_APP_PASSWORD)
+auth = (BB_USERNAME, BB_TOKEN)
 changed = False
 
 for filename in FILES:
