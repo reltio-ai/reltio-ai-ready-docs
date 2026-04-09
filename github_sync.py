@@ -43,8 +43,24 @@ def run(cmd, cwd=None):
 
 tmpdir = tempfile.mkdtemp()
 try:
+    # Try cloning with branch; if repo is empty/new, clone without --branch
     print(f"Cloning {GITHUB_REPO}...")
-    run(["git", "clone", "--depth", "1", "--branch", GITHUB_BRANCH, auth_url, tmpdir])
+    result = subprocess.run(
+        ["git", "clone", "--depth", "1", "--branch", GITHUB_BRANCH, auth_url, tmpdir],
+        capture_output=True, text=True
+    )
+    empty_repo = result.returncode != 0
+
+    if empty_repo:
+        print("  Repo appears empty — initializing fresh clone...")
+        shutil.rmtree(tmpdir, ignore_errors=True)
+        os.makedirs(tmpdir)
+        run(["git", "init"], cwd=tmpdir)
+        run(["git", "remote", "add", "origin", auth_url], cwd=tmpdir)
+        run(["git", "checkout", "-b", GITHUB_BRANCH], cwd=tmpdir)
+
+    run(["git", "config", "user.email", GITHUB_EMAIL], cwd=tmpdir)
+    run(["git", "config", "user.name", "Bitbucket Pipelines"], cwd=tmpdir)
 
     changed = False
     for filename in FILES:
@@ -66,18 +82,20 @@ try:
         print(f"  {filename}: updated ({size_mb:.1f} MB)")
         changed = True
 
-    if not changed:
+    if not changed and not empty_repo:
         print("No changes detected. Nothing to push to GitHub.")
         sys.exit(0)
 
-    run(["git", "config", "user.email", GITHUB_EMAIL], cwd=tmpdir)
-    run(["git", "config", "user.name", "Bitbucket Pipelines"], cwd=tmpdir)
     run(["git", "add"] + FILES, cwd=tmpdir)
 
     import datetime
     timestamp = datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC")
     run(["git", "commit", "-m", f"chore: weekly docs sync [{timestamp}]"], cwd=tmpdir)
-    run(["git", "push", "origin", GITHUB_BRANCH], cwd=tmpdir)
+
+    push_cmd = ["git", "push", "origin", GITHUB_BRANCH]
+    if empty_repo:
+        push_cmd.append("--set-upstream")
+    run(push_cmd, cwd=tmpdir)
     print("Successfully pushed to GitHub.")
 
 finally:
