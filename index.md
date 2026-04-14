@@ -1,5 +1,5 @@
 # Reltio Documentation Index
-_Generated: 2026-04-09 02:14 UTC — 3205 topics_
+_Generated: 2026-04-14 02:14 UTC — 3211 topics_
 
 This file is a structured navigation index of the Reltio documentation portal.
 It contains the full parent-child hierarchy, topic URLs, keywords, summaries,
@@ -41,6 +41,19 @@ relationships, locate sibling topics, and follow cross-references.
 - **Summary:** > **Section:** Reltio > What’s new and notable? > What's new at a glance > Release Notes at a glance
 - **Keywords:** reltio release cadence schedule, bi-weekly release update pattern, general availability releases roadmap, reltio release schedule for preview and GA, ga release planning, how reltio delivers new features, platform update timeline, preview release dates for reltio, release cadence, schedule
 - **See also:** [c relnotes 2025 2 weekly](https://docs.reltio.com/en/reltio/whats-new-and-notable/whats-new-at-a-glance/release-notes-at-a-glance/2025.2-release-notes/2025.2-bi-weekly-release-notes-rn), [c relnotes 2025 2 ga](https://docs.reltio.com/en/reltio/whats-new-and-notable/whats-new-at-a-glance/release-notes-at-a-glance/2025.2-release-notes/2025.2-major-release-notes), [c relnotes 2025 1 weekly](https://docs.reltio.com/en/reltio/whats-new-and-notable/whats-new-at-a-glance/release-notes-at-a-glance/2025.1-release-notes/2025.1-bi-weekly-release-notes), [c relnotes 2025 1 ga](https://docs.reltio.com/en/reltio/whats-new-and-notable/whats-new-at-a-glance/release-notes-at-a-glance/2025.1-release-notes/2025.1-major-release-notes), [c relnotes 2024 3 weekly](https://docs.reltio.com/en/reltio/whats-new-and-notable/whats-new-at-a-glance/release-notes-at-a-glance/2024.3-release-notes/2024.3-weekly-release-notes), [c relnotes 2024 3 ga](https://docs.reltio.com/en/reltio/whats-new-and-notable/whats-new-at-a-glance/release-notes-at-a-glance/2024.3-release-notes/2024.3-major-release-notes), [c relnotes 2024 2 weekly](https://docs.reltio.com/en/reltio/whats-new-and-notable/whats-new-at-a-glance/release-notes-at-a-glance/2024.2-release-notes/2024.2-weekly-release-notes), [c relnotes 2024 2 ga](https://docs.reltio.com/en/reltio/whats-new-and-notable/whats-new-at-a-glance/release-notes-at-a-glance/2024.2-release-notes/2024.2-major-release-notes), [c discover relnotes 2024 1 weekly](https://docs.reltio.com/en/reltio/whats-new-and-notable/whats-new-at-a-glance/release-notes-at-a-glance/2024.1-release-notes/2024.1-weekly-release-notes), [c discover relnotes 2024 1 ga](https://docs.reltio.com/en/reltio/whats-new-and-notable/whats-new-at-a-glance/release-notes-at-a-glance/2024.1-release-notes/2024.1-major-release-notes), [c discover relnotes 2023 3 weekly](https://docs.reltio.com/en/reltio/whats-new-and-notable/whats-new-at-a-glance/release-notes-at-a-glance/2023.3-release-notes/2023.3-weekly-release-notes), [c discover relnotes 2023 3 ga](https://docs.reltio.com/en/reltio/whats-new-and-notable/whats-new-at-a-glance/release-notes-at-a-glance/2023.3-release-notes/2023.3-major-release-notes)
+
+#### 2026.1 Release Notes
+
+- **URL:** https://docs.reltio.com/en/reltio/whats-new-and-notable/whats-new-at-a-glance/release-notes-at-a-glance/2026.1-release-notes
+- **Path:** Reltio Documentation Portal v2 sitemap > Reltio > What’s new and notable? > What's new at a glance > Release Notes at a glance
+- **Summary:** > **Section:** Reltio > What’s new and notable? > What's new at a glance > Release Notes at a glance
+
+#### 2026.1 Major Release Notes
+
+- **URL:** https://docs.reltio.com/en/reltio/whats-new-and-notable/whats-new-at-a-glance/release-notes-at-a-glance/2026.1-release-notes/2026.1-major-release-notes
+- **Path:** Reltio Documentation Portal v2 sitemap > Reltio > What’s new and notable? > What's new at a glance > Release Notes at a glance > 2026.1 Release Notes
+- **Summary:** > **Section:** Reltio > What’s new and notable? > What's new at a glance > Release Notes at a glance > 2026.1 Release Notes
+- **See also:** [c relnotes glance](https://docs.reltio.com/en/reltio/whats-new-and-notable/whats-new-at-a-glance/release-notes-at-a-glance)
 
 #### 2025.2 Release Notes
 
@@ -4341,7 +4354,6 @@ _Topics in this section: Observability Hub at a glance, Access dashboards in Rel
 - **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > About developer resources > Developer resources at a glance > Customize data tasks with LCAs > LCA Implementation Using AWS Lambda
 - **Summary:** > **Section:** Developer resources > About developer resources > Developer resources at a glance > Customize data tasks with LCAs > LCA Implementation Using AWS Lambda
 - **Keywords:** Implementing LCA using AWS Lambda, LCA as AWS Lambda Identity and Access Management, implementing LCA using AWS lambda, LCA as AWS lambda identity and access management
-- **See also:** [open a Support ticket](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal)
 
 #### LCA as AWS Lambda: Monitoring.
 
@@ -16764,7 +16776,14 @@ In most cases, some errors happened during background job operations.
 - **URL:** https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/configure-privatelink-connectivity-for-snowflake-direct-connect-data-pipeline
 - **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Data Pipelines at a glance > Reltio Data Pipeline for Snowflake at a glance > Reltio Data Pipeline for Snowflake setup
 - **Summary:** > **Section:** Applications > Data Integrations > Data Pipelines at a glance > Reltio Data Pipeline for Snowflake at a glance > Reltio Data Pipeline for Snowflake setup
-- **See also:** [c aws privatelink configure](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/additional-subscriptions-at-a-glance/reltio-private-link/configuring-aws-privatelink), [c apps integ pipe snow glance](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance)
+- **See also:** [PrivateLink connectivity support matrix for Snowflake (Direct Connect)](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/privatelink-connectivity-support-matrix-for-reltio-data-pipeline-for-snowflake-direct-connect), [c aws privatelink configure](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/additional-subscriptions-at-a-glance/reltio-private-link/configuring-aws-privatelink), [c apps integ pipe snow glance](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance)
+
+#### PrivateLink connectivity support matrix for Reltio Data Pipeline for Snowflake (Direct Connect)
+
+- **URL:** https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/privatelink-connectivity-support-matrix-for-reltio-data-pipeline-for-snowflake-direct-connect
+- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Data Pipelines at a glance > Reltio Data Pipeline for Snowflake at a glance > Reltio Data Pipeline for Snowflake setup
+- **Summary:** > **Section:** Applications > Data Integrations > Data Pipelines at a glance > Reltio Data Pipeline for Snowflake at a glance > Reltio Data Pipeline for Snowflake setup
+- **Keywords:** privatelink connectivity support matrix for snowflake direct connect, supported privatelink combinations for snowflake direct connect, check privatelink support for snowflake direct connect, snowflake direct connect privatelink deployment scenarios, reltio and snowflake privatelink support matrix, supported cloud and region combinations for privatelink, snowflake business critical edition privatelink support, privatelink, snowflake, direct connect
 
 #### Configure attribute filtering for Snowflake pipeline
 
@@ -17351,6 +17370,14 @@ In most cases, some errors happened during background job operations.
 - **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Reltio Data Sharing at a glance > Reltio Data Sharing with Databricks at a glance > Configure Reltio Data Sharing with Databricks
 - **Summary:** > **Section:** Applications > Data Integrations > Reltio Data Sharing at a glance > Reltio Data Sharing with Databricks at a glance > Configure Reltio Data Sharing with Databricks
 - **Keywords:** configure data share databricks api, create datashare adapter databricks, api setup data sharing, delta sharing api configuration, databricksConfig.identifier, adapter setup rest call, workspace sharing api, delete databricks delta share, databricks share deletion support request
+- **See also:** [Best practices for setting up Reltio Data Sharing with Databricks](https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing-at-a-glance/reltio-data-sharing-with-databricks-at-a-glance/configure-reltio-data-sharing-with-databricks/best-practices-for-setting-up-reltio-data-sharing-with-databricks)
+
+#### Performance benchmarks for data sharing with Databricks
+
+- **URL:** https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing-at-a-glance/reltio-data-sharing-with-databricks-at-a-glance/performance-benchmarks-for-data-sharing-with-databricks
+- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Reltio Data Sharing at a glance > Reltio Data Sharing with Databricks at a glance
+- **Summary:** > **Section:** Applications > Data Integrations > Reltio Data Sharing at a glance > Reltio Data Sharing with Databricks at a glance
+- **Keywords:** performance benchmarks for databricks sharing, full data share benchmark databricks, steady state data share benchmark, sync to data pipeline benchmark, databricks common dataset sync time, per entity dataset sync delay, benchmarking, databricks, integration
 - **See also:** [Best practices for setting up Reltio Data Sharing with Databricks](https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing-at-a-glance/reltio-data-sharing-with-databricks-at-a-glance/configure-reltio-data-sharing-with-databricks/best-practices-for-setting-up-reltio-data-sharing-with-databricks)
 
 #### Schema simplification for Data Share
