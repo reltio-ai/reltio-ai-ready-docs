@@ -2,7 +2,7 @@
 
 > The complete Reltio product knowledge base — 3,200+ topics — optimized for AI consumption and available as structured Markdown. No authentication required.
 
-![Last synced](https://img.shields.io/badge/Last%20synced-2026------04------09-blue)
+![Last synced](https://img.shields.io/badge/Last%20synced-2026------04------14-blue)
 ![Topics](https://img.shields.io/badge/Topics-3%2C200%2B-green)
 ![Format](https://img.shields.io/badge/Format-Markdown-lightgrey)
 ![Access](https://img.shields.io/badge/Access-Public%2C%20no%20auth-brightgreen)
@@ -184,9 +184,15 @@ Load `docs.md` into your support platform's knowledge base or AI bot. The struct
 
 ## Sync schedule
 
-This repository is updated **every Friday** from Reltio's content management system. The files reflect the latest published documentation as of the sync date shown in the badge at the top of this page.
+This repository is updated **every Wednesday and Friday** from Reltio's content management system.
 
-If you're maintaining a local copy, run `git pull` or re-download the files weekly to stay current.
+| Time (UTC) | US Pacific | US Eastern | India (IST) | Europe (CET) |
+|---|---|---|---|---|
+| 17:30 | 10:30 AM | 1:30 PM | 11:00 PM | 6:30 PM |
+
+_* Previous day_
+
+The files reflect the latest published documentation as of the sync date shown in the badge at the top of this page. If you're maintaining a local copy, run `git pull` or re-download the files on Wednesdays and Fridays to stay current.
 
 ---
 
