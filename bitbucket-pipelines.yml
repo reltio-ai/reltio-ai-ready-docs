@@ -49,14 +49,8 @@ pipelines:
             - python -m py_compile github_sync.py && echo "github_sync.py OK"
 
 schedules:
-  - cron: "0 11 * * *"
-    name: Daily sync at 4am PDT (11am UTC)
-    branches:
-      main:
-        - step: *sync-docs
-
-  - cron: "0 14 * * 5"
-    name: Weekly push to GitHub on Friday 3pm Lisbon (14:00 UTC)
+  - cron: "30 5 * * 3,5"
+    name: Sync and push to GitHub Wed+Fri 11:00 AM IST (05:30 UTC)
     branches:
       main:
         - step: *sync-docs
