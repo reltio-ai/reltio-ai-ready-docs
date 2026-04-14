@@ -41,7 +41,7 @@ headers = {
 }
 base_url = f"https://api.github.com/repos/{GITHUB_OWNER}/{GITHUB_REPO}/contents"
 timestamp = datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC")
-sync_date = datetime.datetime.utcnow().strftime("%Y---%m---%d")  # badge-safe format
+sync_date = datetime.datetime.utcnow().strftime("%Y-%m-%d")  # replace('-','--') below handles shields.io escaping
 
 # Stamp sync date into README
 with open(README_FILE, "r") as f:
