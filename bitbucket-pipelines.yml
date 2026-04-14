@@ -27,9 +27,10 @@ definitions:
             fi
 
     - step: &push-github
-        name: Push docs.md and index.md to public GitHub repo
+        name: Sanitize and push to public GitHub repo
         script:
           - pip install requests --quiet
+          - python sanitize.py
           - python github_sync.py
 
 pipelines:
@@ -50,6 +51,7 @@ pipelines:
           name: Validate sync scripts
           script:
             - python -m py_compile sync.py && echo "sync.py OK"
+            - python -m py_compile sanitize.py && echo "sanitize.py OK"
             - python -m py_compile github_sync.py && echo "github_sync.py OK"
 
 schedules:
