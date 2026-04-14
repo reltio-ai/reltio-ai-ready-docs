@@ -40,6 +40,10 @@ pipelines:
     manual-github-push:
       - step: *push-github
 
+    sync-and-push:
+      - step: *sync-docs
+      - step: *push-github
+
   branches:
     main:
       - step:
