@@ -54,7 +54,7 @@ pipelines:
 
 schedules:
   - cron: "30 5 * * 3,5"
-    name: Sync and push to GitHub Wed+Fri 11:00 AM IST (05:30 UTC)
+    name: Sync and push to GitHub Wed+Fri 11:00 PM IST (17:30 UTC)
     branches:
       main:
         - step: *sync-docs
