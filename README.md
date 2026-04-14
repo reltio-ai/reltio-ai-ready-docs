@@ -1,8 +1,8 @@
 # Reltio AI-Ready Documentation
 
-> The complete Reltio product knowledge base — 3,200+ topics — optimized for AI consumption and available as structured Markdown. No authentication required.
+> The complete Reltio product documentation corpus — 3,200+ topics — optimized for AI consumption and available as structured Markdown. No authentication required.
 
-![Last synced](https://img.shields.io/badge/Last%20synced-2026------04------14-blue)
+![Last synced](https://img.shields.io/badge/Last%20synced-2026--04--14-blue)
 ![Topics](https://img.shields.io/badge/Topics-3%2C200%2B-green)
 ![Format](https://img.shields.io/badge/Format-Markdown-lightgrey)
 ![Access](https://img.shields.io/badge/Access-Public%2C%20no%20auth-brightgreen)
@@ -11,7 +11,9 @@
 
 ## Overview
 
-Reltio AI-Ready Documentation gives you Reltio's entire product knowledge base in a format that AI tools can consume directly. The files in this repository are sourced from Reltio's authoring system — not scraped from HTML — and are updated weekly.
+Reltio is a cloud-native master data management (MDM) platform for managing, governing, and analyzing enterprise data.
+
+Reltio AI-Ready Documentation gives you Reltio's entire product documentation corpus in a format that AI tools can consume directly. The files in this repository are sourced from Reltio's documentation platform — not scraped from HTML — and are updated every Wednesday and Friday.
 
 You can drop these files into any RAG pipeline, AI agent, coding assistant, or LLM with a single URL. No scraping. No authentication. No custom ETL.
 
@@ -19,11 +21,22 @@ You can drop these files into any RAG pipeline, AI agent, coding assistant, or L
 
 ---
 
+## Quick start
+
+```bash
+curl -L -o docs.md \
+  https://raw.githubusercontent.com/reltio-ai/reltio-ai-ready-docs/main/docs.md
+```
+
+That's it — you now have the full Reltio documentation corpus locally. See [How to use these files](#how-to-use-these-files) for integration examples.
+
+---
+
 ## Files in this repository
 
 ### `docs.md` — Documentation corpus (~11 MB)
 
-The complete Reltio documentation corpus compiled into a single Markdown file. It covers 3,200+ topics across all Reltio product areas:
+The complete Reltio documentation corpus compiled into a single Markdown file. It covers 3,200+ topics across all Reltio products and documentation categories:
 
 - **Reltio MDM** — entity modeling, matching, merging, survivorship, data quality, APIs, and connectors
 - **Reltio I360** — customer intelligence, analytics, and identity resolution
@@ -31,9 +44,9 @@ The complete Reltio documentation corpus compiled into a single Markdown file. I
 - **Integration** — REST APIs, webhooks, Kafka, and third-party connectors
 - **Troubleshooting** — diagnostics, common errors, and performance tuning
 
-**Source:** The content comes directly from Reltio's content management system (DITA XML), not from crawling docs.reltio.com. Tables, code blocks, step sequences, and cross-reference URLs are accurately converted. This means you get complete, consistent content — not a best-effort scrape.
+**Source:** The content comes directly from Reltio's documentation platform, not from crawling docs.reltio.com. Tables, code blocks, step sequences, and cross-reference URLs are accurately converted. This means you get complete, consistent content — not a best-effort scrape.
 
-**Use this file** when you want to give an AI tool access to the full Reltio knowledge base.
+**Use this file** when you want to give an AI tool access to the full Reltio documentation corpus.
 
 ---
 
@@ -49,7 +62,7 @@ A structured index of every published Reltio topic. For each topic, the index pr
 | URL | Direct link to the topic on docs.reltio.com |
 | Cross-references | Related topics and their paths |
 
-**Use this file** alongside `docs.md` in RAG pipelines to significantly improve retrieval accuracy. The index gives AI models structural context about where each topic sits in the knowledge base — not just flat text — which reduces irrelevant results and improves grounding.
+**Use this file** alongside `docs.md` in RAG pipelines to significantly improve retrieval accuracy. The index gives AI models structural context about where each topic sits in the documentation hierarchy — not just flat text — which reduces irrelevant results and improves grounding. Chunking by topic hierarchy preserves parent-child context that flat text chunking loses, leading to more relevant retrieval results.
 
 ---
 
@@ -126,9 +139,10 @@ Index `docs.md` as a Blob Storage document using the built-in Markdown chunking 
 Add `docs.md` to your project context so your coding assistant has full knowledge of Reltio's APIs, configuration model, and best practices.
 
 **Claude Code**
-```bash
-# Reference the file directly in your conversation
-@docs.md
+
+Inside an interactive Claude Code session, reference the file directly:
+```
+@docs.md How do I configure entity matching in Reltio?
 ```
 
 **GitHub Copilot / Cursor / Windsurf**
@@ -149,7 +163,7 @@ with open("docs.md", "r") as f:
 
 client = anthropic.Anthropic()
 response = client.messages.create(
-    model="claude-opus-4-5",
+    model="claude-sonnet-4-5-20250620",
     max_tokens=4096,
     messages=[
         {
@@ -163,9 +177,9 @@ print(response.content[0].text)
 
 ---
 
-### Use in Zendesk, Salesforce Service Cloud, or support bots
+### Use in support platforms or AI bots
 
-Load `docs.md` into your support platform's knowledge base or AI bot. The structured Markdown format is compatible with all major support platforms that accept external knowledge sources.
+The structured Markdown format is designed to be compatible with support platforms and AI bots that accept external knowledge sources. Refer to your platform's documentation for specific ingestion options.
 
 ---
 
@@ -175,7 +189,7 @@ Load `docs.md` into your support platform's knowledge base or AI bot. The struct
 |---|---|---|
 | RAG pipeline / AI assistant | `docs.md` + `index.md` | Use `index.md` for better retrieval accuracy |
 | AI coding assistant context | `docs.md` | Works with Claude Code, Copilot, Cursor, Codex |
-| Support bot knowledge base | `docs.md` | Compatible with Zendesk, Salesforce, Intercom |
+| Support bot / AI assistant | `docs.md` | Check your platform's docs for ingestion options |
 | Onboarding and training | `docs.md` | Query conversationally with any LLM |
 | LLM direct context | `docs.md` | Best with large context window models |
 | Custom GPT / AI agent | `docs.md` + `index.md` | Upload both files for best results |
@@ -184,15 +198,13 @@ Load `docs.md` into your support platform's knowledge base or AI bot. The struct
 
 ## Sync schedule
 
-This repository is updated **every Wednesday and Friday** from Reltio's content management system.
+This repository is updated **every Wednesday and Friday** from Reltio's documentation platform.
 
 | Time (UTC) | US Pacific | US Eastern | India (IST) | Europe (CET) |
 |---|---|---|---|---|
 | 17:30 | 10:30 AM | 1:30 PM | 11:00 PM | 6:30 PM |
 
-_* Previous day_
-
-The files reflect the latest published documentation as of the sync date shown in the badge at the top of this page. If you're maintaining a local copy, run `git pull` or re-download the files on Wednesdays and Fridays to stay current.
+The files reflect the latest published documentation as of the sync date shown in the badge at the top of this page. If you're maintaining a local copy, run `git pull` or re-download the files on Wednesdays and Fridays to stay current. Each sync updates the "Last synced" badge, which serves as the version indicator for this repository.
 
 ---
 
@@ -200,10 +212,10 @@ The files reflect the latest published documentation as of the sync date shown i
 
 These files contain published product documentation only. The following content is not included:
 
-- API schemas (Swagger / OpenAPI specifications)
-- SDK source code or code samples
-- Support knowledge base articles
-- Release notes in full detail
+- API schemas (Swagger / OpenAPI specifications) — see the [Reltio Developer Portal](https://developer.reltio.com)
+- SDK source code or code samples — see the [Reltio Developer Portal](https://developer.reltio.com)
+- Support articles — see the [Reltio Support Portal](https://support.reltio.com)
+- Release notes in full detail — see [Release Notes on docs.reltio.com](https://docs.reltio.com/en/reltio/whats-new-and-notable/whats-new-at-a-glance/release-notes-at-a-glance)
 - Content in languages other than English
 
 ---
