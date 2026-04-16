@@ -1,5 +1,5 @@
 # Reltio Documentation Index
-_Generated: 2026-04-16 02:14 UTC — 3211 topics_
+_Generated: 2026-04-16 17:15 UTC — 3182 topics_
 
 This file is a structured navigation index of the Reltio documentation portal.
 It contains the full parent-child hierarchy, topic URLs, keywords, summaries,
@@ -5177,7 +5177,7 @@ _Topics in this section: Observability Hub at a glance, Access dashboards in Rel
 - **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Entity Management APIs > Entity Management APIs at a glance
 - **Summary:** > **Section:** Developer resources > Entity Management APIs > Entity Management APIs at a glance
 - **Keywords:** Attribute APIs, attribute apis, create attributes, attributes, update attributes, delete attributes, pin attributes, ignore attributes, get attributes
-- **See also:** [createattribute](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/attribute-apis/create-attribute), [getattribute](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/match-iq-apis/list-available-shared-models), [updateattribute](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/attribute-apis/update-attribute), [ignoreattribute](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/attribute-apis/ignore-attribute), [pinattribute](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/attribute-apis/pin-attribute), [deleteattribute](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/attribute-apis/delete-attribute)
+- **See also:** [createattribute](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/attribute-apis/create-attribute), [getattribute](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/attribute-apis/get-attribute), [updateattribute](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/attribute-apis/update-attribute), [ignoreattribute](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/attribute-apis/ignore-attribute), [pinattribute](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/attribute-apis/pin-attribute), [deleteattribute](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/attribute-apis/delete-attribute)
 
 #### Create Attribute
 
@@ -5268,56 +5268,6 @@ _Topics in this section: Observability Hub at a glance, Access dashboards in Rel
 - **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Entity Management APIs > Entity Management APIs at a glance > Attribute APIs
 - **Summary:** > **Section:** Developer resources > Entity Management APIs > Entity Management APIs at a glance > Attribute APIs
 - **See also:** [authenticationapi](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/authentication-api)
-
-#### Match IQ APIs
-
-- **URL:** https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/match-iq-apis
-- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Entity Management APIs > Entity Management APIs at a glance
-- **Summary:** > **Section:** Developer resources > Entity Management APIs > Entity Management APIs at a glance
-- **Keywords:** Match IQ APIs, share a model, list available shared models, get shared model, update shared model, delete shared model, download shared model
-- **See also:** [postattribute](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/match-iq-apis/share-a-model), [getattribute](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/match-iq-apis/list-available-shared-models), [getsharedmodel](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/match-iq-apis/get-shared-model), [putattribute](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/match-iq-apis/update-shared-model), [sharedmodel attribute delete](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/match-iq-apis/delete-shared-model), [postdownloadmodel](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/match-iq-apis/download-shared-model)
-
-#### Delete Shared Model
-
-- **URL:** https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/match-iq-apis/delete-shared-model
-- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Entity Management APIs > Entity Management APIs at a glance > Match IQ APIs
-- **Summary:** > **Section:** Developer resources > Entity Management APIs > Entity Management APIs at a glance > Match IQ APIs
-- **Keywords:** Delete shared model, Deletes shared model by identifier
-
-#### Download Shared Model
-
-- **URL:** https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/match-iq-apis/download-shared-model
-- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Entity Management APIs > Entity Management APIs at a glance > Match IQ APIs
-- **Summary:** > **Section:** Developer resources > Entity Management APIs > Entity Management APIs at a glance > Match IQ APIs
-- **Keywords:** Download shared model, Downloads the shared model to the specified destination
-
-#### Get Shared Model
-
-- **URL:** https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/match-iq-apis/get-shared-model
-- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Entity Management APIs > Entity Management APIs at a glance > Match IQ APIs
-- **Summary:** > **Section:** Developer resources > Entity Management APIs > Entity Management APIs at a glance > Match IQ APIs
-- **Keywords:** Get shared model, Gets shared model by identifier
-
-#### List Available Shared Models
-
-- **URL:** https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/match-iq-apis/list-available-shared-models
-- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Entity Management APIs > Entity Management APIs at a glance > Match IQ APIs
-- **Summary:** > **Section:** Developer resources > Entity Management APIs > Entity Management APIs at a glance > Match IQ APIs
-- **Keywords:** List available shared models, Lists all the shared models, Available models for download to the specified tenant
-
-#### Share a Model
-
-- **URL:** https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/match-iq-apis/share-a-model
-- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Entity Management APIs > Entity Management APIs at a glance > Match IQ APIs
-- **Summary:** > **Section:** Developer resources > Entity Management APIs > Entity Management APIs at a glance > Match IQ APIs
-- **Keywords:** Shares an existing Match IQ model, Share a model, Shares an existing Match IQ model so it could be used on another
-
-#### Update Shared Model
-
-- **URL:** https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/match-iq-apis/update-shared-model
-- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Entity Management APIs > Entity Management APIs at a glance > Match IQ APIs
-- **Summary:** > **Section:** Developer resources > Entity Management APIs > Entity Management APIs at a glance > Match IQ APIs
-- **Keywords:** update attribute value representing source system, Update attribute value representing source system
 
 #### Crosswalks API
 
@@ -10787,7 +10737,7 @@ _Topics in this section: Hub at a glance, Profile Stats dashboard at a glance, D
 - **Path:** Reltio Documentation Portal v2 sitemap > Applications > Hub > Profiles at a glance > Profile perspectives tabs > Profile perspectives navigation > Potential Matches perspective
 - **Summary:** > **Section:** Applications > Hub > Profiles at a glance > Profile perspectives tabs > Profile perspectives navigation > Potential Matches perspective
 - **Keywords:** Potential Matches, Potential Matches Perspective, potential matches perspective, merge, merge all, Merge All, merge all potential matches, add a relationship, add relationship, add relation
-- **See also:** [c obj profiles nav pmperspective](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/potential-matches-perspective), [findingmatches](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-operation/review-potential-matches-overview/find-potential-matches-manually-for-a-profile), [negativerule](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/match-group-elements---description-and-configuration/negative-rule), [matchiq](https://docs.reltio.com/en/applications/console/configuration-applications/ai-powered-flexible-entity-resolution-network-fern-model-based-matching-at-a-glance/train-an-ml-model-from-scratch-with-match-iq), [relevancematching](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/relevance-based-matching---detailed-explanation), [mergingpotentialmatches](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-operation/review-potential-matches-overview/merge-potential-matches)
+- **See also:** [c obj profiles nav pmperspective](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/potential-matches-perspective), [findingmatches](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-operation/review-potential-matches-overview/find-potential-matches-manually-for-a-profile), [negativerule](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/match-group-elements---description-and-configuration/negative-rule), [t console enablepretrainedmodel fern](https://docs.reltio.com/en/applications/console/configuration-applications/ai-powered-flexible-entity-resolution-network-fern-model-based-matching-at-a-glance/fern-based-matching/use-a-pretrained-fern-model/enable-a-pretrained-fern-model), [relevancematching](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/relevance-based-matching---detailed-explanation), [mergingpotentialmatches](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-operation/review-potential-matches-overview/merge-potential-matches)
 
 #### Interactions perspective
 
@@ -10867,7 +10817,7 @@ _Topics in this section: Hub at a glance, Profile Stats dashboard at a glance, D
 - **Path:** Reltio Documentation Portal v2 sitemap > Applications > Hub > Profiles at a glance > Profile perspectives tabs > Profile perspectives navigation
 - **Summary:** > **Section:** Applications > Hub > Profiles at a glance > Profile perspectives tabs > Profile perspectives navigation
 - **Keywords:** members perspective for group entity, view group members in reltio profile, segmented grouping with member visibility, explore member list using grouping type, group consolidation ID search, use members table for profile navigation, search and export group members, configure members table display settings, members screen, group entity
-- **See also:** [c apps datamodeler largeobjects](https://docs.reltio.com/en/applications/console/configuration-applications/data-modeler-at-a-glance/segmented-grouping-via-match-rules), [configure grouping types](https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/configure-grouping-types/create-grouping-type-configurations), [t obj profiles searchmembers](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/members-perspective/search-and-filter-entities-in-the-members-screen), [t obj profiles exportmemberdetails](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/members-perspective/export-the-member-list-in-the-members-screen)
+- **See also:** [configure grouping types](https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/configure-grouping-types/create-grouping-type-configurations), [t obj profiles searchmembers](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/members-perspective/search-and-filter-entities-in-the-members-screen), [t obj profiles exportmemberdetails](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/members-perspective/export-the-member-list-in-the-members-screen)
 
 #### Search and filter entities in the Members screen
 
@@ -11022,59 +10972,6 @@ _Topics in this section: Hub at a glance, Profile Stats dashboard at a glance, D
 - **Summary:** > **Section:** Applications > Console > Configuration applications > Data Modeler at a glance
 - **Keywords:** match rule editor, Match Rule Editor, Editing Match Rules, creating a match rule, Rules builder, Advanced editor, Match Rule Builder, match rule builder, create a match rule, known limitations
 
-#### Automated householding
-
-- **URL:** https://docs.reltio.com/en/applications/console/configuration-applications/data-modeler-at-a-glance/automated-householding
-- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Console > Configuration applications > Data Modeler at a glance
-- **Summary:** > **Section:** Applications > Console > Configuration applications > Data Modeler at a glance
-- **Keywords:** Reltio Snowflake Connector Overview, Snowflake Data Platform, Snowflake Tables and Views, S3 Storage Bucket, Create an IAM Policy, reltio snowflake connector overview, snowflake data platform, snowflake tables and views, S3 storage bucket, create an IAM policy
-- **See also:** [t model hhgrouptype create](https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/configure-grouping-types/create-grouping-type-configurations), [c v3 insur components](https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-insurance-velocity-pack), [RebuildMatchTableTask](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/rebuild-match-table-task), [c getbearings console household start](https://docs.reltio.com/en/applications/console/configuration-applications/data-modeler-at-a-glance/automated-householding/get-started-with-grouping-types), [c model hhgrouptype manage](https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/configure-grouping-types)
-
-#### Enable grouping types
-
-- **URL:** https://docs.reltio.com/en/applications/console/configuration-applications/data-modeler-at-a-glance/automated-householding/enable-grouping-types
-- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Console > Configuration applications > Data Modeler at a glance > Automated householding
-- **Summary:** > **Section:** Applications > Console > Configuration applications > Data Modeler at a glance > Automated householding
-- **See also:** [r role admin tenant](https://docs.reltio.com/en/objectives/administer-system/system-administration-at-a-glance/access-management-at-a-glance/access-management-reference/authorization/system-roles/critical-high-privilege-roles/role_admin_tenant-access-permissions), [c getbearings console household ovw](https://docs.reltio.com/en/applications/console/configuration-applications/data-modeler-at-a-glance/automated-householding), [c getbearings console household start](https://docs.reltio.com/en/applications/console/configuration-applications/data-modeler-at-a-glance/automated-householding/get-started-with-grouping-types), [t model hhgrouptype create](https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/configure-grouping-types/create-grouping-type-configurations)
-
-#### Get started with grouping types
-
-- **URL:** https://docs.reltio.com/en/applications/console/configuration-applications/data-modeler-at-a-glance/automated-householding/get-started-with-grouping-types
-- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Console > Configuration applications > Data Modeler at a glance > Automated householding
-- **Summary:** > **Section:** Applications > Console > Configuration applications > Data Modeler at a glance > Automated householding
-- **Keywords:** Reltio Snowflake Connector Overview, Snowflake Data Platform, Snowflake Tables and Views, S3 Storage Bucket, Create an IAM Policy, reltio snowflake connector overview, snowflake data platform, snowflake tables and views, S3 storage bucket, create an IAM policy
-- **See also:** [c apps console glance](https://docs.reltio.com/en/applications/console/console-at-a-glance), [selectingatenant](https://docs.reltio.com/en/applications/platform/platform-at-a-glance/platform-navigation/select-a-tenant), [t model hhgrouptype create](https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/configure-grouping-types/create-grouping-type-configurations), [datamodeler](https://docs.reltio.com/en/applications/console/configuration-applications/data-modeler-at-a-glance), [c model hhgrouptype manage](https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/configure-grouping-types)
-
-#### Segmented grouping via match rules
-
-- **URL:** https://docs.reltio.com/en/applications/console/configuration-applications/data-modeler-at-a-glance/segmented-grouping-via-match-rules
-- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Console > Configuration applications > Data Modeler at a glance
-- **Summary:** > **Section:** Applications > Console > Configuration applications > Data Modeler at a glance
-- **Keywords:** segmented grouping, group matching, grouping service, logical entity groups, mdm group scalability, match-rule based grouping, group entity creation, high volume group processing, group population strategies, group consistency
-- **See also:** [c apps datamodeler configuregrouping](https://docs.reltio.com/en/applications/console/configuration-applications/data-modeler-at-a-glance/segmented-grouping-via-match-rules/configure-segmented-grouping-in-your-tenant), [grouping types](https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/configure-grouping-types/create-grouping-type-configurations)
-
-#### Configure segmented grouping in your tenant
-
-- **URL:** https://docs.reltio.com/en/applications/console/configuration-applications/data-modeler-at-a-glance/segmented-grouping-via-match-rules/configure-segmented-grouping-in-your-tenant
-- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Console > Configuration applications > Data Modeler at a glance > Segmented grouping via match rules
-- **Summary:** > **Section:** Applications > Console > Configuration applications > Data Modeler at a glance > Segmented grouping via match rules
-- **Keywords:** enable segmented grouping, groupingConfig version v2, groupingTypes configuration, group entity setup, grouping metadata, group aggregation mappings, topK configuration, survived value group mapping
-- **See also:** [c apps datamodeler attrmappingfunctions](https://docs.reltio.com/en/applications/console/configuration-applications/data-modeler-at-a-glance/segmented-grouping-via-match-rules/supported-attribute-mapping-functions-for-segmented-grouping), [r apps datamodeler validategrouping](https://docs.reltio.com/en/applications/console/configuration-applications/data-modeler-at-a-glance/segmented-grouping-via-match-rules/validate-grouping-metadata)
-
-#### Supported attribute mapping functions for segmented grouping
-
-- **URL:** https://docs.reltio.com/en/applications/console/configuration-applications/data-modeler-at-a-glance/segmented-grouping-via-match-rules/supported-attribute-mapping-functions-for-segmented-grouping
-- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Console > Configuration applications > Data Modeler at a glance > Segmented grouping via match rules
-- **Summary:** > **Section:** Applications > Console > Configuration applications > Data Modeler at a glance > Segmented grouping via match rules
-- **Keywords:** segmented grouping functions, attribute mapping, aggregation strategies, topK values, most recent values, survived value, count distinct, group entity aggregation, householding comparison
-
-#### Validate grouping metadata
-
-- **URL:** https://docs.reltio.com/en/applications/console/configuration-applications/data-modeler-at-a-glance/segmented-grouping-via-match-rules/validate-grouping-metadata
-- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Console > Configuration applications > Data Modeler at a glance > Segmented grouping via match rules
-- **Summary:** > **Section:** Applications > Console > Configuration applications > Data Modeler at a glance > Segmented grouping via match rules
-- **Keywords:** validate grouping metadata for segmented ui, how to use validateGroupingConfiguration API, check entity compatibility with segmented grouping, grouping metadata validation in reltio, verify segmented grouping processor support, reltio validation api for group entity config, segmented grouping metadata check, segmented grouping, grouping configuration, validation api
-
 #### Workflow Modeler at a glance
 
 - **URL:** https://docs.reltio.com/en/applications/console/configuration-applications/workflow-modeler-at-a-glance
@@ -11117,8 +11014,8 @@ _Topics in this section: Hub at a glance, Profile Stats dashboard at a glance, D
 - **URL:** https://docs.reltio.com/en/applications/console/configuration-applications/ai-powered-flexible-entity-resolution-network-fern-model-based-matching-at-a-glance
 - **Path:** Reltio Documentation Portal v2 sitemap > Applications > Console > Configuration applications
 - **Summary:** > **Section:** Applications > Console > Configuration applications
-- **Keywords:** Match - Machine Learning, match iq, machine learning, model, match
-- **See also:** [c console pretrained fern models](https://docs.reltio.com/en/applications/console/configuration-applications/ai-powered-flexible-entity-resolution-network-fern-model-based-matching-at-a-glance/fern-based-matching/use-a-pretrained-fern-model), [matchiq](https://docs.reltio.com/en/applications/console/configuration-applications/ai-powered-flexible-entity-resolution-network-fern-model-based-matching-at-a-glance/train-an-ml-model-from-scratch-with-match-iq)
+- **Keywords:** ai-powered fern model matching, flexible entity resolution network, pretrained fern model matching, out-of-the-box fern model, bulk match review with ai-powered, potential match recommendations, automatic merge for high scoring matches, entity resolution, matching, merge
+- **See also:** [c console pretrained fern models](https://docs.reltio.com/en/applications/console/configuration-applications/ai-powered-flexible-entity-resolution-network-fern-model-based-matching-at-a-glance/fern-based-matching/use-a-pretrained-fern-model)
 
 #### FERN-based matching
 
@@ -11191,87 +11088,6 @@ _Topics in this section: Hub at a glance, Profile Stats dashboard at a glance, D
 - **Summary:** > **Section:** Applications > Console > Configuration applications > AI-powered Flexible Entity Resolution Network (FERN) model-based matching at a glance > FERN-based matching > FERN with Modes
 - **Keywords:** FERN match model, upgrade pretrained model, Console Match tab, AI-powered matching, upgrade FERN version, match model settings, Data Modeler entity type, UPGRADE button, mode-based matching, enhanced discovery
 - **See also:** [r role admin tenant](https://docs.reltio.com/en/objectives/administer-system/system-administration-at-a-glance/access-management-at-a-glance/access-management-reference/authorization/system-roles/critical-high-privilege-roles/role_admin_tenant-access-permissions)
-
-#### Train an ML model from scratch with Match IQ
-
-- **URL:** https://docs.reltio.com/en/applications/console/configuration-applications/ai-powered-flexible-entity-resolution-network-fern-model-based-matching-at-a-glance/train-an-ml-model-from-scratch-with-match-iq
-- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Console > Configuration applications > AI-powered Flexible Entity Resolution Network (FERN) model-based matching at a glance
-- **Summary:** > **Section:** Applications > Console > Configuration applications > AI-powered Flexible Entity Resolution Network (FERN) model-based matching at a glance
-- **Keywords:** Match IQ, match iq, matching, machine learning, match, machine learning, train, model
-
-#### Enable Match IQ
-
-- **URL:** https://docs.reltio.com/en/applications/console/configuration-applications/ai-powered-flexible-entity-resolution-network-fern-model-based-matching-at-a-glance/train-an-ml-model-from-scratch-with-match-iq/enable-match-iq
-- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Console > Configuration applications > AI-powered Flexible Entity Resolution Network (FERN) model-based matching at a glance > Train an ML model from scratch with Match IQ
-- **Summary:** > **Section:** Applications > Console > Configuration applications > AI-powered Flexible Entity Resolution Network (FERN) model-based matching at a glance > Train an ML model from scratch with Match I
-- **See also:** [matchiq](https://docs.reltio.com/en/applications/console/configuration-applications/ai-powered-flexible-entity-resolution-network-fern-model-based-matching-at-a-glance/train-an-ml-model-from-scratch-with-match-iq), [c box techasst ops support](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal), [matchiqworkflow](https://docs.reltio.com/en/applications/console/configuration-applications/ai-powered-flexible-entity-resolution-network-fern-model-based-matching-at-a-glance/train-an-ml-model-from-scratch-with-match-iq/match-iq-workflow)
-
-#### Match IQ Workflow
-
-- **URL:** https://docs.reltio.com/en/applications/console/configuration-applications/ai-powered-flexible-entity-resolution-network-fern-model-based-matching-at-a-glance/train-an-ml-model-from-scratch-with-match-iq/match-iq-workflow
-- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Console > Configuration applications > AI-powered Flexible Entity Resolution Network (FERN) model-based matching at a glance > Train an ML model from scratch with Match IQ
-- **Summary:** > **Section:** Applications > Console > Configuration applications > AI-powered Flexible Entity Resolution Network (FERN) model-based matching at a glance > Train an ML model from scratch with Match I
-- **Keywords:** Match IQ Workflow, match iq workflow, match iq, iq workflow, match workflow
-
-#### Create a Match IQ model flow
-
-- **URL:** https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-operation/create-a-match-iq-model-flow
-- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Console > Configuration applications > AI-powered Flexible Entity Resolution Network (FERN) model-based matching at a glance > Train an ML model from scratch with Match IQ
-- **Summary:** > **Section:** Objectives > Resolve potential matches > Potential matching at a glance > Potential matching operation
-- **Keywords:** Create Model Flow, create model flow, model flow for matching, matching model, match iq model, match iq create flow, match iq model flow
-
-#### Editing the Name and Description of a Model Flow
-
-- **URL:** https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-operation/create-a-match-iq-model-flow/editing-the-name-and-description-of-a-model-flow
-- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Console > Configuration applications > AI-powered Flexible Entity Resolution Network (FERN) model-based matching at a glance > Train an ML model from scratch with Match IQ
-- **Summary:** > **Section:** Objectives > Resolve potential matches > Potential matching at a glance > Potential matching operation > Create a Match IQ model flow
-- **Keywords:** Edit Model Flow, edit model flow, edit model flow name, edit model flow description, edit model name, edit model description, match iq, match iq model
-
-#### Training the Model Flow
-
-- **URL:** https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-operation/create-a-match-iq-model-flow/training-the-model-flow
-- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Console > Configuration applications > AI-powered Flexible Entity Resolution Network (FERN) model-based matching at a glance > Train an ML model from scratch with Match IQ
-- **Summary:** > **Section:** Objectives > Resolve potential matches > Potential matching at a glance > Potential matching operation > Create a Match IQ model flow
-- **Keywords:** Training Model Flow, training model flow, train model flow, match iq model flow, train match iq model, match iq train, match iq
-
-#### Reviewing the Model
-
-- **URL:** https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-operation/create-a-match-iq-model-flow/reviewing-the-model
-- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Console > Configuration applications > AI-powered Flexible Entity Resolution Network (FERN) model-based matching at a glance > Train an ML model from scratch with Match IQ
-- **Summary:** > **Section:** Objectives > Resolve potential matches > Potential matching at a glance > Potential matching operation > Create a Match IQ model flow
-- **Keywords:** Review Model, Publish Model, Publishing the reviewed Model, match iq, review match iq model, match iq model, model review, publish match iq model
-- **See also:** [matchiqpermissions](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-reference/match-iq-api/roles-and-permissions-for-match-iq-application)
-
-#### Publishing the reviewed Model
-
-- **URL:** https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-operation/create-a-match-iq-model-flow/publishing-the-reviewed-model
-- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Console > Configuration applications > AI-powered Flexible Entity Resolution Network (FERN) model-based matching at a glance > Train an ML model from scratch with Match IQ
-- **Summary:** > **Section:** Objectives > Resolve potential matches > Potential matching at a glance > Potential matching operation > Create a Match IQ model flow
-- **Keywords:** Publish Model, match iq, match iq model, publish match iq model
-- **See also:** [matchiqpermissions](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-reference/match-iq-api/roles-and-permissions-for-match-iq-application), [customruleexp](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/configure-custom-match-actions), [createrebuildmatchtablestask](https://docs.reltio.com/en/applications/console/tenant-management-applications/tenant-management-at-a-glance/jobs-at-a-glance/creating-a-rebuild-match-tables-job)
-
-#### Performing an External Match
-
-- **URL:** https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-operation/create-a-match-iq-model-flow/performing-an-external-match
-- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Console > Configuration applications > AI-powered Flexible Entity Resolution Network (FERN) model-based matching at a glance > Train an ML model from scratch with Match IQ
-- **Summary:** > **Section:** Objectives > Resolve potential matches > Potential matching at a glance > Potential matching operation > Create a Match IQ model flow
-- **Keywords:** ML Match, External Match, External Match Using Match IQ, match iq external, external match iq, match iq, record identifier, matching iq
-- **See also:** [externalmatchapi](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/potential-matches-api/external-match-api)
-
-#### Match IQ API
-
-- **URL:** https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-reference/match-iq-api
-- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Console > Configuration applications > AI-powered Flexible Entity Resolution Network (FERN) model-based matching at a glance > Train an ML model from scratch with Match IQ
-- **Summary:** > **Section:** Objectives > Resolve potential matches > Potential matching at a glance > Potential matching reference
-- **Keywords:** Match IQ Workflow, match iq workflow, match iq, iq workflow, match workflow
-- **See also:** [matchiqapioverview](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/match-iq-apis)
-
-#### Roles and Permissions for Match IQ Application
-
-- **URL:** https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-reference/match-iq-api/roles-and-permissions-for-match-iq-application
-- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Console > Configuration applications > AI-powered Flexible Entity Resolution Network (FERN) model-based matching at a glance > Train an ML model from scratch with Match IQ
-- **Summary:** > **Section:** Objectives > Resolve potential matches > Potential matching at a glance > Potential matching reference > Match IQ API
-- **Keywords:** Roles and Permissions for Match IQ Application, roles and permissions for match iq, roles for match iq, permissions for match iq, match iq roles, match iq permissions, match iq roles and permissions, match roles, match permissions
 
 #### Integration Hub at a glance
 
@@ -18064,34 +17880,6 @@ In most cases, some errors happened during background job operations.
 - **Keywords:** ROLE_EXECUTE_MCP
 - **See also:** [c accessmgmt roles system](https://docs.reltio.com/en/objectives/administer-system/system-administration-at-a-glance/access-management-at-a-glance/access-management-reference/authorization/system-roles)
 
-#### ROLE_USER_MATCHIQ_EXTERNAL_MATCH Access permissions
-
-- **URL:** https://docs.reltio.com/en/objectives/administer-system/system-administration-at-a-glance/access-management-at-a-glance/access-management-reference/authorization/system-roles/resource-specific-roles/role_user_matchiq_external_match-access-permissions
-- **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Administer system > System administration at a glance > Access management at a glance > Access management reference > Authorization > System roles > Resource-specific roles
-- **Summary:** > **Section:** Objectives > Administer system > System administration at a glance > Access management at a glance > Access management reference > Authorization > System roles > Resource-specific roles
-- **See also:** [c accessmgmt roles system](https://docs.reltio.com/en/objectives/administer-system/system-administration-at-a-glance/access-management-at-a-glance/access-management-reference/authorization/system-roles)
-
-#### ROLE_USER_MATCHIQ_PUBLISH_MODEL Access permissions
-
-- **URL:** https://docs.reltio.com/en/objectives/administer-system/system-administration-at-a-glance/access-management-at-a-glance/access-management-reference/authorization/system-roles/resource-specific-roles/role_user_matchiq_publish_model-access-permissions
-- **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Administer system > System administration at a glance > Access management at a glance > Access management reference > Authorization > System roles > Resource-specific roles
-- **Summary:** > **Section:** Objectives > Administer system > System administration at a glance > Access management at a glance > Access management reference > Authorization > System roles > Resource-specific roles
-- **See also:** [c accessmgmt roles system](https://docs.reltio.com/en/objectives/administer-system/system-administration-at-a-glance/access-management-at-a-glance/access-management-reference/authorization/system-roles)
-
-#### ROLE_USER_MATCHIQ_SHARE_MODEL Access permissions
-
-- **URL:** https://docs.reltio.com/en/objectives/administer-system/system-administration-at-a-glance/access-management-at-a-glance/access-management-reference/authorization/system-roles/resource-specific-roles/role_user_matchiq_share_model-access-permissions
-- **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Administer system > System administration at a glance > Access management at a glance > Access management reference > Authorization > System roles > Resource-specific roles
-- **Summary:** > **Section:** Objectives > Administer system > System administration at a glance > Access management at a glance > Access management reference > Authorization > System roles > Resource-specific roles
-- **See also:** [c accessmgmt roles system](https://docs.reltio.com/en/objectives/administer-system/system-administration-at-a-glance/access-management-at-a-glance/access-management-reference/authorization/system-roles)
-
-#### ROLE_USER_MATCHIQ_TRAIN_MODEL Access permissions
-
-- **URL:** https://docs.reltio.com/en/objectives/administer-system/system-administration-at-a-glance/access-management-at-a-glance/access-management-reference/authorization/system-roles/resource-specific-roles/role_user_matchiq_train_model-access-permissions
-- **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Administer system > System administration at a glance > Access management at a glance > Access management reference > Authorization > System roles > Resource-specific roles
-- **Summary:** > **Section:** Objectives > Administer system > System administration at a glance > Access management at a glance > Access management reference > Authorization > System roles > Resource-specific roles
-- **See also:** [c accessmgmt roles system](https://docs.reltio.com/en/objectives/administer-system/system-administration-at-a-glance/access-management-at-a-glance/access-management-reference/authorization/system-roles)
-
 #### ROLE_USER_RIH_INVOKER Access permissions
 
 - **URL:** https://docs.reltio.com/en/objectives/administer-system/system-administration-at-a-glance/access-management-at-a-glance/access-management-reference/authorization/system-roles/resource-specific-roles/role_user_rih_invoker-access-permissions
@@ -19475,7 +19263,7 @@ _Topics in this section: Data loading at a glance, Data exporting at a glance_
 - **URL:** https://docs.reltio.com/en/objectives/stream-data/data-streaming-at-a-glance/data-streaming-operation/add-an-external-queue-configuration
 - **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Stream data > Data streaming at a glance > Data streaming operation
 - **Summary:** > **Section:** Objectives > Stream data > Data streaming at a glance > Data streaming operation
-- **Keywords:** Add an external queue configuration, Authenticate using AWS, Order of message streaming, authenticate using AWS, add an external queue configuration, order of message streaming
+- **Keywords:** Add an external queue configuration, Authenticate using AWS, Order of message streaming, authenticate using AWS, add an external queue configuration, order of message streaming, kafka external queue, confluent kafka reltio, event streaming kafka, configure kafka streaming
 - **See also:** [entitiesfiltering](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/entities-api/get-entity/filtering-entities), [messagestreaming](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/events-api/message-streaming), [Outbound Streaming Scenarios](https://docs.reltio.com/en/applications/console/tenant-management-applications/tenant-management-at-a-glance/external-queues-at-a-glance/outbound-streaming-scenarios), [c obj profiles nav activitylog](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/activity-log-perspective), [activitylogapi](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/search-using-activity-log-api)
 
 #### Configure IAM roles for event streaming
@@ -20640,7 +20428,6 @@ _Topics in this section: Data loading at a glance, Data exporting at a glance_
 - **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Resolve potential matches > Potential matching at a glance > Potential matching navigation
 - **Summary:** > **Section:** Objectives > Resolve potential matches > Potential matching at a glance > Potential matching navigation
 - **Keywords:** Matching and Merging, matching and merging, match, merge, matching in reltio, merging in reltio
-- **See also:** [matchiq](https://docs.reltio.com/en/applications/console/configuration-applications/ai-powered-flexible-entity-resolution-network-fern-model-based-matching-at-a-glance/train-an-ml-model-from-scratch-with-match-iq)
 
 #### Potential matching operation
 
@@ -20762,51 +20549,6 @@ _Topics in this section: Data loading at a glance, Data exporting at a glance_
 - **Summary:** > **Section:** Objectives > Resolve potential matches > Potential matching at a glance > Potential matching operation > External Match at a glance
 - **Keywords:** Export External Match Results, Record Identifier, export match results, export external match results, external match export, export external match, record identifier
 
-#### Create a Match IQ model flow
-
-- **URL:** https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-operation/create-a-match-iq-model-flow
-- **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Resolve potential matches > Potential matching at a glance > Potential matching operation
-- **Summary:** > **Section:** Objectives > Resolve potential matches > Potential matching at a glance > Potential matching operation
-- **Keywords:** Create Model Flow, create model flow, model flow for matching, matching model, match iq model, match iq create flow, match iq model flow
-
-#### Editing the Name and Description of a Model Flow
-
-- **URL:** https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-operation/create-a-match-iq-model-flow/editing-the-name-and-description-of-a-model-flow
-- **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Resolve potential matches > Potential matching at a glance > Potential matching operation > Create a Match IQ model flow
-- **Summary:** > **Section:** Objectives > Resolve potential matches > Potential matching at a glance > Potential matching operation > Create a Match IQ model flow
-- **Keywords:** Edit Model Flow, edit model flow, edit model flow name, edit model flow description, edit model name, edit model description, match iq, match iq model
-
-#### Training the Model Flow
-
-- **URL:** https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-operation/create-a-match-iq-model-flow/training-the-model-flow
-- **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Resolve potential matches > Potential matching at a glance > Potential matching operation > Create a Match IQ model flow
-- **Summary:** > **Section:** Objectives > Resolve potential matches > Potential matching at a glance > Potential matching operation > Create a Match IQ model flow
-- **Keywords:** Training Model Flow, training model flow, train model flow, match iq model flow, train match iq model, match iq train, match iq
-
-#### Reviewing the Model
-
-- **URL:** https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-operation/create-a-match-iq-model-flow/reviewing-the-model
-- **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Resolve potential matches > Potential matching at a glance > Potential matching operation > Create a Match IQ model flow
-- **Summary:** > **Section:** Objectives > Resolve potential matches > Potential matching at a glance > Potential matching operation > Create a Match IQ model flow
-- **Keywords:** Review Model, Publish Model, Publishing the reviewed Model, match iq, review match iq model, match iq model, model review, publish match iq model
-- **See also:** [matchiqpermissions](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-reference/match-iq-api/roles-and-permissions-for-match-iq-application)
-
-#### Publishing the reviewed Model
-
-- **URL:** https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-operation/create-a-match-iq-model-flow/publishing-the-reviewed-model
-- **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Resolve potential matches > Potential matching at a glance > Potential matching operation > Create a Match IQ model flow
-- **Summary:** > **Section:** Objectives > Resolve potential matches > Potential matching at a glance > Potential matching operation > Create a Match IQ model flow
-- **Keywords:** Publish Model, match iq, match iq model, publish match iq model
-- **See also:** [matchiqpermissions](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-reference/match-iq-api/roles-and-permissions-for-match-iq-application), [customruleexp](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/configure-custom-match-actions), [createrebuildmatchtablestask](https://docs.reltio.com/en/applications/console/tenant-management-applications/tenant-management-at-a-glance/jobs-at-a-glance/creating-a-rebuild-match-tables-job)
-
-#### Performing an External Match
-
-- **URL:** https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-operation/create-a-match-iq-model-flow/performing-an-external-match
-- **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Resolve potential matches > Potential matching at a glance > Potential matching operation > Create a Match IQ model flow
-- **Summary:** > **Section:** Objectives > Resolve potential matches > Potential matching at a glance > Potential matching operation > Create a Match IQ model flow
-- **Keywords:** ML Match, External Match, External Match Using Match IQ, match iq external, external match iq, match iq, record identifier, matching iq
-- **See also:** [externalmatchapi](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/potential-matches-api/external-match-api)
-
 #### Unmerge entity records
 
 - **URL:** https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-operation/unmerge-entity-records
@@ -20841,21 +20583,6 @@ _Topics in this section: Data loading at a glance, Data exporting at a glance_
 - **URL:** https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-reference
 - **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Resolve potential matches > Potential matching at a glance
 - **Summary:** > **Section:** Objectives > Resolve potential matches > Potential matching at a glance
-
-#### Match IQ API
-
-- **URL:** https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-reference/match-iq-api
-- **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Resolve potential matches > Potential matching at a glance > Potential matching reference
-- **Summary:** > **Section:** Objectives > Resolve potential matches > Potential matching at a glance > Potential matching reference
-- **Keywords:** Match IQ Workflow, match iq workflow, match iq, iq workflow, match workflow
-- **See also:** [matchiqapioverview](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/match-iq-apis)
-
-#### Roles and Permissions for Match IQ Application
-
-- **URL:** https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-reference/match-iq-api/roles-and-permissions-for-match-iq-application
-- **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Resolve potential matches > Potential matching at a glance > Potential matching reference > Match IQ API
-- **Summary:** > **Section:** Objectives > Resolve potential matches > Potential matching at a glance > Potential matching reference > Match IQ API
-- **Keywords:** Roles and Permissions for Match IQ Application, roles and permissions for match iq, roles for match iq, permissions for match iq, match iq roles, match iq permissions, match iq roles and permissions, match roles, match permissions
 
 #### Merge matched data
 
