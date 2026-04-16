@@ -1,5 +1,5 @@
 # Reltio Documentation Index
-_Generated: 2026-04-15 02:14 UTC — 3211 topics_
+_Generated: 2026-04-16 02:14 UTC — 3211 topics_
 
 This file is a structured navigation index of the Reltio documentation portal.
 It contains the full parent-child hierarchy, topic URLs, keywords, summaries,
@@ -1576,13 +1576,14 @@ relationships, locate sibling topics, and follow cross-references.
 - **URL:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/additional-subscriptions-at-a-glance/reltio-business-critical-edition
 - **Path:** Reltio Documentation Portal v2 sitemap > Reltio > What’s in the box? > What's in the box at a glance > Additional subscriptions at a glance
 - **Summary:** > **Section:** Reltio > What’s in the box? > What's in the box at a glance > Additional subscriptions at a glance
-- **See also:** [t bce disaster recovery](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/additional-subscriptions-at-a-glance/reltio-business-critical-edition/manage-disaster-recovery-with-business-critical-edition), [r bce terms](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/additional-subscriptions-at-a-glance/reltio-business-critical-edition/business-critical-edition-terminology), [c reltio privatelink](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/additional-subscriptions-at-a-glance/reltio-private-link), [c console shield](https://docs.reltio.com/en/applications/console/configuration-applications/reltio-shield-at-a-glance), [c bce limitations](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/additional-subscriptions-at-a-glance/reltio-business-critical-edition/business-critical-edition-additional-information)
+- **See also:** [t bce disaster recovery](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/additional-subscriptions-at-a-glance/reltio-business-critical-edition/manage-disaster-recovery-with-business-critical-edition), [r bce terms](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/additional-subscriptions-at-a-glance/reltio-business-critical-edition/business-critical-edition-terminology), [c reltio privatelink](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/additional-subscriptions-at-a-glance/reltio-private-link), [c console shield](https://docs.reltio.com/en/applications/console/configuration-applications/reltio-shield-at-a-glance), [c bce limitations](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/additional-subscriptions-at-a-glance/reltio-business-critical-edition/business-critical-edition-scope-and-coverage)
 
-#### Business Critical Edition additional information
+#### Business Critical Edition: Scope and Coverage
 
-- **URL:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/additional-subscriptions-at-a-glance/reltio-business-critical-edition/business-critical-edition-additional-information
+- **URL:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/additional-subscriptions-at-a-glance/reltio-business-critical-edition/business-critical-edition-scope-and-coverage
 - **Path:** Reltio Documentation Portal v2 sitemap > Reltio > What’s in the box? > What's in the box at a glance > Additional subscriptions at a glance > Reltio Business Critical Edition
 - **Summary:** > **Section:** Reltio > What’s in the box? > What's in the box at a glance > Additional subscriptions at a glance > Reltio Business Critical Edition
+- **Keywords:** business critical edition scope and coverage, reltio bce sla availability and recovery, rpo and rto in reltio bce, reltio availability sla 99.99 percent coverage, bce component coverage and exclusions, reltio service level agreement boundaries, enterprise data availability and recovery reltio, reltio platform high availability architecture, availability, rto
 
 #### Manage disaster recovery with Business Critical Edition
 
@@ -3399,7 +3400,7 @@ relationships, locate sibling topics, and follow cross-references.
 - **URL:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-life-sciences-velocity-pack/data-models-for-life-sciences
 - **Path:** Reltio Documentation Portal v2 sitemap > Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > Reltio for Life Sciences velocity pack
 - **Summary:** > **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Re
-- **See also:** [r v3 lifehcohcp datamodel entitytypes](https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-life-sciences-velocity-pack/data-models-for-life-sciences/entity-types-for-life-sciences)
+- **See also:** [Reltio object types](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-information-model/data-model/reltio-object-types), [r v3 lifehcohcp datamodel entitytypes](https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-life-sciences-velocity-pack/data-models-for-life-sciences/entity-types-for-life-sciences)
 
 #### Entity types for Life Sciences
 
@@ -12350,6 +12351,7 @@ _Topics in this section: Data integrations at a glance, Application Integration 
 - **URL:** https://docs.reltio.com/en/applications/data-integrations/data-integrations-at-a-glance
 - **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations
 - **Summary:** > **Section:** Applications > Data Integrations
+- **Keywords:** data integrations overview reltio, reltio prebuilt connectors low code, application integrations salesforce veeva, data catalog integrations alation collibra, data enrichment integrations reltio, queue requirements for reltio integrations, data store requirements add-on products, supported queues sqs azure service bus, message queue for real-time enrichment, export api batch integration requirements
 - **See also:** [c role about](https://docs.reltio.com/en/roles/about-roles), [Reltio Integration Hub (RIH)](https://docs.reltio.com/en/applications/integration-hub/integration-hub-at-a-glance), [c apps console glance](https://docs.reltio.com/en/applications/console/console-at-a-glance)
 
 #### Application Integration at a glance
@@ -12890,7 +12892,8 @@ _Topics in this section: Data integrations at a glance, Application Integration 
 - **URL:** https://docs.reltio.com/en/applications/data-integrations/application-integration-at-a-glance/reltio-integration-for-salesforce-at-a-glance/reltio-integration-for-salesforce-set-up/getting-started-with-reltio-integration-for-salesforce/set-up-reltio-integration-for-salesforce/connect-salesforce-to-your-reltio-tenant
 - **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Application Integration at a glance > Reltio Integration for Salesforce at a glance > Reltio Integration for Salesforce set up > Getting Started With Reltio Integration for Salesforce > Set up Reltio Integration for Salesforce
 - **Summary:** > **Section:** Applications > Data Integrations > Application Integration at a glance > Reltio Integration for Salesforce at a glance > Reltio Integration for Salesforce set up > Getting Started With 
-- **Keywords:** Reltio Integration for Salesforce set up, Set up Reltio Integration for Salesforce, sfdc set up
+- **Keywords:** connect salesforce to reltio tenant, configure reltio integration for salesforce, set up salesforce reltio connection, verify reltio credentials in salesforce, assign reltio managed permission set, configure salesforce service user credentials, review default sync mappings, synchronize salesforce connector settings, salesforce, integration
+- **See also:** [Add new client](https://docs.reltio.com/en/applications/console/security-applications/client-credentials-at-a-glance/manage-client-credentials/add-new-client)
 
 #### Configure Reltio Integration for Salesforce to use certificate-based authentication
 
