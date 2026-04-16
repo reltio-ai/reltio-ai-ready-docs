@@ -140,6 +140,28 @@ RULES = [
         "find": "204938ca-2cf7-44b0-b11a-1b4c59984512",
         "replace": "{your-access-token}",
     },
+    # TOKEN-1 space-injected variant (formatting artifact, 11+ lines)
+    {
+        "id": "TOKEN-1s",
+        "description": "Bearer token 204938ca with spaces injected",
+        "find": r"204938\s*ca-2\s*cf7-44\s*b0-b11a-1\s*b4c59984512",
+        "replace": "{your-access-token}",
+        "is_regex": True,
+    },
+    # TOKEN-1 variant — last 2 digits differ (line 54692)
+    {
+        "id": "TOKEN-1v1",
+        "description": "Bearer token 204938ca variant (ends 10)",
+        "find": "204938ca-2cf7-44b0-b11a-1b4c59984510",
+        "replace": "{your-access-token}",
+    },
+    # TOKEN-1 variant — middle digits differ (line 34557)
+    {
+        "id": "TOKEN-1v2",
+        "description": "Bearer token 204838ca variant (middle differs)",
+        "find": "204838ca-2cf7-44b0-b11a-1b4c58984512",
+        "replace": "{your-access-token}",
+    },
 
     # TOKEN-2: Bearer token in 11 API examples (Scan v2)
     {
@@ -147,6 +169,14 @@ RULES = [
         "description": "Bearer token c3f28fdd (11 occurrences)",
         "find": "c3f28fdd-e082-4f90-8840-9896914eaf41",
         "replace": "{your-access-token}",
+    },
+    # TOKEN-2 space-injected variant (line 55481)
+    {
+        "id": "TOKEN-2s",
+        "description": "Bearer token c3f28fdd with spaces injected",
+        "find": r"c3f28fdd-e082-4\s+f90-8840-9896914e\s*af41",
+        "replace": "{your-access-token}",
+        "is_regex": True,
     },
 
     # TOKEN-3: Additional OAuth tokens in auth flow examples (Scan v2)
@@ -167,6 +197,38 @@ RULES = [
         "description": "Refresh token fa7e5817 in OAuth example",
         "find": "fa7e5817-0bf6-461c-97ab-c6b7a9e0f556",
         "replace": "{your-refresh-token}",
+    },
+
+    # TOKEN-4: Additional bearer tokens found in OCD deep scan (never in any scan report)
+    {
+        "id": "TOKEN-4a",
+        "description": "Bearer token 5925f793 (7 occurrences)",
+        "find": "5925f793-c092-43ec-b3a3-65ce8e194440",
+        "replace": "{your-access-token}",
+    },
+    {
+        "id": "TOKEN-4b",
+        "description": "Bearer token 5925f793 variant (ends 48)",
+        "find": "5925f793-c092-43ec-b3a3-65ce8e194448",
+        "replace": "{your-access-token}",
+    },
+    {
+        "id": "TOKEN-4c",
+        "description": "Bearer token 1925f793",
+        "find": "1925f793-c092-43ec-b3a3-65ce8e194440",
+        "replace": "{your-access-token}",
+    },
+    {
+        "id": "TOKEN-4d",
+        "description": "Bearer token b55461c0",
+        "find": "b55461c0-243f-43d7-964a-5582c783fb70",
+        "replace": "{your-access-token}",
+    },
+    {
+        "id": "TOKEN-4e",
+        "description": "Bearer token 18c13d18",
+        "find": "18c13d18-e704-4290-a470-8108479cd464",
+        "replace": "{your-access-token}",
     },
 
     # H-3: Real employee emails
@@ -519,10 +581,19 @@ VERIFY_PATTERNS = [
     (r"cmVsdGlvX3VpOnNlY3JldA==", "CRED-2: Base64 OAuth reltio_ui:secret"),
     (r"auth-test\.reltio\.com", "CRED-1: Internal auth-test endpoint"),
     (r"204938ca-2cf7-44b0-b11a-1b4c59984512", "TOKEN-1: Bearer token (161 hits)"),
+    (r"204938\s*ca-2\s*cf7-44\s*b0-b11a-1\s*b4c59984512", "TOKEN-1s: Bearer token space-injected"),
+    (r"204938ca-2cf7-44b0-b11a-1b4c59984510", "TOKEN-1v1: Bearer token variant (ends 10)"),
+    (r"204838ca-2cf7-44b0-b11a-1b4c58984512", "TOKEN-1v2: Bearer token variant (mid differs)"),
     (r"c3f28fdd-e082-4f90-8840-9896914eaf41", "TOKEN-2: Bearer token (11 hits)"),
+    (r"c3f28fdd-e082-4\s+f90-8840-9896914e\s*af41", "TOKEN-2s: Bearer token space-injected"),
     (r"24bc1fb5-8440-4d5e-8431-53b7c9a4dc35", "TOKEN-3a: Access token"),
     (r"676742af-989b-4d40-b7cc-f69ccadd45ea", "TOKEN-3b: Refresh token"),
     (r"fa7e5817-0bf6-461c-97ab-c6b7a9e0f556", "TOKEN-3c: Refresh token"),
+    (r"5925f793-c092-43ec-b3a3-65ce8e194440", "TOKEN-4a: Bearer token (7 hits)"),
+    (r"5925f793-c092-43ec-b3a3-65ce8e194448", "TOKEN-4b: Bearer token variant"),
+    (r"1925f793-c092-43ec-b3a3-65ce8e194440", "TOKEN-4c: Bearer token"),
+    (r"b55461c0-243f-43d7-964a-5582c783fb70", "TOKEN-4d: Bearer token"),
+    (r"18c13d18-e704-4290-a470-8108479cd464", "TOKEN-4e: Bearer token"),
     (r"alexander\.panchenko@reltio\.com", "PII-1: Employee email"),
     (r"abhradeep\.sengupta@reltio\.com", "PII-2: Employee email"),
     (r"ayush\.jain@reltio\.com", "PII-2: Employee email"),
