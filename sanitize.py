@@ -67,6 +67,30 @@ RULES = [
         "replace": "{signature}",
     },
 
+    # CRED-1: Base64-encoded OAuth credential reltio_ui:makita (Scan v2)
+    {
+        "id": "CRED-1",
+        "description": "Base64 OAuth credential reltio_ui:makita",
+        "find": "cmVsdGlvX3VpOm1ha2l0YQ==",
+        "replace": "<BASE64_CREDENTIALS_PLACEHOLDER>",
+    },
+
+    # CRED-2: Base64-encoded OAuth credential reltio_ui:secret (Scan v2)
+    {
+        "id": "CRED-2",
+        "description": "Base64 OAuth credential reltio_ui:secret",
+        "find": "cmVsdGlvX3VpOnNlY3JldA==",
+        "replace": "<BASE64_CREDENTIALS_PLACEHOLDER>",
+    },
+
+    # CRED-1 related: Internal auth-test endpoint
+    {
+        "id": "CRED-1b",
+        "description": "Internal auth-test endpoint",
+        "find": "auth-test.reltio.com",
+        "replace": "{auth-server}.reltio.com",
+    },
+
     # ============================== HIGH ==============================
 
     # H-1: Real AWS Account IDs (5 distinct values)
@@ -109,6 +133,42 @@ RULES = [
         "replace": "{your-external-id}",
     },
 
+    # TOKEN-1: Bearer token used across 161 API examples (Scan v2)
+    {
+        "id": "TOKEN-1",
+        "description": "Bearer token 204938ca (161 occurrences)",
+        "find": "204938ca-2cf7-44b0-b11a-1b4c59984512",
+        "replace": "{your-access-token}",
+    },
+
+    # TOKEN-2: Bearer token in 11 API examples (Scan v2)
+    {
+        "id": "TOKEN-2",
+        "description": "Bearer token c3f28fdd (11 occurrences)",
+        "find": "c3f28fdd-e082-4f90-8840-9896914eaf41",
+        "replace": "{your-access-token}",
+    },
+
+    # TOKEN-3: Additional OAuth tokens in auth flow examples (Scan v2)
+    {
+        "id": "TOKEN-3a",
+        "description": "Access token 24bc1fb5 in OAuth example",
+        "find": "24bc1fb5-8440-4d5e-8431-53b7c9a4dc35",
+        "replace": "{your-access-token}",
+    },
+    {
+        "id": "TOKEN-3b",
+        "description": "Refresh token 676742af in OAuth example",
+        "find": "676742af-989b-4d40-b7cc-f69ccadd45ea",
+        "replace": "{your-refresh-token}",
+    },
+    {
+        "id": "TOKEN-3c",
+        "description": "Refresh token fa7e5817 in OAuth example",
+        "find": "fa7e5817-0bf6-461c-97ab-c6b7a9e0f556",
+        "replace": "{your-refresh-token}",
+    },
+
     # H-3: Real employee emails
     {
         "id": "H-3a",
@@ -120,6 +180,34 @@ RULES = [
         "id": "H-3b",
         "description": "Employee email (pradeep.krishnappa)",
         "find": "pradeep.krishnappa@reltio.com",
+        "replace": "user@example.com",
+    },
+
+    # PII-1: Employee email alexander.panchenko (Scan v2)
+    {
+        "id": "PII-1",
+        "description": "Employee email (alexander.panchenko)",
+        "find": "alexander.panchenko@reltio.com",
+        "replace": "user@example.com",
+    },
+
+    # PII-2: Employee emails in entity/relation API examples (Scan v2)
+    {
+        "id": "PII-2a",
+        "description": "Employee email (abhradeep.sengupta)",
+        "find": "abhradeep.sengupta@reltio.com",
+        "replace": "user@example.com",
+    },
+    {
+        "id": "PII-2b",
+        "description": "Employee email (ayush.jain)",
+        "find": "ayush.jain@reltio.com",
+        "replace": "user@example.com",
+    },
+    {
+        "id": "PII-2c",
+        "description": "Employee email (terence.kirk)",
+        "find": "terence.kirk@reltio.com",
         "replace": "user@example.com",
     },
 
@@ -271,6 +359,37 @@ RULES = [
         "replace": "10.0.0.x",
     },
 
+    # INFRA-1: Internal Kubernetes node IP (Scan v2)
+    {
+        "id": "INFRA-1",
+        "description": "Internal K8s node IP 10.30.32.127",
+        "find": "10.30.32.127",
+        "replace": "10.x.x.x",
+    },
+
+    # INFRA-2: Internal S3 bucket reltio.match.test (Scan v2)
+    {
+        "id": "INFRA-2",
+        "description": "Internal S3 bucket reltio.match.test",
+        "find": "reltio.match.test",
+        "replace": "{your-s3-bucket}",
+    },
+
+    # INFRA-3: STS External ID with ASCII hyphens (Scan v2)
+    {
+        "id": "INFRA-3a",
+        "description": "STS External ID c77f24a0 (ASCII hyphens)",
+        "find": "c77f24a0-f5a6-11f0-9e2e-325096e39f47",
+        "replace": "{your-external-id}",
+    },
+    # INFRA-3: STS External ID with Unicode non-breaking hyphens U+2011 (Scan v2)
+    {
+        "id": "INFRA-3b",
+        "description": "STS External ID c77f24a0 (Unicode hyphens)",
+        "find": "c77f24a0\u2011f5a6\u201111f0\u20119e2e\u2011325096e39f47",
+        "replace": "{your-external-id}",
+    },
+
     # M-3: EC2 instance IDs (regex)
     {
         "id": "M-3a",
@@ -333,6 +452,7 @@ RULES = [
 # ============================================================================
 
 VERIFY_PATTERNS = [
+    # === Scan v1 findings ===
     (r"pbBmG3jbdYUazoj7", "C-1: Maven password"),
     (r"read\.only\.workflow", "C-1: Maven username"),
     (r"AKIAIMVSSDXKTO4I7LPQ", "C-2: AWS Access Key ID"),
@@ -361,6 +481,23 @@ VERIFY_PATTERNS = [
     (r"gabriel_standard_q", "H-4: Internal SQS queue"),
     (r"akzj-s-ssca6264", "H-4: Internal IAM user"),
     (r"sf-snowpipe-AIDA2MMMF4VLMNI5KESTV", "H-4: Internal Snowpipe ID"),
+
+    # === Scan v2 findings ===
+    (r"cmVsdGlvX3VpOm1ha2l0YQ==", "CRED-1: Base64 OAuth reltio_ui:makita"),
+    (r"cmVsdGlvX3VpOnNlY3JldA==", "CRED-2: Base64 OAuth reltio_ui:secret"),
+    (r"auth-test\.reltio\.com", "CRED-1: Internal auth-test endpoint"),
+    (r"204938ca-2cf7-44b0-b11a-1b4c59984512", "TOKEN-1: Bearer token (161 hits)"),
+    (r"c3f28fdd-e082-4f90-8840-9896914eaf41", "TOKEN-2: Bearer token (11 hits)"),
+    (r"24bc1fb5-8440-4d5e-8431-53b7c9a4dc35", "TOKEN-3a: Access token"),
+    (r"676742af-989b-4d40-b7cc-f69ccadd45ea", "TOKEN-3b: Refresh token"),
+    (r"fa7e5817-0bf6-461c-97ab-c6b7a9e0f556", "TOKEN-3c: Refresh token"),
+    (r"alexander\.panchenko@reltio\.com", "PII-1: Employee email"),
+    (r"abhradeep\.sengupta@reltio\.com", "PII-2: Employee email"),
+    (r"ayush\.jain@reltio\.com", "PII-2: Employee email"),
+    (r"terence\.kirk@reltio\.com", "PII-2: Employee email"),
+    (r"10\.30\.32\.127", "INFRA-1: Internal K8s node IP"),
+    (r"reltio\.match\.test", "INFRA-2: Internal S3 bucket"),
+    (r"c77f24a0", "INFRA-3: STS External ID (unicode or ASCII)"),
 ]
 
 
