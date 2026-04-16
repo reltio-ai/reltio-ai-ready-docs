@@ -211,6 +211,38 @@ RULES = [
         "replace": "user@example.com",
     },
 
+    # PII-3: Additional employee emails found in deep scan (not in Rafael's reports)
+    {
+        "id": "PII-3a",
+        "description": "Employee email (andrey.hudyakov)",
+        "find": "andrey.hudyakov@reltio.com",
+        "replace": "user@example.com",
+    },
+    {
+        "id": "PII-3b",
+        "description": "Employee email (thirupathi.reddy)",
+        "find": "thirupathi.reddy@reltio.com",
+        "replace": "user@example.com",
+    },
+    {
+        "id": "PII-3c",
+        "description": "Employee email (stepan.ermakov)",
+        "find": "stepan.ermakov@reltio.com",
+        "replace": "user@example.com",
+    },
+    {
+        "id": "PII-3d",
+        "description": "Employee email (pavel.gizatullin)",
+        "find": "pavel.gizatullin@reltio.com",
+        "replace": "user@example.com",
+    },
+    {
+        "id": "PII-3e",
+        "description": "Employee email (mahalakshmi.krishnakumar)",
+        "find": "mahalakshmi.krishnakumar@reltio.com",
+        "replace": "user@example.com",
+    },
+
     # H-4: Internal dev hostnames (longer/more specific first)
     {
         "id": "H-4a",
@@ -498,6 +530,13 @@ VERIFY_PATTERNS = [
     (r"10\.30\.32\.127", "INFRA-1: Internal K8s node IP"),
     (r"reltio\.match\.test", "INFRA-2: Internal S3 bucket"),
     (r"c77f24a0", "INFRA-3: STS External ID (unicode or ASCII)"),
+
+    # === Deep scan findings (not in Rafael's reports) ===
+    (r"andrey\.hudyakov@reltio\.com", "PII-3: Employee email"),
+    (r"thirupathi\.reddy@reltio\.com", "PII-3: Employee email"),
+    (r"stepan\.ermakov@reltio\.com", "PII-3: Employee email"),
+    (r"pavel\.gizatullin@reltio\.com", "PII-3: Employee email"),
+    (r"mahalakshmi\.krishnakumar@reltio\.com", "PII-3: Employee email"),
 ]
 
 
