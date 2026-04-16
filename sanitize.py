@@ -252,6 +252,13 @@ RULES = [
         "find": "alexander.panchenko@reltio.com",
         "replace": "user@example.com",
     },
+    # PII-1b: alexander.panchenko username in createdBy/updatedBy/username/exportPath (Scan v3)
+    {
+        "id": "PII-1b",
+        "description": "Employee username (alexander.panchenko) in API response fields",
+        "find": "alexander.panchenko",
+        "replace": "jane.doe",
+    },
 
     # PII-2: Employee emails in entity/relation API examples (Scan v2)
     {
@@ -303,6 +310,30 @@ RULES = [
         "description": "Employee email (mahalakshmi.krishnakumar)",
         "find": "mahalakshmi.krishnakumar@reltio.com",
         "replace": "user@example.com",
+    },
+
+    # PII-4: john.luke@reltio.com — flagged by scan v3 as real employee (Scan v3)
+    {
+        "id": "PII-4",
+        "description": "Employee email (john.luke) in email validation example",
+        "find": "john.luke@reltio.com",
+        "replace": "jane.doe@reltio.com",
+    },
+
+    # INFRA-4: Internal D&B FTP hostname (Scan v3)
+    {
+        "id": "INFRA-4",
+        "description": "Internal D&B FTP hostname indiadev-01.its.reltio.com",
+        "find": "indiadev-01.its.reltio.com",
+        "replace": "{your-dnb-ftp-host}",
+    },
+
+    # INFRA-5: Internal tenant ID in D&B config (Scan v3)
+    {
+        "id": "INFRA-5",
+        "description": "Internal tenant ID o0wQnMResB8q1hs in D&B config",
+        "find": "o0wQnMResB8q1hs",
+        "replace": "{tenantId}",
     },
 
     # H-4: Internal dev hostnames (longer/more specific first)
@@ -608,6 +639,12 @@ VERIFY_PATTERNS = [
     (r"stepan\.ermakov@reltio\.com", "PII-3: Employee email"),
     (r"pavel\.gizatullin@reltio\.com", "PII-3: Employee email"),
     (r"mahalakshmi\.krishnakumar@reltio\.com", "PII-3: Employee email"),
+
+    # === Scan v3 findings ===
+    (r"alexander\.panchenko", "PII-1b: Employee username (not just email)"),
+    (r"john\.luke@reltio\.com", "PII-4: Employee email (john.luke)"),
+    (r"indiadev-01\.its\.reltio\.com", "INFRA-4: Internal D&B FTP hostname"),
+    (r"o0wQnMResB8q1hs", "INFRA-5: Internal tenant ID in D&B config"),
 ]
 
 
