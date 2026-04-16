@@ -257,7 +257,7 @@ RULES = [
         "id": "PII-1b",
         "description": "Employee username (alexander.panchenko) in API response fields",
         "find": "alexander.panchenko",
-        "replace": "jane.doe",
+        "replace": "user@example.com",
     },
 
     # PII-2: Employee emails in entity/relation API examples (Scan v2)
@@ -317,7 +317,7 @@ RULES = [
         "id": "PII-4",
         "description": "Employee email (john.luke) in email validation example",
         "find": "john.luke@reltio.com",
-        "replace": "jane.doe@reltio.com",
+        "replace": "user@example.com",
     },
 
     # INFRA-4: Internal D&B FTP hostname (Scan v3)
