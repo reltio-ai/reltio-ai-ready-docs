@@ -1,5 +1,5 @@
 # Reltio Documentation Index
-_Generated: 2026-04-16 17:15 UTC — 3182 topics_
+_Generated: 2026-04-17 15:24 UTC — 3232 topics_
 
 This file is a structured navigation index of the Reltio documentation portal.
 It contains the full parent-child hierarchy, topic URLs, keywords, summaries,
@@ -53,7 +53,7 @@ relationships, locate sibling topics, and follow cross-references.
 - **URL:** https://docs.reltio.com/en/reltio/whats-new-and-notable/whats-new-at-a-glance/release-notes-at-a-glance/2026.1-release-notes/2026.1-major-release-notes
 - **Path:** Reltio Documentation Portal v2 sitemap > Reltio > What’s new and notable? > What's new at a glance > Release Notes at a glance > 2026.1 Release Notes
 - **Summary:** > **Section:** Reltio > What’s new and notable? > What's new at a glance > Release Notes at a glance > 2026.1 Release Notes
-- **See also:** [c relnotes glance](https://docs.reltio.com/en/reltio/whats-new-and-notable/whats-new-at-a-glance/release-notes-at-a-glance)
+- **See also:** [c relnotes glance](https://docs.reltio.com/en/reltio/whats-new-and-notable/whats-new-at-a-glance/release-notes-at-a-glance), [releasepreviewprocess](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/tenants-at-a-glance/tenant-operation/reltio-release-process)
 
 #### 2025.2 Release Notes
 
@@ -1347,7 +1347,7 @@ relationships, locate sibling topics, and follow cross-references.
 - **Path:** Reltio Documentation Portal v2 sitemap > Reltio > What’s in the box? > What's in the box at a glance > Tenants at a glance > Tenant operation
 - **Summary:** > **Section:** Reltio > What’s in the box? > What's in the box at a glance > Tenants at a glance > Tenant operation
 - **Keywords:** release preview process, preview tenant, preview release, Preview feature, Early Access feature, EA feature, General Availability feature, GA feature, weekly release, release schedule
-- **See also:** [c relnotes glance](https://docs.reltio.com/en/reltio/whats-new-and-notable/whats-new-at-a-glance/release-notes-at-a-glance), [c deprecate glance](https://docs.reltio.com/en/reltio/whats-new-and-notable/whats-new-at-a-glance/deprecation-notices-at-a-glance)
+- **See also:** [c rel cadence](https://docs.reltio.com/en/reltio/whats-new-and-notable/whats-new-at-a-glance/release-notes-at-a-glance/release-cadence-and-delivery-schedule), [c deprecate glance](https://docs.reltio.com/en/reltio/whats-new-and-notable/whats-new-at-a-glance/deprecation-notices-at-a-glance)
 
 #### Technical assistance at a glance
 
@@ -1710,7 +1710,7 @@ relationships, locate sibling topics, and follow cross-references.
 - **Path:** Reltio Documentation Portal v2 sitemap > Products > AgentFlow
 - **Summary:** > **Section:** Products > AgentFlow
 - **Keywords:** agentflow overview, agentflow at a glance, conversational data stewardship, ai agents in reltio, mcp server capabilities, secure data interaction, live data workflows, workflow, mcp, governance
-- **See also:** [c role about](https://docs.reltio.com/en/roles/about-roles), [c apidev agentflow agent catalogue](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-agents-catalog), [t apidev agentflow ui use](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/use-the-agentflow-workspace)
+- **See also:** [c role about](https://docs.reltio.com/en/roles/about-roles), [c apidev agentflow agent data explorer](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-agents-catalog/data-explorer), [c apidev agentflow profiling agent](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-agents-catalog/profiler), [c apidev agentflow agent resolver](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-agents-catalog/resolver), [c apidev agentflow agent catalogue](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-agents-catalog), [c agentflow billing credits](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-billing-and-credit-usage), [t apidev agentflow ui use](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/use-the-agentflow-workspace)
 
 #### Use the AgentFlow workspace
 
@@ -1878,6 +1878,83 @@ relationships, locate sibling topics, and follow cross-references.
 - **Keywords:** data profiler prompt samples, data quality agent, data quality analysis, file quality checks, invalid values, quality score, column-level quality metrics, data loading, AWS S3, Google Cloud Storage
 - **See also:** [c apidev agentflow profiling agent](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-agents-catalog/profiler)
 
+#### Segmenter
+
+- **URL:** https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-agents-catalog/segmenter
+- **Path:** Reltio Documentation Portal v2 sitemap > Products > AgentFlow > Reltio AgentFlow™ at a glance > AgentFlow™ agents catalog
+- **Summary:** > **Section:** Products > AgentFlow > Reltio AgentFlow™ at a glance > AgentFlow™ agents catalog
+- **Keywords:** segmenter agent in agentflow, create entity segments through conversation, manage entity segments in agentflow, analyze segment results in agentflow, define audiences in natural language, review and modify existing segments, segmenter, segmentation, agentflow
+- **See also:** [c apidev agentflow agent catalogue](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-agents-catalog), [t apidev agentflow ui use](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/use-the-agentflow-workspace), [c apps hub segment glance](https://docs.reltio.com/en/applications/hub/segmentation-at-a-glance)
+
+#### Enable and Access Segmenter in AgentFlow
+
+- **URL:** https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-agents-catalog/segmenter/enable-and-access-segmenter-in-agentflow
+- **Path:** Reltio Documentation Portal v2 sitemap > Products > AgentFlow > Reltio AgentFlow™ at a glance > AgentFlow™ agents catalog > Segmenter
+- **Summary:** > **Section:** Products > AgentFlow > Reltio AgentFlow™ at a glance > AgentFlow™ agents catalog > Segmenter
+- **Keywords:** enable segmenter in agentflow, access segmenter in agentflow, launch segmenter from discover agents, get started with segmenter, use segmenter in agentflow, agentflow segmenter access, segmenter availability intelligent 360, segmenter permissions in agentflow, segmenter, agentflow
+- **See also:** [c  agentflow agent segmenter](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-agents-catalog/segmenter), [c createandanagesegmentswithsegmenter](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-agents-catalog/segmenter/create-and-manage-segments-with-segmenter), [c apps hub segment glance](https://docs.reltio.com/en/applications/hub/segmentation-at-a-glance)
+
+#### Create and manage segments with Segmenter
+
+- **URL:** https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-agents-catalog/segmenter/create-and-manage-segments-with-segmenter
+- **Path:** Reltio Documentation Portal v2 sitemap > Products > AgentFlow > Reltio AgentFlow™ at a glance > AgentFlow™ agents catalog > Segmenter
+- **Summary:** > **Section:** Products > AgentFlow > Reltio AgentFlow™ at a glance > AgentFlow™ agents catalog > Segmenter
+- **Keywords:** create and manage segments with segmenter, use segmenter in agentflow, create segments in natural language, manage segments in conversation, review interpreted segment criteria, save a segment with segmenter, update segment details with segmenter, review segment results in segmenter, segmenter, segmentation
+- **See also:** [c apidev agentflow at a glance](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance), [c  agentflow agent segmenter](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-agents-catalog/segmenter), [c apps hub segment glance](https://docs.reltio.com/en/applications/hub/segmentation-at-a-glance)
+
+#### Prompt samples for Segmenter
+
+- **URL:** https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-agents-catalog/segmenter/prompt-samples-for-segmenter
+- **Path:** Reltio Documentation Portal v2 sitemap > Products > AgentFlow > Reltio AgentFlow™ at a glance > AgentFlow™ agents catalog > Segmenter
+- **Summary:** > **Section:** Products > AgentFlow > Reltio AgentFlow™ at a glance > AgentFlow™ agents catalog > Segmenter
+- **Keywords:** prompt samples for segmenter, segmenter prompt examples, create segments with segmenter prompts, review segments with segmenter prompts, manage segments in agentflow prompts, natural language segmentation prompts, prompt writing tips for segmenter, segmenter, segmentation, prompts
+
+#### Agent Builder for AgentFlow at a glance
+
+- **URL:** https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agent-builder-for-agentflow-at-a-glance
+- **Path:** Reltio Documentation Portal v2 sitemap > Products > AgentFlow > Reltio AgentFlow™ at a glance
+- **Summary:** > **Section:** Products > AgentFlow > Reltio AgentFlow™ at a glance
+- **Keywords:** agent builder overview agentflow, create and publish ai agents reltio, agentflow agent authoring and governance, agent lifecycle agentflow builder, agentflow agent approval workflow overview, agent builder roles and permissions overview, agentflow agent publishing governance, agent builder, governance, agentflow
+- **See also:** [r agentflow builder scan categories](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agent-builder-for-agentflow-at-a-glance/system-prompt-security-scan), [t agentflow builder create agent](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agent-builder-for-agentflow-at-a-glance/create-test-and-submit-an-agent-for-review)
+
+#### Create, test, and submit an agent for review
+
+- **URL:** https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agent-builder-for-agentflow-at-a-glance/create-test-and-submit-an-agent-for-review
+- **Path:** Reltio Documentation Portal v2 sitemap > Products > AgentFlow > Reltio AgentFlow™ at a glance > Agent Builder for AgentFlow at a glance
+- **Summary:** > **Section:** Products > AgentFlow > Reltio AgentFlow™ at a glance > Agent Builder for AgentFlow at a glance
+- **Keywords:** create agent reltio agentflow builder, edit published agent agentflow builder, test draft agent agentflow builder, submit agent for review agentflow, write system prompt agentflow agent, select tools agentflow agent builder, agentflow agent draft and publish workflow, agent builder author workflow, publish, agentflow
+- **See also:** [c agentflow builder](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agent-builder-for-agentflow-at-a-glance), [c agentflow builder sysprompt engineering](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agent-builder-for-agentflow-at-a-glance/agentflow-system-prompt-guidelines), [r agentflow builder lifecycle states](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agent-builder-for-agentflow-at-a-glance/agent-states-in-agent-builder), [t agentflow builder review request](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agent-builder-for-agentflow-at-a-glance/review-and-act-on-a-publish-request)
+
+#### Review and act on a publish request
+
+- **URL:** https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agent-builder-for-agentflow-at-a-glance/review-and-act-on-a-publish-request
+- **Path:** Reltio Documentation Portal v2 sitemap > Products > AgentFlow > Reltio AgentFlow™ at a glance > Agent Builder for AgentFlow at a glance
+- **Summary:** > **Section:** Products > AgentFlow > Reltio AgentFlow™ at a glance > Agent Builder for AgentFlow at a glance
+- **Keywords:** review agent publish request agentflow, approve agent publish request reltio, reject agent publish request agentflow, agentflow agent approver workflow, inspect scan results agent builder, agent builder approver review queue, agentflow publish request approval, approve, governance, agentflow
+- **See also:** [c agentflow builder](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agent-builder-for-agentflow-at-a-glance), [r agentflow builder scan categories](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agent-builder-for-agentflow-at-a-glance/system-prompt-security-scan)
+
+#### AgentFlow system prompt guidelines
+
+- **URL:** https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agent-builder-for-agentflow-at-a-glance/agentflow-system-prompt-guidelines
+- **Path:** Reltio Documentation Portal v2 sitemap > Products > AgentFlow > Reltio AgentFlow™ at a glance > Agent Builder for AgentFlow at a glance
+- **Summary:** > **Section:** Products > AgentFlow > Reltio AgentFlow™ at a glance > Agent Builder for AgentFlow at a glance
+- **Keywords:** agentflow system prompt engineering, write system prompt for agentflow agent, agentflow agent prompt structure, agentflow prompt guardrails and safety, agentflow agent type templates, agentflow tool documentation in prompt, agentflow prompt anti-patterns, agentflow first-turn behavior prompt, system prompt, guardrails
+- **See also:** [t agentflow builder create agent](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agent-builder-for-agentflow-at-a-glance/create-test-and-submit-an-agent-for-review)
+
+#### Agent states in Agent Builder
+
+- **URL:** https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agent-builder-for-agentflow-at-a-glance/agent-states-in-agent-builder
+- **Path:** Reltio Documentation Portal v2 sitemap > Products > AgentFlow > Reltio AgentFlow™ at a glance > Agent Builder for AgentFlow at a glance
+- **Summary:** > **Section:** Products > AgentFlow > Reltio AgentFlow™ at a glance > Agent Builder for AgentFlow at a glance
+- **Keywords:** agent builder lifecycle states agentflow, agentflow agent draft published archived states, agent state definitions reltio builder, pending review auto-blocked agentflow, agentflow agent status reference, agentflow publish request lifecycle, agent builder state transitions, lifecycle, states, agentflow
+
+#### System prompt security scan
+
+- **URL:** https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agent-builder-for-agentflow-at-a-glance/system-prompt-security-scan
+- **Path:** Reltio Documentation Portal v2 sitemap > Products > AgentFlow > Reltio AgentFlow™ at a glance > Agent Builder for AgentFlow at a glance
+- **Summary:** > **Section:** Products > AgentFlow > Reltio AgentFlow™ at a glance > Agent Builder for AgentFlow at a glance
+- **Keywords:** agent builder system prompt scan, agentflow prompt security scanning, auto-block scan findings agentflow, system prompt scan blocked pass, prompt security scan reltio agent builder, agentflow scan policy category, system prompt scan, security, governance
+
 #### AgentFlow security, audit, and compliance architecture
 
 - **URL:** https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-security-audit-and-compliance-architecture
@@ -1910,6 +1987,89 @@ relationships, locate sibling topics, and follow cross-references.
 - **Keywords:** view agentflow usage dashboard, monitor annual credit balance agentflow, check agentflow credits remaining, usage dashboard navigation agentflow, agentflow billing admin dashboard, base package usage breakdown, tenant usage drill down, contract period credit visibility, dashboard, credit balance
 - **See also:** [c role about](https://docs.reltio.com/en/roles/about-roles)
 
+#### Automated long-running tasks
+
+- **URL:** https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/automated-long-running-tasks
+- **Path:** Reltio Documentation Portal v2 sitemap > Products > AgentFlow > Reltio AgentFlow™ at a glance
+- **Summary:** > **Section:** Products > AgentFlow > Reltio AgentFlow™ at a glance
+- **Keywords:** Reltio AgentFlow, automated long-running tasks, Task management, task, job, conversation, scheduled run, auto-accepted items, items that require review, execution steps
+
+#### Schedule an automated long-running task
+
+- **URL:** https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/automated-long-running-tasks/schedule-an-automated-long-running-task
+- **Path:** Reltio Documentation Portal v2 sitemap > Products > AgentFlow > Reltio AgentFlow™ at a glance > Automated long-running tasks
+- **Summary:** > **Section:** Products > AgentFlow > Reltio AgentFlow™ at a glance > Automated long-running tasks
+- **Keywords:** Reltio AgentFlow, automated long-running tasks, Task management, schedule automated long-running task, user prompt, run once, recurring schedule, job
+
+#### Monitor and review an automated long-running task
+
+- **URL:** https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/automated-long-running-tasks/monitor-and-review-an-automated-long-running-task
+- **Path:** Reltio Documentation Portal v2 sitemap > Products > AgentFlow > Reltio AgentFlow™ at a glance > Automated long-running tasks
+- **Summary:** > **Section:** Products > AgentFlow > Reltio AgentFlow™ at a glance > Automated long-running tasks
+- **Keywords:** Reltio AgentFlow, automated long-running task, monitor automated long-running task, review automated long-running task, Task management, Jobs tab, job details, runtime metrics, Execution Process, Go to Conversation
+
+#### Update and rerun a failed automated long-running task
+
+- **URL:** https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/automated-long-running-tasks/update-and-rerun-a-failed-automated-long-running-task
+- **Path:** Reltio Documentation Portal v2 sitemap > Products > AgentFlow > Reltio AgentFlow™ at a glance > Automated long-running tasks
+- **Summary:** > **Section:** Products > AgentFlow > Reltio AgentFlow™ at a glance > Automated long-running tasks
+- **Keywords:** Reltio AgentFlow, automated long-running tasks, failed automated long-running task, update and rerun failed task, Task management, failed job, Fix Prompt, Update Prompt, Go to Conversation, job details
+
+#### AgentFlow Unstructured
+
+- **URL:** https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-unstructured
+- **Path:** Reltio Documentation Portal v2 sitemap > Products > AgentFlow > Reltio AgentFlow™ at a glance
+- **Summary:** > **Section:** Products > AgentFlow > Reltio AgentFlow™ at a glance
+- **Keywords:** agentflow unstructured overview, unstructured data extraction, document to entity mapping, human validation workflow, structured content in reltio, document data processing, document review and validation, unstructured document processing, business document extraction, downstream data use
+- **See also:** [c role about](https://docs.reltio.com/en/roles/about-roles), [c prod ovw uds workflow](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-unstructured/agentflow-unstructured-workflow), [t prod ovw uds createtemplate](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-unstructured/create-and-publish-an-extraction-template), [t prod ovw uds configuresources](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-unstructured/configure-document-sources-for-agentflow-unstructured), [t prod ovw createpipelines](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-unstructured/set-up-automated-pipelines)
+
+#### Agentflow Unstructured workflow
+
+- **URL:** https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-unstructured/agentflow-unstructured-workflow
+- **Path:** Reltio Documentation Portal v2 sitemap > Products > AgentFlow > Reltio AgentFlow™ at a glance > AgentFlow Unstructured
+- **Summary:** > **Section:** Products > AgentFlow > Reltio AgentFlow™ at a glance > AgentFlow Unstructured
+- **Keywords:** agentflow unstructured workflow, document extraction workflow, extraction validation workflow, template preparation workflow, template publishing workflow, document source configuration, pipeline execution review, structured output publishing, document processing pipeline, reltio data workflows
+
+#### Create and publish an extraction template
+
+- **URL:** https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-unstructured/create-and-publish-an-extraction-template
+- **Path:** Reltio Documentation Portal v2 sitemap > Products > AgentFlow > Reltio AgentFlow™ at a glance > AgentFlow Unstructured
+- **Summary:** > **Section:** Products > AgentFlow > Reltio AgentFlow™ at a glance > AgentFlow Unstructured
+- **Keywords:** create extraction template, publish extraction template, extract structured data, review extraction output, verify mapping details, validate extracted values, map document fields, publish template workflow, agentflow unstructured template, document extraction mapping
+- **See also:** [c clientcredentials](https://docs.reltio.com/en/applications/console/security-applications/client-credentials-at-a-glance), [t prod ovw uds configuresources](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-unstructured/configure-document-sources-for-agentflow-unstructured), [t prod ovw createpipelines](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-unstructured/set-up-automated-pipelines)
+
+#### Configure document sources for AgentFlow Unstructured
+
+- **URL:** https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-unstructured/configure-document-sources-for-agentflow-unstructured
+- **Path:** Reltio Documentation Portal v2 sitemap > Products > AgentFlow > Reltio AgentFlow™ at a glance > AgentFlow Unstructured
+- **Summary:** > **Section:** Products > AgentFlow > Reltio AgentFlow™ at a glance > AgentFlow Unstructured
+- **Keywords:** configure document sources, agentflow unstructured sources, set up source access, connect aws s3 source, connect google cloud storage, test document source connection, save source configuration, document source authentication, configure source settings, pipeline source configuration
+- **See also:** [t prod ovw uds createtemplate](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-unstructured/create-and-publish-an-extraction-template), [t prod ovw createpipelines](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-unstructured/set-up-automated-pipelines)
+
+#### Set up automated pipelines
+
+- **URL:** https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-unstructured/set-up-automated-pipelines
+- **Path:** Reltio Documentation Portal v2 sitemap > Products > AgentFlow > Reltio AgentFlow™ at a glance > AgentFlow Unstructured
+- **Summary:** > **Section:** Products > AgentFlow > Reltio AgentFlow™ at a glance > AgentFlow Unstructured
+- **Keywords:** set up automated pipelines, create document pipeline, configure pipeline source, select published template, schedule document pipeline, save pipeline configuration, agentflow unstructured pipeline, document processing workflow, pipeline schedule configuration, published extraction template
+- **See also:** [create templates](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-unstructured/create-and-publish-an-extraction-template), [configure sources](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-unstructured/configure-document-sources-for-agentflow-unstructured), [t prod ovw monitorpipelineruns](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-unstructured/review-pipeline-executions)
+
+#### Execute a pipeline
+
+- **URL:** https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-unstructured/execute-a-pipeline
+- **Path:** Reltio Documentation Portal v2 sitemap > Products > AgentFlow > Reltio AgentFlow™ at a glance > AgentFlow Unstructured
+- **Summary:** > **Section:** Products > AgentFlow > Reltio AgentFlow™ at a glance > AgentFlow Unstructured
+- **Keywords:** execute a pipeline, run saved pipeline, review pipeline details, open pipeline configuration, view execution details, monitor pipeline execution, pipeline execution status, previous pipeline executions, agentflow unstructured pipeline, execute pipeline now
+- **See also:** [t prod ovw monitorpipelineruns](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-unstructured/review-pipeline-executions)
+
+#### Review pipeline executions
+
+- **URL:** https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-unstructured/review-pipeline-executions
+- **Path:** Reltio Documentation Portal v2 sitemap > Products > AgentFlow > Reltio AgentFlow™ at a glance > AgentFlow Unstructured
+- **Summary:** > **Section:** Products > AgentFlow > Reltio AgentFlow™ at a glance > AgentFlow Unstructured
+- **Keywords:** monitor pipeline executions, track pipeline activity, review pipeline results, identify processing issues, filter pipeline executions, pipeline execution status, document extraction results, pipeline execution details, agentflow unstructured monitoring, pipeline run tracking
+- **See also:** [t prod ovw createpipelines](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-unstructured/set-up-automated-pipelines)
+
 ### Reltio Intelligent 360
 
 #### Reltio Intelligent 360 at a glance
@@ -1938,7 +2098,8 @@ relationships, locate sibling topics, and follow cross-references.
 - **URL:** https://docs.reltio.com/en/products/reltio-intelligent-360/reltio-intelligent-360-at-a-glance/reltio-intelligent-360-navigation/segmentation
 - **Path:** Reltio Documentation Portal v2 sitemap > Products > Reltio Intelligent 360 > Reltio Intelligent 360 at a glance > Reltio Intelligent 360 navigation
 - **Summary:** > **Section:** Products > Reltio Intelligent 360 > Reltio Intelligent 360 at a glance > Reltio Intelligent 360 navigation
-- **See also:** [c apps hub segment glance](https://docs.reltio.com/en/applications/hub/segmentation-at-a-glance)
+- **Keywords:** create fine grained audiences in reltio, use segmentation in reltio intelligent 360, segment audiences by entity data, segment audiences by interaction data, analyze customer audiences with segmentation, personalize marketing with audience segmentation, improve customer service with segmentation, segmentation, audiences, interactions
+- **See also:** [c apps hub segment glance](https://docs.reltio.com/en/applications/hub/segmentation-at-a-glance), [c apps integ zerocopay segmentation](https://docs.reltio.com/en/applications/data-integrations/zero-copy-integration-at-a-glance/reltio-zero-copy-integration-with-snowflake-at-a-glance/reltio-zero-copy-segmentation-with-snowflake)
 
 #### Interaction management
 
@@ -4174,31 +4335,6 @@ _Topics in this section: Reltio Entity Resolution Deployment options, Reltio Ent
 - **Keywords:** run embedded entity resolution, run entity resolution notebook, execute databricks matching pipeline, attach cluster to notebook, generate entity resolution output, share telemetry through delta sharing, configure reverse share telemetry, monitor pipeline telemetry data, review databricks entity results, telemetry
 - **See also:** [Install the required library on the cluster](https://docs.reltio.com/en/products/reltio-entity-resolution/reltio-embedded-entity-resolution-in-databricks-at-a-glance/install-the-required-library-on-the-cluster), [Set up your Databricks environment](https://docs.reltio.com/en/products/reltio-entity-resolution/reltio-embedded-entity-resolution-in-databricks-at-a-glance/set-up-your-databricks-environment), [Clone the repository into your Databricks workspace](https://docs.reltio.com/en/products/reltio-entity-resolution/reltio-embedded-entity-resolution-in-databricks-at-a-glance/clone-the-repository-into-your-databricks-workspace), [Provide your Delta Sharing identifier to Reltio](https://docs.reltio.com/en/products/reltio-entity-resolution/reltio-embedded-entity-resolution-in-databricks-at-a-glance/provide-your-delta-sharing-identifier-to-reltio), [Accept and mount the shared assets](https://docs.reltio.com/en/products/reltio-entity-resolution/reltio-embedded-entity-resolution-in-databricks-at-a-glance/accept-and-mount-the-shared-assets)
 
-### Observability Hub
-
-_Topics in this section: Observability Hub at a glance, Access dashboards in Reltio Observability Hub, Dashboards and filters_
-
-#### Observability Hub at a glance
-
-- **URL:** https://docs.reltio.com/en/products/observability-hub/observability-hub-at-a-glance
-- **Path:** Reltio Documentation Portal v2 sitemap > Products > Observability Hub
-- **Summary:** > **Section:** Products > Observability Hub
-- **Keywords:** observability hub at a glance, reltio observability hub overview, monitor tenant performance in reltio, track api latency and error rates, monitor job queues and storage consumption, use grafana dashboards for reltio metrics, integrate reltio metrics with observability tools, real-time tenant monitoring in reltio, historical insights for reltio tenant usage, grafana
-- **See also:** [Statistics Reporting Services APIs](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis), [Access dashboards in Reltio Observability Hub](https://docs.reltio.com/en/products/observability-hub/access-dashboards-in-reltio-observability-hub), [Dashboards and filters](https://docs.reltio.com/en/products/observability-hub/dashboards-and-filters)
-
-#### Access dashboards in Reltio Observability Hub
-
-- **URL:** https://docs.reltio.com/en/products/observability-hub/access-dashboards-in-reltio-observability-hub
-- **Path:** Reltio Documentation Portal v2 sitemap > Products > Observability Hub
-- **Summary:** > **Section:** Products > Observability Hub
-
-#### Dashboards and filters
-
-- **URL:** https://docs.reltio.com/en/products/observability-hub/dashboards-and-filters
-- **Path:** Reltio Documentation Portal v2 sitemap > Products > Observability Hub
-- **Summary:** > **Section:** Products > Observability Hub
-- **See also:** [Observability Hub at a glance](https://docs.reltio.com/en/products/observability-hub/observability-hub-at-a-glance), [Access dashboards in Reltio Observability Hub](https://docs.reltio.com/en/products/observability-hub/access-dashboards-in-reltio-observability-hub)
-
 ## Developer resources
 
 #### About developer resources
@@ -4311,6 +4447,22 @@ _Topics in this section: Observability Hub at a glance, Access dashboards in Rel
 - **Summary:** > **Section:** Developer resources > About developer resources > Developer resources at a glance > Customize data tasks with LCAs
 - **Keywords:** LCA as AWS Lambda, LCA as AWS lambda
 
+#### Set up AWS Lambda connections for LCAs
+
+- **URL:** https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/lca-implementation-using-aws-lambda/set-up-aws-lambda-connections-for-lcas
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > About developer resources > Developer resources at a glance > Customize data tasks with LCAs > LCA Implementation Using AWS Lambda
+- **Summary:** > **Section:** Developer resources > About developer resources > Developer resources at a glance > Customize data tasks with LCAs > LCA Implementation Using AWS Lambda
+- **Keywords:** lifecycle actions aws connection, aws lambda lca setup, reltio console lifecycle actions, aws iam role setup, trust policy validation, lambda lca self service
+- **See also:** [t lca awslambda create](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/lca-implementation-using-aws-lambda/create-an-lca-in-reltio-console)
+
+#### Create an LCA in Reltio Console
+
+- **URL:** https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/lca-implementation-using-aws-lambda/create-an-lca-in-reltio-console
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > About developer resources > Developer resources at a glance > Customize data tasks with LCAs > LCA Implementation Using AWS Lambda
+- **Summary:** > **Section:** Developer resources > About developer resources > Developer resources at a glance > Customize data tasks with LCAs > LCA Implementation Using AWS Lambda
+- **Keywords:** create lifecycle action, reltio console lifecycle actions, aws lambda lifecycle action, lambda function name, lifecycle hook mapping, entity type lifecycle action
+- **See also:** [t lca awslambda setup](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/lca-implementation-using-aws-lambda/set-up-aws-lambda-connections-for-lcas)
+
 #### Migrate custom LCA to AWS Lambda
 
 - **URL:** https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/lca-implementation-using-aws-lambda/migrate-custom-lca-to-aws-lambda
@@ -4342,6 +4494,14 @@ _Topics in this section: Observability Hub at a glance, Access dashboards in Rel
 - **Keywords:** Implementing LCA using AWS Lambda, LCA as AWS Lambda Java Upgrade, implementing LCA using AWS lambda, LCA as AWS lambda java upgrade
 - **See also:** [Reltio Support](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal)
 
+#### Non-Java LCAs in Cloud Functions
+
+- **URL:** https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/lca-implementation-using-aws-lambda/lca-as-aws-lambda-deployment/non-java-lcas-in-cloud-functions
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > About developer resources > Developer resources at a glance > Customize data tasks with LCAs > LCA Implementation Using AWS Lambda > LCA as AWS Lambda: Deployment
+- **Summary:** > **Section:** Developer resources > About developer resources > Developer resources at a glance > Customize data tasks with LCAs > LCA Implementation Using AWS Lambda > LCA as AWS Lambda: Deployment
+- **Keywords:** aws lambda lca non-java, python lca implementation, nodejs lca implementation, lambda lifecycle actions, binaryjson smile lca, non-java lambda runtimes, lca request payload, lca response format, aws lambda runtimes
+- **See also:** [lcaawslambda](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/lca-implementation-using-aws-lambda)
+
 #### LCA as AWS Lambda: Tenant Configuration
 
 - **URL:** https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/lca-implementation-using-aws-lambda/lca-as-aws-lambda-tenant-configuration
@@ -4355,6 +4515,7 @@ _Topics in this section: Observability Hub at a glance, Access dashboards in Rel
 - **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > About developer resources > Developer resources at a glance > Customize data tasks with LCAs > LCA Implementation Using AWS Lambda
 - **Summary:** > **Section:** Developer resources > About developer resources > Developer resources at a glance > Customize data tasks with LCAs > LCA Implementation Using AWS Lambda
 - **Keywords:** Implementing LCA using AWS Lambda, LCA as AWS Lambda Identity and Access Management, implementing LCA using AWS lambda, LCA as AWS lambda identity and access management
+- **See also:** [t lca awslambda setup](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/lca-implementation-using-aws-lambda/set-up-aws-lambda-connections-for-lcas)
 
 #### LCA as AWS Lambda: Monitoring.
 
@@ -7726,6 +7887,13 @@ _Topics in this section: Observability Hub at a glance, Access dashboards in Rel
 - **Summary:** > **Section:** Developer resources > Data Integration APIs > Data Integration APIs at a glance > Events API
 - **Keywords:** examples of events, crud events, event types supported, event types not supported, match events, event message structure and examples, attributes delta collection, streaming messages format, amazon sqs, sqs Consumer
 
+#### Confluent Kafka messaging provider configuration
+
+- **URL:** https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/events-api/confluent-kafka-messaging-provider-configuration
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Data Integration APIs > Data Integration APIs at a glance > Events API
+- **Summary:** > **Section:** Developer resources > Data Integration APIs > Data Integration APIs at a glance > Events API
+- **Keywords:** kafka provider configuration reltio, configure kafka streaming provider, kafka uri configuration reltio, kafka authentication reltio streaming, kafka streaming configuration parameters, kafka, provider, streaming
+
 ### Workflow APIs
 
 #### Workflow APIs at a glance
@@ -10811,13 +10979,36 @@ _Topics in this section: Hub at a glance, Profile Stats dashboard at a glance, D
 - **Keywords:** Activity Log Perspective, Log, Perspective, Activity Log perspective, log, perspective
 - **See also:** [t obj profiles ops filteractivitylog](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/filter-details-in-the-activity-log), [t obj profiles ops exportactivitylog](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/exporting-activity-log-details)
 
+#### Hierarchy perspective
+
+- **URL:** https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/hierarchy-perspective
+- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Hub > Profiles at a glance > Profile perspectives tabs > Profile perspectives navigation
+- **Summary:** > **Section:** Applications > Hub > Profiles at a glance > Profile perspectives tabs > Profile perspectives navigation
+- **Keywords:** hierarchy perspective in profile view, view hierarchy instances for entity, create or import hierarchy structure, add parent and child connections, compare hierarchy instances in profile, move or copy hierarchy branch, view hierarchy by effective date, work with hierarchy versions, hierarchy, versioning
+- **See also:** [r obj profiles hierarchysettings](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/hierarchy-perspective/configure-tenant-business-settings-for-hierarchy), [r obj profiles uiconfighierarchy](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/hierarchy-perspective/configure-ui-settings-for-the-hierarchy-tab)
+
+#### Configure tenant business settings for hierarchy
+
+- **URL:** https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/hierarchy-perspective/configure-tenant-business-settings-for-hierarchy
+- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Hub > Profiles at a glance > Profile perspectives tabs > Profile perspectives navigation > Hierarchy perspective
+- **Summary:** > **Section:** Applications > Hub > Profiles at a glance > Profile perspectives tabs > Profile perspectives navigation > Hierarchy perspective
+- **Keywords:** tenant hierarchy settings, hierarchy type configuration, allowed entity types, hierarchy type uri, tenant business configuration, hierarchy type inheritance, configure hierarchy types, hierarchyTypes settings, hierarchyTypes, inheritance
+
+#### Configure UI settings for the Hierarchy tab
+
+- **URL:** https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/hierarchy-perspective/configure-ui-settings-for-the-hierarchy-tab
+- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Hub > Profiles at a glance > Profile perspectives tabs > Profile perspectives navigation > Hierarchy perspective
+- **Summary:** > **Section:** Applications > Hub > Profiles at a glance > Profile perspectives tabs > Profile perspectives navigation > Hierarchy perspective
+- **Keywords:** hierarchy tab settings, hierarchy tab configuration, profile tab configuration, config json hierarchy, hierarchy tab visibility, hierarchy tab roles, import template url, profile array settings, canRead, visible
+- **See also:** [tenant business configuration](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/hierarchy-perspective/configure-tenant-business-settings-for-hierarchy)
+
 #### Members perspective
 
 - **URL:** https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/members-perspective
 - **Path:** Reltio Documentation Portal v2 sitemap > Applications > Hub > Profiles at a glance > Profile perspectives tabs > Profile perspectives navigation
 - **Summary:** > **Section:** Applications > Hub > Profiles at a glance > Profile perspectives tabs > Profile perspectives navigation
 - **Keywords:** members perspective for group entity, view group members in reltio profile, segmented grouping with member visibility, explore member list using grouping type, group consolidation ID search, use members table for profile navigation, search and export group members, configure members table display settings, members screen, group entity
-- **See also:** [configure grouping types](https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/configure-grouping-types/create-grouping-type-configurations), [t obj profiles searchmembers](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/members-perspective/search-and-filter-entities-in-the-members-screen), [t obj profiles exportmemberdetails](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/members-perspective/export-the-member-list-in-the-members-screen)
+- **See also:** [c apps datamodeler largeobjects](https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/configure-grouping-types/grouping-advanced-mode), [configure grouping types](https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/configure-grouping-types/create-grouping-type-configurations), [t obj profiles searchmembers](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/members-perspective/search-and-filter-entities-in-the-members-screen), [t obj profiles exportmemberdetails](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/members-perspective/export-the-member-list-in-the-members-screen)
 
 #### Search and filter entities in the Members screen
 
@@ -10840,7 +11031,7 @@ _Topics in this section: Hub at a glance, Profile Stats dashboard at a glance, D
 - **URL:** https://docs.reltio.com/en/applications/hub/segmentation-at-a-glance
 - **Path:** Reltio Documentation Portal v2 sitemap > Applications > Hub
 - **Summary:** > **Section:** Applications > Hub
-- **See also:** [t 360dp createsegment](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/work-with-segments/create-a-segment), [c obj profiles activationservice](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/work-with-segments/activation-service-for-segmentation), [c 360dp enableattrforsegment](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/work-with-segments/enable-attributes-for-segmentation)
+- **See also:** [t 360dp createsegment](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/work-with-segments/create-a-segment), [c obj profiles activationservice](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/work-with-segments/activation-service-for-segmentation), [c 360dp enableattrforsegment](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/work-with-segments/enable-attributes-for-segmentation), [c  agentflow agent segmenter](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-agents-catalog/segmenter)
 
 #### Segmentation navigation
 
@@ -11459,6 +11650,13 @@ _Topics in this section: Hub at a glance, Profile Stats dashboard at a glance, D
 - **Summary:** > **Section:** Applications > Console > Tenant management applications > Usage Reporting at a glance
 - **Keywords:** Data Quality Charts Overview, DQ charts overview, data quality charts overview, dq charts overview
 - **See also:** [r usgrpt summary](https://docs.reltio.com/en/applications/console/tenant-management-applications/usage-reporting-at-a-glance/summary-usage), [r usgrpt cp](https://docs.reltio.com/en/applications/console/tenant-management-applications/usage-reporting-at-a-glance/consolidated-profiles-usage-reports), [r usgrpt api](https://docs.reltio.com/en/applications/console/tenant-management-applications/usage-reporting-at-a-glance/api-usage), [r usgrpt storage](https://docs.reltio.com/en/applications/console/tenant-management-applications/usage-reporting-at-a-glance/storage-usage)
+
+#### Entitlement and Usage Summary
+
+- **URL:** https://docs.reltio.com/en/applications/console/tenant-management-applications/usage-reporting-at-a-glance/entitlement-and-usage-summary
+- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Console > Tenant management applications > Usage Reporting at a glance
+- **Summary:** > **Section:** Applications > Console > Tenant management applications > Usage Reporting at a glance
+- **Keywords:** entitlement and usage summary, standard customer entitlement reporting, package mapping entitlements and usage, tenant entitlements and usage, monthly usage reporting, usage status indicators, usage by month, consolidated profiles usage, storage units usage, api usage
 
 #### View usage reports
 
@@ -12196,7 +12394,7 @@ _Topics in this section: Data integrations at a glance, Application Integration 
 - **URL:** https://docs.reltio.com/en/applications/data-integrations/application-integration-at-a-glance/reltio-integration-for-salesforce-with-rih-at-a-glance/reltio-integration-for-salesforce-with-rih-set-up/prebuilt-integration-for-salesforce-with-rih
 - **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Application Integration at a glance > Reltio Integration for Salesforce (with RIH) at a glance > Reltio Integration for Salesforce (with RIH) set up
 - **Summary:** > **Section:** Applications > Data Integrations > Application Integration at a glance > Reltio Integration for Salesforce (with RIH) at a glance > Reltio Integration for Salesforce (with RIH) set up
-- **See also:** [c integ apps sfrih recipes](https://docs.reltio.com/en/applications/data-integrations/application-integration-at-a-glance/reltio-integration-for-salesforce-with-rih-at-a-glance/reltio-integration-for-salesforce-with-rih-set-up/rih-recipes-for-salesforce-integration), [c v3 b2b what you get](https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-b2b-data-domains-velocity-pack)
+- **See also:** [c integ apps sfrih recipes](https://docs.reltio.com/en/applications/data-integrations/application-integration-at-a-glance/reltio-integration-for-salesforce-with-rih-at-a-glance/reltio-integration-for-salesforce-with-rih-set-up/rih-recipes-for-salesforce-integration)
 
 #### Synchronization modes
 
@@ -12229,7 +12427,7 @@ _Topics in this section: Data integrations at a glance, Application Integration 
 - **URL:** https://docs.reltio.com/en/applications/data-integrations/application-integration-at-a-glance/reltio-integration-for-salesforce-with-rih-at-a-glance/reltio-integration-for-salesforce-with-rih-set-up/get-started-with-reltio-integration-for-salesforce-with-rih/prerequisites-for-installing-reltio-integration-for-salesforce-with-rih
 - **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Application Integration at a glance > Reltio Integration for Salesforce (with RIH) at a glance > Reltio Integration for Salesforce (with RIH) set up > Get started with Reltio Integration for Salesforce (with RIH)
 - **Summary:** > **Section:** Applications > Data Integrations > Application Integration at a glance > Reltio Integration for Salesforce (with RIH) at a glance > Reltio Integration for Salesforce (with RIH) set up >
-- **See also:** [c integ apps sfrih prebuiltinteg](https://docs.reltio.com/en/applications/data-integrations/application-integration-at-a-glance/reltio-integration-for-salesforce-with-rih-at-a-glance/reltio-integration-for-salesforce-with-rih-set-up/prebuilt-integration-for-salesforce-with-rih), [c integ apps sfrih start prereqaws](https://docs.reltio.com/en/applications/data-integrations/application-integration-at-a-glance/reltio-integration-for-salesforce-with-rih-at-a-glance/reltio-integration-for-salesforce-with-rih-set-up/get-started-with-reltio-integration-for-salesforce-with-rih/prerequisites-for-installing-reltio-integration-for-salesforce-with-rih/prerequisites---aws-security-configuration), [c integ apps sfrih start prereqawsevent](https://docs.reltio.com/en/applications/data-integrations/application-integration-at-a-glance/reltio-integration-for-salesforce-with-rih-at-a-glance/reltio-integration-for-salesforce-with-rih-set-up/get-started-with-reltio-integration-for-salesforce-with-rih/prerequisites-for-installing-reltio-integration-for-salesforce-with-rih/prerequisites---aws-event-streaming), [c v3 b2b what you get](https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-b2b-data-domains-velocity-pack), [r role api](https://docs.reltio.com/en/objectives/administer-system/system-administration-at-a-glance/access-management-at-a-glance/access-management-reference/authorization/system-roles/critical-high-privilege-roles/role_api-access-permissions), [t integ apps sfrih start prereqreltioplatform](https://docs.reltio.com/en/applications/data-integrations/application-integration-at-a-glance/reltio-integration-for-salesforce-with-rih-at-a-glance/reltio-integration-for-salesforce-with-rih-set-up/get-started-with-reltio-integration-for-salesforce-with-rih/prerequisites-for-installing-reltio-integration-for-salesforce-with-rih/configure-reltio-tenant-management), [t integ apps sfrih start prereqsalesforce](https://docs.reltio.com/en/applications/data-integrations/application-integration-at-a-glance/reltio-integration-for-salesforce-with-rih-at-a-glance/reltio-integration-for-salesforce-with-rih-set-up/get-started-with-reltio-integration-for-salesforce-with-rih/prerequisites-for-installing-reltio-integration-for-salesforce-with-rih/configure-salesforce-model-and-user-accounts)
+- **See also:** [c integ apps sfrih prebuiltinteg](https://docs.reltio.com/en/applications/data-integrations/application-integration-at-a-glance/reltio-integration-for-salesforce-with-rih-at-a-glance/reltio-integration-for-salesforce-with-rih-set-up/prebuilt-integration-for-salesforce-with-rih), [c integ apps sfrih start prereqaws](https://docs.reltio.com/en/applications/data-integrations/application-integration-at-a-glance/reltio-integration-for-salesforce-with-rih-at-a-glance/reltio-integration-for-salesforce-with-rih-set-up/get-started-with-reltio-integration-for-salesforce-with-rih/prerequisites-for-installing-reltio-integration-for-salesforce-with-rih/prerequisites---aws-security-configuration), [c integ apps sfrih start prereqawsevent](https://docs.reltio.com/en/applications/data-integrations/application-integration-at-a-glance/reltio-integration-for-salesforce-with-rih-at-a-glance/reltio-integration-for-salesforce-with-rih-set-up/get-started-with-reltio-integration-for-salesforce-with-rih/prerequisites-for-installing-reltio-integration-for-salesforce-with-rih/prerequisites---aws-event-streaming), [r role api](https://docs.reltio.com/en/objectives/administer-system/system-administration-at-a-glance/access-management-at-a-glance/access-management-reference/authorization/system-roles/critical-high-privilege-roles/role_api-access-permissions), [t integ apps sfrih start prereqreltioplatform](https://docs.reltio.com/en/applications/data-integrations/application-integration-at-a-glance/reltio-integration-for-salesforce-with-rih-at-a-glance/reltio-integration-for-salesforce-with-rih-set-up/get-started-with-reltio-integration-for-salesforce-with-rih/prerequisites-for-installing-reltio-integration-for-salesforce-with-rih/configure-reltio-tenant-management), [t integ apps sfrih start prereqsalesforce](https://docs.reltio.com/en/applications/data-integrations/application-integration-at-a-glance/reltio-integration-for-salesforce-with-rih-at-a-glance/reltio-integration-for-salesforce-with-rih-set-up/get-started-with-reltio-integration-for-salesforce-with-rih/prerequisites-for-installing-reltio-integration-for-salesforce-with-rih/configure-salesforce-model-and-user-accounts)
 
 #### Prerequisites - AWS security configuration
 
@@ -12355,9 +12553,15 @@ _Topics in this section: Data integrations at a glance, Application Integration 
 - **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Application Integration at a glance > Reltio Integration for Salesforce (with RIH) at a glance > Reltio Integration for Salesforce (with RIH) set up > RIH recipes for Salesforce Integration > Real-time synchronization from Reltio to Salesforce
 - **Summary:** > **Section:** Applications > Data Integrations > Application Integration at a glance > Reltio Integration for Salesforce (with RIH) at a glance > Reltio Integration for Salesforce (with RIH) set up >
 
-#### Synchronize B2B OrganizationAffiliation Relationship
+#### Synchronize Healthcare HCO Entities
 
-- **URL:** https://docs.reltio.com/en/applications/data-integrations/application-integration-at-a-glance/reltio-integration-for-salesforce-with-rih-at-a-glance/reltio-integration-for-salesforce-with-rih-set-up/rih-recipes-for-salesforce-integration/real-time-synchronization-from-reltio-to-salesforce/synchronize-b2b-organizationaffiliation-relationship
+- **URL:** https://docs.reltio.com/en/applications/data-integrations/application-integration-at-a-glance/reltio-integration-for-salesforce-with-rih-at-a-glance/reltio-integration-for-salesforce-with-rih-set-up/rih-recipes-for-salesforce-integration/real-time-synchronization-from-reltio-to-salesforce/synchronize-healthcare-hco-entities
+- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Application Integration at a glance > Reltio Integration for Salesforce (with RIH) at a glance > Reltio Integration for Salesforce (with RIH) set up > RIH recipes for Salesforce Integration > Real-time synchronization from Reltio to Salesforce
+- **Summary:** > **Section:** Applications > Data Integrations > Application Integration at a glance > Reltio Integration for Salesforce (with RIH) at a glance > Reltio Integration for Salesforce (with RIH) set up >
+
+#### Synchronize OrganizationAffiliation Relationship
+
+- **URL:** https://docs.reltio.com/en/applications/data-integrations/application-integration-at-a-glance/reltio-integration-for-salesforce-with-rih-at-a-glance/reltio-integration-for-salesforce-with-rih-set-up/rih-recipes-for-salesforce-integration/real-time-synchronization-from-reltio-to-salesforce/synchronize-organizationaffiliation-relationship
 - **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Application Integration at a glance > Reltio Integration for Salesforce (with RIH) at a glance > Reltio Integration for Salesforce (with RIH) set up > RIH recipes for Salesforce Integration > Real-time synchronization from Reltio to Salesforce
 - **Summary:** > **Section:** Applications > Data Integrations > Application Integration at a glance > Reltio Integration for Salesforce (with RIH) at a glance > Reltio Integration for Salesforce (with RIH) set up >
 
@@ -12367,9 +12571,21 @@ _Topics in this section: Data integrations at a glance, Application Integration 
 - **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Application Integration at a glance > Reltio Integration for Salesforce (with RIH) at a glance > Reltio Integration for Salesforce (with RIH) set up > RIH recipes for Salesforce Integration > Real-time synchronization from Reltio to Salesforce
 - **Summary:** > **Section:** Applications > Data Integrations > Application Integration at a glance > Reltio Integration for Salesforce (with RIH) at a glance > Reltio Integration for Salesforce (with RIH) set up >
 
+#### Synchronize Healthcare HCP Entities
+
+- **URL:** https://docs.reltio.com/en/applications/data-integrations/application-integration-at-a-glance/reltio-integration-for-salesforce-with-rih-at-a-glance/reltio-integration-for-salesforce-with-rih-set-up/rih-recipes-for-salesforce-integration/real-time-synchronization-from-reltio-to-salesforce/synchronize-healthcare-hcp-entities
+- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Application Integration at a glance > Reltio Integration for Salesforce (with RIH) at a glance > Reltio Integration for Salesforce (with RIH) set up > RIH recipes for Salesforce Integration > Real-time synchronization from Reltio to Salesforce
+- **Summary:** > **Section:** Applications > Data Integrations > Application Integration at a glance > Reltio Integration for Salesforce (with RIH) at a glance > Reltio Integration for Salesforce (with RIH) set up >
+
 #### Synchronize B2B OrganizationIndividual Relationship
 
 - **URL:** https://docs.reltio.com/en/applications/data-integrations/application-integration-at-a-glance/reltio-integration-for-salesforce-with-rih-at-a-glance/reltio-integration-for-salesforce-with-rih-set-up/rih-recipes-for-salesforce-integration/real-time-synchronization-from-reltio-to-salesforce/synchronize-b2b-organizationindividual-relationship
+- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Application Integration at a glance > Reltio Integration for Salesforce (with RIH) at a glance > Reltio Integration for Salesforce (with RIH) set up > RIH recipes for Salesforce Integration > Real-time synchronization from Reltio to Salesforce
+- **Summary:** > **Section:** Applications > Data Integrations > Application Integration at a glance > Reltio Integration for Salesforce (with RIH) at a glance > Reltio Integration for Salesforce (with RIH) set up >
+
+#### Synchronize Healthcare HCPisAffiliatedWithHCO Relationship
+
+- **URL:** https://docs.reltio.com/en/applications/data-integrations/application-integration-at-a-glance/reltio-integration-for-salesforce-with-rih-at-a-glance/reltio-integration-for-salesforce-with-rih-set-up/rih-recipes-for-salesforce-integration/real-time-synchronization-from-reltio-to-salesforce/synchronize-healthcare-hcpisaffiliatedwithhco-relationship
 - **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Application Integration at a glance > Reltio Integration for Salesforce (with RIH) at a glance > Reltio Integration for Salesforce (with RIH) set up > RIH recipes for Salesforce Integration > Real-time synchronization from Reltio to Salesforce
 - **Summary:** > **Section:** Applications > Data Integrations > Application Integration at a glance > Reltio Integration for Salesforce (with RIH) at a glance > Reltio Integration for Salesforce (with RIH) set up >
 
@@ -12445,9 +12661,9 @@ _Topics in this section: Data integrations at a glance, Application Integration 
 - **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Application Integration at a glance > Reltio Integration for Salesforce (with RIH) at a glance > Reltio Integration for Salesforce (with RIH) set up > RIH recipes for Salesforce Integration > Batch synchronization from Salesforce to Reltio
 - **Summary:** > **Section:** Applications > Data Integrations > Application Integration at a glance > Reltio Integration for Salesforce (with RIH) at a glance > Reltio Integration for Salesforce (with RIH) set up >
 
-#### Synchronize OrganizationIndividual Relationship
+#### Synchronize OrganizationIndividual and HCPisAffiliatedWithHCO Relationships
 
-- **URL:** https://docs.reltio.com/en/applications/data-integrations/application-integration-at-a-glance/reltio-integration-for-salesforce-with-rih-at-a-glance/reltio-integration-for-salesforce-with-rih-set-up/rih-recipes-for-salesforce-integration/batch-synchronization-from-salesforce-to-reltio/synchronize-organizationindividual-relationship
+- **URL:** https://docs.reltio.com/en/applications/data-integrations/application-integration-at-a-glance/reltio-integration-for-salesforce-with-rih-at-a-glance/reltio-integration-for-salesforce-with-rih-set-up/rih-recipes-for-salesforce-integration/batch-synchronization-from-salesforce-to-reltio/synchronize-organizationindividual-and-hcpisaffiliatedwithhco-relationships
 - **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Application Integration at a glance > Reltio Integration for Salesforce (with RIH) at a glance > Reltio Integration for Salesforce (with RIH) set up > RIH recipes for Salesforce Integration > Batch synchronization from Salesforce to Reltio
 - **Summary:** > **Section:** Applications > Data Integrations > Application Integration at a glance > Reltio Integration for Salesforce (with RIH) at a glance > Reltio Integration for Salesforce (with RIH) set up >
 
@@ -15093,12 +15309,13 @@ In most cases, some errors happened during background job operations.
 - **Keywords:** identity resolution, consumer data enrichment, identity graph matching, data stewardship hub, match and merge profiles, profile unification, referential matching, data lineage visualization, enrichment, matching
 - **See also:** [c role about](https://docs.reltio.com/en/roles/about-roles)
 
-#### Prerequisites for Reltio Identity Builder
+#### Configure and enable Reltio Identity Builder
 
-- **URL:** https://docs.reltio.com/en/applications/data-integrations/reltio-identity-builder-at-a-glance/prerequisites-for-reltio-identity-builder
+- **URL:** https://docs.reltio.com/en/applications/data-integrations/reltio-identity-builder-at-a-glance/configure-and-enable-reltio-identity-builder
 - **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Reltio Identity Builder™ at a glance
 - **Summary:** > **Section:** Applications > Data Integrations > Reltio Identity Builder™ at a glance
 - **Keywords:** identity builder configuration, enable identity builder, configure dtss, autosubscribe mode, manual match mode, identity resolution setup, enrichment configuration, data tenant subscription service, matching, configuration
+- **See also:** [r apps integ enrich rib attrib output data](https://docs.reltio.com/en/applications/data-integrations/reltio-identity-builder-at-a-glance/enrichment-attributes-and-output-data), [r apps integ enrich rib model mapping](https://docs.reltio.com/en/applications/data-integrations/reltio-identity-builder-at-a-glance/data-model), [r apps integ enrich rib match strat logic](https://docs.reltio.com/en/applications/data-integrations/reltio-identity-builder-at-a-glance/match-strategies-and-logic)
 
 #### Data model
 
@@ -17258,6 +17475,71 @@ In most cases, some errors happened during background job operations.
 - **Summary:** > **Section:** Applications > Data Integrations > Zero Copy Integration at a glance > Reltio Zero Copy integration with Snowflake at a glance > Configure Zero Copy Data integration with Snowflake usin
 - **Keywords:** interaction mapping restore, zero copy integration lifecycle, soft delete interaction mapping, zero copy restore api, reltio zero copy snowflake, mapping reuse after delete, restore mapping endpoint, interaction mapping, restore, snowflake
 
+#### Reltio Zero Copy segmentation with Snowflake
+
+- **URL:** https://docs.reltio.com/en/applications/data-integrations/zero-copy-integration-at-a-glance/reltio-zero-copy-integration-with-snowflake-at-a-glance/reltio-zero-copy-segmentation-with-snowflake
+- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Zero Copy Integration at a glance > Reltio Zero Copy integration with Snowflake at a glance
+- **Summary:** > **Section:** Applications > Data Integrations > Zero Copy Integration at a glance > Reltio Zero Copy integration with Snowflake at a glance
+- **Keywords:** zero copy segmentation with snowflake, snowflake permission model for segmentation, secure in place segment evaluation, snowflake objects for segment execution, segment results in snowflake, data access model for segmentation, security boundaries for snowflake segmentation, account level task execution in snowflake, segmentation, snowflake
+
+#### Configure Snowflake permissions for Zero Copy segmentation
+
+- **URL:** https://docs.reltio.com/en/applications/data-integrations/zero-copy-integration-at-a-glance/reltio-zero-copy-integration-with-snowflake-at-a-glance/reltio-zero-copy-segmentation-with-snowflake/configure-snowflake-permissions-for-zero-copy-segmentation
+- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Zero Copy Integration at a glance > Reltio Zero Copy integration with Snowflake at a glance > Reltio Zero Copy segmentation with Snowflake
+- **Summary:** > **Section:** Applications > Data Integrations > Zero Copy Integration at a glance > Reltio Zero Copy integration with Snowflake at a glance > Reltio Zero Copy segmentation with Snowflake
+- **Keywords:** configure snowflake permissions segmentation, zero copy segmentation snowflake setup, snowflake role permissions for segmentation, segmentation execution permissions reltio, grant permissions for snowflake segmentation, snowflake segmentation access control, segmentation setup, snowflake roles, permissions
+
+#### Reltio Zero Copy Interaction Integration from Databricks at a glance
+
+- **URL:** https://docs.reltio.com/en/applications/data-integrations/zero-copy-integration-at-a-glance/reltio-zero-copy-interaction-integration-from-databricks-at-a-glance
+- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Zero Copy Integration at a glance
+- **Summary:** > **Section:** Applications > Data Integrations > Zero Copy Integration at a glance
+- **Keywords:** reltio databricks zero copy overview, intelligent 360 databricks integration, query databricks without copying, use databricks interaction data, link interactions with crosswalks, unified customer profile view, service principal authentication, crosswalks, oauth, integration
+
+#### Reltio Zero Copy Interaction Integration from Databricks architecture
+
+- **URL:** https://docs.reltio.com/en/applications/data-integrations/zero-copy-integration-at-a-glance/reltio-zero-copy-interaction-integration-from-databricks-at-a-glance/reltio-zero-copy-interaction-integration-from-databricks-architecture
+- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Zero Copy Integration at a glance > Reltio Zero Copy Interaction Integration from Databricks at a glance
+- **Summary:** > **Section:** Applications > Data Integrations > Zero Copy Integration at a glance > Reltio Zero Copy Interaction Integration from Databricks at a glance
+- **Keywords:** reltio databricks zero copy architecture, databricks query flow architecture, oauth machine to machine, databricks service principal authentication, unity catalog access control, crosswalk profile linking flow, sql warehouse query path, architecture, crosswalks, oauth
+
+#### Configure Reltio Zero Copy Interaction Integration from Databricks using APIs
+
+- **URL:** https://docs.reltio.com/en/applications/data-integrations/zero-copy-integration-at-a-glance/reltio-zero-copy-interaction-integration-from-databricks-at-a-glance/configure-reltio-zero-copy-interaction-integration-from-databricks-using-apis
+- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Zero Copy Integration at a glance > Reltio Zero Copy Interaction Integration from Databricks at a glance
+- **Summary:** > **Section:** Applications > Data Integrations > Zero Copy Integration at a glance > Reltio Zero Copy Interaction Integration from Databricks at a glance
+- **Keywords:** configure databricks zero copy apis, create databricks connection configuration, store databricks oauth credentials, test databricks connection configuration, map databricks source object, configure zero copy integration, use databricks integration apis, connection, mapping, oauth
+- **See also:** [Create a Databricks connection in Reltio](https://docs.reltio.com/en/applications/data-integrations/zero-copy-integration-at-a-glance/reltio-zero-copy-interaction-integration-from-databricks-at-a-glance/create-a-databricks-connection-configuration), [Store Databricks OAuth credentials in Reltio](https://docs.reltio.com/en/applications/data-integrations/zero-copy-integration-at-a-glance/reltio-zero-copy-interaction-integration-from-databricks-at-a-glance/store-databricks-oauth-credentials), [Test the Databricks connection in Reltio](https://docs.reltio.com/en/applications/data-integrations/zero-copy-integration-at-a-glance/reltio-zero-copy-interaction-integration-from-databricks-at-a-glance/test-a-databricks-connection), [Map a Databricks source object to a Reltio interaction type](https://docs.reltio.com/en/applications/data-integrations/zero-copy-integration-at-a-glance/reltio-zero-copy-interaction-integration-from-databricks-at-a-glance/map-a-databricks-source-object-to-a-reltio-interaction-type)
+
+#### Create a Databricks connection configuration
+
+- **URL:** https://docs.reltio.com/en/applications/data-integrations/zero-copy-integration-at-a-glance/reltio-zero-copy-interaction-integration-from-databricks-at-a-glance/create-a-databricks-connection-configuration
+- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Zero Copy Integration at a glance > Reltio Zero Copy Interaction Integration from Databricks at a glance
+- **Summary:** > **Section:** Applications > Data Integrations > Zero Copy Integration at a glance > Reltio Zero Copy Interaction Integration from Databricks at a glance
+- **Keywords:** create databricks connection, databricks connection api, configure databricks workspace settings, define sql warehouse details, set shared catalog name, set oauth authentication type, create zero copy connection, connection, catalog, warehouse
+
+#### Store Databricks OAuth credentials
+
+- **URL:** https://docs.reltio.com/en/applications/data-integrations/zero-copy-integration-at-a-glance/reltio-zero-copy-interaction-integration-from-databricks-at-a-glance/store-databricks-oauth-credentials
+- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Zero Copy Integration at a glance > Reltio Zero Copy Interaction Integration from Databricks at a glance
+- **Summary:** > **Section:** Applications > Data Integrations > Zero Copy Integration at a glance > Reltio Zero Copy Interaction Integration from Databricks at a glance
+- **Keywords:** store databricks oauth credentials, save service principal credentials, store databricks client secret, store databricks client id, use service principal authentication, request databricks access tokens, configure oauth credential storage, oauth, credentials, authentication
+
+#### Test a Databricks connection
+
+- **URL:** https://docs.reltio.com/en/applications/data-integrations/zero-copy-integration-at-a-glance/reltio-zero-copy-interaction-integration-from-databricks-at-a-glance/test-a-databricks-connection
+- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Zero Copy Integration at a glance > Reltio Zero Copy Interaction Integration from Databricks at a glance
+- **Summary:** > **Section:** Applications > Data Integrations > Zero Copy Integration at a glance > Reltio Zero Copy Interaction Integration from Databricks at a glance
+- **Keywords:** test databricks connection configuration, verify sql warehouse access, validate databricks oauth connection, check databricks connection status, use connection test endpoint, interpret connected field response, confirm sql warehouse connectivity, connectivity, validation, warehouse
+- **See also:** [Create a Databricks connection configuration](https://docs.reltio.com/en/applications/data-integrations/zero-copy-integration-at-a-glance/reltio-zero-copy-interaction-integration-from-databricks-at-a-glance/create-a-databricks-connection-configuration), [Store Databricks OAuth credentials](https://docs.reltio.com/en/applications/data-integrations/zero-copy-integration-at-a-glance/reltio-zero-copy-interaction-integration-from-databricks-at-a-glance/store-databricks-oauth-credentials)
+
+#### Map a Databricks source object to a Reltio interaction type
+
+- **URL:** https://docs.reltio.com/en/applications/data-integrations/zero-copy-integration-at-a-glance/reltio-zero-copy-interaction-integration-from-databricks-at-a-glance/map-a-databricks-source-object-to-a-reltio-interaction-type
+- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Zero Copy Integration at a glance > Reltio Zero Copy Interaction Integration from Databricks at a glance
+- **Summary:** > **Section:** Applications > Data Integrations > Zero Copy Integration at a glance > Reltio Zero Copy Interaction Integration from Databricks at a glance
+- **Keywords:** map databricks source object, create interaction type mapping, configure databricks attribute mapping, link crosswalk columns to profiles, map databricks table name, use member mappings array, save zero copy mapping, mapping, crosswalks, attributes
+
 ## Objectives
 
 #### About objectives
@@ -18311,6 +18593,59 @@ In most cases, some errors happened during background job operations.
 - **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Model data > Data modeling at a glance > Data modeling operation > Configure grouping types
 - **Summary:** > **Section:** Objectives > Model data > Data modeling at a glance > Data modeling operation > Configure grouping types
 
+#### Grouping: Basic mode
+
+- **URL:** https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/configure-grouping-types/grouping-basic-mode
+- **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Model data > Data modeling at a glance > Data modeling operation > Configure grouping types
+- **Summary:** > **Section:** Objectives > Model data > Data modeling at a glance > Data modeling operation > Configure grouping types
+- **Keywords:** Reltio Snowflake Connector Overview, Snowflake Data Platform, Snowflake Tables and Views, S3 Storage Bucket, Create an IAM Policy, reltio snowflake connector overview, snowflake data platform, snowflake tables and views, S3 storage bucket, create an IAM policy
+- **See also:** [t model hhgrouptype create](https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/configure-grouping-types/create-grouping-type-configurations), [RebuildMatchTableTask](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/rebuild-match-table-task), [c getbearings console household start](https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/configure-grouping-types/grouping-basic-mode/get-started-with-grouping-types), [c model hhgrouptype manage](https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/configure-grouping-types), [c apps datamodeler largeobjects](https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/configure-grouping-types/grouping-advanced-mode)
+
+#### Enable grouping types
+
+- **URL:** https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/configure-grouping-types/grouping-basic-mode/enable-grouping-types
+- **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Model data > Data modeling at a glance > Data modeling operation > Configure grouping types > Grouping: Basic mode
+- **Summary:** > **Section:** Objectives > Model data > Data modeling at a glance > Data modeling operation > Configure grouping types > Grouping: Basic mode
+- **See also:** [r role admin tenant](https://docs.reltio.com/en/objectives/administer-system/system-administration-at-a-glance/access-management-at-a-glance/access-management-reference/authorization/system-roles/critical-high-privilege-roles/role_admin_tenant-access-permissions), [c getbearings console household ovw](https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/configure-grouping-types/grouping-basic-mode), [c getbearings console household start](https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/configure-grouping-types/grouping-basic-mode/get-started-with-grouping-types), [t model hhgrouptype create](https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/configure-grouping-types/create-grouping-type-configurations)
+
+#### Get started with grouping types
+
+- **URL:** https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/configure-grouping-types/grouping-basic-mode/get-started-with-grouping-types
+- **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Model data > Data modeling at a glance > Data modeling operation > Configure grouping types > Grouping: Basic mode
+- **Summary:** > **Section:** Objectives > Model data > Data modeling at a glance > Data modeling operation > Configure grouping types > Grouping: Basic mode
+- **Keywords:** Reltio Snowflake Connector Overview, Snowflake Data Platform, Snowflake Tables and Views, S3 Storage Bucket, Create an IAM Policy, reltio snowflake connector overview, snowflake data platform, snowflake tables and views, S3 storage bucket, create an IAM policy
+- **See also:** [c apps console glance](https://docs.reltio.com/en/applications/console/console-at-a-glance), [selectingatenant](https://docs.reltio.com/en/applications/platform/platform-at-a-glance/platform-navigation/select-a-tenant), [t model hhgrouptype create](https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/configure-grouping-types/create-grouping-type-configurations), [datamodeler](https://docs.reltio.com/en/applications/console/configuration-applications/data-modeler-at-a-glance), [c model hhgrouptype manage](https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/configure-grouping-types)
+
+#### Grouping: Advanced mode
+
+- **URL:** https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/configure-grouping-types/grouping-advanced-mode
+- **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Model data > Data modeling at a glance > Data modeling operation > Configure grouping types
+- **Summary:** > **Section:** Objectives > Model data > Data modeling at a glance > Data modeling operation > Configure grouping types
+- **Keywords:** segmented grouping, group matching, grouping service, logical entity groups, mdm group scalability, match-rule based grouping, group entity creation, high volume group processing, group population strategies, group consistency
+- **See also:** [c apps datamodeler configuregrouping](https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/configure-grouping-types/grouping-advanced-mode/configure-grouping-advanced-mode-in-your-tenant), [grouping types](https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/configure-grouping-types/create-grouping-type-configurations)
+
+#### Configure grouping advanced mode in your tenant
+
+- **URL:** https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/configure-grouping-types/grouping-advanced-mode/configure-grouping-advanced-mode-in-your-tenant
+- **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Model data > Data modeling at a glance > Data modeling operation > Configure grouping types > Grouping: Advanced mode
+- **Summary:** > **Section:** Objectives > Model data > Data modeling at a glance > Data modeling operation > Configure grouping types > Grouping: Advanced mode
+- **Keywords:** enable segmented grouping, groupingConfig version v2, groupingTypes configuration, group entity setup, grouping metadata, group aggregation mappings, topK configuration, survived value group mapping
+- **See also:** [c apps datamodeler attrmappingfunctions](https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/configure-grouping-types/grouping-advanced-mode/supported-attribute-mapping-functions-for-grouping-advanced-mode)
+
+#### Supported attribute mapping functions for grouping advanced mode
+
+- **URL:** https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/configure-grouping-types/grouping-advanced-mode/supported-attribute-mapping-functions-for-grouping-advanced-mode
+- **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Model data > Data modeling at a glance > Data modeling operation > Configure grouping types > Grouping: Advanced mode
+- **Summary:** > **Section:** Objectives > Model data > Data modeling at a glance > Data modeling operation > Configure grouping types > Grouping: Advanced mode
+- **Keywords:** segmented grouping functions, attribute mapping, aggregation strategies, topK values, most recent values, survived value, count distinct, group entity aggregation, householding comparison
+
+#### Validate grouping advanced mode metadata
+
+- **URL:** https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/configure-grouping-types/grouping-advanced-mode/validate-grouping-advanced-mode-metadata
+- **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Model data > Data modeling at a glance > Data modeling operation > Configure grouping types > Grouping: Advanced mode
+- **Summary:** > **Section:** Objectives > Model data > Data modeling at a glance > Data modeling operation > Configure grouping types > Grouping: Advanced mode
+- **Keywords:** validate grouping metadata for segmented ui, how to use validateGroupingConfiguration API, check entity compatibility with segmented grouping, grouping metadata validation in reltio, verify segmented grouping processor support, reltio validation api for group entity config, segmented grouping metadata check, segmented grouping, grouping configuration, validation api
+
 #### Managing Object Deletion and Activeness
 
 - **URL:** https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/managing-object-deletion-and-activeness
@@ -19258,6 +19593,14 @@ _Topics in this section: Data loading at a glance, Data exporting at a glance_
 - **Summary:** > **Section:** Objectives > Stream data > Data streaming at a glance
 - **See also:** [t tenant extq manage add](https://docs.reltio.com/en/objectives/stream-data/data-streaming-at-a-glance/data-streaming-operation/add-an-external-queue-configuration)
 
+#### Confluent Kafka as an external streaming destination
+
+- **URL:** https://docs.reltio.com/en/objectives/stream-data/data-streaming-at-a-glance/data-streaming-operation/confluent-kafka-as-an-external-streaming-destination
+- **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Stream data > Data streaming at a glance > Data streaming operation
+- **Summary:** > **Section:** Objectives > Stream data > Data streaming at a glance > Data streaming operation
+- **Keywords:** kafka streaming reltio, use kafka for outbound event streaming, configure kafka as streaming destination, reltio kafka integration overview, event streaming to kafka topics, kafka, streaming, integration
+- **See also:** [t tenant extq manage add](https://docs.reltio.com/en/objectives/stream-data/data-streaming-at-a-glance/data-streaming-operation/add-an-external-queue-configuration), [c obj streamdata ops](https://docs.reltio.com/en/objectives/stream-data/data-streaming-at-a-glance/data-streaming-operation), [messagestreamingprovider](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/events-api/message-streaming-provider), [c apidev integ kafka provider](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/events-api/confluent-kafka-messaging-provider-configuration), [messagestreamingformat](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/events-api/message-streaming-format)
+
 #### Add an external queue configuration
 
 - **URL:** https://docs.reltio.com/en/objectives/stream-data/data-streaming-at-a-glance/data-streaming-operation/add-an-external-queue-configuration
@@ -19324,6 +19667,7 @@ _Topics in this section: Data loading at a glance, Data exporting at a glance_
 - **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Cleanse and verify data > Data cleansing at a glance > Data cleansing set up > Configure cleanse functions
 - **Summary:** > **Section:** Objectives > Cleanse and verify data > Data cleansing at a glance > Data cleansing set up > Configure cleanse functions
 - **Keywords:** Configuring Cleanse Mapping, Configuring Mapping, Configuring Input Mapping, Configuring Output Mapping, attribute, cleanseAttribute, allValues, mandatory, configuring cleanse mapping, configuring mapping
+- **See also:** [c cleanse rawlookupvalue](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-set-up/configure-cleanse-functions/configure-cleanse-to-use-raw-value-when-lookup-fails)
 
 #### Configure cleanse function infos
 
@@ -19331,7 +19675,7 @@ _Topics in this section: Data loading at a glance, Data exporting at a glance_
 - **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Cleanse and verify data > Data cleansing at a glance > Data cleansing set up > Configure cleanse functions
 - **Summary:** > **Section:** Objectives > Cleanse and verify data > Data cleansing at a glance > Data cleansing set up > Configure cleanse functions
 - **Keywords:** cleanse function infos, infos configuration, useInCleansing, cleanse sequence, cleanse chain, cleanseFunction, cleanse function execution, filter expression, conditional cleanse execution, mapping configuration
-- **See also:** [c box techasst ops support](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal)
+- **See also:** [c cleanse rawlookupvalue](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-set-up/configure-cleanse-functions/configure-cleanse-to-use-raw-value-when-lookup-fails), [c box techasst ops support](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal)
 
 #### Configure filter expressions for cleanse function
 
@@ -21169,6 +21513,38 @@ _Topics in this section: Data loading at a glance, Data exporting at a glance_
 - **URL:** https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/manage-profile-images-in-the-hub
 - **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Manage profiles > Profile management at a glance > Profile management operation
 - **Summary:** > **Section:** Objectives > Manage profiles > Profile management at a glance > Profile management operation
+
+#### Add a hierarchy in the Profile view
+
+- **URL:** https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/add-a-hierarchy-in-the-profile-view
+- **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Manage profiles > Profile management at a glance > Profile management operation
+- **Summary:** > **Section:** Objectives > Manage profiles > Profile management at a glance > Profile management operation
+- **Keywords:** add hierarchy profile view, create hierarchy instance, new hierarchy setup, hierarchy creation flow, hierarchy versioning setup, hierarchy type selection, initial hierarchy connection, create versioned hierarchy, hierarchy, versioning
+- **See also:** [r obj profiles hierarchysettings](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/hierarchy-perspective/configure-tenant-business-settings-for-hierarchy), [r obj profiles uiconfighierarchy](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/hierarchy-perspective/configure-ui-settings-for-the-hierarchy-tab)
+
+#### Import a hierarchy in the Profile view
+
+- **URL:** https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/import-a-hierarchy-in-the-profile-view
+- **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Manage profiles > Profile management at a glance > Profile management operation
+- **Summary:** > **Section:** Objectives > Manage profiles > Profile management at a glance > Profile management operation
+- **Keywords:** import hierarchy profile view, hierarchy import workflow, import hierarchy file, download hierarchy template, upload hierarchy template, hierarchy import dialog, create hierarchy import, hierarchy file upload, import hierarchy, template
+- **See also:** [r obj profiles hierarchysettings](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/hierarchy-perspective/configure-tenant-business-settings-for-hierarchy), [r obj profiles uiconfighierarchy](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/hierarchy-perspective/configure-ui-settings-for-the-hierarchy-tab)
+
+#### Add parent and child nodes in a hierarchy
+
+- **URL:** https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/add-parent-and-child-nodes-in-a-hierarchy
+- **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Manage profiles > Profile management at a glance > Profile management operation
+- **Summary:** > **Section:** Objectives > Manage profiles > Profile management at a glance > Profile management operation
+- **Keywords:** add hierarchy nodes, add parent node, add child node, expand hierarchy structure, update hierarchy tree, select parent profile, select child profile, hierarchy node actions, parent node, child node
+- **See also:** [r obj profiles hierarchysettings](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/hierarchy-perspective/configure-tenant-business-settings-for-hierarchy), [r obj profiles uiconfighierarchy](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/hierarchy-perspective/configure-ui-settings-for-the-hierarchy-tab), [t obj profiles addhierarchy](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/add-a-hierarchy-in-the-profile-view)
+
+#### Move or copy hierarchy nodes
+
+- **URL:** https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/move-or-copy-hierarchy-nodes
+- **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Manage profiles > Profile management at a glance > Profile management operation
+- **Summary:** > **Section:** Objectives > Manage profiles > Profile management at a glance > Profile management operation
+- **Keywords:** move hierarchy nodes, copy hierarchy nodes, reorganize hierarchy branches, move hierarchy branch, copy hierarchy branch, paste as child, hierarchy node actions, hierarchy tree update, move nodes, copy nodes
+- **See also:** [r obj profiles hierarchysettings](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/hierarchy-perspective/configure-tenant-business-settings-for-hierarchy), [r obj profiles uiconfighierarchy](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/hierarchy-perspective/configure-ui-settings-for-the-hierarchy-tab), [t obj profiles addhierarchy](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/add-a-hierarchy-in-the-profile-view)
 
 #### Work with segments
 
