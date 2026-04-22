@@ -2,7 +2,7 @@
 
 > The complete Reltio product documentation corpus — 3,232 topics — optimized for AI consumption and available as structured Markdown. No authentication required.
 
-![Last synced](https://img.shields.io/badge/Last%20synced-2026--04--20-blue)
+![Last synced](https://img.shields.io/badge/Last%20synced-2026--04--22-blue)
 ![Topics](https://img.shields.io/badge/Topics-3%2C232-green)
 ![Format](https://img.shields.io/badge/Format-Markdown-lightgrey)
 ![Access](https://img.shields.io/badge/Access-Public%2C%20no%20auth-brightgreen)
@@ -217,3 +217,11 @@ These files contain published product documentation only. The following content 
 - Support articles — see the [Reltio Support Portal](https://support.reltio.com)
 - Release notes in full detail — see [Release Notes on docs.reltio.com](https://docs.reltio.com/en/reltio/whats-new-and-notable/whats-new-at-a-glance/release-notes-at-a-glance)
 - Content in languages other than English
+
+---
+
+## License
+
+© Reltio, Inc. All rights reserved.
+
+The content in this repository is Reltio's published product documentation, made available for use with Reltio products and services. You may use these files to build AI tools, integrations, and workflows that consume Reltio documentation. You may not republish or redistribute the content as your own.
