@@ -1,29 +1,14 @@
 # LICENSE
 
-© 2026 Reltio, Inc. All rights reserved.
+Copyright (c) 2026 Reltio, Inc. All rights reserved.
 
-## Terms of Use
+This repository contains Reltio product documentation made available for use with Reltio products and services.
 
-The content in this repository is Reltio's published product documentation, made available for use with Reltio products and services.
+You may use these files to build AI tools, integrations, RAG pipelines, and workflows that consume Reltio documentation.
 
-### Permitted Uses
+You may not republish or redistribute the content as your own.
 
-- Use these files to build AI-powered tools, integrations, and workflows that consume Reltio documentation.
-- Use these files as context for AI assistants, RAG pipelines, and support automation systems.
-- Create derivative works (e.g., embeddings, indexes, summaries) for internal or commercial use with Reltio products.
+THE CONTENT IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND. 
+You are fully responsible for your use of the documentation; Reltio will not be liable in any way for such use or otherwise.
 
-### Restrictions
-
-- You may **not** republish or redistribute the documentation content as your own.
-- You may **not** remove or alter copyright notices, attribution, or source references.
-- You may **not** misrepresent the content as originating from any party other than Reltio.
-
-### Disclaimer
-
-THE CONTENT IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL RELTIO BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY ARISING FROM THE USE OF THIS CONTENT.
-
-### Updates
-
-This documentation is updated periodically. Reltio reserves the right to modify, update, or remove content at any time without notice.
-
-For questions about licensing or permitted use, contact [support@reltio.com](mailto:support@reltio.com).
+For questions about permitted use, contact [support@reltio.com](mailto:support@reltio.com).
