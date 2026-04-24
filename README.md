@@ -13,17 +13,15 @@
 
 The Reltio Context Intelligence Platform brings together interoperable products that support data unification, context enrichment, and AI-driven interaction.
 
-### Products
-
-#### Reltio Multidomain MDM
+### Reltio Multidomain MDM
 
 Delivers scalable master data management across multiple domains, with built-in governance, survivorship, reference data management, and relationship views.
 
-#### Reltio Intelligent 360™
+### Reltio Intelligent 360™
 
 Goes beyond MDM to add segmentation, derived attributes, interaction management, and conversational data exploration via Reltio Intelligent Assistant (RIA).
 
-#### Reltio AgentFlow™
+### Reltio AgentFlow™
 
 Delivers autonomous AI agents that automate data stewardship, governance, and custom agent workflows on trusted enterprise data.
 
