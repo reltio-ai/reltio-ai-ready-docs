@@ -11,7 +11,21 @@
 
 ## Overview
 
-Reltio is a cloud-native master data management (MDM) platform for managing, governing, and analyzing enterprise data.
+The Reltio Context Intelligence Platform brings together interoperable products that support data unification, context enrichment, and AI-driven interaction.
+
+### Products
+
+#### Reltio Multidomain MDM
+
+Delivers scalable master data management across multiple domains, with built-in governance, survivorship, reference data management, and relationship views.
+
+#### Reltio Intelligent 360™
+
+Goes beyond MDM to add segmentation, derived attributes, interaction management, and conversational data exploration via Reltio Intelligent Assistant (RIA).
+
+#### Reltio AgentFlow™
+
+Delivers autonomous AI agents that automate data stewardship, governance, and custom agent workflows on trusted enterprise data.
 
 Reltio AI-Ready Documentation gives you Reltio's entire product documentation corpus in a format that AI tools can consume directly. The files in this repository are sourced from Reltio's documentation platform — not scraped from HTML — and are updated every Wednesday and Friday.
 
