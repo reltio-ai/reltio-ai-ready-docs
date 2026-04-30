@@ -1,5 +1,5 @@
 # Reltio Documentation Index
-_Generated: 2026-04-24 14:51 UTC — 3238 topics_
+_Generated: 2026-04-29 02:14 UTC — 3237 topics_
 
 This file is a structured navigation index of the Reltio documentation portal.
 It contains the full parent-child hierarchy, topic URLs, keywords, summaries,
@@ -612,7 +612,7 @@ relationships, locate sibling topics, and follow cross-references.
 
 - **URL:** https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-information-model/data-model/reltio-object-types/reltio-relationship-types?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Reltio > What does Reltio do? > What Reltio does at a glance > Data unification and MDM at a glance > Data unification and MDM in detail > Reltio information model > Data Model > Reltio object types
-- **Summary:** Learn about what relationship types are and how to define them in the Reltio Data Cloud.
+- **Summary:** Learn about what relationship types are and how to define them in the Reltio Context Intelligence Platform.
 - **Keywords:** relationship, properties and attributes, relationship, linking entities, relationship, in complex JSON, relationship, organized into hierarchies, relationship data types, Relationship
 - **See also:** [Graph Types](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-configuration-data-types/the-graph-type?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Configuring Relationship Types](https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/define-relationships/configuring-relationship-types?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
@@ -686,7 +686,7 @@ relationships, locate sibling topics, and follow cross-references.
 
 - **URL:** https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-information-model/lookups-for-attribute-code-values/dependent-lookups?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Reltio > What does Reltio do? > What Reltio does at a glance > Data unification and MDM at a glance > Data unification and MDM in detail > Reltio information model > Lookups for attribute code values
-- **Summary:** Reltio Data Cloud supports dependent lookups when one attribute value drives the values of another attribute.
+- **Summary:** Reltio Context Intelligence Platform supports dependent lookups when one attribute value drives the values of another attribute.
 - **Keywords:** configuring lookup dependencies, validating dependent lookups, dependent lookups, non-dependent lookups, Configure lookup dependencies, Validate dependent lookups, Dependent lookups, Non-dependent lookups
 
 #### Configuring Dependent Lookups
@@ -751,7 +751,7 @@ relationships, locate sibling topics, and follow cross-references.
 
 - **URL:** https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/fundamental-concepts-related-to-matching?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Reltio > What does Reltio do? > What Reltio does at a glance > Data unification and MDM at a glance > Data unification and MDM in detail > Reltio match and merge
-- **Summary:** Learn about the concept of matching in the Reltio Data Cloud.
+- **Summary:** Learn about the concept of matching in the Reltio Context Intelligence Platform.
 - **Keywords:** Matching Concepts, matching concepts, match concepts, fundamental concepts, matching, entity types, match rules, match tokens, comparator classes, cleansing
 - **See also:** [Learn more about this powerful tool](https://docs.reltio.com/en/applications/console/configuration-applications/data-modeler-at-a-glance/working-with-match-rule-editor?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Learn more about how to select external entities for matching](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-operation/external-match-at-a-glance/selecting-external-entities-for-matching?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
@@ -859,7 +859,7 @@ relationships, locate sibling topics, and follow cross-references.
 
 - **URL:** https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/match-group-elements---description-and-configuration/rule-element/comparator-classes?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Reltio > What does Reltio do? > What Reltio does at a glance > Data unification and MDM at a glance > Data unification and MDM in detail > Reltio match and merge > Match Group Elements - Description and Configuration > Rule Element
-- **Summary:** Learn about comparator classes and how to use them to support matching in the Reltio Data Cloud.
+- **Summary:** Learn about comparator classes and how to use them to support matching in the Reltio Context Intelligence Platform.
 - **Keywords:** how to define comparator classes, map comparator to attributes, use fuzzy comparison operator, configure thresholds for levenshtein, phonetic comparators for names, compare organization names tokens, address line comparator usage, calculate relevance score per comparator, select match token class, comparator classes
 
 #### Match Token Class
@@ -881,7 +881,7 @@ relationships, locate sibling topics, and follow cross-references.
 
 - **URL:** https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/match-group-elements---description-and-configuration/rule-element/match-token-class/match-token-classes?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Reltio > What does Reltio do? > What Reltio does at a glance > Data unification and MDM at a glance > Data unification and MDM in detail > Reltio match and merge > Match Group Elements - Description and Configuration > Rule Element > Match Token Class
-- **Summary:** This article describes each of the available match token classes in the Reltio Data Cloud.
+- **Summary:** This article describes each of the available match token classes in the Reltio Context Intelligence Platform.
 - **Keywords:** Match Token Class, match token, token, match token generator, token generator, match token class, token class, exact, exactornull, exactorallnull
 
 #### Creating a Custom Comparator and Match Token class
@@ -1001,7 +1001,7 @@ relationships, locate sibling topics, and follow cross-references.
 
 - **URL:** https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-configuration-data-types?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Reltio > What does Reltio do? > What Reltio does at a glance > Data unification and MDM at a glance > Data unification and MDM in detail
-- **Summary:** Learn about data types you can configure in the Reltio Data Cloud.
+- **Summary:** Learn about data types you can configure in the Reltio Context Intelligence Platform.
 - **Keywords:** source type, graph, type, Source type, Graph type
 
 #### The Source Type
@@ -1029,14 +1029,14 @@ relationships, locate sibling topics, and follow cross-references.
 
 - **URL:** https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/key-concepts-and-terms-at-a-glance/key-concepts?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Reltio > What does Reltio do? > What Reltio does at a glance > Key concepts and terms at a glance
-- **Summary:** Learn about key concepts behind Reltio Data Cloud
+- **Summary:** Learn about key concepts behind Reltio Context Intelligence Platform
 - **Keywords:** Understanding Key Concepts, key concepts, master data, relationship data, transaction and interaction data, reference data, data science, reporting and analysis, Key Concepts
 
 #### Tenants
 
 - **URL:** https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/key-concepts-and-terms-at-a-glance/key-concepts/tenants?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Reltio > What does Reltio do? > What Reltio does at a glance > Key concepts and terms at a glance > Key concepts
-- **Summary:** Learn about tenants in Reltio Data Cloud.
+- **Summary:** Learn about tenants in Reltio Context Intelligence Platform.
 - **Keywords:** Tenants, tenants, customer tenant, development tenant, testing tenant, production tenant, What is a Tenant?
 
 #### Master data
@@ -1114,7 +1114,7 @@ relationships, locate sibling topics, and follow cross-references.
 
 - **URL:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-at-a-glance/implementation-assistance-operation/identify-performance-factors?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Reltio > What’s in the box? > What's in the box at a glance > Implementation assistance at a glance > Implementation assistance operation
-- **Summary:** Learn about the factors that can affect your Reltio Data Cloud performance
+- **Summary:** Learn about the factors that can affect your Reltio Context Intelligence Platform performance
 - **See also:** [reltiocloudquotalimits](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-at-a-glance/implementation-assistance-operation/identify-performance-factors/quota-and-limits?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [apilatencybenchmark](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-at-a-glance/implementation-assistance-operation/identify-performance-factors/api-latency-benchmark?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Quota and limits
@@ -1135,21 +1135,21 @@ relationships, locate sibling topics, and follow cross-references.
 
 - **URL:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-at-a-glance/implementation-assistance-operation/identify-performance-factors/quota-and-limits/cleanser-quota-limits?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Reltio > What’s in the box? > What's in the box at a glance > Implementation assistance at a glance > Implementation assistance operation > Identify performance factors > Quota and limits
-- **Summary:** Quota limits can be defined for Cleansers in Reltio Data Cloud.
+- **Summary:** Quota limits can be defined for Cleansers in Reltio Context Intelligence Platform.
 - **Keywords:** Cleansers quota Limits, cleansers quota limits, cleansers quota, quota for cleansers on cloud, quota for cleansers
 
 #### Data Tenant Quota Limits
 
 - **URL:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-at-a-glance/implementation-assistance-operation/identify-performance-factors/quota-and-limits/data-tenant-quota-limits?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Reltio > What’s in the box? > What's in the box at a glance > Implementation assistance at a glance > Implementation assistance operation > Identify performance factors > Quota and limits
-- **Summary:** Quota limits can be defined for Data Tenants in Reltio Data Cloud.
+- **Summary:** Quota limits can be defined for Data Tenants in Reltio Context Intelligence Platform.
 - **Keywords:** Data Tenants quota Limits, data tenants quota limits, quota limits for data tenants in cloud
 
 #### Object size limits
 
 - **URL:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-at-a-glance/implementation-assistance-operation/identify-performance-factors/quota-and-limits/object-size-limits?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Reltio > What’s in the box? > What's in the box at a glance > Implementation assistance at a glance > Implementation assistance operation > Identify performance factors > Quota and limits
-- **Summary:** Learn about object size limits on Reltio Data Cloud and how they ensure optimal platform performance.
+- **Summary:** Learn about object size limits on Reltio Context Intelligence Platform and how they ensure optimal platform performance.
 - **Keywords:** Object Size Limits, Object Limits, Object Quota, Size Limits, Size Quota, object size limits, object limits, object size quota, object quota, size limits
 
 #### Proactive Monitoring
@@ -1164,7 +1164,7 @@ relationships, locate sibling topics, and follow cross-references.
 
 - **URL:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-at-a-glance/implementation-assistance-operation/identify-performance-factors/quota-and-limits/queue-quota-limits?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Reltio > What’s in the box? > What's in the box at a glance > Implementation assistance at a glance > Implementation assistance operation > Identify performance factors > Quota and limits
-- **Summary:** Quota limits can be defined for Queues on Reltio Data Cloud.
+- **Summary:** Quota limits can be defined for Queues on Reltio Context Intelligence Platform.
 - **Keywords:** Quota Limits for Queues, queues quota limits, quota limits for connected cloud queues
 
 #### RDM Quota Limits for MDM
@@ -1178,7 +1178,7 @@ relationships, locate sibling topics, and follow cross-references.
 
 - **URL:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-at-a-glance/implementation-assistance-operation/identify-performance-factors/quota-and-limits/storage-quota-limits?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Reltio > What’s in the box? > What's in the box at a glance > Implementation assistance at a glance > Implementation assistance operation > Identify performance factors > Quota and limits
-- **Summary:** Quota limits can be defined for Storage on Reltio Data Cloud.
+- **Summary:** Quota limits can be defined for Storage on Reltio Context Intelligence Platform.
 - **Keywords:** Storage Quota Limits, Tenant Cloning, Snapshot & Restore, storage quota limits, quota limits for connected cloud storage, storage quota, tenant storage quota limits, tenant storage quota, tenant storage, tenant storage services
 - **See also:** [cloningandsnapshotfaq](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/tenants-at-a-glance/tenant-operation/tenant-cloning-backups-and-snapshots-faq?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
@@ -1186,7 +1186,7 @@ relationships, locate sibling topics, and follow cross-references.
 
 - **URL:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-at-a-glance/implementation-assistance-operation/identify-performance-factors/quota-and-limits/tenant-quota-limits?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Reltio > What’s in the box? > What's in the box at a glance > Implementation assistance at a glance > Implementation assistance operation > Identify performance factors > Quota and limits
-- **Summary:** Quota limits can be defined for Tenants on Reltio Data Cloud.
+- **Summary:** Quota limits can be defined for Tenants on Reltio Context Intelligence Platform.
 - **Keywords:** Quota Limits for Tenants, tenant quota limits, quota limits for connected cloud tenants
 
 #### Validation Constraints for a Tenant
@@ -1272,7 +1272,7 @@ relationships, locate sibling topics, and follow cross-references.
 
 - **URL:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/tenants-at-a-glance/tenant-architecture?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Reltio > What’s in the box? > What's in the box at a glance > Tenants at a glance
-- **Summary:** Learn where tenants site in Reltio Data Cloud architecture.
+- **Summary:** Learn where tenants site in Reltio Context Intelligence Platform architecture.
 - **Keywords:** Reltio cloud architecture, customer's MDM tenant, within Reltio cloud, customer tenant, data tenant, tenant architecture
 - **See also:** [Reltio L3 layer](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-information-model/data-model/tenant-configuration-inheritance-across-layers/reltio-l3-layer----customer-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [c apps about](https://docs.reltio.com/en/applications/about-applications?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
@@ -1539,7 +1539,7 @@ relationships, locate sibling topics, and follow cross-references.
 
 - **URL:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/platform-status-at-a-glance/platform-status-operation/view-platform-status?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Reltio > What’s in the box? > What's in the box at a glance > Platform status at a glance > Platform status operation
-- **Summary:** Check that your environments are up and running in your Reltio Data Cloud platform
+- **Summary:** Check that your environments are up and running in your Reltio Context Intelligence Platform platform
 - **Keywords:** reltio platform status page, status page, reltio sre, reltio noc, monitor cloud, cloud level, health check, incident, daily log, uptime percentage
 
 #### Monitor cloud service health
@@ -1694,7 +1694,7 @@ relationships, locate sibling topics, and follow cross-references.
 
 - **URL:** https://docs.reltio.com/en/products/reltio-context-intelligence-platform/reltio-data-cloud-platform-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Products > Reltio Context Intelligence Platform
-- **Summary:** Get a high-level view of Reltio Data Cloud.
+- **Summary:** Get a high-level view of Reltio Context Intelligence Platform.
 - **See also:** [c role about](https://docs.reltio.com/en/roles/about-roles?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [c platform mdm glance](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Application features available across products
@@ -2587,7 +2587,7 @@ relationships, locate sibling topics, and follow cross-references.
 - **Path:** Reltio Documentation Portal v2 sitemap > Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > Reltio for B2B Data Domains velocity pack > Configurations for B2B Data Domains
 - **Summary:** Learn about the Reltio for B2B prebuilt survivorship types.
 - **Keywords:** Customer Data (B2B) Attributes, B2B, attributes
-- **See also:** [survivorshipgroups](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-navigation/design-survivorship-rules/survivorship-groups?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [c v3 b2b datamodel entitytypes](https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-b2b-data-domains-velocity-pack/data-model-for-b2b-data-domains/entity-types-for-b2b-data-domains?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [survivorshipruletypes](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-navigation/design-survivorship-rules/survivorship-rule-types?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [survivorshipgroups](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-navigation/design-survivorship-rules/survivorship-groups?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [c v3 b2b datamodel entitytypes](https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-b2b-data-domains-velocity-pack/data-model-for-b2b-data-domains/entity-types-for-b2b-data-domains?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [survivorshiprules](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-navigation/design-survivorship-rules/survivorship-rules?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Reference data for B2B Data Domains
 
@@ -2721,7 +2721,7 @@ relationships, locate sibling topics, and follow cross-references.
 - **Path:** Reltio Documentation Portal v2 sitemap > Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > Reltio for B2C Data Domains velocity pack > Configurations for B2C Data Domains
 - **Summary:** Learn about the Reltio for B2C prebuilt survivorship types.
 - **Keywords:** Customer Data (B2B) Attributes, B2B, attributes
-- **See also:** [survivorshipgroups](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-navigation/design-survivorship-rules/survivorship-groups?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [r v3 b2c datamodel entitytypes](https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-b2c-data-domains-velocity-pack/data-model-for-b2c-data-domains/entity-types-for-b2c-data-domains?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [survivorshipruletypes](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-navigation/design-survivorship-rules/survivorship-rule-types?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [survivorshipgroups](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-navigation/design-survivorship-rules/survivorship-groups?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [r v3 b2c datamodel entitytypes](https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-b2c-data-domains-velocity-pack/data-model-for-b2c-data-domains/entity-types-for-b2c-data-domains?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [survivorshiprules](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-navigation/design-survivorship-rules/survivorship-rules?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Reference data for B2C Data Domains
 
@@ -4383,7 +4383,7 @@ _Topics in this section: Reltio Entity Resolution Deployment options, Reltio Ent
 
 - **URL:** https://docs.reltio.com/en/developer-resources/about-developer-resources?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Developer resources
-- **Summary:** Learn about the content curated for Reltio Data Cloud REST APIs
+- **Summary:** Learn about the content curated for Reltio Context Intelligence Platform REST APIs
 - **See also:** [About products](https://docs.reltio.com/en/products/about-products?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [About roles](https://docs.reltio.com/en/roles/about-roles?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [About applications](https://docs.reltio.com/en/applications/about-applications?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [About objectives](https://docs.reltio.com/en/objectives/about-objectives?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Developer resources at a glance
@@ -4418,7 +4418,7 @@ _Topics in this section: Reltio Entity Resolution Deployment options, Reltio Ent
 
 - **URL:** https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/integrate-data-with-reltio-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > About developer resources > Developer resources at a glance
-- **Summary:** Reltio Data Cloud provides powerful out-of-the-box capabilities for integration with other systems, in various classic modalities.
+- **Summary:** Reltio Context Intelligence Platform provides powerful out-of-the-box capabilities for integration with other systems, in various classic modalities.
 
 #### Create Entities and Relations
 
@@ -10601,7 +10601,7 @@ _Topics in this section: Reltio Entity Resolution Deployment options, Reltio Ent
 
 - **URL:** https://docs.reltio.com/en/applications/about-applications?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Applications
-- **Summary:** Learn about the content curated for applications in the Reltio Data Cloud
+- **Summary:** Learn about the content curated for applications in the Reltio Context Intelligence Platform
 - **See also:** [About products](https://docs.reltio.com/en/products/about-products?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [About developer resources](https://docs.reltio.com/en/developer-resources/about-developer-resources?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [About roles](https://docs.reltio.com/en/roles/about-roles?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [About objectives](https://docs.reltio.com/en/objectives/about-objectives?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 ### Platform
@@ -10631,7 +10631,7 @@ _Topics in this section: Reltio Entity Resolution Deployment options, Reltio Ent
 
 - **URL:** https://docs.reltio.com/en/applications/platform/platform-at-a-glance/platform-navigation/sign-in-to-reltio-data-cloud/reset-your-password?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Applications > Platform > Platform at a glance > Platform navigation > Sign in to Reltio Data Cloud
-- **Summary:** Learn how to reset the sign-in to password for your Reltio Data Cloud
+- **Summary:** Learn how to reset the sign-in to password for your Reltio Context Intelligence Platform
 - **Keywords:** reCAPTCHA, reset password, password reset, password, forgotten, resetting login password, forgot my password, Reset Password, Password Reset, Password
 
 #### Default Reltio password policy
@@ -11006,7 +11006,7 @@ _Topics in this section: Hub at a glance, Profile Stats dashboard at a glance, D
 - **Path:** Reltio Documentation Portal v2 sitemap > Applications > Hub > Profiles at a glance > Profile perspectives tabs > Profile perspectives navigation
 - **Summary:** Learn about the various sources and crosswalks for a profile.
 - **Keywords:** Sources perspective, Attributes, Operational Value, Winner Source System, Rule Type, Attribute values, Pin, Ignore, Focus, Edit attribute values
-- **See also:** [rulesetconfiguration](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/configuration-api/ruleset-configuration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [t obj profiles ops opruleset](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/view-operational-values-for-a-ruleset?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [survivorshipruletypes](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-navigation/design-survivorship-rules/survivorship-rule-types?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [c configprofilescreen](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/configure-reltio-ui-with-the-configuration-file/configure-profile-screens?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [t obj profiles ops addattrinsource](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/add-attributes-in-the-sources-perspective?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [c autogenid entity](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-information-model/autogenerated-ids-for-attributes-and-crosswalks?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [rulesetconfiguration](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/configuration-api/ruleset-configuration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [t obj profiles ops opruleset](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/view-operational-values-for-a-ruleset?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [c configprofilescreen](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/configure-reltio-ui-with-the-configuration-file/configure-profile-screens?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [t obj profiles ops addattrinsource](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/add-attributes-in-the-sources-perspective?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [c autogenid entity](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-information-model/autogenerated-ids-for-attributes-and-crosswalks?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Sources legend
 
@@ -12170,7 +12170,7 @@ _Topics in this section: Hub at a glance, Profile Stats dashboard at a glance, D
 
 - **URL:** https://docs.reltio.com/en/applications/ria/ria-reltio-intelligent-assistant-at-a-glance/ria-for-reltio-intelligent-360/ria-for-reltio-intelligent-360-operation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Applications > RIA > RIA (Reltio Intelligent Assistant) at a glance > RIA for Reltio Intelligent 360
-- **Summary:** Learn how to use Reltio Intelligent Assistant (RIA) for Reltio Intelligent 360 in the Reltio Data Cloud
+- **Summary:** Learn how to use Reltio Intelligent Assistant (RIA) for Reltio Intelligent 360 in the Reltio Context Intelligence Platform
 
 ### Search
 
@@ -12862,7 +12862,7 @@ _Topics in this section: Data integrations at a glance, Application Integration 
 
 - **URL:** https://docs.reltio.com/en/applications/data-integrations/application-integration-at-a-glance/reltio-integration-for-salesforce-at-a-glance/reltio-integration-for-salesforce-set-up?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Application Integration at a glance > Reltio Integration for Salesforce at a glance
-- **Summary:** Learn about the Reltio Integration for Salesforce that supports bi-directional synchronization of Account and Contacts between Salesforce and Reltio Data Cloud.
+- **Summary:** Learn about the Reltio Integration for Salesforce that supports bi-directional synchronization of Account and Contacts between Salesforce and Reltio Context Intelligence Platform.
 - **Keywords:** Salesforce Connector, Synchronize salesforce back to Reltio, salesforce connector, salesforce, salesforce match accounts, salesforce overview, synchronize salesforce back to reltio
 
 #### Reltio Integration for Salesforce features
@@ -17595,7 +17595,7 @@ In most cases, some errors happened during background job operations.
 
 - **URL:** https://docs.reltio.com/en/objectives/about-objectives?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Objectives
-- **Summary:** Learn about the content curated for objectives you want to achieve in the Reltio Data Cloud
+- **Summary:** Learn about the content curated for objectives you want to achieve in the Reltio Context Intelligence Platform
 - **See also:** [About products](https://docs.reltio.com/en/products/about-products?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [About developer resources](https://docs.reltio.com/en/developer-resources/about-developer-resources?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [About roles](https://docs.reltio.com/en/roles/about-roles?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [About applications](https://docs.reltio.com/en/applications/about-applications?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 ### Administer system
@@ -17617,7 +17617,7 @@ In most cases, some errors happened during background job operations.
 
 - **URL:** https://docs.reltio.com/en/objectives/administer-system/system-administration-at-a-glance/system-administration-operation/quick-start-guide?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Administer system > System administration at a glance > System administration operation
-- **Summary:** Learn how to get started with the Reltio Data Cloud.
+- **Summary:** Learn how to get started with the Reltio Context Intelligence Platform.
 - **Keywords:** getting started, Quick Start Guide, Quick Start Guide, getting started, quick start guide, starting with Reltio products, starting with Reltio, Getting started, Quick Start Guide, Starting with Reltio
 - **See also:** [Reltio Console](https://docs.reltio.com/en/applications/console/console-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Reltio Velocity Pack](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/tenants-at-a-glance/tenant-architecture/reltio-velocity-packs?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Authentication API](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/authentication-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [t tenant extq manage edit](https://docs.reltio.com/en/objectives/stream-data/data-streaming-at-a-glance/data-streaming-operation/edit-an-external-queue-configuration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Reference Data Management (RDM)](https://docs.reltio.com/en/applications/rdm/rdm-at-a-glance/rdm-operation/lookups-and-canonical-values?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Access Management](https://docs.reltio.com/en/objectives/administer-system/system-administration-at-a-glance/access-management-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [c box techasst ops support](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [t box techasst ops support customercontacts configure](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal/support-portal-designated-contacts/configure-designated-contacts-in-the-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
@@ -17720,7 +17720,7 @@ In most cases, some errors happened during background job operations.
 
 - **URL:** https://docs.reltio.com/en/objectives/administer-system/system-administration-at-a-glance/access-management-at-a-glance/access-management-operation/authentication/authenticate-with-sso/oauth-2.0openid-connect-oidc-single-sign-on-sso?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Administer system > System administration at a glance > Access management at a glance > Access management operation > Authentication > Authenticate with SSO
-- **Summary:** Learn how to use OAuth2 compliant SSO to access Reltio Data Cloud data.
+- **Summary:** Learn how to use OAuth2 compliant SSO to access Reltio Context Intelligence Platform data.
 - **Keywords:** OAuth2 SSO, Single Sign On, SSO, QAuth2
 - **See also:** [ssoidpsetupadfs](https://docs.reltio.com/en/objectives/administer-system/system-administration-at-a-glance/access-management-at-a-glance/access-management-operation/authentication/authenticate-with-sso/sso-configuration/set-up-an-idp-for-oauthoidc/set-up-adfs-idp-for-oauthoidc?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [ssoidpsetupazure](https://docs.reltio.com/en/objectives/administer-system/system-administration-at-a-glance/access-management-at-a-glance/access-management-operation/authentication/authenticate-with-sso/sso-configuration/set-up-an-idp-for-oauthoidc/set-up-azure-idp-for-oauthoidc?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [ssoidpsetupgithub](https://docs.reltio.com/en/objectives/administer-system/system-administration-at-a-glance/access-management-at-a-glance/access-management-operation/authentication/authenticate-with-sso/sso-configuration/set-up-an-idp-for-oauthoidc/set-up-github-idp-for-oauthoidc?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [ssoidpsetupgoogle](https://docs.reltio.com/en/objectives/administer-system/system-administration-at-a-glance/access-management-at-a-glance/access-management-operation/authentication/authenticate-with-sso/sso-configuration/set-up-an-idp-for-oauthoidc/set-up-google-apps-idp-for-oauthoidc?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [r ssoidpsetup keycloak](https://docs.reltio.com/en/objectives/administer-system/system-administration-at-a-glance/access-management-at-a-glance/access-management-operation/authentication/authenticate-with-sso/sso-configuration/set-up-an-idp-for-oauthoidc/set-up-keycloak-idp-for-oauthoidc?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [ssoidpsetupokta](https://docs.reltio.com/en/objectives/administer-system/system-administration-at-a-glance/access-management-at-a-glance/access-management-operation/authentication/authenticate-with-sso/sso-configuration/set-up-an-idp-for-oauthoidc/set-up-okta-idp-for-oauthoidc?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [ssoidpsetupping](https://docs.reltio.com/en/objectives/administer-system/system-administration-at-a-glance/access-management-at-a-glance/access-management-operation/authentication/authenticate-with-sso/sso-configuration/set-up-an-idp-for-oauthoidc/set-up-pingfederate-idp-for-oauthoidc?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
@@ -18308,7 +18308,7 @@ In most cases, some errors happened during background job operations.
 - **URL:** https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/explicit-null-marking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Model data > Data modeling at a glance > Data modeling operation
 - **Summary:** Learn why it's important to explicitly mark NULL values in MDM systems, and how it affects survivorship and golden record creation in Reltio.
-- **See also:** [survivorship](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-navigation/design-survivorship-rules?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Recency](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-navigation/design-survivorship-rules/survivorship-rule-types?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [survivorship](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-navigation/design-survivorship-rules?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Recency](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-navigation/design-survivorship-rules/survivorship-rules?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Define hierarchies
 
@@ -18501,7 +18501,7 @@ In most cases, some errors happened during background job operations.
 - **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Model data > Data modeling at a glance > Data modeling operation > Define entity types and attributes > Configure Survivorship groups in Data Modeler
 - **Summary:** Learn how to manage Survivorship rules and strategies to suit your needs in the Data Modeler.
 - **Keywords:** rules and strategies, Data Modeler, fallback, survivorship, fallback strategy and filter
-- **See also:** [c objtypes match merge](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [c objtypes](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-information-model/data-model/reltio-object-types?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [survivorshiprules](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-navigation/design-survivorship-rules/survivorship-rules?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Survivorship Rules](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-navigation/design-survivorship-rules?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [survivorshipruletypes](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-navigation/design-survivorship-rules/survivorship-rule-types?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [c objtypes match merge](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [c objtypes](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-information-model/data-model/reltio-object-types?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [survivorshiprules](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-navigation/design-survivorship-rules/survivorship-rules?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Survivorship Rules](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-navigation/design-survivorship-rules?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Delete a Survivorship group in Data Modeler
 
@@ -19316,7 +19316,7 @@ In most cases, some errors happened during background job operations.
 
 - **URL:** https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/internationalization-and-localization/localization-configuration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Configure the Reltio UI > UI configuration at a glance > Internationalization and Localization
-- **Summary:** The procedure to configure custom localizations in your Reltio Data Cloud environment is simple.
+- **Summary:** The procedure to configure custom localizations in your Reltio Context Intelligence Platform environment is simple.
 - **Keywords:** Localization Configuration, localization configuration, localization, configuring localization
 - **See also:** [internationalizationapi](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/internationalization-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [localizationuserguide](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/internationalization-and-localization/setting-up-localization?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
@@ -20761,13 +20761,13 @@ _Topics in this section: Data loading at a glance, Data exporting at a glance_
 - **Summary:** Learn about Reltio's survivorship process, which dynamically determines an Operational Value (OV) for an attribute based on a selected rule type.
 - **Keywords:** how to configure survivorship rules, define survivorship logic for attributes, design ov generation strategies, operational value selection in reltio, crosswalk-based attribute survivorship, role-specific survivorship outcomes, real-time ov calculation process, select survivorship strategy per attribute, survivorship, operational value
 
-#### Survivorship Rule Types
+#### Survivorship Rules
 
-- **URL:** https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-navigation/design-survivorship-rules/survivorship-rule-types?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **URL:** https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-navigation/design-survivorship-rules/survivorship-rules?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Resolve potential matches > Potential matching at a glance > Potential matching navigation > Design survivorship rules
-- **Summary:** Learn about survivorship rule types to configure your survivorship strategy.
-- **Keywords:** Survivorship Rule Types, survivorship rule types, survivorship rules, rule types
-- **See also:** [t box techasst ops learn](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/develop-skills-in-learn--partner-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **Summary:** Learn about survivorship rules, which define how to determine the Operational Value (OV) for attributes based on configurable strategies and mappings.
+- **Keywords:** configure survivorship rules for attributes, define operational values in reltio, use source priority for ov selection, fallback logic in survivorship strategy, survivorship mapping with filters and conditions, survivorship strategy types and usage, advanced survivorship filters with nested attributes, operational value configuration for entity attributes, survivorship, crosswalks
+- **See also:** [mergingtwoentities](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/merge-and-unmerge-entities-api/merging-two-entities?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [c obj match valuebasedpriority](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-navigation/design-survivorship-rules/value-based-priority-survivorship-strategy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [ReindexDataTask](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/reindex-data-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [c obj match nav configdefaultsurvivorshipstrategy](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-navigation/design-survivorship-rules/configure-default-survivorship-strategy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Pinned or Ignored Attributes Merges
 
@@ -20776,14 +20776,6 @@ _Topics in this section: Data loading at a glance, Data exporting at a glance_
 - **Summary:** You can define whether pinned/ignored or unpinned/unignored statuses (flags) should survive when two attributes with the same value but with different flags get merged.
 - **Keywords:** pinned values, survivorship rules, defining pinned/ignored flags, defining unpinned/unignored flags, properties of pinIgnoredProperty, examples of merging for pinIgnoredProperty, defining case behavior using pinIgnoredProperty, Pinned values in survivorship rules, Pinned/ignored flags, defining
 - **See also:** [pinattribute](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/attribute-apis/pin-attribute?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [ignoreattribute](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/attribute-apis/ignore-attribute?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-
-#### Survivorship Rules
-
-- **URL:** https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-navigation/design-survivorship-rules/survivorship-rules?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-- **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Resolve potential matches > Potential matching at a glance > Potential matching navigation > Design survivorship rules
-- **Summary:** Learn about survivorship rules, which define how to determine the Operational Value (OV) for attributes based on configurable strategies and mappings.
-- **Keywords:** configure survivorship rules for attributes, define operational values in reltio, use source priority for ov selection, fallback logic in survivorship strategy, survivorship mapping with filters and conditions, survivorship strategy types and usage, advanced survivorship filters with nested attributes, operational value configuration for entity attributes, survivorship, crosswalks
-- **See also:** [mergingtwoentities](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/merge-and-unmerge-entities-api/merging-two-entities?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [c obj match valuebasedpriority](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-navigation/design-survivorship-rules/value-based-priority-survivorship-strategy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [ReindexDataTask](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/reindex-data-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [c obj match nav configdefaultsurvivorshipstrategy](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-navigation/design-survivorship-rules/configure-default-survivorship-strategy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Configure default survivorship strategy
 
@@ -20946,8 +20938,8 @@ _Topics in this section: Data loading at a glance, Data exporting at a glance_
 
 - **URL:** https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-operation/external-match-at-a-glance/exporting-match-results?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Resolve potential matches > Potential matching at a glance > Potential matching operation > External Match at a glance
-- **Summary:** You can export external match results to a CSV file to analyze the match results.
-- **Keywords:** Export External Match Results, Record Identifier, export match results, export external match results, external match export, export external match, record identifier
+- **Summary:** Learn how to export external match results to a CSV file to review matched records, non-matched records, or both.
+- **Keywords:** export external match results reltio, download match results as csv, export matched and non-matched records, export results from completed match job, relevance-based match result export, export match results by match rule, external match job results file, match results zip file csv, external match, match results
 
 #### Unmerge entity records
 
