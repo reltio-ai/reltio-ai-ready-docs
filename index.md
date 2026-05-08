@@ -1,5 +1,5 @@
 # Reltio Documentation Index
-_Generated: 2026-05-06 02:14 UTC — 3240 topics_
+_Generated: 2026-05-08 02:15 UTC — 3240 topics_
 
 This file is a structured navigation index of the Reltio documentation portal.
 It contains the full parent-child hierarchy, topic URLs, keywords, summaries,
@@ -1701,17 +1701,17 @@ relationships, locate sibling topics, and follow cross-references.
 
 ### Reltio Context Intelligence Platform
 
-#### Reltio Data Cloud platform at a glance
+#### Reltio Context Intelligence Platform at a glance
 
-- **URL:** https://docs.reltio.com/en/products/reltio-context-intelligence-platform/reltio-data-cloud-platform-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **URL:** https://docs.reltio.com/en/products/reltio-context-intelligence-platform/reltio-context-intelligence-platform-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Products > Reltio Context Intelligence Platform
 - **Summary:** Get a high-level view of Reltio Context Intelligence Platform.
 - **See also:** [About roles](https://docs.reltio.com/en/roles/about-roles?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Data unification and MDM at a glance](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Application features available across products
 
-- **URL:** https://docs.reltio.com/en/products/reltio-context-intelligence-platform/reltio-data-cloud-platform-at-a-glance/application-features-available-across-products?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-- **Path:** Reltio Documentation Portal v2 sitemap > Products > Reltio Context Intelligence Platform > Reltio Data Cloud platform at a glance
+- **URL:** https://docs.reltio.com/en/products/reltio-context-intelligence-platform/reltio-context-intelligence-platform-at-a-glance/application-features-available-across-products?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Products > Reltio Context Intelligence Platform > Reltio Context Intelligence Platform at a glance
 - **Summary:** Learn about which applications are available across products.
 
 ### AgentFlow
@@ -2148,7 +2148,7 @@ relationships, locate sibling topics, and follow cross-references.
 - **URL:** https://docs.reltio.com/en/products/reltio-intelligent-360/reltio-intelligent-360-at-a-glance/reltio-intelligent-360-navigation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Products > Reltio Intelligent 360 > Reltio Intelligent 360 at a glance
 - **Summary:** Learn how to find your way around with Reltio Intelligent 360.
-- **See also:** [Application features available across products](https://docs.reltio.com/en/products/reltio-context-intelligence-platform/reltio-data-cloud-platform-at-a-glance/application-features-available-across-products?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [Application features available across products](https://docs.reltio.com/en/products/reltio-context-intelligence-platform/reltio-context-intelligence-platform-at-a-glance/application-features-available-across-products?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Reltio Intelligent Assistant (RIA)
 
@@ -21026,7 +21026,7 @@ _Topics in this section: Data loading at a glance, Data exporting at a glance_
 - **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Resolve potential matches > Potential matching at a glance > Potential matching operation > Unmerge entity records
 - **Summary:** Learn how Reltio reassigns the winner when the origin contributor is unmerged, and how to enable this behavior in your tenant configuration.
 - **Keywords:** origin contributor, automatic unmerge, manual unmerge, winner election, feature flag, survivorship, merge tree, crosswalk, unmerge logic
-- **See also:** [Get help in Support Portal](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [submit a request](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Potential matching reference
 
