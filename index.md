@@ -1,5 +1,5 @@
 # Reltio Documentation Index
-_Generated: 2026-05-08 02:15 UTC — 3240 topics_
+_Generated: 2026-05-11 02:14 UTC — 3285 topics_
 
 This file is a structured navigation index of the Reltio documentation portal.
 It contains the full parent-child hierarchy, topic URLs, keywords, summaries,
@@ -208,6 +208,14 @@ relationships, locate sibling topics, and follow cross-references.
 - **Path:** Reltio Documentation Portal v2 sitemap > Reltio > What’s new and notable? > What's new at a glance
 - **Summary:** Take it from the top with Platform changes. Get the overview here, then see the sub topics in this section to drill down to the details.
 - **See also:** [About roles](https://docs.reltio.com/en/roles/about-roles?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Reltio Address Cleanser update - April 2026
+
+- **URL:** https://docs.reltio.com/en/reltio/whats-new-and-notable/whats-new-at-a-glance/platform-changes-at-a-glance/reltio-address-cleanser-update---april-2026?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Reltio > What’s new and notable? > What's new at a glance > Platform changes at a glance
+- **Summary:** Learn about the updates to the Reltio Address Cleanser in the month of April, 2026.
+- **Keywords:** address cleanser update, global data refresh, rescom flag netherlands, subbuilding parsing fix, lexicon rule update, postal code fix, locality parsing fix, thoroughfare normalization, gdh hierarchy update, address matching algorithm
+- **See also:** [Reltio Address Cleanser](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-reference/out-of-the-box-cleanse-functions/address-cleanser?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Reltio Address Cleanser update - Feb and Mar 2026
 
@@ -515,7 +523,7 @@ relationships, locate sibling topics, and follow cross-references.
 - **URL:** https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-information-model/data-model?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Reltio > What does Reltio do? > What Reltio does at a glance > Data unification and MDM at a glance > Data unification and MDM in detail > Reltio information model
 - **Summary:** Learn about the Reltio data model.
-- **Keywords:** Data Model, modeling capabilities, based on attribute types, Modeling capabilities, based on attribute types
+- **Keywords:** Data Model, modeling capabilities, based on attribute types, ontology, entity types, relationships, interactions, information model
 - **See also:** [Reltio attribute types](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-information-model/data-model/reltio-object-types/reltio-attribute-types?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Reltio configuration data types](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-configuration-data-types?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Tenant configuration inheritance across layers
@@ -614,7 +622,7 @@ relationships, locate sibling topics, and follow cross-references.
 - **URL:** https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-information-model/data-model/reltio-object-types/reltio-attribute-types?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Reltio > What does Reltio do? > What Reltio does at a glance > Data unification and MDM at a glance > Data unification and MDM in detail > Reltio information model > Data Model > Reltio object types
 - **Summary:** Learn about the unique Reltio attributes for entity types.
-- **Keywords:** attribute types, modeling capabilities, based on attribute types, simple attributes, nested attributes, reference attributes, analytic attributes, Attribute types, Modeling capabilities, based on attribute types
+- **Keywords:** attribute types, modeling capabilities, based on attribute types, simple attributes, nested attributes, reference attributes, analytic attributes, ontology, data model, entity types
 - **See also:** [Entity Relationships](https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/define-relationships/configuring-relationship-types/entity-relationships?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Understanding the Reltio Entity Type](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-information-model/data-model/reltio-object-types/reltio-entity-types?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Merging in the Reltio Platform](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-reference/merge-matched-data?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Reltio relationship types
@@ -1682,6 +1690,29 @@ relationships, locate sibling topics, and follow cross-references.
 - **Path:** Reltio Documentation Portal v2 sitemap > Reltio > What’s in the box? > What's in the box at a glance > Additional subscriptions at a glance > Reltio Private Link > Configuring Azure Private Link
 - **Summary:** Learn how to configure Azure Private Link for a secure connection to the Reltio Platform.
 - **See also:** [Submit a request](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Configuring Google Cloud Private Service Connect
+
+- **URL:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/additional-subscriptions-at-a-glance/reltio-private-link/configuring-google-cloud-private-service-connect?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Reltio > What’s in the box? > What's in the box at a glance > Additional subscriptions at a glance > Reltio Private Link
+- **Summary:** Learn about how Google Cloud Private Service Connect enables private access to Reltio services from your Google Cloud VPC.
+- **Keywords:** google cloud private service connect, private connectivity to reltio, google cloud private link, configure google cloud private service connect, private service connect for reltio, gcp private endpoint reltio, private dns for reltio, service attachment, private endpoint, cloud dns
+- **See also:** [Google Cloud Private Service Connect limitations and considerations](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/additional-subscriptions-at-a-glance/reltio-private-link/configuring-google-cloud-private-service-connect/google-cloud-private-service-connect-limitations-and-considerations?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Set up Google Cloud Private Service Connect for Reltio
+
+- **URL:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/additional-subscriptions-at-a-glance/reltio-private-link/configuring-google-cloud-private-service-connect/set-up-google-cloud-private-service-connect-for-reltio?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Reltio > What’s in the box? > What's in the box at a glance > Additional subscriptions at a glance > Reltio Private Link > Configuring Google Cloud Private Service Connect
+- **Summary:** Learn how to set up Google Cloud Private Service Connect so that your Google Cloud VPC can access Reltio services through a private endpoint.
+- **Keywords:** set up google cloud private service connect, configure private service connect for reltio, create psc endpoint for reltio, configure private dns for reltio, connect google cloud vpc to reltio, private endpoint for reltio services, google cloud private link setup, service attachment url, psc endpoint, cloud dns
+- **See also:** [Submit a support request](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Google Cloud Private Service Connect limitations and considerations
+
+- **URL:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/additional-subscriptions-at-a-glance/reltio-private-link/configuring-google-cloud-private-service-connect/google-cloud-private-service-connect-limitations-and-considerations?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Reltio > What’s in the box? > What's in the box at a glance > Additional subscriptions at a glance > Reltio Private Link > Configuring Google Cloud Private Service Connect
+- **Summary:** Learn more about the Google Cloud Private Service Connect limits and considerations that apply to Reltio Private Link.
+- **Keywords:** google cloud private service connect limits, private service connect considerations for reltio, gcp private link regional limits, private service connect service attachment, private endpoint lifecycle, service attachment, psc endpoint, private dns
 
 #### Reltio data integrations—add-ons
 
@@ -4580,7 +4611,7 @@ _Topics in this section: Reltio Entity Resolution Deployment options, Reltio Ent
 - **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > About developer resources > Developer resources at a glance > Customize data tasks with LCAs > LCA Implementation Using AWS Lambda
 - **Summary:** You can use AWS Lambda: Identity and Access Management to implement LCA.
 - **Keywords:** Implementing LCA using AWS Lambda, LCA as AWS Lambda Identity and Access Management, implementing LCA using AWS lambda, LCA as AWS lambda identity and access management
-- **See also:** [open a Support ticket](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [Set up AWS Lambda connections for LCAs](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/lca-implementation-using-aws-lambda/set-up-aws-lambda-connections-for-lcas?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### LCA as AWS Lambda: Monitoring.
 
@@ -6265,12 +6296,6 @@ _Topics in this section: Reltio Entity Resolution Deployment options, Reltio Ent
 - **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Reference Data Management APIs > Reference Data Management APIs at a glance > Lookups API
 - **Summary:** ```
 
-#### Get Lookup Code
-
-- **URL:** https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/lookups-api/get-lookup-code?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Reference Data Management APIs > Reference Data Management APIs at a glance > Lookups API
-- **Summary:** This API supports filters for lookup values request.
-
 #### Get Lookups for Tenant
 
 - **URL:** https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/lookups-api/get-lookups-for-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
@@ -6291,18 +6316,6 @@ _Topics in this section: Reltio Entity Resolution Deployment options, Reltio Ent
 - **Summary:** Merge lookup attributes based on canonical lookup codes.
 - **Keywords:** lookup attributes, merging on canonical lookup codes, resolveLookupCode, attributes, merging/deduplicating, lookup tables, Reference Data Management (RDM), codes and values, canonical, new lookup code feature
 - **See also:** [Remove Attribute Duplicates Task](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/remove-attribute-duplicates-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Cumulative Entity Update](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/entities-api/update-entities/cumulative-entity-update?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-
-#### Scan with Filter
-
-- **URL:** https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/lookups-api/scan-with-filter?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Reference Data Management APIs > Reference Data Management APIs at a glance > Lookups API
-- **Summary:** Request
-
-#### Search by Filter
-
-- **URL:** https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/lookups-api/search-by-filter?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Reference Data Management APIs > Reference Data Management APIs at a glance > Lookups API
-- **Summary:** Request:
 
 #### Set Lookups for Tenant
 
@@ -6330,7 +6343,7 @@ _Topics in this section: Reltio Entity Resolution Deployment options, Reltio Ent
 - **URL:** https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Reference Data Management APIs > Reference Data Management APIs at a glance
 - **Summary:** Overview of the RDM APIs.
-- **See also:** [ID Generation API](https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-api/id-generation-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Management API](https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-api/management-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [RDM Task API](https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-api/rdm-task-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [RDM Lookups API](https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-api/rdm-lookups-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Transcode API](https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-api/transcode-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [RDM Service API](https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-api/rdm-service-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [RDM Service Configuration API](https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-api/rdm-service-configuration-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Unmapped Values API](https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-api/unmapped-values-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Uploading Lookup Values With or Without Canonical Values](https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-api/uploading-lookup-values-with-or-without-canonical-values?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Resolve Mapping Errors API](https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-api/resolve-mapping-errors-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [ID Generation API](https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-api/id-generation-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Manage ID Generation API](https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-api/manage-id-generation-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [RDM Task API](https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-api/rdm-task-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [RDM Lookups API](https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-api/rdm-lookups-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Transcode API](https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-api/transcode-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [RDM Service API](https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-api/rdm-service-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [RDM Service Configuration API](https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-api/rdm-service-configuration-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Unmapped Values API](https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-api/unmapped-values-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Uploading Lookup Values With or Without Canonical Values](https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-api/uploading-lookup-values-with-or-without-canonical-values?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Resolve Mapping Errors API](https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-api/resolve-mapping-errors-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Uploading Lookup Values With or Without Canonical Values
 
@@ -6438,23 +6451,27 @@ _Topics in this section: Reltio Entity Resolution Deployment options, Reltio Ent
 - **Summary:** Information about how to stream events to PubSub.
 - **Keywords:** PubSub Streaming Configuration, pubsub streaming configuration, Streaming Configuration, pubsub streaming, configuring pubsub, match rule configuration, match configuration
 
-#### Management API
+#### ID Generation API
 
-- **URL:** https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-api/management-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **URL:** https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-api/id-generation-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Reference Data Management APIs > Reference Data Management APIs at a glance > RDM API
-- **Summary:** Overview of the management API
+- **Summary:** Use the ID Generation API to create generators that produce ID values for lookup types.
+- **Keywords:** create id generator reltio api, configure id generation for lookup types, sequential generator setup reltio, uuid generator creation api, generate lookup ids using reltio api, id generator configuration rdm tenant, create generator for lookup types reltio, id generation api request example reltio, sequential, uuid
+- **See also:** [Manage ID Generation API](https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-api/manage-id-generation-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Manage ID Generation API
+
+- **URL:** https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-api/manage-id-generation-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Reference Data Management APIs > Reference Data Management APIs at a glance > RDM API
+- **Summary:** Learn how to manage ID generators for an RDM tenant.
+- **Keywords:** rdm, reference data management, rdm api, management api, id generator, generators, lookup type, sequential, uuid, create generator
+- **See also:** [ID Generation API](https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-api/id-generation-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### List Available Tenants
 
 - **URL:** https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-api/list-available-tenants?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Reference Data Management APIs > Reference Data Management APIs at a glance > RDM API
 - **Summary:** Provide a list of all tenants available for current user. Full authentication required.
-
-#### ID Generation API
-
-- **URL:** https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-api/id-generation-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Reference Data Management APIs > Reference Data Management APIs at a glance > RDM API
-- **Summary:** Automatic ID generation for a lookup type
 
 #### Get Tenant Configuration
 
@@ -6487,6 +6504,235 @@ _Topics in this section: Reltio Entity Resolution Deployment options, Reltio Ent
 - **URL:** https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-api/cleaning-up-the-lookup-search-index?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Reference Data Management APIs > Reference Data Management APIs at a glance > RDM API
 - **Summary:** You can clean the lookup search indexes in a tenant. You can run this task before running a reindex task.
+
+#### RDM Autopilot API
+
+- **URL:** https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-autopilot-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Reference Data Management APIs > Reference Data Management APIs at a glance
+- **Summary:** Learn about the Autopilot APIs that let you manage tenant-level configuration, lookup type overrides, blocked values, and Autopilot match statistics.
+- **Keywords:** RDM Autopilot API, Autopilot API Reltio, Reltio Autopilot API, Autopilot configuration API, Autopilot matching API, Autopilot stats API, Autopilot endpoints, Autopilot REST API, manage Autopilot configuration, Autopilot lookup type API
+- **See also:** [Get Configuration history](https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-autopilot-api/get-configuration-history?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Create or update Autopilot Configuration](https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-autopilot-api/create-or-update-autopilot-configuration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Delete Autopilot Configuration](https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-autopilot-api/delete-autopilot-configuration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Get effective Autopilot configuration for a lookup type](https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-autopilot-api/get-effective-autopilot-configuration-for-a-lookup-type?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Get Configuration history by Version](https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-autopilot-api/get-configuration-history-by-version?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Get Lookup type Configuration API](https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-autopilot-api/get-lookup-type-configuration-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Create or update Lookup type Configuration](https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-autopilot-api/create-or-update-lookup-type-configuration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Delete Lookup type Configuration](https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-autopilot-api/delete-lookup-type-configuration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [List tenant blocked values](https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-autopilot-api/list-tenant-blocked-values?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Add tenant level blocked values](https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-autopilot-api/add-tenant-level-blocked-values?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Remove tenant blocked value](https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-autopilot-api/remove-tenant-blocked-value?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Delete tenant blocked values in batch](https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-autopilot-api/delete-tenant-blocked-values-in-batch?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Get Tenant Blocked Values Total](https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-autopilot-api/get-tenant-blocked-values-total?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [List Lookup type blocked values](https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-autopilot-api/list-lookup-type-blocked-values?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Add Lookup type blocked values](https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-autopilot-api/add-lookup-type-blocked-values?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Get Configuration API
+
+- **URL:** https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-autopilot-api/get-configuration-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Reference Data Management APIs > Reference Data Management APIs at a glance > RDM Autopilot API
+- **Summary:** Learn how to retrieve the Autopilot configuration for a tenant.
+- **Keywords:** create or update autopilot configuration reltio, replace tenant autopilot configuration api, configure autopilot defaults and lookup overrides, update autopilot configuration for tenant, manage lookup type configuration autopilot, autopilot configuration validation rules reltio, versioned autopilot configuration management, autopilot configuration, lookup types, configuration api
+
+#### Create or update Autopilot Configuration
+
+- **URL:** https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-autopilot-api/create-or-update-autopilot-configuration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Reference Data Management APIs > Reference Data Management APIs at a glance > RDM Autopilot API
+- **Summary:** Learn how the Create or update Autopilot configuration API manages tenant configuration versions and replaces existing settings.
+- **Keywords:** create lookup type autopilot configuration, update lookup type autopilot configuration, configure rdm autopilot by lookup type, put autopilot configuration api, save lookup type settings, autopilot configuration response fields, lookup type configuration api, autopilot, lookup type, transcode
+
+#### Delete Autopilot Configuration
+
+- **URL:** https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-autopilot-api/delete-autopilot-configuration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Reference Data Management APIs > Reference Data Management APIs at a glance > RDM Autopilot API
+- **Summary:** Learn how the Delete Autopilot configuration API removes the active configuration while preserving history.
+- **Keywords:** create or update autopilot configuration reltio, replace tenant autopilot configuration api, configure autopilot defaults and lookup overrides, update autopilot configuration for tenant, manage lookup type configuration autopilot, autopilot configuration validation rules reltio, versioned autopilot configuration management, autopilot configuration, lookup types, configuration api
+
+#### Get effective Autopilot configuration for a lookup type
+
+- **URL:** https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-autopilot-api/get-effective-autopilot-configuration-for-a-lookup-type?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Reference Data Management APIs > Reference Data Management APIs at a glance > RDM Autopilot API
+- **Summary:** Retrieves the effective Autopilot settings for a lookup type by applying tenant defaults and any overrides, showing the final runtime configuration.
+- **Keywords:** Autopilot settings, lookup type, resolved configuration, tenant defaults, overrides, runtime configuration, API, lookup processing, configuration retrieval
+
+#### Get Configuration history
+
+- **URL:** https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-autopilot-api/get-configuration-history?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Reference Data Management APIs > Reference Data Management APIs at a glance > RDM Autopilot API
+- **Summary:** Learn how the API retrieves Autopilot configuration history for a tenant with pagination support.
+- **Keywords:** Configuration history API, Autopilot version tracking, Tenant configuration changes, Pagination parameters, Configuration versions
+
+#### Get Configuration history by Version
+
+- **URL:** https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-autopilot-api/get-configuration-history-by-version?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Reference Data Management APIs > Reference Data Management APIs at a glance > RDM Autopilot API
+- **Summary:** Learn how the API retrieves a specific version of Autopilot configuration for a tenant.
+- **Keywords:** get autopilot configuration history by version, retrieve historical autopilot configuration reltio, view tenant autopilot config version, compare autopilot configuration versions, restore previous autopilot configuration settings, fetch autopilot history for tenant, autopilot configuration version history, autopilot history, configuration version, history api
+
+#### Get Lookup type Configuration API
+
+- **URL:** https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-autopilot-api/get-lookup-type-configuration-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Reference Data Management APIs > Reference Data Management APIs at a glance > RDM Autopilot API
+- **Summary:** Learn how to retrieve configuration settings for a specific lookup type.
+- **Keywords:** get lookup type configuration api, retrieve lookup type match config, autopilot lookup configuration api, lookup type settings retrieval reltio, get lookup type thresholds configuration, lookupTypeMatchConfig api response, autopilot configuration lookup type, lookup configuration, autopilot api, lookup type
+
+#### Create or update Lookup type Configuration
+
+- **URL:** https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-autopilot-api/create-or-update-lookup-type-configuration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Reference Data Management APIs > Reference Data Management APIs at a glance > RDM Autopilot API
+- **Summary:** Learn how to create or update configuration settings for a specific lookup type in the Autopilot configuration.
+- **Keywords:** create lookup type configuration api, update lookup type configuration api, save autopilot settings for lookup type, configure lookup type autopilot settings, put lookup type configuration, autopilot lookup type settings api, update lookup type thresholds, autopilot configuration, lookup type, autopilot settings
+
+#### Delete Lookup type Configuration
+
+- **URL:** https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-autopilot-api/delete-lookup-type-configuration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Reference Data Management APIs > Reference Data Management APIs at a glance > RDM Autopilot API
+- **Summary:** Learn how to delete configuration settings for a specific lookup type from the Autopilot configuration.
+- **Keywords:** delete lookup type configuration api, remove lookup type autopilot config, delete lookup type settings reltio, autopilot lookup type delete api, remove lookup type configuration entry, delete autopilot lookup settings, lookup type deletion api, autopilot configuration, lookup type, delete api
+
+#### List tenant blocked values
+
+- **URL:** https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-autopilot-api/list-tenant-blocked-values?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Reference Data Management APIs > Reference Data Management APIs at a glance > RDM Autopilot API
+- **Summary:** Learn how to retrieve tenant-level blocked values excluded from Autopilot processing, with pagination support and metadata details.
+- **Keywords:** list tenant blocked values api, get blocked values reltio autopilot, retrieve blocked values for tenant, autopilot blocked values api, fetch tenant level blocked values, blocked values pagination api, list autopilot blocked values, blocked values, autopilot api, tenant configuration
+
+#### Add tenant level blocked values
+
+- **URL:** https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-autopilot-api/add-tenant-level-blocked-values?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Reference Data Management APIs > Reference Data Management APIs at a glance > RDM Autopilot API
+- **Summary:** Learn how to add a blocked value that applies across all lookup types for a tenant.
+- **Keywords:** add tenant blocked value api, create blocked value reltio autopilot, block value across lookup types, autopilot blocked values create api, add blocked value tenant level, blocked values configuration api, exclude values from autopilot processing, blocked values, autopilot api, tenant configuration
+
+#### Remove tenant blocked value
+
+- **URL:** https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-autopilot-api/remove-tenant-blocked-value?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Reference Data Management APIs > Reference Data Management APIs at a glance > RDM Autopilot API
+- **Summary:** Learn how to remove a blocked value configured at the tenant level.
+- **Keywords:** remove tenant blocked value api, delete blocked value reltio autopilot, unblock value tenant level reltio, autopilot blocked values delete api, remove blocked value configuration, delete blocked value query parameter api, unblock values in autopilot, blocked values, autopilot api, tenant configuration
+
+#### Delete tenant blocked values in batch
+
+- **URL:** https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-autopilot-api/delete-tenant-blocked-values-in-batch?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Reference Data Management APIs > Reference Data Management APIs at a glance > RDM Autopilot API
+- **Summary:** Learn how to remove multiple tenant-level blocked values in one request.
+- **Keywords:** batch delete tenant blocked values, remove blocked values at tenant level, delete multiple blocked values, tenant blocked values delete api, autopilot blocked values delete, blocked values, autopilot, tenant configuration
+
+#### Get Tenant Blocked Values Total
+
+- **URL:** https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-autopilot-api/get-tenant-blocked-values-total?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Reference Data Management APIs > Reference Data Management APIs at a glance > RDM Autopilot API
+- **Summary:** Use Get tenant blocked values total API to retrieve the total count of tenant-level blocked values. The result is not scoped to any lookup type.
+
+#### List Lookup type blocked values
+
+- **URL:** https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-autopilot-api/list-lookup-type-blocked-values?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Reference Data Management APIs > Reference Data Management APIs at a glance > RDM Autopilot API
+- **Summary:** Learn how to retrieve blocked values configured for a specific lookup type.
+- **Keywords:** list lookup type blocked values api, get blocked values for lookup type, retrieve lookup type blocked values reltio, autopilot lookup blocked values api, fetch blocked values by lookup type, lookup type blocked values pagination, blocked values per lookup type, blocked values, lookup type, autopilot api
+
+#### Add Lookup type blocked values
+
+- **URL:** https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-autopilot-api/add-lookup-type-blocked-values?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Reference Data Management APIs > Reference Data Management APIs at a glance > RDM Autopilot API
+- **Summary:** Learn how to add a blocked value for a specific lookup type.
+- **Keywords:** add lookup type blocked value api, create blocked value for lookup type, block value for specific lookup type, autopilot lookup blocked values create api, add blocked value lookup type reltio, lookup type blocked values configuration, exclude value from lookup type autopilot, blocked values, lookup type, autopilot api
+
+#### Remove Lookup Type Blocked Value
+
+- **URL:** https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-autopilot-api/remove-lookup-type-blocked-value?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Reference Data Management APIs > Reference Data Management APIs at a glance > RDM Autopilot API
+- **Summary:** Learn how the API removes a blocked value for a specific lookup type.
+- **Keywords:** remove lookup type blocked value api, delete blocked value for lookup type, unblock value lookup type reltio, autopilot lookup blocked values delete api, remove blocked value specific lookup type, delete lookup type blocked value query api, unblock values in lookup type autopilot, blocked values, lookup type, autopilot api
+
+#### Delete multiple blocked values for a Lookup type
+
+- **URL:** https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-autopilot-api/delete-multiple-blocked-values-for-a-lookup-type?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Reference Data Management APIs > Reference Data Management APIs at a glance > RDM Autopilot API
+- **Summary:** Learn more about how to remove multiple blocked values for a specific lookup type in a single request.
+- **Keywords:** delete lookup type blocked values, remove blocked values for lookup type, batch delete blocked values api, lookup type blocked values delete endpoint, tenant lookup blocked values api, blocked values, lookup type, autopilot
+
+#### Get total blocked values for lookup type
+
+- **URL:** https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-autopilot-api/get-total-blocked-values-for-lookup-type?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Reference Data Management APIs > Reference Data Management APIs at a glance > RDM Autopilot API
+- **Summary:** Learn more about how to retrieve the total count of blocked values for a specific lookup type.
+- **Keywords:** get lookup type blocked values total, retrieve blocked values count lookup type, lookup type blocked values total api, count blocked values for lookup type, autopilot blocked values total endpoint, blocked values, lookup type, count
+
+#### Scan tenant blocked values using pagination
+
+- **URL:** https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-autopilot-api/scan-tenant-blocked-values-using-pagination?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Reference Data Management APIs > Reference Data Management APIs at a glance > RDM Autopilot API
+- **Summary:** Learn how to scan all tenant-level blocked values using cursor-based pagination.
+- **Keywords:** scan tenant blocked values using cursor, retrieve blocked values with scrollId pagination, cursor based pagination for blocked values api, scan tenant blocked values in pages, use scrollId to fetch next blocked values, blocked values dbscan api reltio, iterate blocked values with cursor pagination, fetch large blocked values dataset efficiently, cursor, scrollId
+
+#### Scan Lookup type blocked values using pagination
+
+- **URL:** https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-autopilot-api/scan-lookup-type-blocked-values-using-pagination?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Reference Data Management APIs > Reference Data Management APIs at a glance > RDM Autopilot API
+- **Summary:** Learn how to scan tenant-level blocked values using pagination.
+- **Keywords:** scan lookup type blocked values, paginate blocked values api, lookup type blocked values, scrollid pagination, blocked values api
+
+#### Get Autopilot match statistics
+
+- **URL:** https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-autopilot-api/get-autopilot-match-statistics?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Reference Data Management APIs > Reference Data Management APIs at a glance > RDM Autopilot API
+- **Summary:** Learn how to retrieve Autopilot match statistics for a tenant with filtering and pagination options.
+- **Keywords:** get autopilot match statistics api, retrieve autopilot matching stats reltio, filter autopilot stats by status source lookup type, analyze unmapped values and match scores, autopilot stats with elasticsearch filter, view autopilot matching performance data, vector match statistics reltio api, autopilot stats, match statistics, vector match
+
+#### Get total match statistics
+
+- **URL:** https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-autopilot-api/get-total-match-statistics?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Reference Data Management APIs > Reference Data Management APIs at a glance > RDM Autopilot API
+- **Summary:** Learn how to retrieve the total number of Autopilot match statistics records for a tenant.
+
+#### Get aggregated counts by field
+
+- **URL:** https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-autopilot-api/get-aggregated-counts-by-field?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Reference Data Management APIs > Reference Data Management APIs at a glance > RDM Autopilot API
+- **Summary:** Learn more about how to retrieve aggregated counts grouped by a specified field for summary reporting and dashboard use cases.
+- **Keywords:** get aggregated counts by field reltio api, retrieve facet counts using field aggregation, filter aggregation results using expression, paginate aggregated facet results reltio, use facets api for lookup status counts, aggregate records by status lookup type source, reltio autopilot stats facets api usage, fetch grouped counts with filter and pagination, aggregation, facets
+
+#### Get total match statistics by lookup type
+
+- **URL:** https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-autopilot-api/get-total-match-statistics-by-lookup-type?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Reference Data Management APIs > Reference Data Management APIs at a glance > RDM Autopilot API
+- **Summary:** Learn how to retrieve the total number of Autopilot match statistics records for a specific lookup type.
+- **Keywords:** get total match statistics by lookup type, retrieve autopilot stats total by lookup type, count match statistics for lookup type api, get total records by lookup type with filter, autopilot statistics total count endpoint, filter match statistics using es expression, lookup type statistics count api, get total matching records without full data, statistics, lookup type
+
+#### Scan match statistics using pagination
+
+- **URL:** https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-autopilot-api/scan-match-statistics-using-pagination?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Reference Data Management APIs > Reference Data Management APIs at a glance > RDM Autopilot API
+- **Summary:** Learn how to scan Autopilot match statistics using cursor-based pagination directly from the database.
+- **Keywords:** scan autopilot match statistics using cursor, cursor pagination match statistics reltio, retrieve vector match stats using dbscan api, scroll autopilot stats using scrollId, autopilot stats dbscan api reltio, scan large match statistics dataset reltio, cursor based vector match stats api, cursor, match statistics, autopilot api
+
+#### Scan match statistics by lookup type using pagination
+
+- **URL:** https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-autopilot-api/scan-match-statistics-by-lookup-type-using-pagination?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Reference Data Management APIs > Reference Data Management APIs at a glance > RDM Autopilot API
+- **Summary:** Learn how to scan Autopilot match statistics for a specific lookup type using pagination.
+- **Keywords:** scan autopilot stats by lookup type cursor, cursor pagination match stats lookup type reltio, retrieve vector match stats by lookup type dbscan, scroll lookup type stats using scrollId, autopilot stats dbscan lookup type api, scan match statistics per lookup type reltio, cursor based lookup type stats api, cursor, match statistics, lookup type
+
+#### Scan statistics by Lookup type and status using pagination
+
+- **URL:** https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-autopilot-api/scan-statistics-by-lookup-type-and-status-using-pagination?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Reference Data Management APIs > Reference Data Management APIs at a glance > RDM Autopilot API
+- **Summary:** Learn how to scan Autopilot match statistics for a specific lookup type and status using cursor-based pagination.
+- **Keywords:** scan stats by lookup type and status cursor, cursor pagination match stats filtered reltio, retrieve vector match stats by lookup and status, scroll filtered stats using scrollId reltio, autopilot stats dbscan filtered api, scan match statistics by lookup type and status, cursor based filtered stats api, cursor, match statistics, lookup type
+
+#### Scan match statistics using filter
+
+- **URL:** https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-autopilot-api/scan-match-statistics-using-filter?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Reference Data Management APIs > Reference Data Management APIs at a glance > RDM Autopilot API
+- **Summary:** Learn how to scan Autopilot match statistics using filters with cursor-based pagination, filtering, and sorting.
+
+#### Scan match statistics by lookup type using filter
+
+- **URL:** https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-autopilot-api/scan-match-statistics-by-lookup-type-using-filter?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Reference Data Management APIs > Reference Data Management APIs at a glance > RDM Autopilot API
+- **Summary:** Learn how to scan Autopilot match statistics for a specific lookup type using with cursor-based pagination.
+- **Keywords:** scan stats by lookup type elasticsearch cursor, cursor pagination lookup stats elasticsearch reltio, retrieve match stats by lookup type elasticsearch, scroll lookup type stats using scrollId, autopilot stats scan elasticsearch lookup type, filter and sort stats by lookup type reltio, cursor based lookup type stats elasticsearch api, cursor, match statistics, lookup type
+
+#### Get specific Autopilot match statistic
+
+- **URL:** https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-autopilot-api/get-specific-autopilot-match-statistic?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Reference Data Management APIs > Reference Data Management APIs at a glance > RDM Autopilot API
+- **Summary:** Learn how to retrieve a specific Autopilot match statistic record using its composite key.
+- **Keywords:** get autopilot match statistic api, retrieve specific vector match stats reltio, get match stats by lookup type source value, fetch autopilot match record composite key, view detailed match statistics reltio, inspect autopilot mapping result api, vector match stats single record api, match statistics, vector match, autopilot api
+
+#### Delete specific Autopilot match statistic
+
+- **URL:** https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-autopilot-api/delete-specific-autopilot-match-statistic?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Reference Data Management APIs > Reference Data Management APIs at a glance > RDM Autopilot API
+- **Summary:** Learn how to delete a specific Autopilot match statistic record using its composite key.
+- **Keywords:** delete match statistic by lookup type source value, remove specific vector match stats reltio, delete autopilot match record composite key, remove match statistics record reltio api, delete specific autopilot stats entry, reset individual match statistic reltio, vector match stats delete api, delete stats, match statistics, autopilot api
 
 ### Load and Export APIs
 
@@ -12116,6 +12362,20 @@ _Topics in this section: Hub at a glance, Profile Stats dashboard at a glance, D
 - **Keywords:** lookups, dependentLookupAttributes, performance
 - **See also:** [Data Modeler](https://docs.reltio.com/en/applications/console/configuration-applications/data-modeler-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
+#### RDM Autopilot
+
+- **URL:** https://docs.reltio.com/en/applications/rdm/rdm-at-a-glance/rdm-operation/rdm-autopilot?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Applications > RDM > RDM at a glance > RDM operation
+- **Summary:** Learn how to configure RDM Autopilot for automated and assisted reference data mapping.
+- **Keywords:** RDM Autopilot, Reltio Autopilot, Autopilot API, Autopilot configuration, automatic mapping RDM, suggested mapping RDM, misspelling detection RDM, lookup creation RDM, unmapped values RDM, transcode failures RDM
+
+#### Configure and enable RDM Autopilot
+
+- **URL:** https://docs.reltio.com/en/applications/rdm/rdm-at-a-glance/rdm-operation/rdm-autopilot/configure-and-enable-rdm-autopilot?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Applications > RDM > RDM at a glance > RDM operation > RDM Autopilot
+- **Summary:** Learn how to configure and enable RDM Autopilot so that you can automate the resolution of unmapped values using defined thresholds, modes, and rules.
+- **Keywords:** configure RDM Autopilot, enable Autopilot RDM, Autopilot configuration, Autopilot setup Reltio, Autopilot thresholds configuration, Autopilot frequency rules, Autopilot operating mode, Autopilot preview mode, Autopilot active mode, Autopilot enablement
+
 #### RDM reference
 
 - **URL:** https://docs.reltio.com/en/applications/rdm/rdm-at-a-glance/rdm-reference?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
@@ -12134,7 +12394,7 @@ _Topics in this section: Hub at a glance, Profile Stats dashboard at a glance, D
 - **URL:** https://docs.reltio.com/en/applications/rdm/rdm-at-a-glance/rdm-reference/back-up-rdm-data-and-configuration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Applications > RDM > RDM at a glance > RDM reference
 - **Summary:** Learn how to take a backup of RDM data and its configuration.
-- **See also:** [RDM configuration](https://docs.reltio.com/en/applications/rdm/rdm-at-a-glance/rdm-reference/rdm-configuration-changes?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [RDM generators](https://docs.reltio.com/en/objectives/manage-reference-data/manage-reference-data-at-a-glance/reference-data-management-operation/working-with-generators?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [RDM lookups](https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-api/rdm-lookups-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [RDM unmapped values](https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-api/unmapped-values-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Streaming events configuration](https://docs.reltio.com/en/objectives/manage-reference-data/manage-reference-data-at-a-glance/reference-data-management-reference/streaming-rdm-events?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Get Tenant Configuration](https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-api/get-tenant-configuration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Management API](https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-api/management-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [RDM configuration](https://docs.reltio.com/en/applications/rdm/rdm-at-a-glance/rdm-reference/rdm-configuration-changes?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [RDM generators](https://docs.reltio.com/en/objectives/manage-reference-data/manage-reference-data-at-a-glance/reference-data-management-operation/working-with-generators?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [RDM lookups](https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-api/rdm-lookups-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [RDM unmapped values](https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-api/unmapped-values-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Streaming events configuration](https://docs.reltio.com/en/objectives/manage-reference-data/manage-reference-data-at-a-glance/reference-data-management-reference/streaming-rdm-events?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Get Tenant Configuration](https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-api/get-tenant-configuration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Manage ID Generation API](https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-api/manage-id-generation-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Restore RDM data and configuration
 
@@ -12142,7 +12402,7 @@ _Topics in this section: Hub at a glance, Profile Stats dashboard at a glance, D
 - **Path:** Reltio Documentation Portal v2 sitemap > Applications > RDM > RDM at a glance > RDM reference
 - **Summary:** Learn how to restore RDM data and its configuration.
 - **Keywords:** RDM Restore, Backup and Recovery, RDM Configuration, REST API Restore, Data Restoration
-- **See also:** [Back up RDM data and configuration](https://docs.reltio.com/en/applications/rdm/rdm-at-a-glance/rdm-reference/back-up-rdm-data-and-configuration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [RDM configuration](https://docs.reltio.com/en/applications/rdm/rdm-at-a-glance/rdm-reference/rdm-configuration-changes?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [RDM generators](https://docs.reltio.com/en/objectives/manage-reference-data/manage-reference-data-at-a-glance/reference-data-management-operation/working-with-generators?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [RDM lookups](https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-api/rdm-lookups-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [RDM unmapped values](https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-api/unmapped-values-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Streaming events configuration](https://docs.reltio.com/en/objectives/manage-reference-data/manage-reference-data-at-a-glance/reference-data-management-reference/streaming-rdm-events?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [RDM setup and migration](https://docs.reltio.com/en/applications/rdm/rdm-at-a-glance/rdm-set-up/rdm-setup-and-migration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Management API](https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-api/management-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [Back up RDM data and configuration](https://docs.reltio.com/en/applications/rdm/rdm-at-a-glance/rdm-reference/back-up-rdm-data-and-configuration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [RDM configuration](https://docs.reltio.com/en/applications/rdm/rdm-at-a-glance/rdm-reference/rdm-configuration-changes?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [RDM generators](https://docs.reltio.com/en/objectives/manage-reference-data/manage-reference-data-at-a-glance/reference-data-management-operation/working-with-generators?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [RDM lookups](https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-api/rdm-lookups-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [RDM unmapped values](https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-api/unmapped-values-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Streaming events configuration](https://docs.reltio.com/en/objectives/manage-reference-data/manage-reference-data-at-a-glance/reference-data-management-reference/streaming-rdm-events?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [RDM setup and migration](https://docs.reltio.com/en/applications/rdm/rdm-at-a-glance/rdm-set-up/rdm-setup-and-migration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Manage ID Generation API](https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-api/manage-id-generation-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 ### Inbox
 
@@ -13489,6 +13749,50 @@ _Topics in this section: Data integrations at a glance, Application Integration 
 - **Summary:** Configure your integration to detect field-level changes in Reltio and ensure that only meaningful updates are sent to Vault CRM.
 - **Keywords:** enable delta detection in reltio recipes, configure sequencing controls in reltio integration, field level change detection reltio veeva, avoid out of order event sync reltio veeva, reltio integration delta sync settings, event ordering logic in reltio recipes, relationeventsfilteringfields reltio configuration, detect meaningful field changes in reltio, reltio queue configuration for attribute filtering, handle race conditions in real time sync
 - **See also:** [Configure event queues: SQS, Pub/Sub, or Azure](https://docs.reltio.com/en/applications/data-integrations/application-integration-at-a-glance/introduction-to-the-reltio-integration-for-veeva-vault-crm/configure-event-queues-sqs-pubsub-or-azure?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Search Before Create (SBC) for Veeva Vault CRM
+
+- **URL:** https://docs.reltio.com/en/applications/data-integrations/application-integration-at-a-glance/introduction-to-the-reltio-integration-for-veeva-vault-crm/search-before-create-sbc-for-veeva-vault-crm?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Application Integration at a glance > Introduction to the Reltio Integration for Veeva Vault CRM
+- **Summary:** Learn about how Search Before Create for Veeva Vault CRM helps you check for existing HCP and HCO records before creating a new account.
+- **Keywords:** search before create veeva vault crm, veeva vault crm duplicate prevention, search existing hcp and hco records, import matching reltio records, review account matches in veeva, veeva reltio customer tenant search, veeva reltio data tenant search, match confidence score, hcp, hco
+- **See also:** [Add the Search Before Create tab in Veeva Vault CRM](https://docs.reltio.com/en/applications/data-integrations/application-integration-at-a-glance/introduction-to-the-reltio-integration-for-veeva-vault-crm/search-before-create-sbc-for-veeva-vault-crm/add-the-search-before-create-tab-in-veeva-vault-crm?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Set up Search Before Create in Veeva Vault CRM](https://docs.reltio.com/en/applications/data-integrations/application-integration-at-a-glance/introduction-to-the-reltio-integration-for-veeva-vault-crm/search-before-create-sbc-for-veeva-vault-crm/set-up-search-before-create-in-veeva-vault-crm?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [SBC Setup API](https://docs.reltio.com/en/applications/data-integrations/application-integration-at-a-glance/introduction-to-the-reltio-integration-for-veeva-vault-crm/search-before-create-sbc-for-veeva-vault-crm/sbc-setup-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Use Search Before Create in Veeva Vault CRM](https://docs.reltio.com/en/applications/data-integrations/application-integration-at-a-glance/introduction-to-the-reltio-integration-for-veeva-vault-crm/search-before-create-sbc-for-veeva-vault-crm/use-search-before-create-in-veeva-vault-crm?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Troubleshoot Search Before Create in Veeva Vault CRM](https://docs.reltio.com/en/applications/data-integrations/application-integration-at-a-glance/introduction-to-the-reltio-integration-for-veeva-vault-crm/search-before-create-sbc-for-veeva-vault-crm/troubleshoot-search-before-create-in-veeva-vault-crm?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Add the Search Before Create tab in Veeva Vault CRM
+
+- **URL:** https://docs.reltio.com/en/applications/data-integrations/application-integration-at-a-glance/introduction-to-the-reltio-integration-for-veeva-vault-crm/search-before-create-sbc-for-veeva-vault-crm/add-the-search-before-create-tab-in-veeva-vault-crm?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Application Integration at a glance > Introduction to the Reltio Integration for Veeva Vault CRM > Search Before Create (SBC) for Veeva Vault CRM
+- **Summary:** Learn how to activate the Search Before Create X-Page tab in Veeva Vault CRM and collect the page name ID required for setup.
+- **Keywords:** add search before create tab, search before create top navigation bar, configure top level tab veeva vault crm, assign x-page in veeva settings, veeva vault crm navigation tab, search before create, veeva vault crm
+
+#### Set up Search Before Create in Veeva Vault CRM
+
+- **URL:** https://docs.reltio.com/en/applications/data-integrations/application-integration-at-a-glance/introduction-to-the-reltio-integration-for-veeva-vault-crm/search-before-create-sbc-for-veeva-vault-crm/set-up-search-before-create-in-veeva-vault-crm?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Application Integration at a glance > Introduction to the Reltio Integration for Veeva Vault CRM > Search Before Create (SBC) for Veeva Vault CRM
+- **Summary:** Learn how to set up Search Before Create in Veeva Vault CRM by using the SBC Setup API.
+- **Keywords:** set up search before create veeva vault crm, use sbc setup api in veeva vault crm, activate x-page for search before create, upload search before create zip file, configure veeva vault crm sbc setup api, collect sbc setup api fields, verify search before create page, sbc setup, integration, workato
+
+#### SBC Setup API
+
+- **URL:** https://docs.reltio.com/en/applications/data-integrations/application-integration-at-a-glance/introduction-to-the-reltio-integration-for-veeva-vault-crm/search-before-create-sbc-for-veeva-vault-crm/sbc-setup-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Application Integration at a glance > Introduction to the Reltio Integration for Veeva Vault CRM > Search Before Create (SBC) for Veeva Vault CRM
+- **Summary:** Learn more about how to use the SBC Setup API to apply the Search Before Create setup in Veeva Vault CRM.
+- **Keywords:** use sbc setup api in veeva vault crm, search before create setup api reference, create sbc config record by api, upload search before create zip file, configure veeva vault crm sbc setup api, html report setup api for veeva, search before create api request fields, sbc setup, veeva vault crm, sbc config
+
+#### Use Search Before Create in Veeva Vault CRM
+
+- **URL:** https://docs.reltio.com/en/applications/data-integrations/application-integration-at-a-glance/introduction-to-the-reltio-integration-for-veeva-vault-crm/search-before-create-sbc-for-veeva-vault-crm/use-search-before-create-in-veeva-vault-crm?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Application Integration at a glance > Introduction to the Reltio Integration for Veeva Vault CRM > Search Before Create (SBC) for Veeva Vault CRM
+- **Summary:** Learn how to search for existing records, review match confidence levels, and import matching records by using Search Before Create in Veeva Vault CRM.
+- **Keywords:** use search before create in veeva vault crm, search existing records in veeva vault crm, review match confidence levels, import matching record from reltio, use this record in veeva vault crm, search before create account types, preview matching records, warning banners in search before create, match confidence, veeva vault crm
+
+#### Troubleshoot Search Before Create in Veeva Vault CRM
+
+- **URL:** https://docs.reltio.com/en/applications/data-integrations/application-integration-at-a-glance/introduction-to-the-reltio-integration-for-veeva-vault-crm/search-before-create-sbc-for-veeva-vault-crm/troubleshoot-search-before-create-in-veeva-vault-crm?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Application Integration at a glance > Introduction to the Reltio Integration for Veeva Vault CRM > Search Before Create (SBC) for Veeva Vault CRM
+- **Summary:** Learn more about common Search Before Create issues in Veeva Vault CRM and how to resolve them.
+- **Keywords:** troubleshoot search before create veeva vault crm, search before create 401 error, search before create no records found, search before create import failed, search before create tab not visible, api token field not visible, search button disabled, troubleshooting, search before create, veeva vault crm
+- **See also:** [submit a support request](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Set up Search Before Create in Veeva Vault CRM](https://docs.reltio.com/en/applications/data-integrations/application-integration-at-a-glance/introduction-to-the-reltio-integration-for-veeva-vault-crm/search-before-create-sbc-for-veeva-vault-crm/set-up-search-before-create-in-veeva-vault-crm?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Add the Search Before Create tab in Veeva Vault CRM](https://docs.reltio.com/en/applications/data-integrations/application-integration-at-a-glance/introduction-to-the-reltio-integration-for-veeva-vault-crm/search-before-create-sbc-for-veeva-vault-crm/add-the-search-before-create-tab-in-veeva-vault-crm?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [SBC Setup API](https://docs.reltio.com/en/applications/data-integrations/application-integration-at-a-glance/introduction-to-the-reltio-integration-for-veeva-vault-crm/search-before-create-sbc-for-veeva-vault-crm/sbc-setup-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Reference: HCO attribute mapping (Reltio → Veeva)
 
@@ -18326,6 +18630,30 @@ In most cases, some errors happened during background job operations.
 - **Keywords:** Workflow
 
 ### Model data
+
+_Topics in this section: Reltio Ontology Builder, Data modeling at a glance_
+
+#### Reltio Ontology Builder
+
+- **URL:** https://docs.reltio.com/en/objectives/model-data/reltio-ontology-builder?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Model data
+- **Summary:** Learn about how Reltio Ontology Builder helps you explore Reltio industry models and map source schemas to the Reltio data model without logging in to Reltio or setting up a tenant.
+- **Keywords:** reltio ontology builder, explore reltio industry models, map source schemas to reltio, ai assisted schema mapping, reltio canonical model, reltio data model exploration, legacy mdm schema mapping, industry data model visualization, ontology builder, schema mapping
+- **See also:** [Uploading a source schema](https://docs.reltio.com/en/objectives/model-data/reltio-ontology-builder/upload-a-source-schema-in-reltio-ontology-builder?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Reviewing a velocity pack](https://docs.reltio.com/en/objectives/model-data/reltio-ontology-builder/review-a-velocity-pack-in-reltio-ontology-builder?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Upload a source schema in Reltio Ontology Builder
+
+- **URL:** https://docs.reltio.com/en/objectives/model-data/reltio-ontology-builder/upload-a-source-schema-in-reltio-ontology-builder?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Model data > Reltio Ontology Builder
+- **Summary:** Learn how to upload a source schema in Reltio Ontology Builder so that you can review suggested mappings to a Reltio-ready data model.
+- **Keywords:** upload source schema in ontology builder, map informatica schema to reltio, review source schema mappings, generate reltio schema mapping, download reltio schema output, ontology builder schema upload, source schema mapping, schema upload, data modeling
+
+#### Review a velocity pack in Reltio Ontology Builder
+
+- **URL:** https://docs.reltio.com/en/objectives/model-data/reltio-ontology-builder/review-a-velocity-pack-in-reltio-ontology-builder?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Model data > Reltio Ontology Builder
+- **Summary:** Learn how to review a velocity pack in Reltio Ontology Builder so that you can understand how Reltio models data for your industry or domain.
+- **Keywords:** review velocity pack in ontology builder, explore reltio velocity pack model, view healthcare velocity pack model, review reltio industry model, explore reltio model diagram, review match rules in ontology builder, velocity pack exploration, industry model, model diagram
 
 #### Data modeling at a glance
 
