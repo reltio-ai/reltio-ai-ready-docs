@@ -1,5 +1,5 @@
 # Reltio Documentation Index
-_Generated: 2026-05-13 08:37 UTC — 3283 topics_
+_Generated: 2026-05-15 02:14 UTC — 3283 topics_
 
 This file is a structured navigation index of the Reltio documentation portal.
 It contains the full parent-child hierarchy, topic URLs, keywords, summaries,
@@ -508,14 +508,14 @@ relationships, locate sibling topics, and follow cross-references.
 - **URL:** https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-information-model?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Reltio > What does Reltio do? > What Reltio does at a glance > Data unification and MDM at a glance > Data unification and MDM in detail
 - **Summary:** Learn about the Reltio information model and our multi-domain master data management (MDM) solution.
-- **Keywords:** metadata, application level, information model, data model, Metadata, Application-level, Information model
+- **Keywords:** metadata, application level, information model, data model, ontology, object-oriented, entity types, relationship types, interaction types, layered model
 - **See also:** [What’s in a name?](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-information-model/whats-in-a-name?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### What's in a name?
 
 - **URL:** https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-information-model/whats-in-a-name?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Reltio > What does Reltio do? > What Reltio does at a glance > Data unification and MDM at a glance > Data unification and MDM in detail > Reltio information model
-- **Summary:** Learn about some terms you’ll encounter regularly.
+- **Summary:** Learn about some terms you will encounter regularly.
 - **Keywords:** terminology, multi-domain, multi domain, layered model, data modeling, data entity, database management system, OODBMS, RDBMS, facets
 - **See also:** [Reltio entity types](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-information-model/data-model/reltio-object-types/reltio-entity-types?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
@@ -591,7 +591,7 @@ relationships, locate sibling topics, and follow cross-references.
 - **URL:** https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-information-model/data-model/reltio-object-types?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Reltio > What does Reltio do? > What Reltio does at a glance > Data unification and MDM at a glance > Data unification and MDM in detail > Reltio information model > Data Model
 - **Summary:** Learn about Reltio’s predefined object types: entities, interactions, and relationships.
-- **Keywords:** object types, L1 layer, L2 layer, L3 layer, data types, entities, relationships, and interactions, object modification, Data types
+- **Keywords:** object types, L1 layer, L2 layer, L3 layer, data types, entities, relationships, and interactions, object modification, ontology
 - **See also:** [Reltio L3 Layer -- Customer tenant](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-information-model/data-model/tenant-configuration-inheritance-across-layers/reltio-l3-layer----customer-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Reltio entity types
@@ -1646,19 +1646,17 @@ relationships, locate sibling topics, and follow cross-references.
 - **Path:** Reltio Documentation Portal v2 sitemap > Reltio > What’s in the box? > What's in the box at a glance > Additional subscriptions at a glance > Reltio Private Link > Configuring AWS PrivateLink
 - **Summary:** Learn how to create a VPC endpoint in your AWS account.
 
-#### Configure networking rules on AWS
+#### Configure Networking Rules on AWS
 
 - **URL:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/additional-subscriptions-at-a-glance/reltio-private-link/configuring-aws-privatelink/configure-networking-rules-on-aws?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Reltio > What’s in the box? > What's in the box at a glance > Additional subscriptions at a glance > Reltio Private Link > Configuring AWS PrivateLink
 - **Summary:** Learn how to set up networking rules within AWS for PrivateLink.
-- **See also:** [Create DNS records for Reltio services](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/additional-subscriptions-at-a-glance/reltio-private-link/configuring-aws-privatelink/create-dns-records-for-reltio-services?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Create DNS records for Reltio services
 
 - **URL:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/additional-subscriptions-at-a-glance/reltio-private-link/configuring-aws-privatelink/create-dns-records-for-reltio-services?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Reltio > What’s in the box? > What's in the box at a glance > Additional subscriptions at a glance > Reltio Private Link > Configuring AWS PrivateLink
 - **Summary:** Learn how to create DNS records for Reltio services in AWS Route 53.
-- **See also:** [Configure networking rules on AWS](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/additional-subscriptions-at-a-glance/reltio-private-link/configuring-aws-privatelink/configure-networking-rules-on-aws?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Set up VPC Endpoint for disaster recovery
 
@@ -4597,6 +4595,7 @@ _Topics in this section: Reltio Entity Resolution Deployment options, Reltio Ent
 - **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > About developer resources > Developer resources at a glance > Customize data tasks with LCAs > LCA Implementation Using AWS Lambda
 - **Summary:** You can use AWS Lambda: Identity and Access Management to implement LCA.
 - **Keywords:** Implementing LCA using AWS Lambda, LCA as AWS Lambda Identity and Access Management, implementing LCA using AWS lambda, LCA as AWS lambda identity and access management
+- **See also:** [open a Support ticket](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### LCA as AWS Lambda: Monitoring.
 
@@ -10321,7 +10320,7 @@ _Topics in this section: Reltio Entity Resolution Deployment options, Reltio Ent
 - **URL:** https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/role-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > System Administration APIs > System Administration APIs at a glance
 - **Summary:** Overview of the role management APIs.
-- **See also:** [Get Roles](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/role-management-apis/get-roles?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Get Roles Against Object URIs](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/role-management-apis/get-roles-against-object-uris?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [User Management at a glance](https://docs.reltio.com/en/applications/console/security-applications/user-management-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Obtaining access tokens with client credentials grant type](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/authentication-api/obtaining-access-tokens-with-client-credentials-grant-type?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [Get Roles](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/role-management-apis/get-roles?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Get Roles Against Object URIs](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/role-management-apis/get-roles-against-object-uris?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Get Customer API](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/user-management-api/get-customer-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Update Customer API](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/user-management-api/update-customer-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [User Management at a glance](https://docs.reltio.com/en/applications/console/security-applications/user-management-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Obtaining access tokens with client credentials grant type](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/authentication-api/obtaining-access-tokens-with-client-credentials-grant-type?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Assign Permissions for an existing Customer-specific Role
 
@@ -11033,7 +11032,7 @@ _Topics in this section: Hub at a glance, Profile Stats dashboard at a glance, D
 - **Path:** Reltio Documentation Portal v2 sitemap > Applications > Hub
 - **Summary:** Learn about the Real-Time Data Quality dashboard for up-to-date insights on your data.
 - **Keywords:** Real-Time Data Quality Dashboard Overview, DQ Dashboard Overview, data quality, Real-Time Data Quality Dashboard overview, dq dashboard overview
-- **See also:** [Real-Time Data Quality dashboard charts](https://docs.reltio.com/en/objectives/monitor-data-quality/data-quality-monitoring-at-a-glance/data-quality-monitoring-reference/real-time-data-quality-dashboard-charts?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [Data quality monitoring at a glance](https://docs.reltio.com/en/objectives/monitor-data-quality/data-quality-monitoring-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Real-Time Data Quality dashboard charts](https://docs.reltio.com/en/objectives/monitor-data-quality/data-quality-monitoring-at-a-glance/data-quality-monitoring-reference/real-time-data-quality-dashboard-charts?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Data Quality dashboard navigation
 
@@ -11750,7 +11749,7 @@ _Topics in this section: Hub at a glance, Profile Stats dashboard at a glance, D
 - **Path:** Reltio Documentation Portal v2 sitemap > Applications > Console > Tenant management applications > Tenant Management at a glance > Jobs at a glance
 - **Summary:** Learn about the Delete tenant data job.
 - **Keywords:** delete tenant data, delete tenant data job, ROLE_ADMIN_TENANT, ROLE_ADMIN_CUSTOMER, tenant management job
-- **See also:** [Get help in Support Portal](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Managing Role Definitions](https://docs.reltio.com/en/applications/console/security-applications/user-management-at-a-glance/managing-role-definitions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [Get help in Support Portal](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [ROLE_ADMIN_CUSTOMER Access permissions](https://docs.reltio.com/en/objectives/administer-system/system-administration-at-a-glance/access-management-at-a-glance/access-management-reference/authorization/system-roles/critical-high-privilege-roles/role_admin_customer-access-permissions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Custom roles](https://docs.reltio.com/en/objectives/administer-system/system-administration-at-a-glance/access-management-at-a-glance/access-management-reference/authorization/custom-roles?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Managing Role Definitions](https://docs.reltio.com/en/applications/console/security-applications/user-management-at-a-glance/managing-role-definitions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Run a Delete tenant data job
 
@@ -14217,7 +14216,7 @@ _Topics in this section: Data integrations at a glance, Application Integration 
 - **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Data Enrichment Integrations at a glance > Reltio Enrichment with D&B at a glance > Reltio Enrichment with D&B set up > Working With Reltio Enrichment with D&B > Enriching Profiles
 - **Summary:** Learn about the Reltio Enrichment with D&B batch process to enrich a group of organization profiles at a set frequency.
 - **Keywords:** Batch Process, batch process
-- **See also:** [Recertification](https://docs.reltio.com/en/applications/data-integrations/data-enrichment-integrations-at-a-glance/reltio-enrichment-with-db-at-a-glance/reltio-enrichment-with-db-set-up/working-with-reltio-enrichment-with-db/enriching-profiles/batch-process-for-enrichment/recertification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Match and Append Process](https://docs.reltio.com/en/applications/data-integrations/data-enrichment-integrations-at-a-glance/reltio-enrichment-with-db-at-a-glance/reltio-enrichment-with-db-set-up/working-with-reltio-enrichment-with-db/enriching-profiles/batch-process-for-enrichment/match-and-append-process?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Batch APIs](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/db-connector-apis/batch-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [On Demand APIs](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/db-connector-apis/on-demand-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [Recertification](https://docs.reltio.com/en/applications/data-integrations/data-enrichment-integrations-at-a-glance/reltio-enrichment-with-db-at-a-glance/reltio-enrichment-with-db-set-up/working-with-reltio-enrichment-with-db/enriching-profiles/batch-process-for-enrichment/recertification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Match and Append Process](https://docs.reltio.com/en/applications/data-integrations/data-enrichment-integrations-at-a-glance/reltio-enrichment-with-db-at-a-glance/reltio-enrichment-with-db-set-up/working-with-reltio-enrichment-with-db/enriching-profiles/batch-process-for-enrichment/match-and-append-process?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Batch APIs](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/db-connector-apis/batch-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [On Demand APIs](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/db-connector-apis/on-demand-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Data model for B2B Data Domains](https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-b2b-data-domains-velocity-pack/data-model-for-b2b-data-domains?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Match and Append Process
 
@@ -19872,9 +19871,9 @@ _Topics in this section: Data loading at a glance, Data exporting at a glance_
 - **Summary:** You can view the basic statistics about a job from the summary information on the **Pending** or **Completed** tabs.
 - **Keywords:** Analysis Information about a Job, View Job Data Analysis, Pending Job, Completed Job, analysis information about a Job, view job data analysis, pending job, completed job
 
-#### Download error Files - NNC
+#### Download error Files
 
-- **URL:** https://docs.reltio.com/en/objectives/load-and-export-data/data-loading-at-a-glance/data-loading-operation/load-data-with-data-loader/job-definitions-capabilities/view-data-analysis-information-about-a-job/download-error-files---nnc?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **URL:** https://docs.reltio.com/en/objectives/load-and-export-data/data-loading-at-a-glance/data-loading-operation/load-data-with-data-loader/job-definitions-capabilities/view-data-analysis-information-about-a-job/download-error-files?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Load and export data > Data loading at a glance > Data loading operation > Load data with Data Loader > Job Definitions capabilities > View Data Analysis Information about a Job
 - **Summary:** Learn how to download error files. On a Data loader interface, when a specific job is completed with errors, you can find out the information about any job error directly on the Data Loader page.
 - **Keywords:** Data Loader, Downloading Error Files, Downloading Source Files, View Job Data Analysis, data loader, downloading error files, downloading source files, view job data analysis
