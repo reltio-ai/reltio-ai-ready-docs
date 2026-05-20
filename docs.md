@@ -1,8 +1,8 @@
 # Reltio Documentation
 
-_Generated: 2026-05-15 02:14 UTC_
+_Generated: 2026-05-20 02:14 UTC_
 
-_Topics: 3283_
+_Topics: 3288_
 
 ---
 
@@ -147,6 +147,92 @@ Common remediation approaches include:
 - Refining normalization so distinct values are not collapsed into the same match token.
 - Reprocessing affected data (as applicable) after configuration or data corrections.
 - After completing remediation steps, re-evaluate the match token distribution to confirm that the match token frequency has dropped below the collision threshold.
+
+
+
+---
+
+# Simultaneous Entity Updates
+
+> **Section:** Developer resources > Entity Management APIs > Entity Management APIs at a glance
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/simultaneous-entity-updates?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** Simultaneous Entity Updates, Conflict Detection and Resolution, Merge-style Resolution, Retry-based Conflict Handling, TOO_MANY_CONCURRENT_REQUESTS_FOR_OBJECT (2008)
+
+
+Learn about conflict resolution approaches used during simultaneous object updates in the Reltio platform.
+
+The Reltio platform detects and resolves conflicts when two or more requests attempt to modify the same object at the same time. This topic covers when conflicts occur, the supported resolution strategies, configuration options for retry-based conflict handling, and how to resolve the common error `TOO_MANY_CONCURRENT_REQUESTS_FOR_OBJECT (2008)`.
+
+[Contact Reltio Support](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) to configure additional retry and backoff settings in your tenant's physical configuration, as described in [Configure Entity Update Retry](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/simultaneous-entity-updates/configure-entity-update-retry?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+## How simultaneous updates create conflicts
+
+A conflict occurs when the state of an object changes between the start and write phases of a request. If Request A starts and reads the object state, and before Request A writes, Request B modifies the object and commits, the system detects a mismatch and identifies it as a conflict when Request A attempts to write.
+
+Not all simultaneous operations cause a conflict. If Request A completes (including writing) before Request B starts processing, both updates complete successfully in sequence.
+
+## Conflict resolution methods
+
+The system supports two approaches for resolving update conflicts:
+
+1. Merge-style resolution (default)
+
+   When a conflict is detected, the platform applies internal merge logic to reconcile concurrent changes so the result is similar to executing a single request containing all updates. It intelligently combines or preserves attribute-level changes based on predefined rules.
+2. Retry-based resolution
+
+   When a conflict occurs, the platform retries the entire request so the final result matches sequential execution (order not guaranteed). This behavior isenabled using `repeatAllOperationsOnConflict` and is also used for nested partial overrides. Retries follow an exponential backoff strategy, and if they fail after multiple attempts, the platform returns a `TOO_MANY_CONCURRENT_REQUESTS_FOR_OBJECT (2008)` error. For more information, see [Troubleshooting Concurrent Requests Errors](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/simultaneous-entity-updates/troubleshooting-concurrent-requests-errors?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+
+
+---
+
+# Troubleshooting Concurrent Requests Errors
+
+> **Section:** Developer resources > Entity Management APIs > Entity Management APIs at a glance > Simultaneous Entity Updates
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/simultaneous-entity-updates/troubleshooting-concurrent-requests-errors?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** troubleshoot concurrent requests errors, resolve error 2008 in reltio, too many concurrent requests for object, fix simultaneous update conflicts, reduce object update contention, retry failed requests with backoff, prevent repeated write conflicts, concurrent request error handling, concurrency, backoff, retries
+
+
+Learn how to diagnose and resolve errors from concurrent entity-update requests
+
+`TOO_MANY_CONCURRENT_REQUESTS_FOR_OBJECT (2008)` is an exception that occurs when the platform cannot successfully complete a request due to repeated conflicts caused by simultaneous updates to the same object. A conflict is detected when the object's state changes between the start of processing and the write operation. In such cases, the system retries the request using an exponential backoff mechanism, which introduces increasing delays between retry attempts to reduce contention. By default, retries continue for up to about one minute. If the operation still fails after all retry attempts, the platform returns the 2008 error, which indicates sustained high concurrency on the object.
+
+## Error 2008: Too Many Concurrent Requests
+
+**Error:**`TOO_MANY_CONCURRENT_REQUESTS_FOR_OBJECT (2008)`
+
+**What this error means**
+
+The system failed to complete the request because too many simultaneous operations targeted the same object. After several retry attempts with exponential backoff, the request failed with error `2008`.
+
+**Why the error occurs**
+
+By default, the system retries a request approximately five times within one minute. In this case, a retry-enabled request attempted to update an object that other operations were continuously modifying. The system retried using exponential backoff, but the retry limits were reached before the conflict cleared.
+
+**How to fix the issue**
+
+Use the following approaches to resolve the error when it occurs.
+
+- Retry the request after a short delay, as the conflict may be temporary and resolve when concurrent operations decrease.
+- Use a controlled retry mechanism with backoff so the request can succeed once concurrent updates to the same object decrease.
+- Temporarily pause or slow down incoming requests if repeated failures occur, allowing in-flight operations on the object to complete.
+
+**Preventive Measures**
+
+Follow the below practices to avoid this error in the future.
+
+- Avoid sending parallel updates for the same object. This error is primarily caused by multiple simultaneous requests targeting a single record.
+- Reduce the frequency of updates to the same object to prevent repeated collisions within a short time window.
+- Review how data is prepared and loaded into the system to identify patterns that lead to frequent updates on the same object.
+- Modify batching and request patterns to minimize conflicts, ensuring that the same object is not included in multiple concurrent batches.
+- Sequence updates instead of sending them concurrently so that changes to the same object are processed in order.
+- Investigate and redesign the data ingestion process if retries do not help, focusing on reducing parallelism for the same object.
 
 
 
@@ -3705,7 +3791,7 @@ Learn how to look up API reference information
 
 The Developer Portal contains reference files, providing syntax for Reltio REST APIs. You can [visit it directly](https://developer.reltio.com), or use the search here on the Documentation Portal and select the API tab in the results.
 
-You'll also find additional context, including usage scenarios and guidance for using Reltio APIs in the [c api access](https://docs.reltio.com/search?q=c-api-access&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) section of this Documentation Portal.
+You'll also find additional context, including usage scenarios and guidance for using Reltio APIs in the [Access Reltio APIs](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/authentication-api/access-reltio-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) section of this Documentation Portal.
 
 
 
@@ -8074,9 +8160,6 @@ We build on each GA release with a steady stream of bi-weekly updates that deliv
 
 | Release Name | Stage | Tenant Type | Release Date |
 | --- | --- | --- | --- |
-| 2026.1.2.0 | 1 | Development (DEV) | May 15, 2026 |
-| 2026.1.2.0 | 2 | Test (TEST) | May 15, 2026 |
-| 2026.1.2.0 | 3 | Production (PRD) | May 22, 2026 |
 | 2026.1.3.0 | 1 | Development (DEV) | May 29, 2026 |
 | 2026.1.3.0 | 2 | Test (TEST) | May 29, 2026 |
 | 2026.1.3.0 | 3 | Production (PRD) | June 05, 2026 |
@@ -8379,7 +8462,7 @@ Find out what's new and notable each week in the Reltio Connected Data Platform 
 
 **Holiday release thaw**
 
-We're still publishing documentation updates while the release freeze continues this week. Look for enhancements and fixes to resume next week! To close out with a trouble-free 2023, we'll freeze releases again December 19, 2023 - January 2, 2024. For more information, see the Holiday release freeze notice in our [2023.3.3.0 weekly release notes | 06-Nov-2023](https://docs.reltio.com/search?q=2023.3.3.0_weekly_release_notes_06-Nov-2023&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+We're still publishing documentation updates while the release freeze continues this week. Look for enhancements and fixes to resume next week! To close out with a trouble-free 2023, we'll freeze releases again December 19, 2023 - January 2, 2024. For more information, see the Holiday release freeze notice in our [2023.3.3.0 weekly release notes | 06-Nov-2023](https://docs.reltio.com/en/reltio/whats-new-and-notable/whats-new-at-a-glance/release-notes-at-a-glance/2023.3-release-notes/2023.3-weekly-release-notes?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs#c-discover-relnotes-2023-3-03-weekly).
 
 **DataDriven Podcast drops new episode**
 
@@ -9838,19 +9921,19 @@ We created a new v3 of our velocity packs (VP) and made data models consistent:
     - Relationship types with new and updated attributes
 - 
 
-  [Reltio for Consumer Data (B2C) v3 velocity pack announcement](https://docs.reltio.com/search?q=2023.3.11.0_weekly_release_notes_05-Feb-2024&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+  [Reltio for Consumer Data (B2C) v3 velocity pack announcement](https://docs.reltio.com/en/reltio/whats-new-and-notable/whats-new-at-a-glance/release-notes-at-a-glance/2023.3-release-notes/2023.3-weekly-release-notes?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs#WR18Dec23-sd6mj6xo)
 - 
 
-  [Reltio for Financial Services v3 velocity pack announcement](https://docs.reltio.com/search?q=2023.3.10.0_weekly_release_notes_29-Jan-2024&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+  [Reltio for Financial Services v3 velocity pack announcement](https://docs.reltio.com/en/reltio/whats-new-and-notable/whats-new-at-a-glance/release-notes-at-a-glance/2023.3-release-notes/2023.3-weekly-release-notes?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs#WR18Dec23-mau2bz6t)
 - 
 
-  [Reltio for Healthcare v3 velocity pack announcement](https://docs.reltio.com/search?q=2023.3.6.0_weekly_release_notes_25-Dec-2023&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+  [Reltio for Healthcare v3 velocity pack announcement](https://docs.reltio.com/en/reltio/whats-new-and-notable/whats-new-at-a-glance/release-notes-at-a-glance/2023.3-release-notes/2023.3-weekly-release-notes?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs#wrn2023-3-6-251223)
 - 
 
-  [Reltio for Insurance v3 velocity pack announcement](https://docs.reltio.com/search?q=2023.3.10.0_weekly_release_notes_29-Jan-2024&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+  [Reltio for Insurance v3 velocity pack announcement](https://docs.reltio.com/en/reltio/whats-new-and-notable/whats-new-at-a-glance/release-notes-at-a-glance/2023.3-release-notes/2023.3-weekly-release-notes?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs#WR18Dec23-mau2bz6t)
 - 
 
-  [Reltio for Life Sciences v3 velocity pack announcement](https://docs.reltio.com/search?q=2023.3.12.0_weekly_release_notes_12-Feb-2024&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+  [Reltio for Life Sciences v3 velocity pack announcement](https://docs.reltio.com/en/reltio/whats-new-and-notable/whats-new-at-a-glance/release-notes-at-a-glance/2023.3-release-notes/2023.3-weekly-release-notes?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs#WR18Dec23-dhys166g)
 
 
 
@@ -9912,13 +9995,13 @@ Some features are just too exciting to hold on to until a major release! Here ar
 
 - 
 
-  [Data Modeler - Graph types](https://docs.reltio.com/search?q=2023.3.8.0_weekly_release_notes_16-Jan-2024&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+  [Data Modeler - Graph types](https://docs.reltio.com/en/reltio/whats-new-and-notable/whats-new-at-a-glance/release-notes-at-a-glance/2023.3-release-notes/2023.3-weekly-release-notes?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs#WR18Dec23-ri3lm8d9)
 - 
 
-  [Grouping type match rule verification](https://docs.reltio.com/search?q=2023.3.6.0_weekly_release_notes_25-Dec-2023&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+  [Grouping type match rule verification](https://docs.reltio.com/en/reltio/whats-new-and-notable/whats-new-at-a-glance/release-notes-at-a-glance/2023.3-release-notes/2023.3-weekly-release-notes?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs#wrn2023-3-6-251223)
 - 
 
-  [Grouping type match rule verification](https://docs.reltio.com/search?q=2023.3.6.0_weekly_release_notes_25-Dec-2023&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+  [Grouping type match rule verification](https://docs.reltio.com/en/reltio/whats-new-and-notable/whats-new-at-a-glance/release-notes-at-a-glance/2023.3-release-notes/2023.3-weekly-release-notes?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs#wrn2023-3-6-251223)
 
 
 
@@ -10507,7 +10590,7 @@ Enrich your Reltio data with D&B data in real-time, batch and on-demand with mon
 
 ## Reltio Data Pipelines
 
-Now you can get going even quicker with the Reltio Data Pipeline for Databricks that we made available in the [2024.1.8.0 weekly release](https://docs.reltio.com/search?q=2024.1.8.0_weekly_release_notes_15-Apr-2024&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+Now you can get going even quicker with the Reltio Data Pipeline for Databricks that we made available in the [2024.1.8.0 weekly release](https://docs.reltio.com/en/reltio/whats-new-and-notable/whats-new-at-a-glance/release-notes-at-a-glance/2024.1-release-notes/2024.1-weekly-release-notes?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs#WR18Dec23-8zvzgs16).
 
 **Reltio Data Pipeline for Databricks Console configuration**
 
@@ -11787,7 +11870,7 @@ Take a look at the new `Data Loader API` endpoints to set a job's priority and t
 | Target roles | Reltio Configurator |
 | Configuration required | No |
 | Additional subscription required | No |
-| Find out more | [Prioritize data loading jobs](https://docs.reltio.com/search?q=c-dl-api-job-priority&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs),  [Pause and Resume a data loading job](https://docs.reltio.com/search?q=c-dl-api-job-pauseresume&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
+| Find out more | [Prioritize data loading jobs](https://docs.reltio.com/en/developer-resources/load-and-export-apis/load-and-export-apis-at-a-glance/data-loader-api/order-of-data-loading-jobs?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs#concept-7312),  [Pause and Resume a data loading job](https://docs.reltio.com/en/developer-resources/load-and-export-apis/load-and-export-apis-at-a-glance/data-loader-api/order-of-data-loading-jobs?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs#concept-1980) |
 
 ## Data Model
 
@@ -13175,7 +13258,7 @@ This new feature reduces manual errors, accelerates form completion, and ensures
 | Target roles | Reltio ConfiguratorData StewardDeveloperData Product Owner |
 | Configuration required | Yes |
 | Additional subscription required | Yes |
-| Find out more | [2025.2.1.0 RN \| 7-Nov-2025](https://docs.reltio.com/search?q=c-relnotes-2025-2-weekly-1&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
+| Find out more | [2025.2.1.0 RN \| 7-Nov-2025](https://docs.reltio.com/en/reltio/whats-new-and-notable/whats-new-at-a-glance/release-notes-at-a-glance/2025.2-release-notes/2025.2-bi-weekly-release-notes-rn?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs#r2025.1.22-9fymaxfb) |
 
 ## Real time Email and Phone Verification
 
@@ -13192,7 +13275,7 @@ It provides you built-in flexibility for any workflow inside or outside Reltio.
 | Target roles | DeveloperReltio ConfiguratorSolution Architect |
 | Configuration required | Yes |
 | Additional subscription required | Yes |
-| Find out more | [2025.2.1.0 RN \| 7-Nov-2025](https://docs.reltio.com/search?q=c-relnotes-2025-2-weekly-1&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
+| Find out more | [2025.2.1.0 RN \| 7-Nov-2025](https://docs.reltio.com/en/reltio/whats-new-and-notable/whats-new-at-a-glance/release-notes-at-a-glance/2025.2-release-notes/2025.2-bi-weekly-release-notes-rn?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs#r2025.1.22-9fymaxfb) |
 
 ## Reltio Identity Builder™
 
@@ -14365,6 +14448,30 @@ For more information, see [Reltio Address Cleanser update - April 2026](https://
 
 ---
 
+# 2026.1.2.0 RN | 22-May-2026
+
+Learn about the new features and enhancements introduced in this 2026.1.1.0 release.
+
+**Deployment dates**
+
+| Stage | Tenant type | When |
+| --- | --- | --- |
+| 1 | Development (DEV) | May 15, 2026 |
+| 2 | Test (TEST) | May 15, 2026 |
+| 3 | Production (PRD) | May 22, 2026 |
+
+## Personalize the attribute view in Sources perspective
+
+In the **Sources** perspective of the entity **Profile** page, you can now personalize the attribute view to better match your workflow. Instead of working with a fixed set of attributes, you can choose which attributes to show or hide, so you can focus on the information most relevant to your task. You can also reorder attributes to group related information and bring the most important values to the top for faster scanning and comparison..
+
+Your attribute view personalization is automatically saved for each entity type. As a result, when you open another profile of the same entity type, your customized layout is preserved, allowing you to continue working with the same attribute view without configuring the view again. This enhancement helps reduce visual clutter, improves efficiency when you work with large or complex profiles, and and makes it easier to review relevant information.
+
+For more information, see [Reorder attributes](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/sources-perspective?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Hide attributes](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/sources-perspective?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+
+
+---
+
 # 2026.1 bi-weekly Release Notes (RN)
 
 > **Section:** Reltio > What’s new and notable? > What's new at a glance > Release Notes at a glance > 2026.1 Release Notes
@@ -14553,6 +14660,14 @@ A set of nodes in the infrastructure that is used to deliver a specific service 
 
 A practice of frequent code integration designed to streamline the software development lifecyle. It bridges the gap between developmental and operational activities and teams by enforcing automation in building, testing, and deploying applications in a shared code repository.
 
+**Concurrent request**
+
+A request processed at the same time as one or more other requests. When concurrent requests target the same object, they can result in a simultaneous update.
+
+**Conflict**
+
+A condition in which the object state changes between the start of request processing and the write operation.
+
 ## D
 
 **Data as a Service (DaaS)**
@@ -14640,6 +14755,10 @@ Entity types are part of the Reltio data model, which you create and manage in t
 **Environment**
 
 A logical grouping of infrastructure components used to deliver Reltio services to end users. Some examples include Dev, Test, Prod, and EU Prod.
+
+**Exponential backoff**
+
+A retry strategy in which the delay between successive retry attempts increases exponentially, for example, 1 second, 2 seconds, 4 seconds, and 8 seconds. Random jitter is often added to reduce contention and load on the target system.
 
 ## F
 
@@ -14785,6 +14904,10 @@ A Databricks-native solution that identifies and groups matching Individual enti
 
 The Reltio Storage Unit (RSU) is calculated as the combined total storage size across all primary and secondary storage spaces (including History, Activity Log, Match, Search Index, and Interactions). 1 RSU equates to 1 TB of storage usage. Current RSU usage for a tenant, including the breakdown of categories, can be found in the Tenant Management application of the Console.
 
+**Retry-enabled request**
+
+A request that the system automatically retries when a conflict is detected.
+
 ## S
 
 **Scalability**
@@ -14822,6 +14945,10 @@ A survivorship strategy allows different attribute values to be selected as oper
 **Service Level Agreements**
 
 A contractual agreement between Reltio and the customer that defines measurable service commitments (for example, availability and other operational targets), what is in scope, and how those commitments apply. SLA terms apply only to what the agreement and published product documentation describe; not every component, integration, or deployment pattern is covered the same way.
+
+**Simultaneous update**
+
+A condition in which two or more requests attempt to modify the same object during overlapping processing periods.
 
 ## T
 
@@ -16747,7 +16874,7 @@ When should you use the Reference attribute type?
 What you need to know before using reference attribute types:
 
 - Define relationship types: You must establish a relationship type between two entity types before you can define a Reference attribute. After you’ve defined the relationship type, you can assign one entity type to be a reference of the other. To learn more about defining relationship types, see [Entity Relationships](https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/define-relationships/configuring-relationship-types/entity-relationships?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
-- Immutability: when you have several entities that must reference the same attribute of another entity, you can mark all subattributes of that reference attribute as `immutable` for some sources. To learn more about avoiding the generation of multiple events, see [Immutable Reference Attributes](https://docs.reltio.com/search?q=c_objtypes_attributes_ref_immutable&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+- Immutability: when you have several entities that must reference the same attribute of another entity, you can mark all subattributes of that reference attribute as `immutable` for some sources. To learn more about avoiding the generation of multiple events, see [Immutable Reference Attributes](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-information-model/data-model/reltio-object-types/reltio-attribute-types?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs#c_objtypes_attributes_ref_immutable).
 - Operational Values (OV) and non-OV values. The Reference attribute type can contain both OV and non-OV values. To learn more about OV values, see [Understanding the Reltio Entity Type](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-information-model/data-model/reltio-object-types/reltio-entity-types?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 ## Analytic attribute type
@@ -16817,7 +16944,7 @@ Consider these facts:
   - A new referenced entity is created.
   - The referenced attribute points to the existing entity, which matches the incoming data; that is, the reference attribute changes.
 
-To learn which reference attribute properties you can use, see [Metadata reference attribute properties](https://docs.reltio.com/search?q=r_objtypes_attributes_props&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+To learn which reference attribute properties you can use, see [Metadata reference attribute properties](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-information-model/data-model/reltio-object-types/reltio-attribute-types?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs#r_objtypes_attributes_props).
 
 
 
@@ -17875,13 +18002,7 @@ In the Reltio model, a simple attribute with a set of values can be defined by a
 
 > **Important:** Reltio recommends using Reference Data Management for this objective.
 
-Lookups can be changed dynamically by updating additional lookup values. Example: attribute *Country* for *Address*. 
-
-> **Note:** Reltio recommends that lookup type attributes be of the string data type.
-
-
-
-Lookups provide a meaningful string for attributes that use code values. For example, Individual can have an attribute for the person's education:*Area of Study* with values *Computer Science*, *Engineering*, *Logistics*, and so on. These values can be arranged as lookups. The attribute value will contain the *Area of Study* code, and the description will be resolved from the lookup table.
+Lookups can be changed dynamically by updating additional lookup values. Example: attribute *Country* for *Address*. Lookups provide human-readable strings for attributes that store code values. Reltio recommends using the string data type for lookup type attributes, as it is the only supported data type. For example, an Individual entity has an attribute for the person's education: *Area of Study* with values *Computer Science*, *Engineering*, *Logistics*, and so on. These values are arranged as lookups where the attribute stores the *Area of Study* code and the lookup table resolves that code to a human-readable description .
 
 To use lookups for a list of values:
 
@@ -22887,6 +23008,10 @@ Agent Builder is used by the following roles:
 For more information about assigning these roles to users, see [Assign Agent Builder roles to users](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agent-builder-for-agentflow-at-a-glance/assign-agent-builder-roles-to-users?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 ## How Agent Builder works
+
+The following diagram shows the end-to-end process for building and publishing an agent, from creating a draft through security scanning, approver review, and final publication.
+
+*Image: Diagram showing the agent publishing process flow from Create Agent Draft through security scan, approver review, and Agent Published*
 
 An agent author writes a system prompt, selects the tools the agent is allowed to use, and tests the agent interactively before submitting it for review. When a publish request is submitted, the system automatically scans the system prompt for security violations. If a violation is detected, the request is auto-blocked before it reaches a reviewer. Valid requests move to a reviewer for approval. Once approved, the agent is published and immediately available in **Discover Agents**. End users can find it in the catalog and start a conversation with it right away.
 
@@ -36509,6 +36634,101 @@ The following video explains how to create a template, configure a source, and r
 
 ---
 
+# Roles and permissions for AgentFlow Unstructured
+
+> **Section:** Products > AgentFlow > Reltio AgentFlow™ at a glance > AgentFlow Unstructured
+
+
+**Source:** https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-unstructured/roles-and-permissions-for-agentflow-unstructured?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+
+Learn more about the roles and permissions that control access to templates, sources, pipelines, and batch runs in AgentFlow Unstructured.
+
+AgentFlow Unstructured uses role-based access control to manage user permissions across the various components of the feature. Access is assigned by role and determines whether a user can create extraction templates, manage document sources, configure pipelines, run batch jobs, and review processing results.
+
+## Access areas
+
+The following table describes the main access areas in AgentFlow Unstructured.
+
+| Area | What it covers |
+| --- | --- |
+| Templates | Extraction template design, including parsing, extraction, mapping, schema browsing, and defining target Reltio tenant for data creation |
+| Sources | Document source connections, including Amazon S3 and Google Cloud Storage, file access, and connection testing |
+| Pipelines | Pipeline configuration, scheduling, and pipeline settings |
+| Batch runs | Pipeline execution, monitoring, document processing status, and extracted entity review |
+
+## Permission types
+
+The following table describes the permissions used across AgentFlow Unstructured resources.
+
+| Permission | Meaning |
+| --- | --- |
+| Create | Create a new template, source, pipeline, or batch run |
+| Read | View configurations, runs, and results |
+| Update | Modify an existing configuration or re-execute a pipeline. |
+| Delete | Remove a configuration |
+| Execute | Perform an action such as testing a source connection or running a pipeline for document processing |
+
+## Role access matrix
+
+The following table summarizes the customer-facing roles for AgentFlow Unstructured.
+
+| Role | Templates | Sources | Pipelines | Batch runs |
+| --- | --- | --- | --- | --- |
+| `ROLE_ADMIN_AFU` | Full access | Full access | Full access | Full access |
+| `ROLE_AFU_DOCAI_ADMIN` | Full access | No access | Full access | Full access |
+| `ROLE_AFU_TEMPLATE_DESIGNER` | Full access | Read-only | No access | No access |
+| `ROLE_AFU_PIPELINE_MANAGER` | No access | Read-only | Full access | No access |
+| `ROLE_AFU_PIPELINE_OPERATOR` | No access | Read-only | No access | Create, read, update, and execute |
+| `ROLE_AFU_SOURCE_MANAGER` | No access | Full access | No access | No access |
+| `ROLE_AFU_PIPELINE_VIEWER` | Read-only | No access | Read-only | Read-only |
+| `ROLE_AFU_VIEWER` | Read-only | Read-only | Read-only | Read-only |
+
+
+
+
+
+> **Note:** Full access includes create, read, update, delete, and execute permissions where those actions are available.
+
+## Role access details
+
+The following table describes access behavior for specific AgentFlow Unstructured roles.
+
+| Role or area | Access behavior |
+| --- | --- |
+| `ROLE_ADMIN_AFU` | Applies to customer-facing AgentFlow Unstructured resources only |
+| `ROLE_AFU_TEMPLATE_DESIGNER` | Includes read access to sources so template authors can review source configurations while working with sample documents |
+| `ROLE_AFU_PIPELINE_MANAGER` | Includes read access to sources so pipeline configurators can select and review source configurations |
+| `ROLE_AFU_PIPELINE_OPERATOR` | Includes read access to sources so operators can review the source used by a batch run |
+| `ROLE_AFU_PIPELINE_OPERATOR` | Does not include delete access for batch run history |
+| `ROLE_AFU_PIPELINE_VIEWER` | Can view templates, pipelines, and batch runs, but cannot view sources |
+| `ROLE_AFU_VIEWER` | Provides read-only access across customer-facing AgentFlow Unstructured resources |
+
+## Common role assignments
+
+The following table lists common role combinations for typical users.
+
+| Persona | Assigned roles |
+| --- | --- |
+| Tenant admin | `ROLE_ADMIN_AFU` |
+| Data engineer | `ROLE_AFU_DOCAI_ADMIN` + `ROLE_AFU_SOURCE_MANAGER` |
+| Template author | `ROLE_AFU_TEMPLATE_DESIGNER` |
+| Pipeline configurator | `ROLE_AFU_PIPELINE_MANAGER` + `ROLE_AFU_SOURCE_MANAGER` |
+| Operations user | `ROLE_AFU_PIPELINE_OPERATOR` + `ROLE_AFU_PIPELINE_VIEWER` |
+| Auditor or stakeholder | `ROLE_AFU_VIEWER` |
+
+## Assigning roles and tenants to users
+
+Use the **User Management** application in Console to assign AgentFlow Unstructured roles to users. [User Management](https://docs.reltio.com/en/applications/console/security-applications/user-management-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) lets you create user accounts, assign roles, and assign tenant access.
+
+For a new user, [create the new user account](https://docs.reltio.com/en/applications/console/security-applications/user-management-at-a-glance/managing-user-accounts/creating-a-new-user-account?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), select the AgentFlow Unstructured roles, and then assign the relevant AgentFlow Unstructured tenant or tenants.
+
+For an existing user, [edit the user account](https://docs.reltio.com/en/applications/console/security-applications/user-management-at-a-glance/managing-user-accounts/working-with-existing-user-accounts?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and then update the assigned AgentFlow Unstructured roles and AgentFlow Unstructured tenant access on the **Edit user** page.
+
+
+
+---
+
 # Set up automated pipelines
 
 > **Section:** Products > AgentFlow > Reltio AgentFlow™ at a glance > AgentFlow Unstructured
@@ -38465,7 +38685,7 @@ The Reference attribute configuration has the following properties:
 | `referencedAttributeURIs` | Yes | A Reference attribute doesn’t have its own attributes. It’s using attributes of a relationship and referenced entity. In this property, an array of relationship and referenced entity URIs is the set that will be used as part of the reference attribute. | Array of URIs for relationship and referenced entity attributes |
 | `doNotOverrideForSourceURIs` | No | If there is profile override, if the reference attribute isn’t provided in a request, then the existing reference attributes from sources (specified in this parameter) won’t be deleted. You’ll need to delete relationships that are no longer needed. | Array of URIs for Sources |
 | `referenceAttributeDirection` | No | Specifies whether the reference attribute must appear in the entity when a relationship of type `relationshipTypeURI` is present. Possible values:  - `both`: (default) The reference attribute appears if a relationship of type `relationshipTypeURI` is present. - `parentToChild`: The reference attribute appears if a relationship of type `relationshipTypeURI` is present and if the entity is a `startEntity` in the relation. - `childToParent`: The reference attribute appears if a relationship of type `relationshipTypeURI` is present and if the entity is an `endEntity` in the relation.    This attribute can be useful when the entity and the referenced entity are of the same type. For example, there’s a reference attribute built on an`"OwnedOrganizations"` relation, which connects organizations `"Org1"` and`"Org2"`. In this case, if there are two organizations and a relation between them (where, for example,`"Org1"` is `startEntity`, and `"Org2"` is `endEntity` of the relation), then on `"Org1"`, in the `"Legal Entities Hierarchy"` facet, you’ll see a tree, where `"Org1"` is a parent of `"Org2"`. Also, `"Org1"` will have a reference attribute equal to `"Org2"`. At the same time, on `"Org2"` you’ll see that `"Org2"` has a reference attribute equal to `"Org1"`.If `referenceAttributeDirection` =`parentToChild`, then `"Org1"` will have a reference attribute and `"Org2"` won’t have it. | Static String: `"both"`, `"parentToChild"`, or "`"childToParent"` |
-| `immutable` | No | Defines the [immutablerefattrs](https://docs.reltio.com/search?q=immutablerefattrs&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). This parameter overrides the `immutableRefAttrsByDefault` parameter from the tenant configuration for this particular attribute. | Boolean |
+| `immutable` | No | Defines the [Immutable Reference Attributes](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-information-model/data-model/reltio-object-types/reltio-attribute-types?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs#c_objtypes_attributes_ref_immutable). This parameter overrides the `immutableRefAttrsByDefault` parameter from the tenant configuration for this particular attribute. | Boolean |
 | `immutableForSources` | No | Used to define an array of source systems (URIs and IDs) for which it isn’t possible to change the value of subattributes that come from the referenced entity. However, you can change the values from the relation. | Array of URIs for Sources (String) |
 | `immutableExceptForSources` | No | Defines a list of sources that will ignore the `immutable` parameter. As a result, attribute values that come from one of defined sources will anyway change the reference object. | Array of URIs for sources (String) |
 
@@ -38494,7 +38714,7 @@ The Reference attribute configuration has the following properties:
 
 > **Note:** Currently, `ID` parameters aren’t supported by the Configuration API.
 
-> **Note:** Reference attributes are automatically included during bulk update and attribute update tasks if your tenant has the `alwaysLoadReferenceAttributesInBulkUpdateTask` parameter set to `true` in the `optionalParameters` section of the physical configuration. When the parameter is not explicitly set, the system treats it as enabled by default. To disable this behavior, you must explicitly set the parameter to `false`. Because this is a physical configuration parameter, you must contact Reltio Support and submit a Zendesk ticket to request any updates. See topic, [c discover support](https://docs.reltio.com/search?q=c-discover-support&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+> **Note:** Reference attributes are automatically included during bulk update and attribute update tasks if your tenant has the `alwaysLoadReferenceAttributesInBulkUpdateTask` parameter set to `true` in the `optionalParameters` section of the physical configuration. When the parameter is not explicitly set, the system treats it as enabled by default. To disable this behavior, you must explicitly set the parameter to `false`. Because this is a physical configuration parameter, you must contact Reltio Support and submit a Zendesk ticket to request any updates. See topic, [Get help in Support Portal](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 ## Attribute ordering and attribute survivorship
 
@@ -57979,7 +58199,7 @@ Learn how to update the attributes for multiple entities in bulk.
 
 This API initiates a bulk update task using which you can update attributes in bulk. The task divides the multiple updates into batches of 50 or fewer entities in the background.
 
-> **Note:** To ensure that reference attributes are loaded during lifecycle actions triggered by bulk update tasks, your tenant must have the `alwaysLoadReferenceAttributesInBulkUpdateTask` parameter set to `true` in the `optionalParameters` section of the tenant's physical configuration. When this parameter is not explicitly defined, the system treats it as enabled by default. To disable reference attribute loading, it must be explicitly set to `false`. Because this parameter resides in the physical configuration, you must contact Reltio Support by creating a Zendesk ticket to request this change. See topic, [c discover support](https://docs.reltio.com/search?q=c-discover-support&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+> **Note:** To ensure that reference attributes are loaded during lifecycle actions triggered by bulk update tasks, your tenant must have the `alwaysLoadReferenceAttributesInBulkUpdateTask` parameter set to `true` in the `optionalParameters` section of the tenant's physical configuration. When this parameter is not explicitly defined, the system treats it as enabled by default. To disable reference attribute loading, it must be explicitly set to `false`. Because this parameter resides in the physical configuration, you must contact Reltio Support by creating a Zendesk ticket to request this change. See topic, [Get help in Support Portal](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 While there is no fixed limit on the number of entity URIs that can be processed in a bulk update request, the size of the request body acts as a practical control. To maintain optimal performance and avoid timeouts or errors, especially in production environments, we recommend keeping the request body size between **10 MB to 20 MB**. Structuring requests within this range helps ensure efficient task processing and system stability.
 
@@ -59670,7 +59890,7 @@ POST {TenantURL}/entities
 | Headers | `Authorization` | Yes | Information about authentication access token in format "Bearer `<accessToken>` " (see details in [Authentication API](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/authentication-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)). |
 |  | `Content-Type` | Yes | Should be "`Content-Type: application/json` ". |
 | Query | `returnObjects` | No | Specifies if response should contain created entities. Default value is `true`. |
-| Query | `maxObjectsToUpdate` | No | **Note:** The `maxObjectsToUpdate` parameter will be deprecated. Therefore, we recommend you do not use this parameter and instead, use the [Immutable reference attributes](https://docs.reltio.com/search?q=c_objtypes_attributes_ref_immutable&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) feature. For more information, see [Deprecation Notices at a glance](https://docs.reltio.com/en/reltio/whats-new-and-notable/whats-new-at-a-glance/deprecation-notices-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).When a reference attribute is used, an update made to the referenced entity or relationship will generate an event and cause a referencing entity to get reindexed. In the case where the referenced entity is linked to numerous referencing entities, this can cause undesirable performance impact during a data load. For example, suppose in the source files, a single location is being used by 300 party entities. As the 300 party entities are being loaded into the tenant, the location object continues to absorb more and more duplicate location entities through merging, each time firing an event that causes the party entities linked to it (which are increasing in number continuously from 1 to 300) to get reindexed. To avoid this occurring in data loads and improve the data load performance, use the `maxObjectsToUpdate` POST parameter to specify the maximum number of events generated by the create / update request for any related objects. Once the data load has completed, the tenant should be reindexed to ensure all entities are properly referenced. |
+| Query | `maxObjectsToUpdate` | No | **Note:** The `maxObjectsToUpdate` parameter will be deprecated. Therefore, we recommend you do not use this parameter and instead, use the [Immutable reference attributes](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-information-model/data-model/reltio-object-types/reltio-attribute-types?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs#c_objtypes_attributes_ref_immutable) feature. For more information, see [Deprecation Notices at a glance](https://docs.reltio.com/en/reltio/whats-new-and-notable/whats-new-at-a-glance/deprecation-notices-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).When a reference attribute is used, an update made to the referenced entity or relationship will generate an event and cause a referencing entity to get reindexed. In the case where the referenced entity is linked to numerous referencing entities, this can cause undesirable performance impact during a data load. For example, suppose in the source files, a single location is being used by 300 party entities. As the 300 party entities are being loaded into the tenant, the location object continues to absorb more and more duplicate location entities through merging, each time firing an event that causes the party entities linked to it (which are increasing in number continuously from 1 to 300) to get reindexed. To avoid this occurring in data loads and improve the data load performance, use the `maxObjectsToUpdate` POST parameter to specify the maximum number of events generated by the create / update request for any related objects. Once the data load has completed, the tenant should be reindexed to ensure all entities are properly referenced. |
 |  | `Body` | Yes | JSON Array with objects representing entity objects to be created. Each object must have "type" property but will not have "`URI` " properties (it will be provided/generated by Reltio API). |
 
 **Response**
@@ -62752,7 +62972,7 @@ The partial override does the following actions, instead of removing the existin
 
 Partial override of reference attributes is executed by slices. For example, let us assume that there is an entity with an `Address` referring to a location with two crosswalks **fb.1** and **fb.2**. In the partial override request, if only **fb.1** is specified in the refEntity, then attributes related to **fb.1** are overridden. The attributes of **fb.2** crosswalk are not changed.
 
-Partial override follows the [Immutable reference attributes](https://docs.reltio.com/search?q=c_objtypes_attributes_ref_immutable&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) logic.
+Partial override follows the [Immutable reference attributes](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-information-model/data-model/reltio-object-types/reltio-attribute-types?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs#c_objtypes_attributes_ref_immutable) logic.
 
 When the **Partial Override for Reference Attributes** is enabled and a crosswalk is provided for the referenced entity, then at least one of them must be the data provider.
 
@@ -72982,7 +73202,7 @@ POST /{object URI}/crosswalks
 | Headers | `Authorization` | Yes | Information about authentication access token in format "Bearer `<accessToken>` " (see details in[Authentication API](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/authentication-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)). |
 | Headers | `Content-Type` | Yes | Should be `"Content-Type: application/json"`. |
 | Query | `returnObjects` | No | Specifies if response should contain created objects. **Note:** Default value is `true`. |
-| Query | `maxObjectsToUpdate` | No | > **Note:** The `maxObjectsToUpdate` parameter will be deprecated. Therefore, we recommend you do not use this parameter and instead, use the [Immutable reference attributes](https://docs.reltio.com/search?q=c_objtypes_attributes_ref_immutable&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) feature. For more information, see [Deprecation Notices at a glance](https://docs.reltio.com/en/reltio/whats-new-and-notable/whats-new-at-a-glance/deprecation-notices-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).    Specifies the maximum number of events generated by the Add crosswalk request for any related objects. |
+| Query | `maxObjectsToUpdate` | No | > **Note:** The `maxObjectsToUpdate` parameter will be deprecated. Therefore, we recommend you do not use this parameter and instead, use the [Immutable reference attributes](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-information-model/data-model/reltio-object-types/reltio-attribute-types?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs#c_objtypes_attributes_ref_immutable) feature. For more information, see [Deprecation Notices at a glance](https://docs.reltio.com/en/reltio/whats-new-and-notable/whats-new-at-a-glance/deprecation-notices-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).    Specifies the maximum number of events generated by the Add crosswalk request for any related objects. |
 | Body | -- | Yes | JSON array with crosswalks to be added. |
 
 **Response**
@@ -103864,10 +104084,10 @@ You can request multiple data loading jobs at the same time, but the data loader
 
 - 
 
-  [Prioritize data loading jobs](https://docs.reltio.com/search?q=c-dl-api-job-priority&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+  [Prioritize data loading jobs](https://docs.reltio.com/en/developer-resources/load-and-export-apis/load-and-export-apis-at-a-glance/data-loader-api/order-of-data-loading-jobs?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs#concept-7312).
 - 
 
-  [Pause and Resume a data loading job](https://docs.reltio.com/search?q=c-dl-api-job-pauseresume&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+  [Pause and Resume a data loading job](https://docs.reltio.com/en/developer-resources/load-and-export-apis/load-and-export-apis-at-a-glance/data-loader-api/order-of-data-loading-jobs?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs#concept-1980).
 
 
 
@@ -107667,15 +107887,7 @@ When exporting to the custom bucket in Export Version 2, you must have the follo
 - `s3:DeleteObject`
 - `s3:GetObject`
 
-The Reltio Export service does not allow two export jobs to write to the same custom destination simultaneously. For any of the following combinations:
-
-- `s3Bucket` /`s3Path`
-- `gcsBucket` /`gcsPath`
-- `azureStorageContainer` /`azureStoragePath`
-
-
-
-If an active job already exists, any new export job targeting the same destination will fail immediately with a`400 Bad Request` error: `Invalid export parameter: s3, gcs, azure. Reason: Task '<taskId>' is already exporting data to this custom destination.`.
+The Reltio Export service does not allow two export jobs to write to the same custom destination simultaneously. For any of the combinations {`s3Bucket` /`s3Path` }, {`gcsBucket` /`gcsPath` } or {`azureStorageContainer` /`azureStoragePath` }, if an active job already exists, any new export job targeting the same destination fails immediately with a **400 Bad Request** error: **Invalid export parameter: s3, gcs, azure. Reason: Task '<taskId>' is already exporting data to this custom destination.**
 
 This restriction applies even when the existing job is in a **Scheduled** state and has not yet started processing. To run export jobs in parallel, configure each job to use a separate destination folder. If you are triggering export jobs programmatically, check the status of any existing job for the same destination before starting a new one.
 
@@ -112540,6 +112752,59 @@ The following example shows a successful response.
   "total": 5
 }
 ```
+
+
+
+---
+
+# Configure Entity Update Retry
+
+> **Section:** Developer resources > Entity Management APIs > Entity Management APIs at a glance > Simultaneous Entity Updates
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/simultaneous-entity-updates/configure-entity-update-retry?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** Retry-based Conflict Resolution, repeatAllOperationsOnConflict, Exponential Backoff, Nested Partial Override, Simultaneous Update Conflicts
+
+
+Learn how to request retry-based conflict resolution for tenant updates so that your tenant can automatically retry updates that fail because of simultaneous-update conflicts.
+
+Enable retry-based conflict resolution for tenant by setting `repeatAllOperationsOnConflict` to true in the tenant's physical configuration. When enabled, the system automatically retries an entire update request that encounters a simultaneous-update conflict, using configurable exponential backoff parameters (`BACK_OFF_*`). Nested attribute behavior is controlled separately through `enableNestedPartialOverride` or `disableNestedPartialOverride`, which control how nested attributes are applied during updates. Enable repeatAllOperationsOnConflict when the original request intent must be preserved and the updates are safe to reapply.
+
+## Prerequisites
+
+Before you begin, make sure the following conditions are met:
+
+- You must have identified the tenant that requires the change.
+- You must have confirmedthat retry-related settings, such as `repeatAllOperationsOnConflict` and `enableNestedPartialOverride`, are applied in the tenant's physical configuration.
+- You must have access to your organization's Reltio support process for submitting a configuration request.
+
+## Enable retry logic in the physical configuration
+
+Contact Reltio Support to update your tenant's physical configuration with the following steps.
+
+1. [Submit a support request](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) with Reltio and specify that you want to enable retry-based conflict resolution for tenant updates in your tenant's physical configuration. Include the business reason for the change so Reltio support can review and apply the requested update.
+2. In the ticket, specify that `repeatAllOperationsOnConflict` is set to `true`.
+3. If you also want partial override behavior for nested attributes, specify that `enableNestedPartialOverride` must be enabled for your tenant.
+
+## Result
+
+- The system retries operations that fail due to simultaneous update conflicts.
+- When a conflict is detected, the system restarts and re-executes the entire operation from the beginning using the current state of the object.
+
+## Nested attribute partial override
+
+The `enableNestedPartialOverride` parameter enables partial override behavior for nested attributes. When enabled and a request contains a partial override for a nested attribute, the system processes that specific request with retry logic, as if `repeatAllOperationsOnConflict` were set to `true`. This behavior applies only to the request that contains the partial override.
+
+## Conflict resolution parameters
+
+Use the following parameters to configure how the system handles update conflicts across simultaneous requests.
+
+| Parameter | Type | Default | Description | Usage context |
+| --- | --- | --- | --- | --- |
+| `repeatAllOperationsOnConflict` | Boolean | `False` | Enables retry logic when a conflict is detected. Retries the original request to simulate sequential consistency. | Use to preserve request intent without enforcing order. |
+| `enableNestedPartialOverride` | Boolean | `False` | Allows partial updates to nested attributes to be merged with existing values. | Use for nested attribute updates where partial data should be retained. |
+| `disableNestedPartialOverride` | Boolean | `False` | Disables nested partial override for a specific request (causes overwrite of the whole nested attribute). | Use to overwrite the entire nested attribute in a given request. |
 
 
 
@@ -177580,7 +177845,7 @@ Follow these steps to connect Snowflake to your AWS cloud storage. Need more hel
 | 1 | Create:  -     [IAM policy](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/configure-snowflake-staging-pipeline/configure-the-reltio-data-pipeline-for-snowflake-for-aws/configure-aws-cloud-storage-for-snowflake/create-a-snowflake-iam-policy-in-aws?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) for giving Snowflake read access to S3.    > **Note:** Reltio does not require any permissions here. These permissions are strictly internal to your organization. You only need to grant the following read permissions between your S3 storage and Snowflake:s3:GetObjects3:ListBuckets3:GetObjectLocation s3:GetObjectVersion -     [AWS IAM role](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/configure-snowflake-staging-pipeline/configure-the-reltio-data-pipeline-for-snowflake-for-aws/configure-aws-cloud-storage-for-snowflake/create-a-snowflake-iam-role-with-an-external-id-in-aws?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) with an external ID for Snowflake. |
 | 2 | [Create](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/configure-snowflake-staging-pipeline/configure-the-reltio-data-pipeline-for-snowflake-for-aws/integrate-aws-cloud-storage-with-snowflake/integrate-the-snowflake-account-with-the-aws-s3-bucket?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) a snowflake integration with a read-only role that is assumed by the Snowflake user, and the partial S3 bucket location. |
 | 3 | [Retrieve the AWS IAM user and external ID](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/configure-snowflake-staging-pipeline/configure-the-reltio-data-pipeline-for-snowflake-for-aws/integrate-aws-cloud-storage-with-snowflake/retrieve-the-aws-iam-user-and-external-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
-| 4 | [t integrate apps snowflakeconn iampolicy swcreate](https://docs.reltio.com/search?q=t-integrate-apps-snowflakeconn-iampolicy-swcreate&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
+| 4 | [Create a Snowflake IAM policy in AWS](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/configure-snowflake-staging-pipeline/configure-the-reltio-data-pipeline-for-snowflake-for-aws/configure-aws-cloud-storage-for-snowflake/create-a-snowflake-iam-policy-in-aws?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
 
 ## Configure Snowflake to accept Reltio data from cloud storage
 
@@ -179312,11 +179577,6 @@ To enable attribute filtering for the Reltio Data Pipeline for Snowflake:
 
 1. Enable the following parameter in your tenant during the initial configuration of your Reltio Data Pipeline for Snowflake:
    `"dataFilteringEnabled": true`
-   For more information on the initial configuration, see topics:
-   For more information on the initial configuration, see topics:
-   - [t integrate configuresnowflakeaws](https://docs.reltio.com/search?q=t-integrate-configuresnowflakeaws&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-   - [t integrate configuresnowflakeazure](https://docs.reltio.com/search?q=t-integrate-configuresnowflakeazure&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-   - [t integrate configuresnowflakegcp](https://docs.reltio.com/search?q=t-integrate-configuresnowflakegcp&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 2. In your tenant business configuration, locate the relevant object type section, add a data pipeline configuration, and specify the attributes you want to include:
    - without object inheritance
 
@@ -187771,7 +188031,7 @@ POST {dphUrl}/api/tenants/{tenantID}/adapters
    ```
 { "type": "datashare-databricks", "name": "datashare", "enabled": true, "createdBy": "user@example.com", "createdOn": "2025-06-09T10:05:07.864379Z", "databricksConfig": { "ovOnly": true, "identifier": "identifier1" } }
    ```
-   The `createdOn` timestamp is auto-generated. The field `isOvOnly` determines whether only operational values (OV) are shared. If set to `true`, the schema is also simplified to a flat format.
+   The `createdOn` timestamp is auto-generated. The field is `OvOnly` determines whether only operational values (OV) are shared. If set to `true`, the schema is also simplified to a flat format.
    Field reference:
    | Parameter | Type | Description |
 | --- | --- | --- |
@@ -187786,7 +188046,7 @@ POST {dphUrl}/api/tenants/{tenantID}/adapters
 2. Set up the data share
    Provision the cloud resources and enable the share using the adapter name:
    ```
-POST {dphUrl}/api/tenants/{tenantID}/adapters/{adapterName}/actions/setup
+POST {dphUrl}/api/tenants/{tenantID}/adapters/{adapterName}/actions/setup-databricks-datashare
    ```
 
 Your data share adapter is now set up and ready for Databricks users to access the shared Delta Lake tables through their Databricks Unity Catalog under Delta Sharing.
@@ -195935,7 +196195,7 @@ The Reltio platform provides the following configuration best practices across a
 | The cleanse button must be disabled in all UI configurations. | N/A |
 | **RDM Configuration** | **RDM Configuration** |
 | Maximum number of lookups created in one `POST` to an RDM tenant | 100 |
-| Maximum number of lookup values for all types | 20,000 |
+| Maximum number of lookup values for all types | N/A |
 | Delta Detection: Implementations MUST code delta detection and only `POST` updates and inserts. | N/A |
 | If any attributes in the configuration use RDM, then all related attributes must also use RDM. Otherwise, attributes that don't use RDM won't support drop-down lists in the UI. | N/A |
 | Every RDM Value set must include a source mapping for source "Reltio". | N/A |
@@ -201744,6 +202004,97 @@ You can declare all of them, a few, or just one of the available verification st
 
 ---
 
+# Moving attention lines in address cleansing
+
+> **Section:** Objectives > Cleanse and verify data > Data cleansing at a glance > Data cleansing reference > Out-of-the-box Cleanse Functions > Address cleanser > Mapping Input and Output Attributes
+
+
+**Source:** https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-reference/out-of-the-box-cleanse-functions/address-cleanser/mapping-input-and-output-attributes/moving-attention-lines-in-address-cleansing?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** address cleansing, attention lines, c/o handling, addressline3, output mapping, delivery address preservation
+
+
+Learn how attention lines like C/O are detected and moved during address cleansing to preserve the delivery address in the correct output field.
+
+## Why attention lines can cause data loss
+
+Addresses that include attention lines such as `C/O John Smith` or `Attn: Billing Department` often appear in the first address line when loaded into the platform. Without proper configuration, these values may overwrite the actual street address during cleansing, resulting in incorrect output and failed matching, geocoding, or delivery validation.
+
+## What happens without configuration
+
+When cleansing is applied without specific attention-handling options, values like `C/O` that appear in `AddressLine1` remain in that position in the Output View. As a result, the actual delivery address may be lost or pushed to `AddressLine2`, which is not recognized as the primary line for validation and matching.
+
+## How cleansing logic identifies attention lines
+
+Some address cleansing providers can detect and classify attention line patterns such as `C/O` and `Attn:`. These lines are not considered part of the deliverable street address and can be routed to a separate output field if configured.
+
+## How to move attention lines to a separate address field
+
+To move attention lines into a dedicated address field and preserve the delivery address, you must apply two changes to the entity configuration:
+
+- Add an option to instruct the cleanser to move attention lines to `Address3.`
+- Map the `Address3` output from the cleansing provider to the desired attribute (such as `AddressLine3`) in your model.
+
+Example cleanse configuration:
+
+```
+
+"cleanse": {
+  "provider": "Loqate",
+  "type": "Address",
+  "options": {
+    "process": "pre+c+g",
+    "addressline3": "attention",
+    "opts": {
+      "PreferPrimaryValidAlias": "Yes"
+    }
+  }
+}
+      
+```
+
+Example output mapping:
+
+```
+
+{
+  "attribute": "configuration/entityTypes/Location/attributes/AddressLine3",
+  "mandatory": false,
+  "allValues": false,
+  "cleanseAttribute": "Address3"
+}
+      
+```
+
+## Output example: before and after cleansing
+
+When configured correctly, the cleanser moves the attention line out of `AddressLine1` and preserves the deliverable street address:
+
+**Input record:**
+
+| AddressLine1 | C/O John Smith |
+| --- | --- |
+| AddressLine2 | 123 Main St. |
+
+**Output View (after cleansing):**
+
+| AddressLine1 | 123 Main St. |
+| --- | --- |
+| AddressLine3 | C/O John Smith |
+
+## Benefits of preserving the delivery address
+
+By moving attention lines out of the primary address field, you ensure that the delivery address remains valid and fully matched. This supports downstream cleansing, match rules, postal validation, and geocoding processes. It also improves consistency when merging records from multiple sources with different address formats.
+
+## Related topics
+
+- [Preprocessing location data](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-reference/out-of-the-box-cleanse-functions/address-cleanser/configuring-tenant/preprocessing-location-data?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Cleanse options for address fields](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-reference/out-of-the-box-cleanse-functions/address-cleanser/reltio-address-cleansing-parameters/address-cleanse-options?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+
+
+---
+
 # Reverse geocoding
 
 > **Section:** Objectives > Cleanse and verify data > Data cleansing at a glance > Data cleansing reference > Out-of-the-box Cleanse Functions > Address cleanser
@@ -202423,223 +202774,6 @@ When the `CombinedVerifyMethods` option is enabled, the flexible spelling correc
 
 - Unusual or ambiguous address structures - Consider the address, `60 Boulevard Saint Michel Paris France`. In this example, Saint Michel is both a possible `ThoroughfareName` or `Locality`, and Paris is both a possible `Locality` or `AdministrativeArea`. Such unusual or ambiguous addresses are better handled when the flexible spelling correction option is enabled.
 - Handling of spelling errors - Consider the address, `7804 Mid City Blvd Fort Worth TX 76180 USA`. The flexible spelling correction option corrects Mid City Blvd to Mid Cities Blvd.
-
-
-
----
-
-# Configuring Chain Cleansing
-
-> **Section:** Objectives > Cleanse and verify data > Data cleansing at a glance > Data cleansing reference > Out-of-the-box Cleanse Functions > Address cleanser > Configuring Tenant
-
-
-**Source:** https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-reference/out-of-the-box-cleanse-functions/address-cleanser/configuring-tenant/configuring-chain-cleansing?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
-**Keywords:** Chain Cleansing, Chain section, chain cleansing, chain section
-
-
-The purpose of defining a chain section is to gain the best cleansed result. The chain section of `cleanseConfig` specifies a list of cleanse functions that are applied one by one in a chain.
-
-When we need to validate addresses from more than one country. Of which, one country is the USA and its address is verified by CASS, the entity type used is Location.
-
-In such cases, our configuration includes the following details:
-
-- Tenant configuration (`"process": "c+g"`)
-- Meta-configuration (chain with a few links)
-- Meta-configuration (`"params"` for a link)
-- Meta-configuration (`"mandatory": true` at `outputMapping`)
-
-The following steps explain chain cleansing:
-
-1. In this configuration, `"process": "c+g"` defines CASS cleansing. All addresses are cleansed by CASS (USA or non-USA).
-2. Rewrite the `"options"` parameters of the tenant configuration by setting them at the meta-configuration level as shown below.
-
-   ```
-   {
-                   "uri": "configuration/entityTypes/Location/cleanse/infos/other",
-                   "useInCleansing": true,
-                   "sequence": [
-                   {
-                   "chain": [
-                   {
-                   "cleanseFunction": "Loqate",
-                   "resultingValuesSourceTypeUri": "configuration/sources/ReltioCleanser",
-                   "proceedOnSuccess": false,
-                   "proceedOnFailure": true,
-                   "params": {
-                   "process": "v+g"
-                   },
-                   "mapping": {
-                   "inputMapping": [
-                   ...
-   ```
-3. Then, specify a few links in the `chain`.
-
-   ```
-   "infos": [
-                           {
-                           "uri": "configuration/entityTypes/Location/cleanse/infos/other",
-                           "useInCleansing": true,
-                           "sequence": [
-                           {
-                           "chain": [
-                           {
-                           "cleanseFunction": "Loqate",
-                           "resultingValuesSourceTypeUri": "configuration/sources/ReltioCleanser",
-                           "proceedOnSuccess": false,
-                           "proceedOnFailure": true,
-                           "mapping": {
-                           ...
-                           }
-                           },
-                           {
-                           "cleanseFunction": "Loqate",
-                           "resultingValuesSourceTypeUri": "configuration/sources/ReltioCleanser",
-                           "proceedOnSuccess": false,
-                           "proceedOnFailure": true,
-                           "mapping": {
-                           ...
-                           }
-                           }
-                           ]
-                           }
-                           ]
-                           }
-                           ]
-   ```
-4. Now, set a chain with rewriting options for the address cleansing function (called loqate in the configuration).
-
-   ```
-   "infos": [
-                                   {
-                                   "uri": "configuration/entityTypes/Location/cleanse/infos/other",
-                                   "useInCleansing": true,
-                                   "sequence": [
-                                   {
-                                   "chain": [
-                                   {
-                                   "cleanseFunction": "Loqate",
-                                   "resultingValuesSourceTypeUri": "configuration/sources/ReltioCleanser",
-                                   "proceedOnSuccess": false,
-                                   "proceedOnFailure": true,
-                                   "params": {
-                                   "process": "c+g"
-                                   },
-                                   "mapping": {
-                                   ...
-                                   }
-                                   },
-                                   {
-                                   "cleanseFunction": "Loqate",
-                                   "resultingValuesSourceTypeUri": "configuration/sources/ReltioCleanser",
-                                   "proceedOnSuccess": false,
-                                   "proceedOnFailure": true,
-                                   "params": {
-                                   "process": "v+g"
-                                   },
-                                   "mapping": {
-                                   ...
-                                   }
-                                   }
-                                   ]
-                                   }
-                                   ]
-                                   }
-                                   ]
-   ```
-5. Next, configure `"proceedOnSuccess"` and `"proceedOnFailure"` for the first link.
-   1. Set `"process": "c+g"` for the first link to cleanse the address by CASS (it can be a USA address).
-   2. If CASS cleansing fails, then cleanse this address in a standard way using `"process": "v+g"` (second link in the chain). According to this logic, we must set the following values for the first chain:
-
-- `"proceedOnSuccess": false`
-- `"proceedOnFailure": true`
-6. This is not enough when cleansing a non-US address by CASS. The body and sample are as given below:
-
-   **Request:**
-
-   ```
-   POST {{cleanse_uri}}/?p=c+g&lqtkey={{lqtkey}}&opts=DefaultCountry%3DUS&ctry=US
-   ```
-
-   **Body:**
-
-   ```
-   [
-                                           {
-                                           "pcde": "K2M 2T5",
-                                           "ctry": "Canada",
-                                           "admn": "ON",
-                                           "add1": "48 Glenrill Pl",
-                                           "lcty": "Kanata"
-                                           }
-                                           ]
-   ```
-
-   **Response:**
-
-   ```
-   [
-                                               {
-                                               "results": [
-                                               {
-                                               "AdministrativeArea": "ON",
-                                               "GeoAccuracy": "A2",
-                                               "Locality": "Kanata",
-                                               "GeoDistance": "19267.2",
-                                               "PostalCode": "K2M 2T5",
-                                               "Latitude": "45.294972",
-                                               "Address1": "48 Glenrill Pl",
-                                               "Longitude": "-75.900250"
-                                               }
-                                               ],
-                                               "status": "OK"
-                                               }
-                                               ]
-   ```
-
-> **Note:** Without [Address Verification Code (AVC)](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-reference/out-of-the-box-cleanse-functions/address-cleanser/understanding-address-verification-code?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), the response is not appropriate. To avoid getting failed cleansed results, set a few mandatory fields in the output mapping.
-
-```
-"cleanseConfig": {
-            "mappings": [
-            {
-            "uri": "configuration/entityTypes/Location/cleanse/mappings/address",
-            "outputMapping": [
-            {
-            "attribute": "configuration/entityTypes/Location/attributes/AVC",
-            "mandatory": true,
-            "allValues": false,
-            "cleanseAttribute": "AVC"
-            },
-```
-
-After performing the above sequence of steps, we have the following details:
-
-- Default tenant configuration with `"process": "c+g"`.
-- Meta-configuration where Location has `cleanseConfig: outputMapping` with a few mandatory attributes. This includes chain of two Loqate links, where the first link has options `"c+g"` and the second link has `"v+g"`.
-
-For the `AddressInput` attribute we have the section, `"configuration/entityTypes/Location/cleanse/infos/default"` that must be configured. However, as per the requirements of input fields for CASS, the configuration must have one link:
-
-```
-"infos": [
-            {
-            "uri": "configuration/entityTypes/Location/cleanse/infos/default",
-            "useInCleansing": true,
-            "sequence": [
-            {
-            "chain": [
-            {
-            "cleanseFunction": "Loqate",
-            "resultingValuesSourceTypeUri": "configuration/sources/ReltioCleanser",
-            "proceedOnSuccess": true,
-            "proceedOnFailure": false,
-            "params": {
-            "process": "v+g"
-            },
-            "mapping": {
-```
-
-> **Note:** If you have used CASS cleansing and are trying to cleanse a non-USA address, then with the above configuration, two requests are sent to the system instead of one request. However, this behavior is expected in case of standard cleanse only.
 
 
 
@@ -203675,7 +203809,7 @@ Reltio supports various input and output attributes and their corresponding Clea
 - [Mapping output attribute](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-reference/out-of-the-box-cleanse-functions/address-cleanser/mapping-input-and-output-attributes/mapping-output-attribute?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 - [Additional Fields for CASS](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-reference/out-of-the-box-cleanse-functions/address-cleanser/mapping-input-and-output-attributes/additional-fields-for-cass?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 - [SERP Parameters](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-reference/out-of-the-box-cleanse-functions/address-cleanser/mapping-input-and-output-attributes/serp-parameters?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- [c address cleanse attentionlines](https://docs.reltio.com/search?q=c-address-cleanse-attentionlines&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Moving attention lines in address cleansing](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-reference/out-of-the-box-cleanse-functions/address-cleanser/mapping-input-and-output-attributes/moving-attention-lines-in-address-cleansing?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 
 
@@ -205150,21 +205284,67 @@ Then the S3 file cleanser replaces these extra spaces with a single whitespace c
 
 ---
 
-# Using String Function Cleanser and Address Cleanser together
+# Configure chain cleansing
 
-> **Section:** Objectives > Cleanse and verify data > Data cleansing at a glance > Data cleansing reference > Out-of-the-box Cleanse Functions > String Cleanser
-
-
-**Source:** https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-reference/out-of-the-box-cleanse-functions/string-cleanser/using-string-function-cleanser-and-address-cleanser-together?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
-**Keywords:** Use String and Address Cleanser together, StringFunctionCleanser and AddressCleanser, ReltioCleanser crosswalk, resultingValuesSourceTypeURI, String Function Cleanser and Address Cleanser, Reltio Cleanser crosswalk, resulting Values SourceTypeURI
+> **Section:** Objectives > Cleanse and verify data > Data cleansing at a glance
 
 
-Learn how to combine the StringFunctionCleanser and the AddressCleanser.
+**Source:** https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/configure-chain-cleansing?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
-You may use the `StringFunctionCleanser` and the `AddressCleanser` one after the other. Here's an example of how the two cleansers work together when you configure the string cleanser before the address cleanser:
+**Keywords:** configure chain cleansing in reltio, chain cleansing cleanse config setup, proceedOnSuccess proceedOnFailure chain behavior, address cleanser and string cleanser sequence, loqate cleanse function tenant configuration, outputMapping mandatory fields avc validation, separate crosswalks for chain cleansers, stringfunctioncleanser special character removal, chain cleansing, cleanseConfig, crosswalk, address verification
+
+
+Learn how to configure chain cleansing in `cleanseConfig` to run cleanse functions in sequence, where each function runs based on the result of the previous one.
+
+Chain cleansing uses the `chain` function of `cleanseConfig` in tenant configuration to run cleanse functions in sequence. Use chain cleansing when a primary cleanse function must run first and a fallback cleanse function must run only when the primary function does not return a complete result.
+
+Before you configure a chain function, review the parameters that control its behavior and understand how the platform decides whether a cleanse step has produced a complete result.
+
+## Chain cleansing parameters and behavior
+
+Each cleanse function in a chain runs in sequence, and the platform checks the result before continuing to the next function.
+
+The following table describes the parameters in chain cleansing.
+
+| Parameter | Description |
+| --- | --- |
+| `sequence` | Specifies a list of cleansing chains that are applied in sequence during cleansing. |
+| `chain` | Specifies the list of cleanse functions that are applied in sequence in the chain. |
+| `proceedOnSuccess` | Specifies whether the chain proceeds to the next cleanse step if the current cleanse function succeeds.  The default value is `true`. |
+| `proceedOnFailure` | Specifies whether the chain proceeds to the next cleanse step if the current cleanse function does not succeed.  The default value is `true`. |
+| `filter` | An optional condition on a cleanse function. It controls whether the function runs for specific entity attribute values. Using a filter prevents unnecessary processing and restricts the function to relevant data. |
+| `params` | Specifies additional parameters for the cleanse function. |
+
+In a chain, each cleanse function runs only when the previous function allows the chain to continue.
+
+- `proceedOnSuccess` controls whether the chain continues after a successful cleanse.
+- `proceedOnFailure` controls whether the chain continues after an unsuccessful cleanse.
+
+After each cleanse step runs, the platform checks the `outputMapping`. If all fields marked `"mandatory": true` have values, the step succeeds and the chain applies `proceedOnSuccess`. If one or more mandatory fields are empty or missing, the step fails and the chain applies `proceedOnFailure`. For address cleansing, the Address Verification Code (AVC) is typically marked as mandatory, if a cleanse step does not return an AVC, the platform marks the step as failed.
+
+The following JSON shows an `outputMapping` configuration with `AVC` set as mandatory.
+
+```
+"outputMapping": [
+  {
+    "attribute": "configuration/entityTypes/Location/attributes/AVC",
+    "mandatory": true,
+    "allValues": false,
+    "cleanseAttribute": "AVC"
+  }
+]
+```
+
+
+
+
+
+> **Note:** 1. If an upstream cleanse function leaves the input value unchanged and `proceedOnFailure` is set to `false`, the next cleanse function does not run. This scenario occurs when a string cleanse function is configured to remove special characters but the input is already plain text. In that case, the function does not write a new value or a crosswalk. To keep the chain running, set `params.isForce: true` on the upstream cleanse function so it always generates a value.
+> 2. If you use `filter` in a chain, place the most restrictive filter first.
 
 ## Sample Address
+
+The following example shows the `StringFunctionCleanser` and `AddressCleanser` running in sequence, with the string cleanser configured before the address cleanser.
 
 ```
 {
@@ -205524,7 +205704,7 @@ Here's a table that explains how the configuration in `cleanseConfig` works:
 | `"resultingValuesSourceTypeUri": "configuration/sources/StringCleanser"` | The `StringCleanser` crosswalk is used for string cleansing. The output obtained is the address cleansed for the special characters by the `StringFunctionCleanser`. |
 | `"resultingValuesSourceTypeUri": "configuration/sources/ReltioCleanser"` | The `ReltioCleanser` crosswalk uses the cleansed value from the `StringCleanser` crosswalk as the source. The `AddressCleanser` further cleanses the entire address for verification and Geo-location. |
 
-> **Note:** To apply the `AddressCleanser` before applying the `StringFunctionCleanser`, place the `AddressCleanser` first in the config sequence, followed by the `StringFunctionCleanser`. We recommend configuring the first cleanser in the chain with `proceedOnSuccess` set to true and `proceedOnFailure` set to false. This ensures the process continues only if the first cleanser succeeds, preventing errors from affecting subsequent cleansing steps..
+> **Note:** To apply the `AddressCleanser` before applying the `StringFunctionCleanser`, place the `AddressCleanser` first in the config sequence, followed by the `StringFunctionCleanser`. We recommend configuring the first cleanser in the chain with `proceedOnSuccess` set to true and `proceedOnFailure` set to false. This ensures the process continues only if the first cleanser succeeds, preventing errors from affecting subsequent cleansing steps.
 
 
 
@@ -206202,7 +206382,7 @@ The `attributeValidations` analytical attribute must be appended to the existing
 
 ## Analytical Attributes
 
-Analytical attributes are the properties of an entity. There are two types of analytical attributes, simple and nested. Nested attributes contain a set of analytical attributes using which, complex structures can be formed. Analytical attributes can contain multiple values, the maximum number of values is limited by `maxOccurs` property. A lightweight special kind of attributes, generally used to hold analytics results. For more information about analytical attributes, see [Configuring Analytic Attributes](https://docs.reltio.com/search?q=configuringanalytcattrs&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+Analytical attributes are the properties of an entity. There are two types of analytical attributes, simple and nested. Nested attributes contain a set of analytical attributes using which, complex structures can be formed. Analytical attributes can contain multiple values, the maximum number of values is limited by `maxOccurs` property. A lightweight special kind of attributes, generally used to hold analytics results. For more information about analytical attributes, see [Configuring Analytic Attributes](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-information-model/data-model/reltio-object-types/reltio-attribute-types?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs#configuringanalytcattrs).
 
 ## Working with Analytical Attributes
 
@@ -210213,23 +210393,24 @@ Before editing the properties object:
 
 | Parameter | Description | Possible Values | Example |
 | --- | --- | --- | --- |
-| attributes | Attributes configuration.   - **presentation**: AttributesPresentation (see description below). - **sorting** (optional): Strategy used for sorting attributes when adding new ones. Possible values: `"ascByName"`. | Object with fields | `attributes: { presentation: { "configuration/entityTypes/HCP/attributes/MDMID": { "thousandSeparator": "" } }, sorting: "ascByName" }`\ |
-| cleanse (optional) | Address cleanse configuration. Each key represents an entity type URI and maps to a CleanseConfiguration object. | Object with fields | `cleanse: { "configuration/entityTypes/Location": { actions: { blur: { attributes: ["configuration/entityTypes/Location/attributes/AddressInput"], type: "configuration/entityTypes/Location/cleanse/infos/default" } }, defaultType: "configuration/entityTypes/Location/cleanse/infos/other", hideForExist: ["configuration/entityTypes/Location/attributes/AddressInput"], hideForNew: [] } }` |
-| customScripts | Configuration for custom scripts. Array of *CustomScript* objects (see description below). | Array of CustomScript | `customScripts: [ { files: ["https://mysite.com/hideAttr.js"], permissions: ["https://[^.]+.reltio.com/reltio/api/..."], processApiRequest: ["regex or link patterns"] } ]` |
-| defaultRoute (optional) | Specifies the default perspective to open when no perspective is defined in the browser URL. If not configured, the Search perspective is used by default. | String | `defaultRoute: "dashboard"` |
-| entity | Specifies the default number of attribute values to be displayed in the requested entity.   - **maxValuesInResponse** (optional): number | Object with fields | `entity: {maxValuesInResponse: 3}` |
-| headerColor (optional) | Specifies the background color of the UI header. | String | `headerColor: "#002855"` |
-| i18n (optional) | Map from locale to translation file URL. | Object (key=locale, value=file URL) | `i18n: { en: "https://reltio-ui-localization.s3.amazonaws.com/en.json" }` |
-| logo (optional) | Specifies the link to the image that is displayed on the top-left corner of the screen. The height of the icon should be 35 px or less. | String (URL) | `logo: "https://mysite.com/my-logo.png"` |
-| lookups | Lookup configuration. **showCode**: boolean  **autocomplete** (optional): object with fields:  -     **includeAttributes** (optional): array of string -     **excludeAttributes** (optional): array of string | Object with fields | `lookups: { showCode: true, autocomplete: { includeAttributes: ["configuration/entityTypes/HCO/attributes/Status"], excludeAttributes: ["configuration/entityTypes/HCO/attributes/Name"] } }` |
-| masks (optional) | Configuration for date and date-time masking.   - **dateMask** (optional): string - **dateTimeMask** (optional): string | Object with fields (optional) | `masks: { dateMask: "99-99-9999", dateTimeMask: "99-99-9999 99:99:99" }` |
-| profileCheckUpdate (optional) | Configuration options for checking updates after saving a profile.   - **autoUpdateInReadMode** (optional): array of string - **entityTypes** (optional): array of string | Object with fields | `profileCheckUpdate: { entityTypes: ["*"], autoUpdateInReadMode: ["HCP"] }` |
-| showAttributeDescription (optional) | Determines whether to show attribute descriptions in Profile and Relationship views. | Boolean | `showAttributeDescription: true` |
-| showEntityId (optional) | Determines whether to display the entity ID in the profile header. | Boolean | `showEntityId: true` |
-| showMasking (optional) | Determines whether to display masked attributes. If true, values are masked in the UI. If false, the UI hides the unmask button and relies on the API to mask. | Boolean | `showMasking: true` |
-| showSearchByOv (optional) | Enables the "Search by OV" option for search. | Boolean | `showSearchByOv: true` |
-| validation | Validation configuration.   - **levels** (optional): array of string — "ERROR", "WARNING" - **validateReadMode** (optional): boolean - **validateRelations** (optional): boolean - **validateReferenceEntityInReadMode** (optional): boolean - **strictAuthoringValidation** (optional): boolean | Object with fields | `validation: { validateReadMode: true, levels: ["ERROR", "WARNING"], validateRelations: true, validateReferenceEntityInReadMode: true }` |
-| workflow | Configuration for workflow service.   - **enabled** (optional): boolean - **path** (optional): string | Object with fields | `workflow: { enabled: true, path: "https://example.reltio.com/workflow" }` |
+| `attributes` | Attributes configuration.   - **presentation**: AttributesPresentation (see description below). - **sorting** (optional): Strategy used for sorting attributes when adding new ones. Possible values: `"ascByName"`. | Object with fields | `attributes: { presentation: { "configuration/entityTypes/HCP/attributes/MDMID": { "thousandSeparator": "" } }, sorting: "ascByName" }`\ |
+| `cleanse` (optional) | Address cleanse configuration. Each key represents an entity type URI and maps to a CleanseConfiguration object. | Object with fields | `cleanse: { "configuration/entityTypes/Location": { actions: { blur: { attributes: ["configuration/entityTypes/Location/attributes/AddressInput"], type: "configuration/entityTypes/Location/cleanse/infos/default" } }, defaultType: "configuration/entityTypes/Location/cleanse/infos/other", hideForExist: ["configuration/entityTypes/Location/attributes/AddressInput"], hideForNew: [] } }` |
+| `customScripts` | Configuration for custom scripts. Array of *CustomScript* objects (see description below). | Array of CustomScript | `customScripts: [ { files: ["https://mysite.com/hideAttr.js"], permissions: ["https://[^.]+.reltio.com/reltio/api/..."], processApiRequest: ["regex or link patterns"] } ]` |
+| `defaultRoute` (optional) | Specifies the default perspective to open when no perspective is defined in the browser URL. If not configured, the Search perspective is used by default. | String | `defaultRoute: "dashboard"` |
+| `entity` | Specifies the default number of attribute values to be displayed in the requested entity.   - **maxValuesInResponse** (optional): number | Object with fields | `entity: {maxValuesInResponse: 3}` |
+| `headerColor` (optional) | Specifies the background color of the UI header. | String | `headerColor: "#002855"` |
+| `i18n` (optional) | Map from locale to translation file URL. | Object (key=locale, value=file URL) | `i18n: { en: "https://reltio-ui-localization.s3.amazonaws.com/en.json" }` |
+| `logo` (optional) | Specifies the link to the image that is displayed on the top-left corner of the screen. The height of the icon should be 35 px or less. | String (URL) | `logo: "https://mysite.com/my-logo.png"` |
+| `lookups` | Lookup configuration. **showCode**: boolean  **autocomplete** (optional): object with fields:  -     **includeAttributes** (optional): array of string -     **excludeAttributes** (optional): array of string | Object with fields | `lookups: { showCode: true, autocomplete: { includeAttributes: ["configuration/entityTypes/HCO/attributes/Status"], excludeAttributes: ["configuration/entityTypes/HCO/attributes/Name"] } }` |
+| `masks` (optional) | Configuration for date and date-time masking.   - **dateMask** (optional): string - **dateTimeMask** (optional): string | Object with fields (optional) | `masks: { dateMask: "99-99-9999", dateTimeMask: "99-99-9999 99:99:99" }` |
+| `profileCheckUpdate` (optional) | Configuration options for checking updates after saving a profile.   - **autoUpdateInReadMode** (optional): array of string - **entityTypes** (optional): array of string | Object with fields | `profileCheckUpdate: { entityTypes: ["*"], autoUpdateInReadMode: ["HCP"] }` |
+| `showAttributeDescription` (optional) | Determines whether to show attribute descriptions in Profile and Relationship views. | Boolean | `showAttributeDescription: true` |
+| `showEntityId` (optional) | Determines whether to display the entity ID in the profile header. | Boolean | `showEntityId: true` |
+| `showMasking` (optional) | Determines whether to display masked attributes. If true, values are masked in the UI. If false, the UI hides the unmask button and relies on the API to mask. | Boolean | `showMasking: true` |
+| `showSearchByOv` (optional) | Enables the "Search by OV" option for search. | Boolean | `showSearchByOv: true` |
+| `validation` | Validation configuration.   - **levels** (optional): array of string — "ERROR", "WARNING" - **validateReadMode** (optional): boolean - **validateRelations** (optional): boolean - **validateReferenceEntityInReadMode** (optional): boolean - **strictAuthoringValidation** (optional): boolean | Object with fields | `validation: { validateReadMode: true, levels: ["ERROR", "WARNING"], validateRelations: true, validateReferenceEntityInReadMode: true }` |
+| `workflow` | Configuration for workflow service.   - **enabled** (optional): boolean - **path** (optional): string | Object with fields | `workflow: { enabled: true, path: "https://example.reltio.com/workflow" }` |
+| `disableTimestampLocalization` | Determines whether timestamp data type attributes are localized in the UI. If omitted or set to `false`, timestamp values appear in the user's local time zone. If set to `true`, timestamp values are displayed in UTC exactly as returned by the API, without local time zone conversion.This parameter applies to all timestamp attributes across all entity types in the tenant. | Boolean | `disableTimestampLocalization: true` |
 
 
 
@@ -210941,6 +211122,8 @@ These values define which type of UI screen is rendered.
 
 ## Supported chart types (chartType in DashboardFacet)
 
+The following table describes the supported chart types for `DashboardFacet`.
+
 | Value | Description |
 | --- | --- |
 | `bar` | Bar chart (vertical or horizontal) |
@@ -210954,6 +211137,8 @@ These values define which type of UI screen is rendered.
 | `table` | Table view with bars embedded in cells |
 
 ## Profile view components (component in profile views[])
+
+The following table describes the supported components for profile `views[]`.
 
 | Value | Description |
 | --- | --- |
@@ -210975,6 +211160,8 @@ These values define which type of UI screen is rendered.
 
 ## Access control fields
 
+The following table describes the access control fields used in the UI configuration file.
+
 | Field | Description | Value Type |
 | --- | --- | --- |
 | `canRead` | Roles allowed to view the component | `string[]` |
@@ -210985,6 +211172,8 @@ These values define which type of UI screen is rendered.
 These fields are optional but recommended for granular role-based access.
 
 ## Layout grid fields (layout[] inside Dashboard, profile, or pivoting)
+
+The following table describes the layout grid fields used in Dashboard, profile, or pivoting layouts.
 
 | Field | Description | Type |
 | --- | --- | --- |
@@ -210998,6 +211187,8 @@ These fields are optional but recommended for granular role-based access.
 
 ## Chart ordering options
 
+The following table describes the supported chart ordering options.
+
 | Field | Description | Supported Values |
 | --- | --- | --- |
 | `orderType` | Defines how chart values are sorted | `reversedCount`, `alphabetical` |
@@ -211006,17 +211197,22 @@ These fields are optional but recommended for granular role-based access.
 
 ## Field types in the properties object
 
+The following table describes common field types supported in the `properties` object.
+
 | Field | Description | Type |
 | --- | --- | --- |
 | `checkIdle` | Idle timeout in milliseconds, or use `true` for default timeout | number or `true` |
 | `customScripts` | List of JavaScript files and matching API patterns | object[] |
 | `defaultRoute` | Specifies which screen loads first after login | string |
+| `disableTimestampLocalization` | Displays timestamp attributes in UTC instead of the user's local time zone. Applies across the tenant. | boolean |
 | `logo` | URL of the logo image displayed in the top-left corner | string (URL) |
 | `masks.dateMask` | Format mask used for date fields | string (mask) |
 | `masks.dateTimeMask` | Format mask used for datetime fields | string (mask) |
 | `workflow.path` | URL to the workflow server | string (URL) |
 
 ## Validation configuration
+
+The following table describes the validation configuration fields and accepted values.
 
 | Field | Description | Accepted Values |
 | --- | --- | --- |
@@ -211025,6 +211221,8 @@ These fields are optional but recommended for granular role-based access.
 | `validateRelations` | Enables validation on entity relationships | `true`, `false` |
 
 ## Supported sidePanelViews
+
+The following table describes the supported `sidePanelViews` values. 
 
 | Value | Description |
 | --- | --- |
@@ -211837,7 +212035,7 @@ To create a sample connection, do the following steps:
 
 # Creating a Manifest
 
-> **Section:** Objectives > Integrate data > Data integration at a glance > Managing the Life Cycle of a Recipe
+> **Section:** Objectives > Integrate data > Data integration at a glance > Managing the life cycle of a recipe
 
 
 **Source:** https://docs.reltio.com/en/objectives/integrate-data/data-integration-at-a-glance/managing-the-life-cycle-of-a-recipe/creating-a-manifest?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
@@ -212035,7 +212233,7 @@ Some of the initial steps for creating a sample recipe are detailed in [Creating
 
 # Importing a Package
 
-> **Section:** Objectives > Integrate data > Data integration at a glance > Managing the Life Cycle of a Recipe
+> **Section:** Objectives > Integrate data > Data integration at a glance > Managing the life cycle of a recipe
 
 
 **Source:** https://docs.reltio.com/en/objectives/integrate-data/data-integration-at-a-glance/managing-the-life-cycle-of-a-recipe/importing-a-package?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
@@ -212063,30 +212261,49 @@ For more information, see [Importing: Deployment](https://docs.workato.com/recip
 
 ---
 
-# Managing the Life Cycle of a Recipe
+# Managing the life cycle of a recipe
 
 > **Section:** Objectives > Integrate data > Data integration at a glance
 
 
 **Source:** https://docs.reltio.com/en/objectives/integrate-data/data-integration-at-a-glance/managing-the-life-cycle-of-a-recipe?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
-**Keywords:** Recipe Life Cycle in Reltio Integration Hub, managing life cycle of a recipe, recipe life cycle
+**Keywords:** recipe lifecycle management, manage recipe lifecycle in reltio integration hub, preserve recipe customizations during upgrades, export and import recipe packages, recipe version history, recipe dependencies, customizations, upgrades, versioning
 
 
-Most of the recipes undergo a life cycle that involves recipe creation, testing, and deployment on a system where the end-to-end integration flow is tested and confirmed to be successful.
+Learn about how recipe lifecycle management in Reltio Integration Hub helps you move recipes across environments and preserve your customizations during upgrades.
 
-Most of the recipes undergo a life cycle that involves recipe creation, testing, and deployment on a system where the end-to-end integration flow is tested and confirmed to be successful. After a recipe is found to be working satisfactorily and as per the design, it is time to move it to another system. For example, you can first create a recipe in a development environment, then move it to a test environment and finally, bring it to your production environment.
+Recipes typically follow a lifecycle that includes creation, testing, and deployment in an environment where the end-to-end integration flow is validated. After a recipe works as designed, you can move it to another environment. For example, create a recipe in a development environment, move it to a test environment, and then promote it to a production environment.
 
-Reltio Integration Hub empowers you to do the following tasks:
+Recipe lifecycle management helps you preserve integration assets during upgrades and environment changes. When you export recipes together with their dependencies, keep package contents in source control, and use recipe version history to review or restore prior changes, you reduce the risk of losing custom work during a deployment or upgrade.
 
-- Export and import packages containing recipes and their dependencies (lookup tables, message templates, and so on.)
-- Package recipes can also be placed in GIT
-- Save every change to the recipe in a version history with the possibility to restore a prior version
-- Use the Project and Folder constructs to organize your recipes and other assets
-- Include all recipe dependencies in the export, and import in a target account
-- Avoid exporting any credentials, keys, or other private data that is required to make a connection to an application
+Reltio Integration Hub supports the following lifecycle management capabilities:
 
-Packages provide a mechanism to export and import recipes and their dependencies from one account to another. To export packages, you will need to first create a manifest. A manifest identifies the recipes that a package should contain and keeps track of dependencies and changes. For more information, see [Recipe Life Cycle Management](https://docs.workato.com/recipe-development-lifecycle.html#recipe-lifecycle-management).
+- Export and import packages that contain recipes and their dependencies, such as lookup tables and message templates.
+- Store packaged recipes in Git for version control.
+- Save changes in recipe version history and restore an earlier version when needed.
+- Use projects and folders to organize recipes and related assets.
+- Include recipe dependencies in an export and import them into a target account.
+- Exclude credentials, keys, and other private connection data from exported packages.
+
+For more information about packaging recipes and dependencies for deployment across environments, see [Recipe lifecycle management](https://docs.workato.com/recipe-development-lifecycle.html#recipe-lifecycle-management).
+
+## Customization behaviour across upgrades and environment changes
+
+Reltio supports only the connector and recipes provided with Reltio Integration Hub (RIH). The following guidelines help preserve customized behavior after upgrades or environment changes:
+
+- Before the upgrade, export the recipes and related assets that you want to preserve.
+- If you store packaged recipes in Git, commit the latest package before the upgrade so you have a version to compare or restore.
+- Review the recipe version history to identify recent changes or restore an earlier version.
+- After the upgrade or import, review customized assets in the target environment.
+- Validate that your custom recipes and configurations work as expected.
+- Reconfigure any customization that no longer matches the target environment.
+
+## Export Manifests and Package Contents
+
+A manifest defines the contents of a package. The manifest identifies which recipes are included and lists their dependencies, such as lookup tables and message templates. When you export a package, it controls what is included and moved to the target environment.
+
+To know more about creating and using an export manifest, see [Export: Packaging Recipes and Dependencies](https://docs.workato.com/en/recipe-development-lifecycle/export#export-manifests).
 
 
 
@@ -219228,7 +219445,7 @@ You can create derived or analytical attributes using the following methods:
 
 - 
 
-  Using the API, see topic [Configuring Analytic Attributes](https://docs.reltio.com/search?q=configuringanalytcattrs&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+  Using the API, see topic [Configuring Analytic Attributes](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-information-model/data-model/reltio-object-types/reltio-attribute-types?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs#configuringanalytcattrs).
 - 
 
   Using the Console, see topic [Create a derived attribute from the Console](https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/define-entity-types-and-attributes/create-entity-type-attributes/derived-attributes/create-a-derived-attribute-from-the-console?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
@@ -220135,7 +220352,7 @@ You can use the **Entity types** option in the left pane to manage entity types 
 
 An **Entity Type** is a class of entity, whereas an entity is a specific instance of an entity type. For example, *Individual* is a Reltio Context Intelligence Platform entity type, whereas *Jim* is an entity (or instance) of type Individual. To learn more about entity types, see [What is an Entity Type?](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-information-model/data-model/reltio-object-types/reltio-entity-types?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
-Attributes are defined as a collection in the *entityTypes* section of the configuration file. **Data Modeler** allows you to create and modify entity types as well as create new attributes by providing appropriate user interface to do so. To learn about an alternate way of configuring attributes, see [Configuring Attributes](https://docs.reltio.com/search?q=configuringattrs&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+Attributes are defined as a collection in the *entityTypes* section of the configuration file. **Data Modeler** allows you to create and modify entity types as well as create new attributes by providing appropriate user interface to do so. To learn about an alternate way of configuring attributes, see [Configuring Attributes](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-information-model/data-model/reltio-object-types/reltio-attribute-types?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs#configuringattrs).
 
 Relationships are links between entities, such as HCOs affiliated with an HCP. To learn more about Relationships, see the [What is a relationship?](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-information-model/data-model/reltio-object-types/reltio-relationship-types?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) topic.
 
@@ -223810,6 +224027,12 @@ The Hierarchy perspective supports the following actions::
 
 The **Hierarchy** perspective depends on both backend and UI setup. Tenant business configuration defines the hierarchy types available to the tenant and the entity types that can use them. UI configuration controls whether and where the Hierarchy tab appears in the Profile view for a given entity type and which users can access it. For more information, see [Configure tenant business settings for hierarchy](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/hierarchy-perspective/configure-tenant-business-settings-for-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Configure UI settings for the Hierarchy tab](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/hierarchy-perspective/configure-ui-settings-for-the-hierarchy-tab?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
+## Watch how Hierarchy perspective works
+
+The following video explains how to create, import, or view hierarchies for a profile,.
+
+*Video: materialized_hierarchy.mp4*
+
 
 
 ---
@@ -224275,7 +224498,9 @@ When `showAppliedSurvivorshipRules` is enabled, the system includes the `showApp
 
 Displaying the applied survivorship rule is important when fallback strategies are applied to determine the OV. If the primary survivorship rule does not return a result, fallback rules are applied. The applied rule shows which strategy determined the OV.
 
-When fallback rules are used, the OV decision path tooltip in the `Attributes & OV` column displays how the final strategy was determined, including the full chain of fallback strategies.*Image: ui_sourcestypesurvivorshiprule.png*
+When fallback rules are used, the OV decision path tooltip in the `Attributes & OV` column displays how the final strategy was determined, including the full chain of fallback strategies.
+
+*Image: ui_sourcestypesurvivorshiprule.png*
 
 ## Count
 
@@ -224297,9 +224522,23 @@ You can also easily find out if a nested attribute belongs to a deleted crosswal
 
 *Image: ui_sources_deletedcrosswalk.png*
 
+**Hide attributes**
+
+To hide an attribute, click the **X** icon corresponding to the required attribute. The attribute is hidden from the list.
+
+*Image: i-hide-attribute.png*
+
+To add an attribute back, click **+ATTRIBUTE** and select the required attribute from the list.
+
+**Reorder attributes**
+
+To reorder an attribute, drag the attribute row to the required position in the list.
+
+*Image: i-reorder-attribute.gif*
+
 **Dependent crosswalks**
 
-If a crosswalk provides only nested or reference attribute values then this crosswalk is added as dependent crosswalk
+If a crosswalk provides only nested or reference attribute values then this crosswalk is added as dependent crosswalk.
 
 *Image: hub-sources-perspective.png*
 
@@ -230578,34 +230817,40 @@ Contact Reltio Support for these Reltio account details, which you'll need to co
 
   External IDs
 
-This process helps you to use a streaming provider with authentication through IAM role.
+This process helps you use a streaming provider with authentication through an IAM role.
 
 
 To configure the IAM roles for event streaming:
 
-1. Create an SQS queue for the Reltio client to stream into.
-2. Create an IAM policy that defines the permissions required for streaming to the SQS destination queue:
+1. Create an SQS queue or SNS topic for the Reltio client to stream into.
+   - In the AWS Console, go to Simple Queue Service (SQS).
+   - Make sure the queue supports these actions:
+   - `sqs:SendMessage`
+   - `sqs:GetQueueUrl`
+   - `sqs:GetQueueAttributes`
+   - SQS
+2. Create an IAM policy that defines the permissions required for streaming to the SQS destination queue.
    Following is an example of policy configuration:
    ```
 { "Version": "2020-01-01", "Statement": [ { "Sid": "VisualEditor0", "Effect": "Allow", "Action": [ "sqs:SendMessage", "sqs:GetQueueUrl", "sqs:GetQueueAttributes" ], "Resource": "arn:aws:sqs:us-east-1:CUSTOMER-ACCOUNT-ID:queue-to-stream-into" } ] }
    ```
-   - sqs:SendMessage
-   - sqs:GetQueueUrl
-   - sqs:GetQueueAttributes
-3. Configure a role in your AWS account to provide Reltio account access to the SQS queue.
-   > **Important:** Reltio does **not** support IAM Role ARNs that include a path component (for example, `service-role/` in `role/service-role/ROLE_NAME`).
+3. Configure a role in your AWS account to provide Reltio access to the SQS queue.
+   > **Important:** Reltio does **not** support IAM Role ARNs that include a path component, for example, `service-role/` in `role/service-role/ROLE_NAME`.
    > **Use this format instead**: `arn:aws:iam::AWS_ACCOUNT_ID:role/ROLE_NAME`
    > If your Role ARN includes a path, Reltio will be unable to validate or assume the role, and connection to the external queue will fail.
-   The following are key points about configuring the role:
-   - **When creating new role:**
+   Use one of the following approaches to configure the role:
+   - **When creating a new role:**
 
 - 
 
-  Choose **Another AWS account** option, check **Require external ID**. Enter the details with previously acquired **Account ID** and **External ID.**
+  Choose **Another AWS account**, select **Require external ID**, and enter the previously acquired **Account ID** and **External ID**.
 - 
 
-  Open the created role. Choose the **Trust Relationships** tab. Select **Edit trust**. Replace *arn:aws:iam:ReltioAccountID:root* in **"Principal"."AWS"** section with *Reltio API/Dataload AWS User ARNs* provided by Reltio Support. For more information on determining which users must be used as trusted user, see **When editing existing role**.
-   - **When editing existing role:** Choose the **Trust Relationships** tab. Select **Edit trust relationship**. Edit **Statement** section to match the following: 
+  Open the created role, choose the **Trust Relationships** tab, and select **Edit trust**.
+- 
+
+  Replace *arn:aws:iam:ReltioAccountID:root* in the **"Principal"."AWS"** section with the *Reltio API/Dataload AWS User ARNs* provided by Reltio Support. For guidance on which users to add, see **When editing an existing role**.
+   - **When editing an existing role:** Choose the **Trust Relationships** tab and select **Edit trust relationship**. Update the **Statement** section to match the following:
 
 ```
 {
@@ -230614,10 +230859,10 @@ To configure the IAM roles for event streaming:
         {
             "Effect": "Allow",
             "Principal": {
-               "AWS": [
-	       "arn:aws:iam::123456789876:user/reltio.platform.dataload",
-                  "arn:aws:iam::123456789876:user/reltio.platform.api"
-        	    ]
+                "AWS": [
+                    "arn:aws:iam::123456789876:user/reltio.platform.dataload",
+                    "arn:aws:iam::123456789876:user/reltio.platform.api"
+                ]
             },
             "Action": "sts:AssumeRole",
             "Condition": {
@@ -230635,39 +230880,11 @@ To configure the IAM roles for event streaming:
 
 
 
-> **Important:** The `ExternalId` must be a UUID version 7 string. Older UUID formats (such as v1) may result in authentication failures. To generate a valid UUID v7, use:`<codeph>GET https://platform-management.reltio.com/api/v1/tools/externalId</codeph>`
-
-
-
-
-
-> **Note:** To configure the SQS queue in a GCP tenant, add the below role details:
-> ```
-> { 
-> "Version": "2012-10-17", 
-> "Statement": [ 
-> { 
-> "Effect": "Allow", 
-> "Principal": { 
-> "AWS": [ 
-> "arn:aws:iam::123456789012:user/reltio.platform.dataload.gcp", 
-> "arn:aws:iam::123456789012:role/role-reltio-platform-dataload-gcp" 
-> ] 
-> }, 
-> "Action": "sts:AssumeRole", 
-> "Condition": { 
-> "StringEquals": { 
-> "sts:ExternalId": {your-external-id} 
-> } 
-> } 
-> } 
-> ] 
-> }
-> ```
-   - Attach the previously created IAM Policy to this role.
-4. Contact us at Reltio and provide the ARN of the role that you created.
-5. We will ensure that the following users - `user/reltio.platform.dataload`, `user/reltio.platform.api` and `"user/application_key" users` - are assigned the `sts:AssumeRole` permission for the role you created.
-   > **Note:** Reltio supports both Amazon SQS and Amazon SNS for event steaming. If you want to configure SNS, clear the **Use ARN** checkbox and select the **SNS** option from the **Type** dropdown when configuring your external queue. For more information, see topic [Add an external queue configuration](https://docs.reltio.com/en/objectives/stream-data/data-streaming-at-a-glance/data-streaming-operation/add-an-external-queue-configuration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+> **Important:** The `ExternalId` must be a UUID version 7 string. Older UUID formats, such as v1, may result in authentication failures. To generate a valid UUID v7, use `GET https://platform-management.reltio.com/api/v1/tools/externalId`.
+   - Attach the previously created IAM policy to this role.
+   - Use the role ARN when you configure the external queue for event streaming.
+4. Complete the external queue configuration.
+   Reltio supports both Amazon SQS and Amazon SNS for event streaming. If you want to configure SNS, clear the **Use ARN** checkbox and select the **SNS** option from the **Type** dropdown when configuring your external queue. For more information, see [Add an external queue configuration](https://docs.reltio.com/en/objectives/stream-data/data-streaming-at-a-glance/data-streaming-operation/add-an-external-queue-configuration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
    **Additional requirements for HIPAA environments**
    When configuring external queue streaming in a HIPAA environment, add your HIPAA user to your trust policy. A sample is given below, which you must add to your IAM policy:
    ```
@@ -234105,7 +234322,7 @@ For more information on uploading, replacing, and publishing the file, see [Impo
 
    **Example: Debugging a Custom Listener Class Locally**
 
-   [In this example, we are going to create a custom listener and debug it on a local machine. Suppose we have a [Delete Profile Review](https://docs.reltio.com/en/objectives/manage-workflow-tasks/workflow-management-at-a-glance/workflow-management-reference/workflow-use-cases/reviewing-recommend-delete?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) Workflow and a user task assigned as shown in the image below:
+   In this example, we are going to create a custom listener and debug it on a local machine. Suppose we have a [Delete Profile Review](https://docs.reltio.com/en/objectives/manage-workflow-tasks/workflow-management-at-a-glance/workflow-management-reference/workflow-use-cases/reviewing-recommend-delete?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) Workflow and a user task is assigned as shown in the image below:
 
    *Image: wf_localdebug_taskui.png*
 
