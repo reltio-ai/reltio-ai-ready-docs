@@ -1,9 +1,9 @@
 # Reltio AI-Ready Documentation
 
-> The complete Reltio product documentation corpus — 3,288 topics — optimized for AI consumption and available as structured Markdown. No authentication required.
+> The complete Reltio product documentation corpus — 3,291 topics — optimized for AI consumption and available as structured Markdown. No authentication required.
 
-![Last synced](https://img.shields.io/badge/Last%20synced-2026--05--20-blue)
-![Topics](https://img.shields.io/badge/Topics-3%2C288-green)
+![Last synced](https://img.shields.io/badge/Last%20synced-2026--05--22-blue)
+![Topics](https://img.shields.io/badge/Topics-3%2C291-green)
 ![Format](https://img.shields.io/badge/Format-Markdown-lightgrey)
 ![Access](https://img.shields.io/badge/Access-Public%2C%20no%20auth-brightgreen)
 
@@ -36,7 +36,7 @@ That's it — you now have the full Reltio documentation corpus locally. See [Ho
 
 ### `docs.md` — Documentation corpus (~11 MB)
 
-The complete Reltio documentation corpus compiled into a single Markdown file. It covers 3,288 topics across all Reltio products and documentation categories:
+The complete Reltio documentation corpus compiled into a single Markdown file. It covers 3,291 topics across all Reltio products and documentation categories:
 
 - **Reltio MDM** — entity modeling, matching, merging, survivorship, data quality, APIs, and connectors
 - **Reltio I360** — customer intelligence, analytics, and identity resolution
