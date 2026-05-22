@@ -1,8 +1,8 @@
 # Reltio Documentation
 
-_Generated: 2026-05-20 02:14 UTC_
+_Generated: 2026-05-22 02:14 UTC_
 
-_Topics: 3288_
+_Topics: 3291_
 
 ---
 
@@ -4264,7 +4264,8 @@ Learn how to configure RDM Autopilot for automated and assisted reference data m
 
 RDM Autopilot (Intelligent Mapping) is an optional automation capability in Reltio Reference Data Management (RDM) that helps organizations automatically resolve unmapped source values during transcode operations. When a source value does not have a mapping to a canonical lookup value, Autopilot analyzes the value using semantic similarity, fuzzy matching, AI reasoning, and frequency thresholds. Based on this evaluation, Autopilot automatically maps values, generates suggestions for steward review, detect misspellings, or recommends creating new lookup entries.
 
-> **Note:** This capability is not enabled by default. Because Autopilot uses AI-based evaluation, it works only when you explicitly enable the Autopilot feature in the configuration settings.
+> **Note:** - Autopilot is disabled by default. Because it uses AI-based evaluation, you must explicitly enable the Autopilot feature in the configuration settings before you can use it.
+> - To enable RDM Autopilot, you must have Create, Read, Update, and Delete access to the **RDM Configuration** resource. Users assigned the `ROLE_ADMIN_TENANT` role have this access by default. You can also grant resource-level access on **RDM Configuration** to specific users, allowing them to enable RDM Autopilot without the full `ROLE_ADMIN_TENANT` role.
 
 You maintain full control over whether the feature is used. If the feature is not turned on, the system continues to behave as usual, and unmapped values must be handled manually..
 
@@ -62408,7 +62409,7 @@ The `Entities API` endpoints enable you to create, update, and delete entities a
 
 > **Note:** All Data API requests must be signed with an authorization token that provides access rights. For more information, see [Authentication API](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/authentication-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
-Alternatively, use the **Console Data Model** to define entity types and the **Hub Profile views** to manage specific instances of entities of defined types. For more information, see topics [c model define overview](https://docs.reltio.com/search?q=c-model-define-overview&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Profiles at a glance](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+Alternatively, use the **Console Data Model** to define entity types and the **Hub Profile views** to manage specific instances of entities of defined types. For more information, see topics [Define entity types and attributes](https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/define-entity-types-and-attributes?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Profiles at a glance](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 ## Entity object structure
 
@@ -109758,6 +109759,8 @@ Learn about the Autopilot APIs that let you manage tenant-level configuration, l
 
 The Autopilot APIs also known as **Intelligent Mapping APIs** enable you to configure and manage Autopilot behavior in Reltio Reference Data Management (RDM). These APIs allow you to control how unmapped source values are evaluated, matched, and processed into existing or new lookup values.
 
+> **Note:** To enable RDM Autopilot, you must have Create, Read, Update, and Delete access to the **RDM Configuration** resource. Users assigned the `ROLE_ADMIN_TENANT` role have this access by default. You can also grant resource-level access on **RDM Configuration** to specific users, allowing them to enable RDM Autopilot without the full `ROLE_ADMIN_TENANT` role.
+
 Use the Autopilot APIs to manage tenant-level configuration, define lookup type–specific overrides, maintain blocked values, and monitor or manage match statistics generated during Autopilot processing.
 
 The following APIs are available as part of the Autopilot API:
@@ -125553,12 +125556,6 @@ Content-Type: application/x-www-form-urlencoded
 Body: grant_type=client_credentials  
 ```
 
-
-
-
-
-> **Tip:** To limit access to a specific tenant when requesting a token, see [Request access token scoped to specific tenants](https://docs.reltio.com/search?q=t-api-auth-scoped-tenant-access&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
-
 **Parameters**
 
 | Name | Name | Required | Description |
@@ -126514,6 +126511,46 @@ By default, tokens expire after 60 minutes. To authenticate into Reltio using sc
 If you don't store your token, you will need to request a token every time you want to authenticate into Reltio. This is a highly inefficient practice. In Reltio, we have a limit of 10 GET token requests per second. If you exceed this limit, you will see the `429 HTTP status``(Too Many Request)` message. This indicates that you need to change the way you are requesting tokens to ensure it complies with our limit.
 
 > **Note:** To get a new token before the current one expires, enable the Multi Token Support feature. For more information, see topic [Multi Token Support](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/authentication-api/multi-token-support?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+
+
+---
+
+# Obtain an access token using client credentials
+
+> **Section:** Developer resources > System Administration APIs > System Administration APIs at a glance > Authentication API
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/authentication-api/obtain-an-access-token-using-client-credentials?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** client credentials token, get access token postman, oauth2 token reltio, reltio authentication setup, authentication api, system administration apis, access token client id secret, authorization header, token generation, oauth, authentication, integration
+
+
+Learn how to retrieve an access token using the OAuth 2.0 client credentials grant type in Postman.
+
+You need a valid Reltio Client ID and Client Secret. These are typically generated in Reltio Console under your application's OAuth configuration. Ensure your client is authorized for the correct scopes and environments.
+
+Use these steps to generate an access token using the OAuth 2.0 client credentials grant type in Postman. This token is required to authenticate API requests in Reltio.
+
+1. In Postman, open your request and go to the **Authorization** tab.
+   *Image: Authorization tab in Postman*
+2. Set the **Type** to **OAuth 2.0**.
+   *Image: Configure new token settings in Postman*
+3. Select **Get New Access Token** and configure the token settings:
+   - **Token Name**: Any descriptive name
+   - **Grant Type**: Client Credentials
+   - **Access Token URL**: `https://auth.reltio.com/oauth/token`
+   - **Client ID**: Your client ID
+   - **Client Secret**: Your client secret
+   - **Scope**: Leave blank (unless required by your tenant)
+   - **Client Authentication**: Send client credentials in body
+4. Select**Get New Access Token** at the bottom of the dialog.
+   *Image: Configure new token settings in Postman*
+5. Select **Use Token** to apply the token to your request.
+   *Image: Token successfully retrieved with metadata*
+   > **Note:** The token is issued by a centralized Reltio authentication service and is not tenant-specific. As a result, IP whitelisting is **not enforced** when retrieving the token. However, when you use this token to access tenant-specific APIs (for example, `/entities/_scan`), **IP whitelisting is enforced**. If your request comes from a non-whitelisted IP, it will fail with a `403 Forbidden` error, even with a valid token.
+
+The token is now applied to your request. You can send API requests to Reltio endpoints with this token. The token typically expires after one hour.
 
 
 
@@ -140797,6 +140834,7 @@ This is a list of some relevant limits and timeouts enforced by the Reltio Integ
 
 Other limits and timeouts that are usually specific to some connectors can be found throughout the [documentation](https://docs.workato.com). Some applications can also enforce limits and those limitations are not documented here.
 
+- By default, an RIH workspace can have up to 100 collaborators. If more users need access, review the current workspace members and remove users who no longer require access. If you need more than 100 collaborators in the workspace, [submit a support request](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 - An account can have Reltio Integration Hub up to 100 [lookup tables](https://docs.workato.com/features/lookup-tables.html#lookup-tables) with up to 10 columns and 10,000 records per table.
 
   > **Note:** It may be possible to add more than 10,000 records to a lookup table, but the 10,000 record limit may be enforced in other ways. For example, while exporting lookup table values to a recipe lifecycle management package.
@@ -141590,6 +141628,8 @@ Follow these steps to create an Analyze match strategy job:
 
 **Source:** https://docs.reltio.com/en/applications/console/tenant-management-applications/tenant-management-at-a-glance/tenant-configuration-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
+**Keywords:** tenant configuration at a glance, configure tenant settings in console, tenant configuration page parameters, manage tenant configuration settings, cleanse configuration tenant settings, message streaming tenant configuration, match strategy tenant configuration, role based access control for rdm, tenant configuration, message streaming, match strategy, rbac
+
 
 Learn about self-service tenant configurations to empower administrators to manage their own tenant settings
 
@@ -141667,6 +141707,7 @@ Explore the Cleanse configurations to tailor how addresses are cleansed, verifie
 | Parameter | Description | Default value | Allowed Values | Additional Info |
 | --- | --- | --- | --- | --- |
 | Message streaming | Message streaming enables the Reltio platform to process events from an internal queue into an external queue or topic in JSON format.   Enable or disable messaging on all queues, including hidden ones like GBQ (Google BigQuery) and SFDC (Salesforce). | `Enabled` | `Enabled`  `Disabled` | [Message streaming](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/events-api/message-streaming?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
+| Hierarchical OV for delta calculation | Controls how operational values (OV) are calculated for nested attributes in streamed delta messages. Enable this option when you want OV values in external message payloads to align more closely with the OV behavior returned by the current entity state in the UI and GET APIs. This option is useful for downstream integrations that rely on streamed messages for traceability, reconciliation, or audit processing. | `Disabled` | `EnabledDisabled` | [Message streaming](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/events-api/message-streaming?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)**Note:** For nested attributes, streamed delta payloads can evaluate OV differently from the current entity state. Enable `hierarchicalOvForDeltaCalculation` when you need delta-message OV behavior to align more closely with the OV returned by the UI and GET APIs. |
 | Message Streaming API | Controls whether events triggered by REST API operations such as data loads or reindex requests are delivered to external streaming destinations.  When this setting is disabled, external delivery is paused, but internal pipelines such as Grouping and DataPipeline continue to operate if message streaming remains enabled.  This setting takes effect only when Message Streaming is enabled. | `Enabled` | `Enabled`  `Disabled` | [Message streaming](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/events-api/message-streaming?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
 
 
@@ -193997,6 +194038,10 @@ Use the following configuration for Azure OIDC v2.0. Get in touch with your IDP 
 
 ```
 
+If you want to assign users to Reltio roles based on their Azure Active Directory (Azure AD) group membership, you must configure group claims mapping in your SSO settings. By default, Azure AD does not return group claims when using the Microsoft Graph `userinfo` endpoint. To retrieve groups, Reltio must validate the ID token (JWT) and extract group claims directly.
+
+For more information, see topic [Configure Azure AD group claims mapping using JWT](https://docs.reltio.com/en/objectives/administer-system/system-administration-at-a-glance/access-management-at-a-glance/access-management-operation/authentication/authenticate-with-sso/sso-configuration/set-up-an-idp-for-oauthoidc/set-up-azure-idp-for-oauthoidc/configure-azure-ad-group-claims-mapping-using-jwt?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
 
 
 ---
@@ -194283,6 +194328,50 @@ After successful login, you will advance to the tenant in the Reltio Context Int
 **Related links**
 
 - [SSO configuration](https://docs.reltio.com/en/objectives/administer-system/system-administration-at-a-glance/access-management-at-a-glance/access-management-operation/authentication/authenticate-with-sso/sso-configuration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+
+
+---
+
+# Configure Azure AD group claims mapping using JWT
+
+> **Section:** Objectives > Administer system > System administration at a glance > Access management at a glance > Access management operation > Authentication > Authenticate with SSO > SSO configuration > Set up an IdP for OAuth/OIDC > Set up Azure IdP for OAuth/OIDC
+
+
+**Source:** https://docs.reltio.com/en/objectives/administer-system/system-administration-at-a-glance/access-management-at-a-glance/access-management-operation/authentication/authenticate-with-sso/sso-configuration/set-up-an-idp-for-oauthoidc/set-up-azure-idp-for-oauthoidc/configure-azure-ad-group-claims-mapping-using-jwt?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** azure ad group claims, jwt jwksURL oidc, azure sso group mapping, configure azure oidc, userGroupsMapping, access management, role assignment, group-based access control, openid connect azure, authentication, jwt, groups
+
+
+Learn how to configure Microsoft Azure Active Directory (Azure AD) to map user group claims into Reltio using OAuth/OIDC with JWT.
+
+- You have already configured Azure AD as an IdP using OAuth/OIDC. For more details, see [Set up Azure IdP for OAuth/OIDC](https://docs.reltio.com/en/objectives/administer-system/system-administration-at-a-glance/access-management-at-a-glance/access-management-operation/authentication/authenticate-with-sso/sso-configuration/set-up-an-idp-for-oauthoidc/set-up-azure-idp-for-oauthoidc?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+- You have access to the Azure portal and can modify the Azure AD application registration.
+- Your Azure AD tenant is configured to emit group claims in the ID token.
+
+By default, Microsoft Graph `userinfo` endpoints return only basic user attributes and do not include group membership. To map Azure AD groups into Reltio, you must configure Reltio to validate and parse group claims directly from the ID token (JWT) issued by Azure AD.
+
+This is achieved by enabling JWT validation using the Azure AD v2.0 `jwksURL` and configuring group claim mapping in the SSO configuration.
+
+
+To configure Azure AD group claims mapping using JWT:
+
+1. In the Azure portal, configure your application registration to emit group claims in the ID token.
+   - Azure AD emits group claims as Object IDs by default.
+   - Enable group membership claims in the app manifest using `groupMembershipClaims`: `\"SecurityGroup\"` or `\"All\"`.
+2. Update your Reltio SSO configuration to enable JWT validation using Azure v2.0 endpoints.
+   ```
+"jwt": true, "jwtSignatureConfig": { "algorithm": "RSA256", "issuer": "https://login.microsoftonline.com/<TENANT_ID>/v2.0", "jwksURL": "https://login.microsoftonline.com/<TENANT_ID>/discovery/v2.0/keys" }
+   ```
+3. Configure group claim mapping in the external provider configuration block.
+   ```
+"userGroupsMapping": "groups", "userGroupRegExp": "([-a-zA-Z0-9_]*),*?", "defaultGroups": []
+   ```
+4. Save your configuration and test with a user who is a member of one or more Azure AD groups.
+
+After successful authentication, Reltio assigns the user to groups based on the group claims present in the Azure AD ID token. These groups can then be used for role assignment and access control in Reltio. 
+
+> **Note:** If your Reltio environment doesn't allow hyphens in group names, use Azure AD claim transformation to replace hyphens with underscores using regular expressions.
 
 
 
@@ -205131,6 +205220,148 @@ Define this parameter within the `infos` object of the `cleanseConfig` to specif
 - Incorrect nesting may lead to incomplete cleansing of hierarchical data.
 - Use a separate `nestedAttributeToCleanse` entry for each nested attribute that requires cleansing.
 - Ensure that nestedAttributeToCleanse is only applied to fully nested structures and doesn't reference simple attributes within a nested attribute.
+
+
+
+---
+
+# Email address validation rules
+**Keywords:** email address validation rules, email cleanser validation rules, validate email local part, validate symbolic domain names, validate bracketed ipv4 domains, email domain type classification, email cleanser output values, rfc compliant email validation, valid and invalid email examples, ascii, ipv4, cleansing
+
+
+Learn about the validation rules, accepted formats, and output values that EmailCleanserFn uses when it validates email addresses.
+
+`EmailCleanserFn` supports commonly used [RFC 5321](https://datatracker.ietf.org/doc/html/rfc5321) and [RFC 5322](https://datatracker.ietf.org/doc/html/rfc5322) email syntax validation rules. It checks character encoding, email structure, local part formatting, and domain structure.
+
+The following table summarizes the scope of email validation.
+
+| Item | Value |
+| --- | --- |
+| Cleanser name | `EmailCleanserFn` |
+| Purpose | Validates email address syntax |
+| Intended users | Developer, Reltio Configurator |
+| Standards | RFC 5321, RFC 5322 |
+
+## Email address validation sequence
+
+`EmailCleanserFn` applies a fixed sequence of checks to each email address. The following table lists the validation checks and shows a valid and invalid example for each one.
+
+| Step | Check | Description | Valid example | Invalid example |
+| --- | --- | --- | --- | --- |
+| 1 | Null value | The email value is not null. | `user@example.com` | `null` |
+| 2 | ASCII characters | Every character is within the ASCII character set. | `user@example.com` | `usér@example.com` |
+| 3 | Email structure | The email contains one local part and one domain part separated by `@`. | `user@example.com` | `userexample.com` |
+| 4 | Leading and trailing whitespace | Leading and trailing whitespace is ignored before validation. | `user@example.com` | `user name@example.com` |
+| 5 | Trailing dot | The email does not end with a dot. | `user@example.com` | `user@example.com.` |
+| 6 | Local part validation | The local part follows the defined character and formatting rules. | `user.name@example.com` | `user..name@example.com` |
+| 7 | Domain validation | The domain follows the symbolic domain format or the bracketed IPv4 format. | `user@example.com` | `user@example` |
+
+## Local part rules
+
+The local part is the part before the `@` symbol.
+
+The following tables list the character and formatting rules that apply to the local part.
+
+| Rule | Description | Valid example | Invalid example |
+| --- | --- | --- | --- |
+| Letters and numbers | Letters and numbers are valid in the local part. | `user123@example.com` | `user<123>@example.com` |
+| Underscore and hyphen | Underscores and hyphens are valid in the local part. | `user_name@example.com` | `user[name]@example.com` |
+| Apostrophe | Apostrophes are valid in the local part. | `user's.name@example.com` | `user:name@example.com` |
+| Plus sign | Plus signs are valid in the local part. | `user+tag@example.com` | `user;tag@example.com` |
+| Spaces | Spaces are valid only inside quoted strings. | `"user name"@example.com` | `user name@example.com` |
+| At sign inside quotes | `@` is valid only inside a quoted local part. | `"user@name"@example.com` | `user@name@example.com` |
+| Unsupported special characters | Control characters, parentheses, angle brackets, commas, semicolons, colons, backslashes, and square brackets are invalid in the local part. | `username@example.com` | `user<name>@example.com` |
+
+The following table lists the format rules for the local part.
+
+| Rule | Description | Valid example | Invalid example |
+| --- | --- | --- | --- |
+| Local part is required | The email includes a value before `@`. | `user@example.com` | `@example.com` |
+| Dot-separated segments | Periods separate words in the local part. | `user.name.sub@example.com` | `user..name@example.com` |
+| Leading dot | The local part does not start with a period. | `user.name@example.com` | `.user@example.com` |
+| Trailing dot | The local part does not end with a period. | `user.name@example.com` | `user.@example.com` |
+| Quoted strings | Quoted strings are valid in the local part. | `"user name"@example.com` | `"user name@example.com` |
+
+## Domain rules
+
+The domain is the portion after the `@` symbol.
+
+The following table lists the rules for symbolic domains. A symbolic domain uses a standard domain name such as `example.com`. Symbolic domain validation is based on the IANA TLD registry.
+
+| Rule | Description | Valid example | Invalid example |
+| --- | --- | --- | --- |
+| Domain is required | The email includes a value after `@`. | `user@example.com` | `user@` |
+| Domain labels | Each domain label starts and ends with an alphanumeric character. | `user@sub.example.com` | `user@-example.com` |
+| Hyphens | Hyphens appear only within a domain label. | `user@my-domain.org` | `user@example-.org` |
+| Top-level domain length | The top-level domain contains at least two alphabetic characters. | `user@example.info` | `user@example.c` |
+| Supported top-level domain | The domain ends with a supported top-level domain. | `user@example.co.uk` | `user@example` |
+| Domain ending | The domain does not end with a dot. | `user@example.com` | `user@example.com.` |
+
+The validator supports standard domain formats and local domain formats. The following table lists the top-level domain categories used during domain validation.
+
+| Category | Example |
+| --- | --- |
+| Generic | `.com`, `.org`, `.net`, `.info`, `.biz`, `.edu`, `.gov`, `.mil` |
+| Country code | `.uk`, `.de` |
+| Infrastructure | `.arpa`, `.root` |
+| Local domains, when local domain validation is enabled | `localhost`, `localdomain` |
+| Custom allowed top-level domains | Tenant-specific allowed values |
+
+## Domain type classification
+
+After the email address passes the null, ASCII, structure, local part, and domain checks, the `EmailCleanserFn` classifies the domain as `PUBLIC` or `PRIVATE` based on an internal list of commonly used public email providers. The following table describes the domain classifications.
+
+| DomainType | Description | Example |
+| --- | --- | --- |
+| `PUBLIC` | The domain is in the public domains list. | `gmail.com` |
+| `PRIVATE` | The domain is not in the public domains list. | `company.example` |
+
+## Unsupported validation scenarios
+
+`EmailCleanserFn` validates email syntax and domain formatting only. It does not verify mailbox availability, mail server configuration, or message deliverability.
+
+The following table lists unsupported validation scenarios.
+
+| Validation type | Description |
+| --- | --- |
+| Mailbox verification | Does not verify whether the mailbox exists |
+| SMTP connectivity | Does not validate SMTP server connectivity |
+| MX record validation | Does not check DNS MX records |
+| Verification email delivery | Does not send verification or confirmation emails |
+| Disposable email detection | Does not detect temporary or disposable email providers |
+| Deliverability validation | Does not guarantee that an email can receive messages |
+
+## Output values
+
+After the email address is validated, the validator returns the original email value, the validation result, and, for a valid email address, the parsed email parts and the domain classification. The following table lists the output values along with their examples.
+
+| Output value | Description | Example |
+| --- | --- | --- |
+| Original email address | Returns the input email address. | `user@example.com` |
+| Validation status | Returns `VALID` or `INVALID`. | `VALID` |
+| Username | Returns the local part before `@` when the email is valid. | `user` |
+| Domain | Returns the domain part after `@` when the email is valid. | `example.com` |
+| Email type | Returns `PUBLIC` or `PRIVATE`. | `PUBLIC` |
+
+## Email examples
+
+The following table shows sample email addresses and their validation results.
+
+| Email address | Result | Description |
+| --- | --- | --- |
+| `user@example.com` | Valid | Standard email format |
+| `user.name@example.com` | Valid | Dot-separated local part |
+| `user+tag@example.co.uk` | Valid | Plus sign in the local part |
+| `"user name"@example.com` | Valid | Quoted local part with a space |
+| `user@[10.x.x.x]` | Valid | Bracketed IPv4 domain |
+| `user_name@sub.example.org` | Valid | Underscore in the local part and subdomain in the domain |
+| `user@example` | Invalid | Missing top-level domain |
+| `user@example.` | Invalid | Trailing dot |
+| `user name@example.com` | Invalid | Unquoted space in the local part |
+| `user@example..com` | Invalid | Consecutive dots in the domain |
+| `user@256.1.1.1` | Invalid | Invalid IP address as it is not within the octet range |
+| `user@` | Invalid | Missing domain |
+| `@example.com` | Invalid | Missing local part |
 
 
 
@@ -233983,7 +234214,7 @@ To export a workflow diagram to a file:
 
 ## Required Permissions
 
-Workflow Adapter has role-based permissions for operations, and you can assign any Reltio role to any API endpoint of Workflow Adapter. For details on the API operations and required permissions, refer [permissionsframework](https://docs.reltio.com/search?q=permissionsframework&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). For details on the Workflow operations, refer [Workflow API](https://docs.reltio.com/en/developer-resources/workflow-apis/workflow-apis-at-a-glance/workflow-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+Workflow Adapter has role-based permissions for operations, and you can assign any Reltio role to any API endpoint of Workflow Adapter. For details on the API operations and required permissions, refer [Workflow service access permissions](https://docs.reltio.com/en/objectives/administer-system/system-administration-at-a-glance/access-management-at-a-glance/access-management-reference/authorization/custom-roles/service-access-permissions/workflow-service-access-permissions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). For details on the Workflow operations, refer [Workflow API](https://docs.reltio.com/en/developer-resources/workflow-apis/workflow-apis-at-a-glance/workflow-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 **Notes:**
 
