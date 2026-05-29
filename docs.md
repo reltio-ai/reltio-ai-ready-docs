@@ -1,8 +1,8 @@
 # Reltio Documentation
 
-_Generated: 2026-05-22 02:14 UTC_
+_Generated: 2026-05-29 02:15 UTC_
 
-_Topics: 3291_
+_Topics: 3297_
 
 ---
 
@@ -469,7 +469,7 @@ When you need to indicate a feature's status, such as EA, Preview, or Deprecatio
 | **Attention:** This feature is available to limited users through the Reltio Early Access (EA) program. We're not accepting additional participants now, but we plan to release the General Availability (GA) version soon. | note_early_access_closed |
 | **Attention:** This feature is planned for deprecation. For more information on how we deprecate features, see topic [Reltio release process](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/tenants-at-a-glance/tenant-operation/reltio-release-process?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). For details of when this feature will be deprecated, see topic [Deprecation Notices at a glance](https://docs.reltio.com/en/reltio/whats-new-and-notable/whats-new-at-a-glance/deprecation-notices-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). | note_deprecation_planned |
 | **Attention:** Take a sneak peek at this new feature to be included in our upcoming GA release. For more information on our Preview release procedure, see topic [Reltio release process](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/tenants-at-a-glance/tenant-operation/reltio-release-process?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). | note_preview_release |
-| **Attention:** This feature is available to limited users testing our new API Experience. Other users are welcome to take a look as this content evolves over the course of the limited testing program. Meanwhile, you can find our current API content in section [c explore api](https://docs.reltio.com/search?q=c-explore-api&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). | note_api_beta |
+| **Attention:** This feature is available to limited users testing our new API Experience. Other users are welcome to take a look as this content evolves over the course of the limited testing program. Meanwhile, you can find our current API content in section [About developer resources](https://docs.reltio.com/en/developer-resources/about-developer-resources?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). | note_api_beta |
 | **Attention:** The repository containing sample code for building LCAs is temporarily unavailable. If you plan to use the sample code, [create a support ticket](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) to request it. | note_LCA_repo_availability |
 
 ## OOB or Add-on features
@@ -845,6 +845,632 @@ The Asset Sheet is emailed to the person listed as the Technical Contact on your
 
 ---
 
+# Scenario 1: Set up PrivateLink and configure the Snowflake (Direct Connect) Data Pipeline for Reltio standard edition
+
+> **Section:** Applications > Data Integrations > Data Pipelines at a glance > Reltio Data Pipeline for Snowflake at a glance > Reltio Data Pipeline for Snowflake setup > PrivateLink connectivity for Snowflake (Direct Connect) Data Pipeline overview
+
+
+**Source:** https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/privatelink-connectivity-for-snowflake-direct-connect-data-pipeline-overview/scenario-1-set-up-privatelink-and-configure-the-snowflake-direct-connect-data-pipeline-for-reltio-standard-edition?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** configure privatelink for snowflake scenario 1, privatelink reltio standard edition single snowflake account, snowflake direct connect data pipeline privatelink setup, private link single snowflake account configuration, secrets api snowflake data pipeline, recreate resources api snowflake setup, validate api snowflake data pipeline, system$get_privatelink_config snowflake, privatelink, snowflake, scenario 1, secrets, validate
+
+
+Learn how to set up PrivateLink connectivity and configure the Snowflake (Direct Connect) Data Pipeline when your Reltio environment is on the standard edition and you have a single Snowflake account.
+
+[Scenario 1](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/privatelink-connectivity-for-snowflake-direct-connect-data-pipeline-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) applies when your Reltio tenant runs on the standard edition and you have a single Snowflake Business Critical Edition account.
+
+Before you begin, confirm that your environment meets the conditions described in the [PrivateLink connectivity requirements](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/privatelink-connectivity-for-snowflake-direct-connect-data-pipeline-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+To set up PrivateLink and configure the Snowflake (Direct Connect) Data Pipeline for Reltio standard edition, complete the following phases:
+
+1. [Establish PrivateLink connectivity](#concept-6207/section-5506)
+2. [Configure the Snowflake (Direct Connect) Data Pipeline](#concept-6207/section-5531)
+
+## Prerequisites
+
+Before you begin, confirm that the following requirements are met.
+
+| Prerequisite | Details |
+| --- | --- |
+| Snowflake user | A Snowflake user with the required data pipeline configuration role is available. |
+| Existing pipeline status | No Snowflake (Direct Connect) Data Pipeline is currently active on your Reltio tenant. Deactivate any active pipeline before you begin. |
+
+## Establish PrivateLink connectivity
+
+Establish the PrivateLink network path between Reltio and your Snowflake account through the following steps.
+
+1. Open a [Reltio support ticket](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) to request Snowflake (Direct Connect) Data Pipeline PrivateLink setup for your tenant. Provide your tenant ID in the ticket so that Reltio identifies your tenant.
+
+   Ask Reltio for the following, which you need to open the Snowflake support ticket in [step 2](#concept-6207/li-1876):
+   - The 12-digit AWS account ID associated with your Reltio tenant
+   - The CIDR range or VPCE ID, if IP whitelisting is required
+2. After Reltio responds with the AWS account ID and the CIDR range or VPCE id, raise a support case in the Snowflake Support Portal to enable AWS PrivateLink for your Snowflake account. Provide the following details:
+
+   Snowflake responds when PrivateLink is enabled on your Snowflake account.
+   - Your Snowflake account locator and the region where your Snowflake account is hosted.
+   - The cloud provider, which is AWS.
+   - A statement confirming that your Snowflake account runs on Snowflake Business Critical Edition.
+   - The 12-digit AWS account ID that Reltio provided in [step 1](#concept-6207/li-1863), where you opened the Reltio support ticket.
+   - A request to enable AWS PrivateLink for the Snowflake account.
+3. After Snowflake enables PrivateLink, retrieve the PrivateLink connection details from your Snowflake account and share them with Reltio:
+   1. Run the following command in your Snowflake account:
+
+```
+SELECT SYSTEM$GET_PRIVATELINK_CONFIG();
+```
+   2. Share the command output in your [Reltio support ticket](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). Reltio uses this output to wire the PrivateLink connection.
+4. Wait for Reltio to confirm in the support ticket that PrivateLink connectivity is established between your Reltio environment and your Snowflake account.
+5. (Optional) Apply a network policy in Snowflake to restrict public internet access using the CIDR range or VPCE ID provided by Reltio. For instructions, see [CREATE NETWORK POLICY](https://docs.snowflake.com/en/sql-reference/sql/create-network-policy) in the Snowflake documentation.
+
+After Reltio confirms PrivateLink connectivity, the network path between your Reltio environment and your Snowflake account is in place. Configure the data pipeline as described in the [Configure the Snowflake (Direct Connect) Data Pipeline](#concept-6207/section-5531) section.
+
+## Configure the Snowflake (Direct Connect) Data Pipeline
+
+Configure the data pipeline in the Reltio Console using the [Snowflake (Direct Connect) Data Pipeline setup](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/configure-snowflake-direct-connect-in-console?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). One additional setting, `privateLinkEnabled`, must be set to `true` to route the data pipeline over the PrivateLink network path.
+
+1. In the Reltio Console, follow [Snowflake (Direct Connect) Data Pipeline](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/configure-snowflake-direct-connect-in-console?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) configuration to set up the data pipeline.
+2. In the tenant's physical configuration, set `privateLinkEnabled` to `true` for each Snowflake (Direct Connect) Data Pipeline that needs to write data over the PrivateLink network path.
+
+## Result
+
+After you complete the configuration, the Snowflake (Direct Connect) Data Pipeline is fully wired for PrivateLink connectivity in your Reltio tenant. Confirm a successful setup against the following outcomes:
+
+- The Snowflake (Direct Connect) Data Pipeline is configured to export data over the PrivateLink network path.
+- The Snowflake resources required by the data pipeline are created in your Snowflake account.
+
+## Validate the setup
+
+After the configuration is complete, run a short validation pass to confirm that data flows correctly from your Reltio environment to your Snowflake account.
+
+1. Trigger an initial data sync from your Reltio tenant by running `syncToDataPipeline`. Trigger the sync from the Console or by calling the [syncToDataPipeline](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/reltio-data-pipeline-for-snowflake-apis/sync-to-data-pipeline-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) API directly.
+2. In your Snowflake account, confirm that records appear in the entity, relationship, interaction, match, merge, activity, and workflow target tables created by the data pipeline.
+
+
+
+---
+
+# Scenario 2: Set up PrivateLink and configure the Snowflake (Direct Connect) Data Pipeline for Reltio BCE with a single Snowflake account having a read-only backup account
+
+> **Section:** Applications > Data Integrations > Data Pipelines at a glance > Reltio Data Pipeline for Snowflake at a glance > Reltio Data Pipeline for Snowflake setup > PrivateLink connectivity for Snowflake (Direct Connect) Data Pipeline overview
+
+
+**Source:** https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/privatelink-connectivity-for-snowflake-direct-connect-data-pipeline-overview/scenario-2-set-up-privatelink-and-configure-the-snowflake-direct-connect-data-pipeline-for-reltio-bce-with-a-single-snowflake-account-having-a-read-only-backup-account?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** configure privatelink for snowflake scenario 2, privatelink reltio bce single snowflake account, privatelink reltio bce read-only snowflake backup, snowflake direct connect data pipeline bce setup, two snowflake users reltio primary backup tenant, secrets api reltio primary backup tenant, recreate resources api snowflake setup, validate api both reltio tenants, system$get_privatelink_config snowflake, privatelink, snowflake, scenario 2, bce, secrets, validate
+
+
+Learn how to set up PrivateLink connectivity and configure the Snowflake (Direct Connect) Data Pipeline when your Reltio tenant is on Reltio Business Critical Edition (BCE) and your Snowflake configuration is a single account having a read-only backup account.
+
+[Scenario 2](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/privatelink-connectivity-for-snowflake-direct-connect-data-pipeline-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) applies when your Reltio tenant runs on Reltio Business Critical Edition (BCE) and your Snowflake configuration is one of the following configurations:
+
+- A single Snowflake Business Critical Edition account without a backup account.
+- A Snowflake Business Critical Edition account with a read-only backup account.
+
+In [Scenario 2](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/privatelink-connectivity-for-snowflake-direct-connect-data-pipeline-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), the Reltio primary environment and the Reltio backup environment both write to the same Snowflake account. During a Reltio outage, Reltio activates the backup environment automatically, and the backup environment continues writing to the same Snowflake account.
+
+Before you begin, confirm that your environment meets the conditions described in the [PrivateLink connectivity requirements](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/privatelink-connectivity-for-snowflake-direct-connect-data-pipeline-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+To set up PrivateLink and configure the Snowflake (Direct Connect) Data Pipeline for Reltio BCE with a single Snowflake account having a read-only backup account, complete the following phases:
+
+1. [Establish PrivateLink connectivity](#concept-355/section-6622)
+2. [Configure the Snowflake (Direct Connect) Data Pipeline](#concept-355/section-6647)
+
+## Prerequisites
+
+Before you begin, confirm that the following requirements are met.
+
+| Prerequisite | Details |
+| --- | --- |
+| Reltio BCE | Reltio Business Critical Edition (BCE) is enabled on your Reltio tenant. |
+| Snowflake users | Two Snowflake users are available for the data pipeline to authenticate to your Snowflake account, one for the Reltio primary environment and one for the Reltio backup environment. Both users must have the same role. |
+| Existing pipeline status | No Snowflake (Direct Connect) Data Pipeline is currently active on your Reltio tenant. Deactivate any active pipeline before you begin. |
+
+
+
+
+
+> **Note:** Two Snowflake users are required because the Reltio primary environment and the Reltio backup environment authenticate to Snowflake with a separate public key. A single user does not support authentication from both Reltio environments.
+
+## Establish PrivateLink connectivity
+
+Establish the PrivateLink network path between Reltio and your Snowflake account through the following steps.
+
+1. Open a [Reltio support ticket](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) to request Snowflake (Direct Connect) Data Pipeline PrivateLink setup for your tenant. Provide your tenant ID in the ticket so that Reltio identifies your tenant.
+
+   Ask Reltio for the following, which you need to open the Snowflake support ticket in [step 2](#concept-355/li-1150), where you raise the Snowflake support ticket:
+   - The 12-digit AWS account IDs associated with your Reltio environment
+   - The CIDR ranges or VPCE IDs, if IP whitelisting is required
+2. After Reltio responds with the AWS account IDs and the CIDR ranges or VPCE IDs, raise a support case in the Snowflake Support Portal to enable AWS PrivateLink for your Snowflake account. Provide the following details:
+
+   Snowflake responds when PrivateLink is enabled on your Snowflake account.
+   - Your Snowflake account locator and the region where your Snowflake account is hosted.
+   - The cloud provider, which is AWS.
+   - A statement confirming that your Snowflake account runs on Snowflake Business Critical Edition.
+   - The 12-digit AWS account ID that Reltio provided in [step 1](#concept-355/li-1136), where you opened the Reltio support ticket.
+   - A request to enable AWS PrivateLink for the Snowflake account.
+3. After Snowflake enables PrivateLink, retrieve the PrivateLink connection details from your Snowflake account and share them with Reltio:
+   1. Run the following command in your Snowflake account:
+
+```
+SELECT SYSTEM$GET_PRIVATELINK_CONFIG();
+```
+   2. Share the command output in your [Reltio support ticket](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). Reltio uses this output to wire the PrivateLink connection.
+4. Wait for Reltio to confirm in the support ticket that PrivateLink connectivity is established between both Reltio environments and your Snowflake account.
+5. (Optional) Apply a network policy in Snowflake to restrict public internet access using the CIDR range / VPCE ID provided by Reltio. For instructions, see Snowflake's documentation on [CREATE NETWORK POLICY](https://docs.snowflake.com/en/sql-reference/sql/create-network-policy).
+
+After Reltio confirms PrivateLink connectivity, the network path between both Reltio environments and your Snowflake account is in place. Configure the data pipeline as described in the [Configure the Snowflake (Direct Connect) Data Pipeline](#concept-355/section-6647) section.
+
+## Configure the Snowflake (Direct Connect) Data Pipeline
+
+Configure the data pipeline in the Reltio Console using the [Snowflake (Direct Connect) Data Pipeline setup](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/configure-snowflake-direct-connect-in-console?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). Three additional settings are required for [Scenario 2](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/privatelink-connectivity-for-snowflake-direct-connect-data-pipeline-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs):
+
+- `privateLinkEnabled` set to `true` in the tenant's physical configuration which enables routing the data pipeline over the PrivateLink network path.
+- Two Snowflake users authenticate the Reltio primary environment and the Reltio backup environment to Snowflake.
+- The `secrets API` is called twice, once for each Reltio environment.
+
+Complete the following steps to apply these settings.
+
+1. In the Console, follow step 1 through step 8 of the [Snowflake (Direct Connect) Data Pipeline setup](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/configure-snowflake-direct-connect-in-console?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). These steps cover the connection details, Snowflake authentication, and adapter selection.
+2. In the adapter physical configuration, set `privateLinkEnabled` to `true`.
+3. In your Snowflake account, set up the two Snowflake users required for the Reltio primary environment and the Reltio backup environment:
+   1. Create two Snowflake users, one for the Reltio primary environment and one for the Reltio backup environment.
+   2. Assign the same role to both users, and use that role for the data pipeline configuration as described in the Snowflake authentication steps of the [Snowflake (Direct Connect) Data Pipeline setup](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/configure-snowflake-direct-connect-in-console?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+4. Generate a secret for each Reltio tenant by calling the `secrets API`. Use the following endpoint to call the API: The request body specifies the Snowflake user for which the secret is generated.
+
+   ```
+   POST https://{env}-data-pipeline-hub.reltio.com/api/tenants/{tenantId}/adapters/{adapterName}/secrets
+   ```
+
+   ```
+   {
+        "SNOWFLAKE": {
+          "username": "<snowflake_username>"
+        }
+      }
+   ```
+
+   Call the API twice:
+
+   - First call: Run against the Reltio primary environment, using the Snowflake user created for the primary environment.
+   - Second call: Run against the Reltio backup environment, using the Snowflake user created for the backup environment.
+5. In your Snowflake account, assign the public key returned by each `secrets API` call to the corresponding Snowflake user by running the following query in your Snowflake account.
+
+   ```
+   ALTER USER <username>
+   SET RSA_PUBLIC_KEY = '<Returned_Public_Key>';
+   ```
+6. Create the Snowflake resources required by the primary data pipeline as described in step 9.2 of [Snowflake (Direct Connect) Data Pipeline setup](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/configure-snowflake-direct-connect-in-console?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), which covers creating the internal stage, tables, tasks, and other Snowflake objects in your Snowflake account.
+7. Wait a few minutes for the Snowflake resources to provision.
+8. Validate the configuration for both Reltio environments by calling the `validate API`. Run the call once for the Reltio primary environment and once for the Reltio backup environment. Both calls must return `200 OK` when the configuration is valid. Replace `{adapterName}` with the name of the Snowflake (Direct Connect) Data Pipeline you have set up.
+
+   Use the following endpoint to call the API:
+
+   ```
+   POST https://{env}-data-pipeline-hub.reltio.com/api/tenants/{tenantId}/adapters/{adapterName}/validate
+   ```
+9. Trigger the initial data sync from the Console.
+   1. In the Re-sync data dialog box, choose the data types you want to include:
+
+- Entities
+- Relations
+- Interactions
+- Matches
+- Merges
+- Activities
+- Workflows
+   2. Select **Re-sync** to start the synchronization. The selected data types are exported from your Reltio tenant and written into Snowflake.
+
+## Result
+
+After you complete the configuration, the Snowflake (Direct Connect) Data Pipeline is fully wired for PrivateLink connectivity across both Reltio environments. Confirm a successful setup against the following outcomes:
+
+- The Snowflake (Direct Connect) Data Pipeline is configured to export data over the PrivateLink network path from both the Reltio primary environment and the Reltio backup environment.
+- The Snowflake resources required by the data pipeline are created in your Snowflake account.
+
+
+
+---
+
+# Disaster recovery for the Snowflake (Direct Connect) Data Pipeline
+
+> **Section:** Applications > Data Integrations > Data Pipelines at a glance > Reltio Data Pipeline for Snowflake at a glance > Reltio Data Pipeline for Snowflake setup > PrivateLink connectivity for Snowflake (Direct Connect) Data Pipeline overview
+
+
+**Source:** https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/privatelink-connectivity-for-snowflake-direct-connect-data-pipeline-overview/disaster-recovery-for-the-snowflake-direct-connect-data-pipeline?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** disaster recovery snowflake direct connect data pipeline, respond to snowflake outage reltio bce, fail over snowflake account reltio data pipeline, recover snowflake account reltio data pipeline, synctodatapipeline updatedsince outage, reltio backup tenant outage, snowflake outage prerequisites reltio, alter failover group snowflake primary, switch active data pipeline snowflake outage, disaster recovery, snowflake outage, reltio outage, synctodatapipeline, failover group, bce
+
+
+Learn how to respond to Reltio outages, Snowflake outages, and combined outages that affect the Snowflake (Direct Connect) Data Pipeline, and what actions are required for each scenario.
+
+Disaster recovery for the Snowflake (Direct Connect) Data Pipeline depends on the type of outage and the scenario you configured. For Reltio outages, Reltio manages the switchover to the Reltio backup environment automatically, and no action is required from you. For Snowflake outages, you need to activate the backup Snowflake account and switch the active data pipeline.
+
+Reltio maintains a Reltio backup environment for tenants on Reltio Business Critical Edition (BCE) and manages the switchover automatically during a Reltio outage. Reltio does not monitor your Snowflake account, so you are responsible for performing the recovery actions when a Snowflake outage occurs.
+
+## Outage scenarios and required actions
+
+The following table summarizes the outage combinations and the actions required for each. The status column for PrivateLink applies only when PrivateLink connectivity is enabled for the Snowflake (Direct Connect) Data Pipeline.
+
+| Reltio | Snowflake | PrivateLink | What to expect | Your action |
+| --- | --- | --- | --- | --- |
+| Healthy | Healthy | Healthy | Reltio writes to the primary Snowflake account over the network path, which is private if PrivateLink is enabled or public if PrivateLink is not enabled. | None |
+| Outage | Healthy | Healthy | Reltio writes to the primary Snowflake account from the Reltio backup environment over the network path, which is private if PrivateLink is enabled or public if PrivateLink is not enabled. Reltio ensures eventual consistency. Data not written to Snowflake during the outage is written after recovery. | None during the outage. |
+| Healthy | Outage | Healthy | Reltio writes to the backup Snowflake account over the network path, which is private if PrivateLink is enabled or public if PrivateLink is not enabled. | Complete the [Prerequisites for managing a Snowflake outage](#concept-8867/section-snowflake-outage-prereqs). Activate the backup Snowflake account and switch the active data pipeline as described in [Respond to a Snowflake outage](#concept-8867/section-respond-snowflake-outage). |
+| Healthy | Healthy | Outage | Reltio writes to the primary Snowflake account over the public network. | None |
+| Healthy | Outage | Outage | Reltio writes to the backup Snowflake account over the public network. | Complete the [Prerequisites for managing a Snowflake outage](#concept-8867/section-snowflake-outage-prereqs). Activate the backup Snowflake account and switch the active data pipeline as described in [Respond to a Snowflake outage](#concept-8867/section-respond-snowflake-outage). |
+
+## Prerequisites for managing a Snowflake outage
+
+For [Scenario 3](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/privatelink-connectivity-for-snowflake-direct-connect-data-pipeline-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), the following conditions are required to be in place before a Snowflake outage occurs so that you can switch the data pipeline quickly when an outage happens.
+
+| Prerequisite | Details |
+| --- | --- |
+| Only one pipeline is active at a time | The primary Snowflake (Direct Connect) Data Pipeline writes to the primary Snowflake account during normal operation. The secondary data pipeline is configured but deactivated. |
+| Snowflake account-to-account replication is configured | Account-to-account replication and a Snowflake failover group keep the primary and backup Snowflake accounts in sync. The replication setup is described in [Scenario 3: Set up PrivateLink and configure the Snowflake (Direct Connect) Data Pipeline for Reltio BCE with a Snowflake account having a read-write backup account.](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/privatelink-connectivity-for-snowflake-direct-connect-data-pipeline-overview/scenario-3-set-up-privatelink-and-configure-the-snowflake-direct-connect-data-pipeline-for-reltio-bce-with-a-snowflake-account-having-a-read-write-backup-account?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
+| Backup Snowflake account is ready to activate | The backup Snowflake account is provisioned and the failover group is replicated from the primary account. |
+| Secondary data pipeline is fully configured and validated | The secondary data pipeline is configured in the Reltio primary tenant, the `validate API` returns `200 OK`, and the pipeline is deactivated. |
+
+For [Scenario 1](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/privatelink-connectivity-for-snowflake-direct-connect-data-pipeline-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Scenario 2](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/privatelink-connectivity-for-snowflake-direct-connect-data-pipeline-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), no action is required from you during a Snowflake outage other than waiting for Snowflake to recover.
+
+## Respond to a Snowflake outage
+
+For [Scenario 3](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/privatelink-connectivity-for-snowflake-direct-connect-data-pipeline-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), switch the active data pipeline to write to the backup Snowflake account through the steps in the following procedure.
+
+1. In the backup Snowflake account, alter the failover group so that the backup Snowflake account becomes the read-write primary:
+
+   ```
+   ALTER FAILOVER GROUP <failover_group_name> PRIMARY;
+   ```
+
+   After the failover, the backup Snowflake account is the read-write primary.
+2. In the Reltio Console, switch the active data pipeline to the backup Snowflake account:
+   1. Deactivate the primary Snowflake (Direct Connect) Data Pipeline that writes to the primary Snowflake account.
+   2. Activate the secondary Snowflake (Direct Connect) Data Pipeline that writes to the backup Snowflake account.
+
+## Recover from a Snowflake outage
+
+For [Scenario 3](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/privatelink-connectivity-for-snowflake-direct-connect-data-pipeline-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), after the primary Snowflake account is restored, recover back to the primary Snowflake account through the steps in the following procedure.
+
+1. In the primary Snowflake account, alter the failover group so that the primary Snowflake account becomes the read-write primary again using the following command:
+
+   ```language-sql
+   ALTER FAILOVER GROUP <failover_group_name> PRIMARY;
+   ```
+2. In the Reltio Console, switch the active data pipeline back to the primary Snowflake account:
+   1. Deactivate the secondary Snowflake (Direct Connect) Data Pipeline.
+   2. Reactivate the primary Snowflake (Direct Connect) Data Pipeline.
+3. Synchronize data that did not reach the primary Snowflake account during the failover-and-recovery cycle. Run `syncToDataPipeline API` from the Reltio primary tenant with the `updatedSince` parameter set to the EPOC time of midnight on the day of the failover. For more information, see the [syncToDataPipeline API](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/reltio-data-pipeline-for-snowflake-apis/sync-to-data-pipeline-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+## Reltio outage
+
+For Reltio outages, no action is required from you. Reltio manages the switchover from the Reltio primary environment to the Reltio backup environment automatically. The Reltio backup environment continues writing to the same Snowflake account used by the primary environment.
+
+After Reltio recovers from the outage, Reltio ensures eventual consistency, and any data not written to Snowflake during the outage is written after recovery.
+
+
+
+---
+
+# Scenario 3: Set up PrivateLink and configure the Snowflake (Direct Connect) Data Pipeline for Reltio BCE with a Snowflake account having a read-write backup account
+
+> **Section:** Applications > Data Integrations > Data Pipelines at a glance > Reltio Data Pipeline for Snowflake at a glance > Reltio Data Pipeline for Snowflake setup > PrivateLink connectivity for Snowflake (Direct Connect) Data Pipeline overview
+
+
+**Source:** https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/privatelink-connectivity-for-snowflake-direct-connect-data-pipeline-overview/scenario-3-set-up-privatelink-and-configure-the-snowflake-direct-connect-data-pipeline-for-reltio-bce-with-a-snowflake-account-having-a-read-write-backup-account?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** recover snowflake direct connect data pipeline two accounts, topology 3 disaster recovery snowflake direct connect, reltio snowflake combined disaster recovery, snowflake failover group recovery reltio, snowflake-only disaster reltio data pipeline, two read-write snowflake accounts recovery, synctodatapipeline after snowflake failover, combined reltio snowflake disaster response, disaster recovery, failover, bce, snowflake
+
+
+Learn how to set up PrivateLink connectivity and configure two Snowflake (Direct Connect) Data Pipelines when your Reltio tenant is on Reltio Business Critical Edition (BCE) and you have a Snowflake account having a read-write backup account.
+
+[Scenario 3](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/privatelink-connectivity-for-snowflake-direct-connect-data-pipeline-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) applies when your Reltio tenant runs on [Reltio Business Critical Edition (BCE)](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/additional-subscriptions-at-a-glance/reltio-business-critical-edition?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and you have a primary Snowflake Business Critical Edition account with a read-write backup Snowflake account.
+
+In [Scenario 3](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/privatelink-connectivity-for-snowflake-direct-connect-data-pipeline-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), two Snowflake (Direct Connect) Data Pipelines are configured in your Reltio primary environment. One pipeline writes to the primary Snowflake account, and the other writes to the backup Snowflake account. Only one pipeline must be active at a time depending on which Snowflake account is in write state.
+
+Before you begin, confirm that your environment meets the conditions described in the [PrivateLink connectivity requirements](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/privatelink-connectivity-for-snowflake-direct-connect-data-pipeline-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+To set up PrivateLink and configure the Snowflake (Direct Connect) Data Pipeline for Reltio BCE with a Snowflake account having a read-write backup account, complete the following sections:
+
+1. [Establish PrivateLink connectivity](#concept-9346/section-establish-privatelink-connectivity)
+2. [Enable Snowflake account-to-account replication](#concept-9346/section-enable-replication)
+3. [Configure the primary Snowflake (Direct Connect) Data Pipeline](#concept-9346/section-configure-primary-pipeline)
+4. [Create a Snowflake failover group](#concept-9346/section-create-failover-group)
+5. [Configure the secondary Snowflake (Direct Connect) Data Pipeline](#concept-9346/section-configure-secondary-pipeline)
+6. [Recover to the primary Snowflake account](#concept-9346/section-recover-primary)
+
+## Prerequisites
+
+Before you begin, confirm that the following requirements are met.
+
+| Requirement | Details |
+| --- | --- |
+| Reltio BCE | Reltio Business Critical Edition (BCE) is enabled on your Reltio tenant. |
+| Snowflake account-to-account replication | Account-to-account replication is enabled on both Snowflake accounts. The procedure to enable replication is described in [Enable Snowflake account-to-account replication](#concept-9346/section-enable-replication). |
+| Snowflake users | Four Snowflake users are available. Two users in the primary Snowflake account, one for the Reltio primary environment and one for the Reltio backup environment. Two users in the backup Snowflake account, one for each Reltio environment . All users hold the same role within their respective Snowflake account. Or you can create all the four users in the primary Snowflake account and have them replicated to the backup Snowflake account |
+| Existing pipeline status | No Snowflake (Direct Connect) Data Pipeline is currently active on your Reltio tenant. Deactivate any active pipeline before you begin. |
+| Reltio environment names | The environment names of your Reltio primary environment and your Reltio backup environment are available. Reltio provides these names when your tenant is provisioned. |
+
+## Establish PrivateLink connectivity
+
+Establish the PrivateLink network path between Reltio and both your Snowflake accounts.
+
+1. Open a [Reltio support ticket](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) to request Snowflake (Direct Connect) Data Pipeline PrivateLink setup for your tenant. Provide your tenant ID in the ticket so that Reltio identifies your tenant.
+
+   Ask Reltio for the following information, which you need to open the Snowflake support ticket in [step 2](#concept-9346/li-80):
+
+   In the same ticket, request that Reltio enables Business Critical Edition (BCE) on your tenant if it is not yet enabled.
+   - The 12-digit AWS account ID associated with your Reltio environment
+   - The CIDR ranges or VPCE ids, if IP whitelisting is required
+2. After Reltio responds with the AWS account IDs and the CIDR ranges or VPCE ids, raise a support case in the Snowflake Support Portal to enable AWS PrivateLink for both your Snowflake accounts. Provide the following details:
+
+   Snowflake responds when PrivateLink is enabled on both your Snowflake accounts.
+   - The Snowflake account locators and the regions where your primary and backup Snowflake accounts are hosted.
+   - The cloud provider, which is AWS.
+   - A statement confirming that both Snowflake accounts run on Snowflake Business Critical Edition.
+   - The 12-digit AWS account ID that Reltio provided in [step 1](#concept-9346/li-69), where you opened the Reltio support ticket.
+   - A request to enable AWS PrivateLink for both Snowflake accounts.
+3. After Snowflake enables PrivateLink, run the command in each Snowflake account to retrieve the PrivateLink configuration that Reltio needs to wire the private network path, then share the outputs with Reltio:
+   1. Run the following command in both your primary and backup Snowflake accounts:
+
+```
+SELECT SYSTEM$GET_PRIVATELINK_CONFIG();
+```
+   2. Share both command outputs in your [Reltio support ticket](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), labeling each set of values with the Snowflake account it came from. Reltio uses these outputs to wire the PrivateLink connections.
+4. Wait for Reltio to confirm in the support ticket that PrivateLink connectivity is established between both Reltio environments and both your Snowflake accounts.
+5. (Optional) Apply a network policy in each Snowflake account to restrict public internet access using the CIDR range or VPCE IDs provided by Reltio. For instructions, see Snowflake's documentation on [CREATE NETWORK POLICY](https://docs.snowflake.com/en/sql-reference/sql/create-network-policy).
+
+After Reltio confirms PrivateLink connectivity, the network paths between both Reltio tenants and both your Snowflake accounts are in place. Continue with [Enable Snowflake account-to-account replication](#concept-9346/section-enable-replication).
+
+## Enable Snowflake account-to-account replication
+
+Enable account-to-account replication on both Snowflake accounts so that the database created by the primary data pipeline replicates to the backup Snowflake account.
+
+1. In your primary Snowflake account, list the available replication accounts using the following command:
+
+   ```
+   SHOW REPLICATION ACCOUNTS;
+   ```
+2. In your primary Snowflake account, enable account replication.
+
+   Use the following command, replacing `<organization_name>` and `<primary_account_name>` with your values:
+
+   ```
+   SELECT SYSTEM$GLOBAL_ACCOUNT_SET_PARAMETER(
+     '<organization_name>.<primary_account_name>',
+     'ENABLE_ACCOUNT_DATABASE_REPLICATION',
+     'true'
+   );
+   ```
+3. In your primary Snowflake account, confirm that replication is enabled using the following command:
+
+   ```
+   SHOW REPLICATION ACCOUNTS;
+   ```
+4. Repeat steps [1](#concept-9346/li-111) through [3](#concept-9346/li-120) in your backup Snowflake account, replacing `<primary_account_name>` with `<primary_account_name>` in [step 2](#concept-9346/li-114), where you enable account replication.
+
+## Configure the primary Snowflake (Direct Connect) Data Pipeline
+
+The primary data pipeline writes to the primary Snowflake account. Configure the primary data pipeline in the Console using the [Snowflake (Direct Connect) Data Pipeline setup](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/configure-snowflake-direct-connect-in-console?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), with three additional settings for [Scenario 3](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/privatelink-connectivity-for-snowflake-direct-connect-data-pipeline-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs):
+
+- `privateLinkEnabled` set to `true` in the tenant's​​ physical configuration​ which enables routing the data pipeline over the PrivateLink network path.
+- Two Snowflake users in the primary Snowflake account to authenticate the Reltio primary environment and the Reltio backup environment.
+- The `secrets API` is called twice, once for each Reltio tenant.
+
+Complete the following steps to apply these settings.
+
+1. In the Console, follow step 1 through step 8 of the [Snowflake (Direct Connect) Data Pipeline setup](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/configure-snowflake-direct-connect-in-console?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), using the connection details of the primary Snowflake account. These steps cover the connection details, Snowflake authentication, and adapter selection.
+2. In the tenant's physical configuration, set `privateLinkEnabled` to `true`.
+3. In the primary Snowflake account, set up the two Snowflake users required for the Reltio primary environment and the Reltio backup environment:
+   1. Create two Snowflake users, one for the Reltio primary environment and one for the Reltio backup environment.
+   2. Assign the same role to both users, and use that role for the data pipeline configuration.
+4. Generate a secret for each Reltio tenant by calling the `secrets API`.
+
+   Use the following endpoint to call the API:
+
+   ```
+   POST https://{env}-data-pipeline-hub.reltio.com/api/tenants/{tenantId}/adapters/{adapterName}/secrets
+   ```
+
+   The request body identifies the Snowflake user for which the secret is generated:
+
+   ```
+   {
+     "SNOWFLAKE": {
+       "username": "<snowflake_username>"
+     }
+   }
+   ```
+
+   Call the API twice:
+   - First call: Run against the Reltio primary environment, using the Snowflake user created in the primary Snowflake account for the Reltio primary environment.
+   - Second call: Run against the Reltio backup environment, using the Snowflake user created in the primary Snowflake account for the Reltio backup environment.
+5. In the primary Snowflake account, assign the public key returned by each `secrets API` call to the corresponding Snowflake user.
+6. Create the Snowflake resources required by the primary data pipeline as described in step 9.2 of [Snowflake (Direct Connect) Data Pipeline setup](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/configure-snowflake-direct-connect-in-console?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), which covers creating the internal stage, tables, tasks, and other Snowflake objects in the primary Snowflake account..
+7. Wait a few minutes for the Snowflake resources to provision.
+8. Validate the primary data pipeline for both Reltio environments by calling the `validate` API. Run the call once for the Reltio primary environment and once for the Reltio backup environment. Both calls return `200 OK` when the configuration is valid.
+
+   Use the following endpoint to call the API:
+
+   ```
+   POST https://{env}-data-pipeline-hub.reltio.com/api/tenants/{tenantId}/adapters/{adapterName}/validate
+   ```
+
+## Create a Snowflake failover group
+
+The Snowflake failover group manages which data objects from your primary Snowflake account are replicated to the backup Snowflake account at a defined replication schedule. Create the failover group after the primary data pipeline is configured, because the failover group references the database created by the primary data pipeline. Create it when your primary data pipeline configuration is complete, or return to this section after [Configure the primary Snowflake (Direct Connect) Data Pipeline](#concept-9346/section-configure-primary-pipeline).
+
+1. In your primary Snowflake account, create the failover group:
+
+   ```
+   USE ROLE ACCOUNTADMIN;
+   CREATE FAILOVER GROUP <failover_group_name>
+     OBJECT_TYPES = DATABASES
+     ALLOWED_DATABASES = <primary_database_name>
+     ALLOWED_ACCOUNTS = <organization_name>.<backup_account_name>
+     REPLICATION_SCHEDULE = '10 MINUTE';
+   ```
+
+   Replace the placeholders with your values:
+   - `<failover_group_name>`: A name for the failover group.
+   - `<primary_database_name>`: The database created by the primary data pipeline in the primary Snowflake account.
+   - `<organization_name>` and `<backup_account_name>`: The Snowflake organization and the backup Snowflake account.
+   - `REPLICATION_SCHEDULE`: The replication frequency. Set this value to match your recovery point objective.
+2. In your backup Snowflake account, create the failover group as a replica, using the same `<failover_group_name>` you used in [step 1](#concept-9346/li-128), where you created the failover group in the primary Snowflake account:
+
+   ```
+   USE ROLE ACCOUNTADMIN;
+   CREATE FAILOVER GROUP <failover_group_name>
+     AS REPLICA OF <organization_name>.<primary_account_name>.<failover_group_name>;
+   ```
+3. Wait for the database and the other objects in the failover group to replicate to the backup Snowflake account before you proceed.
+
+## Configure the secondary Snowflake (Direct Connect) Data Pipeline
+
+The secondary data pipeline writes to the backup Snowflake account. Configure the secondary data pipeline in the same Reltio primary tenant after the failover group is replicated to the backup Snowflake account.
+
+Before you configure the secondary data pipeline, fail over the Snowflake primary account to the backup Snowflake account so that the backup account becomes the read-write primary. The secondary data pipeline writes to the backup account during this configuration.
+
+1. In the backup Snowflake account, fail over the failover group:
+
+   ```
+   ALTER FAILOVER GROUP <failover_group_name> PRIMARY;
+   ```
+
+   After the failover, the backup Snowflake account is the read-write primary, and the primary Snowflake account is read-only.
+2. In the Reltio Console, deactivate the primary data pipeline.
+3. Configure the secondary data pipeline for the backup Snowflake account in the Reltio Console:
+   1. In the Console, follow steps 1 through 8 of the [Snowflake (Direct Connect) Data Pipeline configuration](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/configure-snowflake-direct-connect-in-console?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), using the connection details of the backup Snowflake account.
+   2. In the adapter physical configuration, set `privateLinkEnabled` to `true`.
+4. In the backup Snowflake account, set up the two Snowflake users required for the Reltio primary environment and the Reltio backup environment:
+   1. Create two Snowflake users, one for the Reltio primary environment and one for the Reltio backup environment. Alternatively, create these users in the primary Snowflake account and replicate them to the backup Snowflake account, provided they are not the same users used by the primary data pipeline.
+   2. Assign the same role to both users.
+5. Generate a secret for each Reltio tenant by calling the `secrets API`, using the same endpoint and body shown in step 4 of [Configure the primary Snowflake (Direct Connect) Data Pipeline](#concept-9346/section-configure-primary-pipeline), which covers generating secrets for the Reltio primary environment and the Reltio backup environment .
+
+   Call the API twice, once for the Reltio primary environment and once for the Reltio backup environment, using the corresponding Snowflake user from the backup Snowflake account.
+6. In the backup Snowflake account, assign the public key returned by each `secrets API` call to the corresponding Snowflake user.
+
+   If you are replicating these users from the primary Snowflake account, then assign the public keys in your primary account to avoid them getting overwritten in the backup Snowflake account.
+
+   > **Note:** The `recreate_resources API` is not required for the secondary data pipeline because the database and other resources are already replicated to the backup Snowflake account by the Snowflake failover group.
+7. Validate the secondary data pipeline for both Reltio environments by calling the `validate API`. Run the call once for the Reltio primary environment and once for the Reltio backup environment. Both calls return `200 OK` when the configuration is valid.
+8. In the backup Snowflake account, open the database and schema used by the secondary data pipeline, and check the status of the tasks in the schema.
+   1. If any tasks are in the **Suspended** state, restart them by calling the `recreate_resources API`. Run the call against the Reltio primary tenant with the following body:
+
+```
+{
+  "resources": ["tasks"],
+  "force": true
+}
+```
+
+## Recover to the primary Snowflake account
+
+After the secondary data pipeline is validated, recover back from the backup Snowflake account to the primary Snowflake account so that the primary Snowflake account is the active read-write account during normal operation.
+
+1. In the primary Snowflake account, recover back the failover group:
+
+   ```
+   ALTER FAILOVER GROUP <failover_group_name> PRIMARY;
+   ```
+
+   After the recovery, the primary Snowflake account is the read-write primary again.
+2. In the Console, deactivate the secondary data pipeline and reactivate the primary data pipeline.
+3. Synchronize data that did not reach the primary Snowflake account during the failover-and-recovery cycle. Run `syncToDataPipeline` with the `updatedSince` parameter set to the EPOC time of midnight on the day of the failover. For more information, see the [syncToDataPipeline API](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/reltio-data-pipeline-for-snowflake-apis/sync-to-data-pipeline-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+## Result
+
+After you complete the configuration, both Snowflake (Direct Connect) Data Pipelines are configured for PrivateLink connectivity in your Reltio primary environment. Confirm a successful setup against the following outcomes:
+
+- The primary data pipeline is configured to export data over the PrivateLink network path to the primary Snowflake account.
+- The secondary data pipeline is configured to export data over the PrivateLink network path to the backup Snowflake account.
+- Snowflake account-to-account replication and the Snowflake failover group keep the two Snowflake accounts in sync.
+- The primary data pipeline is active, and the secondary data pipeline is deactivated and ready for failover.
+
+## Validate the setup
+
+After the configuration is complete, run a short validation pass to confirm that both data pipelines work as expected.
+
+1. Trigger an initial data sync from your Reltio primary tenant by running `syncToDataPipeline`. Trigger the sync from the Console or by calling the [syncToDataPipeline API](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/reltio-data-pipeline-for-snowflake-apis/sync-to-data-pipeline-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) directly.
+2. In your primary Snowflake account, confirm that records appear in the entity, relationship, interaction, match, merge, activity, and workflow target tables created by the primary data pipeline.
+3. Confirm that account-to-account replication completes within the configured replication schedule.
+
+
+
+---
+
+# PrivateLink connectivity for Snowflake (Direct Connect) Data Pipeline overview
+
+> **Section:** Applications > Data Integrations > Data Pipelines at a glance > Reltio Data Pipeline for Snowflake at a glance > Reltio Data Pipeline for Snowflake setup
+
+
+**Source:** https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/privatelink-connectivity-for-snowflake-direct-connect-data-pipeline-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** privatelink connectivity for snowflake direct connect, configure privatelink for snowflake data pipeline, snowflake direct connect data pipeline over privatelink, reltio bce snowflake privatelink setup, cross-region privatelink reltio snowflake, cross-account privatelink snowflake, supported scenarios for snowflake privatelink, system$get_privatelink_config snowflake, snowflake direct connect aws privatelink, privatelink, bce, snowflake
+
+
+Learn about how PrivateLink connectivity provides a private network path between your Reltio tenant and your Snowflake account for the Snowflake (Direct Connect) Data Pipeline.
+
+> **Note:** This topic applies only to configuring Snowflake (Direct Connect). It does not apply to Snowflake (Staging Pipeline).
+
+PrivateLink connectivity for the Snowflake (Direct Connect) Data Pipeline establishes a private network path between your Reltio tenant and your Snowflake account, which removes data flow over the public internet.
+
+By default, the Snowflake (Direct Connect) Data Pipeline connects to your Snowflake account over a JDBC connection, and Snowflake encrypts data in transit using TLS 1.2 or higher. PrivateLink is not required to encrypt data in transit. PrivateLink provides additional network-level isolation that some customers require for compliance or network policy reasons. For more information, see [Understanding end-to-end encryption in Snowflake](https://docs.snowflake.com/en/user-guide/security-encryption-end-to-end).
+
+Use these configuration steps, only if you require private connectivity between a Reltio tenant on AWS and a Snowflake account on AWS.
+
+## Requirements for setting up PrivateLink connectivity
+
+PrivateLink connectivity between your Reltio tenant and your Snowflake account is supported only under the conditions described in the following requirements.
+
+| Requirement | Details |
+| --- | --- |
+| Cloud provider | Your Reltio tenant and your Snowflake account are both hosted on AWS. PrivateLink does not support deployments where either Reltio or Snowflake is hosted on Azure or Google Cloud Platform. |
+| Snowflake edition requirement | Your Snowflake account runs on Snowflake Business Critical Edition (BCE) or a higher edition. |
+| Region consistency | Your Reltio tenant and your Snowflake account can reside in different AWS regions. PrivateLink supports cross-region connectivity on AWS. |
+
+See [PrivateLink connectivity support matrix for Snowflake (Direct Connect)](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/privatelink-connectivity-support-matrix-for-reltio-data-pipeline-for-snowflake-direct-connect?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) to check whether your Reltio and Snowflake deployment supports PrivateLink.
+
+Any requirement not explicitly listed above and as part of the [support matrix](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/privatelink-connectivity-support-matrix-for-reltio-data-pipeline-for-snowflake-direct-connect?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) is not supported.
+
+## Supported scenarios
+
+PrivateLink supports three deployment scenarios. The scenario that applies to your deployment depends on your Reltio edition and the number of Snowflake accounts you operate.
+
+The following table summarizes the three scenarios, the conditions under which each scenario applies, and the topic that describes the setup.
+
+| Scenario | Reltio edition | Snowflake configuration | Setup topic |
+| --- | --- | --- | --- |
+| Scenario 1 | Reltio standard edition | A single Snowflake Business Critical Edition account | [Scenario 1: Set up PrivateLink and configure the Snowflake (Direct Connect) Data Pipeline for Reltio standard edition](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/privatelink-connectivity-for-snowflake-direct-connect-data-pipeline-overview/scenario-1-set-up-privatelink-and-configure-the-snowflake-direct-connect-data-pipeline-for-reltio-standard-edition?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
+| Scenario 2 | Reltio Business Critical Edition (BCE) | A single Snowflake Business Critical Edition account, either without a backup account or with a read-only backup account | [Scenario 2: Set up PrivateLink and configure the Snowflake (Direct Connect) Data Pipeline for Reltio BCE with a single Snowflake account having a read-only backup account](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/privatelink-connectivity-for-snowflake-direct-connect-data-pipeline-overview/scenario-2-set-up-privatelink-and-configure-the-snowflake-direct-connect-data-pipeline-for-reltio-bce-with-a-single-snowflake-account-having-a-read-only-backup-account?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
+| Scenario 3 | Reltio Business Critical Edition (BCE) | A Snowflake Business Critical Edition account with a read-write Snowflake backup account | [Scenario 3: Set up PrivateLink and configure the Snowflake (Direct Connect) Data Pipeline for Reltio BCE with a Snowflake account having a read-write backup account](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/privatelink-connectivity-for-snowflake-direct-connect-data-pipeline-overview/scenario-3-set-up-privatelink-and-configure-the-snowflake-direct-connect-data-pipeline-for-reltio-bce-with-a-snowflake-account-having-a-read-write-backup-account?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
+
+## Activities and responsibilities
+
+PrivateLink onboarding involves coordinated activities between you and the Reltio team. Some activities are completed by you in your Snowflake account, and others are performed by Reltio.
+
+The following table summarizes the activities required during PrivateLink onboarding and ongoing operation. For setup steps specific to your scenario, see the linked setup topic in the [Supported scenarios](#concept-n3y6ynj4/section-7810).
+
+| Activity | Customer | Reltio |
+| --- | --- | --- |
+| Open a Reltio support ticket to request PrivateLink setup | ✅ | - |
+| Share the AWS account IDs of the Reltio environments | - | ✅ |
+| Open a Snowflake support ticket to enable PrivateLink for the Reltio AWS account IDs | ✅ | - |
+| Run `SYSTEM$GET_PRIVATELINK_CONFIG()` in the Snowflake account and share the output with Reltio | ✅ | - |
+| Establish PrivateLink connectivity between Reltio and Snowflake | - | ✅ |
+| Configure the Snowflake (Direct Connect) Data Pipeline | ✅ | - |
+| Validate connectivity and trigger the initial data sync | ✅ | - |
+| Respond to disasters as described in Disaster recovery for the Snowflake (Direct Connect) Data Pipeline | ✅(Snowflake outage only) | ✅(Reltio outage) |
+
+## Disaster recovery
+
+Disaster recovery responsibilities for the Snowflake (Direct Connect) Data Pipeline depend on the type of outage. For Reltio outages, Reltio manages the switchover to the backup environment automatically and no customer action is required. For Snowflake outages, you activate the secondary Snowflake account and switch the active data pipeline.
+
+For the full recovery procedure, see [Disaster recovery for the Snowflake (Direct Connect) Data Pipeline](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/privatelink-connectivity-for-snowflake-direct-connect-data-pipeline-overview/disaster-recovery-for-the-snowflake-direct-connect-data-pipeline?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+
+
+---
+
 # Configuring AWS PrivateLink
 
 > **Section:** Reltio > What’s in the box? > What's in the box at a glance > Additional subscriptions at a glance > Reltio Private Link
@@ -1058,90 +1684,6 @@ Provides these additional subscriptions:
 
 
 For further details, see topic[Business Critical Edition: Scope and Coverage](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/additional-subscriptions-at-a-glance/reltio-business-critical-edition/business-critical-edition-scope-and-coverage?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
-
-
-
----
-
-# Configure PrivateLink Connectivity for Snowflake (Direct Connect) Data Pipeline
-
-> **Section:** Applications > Data Integrations > Data Pipelines at a glance > Reltio Data Pipeline for Snowflake at a glance > Reltio Data Pipeline for Snowflake setup
-
-
-**Source:** https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/configure-privatelink-connectivity-for-snowflake-direct-connect-data-pipeline?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
-
-Learn how to enable AWS PrivateLink between Reltio and your Snowflake account hosted on AWS for secure data export using the Snowflake (Direct Connect) Data Pipeline.
-
-> **Note:** This topic applies only to configuring Snowflake (Direct Connect). It does not apply to Snowflake (Staging Pipeline).
-
-Reltio Data Pipeline for Snowflake writes data from Reltio Context Intelligence Platform directly to the Snowflake internal stage over JDBC. Snowflake secures data in transit using TLS 1.2 (or higher) encryption for all JDBC connections. This is enforced by default, all communication between the JDBC driver and Snowflake occurs over HTTPS, ensuring that data uploaded to internal stages is encrypted in transit without any additional configuration. For more information, see [Understanding end-to-end encryption in Snowflake](https://docs.snowflake.com/en/user-guide/security-encryption-end-to-end).
-
-Use this configuration steps, only if you require private connectivity between a Reltio tenant on AWS and a Snowflake account on AWS.
-
-## Requirements for setting up PrivateLink connectivity
-
-PrivateLink connectivity between your Reltio tenant and Snowflake account is supported only under the following conditions:
-
-- Cloud provider alignment: Both the Reltio tenant and Snowflake account must be hosted on AWS. PrivateLink connectivity is not supported if either is hosted on Azure or GCP.
-- Region consistency: The Reltio tenant and Snowflake account must be in the same AWS region. Cross-region PrivateLink connectivity is not supported.
-- Reltio edition requirement: Reltio tenants must be on the standard edition. PrivateLink connectivity is not supported for Reltio Business Critical Edition.
-- Snowflake edition requirement: Snowflake account(s) must be on Business Critical Edition or higher. Lower editions are not supported.
-- Required Snowflake permissions: The user performing Snowflake configuration must have the 'ACCOUNTADMIN' role in Snowflake. Configurations by users without this role are not supported.
-
-See [PrivateLink connectivity support matrix for Snowflake (Direct Connect)](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/privatelink-connectivity-support-matrix-for-reltio-data-pipeline-for-snowflake-direct-connect?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) to check whether your Reltio and Snowflake deployment supports PrivateLink.
-
-Any requirement not explicitly listed above and as part of the [support matrix](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/privatelink-connectivity-support-matrix-for-reltio-data-pipeline-for-snowflake-direct-connect?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) is not supported.
-
-Use the following decision tree to confirm whether your Reltio tenant and Snowflake account support PrivateLink connectivity for Snowflake (Direct Connect).*Image: reltio_snowflake_privatelink_connectivity_support_updated.png*
-
-## Steps to configure Snowflake PrivateLink and provision the analytics pipeline
-
-Follow these steps to enable PrivateLink between your Snowflake account and Reltio, and to complete the secure pipeline configuration.
-
-1. Open a [Reltio support ticket](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) to request Snowflake Data Pipeline Private Link setup for your tenant and ask for the following details:
-
-   Also, include the following information in the support ticket.
-   - The 12-digit AWS account ID associated with your Reltio tenant
-   - The private CIDR range (if IP whitelisting is required)
-   - Your tenant ID
-   - Your Reltio environment name (for example, `reltio-prod-us-east-1`)
-2. Raise a support case in the Snowflake Support Portal to enable AWS PrivateLink for your Snowflake account, and include the following details.
-   - Specify whether you plan to use separate Snowflake accounts for each Reltio tenant (dev, test, prod) or the same account for all tenants. If you use separate accounts, provide the locator and region for each account.
-   - Your Snowflake account locator.
-   - Cloud Provider: AWS
-   - The region where your Snowflake account is hosted.
-   - A statement confirming that the account uses Business Critical Edition.
-   - The 12-digit AWS account ID provided by Reltio.
-   - A request to enable AWS PrivateLink for the Snowflake account.
-
-After Snowflake enables PrivateLink for your account, proceed to next step.
-3. Run the following command in your Snowflake account: Capture and include the following details in your Reltio support ticket:
-
-   ```
-   SELECT SYSTEM$GET_PRIVATELINK_CONFIG();
-
-   ```
-   - `privatelink-vpce-id`: Snowflake's AWS VPC endpoint service ID
-   - `privatelink-account-url`: Private hostname for Snowflake access
-   - AWS region
-4. Wait for Reltio's confirmation on successful PrivateLink connectivity.
-5. (Optional) Apply a network policy in Snowflake to restrict public internet access. For instructions, see [CREATE NETWORK POLICY](https://docs.snowflake.com/en/sql-reference/sql/create-network-policy) in the Snowflake documentation.
-6. After the above steps are done, open a second support ticket to configure the Snowflake Data Pipeline and include the following information.
-   - Warehouse name
-   - Database name
-   - Schema name
-   - Role with required permissions
-   - Internal stage name
-
-## Result
-
-After completing these steps, PrivateLink connectivity between Reltio and your Snowflake account is established. The Snowflake Data Pipeline is configured to export data over a secure, private channel using AWS infrastructure.
-
-**Related links**
-
-- [Configuring AWS PrivateLink](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/additional-subscriptions-at-a-glance/reltio-private-link/configuring-aws-privatelink?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- [Reltio Data Pipeline for Snowflake at a glance](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 
 
@@ -5699,7 +6241,7 @@ Update your authentication mechanism to use IAM role-based authentication. Ensur
 - Export service: [Secure export AWS authentication](https://docs.reltio.com/en/developer-resources/load-and-export-apis/load-and-export-apis-at-a-glance/export-service-apis/secure-export-aws-authentication?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 - Match service: [External match API - AWS](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/potential-matches-api/external-match-api---aws?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 - Data streaming: [Add an external queue configuration](https://docs.reltio.com/en/objectives/stream-data/data-streaming-at-a-glance/data-streaming-operation/add-an-external-queue-configuration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- Life Cycle Actions with AWS Lambda: [LCA as AWS Lambda: Identity and Access Management](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/lca-implementation-using-aws-lambda/lca-as-aws-lambda-identity-and-access-management?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- Life Cycle Actions with AWS Lambda: [LCA as AWS Lambda: Identity and Access Management](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/lca-deployment-using-aws-lambda/lca-as-aws-lambda-identity-and-access-management?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 **For customers already using IAM roles**
 
@@ -8407,7 +8949,7 @@ We understand that you, particularly those of you with retail/consumer operation
 
 **Profile dates**
 
-Before, on **Hub Profile views**, for date attributes, you could only select a date up to December 31, 2099. But now, we've changed that! You can pick any date in the future without restrictions. Just keep in mind that, for performance reasons, the **Date picker** will still display only up to the year 2099. But no worries, you can manually enter any date you need. For more information, see topic [perspectives](https://docs.reltio.com/search?q=perspectives&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+Before, on **Hub Profile views**, for date attributes, you could only select a date up to December 31, 2099. But now, we've changed that! You can pick any date in the future without restrictions. Just keep in mind that, for performance reasons, the **Date picker** will still display only up to the year 2099. But no worries, you can manually enter any date you need. For more information, see topic [Profile perspectives navigation](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
@@ -8487,7 +9029,7 @@ Get in the groove with Reltio's cool new capabilities and rock to the remix of c
 
 **DIY project for Match IQ**
 
-Do you want to start training a machine-learning based match model, but [Match IQ](https://docs.reltio.com/en/applications/console/configuration-applications/ai-powered-flexible-entity-resolution-network-fern-model-based-matching-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) is not enabled on your tenant? Previously, to get it up and running on your tenant, you needed our support. Now, just dive in and enable it yourself, hassle-free! For more information, see topic [t console enable matchiq](https://docs.reltio.com/search?q=t-console-enable-matchiq&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+Do you want to start training a machine-learning based match model, but [Match IQ](https://docs.reltio.com/en/applications/console/configuration-applications/ai-powered-flexible-entity-resolution-network-fern-model-based-matching-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) is not enabled on your tenant? Previously, to get it up and running on your tenant, you needed our support. Now, just dive in and enable it yourself, hassle-free!
 
 **Secure and transparent reporting, now!**
 
@@ -8511,8 +9053,6 @@ The new `Security Audit Log API` filters audit logs and exports them in CSV or J
 - 
 
   SIEM system integration: Seamlessly integrate with your Security Information and Event Management (SIEM) systems such as Splunk, automating it to request data from the Security Audit Log API. For example, set your SIEM system to call the `Security Audit Log API` at five-minute intervals to capture the most recent activities and return results in JSON format. Once the data is in your SIEM, monitor it for specific critical events and correlate information with other log sources.
-
-  For more information, see [Export security audit log reports](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/user-management-api/security-audit-log-api/export-security-audit-log-reports?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
@@ -9328,7 +9868,7 @@ Find out what's new and notable each week in the Reltio Connected Data Platform 
 
 **Unify data with the AI-driven Reltio Customer 360 Data Product**
 
-Last month, we [announced](https://www.reltio.com/news-releases/reltio-customer-360-data-product-pioneers-new-era-of-ai-powered-data-unification/) Reltio Customer 360 Data Product, the first in our series of 360 Data Products with the latest AI innovations to power enterprise business initiatives with trusted, real-time, 360-degree views of customers. Find out how it addresses your data team challenges in securing a unified customer view in our 16-May-2024 community show [Reltio Customer 360 Data Product: Powering AI-Driven Data Unification for Enhanced CX](https://community.reltio.com/events/event-description?CalendarEventKey=44a44745-a884-49c1-8c84-018ee8b0f611&CommunityKey=d172c579-9c0e-4e9f-a9bf-fdfeb2fb98ac&Home=%2fevents%2fcalendar). For an overview of the product, see topic [c customer 360 dp](https://docs.reltio.com/search?q=c-customer-360-dp&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+Last month, we [announced](https://www.reltio.com/news-releases/reltio-customer-360-data-product-pioneers-new-era-of-ai-powered-data-unification/) Reltio Customer 360 Data Product, the first in our series of 360 Data Products with the latest AI innovations to power enterprise business initiatives with trusted, real-time, 360-degree views of customers. Find out how it addresses your data team challenges in securing a unified customer view in our 16-May-2024 community show [Reltio Customer 360 Data Product: Powering AI-Driven Data Unification for Enhanced CX](https://community.reltio.com/events/event-description?CalendarEventKey=44a44745-a884-49c1-8c84-018ee8b0f611&CommunityKey=d172c579-9c0e-4e9f-a9bf-fdfeb2fb98ac&Home=%2fevents%2fcalendar).
 
 
 
@@ -9577,21 +10117,19 @@ Our Reltio Entity Resolution (Reltio ER) offering uniquely identifies and resolv
 
 Reltio Entity Resolution for Individual lets you unify entity data like customers, vendors, and employees.
 
-For more information, see topic [c rer ovw](https://docs.reltio.com/search?q=c-rer-ovw&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+For more information, see topic [Reltio Entity Resolution data model](https://docs.reltio.com/en/products/reltio-entity-resolution/reltio-entity-resolution-at-a-glance/reltio-entity-resolution-reference/reltio-entity-resolution-data-model?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 **Reltio Multidomain Master Data Management**
 
 Reltio Multidomain MDM includes all capabilities of Reltio Entity Resolution, as well as dynamic survivorship, reference data, built-in integration, data quality, and relationship views. Reltio Multidomain MDM is where you unify, cleanse, enrich, and share data. 
 
-For more information, see topic [gettingstarted](https://docs.reltio.com/search?q=gettingstarted&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+For more information, see topic [Reltio Multidomain Master Data Management (MDM) at a glance](https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 **Reltio 360 Data Products**
 
 Reltio 360 Data Products provides governed, standardized datasets for entity data that encompass entities, relationships, interactions, and transaction data that you can integrate with data from various sources, enrich with third-party data, and mobilize across systems.
 
 Reltio 360 Customer Data Product provides a comprehensive view of your customer datasets.
-
-For more information, see topic [c 360dp ovw](https://docs.reltio.com/search?q=c-360dp-ovw&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
@@ -9833,7 +10371,7 @@ The new ML pretrained model for Individual entities is available out-of-the box 
 | Target users/roles |  |
 | Configuration required | No |
 | Additional subscription required | No |
-| Find out more | - [Pretrained FERN model for the Individual entity type](https://docs.reltio.com/en/applications/console/configuration-applications/ai-powered-flexible-entity-resolution-network-fern-model-based-matching-at-a-glance/fern-based-matching/available-pretrained-fern-models/pretrained-fern-model-for-the-individual-entity-type?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) - [r pretrainedmodel HCP](https://docs.reltio.com/search?q=r-pretrainedmodel-HCP&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
+| Find out more |  |
 
 ## Collaborative profile creation (EA)
 
@@ -9960,7 +10498,7 @@ We replaced the lengthy manual process for configuring the Reltio data pipelines
 | Target users/roles |  |
 | Configuration required | No |
 | Additional subscription required | Yes |
-| Find out more | -     [Configure a new GBQ pipeline in the Console](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-gbq-at-a-glance/reltio-data-pipeline-for-gbq-set-up/configure-the-reltio-data-pipeline-for-gbq/provision-your-reltio-tenant-for-the-gbq-connector/configure-a-new-gbq-pipeline-in-the-console?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) -     [t integrate configuresnowflake](https://docs.reltio.com/search?q=t-integrate-configuresnowflake&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
+| Find out more |  |
 
 ## Improved security and performance with AWS PrivateLink support
 
@@ -9988,7 +10526,7 @@ Meanwhile, the existing Reltio API content is still available in both the [Devel
 | Target users/roles | \|  \| |
 | Configuration required | No |
 | Additional subscription required | API beta program |
-| Find out more | [c api experience](https://docs.reltio.com/search?q=c-api-experience&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
+| Find out more |  |
 
 ## Don't miss these related features released since 2023.3
 
@@ -10016,7 +10554,7 @@ But wait, there's more!
 
 **AWS Lambda functions Java upgrade**
 
-We recommend upgrading your LCA functions from Java 8 to Java 17 for improved security, performance, and compatibility with new platform features and industry standards. For details on how to upgrade, see topic [AWS Lambda function Java upgrade](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/lca-implementation-using-aws-lambda/lca-as-aws-lambda-deployment/aws-lambda-function-java-upgrade?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+We recommend upgrading your LCA functions from Java 8 to Java 17 for improved security, performance, and compatibility with new platform features and industry standards. For details on how to upgrade, see topic [AWS Lambda function Java upgrade](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/lca-deployment-using-aws-lambda/lca-deployment-as-aws-lambda/aws-lambda-function-java-upgrade?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 **Cleanse**
 
@@ -10125,7 +10663,7 @@ Check out what's new and notable in this Reltio Connected Data 2024.2.10.0 weekl
 
 Previously, when you loaded data using a JSON file, the data loading job's transformation process converted the data into a table.
 
-Now the Data Loader supports loading jobs for RELTIO_JSON files which don't need to go through the transformation process. This enables you to load a large number of records with a single data loader job [c dl reltiojson load](https://docs.reltio.com/search?q=c-dl-reltiojson-load&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+Now the Data Loader supports loading jobs for RELTIO_JSON files which don't need to go through the transformation process. This enables you to load a large number of records with a single data loader job.
 
 We're rolling out this capability through our API first. In a future update this functionality will be made available in the Console UI.
 
@@ -10486,7 +11024,7 @@ But wait, there's more!
 
 **AWS Lambda functions multithreading**
 
-Looking to improve the performance and cost efficiency of your CPU-intensive AWS Lambda functions? Enable multithreading with the `THREAD_POOL_SIZE` parameter. Note that results may vary based on your specific workload. For details, see topic [LCA as AWS Lambda: Deployment](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/lca-implementation-using-aws-lambda/lca-as-aws-lambda-deployment?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+Looking to improve the performance and cost efficiency of your CPU-intensive AWS Lambda functions? Enable multithreading with the `THREAD_POOL_SIZE` parameter. Note that results may vary based on your specific workload. For details, see topic [LCA Deployment as AWS Lambda](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/lca-deployment-using-aws-lambda/lca-deployment-as-aws-lambda?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
@@ -10587,7 +11125,7 @@ Enrich your Reltio data with D&B data in real-time, batch and on-demand with mon
 | Target users/roles | \| |
 | Configuration required | Yes |
 | Additional subscription required | Yes:  - Requires Reltio Integration Hub (RIH); task utilization counts towards existing entitlement. - Requires D&B Data Blocks licenses from D&B |
-| Find out more | [c enrich dnb datablocks ovw](https://docs.reltio.com/search?q=c-enrich-dnb-datablocks-ovw&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
+| Find out more |  |
 
 ## Reltio Data Pipelines
 
@@ -10617,36 +11155,6 @@ We replaced the lengthy manual process for configuring the Reltio data pipelines
 Learn about the new velocity packs introduced in the 2024.2 release.
 
 Get a head start on unifying and managing your market segment data with these new velocity packs.
-
-## Reltio Entity Resolution for Individual
-
-Expedite data loading and leverage key attributes for matching with this velocity pack's preconfigured data model, match rules, and consolidation logic for Individual entities. Get the essential components necessary for entity resolution, eliminating the need to set up survivorship rules, validation rules, or load extensive sets of attributes.
-
-We improved the UI by giving you an updated dashboard, which is now the default view when you log into Entity Resolution for Individual. We also enabled the Bulk Update feature, so you can now delete and update records in bulk.
-
-We've extended the contents of this preconfigured data model to provide:
-
-- 
-
-  A new `SourceIdentifiers` nested attribute and updated `SourceName` and `SourceID` as sub attributes
-- 
-
-  Under Address, replaced the `PostalCode` nested attribute with simple attributes for `PostalCode`, `Zip5`, and `Zip4`.
-- 
-
-  Added the `Gender` attribute.
-- 
-
-  Updated the `SSN` attribute type from Number to String.
-
-| Get going with this feature | Get going with this feature |
-| --- | --- |
-| Availability | GA |
-| Product line | Reltio Entity Resolution |
-| Target users/roles |  |
-| Configuration required | No |
-| Additional subscription required | No |
-| Find out more | [c rer Individual](https://docs.reltio.com/search?q=c-rer-Individual&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
 
 ## Reltio for Product velocity pack
 
@@ -10681,37 +11189,6 @@ Get the data you need to run efficient product launches and get real-time produc
 | Configuration required | Yes |
 | Additional subscription required | No |
 | Find out more | [Reltio for Product velocity pack](https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-product-velocity-pack?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
-
-## Reltio for Supplier velocity pack
-
-Don't let your Supplier data be the weakest link in your supply chain resilience! Defrag your supplier data to get a clear view of supply chain spending and compliance risks with Reltio for Supplier.
-
-Get the Supplier data you need for supplier performance, procurement and manufacturing operations, and compliance with our prebuilt velocity pack:
-
-- 
-
-  data model
-- 
-
-  match rules
-- 
-
-  validation functions
-- 
-
-  reference data
-- 
-
-  UI configuration
-
-| Get going with this feature | Get going with this feature |
-| --- | --- |
-| Availability | GA |
-| Product line | Reltio Multidomain MDM |
-| Target users/roles | Business User and Data Product Owner |
-| Configuration required | Yes |
-| Additional subscription required | No |
-| Find out more | [c mdm sup components](https://docs.reltio.com/search?q=c-mdm-sup-components&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
 
 
 
@@ -10837,7 +11314,7 @@ Use the dedicated menu, in the Hub side panel, to explore customer data, create,
 | Target users/roles | Data product owners \| Marketing teams |
 | Configuration required | No |
 | Additional subscription required | No |
-| Find out more | - [Segmentation at a glance](https://docs.reltio.com/en/applications/hub/segmentation-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) - [t 360dp activatesegment](https://docs.reltio.com/search?q=t-360dp-activatesegment&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
+| Find out more | - [Segmentation at a glance](https://docs.reltio.com/en/applications/hub/segmentation-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
 
 ## Enhanced Security
 
@@ -11899,7 +12376,7 @@ We enhanced the Segmentation and Activation feature, so you can now schedule whe
 | Target roles | Data Steward |
 | Configuration required | No |
 | Additional subscription required | No |
-| Find out more | [t 360dp activatesegment](https://docs.reltio.com/search?q=t-360dp-activatesegment&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
+| Find out more | [Activation service for segmentation](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/work-with-segments/activation-service-for-segmentation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
 
 ## Collaborative Profile Creation
 
@@ -13136,7 +13613,7 @@ You can now setup AWS PrivateLink between Reltio and your Snowflake account host
 | Target roles | Reltio Configurator |
 | Configuration required | Yes |
 | Additional subscription required | Yes |
-| Find out more | [Configure PrivateLink Connectivity for Snowflake (Direct Connect) Data Pipeline](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/configure-privatelink-connectivity-for-snowflake-direct-connect-data-pipeline?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
+| Find out more | [PrivateLink connectivity for Snowflake (Direct Connect) Data Pipeline overview](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/privatelink-connectivity-for-snowflake-direct-connect-data-pipeline-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
 
 ## Native LCAs deprecation
 
@@ -13958,7 +14435,7 @@ Existing Java-based LCAs continue to operate without modification, while run-tim
 | Target roles | Data StewardSolution ArchitectSystem AdministratorData Product Owner |
 | Configuration required | Yes |
 | Additional subscription required | No |
-| Find out more | [Non-Java LCAs in Cloud Functions](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/lca-implementation-using-aws-lambda/lca-as-aws-lambda-deployment/non-java-lcas-in-cloud-functions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
+| Find out more | [Non-Java LCAs in Cloud Functions](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/lca-deployment-using-aws-lambda/lca-deployment-as-aws-lambda/non-java-lcas-in-cloud-functions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
 
 ## Healthcare VP to Salesforce Sales Cloud Integration
 
@@ -14468,6 +14945,14 @@ In the **Sources** perspective of the entity **Profile** page, you can now perso
 Your attribute view personalization is automatically saved for each entity type. As a result, when you open another profile of the same entity type, your customized layout is preserved, allowing you to continue working with the same attribute view without configuring the view again. This enhancement helps reduce visual clutter, improves efficiency when you work with large or complex profiles, and and makes it easier to review relevant information.
 
 For more information, see [Reorder attributes](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/sources-perspective?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Hide attributes](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/sources-perspective?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+## Self Service for Lambda LCA Deployment
+
+A self-service setup experience for AWS Lambda-based Life Cycle Actions (LCAs) is now available in **Reltio Console**, replacing the support-led onboarding model with a guided workflow for tenant configuration. This experience enables authorized users to register AWS IAM role details, request tenant-specific Reltio IAM roles, validate trust relationships, and apply configuration directly within the product.
+
+The setup supports asynchronous approval states, preserves progress across sessions, and applies tenant configuration only after successful trust validation. Built-in guidance for Lambda implementation and L3 configuration reduces reliance on manual support processes, accelerating onboarding and ensuring consistent setup across environments.
+
+For more information, see [Set up AWS Lambda connections for LCAs](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/lca-deployment-using-aws-lambda/set-up-aws-lambda-connections-for-lcas?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Create an LCA in Reltio Console](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/lca-deployment-using-aws-lambda/create-an-lca-in-reltio-console?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
@@ -17790,68 +18275,164 @@ For more details, see these topics:
 
 **Source:** https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/match-group-elements---description-and-configuration/rule-element/the-comparison-formula/comparison-operators?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
-**Keywords:** Comparison Operators, comparison operators, comparison operators for match rules, operators, exact operator, exactornull operator, exactorallnull operator, notexactsame operator, fuzzy operator
+**Keywords:** comparison operators, comparison operators for match rules, match rule operators, exact operator, fuzzy operator, exactornull operator, exactorallnull operator, notexact operator, multi operator
 
 
-Learn about Comparison Operators, including Exact, Fuzzy, and others, to define attribute matching logic in rules.
+Learn about comparison operators, including `exact`, `fuzzy`, and others, that define attribute matching logic in rules.
 
-Use Comparison Operators, such as `exact` and `fuzzy`, to refine matching logic in rules.
+Use comparison operators, such as `exact` and `fuzzy`, to refine matching logic in rules.
 
-> **Note:** The `exact` and `fuzzy` operators don't define the comparison logic. The comparator assigned to the attribute does. They work the same way in terms of comparison, but they differ slightly when it comes to token generation.
+> **Note:** The `exact` and `fuzzy` operators do not define the comparison logic. The comparator assigned to the attribute does. These operators work the same way for comparison, but they differ slightly in token generation.
 
-A match rule contains various key elements. Its primary element is the rule's comparison formula, which is usually positioned in a JSON, after the comparator and match token classes. Depending on the rule type you choose (`automatic`, `suspect`, `<custom>`, or `relevance_based`), it will be a boolean or arithmetic expression that defines how two match candidates should be compared for similarity. The rule will use Comparison Operators and Helper Operators (e.g., `Equals`, `In`, `And`, `Or`, and `Null Values`), as the key components of the expression. For more information, see topic [Helper Operators](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/match-group-elements---description-and-configuration/rule-element/the-comparison-formula/helper-operators?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+A match rule contains several key elements. Its primary element is the comparison formula, which usually appears in JSON after the comparator and match token classes. Depending on the rule type you choose (`automatic`, `suspect`, `<custom>`, or `relevance_based`), the formula is a Boolean or arithmetic expression that defines how two match candidates are compared for similarity. The rule uses comparison operators and helper operators, such as `Equals`, `In`, `And`, `Or`, and `Null Values`, as key components of the expression. For more information, see [Helper Operators](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/match-group-elements---description-and-configuration/rule-element/the-comparison-formula/helper-operators?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
-A rule must have at least one Comparison Operator. There are six to choose from: `exact`, `fuzzy`, `exactOrNull`, `exactOrAllNull`, `notExact`, and `multi`. Here's a closer look at each operator:
+A rule must have at least one comparison operator. There are six operators: `exact`, `fuzzy`, `exactOrNull`, `exactOrAllNull`, `notExact`, and `multi`.
+
+## Comparison operators
 
 **exact**
 
 This operator ensures a comparison returns `true` when the tested values match exactly as defined by the assigned comparator class.
 
+Example: Exact match on `FirstName`
+
+```
+{
+  "exact": [
+    "configuration/entityTypes/Individual/attributes/FirstName"
+  ]
+}
+```
+
 **fuzzy**
 
-The Fuzzy operator indicates that you wish the comparison for the attribute to be considered `true` if any values being tested are similar, but not necessarily identical.
+The `fuzzy` operator indicates that the comparison for the attribute is considered `true` if any values being tested are similar, but not necessarily identical.
+
+Example: Fuzzy match on `LastName`
+
+```
+{
+  "fuzzy": [
+    "configuration/entityTypes/Individual/attributes/LastName"
+  ]
+}
+```
 
 **exactOrNull**
 
 The comparison on the attribute is considered `true` if:
 
-- Both attributes have values AND pass the test for exact OR
-- One attribute has a value while the other does not OR
-- Both attributes have no values
+- Both attributes have values and pass the test for `exact`, or
+- One attribute has a value while the other does not, or
+- Both attributes have no values.
+
+
+
+
+
+Example: `exactOrNull` match on `MiddleName`
+
+```
+{
+  "exactOrNull": [
+    "configuration/entityTypes/Individual/attributes/MiddleName"
+  ]
+}
+```
 
 **exactOrAllNull**
 
 The comparison on the attribute is considered `true` if:
 
-- Both entities have values AND pass the test for exact OR
-- Both entities have no values
+- Both entities have values and pass the test for `exact`, or
+- Both entities have no values.
+
+
+
+
+
+Example: `exactOrAllNull` match on `NamePrefix`
+
+```
+{
+  "exactOrAllNull": [
+    "configuration/entityTypes/Individual/attributes/NamePrefix"
+  ]
+}
+```
 
 **notExact**
 
-The `notExact` operator negates the behavior of the `exact` operator while preserving the connection between nested attribute values. It ensures that a comparison returns true when the tested values do not match exactly, as defined by the assigned comparator class.
+The `notExact` operator negates the behavior of the `exact` operator while preserving the connection between nested attribute values. It ensures that a comparison returns `true` when the tested values do not match exactly, as defined by the assigned comparator class.
 
-It enables you to create match rules that detect when values differ, without allowing incorrect cross-matching across nested attributes. It provides an inverse comparison to `exact`, making it useful in cases where an exact mismatch should trigger a match condition. It works like this: 
+It lets you create match rules that detect when values differ without allowing incorrect cross-matching across nested attributes. It provides an inverse comparison to `exact`, which is useful when an exact mismatch should trigger a match condition. It works as follows:
 
-- If two attributes have the same value, the result is false (no mismatch).
-- If two attributes differ, the result is true (mismatch detected).
-- If one attribute has a value while the other is empty, the result is true (mismatch).
-- Nested attributes remain grouped together, preventing incorrect cross-value permutations.
+- If two attributes have the same value, the result is `false`.
+- If two attributes differ, the result is `true`.
+- If one attribute has a value while the other is empty, the result is `true`.
+- Nested attributes remain grouped together, which prevents incorrect cross-value permutations.
+
+
+
+
+
+Example: `notExact` match on `CustomerType`
+
+```
+{
+  "notExact": [
+    "configuration/entityTypes/Individual/attributes/CustomerType"
+  ]
+}
+```
 
 **multi**
 
-The purpose of the `multi` operator is to consider more than one attribute when matching entities. 
+The `multi` operator considers more than one attribute when matching entities.
 
-E.g., an instance where your data might have swapped values, such as a last name in the `FirstName` attribute and vice versa. In this case, regular matching methods can't reliably reconcile the entities. By assigning the `CrossMultiComparator` to the `multi` operator, the system generates permutations of the values in `FirstName` and `LastName`. This enables it to find matches even when one entity lists "John Doe" and the other lists "Doe John."
+For example, your data might contain swapped values, such as a last name in the `FirstName` attribute and a first name in the `LastName` attribute. In this case, regular matching methods cannot reliably reconcile the entities. By assigning the `CrossMultiComparator` to the `multi` operator, the system generates permutations of the values in `FirstName` and `LastName`. This allows it to find matches even when one entity lists `John Doe` and the other lists `Doe John`.
+
+Example: `multi` match on `FirstName` and `LastName`
+
+```
+{
+  "multi": [
+    {
+      "uri": "configuration/entityTypes/Individual/attributes/MultiGroup1",
+      "attributes": [
+        "configuration/entityTypes/Individual/attributes/FirstName",
+        "configuration/entityTypes/Individual/attributes/LastName"
+      ]
+    }
+  ],
+  "comparatorClasses": {
+    "mapping": [
+      {
+        "attribute": "configuration/entityTypes/Individual/attributes/MultiGroup1",
+        "class": "com.reltio.match.comparator.CrossMultiComparator"
+      },
+      {
+        "attribute": "configuration/entityTypes/Individual/attributes/FirstName",
+        "class": "com.reltio.match.comparator.BasicStringComparator"
+      },
+      {
+        "attribute": "configuration/entityTypes/Individual/attributes/LastName",
+        "class": "com.reltio.match.comparator.BasicStringComparator"
+      }
+    ]
+  }
+}
+```
 
 ## Token generation
 
 Comparison operators guide how generated tokens are compared during matching.
 
-The `exactOrNull` operator doesn't produce match tokens.
+The `exactOrNull` operator does not produce match tokens.
 
-The `exactOrAllNull` operator doesn't produce tokens by default, which is usually the best option. However, if you're struggling with finding good attributes for a tokenization schema, you can request enabling token generation in your tenant configuration. For more information, see topic [Get help in Support Portal](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+The `exactOrAllNull` operator does not produce tokens by default, which is usually the best option. However, if you're struggling to find suitable attributes for a tokenization schema, you can request token generation in your tenant configuration. For more information, see [raise a support request](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
-The `notExact` operator doesn't produce match tokens.
+The `notExact` operator does not produce match tokens.
 
 
 
@@ -19009,21 +19590,97 @@ Learn about helper operators that let you define complex match logic using AND/O
 
 The Helper Operators apply additional conditions within a rule. The comparator classes you map for the rule have no bearing on the Helper Operators.
 
-## Equals Operator
+## Equals operator
 
-Specifies that an attribute in the profile must be equal to a certain value.
+Specifies that an attribute in the profile must be equal to a certain value for the match to happen.
+
+> **Note:** The `Equals` operator is not case-sensitive.
 
 **Example:**
 
-Suppose you only want to compare addresses where `State` equals `TX`, or identifier type equals `SSN`.
+The following example uses a fuzzy match on `LastName` and limits the match to profiles where `Department` equals `Sales`.
 
-## IN Operator
+```
+{
+  "uri": "configuration/entityTypes/Individual/matchGroups/FuzzyLastNameforSales",
+  "label": "Fuzzy(Last Name)",
+  "type": "suspect",
+  "scope": "ALL",
+  "useOvOnly": true,
+  "rule": {
+    "matchTokenClasses": {
+      "mapping": [
+        {
+          "attribute": "configuration/entityTypes/Individual/attributes/LastName",
+          "class": "com.reltio.match.token.DoubleMetaphoneMatchToken"
+        }
+      ]
+    },
+    "comparatorClasses": {
+      "mapping": [
+        {
+          "attribute": "configuration/entityTypes/Individual/attributes/LastName",
+          "class": "com.reltio.match.comparator.DoubleMetaphoneComparator"
+        }
+      ]
+    },
+    "and": {
+      "fuzzy": [
+        "configuration/entityTypes/Individual/attributes/LastName"
+      ],
+      "equals": [
+        {
+          "values": [
+            "Sales"
+          ],
+          "uri": "configuration/entityTypes/Individual/attributes/Department"
+        }
+      ]
+    }
+  },
+  "scoreStandalone": 0,
+  "scoreIncremental": 0
+}
+```
+
+## IN operator
 
 Specifies that an attribute in the profile must be equal to any of the values in the defined collection. This is equivalent to logic you could create by combining Equals and Or operators.
 
+> **Note:** The `IN` operator is not case-sensitive.
+
 **Example:**
 
-`State` in `TX`, `CA`, `AZ`.
+Exact match on First name for the profiles from Department Sales and Marketing.
+
+```
+{
+	"uri": "configuration/entityTypes/Individual/matchGroups/ExactFirstNameforSalesAndMarketing",
+	"label": "Exact(First Name)",
+	"type": "suspect",
+	"scope": "ALL",
+	"useOvOnly": true,
+	"rule": {
+		"and": {
+			"exact": [
+				"configuration/entityTypes/Individual/attributes/FirstName"
+			],
+			"in": [
+				{
+					"values": [
+						"Sales",
+						"Marketing"
+					],
+					"uri": "configuration/entityTypes/Individual/attributes/Department"
+				}
+			]
+		}
+	},
+	"scoreStandalone": 0,
+	"scoreIncremental": 0
+}
+
+```
 
 ## And, Or Operators
 
@@ -19074,17 +19731,21 @@ In boolean terms: `Producer` (`exact`) AND `Name` (`fuzzy`).
 
 This configuration expresses the logic: Match if either the Name is similar (fuzzy match), or if both the Producer is an exact match and the Distributor is a fuzzy match.
 
+> **Note:** Use braces `{}` with the `or` operator. Use brackets `[]` only to list attributes for a single comparison operator. When `or` combines different conditions or helper operators, structure it as nested branches.
+
 In boolean terms: `Name` (`fuzzy`) OR (`Producer` (`exact`) AND `Distributor` (`fuzzy`)).
 
 These operators can be nested to construct layered match rules using logical groupings.
 
-## NotEquals Operator
+## NotEquals operator
 
 Specifies that an attribute in the profile must not be equal to a certain value. For example, suppose you only want to compare persons outside of California. You might specify `notEquals` on the state field for the person's address.
 
 **When to use the notEquals operator**
 
 In cases where you wish to exclude certain segments from being used in a match, you will typically use the `notEquals` operator.
+
+> **Note:** The `NotEquals` operator is not case-sensitive.
 
 **Example:**
 
@@ -19125,7 +19786,7 @@ Since the attribute, `contentType`, has `notEquals` applied to it, you’re esse
 
 This prevents unnecessary generation of tokens for excluded values, improving match performance.
 
-## Null Values Operator
+## Null Values operator
 
 Allows you to define values that during execution of a match rule, will be replaced with `<null>`, which prepares the attribute to be properly treated by the `ExactOrNull` and `ExactOrAllNull` operators.
 
@@ -19133,7 +19794,10 @@ For example, you could configure this operator to detect `NOT SPECIFIED` as the 
 
 ```
 {
-  "or": {
+  "and": {
+    "exact": [
+      "configuration/entityTypes/Contact/attributes/FirstName"
+    ],
     "nullValues": [
       {
         "attribute": "configuration/entityTypes/Contact/attributes/FirstName",
@@ -19144,19 +19808,11 @@ For example, you could configure this operator to detect `NOT SPECIFIED` as the 
         "value": "NULLVALUE"
       }
     ]
-  },
-  "comparatorClasses": {
-    "mapping": [
-      {
-        "attribute": "configuration/entityTypes/Contact/attributes/FirstName",
-        "class": "com.reltio.match.comparator.BasicStringComparator"
-      }
-    ]
   }
-
+}
 ```
 
-## Not Operator
+## Not operator
 
 Allows you to form complex boolean logic within your match group. Lets you negate a complete logical structure.
 
@@ -19178,103 +19834,103 @@ Allows you to form complex boolean logic within your match group. Lets you negat
 }
 ```
 
-## Nesting of Logical Operators
+## Nesting multiple operators
 
-Nest logical operators (`and`, `or`, `not`) to build sophisticated boolean matching logic.
+You can nest multiple operators to meet match rule requirements. Reltio match rule syntax supports flexible nesting as long as the JSON syntax is valid.
 
 **Example:**
 
+The following example combines several operators in a single rule for the `Individual` entity type.
+
 ```
 {
-                    "uri": "configuration/entityTypes/Organization/matchGroups/Example1",
-                    "label": "Example1",
-                    "type": "automatic",
-                    "scope": "ALL",
-                    "useOvOnly": "true",
-                    "rule": {
-                        "and": {
-                            "exact": [
-                                "configuration/entityTypes/Organization/attributes/Addresses/attributes/AddressLine1",
-                                "configuration/entityTypes/Organization/attributes/Addresses/attributes/City",
-                                "configuration/entityTypes/Organization/attributes/Addresses/attributes/StateProvince",
-                                "configuration/entityTypes/Organization/attributes/Addresses/attributes/AddressType"
-                            ],
-                            "equals": [
-                                {
-                                    "values": [
-                                        "Shipping"
-                                    ],
-                                    "uri": "configuration/entityTypes/Organization/attributes/Addresses/attributes/AddressType"
-                                }
-                            ],
-                            "exactOrNull": [
-                                "configuration/entityTypes/Organization/attributes/StoreNumber"
-                            ],
-                            "exactOrAllNull": [
-                                "configuration/entityTypes/Organization/attributes/Addresses/attributes/AddressLine2",
-                                "configuration/entityTypes/Organization/attributes/Addresses/attributes/Zip/attributes/Zip4",
-                                "configuration/entityTypes/Organization/attributes/Addresses/attributes/Zip/attributes/Zip5",
-                                "configuration/entityTypes/Organization/attributes/Addresses/attributes/Zip/attributes/PostalCode",
-                                "configuration/entityTypes/Organization/attributes/Phone/attributes/FormattedNumber"
-                            ],
-                            "ignoreInToken": [
-                                "configuration/entityTypes/Organization/attributes/Addresses/attributes/Zip/attributes/PostalCode",
-                                "configuration/entityTypes/Organization/attributes/Addresses/attributes/AddressType",
-                                "configuration/entityTypes/Organization/attributes/BuyerLifecycleStatus/attributes/BuyerLifecycleStatus",
-                                "configuration/entityTypes/Organization/attributes/Addresses/attributes/AddressLine2",
-                                "configuration/entityTypes/Organization/attributes/Addresses/attributes/Zip/attributes/Zip4",
-                                "configuration/entityTypes/Organization/attributes/Addresses/attributes/StateProvince"
-                            ],
-                            "notEquals": [
-                                {
-                                    "values": [
-                                        "Virtual Account",
-                                        "Assigned Account"
-                                    ],
-                                    "uri": "configuration/entityTypes/Organization/attributes/BuyerLifecycleStatus/attributes/BuyerLifecycleStatus"
-                                }
-                            ],
-                            "in": [
-                                {
-                                    "values": [
-                                        "SAP",
-                                        "SFDC"
-                                    ],
-                                    "uri": "configuration/sources"
-                                }
-                            ],
-                            "or": {
-                                "exactOrNull": [
-                                    "configuration/entityTypes/Organization/attributes/DUNSNumber"
-                                ],
-                                "exactOrAllNull": [
-                                    "configuration/entityTypes/Organization/attributes/DUNSNumber"
-                                ]
-                            },
-                            "not": {
-                                "and": {
-                                    "exact": [
-                                        "configuration/sources"
-                                    ],
-                                    "equals": [
-                                        {
-                                            "values": [
-                                                "SFDC"
-                                            ],
-                                            "uri": "configuration/sources"
-                                        }
-                                    ]
-                                }
-                            }
-                        }
-                    },
-                    "scoreStandalone": 0,
-                    "scoreIncremental": 0
-                }
-
+  "uri": "configuration/entityTypes/Individual/matchGroups/NestedConditions",
+  "label": "NestedConditions",
+  "type": "automatic",
+  "scope": "ALL",
+  "useOvOnly": true,
+  "rule": {
+    "matchTokenClasses": {
+      "mapping": [
+        {
+          "attribute": "configuration/entityTypes/Individual/attributes/LastName",
+          "class": "com.reltio.match.token.DoubleMetaphoneMatchToken"
+        }
+      ]
+    },
+    "comparatorClasses": {
+      "mapping": [
+        {
+          "attribute": "configuration/entityTypes/Individual/attributes/LastName",
+          "class": "com.reltio.match.comparator.DoubleMetaphoneComparator"
+        }
+      ]
+    },
+    "and": {
+      "exact": [
+        "configuration/entityTypes/Individual/attributes/FirstName"
+      ],
+      "fuzzy": [
+        "configuration/entityTypes/Individual/attributes/LastName"
+      ],
+      "equals": [
+        {
+          "values": [
+            "Sales"
+          ],
+          "uri": "configuration/entityTypes/Individual/attributes/Department"
+        }
+      ],
+      "exactOrNull": [
+        "configuration/entityTypes/Individual/attributes/Middlename"
+      ],
+      "exactOrAllNull": [
+        "configuration/entityTypes/Individual/attributes/Prefix"
+      ],
+      "nullValues": [
+        {
+          "attribute": "configuration/entityTypes/Individual/attributes/MiddleName",
+          "value": "NA"
+        }
+      ],
+      "in": [
+        {
+          "values": [
+            "SAP",
+            "Salesforce"
+          ],
+          "uri": "configuration/sources"
+        }
+      ],
+      "or": {
+        "exactOrNull": [
+          "configuration/entityTypes/Individual/attributes/Email/attributes/Email",
+          "configuration/entityTypes/Individual/attributes/Phone/attributes/FormattedNumber"
+        ]
+      },
+      "not": {
+        "and": {
+          "exact": [
+            "configuration/sources"
+          ],
+          "equals": [
+            {
+              "values": [
+                "DnB"
+              ],
+              "uri": "configuration/sources"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "scoreStandalone": 0,
+  "scoreIncremental": 0
+}
 ```
 
-This rule includes records only if all primary address fields match exactly, the address type is `Shipping`, and specific other conditions are met — including either of the `DUNS` number conditions.
+This rule combines multiple nested conditions to identify duplicate `Individual` records.
 
 
 
@@ -22711,9 +23367,23 @@ This topic is intended for Data Product Owner and System Administrator who manag
 
 ## What AgentFlow credits are
 
-AgentFlow uses credits to measure AI agent usage. Each agent execution consumes large language model (LLM) tokens.
+AgentFlow uses credits to measure AI agent usage. Each agent execution consumes credits.
 
-Data Explorer Agent (DEA) usage is free. DEA activity doesn't deduct credits from your balance and isn't visible in the Usage Dashboard.
+[Data Explorer](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-agents-catalog/data-explorer?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Profiler](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-agents-catalog/profiler?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) agents do not consume credits, and are available to all AgentFlow users. Their activity does not deduct credits from your balance and is not visible in the Usage Dashboard.
+
+Building and configuring agents in [Agent Builder](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agent-builder-for-agentflow-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) does not consume credits. Credits are consumed only when users interact with agents in AgentFlow conversations.
+
+## Subscription models
+
+AgentFlow supports two subscription models. Your subscription model determines what AgentFlow credits cover and who pays for LLM inference costs.
+
+Your organization may have one or both subscription models active, depending on your contract. The three possible configurations are:
+
+- **Reltio Model only**: All agent interactions use a Reltio-managed LLM. Credits are consumed per agent interaction.
+- **Customer Model only**: Agent interactions route through your own LLM endpoint. The price per credit is lower than in the Reltio Model subscription. Your LLM provider bills inference costs separately.
+- **Both models**: Each model maintains its own credit pool. The Usage Dashboard shows entitlements and consumption separately.
+
+For information about setting up a Customer Model subscription, see [Request BYO LLM setup and view your LLM configuration](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/bring-your-own-llm-for-agentflow-at-a-glance/request-byo-llm-setup-and-view-your-llm-configuration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 ## Annual credit entitlement
 
@@ -22997,7 +23667,9 @@ For more information about how to publish an agent after the prompt passes this 
 
 Learn about how Agent Builder enables governed authoring, testing, and publishing of AI agents in AgentFlow.
 
-Agent Builder is the authoring and governance surface within AgentFlow. It gives authors a structured way to create, test, and publish AI agents — and gives approvers a governed workflow to review and control what reaches end users.
+Agent Builder is the authoring and governance surface within AgentFlow. It gives authors a structured way to create, test, and publish AI agents. Approvers get a governed workflow to review and control what reaches end users.
+
+Building and publishing agents in Agent Builder does not consume AgentFlow credits. Credits are consumed when users interact with a published agent in AgentFlow. For more information, see [AgentFlow billing and credit usage](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-billing-and-credit-usage?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 Agent Builder is used by the following roles:
 
@@ -25377,7 +26049,7 @@ The application you selected opens in your browser. Your AgentFlow session remai
 
 **Source:** https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-billing-and-credit-usage/view-agentflow-usage-and-credit-balance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
-**Keywords:** view agentflow usage dashboard, monitor annual credit balance agentflow, check agentflow credits remaining, usage dashboard navigation agentflow, agentflow billing admin dashboard, base package usage breakdown, tenant usage drill down, contract period credit visibility, dashboard, credit balance, usage
+**Keywords:** view agentflow usage dashboard, monitor annual credit balance agentflow, check agentflow credits remaining, usage dashboard navigation agentflow, agentflow billing admin dashboard, base package usage breakdown, tenant usage drill down, contract period credit visibility, agentflow subscription model selector, customer model usage dashboard agentflow, reltio model usage dashboard agentflow, agentflow byo llm credit visibility, switch subscription model agentflow dashboard, dashboard, credit balance, usage
 
 
 Learn how to access the Usage Dashboard to monitor annual credit consumption and contract details.
@@ -25392,13 +26064,18 @@ This topic is intended for Data Product Owner and System Administrator responsib
 
 1. Log in to **AgentFlow**.
 2. In the lower-left corner, select your profile name.
-3. Select **Usage Dashboard**.
+3. Select **Usage Dashboard**.*Image: i-agentflow-usage-dashboard.png*
+4. If your organization has both subscription models active, select **Customer Model** or **Reltio Model** from the dropdown in the upper-right area of the dashboard to view entitlements and usage for that subscription.
 
-*Image: i-agentflow-usage-dashboard.png*
+   *Image: Usage Dashboard showing the subscription model dropdown with Customer Model selected and Reltio Model as an available option*
+
+   > **Note:** If your organization has a single subscription, a badge displaying your subscription model appears instead of a dropdown. No selection is required.
+
+   *Image: Usage Dashboard showing a model indicator badge for customers with a single active subscription*
 
 ## Credit and usage information
 
-The Usage Dashboard displays:
+The Usage Dashboard displays credit and usage information for the selected subscription model. If your organization has both subscription models active, the data updates when you switch between the **Customer Model** and the **Reltio Model**:
 
 - **Total Credits:** Annual credits allocated at the start of the contract period
 - **Credits Used:** Credits consumed to date
@@ -25419,9 +26096,8 @@ Use the following video to see how to open the **Usage Dashboard** in AgentFlow 
 - contract details,
 - credit balance,
 - usage metrics,
-- base package usage,
-- tenant-level usage, and
-- contract details.
+- base package usage, and
+- tenant-level usage.
 
 
 
@@ -25437,7 +26113,7 @@ You can monitor annual credit consumption and review Base Package and tenant-lev
 
 - Confirm that Total Credits, Credits Used, and Credits Remaining appear on the dashboard.
 - Verify that the usage percentage reflects your current annual credit consumption.
-- Confirm that the Base Package and tenant-level usage data appears correctly.
+- Confirm that the Base Package and tenant-level usage data appear correctly.
 
 
 
@@ -29960,7 +30636,7 @@ This diagram illustrates how you can use these features to exchange data between
 
 *Image: start-generic-integ-dataenrichment.png*
 
-These integrations are available as an add-on and are ready to use with your NPI data tenant out of the box--no configuration required! For more information on enriching data with external datasets, see topic [c integrate enrich](https://docs.reltio.com/search?q=c-integrate-enrich&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). For details on the dataset preconfigured for use with Reltio for Healthcare, see topic [NPI DaaS dataset for Healthcare](https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-healthcare-velocity-pack/integrations-and-data-enrichment-for-healthcare/npi-daas-dataset-for-healthcare?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+These integrations are available as an add-on and are ready to use with your NPI data tenant out of the box--no configuration required! For details on the dataset preconfigured for use with Reltio for Healthcare, see topic [NPI DaaS dataset for Healthcare](https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-healthcare-velocity-pack/integrations-and-data-enrichment-for-healthcare/npi-daas-dataset-for-healthcare?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
@@ -32703,7 +33379,7 @@ This diagram illustrates how you can use these features to exchange data between
 
 *Image: start-integ-dataenrichment-ls.png*
 
-These integrations are available as add-ons and are ready to use with your NPI or DEA data tenant out of the box--no configuration required! For more information on enriching data with these external datasets, see topic [c integrate enrich](https://docs.reltio.com/search?q=c-integrate-enrich&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). For details on the datasets preconfigured for use with Reltio for Life Sciences, see topics [DEA DaaS dataset for Life Sciences](https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-life-sciences-velocity-pack/integrations-and-data-enrichment-for-life-science/dea-daas-dataset-for-life-sciences?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [NPI DaaS dataset for Life Sciences](https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-life-sciences-velocity-pack/integrations-and-data-enrichment-for-life-science/npi-daas-dataset-for-life-sciences?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+These integrations are available as add-ons and are ready to use with your NPI or DEA data tenant out of the box--no configuration required! For details on the datasets preconfigured for use with Reltio for Life Sciences, see topics [DEA DaaS dataset for Life Sciences](https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-life-sciences-velocity-pack/integrations-and-data-enrichment-for-life-science/dea-daas-dataset-for-life-sciences?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [NPI DaaS dataset for Life Sciences](https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-life-sciences-velocity-pack/integrations-and-data-enrichment-for-life-science/npi-daas-dataset-for-life-sciences?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
@@ -36898,20 +37574,26 @@ Review both pipeline-level execution status and document-level extraction result
 
 Learn how to configure document sources so AgentFlow Unstructured can access the files you want to process.
 
+Configure a document source so that AgentFlow Unstructured can access files from a supported storage location for document processing.
+
 **Prerequisites:**- 
 
   You must have access to AgentFlow Unstructured.
 - 
 
-  A published extraction template must be available. For more information, see [Create and publish an extraction template](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-unstructured/create-and-publish-an-extraction-template?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+  A [published extraction template](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-unstructured/create-and-publish-an-extraction-template?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) must be available.
 - 
 
-  You have the required authentication details for the source you want to configure. For AWS S3, you have the required role and bucket information and for Google Cloud Storage, you have the service account JSON credentials and bucket information.
+  You have the required authentication details for the source you want to configure.
+- 
 
-Configure a document source so that AgentFlow Unstructured can access files from a supported storage location for document processing.
+  For AWS S3, you must have the Role ARN provided by Reltio, the bucket name, and the bucket region. Your AWS administrator must also update the bucket policy to allow that role to access the selected bucket.
+- 
+
+  For Google Cloud Storage, you must have the service account JSON credentials, bucket name, and location details.
 
 
-To configure a document source:
+To configure a document source
 
 1. From AgentFlow, select **AgentFlow Unstructured**.
 2. In AgentFlow Unstructured, select **Document AI**.
@@ -36920,14 +37602,37 @@ To configure a document source:
 4. Select **+ Configure Source** to add a new source.
    *Image: uds-configurenewsource.png*
    - Select a source type: **AWS S3** or **Google Cloud Storage**.
+     In your S3, navigate to **Buckets** > your bucket > **Permissions** > **Bucket policy**. Update the bucket policy to allow this role to access the bucket. Replace `<role-arn>` with the Role ARN provided by Reltio and `<bucket-name>` with your S3 bucket name. 
+
+```
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowAFUS3Role",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": [
+         "<role-arn>"
+        ]
+      },
+      "Action": [
+        "s3:GetObject",
+        "s3:PutObject",
+        "s3:ListBucket",
+        "s3:DeleteObject"
+      ],
+      "Resource": [
+        "arn:aws:s3:::<bucket-name>", "arn:aws:s3:::<bucket-name>/*"
+      ]
+    }
+  ]
+}
+```
    - In the **Source Configuration Name** field, enter a unique name for the source.
-   - Enter the authentication details.
-     - For **AWS S3**, confirm the **Authentication Type** and enter **Role ARN**, **Bucket Region**, and **Bucket Name**.
-
-  > **Note:** The IAM role you enter in **Role ARN** must have access to the selected S3 bucket and must be configured with the trust relationship required for AgentFlow Unstructured.
-- 
-
-  For **Google Cloud Storage**, paste the paste the service account JSON credentials into **Service Account JSON**, enter **Bucket Name**, and **Location**.
+   - For **AWS S3** source type, confirm the **Authentication Type** and enter **Role ARN**, **Bucket Region**, and **Bucket Name**.
+     > **Note:** The IAM role you enter in **Role ARN** must have access to the selected AWS S3 bucket.
+   - For **Google Cloud Storage** storage type, paste the service account JSON credentials into **Service Account JSON**, enter **Bucket Name**, and **Location**.
    - Select **Test Connection** to verify that the source is accessible.
    - Select **Save**.
 
@@ -40014,17 +40719,17 @@ Household",
 
 ---
 
-# Data Security
+# Role-based data security
 
 > **Section:** Developer resources > System Administration APIs > System Administration APIs at a glance > Configuration API > Role-Based Security
 
 
-**Source:** https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/configuration-api/role-based-security/data-security?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/configuration-api/role-based-security/role-based-data-security?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
-**Keywords:** Role-Based Security, Data Security, data security
+**Keywords:** role-based data security reltio, data security filter configuration, entity access permissions reltio, configure data security with metadata security, showAccess option reltio entities, data security, role-based security, permissions
 
 
-Reltio platform supports role-based data security.
+Learn more about how Reltio uses role-based data security to control access to a filtered subset of entities.
 
 Security rules can be applied for a subset of entities defined by a specific condition. Such conditions are represented by filters, similar to the filters in *Entity Search*.
 
@@ -40032,7 +40737,7 @@ Security rules can be applied for a subset of entities defined by a specific con
 
 ## Get Entity Permissions
 
-Requests which return entities support option `showAccess`. If this option is enabled, the entities are returned along with access level specifications for the entities and reference objects (both reference entities and reference relations).
+Requests that return entities support the option `showAccess`. If this option is enabled, the entities are returned along with access level specifications for the entities and reference objects (both reference entities and reference relations).
 
 ## Getting Entities with Access
 
@@ -40088,12 +40793,11 @@ Response
 
 ## Configuration API
 
-Data security is configured together with metadata security. Both are similar and use the same endpoints. A data security configuration record has an additional `filter` field. The specified privileges are applied for all entities that are accepted by a filter.
+Data security is configured together with metadata security. Both use the same endpoints. A data security configuration record has an additional `filter` field — the specified privileges apply to all entities accepted by that filter. Filter expressions follow the same format as *Entity Search*.
 
 Metadata security evaluates all values of an attribute. It does not consider Operational Value (OV), pinned, or ignored flags when applying filters.
 
-> **Note:** - Filter expressions follow the same format as the one used in *Entity Search*.
-> - When Metadata Security filters reference attributes that use an RDM lookup type, don't share the same lookup type across multiple entity objects. Because lookup types are evaluated globally, filtering on one object can affect the lookup values displayed on another object. This behavior is a known limitation.
+> **Caution:** When metadata security filters reference attributes that use an RDM lookup type, don't share the same lookup type across multiple entity objects. Because lookup types are evaluated globally, filtering on one object can affect the lookup values displayed on another object. This is a known limitation.
 
 ## Data and Metadata Security Records
 
@@ -40839,7 +41543,9 @@ Learn about how the Reltio platform uses role-based metadata security to control
 
 The Reltio Context Intelligence Platform platform supports role-based access control (RBAC) with its metadata security framework. Each role has a list of resources with operations that users assigned to the role can do on each resource. Security can be set at an entity/relationship type level or for individual attributes.
 
-> **Note:** For a newly created tenant, metadata security is disabled. It is enabled when any permissions configuration (even an empty configuration) is applied to the tenant. You may require metadata permissions for performing some of the tasks through Hub, such as crosswalk deletion.
+For a newly created tenant, metadata security is disabled. It is enabled when any permissions configuration (even an empty configuration) is applied to the tenant. You may require metadata permissions to perform some tasks through **Hub**, such as crosswalk deletion.
+
+For more information, see [Data Security](https://docs.reltio.com/en/applications/integration-hub/integration-hub-at-a-glance/integration-hub/data-security?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 ## Get Tenant Configuration
 
@@ -52589,21 +53295,25 @@ POST {ApplicationURL}/api/{tenantId}/multipleIncomingRelations
 
 **Source:** https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/potential-matches-reindex-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
-**Keywords:** reindex tenant potential matches, Potential Matches Reindex Task, Potential Matches Remove Task, potential matches reindex, reindex task, reindex tenant, clean potential matches, tenant reindex, reindex potential matches
+**Keywords:** potential matches reindex task, reindex potential matches, rebuild potential match counters, potential matches remove task, potential matches task api, distributed potential matches reindex, potential matches filter parameter, reindex tenant potential matches, refresh potential matches data, potential match counters
 
 
-Information about how to reindex potential matches.
+Learn more about how to reindex potential matches data for a tenant and when to run this background task manually.
 
-This task contains the following steps:
+The Potential Matches Reindex task rebuilds potential matches information for a tenant. It first removes old potential matches information from the tenant index and then reindexes potential matches information again from the match tables.
 
-- `PotentialMatchesRemoveTask` - This task cleans old potential matches information in the tenant index.
-- `PotentialMatchesReindexTask` - This task reindexes the potential matches information from scratch by using the match tables.
+## When to run this task
 
-You must run this task if inconsistencies are detected in the potential matches counters.
+Run the Potential Matches Reindex task manually in when:
 
-Stop and Pause actions are supported.
+- You detected inconsistencies in the potential matches counters.
+- You ran a Reindex Data Task without `enableSeparateIndexing=true` or `enableSeparateCluster=true` and also need to refresh potential matches data. In that case, `PotentialMatchesReindexTask` is not triggered automatically and must be started separately.
 
-**Requests**
+> **Note:** When you run a Reindex Data Task with `enableSeparateIndexing=true` or `enableSeparateCluster=true`, `PotentialMatchesReindexTask` is triggered automatically upon completion. You do not need to run it manually in that case.
+
+## HTTP method and endpoint
+
+Use the following HTTP method and endpoint to start the task:
 
 Administrator role is required:
 
@@ -52617,14 +53327,16 @@ Tenant admin role is required:
 POST {ApplicationURL}/api/{tenantId}/rebuildpmcounters
 ```
 
-**Parameters**
+## Query parameters
 
-| Parameter | Required | Description |
+The following table describes the supported query parameters.
+
+| **Parameter** | **Required** | **Description** |
 | --- | --- | --- |
 | `tenantId` | Yes | ID of the tenant to reindex potential matches. |
 | `distributed` | No |  |
 | `taskPartsCount` | No |  |
-| `filter` | No | Enables filtering by a condition. The format for the filter query parameter is as follows: `filter=({Condition Type}[AND/OR {Condition Type}]*)`If an entity matches the filter, then its potential matches are reindexed |
+| `filter` | No | Enables filtering by condition. Use the following format for the filter query parameter: `filter=({Condition Type}[AND/OR {Condition Type}]*)`If an entity matches the filter, its potential matches are reindexed. |
 
 
 
@@ -52726,18 +53438,21 @@ To remove overcollisioned flags, run `removeOvercollisionedTokenstask` with `rem
 
 **Source:** https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/reindex-data-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
-**Keywords:** reindex entity data in a tenant, Reindex entity data in a tenant
+**Keywords:** reindex data task, reindex entity data, reindex tenant data, reindex elasticsearch index, distributed reindex task, reindex data task parameters, potential matches reindex task, reindexing and streaming, enable separate indexing, reindex task api
 
 
-Learn about reindexing entity data in a tenant
+Learn more about how to reindex entity data in a tenant and control the scope, execution mode, and follow-up processing for this background task.
+
+The Reindex Data task refreshes the Elasticsearch index for a tenant's entity data. Use it when existing tenant data must be rebuilt into search structures after specific configuration changes or other maintenance scenarios.
 
 > **Note:** This task does not rebuild match tables. To ensure match integrity, run the rebuild match table task after reindexing your tenant data.
 
-This task refreshes the index that supports Elasticsearch of a tenant's Entity data. To speed up the search of a large database, the database management system builds one or more database indexes. Like a book index, a database index is a list of paired items: one item is a significant term from the database, and the other is the *address* of that term in the data storage (like the page number in a large book), where the program can go to find that term. When you type in a term to search for, it's much faster for the program to scan the index for the term, and go directly to the indexed address, than it is to search through the entire database. Database indexes keep large databases `tuned up`, so that searches can be performed quickly.
+## When to run this task
 
-> **Important:** Reindexing should not be a scheduled or routine task. Reltio automatically maintains Elasticsearch indexes during normal operations, such as:
-> - Loading or updating entities
-> - Creating relationships or interactions
+Reindexing should not be a scheduled or routine task. Reltio automatically maintains Elasticsearch indexes during normal operations, such as:
+
+- Loading or updating entities
+- Creating relationships or interactions
 
 Only reindex your data when the following changes occur, and set `enableSeparateIndexing=true` to ensure complete index refresh:
 
@@ -52746,45 +53461,23 @@ Only reindex your data when the following changes occur, and set `enableSeparate
 - Metadata Configuration/L3 changes such as:
   - Existing attribute changes (type, label)
   - Existing attribute is removed
-  - Existed source is removed
+  - Existing source is removed
   - Survivorship rules are modified
   - Cleanse configuration is modified
   - Lookups (RDM) mappings are modified
   - `MatchFieldUris` are modified
-  - Surrogate crosswalks settings are modified
+  - Surrogate crosswalk settings are modified
   - Reference attribute settings are modified
   - Sub-nested attributes are added or removed
-- 
-
-  Tenant's physical configuration changes in:
+- Tenant physical configuration changes in:
   - `survivorshipAdvancedBehavior`
   - `indexOvStrategy`
 
-Reltio's enterprise-scale database system includes a primary Entity database which is searched by Elasticsearch. In addition to the Elasticsearch index, the system is supported by a sub-database that captures the history of all database transactions, an index of all matching records from various sources, and tables that store the output of Reltio's analytics layer (RI). Each of these supporting data structures needs to be updated when the primary database changes. The Reindex Data task updates the Elasticsearch index and updates the supporting structures as well.
+## HTTP method and endpoint
 
-> **Important:** This work can put a significant strain on the system's resources. In addition, each change to the database and any supporting structure generates a database event which is streamed to recording servers. This sudden surge of new events can overwhelm these streaming channels. To avoid overwhelming your databases and reporting channels when reindexing, you can tweak the Reindex Data task in the following ways:
+Use the following HTTP method and endpoint to start the task:
 
-- Instruct the task to reindex the Elasticsearch index but leave the match tables, history, and analytics data alone (set `updateEntities=false`).
-- Restrict the reindexing process to a subset of the Entity database (set `entityType`).
-- Instruct the process to skip some number of Entities (set `skipEntitiesCount`).
-- Cap the number of Entities to be reindexed (set `entitiesLimit`).
-- Distribute the reindexing task among a number of processing nodes (set `distributed=true` and `taskPartsCount`).
-- Run the reindexing job against a limited list of Entities (by appending a list of URLs in the body of the Reindex Data request).
-
-> **Note:** It is not recommended to update the business configuration of the tenant while the reindex data task is running.
-
-The table below provides instructions on how to specify one choice or any combination of choices when you run the Reindex Data task.
-
-> **Note:** This task also starts `PotentialMatchesReindexTask` (see [Potential Matches Reindex Task](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/potential-matches-reindex-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)) to reindex potential matches information for the entire tenant. However, when you reindex specific entities, the `PotentialMatchesReindexTask` is not started.
-
-> **Important:** The `numberOfProcessedObjects` reported in the `ReindexDataTask` may vary. This variation occurs because some entities could be added to, or deleted from the tenant between `ReindexDataTask` executions. 
-> Additionally, when the `ReindexDataTask` runs in distributed mode (with multiple child tasks), add the `numberOfProcessedObjects` values from all child tasks to calculate the total.
-
-Stop and Pause are supported.
-
-**Requests**
-
-Tenant admin role is required:
+Administrator role is required:
 
 ```
 POST {ApplicationURL}/reindex?tenantId={tenantId}
@@ -52796,88 +53489,89 @@ Tenant admin role is required:
 POST {ApplicationURL}/api/{tenantId}/reindex
 ```
 
-File mode example: 
+## Request headers
 
-```
-POST {ApplicationURL}/api/{tenantId}/reindex?bucket={bucket}
+Include the following headers when you run the task in file mode.
 
-Headers:
-Authorization: Bearer {accessToken} 
-awsAccessKey: {awsAccessKey} 
-awsSecretKey: {awsSecretKey}
+| **Name** | **Required** | **Description** |
+| --- | --- | --- |
+| `awsAccessKey` | No | S3 access key for the Amazon bucket. |
+| `awsSecretKey` | No | S3 secret key for the Amazon bucket. |
+| `googleCredentials` | No | Google credentials used for file-based input. |
 
-Body: ["path/file01.json", "path/file02.json", "path/file03.json"]
+## Query parameters
 
-```
+The following table describes the supported query parameters.
 
-**Parameters**
-
-| Parameter | Required | Description |
+| **Parameter** | **Required** | **Description** |
 | --- | --- | --- |
 | `tenantId` | Yes | ID of the tenant to reindex entities. |
-| `updateEntities` | No | If set to `true` (default), in addition to refreshing the Elasticsearch index, the task also updates history, match tables, and the analytics layer (RI). This ensures that all indexes and supporting structures are as up-to-date as possible. As explained above, however, triggering all these activities may decrease the overall performance level of the database system for business work, and overwhelm the event streaming channels. If set to (default), in addition to refreshing the Elasticsearch index, the task also updates history, match tables, and the analytics layer (RI). This ensures that all indexes and supporting structures are as up-to-date as possible. As explained above, however, triggering all these activities may decrease the overall performance level of the database system for business work, and overwhelm the event streaming channels. If set to `false`, the task updates Elasticsearch data only. It does not perform rematching, or update history or analytics. These other activities can be performed at different times to spread out the performance impact. , the task updates Elasticsearch data only. It does not perform rematching, or update history or analytics. These other activities can be performed at different times to spread out the performance impact. **Note:** See the [Reindexing and Streaming](#reindexdatatask/reindexingandstreaming) section for details. |
-| `entityType` | No | If provided, restricts the reindexing scope to the specified entity type(s). Supports multiple entity types as comma-separated values (e.g., `entityType` =Person,Organization). |
-| `skipEntitiesCount` | No | If provided, sets the number of Entities which are skipped during reindexing. Default value: `0`. |
-| `entitiesLimit` | No | If provided, sets the maximum number of Entities are reindexed. Default value: `infinity`. |
-| `updatedSince` | No | Timestamp in Unix format. If this parameter is provided, then only entities with a greater or equal timestamp are reindexed. This is a good way to limit the reindexing to newer records.**Note:** The task must still scan the entire database even when this parameter limits the number of indexed entities. As a result, the task execution time will generally remain the same as running it without this parameter. |
-| `checkCrosswalksConsistency` | No | Specify `true` to reindex each Entity, whether it has changed or not. This operation ensures that each Entity in the database is processed. Reltio does not recommend this option – it decreases the performance of the reindex task dramatically, and may overload the server, which will interfere with all database operations. Default value: `false` |
-| `distributed` | No | **Note:** For large tenants (about 1 billion records), set `distributed=true`, and configure `taskPartsCount` to match the number of available API nodes (typically 4–8). This enables parallel execution across nodes and significantly improves task performance. |
+| `updateEntities` | No | If set to `true` (default), in addition to refreshing the Elasticsearch index, the task also updates history, match tables, and the analytics layer (RI). If set to `false`, the task updates Elasticsearch data only. It does not perform rematching or update history or analytics. |
+| `entityType` | No | If provided, restricts the reindexing scope to the specified entity type or entity types. Supports multiple values as comma-separated items, for example `entityType` =Person,Organization. |
+| `skipEntitiesCount` | No | If provided, sets the number of entities skipped during reindexing. Default value: `0`. |
+| `entitiesLimit` | No | If provided, sets the maximum number of entities reindexed. Default value: `infinity`. |
+| `updatedSince` | No | Timestamp in Unix format. If this parameter is provided, only entities with a greater or equal timestamp are reindexed. **Note:** The task must still scan the entire database even when this parameter limits the number of indexed entities. As a result, the task execution time will generally remain similar to running it without this parameter. |
+| `checkCrosswalksConsistency` | No | Specify `true` to reindex each entity, whether it has changed or not. Reltio does not recommend this option because it can decrease performance dramatically and overload the server. Default value: `false`. |
+| `distributed` | No | **Note:** For large tenants, set `distributed=true` and configure `taskPartsCount` to match the number of available API nodes. This enables parallel execution across nodes and can improve task performance. |
 | `taskPartsCount` | No |  |
-| `forceIgnoreInStreaming` | No | If set to `true`, only events produced by the task are ignored in streaming. Default value is , only events produced by the task are ignored in streaming. Default value is `false`. . **Note:** When you set this parameter to true, the events are generated, but not streamed to external queues. The generated events are used by the internal queue to rebuild the index. This will not affect performance in any way, since the current index remains available throughout the process. For more information about internal and external queues, see topic [Queues at a glance](https://docs.reltio.com/en/applications/console/tenant-management-applications/tenant-management-at-a-glance/queues-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
-| `enableSeparateIndexing` | No | If set to `true`, the Reindex Data task builds a new index. When the task is completed, the task replaces the old index with the new one. Run the Reindex Data task with this parameter to continue your activities in Reltio Cloud without waiting for the task to finish. Default value: `false`. |
-| `bucket` | No | Bucket name |
-| `s3Region` | No | AWS S3 region |
+| `forceIgnoreInStreaming` | No | If set to `true`, only events produced by the task are ignored in streaming. Default value: , only events produced by the task are ignored in streaming. Default value: `false`. . **Note:** When you set this parameter to true, events are generated but not streamed to external queues. The generated events are still used by the internal queue to rebuild the index. For more information about internal and external queues, see [Queues at a glance](https://docs.reltio.com/en/applications/console/tenant-management-applications/tenant-management-at-a-glance/queues-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
+| `enableSeparateIndexing` | No | If set to `true`, the Reindex Data task builds a new Elasticsearch index for the tenant's entity data. When the task is completed, the task replaces the old index with the new one. Run the Reindex Data task with this parameter to continue your activities in Reltio Cloud without waiting for the task to finish. **Note:** When `enableSeparateIndexing=true`, `PotentialMatchesReindexTask` is automatically triggered upon completion of the entity reindex because the new index must contain potential matches data before the tenant switches to the new index..Default value: `false`. |
+| `bucket` | No | Bucket name. |
+| `s3Region` | No | AWS S3 region. |
 
-**Header Parameters**
+## Request body
 
-| Header Key Name | Required | Value Description |
-| --- | --- | --- |
-| `awsAccessKey` | No | S3 access key for amazon bucket. |
-| `awsSecretKey` | No | S3 secret key for amazon bucket. |
-| `googleCredentials` | No | Google credentials |
+The request body is optional.
 
-**Body** (optional)
+Use a JSON array of entity URIs to reindex only the specified entities, or use a JSON array of file names that contain entity URIs when you provide `awsAccessKey` and `awsSecretKey` or `googleCredentials`.
 
-JSON Array of entity URIs to reindex or JSON Array of file names with entity URIs in case you send awsAccessKey and awsSecretKey or googleCredentials.
-
-File format is JSON Array of entity URIs: 
+The following example shows the file format for a JSON array of entity URIs:
 
 ```
 ["entities/aaaaaaa", "entities/bbbbbbb", "entities/ccccccc"]
 ```
 
-> **Note:** If a JSON array of entity URIs is specified, then only the specified entities are reindexed. If the header parameters are specified, then only file URI's are accepted in the request body.
+> **Note:** If a JSON array of entity URIs is specified, only the specified entities are reindexed. If the header parameters are specified, only file URIs are accepted in the request body.
 
-## Reindexing and Streaming
+## Example request
 
-The `ReindexData` data task can do the following:
+The following example shows how to run the task in file mode:
 
-- Rebuild the index for the tenant's Entities (to do this, it creates an `ENTITY_CHANGED` event for each one)
-- Update the history table
-- Update the match tables to reflect each Entity change/creation/deletion caused by reindexing
-- Repopulate the analytics layer (RI)
+```
+POST {ApplicationURL}/api/{tenantId}/reindex?bucket={bucket}
 
-Each of these activities can generate a large volume of events, which may overwhelm the tenant's event queues.
+Headers:
+Authorization: Bearer {accessToken}
+awsAccessKey: {awsAccessKey}
+awsSecretKey: {awsSecretKey}
 
-To optimize performance and reduce event processing load, consider the following options:
+Body:
+["path/file01.json", "path/file02.json", "path/file03.json"]
+```
 
-- Limit the scope of reindexing by specifying multiple entity types in the `entityType` parameter (e.g., `entityType` =Person,Organization).
-- Run `reindex` with `updateEntities` set to *false*, as in the following example:
+## Reindexing and streaming
 
-  ```
-  POST /reltio/{tenantId}/reindex?updateEntities=false
-  ```
+The Reindex Data task rebuilds the Elasticsearch index for tenant entities and, depending on your configuration, updates history, match tables, and analytics data.
 
-  When run with this option, `reindex` only reindexes the Elasticsearch index; the History, Match, and Analytics processors are not triggered.
-- Run `reindex` with `forceIgnoreInStreaming` set to *true*, as in the following example:
+Because this task can process a large volume of data, system load and event volume can increase significantly. Plan the task to minimize disruption to search, matching, analytics processing, and streaming.
 
-  ```
-  POST /reltio/{tenantId}/reindex?forceIgnoreInStreaming=true
-  ```
+To control task scope and reduce processing overhead, you can:
 
-  This option forces `reindex` to ignore streaming when running a reindex job.
+- Reindex only Elasticsearch data by setting `updateEntities=false`. In this mode, the task does not update history, match tables, or analytics data.
+- Restrict the task to specific entity types with `entityType`.
+- Skip a number of entities with `skipEntitiesCount`.
+- Limit the number of processed entities with `entitiesLimit`.
+- Run the task in distributed mode with `distributed=true` and `taskPartsCount`.
+- Run the task only for selected entities by passing entity URIs in the request body.
+- Prevent task-generated events from being sent to external queues by setting `forceIgnoreInStreaming=true`.
 
-> **Note:** For reindexing of analytics attributes, run the [Reindex Analytics Attributes Task](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/reindex-analytics-attributes-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+`PotentialMatchesReindexTask` is triggered automatically only when the Reindex Data task creates a new index, such as when `enableSeparateIndexing=true` is specified. For all other reindex scenarios, run `PotentialMatchesReindexTask` separately if needed. See [Potential Matches Reindex Task](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/potential-matches-reindex-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+Do not update the tenant business configuration while the Reindex Data task is running.
+
+The reported `numberOfProcessedObjects` can vary between task executions because entities may be added to or deleted from the tenant during processing. When the task runs in distributed mode, add the `numberOfProcessedObjects` values from all child tasks to calculate the total.
+
+For reindexing analytics attributes, run the [Reindex Analytics Attributes Task](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/reindex-analytics-attributes-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) task.
 
 
 
@@ -53012,35 +53706,109 @@ There are two ways to prevent this problem:
 
 ---
 
-# Relations Consistency Task
+# Run the Relations Consistency Check task
 
 > **Section:** Developer resources > System Administration APIs > System Administration APIs at a glance > Tasks API
 
 
-**Source:** https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/relations-consistency-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/run-the-relations-consistency-check-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
-**Keywords:** checking and fixing inconsistencies, Column Families, relations consistency task
+**Keywords:** relations consistency check task, run relations consistency check, fix relations one hop inconsistencies, relationsconsistencycheck api, check relation consistency by type, distributed relations consistency task, read only relations consistency check, system administration tasks api, relations consistency, one hop, tasks api
 
 
-Checks and fixes inconsistency between `RELATIONS` and `RELATIONS_ONE_HOP_NEW` Column Families.
+Learn more about how to run the Relations Consistency Check task to detect and fix inconsistencies between the `RELATIONS` and `RELATIONS_ONE_HOP_NEW` column families.
 
-This task checks and fixes inconsistency between `RELATIONS` and `RELATIONS_ONE_HOP_NEW` Column Families.
+Use this task to check and fix consistency between the `RELATIONS` and `RELATIONS_ONE_HOP_NEW` column families. Stop and pause are supported.
 
-Stop and Pause are supported.
+## HTTP method and endpoint
 
-> **Note:** Only sequential mode is supported. Don't run Relations Consistency tasks in parallel as the tasks will fail and cause errors.
-
-**Requests**
+Use one of the following endpoints to submit the request:
 
 ```
+POST {ApplicationURL}/relationsConsistencyCheck
 POST {ApplicationURL}/api/{tenantId}/relationsConsistencyCheck
 ```
 
-**Parameters**
+The admin role is required for `POST {ApplicationURL}/relationsConsistencyCheck`. The tenant admin role is required for `POST {ApplicationURL}/api/{tenantId}/relationsConsistencyCheck`.
 
-| Parameter | Required | Description |
+## Request headers
+
+Include the following request headers.
+
+| **Header** | **Value** | **Required** |
 | --- | --- | --- |
-| `tenantId` | Yes | ID of the tenant to check for relations consistency. |
+| Content-Type | application/json | Yes |
+| Authorization | Bearer <access_token> | Yes |
+
+## Query parameters
+
+The following table describes the supported query parameters.
+
+| **Parameter** | **Type** | **Required** | **Description** | **Accepted values / Default** |
+| --- | --- | --- | --- | --- |
+| tenantId | String | Yes | The ID of the tenant to check. | Required for the tenant-scoped endpoint. |
+| distributed | Boolean | No | If set to `true`, the task runs in distributed mode. Multiple subtasks are created, and each subtask processes its own token range of relations in parallel across API nodes. This parameter is ignored when a request body is provided. | `true` or `false`. Default: `false`. |
+| taskPartsCount | Integer | No | Number of subtasks created for distributed execution. Each subtask processes its own token range. This parameter is used only when `distributed=true`. | Default: `2`. |
+| readOnly | Boolean | No | If set to `true`, the task detects inconsistencies and reports them without making repairs. If set to `false`, the task inserts missing `ONE_HOP` records to fix inconsistencies. | `true` or `false`. Default: `false`. |
+| ignoreMaxOneHopTotalFetchSize | Boolean | No | If set to `true`, disables the tenant-configured `maxOneHopTotalFetchSize` limit while the task reads `ONE_HOP` records. This can help avoid incomplete reads on tenants with highly connected entities. | `true` or `false`. Default: `false`. |
+| relationType | String | No | Checks only relations of the specified type or types. Supports comma-separated values for multiple relation types. | If omitted, all relation types are checked. |
+| maxResultsToStore | Integer | No | Maximum number of consistency errors to store in the task results. | Default: `20`. |
+| updatedSince | Long | No | UNIX timestamp. If specified, only relations with an `updatedTime` greater than or equal to this value are checked. | UNIX timestamp. |
+| updatedTill | Long | No | UNIX timestamp. If specified, only relations with an `updatedTime` less than or equal to this value are checked. You can use this parameter together with `updatedSince` to define a time range. | UNIX timestamp. |
+
+## Request body
+
+You can optionally provide a JSON array of relation IDs. If you do not provide a request body, the task runs for the whole tenant.
+
+| **Parameter** | **Type** | **Required** | **Description** | **Accepted values / Default** |
+| --- | --- | --- | --- | --- |
+| body | Array<String> | No | Array of relation IDs to check. | Example: `["relations/14vev8xH"]`. If omitted, the task runs for the whole tenant. |
+
+## Example request
+
+The following example starts the task for a tenant and limits processing to the specified relation types.
+
+```
+POST {ApplicationURL}/api/{tenantId}/relationsConsistencyCheck?distributed=true&taskPartsCount=4&readOnly=true&relationType=HasAddress,HasContact
+Authorization: Bearer <access_token>
+Content-Type: application/json
+```
+
+## Example request with body
+
+The following example runs the task only for the specified relation IDs.
+
+```
+POST {ApplicationURL}/api/{tenantId}/relationsConsistencyCheck
+Authorization: Bearer <access_token>
+Content-Type: application/json
+
+[
+  "relations/14vev8xH"
+]
+```
+
+## Example response
+
+This operation starts a background task. The response returns the created task information.
+
+```
+{
+  "id": "a1b2c3d4e5",
+  "type": "relationsConsistencyCheck",
+  "status": "SCHEDULED"
+}
+```
+
+## Response fields
+
+The following table describes the common fields returned when the task is created.
+
+| **Field** | **Type** | **Description** |
+| --- | --- | --- |
+| id | String | Unique identifier of the created task. |
+| type | String | Task type. |
+| status | String | Current task status. |
 
 
 
@@ -55926,6 +56694,151 @@ Here's a simple example of a check for two specific URIs, scanning winners, lose
 
 
 > **Note:** When `checkAll` is true, the other check parameters are ignored.
+
+
+
+---
+
+# Merge Tree Consistency Based on Relations Task
+
+> **Section:** Developer resources > System Administration APIs > System Administration APIs at a glance > Tasks API
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/merge-tree-consistency-based-on-relations-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** merge tree consistency based on relations task, merge tree consistency relations, merge tree consistency check for relations, relations merge tree task, fix relation merge tree inconsistencies, distributed merge tree consistency task, merge tree consistency task api, relation consistency task, produce events relation fix, relationsToCheck request body
+
+
+Learn more about how the Merge Tree Consistency Based on Relations Task checks inconsistencies in relation merge tree structure and optionally fixes the inconsistencies it finds.
+
+Use Merge Tree Consistency Based on Relations Task to scan the `RELATIONS` column for inconsistencies in merge tree structure. If the task runs in fix mode, it fixes the inconsistencies it finds.
+
+## HTTP method and endpoint
+
+Use the following HTTP method and endpoint path to start the relation merge tree consistency task.
+
+```
+POST {ApplicationURL}/mergeTreeConsistencyCheckForRelations?tenantId={tenantId}
+```
+
+## Query parameters
+
+The following table describes the query parameters and their values. When a request body is included, query parameters are generally not required. A query parameter is a key-value pair added to the end of a URL to modify or refine a request.
+
+| Parameter | Type | Required | Description | Accepted values / Default |
+| --- | --- | --- | --- | --- |
+| `tenantId` | String | Yes | The unique identifier of the tenant to check. | Example: `6TYkze8cBijGhwS`. |
+| `distributed` | Boolean | No | If set to `true`, the task runs in distributed mode. | `true` or `false`. Default: `false`. |
+| `taskPartsCount` | Integer | No | Number of tasks created for distributed reindexing. Each task reindexes its own part of objects, and all of them can run in parallel on different API nodes. | Recommended value: number of API nodes that can execute the task. Default: `2`. Used only when `distributed=true`. |
+| `fixInconsistency` | Boolean | No | If set to `false`, the task reports inconsistencies but does not fix them. | `true` or `false`. Default: `false`. |
+| `produceEvents` | Boolean | No | If set to `true`, the task generates events when a relation is fixed. | `true` or `false`. Default: `true`. |
+
+## Request body
+
+The following table describes the request body parameters, including accepted values and defaults.
+
+| Parameter | Type | Required | Description | Accepted values / Default |
+| --- | --- | --- | --- | --- |
+| `relationsToCheck` | Array of strings | No | List of relation URIs to check. Use this parameter to limit the scan to specific affected relations. | JSON array of relation URIs. Default: if omitted, all relations are checked. |
+
+## Example request
+
+Use the following example to see how a complete request is structured with query parameters and a JSON body.
+
+```
+POST {ApplicationURL}/mergeTreeConsistencyCheckForRelations?tenantId={tenantId}&fixInconsistency=true
+Authorization: Bearer <access_token>
+Content-Type: application/json
+
+{
+  "relationsToCheck": [
+    "relations/06Oac9l",
+    "relations/06OagQ1",
+    "relations/71O7FfK",
+    "relations/0xBMes6",
+    "relations/03ZkPX6",
+    "relations/03ZkTnM",
+    "relations/03ZkLGq",
+    "relations/03ZkY3c"
+  ]
+}
+```
+
+## Response body
+
+The following table describes the fields returned in the response body.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `id` | String | Unique identifier of the task. |
+| `groupId` | String | Identifier of the task group. |
+| `createdTime` | Number | Timestamp when the task was created. |
+| `createdBy` | String | User who created the task. |
+| `updatedTime` | Number | Timestamp when the task was last updated. |
+| `updatedBy` | String | User who last updated the task. |
+| `type` | String | Internal type of the launched task. |
+| `status` | String | Status of the task. |
+| `name` | String | Name of the task. |
+| `createdOnHost` | String | Host on which the task was created. |
+| `executedOnHost` | String | Host on which the task was executed. |
+| `parallelExecution` | Boolean | Indicates whether the task ran in parallel execution mode. |
+| `nodesGroup` | String | Node group used to execute the task. |
+| `startTime` | Number | Timestamp when the task started. |
+| `endTime` | Number | Timestamp when the task ended. |
+| `parameters` | Object | Task parameters, including the tenant ID, fix mode, payload, and event settings. |
+| `currentState` | Object | Current state of the task, including processing results. |
+| `currentState.relationsWithInconsistency` | Array | List of relation IDs with detected inconsistencies. |
+| `currentState.relationsWithInconsistencyCount` | Number | Number of relations with detected inconsistencies. |
+| `currentState.numberOfProcessedObjects` | Number | Number of processed relations. |
+| `throughput` | Number | Task processing throughput. |
+| `duration` | String | Total task duration. |
+
+## Example response
+
+The following example shows a response with the created task details and task results.
+
+```
+{
+  "id" : "c15a681c-a22c-4a8d-8737-19ae299092ae",
+  "groupId" : "a88bd3dd-50b5-4a53-ba08-6dccdc8fce1e",
+  "createdTime" : 1779959496056,
+  "createdBy" : "admin",
+  "updatedTime" : 1779959496056,
+  "updatedBy" : "admin",
+  "type" : "com.reltio.businesslogic.tasks.consistency.mergetree.MergeTreeConsistencyRelationsTask",
+  "status" : "COMPLETED",
+  "name" : "MergeTree Consistency Scan Relations for tenant Merill",
+  "createdOnHost" : "DESKTOP-SOG68J6",
+  "executedOnHost" : "DESKTOP-SOG68J6",
+  "parallelExecution" : false,
+  "nodesGroup" : "test",
+  "startTime" : 1779959499934,
+  "endTime" : 1779959501519,
+  "parameters" : {
+    "tenantId" : "Merill",
+    "fixInconsistency" : "true",
+    "waitForExternalMatchQueue" : "false",
+    "taskPayload" : "{\"relationsToCheck\":[\"relations/00006OP\",\"relations/0000Aef\",\"relations/0000Euv\"]}",
+    "produceEvents" : "false"
+  },
+  "currentState" : {
+    "numberOfFailedToPublishEvents" : 0,
+    "relationsWithInconsistency" : [ "00006OP" ],
+    "lastHourThroughput" : 0.0,
+    "numberOfProcessedObjects" : 3,
+    "relationsWithInconsistencyCount" : 1,
+    "status" : "Completed"
+  },
+  "throughput" : 3.0,
+  "duration" : "1s"
+}
+```
+
+**Related links**
+
+- [Tasks API](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Merge Tree Consistency Based on Records Task](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/merge-tree-consistency-based-on-records-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Merge Tree Consistency Based on Entities Task](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/merge-tree-consistency-based-on-entities-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 
 
@@ -58891,92 +59804,129 @@ Headers: Authorization: Bearer {your-access-token} {
 
 **Source:** https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/entities-api/delete-entity/bulk-delete-entities?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
-**Keywords:** DeleteEntitiesTask, soft, hard, Soft, Hard
+**Keywords:** bulk delete entities, delete entities task, soft delete entities, hard delete entities, distributed bulk delete entities, entities _delete
 
 
-Learn how to use the `Bulk Delete Entities` task to remove multiple profiles from a tenant using filters or entity URIs.
+Learn how to use the `Bulk Delete Entities` task to remove multiple profiles from a tenant by using filters or entity URIs.
 
-The `Bulk delete entities` task uses the `Delete entities by entity type` task to remove all entities based on a specified filter or list of entity URIs.
+The `Bulk Delete Entities` task uses the `Delete entities by entity type` task to remove entities based on a specified filter or list of entity URIs.
 
-The `Bulk delete entities` task executes a search request to identify the target entities and deletes them by iterating over the results. This task supports distributed mode, allowing it to run in parallel across multiple API nodes for greater scalability. This approach is recommended for large-scale or tenant-wide deletions.
+The `Bulk Delete Entities` task executes a search request to identify the target entities and deletes them by iterating over the results. This task supports distributed mode, which allows it to run in parallel across multiple API nodes for greater scalability. This approach is recommended for large-scale or tenant-wide deletions.
 
-Before you run this task, run the `Cassandra ES Consistency` task to ensure that the ElasticSearch storage is in a consistent state with the main data storage. For more information, see topics [Delete Entities Task](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/delete-entities-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Cassandra ES Consistency Task](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/cassandra-es-consistency-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+Before you run the `Bulk Delete Entities` task, run the `Cassandra ES Consistency` task to ensure that the Elasticsearch storage is in a consistent state with the main data storage. For more information, see [Delete Entities Task](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/delete-entities-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Cassandra ES Consistency Task](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/cassandra-es-consistency-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
-**Request**
+This operation on the Developer portal is [here](https://developer.reltio.com/private/swagger.htm?module=Data%20Operation#/Entities/deleteEntitiesByTenant).
+
+## HTTP method and endpoint
+
+Use the following HTTP method and endpoint path to submit the request to delete entities that match the specified filter or entity URI list.
 
 ```
 POST {TenantURL}/entities/_delete
 ```
 
-This operation on the Developer portal is [here](https://developer.reltio.com/private/swagger.htm?module=Data%20Operation#/Entities/deleteEntitiesByTenant).
+## Query parameters
 
-**Parameters**
+The following table describes the query parameters and their values. A query parameter is a key-value pair added to the end of a URL to modify or refine a request.
 
-| Parameter | Parameter | Required | Details |
-| --- | --- | --- | --- |
-| Headers | `Authorization` | Yes | Authentication access token in the format "Bearer `<accessToken>` ". For more information, see [Authentication API](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/authentication-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
-| Query | `mode` | No | Specifies how entities are removed: - `soft` - the entity is marked as deleted but all data remains in the data storage (you cannot see or restore the entity). - `hard` - entity data such as entity ID, version, and date fields are retained and all other data such as crosswalks and attributes are removed from the data storage. **Note:** Entities that only have the soft parameter mode enabled are also removed. |
-| Query | `sendMail` | No | Specifies if an email must be sent after the task is completed. If the parameter is not specified, an email is not sent. |
-| Query | `distributed` | No | Specifies whether the task is distributed or not. Default is `false`.  For more details, see [Distributed mode](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/distributed-mode?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
-| Query | `taskPartsCount` | No | Specifies the maximum number of sub-tasks for distributed execution. The platform determines the optimal number based on performance limits. Each sub-task processes a separate subset of objects and can run in parallel on different API nodes. If not specified and `distributed` is true, the default value is 4.is true, the default value is 4.**Note:** This parameter is applicable only when `distributed=true`. Otherwise, it's ignored. |
-| Body |  | Yes | The JSON object representing the delete entities request object. It must have the `objects` property that represents the entities in the API request. For more information, see topic [Bulk update of attributes](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/entities-api/update-entities/bulk-update-of-attributes?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).  If you specify the entity URIs, then only these entities are processed. |
+| Parameter | Type | Required | Description | Accepted values / Default |
+| --- | --- | --- | --- | --- |
+| `mode` | String | No | Specifies how entities are removed. | `soft` or or `hard`. . `soft` marks the entity as deleted but keeps all data in storage. marks the entity as deleted but keeps all data in storage. `hard` retains entity data such as entity ID, version, and date fields, and removes other data such as crosswalks and attributes from storage. Default: not specified in source. retains entity data such as entity ID, version, and date fields, and removes other data such as crosswalks and attributes from storage. Default: not specified in source. **Note:** Entities that only have the soft parameter mode enabled are also removed. |
+| `sendMail` | Boolean | No | Specifies whether an email is sent after the task is completed. | If not specified, an email is not sent. |
+| `distributed` | Boolean | No | Specifies whether the task is distributed or not. For more information, see [Distributed mode](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/distributed-mode?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). | `true` or `false`. Default: `false`. |
+| `taskPartsCount` | Integer | No | Specifies the maximum number of sub-tasks for distributed execution. The platform determines the optimal number based on performance limits. Each sub-task processes a separate subset of objects and can run in parallel on different API nodes. | Applicable only when `distributed=true`. If not specified and `distributed` is true, default: `4`. Otherwise, ignored. |
 
-**Response**
+## Request headers
 
-JSON Object representing information about launched manual task which will delete all entities of the specified type: 
+The following request headers must be included.
 
-- `numberOfProcessedObjects` - number of deleted entities since the task started.
-- `objectsFailedToDeleteCount` - number of objects that were not deleted.
-- `objectsFailedToDelete` - entity IDs that were not deleted (only 100 entity IDs that were not deleted are displayed).
-- `name` - name of the manual task in the following format: "<Hard/Soft> Delete Entities By Type: <entity type URI>".
-- `started` - time when the task started.
-- `throughput` - current speed of the task (number of entities deleted per second).
-- `tenant` - name of the tenant.
-- `current` - current system time.
+| Header | Value | Required |
+| --- | --- | --- |
+| `Authorization` | Bearer `<accessToken>` | Yes |
 
-Examples
+For more information, see [Authentication API](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/authentication-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+## Request body
+
+The following table describes the request body parameters, including accepted values and defaults.
+
+| Parameter | Type | Required | Description | Accepted values / Default |
+| --- | --- | --- | --- | --- |
+| `objects` | Object | Yes | Container for the delete request parameters. | JSON object. |
+| `filter` | String | No | Search filter that identifies the entities to delete. | Search filter expression. |
+| `list` | Array | No | List of entity URIs to delete. If you specify entity URIs, the task processes only those entities. | JSON array of entity URIs. |
+| `excludeList` | Array | No | List of entity URIs to exclude from deletion when a filter is used. | JSON array of entity URIs. |
+| `options` | Object | No | Additional search options for the request. | Search options object. |
+| `activeness` | String | No | Activeness filter for the search request. | Activeness value. |
+
+## Example request
+
+Use the following example to see how a complete request is structured with headers and a JSON body.
 
 ```
-
-      POST {TenantURL}/entities/_delete
+POST {TenantURL}/entities/_delete
 Headers: Authorization: Bearer {your-access-token}
 {
- "objects" : {
-  "filter" : "startsWith(attributes.LastName, 'Ind')",
-  "excludeList" : [ "entities/i2", "entities/i3" ]
- }
+  "objects": {
+    "filter": "startsWith(attributes.LastName, 'Ind')",
+    "excludeList": [ "entities/i2", "entities/i3" ]
+  }
 }
-      
 ```
 
+## Response body
+
+The following table describes the fields returned in the response body.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `numberOfProcessedObjects` | Number | Number of deleted entities since the task started. |
+| `objectsFailedToDeleteCount` | Number | Number of objects that were not deleted. |
+| `objectsFailedToDelete` | Array | Entity IDs that were not deleted. Only 100 entity IDs that were not deleted are displayed. |
+| `name` | String | Name of the manual task in the following format: `<Hard/Soft> Delete Entities By Type: <entity type URI>`. |
+| `started` | Time | Time when the task started. |
+| `throughput` | Number | Current speed of the task, which is the number of entities deleted per second. |
+| `tenant` | String | Name of the tenant. |
+| `current` | Time | Current system time. |
+
+## Example response
+
+The following example shows a response with the launched task details.
+
+```
+{
+  "id": "f3d47316-c249-4e60-9a8a-8e97cc9ca0e3",
+  ...
+  "parameters": {
+    "tenantId": "jondoe",
+    "entityType": "HCP",
+    "mode": "hard"
+  },
+  "currentState": {
+    "objectsFailedToDelete": [
+      "1AlLNjPS",
+      "8C06vMB"
+    ],
+    "entityType": "configuration/entityTypes/HCP",
+    "lastExecutionEC2Instances": "i-i-{instance-id}",
+    "objectsFailedToDeleteCount": 2,
+    "numberOfFailedToPublishEvents": 0,
+    "lastHourThroughput": 0.0,
+    "numberOfProcessedObjects": 126,
+    "status": "Completed"
+  },
+  "throughput": 9.692307,
+  "duration": "13s"
+}
 ```
 
-      {
-    "id": "f3d47316-c249-4e60-9a8a-8e97cc9ca0e3",
-    ...
-    "parameters": {
-        "tenantId": "jondoe",
-        "entityType": "HCP",
-        "mode": "hard"
-    },
-    "currentState": {
-        "objectsFailedToDelete": [
-            "1AlLNjPS",
-            "8C06vMB"
-        ],
-        "entityType": "configuration/entityTypes/HCP",
-        "lastExecutionEC2Instances": "i-i-{instance-id}",
-        "objectsFailedToDeleteCount": 2,
-        "numberOfFailedToPublishEvents": 0,
-        "lastHourThroughput": 0.0,
-        "numberOfProcessedObjects": 126,
-        "status": "Completed"
-    },
-    "throughput": 9.692307,
-    "duration": "13s"
-}
-      
-```
+## Error codes and recommended actions
+
+**Related links**
+
+- [Delete Entities Task](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/delete-entities-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Cassandra ES Consistency Task](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/cassandra-es-consistency-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Delete Entities by Entity Type](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/entities-api/delete-entity/delete-entities-by-entity-type?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 
 
@@ -60408,64 +61358,77 @@ DELETE {TenantURL}/entities/10Headers: Authorization: Bearer
 
 **Source:** https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/entities-api/delete-entity/delete-entities-by-entity-type?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
-**Keywords:** delete entity, Delete Entity
+**Keywords:** delete entities by entity type, delete entity type, delete entities task, hard delete entities, soft delete entities, entityType delete
 
 
 Learn how to delete all entities of a specified type from a tenant.
 
-This `Delete entities by entity type` task deletes all entities of a specified type from a tenant. Before you run this task, run the `Cassandra ES Consistency` task to ensure that the Elasticsearch storage is in a consistent state with the main data storage. For more information, see topic [Cassandra ES Consistency Task](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/cassandra-es-consistency-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+Use the `Delete entities by entity type` task to delete all entities of a specified type from a tenant.
 
-The `Delete entities by entity type` task performs a full scan of the primary data storage and does not validate consistency with Elasticsearch indexes. As a result, recently deleted entities may temporarily appear in search results. This task isn't intended to run in distributed mode. For large-scale deletions or distributed processing, consider using [Bulk Delete Entities](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/entities-api/delete-entity/bulk-delete-entities?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+The `Delete entities by entity type` task performs a full scan of the primary data storage and does not validate consistency with Elasticsearch indexes. As a result, recently deleted entities may temporarily appear in search results. This task is not intended to run in distributed mode. For large-scale deletions or distributed processing, consider using [Bulk Delete Entities](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/entities-api/delete-entity/bulk-delete-entities?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
-The `Delete entities by entity type` task doesn't wait for all events to be processed. Therefore, after this task is executed, it's possible that some of the entities are available when you search for it. You may need to wait before Elasticsearch becomes consistent with the primary data storage.
+The `Delete entities by entity type` task does not wait for all events to be processed. Therefore, after this task is executed, some entities might still appear in search results. You might need to wait until Elasticsearch becomes consistent with the primary data storage.
 
-**Request**
+Before you run the `Delete entities by entity type` task, run the `Cassandra ES Consistency` task to ensure that the Elasticsearch storage is in a consistent state with the main data storage. For more information, see [Cassandra ES Consistency Task](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/cassandra-es-consistency-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+## HTTP method and endpoint
+
+Use the following HTTP method and endpoint path to submit the request to delete all entities of the specified type.
 
 ```
 DELETE {TenantURL}/entities
 ```
 
-**Parameters**
+## Query parameters
 
-| Parameter | Parameter | Required | Details |
-| --- | --- | --- | --- |
-| Headers | **Authorization** | Yes | The information about authentication access token in format "Bearer **<accessToken>** ". For more information, see topic [Authentication API](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/authentication-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
-| Query | **entityType** | Yes | The entity type name. All entities of the specified type are deleted. |
-| Query | **mode** | No | An optional parameter indicating whether entities of the specified entity type are completely removed from the system or the entities are only flagged as deleted. Possible parameter values are:   - **soft** (default) - the entity is marked as deleted but all data remains in the data storage (you cannot see or restore the entity). - **hard** - entity data such as entity ID, version, and date fields are retained and all other data such as crosswalks and attributes are removed from the data storage.    > **Note:** Entities that only have the **soft** parameter mode enabled are also removed. |
+The following table describes the query parameters and their values. A query parameter is a key-value pair added to the end of a URL to modify or refine a request.
 
-**Response**
+| Parameter | Type | Required | Description | Accepted values / Default |
+| --- | --- | --- | --- | --- |
+| **entityType** | String | Yes | The entity type name. All entities of the specified type are deleted. | Entity type name. |
+| **mode** | String | No | Indicates whether entities of the specified type are completely removed from the system or only flagged as deleted. | **soft** or **hard**. Default: **soft**. **soft** marks the entity as deleted, but all data remains in the data storage. **hard** retains entity data such as entity ID, version, and date fields, and removes other data such as crosswalks and attributes from the data storage. Entities that only have the **soft** mode enabled are also removed. |
 
-JSON Object representing information about launched manual task which will delete all entities of the specified type:
+## Request headers
 
-- **numberOfProcessedObjects** - number of deleted entities since the task started.
-- **objectsFailedToDeleteCount** - number of objects that were not deleted.
-- **objectsFailedToDelete** - entity IDs that were not deleted (only 100 entity IDs that were not deleted are displayed).
-- **name** - name of the manual task in the following format: "<Hard/Soft> Delete Entities By Type: <entity type URI>".
-- **started** - time when the task started.
-- **throughput** - current speed of the task (number of entities deleted per second).
-- **tenant** - name of the tenant.
-- **current** - current system time.
+The following request headers must be included.
 
-To see the status of the task, use the following request:
+| Header | Value | Required |
+| --- | --- | --- |
+| **Authorization** | Bearer **<accessToken>** | Yes |
 
-```
-GET /tasks 
-```
+For more information, see [Authentication API](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/authentication-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
-This request returns the information about the task in the same format. When the task is completed and all entities of the specified type are deleted, you will no longer see the task information in the response. To see the task information, use the following request:
+## Request body
+
+This operation does not require a request body.
+
+## Example request
+
+Use the following example to see how a complete request is structured with headers.
 
 ```
-GET /tasks/history
+DELETE {TenantURL}/entities?entityType=HCP
+Headers: Authorization: Bearer {your-access-token}
 ```
 
-**Request**
+## Response body
 
-```
-DELETE {TenantURL}/entities?entityType=HCPHeaders: Authorization: Bearer
-            {your-access-token}
-```
+The following table describes the fields returned in the response body.
 
-**Response**
+| Parameter | Type | Description |
+| --- | --- | --- |
+| **numberOfProcessedObjects** | Number | Number of deleted entities since the task started. |
+| **objectsFailedToDeleteCount** | Number | Number of objects that were not deleted. |
+| **objectsFailedToDelete** | Array | Entity IDs that were not deleted. Only 100 entity IDs that were not deleted are displayed. |
+| **name** | String | Name of the manual task in the following format: `<Hard/Soft> Delete Entities By Type: <entity type URI>`. |
+| **started** | Time | Time when the task started. |
+| **throughput** | Number | Current speed of the task, which is the number of entities deleted per second. |
+| **tenant** | String | Name of the tenant. |
+| **current** | Time | Current system time. |
+
+## Example response
+
+The following example shows a response with the launched task details.
 
 ```
 {
@@ -60492,8 +61455,31 @@ DELETE {TenantURL}/entities?entityType=HCPHeaders: Authorization: Bearer
     "throughput": 9.692307,
     "duration": "13s"
 }
+```
+
+## Check task status
+
+Use the following request to see the status of the task:
 
 ```
+GET /tasks
+```
+
+This request returns task information in the same format. When the task is completed and all entities of the specified type are deleted, the task information is no longer returned in the response.
+
+To see completed task information, use the following request:
+
+```
+GET /tasks/history
+```
+
+## Error codes and recommended actions
+
+**Related links**
+
+- [Delete Entities Task](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/delete-entities-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Cassandra ES Consistency Task](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/cassandra-es-consistency-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Bulk Delete Entities](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/entities-api/delete-entity/bulk-delete-entities?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 
 
@@ -100554,10 +101540,10 @@ Ensure you have access to the Reltio repository containing the samples for Googl
 
 # LCA as AWS Lambda: Development
 
-> **Section:** Developer resources > About developer resources > Developer resources at a glance > Customize data tasks with LCAs > LCA Implementation Using AWS Lambda
+> **Section:** Developer resources > About developer resources > Developer resources at a glance > Customize data tasks with LCAs > LCA Deployment Using AWS Lambda
 
 
-**Source:** https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/lca-implementation-using-aws-lambda/lca-as-aws-lambda-development?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/lca-deployment-using-aws-lambda/lca-as-aws-lambda-development?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** Implementing LCA using AWS Lambda, LCA as AWS Lambda Development, implementing LCA using AWS lambda, LCA as AWS lambda development
 
@@ -101049,25 +102035,27 @@ Headers: Authorization: Bearer {your-access-token}, Content-Type:application/jso
 
 ---
 
-# LCA Implementation Using AWS Lambda
+# LCA Deployment Using AWS Lambda
 
 > **Section:** Developer resources > About developer resources > Developer resources at a glance > Customize data tasks with LCAs
 
 
-**Source:** https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/lca-implementation-using-aws-lambda?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/lca-deployment-using-aws-lambda?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** LCA as AWS Lambda, LCA as AWS lambda
 
 
-LCA handlers can be implemented as AWS Lambda Functions.
+Learn about the deployment of Life Cycle Actions (LCAs) as AWS Lambda functions.
 
-This type of implementation provides an easy and scalable way to manage Life Cycle Actions and includes execution, log viewing, scalability configuration, and testing.
+The LCA deployment using AWS Lambda provides an easy and scalable way to manage Life Cycle Actions and includes execution, log viewing, scalability configuration, and testing.
 
-## Prerequisites
+Reltio recommends using the self-service setup in **Reltio Console** to configure the AWS connection for Lifecycle Actions.
 
-- Ensure that an AWS system user account is created with access to Lambda, S3, and CloudWatch. Also, ensure that you have the access key and secret key to that account.
-- Ensure that you have a strong understanding of AWS S3, AWS Lambda, AWS CloudWatch, Java, Maven, and the Reltio API and configuration.
-- Check the concurrency limit on your AWS Lambda function to avoid LCA failures.
+## Related topics
+
+To prepare the self-service setup in **Reltio Console** see topic [Set up AWS Lambda connections for LCAs](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/lca-deployment-using-aws-lambda/set-up-aws-lambda-connections-for-lcas?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+To create an LCA in **Reltio Console** see topic [Create an LCA in Reltio Console](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/lca-deployment-using-aws-lambda/create-an-lca-in-reltio-console?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
@@ -101075,44 +102063,27 @@ This type of implementation provides an easy and scalable way to manage Life Cyc
 
 # LCA as AWS Lambda: Identity and Access Management
 
-> **Section:** Developer resources > About developer resources > Developer resources at a glance > Customize data tasks with LCAs > LCA Implementation Using AWS Lambda
+> **Section:** Developer resources > About developer resources > Developer resources at a glance > Customize data tasks with LCAs > LCA Deployment Using AWS Lambda
 
 
-**Source:** https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/lca-implementation-using-aws-lambda/lca-as-aws-lambda-identity-and-access-management?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/lca-deployment-using-aws-lambda/lca-as-aws-lambda-identity-and-access-management?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** Implementing LCA using AWS Lambda, LCA as AWS Lambda Identity and Access Management, implementing LCA using AWS lambda, LCA as AWS lambda identity and access management
 
 
 You can use AWS Lambda: Identity and Access Management to implement LCA.
 
-To invoke the Lambda functions hosted in a customer AWS account, Reltio can use:
+To invoke Lambda functions hosted in your AWS account, Reltio uses IAM role-based access.
 
-- AWS credentials (Access Key, Secret Key), not enabled with MFA.
-- IAM roles for delegate access (recommended).
-
-## Access with AWS Credentials
-
-To use the regular credentials-based access to your LCA Handlers implemented as AWS Lambda Functions, [open a Support ticket](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) with this information:
-
-- Environment name (Dev, Test, Prod, Preview)
-- Tenant name (Reltio Tenant ID)
-- AWS Access Key and AWS Secret Key of the AWS Account where the Lambda Functions are hosted.
-
-Do not enable MFA on the account, otherwise you'll get an error similar to:
-
-```
-An error occurred (InvalidSignatureException) when calling the ListFunctions operation: The request signature we calculated does not match the signature you provided. Check your AWS Secret Access Key and signing method. Consult the service documentation for details.
-```
+Reltio recommends the self-service setup in **Reltio Console** to create the tenant-specific Reltio IAM role, register your AWS IAM role, and validate the trust relationship.
 
 ## Access with IAM Role
 
-To use the IAM role-based access to your LCA Handlers implemented as AWS Lambda Functions, create the **AssumeRole** in your AWS account, with access to the particular AWS services (S3, Lambda).
+Use the self-service setup in **Reltio Console** to register your AWS IAM role details and request creation of the tenant-specific Reltio IAM role required for AWS Lambda access.
 
-To get started, you must create a [support ticket](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) so that Reltio can create a tenant-specific IAM role in its AWS account. This role is required for establishing a trust relationship between your AWS environment and Reltio.
+To get started, open **Lifecycle Actions** in **Reltio Console** and complete the AWS connection setup. For more information see [Set up AWS Lambda connections for LCAs](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/lca-deployment-using-aws-lambda/set-up-aws-lambda-connections-for-lcas?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 For security reasons, we recommend you use IAM roles (with temporary security credentials) instead of sharing the AWS standard long-term credentials. For configuration details, see the [AWS IAM roles documentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html).
-
-> **Note:** This role must have a Trusted Relationship with the Reltio AWS account. Contact the Reltio Customer Success representative with a request for Reltio AWS account information.
 
 ## Trust policy and permissions required for IAM role
 
@@ -101166,7 +102137,7 @@ Use one of the following trust policies, depending on whether you are using an e
   
 ```
 
-Replace `[env]`, `[tenant_id]`, and `YOUR_EXTERNAL_ID` with values specific to your environment. Contact Reltio Support if you have not received your tenant-specific role ARN.
+Replace `[env]`, `[tenant_id]`, and `YOUR_EXTERNAL_ID` with values specific to your environment.
 
 **Permissions policy example**
 
@@ -101220,10 +102191,10 @@ To establish secure access, create an IAM role within the AWS account with neces
 
 # LCA as AWS Lambda: Tenant Configuration
 
-> **Section:** Developer resources > About developer resources > Developer resources at a glance > Customize data tasks with LCAs > LCA Implementation Using AWS Lambda
+> **Section:** Developer resources > About developer resources > Developer resources at a glance > Customize data tasks with LCAs > LCA Deployment Using AWS Lambda
 
 
-**Source:** https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/lca-implementation-using-aws-lambda/lca-as-aws-lambda-tenant-configuration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/lca-deployment-using-aws-lambda/lca-as-aws-lambda-tenant-configuration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** LCA as AWS Lambda Tenant Configuration, LCA as AWS lambda tenant configuration
 
@@ -101261,10 +102232,10 @@ Actions deployed on AWS Lambda are specified with the `Lambda/` prefix. Also, fo
 
 # Migrate custom LCA to AWS Lambda
 
-> **Section:** Developer resources > About developer resources > Developer resources at a glance > Customize data tasks with LCAs > LCA Implementation Using AWS Lambda
+> **Section:** Developer resources > About developer resources > Developer resources at a glance > Customize data tasks with LCAs > LCA Deployment Using AWS Lambda
 
 
-**Source:** https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/lca-implementation-using-aws-lambda/migrate-custom-lca-to-aws-lambda?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/lca-deployment-using-aws-lambda/migrate-custom-lca-to-aws-lambda?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** Migrating custom LCA to AWS Lambda, Custom LCA to AWS Lambda Service, migrating custom LCA to AWS Lambda, custom LCA, custom LCA to AWS
 
@@ -101295,7 +102266,7 @@ mvn clean install
    ```
    On successful build, the jar and "-jar-with-dependencies.jar" files are generated in the target folder.
 
-You can use the same jar file to create the Lambda function in AWS console. For more information, see topic [LCA as AWS Lambda: Deployment](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/lca-implementation-using-aws-lambda/lca-as-aws-lambda-deployment?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)..
+You can use the same jar file to create the Lambda function in AWS console. For more information, see topic [LCA Deployment as AWS Lambda](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/lca-deployment-using-aws-lambda/lca-deployment-as-aws-lambda?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)..
 
 
 
@@ -102005,7 +102976,7 @@ LCA Handlers can be certified for performance, security, and other aspects.
 
 Each Life Cycle Action Handler created and used in a Reltio configuration, must pass certification for performance, security, and other aspects before it can be used and deployed in production.
 
-> **Note:** The LCA handler certification is applicable only for native LCAs. LCAs running in AWS Lambda don't need to undergo the certification process. You can directly deploy the Lambda LCAs without any manual review from Reltio. To migrate your custom LCAs from LCA service to AWS Lambda, see topic [Migrate custom LCA to AWS Lambda](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/lca-implementation-using-aws-lambda/migrate-custom-lca-to-aws-lambda?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+> **Note:** The LCA handler certification is applicable only for native LCAs. LCAs running in AWS Lambda don't need to undergo the certification process. You can directly deploy the Lambda LCAs without any manual review from Reltio. To migrate your custom LCAs from LCA service to AWS Lambda, see topic [Migrate custom LCA to AWS Lambda](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/lca-deployment-using-aws-lambda/migrate-custom-lca-to-aws-lambda?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 ## Manual Certification
 
@@ -102229,10 +103200,10 @@ Use the following based on the type of validation required:
 
 # LCA as AWS Lambda: Monitoring.
 
-> **Section:** Developer resources > About developer resources > Developer resources at a glance > Customize data tasks with LCAs > LCA Implementation Using AWS Lambda
+> **Section:** Developer resources > About developer resources > Developer resources at a glance > Customize data tasks with LCAs > LCA Deployment Using AWS Lambda
 
 
-**Source:** https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/lca-implementation-using-aws-lambda/lca-as-aws-lambda-monitoring?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs.
+**Source:** https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/lca-deployment-using-aws-lambda/lca-as-aws-lambda-monitoring?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs.
 
 **Keywords:** LCA, AWS Lambda, AWS CloudWatch, lca, AWS lambda, AWS cloudwatch
 
@@ -102595,12 +103566,62 @@ You can now monitor the real-time behavior and historical performance of your Az
 
 ---
 
+# Create an LCA in Reltio Console
+
+> **Section:** Developer resources > About developer resources > Developer resources at a glance > Customize data tasks with LCAs > LCA Deployment Using AWS Lambda
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/lca-deployment-using-aws-lambda/create-an-lca-in-reltio-console?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** create lifecycle action, reltio console lifecycle actions, aws lambda lifecycle action, lambda function name, lifecycle hook mapping, entity type lifecycle action
+
+
+Learn how to create a Lifecycle Action in Reltio Console after you configure the AWS Lambda connection.
+
+After you configure the AWS connection for LCAs, you can create LCAs in **Reltio Console** and map them to Lambda functions.
+
+**Prerequisite**
+
+Before you begin, make sure that an AWS Lambda connection already exists for your tenant. For more information, see [Set up AWS Lambda connections for LCAs](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/lca-deployment-using-aws-lambda/set-up-aws-lambda-connections-for-lcas?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+Make sure that the Lambda function you want to use is already available in your AWS account.
+
+
+To create an LCA in Reltio Console
+
+1. In **Reltio Console**, open **Tenant management** and select **Lifecycle Actions**.
+   If a connection already exists, the page shows the connected state and the option to create a new LCA.
+   *Image: lca_create_aws_lambda_1.png*
+2. Select **+ New Lifecycle Action**.
+3. In the **Define LCA** window enter a name and description for the LCA.
+   *Image: lca_create_aws_lambda_2.png*
+4. Enter the Lambda function name.
+   Provide the name of the AWS Lambda function that should run for this LCA.
+5. Select the lifecycle hook and entity type.
+   - Choose the lifecycle hook that triggers the action.
+   - Choose the entity type that the action applies to.​​
+6. Select **Apply configuration** and then select **Done** to save the LCA.
+   After the action is created, it appears in the **Lifecycle Actions** page.
+   *Image: lca_create_aws_lambda_3.png*
+7. In the **Lifecycle Actions** select the created LCA.
+   A side panel opens and you can review the details of the LCA.
+   You can also select the **Edit** icon to edit the LCA, or select the **Delete** icon to delete the LCA.
+   *Image: lca_create_aws_lambda_4.png*
+
+**Result**
+
+The Lifecycle Action is created in **Reltio Console** and associated with the selected Lambda function, lifecycle hook, and entity type.
+
+
+
+---
+
 # Non-Java LCAs in Cloud Functions
 
-> **Section:** Developer resources > About developer resources > Developer resources at a glance > Customize data tasks with LCAs > LCA Implementation Using AWS Lambda > LCA as AWS Lambda: Deployment
+> **Section:** Developer resources > About developer resources > Developer resources at a glance > Customize data tasks with LCAs > LCA Deployment Using AWS Lambda > LCA Deployment as AWS Lambda
 
 
-**Source:** https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/lca-implementation-using-aws-lambda/lca-as-aws-lambda-deployment/non-java-lcas-in-cloud-functions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/lca-deployment-using-aws-lambda/lca-deployment-as-aws-lambda/non-java-lcas-in-cloud-functions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** aws lambda lca non-java, python lca implementation, nodejs lca implementation, lambda lifecycle actions, binaryjson smile lca, non-java lambda runtimes, lca request payload, lca response format, aws lambda runtimes
 
@@ -102706,7 +103727,7 @@ Structured logs should include only operational values such as timestamp, correl
 
 Java-based LCAs continue to use the existing Java framework and SDK-based model. Non-Java runtime support extends the same AWS Lambda LCA pattern to additional run-times, but it requires explicit implementation of parsing, payload conversion, token handling, and response generation that the Java SDK abstracts.
 
-For Java-specific implementation guidance, deployment steps, tenant configuration, and IAM setup, see topic [LCA Implementation Using AWS Lambda](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/lca-implementation-using-aws-lambda?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+For Java-specific implementation guidance, deployment steps, tenant configuration, and IAM setup, see topic [LCA Deployment Using AWS Lambda](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/lca-deployment-using-aws-lambda?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 ## Sample payloads and responses
 
@@ -102877,12 +103898,80 @@ This section provides sample request and response payloads for common non-Java L
 
 ---
 
+# Set up AWS Lambda connections for LCAs
+
+> **Section:** Developer resources > About developer resources > Developer resources at a glance > Customize data tasks with LCAs > LCA Deployment Using AWS Lambda
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/lca-deployment-using-aws-lambda/set-up-aws-lambda-connections-for-lcas?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** lifecycle actions aws connection, aws lambda lca setup, reltio console lifecycle actions, aws iam role setup, trust policy validation, lambda lca self service
+
+
+Learn how to use the self-service setup in Reltio Console to create an AWS connection for Lifecycle Actions.
+
+The self-service setup in **Reltio Console** lets you connect your AWS account for AWS Lambda-based Lifecycle Actions (LCAs). Use the self-service setup to submit your AWS IAM role details, wait for the Reltio role to be created, update the trust policy in AWS, and apply the tenant configuration.
+
+**Prerequisite**
+
+Before you begin, make sure that you have access to **Reltio Console** and permission to manage LCAs for your tenant. You must also have permission in AWS to create or update IAM roles and policies in the account where your Lambda functions run.
+
+Ensure that you have a strong understanding of AWS S3, AWS Lambda, AWS CloudWatch, Java, Maven, and the Reltio API and configuration.
+
+Check the concurrency limit on your AWS Lambda function to avoid LCA failures. For more information, see [Understanding Lambda function scaling](https://docs.aws.amazon.com/lambda/latest/dg/lambda-concurrency.html).
+
+
+To set up an AWS Lambda connection for LCAs
+
+1. In **Reltio Console**, open **Tenant management** and select **Lifecycle Actions**.
+   If no connection exists yet, the page displays the onboarding state with the steps to set up the connection and create your first LCA.
+   *Image: lca_setup_aws_lambda_1.png*
+2. Select **Create connection**, and then select **AWS**.
+3. Follow the instructions in the **Setup connection - AWS Lambda** page, to prepare your AWS environment.
+   *Image: lca_setup_aws_lambda_2.png*
+4. Enter the AWS connection details in the **AWS Details** section.
+   Enter the following details:
+   Enter the following details:
+   - **AWS Account ID**
+   - **Customer IAM Role ARN**
+   - **AWS Region**
+   - **External ID** (optional)
+   The wizard also shows the Reltio role name that will be created for the tenant.
+5. Select **Submit request**.
+   The request is submitted for asynchronous processing.
+   *Image: lca_setup_aws_lambda_3.png*
+   Depending on the current state, the wizard can show statuses such as **Waiting for approval**, **Reltio role created**, or **Request rejected**.
+   If the request is still being processed, you can leave the page and return later.
+   *Image: lca_setup_aws_lambda_5.png**Image: lca_setup_aws_lambda_4.png*
+6. Select the checkbox that confirms the previous instructions were followed and the trust policy was saved.
+   The wizard also shows a preview of the tenant configuration that will be applied after validation succeeds.
+   *Image: lca_setup_aws_lambda_6.png*
+7. Select **Validate Trust Policy & Apply Configuration**.
+   Reltio validates that it can assume the AWS IAM role by using the configured trust relationship.
+   If validation succeeds, the tenant physical configuration is applied automatically.
+   If validation fails, update the trust policy in AWS and retry the validation step.
+8. In the **Lifecycle Actions** select **Manage Connections**.
+   A side panel opens and you can review the details of the current connection.
+   You can also select the **Edit** icon to edit the connection, or select the **Delete** icon to delete the connection.
+   > **Note:** When you edit a connection you can only edit the External ID.
+   > **Note:** If you delete a connection, it may take up to 3 hours to finish the process. You'll be able to create a new connection once it's complete.
+
+**Result**
+
+The AWS connection for Lifecycle Actions is created for the tenant. You can now manage the connections you created.
+
+After the connection is available, you can create and manage LCAs in **Reltio Console**. For more information, see [Create an LCA in Reltio Console](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/lca-deployment-using-aws-lambda/create-an-lca-in-reltio-console?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+
+
+---
+
 # AWS Lambda function Java upgrade
 
-> **Section:** Developer resources > About developer resources > Developer resources at a glance > Customize data tasks with LCAs > LCA Implementation Using AWS Lambda > LCA as AWS Lambda: Deployment
+> **Section:** Developer resources > About developer resources > Developer resources at a glance > Customize data tasks with LCAs > LCA Deployment Using AWS Lambda > LCA Deployment as AWS Lambda
 
 
-**Source:** https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/lca-implementation-using-aws-lambda/lca-as-aws-lambda-deployment/aws-lambda-function-java-upgrade?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/lca-deployment-using-aws-lambda/lca-deployment-as-aws-lambda/aws-lambda-function-java-upgrade?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** Implementing LCA using AWS Lambda, LCA as AWS Lambda Java Upgrade, implementing LCA using AWS lambda, LCA as AWS lambda java upgrade
 
@@ -103060,37 +104149,37 @@ After completing these steps, you can start using Google LCA and add your custom
 
 ---
 
-# LCA as AWS Lambda: Deployment
+# LCA Deployment as AWS Lambda
 
-> **Section:** Developer resources > About developer resources > Developer resources at a glance > Customize data tasks with LCAs > LCA Implementation Using AWS Lambda
+> **Section:** Developer resources > About developer resources > Developer resources at a glance > Customize data tasks with LCAs > LCA Deployment Using AWS Lambda
 
 
-**Source:** https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/lca-implementation-using-aws-lambda/lca-as-aws-lambda-deployment?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/lca-deployment-using-aws-lambda/lca-deployment-as-aws-lambda?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** Implementing LCA using AWS Lambda, LCA as AWS Lambda Deployment, implementing LCA using AWS lambda, LCA as AWS lambda deployment
 
 
-Learn how to use AWS Lambda: Deployment to implement LCA.
+Learn how to deploy AWS Lambda-based Lifecycle Actions after you configure the AWS connection in Reltio Console.
 
-To deploy an LCA in the AWS Lambda service, you need to create AWS IAM roles, create an AWS S3 bucket, and create an AWS Lambda function as explained in this section.
+To deploy an LCA in AWS Lambda, complete the AWS connection setup in **Reltio Console**. For more information, see [Set up AWS Lambda connections for LCAs](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/lca-deployment-using-aws-lambda/set-up-aws-lambda-connections-for-lcas?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). After that, create the required AWS resources, such as the S3 bucket and Lambda function as explained in this section.
 
 
-To deploy an LCA in the AWS Lambda service:
+To create the required AWS resources and deploy the Lambda function:
 
-1. Create AWS IAM Roles
-   Create a new IAM Role for working with the Lambda Functions. This role must have access to S3 and CloudWatch logs, and be able to invoke any other Lambda Functions. The role requires the following permissions:
+1. Create a new IAM Role to work with Lambda Functions
+   This role must have access to S3 and CloudWatch logs, and be able to invoke any other Lambda Functions. The role requires the following permissions:
    - CloudWatchLogsFullAccess
    - AmazonS3FullAccess
    - LambdaFullAccess
-   See also: [LCA as AWS Lambda: Identity and Access Management](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/lca-implementation-using-aws-lambda/lca-as-aws-lambda-identity-and-access-management?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-2. Create an AWS S3 Bucket:
+   See also: [LCA as AWS Lambda: Identity and Access Management](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/lca-deployment-using-aws-lambda/lca-as-aws-lambda-identity-and-access-management?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+2. Create an AWS S3 Bucket
    - Create a new bucket and folder in S3.
    - Upload all the LCA JARs to the folder and provide the required access to the user account.
-3. Create an AWS Lambda Function:
+3. Create an AWS Lambda Function
    - Open the AWS Lambda console from the AWS Management Console.
-   - Click the **Create Functions** button.
+   - Select the **Create Functions** button.
      *Image: lca_functions.png*
-   - Select **Author from Scratch**.
+   - Select **Author from Scratch** in the **Create function** window.
      *Image: LCA_Create_Lambda_Function.png*
    - In the **Function name** field, type the Lambda Name (for example, `NameConcatenate`).
    - In the **Runtime** field, select **Java 21**.
@@ -103102,7 +104191,7 @@ To deploy an LCA in the AWS Lambda service:
      *Image: lca_uploadafile.png*
    - In the Lambda details page, click **Edit** under the **Runtime settings** section.
      *Image: lca_runtimesettings.png*
-   - In the **Handler** field, type your main java class name. Ensure that you enter a fully qualified handler class (for example, `com.reltio.cust.NameConcatenateClass`) and click **Save**.
+   - In the **Handler** field, type your main java class name. Ensure that you enter a fully qualified handler class (for example, `com.reltio.cust.NameConcatenateClass`), and click **Save**.
      *Image: LCA_Java_Runtime.png*
    - To configure Environment Variables refer AWS document: [AWS Lambda configuration environment variables](https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html).
    - Click the **Configuration** tab, then choose **General Configuration** for Memory and Timeout settings.
@@ -117899,26 +118988,48 @@ DeveloperReltio ConfiguratorSystem Administrator
 
 **Source:** https://docs.reltio.com/en/developer-resources/relation-management-apis/relation-management-apis-at-a-glance/relations-api/bulk-delete-relationships?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
-**Keywords:** _byCrosswalkConnections, get by crosswalk connection, Get By Crosswalk Connection
+**Keywords:** bulk delete relationships, delete relationships by uris, delete relations task, soft delete relationships, hard delete relationships, deleteByUris
 
 
-Learn about using this API to delete relationships based on the specified URIs..
+Learn more about how to use the `Bulk Delete Relationships` task to delete relationships for the specified URIs.
 
-`Delete Entity Relations API``URIs`## Request
+Use `Bulk Delete Relationships` to delete all relationships for the specified `URIs`.
+
+## HTTP method and endpoint
+
+Use the following HTTP method and endpoint path to submit the request to delete relationships for the specified URIs.
 
 ```
 POST {TenantURL}/relations/deleteByUris?mode={mode}
 ```
 
-**Parameters**
+## Query parameters
 
-| Parameters | Name | Required | Description |
-| --- | --- | --- | --- |
-| Headers | `Authorization` | Yes | Information about authentication access token in format "Bearer `<accessToken>` ". For more information, see [Authentication API](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/authentication-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
-| Query | `mode` | No | Denotes the method in which the relations are removed, which can be one of the following:   - `soft`: The relations are marked as deleted, but will remain in the database. This is used by default if you do not specify a mode. - `hard`: The relations are removed from the database. |
-| Body |  | Yes | JSON object representing the delete relations list. |
+The following table describes the query parameters and their values. A query parameter is a key-value pair added to the end of a URL to modify or refine a request.
 
-## Sample Request and Response
+| Parameter | Type | Required | Description | Accepted values / Default |
+| --- | --- | --- | --- | --- |
+| `mode` | String | No | Denotes the method used to remove the relations. | `soft` or `hard`. `soft`: marks relations as deleted, but keeps them in the database. `hard`: removes relations from the database. Default: `soft`. |
+
+## Request headers
+
+The following request headers must be included.
+
+| Header | Value | Required |
+| --- | --- | --- |
+| `Authorization` | Bearer `<accessToken>` | Yes |
+
+For more information, see [Authentication API](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/authentication-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+## Request body
+
+This operation requires a request body. Provide a JSON array of relationship URIs to delete.
+
+Each array item must be a relationship URI, such as `relations/0000KCz`.
+
+## Example request
+
+Use the following example to see how a complete request is structured with headers and a JSON body.
 
 ```
 POST {TenantURL}/relations/deleteByUris?mode=soft
@@ -117928,6 +119039,32 @@ Headers: Authorization: Bearer {your-access-token}
     "relations/0000OTF"
 ]
 ```
+
+## Response body
+
+The following table describes the fields returned in the response body.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `id` | String | Unique identifier of the launched task. |
+| `groupId` | String | Identifier of the task group. |
+| `createdTime` | Number | Timestamp when the task was created. |
+| `createdBy` | String | User who created the task. |
+| `updatedTime` | Number | Timestamp when the task was last updated. |
+| `updatedBy` | String | User who last updated the task. |
+| `type` | String | Internal type of the launched task. |
+| `status` | String | Status of the launched task. |
+| `name` | String | Name of the launched task. |
+| `createdOnHost` | String | Host on which the task was created. |
+| `parallelExecution` | Boolean | Indicates whether the task runs in parallel execution mode. |
+| `nodesGroup` | String | Node group where the task runs. |
+| `parameters` | Object | Task parameters, including tenant, mode, and relationship URI list. |
+| `currentState` | Object | Current state of the task. |
+| `duration` | String | Elapsed task duration. |
+
+## Example response
+
+The following example shows a response with the launched delete task details.
 
 ```
 {
@@ -117953,25 +119090,27 @@ Headers: Authorization: Bearer {your-access-token}
 }
 ```
 
-This API submits a task to perform the requested deletes. You can get information about this task by using the following request:
+## Check task status
+
+Use the following request to get information about the submitted task:
 
 ```
 GET {TenantURL}/tasks/{taskId}
 Headers: Authorization: Bearer {your-access-token}
 ```
 
-**Response**JSON Object representing information about the launched manual tasks that deleted al relations for the specified entity:
+The response is a JSON object that represents information about the launched manual task that deleted all relations for the specified entity.
 
 - `numberOfProcessedObjects` - the number of relations that were deleted when the task was launched.
 - `objectsFailedToDeleteCount` - the number of relations that were not deleted.
-- `objectsFailedToDelete` - the IDs of the relations that were not deleted. This lists a maximum of 100 IDs.
-- `name` - The name of the manual task in the format `<Hard/Soft> Delete Relations`
-- `started` - The time when the task was launched.
-- `throughput` - The current speed of the task, which is the number of relations deleted per second.
-- `tenant` - The tenant where the task was launched.
-- `current` - The current time.
+- `objectsFailedToDelete` - the IDs of the relations that were not deleted. This list contains a maximum of 100 IDs.
+- `name` - the name of the manual task in the format `<Hard/Soft> Delete Relations`.
+- `started` - the time when the task was launched.
+- `throughput` - the current speed of the task, which is the number of relations deleted per second.
+- `tenant` - the tenant where the task was launched.
+- `current` - the current time.
 
-An example is given below:
+The following example shows the task response:
 
 ```
 {
@@ -118008,6 +119147,12 @@ An example is given below:
     "duration": "9s"
 }
 ```
+
+**Related links**
+
+- [Delete Entities Task](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/delete-entities-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Cassandra ES Consistency Task](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/cassandra-es-consistency-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Delete Entity Relations](https://docs.reltio.com/en/developer-resources/relation-management-apis/relation-management-apis-at-a-glance/relations-api/delete-entity-relations?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 
 
@@ -119199,30 +120344,85 @@ To view or change the result limit, see [Tenant Configuration Parameters Referen
 
 **Source:** https://docs.reltio.com/en/developer-resources/relation-management-apis/relation-management-apis-at-a-glance/relations-api/delete-entity-relations?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
-**Keywords:** _byCrosswalkConnections, get by crosswalk connection, Get By Crosswalk Connection
+**Keywords:** delete entity relations, delete all relationships for entity, deleteRelations api, soft delete relations, hard delete relations, entity relations delete task
 
 
-Learn about using this API to delete all relationships for an entity.
+Learn more about how to use this API to delete all relationships for a specified entity.
 
-`Delete Entity Relations API``Entity ID`## Request
+Use the `Delete Entity Relations API` to delete all relationships for the specified `Entity ID`.
+
+The `Delete Entity Relations API` submits a task to perform the requested deletes.
+
+## HTTP method and endpoint
+
+Use the following HTTP method and endpoint path to submit the request to delete all relationships for the specified entity.
 
 ```
 POST {TenantURL}/entities/{id}/deleteRelations?mode={mode}
 ```
 
-**Parameters**
+The following table describes the endpoint path parameters.
 
-| Parameters | Name | Required | Description |
+| Parameter | Type | Required | Description |
 | --- | --- | --- | --- |
-| Headers | `Authorization` | Yes | Information about authentication access token in format "Bearer `<accessToken>` ". For more information, see [Authentication API](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/authentication-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
-| Query | `mode` | No | Denotes the method in which the relations are removed, which can be one of the following:   - `soft`: The relations are marked as deleted, but will remain in the database. This is used by default if you do not specify a mode. - `hard`: The relations are removed from the database. |
+| `id` | String | Yes | The unique identifier of the entity whose relationships you want to delete. |
 
-## Sample Request and Response
+## Query parameters
+
+The following table describes the query parameters and their values. A query parameter is a key-value pair added to the end of a URL to modify or refine a request.
+
+| Parameter | Type | Required | Description | Accepted values / Default |
+| --- | --- | --- | --- | --- |
+| `mode` | String | No | Denotes the method used to remove relations. | `soft` or `hard`. `soft` marks the relations as deleted, but keeps them in the database. `hard` removes the relations from the database. Default: `soft`. |
+
+## Request headers
+
+The following request headers must be included.
+
+| Header | Value | Required |
+| --- | --- | --- |
+| `Authorization` | Bearer `<accessToken>` | Yes |
+
+For more information, see [Authentication API](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/authentication-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+## Request body
+
+This operation does not require a request body.
+
+## Example request
+
+Use the following example to see how a complete request is structured with headers.
 
 ```
 POST {TenantURL}/entities/{id}/deleteRelations
 Headers: Authorization: Bearer {your-access-token}
 ```
+
+## Response body
+
+The following table describes the fields returned in the response body.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `id` | String | Unique identifier of the launched task. |
+| `groupId` | String | Identifier of the task group. |
+| `createdTime` | Number | Timestamp when the task was created. |
+| `createdBy` | String | User who created the task. |
+| `updatedTime` | Number | Timestamp when the task was last updated. |
+| `updatedBy` | String | User who last updated the task. |
+| `type` | String | Internal type of the launched task. |
+| `status` | String | Status of the launched task. |
+| `name` | String | Name of the launched task. |
+| `createdOnHost` | String | Host on which the task was created. |
+| `parallelExecution` | Boolean | Indicates whether the task runs in parallel execution mode. |
+| `nodesGroup` | String | Node group where the task runs. |
+| `parameters` | Object | Task parameters, including tenant, mode, and entity URI list. |
+| `currentState` | Object | Current state of the task. |
+| `duration` | String | Elapsed task duration. |
+
+## Example response
+
+The following example shows a response with the launched delete task details.
 
 ```
 {
@@ -119248,25 +120448,27 @@ Headers: Authorization: Bearer {your-access-token}
 }
 ```
 
-This API submits a task to perform the requested deletes. You can get information about this task by using the following request:
+## Check task status
+
+Use the following request to get information about this task:
 
 ```
 GET {TenantURL}/tasks/{taskId}
 Headers: Authorization: Bearer {your-access-token}
 ```
 
-**Response**JSON Object representing information about the launched manual tasks that deleted al relations for the specified entity:
+The response is a JSON object that represents information about the launched manual task that deleted all relations for the specified entity.
 
 - `numberOfProcessedObjects` - the number of relations that were deleted when the task was launched.
 - `objectsFailedToDeleteCount` - the number of relations that were not deleted.
-- `objectsFailedToDelete` - the IDs of the relations that were not deleted. This lists a maximum of 100 IDs.
-- `name` - The name of the manual task in the format `<Hard/Soft> Delete Relations`
-- `started` - The time when the task was launched.
-- `throughput` - The current speed of the task, which is the number of relations deleted per second.
-- `tenant` - The tenant where the task was launched.
-- `current` - The current time.
+- `objectsFailedToDelete` - the IDs of the relations that were not deleted. This list contains a maximum of 100 IDs.
+- `name` - the name of the manual task in the format `<Hard/Soft> Delete Relations`.
+- `started` - the time when the task was launched.
+- `throughput` - the current speed of the task, which is the number of relations deleted per second.
+- `tenant` - the tenant where the task was launched.
+- `current` - the current time.
 
-An example is given below:
+The following example shows the task response:
 
 ```
 {
@@ -119303,6 +120505,14 @@ An example is given below:
     "duration": "1s"
 }
 ```
+
+## Error codes and recommended actions
+
+**Related links**
+
+- [Delete Entities Task](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/delete-entities-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Cassandra ES Consistency Task](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/cassandra-es-consistency-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Bulk Delete Relationships](https://docs.reltio.com/en/developer-resources/relation-management-apis/relation-management-apis-at-a-glance/relations-api/bulk-delete-relationships?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 
 
@@ -121143,74 +122353,103 @@ Headers: Authorization: Bearer XXX
 
 **Source:** https://docs.reltio.com/en/developer-resources/relation-management-apis/relation-management-apis-at-a-glance/relations-api/get-tree?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
-**Keywords:** get tree, graph type relation, attribute, nested attribute, Get Tree, Graph Type Relation, Attribute, Nested Attribute
+**Keywords:** get tree, graph type relation, attribute, nested attribute, tree api, graphTypeURIs
 
 
-This API request returns a tree of entities built on specified graph type relations.
+Learn about how this API returns a tree of entities built on specified graph type relations.
 
-**Request**
+Use `Get Tree API` to return a tree of entities built on specified graph type relations.
+
+This request returns a tree that includes the initial entity, the entity's parent, all the parent's children, the parent's parent with all its children, and so on until the last parent in the tree. Each node also contains the number of child elements inside it.
+
+In the case of an entity that has several parents, the `parent` attribute in the response is an array of URIs, and the `relation` attribute is an array of relations.
+
+> **Caution:** Use the `_tree` request with caution. This request always reads several graph levels to define the tree and can consume significant platform resources. For large hierarchies, the response can take several minutes. In reversed hierarchies with multiple parent paths, the response still returns a single root branch, and the selected root branch is not guaranteed to be the same for every request.
+
+## HTTP method and endpoint
+
+Use the following HTTP method and endpoint path to submit the request to return a tree for the specified entity.
 
 ```
 GET {TenantURL}/{entity object URI}/_tree
 ```
 
-**Parameters**
+## Endpoint path parameters
 
-| Parameter | Name | Required | Details |
+The following table describes the endpoint path parameters.
+
+| Parameter | Type | Required | Description |
 | --- | --- | --- | --- |
-| Headers | `Authorization` | Yes | This parameter provides information about the authentication access token using the format, `Bearer <accessToken>` (For more information see [Authentication API](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/authentication-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
-| Query | `graphTypeURIs` | Yes | Comma-separated list of graph types URIs for graphs to be traversed. |
-| Query | `select` | No | Comma-separated list of properties from the object structure that should be returned in a response. Allows you to return a partial object. This parameter can be used to include the following fields:  - entity label (using the `label` keyword) - entity secondaryLabel (using the `secondaryLabel` keyword) - entity attributes (prefixing `entities` before the `attributes` keyword)    > **Note:** The `select` parameter supports all attributes.      The following query returns data for all fields:  ``` select=label,secondaryLabel,entities.attributes ```      > **Note:** Data is also returned for all fields if the `select` parameter is not used in the request. |
-| Query | `options` | No | This is a comma-separated list of different options, which affect on entity's JSON content in a response. Available options:   - `sendHidden` - disabled by default, entity's JSON will contain hidden attributes if this option is enabled. - `ovOnly` - return only attribute values that have `ov=true` flag. - `nonOvOnly` - return only attribute values that have `ov=false` flag. If you have a nested or reference attribute value where `ov=true`, but sub-attributes where `ov=false`, then these sub attributes will not appear in the response. - `reverseRelations` - return hierarchy with reversed directions of all relations. This means relations' start objects will be treated as end objects and vice versa. |
+| `{entity object URI}` | String | Yes | The URI of the entity used as the starting point for the returned tree. |
 
-**Response**
+## Query parameters
 
-This request will return the tree (built on specified graph type relations) that contains:
+The following table describes the query parameters and their values. A query parameter is a key-value pair added to the end of a URL to modify or refine a request.
 
-1. Initial entity (specified by the `{id}` parameter).
+| Parameter | Type | Required | Description | Accepted values / Default |
+| --- | --- | --- | --- | --- |
+| `graphTypeURIs` | String | Yes | Comma-separated list of graph type URIs for graphs to be traversed. | Comma-separated list of graph type URIs. |
+| `select` | String | No | Comma-separated list of properties from the object structure that should be returned in the response. This parameter allows you to return a partial object. It can be used to include the entity label by using `label`, the entity secondary label by using `secondaryLabel`, and entity attributes by prefixing `entities` before the `attributes` keyword. | Example: `select=label,secondaryLabel,entities.attributes`. If not specified, data is returned for all fields. |
+| `options` | String | No | Comma-separated list of options that affect entity JSON content in the response. | Available values:   - `sendHidden` - includes hidden attributes. - `ovOnly` - returns only attribute values with `ov=true`. - `nonOvOnly` - returns only attribute values with `ov=false`. - `reverseRelations` - returns the hierarchy with reversed directions of all relations. When `reverseRelations` is used, the response still returns a tree with a single root. If the reversed hierarchy produces multiple possible root branches, the response includes one fully expanded root branch and represents the other parent connections by URI references in the `parent` field. |
 
-2. The entity's parent.
+## Request headers
 
-3. All the parent's children.
+The following request headers must be included.
 
-4. The parent's parent (with all its children) and so on... Till the last parent in the tree.
+| Header | Value | Required |
+| --- | --- | --- |
+| `Authorization` | Bearer `<accessToken>` | Yes |
 
-Also, each node will contain the number of child elements inside it.
+For more information, see [Authentication API](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/authentication-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
-The format of the result (success response) is the following:
+## Response body
+
+The following table describes the fields returned in the response body.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `success` | Boolean or String | Indicates whether the request succeeded. |
+| `root` | Object | Root node of the returned tree. |
+| `entity` | Object | Entity content, including label, secondary label, and attributes when requested. |
+| `total` | Number | Number of child elements inside the node. |
+| `children` | Array | Child nodes of the current node. |
+| `relation` | Object or Array | Relation content that connects the entity with its parent. For an entity with several parents, this field is an array of relations. |
+| `parent` | String or Array | URI of the parent entity. For an entity with several parents, this field is an array of parent URIs. |
+
+## Example response
+
+The following example shows the format of a successful response.
 
 ```
 {
-	"success": "true",
-	"root": {
-		"entity": "entity content, including label/secondaryLabel, attributes",
-		"total": 50,
-		"children": [{
-				"entity": "entity content, including label/secondaryLabel, attributes",
-				"relation": "relation content which connects the entity with its parent",
-				"parent": "URI of parent entity",
-				"total": 0
-			},
-			{
-				"entity": "entity content, including label/secondaryLabel, attributes",
-				"relation": "relation content which connects the entity with its parent",
-				"parent": "URI of parent entity",
-				"total": 5,
-				"children": [
-					...
-				]
-			},
-			....
-		]
-	}
+    "success": "true",
+    "root": {
+        "entity": "entity content, including label/secondaryLabel, attributes",
+        "total": 50,
+        "children": [{
+                "entity": "entity content, including label/secondaryLabel, attributes",
+                "relation": "relation content which connects the entity with its parent",
+                "parent": "URI of parent entity",
+                "total": 0
+            },
+            {
+                "entity": "entity content, including label/secondaryLabel, attributes",
+                "relation": "relation content which connects the entity with its parent",
+                "parent": "URI of parent entity",
+                "total": 5,
+                "children": [
+                    ...
+                ]
+            },
+            ....
+        ]
+    }
 }
 ```
 
-In the case of an entity that has several parents, the parent attribute of the response is an array of URIs, and the `relation` attribute is an array of relations.
+**Related links**
 
-> **Note:** Reltio recommends that you do not use the `_tree` request in scripts for the following reasons:
-> - `_tree` request always reads several graph levels for tree definition and consumes many platform resources. These requests fetch large volumes of data and can cause slowness in the process.
-> - The response could take a long time (up to several minutes) for large hierarchies.
+- [Authentication API](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/authentication-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 
 
@@ -131107,21 +132346,27 @@ Use synchronous consistency when immediate search visibility is required and hig
 
 **Source:** https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/reltio-lightspeed-data-delivery-network-at-a-glance/understanding-synchronous-updates-in-reltio-lightspeed/enable-synchronous-consistency-in-reltio-lightspeed?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
+**Keywords:** enable synchronous consistency reltio lightspeed, configure lightspeed consistency tenant level, entity type consistency override lightspeed, request level strong consistency predicate api, strongddnconsistency query parameter reltio, predicate api config strong consistency, indexingconfig consistency strong reltio, lightspeed synchronous index updates, synchronous consistency, predicate api, reltio lightspeed, strong consistency
 
-Learn how to configure Lightspeed for synchronous updates to support immediate data consistency in Predicate API reads.
 
-> **Note:** This feature is available to limited users through the Reltio Early Access (EA) program. Interested in finding out more about this feature or participating in our EA program? Get details in topic Early Access (EA) features.
+Learn how to enable synchronous consistency in Reltio Lightspeed at the tenant, entity type, or request level.
 
-> **Note:** Reltio Lightspeed is only available on Amazon Web Services (AWS) and Google Cloud Platform (GCP).
+**Prerequisites**> **Note:** Reltio Lightspeed is only available on Amazon Web Services (AWS) and Google Cloud Platform (GCP).
 
 You need [ROLE_ADMIN_TENANT Access permissions](https://docs.reltio.com/en/objectives/administer-system/system-administration-at-a-glance/access-management-at-a-glance/access-management-reference/authorization/system-roles/critical-high-privilege-roles/role_admin_tenant-access-permissions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) or a custom role with `MDM:config.tenant UPDATE` permission.
 
-This task helps you configure Reltio Lightspeed™ Data Delivery Network (Reltio Lightspeed) for synchronous index updates that ensure consistent query behavior immediately after writes.
+You can enable synchronous consistency in one of the following ways, depending on the scope you need:
+
+- **Tenant level**: Applies strong consistency across all Predicate API reads for the tenant.
+- **Entity type level**: Overrides the tenant setting for a specific entity type in the layer-3 configuration.
+- **Request level**: Applies strong consistency to a single API request using a query parameter.
+
+You don't need to configure all three levels. Choose the option that matches your consistency requirement.
 
 
-To enable sync index updates:
+To enable synchronous consistency in Reltio Lightspeed:
 
-1. Configure the physical tenant settings for synchronous consistency.
+1. To enable synchronous consistency at the tenant level, configure the physical tenant settings.
    > **Note:** If you don't have access to update the physical configuration [submit a Support request](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) to apply the change.
    - Access your tenant’s physical configuration using the `/reltio/tenants/<tenantId>` endpoint.
    - Add the following block to the config under `predicateAPIConfig`:
@@ -131134,24 +132379,24 @@ To enable sync index updates:
         
 ```
    - Use the PUT Tenant Configuration API operation to save changes.
-2. Configure the L3 settings for synchronous consistency.
-   - Override consistency at entity type level in the layer-3 configuration.
+2. To enable synchronous consistency at the entity type level, override the tenant setting in the layer-3 configuration.
+   - Apply the following configuration at the entity type level.
      [Apply an L3 to a tenant](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-information-model/data-model/tenant-configuration-inheritance-across-layers/reltio-l3-layer----customer-tenant/apply-an-l3-to-a-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)```
 
 "indexingConfig": {
   "predicateEnabled": true,
-  "consistency": "eventual"
+  "consistency": "strong"
 }
         
 ```
-3. To enable synchronous indexing per API request, add `strongDDNConsistency` to `options`:
+3. To enable synchronous consistency at the request level, add `strongDDNConsistency` to `options`:
    ```
 POST /entities?options=strongDDNConsistency
    ```
 
-After this setup, write operations will block until the predicate index confirms availability, ensuring strong consistency on Lightspeed API reads.
+After you apply your chosen configuration, write operations block until the predicate index confirms availability. Predicate API reads return consistent results at the scope you configured — tenant, entity type, or request.
 
-For reference JSON and configuration hierarchy, see [Configuration options for synchronous consistency in Reltio Lightspeed](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/reltio-lightspeed-data-delivery-network-at-a-glance/understanding-synchronous-updates-in-reltio-lightspeed/configuration-options-for-synchronous-consistency-in-reltio-lightspeed?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)..
+For a reference JSON and configuration hierarchy, see [Configuration options for synchronous consistency in Reltio Lightspeed](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/reltio-lightspeed-data-delivery-network-at-a-glance/understanding-synchronous-updates-in-reltio-lightspeed/configuration-options-for-synchronous-consistency-in-reltio-lightspeed?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)..
 
 
 
@@ -141514,6 +142759,8 @@ The script provides Reltio Shield for DynamoDB for Data at Rest encryption, gene
 - **AWS_KMS**: An Amazon Web Services KMS key. For this material origin, you can set a key rotation option to rotate the key automatically once every year.
 - **EXTERNAL**: You provide your own key material file, which will be encrypted and imported to the key script generates. You need to have OpenSSL v.3.0 or later installed to use this option.
 
+> **Note:** The script runs in your own AWS environment and account. It does not require cross-account trust or external IDs. If you use AWS access keys, the credentials are used only for one-time key creation and key policy setup. After that, Reltio IAM roles access the KMS key through the key policy. Your credentials are not required for ongoing operations.
+
 > **Tip:** The Reltio Shield installation script is written in Python v3.9, so you need to have Python installed to run it.
 
 Before starting the installation, ensure you have this information at hand. You may find it helpful to print this page and record your information in advance for easy reference.
@@ -141528,11 +142775,14 @@ Before starting the installation, ensure you have this information at hand. You 
 | Authorization Server credentials | Username |  |
 | Authorization Server credentials | Password |  |
 | **Encryption key information** | **Encryption key information** | **Encryption key information** |
-| AWS Credentials | AWS key identifier |  |
-| AWS Credentials | AWS secret access key |  |
+| AWS Credentials | AWS authentication |  |
+| AWS Credentials | Recommended: IAM role or instance profile attached to the machine running the script, with these KMS permissions: `kms:CreateKey`, `kms:CreateAlias`, `kms:PutKeyPolicy`, `kms:DescribeKey` |  |
+| AWS Credentials | Alternative: AWS access key ID and secret access key for an IAM user with the same KMS permissions |  |
 | **Key material origin** | **Key material origin** | **Key material origin** |
 | AWS KMS | Automatic key rotation required? |  |
 | External | Name of the file containing external encryption key details |  |
+
+> **Note:** If an IAM role or instance profile is configured on your machine, the script detects it automatically, so you don't need to provide AWS credentials. Otherwise, the script prompts you to enter your AWS access key ID and secret access key.
 
 To encrypt your tenant using the Reltio Shield installation script:
 
@@ -146298,41 +147548,59 @@ Learn about the Reltio Integration for Salesforce (with RIH)
 
 Reltio Integration for Salesforce with Reltio Integration Hub (RIH) enables you to sync and maintain the latest data related to your contacts and accounts in Salesforce. By integrating with the Reltio Context Intelligence Platform, you acquire data that is cleansed and consolidated from various sources into a golden record.
 
-*Image: i-rih-sfdc-sqs-architecture.png*
+Reltio Integration for Salesforce (with RIH) differs from the legacy [Reltio Integration for Salesforce](https://docs.reltio.com/en/applications/data-integrations/application-integration-at-a-glance/reltio-integration-for-salesforce-at-a-glance/reltio-integration-for-salesforce-set-up?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) by providing enhanced alerting, monitoring, troubleshooting, and self-service capabilities through the Reltio Integration Hub (RIH).
 
-*Image: i-rih-sfdc-architecture.png*
+## Data Synchronization Architecture
 
-This integration is different from the legacy [Reltio Integration for Salesforce](https://docs.reltio.com/en/applications/data-integrations/application-integration-at-a-glance/reltio-integration-for-salesforce-at-a-glance/reltio-integration-for-salesforce-set-up?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), which also syncs data between Reltio and Salesforce. This Reltio Integration for Salesforce (with RIH) offers features that help better manage your data with extensive alerting, monitoring, troubleshooting capabilities, and the ability to self serve.
+Reltio Integration Hub (RIH) supports bidirectional data synchronization between Reltio and Salesforce.
 
-This integration uses our Reltio Integration Hub's Salesforce Data Connector (SFDC) recipes and includes the following features:
+**Data synchronization from Reltio to Salesforce**
 
-- 
+The following diagrams illustrate the flow of data from Reltio to Salesforce through Reltio Integration Hub (RIH).
 
-  Prebuilt recipes for the Reltio B2B Velocity Pack and Reltio Healthcare Velocity Pack that integrate with Salesforce objects
-- 
+*Image: i-salesforce-to-reltio.png*
 
-  Bi-directional sync of account and contact data
-- 
+Key characteristics of data synchronization from Reltio to Salesforce include: 
 
-  Configuration to map objects and fields between Salesforce and Reltio
-- 
+- Trigger through Amazon SNS (real time) and SQS (near real time) for Reltio change events
+- Push-based delivery from Reltio to RIH recipes without polling
+- Best-effort event ordering and single-event processing per recipe job
+- Recipe concurrency of up to 5 jobs per entity type
+- Recipe-based delivery of the final payload to Salesforce objects
 
-  Extensive monitoring and troubleshooting through transparent RIH dashboards and configurable alerts in recipes
-- 
+**Data synchronization from Salesforce to Reltio**
 
-  Ability to create new integration from the prebuilt recipes for expanded use cases
-- 
+The following diagram illustrates the flow of data from Salesforce to Reltio through Reltio Integration Hub (RIH).
 
-  Search for records before creating them, and import the records not available into Salesforce.
+*Image: i-rih-salesforce-outbound.png*
 
-A successful integration between Reltio and Salesforce involves 2 parts:
+Key characteristics of data synchronization from Salesforce to Reltio include:
 
-1. 
+- Salesforce changes are notified through outbound messages, with backup polling every 6 hours to recover missed events and ensure that RIH creates any required jobs if a notification is not received.
+- RIH recipes handle the outbound message and keep the Reltio system in sync with Salesforce.
+- Optionally, the integration performs a write-back to update the Reltio URI in the external ID field of the originating Salesforce record, so that both systems maintain a consistent cross-reference.
 
-   Set up a bidirectional sync between Reltio and Salesforce. This is done using the RIH recipes, which you can download on your tenant and use them as per your requirements. For more information, see topics [Prebuilt integration for Salesforce with RIH](https://docs.reltio.com/en/applications/data-integrations/application-integration-at-a-glance/reltio-integration-for-salesforce-with-rih-at-a-glance/reltio-integration-for-salesforce-with-rih-overview/prebuilt-integration-for-salesforce-with-rih?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Synchronization modes](https://docs.reltio.com/en/applications/data-integrations/application-integration-at-a-glance/reltio-integration-for-salesforce-with-rih-at-a-glance/reltio-integration-for-salesforce-with-rih-overview/synchronization-modes?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Get started with Reltio Integration for Salesforce (with RIH)](https://docs.reltio.com/en/applications/data-integrations/application-integration-at-a-glance/reltio-integration-for-salesforce-with-rih-at-a-glance/reltio-integration-for-salesforce-with-rih-overview/get-started-with-reltio-integration-for-salesforce-with-rih?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), and [RIH recipes for Salesforce Integration](https://docs.reltio.com/en/applications/data-integrations/application-integration-at-a-glance/reltio-integration-for-salesforce-with-rih-at-a-glance/reltio-integration-for-salesforce-with-rih-overview/rih-recipes-for-salesforce-integration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
-2. 
+## Key Features
 
-   Set up the Search Before Create (SBC) feature using the Salesforce managed package. For more information, see topic [Search before create (SBC)](https://docs.reltio.com/en/applications/data-integrations/application-integration-at-a-glance/reltio-integration-for-salesforce-with-rih-at-a-glance/reltio-integration-for-salesforce-with-rih-overview/search-before-create-sbc?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+The Reltio Integration Hub uses Salesforce Data Connector (SFDC) recipes and includes the following features:
+
+- Prebuilt recipes for the Reltio B2B Velocity Pack and Reltio Healthcare Velocity Pack that integrate with Salesforce objects.
+- Bi-directional sync of account and contact data.
+- Configuration to map objects and fields between Salesforce and Reltio.
+- Extensive monitoring and troubleshooting through transparent RIH dashboards and configurable alerts in recipes.
+- Ability to create new integration from the prebuilt recipes for expanded use cases.
+- Search for records before creating them, and import the records not available into Salesforce.
+
+## Next Steps
+
+To complete the integration setup, perform the following tasks:
+
+- **Configure bidirectional synchronization**: Use the RIH recipes to synchronize data between Reltio and Salesforce. For more information, see:
+  - [Prebuilt integration for Salesforce with RIH](https://docs.reltio.com/en/applications/data-integrations/application-integration-at-a-glance/reltio-integration-for-salesforce-with-rih-at-a-glance/reltio-integration-for-salesforce-with-rih-overview/prebuilt-integration-for-salesforce-with-rih?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+  - [Synchronization modes](https://docs.reltio.com/en/applications/data-integrations/application-integration-at-a-glance/reltio-integration-for-salesforce-with-rih-at-a-glance/reltio-integration-for-salesforce-with-rih-overview/synchronization-modes?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+  - [Get started with Reltio Integration for Salesforce (with RIH)](https://docs.reltio.com/en/applications/data-integrations/application-integration-at-a-glance/reltio-integration-for-salesforce-with-rih-at-a-glance/reltio-integration-for-salesforce-with-rih-overview/get-started-with-reltio-integration-for-salesforce-with-rih?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+  - [RIH recipes for Salesforce Integration](https://docs.reltio.com/en/applications/data-integrations/application-integration-at-a-glance/reltio-integration-for-salesforce-with-rih-at-a-glance/reltio-integration-for-salesforce-with-rih-overview/rih-recipes-for-salesforce-integration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **Enable Search Before Create**: Use the Salesforce managed package to enable the [Search before create (SBC)](https://docs.reltio.com/en/applications/data-integrations/application-integration-at-a-glance/reltio-integration-for-salesforce-with-rih-at-a-glance/reltio-integration-for-salesforce-with-rih-overview/search-before-create-sbc?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) feature.
 
 
 
@@ -146350,7 +147618,7 @@ Learn about the prebuilt integration for Salesforce with RIH.
 
 Reltio Integration for Salesforce (with RIH) offers prebuilt recipes to sync your data between Reltio and Salesforce. These recipes are out-of-the-box mapping setups related to Reltio's B2B and Healthcare velocity packs. Use them as they are, or modify them according to your requirements and specifications. For more information, see topic [RIH recipes for Salesforce Integration](https://docs.reltio.com/en/applications/data-integrations/application-integration-at-a-glance/reltio-integration-for-salesforce-with-rih-at-a-glance/reltio-integration-for-salesforce-with-rih-overview/rih-recipes-for-salesforce-integration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
-To deploy the recipes in your RIH account in your Dev tenant, contact your Reltio CSM. For more information, see [c discover support](https://docs.reltio.com/search?q=c-discover-support&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+To deploy the recipes in your RIH account in your Dev tenant, contact your Reltio CSM. For more information, see [Get help in Support Portal](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 When new updates are available, we'll send notifications. Note that the prebuilt integration is not automatically upgraded, so please request access to the latest version of the prebuilt integration package. Once you receive the latest version, do one of the following:
 
@@ -154244,7 +155512,7 @@ The API returns the following HTTP status codes based on the processing result.
 
 **Source:** https://docs.reltio.com/en/applications/data-integrations/application-integration-at-a-glance/introduction-to-the-reltio-integration-for-veeva-vault-crm/search-before-create-sbc-for-veeva-vault-crm/set-up-search-before-create-in-veeva-vault-crm?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
-**Keywords:** set up search before create veeva vault crm, use sbc setup api in veeva vault crm, activate x-page for search before create, upload search before create zip file, configure veeva vault crm sbc setup api, collect sbc setup api fields, verify search before create page, sbc setup, integration, workato
+**Keywords:** set up search before create veeva vault crm, use sbc setup api in veeva vault crm, activate x-page for search before create, upload search before create zip file, configure veeva vault crm sbc setup api, collect sbc setup api fields, verify search before create page, sbc setup, integration, RIH
 
 
 Learn how to set up Search Before Create in Veeva Vault CRM by using the SBC Setup API.
@@ -154255,7 +155523,7 @@ Use the SBC Setup API to configure Search Before Create in Veeva Vault CRM. The 
 
 Before you begin, confirm that the following prerequisites are met:
 
-- The X-Page tab used to display the Search Before Create page is activated in Veeva Vault CRM.
+- The [X-Page](https://docs.reltio.com/en/applications/data-integrations/application-integration-at-a-glance/introduction-to-the-reltio-integration-for-veeva-vault-crm/search-before-create-sbc-for-veeva-vault-crm/add-the-search-before-create-tab-in-veeva-vault-crm?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) tab used to display the Search Before Create page is activated in Veeva Vault CRM.
 - You have the page name ID of the activated top-level X-Page.
 
   To get the page name ID, in Veeva Vault CRM, navigate to **Admin > Configuration > Pages**, open the X-Page, and copy the value in **Name**.
@@ -154270,28 +155538,36 @@ Perform the following steps to confirm that the SBC Setup API endpoint is active
 2. On the **Details** tab, confirm that the right panel shows **Active endpoint**.
 3. Under **Endpoint URL**, click **Copy URL**.
 
+   **Example:**
+
+   You can use the following endpoint and method for the request.
+
+   ```
+   POST https://{RIH_api_base_url}/{RIH_environment}/veeva-sbc-vv1/veeva/sbc/setup
+   ```
+
 ## Request parameters
 
 The following table displays the information required for the SBC Setup API request. Review each field and confirm the values to include in the request.
 
 | **Field** | **Required** | **Description** | **Sample value** |
 | --- | --- | --- | --- |
-| file | No | ZIP file that contains the UI configuration for Search Before Create. If you do not provide this field, the API uses the most recent file stored in file storage under `SBC_setup_UI_zip_file`. | `sbc.zip` |
+| file | No | ZIP file that contains the UI configuration for Search Before Create. If you do not provide this field, the API uses the most recent file stored in file storage under `SBC_setup_UI_zip_file` folder. | `sbc.zip` |
 | name__v | Yes | Name of the `html_report__v` record. | `Test Page - SBC` |
 | platform__v | Yes | Platform value for the `html_report__v` record. | `online__v` |
 | name__v_sbc_config__c | Yes | Name of the `sbc_config__c` record. | `rec_token_test` |
-| api_token__c_sbc_config__c | Yes | API token used for the Search Before Create import and search endpoints. Collect this value from the Workato API collection client configuration for the SBC API. | `<api_token>` |
+| api_token__c_sbc_config__c | Yes | API token used for the Search Before Create import and search endpoints. Collect this value from the RIH client configuration at **Tools** > **API platform** > **Clients** tab for the client that has access to the SBC API collection. | `<api_token>` |
 | test_mode__c_sbc_config__c | Yes | Indicates whether test mode is enabled for the import and search recipes. | `false` |
 | timeout_seconds__c_sbc_config__c | Yes | Timeout, in seconds, used by the import and search recipes. | `30` |
 
-## SBC Setup API request
+## SBC Setup Activation using API
 
 Use the following steps to submit the SBC Setup API request.
 
 1. Use the following endpoint and method for the request:
 
    ```
-   POST https://{workato_api_base_url}/{environment}/veeva-sbc-vv1/veeva/sbc/setup
+   POST https://{RIH_api_base_url}/{RIH_environment}/veeva-sbc-vv1/veeva/sbc/setup
    ```
 2. Include the following request headers:
 
@@ -154303,7 +155579,7 @@ Use the following steps to submit the SBC Setup API request.
 3. Add the required request parameters for the HTML Report record and the SBC Config record. The following example displays a complete request:
 
    ```
-   curl --location --request POST 'https://{RIH_api_base_url}/{environment}/veeva-sbc-vv1/veeva/sbc/setup' \
+   curl --location --request POST 'https://{RIH_api_base_url}/{RIH_environment}/veeva-sbc-vv1/veeva/sbc/setup' \
    --header 'accept: application/json' \
    --header 'Content-Type: multipart/form-data' \
    --header 'API-TOKEN: <api_token>' \
@@ -172483,10 +173759,6 @@ Learn about the configuration steps needed to set up your Reltio Data Pipeline f
 
 
 
-**[Integrate GCP cloud storage with Databricks](https://docs.reltio.com/search?q=t-integrate-apps-databricksconn-gcp-integ-create-databricks-wh&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)**
-
-
-
 **[Connect Reltio to GCP cloud storage](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-databricks-at-a-glance/reltio-data-pipeline-for-databricks-set-up/configure-the-reltio-data-pipeline-for-databricks-for-gcp/configure-databricks-pipeline-for-gcp-using-apis/connect-reltio-to-gcp-cloud-storage/provision-your-reltio-tenant-for-the-reltio-data-pipeline-for-databricks-gcp?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)**
 
 
@@ -176096,7 +177368,7 @@ Learn how to synchronize your entities, relations, matches, interactions, and me
 
 After all configurations are completed, the next step is to synchronize data between the Reltio platform to the GBQ connector. This ensures that you always have the latest event data in your BigQuery dataset. You can view data being transmitted in your BigQuery dataset in the Dataset info section once you log in to the Google Cloud console.
 
-> **Note:** If you choose the column-based schema in [t integrate apps gbqconn suppreq submit](https://docs.reltio.com/search?q=t-integrate-apps-gbqconn-suppreq-submit&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and there is a data schema change, for example, you add a new attribute to a profile in the Reltio UI, you need to run this command again.
+> **Note:** If you choose the column-based schema and there is a data schema change, for example, you add a new attribute to a profile in the Reltio UI, you need to run this command again.
 
 To synchronize data, execute: 
 
@@ -176121,7 +177393,7 @@ After the request is completed, run the following periodic tasks to check if the
 
 
 
-Once the task is completed successfully, view the latest data in your tenant’s**Profile** view. For more information, see topic [Profile view](https://docs.reltio.com/search?q=profiledetails&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+Once the task is completed successfully, view the latest data in your tenant’s**Profile** view. For more information, see topic [Profile perspectives tabs](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-navigation/profile-attributes/potential-matches-facet/profile-perspectives-tabs?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 Here are some helpful tips when it comes to troubleshooting issues that may occur after you synchronize Reltio with GBQ:
 
@@ -177906,7 +179178,7 @@ Follow these steps to validate the connection and sync Snowflake with your Relti
 | --- | --- |
 | 1 | [Validate event transfer](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/configure-snowflake-staging-pipeline/configure-the-reltio-data-pipeline-for-snowflake-for-gcp/validate-and-sync-with-the-reltio-snowflake-connector-for-gcp/validate-event-transfer-in-snowflake-with-the-reltio-ui?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) in Snowflake with the Reltio UI. |
 | 2 | [Validate event transfer](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/configure-snowflake-staging-pipeline/configure-the-reltio-data-pipeline-for-snowflake-for-aws/validate-and-sync-with-the-reltio-snowflake-connector-for-aws/validate-event-transfer-in-snowflake-with-the-reltio-api-aws?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) in Snowflake with the Reltio API. |
-| 3 | [Sync data between Reltio and Snowflake](https://docs.reltio.com/search?q=c-integrate-apps-snowflakeconn-syncdata&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs):  ``` POST {{apihost}}/reltio/api/syncToDataPipeline ``` |
+| 3 | [Sync data between Reltio and Snowflake](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/configure-snowflake-staging-pipeline/configure-the-reltio-data-pipeline-for-snowflake-for-gcp/validate-and-sync-with-the-reltio-snowflake-connector-for-gcp/synchronize-data-between-reltio-and-snowflake?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs):  ``` POST {{apihost}}/reltio/api/syncToDataPipeline ``` |
 
 
 
@@ -178033,20 +179305,18 @@ This table provides more information on these configuration steps, which are des
 | 4. | [Create a custom IAM role](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/configure-snowflake-staging-pipeline/configure-the-reltio-data-pipeline-for-snowflake-for-gcp/configure-gcp-cloud-storage-for-snowflake/create-a-custom-iam-role-for-gcp?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). | The role enables you to grant the service account permission to access the bucket objects that store your data. |
 | 5. | [Assign the role](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/configure-snowflake-staging-pipeline/configure-the-reltio-data-pipeline-for-snowflake-for-gcp/integrate-gcp-cloud-storage-with-snowflake/create-a-cloud-storage-integration-in-snowflake-for-gcp?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) to the cloud storage service account. |  |
 | 6. | [Create a Pub/Sub topic.](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/configure-snowflake-staging-pipeline/configure-the-reltio-data-pipeline-for-snowflake-for-gcp/configure-gcp-cloud-storage-for-snowflake/create-a-pubsub-topic-for-gcp?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |  |
-| 7. | [Create a Pub/Sub subscription.](https://docs.reltio.com/search?q=t-integrate-apps-snowflakeconn-gcp-pubsubsubsc-create&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |  |
-| 8. | [Retrieve the Pub/Sub subscription ID.](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/configure-snowflake-staging-pipeline/configure-the-reltio-data-pipeline-for-snowflake-for-gcp/configure-gcp-cloud-storage-for-snowflake/get-the-pubsub-subscription-id-for-gcp?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |  |
-| 9. | [Grant Snowflake Access to the Pub/Sub Subscription.](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/configure-snowflake-staging-pipeline/configure-the-reltio-data-pipeline-for-snowflake-for-gcp/configure-gcp-cloud-storage-for-snowflake/grant-snowflake-access-to-the-pubsub-subscription-for-gcp?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |  |
-| 10. | [Set TTL for files in bucket](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/configure-snowflake-staging-pipeline/configure-the-reltio-data-pipeline-for-snowflake-for-gcp/configure-gcp-cloud-storage-for-snowflake/add-a-lifecycle-rule-for-gcp?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |  |
+| 7. | [Retrieve the Pub/Sub subscription ID.](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/configure-snowflake-staging-pipeline/configure-the-reltio-data-pipeline-for-snowflake-for-gcp/configure-gcp-cloud-storage-for-snowflake/get-the-pubsub-subscription-id-for-gcp?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |  |
+| 8. | [Grant Snowflake Access to the Pub/Sub Subscription.](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/configure-snowflake-staging-pipeline/configure-the-reltio-data-pipeline-for-snowflake-for-gcp/configure-gcp-cloud-storage-for-snowflake/grant-snowflake-access-to-the-pubsub-subscription-for-gcp?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |  |
+| 9. | [Set TTL for files in bucket](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/configure-snowflake-staging-pipeline/configure-the-reltio-data-pipeline-for-snowflake-for-gcp/configure-gcp-cloud-storage-for-snowflake/add-a-lifecycle-rule-for-gcp?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |  |
 | Snowflake Configuration of Reltio Data from Cloud Storage | Snowflake Configuration of Reltio Data from Cloud Storage | Snowflake Configuration of Reltio Data from Cloud Storage |
-| 11. | [Provision your Reltio tenant for the Reltio Data Pipeline for Snowflake (GCP)](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/configure-snowflake-staging-pipeline/configure-the-reltio-data-pipeline-for-snowflake-for-gcp/connect-reltio-to-gcp-cloud-storage/provision-your-reltio-tenant-for-the-reltio-data-pipeline-for-snowflake-gcp?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) with your  -     Tenant ID -     Tenant Environment -     GCS Bucket Name -     GCP Service Account Keys |  |
-| 12. | In your Snowflake environment, [create an external stage](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/configure-snowflake-staging-pipeline/configure-the-reltio-data-pipeline-for-snowflake-for-gcp/integrate-gcp-cloud-storage-with-snowflake/create-an-external-stage-in-snowflake-for-gcp?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). | The file format type is JSON. |
-| 13. | In your Snowflake environment, [create a notification integration](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/configure-snowflake-staging-pipeline/configure-the-reltio-data-pipeline-for-snowflake-for-gcp/integrate-gcp-cloud-storage-with-snowflake/create-a-notification-integration-in-snowflake-for-gcp?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). | This allows events to be sent to the queue. |
-| 14. | Retrieve the GCP_PUBSUB_SERVICE_ACCOUNT. |  |
-| 15. | Create a Pipe with Auto-Ingest Enabled. |  |
-| Validate and Sync All Desired Reltio Data to Snowflake | Validate and Sync All Desired Reltio Data to Snowflake | Validate and Sync All Desired Reltio Data to Snowflake |
-| 16. | [Validate event transfer](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/configure-snowflake-staging-pipeline/configure-the-reltio-data-pipeline-for-snowflake-for-gcp/validate-and-sync-with-the-reltio-snowflake-connector-for-gcp/validate-event-transfer-in-snowflake-with-the-reltio-ui?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) in Snowflake with the Reltio UI. | You can verify that the validation is successful by changing an entity attribute in the Reltio UI. |
-| 17. | [Validate event transfer](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/configure-snowflake-staging-pipeline/configure-the-reltio-data-pipeline-for-snowflake-for-gcp/validate-and-sync-with-the-reltio-snowflake-connector-for-gcp/validate-event-transfer-in-snowflake-with-the-reltio-api-gcp?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) in Snowflake with the Reltio API. | You can use the reindex API for validating event transfer. |
-| 18. | [Sync data between Reltio and Snowflake](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/configure-snowflake-staging-pipeline/configure-the-reltio-data-pipeline-for-snowflake-for-gcp/validate-and-sync-with-the-reltio-snowflake-connector-for-gcp/synchronize-data-between-reltio-and-snowflake?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs):  ``` POST {{apihost}}/reltio/api/syncToDataPipeline ``` | If the synchronize task is successfully scheduled, you see a 200 OK status in the response. Query each object’s staging table to view data in the corresponding Snowflake landing table.  If your connection is unsuccessful, contact Reltio support. |
+| 10. | [Provision your Reltio tenant for the Reltio Data Pipeline for Snowflake (GCP)](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/configure-snowflake-staging-pipeline/configure-the-reltio-data-pipeline-for-snowflake-for-gcp/connect-reltio-to-gcp-cloud-storage/provision-your-reltio-tenant-for-the-reltio-data-pipeline-for-snowflake-gcp?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) with your  -     Tenant ID -     Tenant Environment -     GCS Bucket Name -     GCP Service Account Keys |  |
+| 11. | In your Snowflake environment, [create an external stage](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/configure-snowflake-staging-pipeline/configure-the-reltio-data-pipeline-for-snowflake-for-gcp/integrate-gcp-cloud-storage-with-snowflake/create-an-external-stage-in-snowflake-for-gcp?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). | The file format type is JSON. |
+| 12. | In your Snowflake environment, [create a notification integration](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/configure-snowflake-staging-pipeline/configure-the-reltio-data-pipeline-for-snowflake-for-gcp/integrate-gcp-cloud-storage-with-snowflake/create-a-notification-integration-in-snowflake-for-gcp?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). | This allows events to be sent to the queue. |
+| 13. | Retrieve the GCP_PUBSUB_SERVICE_ACCOUNT. |  |
+| 14. | Create a Pipe with Auto-Ingest Enabled. |  |
+| 15. | [Validate event transfer](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/configure-snowflake-staging-pipeline/configure-the-reltio-data-pipeline-for-snowflake-for-gcp/validate-and-sync-with-the-reltio-snowflake-connector-for-gcp/validate-event-transfer-in-snowflake-with-the-reltio-ui?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) in Snowflake with the Reltio UI. | You can verify that the validation is successful by changing an entity attribute in the Reltio UI. |
+| 16. | [Validate event transfer](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/configure-snowflake-staging-pipeline/configure-the-reltio-data-pipeline-for-snowflake-for-gcp/validate-and-sync-with-the-reltio-snowflake-connector-for-gcp/validate-event-transfer-in-snowflake-with-the-reltio-api-gcp?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) in Snowflake with the Reltio API. | You can use the reindex API for validating event transfer. |
+| 17. | [Sync data between Reltio and Snowflake](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/configure-snowflake-staging-pipeline/configure-the-reltio-data-pipeline-for-snowflake-for-gcp/validate-and-sync-with-the-reltio-snowflake-connector-for-gcp/synchronize-data-between-reltio-and-snowflake?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs):  ``` POST {{apihost}}/reltio/api/syncToDataPipeline ``` | If the synchronize task is successfully scheduled, you see a 200 OK status in the response. Query each object’s staging table to view data in the corresponding Snowflake landing table.  If your connection is unsuccessful, contact Reltio support. |
 
 
 
@@ -178709,7 +179979,7 @@ Learn how to set up the Snowflake Direct Connect data pipeline in the Console UI
 
 Reltio Data Pipeline for Snowflake writes data from Reltio Context Intelligence Platform directly to the Snowflake internal stage over JDBC. Snowflake secures data in transit using TLS 1.2 (or higher) encryption for all JDBC connections. This is enforced by default, all communication between the JDBC driver and Snowflake occurs over HTTPS, ensuring that data uploaded to internal stages is encrypted in transit without any additional configuration. For more information, see [Understanding end-to-end encryption in Snowflake](https://docs.snowflake.com/en/user-guide/security-encryption-end-to-end).
 
-If you still have a business need to establish PrivateLink connectivity between your Reltio tenant on AWS and your Snowflake account on AWS, follow the instructions in [Configure PrivateLink Connectivity for Snowflake (Direct Connect) Data Pipeline](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/configure-privatelink-connectivity-for-snowflake-direct-connect-data-pipeline?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) before continuing to configure the Snowflake (Direct Connect) pipeline from the Reltio Console.
+If you still have a business need to establish PrivateLink connectivity between your Reltio tenant on AWS and your Snowflake account on AWS, follow the instructions in [PrivateLink connectivity for Snowflake (Direct Connect) Data Pipeline overview](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/privatelink-connectivity-for-snowflake-direct-connect-data-pipeline-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) before continuing to configure the Snowflake (Direct Connect) pipeline from the Reltio Console.
 
 ## Steps to configure the Snowflake (Direct Connect) pipeline from the Reltio Console
 
@@ -179653,7 +180923,7 @@ Learn how to create an external stage.
 Create an external stage to reference Reltio's data files and load them into Snowflake. To create an external stage in your Snowflake environment:
 
 1. In the worksheet area, enter the stage name. For example: create or replace stage {database}.{schema}.{stage_name}.
-2. **url**: Enter the **storage_allowed_locations** value from [t integrate apps snowflakeconn gcp servacc get](https://docs.reltio.com/search?q=t-integrate-apps-snowflakeconn-gcp-servacc-get&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+2. **url**: Enter the **storage_allowed_locations** value from [Get the snowflake service account ID for GCP](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/configure-snowflake-staging-pipeline/configure-the-reltio-data-pipeline-for-snowflake-for-gcp/integrate-gcp-cloud-storage-with-snowflake/get-the-snowflake-service-account-id-for-gcp?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 3. **storage_integration**: Enter the storage_integration value from [Create a cloud storage integration in Snowflake for GCP](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/configure-snowflake-staging-pipeline/configure-the-reltio-data-pipeline-for-snowflake-for-gcp/integrate-gcp-cloud-storage-with-snowflake/create-a-cloud-storage-integration-in-snowflake-for-gcp?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 4. **enabled**: Enter true to enable the integration.
 
@@ -180065,7 +181335,7 @@ The AWS user is the same for your Snowflake account, while the external ID is sp
 
 1. Locate the **STORAGE_AWS_IAM_USER_ARN** and **STORAGE_AWS_EXTERNAL_ID** properties in Snowflake. The STORAGE_AWS_IAM_USER_ARN property indicates the AWS Identity and Access Management( IAM) user created for your Snowflake account. For example: **arn:aws:iam::123456789001:user/abc1-b-self1234**. All S3 storage integrations use the same IAM user. The STORAGE_AWS_EXTERNAL_ID property indicates the external ID that is needed to establish a trust relationship in the AWS IAM policy.
 2. Run the **DESC INTEGRATION s3_integration;** command in Snowflake. This displays the fields in the following image:*Image: snowflake_awsretrieve.png*
-3. Make a note of the STORAGE_AWS_IAM_USER_ARN and STORAGE_AWS_EXTERNAL_ID property values. You’ll need it when you [Grant the IAM user S3 bucket access](https://docs.reltio.com/search?q=t-integrate-apps-snowflakeconn-s3bucket-policy-create&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+3. Make a note of the STORAGE_AWS_IAM_USER_ARN and STORAGE_AWS_EXTERNAL_ID property values. You’ll need it when you [Grant the IAM user S3 bucket access](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/configure-snowflake-staging-pipeline/configure-the-reltio-data-pipeline-for-snowflake-for-aws/configure-aws-cloud-storage-for-snowflake/create-a-reltio-iam-policy-in-aws?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
@@ -183085,11 +184355,10 @@ Use MuleSoft connectors to:
 - [Delete Data Change Request](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/data-change-request-api/delete-data-change-request?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs): Delete a data change request with the given ID.
 - [Managing Entity Roles](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/entities-api/update-entities/managing-entity-roles?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs): Add roles to an entity object.
 - [Export relations](https://docs.reltio.com/en/objectives/load-and-export-data/data-exporting-at-a-glance/data-exporting-operation/export-data-using-reltio-export-service/export-relations?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs): Filter relations, exports them, uploads a CSV or the JSON file to the storage and sends a link to the exported data or a link to the Export Console UI page.
-- [entitysearch](https://docs.reltio.com/search?q=entitysearch&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs): Get entities based on filter and other options.
+- [Entity Search](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/entities-api/get-entity/entity-search?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs): Get entities based on filter and other options.
 - [Get Entity](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/entities-api/get-entity?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs): Get the entity by its URI.
 - [Get Entity by Crosswalk](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/entities-api/get-entity/get-entity-by-crosswalk?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs): Get the entity object by the crosswalk.
 - [Get Interactions for an Entity](https://docs.reltio.com/en/developer-resources/interaction-management-apis/interaction-apis-at-a-glance/interactions-api/get-interactions-for-an-entity?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs): Get the list of interactions.
-- [matchentities](https://docs.reltio.com/search?q=matchentities&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs): Get matching entities.
 - [Search entity with cursor](https://docs.reltio.com/en/applications/data-integrations/ipaas-connectors-at-a-glance/reltio-connector-for-mulesoft-at-a-glance/reltio-connector-for-mulesoft-set-up/test-a-project-with-the-reltio-connector-for-mulesoft/reltio-connector-for-mulesoft-operations/search-entity-with-cursor?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs): Get matching entities with specific criteria with a strongly defined order and cursor.
 - [Pause Task](https://docs.reltio.com/en/developer-resources/load-and-export-apis/load-and-export-apis-at-a-glance/export-service-apis/export-tasks-management-api/pause-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs): Pause the task.
 - [Force Stop Task](https://docs.reltio.com/en/developer-resources/load-and-export-apis/load-and-export-apis-at-a-glance/export-service-apis/export-tasks-management-api/force-stop-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs): Stop the task.
@@ -190209,7 +191478,9 @@ The topics in this section provide step-by-step instructions for these stages.
 **Keywords:** Reference Data Management, rdm overview, rdm lookup types, canonical values, creating lookups, creating canonical rows, create lookups, create canonical rows, rdm cache, transcoding, canonical value
 
 
-Reference Data Management allows you to ensure data governance and operational excellence.
+Learn about lookup types and canonical values in Reltio Reference Data Management (RDM), and how they standardize source-specific values for consistent display, search, and API responses.
+
+Lookup types and canonical values standardize source-specific values in Reltio Reference Data Management (RDM) by mapping them to canonical values for consistent display, search, and API responses.
 
 ## How to use Lookup Types and Canonical Values
 
@@ -190222,6 +191493,15 @@ Instead, RDM allows you to define a Lookup Type called Gender that can be used t
 **The value you see versus the value that is stored**
 
 It is important to note that transcoding occurs on-the-fly. When the value of *01* is posted to the gender attribute of an MDM tenant record from a source system, it is the raw value **01** that is stored in the record. If you have set up a canonical row in RDM for **Gender** and set the canonical value to **Female**, then in every screen of the Hub and in every return of an API call for the record, **01** will never appear. The value will always be transcoded on-the-fly to the canonical code of **Female**. This is also applicable for indexing. Therefore, a search facet based on **Gender** will display the value of female. If the gender attribute in the MDM configuration is linked to the Gender Lookup Type, then the canonical values appear as part of a drop-down list for the attribute in Hub.
+
+## How source mappings affect lookup resolution
+
+When multiple sources are defined for the same lookup value, lookup resolution follows the additional source mapping rules listed below.
+
+- The platform evaluates multiple sources in alphabetical order.
+- A valid mapping in one source does not guarantee successful resolution.
+- Resolution can fail if another source in the evaluated list is not mapped for that value.
+- Maintain mappings for all applicable values across all configured sources to ensure consistent lookup resolution.
 
 ## Creating New Lookups and Canonical Rows
 
@@ -190261,7 +191541,7 @@ POST: {{rdmURL}}/transcode/{{rdmTenant}}
 ]
 ```
 
-**Reponse**
+**Response**
 
 ```
 [
@@ -190284,7 +191564,7 @@ POST: {{rdmURL}}/transcode/{{rdmTenant}}
 
 The response provides information about: 
 
-- The Look type which is GENDER1.
+- The Lookup type which is GENDER1.
 - The canonical value returned by RDM which is F because RDM transcoded the value of *female* from source *AMS* to the canonical value of F.
 
 ## Hierarchy Transcode
@@ -190295,11 +191575,9 @@ See the following example of Hierarchy Transcode:
 
 ```
 POST: {{rdmURL}}/transcode/{{rdmTenant}}
-
 ```
 
 ```
-
 [
   {
     "values": {
@@ -190324,13 +191602,11 @@ POST: {{rdmURL}}/transcode/{{rdmTenant}}
     ]
   }
 ]
-
 ```
 
 **Response**
 
 ```
-
 [
     {
         "values": {
@@ -190363,7 +191639,6 @@ POST: {{rdmURL}}/transcode/{{rdmTenant}}
         ]
     }
 ]
-
 ```
 
 ## The MDM Cache
@@ -191775,7 +193050,7 @@ Use Integration Hub when you need to:
 
 Reltio Multidomain MDMReltio Intelligent 360
 
-Access RIH from **Applications > Inetgration Hub**. For more information, see topic [c apps rih nav](https://docs.reltio.com/search?q=c-apps-rih-nav&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+Access RIH from **Applications > Inetgration Hub**. For more information, see topic [Integration Hub navigation](https://docs.reltio.com/en/applications/integration-hub/integration-hub-at-a-glance/integration-hub-navigation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
@@ -199010,35 +200285,95 @@ Map the `PatternBasedFieldBuilder` for any entity in your L3 configuration. Here
 **Keywords:** Phone Cleanser, PhoneCleanserFn, phone cleanser
 
 
-Learn about the different options available to configure the phone cleanser.
+Learn how the phone cleanser validates and standardizes global phone numbers.
 
 **Cleanser Name** - `PhoneCleanserFn`
 
 ## Description
 
-This cleanser takes the `phone number`, `country code`, and `type` and produces many attributes with the `ReltioCleanser` crosswalk, as per the output mapping.
+The **Phone Cleanser** (`PhoneCleanserFn`) validates, standardizes, and enriches phone numbers as part of data cleansing in the Reltio Data Cloud. It uses Google's **libphonenumber** library to enforce country‑specific rules and produce a consistent set of output attributes.
 
-> **Important:** This validation does not guarantee a phone number exists and is reachable. The cleanser only validates and corrects the format of the number based on the country code.
+Phone numbers are often inconsistent or poorly formatted — entered in inconsistent formats, missing country codes, or containing formatting characters. The Phone Cleanser ensures:
 
-The phone cleanser works in the same way as the existing custom phone cleanser (configured in the S3).
+- Data is consistent and standardized across systems
+- Phone attributes are validated and normalized
+- Downstream processes (matching, analytics, communication) work with high‑quality phone data. This enables reliable identity resolution and better data integrity across domains.The cleanser validates numbers against country‑specific rules, applies format rules, length checks, and structure rules and detects/assigns valid number type and metadata.
 
-## Mapping input and output
+  > **Important:** Cleansing does not guarantee that a phone number is in service or reachable. It verifies format, structure, length, and consistency of the phone number based on numbering plans.
 
-The input and output mapping of the phone cleanser can be configured in two ways.
+## Supported phone number formats
 
-- **Implementation 1** works only when the phone address is configured at the first nested attribute. This implementation doesn’t work when configured at deeper nested levels. However, **implementation 2** works when configured at any nested level.
-- **Implementation 1** makes it compulsory to use the nested attribute name as `Phone`. The cleanser doesn’t work if the name is changed. However, for **implementation 2**, you can use any name for the nested attribute.
+**Supported Input Types**
 
-**Implementation 1**```
-{
-  "attribute": "configuration/entityTypes/HCP/attributes/Phone/attributes/Number",
-  "mandatory": true,
-  "allValues": true,
-  "cleanseAttribute": "Phone.Number"
-}
-```
+| **Input Type** | **Example** |
+| --- | --- |
+| With country code | `+1 415 555 2671` |
+| Without country code | `4155552671` (US by default or based on config) |
+| With formatting characters | `(415) 555‑2671`, `415.555.2671` |
+| Vanity number | `1‑800‑FLOWERS` (converted to digits) |
 
-**Implementation 2**```
+**Country code rules**
+
+| **Condition** | **Behavior** |
+| --- | --- |
+| Valid country code provided | Uses rules for that country |
+| Missing or invalid country code | Defaults to `US`. When no country code is supplied, the cleanser assumes US formatting and validation rules. This may produce unexpected or invalid results for international numbers. We recommend supplying a valid ISO country code or an E.164 formatted number to ensure accurate validation and formatting. |
+| No code, but + prefix detected | Attempts auto-detection from number format |
+
+**Examples of valid formats**
+
+| **Format** | **Notes** |
+| --- | --- |
+| `+1 (415) 555-2671` | Valid US number |
+| `4155552671` | Valid (auto-detected US) |
+| `+44 20 7946 0958` | Valid UK number |
+| `+33 1 42 86 83 26` | Valid French number |
+
+**Examples of invalid formats**
+
+| **Format** | **Reason** |
+| --- | --- |
+| `1234567890` | Too short for most countries |
+| `+1 555 000 0000` | Invalid area code (555 is reserved) |
+| `+1 415 555` | Too short (missing digits) |
+
+## Output formats and extracted fields
+
+After cleansing, the phone attribute is enriched with the following structured results:
+
+| **Output name** | **Description** | **Example / Notes** |
+| --- | --- | --- |
+| Validation status | Indicates whether the number passed all validation checks | VALID, INVALID |
+| Phone number format | **E164**: Phone number in international E.164 format | +14155552671 |
+| Phone number format | **National**: Country-specific national format | (415) 555-2671 |
+| Phone number format | **International**: International format with spaces | +1 415 555 2671 |
+| Phone number format | **RFC3966**: URI-compatible phone format (RFC3966) | tel:+1-415-555-2671 |
+| Country Code | Country identifier used for validation (ISO or numeric) | US or 1 |
+| Area code | Regional area code extracted from number | 415 |
+| Local number | Local portion of the number, after area code | 5552671 |
+| Extension | Extension provided in input (if any) | 123 |
+| Line type | Classification of number type | MOBILE, FIXED_LINE, TOLL_FREE, VOIP |
+| Geo country | Country derived from number's geography | United States |
+| Geo area | State, province, or city (if regionally mappable) | California, London |
+| Carrier information | Carrier associated with number, if available | AT&T |
+| Format mask | Pattern showing digit structure of the number | +n (nnn) nnn-nnnn |
+| Digit count | Number of numeric digits (excluding symbols or separators) | 11 |
+| Digits number | Fully numeric version of the phone number | 14155552671 |
+
+## Cleanser configuration options
+
+| Parameter | Possible Values | Description |
+| --- | --- | --- |
+| `licensedCountryCodes` | ISO3166-2 country codes with a semicolon (;) separator. For example, `US;IN;RU`. If blank, all countries are considered. | The `licensedCountryCodes` parameter restricts phone cleansing to the specified countries. If it's omitted, phone numbers from all countries are supported.  - If no value is mentioned, the phone cleanser cleanses the phone numbers of all the countries. - If a value is mentioned, the phone cleanser cleanses the phone numbers of that country only. -     If the country code isn't part of the allowed list, the cleanser returns the original input unchanged.      You can configure `licensedCountryCodes` iat either the physical configuration level or the L3 configuration level.  - **Physical configuration**: Contact Reltio Support if `licensedCountryCodes` must be enabled at the physical configuration level. - **L3 Configuration**: Add `licensedCountryCodes` under `params` in the `PhoneCleanserFn` cleanse configuration. For more information, see [#cleanselibphone/inputoutputmapping](#cleanselibphone/inputoutputmapping). |
+| `returnDataForInValidStatus` | The following options are available:   - `true` - This is the default value. - `false` | The `returnDataForInValidStatus` option is considered when `ValidationStatus` is `INVALID`. The following points explain how the `returnDataForInValidStatus` option works:  - When the `returnDataForInValidStatus` option is set to `true`, the phone cleanser returns the cleansed data even for those phone numbers that are `INVALID`. - When the `returnDataForInValidStatus` option is set to `false`, the phone cleanser doesn't return the cleansed data. It just returns the user input along with `ValidationStatus`. |
+| `enhanceCleansing` | The following options are available:   - `true` - `false` - This is the default value. | The `enhanceCleansing` option is active only when `ValidationStatus` is `INVALID`. The following points explain how the `enhanceCleansing` option works:  - If the `enhanceCleansing` option is set to `true` and the input phone number doesn't have a prefix of `'+'` or `'0'`, the phone cleanser tries to re-cleanse the phone number by adding the `'+'` prefix to the input phone number. - If the `enhanceCleansing` option is set to `false`, the phone cleanser doesn't try to re-cleanse the phone number. |
+| `formatType` | The following format types are supported:  - E164 - INTERNATIONAL - NATIONAL - RFC3966 | This option determines the output format of the phone number. The default format is `NATIONAL`. For example:   - E164: +15417543010 - INTERNATIONAL: +1 541-754-3010 - NATIONAL: (541) 754-3010 - RFC3966:+1-541-754-3010 |
+
+## Cleanser mapping and L3 examples
+
+`PhoneCleanserFn`- ****
+
+**Mapping snippet**```
 {
   "attribute": "configuration/entityTypes/HCP/attributes/Phone/attributes/Number",
   "mandatory": true,
@@ -199047,519 +200382,7 @@ The input and output mapping of the phone cleanser can be configured in two ways
 }
 ```
 
-## Options for phone cleanser
-
-**Options**
-
-| Key | Allowed Values | Description |
-| --- | --- | --- |
-| `licensedCountryCodes` | ISO3166-2 country codes with a semicolon (;) separator. For example, `US;IN;RU` | This option is enabled in the phone cleanser configuration to support only a few countries. If no value is mentioned, the phone number is returned as given.  - If no value is mentioned, the phone cleanser cleanses the phone numbers of all the countries. - If any value is mentioned, the phone cleanser cleanses the phone numbers of that country only.      You can use `licensedCountryCodes` in one of the following ways:  - In the physical configuration - Contact the Support Team to enable `licensedCountryCodes` at the physical configuration level. - In the L3 Configuration - For more information about using `licensedCountryCodes` under `params`, see the **L3 Configuration for Implementation 1** and **L3 Configuration for Implementation 2** sections. |
-| `returnDataForInValidStatus` | The following options are available:   - `true` - This is the default value. - `false` | The `returnDataForInValidStatus` option is considered when `ValidationStatus` is `INVALID`. The following points explain how the `returnDataForInValidStatus` option works:  - When the `returnDataForInValidStatus` option is set to `true`, the phone cleanser returns the cleansed data even for those phone numbers that are `INVALID`. - When the `returnDataForInValidStatus` option is set to `false`, the phone cleanser doesn’t return the cleansed data. It just returns the user input along with `ValidationStatus`. |
-| `enhanceCleansing` | The following options are available:   - `true` - `false` - This is the default value. | The `enhanceCleansing` option is active only when `ValidationStatus` is `INVALID`. The following points explain how the `enhanceCleansing` option works:  - If the `enhanceCleansing` option is set to `true` and the input phone number doesn’t have a prefix of `'+'` or `'0'`, the phone cleanser tries to re-cleanse the phone number by adding the `'+'` prefix to the input phone number. - If the `enhanceCleansing` option is set to `false`, the phone cleanser doesn’t try to re-cleanse the phone number. |
-| `formatType` | The following format types are supported:  - E164 - INTERNATIONAL - NATIONAL - RFC3966 | Use this option to determine the output format of the phone number. The default format is `NATIONAL`. For example:   - E164: +15417543010 - INTERNATIONAL: +1 541-754-3010 - NATIONAL: (541) 754-3010 - RFC3966:+1-541-754-3010 |
-
-## L3 configuration
-
-Map the `PhoneCleanserFn` for any entity in your L3 configuration as per the chosen implementation process.
-
-**L3 Configuration for Implementation 1**```
-{
-  "uri": "configuration/entityTypes/HCP",
-  "cleanseConfig": {
-    "infos": [
-      {
-        "uri": "configuration/entityTypes/Individual/cleanse/infos/PhoneCleanserFn",
-        "useInCleansing": true,
-        "sequence": [
-          {
-            "chain": [
-              {
-                "cleanseFunction": "PhoneCleanserFn",
-                "resultingValuesSourceTypeUri": "configuration/sources/ReltioCleanser",
-                "proceedOnSuccess": true,
-                "proceedOnFailure": true,
-                "params": {
-                  "licensedCountryCodes": "US",
-	      "formatType": "E164"
-                },
-                "mapping": {
-                  "inputMapping": [
-                    {
-                      "attribute": "configuration/entityTypes/HCP/attributes/Phone/attributes/Number",
-                      "mandatory": true,
-                      "allValues": true,
-                      "cleanseAttribute": "Phone.Number"
-                    },
-                    {
-                      "attribute": "configuration/entityTypes/HCP/attributes/Phone/attributes/CountryCode",
-                      "mandatory": false,
-                      "allValues": true,
-                      "cleanseAttribute": "Phone.CountryCode"
-                    },
-                    {
-                      "attribute": "configuration/entityTypes/HCP/attributes/Phone/attributes/Type",
-                      "mandatory": false,
-                      "allValues": true,
-                      "cleanseAttribute": "Phone.Type"
-                    }
-                  ],
-                  "outputMapping": [
-                    {
-                      "attribute": "configuration/entityTypes/HCP/attributes/Phone/attributes/Type",
-                      "mandatory": false,
-                      "allValues": false,
-                      "cleanseAttribute": "Phone.Type"
-                    },
-                    {
-                      "attribute": "configuration/entityTypes/HCP/attributes/Phone/attributes/Number",
-                      "mandatory": true,
-                      "allValues": false,
-                      "cleanseAttribute": "Phone.Number"
-                    },
-                    {
-                      "attribute": "configuration/entityTypes/HCP/attributes/Phone/attributes/CountryCode",
-                      "mandatory": false,
-                      "allValues": false,
-                      "cleanseAttribute": "Phone.CountryCode"
-                    },
-                    {
-                      "attribute": "configuration/entityTypes/HCP/attributes/Phone/attributes/Extension",
-                      "mandatory": false,
-                      "allValues": false,
-                      "cleanseAttribute": "Phone.Extension"
-                    },
-                    {
-                      "attribute": "configuration/entityTypes/HCP/attributes/Phone/attributes/LineType",
-                      "mandatory": false,
-                      "allValues": false,
-                      "cleanseAttribute": "Phone.LineType"
-                    },
-                    {
-                      "attribute": "configuration/entityTypes/HCP/attributes/Phone/attributes/FormatMask",
-                      "mandatory": false,
-                      "allValues": false,
-                      "cleanseAttribute": "Phone.FormatMask"
-                    },
-                    {
-                      "attribute": "configuration/entityTypes/HCP/attributes/Phone/attributes/ValidationStatus",
-                      "mandatory": true,
-                      "allValues": false,
-                      "cleanseAttribute": "Phone.ValidationStatus"
-                    },
-                    {
-                      "attribute": "configuration/entityTypes/HCP/attributes/Phone/attributes/AreaCode",
-                      "mandatory": false,
-                      "allValues": false,
-                      "cleanseAttribute": "Phone.AreaCode"
-                    },
-                    {
-                      "attribute": "configuration/entityTypes/HCP/attributes/Phone/attributes/GeoCountry",
-                      "mandatory": false,
-                      "allValues": false,
-                      "cleanseAttribute": "Phone.GeoCountry"
-                    },
-                    {
-                      "attribute": "configuration/entityTypes/HCP/attributes/Phone/attributes/GeoArea",
-                      "mandatory": false,
-                      "allValues": false,
-                      "cleanseAttribute": "Phone.GeoArea"
-                    },
-                    {
-                      "attribute": "configuration/entityTypes/HCP/attributes/Phone/attributes/DigitCount",
-                      "mandatory": false,
-                      "allValues": false,
-                      "cleanseAttribute": "Phone.DigitCount"
-                    },
-                    {
-                      "attribute": "configuration/entityTypes/HCP/attributes/Phone/attributes/LocalNumber",
-                      "mandatory": false,
-                      "allValues": false,
-                      "cleanseAttribute": "Phone.LocalNumber"
-                    },
-                    {
-                      "attribute": "configuration/entityTypes/HCP/attributes/Phone/attributes/CarrierInfo",
-                      "mandatory": false,
-                      "allValues": false,
-                      "cleanseAttribute": "Phone.CarrierInfo"
-                    },
-                    {
-                      "attribute": "configuration/entityTypes/HCP/attributes/Phone/attributes/FormattedNumber",
-                      "mandatory": true,
-                      "allValues": false,
-                      "cleanseAttribute": "Phone.FormattedNumber"
-                    },
-                    {
-                      "attribute": "configuration/entityTypes/HCP/attributes/Phone/attributes/FormattedNumber-NATIONAL",
-                      "mandatory": false,
-                      "allValues": false,
-                      "cleanseAttribute": "Phone.FormattedNumber-NATIONAL"
-                    },
-                    {
-                      "attribute": "configuration/entityTypes/HCP/attributes/Phone/attributes/FormattedNumber-INTERNATIONAL",
-                      "mandatory": false,
-                      "allValues": false,
-                      "cleanseAttribute": "Phone.FormattedNumber-INTERNATIONAL"
-                    },
-                    {
-                      "attribute": "configuration/entityTypes/HCP/attributes/Phone/attributes/FormattedNumber-E164",
-                      "mandatory": false,
-                      "allValues": false,
-                      "cleanseAttribute": "Phone.FormattedNumber-E164"
-                    },
-                    {
-                      "attribute": "configuration/entityTypes/HCP/attributes/Phone/attributes/FormattedNumber-RFC3966",
-                      "mandatory": false,
-                      "allValues": false,
-                      "cleanseAttribute": "Phone.FormattedNumber-RFC3966"
-                    }
-                  ]
-                }
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  "attributes": [
-    {
-      "label": "ID",
-      "name": "ID",
-      "description": "",
-      "type": "String",
-      "hidden": false,
-      "important": false,
-      "system": false,
-      "attributeOrdering": {
-        "orderingStrategy": "LUD"
-      },
-      "uri": "configuration/entityTypes/HCP/attributes/ID",
-      "skipInDataAccess": false
-    },
-    {
-      "label": "Phone",
-      "name": "Phone",
-      "type": "Nested",
-      "hidden": false,
-      "important": false,
-      "system": false,
-      "required": false,
-      "attributeOrdering": {
-        "fieldURI": "configuration/entityTypes/HCP/attributes/Phone/attributes/Rank",
-        "orderType": "ASC",
-        "orderingStrategy": "FieldBased"
-      },
-      "uri": "configuration/entityTypes/HCP/attributes/Phone",
-      "dataLabelPattern": "{Type} {Number}",
-      "matchFieldURIs": [
-        "configuration/entityTypes/HCP/attributes/Phone/attributes/FormattedNumber"
-      ],
-      "attributes": [
-        {
-          "label": "Type*",
-          "name": "Type",
-          "description": "",
-          "type": "String",
-          "hidden": false,
-          "important": false,
-          "system": false,
-          "required": false,
-          "values": [
-            "Mobile",
-            "Home",
-            "Work",
-            "Fax",
-            "Main",
-            "Work Fax",
-            "Home Fax",
-            "Pager",
-            "Other"
-          ],
-          "attributeOrdering": {
-            "orderingStrategy": "LUD"
-          },
-          "uri": "configuration/entityTypes/HCP/attributes/Phone/attributes/Type",
-          "skipInDataAccess": false
-        },
-        {
-          "label": "Number*",
-          "name": "Number",
-          "description": "",
-          "type": "String",
-          "hidden": false,
-          "important": false,
-          "system": false,
-          "required": false,
-          "attributeOrdering": {
-            "orderingStrategy": "LUD"
-          },
-          "uri": "configuration/entityTypes/HCP/attributes/Phone/attributes/Number",
-          "skipInDataAccess": false
-        },
-        {
-          "label": "Country Code*",
-          "name": "CountryCode",
-          "description": "",
-          "type": "String",
-          "hidden": false,
-          "important": false,
-          "system": false,
-          "required": false,
-          "values": [
-            "US",
-            "IN",
-            "GB",
-            "AU"
-          ],
-          "attributeOrdering": {
-            "orderingStrategy": "LUD"
-          },
-          "uri": "configuration/entityTypes/HCP/attributes/Phone/attributes/CountryCode",
-          "skipInDataAccess": false
-        },
-        {
-          "label": "Extension",
-          "name": "Extension",
-          "description": "",
-          "type": "String",
-          "hidden": false,
-          "important": false,
-          "system": false,
-          "required": false,
-          "attributeOrdering": {
-            "orderingStrategy": "LUD"
-          },
-          "uri": "configuration/entityTypes/HCP/attributes/Phone/attributes/Extension",
-          "skipInDataAccess": false
-        },
-        {
-          "label": "Formatted Number",
-          "name": "FormattedNumber",
-          "type": "String",
-          "hidden": false,
-          "important": false,
-          "system": false,
-          "required": false,
-          "attributeOrdering": {
-            "orderingStrategy": "LUD"
-          },
-          "uri": "configuration/entityTypes/HCP/attributes/Phone/attributes/FormattedNumber",
-          "skipInDataAccess": false
-        },
-        {
-          "label": "National Formatted Number",
-          "name": "FormattedNumber-NATIONAL",
-          "type": "String",
-          "hidden": false,
-          "important": false,
-          "system": false,
-          "required": false,
-          "attributeOrdering": {
-            "orderingStrategy": "LUD"
-          },
-          "uri": "configuration/entityTypes/HCP/attributes/Phone/attributes/FormattedNumber-NATIONAL",
-          "skipInDataAccess": false
-        },
-        {
-          "label": "International Formatted Number",
-          "name": "FormattedNumber-INTERNATIONAL",
-          "type": "String",
-          "hidden": false,
-          "important": false,
-          "system": false,
-          "required": false,
-          "attributeOrdering": {
-            "orderingStrategy": "LUD"
-          },
-          "uri": "configuration/entityTypes/HCP/attributes/Phone/attributes/FormattedNumber-INTERNATIONAL",
-          "skipInDataAccess": false
-        },
-        {
-          "label": "E164 Formatted Number",
-          "name": "FormattedNumber-E164",
-          "type": "String",
-          "hidden": false,
-          "important": false,
-          "system": false,
-          "required": false,
-          "attributeOrdering": {
-            "orderingStrategy": "LUD"
-          },
-          "uri": "configuration/entityTypes/HCP/attributes/Phone/attributes/FormattedNumber-E164",
-          "skipInDataAccess": false
-        },
-        {
-          "label": "RFC3966 Formatted Number",
-          "name": "FormattedNumber-RFC3966",
-          "type": "String",
-          "hidden": false,
-          "important": false,
-          "system": false,
-          "required": false,
-          "attributeOrdering": {
-            "orderingStrategy": "LUD"
-          },
-          "uri": "configuration/entityTypes/HCP/attributes/Phone/attributes/FormattedNumber-RFC3966",
-          "skipInDataAccess": false
-        },
-        {
-          "label": "Rank",
-          "name": "Rank",
-          "description": "",
-          "type": "Int",
-          "hidden": false,
-          "important": false,
-          "system": false,
-          "required": false,
-          "attributeOrdering": {
-            "orderingStrategy": "LUD"
-          },
-          "uri": "configuration/entityTypes/HCP/attributes/Phone/attributes/Rank",
-          "skipInDataAccess": false
-        },
-        {
-          "label": "Area Code",
-          "name": "AreaCode",
-          "description": "",
-          "type": "String",
-          "hidden": false,
-          "important": false,
-          "system": false,
-          "required": false,
-          "attributeOrdering": {
-            "orderingStrategy": "LUD"
-          },
-          "uri": "configuration/entityTypes/HCP/attributes/Phone/attributes/AreaCode",
-          "skipInDataAccess": false
-        },
-        {
-          "label": "Local Number",
-          "name": "LocalNumber",
-          "description": "",
-          "type": "String",
-          "hidden": false,
-          "important": false,
-          "system": false,
-          "required": false,
-          "attributeOrdering": {
-            "orderingStrategy": "LUD"
-          },
-          "uri": "configuration/entityTypes/HCP/attributes/Phone/attributes/LocalNumber",
-          "skipInDataAccess": false
-        },
-        {
-          "label": "Validation Status",
-          "name": "ValidationStatus",
-          "description": "",
-          "type": "String",
-          "hidden": false,
-          "important": false,
-          "system": false,
-          "required": false,
-          "attributeOrdering": {
-            "orderingStrategy": "LUD"
-          },
-          "uri": "configuration/entityTypes/HCP/attributes/Phone/attributes/ValidationStatus",
-          "skipInDataAccess": false
-        },
-        {
-          "label": "Line Type",
-          "name": "LineType",
-          "description": "",
-          "type": "String",
-          "hidden": false,
-          "important": false,
-          "system": false,
-          "required": false,
-          "attributeOrdering": {
-            "orderingStrategy": "LUD"
-          },
-          "uri": "configuration/entityTypes/HCP/attributes/Phone/attributes/LineType",
-          "skipInDataAccess": false
-        },
-        {
-          "label": "Format Mask",
-          "name": "FormatMask",
-          "description": "",
-          "type": "String",
-          "hidden": false,
-          "important": false,
-          "system": false,
-          "required": false,
-          "attributeOrdering": {
-            "orderingStrategy": "LUD"
-          },
-          "uri": "configuration/entityTypes/HCP/attributes/Phone/attributes/FormatMask",
-          "skipInDataAccess": false
-        },
-        {
-          "label": "Digit Count",
-          "name": "DigitCount",
-          "description": "",
-          "type": "Int",
-          "hidden": false,
-          "important": false,
-          "system": false,
-          "required": false,
-          "attributeOrdering": {
-            "orderingStrategy": "LUD"
-          },
-          "uri": "configuration/entityTypes/HCP/attributes/Phone/attributes/DigitCount",
-          "skipInDataAccess": false
-        },
-        {
-          "label": "Geo Area",
-          "name": "GeoArea",
-          "description": "",
-          "type": "String",
-          "hidden": false,
-          "important": false,
-          "system": false,
-          "required": false,
-          "attributeOrdering": {
-            "orderingStrategy": "LUD"
-          },
-          "uri": "configuration/entityTypes/HCP/attributes/Phone/attributes/GeoArea",
-          "skipInDataAccess": false
-        },
-        {
-          "label": "Geo Country",
-          "name": "GeoCountry",
-          "description": "",
-          "type": "String",
-          "hidden": false,
-          "important": false,
-          "system": false,
-          "required": false,
-          "attributeOrdering": {
-            "orderingStrategy": "LUD"
-          },
-          "uri": "configuration/entityTypes/HCP/attributes/Phone/attributes/GeoCountry",
-          "skipInDataAccess": false
-        },
-        {
-          "label": "CarrierInfo",
-          "name": "CarrierInfo",
-          "description": "",
-          "type": "String",
-          "hidden": false,
-          "important": false,
-          "system": false,
-          "required": false,
-          "attributeOrdering": {
-            "orderingStrategy": "LUD"
-          },
-          "uri": "configuration/entityTypes/HCP/attributes/Phone/attributes/CarrierInfo",
-          "skipInDataAccess": false
-        }
-      ],
-      "skipInDataAccess": false
-    }
-  ]
-}
-```
-
-**L3 Configuration for Implementation 2**```
+**L3 Configuration**```
 {
   "uri": "configuration/entityTypes/HCP",
   "cleanseConfig": {
@@ -200254,40 +201077,9 @@ Map the `PhoneCleanserFn` for any entity in your L3 configuration as per the cho
 }
 ```
 
-## Input cleanse attributes
-
-| Field name | Required |
-| --- | --- |
-| `Number` | Yes |
-| `CountryCode` | No |
-| `Type` | No |
-
-## Output cleanse fields
-
-| Field name | Required |
-| --- | --- |
-| `Number` | Yes |
-| `CountryCode` | No |
-| `Type` | No |
-| `Extension` | No |
-| `LineType` | No |
-| `FormatMask` | No |
-| `AreaCode` | No |
-| `GeoCountry` | No |
-| `GeoArea` | No |
-| `DigitCount` | No |
-| `LocalNumber` | No |
-| `FormattedNumber` | Yes |
-| `ValidationStatus` | Yes |
-| `CarrierInfo` | No |
-| `FormattedNumber-NATIONAL` | No |
-| `FormattedNumber-INTERNATIONAL` | No |
-| `FormattedNumber-E164` | No |
-| `FormattedNumber-RFC3966` | No |
-
 ## Example to understand the input and output fields
 
-**Example**
+****
 
 | Options | Input Fields | Output Fields |
 | --- | --- | --- |
@@ -200306,6 +201098,23 @@ Map the `PhoneCleanserFn` for any entity in your L3 configuration as per the cho
 | `{}` | `{ "Number": "(541)-754-3010", "CountryCode": "US", "Type": "Work" }` | `{ "Type": "Work", "Number": "(541)-754-3010", "CountryCode": "US" }` |
 | `{ "licensedCountryCodes" : "RU;IN" }` | `{ "Number": "(541)-754-3010", "CountryCode": "US", "Type": "Work" }` | `{ "Type": "Work", "Number": "(541)-754-3010", "CountryCode": "US" }` |
 | `{ "formatType" : "E164" }` | `{ "Number": "(541)-754-3010", "CountryCode": "US", "Type": "Work" }` | `{ "Type": "Work", "Number": "+15417543010", "CountryCode": "US", "FormattedNumber": "(541) 754-3010", "AreaCode": "541", "LocalNumber": "7543010", "ValidationStatus": "VALID", "LineType": "FIXED_LINE_OR_MOBILE", "FormatMask": "(nnn) nnn-nnnn", "DigitCount": "10", "GeoArea": "Corvallis, OR", "GeoCountry": "United States" }` |
+
+## Best practices for phone cleansing
+
+- Always provide a country code
+  - Prevents incorrect defaulting to US
+  - Supports precise validation and formatting
+- Enable `enhanceCleansing` for messy input data
+  - Automatically retries invalid numbers with a `+` prefix
+  - Helps recover incomplete or poorly formatted values
+- Choose the right `formatType` for your use case
+  - `E164`: Recommended for storage, integrations, and APIs
+  - `NATIONAL`: Suitable for local display (UI)
+  - `INTERNATIONAL`: Preferred for human-readable formatting across countries
+- Set `returnDataForInValidStatus = true` if you need metadata on invalid inputs
+  - Useful for debugging, partial enrichment, and data profiling
+- Use `licensedCountryCodes` to restrict processing
+  - Helps with compliance, cost control, or targeting specific markets
 
 
 
@@ -202093,97 +202902,6 @@ You can declare all of them, a few, or just one of the available verification st
 
 ---
 
-# Moving attention lines in address cleansing
-
-> **Section:** Objectives > Cleanse and verify data > Data cleansing at a glance > Data cleansing reference > Out-of-the-box Cleanse Functions > Address cleanser > Mapping Input and Output Attributes
-
-
-**Source:** https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-reference/out-of-the-box-cleanse-functions/address-cleanser/mapping-input-and-output-attributes/moving-attention-lines-in-address-cleansing?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
-**Keywords:** address cleansing, attention lines, c/o handling, addressline3, output mapping, delivery address preservation
-
-
-Learn how attention lines like C/O are detected and moved during address cleansing to preserve the delivery address in the correct output field.
-
-## Why attention lines can cause data loss
-
-Addresses that include attention lines such as `C/O John Smith` or `Attn: Billing Department` often appear in the first address line when loaded into the platform. Without proper configuration, these values may overwrite the actual street address during cleansing, resulting in incorrect output and failed matching, geocoding, or delivery validation.
-
-## What happens without configuration
-
-When cleansing is applied without specific attention-handling options, values like `C/O` that appear in `AddressLine1` remain in that position in the Output View. As a result, the actual delivery address may be lost or pushed to `AddressLine2`, which is not recognized as the primary line for validation and matching.
-
-## How cleansing logic identifies attention lines
-
-Some address cleansing providers can detect and classify attention line patterns such as `C/O` and `Attn:`. These lines are not considered part of the deliverable street address and can be routed to a separate output field if configured.
-
-## How to move attention lines to a separate address field
-
-To move attention lines into a dedicated address field and preserve the delivery address, you must apply two changes to the entity configuration:
-
-- Add an option to instruct the cleanser to move attention lines to `Address3.`
-- Map the `Address3` output from the cleansing provider to the desired attribute (such as `AddressLine3`) in your model.
-
-Example cleanse configuration:
-
-```
-
-"cleanse": {
-  "provider": "Loqate",
-  "type": "Address",
-  "options": {
-    "process": "pre+c+g",
-    "addressline3": "attention",
-    "opts": {
-      "PreferPrimaryValidAlias": "Yes"
-    }
-  }
-}
-      
-```
-
-Example output mapping:
-
-```
-
-{
-  "attribute": "configuration/entityTypes/Location/attributes/AddressLine3",
-  "mandatory": false,
-  "allValues": false,
-  "cleanseAttribute": "Address3"
-}
-      
-```
-
-## Output example: before and after cleansing
-
-When configured correctly, the cleanser moves the attention line out of `AddressLine1` and preserves the deliverable street address:
-
-**Input record:**
-
-| AddressLine1 | C/O John Smith |
-| --- | --- |
-| AddressLine2 | 123 Main St. |
-
-**Output View (after cleansing):**
-
-| AddressLine1 | 123 Main St. |
-| --- | --- |
-| AddressLine3 | C/O John Smith |
-
-## Benefits of preserving the delivery address
-
-By moving attention lines out of the primary address field, you ensure that the delivery address remains valid and fully matched. This supports downstream cleansing, match rules, postal validation, and geocoding processes. It also improves consistency when merging records from multiple sources with different address formats.
-
-## Related topics
-
-- [Preprocessing location data](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-reference/out-of-the-box-cleanse-functions/address-cleanser/configuring-tenant/preprocessing-location-data?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- [Cleanse options for address fields](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-reference/out-of-the-box-cleanse-functions/address-cleanser/reltio-address-cleansing-parameters/address-cleanse-options?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-
-
-
----
-
 # Reverse geocoding
 
 > **Section:** Objectives > Cleanse and verify data > Data cleansing at a glance > Data cleansing reference > Out-of-the-box Cleanse Functions > Address cleanser
@@ -203898,7 +204616,6 @@ Reltio supports various input and output attributes and their corresponding Clea
 - [Mapping output attribute](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-reference/out-of-the-box-cleanse-functions/address-cleanser/mapping-input-and-output-attributes/mapping-output-attribute?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 - [Additional Fields for CASS](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-reference/out-of-the-box-cleanse-functions/address-cleanser/mapping-input-and-output-attributes/additional-fields-for-cass?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 - [SERP Parameters](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-reference/out-of-the-box-cleanse-functions/address-cleanser/mapping-input-and-output-attributes/serp-parameters?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- [Moving attention lines in address cleansing](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-reference/out-of-the-box-cleanse-functions/address-cleanser/mapping-input-and-output-attributes/moving-attention-lines-in-address-cleansing?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 
 
@@ -205226,6 +205943,12 @@ Define this parameter within the `infos` object of the `cleanseConfig` to specif
 ---
 
 # Email address validation rules
+
+> **Section:** Objectives > Cleanse and verify data > Data cleansing at a glance > Data cleansing reference > Out-of-the-box Cleanse Functions > Email Cleanser
+
+
+**Source:** https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-reference/out-of-the-box-cleanse-functions/email-cleanser/email-address-validation-rules?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
 **Keywords:** email address validation rules, email cleanser validation rules, validate email local part, validate symbolic domain names, validate bracketed ipv4 domains, email domain type classification, email cleanser output values, rfc compliant email validation, valid and invalid email examples, ascii, ipv4, cleansing
 
 
@@ -210624,7 +211347,7 @@ Before editing the properties object:
 
 | Parameter | Description | Possible Values | Example |
 | --- | --- | --- | --- |
-| `attributes` | Attributes configuration.   - **presentation**: AttributesPresentation (see description below). - **sorting** (optional): Strategy used for sorting attributes when adding new ones. Possible values: `"ascByName"`. | Object with fields | `attributes: { presentation: { "configuration/entityTypes/HCP/attributes/MDMID": { "thousandSeparator": "" } }, sorting: "ascByName" }`\ |
+| `attributes` | Attributes configuration.   - **presentation**: AttributesPresentation (see description below). - **sorting** (optional): Strategy used for sorting attributes when adding new ones. Possible values: `"ascByName"`. - **disableTimestampLocalization**: Determines whether timestamp data type attributes are localized in the UI. If omitted or set to `false`, timestamp values appear in the user's local time zone. If set to `true`, timestamp values are displayed in UTC exactly as returned by the API, without local time zone conversion.This parameter applies to all timestamp attributes across all entity types in the tenant. | Object with fields | `attributes: { presentation: { "configuration/entityTypes/HCP/attributes/MDMID": { "thousandSeparator": "" } }, sorting: "ascByName", disableTimestampLocalization: true }` |
 | `cleanse` (optional) | Address cleanse configuration. Each key represents an entity type URI and maps to a CleanseConfiguration object. | Object with fields | `cleanse: { "configuration/entityTypes/Location": { actions: { blur: { attributes: ["configuration/entityTypes/Location/attributes/AddressInput"], type: "configuration/entityTypes/Location/cleanse/infos/default" } }, defaultType: "configuration/entityTypes/Location/cleanse/infos/other", hideForExist: ["configuration/entityTypes/Location/attributes/AddressInput"], hideForNew: [] } }` |
 | `customScripts` | Configuration for custom scripts. Array of *CustomScript* objects (see description below). | Array of CustomScript | `customScripts: [ { files: ["https://mysite.com/hideAttr.js"], permissions: ["https://[^.]+.reltio.com/reltio/api/..."], processApiRequest: ["regex or link patterns"] } ]` |
 | `defaultRoute` (optional) | Specifies the default perspective to open when no perspective is defined in the browser URL. If not configured, the Search perspective is used by default. | String | `defaultRoute: "dashboard"` |
@@ -210641,7 +211364,6 @@ Before editing the properties object:
 | `showSearchByOv` (optional) | Enables the "Search by OV" option for search. | Boolean | `showSearchByOv: true` |
 | `validation` | Validation configuration.   - **levels** (optional): array of string — "ERROR", "WARNING" - **validateReadMode** (optional): boolean - **validateRelations** (optional): boolean - **validateReferenceEntityInReadMode** (optional): boolean - **strictAuthoringValidation** (optional): boolean | Object with fields | `validation: { validateReadMode: true, levels: ["ERROR", "WARNING"], validateRelations: true, validateReferenceEntityInReadMode: true }` |
 | `workflow` | Configuration for workflow service.   - **enabled** (optional): boolean - **path** (optional): string | Object with fields | `workflow: { enabled: true, path: "https://example.reltio.com/workflow" }` |
-| `disableTimestampLocalization` | Determines whether timestamp data type attributes are localized in the UI. If omitted or set to `false`, timestamp values appear in the user's local time zone. If set to `true`, timestamp values are displayed in UTC exactly as returned by the API, without local time zone conversion.This parameter applies to all timestamp attributes across all entity types in the tenant. | Boolean | `disableTimestampLocalization: true` |
 
 
 
@@ -220354,31 +221076,33 @@ This section describes how to use the **Hierarchy Management** facet in view mod
 
 ## Hierarchy facet basics
 
-The title displayed in the **Hierarchy Management** facet is the caption defined when you configure the facet in the **UI Modeler**. In this example, the configured caption is **Legal Entities Hierarchy**. For more information about configuring the facet in the UI Modeler, see [Charts for profile pages in the UI Modeler](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/configure-your-profile-pages/charts-for-profile-pages-in-the-ui-modeler?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+The title displayed in the **Hierarchy Management** facet is the caption defined when you configure the facet in the **UI Modeler**. In this example, the configured caption is **Legal Entities Hierarchy**. For more information about configuring the facet in the UI Modeler, see [Charts for profile pages in the UI Modeler](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/configure-your-profile-pages/charts-for-profile-pages-in-the-ui-modeler?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 *Image: hm_viewmode.png*
 
-Clicking the **Show graph** icon opens the hierarchy in the Graph perspective. By default, the tree view of the existing graph type is displayed.
+Select the **Show graph** icon to open the hierarchy in the Graph perspective. By default, the tree view of the existing graph type is displayed.
 
-You can select the date from which the current hierarchy view is applicable by selecting the **Effective date** for the hierarchy.
+Select the **Effective date** to display the hierarchy view that applies from a specific date.
 
-By default, the current profile that you are on is highlighted in the Hierarchy Management facet. The count of all the entities in each node is displayed along with the name of the node/entity. In our example above, the **Company ABC** contains *3* entities, and **Entity B** contains *2* entities.
+By default, the current profile is highlighted in the **Hierarchy Management** facet. Each node shows the total number of entities together with the entity name. In the preceding example, **Company ABC** contains *3* entities, and **Entity B** contains *2* entities.
 
-You can expand a node by clicking the arrow on the left side of the node. In addition, you can also click an entity in the **Hierarchy Management** facet and open the **Profile** view of that entity. If you would like to remain on the same page but open an entity in the Profile view from the hierarchy, you can right-click on the entity and open it in a new tab. If you have expanded several nodes and want to return to the node specific to the profile that you are on, click the **Scroll to** icon (*Image: hm_scrollto_icon.png*) on the top-right of the Hierarchy Management facet.
+To expand a node, select the arrow on the left side of the node. To open the profile of an entity from the **Hierarchy Management** facet, select the entity name. To stay on the current page and open the entity profile in a separate browser tab, right-click the entity and open it in a new tab. If several nodes are expanded, select the **Scroll to** icon (*Image: hm_scrollto_icon.png*) in the upper-right corner of the facet to return to the node for the current profile.
 
-The hierarchy details are sorted by **Relationship type label** or **Entity label** based on the Hierarchy Management Facet settings.
+The hierarchy details are sorted by **Relationship type label** or **Entity label**, based on the Hierarchy Management facet settings.
 
-By default, the hierarchy is sorted on the **Entity label** and is in the ascending order. Using the **View Options** icon (*Image: hm_sortbutton.png*), you can also sort the hierarchy by the **Relationship type label**. For example, you want the hierarchy to be sorted such that all the employees in the organization are listed first and then the contractors.
+By default, the hierarchy is sorted by **Entity label** in ascending order. To change the sort order, select the **View Options** icon (*Image: hm_sortbutton.png*), and then sort by **Relationship type label**. For example, use this option to list employees before contractors.
 
-You can display the secondary labels for the entities as well. Use the UI Modeler application in Console to set these preferences. For more information, see [Configure your profile pages](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/configure-your-profile-pages?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+Secondary labels can also be displayed for entities. Use the UI Modeler application in Console to define these preferences. For more information, see [Configure your profile pages](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/configure-your-profile-pages?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 **Multiple parents for an entity**
 
-If an entity has more than one parent, then the following icon is displayed next to the entity name.
+If an entity has more than one parent, the following icon is displayed next to the entity name.
 
 *Image: hm_multipleparenticon.png*
 
-Click the icon to view the other parents for the entity.
+Select the icon to view the other parents for the entity.
+
+When the hierarchy is configured to use reversed relations, the Hierarchy Management facet shows a reversed tree based on the `/_tree` response. Because that response returns a single root branch, entities with multiple parent paths might not display all related branches at the same time. If more than one root branch is possible in the reversed hierarchy, the response is not guaranteed to return the same root branch for every request. To review all connected relationships, open the hierarchy in the Graph perspective. For more information, see topic [Graph perspective](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/graph-perspective?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 ## Hierarchy facet relationships
 
@@ -231036,34 +231760,40 @@ Once you save the queue configuration, the queue name appears in the UI.
 **Source:** https://docs.reltio.com/en/objectives/stream-data/data-streaming-at-a-glance/data-streaming-operation/add-an-external-queue-configuration/configure-iam-roles-for-event-streaming?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 
-Learn how to configure IAM roles for event streaming.
+Learn how to configure IAM roles for event streaming from Reltio to an Amazon SQS queue or Amazon SNS topic.
 
-Contact Reltio Support for these Reltio account details, which you'll need to configure access to the SQS queue:- 
+Contact [Reltio Support](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) for these Reltio account details, which you'll need to configure access to your AWS event streaming destination:for these Reltio account details, which you'll need to configure access to your AWS event streaming destination:- Reltio AWS Account ID
+- Reltio AWS User ARNs
+- External IDs
 
-  Reltio AWS Account ID
-- 
-
-  Reltio AWS User ARNs
-- 
-
-  External IDs
-
-This process helps you use a streaming provider with authentication through an IAM role.
+Configure IAM roles for event streaming explains how to configure AWS IAM role-based authentication for event streaming to an Amazon SQS queue or Amazon SNS topic.
 
 
 To configure the IAM roles for event streaming:
 
-1. Create an SQS queue or SNS topic for the Reltio client to stream into.
-   - In the AWS Console, go to Simple Queue Service (SQS).
-   - Make sure the queue supports these actions:
-   - `sqs:SendMessage`
-   - `sqs:GetQueueUrl`
-   - `sqs:GetQueueAttributes`
-   - SQS
-2. Create an IAM policy that defines the permissions required for streaming to the SQS destination queue.
-   Following is an example of policy configuration:
+1. Create an **SQS** queue or **SNS** topic into which the Reltio client can stream data.
+   - For Amazon SQS
+     - In the AWS Console, go to Simple Queue Service (SQS).
+     - Create or select the destination queue.
+     - Make sure the queue supports these actions:
+
+- `sqs:SendMessage`
+- `sqs:GetQueueUrl`
+- `sqs:GetQueueAttributes`
+   - For Amazon SNS
+     - In the AWS Console, go to Simple Notification Service (SNS).
+     - Create or select the destination topic.
+     - Make sure the topic supports this action:
+
+- `sns:Publish`
+2. Create an IAM policy that defines the permissions required for streaming to your AWS destination.
+   **SQS example**
    ```
 { "Version": "2020-01-01", "Statement": [ { "Sid": "VisualEditor0", "Effect": "Allow", "Action": [ "sqs:SendMessage", "sqs:GetQueueUrl", "sqs:GetQueueAttributes" ], "Resource": "arn:aws:sqs:us-east-1:CUSTOMER-ACCOUNT-ID:queue-to-stream-into" } ] }
+   ```
+   **SNS example**
+   ```
+{ "Version": "2012-10-17", "Statement": [ { "Sid": "AllowPublishToSnsTopic", "Effect": "Allow", "Action": [ "sns:Publish" ], "Resource": "arn:aws:sns:us-east-1:CUSTOMER-ACCOUNT-ID:topic-to-stream-into" } ] }
    ```
 3. Configure a role in your AWS account to provide Reltio access to the SQS queue.
    > **Important:** Reltio does **not** support IAM Role ARNs that include a path component, for example, `service-role/` in `role/service-role/ROLE_NAME`.
@@ -231072,16 +231802,13 @@ To configure the IAM roles for event streaming:
    Use one of the following approaches to configure the role:
    - **When creating a new role:**
 
-- 
-
-  Choose **Another AWS account**, select **Require external ID**, and enter the previously acquired **Account ID** and **External ID**.
+- Choose **Another AWS account**, select **Require external ID**, and enter the previously acquired **Account ID** and **External ID**.
 - 
 
   Open the created role, choose the **Trust Relationships** tab, and select **Edit trust**.
-- 
+- Replace *arn:aws:iam:ReltioAccountID:root* in the **"Principal"."AWS"** section with the *Reltio API/Dataload AWS User ARNs* provided by Reltio Support. For guidance on which users to add, see **When editing an existing role**.
 
-  Replace *arn:aws:iam:ReltioAccountID:root* in the **"Principal"."AWS"** section with the *Reltio API/Dataload AWS User ARNs* provided by Reltio Support. For guidance on which users to add, see **When editing an existing role**.
-   - **When editing an existing role:** Choose the **Trust Relationships** tab and select **Edit trust relationship**. Update the **Statement** section to match the following:
+When editing an existing role: Choose the Trust Relationships tab and select Edit trust relationship. Update the Statement section to match the following:
 
 ```
 {
@@ -231117,9 +231844,20 @@ To configure the IAM roles for event streaming:
 4. Complete the external queue configuration.
    Reltio supports both Amazon SQS and Amazon SNS for event streaming. If you want to configure SNS, clear the **Use ARN** checkbox and select the **SNS** option from the **Type** dropdown when configuring your external queue. For more information, see [Add an external queue configuration](https://docs.reltio.com/en/objectives/stream-data/data-streaming-at-a-glance/data-streaming-operation/add-an-external-queue-configuration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
    **Additional requirements for HIPAA environments**
-   When configuring external queue streaming in a HIPAA environment, add your HIPAA user to your trust policy. A sample is given below, which you must add to your IAM policy:
+   If your Reltio tenant is provisioned as a HIPAA environment, you must add an additional principal to your IAM role trust policy before Reltio can assume the role. Without this entry, streaming will fail.
+   > **Note:** To determine whether your tenant uses a HIPAA environment, check the application URL. HIPAA environment URLs include **h360**, while non-HIPAA environment URLs do not. If the environment type is still unclear, contact [Reltio Support](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+   If your tenant is provisioned as a HIPAA environment, complete the following steps to add the required Reltio HIPAA principal to the IAM role trust policy.
+   1. In the AWS Console, open your IAM role.
+   2. Select the **Trust relationships** tab.
+   3. Select **Edit trust** policy.
+   4. Add the following entry to the existing `Statement` array:
    ```
 { "Effect": "Allow", "Principal": { "AWS": "arn:aws:iam::682505635934:user/reltio.platform.dev-h360" }, "Action": "sts:AssumeRole" }
+   ```
+5. Save the policy.
+   The following example shows a complete trust policy for a HIPAA environment, including the standard Reltio principals and the HIPAA principal:
+   ```
+{ "Version": "2012-10-17", "Statement": [ { "Effect": "Allow", "Principal": { "AWS": [ "arn:aws:iam::123456789876:user/reltio.platform.dataload", "arn:aws:iam::123456789876:user/reltio.platform.api" ] }, "Action": "sts:AssumeRole", "Condition": { "StringEquals": { "sts:ExternalId": "{your-external-id}" } } }, { "Effect": "Allow", "Principal": { "AWS": "arn:aws:iam::682505635934:user/reltio.platform.dev-h360" }, "Action": "sts:AssumeRole" } ] }
    ```
 
 
