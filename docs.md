@@ -1,8 +1,8 @@
 # Reltio Documentation
 
-_Generated: 2026-05-29 02:15 UTC_
+_Generated: 2026-06-05 02:15 UTC_
 
-_Topics: 3297_
+_Topics: 3301_
 
 ---
 
@@ -1841,10 +1841,6 @@ For more information, see topic [Tenants at a glance](https://docs.reltio.com/en
 
 Reltio Lightspeed Data Delivery Network provides fast data access capabilities within the Reltio Context Intelligence Platform, focusing on high-speed querying for attributes, crosswalks, and entity URIs. It minimizes internal service interactions to improve response times significantly. For more information, see topic [Reltio Lightspeed Data Delivery Network at a glance](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/reltio-lightspeed-data-delivery-network-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
-**Data Loader Premium**
-
-Load large amounts of records at a time with up to 4X performance (compared to our free offering) for faster time to value and high-scale efficiency. For more information, see topic [c data loader premium](https://docs.reltio.com/search?q=c-data-loader-premium&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
-
 ## Who are additional subscriptions for?
 
 This content is curated for these Reltio user roles, defined in topic [About roles](https://docs.reltio.com/en/roles/about-roles?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs):
@@ -3615,7 +3611,7 @@ The following table lists services related to tenant storage:
 | **Recovery from Backup** | A service to reinstate a tenant configuration and data from backup. | You can purchase the Recovery from Backup Service for a fee. |
 | **Tenant Cloning** | A service to copy a tenant configuration and data from one active environment into a different one. | A tenant cloning service can be requested once a month per base package. History will be cloned only if specifically requested. Any additional cloning request per calendar month will be charged a fee. |
 
-For more information, see [aboutsubscription](https://docs.reltio.com/search?q=aboutsubscription&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Tenant cloning, backups, and snapshots FAQ](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/tenants-at-a-glance/tenant-operation/tenant-cloning-backups-and-snapshots-faq?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+For more information, see [Tenant cloning, backups, and snapshots](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/tenants-at-a-glance/tenant-architecture/tenant-cloning-backups-and-snapshots?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Tenant cloning, backups, and snapshots FAQ](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/tenants-at-a-glance/tenant-operation/tenant-cloning-backups-and-snapshots-faq?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
@@ -6291,7 +6287,7 @@ There will be no impact if you're already using the new user interface. If you'r
 
 ## What action do you need to take?
 
-No action is required from your side. The switch will happen automatically for anyone still using the Classic user interface. You can switch to the new user interface anytime before we retire the classic user interface. We strongly recommend you to make the switch now. For more information, see topic [t hub switchbetweenUI](https://docs.reltio.com/search?q=t_hub_switchbetweenUI&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). 
+No action is required from your side. The switch will happen automatically for anyone still using the Classic user interface. You can switch to the new user interface anytime before we retire the classic user interface. We strongly recommend you to make the switch now. 
 
 > **Note:** If you are a new customer, you will only see the new UI. If you are an existing customer, you can choose to use the new UI any time you want. All new features will be available only in the new UI and only critical bugs will be fixed in the classic UI until it is deprecated.
 
@@ -8703,9 +8699,6 @@ We build on each GA release with a steady stream of bi-weekly updates that deliv
 
 | Release Name | Stage | Tenant Type | Release Date |
 | --- | --- | --- | --- |
-| 2026.1.3.0 | 1 | Development (DEV) | May 29, 2026 |
-| 2026.1.3.0 | 2 | Test (TEST) | May 29, 2026 |
-| 2026.1.3.0 | 3 | Production (PRD) | June 05, 2026 |
 | 2026.1.4.0 | 1 | Development (DEV) | June 12, 2026 |
 | 2026.1.4.0 | 2 | Test (TEST) | June 12, 2026 |
 | 2026.1.4.0 | 3 | Production (PRD) | June 19, 2026 |
@@ -14953,6 +14946,28 @@ A self-service setup experience for AWS Lambda-based Life Cycle Actions (LCAs) i
 The setup supports asynchronous approval states, preserves progress across sessions, and applies tenant configuration only after successful trust validation. Built-in guidance for Lambda implementation and L3 configuration reduces reliance on manual support processes, accelerating onboarding and ensuring consistent setup across environments.
 
 For more information, see [Set up AWS Lambda connections for LCAs](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/lca-deployment-using-aws-lambda/set-up-aws-lambda-connections-for-lcas?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Create an LCA in Reltio Console](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/lca-deployment-using-aws-lambda/create-an-lca-in-reltio-console?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+
+
+---
+
+# 2026.1.3.0 RN | 05-June-2026
+
+Learn about the new features and enhancements introduced in this 2026.1.3.0 release.
+
+**Deployment dates**
+
+| Stage | Tenant type | When |
+| --- | --- | --- |
+| 1 | Development (DEV) | May 29, 2026 |
+| 2 | Test (TEST) | May 29, 2026 |
+| 3 | Production (PRD) | June 05, 2026 |
+
+## OAuth2 client credentials for Azure Function LCAs
+
+Azure Function Lifecycle Actions (LCAs) now support OAuth2 `client_credentials` authentication. When invoking an Azure Function, Reltio requests a bearer token from a customer-managed OAuth2 identity provider. OAuth2 `client_credentials` support adds an authentication option alongside existing methods and gives organizations greater control over how Azure Function LCAs authenticate.
+
+For more information, see [Configure OAuth2 client credentials for Azure LCAs](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/azure-functions-for-lifecycle-actions/configure-oauth2-client-credentials-for-azure-lcas?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
@@ -23692,6 +23707,8 @@ While a request is pending review, the agent is locked. If the author needs to m
 
 *Image: Agent Builder home page showing the All agents and Your drafts and requests tabs, empty state with no custom agents, and the Build new agent button in the top right corner*
 
+Agent authors can also download a published agent as an encrypted blueprint file and upload it into a different tenant to recreate the agent configuration. See [Download an agent](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agent-builder-for-agentflow-at-a-glance/download-an-agent?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Upload an agent from another tenant](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agent-builder-for-agentflow-at-a-glance/upload-an-agent-from-another-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
 ## System prompt security scanning
 
 Every publish request triggers an automated scan of the agent's system prompt. The scan evaluates the prompt for security violations. If a violation is detected, the request is auto-blocked before it reaches a reviewer.
@@ -25612,17 +25629,17 @@ Learn how to create a new agent or update a published one in Agent Builder, veri
 
 Agent Builder provides you with the following structured authoring workflow:
 
-1. Create a new or open an existing agent draft,
-2. Write or edit the system prompt,
-3. Choose the required tools,
-4. Test the agent interactively, and
-5. Submit a publish request.
+- **Step 1: Agent & Prompt information**: Enter a name, description, tags, and system prompt.
+- **Step 2: Tools & capabilities**: Enable Web search and select the tools the agent is allowed to use.
+- **Step 3: Test & publish**: Verify behavior in the test panel and submit a publish request for review.
 
 The system scans the prompt automatically before routing the request to a reviewer.
 
 For more information about Agent Builder and how the lifecycle works, see [Agent Builder for AgentFlow at a glance](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agent-builder-for-agentflow-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 For more information about writing an effective system prompt, see [AgentFlow system prompt guidelines](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agent-builder-for-agentflow-at-a-glance/agentflow-system-prompt-guidelines?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+> **Note:** To recreate an existing agent from another tenant instead of building from scratch, see [Upload an agent from another tenant](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agent-builder-for-agentflow-at-a-glance/upload-an-agent-from-another-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 ## Prerequisites
 
@@ -25632,78 +25649,73 @@ Before you begin, confirm that:
 - At least one user on the tenant must have the `ROLE_AGENT_AUTHOR` role (PUBLISH permission). Publishing requires an approver with PUBLISH permission.
 - The tools you plan to use must be in the tenant-approved tool catalog.
 
-## Create a draft agent
+## Step 1: Agent & Prompt information
 
 Use this path when you are building a new agent from scratch.
 
 1. Open **AgentFlow** and go to **Agent Builder**.
-2. Select **Create agent**.
-3. Enter a name, description, and any relevant tags. These values appear in **Discover Agents** after the agent is published.
-4. Save the agent. Agent Builder creates it in **Draft** state.
+2. Select **+ Build new agent**.
 
-*Image: Create New Agent dialog with name, description, and tags input fields and a Create Agent button*
+   *Image: Create New Agent dialog with name, description, and tags input fields and a Create Agent button*
+3. Under **AGENT DETAILS**, enter a name, description, and any relevant tags. These values appear in **Discover Agents** after the agent is published.
 
-## Update a published agent
+   *Image: Create New Agent dialog with name, description, and tags input fields and a Create Agent button*
+4. Write the **System prompt**. The system prompt defines the agent's:
 
-Use this path when you want to revise an agent that is already published. An Agent Author (for their own agents) or an Agent Admin can initiate this. The published version remains live and available to users throughout the editing and review process.
-
-1. Log in to**AgentFlow** and go to **Agent Builder**.
-2. Locate the published agent and select the option to create a new version. Agent Builder creates a new draft version. The latest published version remains active in Discover Agents.
-3. Proceed to write the system prompt and select tools. See [#concept-9378/select_tools](#concept-9378/select_tools).
-
-Version history is maintained across all draft and published versions of the agent.
-
-## Write the system prompt
-
-1. In the agent editor, open the prompt authoring area.
-2. Enter the agent's system prompt. The system prompt defines the agent's:
+   *Image: Create New Agent dialog with name, description, and tags input fields and a Create Agent button*
 
    > **Note:** For more information about structuring an effective system prompt, see [AgentFlow system prompt guidelines](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agent-builder-for-agentflow-at-a-glance/agentflow-system-prompt-guidelines?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
-   - Identity
-   - Objectives
-   - Tool usage rules
-   - Workflow
-   - Guardrails
-   - Output format
-   - Error handling behavior.
-3. Save your changes.
+   1. Identity
+   2. Objectives
+   3. Tool usage rules
+   4. Workflow
+   5. Guardrails
+   6. Output format
+   7. Error handling behavior.
+5. Select **Save & continue**.
 
-*Image: Agent editor Prompt tab with system prompt text area, character counter, and Basics, Prompt, Tools, Test navigation tabs*
+## Step 2: Tools & capabilities
 
-## Select tools
+1. [Optional] Enable .
 
-1. In the agent editor, open the tool selection area.
-2. Search or scroll to find the tools you want this agent to use. Only tools in the tenant-approved catalog are available.
-3. Select each tool you want to add. The selected tools form the agent's allowlist — the agent cannot call tools outside this selection.
+
+
+   > **Note:** Enabling web search during agent creation is not sufficient. End users must also have web search enabled in their own settings before they can use this capability at runtime.
+2. **Enable server** and select each of the tools you want to add. The selected tools form the agent's allowlist — the agent cannot call tools outside this selection.
 
    > **Note:** If you proceed without selecting any tools, Agent Builder displays a warning before you can submit for review. You can still proceed, but the agent will have no approved actions available at runtime.
-4. Save your changes.
 
-*Image: Agent editor Tools tab with MCP Servers and Tools panel on the left and tool selection list with checkboxes on the right*
+   *Image: Agent editor Tools tab with MCP Servers and Tools panel on the left and tool selection list with checkboxes on the right*
+3. Select **Save & continue**.
 
-## Test the draft agent
+## Step 3: Test & publish the agent
 
-1. Open the test panel in the agent editor.
-2. Enter a prompt and review the streaming response.
+1. Enter a prompt and review the streaming response.
 
    > **Note:** If a violation is detected in the system prompt, the test run is blocked. Revise the prompt before testing again.
-3. Review the run summary after each test. It shows latency, tokens used, and tool calls for that run.
-4. Iterate on the prompt and tool selection as needed. Save your changes and retest.
+2. Review the run summary after each test. It shows latency, tokens used, and tool calls for that run.
+3. Iterate on the prompt and tool selection as needed.
 
-*Image: Agent editor Test tab with Test and Publish chat panel on the left and Execution Log on the right*
-
-## Submit for review
-
-1. When the agent is ready, select the publish action in the agent editor.
-2. Optionally add version notes. Version notes are visible to the reviewer.
-3. Confirm the submission.
+   *Image: Agent editor Test tab with Test and Publish chat panel on the left and Execution Log on the right*
+4. Select **Submit for review**.
+5. Confirm the submission.
 
    The system automatically scans the system prompt. Two outcomes are possible:
 
    > **Note:** If you need to make changes after submitting, you can withdraw the pending request at any time. Withdrawing returns the agent to **Draft** state and unlocks the editor.
    - If no violations are detected, the agent transitions to **Pending review** state.
    - If a violation is detected, the request is **auto-blocked**. You receive a notification with the scan result. Revise the system prompt and submit again when ready.
-4. If this agent already has a published version, that version remains live in **Discover Agents** while the new version is under review.
+6. If this agent already has a published version, that version remains live in **Discover Agents** while the new version is under review.
+
+## Update a published agent
+
+Use this path when you want to revise an agent that is already published. An Agent Author (for their own agents) or an Agent Admin can initiate this. The published version remains live and available to users throughout the editing and review process.
+
+1. Log in to **AgentFlow** and go to **Agent Builder**.
+2. Locate the published agent and select the option to create a new version. Agent Builder creates a new draft version. The latest published version remains active in Discover Agents.
+3. Proceed to write the system prompt and select tools. See [#concept-9378/select_tools](#concept-9378/select_tools).
+
+Version history is maintained across all draft and published versions of the agent.
 
 ## Result
 
@@ -25714,6 +25726,45 @@ For more information about what happens next, see [Review and act on a publish r
 ## Validation steps
 
 - Confirm the agent shows **Pending review** status in Agent Builder.
+
+
+
+---
+
+# Download an agent
+
+> **Section:** Products > AgentFlow > Reltio AgentFlow™ at a glance > Agent Builder for AgentFlow at a glance
+
+
+**Source:** https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agent-builder-for-agentflow-at-a-glance/download-an-agent?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** download agent agentflow, export agent blueprint reltio, agentflow agent blueprint download, download agent to reuse in another tenant, agent builder download agent option, agentflow agent file format, transfer agent between reltio tenants, download published agent agentflow, agent, blueprint, export
+
+
+Learn how to download an agent blueprint from Agent Builder to reuse it in a different tenant.
+
+**Prerequisites**
+
+Before you begin, make sure you meet the following requirements:
+
+- 
+
+  The agent must have a **Published** status.
+- 
+
+  You must have access to Agent Builder in the source tenant.
+
+You can download a published agent as an encrypted blueprint file and use it to recreate the agent in a different Reltio tenant.
+
+1. In **Agent Builder**, locate the agent you want to download in the agents list.
+2. Select the **⋮** (more options) menu at the end of the agent row.
+3. Select **Download agent**.
+4. In the confirmation dialog, select **Yes, Download**.
+   > **Note:** The blueprint file is encrypted. You can only upload it when creating an agent in a different tenant.
+
+**Result**
+
+The agent blueprint downloads to your device as an `.agent` file. The file name follows the format `agent-{AgentName}-v{VersionNumber}.agent`. To use this file in another tenant, see [Upload an agent from another tenant](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agent-builder-for-agentflow-at-a-glance/upload-an-agent-from-another-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
@@ -25781,6 +25832,55 @@ On rejection, the agent returns to the author with the reason. The previously pu
 
 - Confirm the agent status shows **Published** in Agent Builder after approval.
 - Open **Discover Agents** and confirm the agent appears with the correct name and description.
+
+
+
+---
+
+# Upload an agent from another tenant
+
+> **Section:** Products > AgentFlow > Reltio AgentFlow™ at a glance > Agent Builder for AgentFlow at a glance
+
+
+**Source:** https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agent-builder-for-agentflow-at-a-glance/upload-an-agent-from-another-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** upload agent from another tenant agentflow, import agent blueprint reltio, agentflow upload existing tenant file, create agent from blueprint agentflow, agent builder upload from existing tenant, clone agent between reltio tenants, agentflow agent file upload, build new agent upload option agentflow, agent, blueprint, upload
+
+
+Learn how to upload an agent blueprint file to create a new agent in your tenant from an existing agent in another tenant.
+
+**Prerequisites**
+
+Before you begin, make sure you meet the following requirements:
+
+- 
+
+  You must have an `.agent` blueprint file downloaded from another tenant. See [Download an agent](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agent-builder-for-agentflow-at-a-glance/download-an-agent?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+- 
+
+  You must have permission to create agents in the target tenant.
+
+You can upload an agent blueprint file to create a new agent in your tenant. The upload pre-populates the agent name, description, tags, system prompt, and tool selections from the blueprint. You then review the configuration and submit the agent for review.
+
+1. In **Agent Builder**, select the dropdown arrow on **Build new agent**.
+2. Select **Upload from an existing tenant**.
+3. In the file picker, select your `.agent` file and select **Open**.
+4. Wait for the system to finish parsing the file.
+   > **Note:** Parsing may take some time. Do not close the browser tab while parsing is in progress.
+5. On the **Agent & Prompt information** step, review the pre-populated agent name, description, tags, and system prompt. Edit any fields as needed for the target tenant.
+6. Select **Save & continue**.
+7. On the **Tools & capabilities** step, review the pre-selected tools and MCP server connections. Add or remove tools as required for the target tenant.
+8. Select **Save & continue**.
+9. On the **Test & publish** step, test the agent and select **Save & continue**.
+10. In the **Confirm submit for review** dialog, select **Submit for review**.
+
+**Result**
+
+The agent is submitted for review. You receive a notification when the administrator approves or rejects the submission. Once approved, the agent is published and available in your tenant.
+
+**Validation**
+
+To confirm the agent was submitted successfully, select **Your drafts & requests** in Agent Builder. The agent appears in the list with a **Pending approval** status.
 
 
 
@@ -25933,7 +26033,7 @@ BYO LLM is a **one-time setup per environment** (DEV, TEST, PROD). Once configur
 
 **Billing**
 
-BYO LLM has separate, lower-cost pricing. Your organization bears its own LLM provider costs (inference, tokens, API usage). Reltio charges only for platform usage (compute, networking, observability). For more information, refer to your AgentFlow pricing agreement.
+BYO LLM has separate, lower-cost pricing. Your organization bears its own LLM provider costs (inference, tokens, API usage). Reltio charges only for platform usage (compute, networking, observability). For more information about how credits are allocated and consumed under each subscription model, see [AgentFlow billing and credit usage](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-billing-and-credit-usage?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
@@ -83465,7 +83565,7 @@ POST {TenantURL}/objects
 | Headers | `Authorization` | Yes | Information about authentication access token in format "Bearer `<accessToken>` " (see details in [Configuration API](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/configuration-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)). |
 |  | `Content-Type` | Yes | Should be "`Content-Type: application/json` ". |
 | Query | `returnObjects` | No | Specifies if the response should contain created entities or relations. Default is `true`. |
-|  | `maxObjectsToUpdate` | No | **Note:** The `maxObjectsToUpdate` parameter will be deprecated. Therefore, we recommend you do not use this parameter and instead, use the [immutablerefattrs](https://docs.reltio.com/search?q=immutablerefattrs&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) feature.Maximum number of events for related objects which could be produced by one request to create/update entities or relations. The Reltio platform has asynchronous storages that are populated through events, such as, *if a new entity was created it should appear in the search*. In some data topologies, changing one entity can cause changing numerous entities. For example, if there are many *organization* entities stored in the platform, and they have same address, changing attributes of this address should produce events indicating that all organizations were changed. In some cases, it is ineffective, because during data loads, the system can generate many events about the same objects, which would cause many updates of the same objects in search indices. In these types of topologies, it is recommended that you limit number of events each change could cause, and perform a one-time reindexing of the data set after a load. |
+|  | `maxObjectsToUpdate` | No | **Note:** The `maxObjectsToUpdate` parameter will be deprecated. Therefore, we recommend you do not use this parameter and instead, use the [Immutable reference attributes](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-information-model/data-model/reltio-object-types/reltio-attribute-types?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs#c_objtypes_attributes_ref_immutable) feature.Maximum number of events for related objects which could be produced by one request to create/update entities or relations. The Reltio platform has asynchronous storages that are populated through events, such as, *if a new entity was created it should appear in the search*. In some data topologies, changing one entity can cause changing numerous entities. For example, if there are many *organization* entities stored in the platform, and they have same address, changing attributes of this address should produce events indicating that all organizations were changed. In some cases, it is ineffective, because during data loads, the system can generate many events about the same objects, which would cause many updates of the same objects in search indices. In these types of topologies, it is recommended that you limit number of events each change could cause, and perform a one-time reindexing of the data set after a load. |
 | Body |  | Yes | JSON Array with objects representing entity or relations objects to be created. Each object must have the `type` property but will not have `"uri"` properties (they are provided/generated by the Reltio API). |
 
 **Response**
@@ -99415,20 +99515,225 @@ update_assume_role
 
 **Source:** https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/reltio-data-pipeline-for-snowflake-apis/sync-to-data-pipeline-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
+**Keywords:** sync tenant data to data pipeline hub, syncToDataPipeline API reltio, trigger reindex job reltio data pipeline, reindex entities relations interactions reltio, stream tenant data to data pipeline hub, distributed reindex reltio pipeline, reindex deleted entities relations reltio, background reindex tasks reltio, syncToDataPipeline, reindex, datapipeline
 
-Learn about using the `syncToDataPipeline API`.
 
-## Request
+Learn more about how to use the `syncToDataPipeline API API` to trigger a full reindex of tenant data and stream the results to the Data Pipeline Hub.
 
-This endpoint synchronizes data (such as entities) from the platform to the enabled connector.
+## 
+
+The `syncToDataPipeline API` triggers a background reindex job that synchronizes all tenant data and streams it to the Data Pipeline Hub. The job processes entities, relations, interactions, potential matches, merges, and activities. Also, the job scopes the reindex to specific data types, entity types, or relation types. Stop and Pause operations are supported. For more information about this API and to try it out, see [Sync to Data Pipeline API](https://developer.reltio.com/private/swagger.htm?module=Tenant+Management#/DPH%20Reindex%20Jobs/syncToDataPipeline).
+
+## Background tasks
+
+When the reindex job starts, it creates a background task for each requested data type. Each task scans the entire database and streams the results to the Data Pipeline Hub. Monitor these tasks in the **Console > Tenant Management > Jobs**.
+
+Each task scans the entire database regardless of the `updatedSince`, `dataTypes`, `entityType`, `relationType`, or `distributed` parameters specified in the request. Task execution time remains the same regardless of the parameter values.
+
+The following background tasks run as part of the job.
+
+| Data type | Background task |
+| --- | --- |
+| Entities | `ReindexDataTask` |
+| Deleted entities | `ReindexDeletedDataTask` |
+| Relations | `ReindexRelationsTask` |
+| Deleted relations | `ReindexDeletedRelationsTask` |
+| Interactions | `ReindexInteractionsTask` |
+| Deleted interactions | `ReindexDeletedInteractionsTask` |
+| Potential matches | `PotentialMatchesReindexTask` |
+| Activity | `ReindexActivityTask` |
+| Merges | `ReindexMergesTask` |
+
+## HTTP method and endpoint
+
+Use the following HTTP method and endpoint path to submit the request:
 
 ```
-POST http(s)://{{environment}}.reltio.com/reltio/api/{{tenantId}}/syncToDataPipeline
+POST http(s)://{{environment}}.reltio.com/reltio/api/{tenantId}/syncToDataPipeline
 ```
 
-## Response
+Replace `{{environment}}` with your tenant environment name.
 
-See the Reltio Developer Portal for more information about this API and to try it out:[Sync to data pipeline API](https://developer.reltio.com/private/swagger.htm?module=Tenant+Management#/DPH%20Reindex%20Jobs/syncToDataPipeline)
+The following table describes the endpoint path parameters:
+
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| `tenantId` | String | Yes | ID of the tenant for which to trigger the reindex. Example: `ce5627DYnQ6abcD` |
+
+## Request headers
+
+The following request headers must be included.
+
+| Header | Value | Required |
+| --- | --- | --- |
+| `Authorization` | Bearer `<access_token>` | Yes |
+| `Content-Type` | `application/json` | Yes |
+
+## Query parameters
+
+The following table describes the supported query parameters.
+
+| Parameter | Type | Required | Description | Accepted values / Default |
+| --- | --- | --- | --- | --- |
+| `dataTypes` | String | No | Comma-separated list of data types to reindex and stream. If omitted, all data types are processed. | `entities`, `relations`, `interactions`, `matches`, `merges`, `activities`, `deleted_entities`, `deleted_relations`, `deleted_interactions`.   Default: all |
+| `updatedSince` | Integer (int64) | No | Reindexes objects updated after the specified timestamp in epoch milliseconds.   Default: `0`. | Default: `0` |
+| `adapters` | String | No | Specifies the target adapter to stream data to. If omitted, all enabled adapters are used. | — |
+| `reindexDeleted` | Boolean | No | If set to `true`, adds sub-tasks to reindex deleted entities and relations. This parameter is ignored when specific `dataTypes` values are provided. | `true` or `false`.   Default: `false` |
+| `entityType` | String | No | Restricts the reindex scope to a specific entity type. Only applies when `dataTypes` includes `entities`. | Example: `Individual` |
+| `relationType` | String | No | Restricts the reindex scope to a specific relation type. Only applies when `dataTypes` includes `relations`. | Example: `HasAddress` |
+| `distributed` | Boolean | No | If set to `true`, the job runs in distributed mode, splitting the reindex across multiple parallel tasks. | `true` or `false`.  Default: `false` |
+| `taskPartsCount` | Integer | No | Number of parallel tasks created for distributed reindexing. Each task processes its own subset of objects.   Must not exceed the `maxTaskPartsCount` property in your tenant configuration. Only applies when `distributed=true`. | Default: `2` |
+| `distributedTaskIndex` | Integer | No | Specifies which part of the distributed job to run. The value must be within the range defined by `taskPartsCount`. For example, if `taskPartsCount` is 3, valid values are 1, 2, or 3. Use this to rerun a specific part that previously failed.   Only applies when `distributed=true`. | 1 to `taskPartsCount.`  Default: None |
+
+## Request body
+
+The `syncToDataPipeline API` accepts an optional request body containing a list of entity URIs. Use the request body when you need to scope the reindex to a specific set of entity records rather than reindexing all records of a given data type. When a list of entity URIs is provided, the reindex processes only those records. When no body is provided, the reindex processes all records matching the query parameters.
+
+```
+["entities/I1", "entities/I2", "entities/I3"]
+```
+
+> **Note:** The request body is supported only for entity URIs. It cannot be used to scope the reindex to specific relation, interaction, or other object types.
+
+## Example request
+
+The following table shows common ways to use the Sync to Data Pipeline API. Use the request that matches your reindex requirement.
+
+| Scenario | When to use | Request |
+| --- | --- | --- |
+| Send all data (default) | Reindex and stream all tenant data to the Data Pipeline Hub. | `POST https://{env}.reltio.com/reltio/api/{tenantId}/syncToDataPipeline` |
+| Include deleted and loser records | Reindex all data, including deleted entities and relations and loser records from merges. | `POST https://{env}.reltio.com/reltio/api/{tenantId}/syncToDataPipeline?reindexDeleted=true` |
+| Sync only entities | Reindex and stream entity data only, excluding all other data types. | `POST https://{env}.reltio.com/reltio/api/{tenantId}/syncToDataPipeline?dataTypes=entities` |
+| Sync only relations | Reindex and stream relation data only, excluding all other data types. | `POST https://{env}.reltio.com/reltio/api/{tenantId}/syncToDataPipeline?dataTypes=relations` |
+| Sync a specific entity type | Restrict the reindex scope to a single entity type. Replace `HCP` with your entity type. | `POST https://{env}.reltio.com/reltio/api/{tenantId}/syncToDataPipeline?dataTypes=entities&entityType=HCP` |
+| Sync a specific relation type | Restrict the reindex scope to a single relation type. Replace `HCOToHCP` with your relation type. | `POST https://{env}.reltio.com/reltio/api/{tenantId}/syncToDataPipeline?dataTypes=relations&relationType=HCOToHCP` |
+| Sync specific entity records by URI | Reindex only a known set of entity records. Include the URIs in the request body. | `POST https://{env}.reltio.com/reltio/api/{tenantId}/syncToDataPipeline?dataTypes=entities ["entities/I1", "entities/I2", "entities/I3"]` |
+| Sync specific deleted or loser records by URI | Reindex only a known set of deleted or loser entity records. Include the URIs in the request body. | `POST https://{env}.reltio.com/reltio/api/{tenantId}/syncToDataPipeline?dataTypes=deleted_entities ["entities/I1", "entities/I2", "entities/I3"]` |
+| Sync all data for specific entity records | Stream all events for specific records, including entity created or updated events, match events, and merge pairs where the specified entity is the loser. | `POST https://{env}.reltio.com/reltio/api/{tenantId}/syncToDataPipeline ["entities/I1", "entities/I2", "entities/I3"]` |
+| Sync events after a specific timestamp | Reindex only records updated after a specific point in time. Replace `xxxxxxxxxxxx` with the epoch timestamp. | `POST https://{env}.reltio.com/reltio/api/{tenantId}/syncToDataPipeline?updatedSince=xxxxxxxxxxxx` |
+| Sync in distributed mode with multiple parameters | Run the reindex job across multiple parallel tasks, scoped to specific data types, entity type, relation type, and timestamp. | `POST https://{env}.reltio.com/reltio/api/{tenantId}/syncToDataPipeline?dataTypes=matches,merges,interactions&distributed=true&distributedTaskIndex=0&taskPartsCount=4&updatedSince=123456&reindexDeleted=true&entityType=HCP&relationType=Location ["entities/I1", "entities/I2", "entities/I3"]` |
+
+## Response body
+
+The following table describes the fields returned in the response body for each background task created by the reindex job.
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `id` | String | Unique identifier of the background task. |
+| `groupId` | String | Unique identifier that groups all background tasks created by the same reindex job. |
+| `createdTime` | Number | Timestamp when the task was created, in epoch milliseconds. |
+| `createdBy` | String | Email address of the user who triggered the reindex job. |
+| `updatedTime` | Number | Timestamp of the last task update, in epoch milliseconds. |
+| `updatedBy` | String | Email address of the user who last updated the task. |
+| `type` | String | Fully qualified class name of the background task. Identifies the data type being reindexed. |
+| `status` | String | Current execution status of the task. Example: `SCHEDULED`. |
+| `name` | String | Description of the reindex operation. |
+| `createdOnHost` | String | Hostname of the server that created the task. |
+| `parallelExecution` | Boolean | Indicates whether the task runs in parallel execution mode. |
+| `nodesGroup` | String | Node group on which the task runs. |
+| `parameters.tenantId` | String | Tenant ID for which the reindex is running. |
+| `parameters.updatedSince` | String | The `updatedSince` value applied to the task. |
+| `parameters.eventQueueProcessors` | String | Event queue processors used to stream data. |
+| `parameters.streamingDestinations` | String | Streaming destination queue for the tenant. |
+| `currentState` | Object | Current execution state of the task. Empty when newly scheduled. |
+| `duration` | String | Elapsed execution time of the task. |
+
+## Example response
+
+All requests return the same response structure, an array of background tasks created for the reindex job. The following example shows a response for a request that reindexes interactions, potential matches, and merges. 
+
+```
+[
+  {
+    "id": "9916103e-8757-4ad1-8d69-4d6afa17b125",
+    "groupId": "27856767-5cef-4970-92b9-7403c714b293",
+    "createdTime": 1665054423545,
+    "createdBy": "test@reltio.com",
+    "updatedTime": 1665054423545,
+    "updatedBy": "test@reltio.com",
+    "type": "com.reltio.businesslogic.tasks.reindex.ReindexInteractionsTask",
+    "status": "SCHEDULED",
+    "name": "Reindexing interactions in tenant LocalTest",
+    "createdOnHost": "DESKTOP-1N09DOF",
+    "parallelExecution": false,
+    "nodesGroup": "default",
+    "parameters": {
+      "tenantId": "LocalTest",
+      "eventQueueProcessors": "crud_streaming,datapipeline_snowflake_processor",
+      "streamingDestinations": "03ff3091f067027b0d484b4e02e36861_queue_local-datapipeline-events_LocalTest"
+    },
+    "currentState": {},
+    "duration": "0s"
+  },
+  {
+    "id": "5d5b448d-377e-4937-a098-43a6bebacf9b",
+    "groupId": "21e1fa97-d90b-4609-a0d4-0356e3f2a3fd",
+    "createdTime": 1665054423545,
+    "createdBy": "test@reltio.com",
+    "updatedTime": 1665054423545,
+    "updatedBy": "test@reltio.com",
+    "type": "com.reltio.businesslogic.tasks.reindex.PotentialMatchesReindexTask",
+    "status": "SCHEDULED",
+    "name": "Reindexing potential matches information for tenant LocalTest",
+    "createdOnHost": "DESKTOP-1N09DOF",
+    "parallelExecution": false,
+    "nodesGroup": "default",
+    "parameters": {
+      "tenantId": "LocalTest",
+      "eventQueueProcessors": "crud_streaming,datapipeline_snowflake_processor",
+      "streamingDestinations": "03ff3091f067027b0d484b4e02e36861_queue_local-datapipeline-events_LocalTest"
+    },
+    "currentState": {},
+    "duration": "0s"
+  },
+  {
+    "id": "2bb5f03b-8163-46fe-a383-4523f77cf5b4",
+    "groupId": "7df39c85-b230-4b7d-bc02-1cc10d68b891",
+    "createdTime": 1665054423545,
+    "createdBy": "test@reltio.com",
+    "updatedTime": 1665054423545,
+    "updatedBy": "test@reltio.com",
+    "type": "com.reltio.businesslogic.tasks.reindex.ReindexMergesTask",
+    "status": "SCHEDULED",
+    "name": "Reindexing of merges in tenant LocalTest",
+    "createdOnHost": "DESKTOP-1N09DOF",
+    "parallelExecution": false,
+    "nodesGroup": "default",
+    "parameters": {
+      "tenantId": "LocalTest",
+      "eventQueueProcessors": "match_streaming,datapipeline_snowflake_processor",
+      "streamingDestinations": "03ff3091f067027b0d484b4e02e36861_queue_local-datapipeline-events_LocalTest"
+    },
+    "currentState": {},
+    "duration": "0s"
+  }
+]
+```
+
+If the request is invalid, the API returns a `400 Bad Request` response. Review the error details, correct the request, and try again.
+
+```
+{
+  "severity": "Error",
+  "errorMessage": "Failed to parse content as JSON",
+  "errorCode": 150,
+  "errorDetailMessage": "Expecting request content in JSON format, failed to parse.",
+  "innerErrorData": {
+    "exception": "com.reltio.rest.data.marshalling.MarshallerException"
+  }
+}
+```
+
+## Monitor the reindex job
+
+After submitting the request, monitor the reindex job using the following APIs.
+
+| Goal | API |
+| --- | --- |
+| Check the status of all active tasks | [Get active tasks for tenant](https://docs.reltio.com/developer-resources/load-and-export-apis/load-and-export-apis-at-a-glance/export-service-apis/export-tasks-management-api/get-active-tasks-for-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
+| Review completed task history | [Get task history for tenant](https://docs.reltio.com/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/get-tasks-history-for-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
+| Check the status of a specific task by ID | [Get task by ID for tenant](https://docs.reltio.com/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/get-task-by-id-for-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
+| Verify that processing is complete | [Tenant Queue Status API](https://docs.reltio.com/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/reltio-data-pipeline-for-snowflake-apis/tenant-queue-status-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), confirm the queue count is , confirm the queue count is `0`**Note:** A non-zero queue count does not always indicate that the sync is still running. Ongoing activity in the tenant may contribute to the count. Check for other active processes before concluding the sync is incomplete. |
 
 
 
@@ -101415,6 +101720,8 @@ Azure Function Lifecycle Actions (LCAs) let you run your own custom code when sp
 
 Previously, you needed to host LCAs in Reltio's AWS environment, resulting in limited autonomy and requiring Reltio Support for deployment and maintenance. With Azure Function LCAs, you can now self-manage their lifecycle logic directly within their cloud infrastructure.
 
+Azure Function LCAs support two authentication methods. You can configure Microsoft Entra ID authentication by using Reltio's Azure app registration flow, or you can configure OAuth2 client credentials so that Reltio authenticates through your own identity provider. Choose the authentication method that matches your Azure Function security model.
+
 Use Azure Function LCAs when:
 
 - 
@@ -101434,13 +101741,17 @@ You can implement this feature by:
 
 - 
 
-  Contact Reltio Support to create an Azure app.
-- 
-
   [Deploying the function as an Azure Function App](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/azure-functions-for-lifecycle-actions/deploy-azure-function-lifecycle-actions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 - 
 
-  [Setting up authentication using Azure App Registrations and Easy Auth](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/azure-functions-for-lifecycle-actions/configure-authentication-for-azure-lifecycle-actions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+  Choosing one authentication method:
+
+  - 
+
+    For Microsoft Entra ID authentication, contact Reltio Support to create an Azure app, then see [Configure Microsoft Entra ID authentication for Azure LCAs](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/azure-functions-for-lifecycle-actions/configure-microsoft-entra-id-authentication-for-azure-lcas?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+  - 
+
+    For customer-managed OAuth2 authentication, see [Configure OAuth2 client credentials for Azure LCAs](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/azure-functions-for-lifecycle-actions/configure-oauth2-client-credentials-for-azure-lcas?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 - 
 
   [Updating L3 configuration to enable invocation](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/azure-functions-for-lifecycle-actions/update-l3-configuration-for-azure-function-lifecycle-actions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
@@ -103427,17 +103738,109 @@ Headers: Authorization: Bearer {your-access-token}, Content-Type:
 
 ---
 
-# Configure authentication for Azure Lifecycle Actions
+# Configure OAuth2 client credentials for Azure LCAs
 
 > **Section:** Developer resources > About developer resources > Developer resources at a glance > Customize data tasks with LCAs > Azure functions for Lifecycle Actions
 
 
-**Source:** https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/azure-functions-for-lifecycle-actions/configure-authentication-for-azure-lifecycle-actions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/azure-functions-for-lifecycle-actions/configure-oauth2-client-credentials-for-azure-lcas?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** configure oauth2 client credentials for azure lcas, set up oauth2 authentication for azure lifecycle actions, use client credentials for azure function lca calls, configure token endpoint for azure lca integration, store oauth2 credentials for tenant azure lca, verify oauth2 bearer token flow for azure lca, oauth2, azure lca, client credentials, lifecycle actions
 
 
-Learn how to configure Microsoft Entra ID (Azure AD) authentication for your Azure Function so it can securely receive Lifecycle Action calls from Reltio.
+Learn how to configure OAuth2 `client_credentials` authentication for Azure Lifecycle Actions (LCAs) so that Reltio can securely invoke your Azure Function through your identity provider.
 
-At this stage, you'll need a tenant-specific Azure App ID provided by Reltio to complete the authentication setup. If you haven't received one, please create a support ticket with Reltio to request it.
+**Prerequisites**
+
+Before you begin, make sure that you have the following requirements:
+
+- An OAuth2 client in your identity provider that supports the `client_credentials` grant type.
+- The OAuth2 client ID.
+- The OAuth2 client secret.
+- The HTTPS token endpoint URL for your identity provider.
+- An optional scope value, if your identity provider requires one.
+- A Reltio admin bearer token for the tenant.
+
+> **Important:** Reltio grants access to the `PUT` and `DELETE` endpoint on request. Before you proceed, create a [support ticket](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) with Reltio to enable the required privilege for your admin user.
+
+OAuth2 `client_credentials` authentication enables Azure Lifecycle Actions (LCAs) to authenticate through your identity provider.
+
+When this authentication method is configured, Reltio requests a bearer token from your token endpoint before it invokes your Azure Function.
+
+
+To configure OAuth2 client credentials for Azure Function LCAs
+
+1. Send a `PUT` request to the Azure LCA OAuth2 configuration endpoint.
+   ```
+PUT /tenants/{tenantId}/lcaConfig/azureConfig/secrets
+   ```
+   Include the following request headers:
+   ```
+Authorization: Bearer <reltio-admin-token> Content-Type: application/json
+   ```
+2. Provide the OAuth2 configuration values in the request body.
+   Include the token endpoint URL, client ID, client secret, and optional scope value.
+   ```
+{ "tokenUrl": "https://auth.example.com/as/token.oauth2", "clientId": "your-client-id", "clientSecret": "your-client-secret", "scope": "lca.invoke" }
+   ```
+   If your identity provider does not require a scope value, omit the `scope` field.
+   Make sure that the following values are valid before you submit the request:
+   - `tokenUrl` must use `https://`.
+   - `clientId` must not be blank.
+   - `clientSecret` must not be blank.
+   > **Note:**
+   > If your Azure Function gateway validates token claims such as `aud` or `iss`, make sure that your identity provider is configured to return the expected values.
+3. Submit the request and confirm that Reltio stores the configuration.
+   When you save the configuration, Reltio validates the values and performs a live `client_credentials` token request against the supplied token endpoint. If the token endpoint is unreachable or the credentials are rejected, the save fails and the existing configuration remains unchanged.
+   The following example shows a complete curl request:
+   ```
+curl -X PUT \ "https://<your-reltio-environment>/reltio/tenants/<tenantId>/lcaConfig/azureConfig/secrets" \ -H "Authorization: Bearer <reltio-admin-token>" \ -H "Content-Type: application/json" \ -d '{ "tokenUrl": "https://auth.example.com/as/token.oauth2", "clientId": "e356249a-b365-4679-b464-f6f5fd2fff06", "clientSecret": "your-client-secret-here", "scope": "lca.invoke" }'
+   ```
+   > **Note:**
+   > Reltio authenticates to your token endpoint by using `client_secret_post`. If your identity provider requires `client_secret_basic`, create a support ticket with Reltio to request this capability.
+   If the request succeeds, Reltio returns HTTP 200.
+   ```
+{ "successful": true, "message": "LCA Azure OAuth2 credentials stored successfully" }
+   ```
+4. Verify that the configuration is working.
+   1. Trigger an Azure Function LCA on the tenant.
+   2. Check your identity provider audit log, and confirm that it received a `client_credentials` token request for the configured client.
+   3. Check your Azure Function logs or gateway logs, and confirm that the request includes a valid `Authorization: Bearer` header.
+   If the LCA completes successfully, the OAuth2 configuration is working. Reltio caches and refreshes tokens automatically based on the `expires_in` value returned by your identity provider.
+5. Send a `DELETE` request if you want to remove the stored OAuth2 client credentials.
+   - Use the following endpoint:
+     ```
+DELETE /tenants/{tenantId}/lcaConfig/azureConfig/secrets
+```
+   - Include the Reltio admin bearer token in the request header:
+     ```
+Authorization: Bearer <reltio-admin-token>
+```
+   If the request succeeds, Reltio returns HTTP 200.
+   ```
+{ "successful": true, "message": "LCA Azure OAuth2 credentials removed successfully" }
+   ```
+   After the OAuth2 configuration is removed, Azure Function LCAs for the tenant use the Microsoft Entra ID authentication flow.
+
+OAuth2 client credentials are now active for the tenant. Each Azure Function LCA invocation requests a bearer token from your identity provider and includes that token in the outbound request.
+
+To configure Microsoft Entra ID authentication instead, see [Configure Microsoft Entra ID for Azure LCAs](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/azure-functions-for-lifecycle-actions/configure-microsoft-entra-id-authentication-for-azure-lcas?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+
+
+---
+
+# Configure Microsoft Entra ID authentication for Azure LCAs
+
+> **Section:** Developer resources > About developer resources > Developer resources at a glance > Customize data tasks with LCAs > Azure functions for Lifecycle Actions
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/azure-functions-for-lifecycle-actions/configure-microsoft-entra-id-authentication-for-azure-lcas?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+
+Learn how to configure Microsoft Entra ID authentication for your Azure Function so that Reltio can securely invoke Azure Lifecycle Actions (LCAs).
+
+Before you begin, make sure that you have a tenant-specific Azure App ID provided by Reltio. If you have not received one, create a support ticket with Reltio to request it. For more information, see [Get help in Support Portal](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 To setup authentication for Azure's LCA:
@@ -103483,7 +103886,7 @@ These values will be added to your tenant's physical configuration.
 
 Learn how to customize, build, and deploy your own Azure Function Lifecycle Actions using Reltio's open-source sample module.
 
-At this stage, you'll need a tenant-specific Azure App ID provided by Reltio to complete the authentication setup. If you haven't received one, please create a support ticket with Reltio to request it.
+Before you begin, make sure that you have the required permissions to create an Azure Function App and deploy your function package in the target Azure subscription.
 
 
 To deploy the Azure function LCA:
@@ -103522,7 +103925,9 @@ To deploy the Azure function LCA:
    - Click an entry point (e.g., `beforeSaveEntityAction`).
    - Click **Get Function URL**.
    - Copy this URL — you'll use it in your tenant's L3 configuration to reference this function.
-5. After deployment, you must configure the authentication for your Function App. For more information, see topic [Configure authentication for Azure Lifecycle Actions](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/azure-functions-for-lifecycle-actions/configure-authentication-for-azure-lifecycle-actions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+5. After deployment, configure authentication for your Function App.
+   For Microsoft Entra ID authentication, see [Configure Microsoft Entra ID authentication for Azure LCAs](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/azure-functions-for-lifecycle-actions/configure-microsoft-entra-id-authentication-for-azure-lcas?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+   For OAuth2 client credentials authentication, see [Configure OAuth2 client credentials for Azure LCAs](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/azure-functions-for-lifecycle-actions/configure-oauth2-client-credentials-for-azure-lcas?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 Your custom Azure Function LCA is now deployed and ready to be integrated with your Reltio tenant via L3 configuration.
 
@@ -105046,7 +105451,9 @@ Similar to the **Data Loader** application in the **Console**, these endpoints e
 
   Define data load options, like using life-cycle assessment (LCA), or full or partial updates.
 
-For more information about the `Data Loader API` endpoints, see our [Developer Portal](https://developer.reltio.com/private/swagger.htm?module=Data%20Ingestion#/Data%20Load%20Job).
+For more information about the `Data Loader API` endpoints, see our [Developer Portal](https://developer.reltio.com/private/swagger.htm?module=Data%20Ingestion#/Data%20Load%20Job). 
+
+> **Note:** When using `Data Loader API` for China-based tenants, please replace `{{dataloader_uri}}` with `https://aws-dataloader.reltiocn.cn`.
 
 
 
@@ -105361,6 +105768,12 @@ Use the following endpoint:
 ```
 POST {{dataloader_uri}}/dataloader/api/{{tenantId}}/_mapping
 ```
+
+
+
+
+
+> **Note:** For China-based tenants, please replace `{{dataloader_uri}}` with `https://aws-dataloader.reltiocn.cn`.
 
 Configure the mapping as shown in this example:
 
@@ -109047,6 +109460,8 @@ A RELTIO_JSON file is a file type used to load data with the `Data Loader API`. 
 - 
 
   This type of data loading job doesn't require you to define the `mappingDetails` parameter, as it doesn't use this functionality.
+
+> **Note:** For China-based tenants, please replace `{{dataloader_uri}}` with `https://aws-dataloader.reltiocn.cn`.
 
 Unlike a typical JSON file, the RELTIO_JSON file contains information needed for the data upload, without requiring additional table transformations.
 
@@ -113666,50 +114081,60 @@ Most of the time reference data is standardized before being imported or used by
 
 ## Request
 
+To transcode a simple lookup value, send a POST request with the lookup type, value, and source system as shown below.
+
 ```
-POST https://{{rdm-service}}/transcode/rdm/value
+POST https://{{rdm-service}}/transcode/rdm_tenant_name/value
 Authorization: Bearer {{token}}
-    {
-        "type": "rdm/lookupTypes/City",
-        "value": "M",
-        "source": "ABCD"
-    }
+{
+    "type": "rdm/lookupTypes/State",
+    "value": "AR",
+    "source": "rdm/sources/Reltio"
+}
 ```
 
 ## Response
 
+On success, the API returns the canonical value corresponding to the provided source value, along with a `success` flag confirming the transcoding result.
+
 ```
 {
-  "type": "rdm/lookupTypes/City",
-  "code": "rdm/City/M"
-  "value": "Moscow",
-  "source": "rdm/sources/ABCD"
-  "success": true
+  "type": "rdm/lookupTypes/State",
+  "code": "AR",
+  "value": "Arkansas",
+  "source": "rdm/sources/Reltio",
+  "success": true 
 }
 ```
 
 ## Transcode Hierarchical Lookups
 
+The Transcode API resolves a parent lookup (such as Country) alongside one or more dependent child lookups (such as State) in a single request. The response preserves the parent-child relationship between the values.
+
+## Request
+
+To transcode hierarchical lookups, send a POST request that includes both the parent lookup values and their dependent child lookup values in a nested structure.
+
 ```
-POST https://{{rdm-service}}/transcode/rdm
+POST https://{{rdm-service}}/transcode/rdm_tenant_name
 Authorization: Bearer {{token}}
 [
   {
     "values": {
-      "rdm/lookupTypes/State": [
+      "rdm/lookupTypes/Country": [
         {
-          "value": "CA",
-          "source": "ABCD"
+          "value": "US",
+          "source": "rdm/sources/Reltio"
         }
       ]
     },
     "dependentValues": [
       {
         "values": {
-          "rdm/lookupTypes/City": [
+          "rdm/lookupTypes/State": [
             {
-              "value": "SF",
-              "source": "rdm/sources/ABCD"
+              "value": "AR",
+              "source": "rdm/sources/Reltio"
             }
           ]
         }
@@ -113721,29 +114146,135 @@ Authorization: Bearer {{token}}
 
 ## Response
 
+The API returns the resolved canonical values for both the parent and child lookups, maintaining the original hierarchical structure in the response.
+
 ```
 [
   {
-    "values": [
-      {
-        "type": "rdm/lookupTypes/State",
-        "value": "CA",
-        "source": "ABCD",
-        "error": "1001: Source system [ABCD] not found in tenant [rdm]",
-        "success": false
-      }
-    ],
+    "values": {
+      "rdm/lookupTypes/Country": [
+        {
+          "code": "US",
+          "value": "USA",
+          "source": "rdm/sources/Reltio",
+          "success": true
+        }
+      ]
+    },
     "dependentValues": [
       {
-        "values": [
-          {
-            "type": "rdm/lookupTypes/City",
-            "value": "SF",
-            "source": "ABCD",
-            "error": "1001: Source system [ABCD] not found in tenant [rdm]",
-            "success": false
-          }
-        ]
+        "values": {
+          "rdm/lookupTypes/State": [
+            {
+              "code": "AR",
+              "value": "Arkansas",
+              "source": "rdm/sources/Reltio",
+              "success": true
+            }
+          ]
+        }
+      }
+    ]
+  }
+]
+```
+
+**How parent child validation works**
+
+When the transcode engine resolves a hierarchical request, its validation logic enforces three specific characteristics that deviate from the default resolution behavior:
+
+1. **Source is not used for parent-child validation**: The source system of the child value (for example, `BFO`) and the source system of the parent value (for example, `Planon`) are not correlated during validation. The engine validates the parent-child relationship using canonical codes of resolved parent values only, not the source systems they came from.
+2. **There is no row-level pairing**: The engine does not pair individual parent rows with individual child rows. Instead, all successfully resolved parent values of the same lookup type are collapsed into a single set of canonical codes. If the child value's resolved canonical code is a valid child of any canonical code in that set, the child resolves successfully.
+3. **Cross-source resolution is by design**: When multiple source systems contribute values for a parent lookup type, RDM checks whether at least one resolved parent canonical code is a valid parent for the requested child value. If so, the child resolves successfully. RDM does not return a lookup error, even when the resolved parent and child originate from different source systems.
+
+**Example: Transcode dependent child values by parent lookup values**The following example shows how the API resolves parent lookup values first and then evaluates dependent child values in that parent context. In this example, the parent lookup type is Country, and the dependent child lookup type is State. The canonical code **IN** is the parent of the canonical code **KL**, so the value **Kerala** resolves successfully when it is evaluated under that parent relationship. By contrast, **Keralam** is defined with no parent, so it does not match the parent-child mapping in this example.
+
+**Example Request**
+
+The following request example shows the parent lookup values and dependent child values sent to the API for hierarchical transcoding.
+
+```
+POST https://{{RdmApiUrl}}/transcode/{{RdmTenant}}
+Authorization: Bearer {{token}}
+[
+    {
+        "values": {
+            "rdm/lookupTypes/Country": [
+                {
+                    "type": "rdm/lookupTypes/Country",
+                    "value": "India",
+                    "source": "SAP"
+                },
+                {
+                    "type": "rdm/lookupTypes/Country",
+                    "value": "Bharath",
+                    "source": "OKTA"
+                }
+            ],
+            "dependentValues": [
+                {
+                    "values": {
+                        "rdm/lookupTypes/State": [
+                            {
+                                "type": "rdm/lookupTypes/State",
+                                "value": "Keralam",
+                                "source": "SAP"
+                            },
+                            {
+                                "type": "rdm/lookupTypes/State",
+                                "value": "Kerala",
+                                "source": "OKTA"
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    }
+]
+```
+
+**Example Response**
+
+The following response example shows how the API returns the resolved parent lookup values and the evaluated dependent child values based on the parent-child mapping.
+
+```
+[
+  {
+    "values": {
+      "rdm/lookupTypes/Country": [
+        {
+          "code": "IN",
+          "value": "India",
+          "source": "rdm/sources/SAP",
+          "success": true
+        },
+        {
+          "code": "BH",
+          "value": "Bharath",
+          "source": "rdm/sources/OKTA",
+          "success": true
+        }
+      ]
+    },
+    "dependentValues": [
+      {
+        "values": {
+          "rdm/lookupTypes/State": [
+            {
+              "error": "1003: RDM canonical value mapping not found for value [Keralam] and source [SAP] in tenant [RDM_tenantId]",
+              "value": "Keralam",
+              "source": "rdm/sources/SAP",
+              "success": false
+            },
+            {
+              "code": "KL",
+              "value": "Kerala",
+              "source": "rdm/sources/OKTA",
+              "success": true
+            }
+          ]
+        }
       }
     ]
   }
@@ -113758,6 +114289,8 @@ Reverse transcoding is applied using Transcode API, with `&targetSource=AHA` in 
 
 ## Request
 
+To perform reverse transcoding, send a POST request with the `targetSource` query parameter specifying the target source system, along with the lookup type and value to be transcoded.
+
 ```
 POST {{rdm_uri}}/transcode/{{rdm_tenant}}/value?targetSource=AHA
 HEADERS:
@@ -113771,6 +114304,8 @@ BODY:
 ```
 
 ## Response
+
+The API returns the value translated into the target source system's representation, including the corresponding code and a `success` flag indicating a successful reverse transcode.
 
 ```
 {
@@ -141117,7 +141652,7 @@ Here's the lowdown on access and permissions:
 
 | Access to | How to gain access |
 | --- | --- |
-| Configure **Data Loader** | For permissions to configure the **Data Loader** itself, you need to be granted the global role `ROLE_DATALOADER`. This role gives you access to all required resources to work with the **Data Loader** API. Contact your **Data Loader** administrator for access.  For more information about Data Loader resources, see topic [User Management at a glance](https://docs.reltio.com/en/applications/console/security-applications/user-management-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).  > **Note:** Currently the tenants provisioned for China can only access the Data Loader APIs. Data Loader in the Console isn't accessible for those tenants. When creating a job definition for a tenant provisioned for China, you need to configure the `platformDomain` parameter as follows: > ``` > { >     "projectStatus": "COMPLETE", >     "environment": "{{envId}}", >     "platformDomain": "reltiocn.cn", >     "tenantId": "{{tenant}}", >     ... >     "storageDetails": {...}, >     "mappingDetails": {...} > } > ``` |
+| Configure **Data Loader** | For permissions to configure the **Data Loader** itself, you need to be granted the global role `ROLE_DATALOADER`. This role gives you access to all required resources to work with the **Data Loader** API. Contact your **Data Loader** administrator for access.  For more information about Data Loader resources, see topic [User Management at a glance](https://docs.reltio.com/en/applications/console/security-applications/user-management-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
 | **Data Loader** resources and operations | For information about the required roles and permissions, see topic [Roles and permissions](https://docs.reltio.com/en/applications/console/tenant-management-applications/data-loader-at-a-glance/get-ready-for-data-loader/roles-and-permissions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
 | Data source systems | For information about how to give Reltio access for uploading from your various data source systems, see topic [Manage source system accounts](https://docs.reltio.com/en/applications/console/tenant-management-applications/data-loader-at-a-glance/get-ready-for-data-loader/delete-source-accounts-in-data-loader-settings?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
 
@@ -141835,7 +142370,7 @@ A drop-down menu at the top of the Console page that provides a list of availabl
 
 The pane that displays the different menus that you can view in tenant management:
 
-- **Statistics**: Select this menu to monitor your tenant. For more information, see topic [envstatistics](https://docs.reltio.com/search?q=envstatistics&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+- **Statistics**: Select this menu to monitor your tenant. For more information, see topic [Entitlement and Usage Summary](https://docs.reltio.com/en/applications/console/tenant-management-applications/usage-reporting-at-a-glance/entitlement-and-usage-summary?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 - **Match analysis**: Select this menu to analyze the match rules used in your tenant. For more information, see topic [Match Analysis at a glance](https://docs.reltio.com/en/applications/console/tenant-management-applications/tenant-management-at-a-glance/match-analysis-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 - **Queues**: Select this menu to monitor the internal queues used in Reltio. For more information, see topic [Queues at a glance](https://docs.reltio.com/en/applications/console/tenant-management-applications/tenant-management-at-a-glance/queues-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 - **Jobs**: Select this menu to create a job that you can use to manage your tenant’s data.
@@ -145093,7 +145628,7 @@ Hover your mouse pointer over the left navigation drawer and select one of these
   **Create new profile**: Displays a list of entity types for which you can create a new profile. Currently, we support Individual, Location, and Household entity types. For more information, see topic [Adding a Profile](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/adding-a-profile?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 - 
 
-  **Segmentation**: Displays the segmentation menu where you create and manage audience segments, and activate them for downstream applications. For more information see, topics [Segmentation at a glance](https://docs.reltio.com/en/applications/hub/segmentation-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [t 360dp activatesegment](https://docs.reltio.com/search?q=t-360dp-activatesegment&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+  **Segmentation**: Displays the segmentation menu where you create and manage audience segments, and activate them for downstream applications. For more information see, topics [Segmentation at a glance](https://docs.reltio.com/en/applications/hub/segmentation-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Add a destination to sync](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/work-with-segments/add-a-destination-to-sync?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 - 
 
   **Notifications**: Accesses the notifications page in the **Console**. For more information see topic [Notifications page](https://docs.reltio.com/en/applications/console/configuration-applications/notification-management-at-a-glance/notifications-page?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
@@ -177125,12 +177660,12 @@ This table provides more information on these configuration steps, which are des
 | 2. | [Create a BigQuery dataset in the GCP project](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-gbq-at-a-glance/reltio-data-pipeline-for-gbq-set-up/configure-the-reltio-data-pipeline-for-gbq/create-a-gbq-projectdataset/create-a-bigquery-dataset-in-the-gcp-project?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). | The dataset allows the Reltio Data Pipeline for GBQ to deliver events from your Reltio tenant to the dataset. |
 | 3. | [Create a custom IAM role at the project level](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-gbq-at-a-glance/reltio-data-pipeline-for-gbq-set-up/configure-the-reltio-data-pipeline-for-gbq/create-a-gbq-projectdataset/create-a-custom-iam-role-at-the-project-level?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). | You must add the following permissions:  -     bigquery.jobs.create -     bigquery.jobs.get -     serviceusage.services.use |
 | 4. | [Create a custom IAM role at the dataset level](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-gbq-at-a-glance/reltio-data-pipeline-for-gbq-set-up/configure-the-reltio-data-pipeline-for-gbq/create-a-gbq-projectdataset/create-a-custom-iam-role-at-the-project-level?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). | You must add the following permissions:  -     bigquery.tables.create -     bigquery.tables.delete -     bigquery.tables.get -     bigquery.tables.getData -     bigquery.tables.list -     bigquery.tables.update -     bigquery.tables.updateData |
-| 5. | [Grant the roles permissions to Reltio’s or your GCP service account](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-gbq-at-a-glance/reltio-data-pipeline-for-gbq-set-up/configure-the-reltio-data-pipeline-for-gbq/create-a-gbq-projectdataset/grant-the-roles-permissions-to-reltios-or-your-gcp-service-account?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). | You can either use Reltio's GCP service account and retain the content or use your service account. For whichever service account you choose, you must assign the following role at the project level for the service account:   -     Service Usage Consumer    To use your service account, apply the same permissions in steps 3 and 4 to your service account, configure your GCP credentials for your service account, and mention your service account name in step 6. |
+| 5. | [Configure your GCP service account for BigQuery access](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-gbq-at-a-glance/reltio-data-pipeline-for-gbq-set-up/configure-the-reltio-data-pipeline-for-gbq/create-a-gbq-projectdataset/configure-your-gcp-service-account-for-bigquery-access?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). | Assign the Service Usage Consumer role to your service account at the project level. |
 | Provision your Reltio tenant for the Reltio Data Pipeline for GBQ | Provision your Reltio tenant for the Reltio Data Pipeline for GBQ | Provision your Reltio tenant for the Reltio Data Pipeline for GBQ |
 | 6. | [Configure a new GBQ pipeline in the Console](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-gbq-at-a-glance/reltio-data-pipeline-for-gbq-set-up/configure-the-reltio-data-pipeline-for-gbq/provision-your-reltio-tenant-for-the-gbq-connector/configure-a-new-gbq-pipeline-in-the-console?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) with your:  - Tenant ID -     Tenant environment -     Tenant URL (if available) -     GCP project name -     GCP dataset name -     Configuration choice | Enter the configuration options based on how you want your Reltio data tables or views to be displayed in GBQ. |
 | 7 (Optional) | [Configure your GCP Credentials in the Reltio Data Pipeline for GBQ](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-gbq-at-a-glance/reltio-data-pipeline-for-gbq-set-up/configure-the-reltio-data-pipeline-for-gbq/provision-your-reltio-tenant-for-the-gbq-connector/configure-your-gcp-credentials-in-the-gbq-connector---optional?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs):  `PUT {{dphUrl}}/api/tenants/{{tenantId}}/adapters/{{adapterName}}/secrets` | You can add your email and private key in the request body to add your credentials to the tenant configuration. |
 | Validate and Sync Reltio Data to GBQ | Validate and Sync Reltio Data to GBQ | Validate and Sync Reltio Data to GBQ |
-| 8. | [Validate access between Reltio's and your GCP service accounts](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-gbq-at-a-glance/reltio-data-pipeline-for-gbq-set-up/configure-the-reltio-data-pipeline-for-gbq/validate-and-sync-reltio-data-to-gbq/validate-access-between-reltios-and-your-gcp-service-accounts?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).   `POST https://{{dphUrl}}/api/tenants/{{ternantId}}/adapters/{{adapterName}}/validate` | If Reltio's service account has access to your service account, you see a 200 OK status in the response, and the response body is empty. |
+| 8. | [Validate access between Reltio and your GCP service account](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-gbq-at-a-glance/reltio-data-pipeline-for-gbq-set-up/configure-the-reltio-data-pipeline-for-gbq/validate-and-sync-reltio-data-to-gbq/validate-access-between-reltio-and-your-gcp-service-account?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).   `POST https://{{dphUrl}}/api/tenants/{{ternantId}}/adapters/{{adapterName}}/validate` | If Reltio has access to your service account, the response returns a 200 OK status with an empty body. |
 | 9. | [Validate event transfer in GBQ with the Reltio UI](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-gbq-at-a-glance/reltio-data-pipeline-for-gbq-set-up/configure-the-reltio-data-pipeline-for-gbq/validate-and-sync-reltio-data-to-gbq/validate-event-transfer-in-gbq-with-the-reltio-ui?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). | You can verify if event transfer is successful by changing an entity attribute in the Reltio UI. |
 | 10. | [Validate event transfer in GBQ with the Reltio API](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-gbq-at-a-glance/reltio-data-pipeline-for-gbq-set-up/configure-the-reltio-data-pipeline-for-gbq/validate-and-sync-reltio-data-to-gbq/validate-event-transfer-in-gbq-with-the-reltio-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs):   `POST {{apiHost}}/reltio/reindex?tenantId={{tenant}}` | You can use the reindex API to verify event transfer. |
 | 11. | [Recreate GBQ tables and views in your BigQuery dataset](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-gbq-at-a-glance/reltio-data-pipeline-for-gbq-set-up/configure-the-reltio-data-pipeline-for-gbq/validate-and-sync-reltio-data-to-gbq/recreate-gbq-tables-and-views-in-your-bigquery-dataset?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). | This must be done to restore the tables and views after the connector is configured, since the data schema changes once the configuration is completed. |
@@ -177200,46 +177735,34 @@ If `autoInsertTime` is not enabled, the GBQ connector assigns the `insertedTime`
 
 **Source:** https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-gbq-at-a-glance/reltio-data-pipeline-for-gbq-set-up/datasets-for-the-gbq-data-schema?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
-**Keywords:** JSON Data Schema, JSON data schema
+**Keywords:** json-based gbq data schema, legacy gbq schema differences, JSON Data Schema, how to select gbq schema type, configure gbq integration settings, gbq column naming rules, transform reltio attributes for gbq, crosswalk structure in gbq schema, gbq integration for reltio tenants, crosswalks, schema, integration, attributes
 
 
-Learn about the difference in the legacy and new GBQ datasets.
+Learn about the differences between the JSON-based and legacy column-based GBQ data schemas in your tenant.
 
 Your tenant comes bundled with one dataset in GBQ. The data schema can be of two types:
 
-- 
+- JSON-based
+- Legacy column-based.
 
-  JSON-based
-- 
+For information on selecting a configuration, see [Configure a new GBQ pipeline in the Console](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-gbq-at-a-glance/reltio-data-pipeline-for-gbq-set-up/configure-the-reltio-data-pipeline-for-gbq/provision-your-reltio-tenant-for-the-gbq-connector/configure-a-new-gbq-pipeline-in-the-console?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
-  Legacy column-based.
-
-For information on selecting a configuration, see topic [Configure a new GBQ pipeline in the Console](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-gbq-at-a-glance/reltio-data-pipeline-for-gbq-set-up/configure-the-reltio-data-pipeline-for-gbq/provision-your-reltio-tenant-for-the-gbq-connector/configure-a-new-gbq-pipeline-in-the-console?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). For details of these different data schema types, see the section below.
+For details of these different data schema types, see the section below.
 
 ## JSON-based GBQ data schema
 
-We recommend the JSON-based schema. It has only one column for the crosswalk Uri, crosswalk attributes, and crosswalk updateDate values, and is the same for attributes and analytical attributes.
+We recommend the JSON-based schema. It has only one column for the crosswalk URI, crosswalk attributes, and crosswalk `updateDate` values, and is the same for attributes and analytical attributes.
 
 For more information, see topics:
 
-- 
-
-  [Entity dataset for the JSON data schema](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-gbq-at-a-glance/reltio-data-pipeline-for-gbq-set-up/datasets-for-the-gbq-data-schema/datasets-for-the-gbq-json-based-data-scheme/entity-dataset-for-the-json-data-schema?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- 
-
-  [Relationship dataset for the JSON data schema](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-gbq-at-a-glance/reltio-data-pipeline-for-gbq-set-up/datasets-for-the-gbq-data-schema/datasets-for-the-gbq-json-based-data-scheme/relationship-dataset-for-the-json-data-schema?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- 
-
-  [Interaction dataset for the JSON data schema](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-gbq-at-a-glance/reltio-data-pipeline-for-gbq-set-up/datasets-for-the-gbq-data-schema/datasets-for-the-gbq-json-based-data-scheme/interaction-dataset-for-the-json-data-schema?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- 
-
-  [Dataset for interactions in the legacy data schema](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-gbq-at-a-glance/reltio-data-pipeline-for-gbq-set-up/datasets-for-the-gbq-data-schema/datasets-for-the-gbq-column-based-data-schema/dataset-for-interactions-in-the-legacy-data-schema?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- 
-
-  [Matches dataset for the JSON data schema](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-gbq-at-a-glance/reltio-data-pipeline-for-gbq-set-up/datasets-for-the-gbq-data-schema/datasets-for-the-gbq-json-based-data-scheme/matches-dataset-for-the-json-data-schema?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- 
-
-  [Merges dataset for the JSON data schema](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-gbq-at-a-glance/reltio-data-pipeline-for-gbq-set-up/datasets-for-the-gbq-data-schema/datasets-for-the-gbq-json-based-data-scheme/merges-dataset-for-the-json-data-schema?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Entity dataset for the JSON data schema](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-gbq-at-a-glance/reltio-data-pipeline-for-gbq-set-up/datasets-for-the-gbq-data-schema/datasets-for-the-gbq-json-based-data-scheme/entity-dataset-for-the-json-data-schema?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Relationship dataset for the JSON data schema](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-gbq-at-a-glance/reltio-data-pipeline-for-gbq-set-up/datasets-for-the-gbq-data-schema/datasets-for-the-gbq-json-based-data-scheme/relationship-dataset-for-the-json-data-schema?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Interaction dataset for the JSON data schema](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-gbq-at-a-glance/reltio-data-pipeline-for-gbq-set-up/datasets-for-the-gbq-data-schema/datasets-for-the-gbq-json-based-data-scheme/interaction-dataset-for-the-json-data-schema?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Dataset for interactions in the legacy data schema](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-gbq-at-a-glance/reltio-data-pipeline-for-gbq-set-up/datasets-for-the-gbq-data-schema/datasets-for-the-gbq-column-based-data-schema/dataset-for-interactions-in-the-legacy-data-schema?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Matches dataset for the JSON data schema](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-gbq-at-a-glance/reltio-data-pipeline-for-gbq-set-up/datasets-for-the-gbq-data-schema/datasets-for-the-gbq-json-based-data-scheme/matches-dataset-for-the-json-data-schema?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Merges dataset for the JSON data schema](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-gbq-at-a-glance/reltio-data-pipeline-for-gbq-set-up/datasets-for-the-gbq-data-schema/datasets-for-the-gbq-json-based-data-scheme/merges-dataset-for-the-json-data-schema?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Workflow dataset for the JSON data schema](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-gbq-at-a-glance/reltio-data-pipeline-for-gbq-set-up/datasets-for-the-gbq-data-schema/datasets-for-the-gbq-json-based-data-scheme/workflow-dataset-for-the-json-data-schema?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Activity log dataset for the JSON data schema](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-gbq-at-a-glance/reltio-data-pipeline-for-gbq-set-up/datasets-for-the-gbq-data-schema/datasets-for-the-gbq-json-based-data-scheme/activity-log-dataset-for-the-json-data-schema?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 ## Legacy column-based GBQ data schema
 
@@ -177247,41 +177770,24 @@ Optionally, you can use the legacy column-based GBQ data schema. It explodes eac
 
 This column-based data schema uses automatic transformation rules to convert Reltio attribute names to GBQ field names. This is because GBQ field names can only contain letters, numbers, or underscore (_), and must also start with a letter or an underscore. The following match rules are used:
 
-- 
-
-  If the Reltio attribute name satisfies the GBQ schema naming convention, then it remains as-is.
-- 
-
-  If the Reltio attribute name contains invalid GBQ characters, then it is replaced with an underscore (_).
-- 
-
-  If the Reltio attribute name starts with a number, then it is prefixed with an underscore (_) at the beginning of the name.
-- 
-
-  If the Reltio attribute meets the naming collisions after the previous two steps, then include a CRC32 hash function value at the end of the Reltio attribute name.
-- 
-
-  If there are two or more Reltio attribute with the same name, then a hash function value is added at the end of the Reltio attribute name. For example, there are two attribute names: **Another-Field** and **another_field**. After the transformation rule is applied, the GBQ field names changes to **Another_Field_71e1316e** and **another_field_45b4f955** respectively.
+- If the Reltio attribute name satisfies the GBQ schema naming convention, then it remains as-is.
+- If the Reltio attribute name contains invalid GBQ characters, then it is replaced with an underscore (_).
+- If the Reltio attribute name starts with a number, then it is prefixed with an underscore (_) at the beginning of the name.
+- If the Reltio attribute meets the naming collisions after the previous two steps, then include a CRC32 hash function value at the end of the Reltio attribute name.
+- If there are two or more Reltio attribute with the same name, then a hash function value is added at the end of the Reltio attribute name. For example, there are two attribute names: **Another-Field** and **another_field**. After the transformation rule is applied, the GBQ field names changes to **Another_Field_71e1316e** and **another_field_45b4f955** respectively.
 
 > **Note:** If there is a change in the data schema, these parameters are not impacted.
 
-For more information, see topics:
+For more information, see:
 
-- 
-
-  [Entity dataset for the legacy data schema](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-gbq-at-a-glance/reltio-data-pipeline-for-gbq-set-up/datasets-for-the-gbq-data-schema/datasets-for-the-gbq-column-based-data-schema/entity-dataset-for-the-legacy-data-schema?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- 
-
-  [Relationship dataset for the legacy data schema](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-gbq-at-a-glance/reltio-data-pipeline-for-gbq-set-up/datasets-for-the-gbq-data-schema/datasets-for-the-gbq-column-based-data-schema/relationship-dataset-for-the-legacy-data-schema?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- 
-
-  [Dataset for interactions in the legacy data schema](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-gbq-at-a-glance/reltio-data-pipeline-for-gbq-set-up/datasets-for-the-gbq-data-schema/datasets-for-the-gbq-column-based-data-schema/dataset-for-interactions-in-the-legacy-data-schema?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- 
-
-  [Matches dataset for the legacy data schema](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-gbq-at-a-glance/reltio-data-pipeline-for-gbq-set-up/datasets-for-the-gbq-data-schema/datasets-for-the-gbq-column-based-data-schema/matches-dataset-for-the-legacy-data-schema?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- 
-
-  [Merges dataset for the legacy data schema](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-gbq-at-a-glance/reltio-data-pipeline-for-gbq-set-up/datasets-for-the-gbq-data-schema/datasets-for-the-gbq-column-based-data-schema/merges-dataset-for-the-legacy-data-schema?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Entity dataset for the legacy data schema](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-gbq-at-a-glance/reltio-data-pipeline-for-gbq-set-up/datasets-for-the-gbq-data-schema/datasets-for-the-gbq-column-based-data-schema/entity-dataset-for-the-legacy-data-schema?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Relationship dataset for the legacy data schema](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-gbq-at-a-glance/reltio-data-pipeline-for-gbq-set-up/datasets-for-the-gbq-data-schema/datasets-for-the-gbq-column-based-data-schema/relationship-dataset-for-the-legacy-data-schema?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Interaction dataset for the JSON data schema](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-gbq-at-a-glance/reltio-data-pipeline-for-gbq-set-up/datasets-for-the-gbq-data-schema/datasets-for-the-gbq-json-based-data-scheme/interaction-dataset-for-the-json-data-schema?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Dataset for interactions in the legacy data schema](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-gbq-at-a-glance/reltio-data-pipeline-for-gbq-set-up/datasets-for-the-gbq-data-schema/datasets-for-the-gbq-column-based-data-schema/dataset-for-interactions-in-the-legacy-data-schema?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Matches dataset for the legacy data schema](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-gbq-at-a-glance/reltio-data-pipeline-for-gbq-set-up/datasets-for-the-gbq-data-schema/datasets-for-the-gbq-column-based-data-schema/matches-dataset-for-the-legacy-data-schema?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Merges dataset for the legacy data schema](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-gbq-at-a-glance/reltio-data-pipeline-for-gbq-set-up/datasets-for-the-gbq-data-schema/datasets-for-the-gbq-column-based-data-schema/merges-dataset-for-the-legacy-data-schema?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Workflow dataset for the JSON data schema](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-gbq-at-a-glance/reltio-data-pipeline-for-gbq-set-up/datasets-for-the-gbq-data-schema/datasets-for-the-gbq-json-based-data-scheme/workflow-dataset-for-the-json-data-schema?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Activity log dataset for the JSON data schema](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-gbq-at-a-glance/reltio-data-pipeline-for-gbq-set-up/datasets-for-the-gbq-data-schema/datasets-for-the-gbq-json-based-data-scheme/activity-log-dataset-for-the-json-data-schema?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 
 
@@ -178224,29 +178730,88 @@ To create an IAM role using the Google Cloud console:
 
 ---
 
-# Grant the roles permissions to Reltio’s or your GCP service account
+# Configure your GCP service account for BigQuery access
 
 > **Section:** Applications > Data Integrations > Data Pipelines at a glance > Reltio Data Pipeline for GBQ at a glance > Reltio Data Pipeline for GBQ set up > Configure the Reltio Data Pipeline for GBQ > Create a GBQ Project/Dataset
 
 
-**Source:** https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-gbq-at-a-glance/reltio-data-pipeline-for-gbq-set-up/configure-the-reltio-data-pipeline-for-gbq/create-a-gbq-projectdataset/grant-the-roles-permissions-to-reltios-or-your-gcp-service-account?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-gbq-at-a-glance/reltio-data-pipeline-for-gbq-set-up/configure-the-reltio-data-pipeline-for-gbq/create-a-gbq-projectdataset/configure-your-gcp-service-account-for-bigquery-access?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** grant permissions GCP service account BigQuery, create GCP service account for Reltio GBQ, assign BigQuery Data Owner role to service account, project level permissions Reltio GBQ connector, dataset level permissions BigQuery Reltio, generate service account key for GBQ pipeline, configure GCP service account Reltio data pipeline, Reltio GBQ connector project level IAM role, bigquery.jobs.create serviceusage.services.use Reltio, service account key JSON GBQ pipeline upload, GCP IAM permissions Reltio BigQuery integration, service account, BigQuery, IAM, permissions
 
 
-Learn how to grant write access to the Reltio-owned service account or your service account .
+Learn how to create a GCP service account, assign the required permissions, and generate a service account key so that Reltio can write data to your BigQuery dataset.
 
-Grant write access to the Reltio/Customer service account so that data can be written to your BigQuery dataset.
+Before you begin, confirm that the following requirements are met.
 
-To grant access:
+- Your GCP project has BigQuery enabled.
+- Your Google account has the **Owner** or **IAM Admin** role on the GCP project, which is required to create service accounts, create custom IAM roles, and modify dataset permissions.
+- You have already created the Reltio GBQ connector Project Level [custom IAM role](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-gbq-at-a-glance/reltio-data-pipeline-for-gbq-set-up/configure-the-reltio-data-pipeline-for-gbq/create-a-gbq-projectdataset/create-a-custom-iam-role-at-the-project-level?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) with the required project-level permissions.
+- You have already created a [BigQuery dataset in your GCP project](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-gbq-at-a-glance/reltio-data-pipeline-for-gbq-set-up/configure-the-reltio-data-pipeline-for-gbq/create-a-gbq-projectdataset/create-a-bigquery-dataset-in-the-gcp-project?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
-1. In the Google Cloud console, select the dataset you created in [Create a BigQuery dataset in the GCP project](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-gbq-at-a-glance/reltio-data-pipeline-for-gbq-set-up/configure-the-reltio-data-pipeline-for-gbq/create-a-gbq-projectdataset/create-a-bigquery-dataset-in-the-gcp-project?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
-2. Select **Permissions** from the **SHARING** drop-down list.
-3. In the **Dataset Permissions** window, select **ADD PRINCIPAL**.*Image: gbq_grantpermissions_dataset.png*
-4. In the **Grant access to** window, provide the permission details:
-   - In the **New principals** field, add the Reltio-owned service account from from the Reltio Knowledge Base (KB) article in [Configure the Reltio Data Pipeline for GBQ](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-gbq-at-a-glance/reltio-data-pipeline-for-gbq-set-up/configure-the-reltio-data-pipeline-for-gbq?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
-   - In the **Select a role** drop-down list, choose the appropriate role.
-   - Select **Save**.
-5. In the Navigation menu, select **IAM** from the **IAM & Admin** sub-menu.*Image: gbq_grantpermissions.png*
-6. In the **PERMISSIONS** tab of the **IAM** page, select **GRANT ACCESS**. *Image: gbq_grantpermissions_project.png*
+Setting up your service account involves four steps:
+
+1. [Create a GCP service account](#task-2blxmftf/stepsection-1230)
+2. [Assign project-level permissions to your service account](#task-2blxmftf/stepsection-1305)
+3. [Assign dataset-level permissions to your service account](#task-2blxmftf/stepsection-1413)
+4. [Generate a service account key](#task-2blxmftf/stepsection-1480)
+
+
+Create a GCP service account
+
+1. In the Google Cloud console, open the navigation menu.
+2. Select **IAM & Admin**, and then select **Service Accounts**.
+3. Select **+ CREATE SERVICE ACCOUNT**.
+4. In the **Service account name** field, enter a name that identifies the account's purpose, for example, `reltio-gbq-connector`.
+   The **Service account ID** field auto-generates from the name, edit the ID if needed.
+5. In the **Service account description** field, enter a brief description, for example, `Service account for Reltio GBQ data pipeline`.
+6. Select **CREATE AND CONTINUE**.
+7. Skip the optional role and user access sections for now.
+   In [Assign project-level permissions to your service account](#task-2blxmftf/stepsection-1305), you assign the Reltio GBQ connector Project Level role and the BigQuery Data Owner role to the service account.
+8. Select **DONE**.
+   The service account appears in the **Service Accounts** list.
+
+Assign project-level permissions to your service account
+
+9. In the Google Cloud console, open the navigation menu.
+10. Select **IAM & Admin**, and then select **IAM**.
+   *Image: gbq_grantpermissions.png*
+11. In the **PERMISSIONS** tab, select **GRANT ACCESS**.
+12. In the **Grant access** panel, provide the following details.
+   *Image: gbq_grantpermissions_project.png*
+   - In the **New principals** field, enter the email address of your service account.
+   - In the **Select a role** drop-down list, select the **Reltio GBQ connector Project Level** custom role. This role includes the following permissions that allow Reltio to write data to your GCP project.
+     | Permission | Purpose |
+| --- | --- |
+| `serviceusage.services.use` | Allows Reltio to use enabled GCP services in the project |
+| `bigquery.jobs.create` | Allows Reltio to create BigQuery jobs to process and stream data |
+| `bigquery.jobs.get` | Allows Reltio to retrieve the status of BigQuery jobs |
+13. Select **Save**.
+
+Assign dataset-level permissions to your service account
+
+14. In the Google Cloud console, open **BigQuery**.
+15. In the **Explorer** panel, expand your project and select the dataset you created.
+16. Select **SHARING**, and then select **Permissions** from the drop-down list.
+17. In the **Dataset Permissions** panel, select **ADD PRINCIPAL**.
+   *Image: gbq_grantpermissions_dataset.png*
+18. In the **Grant access** panel, provide the following details.
+   - In the **New principals** field, enter the email address of your service account.
+   - In the **Select a role** drop-down list, select **BigQuery Data Owner**.
+19. Select **Save**.
+
+Generate a service account keyYou generate a JSON key file in this procedure. Upload it when configuring the GBQ pipeline in the Reltio Console.
+
+20. In the Google Cloud console, open the navigation menu.
+21. Select **IAM & Admin**, and then select **Service Accounts**.
+22. In the **Service Accounts** list, select the service account you created.
+23. Select the **KEYS** tab.
+24. Select **ADD KEY**.
+   The JSON key file downloads to your computer automatically.
+   The JSON key file downloads to your computer automatically.
+   > **Important:** Store the JSON key file securely as the Google Cloud console does not allow you to download it again. Upload it while [configuring the GBQ pipeline in the Reltio Console](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-gbq-at-a-glance/reltio-data-pipeline-for-gbq-set-up/configure-the-reltio-data-pipeline-for-gbq/provision-your-reltio-tenant-for-the-gbq-connector/configure-a-new-gbq-pipeline-in-the-console?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). Do not share it in or commit it to version control. If the key is compromised, delete it immediately from the KEYS tab and generate a replacement.
+
+Your GCP service account is now ready for Reltio to use. It has the project-level and dataset-level permissions needed to stream data into your BigQuery dataset. Use the downloaded key file to [configure a new GBQ pipeline in the Reltio Console](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-gbq-at-a-glance/reltio-data-pipeline-for-gbq-set-up/configure-the-reltio-data-pipeline-for-gbq/provision-your-reltio-tenant-for-the-gbq-connector/configure-a-new-gbq-pipeline-in-the-console?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
@@ -178346,15 +178911,15 @@ To verify the event transfer:
 
 ---
 
-# Validate access between Reltio's and your GCP service accounts
+# Validate access between Reltio and your GCP service account
 
 > **Section:** Applications > Data Integrations > Data Pipelines at a glance > Reltio Data Pipeline for GBQ at a glance > Reltio Data Pipeline for GBQ set up > Configure the Reltio Data Pipeline for GBQ > Validate and sync Reltio data to GBQ
 
 
-**Source:** https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-gbq-at-a-glance/reltio-data-pipeline-for-gbq-set-up/configure-the-reltio-data-pipeline-for-gbq/validate-and-sync-reltio-data-to-gbq/validate-access-between-reltios-and-your-gcp-service-accounts?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-gbq-at-a-glance/reltio-data-pipeline-for-gbq-set-up/configure-the-reltio-data-pipeline-for-gbq/validate-and-sync-reltio-data-to-gbq/validate-access-between-reltio-and-your-gcp-service-account?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 
-Learn how to validate access between the two service accounts.
+Learn how to validate access between the Reltio and your service account.
 
 After you're done with creating projects, datasets, custom roles, and submitting a Zendesk ticket, check if Reltio has access to your service account. A successful verification means that all your tenant's events are now synchronized with Reltio.
 
@@ -178374,7 +178939,7 @@ After you're done with creating projects, datasets, custom roles, and submitting
   - `dphUrl` is your tenant environment-data-pipeline-hub.reltio.com. For example: test-usg-data-pipeline-hub.reltio.com.
   - `adapterName` is the name of your pipeline instance.
 
-If Reltio's service account has access to your service account, you see a 200 OK status in the response, and the response body is empty.
+If Reltio has access to your service account, the response returns a 200 OK status with an empty body.
 
 
 
@@ -178412,7 +178977,7 @@ To configure a new GBQ pipeline:
    *Image: gbq_configureconnector.png*
 3. In the **Name** field, enter the name of the pipeline, which is used to refer to the pipeline in the UI. The name must be alphanumeric, can be 3 to 20 characters in length, and should not contain any spaces.
 4. In the **Authentication** section, select **Upload Service Account Key File** to browse and upload your key file for your service account.
-   > **Note:** Ensure the required permissions have been assigned to your service account and configure your GCP credentials. For more information, see topic [Grant the roles permissions to Reltio’s or your GCP service account](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-gbq-at-a-glance/reltio-data-pipeline-for-gbq-set-up/configure-the-reltio-data-pipeline-for-gbq/create-a-gbq-projectdataset/grant-the-roles-permissions-to-reltios-or-your-gcp-service-account?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+   > **Note:** Ensure the required permissions have been assigned to your service account and configure your GCP credentials. For more information, see topic [Configure your GCP service account for BigQuery access](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-gbq-at-a-glance/reltio-data-pipeline-for-gbq-set-up/configure-the-reltio-data-pipeline-for-gbq/create-a-gbq-projectdataset/configure-your-gcp-service-account-for-bigquery-access?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 5. Under the **Project and Dataset details** section, in the **GCP project name** field, enter the name of the GCP project, which provides permissions and dataset roles.
    - In the **GCP dataset name** field, enter the dataset name for the GCP project. This dataset allows the connector to deliver events from your Reltio tenant.
    - In the **Location** field, enter the location of the dataset.
@@ -182391,35 +182956,35 @@ After your tenant is provisioned, you're ready to [Validate and sync with the Re
 
 **Source:** https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/configure-snowflake-staging-pipeline/configure-the-reltio-data-pipeline-for-snowflake-for-gcp/validate-and-sync-with-the-reltio-snowflake-connector-for-gcp/synchronize-data-between-reltio-and-snowflake?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
+**Keywords:** syncToDataPipeline
+
 
 Learn how to synchronize your entities, relations, matches, interactions, and merges data from Reltio to Snowflake.
 
 Before you synchronize data, you must validate Reltio event transfer for your cloud platform and Snowflake. For more information, see the that topic for your cloud platform earlier in this section.
 
-Synchronize data between the Reltio and Snowflake platforms to ensure that you always have the latest Reltio data in Snowflake. View data being transmitted in your cloud storage location in the Event Notifications section of your cloud console.> **Note:** The Snowflake connector does not support entity resolution features such as `resolveMergedEntities`. All relationships and related records are synchronized as is, without resolving merged entities to surviving profiles.
+Synchronize data between the Reltio and Snowflake platforms to ensure that you always have the latest Reltio data in Snowflake. View data being transmitted in your cloud storage location in the Event Notifications section of your cloud console.
+
+> **Note:** The Snowflake connector does not support entity resolution features such as `resolveMergedEntities`. All relationships and related records are synchronized as is, without resolving merged entities to surviving profiles.
 
 
 To synchronize data between Reltio and Snowflake:
 
 1. Start the synchronization by running the `syncToDataPipeline API`:
+2. Start the synchronization by running the syncToDataPipeline:
    ```
 POST https://{{tenantEnvironmentName}}.reltio.com/reltio/api/{{tenantId}}/syncToDataPipeline
    ```
+   where: For more information on how to sync to data pipeline using API, see [Sync to Data Pipeline API](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/reltio-data-pipeline-for-snowflake-apis/sync-to-data-pipeline-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
    where:
-   where:
-   - `<tenantEnvironmentName>`: is the name of the environment on which your Reltio tenant is hosted, which forms part of the fully qualified URL, for example:
+   - `<tenantEnvironmentName>`: is the name of the environment on which your Reltio tenant is hosted, which forms part of the fully qualified URL, for example: 
 
-- 
-
-  `https://dev-data-pipeline-hub.reltio.com`
-- 
-
-  `https://test-data-pipeline-hub.reltio.com`
-- 
-
-  `https://361-data-pipeline-hub.reltio.com`
-   - `tenantId`: is the ID of the Reltio tenant you configured the Reltio Data Pipeline for Snowflake
-2. Run these APIs to confirm the request completed successfully:
+- `https://dev-data-pipeline-hub.reltio.com`
+- `https://test-data-pipeline-hub.reltio.com`
+- `https://361-data-pipeline-hub.reltio.com`
+   - `tenantId`: is the ID of the Reltio tenant you configured the Reltio Data Pipeline for Snowflake.
+   For more information on how to sync to data pipeline using API, see [Sync to Data Pipeline API](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/reltio-data-pipeline-for-snowflake-apis/sync-to-data-pipeline-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+3. Run these APIs to confirm the request completed successfully:
    | `Get Active Tasks for Tenant API` to check the current tasks for the tenant: | `GET {ApplicationURL}/{tenantId}/tasks` |
 | --- | --- |
 | `Get Tasks History API` to check finished tasks for all tenants | `GET https://{{tenantEnvironmentName}}.reltio.com/reltio/{{tenantId}}/tasks/history` |
@@ -182428,34 +182993,30 @@ POST https://{{tenantEnvironmentName}}.reltio.com/reltio/api/{{tenantId}}/syncTo
    where:
    - `taskId`: is the ID of the Reltio object type processing task.
    For more information, see topics [Get Active Tasks for Tenant](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/get-active-tasks-for-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Get Tasks History](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/get-tasks-history?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), and [Get Task by ID for Tenant](https://docs.reltio.com/en/developer-resources/load-and-export-apis/load-and-export-apis-at-a-glance/export-service-apis/export-tasks-management-api/get-task-by-id-for-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
-3. Run the `Tenant Queue Status API` to verify that Snowflake received Reltio events:
+4. Run the `Tenant Queue Status API` to verify that Snowflake received Reltio events:
    ```
 GET https://{{tenantEnvironmentName}}-data-pipeline-hub.reltio.com/status/tenant/{{tenantID}}/details
    ```
    For more information, see topic [Tenant Queue Status API](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/reltio-data-pipeline-for-snowflake-apis/tenant-queue-status-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
-4. When the task is complete (count is zero), validate that the number of objects in Snowflake is the same as in Reltio.
+5. When the task is complete (count is zero), validate that the number of objects in Snowflake is the same as in Reltio.
    > **Note:** When the synchronization completes, a row is added in the landing table with details of the sync. A separate row is created for each sync, with the time of the sync recorded in the `Timestamp` field. For more information, see topic [Landing table datasets for Snowflake](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/snowflake-pipeline-datasets/datasets-for-the-snowflake-data-schema/landing-table-datasets-for-snowflake?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
    If it is not, check the following issues:
    If it is not, check the following issues:
-   - If there is a discrepancy in the count of events in Reltio and in Snowflake, use the `Event Monitoring API` to check if the events are being loaded to your cloud storage:
+   - If there is a discrepancy in the count of events in Reltio and in Snowflake, use the `Event Monitoring API` to check if the events are being loaded to your cloud storage: 
 
 ```
 GET https://{{tenantEnvironmentName}}-data-pipeline-hub.reltio.com/api/tenants/{{tenantID}}/monitoring/_eventMonitoring
 ```
 
 For more information, see topic [Event Monitoring API](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/reltio-data-pipeline-for-snowflake-apis/event-monitoring-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
-   - If events are being passed to your cloud storage, run the `COPY_HISTORY` command to view a copy history table that identifies whether an attempt was made to partially load your Snowflake landing table or if the load failed. For more information, see Loading history in the [Snowflake function reference](https://docs.snowflake.com/en/sql-reference/functions/copy_history.html).
+   - If events are being passed to your cloud storage, run the `COPY_HISTORY` command to view a copy history table that identifies whether an attempt was made to partially load your Snowflake landing table or if the load failed. For more information, see Loading history in the [Snowflake function reference](https://docs.snowflake.com/en/sql-reference/functions/copy_history.html). 
 
-In the displayed data loading history within the selected time period, view these columns to check whether files were loaded or not and the reason if it didn't load correctly:
+In the displayed data loading history within the selected time period, view these columns to check whether files were loaded or not and the reason if it didn't load correctly: 
 
-- 
+- **STATUS**: Whether or not a particular set of files was loaded, partially loaded, or failed to load.
+- **FIRST_ERROR_MESSAGE**: The reason a load attempt was only partially completed or if it didn't happen at all.
 
-  **STATUS**: Whether or not a particular set of files was loaded, partially loaded, or failed to load.
-- 
-
-  **FIRST_ERROR_MESSAGE** The reason a load attempt was only partially completed or if didn't happen at all.
-
-  If a set of loaded files has multiple issues, this **FIRST_ERROR_MESSAGE** column only indicates the first error encountered. Run the `COPY INTO <table>` command with the `VALIDATION_MODE copy` option set to `RETURN_ALL_ERRORS` and reference the set of files you'd attempted to load using Snowpipe to view all errors in the files.
+  If a set of loaded files has multiple issues, this **FIRST_ERROR_MESSAGE** column only indicates the first error encountered. Run the `COPY INTO <table>` command with the `VALIDATION_MODE copy` option set to `RETURN_ALL_ERRORS` and reference the set of files you'd attempted to load using Snowpipe to view all errors in the files. 
 
   ```
   SELECT *
@@ -182471,12 +183032,12 @@ In the displayed data loading history within the selected time period, view thes
   > **Note:** The `VALIDATION_MODE` copy option instructs a `COPY` statement to validate the data to be loaded and return results based on the validation option specified. No data is loaded when this copy option is specified.
 
   For more information, see COPY INTO <table> in the [Snowflake function reference](https://docs.snowflake.com/en/sql-reference/sql/copy-into-table.html).
-5. If events are not being passed to your cloud storage, run the `Event Monitoring API` to observe the specific transfer stage that a particular entity event is at in Reltio and check against your Snowflake data.
+6. If events are not being passed to your cloud storage, run the `Event Monitoring API` to observe the specific transfer stage that a particular entity event is at in Reltio and check against your Snowflake data.
    Take these steps depending on the value in the `eventState` field:
    Take these steps depending on the value in the `eventState` field:
    - `DATAPIPELINE_PROCESSED`: recheck your steps in this [Configure the Reltio Data Pipeline for Snowflake for Azure](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/configure-snowflake-staging-pipeline/configure-the-reltio-data-pipeline-for-snowflake-for-azure?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) section.
    - `INCOMPLETE`: Raise a Support ticket for further investigation.
-   For more information, see topics [Event Monitoring API](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/reltio-data-pipeline-for-snowflake-apis/event-monitoring-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Get help in Support Portal](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+   For more information, see topics [Event Monitoring API](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/reltio-data-pipeline-for-snowflake-apis/event-monitoring-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Get help in Support Portal](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
@@ -190206,7 +190767,7 @@ Confirm that all required permissions exist and that segmentation tasks execute 
 
 Learn how to configure Reltio Zero Copy Interaction Integration by completing the required API tasks in sequence.
 
-Configure the Databricks connection and mapping required for Reltio Zero Copy Interaction Integration from Databricks by completing the required API tasks in sequence. Create a Databricks connection, store service principal credentials, test the connection, and map a Databricks source object to a Reltio interaction type. After you complete these tasks, Reltio can query the mapped Databricks source and return matching interaction data for the related profile without copying that data into Reltio.
+Configure the Databricks connection and mapping required for Reltio Zero Copy Interaction Integration from Databricks by completing the required API tasks in sequence. Create a Databricks connection and store the service principal credentials, test the connection, and map a Databricks source object to a Reltio interaction type. After you complete these tasks, Reltio can query the mapped Databricks source and return matching interaction data for the related profile without copying that data into Reltio.
 
 ## Prerequisites
 
@@ -190221,182 +190782,21 @@ Before you begin, ensure the following requirements are met.
   - `USE SCHEMA` on the target schema.
   - `SELECT` on each target table or view.
 - An existing Reltio interaction type to use in the mapping.
-- The Databricks workspace URL, warehouse ID, and shared catalog name for the source data.
+- The Databricks workspace URL and warehouse ID for the source data.
 
 ## Configure Zero Copy integration with Databricks
 
 To configure Zero Copy Interaction Integration from Databricks, complete the following tasks in order:
 
-1. [Create a Databricks connection in Reltio](https://docs.reltio.com/en/applications/data-integrations/zero-copy-integration-at-a-glance/reltio-zero-copy-interaction-integration-from-databricks-at-a-glance/create-a-databricks-connection-configuration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs): Define the Databricks workspace, SQL Warehouse, shared catalog, connection properties, and authentication type for the integration.
-2. [Store Databricks OAuth credentials in Reltio](https://docs.reltio.com/en/applications/data-integrations/zero-copy-integration-at-a-glance/reltio-zero-copy-interaction-integration-from-databricks-at-a-glance/store-databricks-oauth-credentials?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs): Store the service principal client ID and client secret that Reltio uses to request and refresh Databricks access tokens automatically.
-3. [Test the Databricks connection in Reltio](https://docs.reltio.com/en/applications/data-integrations/zero-copy-integration-at-a-glance/reltio-zero-copy-interaction-integration-from-databricks-at-a-glance/test-a-databricks-connection?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs): Verify that Reltio can connect to the Databricks SQL Warehouse before you create the interaction mapping.
-4. [Map a Databricks source object to a Reltio interaction type](https://docs.reltio.com/en/applications/data-integrations/zero-copy-integration-at-a-glance/reltio-zero-copy-interaction-integration-from-databricks-at-a-glance/map-a-databricks-source-object-to-a-reltio-interaction-type?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs): Define the Databricks source object, returned attributes, interaction type, and member mappings that link Databricks rows to Reltio entities.
+1. [Create a Databricks connection and store OAuth credentials in Reltio](https://docs.reltio.com/en/applications/data-integrations/zero-copy-integration-at-a-glance/reltio-zero-copy-interaction-integration-from-databricks-at-a-glance/create-a-databricks-connection-and-store-oauth-credentials?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs): Create the Databricks connection configuration and store the service principal client ID and client secret in a single request. Reltio uses these credentials to request and refresh Databricks access tokens.
+2. [Test the Databricks connection in Reltio](https://docs.reltio.com/en/applications/data-integrations/zero-copy-integration-at-a-glance/reltio-zero-copy-interaction-integration-from-databricks-at-a-glance/test-a-databricks-connection?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs): Verify that Reltio can connect to the Databricks SQL Warehouse before you create the interaction mapping.
+3. [Map a Databricks source object to a Reltio interaction type](https://docs.reltio.com/en/applications/data-integrations/zero-copy-integration-at-a-glance/reltio-zero-copy-interaction-integration-from-databricks-at-a-glance/map-a-databricks-source-object-to-a-reltio-interaction-type?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs): Define the Databricks source object, returned attributes, interaction type, and member mappings that link Databricks rows to Reltio entities.
 
 > **Note:** This integration uses OAuth 2.0 machine-to-machine authentication. In this model, Reltio authenticates to Databricks by using a service principal instead of a user sign-in. Personal Access Tokens are not supported.
 
 ## Result
 
 After you complete these tasks, Reltio queries the mapped Databricks source and returns matching external interaction data for the related profile without copying that data into Reltio. The connection, credentials, connection test, and mapping together complete the API setup required to make the mapped Databricks source available in Intelligent 360.
-
-
-
----
-
-# Create a Databricks connection configuration
-
-> **Section:** Applications > Data Integrations > Zero Copy Integration at a glance > Reltio Zero Copy Interaction Integration from Databricks at a glance
-
-
-**Source:** https://docs.reltio.com/en/applications/data-integrations/zero-copy-integration-at-a-glance/reltio-zero-copy-interaction-integration-from-databricks-at-a-glance/create-a-databricks-connection-configuration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
-**Keywords:** create databricks connection, databricks connection api, configure databricks workspace settings, define sql warehouse details, set shared catalog name, set oauth authentication type, create zero copy connection, connection, catalog, warehouse
-
-
-Learn more about the Databricks connection API used to create a Databricks connection configuration for Reltio Zero Copy Interaction Integration from Databricks.
-
-Use `Databricks connection API API` to create a named Databricks connection configuration in Reltio. The connection configuration defines the Databricks workspace, SQL Warehouse, shared catalog, connection properties, and authentication type used by Zero Copy integration. When the request succeeds, Reltio saves the connection configuration and returns a generated `connectionId` for that connection.
-
-## HTTP method and endpoint
-
-Use the following HTTP method and endpoint path to create the Databricks connection configuration. 
-
-```
-POST {platformUrl}/reltio/api/tenants/{tenantId}/interactions/database-configs/
-```
-
-Replace `{platformUrl}` with your Reltio platform base URL and `{tenantId}` with your tenant ID.
-
-The following table describes the endpoint path parameters.
-
-| Parameter | Type | Required | Description |
-| --- | --- | --- | --- |
-| `tenantId` | String | Yes | Unique identifier of the tenant where you want to create the Databricks connection.  Example: ce5627DYnQ6abcD |
-
-## Request headers
-
-The following request headers must be included.
-
-| Header | Value | Required |
-| --- | --- | --- |
-| `Authorization` | Bearer `<access_token>` | Yes |
-| `Content-Type` | application/json | Yes |
-
-## Request body
-
-Use the request body to define the Databricks connection settings. The following table describes the supported request body parameters.
-
-| Parameter | Type | Required | Description | Accepted values / Default |
-| --- | --- | --- | --- | --- |
-| `connection_name` | String | Yes | Unique name for the Databricks connection within the tenant. | Example: `my-databricks-connection` |
-| `database_type` | String | Yes | Database type for the connection. | `DATABRICKS` |
-| `databricks_config.workspace.workspace_url` | String | Yes | Full HTTPS URL of the Databricks workspace. | Example: `https://adb-xxx.cloud.databricks.com` |
-| `databricks_config.workspace.workspace_id` | String | No | Databricks workspace identifier. | — |
-| `databricks_config.workspace.region` | String | No | Region where the Databricks workspace is deployed. | Example: `us-east-1` |
-| `databricks_config.workspace.cloud_provider` | String | No | Cloud provider for the Databricks workspace. | Example: `AWS` |
-| `databricks_config.sql_warehouse.warehouse_id` | String | Yes | Databricks SQL Warehouse identifier. | Example: `abc123def456` |
-| `databricks_config.sql_warehouse.warehouse_name` | String | No | Display name of the SQL Warehouse. | Example: `my-warehouse` |
-| `databricks_config.sql_warehouse.size` | String | No | SQL Warehouse size value. | Example: `SMALL` |
-| `databricks_config.sql_warehouse.auto_stop` | Boolean | No | Indicates whether the SQL Warehouse stops automatically after an idle period. | `true` or `false` |
-| `databricks_config.sql_warehouse.auto_stop_minutes` | Integer | No | Idle time before auto-stop. | Example: `10` |
-| `databricks_config.share_info.shared_catalog_name` | String | Yes | Unity Catalog name that Reltio uses as the catalog for mapped Databricks tables or views. | Example: `reltio_interactions` |
-| `databricks_config.connection_properties.query_timeout` | Integer | No | Query timeout setting for the connection. | Example: `300` |
-| `databricks_config.connection_properties.max_pool_size` | Integer | No | Maximum connection pool size for the Databricks connection. | Example: `5` |
-| `databricks_config.auth_type` | String | Yes | Authentication type used by the connection. | `OAUTH_M2M` |
-
-## Example request
-
-Use the following example to create a Databricks connection configuration. Replace the sample connection name, workspace values, warehouse values, shared catalog name, and connection properties with values from your environment.
-
-```
-POST {platformUrl}/reltio/api/tenants/{tenantId}/interactions/database-configs/
-{
-  "connection_name": "my-databricks-connection",
-  "database_type": "DATABRICKS",
-  "databricks_config": {
-    "workspace": {
-      "workspace_url": "https://adb-1234567890123456.7.azuredatabricks.net",
-      "workspace_id": "1234567890123456",
-      "region": "us-east-1",
-      "cloud_provider": "AWS"
-    },
-    "sql_warehouse": {
-      "warehouse_id": "abc123def456",
-      "warehouse_name": "my-warehouse",
-      "size": "SMALL",
-      "auto_stop": true,
-      "auto_stop_minutes": 10
-    },
-    "share_info": {
-      "shared_catalog_name": "reltio_interactions"
-    },
-    "connection_properties": {
-      "query_timeout": 300,
-      "max_pool_size": 5
-    },
-    "auth_type": "OAUTH_M2M"
-  }
-}
-```
-
-## Response body
-
-The following table describes the successful response field returned by this operation.
-
-| Field | Type | Description |
-| --- | --- | --- |
-| `connectionId` | String | Generated identifier of the saved Databricks connection configuration in Reltio. |
-
-## Example response
-
-If the request succeeds, this operation returns HTTP `201 Created` with the created Databricks connection configuration, including the generated `connectionId`. 
-
-```
-{
-    "successful": true,
-    "result": {
-        "connection_id": "e1fc522f-8380-4177-98b9-acd63767d73b",
-        "connection_name": "databricks-test-02",
-        "tenant_id": "ZeroCopyDataBricks",
-        "database_type": "DATABRICKS",
-        "databricks_config": {
-            "workspace": {
-                "workspace_url": "https://reltio-ent-data-nile-aws-us-east-1-poc.cloud.databricks.com",
-                "workspace_id": "892915033844773",
-                "region": "us-east-1",
-                "cloud_provider": "AWS"
-            },
-            "share_info": {
-                "provider_share_identifier": "workspace-name.share-name",
-                "shared_catalog_name": "reltio_interactions"
-            },
-            "sql_warehouse": {
-                "warehouse_id": "af2d09b1051558ab",
-                "size": "SMALL",
-                "auto_stop": true,
-                "auto_stop_minutes": 10
-            },
-            "connection_properties": {
-                "queryTimeout": 120000,
-                "maxPoolSize": 5
-            },
-            "auth_type": "OAUTH_M2M",
-            "oauth_client_id": "100053d0-ca85-4975-8f2d-8110fe03fada"
-        },
-        "status": "PENDING",
-        "created_time": "2026-04-09T13:03:23.033630458",
-        "updated_time": "2026-04-09T13:03:23.033643419"
-    }
-}
-```
-
-If the request is invalid, the API returns a `400 Bad Request` response. Review the error details, correct the request, and send the API request again.
-
-```
-{
-    "successful": false,
-    "error": "Code: DS_SNOWFLAKE_CONNECTION_ALREADY_EXISTS; Message parameters: [databricks-test-02, ZeroCopyDataBricks]. A Snowflake connection with this name already exists. A connection named databricks-test-02 already exists for tenant ZeroCopyDataBricks. Please choose a different name."
-}
-```
 
 
 
@@ -190682,10 +191082,9 @@ This integration enables you to:
 
 Reltio Zero Copy integration with Databricks is configured through Reltio APIs and uses OAuth 2.0 machine-to-machine authentication. In this model, Reltio authenticates to Databricks by using a service principal instead of a user sign-in. The setup includes the following configuration flow:
 
-- Create a Databricks connection in Reltio by using the database configuration API.
-- Store OAuth credentials for the Databricks service principal in Reltio by using the Databricks OAuth credentials API.
-- Test the Databricks connection in Reltio by using the connection test API.
-- Map Databricks tables or views to Reltio interaction types in Reltio by using the zero-copy interaction mapping API.
+- Use the Create Databricks Connection and Store OAuth Credentials API to create a Databricks connection configuration and store the OAuth credentials for the Databricks service principal in Reltio.
+- Use the connection test API to test the Databricks connection in Reltio.
+- Use the zero-copy interaction mapping API to map Databricks tables or views to Reltio interaction types in Reltio.
 
 After the integration is configured, Reltio can query the mapped Databricks source and return the matching interaction data for the related profile. This makes the external interaction data available in the Intelligent 360 experience without moving it into Reltio storage.
 
@@ -190693,40 +191092,43 @@ After the integration is configured, Reltio can query the mapped Databricks sour
 
 The following video explains how Reltio Zero Copy Interaction Integration from Databricks queries Databricks data, links the returned data to profiles, and supports a unified view in Intelligent 360.
 
-*Video: reltio_zero_copy_interaction_integration_from_databricks.mp4*
+*Video: v-reltio_zero_copy_interaction_integration_from_databricks.mp4*
 
 
 
 ---
 
-# Store Databricks OAuth credentials
+# Create a Databricks connection and store OAuth credentials
 
 > **Section:** Applications > Data Integrations > Zero Copy Integration at a glance > Reltio Zero Copy Interaction Integration from Databricks at a glance
 
 
-**Source:** https://docs.reltio.com/en/applications/data-integrations/zero-copy-integration-at-a-glance/reltio-zero-copy-interaction-integration-from-databricks-at-a-glance/store-databricks-oauth-credentials?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/applications/data-integrations/zero-copy-integration-at-a-glance/reltio-zero-copy-interaction-integration-from-databricks-at-a-glance/create-a-databricks-connection-and-store-oauth-credentials?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** store databricks oauth credentials, save service principal credentials, store databricks client secret, store databricks client id, use service principal authentication, request databricks access tokens, configure oauth credential storage, oauth, credentials, authentication
 
 
-Learn more about the Store Databricks OAuth credentials API used to store Databricks OAuth credentials for Zero Copy Interaction Integration from Databricks.
+Learn more about the Create Databricks Connection and Store OAuth Credentials API used to create a Databricks connection configuration and store M2M OAuth credentials for Zero Copy Interaction Integration from Databricks.
 
-Use `Store Databricks OAuth credentials API API` to store the Databricks service principal client ID and client secret in Reltio. Reltio then uses these credentials to request and refresh Databricks access tokens for Zero Copy integration. When the request succeeds, the response confirms that the credentials are stored for the named Databricks connection. This operation does not require a public key or a SQL statement in Databricks.
+Use the `Create Databricks Connection API` to create a Databricks connection configuration and store the M2M OAuth service principal credentials in a single request. When the request succeeds, Reltio saves the connection configuration and returns a `connectionId` confirming that the credentials are stored.
 
 ## HTTP method and endpoint
 
-Use the following HTTP method and endpoint path to store the Databricks OAuth credentials for an existing connection.
+Use the following HTTP method and endpoint path to create the Databricks connection configuration and store the OAuth credentials.
 
 ```
-POST {platformUrl}/reltio/api/tenants/{tenantId}/interactions/database-configs/{connectionName}/databricks/oauth/credentials
+POST {platformUrl}/reltio/api/tenants/{tenantId}/interactions/database-configs/databricks/oauth/credentials
 ```
 
-The following table describes the endpoint path parameters. 
+
+
+Replace`{platformUrl}` with your Reltio platform base URL and `{tenantId}` with your tenant ID.
+
+The following table describes the endpoint path parameter. 
 
 | Parameter | Type | Required | Description |
 | --- | --- | --- | --- |
-| `tenantId` | String | Yes | Unique identifier of the tenant where the Databricks connection is defined.   Example: ce5627DYnQ6abcD |
-| `connectionName` | String | Yes | Name of the existing Databricks connection configuration that will store the OAuth credentials. |
+| `tenantId` | String | Yes | Unique identifier of the tenant where the Databricks connection is defined.   Example: `ce5627DYnQ6abcD` |
 
 ## Request headers
 
@@ -190739,37 +191141,43 @@ The following request headers must be included.
 
 ## Request body
 
-The following table describes the supported request body parameters. Use this to provide the Databricks service principal credentials.
+The following table describes the request body parameters required to create the Databricks connection and store the OAuth credentials.
 
 | Parameter | Type | Required | Description | Accepted values / Default |
 | --- | --- | --- | --- | --- |
+| `connectionName` | String | Yes | Unique name for the Databricks connection within the tenant. | Example: `databricks-connection-01` |
+| `workspaceUrl` | String | Yes | HTTPS URL of the Databricks workspace. | Example: `https://adb-1234567890123456.7.azuredatabricks.net` |
+| `warehouseId` | String | Yes | Identifier of the Databricks SQL Warehouse. | Example: `ab1c2d3ef5g6h7i8` |
 | `clientId` | String | Yes | OAuth client ID of the Databricks service principal. | Example: `a1b2c3d4-e5f6-7890-abcd-ef1234567890` |
-| `clientSecret` | String | Yes | OAuth client secret of the Databricks service principal. | Example: Service principal secret value |
+| `clientSecret` | String | Yes | OAuth client secret of the Databricks service principal. | Example: `your-client-secret` |
 
 ## Example request
 
-Use the following example to see how a complete request is structured. Replace the sample `clientId` and `clientSecret` values with the credentials for your Databricks service principal.
+Use the following example to see how a complete request is structured. Replace the sample values with the connection details and service principal credentials from your environment.
 
 ```
-POST {platformUrl}/reltio/api/tenants/{tenantId}/interactions/database-configs/{connectionName}/databricks/oauth/credentials
+POST {platformUrl}/reltio/api/tenants/{tenantId}/interactions/database-configs/databricks/oauth/credentials
 {
+  "connectionName": "databricks-connection-01",
+  "workspaceUrl": "https://adb-1234567890123456.7.azuredatabricks.net",
+  "warehouseId": "ab1c2d3ef5g6h7i8",
   "clientId": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
-  "clientSecret": "example-secret"
+  "clientSecret": "your-client-secret"
 }
 ```
 
 ## Response body
 
-The following table describes the fields returned in the response body. 
+The following table describes the fields returned in the response body when the request succeeds.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `status` | String | Overall response status. |
-| `data.status` | String | Status of the credential storage operation. |
-| `data.message` | String | Result message returned by the API. |
-| `data.connectionId` | String | Identifier of the Databricks connection configuration associated with the stored credentials. |
-| `data.connectionName` | String | Name of the Databricks connection configuration associated with the stored credentials. |
-| `data.timestamp` | Number | Timestamp value returned by the API for the credential storage operation. |
+| `successful` | Boolean | Indicates whether the request succeeded. |
+| `result.connectionId` | String | Unique identifier of the saved Databricks connection configuration. |
+| `result.connectionName` | String | Name of the Databricks connection configuration. |
+| `result.message` | String | Confirmation message returned by the API. |
+| `result.status` | String | Status of the operation. |
+| `result.timestamp` | Number | Timestamp of the operation, in epoch milliseconds. |
 
 ## Example response
 
@@ -190777,34 +191185,29 @@ The following example shows a successful response.
 
 ```
 {
-  "status": "success",
-  "data": {
-    "status": "success",
+  "successful": true,
+  "result": {
+    "connectionId": "f7956383-eb65-4298-b716-c6f808aa6744",
+    "connectionName": "databricks-connection-01",
     "message": "Databricks M2M OAuth credentials stored successfully",
-    "connectionId": "c1d2e3f4-...",
-    "connectionName": "my-databricks-connection",
-    "timestamp": 1743600000000
+    "status": "success",
+    "timestamp": 1779778867683
   }
 }
 ```
 
-```
-{
-  "successful": false,
-  "error": "Code: DS_DATABRICKS_OAUTH_CLIENT_ID_REQUIRED; Message parameters: []. Databricks OAuth client ID is required. The clientId field cannot be null or empty when storing Databricks M2M OAuth credentials"
-}
-```
+## Error codes and recommended actions
 
+The following table lists the possible error responses returned by this API.
 
-
-
-
-```
-{
-  "successful": false,
-  "error": "Code: DS_DATABRICKS_OAUTH_CLIENT_SECRET_REQUIRED; Message parameters: []. Databricks OAuth client secret is required. The clientSecret field cannot be null or empty when storing Databricks M2M OAuth credentials"
-}
-```
+| HTTP status | Description | Recommended action |
+| --- | --- | --- |
+| `400 Bad Request` | An active Databricks connection already exists for the tenant. | Delete or revoke the existing connection before creating a new one. |
+| `400 Bad Request` | A Databricks connection with the same name already exists for the tenant. | Choose a different connection name and resubmit the request. |
+| `400 Bad Request` | The `workspaceUrl` field is null or empty. | Provide a valid Databricks workspace URL and resubmit the request. |
+| `400 Bad Request` | The `warehouseId` field is null or empty. | Provide a valid Databricks SQL Warehouse ID and resubmit the request. |
+| `400 Bad Request` | The `clientId` or `clientSecret` field is null or empty. | Provide valid OAuth credentials for the Databricks service principal and resubmit the request. |
+| `400 Bad Request` | The `workspaceUrl` format is invalid. | Correct the workspace URL format and resubmit the request. |
 
 
 
@@ -190891,7 +191294,7 @@ If the connection test succeeds, the response is similar to the following exampl
 }
 ```
 
-If the connection test fails, the response is similar to the following example. Review the response message to identify the issue, update the values saved through [Create a Databricks connection configuration](https://docs.reltio.com/en/applications/data-integrations/zero-copy-integration-at-a-glance/reltio-zero-copy-interaction-integration-from-databricks-at-a-glance/create-a-databricks-connection-configuration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) or [Store Databricks OAuth credentials](https://docs.reltio.com/en/applications/data-integrations/zero-copy-integration-at-a-glance/reltio-zero-copy-interaction-integration-from-databricks-at-a-glance/store-databricks-oauth-credentials?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) as needed, and then test the connection again. 
+If the connection test fails, the response is similar to the following example. Review the response message to identify the issue, update the values saved through [Create a Databricks connection and store OAuth credentials](https://docs.reltio.com/en/applications/data-integrations/zero-copy-integration-at-a-glance/reltio-zero-copy-interaction-integration-from-databricks-at-a-glance/create-a-databricks-connection-and-store-oauth-credentials?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) as needed, and then test the connection again. 
 
 ```
 {
@@ -191569,77 +191972,11 @@ The response provides information about:
 
 ## Hierarchy Transcode
 
-See the following example of Hierarchy Transcode:
+If your data model includes lookup types with parent-child dependencies, such as Country and City, or State and County, a flat transcode request is not sufficient. Transcoding each lookup independently ignores the hierarchical relationship between them and produces ambiguous or incorrect results. For example, the city code `PR` resolves to Paris under France, or Praia under Cape Verde. Hierarchy Transcode resolves a parent lookup and one or more dependent child lookups in a single request, preserving the parent-child context in the response.
 
-**Transcoding Request**
+In a hierarchy transcode request, the parent lookup is placed in the `values` map, and each dependent (child) lookup is nested inside a `dependentValues` array. RDM evaluates the child lookup within the scope of its resolved parent, returning canonical values that reflect the correct parent-child relationship.
 
-```
-POST: {{rdmURL}}/transcode/{{rdmTenant}}
-```
-
-```
-[
-  {
-    "values": {
-      "rdm/lookupTypes/COUNTRY_TYPE": [
-        {
-          "value": "FR",
-          "source": "AMS"
-        }        
-      ]
-    },
-    "dependentValues": [
-      {
-        "values": {
-          "rdm/lookupTypes/CITY_TYPE": [
-            {
-              "value": "PR",
-              "source": "AMS"
-            }
-          ]
-        }
-      }
-    ]
-  }
-]
-```
-
-**Response**
-
-```
-[
-    {
-        "values": {
-            "rdm/lookupTypes/COUNTRY_TYPE": [
-                {
-                    "type": "rdm/lookupTypes/COUNTRY_TYPE",
-                    "code": "FRA",
-                    "value": "France",
-                    "source": "rdm/sources/AMS",
-                    "attributes": [],
-                    "success": true
-                }
-            ]
-        },
-        "dependentValues": [
-            {
-                "values": {
-                    "rdm/lookupTypes/CITY_TYPE": [
-                        {
-                            "type": "rdm/lookupTypes/CITY_TYPE",
-                            "code": "PARIS",
-                            "value": "Paris",
-                            "source": "rdm/sources/AMS",
-                            "attributes": [],
-                            "success": true
-                        }
-                    ]
-                }
-            }
-        ]
-    }
-]
-```
+For field descriptions, error handling, and advanced nesting, see [Transcode API](https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-api/transcode-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 ## The MDM Cache
 
@@ -193165,8 +193502,6 @@ To enhance your experience, the **Search Results** are now displayed in an advan
 To know more about each of the functionalities mentioned above, click the topics provided below.
 
 [Working with the Main Search Page](https://docs.reltio.com/en/applications/search/search-at-a-glance/search-operation/working-with-the-main-search-page?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-
-[overviewbulkoper NNC](https://docs.reltio.com/search?q=overviewbulkoper_NNC&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 [Working with Search Results in Hub](https://docs.reltio.com/en/applications/search/search-at-a-glance/search-operation/working-with-search-results-in-hub?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
@@ -197100,7 +197435,7 @@ Learn about ROLE_REVIEWER role to manage access permissions for the Reltio Workf
 
 Assign roles to user and group accounts to grant them permissions (access rights and privileges). For more information, see topic [System roles](https://docs.reltio.com/en/objectives/administer-system/system-administration-at-a-glance/access-management-at-a-glance/access-management-reference/authorization/system-roles?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
-The ROLE_REVIEWER system role grants permissions to review workflow tasks (for details, see topic [workflow](https://docs.reltio.com/search?q=workflow&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)).
+The ROLE_REVIEWER system role grants permissions to review workflow tasks (for details, see topic [Workflow Task Actions](https://docs.reltio.com/en/objectives/manage-workflow-tasks/workflow-management-at-a-glance/workflow-management-operation/working-with-tasks/workflow-task-actions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)).
 
 The ROLE_REVIEWER system role doesn't have any access permissions for Reltio services, resources, and sub resources.
 
@@ -197374,6 +197709,24 @@ This table identifies the Reltio access permissions for Reltio services, resourc
 | Accessing APIs that update tasks | workflow.jobs.updateTasks |  |
 | Accessing APIs that validate tasks | workflow.jobs.validateTasks |  |
 | Using the monitoring API | workflow.monitoring |  |
+
+
+
+---
+
+# Configuration service access permissions service access permissions
+
+> **Section:** Objectives > Administer system > System administration at a glance > Access management at a glance > Access management reference > Authorization > Custom roles > Service access permissions
+
+
+**Source:** https://docs.reltio.com/en/objectives/administer-system/system-administration-at-a-glance/access-management-at-a-glance/access-management-reference/authorization/custom-roles/service-access-permissions/configuration-service-access-permissions-service-access-permissions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** Configuration service access permissions
+
+
+Learn about Configuration service access permissions service access permissions to assign to resources and sub resources.
+
+This table identifies the Reltio access permissions you can assign to custom roles for each resource and sub resource in the Configuration service access permissions service, identifying both its API endpoint and user interface name.
 
 
 
@@ -207133,7 +207486,7 @@ This table describes the content of the infos associated with cleanse functions.
 
 **Source:** https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-set-up/configure-cleanse-functions/configure-filter-expressions-for-cleanse-function?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
-**Keywords:** filter expression, cleanse function filter, conditional cleansing, filter-based execution, entity data filtering, runtime filter evaluation, cleanse configuration, cleanseConfig, infos.sequence.chain.filter, cleanse function configuration, filter expression syntax, filter evaluation, execution conditions, true/false evaluation, conditional execution, skip cleanse execution, cleanser crosswalk behavior, entity-level filtering, nested attribute filtering, object-level cleansing, nested value evaluation, attribute equality, attribute existence, composite expressions, nested attribute conditions, crosswalk conditions, filter validation, expression validation, syntax validation, configuration errors, parser error messages
+**Keywords:** filter expression, cleanse function filter, conditional cleansing, filter-based execution, entity data filtering, runtime filter evaluation, cleanse configuration, cleanseConfig, infos.sequence.chain.filter, cleanse function configuration, filter expression syntax, filter evaluation, execution conditions, true/false evaluation, conditional execution, skip cleanse execution, cleanser crosswalk behavior, entity-level filtering, nested attribute filtering, object-level cleansing, nested value evaluation, attribute equality, attribute existence, composite expressions, nested attribute conditions, crosswalk conditions, filter validation, expression validation, syntax validation, configuration errors, parser error messages, multiple filter expressions, conditional cleanse chain, multi-step cleanse chain, conditional attribute derivation, independent step evaluation, mutually exclusive filter conditions, per-step filter evaluation, chain step independence, if-else cleanse pattern, derive attribute by condition
 
 
 Learn how to use filter expressions to control when a cleanse function executes on entity data.
@@ -207194,6 +207547,146 @@ The following table describes how cleanse execution behaves based on whether a f
 | No filter defined | Cleanse executes for all entity data |
 | Filter expression is defined and it evaluates to true | Cleanse executes on the entity data and a cleanser crosswalk is created or updated |
 | Filter expression is defined and it evaluates to false | Cleanse is skipped, no data is written, and no cleanser crosswalk is created or modified |
+
+## Use multiple filter expressions for conditional cleansing
+
+A cleanse function supports multiple steps, each with its own filter expression, to implement conditional attribute derivation. Each step evaluates independently against the set of records processed by the cleanse function. When a step's filter does not match a record, the step is skipped for the record, but the remaining steps still evaluate and execute if their filter conditions match.
+
+Apply this pattern when an attribute value depends on mutually exclusive conditions. Configure each step with its own filter, and the step whose filter matches a record sets the value for that record.
+
+In the following example, a three-step conditional cleanse function derives the `Name` attribute based on the different format for different `Country`. The first two steps target specific country values, and the final step uses a default format to generate the Name attribute.
+
+```
+{
+                "chain": [
+                  {
+                    "cleanseFunction": "PatternBasedFieldBuilder",
+                    "resultingValuesSourceTypeUri": "configuration/sources/ReltioCleanser",
+                    "proceedOnSuccess": false,
+                    "proceedOnFailure": true,
+                    "filter": "equals(attributes.Country, 'US')",
+                    "mapping": {
+                      "inputMapping": [
+                        {
+                          "attribute": "configuration/entityTypes/Individual/attributes/FirstName",
+                          "mandatory": false,
+                          "allValues": false,
+                          "cleanseAttribute": "FirstName"
+                        },
+                        {
+                          "attribute": "configuration/entityTypes/Individual/attributes/MiddleName",
+                          "mandatory": false,
+                          "allValues": false,
+                          "cleanseAttribute": "MiddleName"
+                        },
+                        {
+                          "attribute": "configuration/entityTypes/Individual/attributes/LastName",
+                          "mandatory": false,
+                          "allValues": false,
+                          "cleanseAttribute": "LastName"
+                        }
+                      ],
+                      "outputMapping": [
+                        {
+                          "attribute": "configuration/entityTypes/Individual/attributes/Name",
+                          "mandatory": false,
+                          "allValues": false,
+                          "cleanseAttribute": "OutputText"
+                        }
+                      ]
+                    },
+                    "params": {
+                      "isForce": true,
+                      "pattern": "{LastName}, {FirstName}"
+                    }
+                  },
+                  {
+                    "cleanseFunction": "PatternBasedFieldBuilder",
+                    "resultingValuesSourceTypeUri": "configuration/sources/ReltioCleanser",
+                    "proceedOnSuccess": false,
+                    "proceedOnFailure": true,
+                    "filter": "equals(attributes.Country, 'IN')",
+                    "mapping": {
+                      "inputMapping": [
+                        {
+                          "attribute": "configuration/entityTypes/Individual/attributes/FirstName",
+                          "mandatory": false,
+                          "allValues": false,
+                          "cleanseAttribute": "FirstName"
+                        },
+                        {
+                          "attribute": "configuration/entityTypes/Individual/attributes/MiddleName",
+                          "mandatory": false,
+                          "allValues": false,
+                          "cleanseAttribute": "MiddleName"
+                        },
+                        {
+                          "attribute": "configuration/entityTypes/Individual/attributes/LastName",
+                          "mandatory": false,
+                          "allValues": false,
+                          "cleanseAttribute": "LastName"
+                        }
+                      ],
+                      "outputMapping": [
+                        {
+                          "attribute": "configuration/entityTypes/Individual/attributes/Name",
+                          "mandatory": false,
+                          "allValues": false,
+                          "cleanseAttribute": "OutputText"
+                        }
+                      ]
+                    },
+                    "params": {
+                      "isForce": true,
+                      "pattern": "{FirstName}, {LastName}"
+                    }
+                  },
+                  {
+                    "cleanseFunction": "PatternBasedFieldBuilder",
+                    "resultingValuesSourceTypeUri": "configuration/sources/ReltioCleanser",
+                    "proceedOnSuccess": false,
+                    "proceedOnFailure": true,
+                    "filter": "not(equals(attributes.Country, 'US')) and not(equals(attributes.Country, 'IN'))",
+                    "mapping": {
+                      "inputMapping": [
+                        {
+                          "attribute": "configuration/entityTypes/Individual/attributes/FirstName",
+                          "mandatory": false,
+                          "allValues": false,
+                          "cleanseAttribute": "FirstName"
+                        },
+                        {
+                          "attribute": "configuration/entityTypes/Individual/attributes/MiddleName",
+                          "mandatory": false,
+                          "allValues": false,
+                          "cleanseAttribute": "MiddleName"
+                        },
+                        {
+                          "attribute": "configuration/entityTypes/Individual/attributes/LastName",
+                          "mandatory": false,
+                          "allValues": false,
+                          "cleanseAttribute": "LastName"
+                        }
+                      ],
+                      "outputMapping": [
+                        {
+                          "attribute": "configuration/entityTypes/Individual/attributes/Name",
+                          "mandatory": false,
+                          "allValues": false,
+                          "cleanseAttribute": "OutputText"
+                        }
+                      ]
+                    },
+                    "params": {
+                      "isForce": true,
+                      "pattern": "{FirstName} {MiddleName} {LastName}"
+                    }
+                  }
+                ]
+              }
+```
+
+For each record, only the step with a matching filter executes. The remaining steps are skipped without affecting the record or the rest of the chain.
 
 ## Runtime evaluation for object and nested attributes
 
@@ -214428,6 +214921,12 @@ Body:
 }
 ```
 
+
+
+
+
+> **Note:** For China-based tenants, please replace `{{dataloader_uri}}` with `https://aws-dataloader.reltiocn.cn`.
+
 You need to set the parameter `loadType` to `SCHEMALESS_INTERACTIONS` to specify the type of data to load.
 
 
@@ -215138,7 +215637,7 @@ Here are some considerations when deciding to group multiple records into a sing
   Source file formats must be CSV or XLSX only.
 - 
 
-  [RELTIO_JSON](https://docs.reltio.com/search?q=c-dl-reltiojson-load&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) input files aren't supported for consolidating/grouping records.
+  [RELTIO_JSON](https://docs.reltio.com/en/developer-resources/load-and-export-apis/load-and-export-apis-at-a-glance/data-loader-api/json-file-loading-example?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) input files aren't supported for consolidating/grouping records.
 - 
 
   The total size of all source files to be loaded in any job cannot be higher than 10GB. If this functionality is disabled there is no size limitation.
@@ -223358,7 +223857,7 @@ To manage Survivorship rules and strategies:
      - More than one
      - Zero or more than one
      *Image: dm_survivorship_fallbackoptions.png*
-   - Select the Rule type. For more information, see topic [survivorshipruletypes](https://docs.reltio.com/search?q=survivorshipruletypes&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+   - Select the Rule type. For more information, see topic [Survivorship Rules](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-navigation/design-survivorship-rules/survivorship-rules?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
      > **Note:** You can add more Fallback criteria by clicking **ADD FALLBACK**. Doing so adds another set of fallback criteria with rule type information that can be edited.
    - Optionally, click **ADD NESTED FALLBACK** to add nested fallback criteria for a rule type.
      > **Tip:** You can make the nested fallback details appear or disappear by clicking the nested icon (*Image: dm_survivorship_nestedicon.png*).
@@ -225537,7 +226036,7 @@ For each of these attribute values, the following actions are available:
 
 View the workflow tasks assocaited with the profile.
 
-A workflow task is basically a series of predetermined sequential steps a user needs to perform to carry out a business objective. For example, you can create workflow tasks to review potential matches or review data that has been recommended for deletion. For more information, see [workflow](https://docs.reltio.com/search?q=workflow&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+A workflow task is basically a series of predetermined sequential steps a user needs to perform to carry out a business objective. For example, you can create workflow tasks to review potential matches or review data that has been recommended for deletion. For more information, see [Workflow Tasks](https://docs.reltio.com/en/objectives/manage-workflow-tasks/workflow-management-at-a-glance/workflow-management-operation/workflow-tasks?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 The following page appears on the right side of the **Profile** view, when you click the **Workflow** tab.
 
@@ -226403,7 +226902,7 @@ To create a profile:
 
 
 
-> **Note:** If you are adding values for an address attribute, you can configure the address autocomplete feature to enable you to add accurate addresses. For more information, see topic [c obj profiles addressautocomplete](https://docs.reltio.com/search?q=c-obj-profiles-addressautocomplete&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+> **Note:** If you are adding values for an address attribute, you can configure the address autocomplete feature to enable you to add accurate addresses.
 
 
 
@@ -226509,8 +227008,6 @@ Learn how to manage conditional attributes when creating a profile.
 Conditional attributes previously configured for an entity type in the Data Modeler are available to display for entities of that type in the Hub Profile view. For more information about control and conditional attributes and how to configure them in the Data Modeler, see topics [Conditional attributes](https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/define-entity-types-and-attributes/create-entity-type-attributes/conditional-attributes?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and and [Configure conditional attributes](https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/define-entity-types-and-attributes/create-entity-type-attributes/conditional-attributes/configure-conditional-attributes?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)..
 
 When you create a profile for an entity type for which you have configured conditions, select the configured value in the control attribute to display the conditional attributes in the Profile view.
-
-> **Note:** Conditional attributes are applicable if you use the Collaborative Profile Creation process. For more information, see topic [c discover relnotes 2022 1 moderncloudnativefoundation](https://docs.reltio.com/search?q=c-discover-relnotes-2022-1-moderncloudnativefoundation&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 To add conditional attributes for a control attribute when creating a profile:
@@ -232758,13 +233255,13 @@ Select a specific set of tasks and apply bulk actions to them like changing the 
 
 To select one or more tasks:
 
-1. In the left navigation pane, select **Inbox**. For more information, see topic [c getbearings inbox start](https://docs.reltio.com/search?q=c-getbearings-inbox-start&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+1. In the left navigation pane, select **Inbox**. For more information, see topic [inbox](https://docs.reltio.com/en/applications/inbox?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
    If you're in the **All** tab in the navigation pane, you'll only be able to reassign tasks that are in the **Open** status.If the task you want to reassign is in the **Closed** status, close the task and then reassign it.
    *Image: wf_inbox_selecttasks.png*
 2. In the workflow task area, select the tasks you want to perform bulk actions on:
    - At the top of the workflow area, select the **# tasks selected** check box to select all the tasks in the workflow task area. Alternatively, clear this check box to deselect all tasks.
    - Select or clear one or more individual check boxes. The **# tasks selected** changes to **selected tasks**.
-   For more information, see topic [c getbearings inbox start](https://docs.reltio.com/search?q=c-getbearings-inbox-start&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+   For more information, see topic [inbox](https://docs.reltio.com/en/applications/inbox?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 3. In the bulk actions menu displayed in the **Filter icon/View Switcher** if you selected multiple tasks, specify the action to apply to these tasks:
    - Calendar icon: Change the due date.
    - Framed plus icon: Add a comment.
@@ -233219,8 +233716,6 @@ You can review the data change request and the corresponding approval process.
 - **Actors**: Reviewer, Workflow Engine, Workflow Adapter, Hub, and Reltio API.
 - **Trigger**: A user starts a workflow to review a data change request, from Suggesting mode on profile page.
 
-For more information, see [workflow](https://docs.reltio.com/search?q=workflow&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
-
 ## User Flow
 
 The user flow explains the steps that are carried out, when a data change request is initiated and the process is triggered.
@@ -233272,7 +233767,7 @@ Recommend for Delete is a process for reviewing intended deletions of Reltio pro
 - *Actors*: Reviewer, Workflow Engine, Workflow Adapter, Hub, and Reltio API.
 - *Trigger*: User starts a workflow (with comments) to review an entity for deletion.
 
-For more information, see [workflow](https://docs.reltio.com/search?q=workflow&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+For more information, see [Workflow Tasks](https://docs.reltio.com/en/objectives/manage-workflow-tasks/workflow-management-at-a-glance/workflow-management-operation/workflow-tasks?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 ## User Flow
 
@@ -233320,7 +233815,7 @@ Reltio Platform uses match rules to find out if two records are identical. Match
 
 ## Potential Match Review
 
-*Profile*[potentialmatchesperspective](https://docs.reltio.com/search?q=potentialmatchesperspective&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)## Create Workflow
+*Profile*[Potential Matches perspective](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/potential-matches-perspective?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)## Create Workflow
 
 You can filter the search results using the potential matches or the match rules facet. From the search screen you can initiate a workflow.
 
