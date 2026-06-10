@@ -1,6 +1,6 @@
 # Reltio Documentation
 
-_Generated: 2026-06-05 02:15 UTC_
+_Generated: 2026-06-10 02:14 UTC_
 
 _Topics: 3301_
 
@@ -14963,11 +14963,33 @@ Learn about the new features and enhancements introduced in this 2026.1.3.0 rele
 | 2 | Test (TEST) | May 29, 2026 |
 | 3 | Production (PRD) | June 05, 2026 |
 
+## Download and upload agents across tenants in AgentFlow Agent Builder
+
+Agent Builder now lets you download a published agent as an encrypted blueprint file and upload it into a different tenant. The uploaded blueprint pre-populates the agent name, description, tags, system prompt, and tool selections, reducing the effort required to deploy the same agent across multiple tenants.
+
+Download is available from the **⋮** (more options) menu on any published agent. Upload is available from the **Build new agent** dropdown under **Upload from an existing tenant**.
+
+For more information, see [Download an agent](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agent-builder-for-agentflow-at-a-glance/download-an-agent?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Upload an agent from another tenant](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agent-builder-for-agentflow-at-a-glance/upload-an-agent-from-another-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
 ## OAuth2 client credentials for Azure Function LCAs
 
 Azure Function Lifecycle Actions (LCAs) now support OAuth2 `client_credentials` authentication. When invoking an Azure Function, Reltio requests a bearer token from a customer-managed OAuth2 identity provider. OAuth2 `client_credentials` support adds an authentication option alongside existing methods and gives organizations greater control over how Azure Function LCAs authenticate.
 
 For more information, see [Configure OAuth2 client credentials for Azure LCAs](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/azure-functions-for-lifecycle-actions/configure-oauth2-client-credentials-for-azure-lcas?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+## Access Data Loader in the Console for China-based tenants
+
+Data Loader is now available in the **Console** for China-based tenants. With this update, China-based tenants can now use not only the Data Loader API, but also the **Data Loader** UI in the **Console**, enabling users to manage data loading tasks through the application interface. Available in **Console > Tenant Management applications > Data Loader**.
+
+For more information, see [Get started with Data Loader](https://docs.reltio.com/en/applications/console/tenant-management-applications/data-loader-at-a-glance/get-ready-for-data-loader?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+## Entitlement and Usage Summary now available to more customers
+
+The **Entitlement and Usage Summary** page now supports additional contract types, allowing more customers to view their entitlements and usage across contracts, package mappings, and tenants in one place. Depending on how your entitlements are structured, the page also shows dedicated views for consolidated profile (CP) usage that is shared across tenants or pooled across contracts.
+
+You can navigate to this page from **Console > Usage Reporting > Entitlement & Usage Summary**.
+
+For more information, see [Entitlement and Usage Summary](https://docs.reltio.com/en/applications/console/tenant-management-applications/usage-reporting-at-a-glance/entitlement-and-usage-summary?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
@@ -53806,12 +53828,12 @@ There are two ways to prevent this problem:
 
 ---
 
-# Run the Relations Consistency Check task
+# Relations Consistency Task
 
 > **Section:** Developer resources > System Administration APIs > System Administration APIs at a glance > Tasks API
 
 
-**Source:** https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/run-the-relations-consistency-check-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/relations-consistency-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** relations consistency check task, run relations consistency check, fix relations one hop inconsistencies, relationsconsistencycheck api, check relation consistency by type, distributed relations consistency task, read only relations consistency check, system administration tasks api, relations consistency, one hop, tasks api
 
@@ -115894,6 +115916,8 @@ The Delete match statistic API deletes a single Autopilot match statistic record
 
 You can use this API to remove individual match statistics records, for example when correcting data or resetting specific matching results.
 
+> **Note:** When you delete a specific statistics record, Autopilot deletes `AUTOMAPPED` and `LOOKUP_CREATED` records. Autopilot does not delete records with status `DCR_PENDING` or `LOOKUP_DCR_PENDING`.
+
 ## HTTP method and endpoint
 
 Use the following HTTP method and endpoint path to submit the request:
@@ -129842,11 +129866,11 @@ Rule for determining if a password contains a QWERTY keyboard sequence. Both upp
 
 Learn about the API operation to update your customer password policy rules.
 
-Use the `Customer Password Policy API` to update your customer password policy.
+Use the `Customer Password Policy API` to update your user's password policy.
 
-A customer password policy defines the way you authenticate your customers based on a username and password.
+A customer password policy defines the way you authenticate your user's based on a username and password.
 
-Only users with the [ROLE_ADMIN_CUSTOMER Access permissions](https://docs.reltio.com/en/objectives/administer-system/system-administration-at-a-glance/access-management-at-a-glance/access-management-reference/authorization/system-roles/critical-high-privilege-roles/role_admin_customer-access-permissions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)`ROLE_ADMIN_CUSTOMER` can update the customer password policy. This is a self-service task that must be performed by an admin user. Reltio Support cannot make these changes on your behalf.
+Only user's with the [ROLE_ADMIN_CUSTOMER Access permissions](https://docs.reltio.com/en/objectives/administer-system/system-administration-at-a-glance/access-management-at-a-glance/access-management-reference/authorization/system-roles/critical-high-privilege-roles/role_admin_customer-access-permissions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)`ROLE_ADMIN_CUSTOMER` can update the customer password policy. This is a self-service task that must be performed by an admin user. Reltio Support cannot make these changes on your behalf.
 
 > **Note:** Customer password policies inherit properties from the default password policy if those properties are not explicitly defined. This means that if you don't specify values for number of failed attempts and inactive period, then the values from [the default policy](https://docs.reltio.com/en/applications/platform/platform-at-a-glance/platform-navigation/sign-in-to-reltio-data-cloud/default-reltio-password-policy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) will be used.
 
@@ -129864,12 +129888,12 @@ This table defines the parameters in the body of this API to define your custome
 
 | Parameter | Description |
 | --- | --- |
-| `expirePeriodInDays` | The period of time (in days) by which the customer must change the password before their account is locked.  For more information, see topic [expirePeriodInDays](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/customer-password-policy-apis/set-customer-password-policy/expireperiodindays?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
-| `inactivePeriodInDays` | The period of time (in days) a customer account can be inactive after which it is automatically disabled. Must be between 1 to 180, inclusive. If not defined, inherits the default value from [the default policy](https://docs.reltio.com/en/applications/platform/platform-at-a-glance/platform-navigation/sign-in-to-reltio-data-cloud/default-reltio-password-policy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). **Note:** When the account is disabled after this period, the account status is still displayed as active in **Console User Management** until the user tries to log in, At that point, the account is disabled and the status is updated to inactive.For more information, see topic [inactivePeriodInDays](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/customer-password-policy-apis/set-customer-password-policy/inactiveperiodindays?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
-| `numberOfFailedLoginAttempts` | The number of failed login attempts permitted before the customer's account is automatically locked. Must be between 2 and 20, inclusive.   If not defined, inherits the default value from [the default policy](https://docs.reltio.com/en/applications/platform/platform-at-a-glance/platform-navigation/sign-in-to-reltio-data-cloud/default-reltio-password-policy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).  For more information, see topic [numberOfFailedLoginAttempts](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/customer-password-policy-apis/set-customer-password-policy/numberoffailedloginattempts?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
-| `numberOfFailedMFALoginAttempts` | The number of failed login MFA attempts permitted before the customer's account is automatically locked. Must be between 2 and 20, inclusive.   If not defined, inherits the default value from [the default policy](https://docs.reltio.com/en/applications/platform/platform-at-a-glance/platform-navigation/sign-in-to-reltio-data-cloud/default-reltio-password-policy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
-| `passwordRules` | The rules for validating a customer password.   For more information, see topic [passwordRules](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/customer-password-policy-apis/set-customer-password-policy/passwordrules?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
-| `userSessionTimeoutSeconds` | > **Important:** We strongly recommend enabling `userSessionTimeoutSeconds` to enforce session idle timeouts and reduce the risk of unauthorized access through inactive sessions. This setting requires coordination between your identity provider (IdP) and the Reltio IdP. Before enabling it, [Get help in Support Portal](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) in the Reltio Support Portal. Reltio Support must validate the setup and confirm compatibility with your environment before applying the parameter.  The period of time (in seconds) a session can remain idle before the session times out and the customer is required to get a new token to log in again.  > **Note:** The idle duration is applicable when there isn't user activity involving an API call. If an user clicks on the UI without taking any action, it doesn't count as activity.    For more information, see topic[userSessionTimeoutSeconds](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/customer-password-policy-apis/set-customer-password-policy/usersessiontimeoutseconds?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
+| `expirePeriodInDays` | The period of time (in days) by which the user must change the password before their account is locked.  For more information, see topic [expirePeriodInDays](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/customer-password-policy-apis/set-customer-password-policy/expireperiodindays?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
+| `inactivePeriodInDays` | The period of time (in days) a user account can be inactive after which it is automatically disabled. Must be between 1 to 180, inclusive. If not defined, inherits the default value from [the default policy](https://docs.reltio.com/en/applications/platform/platform-at-a-glance/platform-navigation/sign-in-to-reltio-data-cloud/default-reltio-password-policy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). **Note:** When the account is disabled after this period, the account status is still displayed as active in **Console User Management** until the user tries to log in, At that point, the account is disabled and the status is updated to inactive.For more information, see topic [inactivePeriodInDays](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/customer-password-policy-apis/set-customer-password-policy/inactiveperiodindays?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
+| `numberOfFailedLoginAttempts` | The number of failed login attempts permitted before the user's account is automatically locked. Must be between 2 and 20, inclusive.   If not defined, inherits the default value from [the default policy](https://docs.reltio.com/en/applications/platform/platform-at-a-glance/platform-navigation/sign-in-to-reltio-data-cloud/default-reltio-password-policy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).  For more information, see topic [numberOfFailedLoginAttempts](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/customer-password-policy-apis/set-customer-password-policy/numberoffailedloginattempts?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
+| `numberOfFailedMFALoginAttempts` | The number of failed login MFA attempts permitted before the user's account is automatically locked. Must be between 2 and 20, inclusive.   If not defined, inherits the default value from [the default policy](https://docs.reltio.com/en/applications/platform/platform-at-a-glance/platform-navigation/sign-in-to-reltio-data-cloud/default-reltio-password-policy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
+| `passwordRules` | The rules for validating a user password.   For more information, see topic [passwordRules](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/customer-password-policy-apis/set-customer-password-policy/passwordrules?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
+| `userSessionTimeoutSeconds` | The period of time, in seconds, that a user session can remain idle before it times out. When the timeout is reached, users are signed out of all active sessions simultaneously, including sessions across multiple tenants, browser tabs, browsers, and devices. User's must then authenticate again to continue using Reltio.  > **Note:** The timeout timer resets only when the user performs an action that triggers a Reltio API call, such as searching, opening an entity, editing data, or running an export. Browser-only interactions such as scrolling, hovering, or typing without submitting do not reset the timer.  > **Important:** We strongly recommend enabling `userSessionTimeoutSeconds` to enforce session idle timeouts and reduce the risk of unauthorized access through inactive sessions. This setting requires coordination between your identity provider (IdP) and the Reltio IdP. Before enabling it, [Get help in Support Portal](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) in the Reltio Support Portal. Reltio Support must validate the setup and confirm compatibility with your environment before applying the parameter.  For more information, see topic [userSessionTimeoutSeconds](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/customer-password-policy-apis/set-customer-password-policy/usersessiontimeoutseconds?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
 
 ## Example: Strong password policy with character requirements and history
 
@@ -130044,29 +130068,42 @@ Rule for determining if a password contains the correct number of uppercase char
 
 **Source:** https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/customer-password-policy-apis/set-customer-password-policy/usersessiontimeoutseconds?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
+**Keywords:** userSessionTimeoutSeconds, user session timeout, session idle timeout Reltio, customer level session timeout, session timeout password policy, sign out all active sessions Reltio, terminate all sessions on timeout, SSO session timeout Reltio, session timeout across multiple tenants, session timeout browser tabs, idle session logout Reltio, API activity reset session timer, customer password policy session timeout, disable session timeout Reltio
 
-Learn about the userSessionTimeoutSeconds parameter for the Customer Password Policy API
 
-The `userSessionTimeoutSeconds` parameter defines how long a user session can remain idle before it automatically times out.
+Learn about the userSessionTimeoutSeconds parameter for the Customer Password Policy API.
 
-> **Important:** We strongly recommend enabling `userSessionTimeoutSeconds` to enforce session idle timeouts and reduce the risk of unauthorized access through inactive sessions. This setting requires coordination between your identity provider (IdP) and the Reltio IdP. Before enabling it, [Get help in Support Portal](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) in the Reltio Support Portal. Reltio Support must validate the setup and confirm compatibility with your environment before applying the parameter.
+The `userSessionTimeoutSeconds` parameter specifies the period of time, in seconds, that a user session can remain idle before it times out. When the configured idle period is reached, Reltio signs the user out of all active sessions simultaneously, including sessions across multiple tenants, browser tabs, browsers, and devices. The user must then authenticate again to continue using Reltio.
 
-The `userSessionTimeoutSeconds` parameter for the Customer Password Policy endpoint specifies the period of time (in seconds) a session can remain idle before the session times out and users are required to get a new token to log in again.
-
-For example, pass 300 in a request to end sessions if idle for 5 minutes: 
+The following example sets a 30-minute session timeout:
 
 ```
 {
-    "userSessionTimeoutSeconds": 300
+    "userSessionTimeoutSeconds": 1800
 //rest of the fields
  }
 ```
 
-The idle timeout countdown begins from the last action performed in Reltio. For example, if a user views an entity and then remains inactive, the countdown starts from that point. 
+If `userSessionTimeoutSeconds` is absent from your password policy, or if the value is set to `0`, no user-level session timeout is applied. Sessions remain active until the user explicitly logs out or the identity provider terminates the session. Choose a timeout value based on your organization's security policy and the sensitivity of the data in your environment.
 
-> **Note:** Mouse clicks or movements aren’t counted as actions unless they trigger a platform task.
+> **Important:** We strongly recommend enabling `userSessionTimeoutSeconds` to enforce session idle timeouts and reduce the risk of unauthorized access through inactive sessions. This setting requires coordination between your identity provider (IdP) and the Reltio IdP. Before enabling it, [Get help in Support Portal](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) in the Reltio Support Portal. Reltio Support must validate the setup and confirm compatibility with your environment before applying the parameter.
 
-For information on the other parameters in this API operation, see topic [Customer Password Policy APIs](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/customer-password-policy-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+## Actions that resets the timeout
+
+The timeout timer resets each time the user performs an action that triggers a Reltio API call. The following actions reset the timer:
+
+- Searching
+- Opening an entity
+- Editing data
+- Running an export
+
+The following browser-only interactions do not reset the timer: 
+
+- Scrolling
+- Hovering
+- Typing without submitting and action
+
+> **Note:** For SSO users, session behavior is also affected by your identity provider configuration. Review both the [customer password policy](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/customer-password-policy-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and your identity provider session settings when troubleshooting session timeout behavior.
 
 
 
@@ -141166,8 +141203,6 @@ This figure illustrates the benefits of metadata security*Image: sec_metadatarol
 
 Learn about the Entitlement and Usage Summary page, a single source of truth for entitlement and usage reporting.
 
-> **Note:** The **Entitlement and Usage Summary** page is currently available only for Standard customers. In this offering, entitlements are managed for a specific package mapping, are not pooled across multiple package mappings, and can include additional tenants.
-
 Use the **Entitlement and Usage Summary** page to view entitlements and usage across your contracts, package mappings, and tenants. This page helps you understand how your entitlements are allocated, compare usage across packages and tenants, and plan for approaching usage limits.
 
 To access this page, navigate to **Console > Usage Reporting > Entitlement & Usage Summary**.
@@ -141176,15 +141211,47 @@ To access this page, navigate to **Console > Usage Reporting > Entitlement & Usa
 
 ## Contract structure
 
-A contract can contain multiple package mappings. Each package mapping includes a base package with one DEV tenant, one TEST tenant, and one PROD tenant by default. You can also subscribe to additional tenants if required.
+A contract can contain multiple package mappings. Each package mapping includes a base package with one DEV tenant, one TEST tenant, and one PROD tenant by default. How entitlements are scoped, shared, and pooled across these tenants depends on the customer type.
+
+**Standard customer**
+
+For Standard customers, entitlements are tracked and reported for each package mapping individually.
 
 *Image: i-usage-hierarchy.svg*
+
+- Entitlements are managed for each package mapping and are not pooled across package mappings.
+- CP is tracked for each tenant, while RSU, API, and RIH are shared across the package mapping.
+- A package mapping can include additional tenants.
+
+**Usage customer**
+
+For Usage customers, entitlements are shared across the base package.
+
+*Image: i-reltio-usage.svg*
+
+- CP entitlement is shared across all tenants (PROD, TEST, and DEV) in the base package. DEV usage cannot exceed 200,000 CP.
+- RSU, API, and RIH are shared across the base package.
+- Additional tenants are not supported.
+
+**Pooled customer**
+
+For Pooled customers, entitlements are shared across all contracts and package mappings in the pool.
+
+*Image: i-reltio-pooled.svg*
+
+- RSU, API, and RIH are pooled across all package mappings and contracts that share the same package mapping and are marked as pooled.
+- CP is pooled by environment, and base package tenants and additional tenants pool separately:
+  - Base package PROD and TEST tenants pool with other base package tenants of the same environment.
+  - Additional PROD and TEST tenants pool with other additional tenants of the same environment, not with the base package tenants.
+  - DEV tenants are never pooled.
 
 ## Package mapping and tenant views
 
 The page presents entitlement and usage information at the following levels:
 
 - **Package Mapping Entitlements and Usage**: Displays usage and entitlement details for each contract and package mapping. This view helps you compare usage with entitlements, monitor consumption trends, and identify package mappings that are nearing contractual limits.
+- **Usage CP Entitlement** (only for Usage customers): Displays CP usage against the CP entitlement that is shared across all tenants (PROD, TEST, and DEV) in each base package. DEV usage cannot exceed 200,000 CP.
+- **Pooled CP Summary** (only for Pooled customers): Displays aggregated CP usage against the pooled CP entitlement for each environment, with separate rows for PROD and TEST tenants. DEV tenants are not pooled.
 - **Tenant Entitlement and Usage**: Displays usage and entitlement details for individual PROD, TEST, and DEV tenants within each package mapping. This helps you track usage against allocated entitlements and review capacity and renewal needs.
 
 For more information on entitlements and metrics on this page, see [Entitlements](https://www.reltio.com/entitlements/).
@@ -141207,14 +141274,14 @@ The page updates to show entitlement and usage information for the selected mont
 
 The **Entitlement and Usage Summary** page calculates usage over a calendar month based on values collected through the tenant reporting process. Entitlements are always shown in real time and do not reflect historical states. When you review past months, usage is evaluated against the current entitlement values.
 
-The following table shows when each metric is measured, how the monthly value is calculated, and how usage is aggregated. For metrics that use a monthly average, the average is updated each day during the month, so the value shown during the month reflects usage collected so far.
+The aggregation level depends on the customer type. For metrics that use a monthly average, the average is updated each day during the month, so the value shown during the month reflects usage collected so far.The following table shows when each metric is measured, how the monthly value is calculated, and how usage is aggregated.
 
-| **Metric** | **Measurement** | **Monthly calculation** | **Aggregation level** |
-| --- | --- | --- | --- |
-| **Consolidated Profiles (CP)** | Measured once each day for each tenant. | The monthly average is updated each day based on the daily CP counts collected so far in the calendar month. | Tenant level. CP is not aggregated across tenants. |
-| **Reltio Storage Units (RSU)** | Measured once each day for each tenant. | The monthly average is updated each day based on the daily RSU values collected so far in the calendar month. | Packaging mapping level. RSU usage is aggregated across all tenants in the packaging mapping. |
-| **API** | Measured once each day for each tenant. | The monthly average is updated each day based on the daily API call totals collected so far in the calendar month. | Packaging mapping level. API usage is aggregated across all tenants in the packaging mapping. |
-| **Reltio Integration Hub (RIH)** | Measured once each day for each tenant. | The monthly total is updated each day based on the daily task totals collected so far in the calendar month. | Packaging mapping level. Task usage is aggregated across all tenants in the packaging mapping. |
+| **Metric** | **Measurement** | **Monthly calculation** | **Standard aggregation** | **Usage aggregation** | **Pooled aggregation** |
+| --- | --- | --- | --- | --- | --- |
+| **Consolidated Profiles (CP)** | Measured once each day for each tenant. | The monthly average is updated each day based on the daily CP counts collected so far in the calendar month. | Tenant level. CP is not aggregated across tenants. | Base package level. CP is shared across all tenants (PROD, TEST, and DEV); DEV usage cannot exceed 200,000 CP. | Environment level. CP is pooled across PROD tenants and, separately, across TEST tenants in the pool. DEV is not pooled. |
+| **Reltio Storage Units (RSU)** | Measured once each day for each tenant. | The monthly average is updated each day based on the daily RSU values collected so far in the calendar month. | Package mapping level. RSU usage is aggregated across all tenants in the package mapping. | Base package level. RSU usage is aggregated across all tenants in the base package. | Pool level. RSU usage is aggregated across all package mappings and tenants in the pool. |
+| **API** | Measured once each day for each tenant. | The monthly average is updated each day based on the daily API call totals collected so far in the calendar month. | Package mapping level. API usage is aggregated across all tenants in the package mapping. | Base package level. API usage is aggregated across all tenants in the base package. | Pool level. API usage is aggregated across all package mappings and tenants in the pool. |
+| **Reltio Integration Hub (RIH)** | Measured once each day for each tenant. | The monthly total is updated each day based on the daily task totals collected so far in the calendar month. | Package mapping level. Task usage is aggregated across all tenants in the package mapping. | Base package level. Task usage is aggregated across all tenants in the base package. | Pool level. Task usage is aggregated across all package mappings and tenants in the pool. |
 
 For compliance evaluation, the value shown on the last day of the month is used.
 
@@ -218448,7 +218515,7 @@ Use the `OldestValue` survivorship strategy for the `FirstName` attribute for al
 
 **Source:** https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-navigation/design-survivorship-rules/survivorship-rules?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
-**Keywords:** configure survivorship rules for attributes, define operational values in reltio, use source priority for ov selection, fallback logic in survivorship strategy, survivorship mapping with filters and conditions, survivorship strategy types and usage, advanced survivorship filters with nested attributes, operational value configuration for entity attributes, survivorship, crosswalks, governance, workflow
+**Keywords:** configure survivorship rules for attributes, define operational values in reltio, use source priority for ov selection, fallback logic in survivorship strategy, survivorship mapping with filters and conditions, survivorship strategy types and usage, advanced survivorship filters with nested attributes, operational value configuration for entity attributes, survivorship, crosswalks, governance, workflow, resolveLookupCode, lookup attribute filtering, survivorship filter, lookup code, lookup value, filter condition, survivorship mapping, fallback survivorship, lookup resolution, survivorship group filter, lookup-backed attribute, canonical lookup code
 
 
 Learn about survivorship rules, which define how to determine the Operational Value (OV) for attributes based on configurable strategies and mappings.
@@ -218818,6 +218885,32 @@ A URI for matching any attribute can be used, for example:
 - Not a neighbor value from anywhere (`Identifiers` /`ID` -> `Address` /`AddressLine1`) This makes sense only for different entities: OV for `Identifiers` /`ID` from one entity with one address will be calculated with one rule, but for another entity with other address it will be calculated with another rule.
 
 If multiple values exist on URI, one required value is enough for the filtering match.
+
+## resolveLookupCode behavior in survivorship filters
+
+The `resolveLookupCode` parameter in survivorship determines whether a survivorship filter on a lookup-backed attribute matches correctly. The filter value is compared against the value stored for the attribute. If the values match, the survivorship strategy defined in that mapping is applied. If the values do not match, the filter condition fails and the fallback or default survivorship behavior is applied for that attribute instead.
+
+Configure `resolveLookupCode` at the tenant level or at the attribute level. The attribute-level setting takes precedence whenever it is explicitly defined for an attribute. The tenant-level value is used only as the default for attributes that do not declare their own `resolveLookupCode` setting.
+
+- When `resolveLookupCode` is `true`, the lookup code is stored for the attribute, regardless of whether the source loaded a code or a value. Set the filter value to the lookup code so the filter matches correctly.
+- When `resolveLookupCode` is `false`, the raw value loaded by the source is stored. Set the filter value to match that same form, lookup code or lookup value, so the filter matches correctly.
+
+> **Note:** The recommended practice is to set `resolveLookupCode` to `true` and use lookup codes in survivorship group filters. This produces consistent filter behavior when different source systems load different representations of the same value.
+
+The following example shows how filter matching behaves for a lookup-backed country attribute where the lookup code is `US` and the lookup value is `United States`.
+
+| Filter value | Entity value sent | resolveLookupCode | Value used for matching | Filter condition met |
+| --- | --- | --- | --- | --- |
+| `US` | `US` | `true` | `US` | Yes |
+| `US` | `United States` | `true` | `US`, after lookup resolution | Yes |
+| `US` | `US` | `false` | `US` | Yes |
+| `US` | `United States` | `false` | `United States` | No |
+| `United States` | `US` | `true` | `US` | No |
+| `United States` | `United States` | `true` | `US`, after lookup resolution | No |
+| `United States` | `US` | `false` | `US` | No |
+| `United States` | `United States` | `false` | `United States` | Yes |
+
+If you change the `resolveLookupCode` setting and need to reprocess existing lookup data, use the [Reload Lookup Data task](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/reload-lookup-data-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 ## Discard ignored and deleted values in survivorship filters
 
@@ -219240,6 +219333,10 @@ If the **Customer tenant** has three entities:
 When we merge Entity 1 and Entity 2 with the specified winner as Entity 1, then the merged entity (Entity 21) will have the`FirstName` attribute value of `FirstName1`. The operational value is set to `true` and the `FirstName2` operational value is set to `false`.
 
 If Entity 21 and Entity 3 are merged with the specified winner as Entity 3, then the merged entity will have the `FirstName` attribute value of `FirstName3`. The operational value is set to `true` and the `FirstName1` and `FirstName2` operational values are set to `false`.
+
+**Related links**
+
+- [Configuring Survivorship Rules in the L3](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/configuration-api/configuring-survivorship-rules-in-the-l3?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 
 
