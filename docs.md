@@ -1,8 +1,8 @@
 # Reltio Documentation
 
-_Generated: 2026-06-10 02:14 UTC_
+_Generated: 2026-06-12 02:15 UTC_
 
-_Topics: 3301_
+_Topics: 3327_
 
 ---
 
@@ -3556,28 +3556,6 @@ For more information, see [Computing Credits](https://docs.reltio.com/en/develop
 ## Heavy operations API
 
 After you receive the email from Reltio, you can run the heavy operations API to identify the operations that cause the quota to exceed. For more information, see [Get Heavy Operations](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/quota-limit-alerts-api/get-heavy-operations?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Get Heavy Operations Summary](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/quota-limit-alerts-api/get-heavy-operations-summary?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
-
-
-
----
-
-# Queue Quota Limits
-
-> **Section:** Reltio > What’s in the box? > What's in the box at a glance > Implementation assistance at a glance > Implementation assistance operation > Identify performance factors > Quota and limits
-
-
-**Source:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-at-a-glance/implementation-assistance-operation/identify-performance-factors/quota-and-limits/queue-quota-limits?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
-**Keywords:** Quota Limits for Queues, queues quota limits, quota limits for connected cloud queues
-
-
-Quota limits can be defined for Queues on Reltio Context Intelligence Platform.
-
-**Reltio Context Intelligence Platform**
-
-| Item | Definition | Quota Limit | Request Quota Increase |
-| --- | --- | --- | --- |
-| **Queue** | Queues are used to process records for synchronization to downstream systems. Each queue contains information about events, profiles, and relationships. | **1 Queue per tenant** | Additional queues can be subscribed for a fee. |
 
 
 
@@ -19191,29 +19169,75 @@ The Reltio platform uniquely enables you to easily model any entity occurring in
 
 This functionality allows you to set up a dependency between attributes with lookups.
 
-To set up dependency between attributes with lookups, an additional section needs to be added to the attribute configuration. You can configure the attributes within: Entity Types, Group Types, Relation Types, Graph Types, and Interaction Types.
+Dependent lookups are used when the value of one attribute (field) depends on the value selected in another attribute. Configuring dependent lookups helps in showing only relevant lookup values based on prior selections. You can configure the attributes within: Entity Types, Group Types, Relation Types, Graph Types, and Interaction Types. For a full reference of attribute properties used in this configuration, see [Attributes configuration](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/configuration-api/attributes-configuration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
-## Dependent Lookup Structure
+> **Note:** This is a legacy (MDM) lookup configuration approach. It is considered outdated and has been replaced by RDM-based lookup management.
+
+## How Dependent Lookups Work in L3 Configuration
+
+To establish a dependency between attributes, you need to define the `dependentLookupAttributes` property in the attribute configuration.
 
 ```
+  PUT {{MDMUrl}}/api/{{tenantName}}/configuration
 {
-   "COUNTRY_CD":{
-      "US":{
-         "displayName":"USA"
-      }
-   },
-   "CITY_CD":{
-      "SPB":{
-         "parent":"COUNTRY_CD.US",
-         "displayName":"Saint Petersburg"
-      }
-   },
-   "LICENSE_CD : {
-              "   1234   " : {
-              "   parent":"COUNTRY_CD.US",
-   "displayName":"123456789"
-}
-}
+                            "label": "Category",
+                            "name": "Category",
+                            "description": "Category",
+                            "type": "String",
+                            "hidden": false,
+                            "important": false,
+                            "system": false,
+                            "required": true,
+                            "faceted": true,
+                            "searchable": true,
+                            "attributeOrdering": {
+                                "orderingStrategy": "LUD"
+                            },
+                            "uri": "configuration/entityTypes/Company/attributes/McoType/attributes/Category",
+                            "lookupCode": "rdm/lookupTypes/LKUP_IMS_MCO_CATEGORY",
+                            "dependentLookupAttributes": [
+                                "configuration/entityTypes/Company/attributes/McoType/attributes/CompanyType"
+                            ],
+                            "skipInDataAccess": false
+                        },
+                        {
+                            "label": "Type",
+                            "name": "CompanyType",
+                            "description": "Type",
+                            "type": "String",
+                            "hidden": false,
+                            "important": false,
+                            "system": false,
+                            "required": true,
+                            "faceted": true,
+                            "searchable": true,
+                            "attributeOrdering": {
+                                "orderingStrategy": "LUD"
+                            },
+                            "uri": "configuration/entityTypes/Company/attributes/McoType/attributes/CompanyType",
+                            "lookupCode": "rdm/lookupTypes/LKUP_IMS_MCO_TYPE",
+                            "dependentLookupAttributes": [
+                                "configuration/entityTypes/Company/attributes/McoType/attributes/SubType"
+                            ],
+                            "skipInDataAccess": false
+                        },
+                        {
+                            "label": "Subtype",
+                            "name": "SubType",
+                            "description": "Subtype",
+                            "type": "String",
+                            "hidden": false,
+                            "important": false,
+                            "system": false,
+                            "faceted": true,
+                            "searchable": true,
+                            "attributeOrdering": {
+                                "orderingStrategy": "LUD"
+                            },
+                            "uri": "configuration/entityTypes/Company/attributes/McoType/attributes/SubType",
+                            "lookupCode": "rdm/lookupTypes/LKUP_IMS_MCO_SUBTYPE",
+                            "skipInDataAccess": false
+                        },
 ```
 
 
@@ -22685,8 +22709,8 @@ Learn about the L3 errors, including error code, error message, detailed error m
 | CLEANSE_FUNCTION_VALIDATION_ERROR | **Error Code** 714   **Error Message** Cleanse function `CleanseFunctionName` validation error.**Detailed Error Message** Validation of cleanse function `cleanseFunctionName` failed with an error: `error details`. | An error occurred during the creation of the described cleanse function. | If details in the error message don’t clarify the reason for the error, contact the Reltio Customer Support team. |
 | CLEANSE_MAPPING_ATTRIBUTE_NOT_FOUND | **Error Code** 715   **Error Message** Cleanse mapping contains a non-existent attribute.**Detailed Error Message** Cleanse mapping with URI `uri` contains a non-existent attribute `attribute uri`. | A cleanse function mapping refers to an attribute that doesn’t exist in the entity type. | Use a correct attribute name in the mapping. |
 | CLEANSE_FUNCTION_MISSING_ATTRIBUTE | **Error Code** 718   **Error Message** Required `attributeName` attribute value missing in cleanse.**Detailed Error Message** Required value for `attributeName` attribute is missing for the cleanse URI `uri`. | Cleanse function isn’t set in the configuration for the cleanser. | Set the name of the required cleanse function. |
-| CLEANSE_FUNCTION_INPUT_MAPPING_MISSING | **Error Code** 719   **Error Message** Input mapping missing for cleanse function `CleanseFunctionName`.**Detailed Error Message** Input mapping isn’t defined for the cleanse function `cleanseFunctionName`. Add the cleanse function mappings fields such as `inputMapping` or `inputMappingRef`. | Cleanse function section doesn’t have any information about the input mappings. | Add the cleanse function mappings fields, such as `inputMapping` and `inputMappingRef`. For more information, see [Configure cleanse rules](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-set-up/configure-cleanse-functions/configure-cleanse-rules?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
-| CLEANSE_FUNCTION_OUTPUT_MAPPING_MISSING | **Error Code** 720   **Error Message** Output mapping missing for cleanse function `CleanseFunctionName`.**Detailed Error Message** Output mapping isn’t defined for the cleanse function `CleanseFunctionName`. Add the cleanse function mappings fields such as `outputMapping` or `outputMappingRef`. | Cleanse function section doesn’t have any information about the output mappings. | Add the cleanse function mappings fields, such as `outputMapping` and, `outputMappingRef`. For more information, see [Configure cleanse rules](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-set-up/configure-cleanse-functions/configure-cleanse-rules?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
+| CLEANSE_FUNCTION_INPUT_MAPPING_MISSING | **Error Code** 719   **Error Message** Input mapping missing for cleanse function `CleanseFunctionName`.**Detailed Error Message** Input mapping isn’t defined for the cleanse function `cleanseFunctionName`. Add the cleanse function mappings fields such as `inputMapping` or `inputMappingRef`. | Cleanse function section doesn’t have any information about the input mappings. | Add the cleanse function mappings fields, such as `inputMapping` and `inputMappingRef`. For more information, see [Mapping Input Attribute](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-reference/out-of-the-box-cleanse-functions/address-cleanser/mapping-input-and-output-attributes/mapping-input-attribute?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
+| CLEANSE_FUNCTION_OUTPUT_MAPPING_MISSING | **Error Code** 720   **Error Message** Output mapping missing for cleanse function `CleanseFunctionName`.**Detailed Error Message** Output mapping isn’t defined for the cleanse function `CleanseFunctionName`. Add the cleanse function mappings fields such as `outputMapping` or `outputMappingRef`. | Cleanse function section doesn’t have any information about the output mappings. | Add the cleanse function mappings fields, such as `outputMapping` and, `outputMappingRef`. For more information, see [Mapping output attribute](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-reference/out-of-the-box-cleanse-functions/address-cleanser/mapping-input-and-output-attributes/mapping-output-attribute?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
 | UNKNOWN_CLEANSE_FUNCTION_ERROR | **Error Code** 721   **Error Message** Cleanse function `cleanseFunctionName` not defined.**Detailed Error Message** Cleanse function `cleanseFunctionName` isn’t defined in the tenant storage configuration (uri: `uri`). | You’re trying to use a cleanse function that is not available or not defined in the physical configuration of the tenant. | Add a definition of the cleanse function to the tenant physical configuration (in the cleanse section). |
 | CLEANSE_FUNCTION_INVALID_OPTION_VALUE | **Error Code** 722   **Error Message** Cleanse function `cleanseFunctionName` has invalid option/parameter value.**Detailed Error Message** Cleanse function `cleanseFunctionName` has an invalid value `GivenValue` for the parameter `OptionName`, the allowed values are: `AllowedValues`. | When an incorrect value is provided for a cleanser parameter/option. For example, a non-Boolean value is provided for the option `ovOnly`. | Update the option with the correct value or remove the property from the parameters section. |
 | CLEANSE_FUNCTION_INVALID_OPTION | **Error Code** 723   **Error Message** Cleanse function `cleanseFunctionName` has invalid parameter.**Detailed Error Message** Unknown parameter `param` found in the`cleanseFunctionName` cleanse function in the `tenant/business model` configuration. | You’re trying to use an option that is unknown to the defined cleanse function. | Use the proper values from the options available for the different cleansers. |
@@ -25682,11 +25706,21 @@ Use this path when you are building a new agent from scratch.
 3. Under **AGENT DETAILS**, enter a name, description, and any relevant tags. These values appear in **Discover Agents** after the agent is published.
 
    *Image: Create New Agent dialog with name, description, and tags input fields and a Create Agent button*
+
+   Use the following rules when filling in the agent details fields: 
+
+   - **Agent name**: Letters, numbers, spaces, and `` _ - ( ) . & ` `` are allowed.
+   - **Describe your agent**: Maximum 100 characters. The symbols `<` and `>` are not allowed.
+   - **Tags**: Letters, numbers, and hyphens only. Separate multiple tags with commas.
+
+
+
+   If a field contains an invalid value, an inline error appears below it. Correct the value before continuing.
 4. Write the **System prompt**. The system prompt defines the agent's:
 
    *Image: Create New Agent dialog with name, description, and tags input fields and a Create Agent button*
 
-   > **Note:** For more information about structuring an effective system prompt, see [AgentFlow system prompt guidelines](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agent-builder-for-agentflow-at-a-glance/agentflow-system-prompt-guidelines?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+   For more information about structuring an effective system prompt, see [AgentFlow system prompt guidelines](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agent-builder-for-agentflow-at-a-glance/agentflow-system-prompt-guidelines?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
    1. Identity
    2. Objectives
    3. Tool usage rules
@@ -25696,13 +25730,15 @@ Use this path when you are building a new agent from scratch.
    7. Error handling behavior.
 5. Select **Save & continue**.
 
+   After the agent is created, the **Agent ID** appears in the **AGENT DETAILS** section. Select the copy icon next to the **Agent ID** to copy it to your clipboard.
+
+> **Note:** While you have unsaved changes, an **Unsaved changes** indicator appears in the page header. If you navigate away — by selecting the back icon, selecting **Cancel**, or using your browser's back button — Agent Builder displays a warning before discarding your changes. If you reload the page, your browser displays its own native dialog. Select **Save as draft** at any time to preserve your work.
+
 ## Step 2: Tools & capabilities
 
-1. [Optional] Enable .
+1. [Optional] Enable **Web search**.
 
-
-
-   > **Note:** Enabling web search during agent creation is not sufficient. End users must also have web search enabled in their own settings before they can use this capability at runtime.
+   > **Note:** Enabling **Web search** during agent creation is not sufficient. End users must also enable **Web search** in their own settings before they can use this capability at runtime.
 2. **Enable server** and select each of the tools you want to add. The selected tools form the agent's allowlist — the agent cannot call tools outside this selection.
 
    > **Note:** If you proceed without selecting any tools, Agent Builder displays a warning before you can submit for review. You can still proceed, but the agent will have no approved actions available at runtime.
@@ -25722,9 +25758,11 @@ Use this path when you are building a new agent from scratch.
 4. Select **Submit for review**.
 5. Confirm the submission.
 
+   A **Confirm submit for review** dialog appears. Select **Submit for review** to proceed, or **Back** to return to the test panel.
+
    The system automatically scans the system prompt. Two outcomes are possible:
 
-   > **Note:** If you need to make changes after submitting, you can withdraw the pending request at any time. Withdrawing returns the agent to **Draft** state and unlocks the editor.
+   If you need to make changes after submitting, you can withdraw the pending request at any time. Withdrawing returns the agent to **Draft** state and unlocks the editor.
    - If no violations are detected, the agent transitions to **Pending review** state.
    - If a violation is detected, the request is **auto-blocked**. You receive a notification with the scan result. Revise the system prompt and submit again when ready.
 6. If this agent already has a published version, that version remains live in **Discover Agents** while the new version is under review.
@@ -53584,7 +53622,6 @@ Only reindex your data when the following changes occur, and set `enableSeparate
   - Existing attribute changes (type, label)
   - Existing attribute is removed
   - Existing source is removed
-  - Survivorship rules are modified
   - Cleanse configuration is modified
   - Lookups (RDM) mappings are modified
   - `MatchFieldUris` are modified
@@ -53637,6 +53674,7 @@ The following table describes the supported query parameters.
 | `distributed` | No | **Note:** For large tenants, set `distributed=true` and configure `taskPartsCount` to match the number of available API nodes. This enables parallel execution across nodes and can improve task performance. |
 | `taskPartsCount` | No |  |
 | `forceIgnoreInStreaming` | No | If set to `true`, only events produced by the task are ignored in streaming. Default value: , only events produced by the task are ignored in streaming. Default value: `false`. . **Note:** When you set this parameter to true, events are generated but not streamed to external queues. The generated events are still used by the internal queue to rebuild the index. For more information about internal and external queues, see [Queues at a glance](https://docs.reltio.com/en/applications/console/tenant-management-applications/tenant-management-at-a-glance/queues-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
+| `forceIndexing` | No | If `forceIndexing` is set to `true`, reindexes all objects of the entity types specified in `entityType`, even if they have not changed since the last index update. Use this parameter after changing survivorship strategies to ensure that updated Operational Values (OV) are reflected in search results. Default value: `false`. |
 | `enableSeparateIndexing` | No | If set to `true`, the Reindex Data task builds a new Elasticsearch index for the tenant's entity data. When the task is completed, the task replaces the old index with the new one. Run the Reindex Data task with this parameter to continue your activities in Reltio Cloud without waiting for the task to finish. **Note:** When `enableSeparateIndexing=true`, `PotentialMatchesReindexTask` is automatically triggered upon completion of the entity reindex because the new index must contain potential matches data before the tenant switches to the new index..Default value: `false`. |
 | `bucket` | No | Bucket name. |
 | `s3Region` | No | AWS S3 region. |
@@ -83757,6 +83795,2721 @@ Body:
   }
 ]
 ```
+
+
+
+---
+
+# Hierarchy management APIs
+
+> **Section:** Developer resources > Hiererchy Management APIs
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** hierarchy management apis overview, retrieve hierarchy views api, search hierarchy members api, retrieve object hierarchy paths, manage parent child connections, create hierarchy versions api, clone hierarchy instances api, delete hierarchy connections api, import hierarchy data bulk, hierarchies, connections, versions
+
+
+Learn about the hierarchy management APIs used to create and manage hierarchies.
+
+The Hierarchy management APIs provide access to node based hierarchy data in Reltio. It lets you retrieve hierarchy views, search hierarchy members, manage parent-child connections, work with hierarchies and hierarchy versions, and import hierarchy data in bulk.
+
+Hierarchy management APIs complement the hierarchy experience in the Profile view. While the UI helps business users explore and manage hierarchies interactively, these APIs provide a programmatic way to retrieve the same structures and apply controlled changes at scale.
+
+## Who are Hierarchy Management APIs for?
+
+This content is curated for these Reltio user roles defined in topic [About roles](https://docs.reltio.com/en/roles/about-roles?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs):
+
+DeveloperReltio ConfiguratorSystem Administrator
+
+## What you can do with these APIs
+
+Hierarchy management APIs support the following use cases:
+
+- retrieve the hierarchy position of an object
+- return all available paths from an object to its roots
+- list direct parents or children in a hierarchy instance
+- search hierarchy members by label
+- create or update hierarchy connections with effective dates
+- identify which hierarchies or versions include a specific object
+- create new hierarchies and hierarchy versions
+- clone an existing hierarchy, version, or instance
+- delete hierarchy connections, hierarchies, or hierarchy versions
+- import hierarchy data in bulk from supported file formats
+
+## Why these APIs matter
+
+Hierarchy data can change over time and can exist in multiple versions. These APIs give you a consistent way to retrieve hierarchy state for a specific date, manage hierarchy structures, and automate hierarchy maintenance without relying on manual UI actions.
+
+## List of APIs
+
+The following table lists the hierarchy management APIs and describes the purpose of each API.
+
+| API | Purpose |
+| --- | --- |
+| [Get hierarchy view for an object](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/get-hierarchy-view-for-an-object?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Returns one path from the requested object to a root in a hierarchy instance. |
+| [Get hierarchy paths for an object](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/get-hierarchy-paths-for-an-object?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Returns all available root paths for the requested object in a hierarchy instance. |
+| [List children of an entity in a hierarchy instance](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/list-children-of-an-entity-in-a-hierarchy-instance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Returns a flat list of child objects for the requested object. |
+| [List parent objects in a hierarchy instance](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/list-parents-objects-in-a-hierarchy-instance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Returns a flat list of parent objects for the requested object. |
+| [Search hierarchy labels in a hierarchy instance](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/search-hierarchy-labels-in-a-hierarchy-instance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Returns matching objects and their label paths in a hierarchy instance. |
+| [Get a hierarchy connection by ID](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/get-a-hierarchy-connection-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Returns the definition of a hierarchy connection. |
+| [Create hierarchy connections](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/create-hierarchy-connections?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Creates one or more hierarchy connections in a hierarchy instance. |
+| [Delete hierarchy connections](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/delete-hierarchy-connections?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Deletes one or more hierarchy connections. |
+| [List hierarchy instances for an object](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/list-hierarchy-instances-for-an-object?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Returns the hierarchy instances in which an object participates. |
+| [List hierarchies for an object](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/list-hierarchies-for-an-object?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Returns the hierarchies in which an object participates, without version details. |
+| [List hierarchy versions for an object](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/list-hierarchy-versions-for-an-object?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Returns the versions of a hierarchy in which an object participates. |
+| [Get a hierarchy by ID](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/get-a-hierarchy-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Returns hierarchy metadata. |
+| [List hierarchy versions](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/list-hierarchy-versions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Returns all versions for a hierarchy. |
+| [Get a hierarchy version by ID](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/get-a-hierarchy-version-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Returns metadata for a single hierarchy version. |
+| [Get a hierarchy instance by ID](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/get-a-hierarchy-instance-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Returns metadata for a hierarchy instance. |
+| [Create a hierarchy](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/create-a-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Creates a hierarchy and, optionally, its first version and first connection. |
+| [Create a hierarchy version](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/create-a-hierarchy-version?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Creates a hierarchy version and, optionally, its first connection. |
+| [Clone an unversioned hierarchy instance](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/clone-an-unversioned-hierarchy-instance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Creates a new hierarchy by cloning an existing hierarchy. |
+| [Clone a hierarchy version](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/clone-a-hierarchy-version?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Creates a new hierarchy version by cloning an existing hierarchy version. |
+| [Clone a versioned hierarchy instance](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/clone-a-versioned-hierarchy-instance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Creates a new hierarchy by cloning an existing hierarchy instance. |
+| [Update a hierarchy by ID](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/update-a-hierarchy-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Updates hierarchy metadata. |
+| [Update a hierarchy version by ID](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/update-a-hierarchy-version-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Updates hierarchy version metadata. |
+| [Delete a hierarchy by ID](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/delete-a-hierarchy-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Deletes a hierarchy. |
+| [Delete a hierarchy version by ID](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/delete-a-hierarchy-version-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Deletes a hierarchy version. |
+| [Import a hierarchy](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/import-a-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Imports hierarchy data from a CSV or JSON file. |
+
+
+
+---
+
+# Clone an unversioned hierarchy instance
+
+> **Section:** Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/clone-an-unversioned-hierarchy-instance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** clone hierarchy by id, clone existing hierarchy api, create cloned hierarchy from existing, clone hierarchy with versions, clone hierarchy with connections, copy hierarchy definition and connections, post hierarchy clone endpoint, create versioned cloned hierarchy, hierarchy clone response fields, cloning, versioning, connections
+
+
+Learn more about how to use the Clone unversioned hierarchy instance to create a hierarchy and, optionally, its first connection.
+
+Use the `Clone an unversioned hierarchy instance API` to create a new hierarchy by cloning an existing hierarchy. All hierarchy connections are cloned automatically. This operation requires the `MDM.Data.Hierarchy` permission with the `CREATE` privilege.
+
+## HTTP method and endpoint
+
+Use the following HTTP method and endpoint path to submit the request:
+
+```
+POST https://<environment>.reltio.com/reltio/api/{tenantId}/hierarchies/list/{hierarchyId}/clone
+```
+
+## Request headers
+
+The following request headers must be included.
+
+| Header | Value | Required |
+| --- | --- | --- |
+| `Authorization` | `Bearer <token>` | Yes |
+
+## Request body
+
+The request body is a JSON array of connection definition objects.
+
+| Field | Nested field | Type | Required | Description |
+| --- | --- | --- | --- | --- |
+| `type` | — | String | Yes | The hierarchy type name as defined in the business configuration. |
+| `name` | — | String | Yes | The name of the new hierarchy. |
+| `hasVersioning` | — | Boolean | No | Indicates whether the cloned hierarchy is versioned. |
+| `version` | — | Object | Yes, if `hasVersioning=true` | The object that describes the version to create. |
+| `version` | `name` | String | See `version` | The name of the version. |
+| `version` | `status` | String | See `version` | Optional. The status of the version. |
+| `version` | `effectiveStartDate` | String | See `version` | Optional. The start effective date of the version in ISO 8601 date format. |
+| `version` | `effectiveEndDate` | String | See `version` | Optional. The end effective date of the version in ISO 8601 date format. |
+| `version` | `description` | String | See `version` | Optional. The description of the version. |
+| `version` | `context` | String | See `version` | Optional. Additional context for the version. |
+
+## Example request
+
+Use the following example to see how a complete request is structured with headers.
+
+```
+POST /list/prd/clone
+Authorization: Bearer <token>
+
+{
+  "type": "configuration/hierarchyTypes/TypeProduct",
+  "name": "Cloned Product Hierarchy",
+  "hasVersioning": true,
+  "version": {
+    "name": "Version 2",
+    "status": "ACTIVE",
+    "effectiveStartDate": "2024-01-01",
+    "effectiveEndDate": "2026-12-31",
+    "description": "longDescription",
+    "context": "longContextDescription"
+  }
+}
+```
+
+## Response fields
+
+The following table describes the fields returned in the response body, which is an array of hierarchy connection objects.
+
+| Field | Nested field | Type | Description |
+| --- | --- | --- | --- |
+| `type` | — | String | The hierarchy type name as defined in the business configuration. |
+| `name` | — | String | The name of the hierarchy. |
+| `hasVersioning` | — | Boolean | Indicates whether the hierarchy is versioned. |
+| `hierarchyId` | — | String | The ID of the created hierarchy. |
+| `instanceId` | — | String | The ID of the created hierarchy instance. |
+| `version` | — | Object | Optional. The created hierarchy version. |
+| `version` | `versionId` | String | The ID of the created version. |
+| `version` | `name` | String | The name of the version. |
+| `version` | `status` | String | Optional. The status of the version. |
+| `version` | `effectiveStartDate` | String | Optional. The start effective date of the version in ISO 8601 date format. |
+| `version` | `effectiveEndDate` | String | Optional. The end effective date of the version in ISO 8601 date format. |
+| `version` | `description` | String | Optional. The description of the version. |
+| `version` | `context` | String | Optional. Additional context for the version. |
+| `createdBy` | — | String | The username of the user who created the hierarchy. |
+| `createdTime` | — | String | The time when the hierarchy was created, in ISO 8601 date-time format. |
+| `updatedBy` | — | String | The username of the user who last updated the hierarchy. |
+| `updatedTime` | — | String | The time when the hierarchy was last updated, in ISO 8601 date-time format. |
+
+## Example response
+
+The following example shows the response body.
+
+```
+{
+  "type": "configuration/hierarchyTypes/TypeProduct",
+  "name": "Cloned Product Hierarchy",
+  "hasVersioning": true,
+  "hierarchyId": "0ABlc0A",
+  "instanceId": "0ABlc0A.0ABlgGQ",
+  "version": {
+    "versionId": "0ABlgGQ",
+    "name": "Version 2",
+    "status": "ACTIVE",
+    "effectiveStartDate": "2024-01-01",
+    "effectiveEndDate": "2026-12-31",
+    "description": "longDescription",
+    "context": "longContextDescription"
+  },
+  "createdBy": "email@reltio.com",
+  "createdTime": "2025-04-01T13:30:00",
+  "updatedBy": "email@reltio.com",
+  "updatedTime": "2025-04-01T13:30:00"
+}
+```
+
+**Related links**
+
+- [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+
+
+---
+
+# Clone a versioned hierarchy instance
+
+> **Section:** Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/clone-a-versioned-hierarchy-instance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** clone hierarchy instance api, clone existing hierarchy instance, create hierarchy from instance clone, copy hierarchy instance with connections, clone versioned hierarchy instance, post hierarchy instance clone endpoint, create cloned hierarchy definition, set version metadata for clone, hierarchy instance clone response fields, cloning, versioning, instanceid
+
+
+Learn more about how to use the Clone hierarchy API to clone a hierarchy instance.
+
+Use the `Clone a hierarchy instance API` to create a new hierarchy by cloning an existing hierarchy instance. All hierarchy connections are cloned automatically. This operation requires the `MDM.Data.Hierarchy` permission with the `CREATE` privilege.
+
+## HTTP method and endpoint
+
+Use the following HTTP method and endpoint path to submit the request:
+
+```
+POST https://<environment>.reltio.com/reltio/api/{tenantId}/hierarchies/{instanceId}/clone
+```
+
+## Request headers
+
+The following request headers must be included.
+
+| Header | Value | Required |
+| --- | --- | --- |
+| `Authorization` | `Bearer <token>` | Yes |
+
+## Request body
+
+The request body is a JSON array of connection definition objects.
+
+| Field | Field | Type | Required | Description |
+| --- | --- | --- | --- | --- |
+| `type` | — | String | Yes | The hierarchy type name as defined in the business configuration. |
+| `name` | — | String | Yes | The name of the new hierarchy. |
+| `hasVersioning` | — | Boolean | No | Indicates whether the cloned hierarchy is versioned. |
+| `version` | — | Object | Yes, if `hasVersioning=true` | The object that describes the version to create. |
+| `version` | `name` | String | See `version` | The name of the version. |
+| `version` | `status` | String | See `version` | Optional. The status of the version. |
+| `version` | `effectiveStartDate` | String | See `version` | Optional. The start effective date of the version in ISO 8601 date format. |
+| `version` | `effectiveEndDate` | String | See `version` | Optional. The end effective date of the version in ISO 8601 date format. |
+| `version` | `description` | String | See `version` | Optional. The description of the version. |
+| `version` | `context` | String | See `version` | Optional. Additional context for the version. |
+
+## Example request
+
+Use the following example to see how a complete request is structured with headers.
+
+```
+POST /prd.version1/clone
+Authorization: Bearer <token>
+
+{
+  "type": "configuration/hierarchyTypes/TypeProduct",
+  "name": "Cloned Product Hierarchy",
+  "hasVersioning": true,
+  "version": {
+    "name": "Version 2",
+    "status": "ACTIVE",
+    "effectiveStartDate": "2024-01-01",
+    "effectiveEndDate": "2026-12-31",
+    "description": "longDescription",
+    "context": "longContextDescription"
+  }
+}
+```
+
+## Response fields
+
+The following table describes the fields returned in the response body, which is an array of hierarchy connection objects.
+
+| Field | Field | Type | Description |
+| --- | --- | --- | --- |
+| `type` | — | String | The hierarchy type name as defined in the business configuration. |
+| `name` | — | String | The name of the hierarchy. |
+| `hasVersioning` | — | Boolean | Indicates whether the hierarchy is versioned. |
+| `hierarchyId` | — | String | The ID of the created hierarchy. |
+| `instanceId` | — | String | The ID of the created hierarchy instance. |
+| `version` | — | Object | Optional. The created hierarchy version. |
+| `version` | `versionId` | String | The ID of the created version. |
+| `version` | `name` | String | The name of the version. |
+| `version` | `status` | String | Optional. The status of the version. |
+| `version` | `effectiveStartDate` | String | Optional. The start effective date of the version in ISO 8601 date format. |
+| `version` | `effectiveEndDate` | String | Optional. The end effective date of the version in ISO 8601 date format. |
+| `version` | `description` | String | Optional. The description of the version. |
+| `version` | `context` | String | Optional. Additional context for the version. |
+| `createdBy` | — | String | The username of the user who created the hierarchy. |
+| `createdTime` | — | String | The time when the hierarchy was created, in ISO 8601 date-time format. |
+| `updatedBy` | — | String | The username of the user who last updated the hierarchy. |
+| `updatedTime` | — | String | The time when the hierarchy was last updated, in ISO 8601 date-time format. |
+
+## Example response
+
+The following example shows the response body.
+
+```
+{
+  "type": "configuration/hierarchyTypes/TypeProduct",
+  "name": "Cloned Product Hierarchy",
+  "hasVersioning": true,
+  "hierarchyId": "0ABlc0A",
+  "instanceId": "0ABlc0A.0ABlgGQ",
+  "version": {
+    "versionId": "0ABlgGQ",
+    "name": "Version 2",
+    "status": "ACTIVE",
+    "effectiveStartDate": "2024-01-01",
+    "effectiveEndDate": "2026-12-31",
+    "description": "longDescription",
+    "context": "longContextDescription"
+  },
+  "createdBy": "email@reltio.com",
+  "createdTime": "2025-04-01T13:30:00",
+  "updatedBy": "email@reltio.com",
+  "updatedTime": "2025-04-01T13:30:00"
+}
+```
+
+**Related links**
+
+- [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+
+
+---
+
+# Clone a hierarchy version
+
+> **Section:** Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/clone-a-hierarchy-version?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** clone hierarchy version api, clone existing hierarchy version, create new version from clone, post hierarchy version clone endpoint, copy hierarchy version with connections, clone hierarchy version by id, submit hierarchy version clone request, set cloned version metadata, hierarchy version clone response fields, cloning, versionid, instanceid
+
+
+Learn more about how to use the Clone hierarchy version API to clone a hierarchy version.
+
+Use the `Clone hierarchy version API` to create a new hierarchy version by cloning an existing hierarchy version. All hierarchy connections are cloned automatically. This operation requires the `MDM.Data.Hierarchy` permission with the `CREATE` privilege.
+
+## HTTP method and endpoint
+
+Use the following HTTP method and endpoint path to submit the request:
+
+```
+POST https://<environment>.reltio.com/reltio/api/{tenantId}/hierarchies/list/{hierarchyId}/versions/{versionId}/clone
+```
+
+## Request headers
+
+The following request headers must be included.
+
+| Header | Value | Required |
+| --- | --- | --- |
+| `Authorization` | `Bearer <token>` | Yes |
+
+## Request body
+
+The request body is a JSON array of connection definition objects.
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `name` | String | Yes | The name of the new version. |
+| `status` | String | No | The status of the version. |
+| `effectiveStartDate` | String | No | The start effective date of the version in ISO 8601 date format. |
+| `effectiveEndDate` | String | No | The end effective date of the version in ISO 8601 date format. |
+| `description` | String | No | The description of the version. |
+| `context` | String | No | Additional context for the version. |
+
+## Example request
+
+Use the following example to see how a complete request is structured with headers.
+
+```
+POST /list/prd/versions/version1/clone
+Authorization: Bearer <token>
+
+{
+  "name": "Version 2",
+  "status": "ACTIVE",
+  "effectiveStartDate": "2024-01-01",
+  "effectiveEndDate": "2026-12-31",
+  "description": "longDescription",
+  "context": "longContextDescription"
+}
+```
+
+## Response fields
+
+The following table describes the fields returned in the response body, which is an array of hierarchy connection objects.
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `instanceId` | String | The ID of the created hierarchy instance. |
+| `versionId` | String | The ID of the created version. |
+| `name` | String | The name of the version. |
+| `status` | String | Optional. The status of the version. |
+| `effectiveStartDate` | String | Optional. The start effective date of the version in ISO 8601 date format. |
+| `effectiveEndDate` | String | Optional. The end effective date of the version in ISO 8601 date format. |
+| `description` | String | Optional. The description of the version. |
+| `context` | String | Optional. Additional context for the version. |
+| `createdBy` | String | The username of the user who created the version. |
+| `createdTime` | String | The time when the version was created, in ISO 8601 date-time format. |
+| `updatedBy` | String | The username of the user who last updated the version. |
+| `updatedTime` | String | The time when the version was last updated, in ISO 8601 date-time format. |
+
+## Example response
+
+The following example shows the response body.
+
+```
+{
+  "instanceId": "0ABlc0A.0ABlgGQ",
+  "versionId": "0ABlgGQ",
+  "name": "Version 2",
+  "status": "ACTIVE",
+  "effectiveStartDate": "2024-01-01",
+  "effectiveEndDate": "2026-12-31",
+  "description": "longDescription",
+  "context": "longContextDescription",
+  "createdBy": "email@reltio.com",
+  "createdTime": "2025-04-01T13:30:00",
+  "updatedBy": "email@reltio.com",
+  "updatedTime": "2025-04-01T13:30:00"
+}
+```
+
+**Related links**
+
+- [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+
+
+---
+
+# Create hierarchy connections
+
+> **Section:** Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/create-hierarchy-connections?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** create hierarchy connections api, post hierarchy connections endpoint, create parent child connections, bulk create hierarchy connections, set effective dates on connections, create hierarchy connection definitions, submit hierarchy connection request body, return created hierarchy connections, use hierarchy connections post, connections, parentid, childid
+
+
+Learn more about how to use the hierarchy connections API to create one or more connections in a hierarchy instance.
+
+Use the `Create Hierarchy connections API` to create new nodes in a hierarchy instance. This operation requires the `MDM.Data.Hierarchy` permission with the `CREATE` privilege.
+
+## HTTP method and endpoint
+
+Use the following HTTP method and endpoint path to submit the request:
+
+```
+POST https://<environment>.reltio.com/reltio/api/{tenantId}/hierarchies/{instanceId}/connections
+```
+
+## Request headers
+
+The following request headers must be included.
+
+| Header | Value | Required |
+| --- | --- | --- |
+| `Authorization` | `Bearer <token>` | Yes |
+
+## Request body
+
+The request body is a JSON array of connection definition objects.
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `parentId` | String | Yes | The entity ID of the parent object. Either the parent or the child must already be part of the hierarchy that you are modifying. |
+| `childId` | String | Yes | The entity ID of the child object. Either the parent or the child must already be part of the hierarchy that you are modifying. |
+| `startDate` | String | No | The start effective date of the connection in ISO 8601 date format. |
+| `endDate` | String | No | The end effective date of the connection in ISO 8601 date format. |
+
+## Example request
+
+Use the following example to see how a complete request is structured with headers.
+
+```
+POST /{instanceId}/connections
+Authorization: Bearer <token>
+
+[
+  {
+    "parentId": "prtId",
+    "childId": "cldId",
+    "startDate": "2024-01-01",
+    "endDate": "2026-12-31"
+  },
+  {
+    "parentId": "cldId",
+    "childId": "grdcldId",
+    "startDate": "2024-05-01",
+    "endDate": "2025-12-31"
+  }
+]
+```
+
+## Response fields
+
+The following table describes the fields returned in the response body, which is an array of hierarchy connection objects.
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `connectionId` | String | The connection ID. |
+| `parentId` | String | The entity ID of the parent object. |
+| `childId` | String | The entity ID of the child object. |
+| `startDate` | String | Optional. The start effective date of the connection in ISO 8601 date format. |
+| `endDate` | String | Optional. The end effective date of the connection in ISO 8601 date format. |
+| `createdBy` | String | The username of the user who created the connection. |
+| `createdTime` | String | The time when the connection was created, in ISO 8601 date-time format. |
+| `updatedBy` | String | The username of the user who last updated the connection. |
+| `updatedTime` | String | The time when the connection was last updated, in ISO 8601 date-time format. |
+
+## Example response
+
+The following example shows the response body.
+
+```
+[
+    {
+        "connectionId": "connId1",
+        "parentId": "prtId1",
+        "childId": "cldId1",
+        "startDate": "2024-01-01",
+        "endDate": "2026-12-32",
+        "createdBy": "john.smith@reltio.com",
+        "createdTime": "2024-10-10T10:13:30",
+        "updatedBy": "john.smith@reltio.com",
+        "updatedTime": "2024-10-10T10:15:30"
+    },
+    {
+        "connectionId": "connId2",
+        "parentId": "prtId2",
+        "childId": "cldId2",
+        "startDate": "2025-01-01",
+        "endDate": "2027-12-32",
+        "createdBy": "john.smith@reltio.com",
+        "createdTime": "2024-10-10T10:13:30",
+        "updatedBy": "john.smith@reltio.com",
+        "updatedTime": "2024-10-10T10:15:30"
+    }
+]
+```
+
+**Related links**
+
+- [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+
+
+---
+
+# Create a hierarchy
+
+> **Section:** Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/create-a-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** create hierarchy api, create hierarchy definition, create hierarchy with version, create hierarchy with connection, create first hierarchy connection, create hierarchy version and instance, submit hierarchy create request, hierarchy create response fields, create versioned hierarchy, versioning, hierarchyid, firstconnection
+
+
+Learn more about how to use the Create hierarchy API to create a hierarchy and, optionally, its first version and first connection.
+
+Use the `Create a Hierarchy API` to create a hierarchy definition. If versioning is enabled, you can also create the initial hierarchy version and the first hierarchy connection in the same request. This operation requires the `MDM.Data.Hierarchy` permission with the `CREATE` privilege.
+
+## HTTP method and endpoint
+
+Use the following HTTP method and endpoint path to submit the request:
+
+```
+POST https://<environment>.reltio.com/reltio/api/{tenantId}/hierarchies/
+```
+
+## Request headers
+
+The following request headers must be included.
+
+| Header | Value | Required |
+| --- | --- | --- |
+| `Authorization` | `Bearer <token>` | Yes |
+
+## Request body
+
+The request body is a JSON array of connection definition objects.
+
+| Field | Field | Type | Required | Description |
+| --- | --- | --- | --- | --- |
+| `type` | — | String | Yes | The hierarchy type name as defined in the business configuration. |
+| `name` | — | String | Yes | The name of the hierarchy. |
+| `hasVersioning` | — | Boolean | No | Indicates whether the hierarchy is versioned. |
+| `version` | — | Object | Yes, if `hasVersioning=true` | The object that describes the version to create. |
+| `version` | `name` | String | No | The name of the version. |
+| `version` | `effectiveStartDate` | String | No | Optional. The start effective date of the version in ISO 8601 date format. |
+| `version` | `effectiveEndDate` | String | No | Optional. The end effective date of the version in ISO 8601 date format. |
+| `version` | `description` | String | No | Optional. The description of the version. |
+| `version` | `context` | String | No | Optional. Additional context for the version. |
+| `version` | `firstConnection` | — | Object | No |
+| `parentId` | `firstConnection` | String | Yes | The entity ID of the parent object. Either the parent or the child must be part of the hierarchy being modified. |
+| `childId` | `firstConnection` | String | Yes | The entity ID of the child object. Either the parent or the child must be part of the hierarchy being modified. |
+| `startDate` | `firstConnection` | String | No | Optional. The start effective date of the connection in ISO 8601 date format. |
+| `endDate` | `firstConnection` | String | No | Optional. The end effective date of the connection in ISO 8601 date format. |
+
+## Example request
+
+Use the following example to see how a complete request is structured with headers.
+
+```
+POST /
+Authorization: Bearer <token>
+
+{
+  "type": "configuration/hierarchyTypes/TypeProduct",
+  "name": "Product Hierarchy",
+  "hasVersioning": true,
+  "version": {
+    "name": "Version 1",
+    "status": "ACTIVE",
+    "effectiveStartDate": "2024-01-01",
+    "effectiveEndDate": "2026-12-31",
+    "description": "longDescription",
+    "context": "longContextDescription"
+  },
+  "firstConnection": {
+    "parentId": "prtId",
+    "childId": "cldId",
+    "startDate": "2024-01-01",
+    "endDate": "2026-12-32"
+  }
+}
+```
+
+## Response fields
+
+The following table describes the fields returned in the response body, which is an array of hierarchy connection objects.
+
+| Field | Field | Type | Description |
+| --- | --- | --- | --- |
+| `type` | — | String | The hierarchy type name as defined in the business configuration. |
+| `name` | — | String | The name of the hierarchy. |
+| `hasVersioning` | — | Boolean | Indicates whether the hierarchy is versioned. |
+| `hierarchyId` | — | String | The ID of the created hierarchy. |
+| `instanceId` | — | String | The ID of the created hierarchy instance. |
+| `version` | — | Object | Optional. The created hierarchy version. |
+| `version` | `versionId` | String | The ID of the created version. |
+| `version` | `name` | String | The name of the version. |
+| `version` | `status` | String | Optional. The status of the version. |
+| `version` | `effectiveStartDate` | String | Optional. The start effective date of the version in ISO 8601 date format. |
+| `version` | `effectiveEndDate` | String | Optional. The end effective date of the version in ISO 8601 date format. |
+| `version` | `description` | String | Optional. The description of the version. |
+| `version` | `context` | String | Optional. Additional context for the version. |
+| `firstConnection` |  | Object | Optional. The created first hierarchy connection. |
+| `firstConnection` | `connectionId` | String | The ID of the created connection. |
+| `firstConnection` | `parentId` | String | The entity ID of the parent object. |
+| `firstConnection` | `childId` | String | The entity ID of the child object. |
+| `firstConnection` | `startDate` | String | Optional. The start effective date of the connection in ISO 8601 date format. |
+| `firstConnection` | `endDate` | String | Optional. The end effective date of the connection in ISO 8601 date format. |
+| `createdBy` | — | String | The username of the user who created the hierarchy. |
+| `createdTime` | — | String | The time when the hierarchy was created, in ISO 8601 date-time format. |
+| `updatedBy` | — | String | The username of the user who last updated the hierarchy. |
+| `updatedTime` | — | String | The time when the hierarchy was last updated, in ISO 8601 date-time format. |
+
+## Example response
+
+The following example shows the response body.
+
+```
+{
+  "type": "configuration/hierarchyTypes/TypeProduct",
+  "name": "Product Hierarchy",
+  "hasVersioning": true,
+  "hierarchyId": "0ABlc0A",
+  "instanceId": "0ABlc0A.0ABlgGQ",
+  "version": {
+    "versionId": "0ABlgGQ",
+    "name": "Version 1",
+    "status": "ACTIVE",
+    "effectiveStartDate": "2024-01-01",
+    "effectiveEndDate": "2026-12-31",
+    "description": "longDescription",
+    "context": "longContextDescription"
+  },
+  "firstConnection": {
+    "connectionId": "0ABmA6E",
+    "parentId": "prtId",
+    "childId": "cldId",
+    "startDate": "2024-01-01",
+    "endDate": "2026-12-32"
+  },
+  "createdBy": "email@reltio.com",
+  "createdTime": "2025-04-01T13:30:00",
+  "updatedBy": "email@reltio.com",
+  "updatedTime": "2025-04-01T13:30:00"
+}
+```
+
+**Related links**
+
+- [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+
+
+---
+
+# Create a hierarchy version
+
+> **Section:** Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/create-a-hierarchy-version?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** create hierarchy version api, create version for existing hierarchy, create hierarchy version with connection, post hierarchy versions endpoint, submit hierarchy version request body, set effective dates for version, create first connection in version, hierarchy version create response fields, use hierarchy versions create api, versioning, versionid, firstconnection
+
+
+Learn more about how to use the Create hierarchy version to create a hierarchy version.
+
+Use the `Create hierarchy version API` to create a version for an existing hierarchy. You can also create the first hierarchy connection in the same request. This operation requires the `MDM.Data.Hierarchy` permission with the `CREATE` privilege.
+
+## HTTP method and endpoint
+
+Use the following HTTP method and endpoint path to submit the request:
+
+```
+POST https://<environment>.reltio.com/reltio/api/{tenantId}/hierarchies/list/{hierarchyId}/versions
+```
+
+## Request headers
+
+The following request headers must be included.
+
+| Header | Value | Required |
+| --- | --- | --- |
+| `Authorization` | `Bearer <token>` | Yes |
+
+## Request body
+
+The request body is a JSON array of connection definition objects.
+
+| Field | Field | Type | Required | Description |
+| --- | --- | --- | --- | --- |
+| `name` | — | String | Yes | The name of the version. |
+| `status` | — | String | No | The status of the version. |
+| `effectiveStartDate` | — | String | No | The start effective date of the version in ISO 8601 date format. |
+| `effectiveEndDate` | — | String | No | The end effective date of the version in ISO 8601 date format. |
+| `description` | — | String | No | The description of the version. |
+| `context` | — | String | No | Additional context for the version. |
+| `firstConnection` | — | Object | No | The object that describes the first hierarchy connection to create. |
+| `firstConnection` | `parentId` | String | See `firstConnection` | The entity ID of the parent object. Either the parent or the child must be part of the hierarchy being modified. |
+| `firstConnection` | `childId` | String | See `firstConnection` | The entity ID of the child object. Either the parent or the child must be part of the hierarchy being modified. |
+| `firstConnection` | `startDate` | String | See `firstConnection` | Optional. The start effective date of the connection in ISO 8601 date format. |
+| `firstConnection` | `endDate` | String | See `firstConnection` | Optional. The end effective date of the connection in ISO 8601 date format. |
+
+## Example request
+
+Use the following example to see how a complete request is structured with headers.
+
+```
+POST /list/prd/versions
+Authorization: Bearer <token>
+
+{
+  "name": "Version 1",
+  "status": "ACTIVE",
+  "effectiveStartDate": "2024-01-01",
+  "effectiveEndDate": "2026-12-31",
+  "description": "longDescription",
+  "context": "longContextDescription",
+  "firstConnection": {
+    "parentId": "prtId",
+    "childId": "cldId",
+    "startDate": "2024-01-01",
+    "endDate": "2026-12-32"
+  }
+}
+```
+
+## Response fields
+
+The following table describes the fields returned in the response body, which is an array of hierarchy connection objects.
+
+| Field | Field | Type | Description |
+| --- | --- | --- | --- |
+| `instanceId` | — | String | The ID of the created hierarchy instance. |
+| `versionId` | — | String | The ID of the created version. |
+| `name` | — | String | The name of the version. |
+| `status` | — | String | Optional. The status of the version. |
+| `effectiveStartDate` | — | String | Optional. The start effective date of the version in ISO 8601 date format. |
+| `effectiveEndDate` | — | String | Optional. The end effective date of the version in ISO 8601 date format. |
+| `description` | — | String | Optional. The description of the version. |
+| `context` | — | String | Optional. Additional context for the version. |
+| `firstConnection` | — | Object | Optional. The created first hierarchy connection. |
+| `firstConnection` | `connectionId` | String | The ID of the created connection. |
+| `firstConnection` | `parentId` | String | The entity ID of the parent object. |
+| `firstConnection` | `childId` | String | The entity ID of the child object. |
+| `firstConnection` | `startDate` | String | Optional. The start effective date of the connection in ISO 8601 date format. |
+| `firstConnection` | `endDate` | String | Optional. The end effective date of the connection in ISO 8601 date format. |
+| `createdBy` | — | String | The username of the user who created the version. |
+| `createdTime` | — | String | The time when the version was created, in ISO 8601 date-time format. |
+| `updatedBy` | — | String | The username of the user who last updated the version. |
+| `updatedTime` | — | String | The time when the version was last updated, in ISO 8601 date-time format. |
+
+## Example response
+
+The following example shows the response body.
+
+```
+{
+  "instanceId": "0ABlc0A.0ABlgGQ",
+  "versionId": "0ABlgGQ",
+  "name": "Version 1",
+  "status": "ACTIVE",
+  "effectiveStartDate": "2024-01-01",
+  "effectiveEndDate": "2026-12-31",
+  "description": "longDescription",
+  "context": "longContextDescription",
+  "firstConnection": {
+    "connectionId": "0ABmA6E",
+    "parentId": "prtId",
+    "childId": "cldId",
+    "startDate": "2024-01-01",
+    "endDate": "2026-12-31"
+  },
+  "createdBy": "email@reltio.com",
+  "createdTime": "2025-04-01T13:30:00",
+  "updatedBy": "email@reltio.com",
+  "updatedTime": "2025-04-01T13:30:00"
+}
+```
+
+**Related links**
+
+- [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+
+
+---
+
+# Delete hierarchy connections
+
+> **Section:** Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/delete-hierarchy-connections?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** delete hierarchy connections api, delete connections in hierarchy instance, remove hierarchy connections by id, bulk delete hierarchy connections, submit hierarchy connection delete request, use hierarchy connections delete api, delete hierarchy links by connection id, hierarchy connection delete response, delete connection list in hierarchy, deletion, connectionid, targetobject
+
+
+Learn more about how to use the hierarchy connections API to delete connections in a hierarchy instance.
+
+Use the `Hierarchy delete connections API` to delete one or more connections from a hierarchy instance. This operation requires the `MDM.Data.Hierarchy` permission with the `DELETE` privilege.
+
+## HTTP method and endpoint
+
+Use the following HTTP method and endpoint path to submit the request:
+
+```
+DELETE https://<environment>.reltio.com/reltio/api/{tenantId}/hierarchies/{instanceId}/connections
+```
+
+## Request headers
+
+The following request headers must be included.
+
+| Header | Value | Required |
+| --- | --- | --- |
+| `Authorization` | `Bearer <token>` | Yes |
+
+## Request body
+
+The request body is a JSON array of connection definition objects.
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| Connection IDs | Array of strings | Yes | The list of connection IDs to delete. |
+
+## Example request
+
+Use the following example to see how a complete request is structured with headers.
+
+```
+DELETE /{instanceId}/connections
+Authorization: Bearer <token>
+
+[
+  "conn1",
+  "conn2",
+  "conn3"
+]
+```
+
+## Response fields
+
+The following table describes the fields returned in the response body, which is an array of hierarchy connection objects.
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `connectionId` | String | The connection ID for the deleted connection. |
+| `status` | String | The result of the delete operation. The documented value is `DELETED`. |
+
+## Example response
+
+The following example shows the response body.
+
+```
+[{
+  "connectionId": "{conn1}",
+  "status": "DELETED"
+},
+ {
+  "connectionId": "{conn2}",
+  "status": "DELETED"
+},
+{
+  "connectionId": "{conn3}",
+  "status": "DELETED"
+}] 
+```
+
+**Related links**
+
+- [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+
+
+---
+
+# Delete a hierarchy by ID
+
+> **Section:** Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/delete-a-hierarchy-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** delete hierarchy by id, hierarchy delete api, delete hierarchy with api, remove hierarchy by hierarchy id, delete hierarchy endpoint, submit hierarchy delete request, hierarchy delete response fields, delete hierarchy definition, delete hierarchy using bearer token, deletion, hierarchyid, deleted
+
+
+Learn more about how to use the Delete hierarchy API to delete a hierarchy by ID.
+
+Use the `Delete hierarchy by ID API` to delete a hierarchy. This operation requires the `MDM.Data.Hierarchy` permission with the `DELETE` privilege.
+
+## HTTP method and endpoint
+
+Use the following HTTP method and endpoint path to submit the request:
+
+```
+DELETE https://<environment>.reltio.com/reltio/api/{tenantId}/hierarchies/list/{hierarchyId}
+```
+
+## Request headers
+
+The following request headers must be included.
+
+| Header | Value | Required |
+| --- | --- | --- |
+| `Authorization` | `Bearer <token>` | Yes |
+
+## Request body
+
+This operation does not require a request body.
+
+## Example request
+
+Use the following example to see how a complete request is structured with headers.
+
+```
+DELETE /list/prd
+Authorization: Bearer <token>
+```
+
+## Response fields
+
+The following table describes the fields returned in the response body, which is an array of hierarchy connection objects.
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `hierarchyId` | String | The ID of the deleted hierarchy. |
+| `status` | String | The result of the delete operation. The documented value is `DELETED`. |
+
+## Example response
+
+The following example shows the response body.
+
+```
+{
+  "hierarchyId": "prd",
+  "status": "DELETED"
+}
+```
+
+**Related links**
+
+- [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+
+
+---
+
+# Delete a hierarchy version by ID
+
+> **Section:** Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/delete-a-hierarchy-version-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** get hierarchy by id, retrieve hierarchy definition by id, hierarchy api by id, return hierarchy details by id, get hierarchy metadata response, retrieve hierarchy audit fields, identify versioned hierarchy definition, get single instance hierarchy, hierarchy response fields, hierarchyid, versioning, singleinstanceid
+
+
+Learn more about how to use the Delete Hierarchy Version API to delete a specific hierarchy version by ID.
+
+Use the`Delete Hierarchy Version API` to delete a specific hierarchy version by ID. This operation requires the `MDM.Data.Hierarchy` permission with the `DELETE` privilege.
+
+## HTTP method and endpoint
+
+Use the following HTTP method and endpoint path to submit the request:
+
+```
+DELETE /list/{hierarchyId}/versions/{versionId}
+```
+
+## Request headers
+
+The following request headers must be included.
+
+| Header | Value | Required |
+| --- | --- | --- |
+| `Authorization` | `Bearer <token>` | Yes |
+
+## Request body
+
+This operation does not require a request body.
+
+## Example request
+
+Use the following example to see how a complete request is structured with headers.
+
+```
+DELETE https://<environment>.reltio.com/reltio/api/{tenantId}/hierarchies/list/{hierarchyId}/versions/{versionId}
+```
+
+## Response fields
+
+The following table describes the fields returned in the response body.
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `hierarchyId` | String | The ID of the hierarchy that contained the deleted version. |
+| `status` | String | The result of the delete operation. The documented value is `DELETED`. |
+
+## Example response
+
+The following example shows the response body.
+
+```
+{
+  "hierarchyId": "prd",
+  "type": "configuration/hierarchyTypes/TypeProduct",
+  "name": "Product Hierarchy",
+  "hasVersioning": true,
+  "createdBy": "test@usercom",
+  "createdTime": "2024-10-10T10:13:30",
+  "updatedBy": "test@usercom",
+  "updatedTime": "2024-10-10T10:15:30"
+}
+```
+
+**Related links**
+
+- [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+
+
+---
+
+# Get a hierarchy by ID
+
+> **Section:** Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/get-a-hierarchy-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** get hierarchy by id, retrieve hierarchy definition by id, hierarchy api by id, return hierarchy details by id, get hierarchy metadata response, retrieve hierarchy audit fields, identify versioned hierarchy definition, get single instance hierarchy, hierarchy response fields, hierarchyid, versioning, singleinstanceid
+
+
+Learn more about how to use the Get hierarchy API to return the definition of a hierarchy by ID.
+
+Use the `Get hierarchy by ID API` to retrieve the metadata for a hierarchy. This operation requires the `MDM.Data.Hierarchy` permission with the `READ` privilege.
+
+## HTTP method and endpoint
+
+Use the following HTTP method and endpoint path to submit the request:
+
+```
+GET https://<environment>.reltio.com/reltio/api/{tenantId}/hierarchies/list/{hierarchyId}
+```
+
+## Request headers
+
+The following request headers must be included.
+
+| Header | Value | Required |
+| --- | --- | --- |
+| `Authorization` | `Bearer <token>` | Yes |
+
+## Request body
+
+This operation does not require a request body.
+
+## Example request
+
+Use the following example to see how a complete request is structured with headers.
+
+```
+GET /list/prd
+Authorization: Bearer <token>
+```
+
+## Response fields
+
+The following table describes the fields returned in the response body.
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `hierarchyId` | String | The hierarchy ID. |
+| `type` | String | The hierarchy type name as defined in the business configuration. |
+| `name` | String | The name of the hierarchy. |
+| `hasVersioning` | Boolean | Indicates whether the hierarchy is versioned. |
+| `singleInstanceId` | String | Optional. If versioning is disabled, the ID of the only hierarchy instance. |
+| `createdBy` | String | The username of the user who created the hierarchy. |
+| `createdTime` | String | The time when the hierarchy was created, in ISO 8601 date-time format. |
+| `updatedBy` | String | The username of the user who last updated the hierarchy. |
+| `updatedTime` | String | The time when the hierarchy was last updated, in ISO 8601 date-time format. |
+
+## Example response
+
+The following example shows the response body.
+
+```
+{
+  "hierarchyId": "prd",
+  "type": "configuration/hierarchyTypes/TypeProduct",
+  "name": "Product Hierarchy",
+  "hasVersioning": true,
+  "createdBy": "john.smith@reltio.com",
+  "createdTime": "2024-10-10T10:13:30",
+  "updatedBy": "john.smith@reltio.com",
+  "updatedTime": "2024-10-10T10:15:30"
+}
+```
+
+**Related links**
+
+- [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+
+
+---
+
+# Get a hierarchy instance by ID
+
+> **Section:** Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/get-a-hierarchy-instance-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** get hierarchy instance by id, retrieve hierarchy instance details, hierarchy instance api by id, return hierarchy instance metadata, get versioned hierarchy instance, view hierarchy instance version, retrieve hierarchy instance audit fields, get hierarchy version inside instance, hierarchy instance response fields, instanceid, versionid, versioning
+
+
+Learn more about how to use the Get hierarchy instance to return a hierarchy instance by ID.
+
+Use the `Get a hierarchy instance API` to retrieve the metadata for a specific hierarchy instance. This operation requires the `MDM.Data.Hierarchy` permission with the `READ` privilege.
+
+## HTTP method and endpoint
+
+Use the following HTTP method and endpoint path to submit the request:
+
+```
+GET https://<environment>.reltio.com/reltio/api/{tenantId}/hierarchies/{instanceId}
+```
+
+## Request headers
+
+The following request headers must be included.
+
+| Header | Value | Required |
+| --- | --- | --- |
+| `Authorization` | `Bearer <token>` | Yes |
+
+## Request body
+
+This operation does not require a request body.
+
+## Example request
+
+Use the following example to see how a complete request is structured with headers.
+
+```
+GET /prd.version1
+Authorization: Bearer <token>
+```
+
+## Response fields
+
+The following table describes the fields returned in the response body.
+
+| Field | Field | Type | Description |
+| --- | --- | --- | --- |
+| `instanceId` | — | String | The hierarchy instance ID. |
+| `hierarchyId` | — | String | The hierarchy ID. |
+| `label` | — | String | The visible name of the hierarchy instance. |
+| `type` | — | String | The hierarchy type name as defined in the business configuration. |
+| `name` | — | String | The name of the hierarchy. |
+| `hasVersioning` | — | Boolean | Indicates whether the hierarchy is versioned. |
+| `singleInstanceId` | — | String | Optional. If versioning is disabled, the ID of the only hierarchy instance. |
+| `version` | `versionId` | String | The version ID. |
+| `version` | `name` | String | The name of the version. |
+| `version` | `status` | String | Optional. The status of the version. |
+| `version` | `effectiveStartDate` | String | Optional. The start effective date of the version in ISO 8601 date format. |
+| `version` | `effectiveEndDate` | String | Optional. The end effective date of the version in ISO 8601 date format. |
+| `version` | `description` | String | Optional. The description of the version. |
+| `version` | `context` | String | Optional. Additional context for the version. |
+| `version` | `createdBy` | String | The username of the user who created the version. |
+| `version` | `createdTime` | String | The time when the version was created, in ISO 8601 date-time format. |
+| `version` | `updatedBy` | String | The username of the user who last updated the version. |
+| `version` | `updatedTime` | String | The time when the version was last updated, in ISO 8601 date-time format. |
+| `createdBy` | — | String | The username of the user who created the hierarchy. |
+| `createdTime` | — | String | The time when the hierarchy was created, in ISO 8601 date-time format. |
+| `updatedBy` | — | String | The username of the user who last updated the hierarchy. |
+| `updatedTime` | — | String | The time when the hierarchy was last updated, in ISO 8601 date-time format. |
+
+## Example response
+
+The following example shows the response body.
+
+```
+{
+  "instanceId": "prd.version1",
+  "hierarchyId": "prd",
+  "label": "Product Hierarchy - Version 1",
+  "type": "configuration/hierarchyTypes/TypeProduct",
+  "name": "Product Hierarchy",
+  "hasVersioning": true,
+  "version": {
+    "versionId": "version1",
+    "name": "Version 1",
+    "status": "ACTIVE",
+    "effectiveStartDate": "2024-01-01",
+    "effectiveEndDate": "2026-12-31",
+    "description": "longDescription",
+    "context": "longContextDescription",
+    "createdBy": "john.smith@reltio.com",
+    "createdTime": "2024-10-10T10:13:30",
+    "updatedBy": "john.smith@reltio.com",
+    "updatedTime": "2024-10-10T10:15:30"
+  },
+  "createdBy": "john.smith@reltio.com",
+  "createdTime": "2024-10-10T10:13:30",
+  "updatedBy": "john.smith@reltio.com",
+  "updatedTime": "2024-10-10T10:15:30"
+}
+```
+
+**Related links**
+
+- [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+
+
+---
+
+# Get hierarchy paths for an object
+
+> **Section:** Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/get-hierarchy-paths-for-an-object?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** get hierarchy paths for object, hierarchy path view api, return all paths to roots, retrieve hierarchy paths by date, get object paths in hierarchy, retrieve all root paths, hierarchy instance path view, use hierarchy pathview api, hierarchy path response fields, hierarchy, pathview, roots
+
+
+Learn more about how to use the Get hierarchy path API to return all paths from an object to each root in a hierarchy instance.
+
+Use the `Get Hierarchy Path View API` to retrieve all available paths from an object to each root in a hierarchy instance. Use this API when an object can be reached through multiple parent branches. The response returns one path for each available branch. For example, if object `F` belongs to a hierarchy where it is connected through `A > B > F`, `D > B > F`, and `E > C > F`, the response returns all three root paths. This helps you identify every available route from the selected object to a root, which is especially useful in multiparent hierarchies.
+
+This operation requires the `MDM.Data.Hierarchy` permission with the `READ` privilege.
+
+## HTTP method and endpoint
+
+Use the following HTTP method and endpoint path to submit the request:
+
+```
+GET https://<environment>.reltio.com/reltio/api/{tenantId}/hierarchies/{instanceId}/objects/{entityId}/pathView
+```
+
+## Request headers
+
+The following request headers must be included.
+
+| Header | Value | Required |
+| --- | --- | --- |
+| `Authorization` | `Bearer <token>` | Yes |
+
+## Query parameters
+
+The following table describes the query parameters and their values.
+
+| Parameter | Type | Required | Description | Accepted values / Default |
+| --- | --- | --- | --- | --- |
+| `date` | String | No | Returns the hierarchy state for a specific date. Use ISO 8601 date format. | Example: `2025-10-10`. Default: today |
+
+## Request body
+
+This operation does not require a request body.
+
+## Example request
+
+Use the following example to see how a complete request is structured with headers.
+
+```
+GET /{instanceId}/objects/{entityId}/pathView?date=2025-10-10
+Authorization: Bearer <token>
+```
+
+## Response fields
+
+The following table describes the fields returned in the response body.
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `entityId` | String | The entity ID of the object. |
+| `entityType` | String | The entity type of the object. |
+| `label` | String | The label value of the object. |
+| `hasMoreChildren` | Boolean | Indicates whether the object has more children than are returned in the `children` field. |
+| `hasManyParents` | Boolean | Optional. Indicates whether the object has multiple parents. Default: `false`. |
+| `cyclic` | Boolean | Optional. Indicates whether the object creates a cycle with any lower level in the hierarchy. Default: `false`. |
+| `selected` | Boolean | Optional. Indicates whether this is the object specified in the request. Default: `false`. |
+| `connectionId` | String | The connection ID between the object and its parent. For the root object, this value is `null`. |
+| `children` | Array of objects | The list of child nodes. Each child repeats the same response structure recursively. |
+
+## Example response
+
+The following example shows the response body.
+
+```
+[
+  {
+    "entityId": "idRoot1",
+    "entityType": "configuration/entityTypes/HCP",
+    "label": "Root1",
+    "hasMoreChildren": false,
+    "children": [...]
+  },
+  {
+    "entityId": "idRoot2",
+    "entityType": "configuration/entityTypes/HCP",
+    "label": "Root2",
+    "hasMoreChildren": false,
+    "children": [...]
+  },
+  {
+    "entityId": "idRoot3",
+    "entityType": "configuration/entityTypes/HCP",
+    "label": "Root3",
+    "hasMoreChildren": false,
+    "children": [...]
+  }
+]
+```
+
+**Related links**
+
+- [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+
+
+---
+
+# Get a hierarchy version by ID
+
+> **Section:** Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/get-a-hierarchy-version-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** get hierarchy version by id, retrieve hierarchy version details, hierarchy versions api by id, return hierarchy version metadata, get version status and dates, retrieve hierarchy version response, get hierarchy version audit fields, view hierarchy version definition, get hierarchy version instance, versionid, instanceid, versioning
+
+
+Learn more about how to use the Get Hierarchy Version API to retrieve the metadata for a specific hierarchy version by ID.
+
+Use the `Get Hierarchy Version API` to retrieve the metadata for a specific hierarchy version by ID. This operation requires the `MDM.Data.Hierarchy` permission with the `READ` privilege.
+
+## HTTP method and endpoint
+
+Use the following HTTP method and endpoint path to submit the request:
+
+```
+GET https://<environment>.reltio.com/reltio/api/{tenantId}/hierarchies/list/{hierarchyId}/versions/{versionId}
+```
+
+## Request headers
+
+The following request headers must be included.
+
+| Header | Value | Required |
+| --- | --- | --- |
+| `Authorization` | `Bearer <token>` | Yes |
+
+## Request body
+
+This operation does not require a request body.
+
+## Example request
+
+Use the following example to see how a complete request is structured with headers.
+
+```
+GET /list/prd/versions/version1
+Authorization: Bearer <token>
+```
+
+## Response fields
+
+The following table describes the fields returned in the response body.
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `instanceId` | String | The hierarchy instance ID. |
+| `versionId` | String | The version ID. |
+| `name` | String | The name of the version. |
+| `status` | String | Optional. The status of the version. |
+| `effectiveStartDate` | String | Optional. The start effective date of the version in ISO 8601 date format. |
+| `effectiveEndDate` | String | Optional. The end effective date of the version in ISO 8601 date format. |
+| `description` | String | Optional. The description of the version. |
+| `context` | String | Optional. Additional context for the version. |
+| `createdBy` | String | The username of the user who created the version. |
+| `createdTime` | String | The time when the version was created, in ISO 8601 date-time format. |
+| `updatedBy` | String | The username of the user who last updated the version. |
+| `updatedTime` | String | The time when the version was last updated, in ISO 8601 date-time format. |
+
+## Example response
+
+The following example shows the response body.
+
+```
+{
+  "instanceId": "prd.version1",
+  "versionId": "version1",
+  "name": "Version 1",
+  "status": "ACTIVE",
+  "effectiveStartDate": "2024-01-01",
+  "effectiveEndDate": "2026-12-31",
+  "description": "longDescription",
+  "context": "longContextDescription",
+  "createdBy": "john.smith@reltio.com",
+  "createdTime": "2024-10-10T10:13:30",
+  "updatedBy": "john.smith@reltio.com",
+  "updatedTime": "2024-10-10T10:15:30"
+}
+```
+
+**Related links**
+
+- [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+
+
+---
+
+# List hierarchy versions
+
+> **Section:** Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/list-hierarchy-versions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** get hierarchy by id, retrieve hierarchy definition by id, hierarchy api by id, return hierarchy details by id, get hierarchy metadata response, retrieve hierarchy audit fields, identify versioned hierarchy definition, get single instance hierarchy, hierarchy response fields, hierarchyid, versioning, singleinstanceid
+
+
+Learn more about how to use the hierarchy versions API to return all versions of a hierarchy by ID.
+
+Use the `Hierarchy versions API` to retrieve all versions for a specified hierarchy. This operation requires the `MDM.Data.Hierarchy` permission with the `READ` privilege.
+
+## HTTP method and endpoint
+
+Use the following HTTP method and endpoint path to submit the request:
+
+```
+GET https://<environment>.reltio.com/reltio/api/{tenantId}/hierarchies/list/{hierarchyId}/versions
+```
+
+## Request headers
+
+The following request headers must be included.
+
+| Header | Value | Required |
+| --- | --- | --- |
+| `Authorization` | `Bearer <token>` | Yes |
+
+## Request body
+
+This operation does not require a request body.
+
+## Example request
+
+Use the following example to see how a complete request is structured with headers.
+
+```
+GET /list/prd/versions
+Authorization: Bearer <token>
+```
+
+## Response fields
+
+The following table describes the fields returned in the response body.
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `hierarchyId` | String | The hierarchy ID. |
+| `type` | String | The hierarchy type name as defined in the business configuration. |
+| `name` | String | The name of the hierarchy. |
+| `hasVersioning` | Boolean | Indicates whether the hierarchy is versioned. |
+| `singleInstanceId` | String | Optional. If versioning is disabled, the ID of the only hierarchy instance. |
+| `createdBy` | String | The username of the user who created the hierarchy. |
+| `createdTime` | String | The time when the hierarchy was created, in ISO 8601 date-time format. |
+| `updatedBy` | String | The username of the user who last updated the hierarchy. |
+| `updatedTime` | String | The time when the hierarchy was last updated, in ISO 8601 date-time format. |
+
+## Example response
+
+The following example shows the response body.
+
+```
+[
+  {
+    "instanceId": "prd.version1",
+    "versionId": "version1",
+    "name": "Version 1",
+    "status": "ACTIVE",
+    "effectiveStartDate": "2024-01-01",
+    "effectiveEndDate": "2026-12-31",
+    "description": "longDescription",
+    "context": "longContextDescription",
+    "createdBy": "john.smith@reltio.com",
+    "createdTime": "2024-10-10T10:13:30",
+    "updatedBy": "john.smith@reltio.com",
+    "updatedTime": "2024-10-10T10:15:30"
+  },
+  {
+    "instanceId": "prd.versionDraft",
+    "versionId": "versionDraft",
+    "name": "Version Draft",
+    "status": "DRAFT",
+    "description": "longDescription of draft",
+    "context": "longContextDescription of draft",
+    "createdBy": "john.smith@reltio.com",
+    "createdTime": "2024-10-10T10:13:30",
+    "updatedBy": "john.smith@reltio.com",
+    "updatedTime": "2024-10-10T10:15:30"
+  }
+]
+```
+
+**Related links**
+
+- [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+
+
+---
+
+# Get hierarchy view for an object
+
+> **Section:** Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/get-hierarchy-view-for-an-object?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** get hierarchy view for object, hierarchy view api for object, return object path to root, retrieve hierarchy path by instance, get hierarchy state by date, use torootonly hierarchy option, hierarchy instance object view api, retrieve parent child hierarchy path, hierarchy view response fields, hierarchy, instance, path
+
+
+Learn more about how to use the Get hierarchy view API to return a path from an object to one root in a hierarchy instance.
+
+Use the `Get hierarchy view for an object API` to return a path from an object to the root node in a hierarchy instance. This operation requires the `MDM.Data.Hierarchy` permission with the `READ` privilege.
+
+## HTTP method and endpoint
+
+Use the following HTTP method and endpoint path to submit the request:
+
+```
+GET /{instanceId}/objects/{entityId}/view
+```
+
+## Request headers
+
+The following request headers must be included.
+
+| Header | Value | Required |
+| --- | --- | --- |
+| `Authorization` | `Bearer <token>` | Yes |
+
+## Query parameters
+
+The following table describes the query parameters and their values.
+
+| Parameter | Type | Required | Description | Accepted values / Default |
+| --- | --- | --- | --- | --- |
+| `date` | String | No | Returns the hierarchy state for a specific date. Use ISO 8601 date format. | Example: `2025-10-10`. Default: today |
+
+## Request body
+
+This operation does not require a request body.
+
+## Example request
+
+Use the following example to see how a complete request is structured with headers.
+
+```
+GET https://<environment>.reltio.com/reltio/api/{tenantId}/hierarchies/{instanceId}/objects/{entityId}/view
+```
+
+## Response fields
+
+The following table describes the fields returned in the response body.
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `entityId` | String | The entity ID of the object. |
+| `entityType` | String | The entity type of the object. |
+| `label` | String | The label value of the object. |
+| `hasMoreChildren` | Boolean | Indicates whether the object has more children than are returned in the `children` field. |
+| `hasManyParents` | Boolean | Optional. Indicates whether the object has multiple parents. |
+| `cyclic` | Boolean | Optional. Indicates whether the object creates a cycle with any lower level in the hierarchy. |
+| `selected` | Boolean | Optional. Indicates whether this is the object specified in the request. |
+| `connectionId` | String | The connection ID between the object and its parent. For the root object, this value is `null`. |
+| `children` | Array of objects | The list of child nodes. Each child repeats the same response structure recursively. |
+
+## Example response
+
+The following example shows the response body.
+
+```
+{
+  "entityId": "idRoot",
+  "entityType": "configuration/entityTypes/HCP",
+  "label": "Root",
+  "hasMoreChildren": false,
+  "children": [
+    {
+      "entityId": "level1Id",
+      "entityType": "configuration/entityTypes/HCP",
+      "label": "Level 1",
+      "hasMoreChildren": false,
+      "connectionId": "rootToLevel1Id",
+      "children": [
+        {
+          "entityId": "objectId",
+          "entityType": "configuration/entityTypes/HCP",
+          "selected": true,
+          "label": "Opened object",
+          "hasMoreChildren": false,
+          "connectionId": "level1ToObjectId",
+          "children": [
+            {
+              "entityId": "child1Id",
+              "entityType": "configuration/entityTypes/HCP",
+              "label": "Child 1",
+              "hasMoreChildren": true,
+              "hasManyParents": true,
+              "connectionId": "objectToChild1Id"
+            },
+            {
+              "entityId": "child2Id",
+              "entityType": "configuration/entityTypes/HCP",
+              "label": "Child 2",
+              "hasMoreChildren": false,
+              "connectionId": "objectToChild2Id"
+            },
+            {
+              "entityId": "child3Id",
+              "entityType": "configuration/entityTypes/HCP",
+              "label": "Child 3",
+              "hasMoreChildren": true,
+              "connectionId": "objectToChild3Id"
+            },
+            {
+              "entityId": "idRoot",
+              "entityType": "configuration/entityTypes/HCP",
+              "label": "Root 2",
+              "hasMoreChildren": false,
+              "connectionId": "objectToRootId",
+              "cyclic": true
+            }
+          ]
+        },
+        {
+          "entityId": "siblingObjectId",
+          "entityType": "configuration/entityTypes/HCP",
+          "selected": true,
+          "label": "Opened object",
+          "hasMoreChildren": true,
+          "hasManyParents": true,
+          "connectionId": "level1ToSiblingObjectId",
+          "children": []
+        }
+      ]
+    }
+  ]
+}
+```
+
+**Related links**
+
+- [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+
+
+---
+
+# Import a hierarchy
+
+> **Section:** Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/import-a-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** create hierarchy api, create hierarchy definition, create hierarchy with version, create hierarchy with connection, create first hierarchy connection, create hierarchy version and instance, submit hierarchy create request, hierarchy create response fields, create versioned hierarchy, versioning, hierarchyid, firstconnection
+
+
+Learn more about how to use the Import Hierarchy API to import hierarchy data from a CSV or JSON file.
+
+Use the `Import Hierarchy API` to import hierarchy data in bulk. This operation requires the `MDM.Data.Hierarchy` permission with the `CREATE` privilege.
+
+## HTTP method and endpoint
+
+Use the following HTTP method and endpoint path to submit the request:
+
+```
+POST https://<environment>.reltio.com/reltio/api/{tenantId}/hierarchies/import
+```
+
+## Request headers
+
+The following request headers must be included.
+
+| Header | Value | Required |
+| --- | --- | --- |
+| `Authorization` | `Bearer <token>` | Yes |
+| `Content-type` | `multipart/form-data` | Yes |
+
+## Request body
+
+The request body is a JSON array of connection definition objects.
+
+| Field | Type | Required | Description | Accepted values / Default |
+| --- | --- | --- | --- | --- |
+| `format` | String | No | The import file format. | `CSV` or `JSON`. Default: `CSV` |
+| `disconnectPolicy` | String | No | Determines what happens if not all objects are connected in a hierarchy with the same type, name, and version. | `PREVENT` or `CREATE_MULTIPLE`. Default: `PREVENT` |
+| `conflictsPolicy` | String | No | Determines how to handle conflicts in connection dates for defined hierarchies. | `FORBID` or `MERGE`. Default: `FORBID` |
+| `errorPolicy` | String | No | Determines what happens when individual lines in the imported file are in an incorrect format. | `IGNORE` or `FAIL`. Default: `FAIL` |
+| `file` | File | Yes | The file that contains the hierarchy definition. | CSV or JSON file |
+| `version` | String | No | The version name of the hierarchy. | Any string. Default is none. |
+| `startDate` | Date | No | The start date of the connection. | Date format YYYY-MM-DD. |
+| `endDate` | Date | No | The end date of the connection. | Date format YYYY-MM-DD. |
+
+## Example CSV and JSON file
+
+The following example shows the content of an import CSV file.
+
+```
+
+# hiearchies with no versions
+configuration/hierarchyTypes/HierarchyType,Hierachy Name,0JecJqU,2YCLdAuY
+configuration/hierarchyTypes/HierarchyType,Hierachy Name,2YCLdAuY,2YCLdFAo
+
+# hiearchies with versions
+configuration/hierarchyTypes/HierarchyType,Hierachy Name,Version Name,0JecJqU,2YCLdAuY
+configuration/hierarchyTypes/HierarchyType,Hierachy Name,Version Name,2YCLdAuY,2YCLdFAo
+
+# hiearchies with no versions, but with start-end dates of connections
+configuration/hierarchyTypes/HierarchyType,Hierachy Name,0JecJqU,2YCLdAuY,2026-01-01,2026-02-28
+configuration/hierarchyTypes/HierarchyType,Hierachy Name,2YCLdAuY,2YCLdFAo,2026-01-05,2026-03-30
+
+# hiearchies with versions, and start-end dates of connections
+configuration/hierarchyTypes/HierarchyType,Hierachy Name,Version Name,0JecJqU,2YCLdAuY,2026-01-01,2026-02-28
+configuration/hierarchyTypes/HierarchyType,Hierachy Name,Version Name,2YCLdAuY,2YCLdFAo,2026-01-05,2026-03-30 
+```
+
+The following example shows the content of an import JSON file.
+
+```
+[
+  {
+    "name": "test-hierarchy",
+    "type": "test-type",
+    "version": "1.0",
+    "connections": [
+      {
+        "parentId": "parent1",
+        "childId": "child1",
+        "startDate": "2025-01-01",
+        "endDate": "2025-12-31"
+      }
+    ]
+  }
+]
+```
+
+## Example request
+
+The following example shows a CSV upload request. To upload a JSON file, set `format` to `JSON` and upload a JSON file in the `file` field.
+
+```
+POST /import
+Authorization: Bearer <token>
+Content-Type: multipart/form-data; boundary=---boundary
+
+
+format=CSV
+disconnectPolicy=PREVENT
+conflictsPolicy=FORBID
+errorPolicy=FAIL
+file=hierarchies.csv
+```
+
+## Response fields
+
+The following table describes the fields returned in the response body, which is an array of hierarchy connection objects.
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `createdInstances` | Object | A map of hierarchy names to arrays of created instance IDs. Instance ID = `HierarchyId.VersionId` |
+| `failedHierarchies` | Array of strings | The names of hierarchies that could not be loaded. |
+
+## Example response
+
+The following example shows the response body.
+
+```
+{
+  "createdInstances": {
+    "Hierarchy One": [
+      "0ABlc0A.0ABlgGQ"
+    ],
+    "Hierarchy Two": [
+      "0ABlc0A.0ABlB1z"
+    ]
+  },
+  "failedHierarchies": [
+    "Failed Hierarchy Name"
+  ]
+}
+```
+
+**Related links**
+
+- [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+
+
+---
+
+# Search hierarchy labels in a hierarchy instance
+
+> **Section:** Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/search-hierarchy-labels-in-a-hierarchy-instance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** search hierarchy labels in instance, hierarchy label search api, return matching hierarchy entries, find hierarchy labels by query, retrieve matched labels and paths, search hierarchy labels by date, use label search api, get hierarchy search response fields, return label paths for entity, labelsearch, pathlabels, entityid
+
+
+Learn more about how to use the search hierarchy label API to return matching entries and their paths in a hierarchy instance.
+
+Use the `Search Hierarchy label API` to search for objects by label in a hierarchy instance. This operation requires the `MDM.Data.Hierarchy` permission with the `READ` privilege.
+
+## HTTP method and endpoint
+
+Use the following HTTP method and endpoint path to submit the request:
+
+```
+GET https://<environment>.reltio.com/reltio/api/{tenantId}/hierarchies/{instanceId}/labelSearch
+```
+
+## Request headers
+
+The following request headers must be included.
+
+| Header | Value | Required |
+| --- | --- | --- |
+| `Authorization` | `Bearer <token>` | Yes |
+
+## Query parameters
+
+The following table describes the query parameters and their values.
+
+| Parameter | Type | Required | Description | Accepted values / Default |
+| --- | --- | --- | --- | --- |
+| `query` | String | Yes | The input string used to search hierarchy labels. | Minimum 3 characters, maximum 100 characters. Example: `Labe` |
+| `date` | String | No | Returns the hierarchy state for a specific date. Use ISO 8601 date format. | Example: `2025-10-10`. Default: today |
+
+## Request body
+
+This operation does not require a request body.
+
+## Example request
+
+Use the following example to see how a complete request is structured with headers.
+
+```
+GET /{instanceId}/labelSearch?query=Labe&date=2025-10-10
+Authorization: Bearer <token>
+```
+
+## Response fields
+
+The following table describes the fields returned in the response body.
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `entityId` | String | The entity ID of the matched object. |
+| `labels` | Array of strings | The path labels for the matched entry. One random path is chosen. The matched entity is always the last item in the list. |
+
+## Example response
+
+The following example shows the response body.
+
+```
+[
+  {
+    "entityId": "matchedId1",
+    "labels": [
+      "Root",
+      "Level 1 object",
+      "Level 2.1 object",
+      "Matched entity 1"
+    ]
+  },
+  {
+    "entityId": "matchedId2",
+    "labels": [
+      "Root",
+      "Level 1 object",
+      "Level 2.2 object",
+      "Matched entity 2"
+    ]
+  }
+]
+```
+
+**Related links**
+
+- [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+
+
+---
+
+# List children of an entity in a hierarchy instance
+
+> **Section:** Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/list-children-of-an-entity-in-a-hierarchy-instance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** list child objects in hierarchy instance, children view api for hierarchy, return flat list of child objects, get child objects for entity, retrieve hierarchy children by date, list direct children in hierarchy, get hierarchy children response fields, use children api in hierarchy, retrieve child connections in hierarchy, children, connectionid, hierarchies
+
+
+Learn more about how to use the List children of an entity API to return a flat list of child objects for an entity in a hierarchy instance.
+
+Use the `List the children of an entity API` to retrieve all immediate child objects for a specified entity in a hierarchy instance. This operation requires the `MDM.Data.Hierarchy` permission with the `READ` privilege.
+
+## HTTP method and endpoint
+
+Use the following HTTP method and endpoint path to submit the request:
+
+```
+GET https://<environment>.reltio.com/reltio/api/{tenantId}/hierarchies/{instanceId}/objects/{entityId}/children
+```
+
+## Request headers
+
+The following request headers must be included.
+
+| Header | Value | Required |
+| --- | --- | --- |
+| `Authorization` | `Bearer <token>` | Yes |
+
+## Query parameters
+
+The following table describes the query parameters and their values.
+
+| Parameter | Type | Required | Description | Accepted values / Default |
+| --- | --- | --- | --- | --- |
+| `date` | String | No | Returns the hierarchy state for a specific date. Use ISO 8601 date format. | Example: `2025-10-10`. Default: today |
+
+## Request body
+
+This operation does not require a request body.
+
+## Example request
+
+Use the following example to see how a complete request is structured with headers.
+
+```
+GET /{instanceId}/objects/{entityId}/children?date=2025-10-10
+Authorization: Bearer <token>
+```
+
+## Response fields
+
+The following table describes the fields returned in the response body.
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `entityId` | String | The entity ID of the child object. |
+| `entityType` | String | The entity type of the child object. |
+| `label` | String | The label value of the child object. |
+| `hasMoreChildren` | Boolean | Indicates whether the child object has more children than are returned in the current view. |
+| `hasManyParents` | Boolean | Optional. Indicates whether the child object has multiple parents. Default: `false`. |
+| `connectionId` | String | The connection ID between the requested object and this child object. |
+
+## Example response
+
+The following example shows the response body.
+
+```
+[
+  {
+    "entityId": "child1Id",
+    "entityType": "configuration/entityTypes/HCP",
+    "label": "Child 1",
+    "hasMoreChildren": true,
+    "connectionId": "objectToChild1Id"
+  },
+  {
+    "entityId": "child2Id",
+    "entityType": "configuration/entityTypes/HCP",
+    "label": "Child 2",
+    "hasMoreChildren": false,
+    "hasManyParents": true,
+    "connectionId": "objectToChild2Id"
+  },
+  {
+    "entityId": "child3Id",
+    "entityType": "configuration/entityTypes/HCP",
+    "label": "Child 3",
+    "hasMoreChildren": true,
+    "connectionId": "objectToChild3Id"
+  }
+]
+```
+
+**Related links**
+
+- [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+
+
+---
+
+# List parents objects in a hierarchy instance
+
+> **Section:** Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/list-parents-objects-in-a-hierarchy-instance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** list parent objects in hierarchy, parents view api for hierarchy, return flat list of parents, get parent objects for entity, retrieve hierarchy parents by date, list direct parents in hierarchy, get hierarchy parents response fields, use parents api in hierarchy, retrieve parent connections in hierarchy, parents, connections, instances
+
+
+Learn more about how to use the List parent objects to return a flat list of parent objects for an entity in a hierarchy instance.
+
+Use the `List parent objects API` to retrieve all parent objects for a specified entity in a hierarchy instance. This operation requires the `MDM.Data.Hierarchy` permission with the `READ` privilege.
+
+## HTTP method and endpoint
+
+Use the following HTTP method and endpoint path to submit the request:
+
+```
+GET https://<environment>.reltio.com/reltio/api/{tenantId}/hierarchies/{instanceId}/objects/{entityId}/parents
+```
+
+## Request headers
+
+The following request headers must be included.
+
+| Header | Value | Required |
+| --- | --- | --- |
+| `Authorization` | `Bearer <token>` | Yes |
+
+## Query parameters
+
+The following table describes the query parameters and their values.
+
+| Parameter | Type | Required | Description | Accepted values / Default |
+| --- | --- | --- | --- | --- |
+| `date` | String | No | Returns the hierarchy state for a specific date. Use ISO 8601 date format. | Example: `2025-10-10`. Default: today |
+
+## Request body
+
+This operation does not require a request body.
+
+## Example request
+
+Use the following example to see how a complete request is structured with headers.
+
+```
+GET /{instanceId}/objects/{entityId}/parents?date=2025-10-10
+Authorization: Bearer <token>
+```
+
+## Response fields
+
+The following table describes the fields returned in the response body.
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `entityId` | String | The entity ID of the parent object. |
+| `entityType` | String | The entity type of the parent object. |
+| `label` | String | The label value of the parent object. |
+| `hasMoreChildren` | Boolean | Indicates whether the parent object has additional child objects. |
+| `hasManyParents` | Boolean | Optional. Indicates whether the parent object has multiple parents. Default: `false`. |
+| `connectionId` | String | The connection ID between the requested object and this parent object. |
+
+## Example response
+
+The following example shows the response body.
+
+```
+[
+  {
+    "entityId": "parent1Id",
+    "entityType": "configuration/entityTypes/HCP",
+    "label": "Parent 1",
+    "hasMoreChildren": false,
+    "hasManyParents": true,
+    "connectionId": "objectToParent1Id"
+  },
+  {
+    "entityId": "parent2Id",
+    "entityType": "configuration/entityTypes/HCP",
+    "label": "Parent 2",
+    "hasMoreChildren": false,
+    "connectionId": "objectToParent2Id"
+  },
+  {
+    "entityId": "parent3Id",
+    "entityType": "configuration/entityTypes/HCP",
+    "label": "Parent 3",
+    "hasMoreChildren": false,
+    "connectionId": "objectToParent3Id"
+  }
+]
+```
+
+**Related links**
+
+- [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+
+
+---
+
+# Update a hierarchy by ID
+
+> **Section:** Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/update-a-hierarchy-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** update hierarchy by id, hierarchy update api, update hierarchy metadata, change hierarchy name and type, enable hierarchy versioning setting, put hierarchy endpoint by id, hierarchy update request body, hierarchy update response fields, update hierarchy versioning option, versioning, hierarchyid, singleinstanceid
+
+
+Learn more about how to use the hierarchy update API to update a hierarchy by ID.
+
+Use the `Hierarchy update API` to update the metadata for a hierarchy. This operation requires the `MDM.Data.Hierarchy` permission with the `UPDATE` privilege.
+
+## HTTP method and endpoint
+
+Use the following HTTP method and endpoint path to submit the request:
+
+```
+PUT https://<environment>.reltio.com/reltio/api/{tenantId}/hierarchies/list/{hierarchyId}
+```
+
+## Request headers
+
+The following request headers must be included.
+
+| Header | Value | Required |
+| --- | --- | --- |
+| `Authorization` | `Bearer <token>` | Yes |
+
+## Request body
+
+The request body is a JSON array of connection definition objects.
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `type` | String | Yes | The hierarchy type name as defined in the business configuration. |
+| `name` | String | Yes | The name of the hierarchy. |
+| `hasVersioning` | Boolean | No | Indicates whether hierarchy versioning must be enabled or disabled. If the hierarchy has multiple versions, you can't disable versioning. |
+
+## Example request
+
+Use the following example to see how a complete request is structured with headers.
+
+```
+PUT /list/prd
+Authorization: Bearer <token>
+
+{
+  "type": "configuration/hierarchyTypes/TypeProduct",
+  "name": "Product Hierarchy",
+  "hasVersioning": true
+}
+```
+
+## Response fields
+
+The following table describes the fields returned in the response body.
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `hierarchyId` | String | The hierarchy ID. |
+| `type` | String | The hierarchy type name as defined in the business configuration. |
+| `name` | String | The name of the hierarchy. |
+| `hasVersioning` | Boolean | Indicates whether the hierarchy is versioned. |
+| `singleInstanceId` | String | Optional. If versioning is disabled, the ID of the only hierarchy instance. |
+| `createdBy` | String | The username of the user who created the hierarchy. |
+| `createdTime` | String | The time when the hierarchy was created, in ISO 8601 date-time format. |
+| `updatedBy` | String | The username of the user who last updated the hierarchy. |
+| `updatedTime` | String | The time when the hierarchy was last updated, in ISO 8601 date-time format. |
+
+## Example response
+
+The following example shows the response body.
+
+```
+{
+  "hierarchyId": "prd",
+  "type": "configuration/hierarchyTypes/TypeProduct",
+  "name": "Product Hierarchy",
+  "hasVersioning": true,
+  "createdBy": "john.smith@reltio.com",
+  "createdTime": "2024-10-10T10:13:30",
+  "updatedBy": "john.smith@reltio.com",
+  "updatedTime": "2024-10-10T10:15:30"
+}
+```
+
+**Related links**
+
+- [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+
+
+---
+
+# Update a hierarchy version by ID
+
+> **Section:** Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/update-a-hierarchy-version-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** update hierarchy version by id, hierarchy version update api, change hierarchy version metadata, put hierarchy version endpoint, update version status and dates, edit hierarchy version description, update hierarchy version context, modify hierarchy version by id, hierarchy version response fields, versionid, versioning, metadata
+
+
+Learn more about how to use the hierarchy versions API to update a hierarchy version by ID.
+
+Use the `Hierarchy versions API` to update the metadata for a hierarchy version. This operation requires the `MDM.Data.Hierarchy` permission with the `UPDATE` privilege.
+
+## HTTP method and endpoint
+
+Use the following HTTP method and endpoint path to submit the request:
+
+```
+PUT https://<environment>.reltio.com/reltio/api/{tenantId}/hierarchies/list/{hierarchyId}/versions/{versionId}
+```
+
+## Request headers
+
+The following request headers must be included.
+
+| Header | Value | Required |
+| --- | --- | --- |
+| `Authorization` | `Bearer <token>` | Yes |
+
+## Request body
+
+The request body is a JSON array of connection definition objects.
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `name` | String | Yes | The name of the version. |
+| `status` | String | No | The status of the version. |
+| `effectiveStartDate` | String | No | The start effective date of the version in ISO 8601 date format. |
+| `effectiveEndDate` | String | No | The end effective date of the version in ISO 8601 date format. |
+| `description` | String | No | The description of the version. |
+| `context` | String | No | Additional context for the version. |
+
+## Example request
+
+Use the following example to see how a complete request is structured with headers.
+
+```
+PUT /list/prd/versions/version1
+Authorization: Bearer <token>
+
+{
+  "name": "Version 1",
+  "status": "ACTIVE",
+  "effectiveStartDate": "2024-01-01",
+  "effectiveEndDate": "2026-12-31",
+  "description": "longDescription",
+  "context": "longContextDescription"
+}
+```
+
+## Response fields
+
+The following table describes the fields returned in the response body.
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `instanceId` | String | The hierarchy instance ID. |
+| `versionId` | String | The version ID. |
+| `name` | String | The name of the version. |
+| `status` | String | Optional. The status of the version. |
+| `effectiveStartDate` | String | Optional. The start effective date of the version in ISO 8601 date format. |
+| `effectiveEndDate` | String | Optional. The end effective date of the version in ISO 8601 date format. |
+| `description` | String | Optional. The description of the version. |
+| `context` | String | Optional. Additional context for the version. |
+| `createdBy` | String | The username of the user who created the version. |
+| `createdTime` | String | The time when the version was created, in ISO 8601 date-time format. |
+| `updatedBy` | String | The username of the user who last updated the version. |
+| `updatedTime` | String | The time when the version was last updated, in ISO 8601 date-time format. |
+
+## Example response
+
+The following example shows the response body.
+
+```
+{
+  "instanceId": "prd.version1",
+  "versionId": "version1",
+  "name": "Version 1",
+  "status": "ACTIVE",
+  "effectiveStartDate": "2024-01-01",
+  "effectiveEndDate": "2026-12-31",
+  "description": "longDescription",
+  "context": "longContextDescription",
+  "createdBy": "user@test.com",
+  "createdTime": "2024-10-10T10:13:30",
+  "updatedBy": "user@test.com",
+  "updatedTime": "2024-10-10T10:15:30"
+}
+```
+
+**Related links**
+
+- [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+
+
+---
+
+# Get a hierarchy connection by ID
+
+> **Section:** Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/get-a-hierarchy-connection-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** get hierarchy connection by id, hierarchy connections api, retrieve hierarchy connection details, get parent child connection by id, return hierarchy connection definition, hierarchy connection effective dates, retrieve hierarchy connection audit fields, use hierarchy connection get api, hierarchy connection response fields, connectionid, parentid, childid
+
+
+Learn more about how to use the Get hierarchy connections API to return the definition of a hierarchy connection by ID.
+
+Use the `Get a Hierarchy connection by ID API` to retrieve the definition of a connection in a hierarchy instance. This operation requires the `MDM.Data.Hierarchy` permission with the `READ` privilege.
+
+## HTTP method and endpoint
+
+Use the following HTTP method and endpoint path to submit the request:
+
+```
+GET /{instanceId}/connections/{connectionId}GET https://<environment>.reltio.com/reltio/api/{tenantId}/hierarchies/{instanceId}/connections/{connectionId}
+```
+
+## Request headers
+
+The following request headers must be included.
+
+| Header | Value | Required |
+| --- | --- | --- |
+| `Authorization` | `Bearer <token>` | Yes |
+
+## Request body
+
+This operation does not require a request body.
+
+## Example request
+
+Use the following example to see how a complete request is structured with headers.
+
+```
+GET /{instanceId}/connections/{connectionId}
+Authorization: Bearer <token>
+```
+
+## Response fields
+
+The following table describes the fields returned in the response body.
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `connectionId` | String | The connection ID. |
+| `parentId` | String | The entity ID of the parent object. |
+| `childId` | String | The entity ID of the child object. |
+| `startDate` | String | Optional. The start effective date of the connection in ISO 8601 date format. |
+| `endDate` | String | Optional. The end effective date of the connection in ISO 8601 date format. |
+| `createdBy` | String | The username of the user who created the connection. |
+| `createdTime` | String | The time when the connection was created, in ISO 8601 date-time format. |
+| `updatedBy` | String | The username of the user who last updated the connection. |
+| `updatedTime` | String | The time when the connection was last updated, in ISO 8601 date-time format. |
+
+## Example response
+
+The following example shows the response body.
+
+```
+{
+  "connectionId": "connId",
+  "parentId": "prtId",
+  "childId": "cldId",
+  "startDate": "2024-01-01",
+  "endDate": "2026-12-32",
+  "createdBy": "john.smith@reltio.com",
+  "createdTime": "2024-10-10T10:13:30",
+  "updatedBy": "john.smith@reltio.com",
+  "updatedTime": "2024-10-10T10:15:30"
+}
+```
+
+**Related links**
+
+- [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+
+
+---
+
+# List hierarchies for an object
+
+> **Section:** Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/list-hierarchies-for-an-object?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** list hierarchies for object, hierarchy listing api for object, return hierarchies that include object, get hierarchies by entity id, find hierarchies containing object, retrieve hierarchy list for object, identify versioned hierarchies for object, list hierarchy names and types, hierarchy listing response fields, hierarchyid, versioning, singleinstanceid
+
+
+Learn more about how to use the List hierarchies API to return the hierarchies that include an object.
+
+Use the `List hierarchies for an object API` to view a list of hierarchies for an object. This operation requires the `MDM.Data.Hierarchy` permission with the `READ` privilege.
+
+## HTTP method and endpoint
+
+Use the following HTTP method and endpoint path to submit the request:
+
+```
+GET https://<environment>.reltio.com/reltio/api/{tenantId}/hierarchies/objects/{entityId}/list
+```
+
+## Request headers
+
+The following request headers must be included.
+
+| Header | Value | Required |
+| --- | --- | --- |
+| `Authorization` | `Bearer <token>` | Yes |
+
+## Request body
+
+This operation does not require a request body.
+
+## Example request
+
+Use the following example to see how a complete request is structured with headers.
+
+```
+GET /objects/{entityId}/list
+Authorization: Bearer <token>
+```
+
+## Response fields
+
+The following table describes the fields returned in the response body.
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `hierarchyId` | String | The hierarchy ID. |
+| `type` | String | The hierarchy type name as defined in the business configuration. |
+| `name` | String | The name of the hierarchy. |
+| `hasVersioning` | Boolean | Indicates whether the hierarchy is versioned. |
+| `singleInstanceId` | String | Optional. If versioning is disabled, the ID of the only hierarchy instance. |
+
+## Example response
+
+The following example shows the response body.
+
+```
+[
+  {
+    "hierarchyId": "prd",
+    "type": "configuration/hierarchyTypes/TypeProduct",
+    "name": "Product Hierarchy - Version 1",
+    "hasVersioning": true
+  },
+  {
+    "hierarchyId": "obj",
+    "type": "configuration/hierarchyTypes/TypeObjects",
+    "name": "Object Hierarchy",
+    "hasVersioning": false,
+    "singleInstanceId": "obj.1"
+  }
+]
+```
+
+**Related links**
+
+- [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+
+
+---
+
+# List hierarchy instances for an object
+
+> **Section:** Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/list-hierarchy-instances-for-an-object?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** list hierarchy instances for object, hierarchy instances listing api, return hierarchy instances by object, find hierarchy instances containing object, get object hierarchy instances, retrieve hierarchy instance details, identify versioned hierarchy instances, list hierarchy instance labels, hierarchy instance response fields, instanceid, versioning, hierarchytypes
+
+
+Learn more about how to use the List hierarchy instances API to return the hierarchy instances that include an object.
+
+Use the `List Hierarchy instances API` to retrieve an aggregated list of hierarchy instances in which a specified object participates. This operation requires the `MDM.Data.Hierarchy` permission with the `READ` privilege.
+
+## HTTP method and endpoint
+
+Use the following HTTP method and endpoint path to submit the request:
+
+```
+GET https://<environment>.reltio.com/reltio/api/{tenantId}/hierarchies/objects/{entityId}/instances
+```
+
+## Request headers
+
+The following request headers must be included.
+
+| Header | Value | Required |
+| --- | --- | --- |
+| `Authorization` | `Bearer <token>` | Yes |
+
+## Request body
+
+This operation does not require a request body.
+
+## Example request
+
+Use the following example to see how a complete request is structured with headers.
+
+```
+GET /objects/{entityId}/instances
+Authorization: Bearer <token>
+```
+
+## Response fields
+
+The following table describes the fields returned in the response body.
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `instanceId` | String | The hierarchy instance ID. This value consists of the hierarchy ID and the version ID. |
+| `type` | String | The hierarchy type name as defined in the business configuration. |
+| `label` | String | The visible name of the hierarchy instance. |
+| `hasVersioning` | Boolean | Indicates whether the hierarchy instance belongs to a versioned hierarchy. |
+
+## Example response
+
+The following example shows the response body.
+
+```
+[
+  {
+    "instanceId": "prd.version1",
+    "type": "configuration/hierarchyTypes/TypeProduct",
+    "label": "Product Hierarchy - Version 1",
+    "hasVersioning": true
+  },
+  {
+    "instanceId": "prd.version2",
+    "type": "configuration/hierarchyTypes/TypeProduct",
+    "label": "Product Hierarchy - Version 2",
+    "hasVersioning": true
+  },
+  {
+    "instanceId": "obj.1",
+    "type": "configuration/hierarchyTypes/TypeObjects",
+    "label": "Object Hierarchy",
+    "hasVersioning": false
+  }
+]
+```
+
+**Related links**
+
+- [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+
+
+---
+
+# List hierarchy versions for an object
+
+> **Section:** Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/list-hierarchy-versions-for-an-object?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** list hierarchy versions for object, hierarchy versions listing api, return versions for hierarchy, get hierarchy versions by object, find hierarchy versions containing object, retrieve version list for hierarchy, list version names by hierarchy, get hierarchy version response, use hierarchy versions api, versioning, versionid, hierarchyid
+
+
+Learn more about how to use the List hierarchy versions API to return the versions of a hierarchy that include an object.
+
+Use the `List hierarchy versions API` to retrieve the list of hierarchies in which a specified object participates, without version details. This operation requires the `MDM.Data.Hierarchy` permission with the `READ` privilege.
+
+## HTTP method and endpoint
+
+Use the following HTTP method and endpoint path to submit the request:
+
+```
+GET https://<environment>.reltio.com/reltio/api/{tenantId}/hierarchies/objects/{entityId}/list/{hierarchyId}
+```
+
+## Request headers
+
+The following request headers must be included.
+
+| Header | Value | Required |
+| --- | --- | --- |
+| `Authorization` | `Bearer <token>` | Yes |
+
+## Request body
+
+This operation does not require a request body.
+
+## Example request
+
+Use the following example to see how a complete request is structured with headers.
+
+```
+GET /objects/{entityId}/list/{hierarchyId}
+Authorization: Bearer <token>
+```
+
+## Response fields
+
+The following table describes the fields returned in the response body.
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `versionId` | String | The version ID. |
+| `name` | String | The name of the version. |
+
+## Example response
+
+The following example shows the response body.
+
+```
+[
+  {
+    "versionId": "version1",
+    "name": "Version 1"
+  },
+  {
+    "versionId": "version2",
+    "name": "Version 2"
+  }
+]
+```
+
+**Related links**
+
+- [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 
 
@@ -144851,13 +147604,15 @@ Let's take you around the **Bulk match review** neighborhood.
 
 ## Bulk match review access
 
-Access **Bulk match review** from here in the UI: **Applications > Hub > Bulk match review**. For general information on using the left navigation drawer in the Hub, see topic [Hub navigation](https://docs.reltio.com/en/applications/hub/hub-at-a-glance/hub-navigation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+Access **Bulk match review** from here in the UI: **Applications > Hub > Bulk match**. For general information on using the left navigation drawer in the Hub, see topic [Hub navigation](https://docs.reltio.com/en/applications/hub/hub-at-a-glance/hub-navigation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+> **Note:** The **Bulk match** option appears in the left navigation pane only after [you enable](https://docs.reltio.com/en/applications/hub/bulk-match-review-at-a-glance/enable-bulk-match-in-a-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) it in **UI Modeler**.
 
 If `No results found` is displayed, use Search to select a specific profile whose potential matches you want to review. For more information, see section [Search at a glance](https://docs.reltio.com/en/applications/hub/search-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 ## Bulk match review anatomy
 
-The **Bulk match review** page contains tabs for the entity types defined for the specified profile, for example, Location, Individual, Organization, and Household.
+The **Bulk match** page contains tabs for the entity types defined for the specified profile, for example, Location, Individual, Organization, and Household.
 
 To review potential matches in bulk, select one or more check boxes from the **Profile** column. The **Match Review** bar then prompts you to choose between:
 
@@ -144920,7 +147675,7 @@ Get a high-level view of Bulk match reviews and actions feature in the Hub.
 
 ## What is it?
 
-**Bulk match review** helps you resolve duplicate records efficiently. Instead of reviewing matches one at a time, work with up to 100 potential matches in a single session.
+**Bulk match review** helps you resolve duplicate records efficiently. Instead of reviewing matches one at a time, review multiple potential matches in a single session and use pagination to move through additional pairs as needed.
 
 Use filtering options to narrow down the list of potential matches and decide which records to merge or exclude. The feature ensures consistent data quality and speeds up match resolution tasks.
 
@@ -144974,7 +147729,13 @@ Use **Bulk match review** when you want to:
 
 Reltio Multidomain MDMReltio Intelligent 360
 
-Access it in the **Hub** application by selecting the **Bulk match review** icon on the left sidebar.*Image: i-apps-bulk-match.png*
+Access it in the **Hub** application by selecting the **Bulk match** icon on the left sidebar. 
+
+> **Note:** The **Bulk match** option appears in the left navigation pane only after you [enable](https://docs.reltio.com/en/applications/hub/bulk-match-review-at-a-glance/enable-bulk-match-in-a-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) it in the UI configuration file.
+
+
+
+*Image: i-apps-bulk-match.png*
 
 
 
@@ -145005,6 +147766,60 @@ The quick filters panel helps you reduce result sets and focus on specific attri
 ## Location
 
 The panel appears on the left side of the **Bulk Match review** UI in the **Hub**.*Image: i-apps-bulk-match-quick-filters.png*
+
+
+
+---
+
+# Enable Bulk match in a tenant
+
+> **Section:** Applications > Hub > Bulk match review at a glance
+
+
+**Source:** https://docs.reltio.com/en/applications/hub/bulk-match-review-at-a-glance/enable-bulk-match-in-a-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** enable bulk match tenant, enable bulk match review, configure bulk match screen, add bulk match navigation, update ui configuration file, import and publish ui config, uimodeler, layout, navigation
+
+
+Learn how to update the UI configuration file to add Bulk match to the left navigation so that users can open Bulk match review in Hub.
+
+> **Note:** This feature is available to limited users through the Reltio Early Access (EA) program. Interested in finding out more about this feature or participating in our EA program? Get details in topic Early Access (EA) features.
+
+[Bulk Match](https://docs.reltio.com/en/applications/hub/bulk-match-review-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) enables matching operations across large datasets directly from the Hub. To enable this feature for a specific tenant, update the UI configuration file through the UI Modeler.
+
+**Prerequisites**- 
+
+  You have access to the [Console](https://docs.reltio.com/en/applications/console/console-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) application in your tenant.
+- 
+
+  You have a backup copy of the current UI configuration file.
+
+
+To enable the bulk match feature in your tenant
+
+1. In the **Console**, select **UI Modeler**.
+2. From the left navigation menu, select **Import/Export UI Config Files**. The **Import/export UI Config files** page is displayed.
+   *Image: import-export-ui_new.png*
+3. Select the `config.json` file by clicking on the checkbox next to it.
+4. Click **Export**. The file is exported to your local file system.
+   - Open the downloaded JSON file in a text editor.
+   - In the `layout` section, locate the `items` array, and add the following code;
+     ```
+{
+  "label": "Bulk match",
+  "icon": "https://reltio-ui-files.s3.amazonaws.com/new-ui/BulkMatch.svg",
+  "class": "BulkMatch"
+}
+```
+   - Save the file.
+5. In the **UI Modeler**, select the same configuration file, and then select **Import & Replace**. The **Select file** page is displayed.
+   *Image: uimod_importfile.png*
+   - In the **Browse File** field, select the updated configuration file that must be imported and replaced.
+   - Click **Continue**. The **Review** page is displayed where you can review the changes.
+   - Select **Replace**. This action will replace the current configuration with the Imported configuration file.
+6. Select **Publish**.
+
+The changes in the configuration file are published. The **Bulk Match** option appears in the left navigation pane in the option appears in the left navigation pane in the **Hub**. .
 
 
 
@@ -162990,6 +165805,126 @@ Learn how to configure on-demand UI buttons for RIH with D&B Data Blocks.
    - Re-upload the modified JSON to UI Modeler and publish.
    - Ensure that all three buttons appear under the D&B panel and trigger expected enrichment behavior.
      *Image: i-dnb-dblocks-proxyui-6.png*
+
+
+
+---
+
+# Configure the Reltio UI for BvD on-demand buttons
+
+> **Section:** Applications > Data Integrations > Data Enrichment Integrations at a glance > Reltio Enrichment with D&B Data Blocks at a glance > Get started with Reltio Enrichment with D&B Data Blocks > Install and configure RIH recipes for Reltio Enrichment with D&B Data Blocks > Mode-specific configuration for Reltio Enrichment with D&B Data Blocks > Prepare the configuration of on demand UI buttons for Reltio Enrichment with D&B Data Blocks
+
+
+**Source:** https://docs.reltio.com/en/applications/data-integrations/data-enrichment-integrations-at-a-glance/reltio-enrichment-with-db-data-blocks-at-a-glance/get-started-with-reltio-enrichment-with-db-data-blocks/install-and-configure-rih-recipes-for-reltio-enrichment-with-db-data-blocks/mode-specific-configuration-for-reltio-enrichment-with-db-data-blocks/prepare-the-configuration-of-on-demand-ui-buttons-for-reltio-enrichment-with-db-data-blocks/configure-the-reltio-ui-for-bvd-on-demand-buttons?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** configure bvd on-demand buttons, configure reltio ui for bvd, bvd buttons in organization profile, add bvd side panel views, update config json for bvd, configure organization ui for bvd, bvd side panel buttons, rih proxy for bvd buttons, workato endpoint for bvd, publish ui modeler configuration, bvd match button, bvd details button
+
+
+Learn how to configure the Reltio UI for BvD on-demand buttons so that BvD actions appear in the Organization profile side panel.
+
+Configure the Reltio UI to add BvD on-demand buttons to the profile side panel.These buttons use the RIH proxy to send secure requests to the configured Integration Hub endpoint and support actions such as BvD match, company information retrieval, and hierarchy or contact enrichment.
+
+After you complete this configuration, you can run BvD actions directly from the profile side panel.
+
+**Prerequisites**
+
+- You have access to **Console** > **UI Modeler**.
+- You have created a [Reltio Support](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) ticket to request RIH proxy creation for your environment.
+- Your ticket includes the Reltio tenant ID, environment, and RIH API profile name.
+- The RIH API profile name does not contain spaces or special characters.
+- You have the BvD API endpoints configured in your Workato environment.
+- You have a backup of the current `config.json`.
+
+To configure the UI for BvD buttons
+
+1. In the **Console**, select **UI Modeler**.
+2. Generate an access token for the RIH proxy. For more information, see [Create Access Token for RIH Proxy](https://docs.reltio.com/en/applications/data-integrations/data-enrichment-integrations-at-a-glance/reltio-enrichment-with-db-data-blocks-at-a-glance/get-started-with-reltio-enrichment-with-db-data-blocks/install-and-configure-rih-recipes-for-reltio-enrichment-with-db-data-blocks/mode-specific-configuration-for-reltio-enrichment-with-db-data-blocks/prepare-the-configuration-of-on-demand-ui-buttons-for-reltio-enrichment-with-db-data-blocks/configure-proxy-for-on-demand-mode-ui-buttons?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+3. From the left navigation menu, select **Import/Export UI Config Files**. The **Import/export UI Config files** page is displayed.
+   *Image: import-export-ui_new.png*
+4. Select the `config.json` file by clicking on the checkbox next to it.
+5. Click **Export**. The file is exported to your local file system.
+   - Open the downloaded JSON file in a text editor.
+   - Under the entity definition, add the required `sidePanelViews`. For more information, see [Configure profile screens](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/configure-reltio-ui-with-the-configuration-file/configure-profile-screens?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+   - If the BvD buttons do not appear, confirm that the updated `config.json` file was published to the correct environment.
+   - Add the BvD button definition object with `"id": "BvD"`.
+     **Example**```
+{
+                            "id": "BvD",
+                            "views": [
+                                {
+                                    "point": "com.reltio.plugins.ui.view",
+                                    "id": "com.reltio.plugins.entity.org.BvDMatch",
+                                    "class": "com.reltio.plugins.ui.CustomActionView",
+                                    "label": "BvD match",
+                                    "url": "https://tst-01-rih-proxy.reltio.com/api/v1/proxy/workato/invoke_endpoints?xxx=",
+                                    "success": "Success:",
+                                    "fail": "Failure:",
+                                    "loading": "Loading...",
+                                    "height": 34,
+                                    "profileName": "<profile_name>", // fetched from previous doc
+                                    "workatoEndpoint": "https://apim.workato.com/reltioapi/bvd-v1/tst-01/BvDIntegrationCT/match",
+                                    "proxyMethod": "GET",
+                                    "action": {
+                                        "permissions": [
+                                            "https://tst-01-rih-proxy.reltio.com",
+                                            "https://apim.workato.com"
+                                        ],
+                                        "files": [
+                                            "https://reltio-ui-files.s3.amazonaws.com/custom-scripts/b2b_application_bvd_proxy.js"
+                                        ]
+                                    }
+                                },
+                                {
+                                    "point": "com.reltio.plugins.ui.view",
+                                    "id": "com.reltio.plugins.entity.org.BvDDetails",
+                                    "class": "com.reltio.plugins.ui.CustomActionView",
+                                    "label": "BvD details",
+                                    "url": "https://tst-01-rih-proxy.reltio.com/api/v1/proxy/workato/invoke_endpoints?xxx=",
+                                    "checkAttributeToEnable": "BvDId",
+                                    "success": "Success:",
+                                    "fail": "Failure:",
+                                    "loading": "Loading...",
+                                    "height": 34,
+                                    "profileName": "<profile_name>",
+                                    "workatoEndpoint": "https://apim.workato.com/reltioapi/bvd-v1/tst-01/BvDIntegrationCT/hierarchy",
+                                    "proxyMethod": "GET",
+                                    "action": {
+                                        "permissions": [
+                                            "https://tst-01-rih-proxy.reltio.com",
+                                            "https://apim.workato.com"
+                                        ],
+                                        "files": [
+                                            "https://reltio-ui-files.s3.amazonaws.com/custom-scripts/b2b_application_bvd_proxy.js"
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+```
+   - Replace the `url` value with the RIH proxy URL provided by Reltio Support.
+   - Replace `<profile_name>` in `profileName` with the profile name created for the RIH proxy.
+   - Replace the `workatoEndpoint` value with the BvD real-time REST API endpoint configured in your Workato environment. Do not change the parameters in the `workatoEndpoint` value.
+     > **Note:** If the environment is not `tst-01`, change the `action.permissions` URL from `https://tst-01-rih-proxy.reltio.com` to `https://360-rih-proxy.reltio.com`.
+   - Save the `config.json` file.
+6. In the **UI Modeler**, select the configuration file, and then select **Import & Replace**. The **Select file** page is displayed.
+   *Image: uimod_importfile.png*
+   - In the **Browse File** filed, select the updated configuration file that must be imported and replaced.
+   - Click **Continue**. The **Review** page is displayed where you can review the changes.
+   - Select **Replace**. This action replaces the current configuration with the Imported configuration file.
+   - Select **Publish**.
+
+**Result**
+
+The BvD buttons appear in the side panel of the profile in the Reltio UI. You can use these buttons for BvD-related actions, including record enrichment.
+
+The BvD Details button remains inactive until you run BvD Match and merge a suitable potential match with the entity so that the entity receives the BvD Identifier attribute.
+
+**Verification steps**
+
+1. Open the profile in the Reltio UI.
+2. Confirm that the BvD buttons appear in the side panel view.
+3. Select BvD Match and confirm that the action starts as expected.
+4. After the entity receives the **BvD Identifier** attribute, confirm that the **BvD Details** button becomes active.
 
 
 
@@ -183023,8 +185958,6 @@ After your tenant is provisioned, you're ready to [Validate and sync with the Re
 
 **Source:** https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/configure-snowflake-staging-pipeline/configure-the-reltio-data-pipeline-for-snowflake-for-gcp/validate-and-sync-with-the-reltio-snowflake-connector-for-gcp/synchronize-data-between-reltio-and-snowflake?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
-**Keywords:** syncToDataPipeline
-
 
 Learn how to synchronize your entities, relations, matches, interactions, and merges data from Reltio to Snowflake.
 
@@ -183037,12 +185970,11 @@ Synchronize data between the Reltio and Snowflake platforms to ensure that you a
 
 To synchronize data between Reltio and Snowflake:
 
-1. Start the synchronization by running the `syncToDataPipeline API`:
-2. Start the synchronization by running the syncToDataPipeline:
+1. Start the synchronization by running the [syncToDataPipeline](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/reltio-data-pipeline-for-snowflake-apis/sync-to-data-pipeline-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs):
    ```
 POST https://{{tenantEnvironmentName}}.reltio.com/reltio/api/{{tenantId}}/syncToDataPipeline
    ```
-   where: For more information on how to sync to data pipeline using API, see [Sync to Data Pipeline API](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/reltio-data-pipeline-for-snowflake-apis/sync-to-data-pipeline-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+   where:
    where:
    - `<tenantEnvironmentName>`: is the name of the environment on which your Reltio tenant is hosted, which forms part of the fully qualified URL, for example: 
 
@@ -183050,8 +185982,7 @@ POST https://{{tenantEnvironmentName}}.reltio.com/reltio/api/{{tenantId}}/syncTo
 - `https://test-data-pipeline-hub.reltio.com`
 - `https://361-data-pipeline-hub.reltio.com`
    - `tenantId`: is the ID of the Reltio tenant you configured the Reltio Data Pipeline for Snowflake.
-   For more information on how to sync to data pipeline using API, see [Sync to Data Pipeline API](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/reltio-data-pipeline-for-snowflake-apis/sync-to-data-pipeline-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
-3. Run these APIs to confirm the request completed successfully:
+2. Run these APIs to confirm the request completed successfully:
    | `Get Active Tasks for Tenant API` to check the current tasks for the tenant: | `GET {ApplicationURL}/{tenantId}/tasks` |
 | --- | --- |
 | `Get Tasks History API` to check finished tasks for all tenants | `GET https://{{tenantEnvironmentName}}.reltio.com/reltio/{{tenantId}}/tasks/history` |
@@ -183060,12 +185991,12 @@ POST https://{{tenantEnvironmentName}}.reltio.com/reltio/api/{{tenantId}}/syncTo
    where:
    - `taskId`: is the ID of the Reltio object type processing task.
    For more information, see topics [Get Active Tasks for Tenant](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/get-active-tasks-for-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Get Tasks History](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/get-tasks-history?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), and [Get Task by ID for Tenant](https://docs.reltio.com/en/developer-resources/load-and-export-apis/load-and-export-apis-at-a-glance/export-service-apis/export-tasks-management-api/get-task-by-id-for-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
-4. Run the `Tenant Queue Status API` to verify that Snowflake received Reltio events:
+3. Run the `Tenant Queue Status API` to verify that Snowflake received Reltio events:
    ```
 GET https://{{tenantEnvironmentName}}-data-pipeline-hub.reltio.com/status/tenant/{{tenantID}}/details
    ```
    For more information, see topic [Tenant Queue Status API](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/reltio-data-pipeline-for-snowflake-apis/tenant-queue-status-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
-5. When the task is complete (count is zero), validate that the number of objects in Snowflake is the same as in Reltio.
+4. When the task is complete (count is zero), validate that the number of objects in Snowflake is the same as in Reltio.
    > **Note:** When the synchronization completes, a row is added in the landing table with details of the sync. A separate row is created for each sync, with the time of the sync recorded in the `Timestamp` field. For more information, see topic [Landing table datasets for Snowflake](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/snowflake-pipeline-datasets/datasets-for-the-snowflake-data-schema/landing-table-datasets-for-snowflake?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
    If it is not, check the following issues:
    If it is not, check the following issues:
@@ -183099,7 +186030,7 @@ In the displayed data loading history within the selected time period, view thes
   > **Note:** The `VALIDATION_MODE` copy option instructs a `COPY` statement to validate the data to be loaded and return results based on the validation option specified. No data is loaded when this copy option is specified.
 
   For more information, see COPY INTO <table> in the [Snowflake function reference](https://docs.snowflake.com/en/sql-reference/sql/copy-into-table.html).
-6. If events are not being passed to your cloud storage, run the `Event Monitoring API` to observe the specific transfer stage that a particular entity event is at in Reltio and check against your Snowflake data.
+5. If events are not being passed to your cloud storage, run the `Event Monitoring API` to observe the specific transfer stage that a particular entity event is at in Reltio and check against your Snowflake data.
    Take these steps depending on the value in the `eventState` field:
    Take these steps depending on the value in the `eventState` field:
    - `DATAPIPELINE_PROCESSED`: recheck your steps in this [Configure the Reltio Data Pipeline for Snowflake for Azure](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/configure-snowflake-staging-pipeline/configure-the-reltio-data-pipeline-for-snowflake-for-azure?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) section.
@@ -201966,7 +204897,7 @@ You can also specify any other parameters in the `options` section of the config
 
 - `cleanseInputs` - Indicates the input data for the cleanse function, where, one `CleanseInputs` element belongs to one entity to cleanse. The values to cleanse may be obtained by the `getAttributesToCleanse` call. It outputs `Map<String,Object>`, where the key is the attribute name and the `value-is` is the value. Depending on the `inputMappings` configuration, the type of the value may be String, List<String>, Map<String, String>, or Map<String, List<String>>.
 
-  > **Note:** For more information, see [Configure cleanse rules](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-set-up/configure-cleanse-functions/configure-cleanse-rules?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+  > **Note:** For more information, see [configcleanserule](https://docs.reltio.com/search?q=configcleanserule&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 - `securedOptions` - Indicates the properties specified in the tenant cleanse configuration (under the `options` section).
 - `unsecuredOptions` - Indicates the properties specified in the cleanse rules configuration.
 
@@ -207223,146 +210154,6 @@ Output mapping determines where the cleansed values must be stored. It has the s
 
 ---
 
-# Configure cleanse rules
-
-> **Section:** Objectives > Cleanse and verify data > Data cleansing at a glance > Data cleansing set up > Configure cleanse functions
-
-
-**Source:** https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-set-up/configure-cleanse-functions/configure-cleanse-rules?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
-**Keywords:** Configuring Cleanse Rules, Cleanse Rules, configuring cleanse rules, cleanse rules
-
-
-Cleanse rule configuration details are part of tenant configuration and these rules can be applied to any entity type.
-
-Configuration details for entity cleansing are available in the `cleanseConfig` section of the entity configuration.
-
-**HCP Entity with cleanseConfig**
-
-```
-{
-  "uri": "configuration/entityTypes/HCP",
-  "cleanseConfig": {
-    "mappings": [
-      {
-        "uri": "configuration/entityTypes/HCP/cleanseConfig/mappings/NameAttributeMappings",
-        "inputMapping": [
-          {
-            "attribute": "configuration/entityTypes/HCP/attributes/FirstName",
-            "mandatory": false,
-            "allValues": false,
-            "cleanseAttribute": "FirstName"
-          },
-          {
-            "attribute": "configuration/entityTypes/HCP/attributes/MiddleName",
-            "mandatory": false,
-            "allValues": false,
-            "cleanseAttribute": "MiddleName"
-          },
-          {
-            "attribute": "configuration/entityTypes/HCP/attributes/LastName",
-            "mandatory": false,
-            "allValues": false,
-            "cleanseAttribute": "LastName"
-          }
-        ],
-        "outputMapping": [
-          {
-            "attribute": "configuration/entityTypes/HCP/attributes/Name",
-            "cleanseAttribute": "Name",
-            "mandatory": true,
-            "allValues": false
-          }
-        ]
-      }
-    ],
-    "infos": [
-      {
-        "uri": "configuration/entityTypes/HCP/cleanse/infos/PatternBasedFieldBuilder",
-        "useInCleansing": true,
-        "sequence": [
-          {
-            "chain": [
-              {
-                "cleanseFunction": "PatternBasedFieldBuilder",
-                "resultingValuesSourceTypeUri": "configuration/sources/ReltioCleanser",
-                "proceedOnSuccess": false,
-                "proceedOnFailure": true,
-                "filter": "exists(attributes.MiddleName) and exists(attributes.LastName)",
-                "mapping": {
-                  "inputMappingRef": "configuration/entityTypes/HCP/cleanseConfig/mappings/NameAttributeMappings/inputMapping",
-                  "outputMappingRef": "configuration/entityTypes/HCP/cleanseConfig/mappings/NameAttributeMappings/outputMapping"
-                },
-                "params": {
-                  "isForce": true,
-                  "pattern": "{FirstName}-{MiddleName}-{LastName}"
-                }
-              },
-              {
-                "cleanseFunction": "PatternBasedFieldBuilder",
-                "resultingValuesSourceTypeUri": "configuration/sources/ReltioCleanser",
-                "proceedOnSuccess": false,
-                "proceedOnFailure": true,
-                "filter": "missing(attributes.MiddleName)",
-                "mapping": {
-                  "inputMappingRef": "configuration/entityTypes/HCP/cleanseConfig/mappings/NameAttributeMappings/inputMapping",
-                  "outputMappingRef": "configuration/entityTypes/HCP/cleanseConfig/mappings/NameAttributeMappings/outputMapping"
-                },
-                "params": {
-                  "isForce": true,
-                  "pattern": "{FirstName}-{LastName}"
-                }
-              },
-              {
-                "cleanseFunction": "PatternBasedFieldBuilder",
-                "resultingValuesSourceTypeUri": "configuration/sources/ReltioCleanser",
-                "proceedOnSuccess": false,
-                "proceedOnFailure": true,
-                "filter": "contains(attributes.FirstName, 'Test')",
-                "mapping": {
-                  "inputMappingRef": "configuration/entityTypes/HCP/cleanseConfig/mappings/NameAttributeMappings/inputMapping",
-                  "outputMappingRef": "configuration/entityTypes/HCP/cleanseConfig/mappings/NameAttributeMappings/outputMapping"
-                },
-                "params": {
-                  "isForce": true,
-                  "pattern": "{MiddleName}-{LastName}"
-                }
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  "attributes": [
-    {
-      "uri": "configuration/entityTypes/HCP/attributes/FirstName",
-      "type": "String"
-    },
-    {
-      "uri": "configuration/entityTypes/HCP/attributes/LastName",
-      "type": "String"
-    },
-    {
-      "uri": "configuration/entityTypes/HCP/attributes/MiddleName",
-      "type": "String"
-    },
-    {
-      "uri": "configuration/entityTypes/HCP/attributes/Name",
-      "type": "String"
-    },
-    {
-      "uri": "configuration/entityTypes/HCP/attributes/CleanseField",
-      "type": "String"
-    }
-  ]
-}
-```
-
-
-
----
-
 # Configure fallback strategies
 
 > **Section:** Objectives > Cleanse and verify data > Data cleansing at a glance > Data cleansing set up > Configure cleanse functions
@@ -211869,6 +214660,38 @@ The screen launches the linked Console application with the specified path and q
 Select the screen and confirm that the external app loads with the expected context. Here's a screen showing the Export option configured in the Hub navigation:
 
 *Image: newuiconfig-consoleapp.png*
+
+## Configure a Bulk match screen
+
+Use the `BulkMatch` screen type to add the **Bulk match** to the left navigation in the Hub.
+
+```
+{
+  "label": "Bulk match",
+  "icon": "https://reltio-ui-files.s3.amazonaws.com/new-ui/BulkMatch.svg",
+  "class": "BulkMatch"
+}
+```
+
+**Required fields**
+
+| Field | Description |
+| --- | --- |
+| `class` | Must be `"BulkMatch"` |
+| `label` | Screen name in the navigation |
+| `icon` | Icon displayed for the screen in the navigation |
+
+
+
+**Result**
+
+The **Bulk match** option appears in the left navigation in the Hub. You can select it to open the [Bulk match review](https://docs.reltio.com/en/applications/hub/bulk-match-review-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+**Validation**
+
+Select **Bulk match** in the left navigation and confirm that the **Bulk match** page opens.
+
+*Image: i-apps-bulk-match.png*
 
 
 
@@ -218557,7 +221380,7 @@ Supported survivorship strategies are described in the following table:
 | `WinnerEntityCrosswalk` | The entity value of the current winning entity becomes the winner. All crosswalks from the winner entity also become winners.  If the winner entity is explicitly specified in the `explicitWinner` parameter, then after the merge the winner's `OV` is set to `true` and the loser's `OV` is set to `false`. If the winner is not explicitly specified in the `explicitWinner` parameter, then after the merge the oldest entity is selected as the winner. The winner's `OV` is set to `true` and the loser's `OV` is set to `false`. For more information, see [Merging Two Entities](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/merge-and-unmerge-entities-api/merging-two-entities?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
 | `ValueBasedPriority` | A user-defined priority list of attribute values determines the Operational Value (OV). The value with the highest priority becomes the winner. All crosswalks associated with this value are also marked as winners.   If the `valuesPriorityOrder` list is missing, an error is returned during configuration validation. If a value is not present in this list, its OV flag is set to `false`.  If the attribute is a lookup, use the `lookupComparisonField` parameter to specify which lookup representation to compare. Supported options are:  - `lookupCode` - `lookupValue` - `lookupRawValue`      If `lookupComparisonField` is not provided, the default behavior is applied to ensure backward compatibility.  For more information, see [Value-based priority survivorship strategy](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-navigation/design-survivorship-rules/value-based-priority-survivorship-strategy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
 
-> **Note:** When the survivorship strategy is changed, to get the correct search results for OV values the tenant must be reindexed to a separate index. To initiate a Reindex job and create a separate index using the `enableSeparateIndexing` flag, see [Reindex Data Task](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/reindex-data-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+> **Note:** When you change a survivorship strategy, run a reindex to update search indexes. Target only the object types whose survivorship strategy changed, and set the `forceIndexing` flag to `true`. The `forceIndexing` flag ensures that existing objects are updated in the search index when you run the [Reindex Data Task](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/reindex-data-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 By default, LUD is the default survivorship strategy. But you can specify certain strategies as the default strategy. For more information, see topic [Configure default survivorship strategy](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-navigation/design-survivorship-rules/configure-default-survivorship-strategy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
