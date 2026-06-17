@@ -1,8 +1,8 @@
 # Reltio Documentation
 
-_Generated: 2026-06-12 02:15 UTC_
+_Generated: 2026-06-17 02:15 UTC_
 
-_Topics: 3327_
+_Topics: 3329_
 
 ---
 
@@ -8677,9 +8677,6 @@ We build on each GA release with a steady stream of bi-weekly updates that deliv
 
 | Release Name | Stage | Tenant Type | Release Date |
 | --- | --- | --- | --- |
-| 2026.1.4.0 | 1 | Development (DEV) | June 12, 2026 |
-| 2026.1.4.0 | 2 | Test (TEST) | June 12, 2026 |
-| 2026.1.4.0 | 3 | Production (PRD) | June 19, 2026 |
 | 2026.1.5.0 | 1 | Development (DEV) | June 26, 2026 |
 | 2026.1.5.0 | 2 | Test (TEST) | June 26, 2026 |
 | 2026.1.5.0 | 3 | Production (PRD) | July 03, 2026 |
@@ -14968,6 +14965,28 @@ The **Entitlement and Usage Summary** page now supports additional contract type
 You can navigate to this page from **Console > Usage Reporting > Entitlement & Usage Summary**.
 
 For more information, see [Entitlement and Usage Summary](https://docs.reltio.com/en/applications/console/tenant-management-applications/usage-reporting-at-a-glance/entitlement-and-usage-summary?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+
+
+---
+
+# 2026.1.4.0 RN | 19-June-2026
+
+Learn about the new features and enhancements introduced in this 2026.1.4.0 release.
+
+**Deployment dates**
+
+| Stage | Tenant type | When |
+| --- | --- | --- |
+| 1 | Development (DEV) | June 12, 2026 |
+| 2 | Test (TEST) | June 12, 2026 |
+| 3 | Production (PRD) | June 19, 2026 |
+
+## Export tasks now run in parallel by default
+
+Previously, parallel execution for export tasks had to be explicitly enabled on each request. Reltio Export Service now enforces parallel execution for all export tasks, including those created through the UI. This results in more consistent and predictable export duration, regardless of other scheduled activity on the tenant.
+
+For more information, see [Export entities](https://docs.reltio.com/en/objectives/load-and-export-data/data-exporting-at-a-glance/data-exporting-operation/export-data-using-reltio-export-service/export-entities?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Export relations](https://docs.reltio.com/en/objectives/load-and-export-data/data-exporting-at-a-glance/data-exporting-operation/export-data-using-reltio-export-service/export-relations?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), and [Export tasks management API](https://docs.reltio.com/en/developer-resources/load-and-export-apis/load-and-export-apis-at-a-glance/export-service-apis/export-tasks-management-api/get-task-by-id-for-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
@@ -41594,7 +41613,7 @@ GET{
 
 **Source:** https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/configuration-api/interaction-types?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
-**Keywords:** tenant configuration, Interaction Types properties, Interaction Types examples
+**Keywords:** configure interaction types reltio, interaction types configuration api, configure member types interaction, attribute mapping member type configuration, define interaction types tenant configuration, interaction type attribute mapping reltio, automatic member resolution interaction type, interaction types, member types, attribute mapping
 
 
 Define types of interactions that are recognized by a tenant configuration.
@@ -41614,7 +41633,8 @@ A collection of Interaction Types can be defined for a tenant configuration. Eac
 | `label` | Readable name of the Interaction Type. Required. | String |
 | `description` | Description for the Interaction type. | String |
 | `extendsTypeURI` | URI of an Interaction Type which is extended by this type. | String, URI |
-| `memberTypes` | A collection of possible member types. Examples can be: Participant, Organizer. Member type properties:   - `URI`: String - `name`: String - `id`: String - `label`: String - `objectTypeURI`: Array of URIs of entity types and roles that can be members of the type. - `minOccurs`: Integer, equal or greater than 0. Identifies how many members can be of this member type. Default is `0`. | Complex |
+| `hasMembers` | Indicates that this interaction type has entity members defined. Set to `true` when `memberTypes` are configured for the interaction type. | Boolean |
+| `memberTypes` | A collection of possible member types for this interaction type. Examples: Participant, Organizer. Each member type supports the following properties:  - `URI`: String - `name`: String - `id`: String - `label`: String - `objectTypeURI`: Array of URIs of entity types and roles that can be members of the type. - `minOccurs`: Integer, equal or greater than 0. Identifies how many members can be of this member type. Default is `0`. - `attributeMapping`: Object, optional. Maps one interaction attribute to one entity attribute for automatic member resolution at interaction load time. Only one `attributeMapping` is allowed per member type. The entity attribute specified in `entityAttribute` must be marked for segmentation in the tenant configuration. Supports the following sub-properties:   - `interactionAttribute`: String, URI. The interaction attribute whose value is used to find matching entities.   - `entityAttribute`: String, URI. The entity attribute to match against. Must be the same type as `interactionAttribute`. The entity attribute must be marked for segmentation in the tenant configuration. | Complex |
 | `attributes` | Attributes that are defined as standard for this type. Attributes can be of simple, nested and reference type. For details, refer to [Attributes configuration](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/configuration-api/attributes-configuration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). . **Note:** Not every interaction object will have all attributes defined in its interaction type. Also, an interaction object can have some attributes that are not defined in the configuration-custom attributes. | JSON object of Attributes Configuration |
 | `ignoreUniqueness` | If `true`, **Data Access API** and compaction will not perform uniqueness resolution (de-duplication) for interactions of this type. If `false`, regular uniqueness resolution is performed. Default is `false`. | Boolean |
 
@@ -41683,6 +41703,30 @@ Example of a `Prescription` Interaction Type configuration:
 			"minOccurs": 2
 		}]
 	}
+```
+
+## Interaction Type: ExhibitionEvent (with attributeMapping)
+
+The following example configures an `ExhibitionEvent` interaction type with `attributeMapping` on the HCO member type. At interaction load time, Reltio resolves the HCO member automatically by matching the `EXHBT_NAME` attribute value against the `Name` attribute of the HCO entity type. Each attribute value must match exactly one entity. Zero or multiple matches fail the interaction load.
+
+```
+{
+  "uri": "configuration/interactionTypes/ExhibitionEvent",
+  "label": "Exhibition Event",
+  "hasMembers": true,
+  "memberTypes": [
+    {
+      "uri": "configuration/interactionTypes/ExhibitionEvent/memberTypes/HCO",
+      "label": "HCO",
+      "name": "HCO",
+      "objectTypeURI": "configuration/entityTypes/HCO",
+      "attributeMapping": {
+        "interactionAttribute": "configuration/interactionTypes/ExhibitionEvent/attributes/EXHBT_NAME",
+        "entityAttribute": "configuration/entityTypes/HCO/attributes/Name"
+      }
+    }
+  ]
+}
 ```
 
 
@@ -60643,17 +60687,21 @@ GET {tenantID}/entities/_segmentation
 
 For more information, see [Segmentation for entities](https://developer.reltio.com/private/swagger.htm?module=Data%20Operation#/Entities/getEntitiesSegmentation).
 
-The following filters are supported for interactions attributes:
+The following filters are supported for entity and interaction attributes:
 
-- equalsCaseSensitive
-- fullText
-- lt
-- gt
-- lte
-- gte
-- missing
-- exists
-- contains
+- `fullText`
+- `lt`
+- `gt`
+- `lte`
+- `gte`
+- `missing`
+- `exists`
+- `equals`
+- `not equals`
+- `contains`
+- `not contains`
+- `range`
+- `not range`
 
 
 
@@ -74878,7 +74926,6 @@ POST {ExportServiceURL}/export/{{tenant}}/entities/_crosswalksTree
 | **Query** | `partSize` | No | Human readable part size. The service will split result files depending on this setting.  See [Export Data into Multiple Files](https://docs.reltio.com/en/developer-resources/load-and-export-apis/load-and-export-apis-at-a-glance/export-service-apis/export-data-into-multiple-files?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) for more information. | `1gb`, `200m` |
 | **Query** | `name` | No | A name of the export task that is displayed in task status. The name is also used by the Export UI.  See [Naming an Export Job](https://docs.reltio.com/en/developer-resources/load-and-export-apis/load-and-export-apis-at-a-glance/export-service-apis/naming-an-export-job?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) for more information. |  |
 | **Query** | `activeness` | No | This parameter determines how the Export Service should process active and expired objects.  Possible values:  - `ALL`: Enables exporting of active and expired objects. - `ACTIVE`: Enables only exporting of active objects. - `NOT_ACTIVE`: Enables only exporting of expired objects.      Default value: `ALL` | `POST http://localhost/jobs/export/Merill/ entities/_crosswalksTree?activeness=ACTIVE Headers: Authorization: Bearer {your-access-token} Content-Type: application/json { }` |
-|  | `options` | No | `parallelExecution`: This option enables multiple export jobs for the same tenant to run in parallel. By default, jobs run sequentially. Use this option to reduce export time when jobs don't need to wait for one another. |  |
 | **Body** |  | No | JSON Object containing parameters for filtering merges by date. |  |
 | **Body** | `startDate` | No | The request supports filtering by date. Two options are provided: `"startDate"` and `"endDate"`, which take start and end date filters in the following formats:  - Timestamp: number of milliseconds since 1 Jan 1970 - YYYY-MM-dd'T'HH:mm:ss.SSSZ - MM-dd-YYYY [HH.mm](http://hh.mm/)      If all merges are filtered for a particular contributor, such a contributor node is removed from the report.  Value type is String/Long. |  |
 | **Body** | `endDate` | No | The request supports filtering by date. Two options are provided: `"startDate"` and `"endDate"`, which take start and end date filters in the following formats:  - Timestamp: number of milliseconds since 1 Jan 1970 - YYYY-MM-dd'T'HH:mm:ss.SSSZ - MM-dd-YYYY [HH.mm](http://hh.mm/)      If all merges are filtered for a particular contributor, such a contributor node is removed from the report.  Value type is String/Long. |  |
@@ -103497,238 +103544,310 @@ You are connected to the Reltio MCP server and can successfully execute MCP tool
 
 **Source:** https://docs.reltio.com/en/developer-resources/interaction-management-apis/interaction-apis-at-a-glance/interactions-api/create-interactions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
-**Keywords:** Create Interactions, Add Interactions, create interactions, add interactions
+**Keywords:** create interactions using reltio api, add interactions using entity uri, create interactions using crosswalk, interaction member attribute mapping reltio, resolve interaction members automatically, create interaction without specifying members, post interactions api reltio, interactions, crosswalk, attribute mapping
 
 
-Use this API to create one or more interactions by specifying a JSON object array in the body.
+Learn more about how to create interactions in Reltio Platform.
 
 Reltio Intelligent 360
 
-This API creates a collection of interactions in the Reltio Platform according to the JSON object definition. For more information about the `Interactions API` see topic [Interactions API](https://docs.reltio.com/en/developer-resources/interaction-management-apis/interaction-apis-at-a-glance/interactions-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+Use `Interactions API` to create interactions in Reltio Platform. Specify interaction members by `objectURI`, `crosswalk`, or `attributeMapping`. Review the [Interactions API](https://docs.reltio.com/en/developer-resources/interaction-management-apis/interaction-apis-at-a-glance/interactions-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) overview to understand the interaction object structure before making requests.
 
-## Request
+## HTTP method and endpoint
+
+Use the following HTTP method and endpoint path to create interactions.
 
 ```
-POST {TenantURL}/interactions
+POST /services/reltio/api/{tenantId}/interactions
+
 ```
 
-For more information, see [Create Interactions](https://developer.reltio.com/private/swagger.htm?module=Data%20Ingestion#/Interactions/addToCollectionByTenant).
 
-**Parameters**
 
-| Parameter | Name | Required | Details |
+Access the API specification in the[Create Interactions](https://developer.reltio.com/private/swagger.htm?module=Data%20Ingestion#/Interactions/addToCollectionByTenant).
+
+The following table describes the endpoint path parameters.
+
+| Parameter | Type | Required | Description |
 | --- | --- | --- | --- |
-| Headers | `Authorization` | Yes | This parameter provides information about the authentication access token using the format, `Bearer <accessToken>`. For more information see [Authentication API](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/authentication-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
-| Headers | `Source-System` | Yes | This parameter indicates the source system that this request is representing. For example, `configuration/sources/Reltio` indicates that the data is not loaded from other source systems and is instead created in the Reltio Platform directly. |
-| Headers | `Content-Type` | Yes | This parameter should be `Content-Type: application/json`. |
-| Query | `crosswalkValue` |  | This parameter indicates the identifier of an interaction object in the source system. Use this parameter to specify the `crosswalkValue` when there is no crosswalk in the request body. |
-| Query | `returnObjects` |  | This parameter specifies if the response must include the created objects. Use this parameter to display only the object URIs in the response and not the whole object. The default value is `true`. |
-| Query | `options` |  | This parameter includes or excludes the hidden attributes in the response using the `sendHidden` option. By default, the `sendHidden` option is disabled, that is, the response will not contain the hidden attributes.   If you want to view the hidden attributes, set the `option` parameter to `sendHidden` in the request query. |
-| Query | `Body` | Yes | A JSON array with objects representing objects to be created. Each object must have the `type` property but may not have the `URI`, `crosswalks`, and `referencedCrosswalks` properties (these properties are provided/generated by Reltio API). |
+| `tenantId` | String | Yes | The unique identifier of the tenant. Specifies the tenant context for the request. Example: `ce5627DYnQ6abcD` |
 
-> **Note:** Interactions must have unique IDs across all uploads. Uploading interactions with duplicate IDs can result in indexing errors and unexpected behavior in search results. Ensure ID uniqueness to avoid these issues. Validation to prevent duplicates will be implemented in a future release.
+## Query parameters
 
-## Response
+The following table describes the query parameters and their values.
 
-The response consists of an array with results for each element of a request. Each result has the following properties:
+| Parameter | Type | Required | Description | Accepted values / Default |
+| --- | --- | --- | --- | --- |
+| `crosswalkValue` | String | No | The identifier of the interaction object in the source system. Use this parameter when the request body does not include a crosswalk. | Any valid source system identifier. Example: `INT_001`.   Default: not set |
+| `returnObjects` | Boolean | No | Specifies whether the response includes the full created interaction objects. Set to `false` to return only the object URIs. | `true` or `false`.   Default: `true` |
+| `options` | String | No | Includes or excludes hidden attributes in the response using the `sendHidden` option. Hidden attributes are excluded by default. | `sendHidden`.   Default: disabled |
 
-- `index` - This is the index of an interaction object in the JSON array to be created. This is a required property in the response.
-- `URI` - URI of the interaction object that is created. This property is returned only if an object was created successfully.
-- `error` - This property is returned if an object cannot be created for some reason. It contains the details of the problem and is returned only if an object was not created.
-- `warning` - This property indicates that an object was created but there were some problems.
-- `status` - This property indicates the result of an API request. The possible values are `OK` and `failed`.
+## Request headers
 
-## Example
+The following request headers must be included.
 
-The following example creates an interaction type called *Lunch* using `objectURI`. The interaction contains information about the lunch place or venue, lunch organizer, chef for the lunch, lunch participants, and lunch notes.
+| Header | Value | Required |
+| --- | --- | --- |
+| `Authorization` | `Bearer <access_token>` | Yes |
+| `Source-System` | The source system this request represents.   For example, `configuration/sources/Reltio` indicates data created directly in Reltio Platform. | No |
+| `Content-Type` | `application/json` | Yes |
 
-**Request**
+## Request body
 
-```
-POST {TenantURL}/interactions
-Headers:Source-System:configuration/sources/XYZ,
-Authorization:Bearer {your-access-token},
-Content-Type:application/json
-Body:[
-   {
-      "type":"configuration/interactionTypes/Lunch",
-      "timestamp":1338580800000,
-      "attributes":{
-         "Place":[
-            { "value":"Shire, Bag End in Hobbiton"}
-         ],
-         "Notes":[
-            { "value":"All participants eat Lembas"}
-         ]
-      },
-      "members":{
-         "Organizers":{
-            "type":"configuration/interactionTypes/Meeting/memberTypes/Organizers",
-            "members":[
-               { "objectURI":"entities/30000" }
-            ]
-         },
-         "Chefs":{
-            "type":"configuration/interactionTypes/Lunch/memberTypes/Chefs",
-            "members":[
-               { "objectURI":"entities/40000" }
-            ]
-         },
-         "Participants":{
-            "type":"configuration/interactionTypes/Meeting/memberTypes/Participants",
-            "members":[
-               { "objectURI":"entities/10000" },
-               { "objectURI":"entities/10001" },
-               { "objectURI":"entities/10003" }
-            ]
-         }
-      }
-   }
-]
-```
+The following table describes the request body parameters required to create interactions. Each object must include the `type` property. Reltio generates the `URI` and `crosswalks` properties if they are not included in the request.
 
-**Response**
+| Parameter | Type | Required | Description | Accepted values / Default |
+| --- | --- | --- | --- | --- |
+| `type` | String | Yes | The interaction type URI. | Valid interaction type URI configured in the tenant. Example: `configuration/interactionTypes/Lunch` |
+| `timestamp` | Number | No | The timestamp of when the interaction occurred, in epoch milliseconds. | Any valid epoch milliseconds value. Example: `1338580800000`. Default: not set |
+| `attributes` | Object | No | Interaction-level attributes grouped by attribute configuration. Structure varies by interaction type. | Key-value pairs where each key is an attribute name and the value is an array of attribute objects. Default: not set |
+| `members` | Object | No | The entities involved in the interaction, grouped by member type. Specify members by `objectURI` or crosswalk. Omit this field when `attributeMapping` is configured on the member type, or when `minOccurs` is `0` for all member types. | Object containing member type keys with nested `members` arrays. Default: not set |
 
-```
-[
-   {
-      "index":0,
-      "URI":"interactions/01BThVh",
-      "object":{
-         "URI":"interactions/01BThVh",
-         "type":"configuration/interactionTypes/Lunch",
-         "createdBy":"User",
-         "createdTime":1354626947723,
-         "updatedTime":1354626947723,
-         "timestamp":1338580800000,
-         "attributes":{
-            "Place":[
-               {  "type":"configuration/interactionTypes/Meeting/attributes/Place",
-                  "value":"Shire, Bag End in Hobbiton",
-                  "URI":"interactions/01BThVh/attributes/Place/6" }
-            ],
-            "Notes":[
-               {  "type":"configuration/interactionTypes/Meeting/attributes/Notes",
-                  "value":"All participants eat Lembas",
-                  "URI":"interactions/01BThVh/attributes/Notes/7" }
-            ]
-         },
-         "crosswalks":[
-            {  "URI":"interactions/01BThVh/crosswalks/8",
-               "type":"configuration/sources/MDM",
-               "value":"",
-               "attributes":[
-                  "interactions/01BThVh/attributes/Notes/7",
-                  "interactions/01BThVh/attributes/Place/6" ]
-            }
-         ],
-         "members":{
-            "Organizers":{
-               "URI":"interactions/01BThVh/members/Organizers",
-               "type":"configuration/interactionTypes/Meeting/memberTypes/Organizers",
-               "members":[
-                  {  "objectURI":"entities/30000",
-                     "type":"configuration/entityTypes/Individual",
-                     "label":"John Smith" }
-               ]
-            },
-            "Chefs":{
-               "URI":"interactions/01BThVh/members/Chefs",
-               "type":"configuration/interactionTypes/Lunch/memberTypes/Chefs",
-               "members":[
-                  {  "objectURI":"entities/40000",
-                     "type":"configuration/entityTypes/Individual",
-                     "label":"Ann Roman" }
-               ]
-            },
-            "Participants":{
-               "URI":"interactions/01BThVh/members/Participants",
-               "type":"configuration/interactionTypes/Meeting/memberTypes/Participants",
-               "members":[
-                  {  "objectURI":"entities/10000",
-                     "type":"configuration/entityTypes/Individual",
-                     "label":"San Dunn" },
-                  {  "objectURI":"entities/10001",
-                     "type":"configuration/entityTypes/Individual",
-                     "label":"Josh May" },
-                  {  "objectURI":"entities/10003",
-                     "type":"configuration/entityTypes/Individual",
-                     "label":"Marc Jack" }
-               ]
-            }
-         }
-      },
-      "status":"OK"
-   }
-]
-```
 
-**Request using crosswalks**The following example creates an interaction type called *Lunch* using crosswalks. The interaction contains information about the lunch place or venue, lunch organizer, chef for the lunch, and lunch notes.
 
-```
 
-Body:[
-   {
-      "type":"configuration/interactionTypes/Lunch",
-      "timestamp":1338580800000,
-      "attributes":{
-         "Place":[
-            { "value":"Shire, Bag End in Hobbiton"}
-         ],
-         "Notes":[
-            { "value":"All participants eat Lembas"}
-         ]
-      },
-      "members":{
-         "Organizers":{
-            "type":"configuration/entityTypes/Organizers",
-            "members":[
-               { 
-                    "crosswalks": [
-                        {
-                            "type": "configuration/sources/Salesforce"
-                            "value": "EMP_600000"
-                        }
-                    ]
-                }       
-            ]
-         },
-         "Chefs":{
-            "type":"configuration/entityTypes/Chefs",
-            "members":[
-               { 
-                    "crosswalks": [
-                        {
-                            "type": "configuration/sources/Salesforce"
-                            "value": "EMP_1000072"
-                        }
-                    ]
-                }       
-            ]
-         },
-        },
-      }
-   }
-```
 
-## Exception for existing crosswalk
+> **Note:** Interactions must have unique crosswalk values across all uploads. Uploading interactions with duplicate `crosswalkValue` entries results in indexing errors and unexpected behavior in search results.
 
-When you attempt to create an interaction with an existing crosswalk, the operation returns an error similar to the one below.
+## Example request
 
-> **Note:** Interactions are immutable, to change an interaction delete and create it again. See also, [Delete Interaction](https://docs.reltio.com/en/developer-resources/interaction-management-apis/interaction-apis-at-a-glance/interactions-api/delete-interaction?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+The following examples show how to structure requests for creating interactions using different member specification methods. The response structure remains the same across methods, with the members field reflecting the resolved entities. 
 
-```
-[
+- Create an interaction using `objectURI`:
+
+  ```
+  POST /services/reltio/api/{tenantId}/interactions
+  [
     {
-        "index": 0,
-        "errors": {
-            "severity": "Error",
-            "errorMessage": "Interaction with specified system configuration/sources/AMA and value TEST already exists.",
-            "errorCode": 536,
-            "errorDetailMessage": "Failed to create interaction, because such crosswalk already exists. System and value parameters pair should be unique."
+      "type": "configuration/interactionTypes/Lunch",
+      "timestamp": 1338580800000,
+      "attributes": {
+        "Place": [ { "value": "Shire, Bag End in Hobbiton" } ],
+        "Notes": [ { "value": "All participants eat Lembas" } ]
+      },
+      "members": {
+        "Organizers": {
+          "type": "configuration/interactionTypes/Meeting/memberTypes/Organizers",
+          "members": [ { "objectURI": "entities/30000" } ]
         },
-        "successful": false
+        "Chefs": {
+          "type": "configuration/interactionTypes/Lunch/memberTypes/Chefs",
+          "members": [ { "objectURI": "entities/40000" } ]
+        },
+        "Participants": {
+          "type": "configuration/interactionTypes/Meeting/memberTypes/Participants",
+          "members": [
+            { "objectURI": "entities/10000" },
+            { "objectURI": "entities/10001" },
+            { "objectURI": "entities/10003" }
+          ]
+        }
+      }
     }
+  ]
+  ```
+- Create an interaction using `crosswalks`:Creating an interaction with an existing crosswalk returns an error. Interactions are immutable. To update an interaction, delete the existing one and create a new one. For error details and the error response structure, see [Error codes and recommended actions](#createinteractions/section-1998).
+
+  ```
+  POST /services/reltio/api/{tenantId}/interactions
+  [
+    {
+      "type": "configuration/interactionTypes/Lunch",
+      "timestamp": 1338580800000,
+      "attributes": {
+        "Place": [ { "value": "Shire, Bag End in Hobbiton" } ],
+        "Notes": [ { "value": "All participants eat Lembas" } ]
+      },
+      "members": {
+        "Organizers": {
+          "type": "configuration/entityTypes/Organizers",
+          "members": [
+            { "crosswalks": [ { "type": "configuration/sources/Salesforce", "value": "EMP_600000" } ] }
+          ]
+        },
+        "Chefs": {
+          "type": "configuration/entityTypes/Chefs",
+          "members": [
+            { "crosswalks": [ { "type": "configuration/sources/Salesforce", "value": "EMP_1000072" } ] }
+          ]
+        }
+      }
+    }
+  ]
+  ```
+- Create an interaction using `attributeMapping`. Reltio resolves the HCO member automatically by matching the `EXHBT_NAME` attribute value against the `Name` attribute of the HCO entity type, based on the `attributeMapping` configured in the interaction type definition:
+
+  ```
+  POST /services/reltio/api/{tenantId}/interactions
+  [
+    {
+      "type": "configuration/interactionTypes/ExhibitionEvent",
+      "timestamp": 1780576191519,
+      "attributes": {
+        "EXHBT_NAME": [
+          {
+            "type": "configuration/interactionTypes/ExhibitionEvent/attributes/EXHBT_NAME",
+            "value": "ForAttributeInteraction"
+          }
+        ]
+      }
+    }
+  ]
+  ```
+
+## Response body
+
+The following table describes the fields returned in the response body when the request succeeds.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `index` | Number | The index of the interaction object in the request array. This is a required property in the response. |
+| `URI` | String | URI of the created interaction. Returned only if the object was created successfully. |
+| `error` | Object | Error details if the object could not be created. Contains the details of the problem and is returned only when creation fails. |
+| `warning` | String | Indicates the object was created but with issues. |
+| `status` | String | Result of the API request. Possible values: `OK`, `failed`. |
+
+## Example response
+
+The response structure is consistent across all creation methods. The `members` field reflects the entities resolved based on the approach used.
+
+- Response for `objectURI` and `crosswalks`:
+
+  ```
+  [
+    {
+      "index": 0,
+      "URI": "interactions/01BThVh",
+      "object": {
+        "URI": "interactions/01BThVh",
+        "type": "configuration/interactionTypes/Lunch",
+        "createdBy": "User",
+        "createdTime": 1354626947723,
+        "updatedTime": 1354626947723,
+        "timestamp": 1338580800000,
+        "attributes": {
+          "Place": [
+            {
+              "type": "configuration/interactionTypes/Meeting/attributes/Place",
+              "value": "Shire, Bag End in Hobbiton",
+              "URI": "interactions/01BThVh/attributes/Place/6"
+            }
+          ],
+          "Notes": [
+            {
+              "type": "configuration/interactionTypes/Meeting/attributes/Notes",
+              "value": "All participants eat Lembas",
+              "URI": "interactions/01BThVh/attributes/Notes/7"
+            }
+          ]
+        },
+        "crosswalks": [
+          {
+            "URI": "interactions/01BThVh/crosswalks/8",
+            "type": "configuration/sources/MDM",
+            "value": "",
+            "attributes": [
+              "interactions/01BThVh/attributes/Notes/7",
+              "interactions/01BThVh/attributes/Place/6"
+            ]
+          }
+        ],
+        "members": {
+          "Organizers": {
+            "URI": "interactions/01BThVh/members/Organizers",
+            "type": "configuration/interactionTypes/Meeting/memberTypes/Organizers",
+            "members": [
+              { "objectURI": "entities/30000", "type": "configuration/entityTypes/Individual", "label": "John Smith" }
+            ]
+          },
+          "Chefs": {
+            "URI": "interactions/01BThVh/members/Chefs",
+            "type": "configuration/interactionTypes/Lunch/memberTypes/Chefs",
+            "members": [
+              { "objectURI": "entities/40000", "type": "configuration/entityTypes/Individual", "label": "Ann Roman" }
+            ]
+          },
+          "Participants": {
+            "URI": "interactions/01BThVh/members/Participants",
+            "type": "configuration/interactionTypes/Meeting/memberTypes/Participants",
+            "members": [
+              { "objectURI": "entities/10000", "type": "configuration/entityTypes/Individual", "label": "San Dunn" },
+              { "objectURI": "entities/10001", "type": "configuration/entityTypes/Individual", "label": "Josh May" },
+              { "objectURI": "entities/10003", "type": "configuration/entityTypes/Individual", "label": "Marc Jack" }
+            ]
+          }
+        }
+      },
+      "status": "OK"
+    }
+  ]
+  ```
+- Response for an interaction created using `attributeMapping`. Reltio populates the `members` block based on the resolved attribute value:
+
+  ```
+  [
+    {
+      "index": 0,
+      "URI": "interactions/0OLT9CG",
+      "object": {
+        "URI": "interactions/0OLT9CG",
+        "type": "configuration/interactionTypes/ExhibitionEvent",
+        "createdBy": "User",
+        "createdTime": 1780576191495,
+        "updatedTime": 1780576191495,
+        "timestamp": 1780576191519,
+        "attributes": {
+          "EXHBT_NAME": [
+            {
+              "type": "configuration/interactionTypes/ExhibitionEvent/attributes/EXHBT_NAME",
+              "value": "ForAttributeInteraction",
+              "URI": "interactions/0OLT9CG/attributes/EXHBT_NAME/0"
+            }
+          ]
+        },
+        "members": {
+          "HCO": {
+            "URI": "interactions/0OLT9CG/members/HCO",
+            "type": "configuration/interactionTypes/ExhibitionEvent/memberTypes/HCO",
+            "members": [
+              {
+                "objectURI": "entities/0UYXYk4",
+                "type": "configuration/entityTypes/HCO",
+                "label": "ForAttributeInteraction"
+              }
+            ]
+          }
+        }
+      },
+      "status": "OK"
+    }
+  ]
+  ```
+
+Reltio resolves members only when the mapped interaction attribute is present in the request body. If the attribute is absent, no members are resolved for that member type. In that case, the `minOccurs` property on the member type determines the outcome. The `minOccurs` property specifies the minimum number of members required for a member type and is configured in the [interaction types](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/configuration-api/interaction-types?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). If `minOccurs` is `0`, Reltio creates the interaction with zero resolved members. If `minOccurs` is greater than `0`, the interaction load fails.
+
+## Error codes and recommended actions
+
+| HTTP status | Description | Recommended action |
+| --- | --- | --- |
+| `200` with `successful: false`, error code `536` | An interaction with the specified crosswalk already exists. | Delete the existing interaction and create a new one. Interactions are immutable. For more information, see [Delete Interaction](https://docs.reltio.com/en/developer-resources/interaction-management-apis/interaction-apis-at-a-glance/interactions-api/delete-interaction?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
+| `200` with `successful: false`, error code `38010` | The mapped interaction attribute value did not match any entity of the configured type. | Verify that the attribute value in the request body matches at least one entity. Check the `attributeMapping` configuration in the [interaction type](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/configuration-api/interaction-types?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
+| `200` with `successful: false`, error code `38011` | The mapped interaction attribute value matched more than one entity. | Ensure the attribute value in the request body uniquely identifies a single entity. Each attribute value must resolve to exactly one entity. |
+
+The following example shows the error response returned when an interaction with an existing crosswalk is submitted.
+
+```
+[
+  {
+    "index": 0,
+    "errors": {
+      "severity": "Error",
+      "errorMessage": "Interaction with specified system configuration/sources/AMA and value TEST already exists.",
+      "errorCode": 536,
+      "errorDetailMessage": "Failed to create interaction, because such crosswalk already exists. System and value parameters pair should be unique."
+    },
+    "successful": false
+  }
 ]
 ```
 
@@ -103767,8 +103886,8 @@ Interactions have the following properties:
 | --- | --- | --- | --- |
 | `URI` | Indicates the path that is used to reach an interaction object. Format is: `interactions/{interaction_id}` | String, URI | `interactions/i2` |
 | `type` | Indicates the interaction kind. This is the reference to the interaction type configuration by its URI. | String, Interaction Types URI | `configuration/interactionTypes/Lunch` |
-| `members` | Defines `memberTypes` (roles like "Chefs") with concrete entities that play these roles in this interaction. | JSONObject |  |
-| `attributes` | Indicates the attributes that interaction object has. This includes simple and nested attributes. Each attribute has reference to its configuration type. Attributes are grouped by attribute configuration. | Array of attributes | `{ "Place": [ { "URI": "interactions/12/attributes/Place/1", "value" : "San Mateo, McDonalds restaurant" } ], "Notes": [ { "URI": "interactions/12/attributes/Notes/2", "value" : "All participants eat BigMacs" } ] }` |
+| `members` | Defines `memberTypes` with the entities involved in an interaction. You can specify members by `objectURI`, by `crosswalk`, or by `attributeMapping`. | JSONObject | `{ "Chefs": { "type": "configuration/interactionTypes/Lunch/memberTypes/Chefs", "URI": "interactions/01BThVh/members/Chefs", "members": [ { "objectURI": "entities/40000", "type": "configuration/entityTypes/Individual", "label": "Ann Roman" } ] } }` |
+| `attributes` | Indicates the attributes that interaction object has. Each attribute references its configuration type and is grouped by attribute configuration. | Array of attributes | `{ "Place": [ { "URI": "interactions/12/attributes/Place/1", "value" : "San Mateo, McDonalds restaurant" } ], "Notes": [ { "URI": "interactions/12/attributes/Notes/2", "value" : "All participants eat BigMacs" } ] }` |
 | `crosswalks` | Indicates the crosswalks to source systems and data in the source systems that are associated with an object. | Array of crosswalks | `[ { "URI":"interactions/12/crosswalks/1", "type":"configuration/sources/XYZ", "attributes":[ "interactions/12/attributes/Place/1", "interactions/12/attributes/Notes/2" ] } ]` |
 | `timestamp` | Indicates the timestamp when interaction occurred. | String | `06/02/2012` |
 
@@ -110081,10 +110200,10 @@ An array of active export tasks for the specified tenant.
 
 **Source:** https://docs.reltio.com/en/developer-resources/load-and-export-apis/load-and-export-apis-at-a-glance/export-service-apis/export-tasks-management-api/get-task-by-id-for-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
-**Keywords:** return task with the given ID for specified tenant
+**Keywords:** get task by id for tenant, retrieve tenant export task by id, export task status for tenant, tenant specific task lookup api, check export task by tenant, export task details by tenant, tenant export task response fields, get task, tenant, task id, export task
 
 
-Returns the task with the given ID for specified tenant .
+Learn more about how to use the Get Task by ID for Tenant API to retrieve the details of a specific export task for a given tenant.
 
 For the specified Task ID, the `Get Task by ID for tenant API` API returns the task for the tenant. You will see an error message if the task ID does not exist. You must be an Administrator or the Tenant's Administrator to execute this API.
 
@@ -110109,7 +110228,7 @@ JSON object representing export task.
     "type": "com.reltio.export.tasks.v4.ExportTask",
     "status": "COMPLETED",
     "name": "entity-export-task[{your tenant-ID}_10-19_entities_b49027]",
-    "parallelExecution": false,
+    "parallelExecution": true,
     "nodesGroup": "{nodesGroup}",
     "startTime": 1697192373482,
     "endTime": 1697193345470,
@@ -110179,10 +110298,10 @@ JSON object representing export task.
 
 **Source:** https://docs.reltio.com/en/developer-resources/load-and-export-apis/load-and-export-apis-at-a-glance/export-service-apis/export-tasks-management-api/get-task-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
-**Keywords:** return the task with the given ID, get task, Return the task with the given ID, Get Task
+**Keywords:** get task by id api, retrieve export task by id, export task status by id, export service task lookup, check export task progress, export task response fields, export task details reltio, get task, task id, export task, taskid
 
 
-Returns the task with the given ID or an error if there is no task with this ID.
+Learn more about how to use the Get Task by ID API to retrieve the details of a specific export task.
 
 The `Get Task by ID API` API returns the task for the specified task ID. You will see an error message if the task ID does not exist. You must be an This task is available to Administrator or and the Tenant's Administrator to execute this API..This task is available to Administrator.
 
@@ -110207,7 +110326,7 @@ JSON object representing export task.
     "type": "com.reltio.export.tasks.v4.ExportTask",
     "status": "COMPLETED",
     "name": "entity-export-task[jsmith123_10-19_entities_b49027]",
-    "parallelExecution": false,
+    "parallelExecution": true,
     "nodesGroup": "{nodesGroup}",
     "startTime": 1697192373482,
     "endTime": 1697193345470,
@@ -110646,10 +110765,10 @@ The `fileFormat` has four possible values: `ZIP`, `GZIP`, `JSON`, or `CSV`.
 
 **Source:** https://docs.reltio.com/en/developer-resources/load-and-export-apis/load-and-export-apis-at-a-glance/export-service-apis/naming-an-export-job?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
-**Keywords:** export job, set a custom name for, custom name, export endpoints which support setting of, set a custom name for an export job, export endpoints which support setting of a custom name, Set a custom name for an export job, Export endpoints which support setting of a custom name
+**Keywords:** naming an export job, set custom name for export job, export job name query parameter, custom name export endpoints reltio, export task name field response, export service auto generated name, name parameter export request, export job, custom name, name parameter, export task
 
 
-Provides the ability to set a custom name for an Export job.
+Learn more about how to set a custom name for an export job using the name query parameter.
 
 This functionality provides the ability to set a custom name for an Export job. In order to set a custom name for an Export job, a requester should pass the `name` parameter through query parameters of an Export request. After that, the name of the Export task can be obtained through the `name` field, as shown in this example:
 
@@ -110732,7 +110851,7 @@ In the case a requester doesn't pass the `name` parameter for an Export job, the
        "name": "custom-name-entities",
        "createdOnHost": "localhost",
        "executedOnHost": "localhost",
-       "parallelExecution": false,
+       "parallelExecution": true,
        "nodesGroup": "default",
        "startTime": "11-13-2017 11.41",
        "parameters": {
@@ -163935,7 +164054,7 @@ See the following topics to complete the setup:
 **Keywords:** dnb datablocks prerequisites, reltio enrichment requirements, licensing, roles and permissions, aws s3 configuration
 
 
-Review the product entitlements, licensing, and platform prerequisites before you configure Reltio Enrichment with D&B Data Blocks.
+Learn about the product entitlements, licensing, roles, and platform prerequisites for Reltio Enrichment with D&B Data Blocks.
 
 ## Product requirements
 
@@ -163953,7 +164072,8 @@ Your tenant must be provisioned with the B2B or Financial Services velocity pack
 ## Roles and permissions
 
 - At least one administrator must be assigned the **ROLE_INTEGRATION_CUSTOMER_ADMIN** role to manage integrations in Reltio Integration Hub.
-- Assign the **ROLE_DNB_CONNECTOR** role to users who need to run on-demand enrichment through UI buttons.
+- Assign the **ROLE_DNB_CONNECTOR** role to users who need access to the D&B connector functions.
+- For on-demand enrichment through UI buttons in an RIH-based setup, assign the **ROLE_USER_RIH_INVOKER** role in addition to **ROLE_DNB_CONNECTOR**. This role grants the `RIHProxy``EXECUTE` permission required to invoke the enrichment flow.
 
 For more information on roles and access, see topic [Integration Hub set up](https://docs.reltio.com/en/applications/integration-hub/integration-hub-at-a-glance/integration-hub-set-up?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
@@ -164150,9 +164270,9 @@ Enrichment can occur in two general ways:
 
 ## On-demand usage for business users
 
-Reltio offers on-demand enrichment through buttons that appear in the profile side panel for the `Organization` entity type. These buttons are visible only to users with the `ROLE_DNB_CONNECTOR` role and require correct UI configuration.
+Reltio offers on-demand enrichment through buttons that appear in the profile side panel for the `Organization` entity type. In an RIH-based setup, you who run on-demand enrichment must have the `ROLE_DNB_CONNECTOR` role and the `ROLE_USER_RIH_INVOKER` role. Before running on-demand enrichment, be sure to complete the proxy and UI button configuration.
 
-Users can match records without a DUNS number, enrich existing profiles, or retrieve hierarchy and principal contact details. These interactions are helpful when automation is not enabled or when working in isolated cases.
+You can run on-demand actions to match records that do not yet have a DUNS number, enrich existing profiles, and retrieve hierarchy or principal contact details. This mode is useful when automated enrichment is not enabled or when users need to review and enrich individual profiles selectively.
 
 For details on button behavior, available parameters, and customization, see [Customize or add new Data Blocks](https://docs.reltio.com/en/applications/data-integrations/data-enrichment-integrations-at-a-glance/reltio-enrichment-with-db-data-blocks-at-a-glance/use-reltio-enrichment-with-db-data-blocks/customize-or-add-new-data-blocks?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
@@ -165655,6 +165775,12 @@ In order to use the D&B monitoring integration, you must prepare an S3 bucket to
 
 Learn how to configure on-demand UI buttons for RIH with D&B Data Blocks.
 
+**Prerequisites**
+
+Before you begin, make sure that users who run the on-demand D&B UI buttons have the `ROLE_DNB_CONNECTOR` role and the `ROLE_USER_RIH_INVOKER` role. The `ROLE_USER_RIH_INVOKER` role is required to execute the RIH proxy used by the on-demand enrichment flow.
+
+The RIH proxy enables on-demand D&B enrichment requests from UI buttons to invoke the configured Integration Hub endpoint securely. When this configuration is in place, you can trigger D&B match, company information, and hierarchy or contact enrichment actions from Organization profiles.
+
 1. Create Access Token for RIH Proxy
    - Navigate to **Tools > API platform**.
    - On the **Clients** tab select **Create new API Client**.
@@ -165669,11 +165795,11 @@ Learn how to configure on-demand UI buttons for RIH with D&B Data Blocks.
    - Store the profile name and value
      *Image: i-dnb-dblocks-proxyui-2.png**Image: i-dnb-dblocks-proxyui-1.png*
 2. Update UI configuration for on-demand buttons
-   Configure the Organization UI plugin so that on-demand enrichment buttons appear on profile pages. This includes editing the `com.reltio.plugins.entity.organization.json` file and inserting the D&B proxy button definitions.
+   Configure the UI configuration file so that on-demand enrichment buttons appear on profile pages.
    - Navigate to **Reltio Console > UI Modeler**.
    - Select **Import/Export UI Config Files**.
-     *Image: i-dnb-dblocks-proxyui-3.png*
-   - Download `com.reltio.plugins.entity.organization.json` and create a backup before making changes.
+     *Image: uimod_impexpmultiplefiles.png*
+   - In the right pane, hover over the file name, and select Export to download the JSON file.
    - Open the file and locate the top-level `sidePanelViews` array.
    - Add a new object to define the D&B buttons using `"id": "D&B"`.
      ```
@@ -165687,9 +165813,9 @@ Learn how to configure on-demand UI buttons for RIH with D&B Data Blocks.
    - Add the following sample block:
      ```
 {
-                     "point": "com.reltio.plugins.ui.view",
-                     "id": "com.reltio.plugins.entity.org.GetMatchButtonView",
-                     "class": "com.reltio.plugins.ui.CustomActionView",
+                   
+                     "id": "GetMatchButtonView",
+                     "class": "CustomActionView",
                      "label": "Get D&B Match",
                      "url": "https://360-rih-proxy.reltio.com/api/v1/proxy/workato/invoke_endpoints",
                      "success": "Success! Please reload this profile and review the 'Verification' details to check whether a match was found. Resolve the Potential Match to enrich the profile.",
@@ -165716,9 +165842,9 @@ Learn how to configure on-demand UI buttons for RIH with D&B Data Blocks.
                      }
                   },
                   {
-                     "point": "com.reltio.plugins.ui.view",
-                     "id": "com.reltio.plugins.entity.org.GetCompanyDetailsButtonView",
-                     "class": "com.reltio.plugins.ui.CustomActionView",
+                     
+                     "id": "GetCompanyDetailsButtonView",
+                     "class": "CustomActionView",
                      "label": "Get D&B Company Info",
                      "url": "https://360-rih-proxy.reltio.com/api/v1/proxy/workato/invoke_endpoints",
                      "success": "Success! This profile should now be updated with the latest company information.",
@@ -165745,9 +165871,9 @@ Learn how to configure on-demand UI buttons for RIH with D&B Data Blocks.
                      }
                   },
                   {
-                     "point": "com.reltio.plugins.ui.view",
-                     "id": "com.reltio.plugins.entity.org.GetAssociationButtonView",
-                     "class": "com.reltio.plugins.ui.CustomActionView",
+                    
+                     "id": "GetAssociationButtonView",
+                     "class": "CustomActionView",
                      "label": "Get D&B Hierarchy & Contacts",
                      "url": "https://360-rih-proxy.reltio.com/api/v1/proxy/workato/invoke_endpoints",
                      "success": "Success! If Contact and Hierarchy data was available, this profile should now be enriched with the corresponding Company Hierarchy and Principal Contacts' relationships. Please reload the profile.",
@@ -204897,7 +205023,7 @@ You can also specify any other parameters in the `options` section of the config
 
 - `cleanseInputs` - Indicates the input data for the cleanse function, where, one `CleanseInputs` element belongs to one entity to cleanse. The values to cleanse may be obtained by the `getAttributesToCleanse` call. It outputs `Map<String,Object>`, where the key is the attribute name and the `value-is` is the value. Depending on the `inputMappings` configuration, the type of the value may be String, List<String>, Map<String, String>, or Map<String, List<String>>.
 
-  > **Note:** For more information, see [configcleanserule](https://docs.reltio.com/search?q=configcleanserule&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+  For more information, see [Mapping Input Attribute](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-reference/out-of-the-box-cleanse-functions/address-cleanser/mapping-input-and-output-attributes/mapping-input-attribute?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 - `securedOptions` - Indicates the properties specified in the tenant cleanse configuration (under the `options` section).
 - `unsecuredOptions` - Indicates the properties specified in the cleanse rules configuration.
 
@@ -216946,10 +217072,10 @@ Exporting data is useful for analyses and importing into other systems for furth
 
 **Source:** https://docs.reltio.com/en/objectives/load-and-export-data/data-exporting-at-a-glance/data-exporting-operation/export-data-using-reltio-export-service/exporting-activity-log-data?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
-**Keywords:** Export Activity Log, export activity log
+**Keywords:** export activity log data api, activity log export to csv json, export activity log filter by timestamp, activity log export query parameters, export activity log to s3 gcs azure, activity log export file format, schedule activity log export job, activity log, export activities, filter parameter, export task
 
 
-Exporting Activity Log Data API exports all activity logs and uploads a CSV or a JSON file to the appropriate storage.
+Learn more about how to use the Exporting Activity Log Data API to export activity logs and upload the results to cloud storage.
 
 The API exports activity logs and sends a link to the exported data (if post-processing is enabled and the `partSize` parameter was not specified) or a link to the Export Console UI page (in the other cases) to your email address.
 
@@ -216982,7 +217108,6 @@ See *Table 1: Query Parameters* to find out the list of optional query parameter
 | Query | `email` | No | This parameter indicates the comma-separated list of custom email addresses to which the notification is sent after the export is completed. If the parameter is not specified, the Export Service notifies the Reltio user who submitted the export request. |
 | Query | `partSize` | No | This parameter indicates a human-readable part size. The Export Service splits result files depending on this setting. Enables activities filtering by a condition. For more information, see [Filtering activities](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/search-using-activity-log-api/filtering-activities?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
 | Query | `filter` | No | This parameter indicates a filter condition to filter activity log items. The format is the same as that for the `ActivityLogRecordsSearch` request. For more information, see [Filtering activities](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/search-using-activity-log-api/filtering-activities?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
-| Query | `options` | No | `parallelExecution`: This option enables multiple export jobs for the same tenant to run in parallel. By default, jobs run sequentially. Use this option to reduce export time when jobs don't need to wait for one another. |
 | Query | `dateFormat` | No | This parameter indicates the format of the `date` and `time` attribute values (in CSV export only).  The possible values are:  - `TIMESTAMP` - considered as the default value - `READABLE` |
 | Query | `skipPostprocessing` | No | During data extraction, the Export Service generates multiple smaller in size, partial files that contain Export results.   If this parameter is enabled, the Export Service returns links to these files as the result, and the `partSize` parameter is ignored.Otherwise, the Export Service combines the partial files into one or several files depending on the`partSize` parameter and returns links to the combined files as the result. The default value is `true`. |
 | Query | `name` | No | This parameter indicates a name of the export task displayed in the task status. The name is also used by the Export UI. For more information see [Naming an Export Job](https://docs.reltio.com/en/developer-resources/load-and-export-apis/load-and-export-apis-at-a-glance/export-service-apis/naming-an-export-job?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
@@ -217080,7 +217205,7 @@ See *Table 1: Parameters* to find out the list of parameters.
 | Query | `email` | No | This parameter indicates the comma-separated list of custom email addresses to which the notification is sent after the export is completed. If the parameter isn’t specified, the Export Service notifies the Reltio user who submitted the export request. |
 | Query | `select` | No | This parameter accepts a list of entity fields to be exported. If not specified, then all fields are present in export. For example, `select=type,attributes.FirstName,attributes.Address.City,createdTime`. |
 | Query | `filter` | No | This parameter enables you to filter entities by a condition. Format for filter query parameter: `filter=({Condition Type}[AND/OR {Condition Type}]*)`. For more information, see [Filtering Entities](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/entities-api/get-entity/filtering-entities?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
-| Query | `options` | No | This is a comma-separated list of different options. The available options are as follows:  - `searchByOv`: This option is disabled by default and is used to search only by attributes with `ov=true`. - `parallelExecution`: This option enables multiple export jobs for the same tenant to run in parallel. By default, jobs run sequentially. Use this option to reduce export time when jobs don't need to wait for one another. |
+| Query | `options` | No | `searchByOv`: This option is disabled by default and is used to search only by attributes with `ov=true`. |
 | Query | `activeness` | No | This parameter determines how the Export Service must process the active and expired objects. The possible values are as follows:   - `ALL`: This option enables the exporting of active and expired objects. This is the default value. - `ACTIVE`: This option only enables the exporting of active objects. - `NOT_ACTIVE`: This option only enables the exporting of expired objects. |
 | Query | `exploded` | No | This parameter is only applicable for CSV export. If the parameter equals `true`, then all attribute values for the same attribute must be within one column (more than one row for one entity). In other words, if the parameter equals to `true`, then each entity is shown as a set of CSV lines, where the set is a cartesian product of the entity's attributes. There’s a restriction to explode up to 100K rows per one entity. The default value is `false`.  For more information, see [Exploded format in CSV entities export](https://docs.reltio.com/en/developer-resources/load-and-export-apis/load-and-export-apis-at-a-glance/export-service-apis/export-api-csv-output-format/exploded-format-in-csv-entities-export?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
 | Query | `headersStyle` | No | This parameter defines how the Export Service must name the CSV columns for the attribute values. This parameter is only applicable for CSV export. The possible values are as follows:  - `name` - Attribute names are used for CSV column names. - `label` - Attribute labels are used for CSV column names.      The default value is `name`.  For more information, see [Parameters for CSV Headers in the Entities or Relations Export File](https://docs.reltio.com/en/developer-resources/load-and-export-apis/load-and-export-apis-at-a-glance/export-service-apis/export-api-csv-output-format/parameters-for-csv-headers-in-the-entities-or-relations-export-file?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
@@ -217366,7 +217491,7 @@ The following example defines the structure of an Organization entity, including
 
 **Source:** https://docs.reltio.com/en/objectives/load-and-export-data/data-exporting-at-a-glance/data-exporting-operation/export-data-using-reltio-export-service/export-relations?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
-**Keywords:** export relations, run export operation for relations, Export Relations, Run Export Operation for Relations
+**Keywords:** export relations api reltio, filter and export relations by condition, export relations to csv json, export relations to s3 gcs azure, export relations query parameters, export relations by type filter, export relations update time filter, relations export sliced by crosswalks, export relations, relation types, activeness, skippostprocessing
 
 
 Learn more about the Export Relations API, which is used to export relations.
@@ -217405,7 +217530,7 @@ See *Table 1: Parameters* to find out the list of parameters.
 | Query | `name` | No | This parameter indicates the name of the export task displayed in the task status. The name is also used by the Export UI. For more information, see topic [Naming an Export Job](https://docs.reltio.com/en/developer-resources/load-and-export-apis/load-and-export-apis-at-a-glance/export-service-apis/naming-an-export-job?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
 | Query | `select` | No | This parameter accepts a list of relation fields to be exported. If not specified, then all fields are present in export. For example, `select=type,attributes.Title`..**Note:** `startObject` and `endObject` aren’t supported for the `select` query when you export to a CSV file. |
 | Query | `filter` | No | Enables relations filtering by a condition. Format for filter query parameter: `filter=({Condition Type}[AND/OR {Condition Type}]*)`. For more information, see topic [Relations Filtering](https://docs.reltio.com/en/developer-resources/relation-management-apis/relation-management-apis-at-a-glance/relations-api/relations-filtering?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
-| Query | `options` | No | This is a comma-separated list of different options. The available options are as follows:   - `searchByOv`: This option is disabled by default and is used to search only by attributes with `ov=true`. - `resolveMergedEntities`: If this option is specified, the Export Service returns winner URIs for start/end objects in relations. - `resolveRelationEdgeTypes`: This option is disabled by default. When it’s enabled, the entity type of the start/end objects of relations is displayed.    > **Note:** The `resolveRelationEdgeTypes` option only takes effect if `emulateSparkOutput=true` is enabled in the tenant's physical configuration. This is a legacy backward-compatibility mode for tenants migrating from the deprecated Spark-based export. For tenants, where `emulateSparkOutput` is not enabled, this option has no effect on the export output. - `parallelExecution`: This option enables multiple export jobs for the same tenant to run in parallel. By default, jobs run sequentially. Use this option to reduce export time when jobs don't need to wait for one another.    > **Note:** Labels and directional labels of start/end objects of relations aren’t supported for Spark based export. |
+| Query | `options` | No | This is a comma-separated list of different options. The available options are as follows:   - `searchByOv`: This option is disabled by default and is used to search only by attributes with `ov=true`. - `resolveMergedEntities`: If this option is specified, the Export Service returns winner URIs for start/end objects in relations. - `resolveRelationEdgeTypes`: This option is disabled by default. When it’s enabled, the entity type of the start/end objects of relations is displayed.    > **Note:** The `resolveRelationEdgeTypes` option only takes effect if `emulateSparkOutput=true` is enabled in the tenant's physical configuration. This is a legacy backward-compatibility mode for tenants migrating from the deprecated Spark-based export. For tenants, where `emulateSparkOutput` is not enabled, this option has no effect on the export output.    > **Note:** Labels and directional labels of start/end objects of relations are not supported for Spark based export. |
 | Query | `sePrefix` | No | This parameter is only for CSV export. If set to `true`, then the fields related to start and end objects have either the prefix `StartObject` or the `prefixEndObject`. The default value is `false`.  For more information, see topic [Parameters for CSV Headers in the Entities or Relations Export File](https://docs.reltio.com/en/developer-resources/load-and-export-apis/load-and-export-apis-at-a-glance/export-service-apis/export-api-csv-output-format/parameters-for-csv-headers-in-the-entities-or-relations-export-file?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
 | Query | `headersStyle` | No | This parameter defines how the Export Service must name the CSV columns for the attribute values. This parameter is only applicable for CSV export. The possible values are as follows:  - `name` - Attribute names are used for CSV column names. - `label` - Attribute labels are used for CSV column names.      The default value is `name`. For more information, see topic [Parameters for CSV Headers in the Entities or Relations Export File](https://docs.reltio.com/en/developer-resources/load-and-export-apis/load-and-export-apis-at-a-glance/export-service-apis/export-api-csv-output-format/parameters-for-csv-headers-in-the-entities-or-relations-export-file?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
 | Query | `skipPostprocessing` | No | During data extraction, the Export Service generates many small partial files of the export results. If this parameter is enabled, then the Export Service returns links to these files as results and the `partSize` parameter is ignored. Otherwise, the Export Service combines the partial files into one or more files depending on the `partSize` parameter and returns the links to the combined files as results. The default value is `true`. |
@@ -229350,6 +229475,43 @@ The topics in this section provide step-by-step instructions for these stages.
 
 ---
 
+# Supported operators for segmentation
+
+> **Section:** Objectives > Manage profiles > Profile management at a glance > Profile management operation > Work with segments
+
+
+**Source:** https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/work-with-segments/supported-operators-for-segmentation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** segment rule operators, segmentation operator dropdown, segment filter conditions, equals not contains in range segmentation, segment attribute data type operators, not operator segmentation, not contains segment rule, not in range segment rule, segment builder operators reltio, supported operators for segmentation
+
+
+Learn more about the operators available in the segment rule builder and the attribute data types each operator supports.
+
+Operators in the segment rule builder define filter conditions for a segment. The operators available in the **Operator** dropdown depend on the data type of the attribute you select.
+
+## Supported operators
+
+The following table describes each operator and the data types it supports.
+
+| Operator | Description | String | Numeric | Date |
+| --- | --- | --- | --- | --- |
+| **Equals** | Includes profiles where the attribute value exactly matches the specified value. | ✅ | ✅ | ✅ |
+| **Not** | Includes profiles where the attribute value does not match the specified value. | ✅ | ✅ | ✅ |
+| **Exists** | Includes profiles where the attribute has a value. | ✅ | ✅ | ✅ |
+| **Missing value** | Includes profiles where the attribute has no value. | ✅ | ✅ | ✅ |
+| **Contains** | Includes profiles where the attribute value contains the specified string. | ✅ | — | — |
+| **Not contains** | Includes profiles where the attribute value does not contain the specified string. | ✅ | — | — |
+| **In range** | Includes profiles where the attribute value falls within the specified range (inclusive). | — | ✅ | ✅ |
+| **Not in range** | Includes profiles where the attribute value falls outside the specified range. | — | ✅ | ✅ |
+| **Less than** | Includes profiles where the attribute value is less than the specified value. | — | ✅ | ✅ |
+| **Less than or equal** | Includes profiles where the attribute value is less than or equal to the specified value. | — | ✅ | ✅ |
+| **Greater than** | Includes profiles where the attribute value is greater than the specified value. | — | ✅ | ✅ |
+| **Greater than or equal** | Includes profiles where the attribute value is greater than or equal to the specified value. | — | ✅ | ✅ |
+
+
+
+---
+
 # View the Activity log for segments
 
 > **Section:** Objectives > Manage profiles > Profile management at a glance > Profile management operation > Work with segments
@@ -229405,6 +229567,8 @@ You can filter and export segment details from the dashboard facet too.
 
 **Source:** https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/work-with-segments/create-a-segment?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
+**Keywords:** create a segment reltio, how to create a segment, segment rule builder, create segment hub, segment rule filter, segmentation audience builder, dynamic segmentation reltio, create segment entity attributes, create segment interaction attributes, segment condition filter, segment name rule set, add rule to segment, segment entity type, build audience segment reltio, segment activation reltio, reltio intelligent 360 segmentation, create profile segment, segmentation operator dropdown
+
 
 Learn how to create a segment for Reltio Intelligent 360 in the Reltio Hub.
 
@@ -229431,9 +229595,9 @@ When creating a segment, you select attributes to filter your target audience. F
 3. In the **Entity type** field, select the entity type for which you want to create a segment. For example: *Individual*.
    *Image: dp_seg_selectindividual.png*
    Let us select the **HCO** entity type here.
-4. Set the filter criteria for the segmentation rules by selecting an attribute, the appropriate operator, and specifying the value of the attribute.
+4. Select an attribute, an [operator](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/work-with-segments/supported-operators-for-segmentation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), and a value to define the filter conditions for the segment rule.
    *Image: dp_seg_indroleprospect.png*
-   In the attribute field, you will see a list of attributes that are marked for segmentation. This can be done either in the Console. For more information, see topics [and](https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/define-entity-types-and-attributes/create-entity-type-attributes/create-a-simple-attribute?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)[Enable attributes for segmentation](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/work-with-segments/enable-attributes-for-segmentation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+   In the attribute field, you will see a list of attributes that are marked for segmentation. This can be done either in the Console. For more information, see topics [Create a simple attribute](https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/define-entity-types-and-attributes/create-entity-type-attributes/create-a-simple-attribute?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Enable attributes for segmentation](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/work-with-segments/enable-attributes-for-segmentation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
    The **Audience** facet on the right side displays the a chart that depicts the percentage of profiles that match your filter criteria.
    > **Note:** When creating a segment, this chart is available only for segments with real-time refresh, and not segments with batch process.
 5. Add interaction details to narrow down the segment to the desired audience.
