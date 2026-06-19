@@ -1,5 +1,5 @@
 # Reltio Documentation Index
-_Generated: 2026-06-17 02:15 UTC — 3206 topics (3153 unique)_
+_Generated: 2026-06-19 02:15 UTC — 3206 topics (3153 unique)_
 
 This file is a structured navigation index of the Reltio documentation portal.
 It contains the full parent-child hierarchy, topic URLs, keywords, summaries,
@@ -4705,7 +4705,7 @@ _Topics in this section: Reltio Entity Resolution Deployment options, Reltio Ent
 - **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > About developer resources > Developer resources at a glance > Customize data tasks with LCAs > Azure functions for Lifecycle Actions
 - **Summary:** Learn how to configure OAuth2 `client_credentials` authentication for Azure Lifecycle Actions (LCAs) so that Reltio can securely invoke your Azure Function through your identity provider.
 - **Keywords:** configure oauth2 client credentials for azure lcas, set up oauth2 authentication for azure lifecycle actions, use client credentials for azure function lca calls, configure token endpoint for azure lca integration, store oauth2 credentials for tenant azure lca, verify oauth2 bearer token flow for azure lca, oauth2, azure lca, client credentials, lifecycle actions
-- **See also:** [support ticket](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Configure Microsoft Entra ID for Azure LCAs](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/azure-functions-for-lifecycle-actions/configure-microsoft-entra-id-authentication-for-azure-lcas?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [Configure Microsoft Entra ID for Azure LCAs](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/azure-functions-for-lifecycle-actions/configure-microsoft-entra-id-authentication-for-azure-lcas?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Update L3 configuration for Azure Function Lifecycle Actions
 
