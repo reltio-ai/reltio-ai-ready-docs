@@ -1,6 +1,6 @@
 # Reltio Documentation
 
-_Generated: 2026-06-17 02:15 UTC_
+_Generated: 2026-06-19 02:15 UTC_
 
 _Topics: 3329_
 
@@ -25647,16 +25647,16 @@ The following roles control access to Agent Builder:
 
 | Role | What the user can do |
 | --- | --- |
-| `ROLE_ADMIN_TENANT` | Grants admin access to the tenant. Required in combination with `ROLE_ADMIN_AGENTS_TENANT` to act as an Agent Builder admin. |
-| `ROLE_ADMIN_AGENTS_TENANT` | Grants Agent Builder admin access. Required in combination with `ROLE_ADMIN_TENANT` to act as an Agent Builder admin. |
+| `ROLE_ADMIN_TENANT` | Grants admin access to the tenant. Required in combination with `ROLE_ADMIN_AGENTS` to act as an Agent Builder admin. |
+| `ROLE_ADMIN_AGENTS` | Grants Agent Builder admin access. Required in combination with `ROLE_ADMIN_TENANT` to act as an Agent Builder admin. |
 | `ROLE_AGENT_AUTHOR` | Allows the user to create agents for the assigned tenant. |
 | `ROLE_AGENT_APPROVER` | Allows the user to approve agents for the assigned tenant. |
 
-> **Important:** An admin is a user who holds both `ROLE_ADMIN_TENANT` and `ROLE_ADMIN_AGENTS_TENANT`. Only admins can assign Agent Builder roles to other users.
+> **Important:** An admin is a user who holds both `ROLE_ADMIN_TENANT` and `ROLE_ADMIN_AGENTS`. Only admins can assign Agent Builder roles to other users.
 
 ## Prerequisites
 
-- You must hold both `ROLE_ADMIN_TENANT` and `ROLE_ADMIN_AGENTS_TENANT` for the tenant where you are assigning roles.
+- You must hold both `ROLE_ADMIN_TENANT` and `ROLE_ADMIN_AGENTS` for the tenant where you are assigning roles.
 - The user you are assigning a role to must already exist in the system.
 
 ## Assign a role to a user
@@ -106654,8 +106654,7 @@ Before you begin, make sure that you have the following requirements:
 - The HTTPS token endpoint URL for your identity provider.
 - An optional scope value, if your identity provider requires one.
 - A Reltio admin bearer token for the tenant.
-
-> **Important:** Reltio grants access to the `PUT` and `DELETE` endpoint on request. Before you proceed, create a [support ticket](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) with Reltio to enable the required privilege for your admin user.
+- Ensure you have the role `ROLE_ADMIN_TENANT` to access the Azure LCA OAuth2 configuration endpoint.
 
 OAuth2 `client_credentials` authentication enables Azure Lifecycle Actions (LCAs) to authenticate through your identity provider.
 
@@ -213441,7 +213440,7 @@ Locales based on languages and regional language variants that are available out
 | Croatian (Croatia)*** | `hr-HR` |
 | Czech (Czech Republic) | `cs-CZ` |
 | Danish (Denmark)*** | `da-DK` |
-| Dutch (Netherlands)*** | `nl-NL` |
+| Dutch (Netherlands) | `nl-NL` |
 | English (United Kingdom) | `en-GB` |
 | English (United States) | `en-US` |
 | English*** | `en` |
