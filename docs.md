@@ -1,8 +1,8 @@
 # Reltio Documentation
 
-_Generated: 2026-06-19 02:15 UTC_
+_Generated: 2026-06-24 02:15 UTC_
 
-_Topics: 3329_
+_Topics: 3334_
 
 ---
 
@@ -7656,6 +7656,92 @@ These updates improve address parsing, returned address structure, and verificat
 
 ---
 
+# Reltio Address Cleanser update - May and June 2026
+
+> **Section:** Reltio > What’s new and notable? > What's new at a glance > Platform changes at a glance
+
+
+**Source:** https://docs.reltio.com/en/reltio/whats-new-and-notable/whats-new-at-a-glance/platform-changes-at-a-glance/reltio-address-cleanser-update---may-and-june-2026?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** address cleanser update, global data refresh, rescom flag brazil, subbuilding parsing fix, building parsing fix, premise parsing fix, packstation address output, postal code fix, locality parsing fix, thoroughfare normalization, gdh hierarchy update, address verification improvement
+
+
+Learn about the updates to the Reltio Address Cleanser in the months of May and June, 2026.
+
+Here are the updates to the [Reltio Address Cleanser](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-reference/out-of-the-box-cleanse-functions/address-cleanser?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) in May and June, 2026.
+
+## Global data refreshes
+
+The following countries had a data refresh during the May and June 2026 cycle:
+
+| Afghanistan (AF) | Andorra (AD) | Angola (AO) |
+| --- | --- | --- |
+| Argentina (AR) | Australia (AU) | Austria (AT) |
+| Belgium (BE) | Benin (BJ) | Bermuda (BM) |
+| Bonaire, Sint Eustatius and Saba (BQ) | Brazil (BR) | Bulgaria (BG) |
+| Burkina Faso (BF) | Burundi (BI) | Canada (CA) |
+| Chile (CL) | China (CN) | Colombia (CO) |
+| Croatia (HR) | Cyprus (CY) | Czechia (CZ) |
+| Denmark (DK) | Dominican Republic (DO) | Ecuador (EC) |
+| Egypt (EG) | Estonia (EE) | Eswatini (SZ) |
+| Finland (FI) | France (FR) | Gabon (GA) |
+| Germany (DE) | Great Britain (GB) | Greece (GR) |
+| Guernsey (GG) | Hong Kong (HK) | Hungary (HU) |
+| Iceland (IS) | India (IN) | Ireland (IE) |
+| Isle of Man (IM) | Israel (IL) | Italy (IT) |
+| Japan (JP) | Jersey (JE) | Kazakhstan (KZ) |
+| Korea, Republic of (KR) | Kosovo (XK) | Latvia (LV) |
+| Liechtenstein (LI) | Lithuania (LT) | Luxembourg (LU) |
+| Macau (MO) | Mali (ML) | Malta (MT) |
+| Netherlands (NL) | New Zealand (NZ) | Norway (NO) |
+| Peru (PE) | Philippines (PH) | Poland (PL) |
+| Portugal (PT) | Puerto Rico (PR) | Romania (RO) |
+| Saint Barthélemy (BL) | Saint Kitts and Nevis (KN) | Sao Tome and Principe (ST) |
+| Saudi Arabia (SA) | Serbia (RS) | Singapore (SG) |
+| Slovakia (SK) | Slovenia (SI) | South Africa (ZA) |
+| South Sudan (SS) | Spain (ES) | Sri Lanka (LK) |
+| Suriname (SR) | Sweden (SE) | Switzerland (CH) |
+| Taiwan (TW) | Thailand (TH) | Tonga (TO) |
+| Türkiye (TR) | Ukraine (UA) | United Arab Emirates (AE) |
+| United Kingdom (GB) | United States (US) | Uruguay (UY) |
+| Viet Nam (VN) |  |  |
+
+## Countries with major address dataset rebuilds
+
+The following dataset rebuilds and major improvements were applied:
+
+- **Türkiye (TR)**: Updated hierarchy handling so districts are populated in `Locality` instead of `SubAdministrativeArea`. `DependentLocality` is now populated only for certain addresses that contain towns known locally but not officially.
+- **Brazil (BR)**: Added a Residential-Commercial (`ResCom`) flag to indicate property type. Supported values are `Res` for residential, `Com` for commercial, `R/C` for residential/commercial, and `Unk` for unknown.
+- **Romania (RO)**: Corrected the output order for building-specific information in Latin script in the `SubBuilding` section. The corrected order is building, entrance, floor, and apartment.
+- **Bulgaria (BG)**: Corrected the output order for building-specific information in Latin script in the `SubBuilding` section. The corrected order is building, entrance, floor, and apartment.
+
+## Data improvements
+
+The May and June 2026 releases include several data improvements that enhance address parsing, formatting, and verification accuracy across multiple countries. These improvements include:
+
+- `Address verification` improvements: Sweden (SE) and Australia (AU)
+- `Hierarchy` handling improvement: Türkiye (TR)
+- `Premise`, `Building`, and `SubBuilding` parsing improvements: Australia (AU) and Great Britain (GB)
+- `Locality` values and formatting: Australia (AU) and Greece (GR)
+- `Thoroughfare` output and parsing improvements: Brazil (BR), Greece (GR), and Canada (CA)
+- `Packstation` address output improvement: Germany (DE)
+
+## Geographic data hierarchy updates
+
+The following GDH (Geographic Data Hierarchy) updates were applied:
+
+- **Canada (CA)**: Resolved missing postal codes.
+- **France (FR)**: Cleaned up an obsolete postal code.
+- **Germany (DE)**: Fixed `PostalCode` mapping.
+- **Korea, Republic of (KR)**: Fixed missing `Locality` values under the provinces `Gyeonggi-do` and `Daegu`.
+- **Spain (ES)**: Added `Vizcaya` as a valid alias of the `Bizkaia` administrative area.
+
+These updates improve address parsing, returned address structure, geographic hierarchy consistency, and verification accuracy during address cleansing.
+
+
+
+---
+
 # Improved data sync performance for Databricks pipelines - Jan 2025
 
 > **Section:** Reltio > What’s new and notable? > What's new at a glance > Platform changes at a glance
@@ -14987,6 +15073,42 @@ Learn about the new features and enhancements introduced in this 2026.1.4.0 rele
 Previously, parallel execution for export tasks had to be explicitly enabled on each request. Reltio Export Service now enforces parallel execution for all export tasks, including those created through the UI. This results in more consistent and predictable export duration, regardless of other scheduled activity on the tenant.
 
 For more information, see [Export entities](https://docs.reltio.com/en/objectives/load-and-export-data/data-exporting-at-a-glance/data-exporting-operation/export-data-using-reltio-export-service/export-entities?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Export relations](https://docs.reltio.com/en/objectives/load-and-export-data/data-exporting-at-a-glance/data-exporting-operation/export-data-using-reltio-export-service/export-relations?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), and [Export tasks management API](https://docs.reltio.com/en/developer-resources/load-and-export-apis/load-and-export-apis-at-a-glance/export-service-apis/export-tasks-management-api/get-task-by-id-for-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+## Reltio Address Cleanser update
+
+The Reltio Address Cleanser is updated with the latest data refresh, structural improvements, and verification enhancements. These updates include country rebuilds, data improvements, and issue fixes across multiple countries. They improve verification results and cleansed address output.
+
+`Packstation`For more information, see [Reltio Address Cleanser update - May and June 2026](https://docs.reltio.com/en/reltio/whats-new-and-notable/whats-new-at-a-glance/platform-changes-at-a-glance/reltio-address-cleanser-update---may-and-june-2026?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+## Create agents faster with Agent Blueprint
+
+The **Agent Blueprint** feature introduced in **Agent Builder** creates an initial agent configuration from the details you provide, such as the purpose of the agent, intended users, use cases, and constraints. Agent Blueprint then generates a system prompt and automatically recommends tools that best match those requirements.
+
+This feature reduces the manual effort required to define agent behavior and tool access, while giving you a more complete starting point that you can review, adjust, and refine before publishing.
+
+For more information, see [Generate a system prompt using Agent Blueprint](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agent-builder-for-agentflow-at-a-glance/create-test-and-submit-an-agent-for-review?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+## Contextual data visualizations in AgentFlow
+
+AgentFlow now analyzes your prompts and contextually displays charts or graphs wherever applicable, ensuring that information is always presented in the most effective format. This allows you to visually identify patterns in your data, compare metrics, and analyze relationships directly in AgentFlow, without exporting your data to external visualization tools. Charts and graphs are interactive, allowing you to show, hide, or filter specific attributes and values while reviewing your data.
+
+This enhancement is available for all Reltio agents available in **AgentFlow**.
+
+For more information, see [Charts in AgentFlow](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/charts-in-agentflow?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+## Materialized hierarchy support for GCP and Azure
+
+In addition to AWS, support for Materialized hierarchy extends to GCP and Azure. This gives you consistent hierarchy management capabilities across supported cloud environments.
+
+For more information, see [Hierarchy perspective](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/hierarchy-perspective?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+## Reltio Documentation Portal now available in 19 languages
+
+The Reltio Documentation Portal now supports machine-translated content in 19 languages. You can select your preferred language from the language selector in the upper-right corner of the documentation portal, making Reltio documentation more accessible to a global audience.
+
+Translated content may contain inaccuracies. The English (US) version remains the authoritative source for technical accuracy. The following items are not translated: product names, company names, roles, branded terms, code phrases, code blocks, images, videos, GIFs, and other non-text media.
+
+For more information, see [View documentation in your preferred language](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/internationalization-and-localization/view-documentation-in-your-preferred-language?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Localization Disclaimer](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/internationalization-and-localization/localization-disclaimer?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
@@ -25186,6 +25308,7 @@ Use AgentFlow when you need to:
 - Search and review profiles using natural language
 - Investigate possible duplicates and match history
 - Make confident decisions about merges with explainable AI input
+- Review data visually using [graphs and charts](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/charts-in-agentflow?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 - Enrich profiles with validated external data (optional)
 - Maintain governance traceability while working faster
 
@@ -25625,6 +25748,74 @@ In addition to the standard role mappings shown above, AgentFlow enforces a dedi
 
 ---
 
+# Charts in AgentFlow
+
+> **Section:** Products > AgentFlow > Reltio AgentFlow™ at a glance
+
+
+**Source:** https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/charts-in-agentflow?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** agentflow graphs, inline graphs in agentflow, agentflow graph types, agentflow graph examples, bar chart in agentflow, line chart in agentflow, donut chart in agentflow, gauge chart in agentflow, graph chart in agentflow, set overlap chart in agentflow, visualization
+
+
+Learn more about the charts that AgentFlow can display in conversations and example prompts that can produce them.
+
+AgentFlow contextually displays charts or graphs in a conversation when information is easier to understand visually than through text. These contextual visualizations help you identify patterns, compare results, and explore relationships more efficiently.
+
+The following types of charts are supported in AgentFlow:
+
+## Bar chart
+
+Use a bar chart to compare values across multiple categories.
+
+**Example prompt:** Show entity counts by type across source systems.
+
+*Image: i-bar-chart.png*
+
+## Line chart
+
+Use a line chart when to see how a metric changes over a period of time.
+
+**Example prompt:** Show merge activity over the past 6 months.
+
+*Image: i-line-chart.png*
+
+## Donut chart
+
+Use a donut chart when to understand how a total is distributed across different categories.
+
+**Example prompt:** Show the breakdown of match status across records.
+
+*Image: i-donut-chart.png*
+
+## Gauge chart
+
+Use a gauge chart to see how a single metric is performing against a defined target or threshold.
+
+**Example prompt:** Show the current data quality score.
+
+*Image: i-gauge-chart.png*
+
+## Graph chart
+
+Use a graph chart to explore connections and relationships between entities.
+
+**Example prompt:** Show the relationship map for Customer XYZ.
+
+*Image: gif-graph-chart.gif*
+
+## Set overlap chart
+
+Use a set overlap chart to understand how records are distributed across overlapping sets.
+
+**Example prompt:** Show overlap across SAP, Oracle, and Salesforce source systems.
+
+*Image: i-set-overlap-graph.png*
+
+
+
+---
+
 # Assign Agent Builder roles to users
 
 > **Section:** Products > AgentFlow > Reltio AgentFlow™ at a glance > Agent Builder for AgentFlow at a glance
@@ -25694,7 +25885,9 @@ Learn how to create a new agent or update a published one in Agent Builder, veri
 
 Agent Builder provides you with the following structured authoring workflow:
 
-- **Step 1: Agent & Prompt information**: Enter a name, description, tags, and system prompt.
+- **Step 1: Agent & Prompt information**: Define the agent and create its system prompt. In this step, you can perform either of the following:
+  - Enter the agent information and system prompt [manually](#concept-9378/p-3135).
+  - Select [Generate Agent Blueprint](#concept-9378/p-3261) to generate the system prompt and recommended tools based on your requirements.
 - **Step 2: Tools & capabilities**: Enable Web search and select the tools the agent is allowed to use.
 - **Step 3: Test & publish**: Verify behavior in the test panel and submit a publish request for review.
 
@@ -25714,9 +25907,16 @@ Before you begin, confirm that:
 - At least one user on the tenant must have the `ROLE_AGENT_AUTHOR` role (PUBLISH permission). Publishing requires an approver with PUBLISH permission.
 - The tools you plan to use must be in the tenant-approved tool catalog.
 
-## Step 1: Agent & Prompt information
+## Step 1: Enter agent and prompt information
 
-Use this path when you are building a new agent from scratch.
+In this step, define the agent and create its system prompt. You can either enter the information manually or use Agent Blueprint to generate it from your requirements.
+
+- [Enter agent and prompt information manually](#concept-9378/p-3135)
+- [Use Agent Blueprint to generate a system prompt and select the recommended tools](#concept-9378/p-3261)
+
+**Enter agent and prompt information manually**
+
+Use this path when you are building a new agent manually from scratch.
 
 1. Open **AgentFlow** and go to **Agent Builder**.
 2. Select **+ Build new agent**.
@@ -25752,6 +25952,43 @@ Use this path when you are building a new agent from scratch.
    After the agent is created, the **Agent ID** appears in the **AGENT DETAILS** section. Select the copy icon next to the **Agent ID** to copy it to your clipboard.
 
 > **Note:** While you have unsaved changes, an **Unsaved changes** indicator appears in the page header. If you navigate away — by selecting the back icon, selecting **Cancel**, or using your browser's back button — Agent Builder displays a warning before discarding your changes. If you reload the page, your browser displays its own native dialog. Select **Save as draft** at any time to preserve your work.
+
+**Generate a system prompt using Agent Blueprint**
+
+Follow these steps when you want AI to generate a first draft of the system prompt and select the required tools based on your requirements:
+
+1. Open **Agentflow** and select **Agent Builder**.
+2. Select **+ Build new agent** and select **Build new agent from scratch**.*Image: i-blueprint-select-agent.png*
+3. Select **Generate Agent Blueprint**.*Image: i-generate-agent-blueprint.png*
+4. Enter the required details in the following fields:
+   - **Agent Name**: Enter a clear, specific name that describes what the agent does.
+   - **Short Description**: Enter a brief summary of the main purpose of the agent and the benefit it provides to users.
+   - **Describe your agent**: Describe the role of the agents, the tasks the agent must perform, and the type of responses you need.
+   - **Intended users**: Specify the users or roles the agent is intended for
+   - **Describe use cases**: List the main scenarios or business tasks the agent should support.
+   - **Constraints**: Enter any limits or rules the agent must follow, such as read-only access, restricted tools, or response boundaries.
+   - **Notes**: Enter any additional instructions, preferences, or context that helps improve the generated prompt.*Image: i-generate-agent-blueprint-2.png*
+5. Select **Generate**.
+
+   Agent Builder generates a system prompt draft based on the information you entered. On completion, the **Generate agent blueprint** pop-up appears.
+6. Review the generated system prompt and verify the details.*Image: i-blueprint-prompt.png*
+7. Select **See assumptions made** to review the inputs used to generate the system prompt.
+8. Select **Next**.
+9. Review the list of MCP tools selected for the agent.
+
+   Agent Builder automatically selects tools based on your requirements. You can add or remove tools as required.
+
+   Each tool includes a confidence score of **High**, **Medium**, or **Low**.
+10. On reviewing all the details of the agent, select **Done**.
+
+   The **Build an agent** page appears.
+11. 
+
+   Select **Save & continue**.
+
+   After the agent is created, the **Agent ID** appears in the **AGENT DETAILS** section. Select the copy icon next to the **Agent ID** to copy it to your clipboard.
+
+To continue, see [Step 3: Test & publish the agent](#concept-9378/title-2074)
 
 ## Step 2: Tools & capabilities
 
@@ -26403,7 +26640,7 @@ To use AgentFlow workspace, follow these steps:
 3. Enter a prompt or question in the input box and press Enter or select the send icon.
    For example, try "*Show me the organization record for XYZ Corp.* ”
 4. Review the agent's response in the conversation panel.
-   Responses may include tables, summaries, lists, or follow-up suggestions depending on your agent and permissions.
+   Responses may include tables, summaries, lists, follow-up suggestions, or [visualizations (charts and graphs)](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/charts-in-agentflow?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) depending on your agent and permissions.
 5. Access recent threads or agent options using the left navigation panel.
    You can revisit prior conversations, toggle web search, or adjust agent instructions.
 
@@ -109856,10 +110093,10 @@ A status of the operation: success or error.
 
 **Source:** https://docs.reltio.com/en/developer-resources/load-and-export-apis/load-and-export-apis-at-a-glance/export-service-apis/export-tasks-management-api/get-active-tasks?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
-**Keywords:** return export tasks for all tenants, Return Export Tasks for all Tenants
+**Keywords:** get active tasks api, retrieve active export tasks, export tasks for all tenants, export task status reltio, scheduled processing paused export tasks, waiting for resource export task, export service task list, max offset pagination export tasks, export task json response, reltio export service api
 
 
-The API returns the export tasks for all tenants.
+Learn more about how to use the Get Active Tasks API to retrieve export tasks for all tenants.
 
 The `Get Active Tasks API` returns export tasks for all tenants and is available to everyone. This API returns tasks with the following statuses:
 
@@ -109903,7 +110140,7 @@ An array of active export tasks:
         "type": "com.reltio.export.tasks.v4.ExportTask",
         "status": "PROCESSING",
         "name": "entity-export-task[tenantId_14-10_entities_d2d375]",
-        "parallelExecution": false,
+        "parallelExecution": true,
         "nodesGroup": "{nodesGroup}",
         "startTime": 1697119874795,
         "parameters": {
@@ -109963,7 +110200,7 @@ An array of active export tasks:
         "type": "com.reltio.export.tasks.v4.ExportTask",
         "status": "PAUSED",
         "name": "relation-export-task[{tenantId_14}-17_relations_0c4156]",
-        "parallelExecution": false,
+        "parallelExecution": true,
         "nodesGroup": "{nodesGroup}",
         "startTime": 1697120356793,
         "pausedTime": 1697120569543,
@@ -110028,10 +110265,10 @@ An array of active export tasks:
 
 **Source:** https://docs.reltio.com/en/developer-resources/load-and-export-apis/load-and-export-apis-at-a-glance/export-service-apis/export-tasks-management-api/get-active-tasks-for-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
-**Keywords:** return export tasks for the specified tenant, get active task for tenant, Return Export Tasks for the Specified Tenant, Get Active Task for Tenant
+**Keywords:** get active tasks for tenant api, retrieve export tasks by tenant, tenant-specific export task status, export tasks admin tenant admin, scheduled processing paused export tasks, waiting for resource tenant export, export service tenant task list, max offset pagination tenant tasks, export task json response tenant, reltio export service tenant api
 
 
-The API returns export tasks for the specified tenant.
+Learn more about how to use the Get Active Tasks for Tenant API to retrieve export tasks for a specified tenant.
 
 The Get Active Tasks for Tenant API returns status of export tasks for all tenants. You can execute this API if you're an Admin or Tenant Admin. The API return tasks with the following statuses:
 
@@ -110074,7 +110311,7 @@ An array of active export tasks for the specified tenant.
         "type": "com.reltio.export.tasks.v4.ExportTask",
         "status": "PROCESSING",
         "name": "entity-export-task[{tenantId}_14-10_entities_d2d375]",
-        "parallelExecution": false,
+        "parallelExecution": true,
         "nodesGroup": "{nodesGroup}",
         "startTime": 1697119874795,
         "parameters": {
@@ -110134,7 +110371,7 @@ An array of active export tasks for the specified tenant.
         "type": "com.reltio.export.tasks.v4.ExportTask",
         "status": "PAUSED",
         "name": "relation-export-task[{tenantId}_14-17_relations_0c4156]",
-        "parallelExecution": false,
+        "parallelExecution": true,
         "nodesGroup": "{nodesGroup}",
         "startTime": 1697120356793,
         "pausedTime": 1697120569543,
@@ -110393,10 +110630,10 @@ JSON object representing export task.
 
 **Source:** https://docs.reltio.com/en/developer-resources/load-and-export-apis/load-and-export-apis-at-a-glance/export-service-apis/export-tasks-management-api/get-tasks-history?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
-**Keywords:** return export tasks for all tenants
+**Keywords:** get tasks history api, retrieve finished export tasks, completed canceled failed export tasks, export task history all tenants, administrator export task history, export tasks history endpoint, max offset pagination task history, export task history json response, export urls completed task, reltio export service history api
 
 
-The API returns finished export tasks for all tenants.
+Learn more about how to use the Get Tasks History API to retrieve finished export tasks for all tenants.
 
 The Get Tasks History API returns export tasks for all tenants. You must be an administrator to execute this API. This API returns tasks with the following statuses:
 
@@ -110433,7 +110670,7 @@ An array of completed export tasks.
         "type": "com.reltio.export.tasks.v4.ExportTask",
         "status": "COMPLETED",
         "name": "relation-export-task[{tenantId}_14-17_relations_0c4156]",
-        "parallelExecution": false,
+        "parallelExecution": true,
         "nodesGroup": "{nodesGroup}",
         "startTime": 1697120356793,
         "endTime": 1697127077503,
@@ -110498,7 +110735,7 @@ An array of completed export tasks.
         "type": "com.reltio.export.tasks.v4.ExportTask",
         "status": "COMPLETED",
         "name": "entity-export-task[jsmith123_14-10_entities_d2d375]",
-        "parallelExecution": false,
+        "parallelExecution": true,
         "nodesGroup": "{nodesGroup}",
         "startTime": 1697119874795,
         "endTime": 1697121040077,
@@ -194994,6 +195231,93 @@ The topics in this section provide step-by-step instructions for these stages.
 
 ---
 
+# Best practices for RDM Autopilot
+
+> **Section:** Applications > RDM > RDM at a glance > RDM operation > RDM Autopilot
+
+
+**Source:** https://docs.reltio.com/en/applications/rdm/rdm-at-a-glance/rdm-operation/rdm-autopilot/best-practices-for-rdm-autopilot?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** RDM Autopilot best practices, Autopilot Preview and Active mode, Blocked Values and Lookup Type Overrides, Autopilot misspelled value handling, Autopilot DCR workflow
+
+
+Learn more about the recommended practices for configuring and operating RDM Autopilot to ensure accurate, efficient evaluation of unmapped values.
+
+Use these best practices to help improve the accuracy and effectiveness of RDM Autopilot. Before you begin, make sure that you're familiar with [RDM Autopilot](https://docs.reltio.com/en/applications/rdm/rdm-at-a-glance/rdm-operation/rdm-autopilot?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and its [configuration options](https://docs.reltio.com/en/applications/rdm/rdm-at-a-glance/rdm-operation/rdm-autopilot/configure-and-enable-rdm-autopilot?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+> **Note:** Autopilot is not supported on MDM tenants that use an "All in memory" RDM cache and does not act on transcode errors from the MDM side. However, you can still use Autopilot independently on the RDM tenant through the transcode API.
+
+## Recommended practices
+
+## Register the tenant in the workflow service
+
+Register the tenant in the workflow service so that Autopilot can create and manage workflows for user input.
+
+## Add descriptions for each lookup type in the RDM configuration
+
+Autopilot uses lookup type descriptions to understand what each lookup type represents. Add or update the description for every lookup type in your RDM tenant configuration.
+
+For example, for the lookup type `CC`, a description such as Country codes helps Autopilot interpret values as country codes.
+
+## Start in Preview mode when you enable Autopilot for the first time
+
+When you enable Autopilot for the first time, select **Preview mode** in the **Mode** section of the Configure Autopilot panel. Keep it in **Preview mode** for an appropriate period based on your tenant size. Autopilot needs time to learn your data patterns before it can act on them accurately.
+
+Selecting **DISABLE** in the Configure Autopilot panel, whether globally or for a specific lookup type, deletes the learning for that scope. When you re-enable it, Autopilot starts fresh and needs the same waiting period in **Preview mode** again. To pause Autopilot temporarily, switch to **Preview mode** instead. Autopilot retains all its learning and your existing statistics but does not create or modify any mappings or lookups. When you switch back to **Active mode**, Autopilot resumes acting on data immediately with no waiting period.
+
+## Review the insights tab before you switch to Active mode
+
+Before you switch to Active mode, open the Insights overview on the Autopilot page and review the stats in the following tabs:
+
+- **AUTO MAPPED**
+- **MAPPING SUGGESTED**
+- **LOOKUP CREATED**
+- **LOOKUP SUGGESTED**
+- **MISSPELLED**
+- **IGNORED**
+
+If the AI reasoning appears consistently incorrect, do not switch to **Active mode**. Switching to **Active mode** with incorrect reasoning can create wrong mappings, add invalid lookup values, or resolve values to incorrect entries. To fix this, adjust the thresholds in the Mapping actions or New lookup creation sections, update your lookup type descriptions in the RDM configuration, or add entries to Blocked Values in the Configure Autopilot panel. **Active mode** starts acting on data immediately.
+
+## Use Blocked Values for values you never want Autopilot to act on
+
+In the Configure Autopilot panel, go to the Blocked Values section and select **MANAGE BLOCKED VALUES** to add values that Autopilot must never act on, such as `"NA"`, `"unknown"`, or `"test"`. Autopilot applies blocked value checks before any evaluation.
+
+You can define blocked values at the tenant level or per lookup type. Tenant-level values apply globally across all lookup types. Per-lookup-type values apply only to that lookup type. Both levels apply together.
+
+## Use Lookup Type Overrides to customize settings for a specific lookup type
+
+The settings in the Configure Autopilot panel, such as Mapping actions thresholds, New lookup creation thresholds, Minimum occurrence gate, and Misspelling detection confidence, apply to all lookup types by default. If a specific lookup type requires thresholds that differ from the global defaults, you can configure an override for that lookup type. To view or remove existing overrides, select **MANAGE OVERRIDES** in the Scope section to open the Lookup Type Overrides dialog.
+
+## Enable Suggest lookup for review before you enable Create lookup automatically
+
+The New lookup creation section in the Configure Autopilot panel controls how Autopilot handles incoming values that do not match any existing lookup entry. Autopilot provides two options:
+
+- **Create lookup automatically**: Autopilot creates a new lookup value and adds it directly to your reference data without human review. Use this option only when you trust Autopilot's reasoning for the lookup type.
+- **Suggest lookup for review**: Autopilot creates a data change request (DCR) for you to review before it adds any new value to your reference data. Use this option to verify changes before they take effect.
+
+Start with **Suggest lookup for review** enabled and **Create lookup automatically** disabled until you are confident in Autopilot's behavior for your data.
+
+## Resolve pending DCRs before you re-evaluate a value
+
+When Autopilot raises a DCR for a value, the status of that value changes to **DCR Pending**. Autopilot does not evaluate that value again until someone approves or rejects the DCR in the workflow. If a DCR is stuck or abandoned, close or reject it in the workflow first, and then delete the corresponding statistics on the Autopilot page to allow Autopilot to re-evaluate the value.
+
+## Autopilot evaluates unmapped values independently for each source
+
+Autopilot evaluates each unmapped value separately for each source. For example, if the value "Cardio" appears from Source A and Source B, Autopilot tracks and evaluates each occurrence independently. The Minimum occurrence gate settings also apply per source. The Minimum occurrence gate also applies per source. Before Autopilot evaluates a value, that value must appear the minimum number of times from a single source within the configured check frequency window.
+
+## Misspelled values are kept in statistics, not added to lookup data
+
+Autopilot does not add misspelled values to your tenant lookup data because they are treated as invalid mappings. Instead, Autopilot keeps them in the statistics so that you can review how each value is being resolved on the MISSPELLED tab.
+
+Misspelled entries are cleaned up automatically in two situations:
+
+- If the value that a misspelled entry resolves to is deleted, the corresponding misspelled entry is also removed.
+- If you delete a misspelled stat entry, the associated misspelled resolution is removed, but the correct mapping remains untouched.
+
+
+
+---
+
 # Lookups and canonical values
 
 > **Section:** Applications > RDM > RDM at a glance > RDM operation
@@ -213413,7 +213737,7 @@ You can use the **Export** feature to export UI configuration files.
 
 Learn how Reltio supports internationalization and localization across the UI, metadata, and services.
 
-Reltio Platform offers Internationalization (i18n) and Localization (L10n) solution for customers with global deployments for Reltio Context Intelligence Platform and Solution Accelerators. The solution offers the following key features:
+Reltio Platform offers Internationalization (i18n) and Localization (L10n) solution for customers with global deployments for Reltio Context Intelligence Platform and Solution Accelerators, and the [Reltio Documentation Portal](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/internationalization-and-localization/localization-disclaimer?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). The solution offers the following key features:
 
 - Localization of user interface in the Desktop UI is:
   - Out-of-the-box
@@ -213422,6 +213746,7 @@ Reltio Platform offers Internationalization (i18n) and Localization (L10n) solut
   - Out-of-the-box - Core metadata (Reltio Model L1/L2 layers: labels, abbreviations, captions, descriptions, label patterns, direction labels)
   - Customizable - Custom metadata (Reltio Model L3/L4/... layers: labels, abbreviations, captions, descriptions, label patterns, direction labels, customer-defined lookups)
 - Localization of Date, Number, Currency formats is out-of-the-box
+- Localization of the [Reltio Documentation Portal](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/internationalization-and-localization/localization-disclaimer?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) is out-of-the-box.
 
 > **Note:** The `POST {TenantURL}/resources/i18n` internationalization API supports localization of label patterns, direction labels, error messages, and customer-defined lookups. The labels, abbreviations, captions, and descriptions can be localized by modifying the UI configuration. Contact Reltio Customer Support to update the UI configuration.
 
@@ -213484,6 +213809,7 @@ Localization features are available for the following Reltio services:
 - API
 - RDM
 - Validation
+- [Reltio Documentation Portal](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/internationalization-and-localization/localization-disclaimer?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 **Related links**
 
@@ -213491,6 +213817,7 @@ Localization features are available for the following Reltio services:
 - [Translator's Guide](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/internationalization-and-localization/translators-guide?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 - [Localization Configuration](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/internationalization-and-localization/localization-configuration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 - [Internationalization API](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/internationalization-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [View documentation in your preferred language](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/internationalization-and-localization/view-documentation-in-your-preferred-language?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 
 
@@ -213534,6 +213861,53 @@ You can use the **Import** feature to import updated UI configuration files into
    - **Publish As**: Deploys the same UI configuration to a different target tenant. This is helpful when you want to reuse your configuration across environments, such as from development to production.
 
 > **Important:** Changes made to the configuration files must be published after they are imported into the application. Even if you select a single file during import, all configuration files in the UI configuration set are deployed together as a versioned package. These changes are similar to other changes made as part of UI Modeler.
+
+
+
+---
+
+# Localization Disclaimer
+
+> **Section:** Objectives > Configure the Reltio UI > UI configuration at a glance > Internationalization and Localization
+
+
+**Source:** https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/internationalization-and-localization/localization-disclaimer?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+
+Learn about the limitations of AI-translated documentation
+
+This documentation is translated using machine translation (AI). While we strive for accuracy, machine-translated content may contain inaccuracies, omissions, or misrepresentations of the original material.
+
+## Model Non-Determinism
+
+Machine translation models are probabilistic. Even with automated validation against source material, generated translations may:
+
+- 
+
+  Misrepresent system behavior or functionality
+- 
+
+  Simplify or omit important edge cases
+- 
+
+  Introduce subtle inaccuracies in technical terminology
+
+## Authority & Support
+
+For support, product questions, and translation concerns, refer to the following information:
+
+- 
+
+  **Official Source:** The English version of this documentation is the authoritative source for all technical accuracy, feature specifications, and official support purposes.
+- 
+
+  **Technical Support:** If translated documentation contradicts your experience or the English version, the English documentation takes precedence.
+- 
+
+  **Product Questions:** For questions or requests about Reltio product or functionality, contact Reltio support with reference to the English version of the documentation.
+- 
+
+  **Translation Feedback:** If you have questions or feedback about the translated content, reach out to us.
 
 
 
@@ -215945,6 +216319,84 @@ Your `com.reltio.plugins.pivoting.json` file is now updated with your defined pi
 
 ---
 
+# View documentation in your preferred language
+
+> **Section:** Objectives > Configure the Reltio UI > UI configuration at a glance > Internationalization and Localization
+
+
+**Source:** https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/internationalization-and-localization/view-documentation-in-your-preferred-language?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** use the language selector, change documentation language, switch portal language, select a documentation language, language selector in docs portal, translate documentation page, documentation language settings, language selector, translation, localization
+
+
+Learn how to use the language selector in the Reltio Documentation Portal to view documentation in your preferred language.
+
+The language selector in the Reltio Documentation Portal allows you to view content in a supported language.
+
+## Select a language
+
+To view the documentation in your preferred language, perform the following steps:
+
+1. Navigate to the [Reltio Documentation Portal](docs.reltio.com).
+2. Select the language selector in the upper-right corner of the page.*Image: i-language-selector.png*
+3. Select your preferred language from the dropdown list.
+
+   Wait for the translated content to appear.
+
+The page refreshes to display the translated content.
+
+## Supported languages
+
+The following table lists the locales and languages available in the language selector.
+
+| **Locale** | **Language** |
+| --- | --- |
+| zh-CN | Chinese (Simplified) |
+| nl-NL | Dutch |
+| de-DE | German |
+| es-ES | Spanish |
+| fr-FR | French |
+| en-GB | English (UK) |
+| zh-TW | Chinese (Traditional) |
+| cs-CZ | Czech |
+| el-GR | Greek |
+| hu-HU | Hungarian |
+| it-IT | Italian |
+| ja-JP | Japanese |
+| ko-KR | Korean |
+| pl-PL | Polish |
+| pt-BR | Portuguese (Brazil) |
+| pt-PT | Portuguese (Portugal) |
+| ru-RU | Russian |
+| tr-TR | Turkish |
+| vi-VN | Vietnamese |
+
+## Translation considerations
+
+The following considerations apply when using the language selector:
+
+- Translated content is generated by machine translation and can contain inaccuracies, omissions, or incorrect terminology.
+- The English (US) version of the documentation is the authoritative source. If translated content differs from the English version, use the English version for technical accuracy.
+- For support or product questions, refer to the English (US) documentation when you contact Reltio Support.
+- There is a short delay before translated content appears after you select a language.
+- The following are not translated:
+  - Product names
+  - Company names
+  - Roles
+  - Other branded terms
+  - Code phrases, such as `/entities`
+  - Code blocks, such as API examples or JSON samples
+  - Images
+  - Videos
+  - GIFs
+  - Any form of media other than text
+
+For more information, see [Localization Disclaimer](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/internationalization-and-localization/localization-disclaimer?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+
+
+---
+
 # Translator's Guide
 
 > **Section:** Objectives > Configure the Reltio UI > UI configuration at a glance > Internationalization and Localization
@@ -217613,7 +218065,7 @@ The full response object:
         "type": "com.reltio.export.tasks.v4.ExportTask",
         "status": "COMPLETED",
         "name": "relation-export-task[_14-17_relations_0c4156]",
-        "parallelExecution": false,
+        "parallelExecution": true,
         "nodesGroup": "{nodesGroup}",
         "startTime": 1697120356793,
         "endTime": 1697127077503,
@@ -217678,7 +218130,7 @@ The full response object:
         "type": "com.reltio.export.tasks.v4.ExportTask",
         "status": "COMPLETED",
         "name": "entity-export-task[jsmith123_14-10_entities_d2d375]",
-        "parallelExecution": false,
+        "parallelExecution": true,
         "nodesGroup": "abc-{environment}-jobs",
         "startTime": 1697119874795,
         "endTime": 1697121040077,
@@ -228495,8 +228947,6 @@ When you're trying to analyze data, would you appreciate the ability to view det
 
 Learn about how the Hierarchy perspective in the Profile view helps you explore, manage, and compare hierarchy structures for an entity, including hierarchy versions and effective-date views.
 
-> **Note:** This feature is currently available only in AWS environments. Support for GCP and Azure will be available in a future release.
-
 The **Hierarchy** perspective in the **Profile** view lets you review and manage hierarchy data for a selected entity. It brings together the hierarchy instances associated with that entity so you can understand where the entity sits in a structure, review related branches, and manage hierarchy changes in context.
 
 The Hierarchy perspective supports the following actions::
@@ -229742,8 +230192,6 @@ Learn how to add a hierarchy so that you can create a new hierarchy instance for
 
   You must enable hierarchy in the UI configuration. For more information, see [Configure UI settings for the Hierarchy tab](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/hierarchy-perspective/configure-ui-settings-for-the-hierarchy-tab?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
-> **Note:** This feature is currently available only in AWS environments. Support for GCP and Azure will be available in a future release.
-
 Create a new hierarchy when you need to organize an entity within a hierarchy type, prepare a hierarchy for future updates, or create a new versioned hierarchy instance.
 
 
@@ -229798,8 +230246,6 @@ Learn how to add parent and child nodes in a hierarchy so that you can expand an
 
   You must create a hierarchy for a profile. For more information, see [Add a hierarchy in the Profile view](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/add-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
-> **Note:** This feature is currently available only in AWS environments. Support for GCP and Azure will be available in a future release.
-
 Connect another profile to an existing hierarchy as a parent or child node.
 
 
@@ -229849,8 +230295,6 @@ Learn how to import a hierarchy so that you can create a hierarchy structure fro
 
   You must have access to a hierarchy template.
 
-> **Note:** This feature is currently available only in AWS environments. Support for GCP and Azure will be available in a future release.
-
 Use this task when a profile does not yet have a hierarchy and you want to load the hierarchy structure from a supported `.csv` or or **.json** import file.import file.
 
 
@@ -229899,8 +230343,6 @@ Learn how to move or copy hierarchy nodes so that you can reorganize an existing
 - 
 
   You must create a hierarchy structure for a profile. For more information, see [Add a hierarchy in the Profile view](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/add-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
-
-> **Note:** This feature is currently available only in AWS environments. Support for GCP and Azure will be available in a future release.
 
 Relocate a node from one place in the hierarchy to another or reuse the same node in more than one place in the hierarchy. In this workflow, selecting a node also includes all of its descendant nodes.
 
@@ -232179,11 +232621,7 @@ See the following topics in this section for additional reference information on
 
 Learn more about the tenant business configuration settings used to define hierarchy types and control which entity types can use them.
 
-> **Note:** This feature is currently available only in AWS environments. Support for GCP and Azure will be available in a future release.
-
-
-
-Define hierarchy types in tenant business configuration so they are available for use in the tenant. To enable hierarchy for an entity type, add a`hierarchyTypes` section to the tenant business configuration. Each hierarchy type entry can include a URI, a label, and a list of allowed entity types.
+Define hierarchy types in tenant business configuration so they are available for use in the tenant. To enable hierarchy for an entity type, add a `hierarchyTypes` section to the tenant business configuration. Each hierarchy type entry can include a URI, a label, and a list of allowed entity types.
 
 Use `allowedEntityTypes` to restrict a hierarchy type to specific existing entity types. If `allowedEntityTypes` is not provided, the hierarchy type can use entities from any entity type.
 
@@ -232751,8 +233189,6 @@ Based on the above example, only a user who is assigned the `ROLE_A360_STEWARD` 
 
 
 Learn more about the UI configuration settings used to display the Hierarchy tab in the Profile view.
-
-> **Note:** This feature is currently available only in AWS environments. Support for GCP and Azure will be available in a future release.
 
 The Hierarchy tab is configured in the new UI configuration format in `config.json` as a profile screen with `class: "Hierarchy"`. Hierarchy is a profile tab, like Relationships, Interactions, and Activity. To display the Hierarchy tab for an entity type, add a Hierarchy screen object to the top-level `profile` array in the UI configuration. For more information, see [Configure profile screens](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/configure-reltio-ui-with-the-configuration-file/configure-profile-screens?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
