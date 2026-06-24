@@ -1,5 +1,5 @@
 # Reltio Documentation Index
-_Generated: 2026-06-19 02:15 UTC — 3206 topics (3153 unique)_
+_Generated: 2026-06-24 02:15 UTC — 3211 topics (3158 unique)_
 
 This file is a structured navigation index of the Reltio documentation portal.
 It contains the full parent-child hierarchy, topic URLs, keywords, summaries,
@@ -208,6 +208,14 @@ relationships, locate sibling topics, and follow cross-references.
 - **Path:** Reltio Documentation Portal v2 sitemap > Reltio > What’s new and notable? > What's new at a glance
 - **Summary:** Take it from the top with Platform changes. Get the overview here, then see the sub topics in this section to drill down to the details.
 - **See also:** [About roles](https://docs.reltio.com/en/roles/about-roles?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Reltio Address Cleanser update - May and June 2026
+
+- **URL:** https://docs.reltio.com/en/reltio/whats-new-and-notable/whats-new-at-a-glance/platform-changes-at-a-glance/reltio-address-cleanser-update---may-and-june-2026?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Reltio > What’s new and notable? > What's new at a glance > Platform changes at a glance
+- **Summary:** Learn about the updates to the Reltio Address Cleanser in the months of May and June, 2026.
+- **Keywords:** address cleanser update, global data refresh, rescom flag brazil, subbuilding parsing fix, building parsing fix, premise parsing fix, packstation address output, postal code fix, locality parsing fix, thoroughfare normalization
+- **See also:** [Reltio Address Cleanser](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-reference/out-of-the-box-cleanse-functions/address-cleanser?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Reltio Address Cleanser update - April 2026
 
@@ -1748,7 +1756,7 @@ relationships, locate sibling topics, and follow cross-references.
 - **Path:** Reltio Documentation Portal v2 sitemap > Products > AgentFlow
 - **Summary:** Learn about how Reltio AgentFlow enables real-time, AI-driven data stewardship through secure, governed conversations with purpose-built agents.
 - **Keywords:** agentflow overview, agentflow at a glance, conversational data stewardship, ai agents in reltio, mcp server capabilities, secure data interaction, live data workflows, workflow, mcp, governance
-- **See also:** [About roles](https://docs.reltio.com/en/roles/about-roles?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Data Explorer](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-agents-catalog/data-explorer?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Profiler](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-agents-catalog/profiler?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Resolver](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-agents-catalog/resolver?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [AgentFlow™ agents catalog](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-agents-catalog?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [AgentFlow billing and credit usage](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-billing-and-credit-usage?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Use the AgentFlow workspace](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/use-the-agentflow-workspace?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Navigate between AgentFlow and other Reltio applications](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/navigate-between-agentflow-and-other-reltio-applications?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [About roles](https://docs.reltio.com/en/roles/about-roles?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Data Explorer](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-agents-catalog/data-explorer?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Profiler](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-agents-catalog/profiler?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Resolver](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-agents-catalog/resolver?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [AgentFlow™ agents catalog](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-agents-catalog?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [AgentFlow billing and credit usage](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-billing-and-credit-usage?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [graphs and charts](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/charts-in-agentflow?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Use the AgentFlow workspace](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/use-the-agentflow-workspace?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Navigate between AgentFlow and other Reltio applications](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/navigate-between-agentflow-and-other-reltio-applications?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Use the AgentFlow workspace
 
@@ -1756,7 +1764,14 @@ relationships, locate sibling topics, and follow cross-references.
 - **Path:** Reltio Documentation Portal v2 sitemap > Products > AgentFlow > Reltio AgentFlow™ at a glance
 - **Summary:** Learn how to navigate the AgentFlow interface, select agents, and interact with your data through a conversational workspace.
 - **Keywords:** agentflow workspace, how to use agentflow ui, agent selection in reltio, navigate agentflow interface, input field and conversation, agentflow settings, rbac access agentflow, data explorer interface, chat ui, agent
-- **See also:** [AgentFlow capabilities and permissions](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-capabilities-and-permissions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Navigate between AgentFlow and other Reltio applications](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/navigate-between-agentflow-and-other-reltio-applications?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Reltio AgentFlow™ at a glance](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [AgentFlow™ agents catalog](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-agents-catalog?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [AgentFlow capabilities and permissions](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-capabilities-and-permissions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [visualizations (charts and graphs)](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/charts-in-agentflow?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Navigate between AgentFlow and other Reltio applications](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/navigate-between-agentflow-and-other-reltio-applications?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Reltio AgentFlow™ at a glance](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [AgentFlow™ agents catalog](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-agents-catalog?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Charts in AgentFlow
+
+- **URL:** https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/charts-in-agentflow?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Products > AgentFlow > Reltio AgentFlow™ at a glance
+- **Summary:** Learn more about the charts that AgentFlow can display in conversations and example prompts that can produce them.
+- **Keywords:** agentflow graphs, inline graphs in agentflow, agentflow graph types, agentflow graph examples, bar chart in agentflow, line chart in agentflow, donut chart in agentflow, gauge chart in agentflow, graph chart in agentflow, set overlap chart in agentflow
 
 #### Navigate between AgentFlow and other Reltio applications
 
@@ -6841,22 +6856,22 @@ _Topics in this section: Reltio Entity Resolution Deployment options, Reltio Ent
 
 - **URL:** https://docs.reltio.com/en/developer-resources/load-and-export-apis/load-and-export-apis-at-a-glance/export-service-apis/export-tasks-management-api/get-active-tasks?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Load and Export APIs > Load and Export APIs at a glance > Export Service APIs > Export Tasks Management API
-- **Summary:** The API returns the export tasks for all tenants.
-- **Keywords:** return export tasks for all tenants, Return Export Tasks for all Tenants
+- **Summary:** Learn more about how to use the Get Active Tasks API to retrieve export tasks for all tenants.
+- **Keywords:** get active tasks api, retrieve active export tasks, export tasks for all tenants, export task status reltio, scheduled processing paused export tasks, waiting for resource export task, export service task list, max offset pagination export tasks, export task json response, reltio export service api
 
 #### Get Active Tasks for Tenant
 
 - **URL:** https://docs.reltio.com/en/developer-resources/load-and-export-apis/load-and-export-apis-at-a-glance/export-service-apis/export-tasks-management-api/get-active-tasks-for-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Load and Export APIs > Load and Export APIs at a glance > Export Service APIs > Export Tasks Management API
-- **Summary:** The API returns export tasks for the specified tenant.
-- **Keywords:** return export tasks for the specified tenant, get active task for tenant, Return Export Tasks for the Specified Tenant, Get Active Task for Tenant
+- **Summary:** Learn more about how to use the Get Active Tasks for Tenant API to retrieve export tasks for a specified tenant.
+- **Keywords:** get active tasks for tenant api, retrieve export tasks by tenant, tenant-specific export task status, export tasks admin tenant admin, scheduled processing paused export tasks, waiting for resource tenant export, export service tenant task list, max offset pagination tenant tasks, export task json response tenant, reltio export service tenant api
 
 #### Get Tasks History
 
 - **URL:** https://docs.reltio.com/en/developer-resources/load-and-export-apis/load-and-export-apis-at-a-glance/export-service-apis/export-tasks-management-api/get-tasks-history?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Load and Export APIs > Load and Export APIs at a glance > Export Service APIs > Export Tasks Management API
-- **Summary:** The API returns finished export tasks for all tenants.
-- **Keywords:** return export tasks for all tenants
+- **Summary:** Learn more about how to use the Get Tasks History API to retrieve finished export tasks for all tenants.
+- **Keywords:** get tasks history api, retrieve finished export tasks, completed canceled failed export tasks, export task history all tenants, administrator export task history, export tasks history endpoint, max offset pagination task history, export task history json response, export urls completed task, reltio export service history api
 
 #### Get Task by ID
 
@@ -12663,6 +12678,14 @@ _Topics in this section: Hub at a glance, Profile Stats dashboard at a glance, D
 - **Path:** Reltio Documentation Portal v2 sitemap > Applications > RDM > RDM at a glance > RDM operation > RDM Autopilot
 - **Summary:** Learn how to configure and enable RDM Autopilot so that you can automate the resolution of unmapped values using defined thresholds, modes, and rules.
 - **Keywords:** configure RDM Autopilot, enable Autopilot RDM, Autopilot configuration, Autopilot setup Reltio, Autopilot thresholds configuration, Autopilot frequency rules, Autopilot operating mode, Autopilot preview mode, Autopilot active mode, Autopilot enablement
+
+#### Best practices for RDM Autopilot
+
+- **URL:** https://docs.reltio.com/en/applications/rdm/rdm-at-a-glance/rdm-operation/rdm-autopilot/best-practices-for-rdm-autopilot?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Applications > RDM > RDM at a glance > RDM operation > RDM Autopilot
+- **Summary:** Learn more about the recommended practices for configuring and operating RDM Autopilot to ensure accurate, efficient evaluation of unmapped values.
+- **Keywords:** RDM Autopilot best practices, Autopilot Preview and Active mode, Blocked Values and Lookup Type Overrides, Autopilot misspelled value handling, Autopilot DCR workflow
+- **See also:** [RDM Autopilot](https://docs.reltio.com/en/applications/rdm/rdm-at-a-glance/rdm-operation/rdm-autopilot?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [configuration options](https://docs.reltio.com/en/applications/rdm/rdm-at-a-glance/rdm-operation/rdm-autopilot/configure-and-enable-rdm-autopilot?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### RDM reference
 
@@ -19990,7 +20013,7 @@ _Topics in this section: Reltio Ontology Builder, Data modeling at a glance_
 - **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Configure the Reltio UI > UI configuration at a glance
 - **Summary:** Learn how Reltio supports internationalization and localization across the UI, metadata, and services.
 - **Keywords:** Internationalization, Localization, Globalization, internationalization, localization, globalization
-- **See also:** [Setting Up Localization](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/internationalization-and-localization/setting-up-localization?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Translator's Guide](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/internationalization-and-localization/translators-guide?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Localization Configuration](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/internationalization-and-localization/localization-configuration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Internationalization API](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/internationalization-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [Reltio Documentation Portal](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/internationalization-and-localization/localization-disclaimer?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Setting Up Localization](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/internationalization-and-localization/setting-up-localization?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Translator's Guide](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/internationalization-and-localization/translators-guide?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Localization Configuration](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/internationalization-and-localization/localization-configuration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Internationalization API](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/internationalization-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [View documentation in your preferred language](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/internationalization-and-localization/view-documentation-in-your-preferred-language?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Setting Up Localization
 
@@ -20014,6 +20037,20 @@ _Topics in this section: Reltio Ontology Builder, Data modeling at a glance_
 - **Summary:** The procedure to configure custom localizations in your Reltio Context Intelligence Platform environment is simple.
 - **Keywords:** Localization Configuration, localization configuration, localization, configuring localization
 - **See also:** [Internationalization API](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/internationalization-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Setting Up Localization](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/internationalization-and-localization/setting-up-localization?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### View documentation in your preferred language
+
+- **URL:** https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/internationalization-and-localization/view-documentation-in-your-preferred-language?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Configure the Reltio UI > UI configuration at a glance > Internationalization and Localization
+- **Summary:** Learn how to use the language selector in the Reltio Documentation Portal to view documentation in your preferred language.
+- **Keywords:** use the language selector, change documentation language, switch portal language, select a documentation language, language selector in docs portal, translate documentation page, documentation language settings, language selector, translation, localization
+- **See also:** [Localization Disclaimer](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/internationalization-and-localization/localization-disclaimer?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Localization Disclaimer
+
+- **URL:** https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/internationalization-and-localization/localization-disclaimer?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Configure the Reltio UI > UI configuration at a glance > Internationalization and Localization
+- **Summary:** Learn about the limitations of AI-translated documentation
 
 ### Load and export data
 
