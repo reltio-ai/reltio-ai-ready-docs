@@ -1,5 +1,5 @@
 # Reltio Documentation Index
-_Generated: 2026-06-26 02:14 UTC — 3211 topics (3158 unique)_
+_Generated: 2026-07-01 02:15 UTC — 3221 topics (3168 unique)_
 
 This file is a structured navigation index of the Reltio documentation portal.
 It contains the full parent-child hierarchy, topic URLs, keywords, summaries,
@@ -2402,7 +2402,7 @@ relationships, locate sibling topics, and follow cross-references.
 - **URL:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference
 - **Summary:** Learn more about Reltio Multidomain MDM.
-- **See also:** [Reltio velocity packs](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/tenants-at-a-glance/tenant-architecture/reltio-velocity-packs?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Reltio Entity Resolution reference](https://docs.reltio.com/en/products/reltio-entity-resolution/reltio-entity-resolution-at-a-glance/reltio-entity-resolution-reference?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [Reltio velocity packs](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/tenants-at-a-glance/tenant-architecture/reltio-velocity-packs?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Reltio Entity Resolution reference](https://docs.reltio.com/en/products/reltio-entity-resolution/reltio-entity-resolution-at-a-glance/reltio-entity-resolution-reference?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [pretrained Flexible Entity Resolution Network (FERN) models](https://docs.reltio.com/en/applications/console/configuration-applications/ai-powered-flexible-entity-resolution-network-fern-model-based-matching-at-a-glance/fern-based-matching/available-pretrained-fern-models?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Reltio for B2B Data Domains velocity pack
 
@@ -5274,6 +5274,14 @@ _Topics in this section: Reltio Entity Resolution Deployment options, Reltio Ent
 - **Keywords:** entity attribute, cumulative, Entity Attribute, Cumulative
 - **See also:** [Authentication API](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/authentication-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [About Data Change Request](https://docs.reltio.com/en/objectives/manage-workflow-tasks/workflow-management-at-a-glance/workflow-management-operation/about-data-change-request?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
+#### Entity verification
+
+- **URL:** https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/entities-api/update-entities/entity-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Entity Management APIs > Entity Management APIs at a glance > Entities API > Update entities
+- **Summary:** Learn more about how to verify mapped email and phone attributes on an entity and persist the results.
+- **Keywords:** entity verification api, verify email and phone attributes, persist verification results, force verify entity attributes, entity verification max verification age, emailverifier client filter, phoneverifier client filter, attribute verification verify endpoint
+- **See also:** [L3 configuration](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-operation/email-and-phone-verification/configure-email-and-phone-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Get Entity](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/entities-api/get-entity?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
 #### Managing Entity Roles
 
 - **URL:** https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/entities-api/update-entities/managing-entity-roles?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
@@ -7632,6 +7640,27 @@ _Topics in this section: Reltio Entity Resolution Deployment options, Reltio Ent
 - **Summary:** Learn more about the Segmentation Api to get a history of sync logs.
 - **See also:** [Authentication API](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/authentication-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
+#### Batch attribute verification APIs
+
+- **URL:** https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/batch-attribute-verification-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Data Integration APIs > Data Integration APIs at a glance
+- **Summary:** Learn about the Batch APIs to verify email addresses and phone numbers in batch.
+- **Keywords:** attribute verification api, email batch verification, phone batch verification, bulk validation api, contact data cleansing, real-time contact verification
+- **See also:** [Email batch verification API](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/batch-attribute-verification-apis/email-batch-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Phone batch verification API](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/batch-attribute-verification-apis/phone-batch-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Email batch verification
+
+- **URL:** https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/batch-attribute-verification-apis/email-batch-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Data Integration APIs > Data Integration APIs at a glance > Batch attribute verification APIs
+- **Summary:** Learn more about how to verify multiple email addresses in a single request.
+
+#### Phone batch verification
+
+- **URL:** https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/batch-attribute-verification-apis/phone-batch-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Data Integration APIs > Data Integration APIs at a glance > Batch attribute verification APIs
+- **Summary:** Learn more about how to verify multiple phone numbers in a single request using real-time validation.
+- **Keywords:** phone batch verification api, verify phone numbers in bulk, real time phone validation, bulk phone number verification, reltio phone api, loqate phone verification, validate mobile and landline numbers, phone validation rest api, verify phone country prefix, check phone network name
+
 #### Reltio Data Pipeline for Snowflake APIs
 
 - **URL:** https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/reltio-data-pipeline-for-snowflake-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
@@ -7656,8 +7685,9 @@ _Topics in this section: Reltio Entity Resolution Deployment options, Reltio Ent
 
 - **URL:** https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/reltio-data-pipeline-for-snowflake-apis/event-monitoring-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Data Integration APIs > Data Integration APIs at a glance > Reltio Data Pipeline for Snowflake APIs
-- **Summary:** Learn about monitoring events using the Event Monitoring API.
-- **Keywords:** Get All Pipeline API Call, get all pipeline api call
+- **Summary:** Learn more about monitoring events using the Event Monitoring API.
+- **Keywords:** event monitoring api, reltio data pipeline event monitoring, snowflake event monitoring, monitor events snowflake, event transfer monitoring, detailed event monitoring, CRUD events monitoring, match events monitoring, ACTIVITY_CREATED_UPDATED events, total_events_count
+- **See also:** [CRUD Events](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/events-api/crud-events?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Match Events](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/events-api/match-events?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Tenant Queue Status API
 
@@ -9564,6 +9594,12 @@ _Topics in this section: Reltio Entity Resolution Deployment options, Reltio Ent
 - **Keywords:** distributed mode tasks, parallel execution of tasks, Distributed mode, task execution in parallel, Distributed mode, task partitioning
 - **See also:** [Export entities](https://docs.reltio.com/en/objectives/load-and-export-data/data-exporting-at-a-glance/data-exporting-operation/export-data-using-reltio-export-service/export-entities?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
+#### Email verification task
+
+- **URL:** https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/email-verification-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > System Administration APIs > System Administration APIs at a glance > Tasks API
+- **Summary:** Learn more about how to start an asynchronous task that verifies entity email attributes using the configured verifier.
+
 #### Entity crosswalks consistency task
 
 - **URL:** https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/entity-crosswalks-consistency-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
@@ -9760,6 +9796,13 @@ _Topics in this section: Reltio Entity Resolution Deployment options, Reltio Ent
 - **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > System Administration APIs > System Administration APIs at a glance > Tasks API
 - **Summary:** Learn how to pause a task on a specific tenant based on the Tenant ID.
 - **Keywords:** pause task with the given ID for the specified tenant, task state stored to Cassandra
+
+#### Phone verification task
+
+- **URL:** https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/phone-verification-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > System Administration APIs > System Administration APIs at a glance > Tasks API
+- **Summary:** Learn more about how to start an asynchronous task that verifies entity phone attributes using the configured verification provider.
+- **Keywords:** phone verification task api, asynchronous phone verification, phone verify task, verify phone attributes task, phone verification batch task, phone verification by entity type, phone verification by uris, phone verification force verify
 
 #### Potential Matches Cassandra Es Consistency Task
 
@@ -11832,7 +11875,7 @@ _Topics in this section: Hub at a glance, Profile Stats dashboard at a glance, D
 - **URL:** https://docs.reltio.com/en/applications/console/configuration-applications/ai-powered-flexible-entity-resolution-network-fern-model-based-matching-at-a-glance/fern-based-matching?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Applications > Console > Configuration applications > AI-powered Flexible Entity Resolution Network (FERN) model-based matching at a glance
 - **Summary:** Learn about FERN-based matching
-- **See also:** [Individual entity type for B2C Data Domains](https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-b2c-data-domains-velocity-pack/data-model-for-b2c-data-domains/entity-types-for-b2c-data-domains/individual-entity-type-for-b2c-data-domains?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Organization entity type for B2B Data Domains](https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-b2b-data-domains-velocity-pack/data-model-for-b2b-data-domains/entity-types-for-b2b-data-domains/organization-entity-type-for-b2b-data-domains?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Enable a pretrained FERN model](https://docs.reltio.com/en/applications/console/configuration-applications/ai-powered-flexible-entity-resolution-network-fern-model-based-matching-at-a-glance/fern-based-matching/use-a-pretrained-fern-model/enable-a-pretrained-fern-model?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [Individual entity type for B2C Data Domains](https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-b2c-data-domains-velocity-pack/data-model-for-b2c-data-domains/entity-types-for-b2c-data-domains/individual-entity-type-for-b2c-data-domains?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Organization entity type for B2B Data Domains](https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-b2b-data-domains-velocity-pack/data-model-for-b2b-data-domains/entity-types-for-b2b-data-domains/organization-entity-type-for-b2b-data-domains?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Reltio Multidomain Master Data Management (MDM) velocity packs](https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Enable a pretrained FERN model](https://docs.reltio.com/en/applications/console/configuration-applications/ai-powered-flexible-entity-resolution-network-fern-model-based-matching-at-a-glance/fern-based-matching/use-a-pretrained-fern-model/enable-a-pretrained-fern-model?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Use a pretrained FERN model
 
@@ -11860,7 +11903,7 @@ _Topics in this section: Hub at a glance, Profile Stats dashboard at a glance, D
 - **URL:** https://docs.reltio.com/en/applications/console/configuration-applications/ai-powered-flexible-entity-resolution-network-fern-model-based-matching-at-a-glance/fern-based-matching/available-pretrained-fern-models?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Applications > Console > Configuration applications > AI-powered Flexible Entity Resolution Network (FERN) model-based matching at a glance > FERN-based matching
 - **Summary:** Learn about the entity types for which you can use a pretrained machine learning model for AI-powered matching
-- **See also:** [Enable a pretrained FERN model](https://docs.reltio.com/en/applications/console/configuration-applications/ai-powered-flexible-entity-resolution-network-fern-model-based-matching-at-a-glance/fern-based-matching/use-a-pretrained-fern-model/enable-a-pretrained-fern-model?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [Reltio Multidomain Master Data Management (MDM) velocity packs](https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Enable a pretrained FERN model](https://docs.reltio.com/en/applications/console/configuration-applications/ai-powered-flexible-entity-resolution-network-fern-model-based-matching-at-a-glance/fern-based-matching/use-a-pretrained-fern-model/enable-a-pretrained-fern-model?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Pretrained FERN model for the Individual entity type
 
@@ -17558,7 +17601,7 @@ _Topics in this section: Data integrations at a glance, Application Integration 
 - **URL:** https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/migrate-snowflake-pipeline-from-snowflake-staging-pipeline-to-snowflake-direct-connect?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Data Pipelines at a glance > Reltio Data Pipeline for Snowflake at a glance > Reltio Data Pipeline for Snowflake setup
 - **Summary:** Learn how to transition your existing Snowflake pipeline using external stage and Snowpipe ingestion to the internal stage–based architecture.
-- **See also:** [Enter a Support case](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Data Pipelines at a glance](https://docs.reltio.com/en/applications/console/tenant-management-applications/data-sharing-at-a-glance/data-pipelines-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [Reltio Support](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Data Pipelines at a glance](https://docs.reltio.com/en/applications/console/tenant-management-applications/data-sharing-at-a-glance/data-pipelines-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Snowflake warehouse size guide
 
@@ -18157,13 +18200,20 @@ _Topics in this section: Data integrations at a glance, Application Integration 
 - **Summary:** Learn how Reltio structures its catalog, schemas, and tables to support Delta Sharing with Databricks.
 - **Keywords:** databricks delta sharing schema, delta sharing table types, dynamic entity tables, flattened schema for delta sharing, databricks integration tables, schema structure for data sharing, landing tables for reltio databricks, json parsed tables, delta lake schema overview, data share schema table naming
 
-#### Monitoring data sharing
+#### Monitoring data share
 
-- **URL:** https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing-at-a-glance/monitoring-data-sharing?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **URL:** https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing-at-a-glance/monitoring-data-share?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Reltio Data Sharing at a glance
-- **Summary:** Learn how to monitor Reltio generated data sharing events through the external queue.
-- **Keywords:** monitor data sharing in reltio, track data pipeline queue activity, monitor external queue for data warehouse, check data sharing event progress, review reltio external queue status, data sharing monitoring, external queue, data pipeline, cloud data warehouse
-- **See also:** [Monitoring the External Queue](https://docs.reltio.com/en/applications/console/tenant-management-applications/tenant-management-at-a-glance/queues-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **Summary:** Learn about the data volume and messages processed for your data shares.
+- **Keywords:** monitor data sharing in reltio, data volume processed per data share, messages sent across data shares, track data share activity, confirm data sharing is working, data sharing monitoring, data volume, messages sent, data share
+- **See also:** [view data sharing activity](https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing-at-a-glance/monitoring-data-share/view-data-sharing-activity?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### View data sharing activity
+
+- **URL:** https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing-at-a-glance/monitoring-data-share/view-data-sharing-activity?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Reltio Data Sharing at a glance > Monitoring data share
+- **Summary:** Learn how to view the data volume processed and messages sent for a data share in Reltio Console.
+- **Keywords:** view data sharing activity in reltio, open data share monitoring page, check data volume processed for data share, view messages sent across data shares, monitor data share in console, set time range for monitoring, data sharing monitoring, data volume, messages sent, time range
 
 #### Zero Copy Integration at a glance
 
@@ -20647,6 +20697,30 @@ _Topics in this section: Data loading at a glance, Data exporting at a glance_
 - **Summary:** Learn how to use Validation APIs to execute Data Validation Functions (DVFs) before data is ingested into Reltio.
 - **Keywords:** validate data before ingestion reltio, pre ingestion dvf validation, external data quality validation, run dvf before loading data, prevent invalid data ingestion, data quality, dvf, validation api
 - **See also:** [Validation APIs](https://docs.reltio.com/en/developer-resources/data-validation-apis/data-validation-apis-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Email and phone verification
+
+- **URL:** https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-operation/email-and-phone-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Cleanse and verify data > Data cleansing at a glance > Data cleansing operation
+- **Summary:** Learn about email and phone verification in Reltio, including entity, batch, and task-based verification modes.
+- **Keywords:** email verification, phone verification, Loqate, real-time verification, batch verification
+- **See also:** [Entity verification](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/entities-api/update-entities/entity-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Email batch verification](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/batch-attribute-verification-apis/email-batch-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Phone batch verification](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/batch-attribute-verification-apis/phone-batch-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Email verification task](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/email-verification-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Phone verification task](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/phone-verification-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Configure email and phone verification
+
+- **URL:** https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-operation/email-and-phone-verification/configure-email-and-phone-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Cleanse and verify data > Data cleansing at a glance > Data cleansing operation > Email and phone verification
+- **Summary:** Learn how to configure email and phone verification in your tenant.
+- **Keywords:** email verification, phone verification, Loqate configuration, attributeVerificationConfig
+- **See also:** [Tenant Configuration at a glance](https://docs.reltio.com/en/applications/console/tenant-management-applications/tenant-management-at-a-glance/tenant-configuration-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [GET Configuration](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/configuration-api/get-configuration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Email batch verification](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/batch-attribute-verification-apis/email-batch-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Phone batch verification](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/batch-attribute-verification-apis/phone-batch-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Save the updated configuration](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/configuration-api/set-configuration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Entity Verification API](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/entities-api/update-entities/entity-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Email Verification Task](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/email-verification-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Verify email and phone attributes in the Profile view
+
+- **URL:** https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-operation/email-and-phone-verification/verify-email-and-phone-attributes-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Cleanse and verify data > Data cleansing at a glance > Data cleansing operation > Email and phone verification
+- **Summary:** Learn how to verify email addresses and phone numbers directly from the Profile view in Reltio Hub.
+- **Keywords:** verify email addresses in reltio hub profile view, verify phone numbers in reltio profile, how to run email verification in reltio, check email and phone verification status reltio, real-time verification request reltio profile, email phone verification status icons reltio, verify all email and phone numbers reltio hub, email verification, phone verification, verification status
+- **See also:** [Configure email and phone verification](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-operation/email-and-phone-verification/configure-email-and-phone-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Data cleansing reference
 
