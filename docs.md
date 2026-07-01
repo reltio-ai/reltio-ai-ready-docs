@@ -1,8 +1,8 @@
 # Reltio Documentation
 
-_Generated: 2026-06-26 02:14 UTC_
+_Generated: 2026-07-01 02:14 UTC_
 
-_Topics: 3334_
+_Topics: 3345_
 
 ---
 
@@ -8763,9 +8763,6 @@ We build on each GA release with a steady stream of bi-weekly updates that deliv
 
 | Release Name | Stage | Tenant Type | Release Date |
 | --- | --- | --- | --- |
-| 2026.1.5.0 | 1 | Development (DEV) | June 26, 2026 |
-| 2026.1.5.0 | 2 | Test (TEST) | June 26, 2026 |
-| 2026.1.5.0 | 3 | Production (PRD) | July 03, 2026 |
 | 2026.1.6.0 | 1 | Development (DEV) | July 10, 2026 |
 | 2026.1.6.0 | 2 | Test (TEST) | July 10, 2026 |
 | 2026.1.6.0 | 3 | Production (PRD) | July 17, 2026 |
@@ -15109,6 +15106,66 @@ The Reltio Documentation Portal now supports machine-translated content in 19 la
 Translated content may contain inaccuracies. The English (US) version remains the authoritative source for technical accuracy. The following items are not translated: product names, company names, roles, branded terms, code phrases, code blocks, images, videos, GIFs, and other non-text media.
 
 For more information, see [View documentation in your preferred language](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/internationalization-and-localization/view-documentation-in-your-preferred-language?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Localization Disclaimer](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/internationalization-and-localization/localization-disclaimer?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+
+
+---
+
+# 2026.1.5.0 RN | 3-July-2026
+
+Learn about the new features and enhancements introduced in this 2026.1.5.0 release.
+
+**Deployment dates**
+
+| Stage | Tenant type | When |
+| --- | --- | --- |
+| 1 | Development (DEV) | June 26, 2026 |
+| 2 | Test (TEST) | June 26, 2026 |
+| 3 | Production (PRD) | July 3, 2026 |
+
+## D&B Data Blocks UI Buttons Role-Based Visibility
+
+The D&B Data Blocks UI buttons (such as **Get Match**) in the profile side panel now enforce the `canRead` role configuration, consistent with all other UI panels. A legacy exception for the D&B panel ID caused these buttons to be visible to all users regardless of their assigned roles.
+
+The buttons are now visible only to users who hold the role specified in the `canRead` field of the D&B panel UI configuration (typically `ROLE_DNB_CONNECTOR`), or who have the `ROLE_UI_ALL` or `ROLE_UI_ALL_READONLY` assigned.
+
+No configuration changes are required. Review your tenant's D&B panel UI configuration to confirm the `canRead` roles are set correctly for all users who need access to these buttons.
+
+For more information, see [Configure on demand UI buttons for Reltio Enrichment with D&B Data Blocks](https://docs.reltio.com/en/applications/data-integrations/data-enrichment-integrations-at-a-glance/reltio-enrichment-with-db-data-blocks-at-a-glance/get-started-with-reltio-enrichment-with-db-data-blocks/install-and-configure-rih-recipes-for-reltio-enrichment-with-db-data-blocks/mode-specific-configuration-for-reltio-enrichment-with-db-data-blocks/prepare-the-configuration-of-on-demand-ui-buttons-for-reltio-enrichment-with-db-data-blocks/configure-on-demand-ui-buttons-for-reltio-enrichment-with-db-data-blocks?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Use on-demand UI buttons effectively](https://docs.reltio.com/en/applications/data-integrations/data-enrichment-integrations-at-a-glance/reltio-enrichment-with-db-data-blocks-at-a-glance/architecture-and-design-considerations-for-db-data-blocks-integration/use-on-demand-ui-buttons-effectively?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+For more information, see
+
+## Find entity types faster in Search
+
+The **Entity types** facet on the Search page now has a search field, allowing you to quickly search and find the required entity types without scanning the full list manually. This is especially helpful in tenants with many configured entity types, long labels, or similar entity type names.
+
+The entity type search field is available in **Search > Quick Filters > Entity types**.
+
+For more information, see [Using Quick Filters](https://docs.reltio.com/en/applications/search/search-at-a-glance/search-operation/using-quick-filters?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+## View relevant entity type tabs for your search results
+
+When you run a search in **Hub**, the page now displays only the entity type tabs that are relevant to your search results. This helps you review results more quickly in tenants with many entity types, as tabs that do not apply to your search are hidden.
+
+This enhancement is available in **Hub > Search**.
+
+For more information, see [Using Quick Filters](https://docs.reltio.com/en/applications/search/search-at-a-glance/search-operation/using-quick-filters?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+## Real time Email and Phone Verification
+
+Reltio real-time email and phone verification lets you verify email addresses and phone numbers as you capture them or in batch for existing records.
+
+You can write verification results directly to the record or return them in the API response without storing them. Use this capability to validate contact data during onboarding, bulk data cleanup, and external system workflows.
+
+For more information, see [Email and phone verification](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-operation/email-and-phone-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+## Monitor your Data Shares
+
+Monitoring data share is now available for each of your data shares in the **Data Sharing** application. For a selected data share, it shows the volume of data processed, and the total messages processed across all the outbound data shares and data pipelines in your Reltio tenant. Monitoring gives you a direct view of the health of the data share and the rate at which data is shared with your cloud data warehouse.
+
+Available in **Console > Data Sharing > Data Share**. Select **Monitor** for a data share to open its Monitoring page.
+
+For more information, see [Monitoring data share](https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing-at-a-glance/monitoring-data-share?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [View data sharing activity](https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing-at-a-glance/monitoring-data-share/view-data-sharing-activity?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
@@ -26023,6 +26080,20 @@ To continue, see [Step 3: Test & publish the agent](#concept-9378/title-2074)
    - If a violation is detected, the request is **auto-blocked**. You receive a notification with the scan result. Revise the system prompt and submit again when ready.
 6. If this agent already has a published version, that version remains live in **Discover Agents** while the new version is under review.
 
+## View agent history
+
+After you submit a publish request, you can review the audit logs in Agent Builder to track the history of changes made to an agent. The agent history displays events such as approvals or rejections, along with key details such as who performed the action, when it occurred, and the resulting status.
+
+To view the agent history, perform the following steps:
+
+1. Go to **AgentFlow** > **Agent Builder**.
+2. Select the required agent.
+3. Select **See History**.
+
+*Image: i-agent-history.png*
+
+The history panel displays events in chronological order for the selected agent version.
+
 ## Update a published agent
 
 Use this path when you want to revise an agent that is already published. An Agent Author (for their own agents) or an Agent Admin can initiate this. The published version remains live and available to users throughout the editing and review process.
@@ -26979,6 +27050,31 @@ Each velocity pack includes an industry-specific data model, with the entity typ
   Connectors to common platforms, such as Salesforce
 
 If you have Reltio Entity Resolution implemented on your tenant, see topic [Reltio Entity Resolution reference](https://docs.reltio.com/en/products/reltio-entity-resolution/reltio-entity-resolution-at-a-glance/reltio-entity-resolution-reference?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) for details on the predefined entity types that come with that Reltio Context Intelligence Platform product line.
+
+## FERN matching support
+
+Some entity types in these velocity packs support [pretrained Flexible Entity Resolution Network (FERN) models](https://docs.reltio.com/en/applications/console/configuration-applications/ai-powered-flexible-entity-resolution-network-fern-model-based-matching-at-a-glance/fern-based-matching/available-pretrained-fern-models?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). The following table lists those entity types and identifies whether the Individual or Organization model applies.
+
+| Entity type | Velocity packs | FERN model |
+| --- | --- | --- |
+| Person | Healthcare, Life Sciences | Individual |
+| Practitioner | Healthcare | Individual |
+| HCP | Life Sciences | Individual |
+| Individual | Financial Services, Insurance, Supplier | Individual |
+| Financial Professional | Financial Services | Individual |
+| Contact | B2B, B2C | Individual |
+| Broker / Agent | Insurance | Individual |
+| Provider Organization | Healthcare | Organization |
+| HCO | Life Sciences | Organization |
+| GPO | Life Sciences | Organization |
+| Payer | Healthcare | Organization |
+| Organization | Financial Services, Insurance, B2B, B2C, Supplier | Organization |
+
+
+
+
+
+> **Note:** FERN model support is not applicable to the Location, Household, and Product entity types, or to the Policy, Claim, and Asset entity types.
 
 
 
@@ -102464,61 +102560,128 @@ once the processing is completed.
 
 **Source:** https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/reltio-data-pipeline-for-snowflake-apis/event-monitoring-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
-**Keywords:** Get All Pipeline API Call, get all pipeline api call
+**Keywords:** event monitoring api, reltio data pipeline event monitoring, snowflake event monitoring, monitor events snowflake, event transfer monitoring, detailed event monitoring, CRUD events monitoring, match events monitoring, ACTIVITY_CREATED_UPDATED events, total_events_count, total_incomplete_events_count, event monitoring query parameters, event monitoring response fields, eventId eventType eventState, objectUri timestamp checksum, platform_checksum data_pipeline_checksum, DATAPIPELINE_PROCESSED, event monitoring api reltio snowflake, reltio snowflake pipeline events, validate event details snowflake
 
 
-Learn about monitoring events using the Event Monitoring API.
+Learn more about monitoring events using the Event Monitoring API.
 
-The `Event Monitoring API API` determines how many events were transferred within a certain interval of time. The API can facilitate a query for any period up to 1 day for the past 30 days. The `Event Monitoring API API` specifies details, such as time and event IDs to track back to your cloud storage and Snowflake environments. With this information, you can understand where in the data transfer process your event is.
+Use the `Event Monitoring API` to determine how many events the Reltio Data Pipeline transferred to your Snowflake environment within a specific interval of time. `Event Monitoring API` supports queries for any period up to one day within the past 30 days. Each response includes event IDs and timestamps that you can use to trace individual events across your Reltio tenant, cloud storage, and Snowflake environment, so you can identify exactly where in the transfer process an event succeeded, stalled, or failed to load into Snowflake.
 
-> **Note:** To validate complete event details, use the timestamp in the event ID and the object URI to match in Snowflake.
+## HTTP method and endpoint
 
-Request
+Use the following HTTP method and endpoint path to submit the event monitoring request:
 
 ```
-GET {{hub-url}}/api/tenants/{tenantId}/monitoring/_eventMonitoring
+GET {hub-url}/api/tenants/{tenantId}/monitoring/_eventMonitoring
 ```
 
-Where hub-url is your tenant environment-data-pipeline-hub.reltio.com.
+The following table describes the endpoint path parameters.
 
-**Parameters**
-
-| Parameters | Required | Default | Details |
+| Parameter | Type | Required | Description |
 | --- | --- | --- | --- |
-| `from` | No | 1 day | The `timeinterval` is in milliseconds (UNIX Epoch). Use to check consistency. |
-| `to` | No | N/A | The `timeinterval` is in milliseconds. (UNIX Epoch). Use to check consistency. |
-| `detailed` | No | false | Select **Yes** for more event-specific information for complete and incomplete events. |
-| `max` | No | 10 | The limit of incomplete events returned in the response. |
+| `hub-url` | String | Yes | The data pipeline hub URL for your tenant environment. Example: `environment-data-pipeline-hub.reltio.com`. |
+| `tenantId` | String | Yes | The unique identifier of the tenant. Specifies the tenant context for the request. Example: `ce5627DYnQ6abcD`. |
 
-Response
+## Query parameters
 
-Returns the event transferred for a tenant ID.
+The following table describes the supported query parameters.
 
-Sample Request
+| Parameter | Type | Required | Description | Accepted values / Default |
+| --- | --- | --- | --- | --- |
+| `from` | Number | No | Start of the monitoring interval in milliseconds (UNIX Epoch). Use to define the earliest point in the time range for which the API returns event transfer data. | Any valid epoch timestamp.   Default: 1 day before current time. |
+| `to` | Number | No | End of the monitoring interval in milliseconds (UNIX Epoch). Use to define the latest point in the time range for which the API returns event transfer data. | Any valid epoch timestamp.   Default: Current time. |
+| `detailed` | Boolean | No | When set to `Yes`, returns detailed information for each event transferred within the specified time frame. The detailed response includes individual event records sourced from [CRUD Events](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/events-api/crud-events?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Match Events](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/events-api/match-events?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) only. If the specified time frame contains only `ACTIVITY_CREATED_UPDATED` events, individual event records are not returned. The response includes only `total_events_count` and `total_incomplete_events_count`. | `Yes` or `No`.   Default: `No`. |
+| `max` | Number | No | Maximum number of incomplete events returned in the response. | Any positive integer.   Default: `10`. |
+
+## Request headers
+
+The following request headers must be included. 
+
+| Header | Value | Required |
+| --- | --- | --- |
+| `Authorization` | `Bearer <access_token>` | Yes |
+| `Content-Type` | `application/json` | Yes |
+
+## Example request
+
+The following example shows a complete request that retrieves detailed event information for a specific time range.
 
 ```
-GET {{test-usg-data-pipeline-hub.reltio.com}}/status/tenant/{tenantId}/_eventMonitoring
+GET https://environment-data-pipeline-hub.reltio.com/api/tenants/ce5627DYnQ6abcD/monitoring/_eventMonitoring?from=1778800000000&to=1778813200000&detailed=Yes
+
 ```
 
-Sample Response
+## Response body
+
+The response returns the events transferred for a tenant ID. The structure of the response varies based on the `detailed` parameter and the event types present in the specified time frame.
+
+The following table describes the fields returned in the response body. 
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `total_events_count` | Number | Total number of events transferred within the specified time interval. |
+| `total_incomplete_events_count` | Number | Total number of incomplete events within the specified time interval. |
+| `events` | Array | List of individual event objects. Returned only when `detailed=Yes` and the time frame contains CRUD Events or Match Events. Not returned when only `ACTIVITY_CREATED_UPDATED` events are present. |
+| `events[].eventId` | String | Unique identifier for the event. |
+| `events[].eventType` | String | Type of the event. Example: `ENTITY_CHANGED`. |
+| `events[].eventState` | String | Processing state of the event. Example: `DATAPIPELINE_PROCESSED`. |
+| `events[].objectUri` | String | URI of the entity or object associated with the event. |
+| `events[].timestamp` | Number | Time the event was recorded, in epoch milliseconds. |
+| `events[].checksum` | Number | Combined checksum of the event. Use this value to verify data integrity across systems. |
+| `events[].platform_checksum` | Number | Checksum value assigned by the Reltio platform. |
+| `events[].data_pipeline_checksum` | Number | Checksum value assigned by the data pipeline. |
+
+## Example responses
+
+The following examples show the two response structures returned when `detailed=Yes`, depending on the event types present in the specified time frame.
+
+**Response when CRUD Events or Match Events are present**
+
+When `detailed=Yes` and the time frame contains CRUD Events or Match Events, the response includes an `events` array with individual event records.
 
 ```
 {
-	"eventId" : "1672862520597_38JUqe0",
-	"eventType" : "C1",
-	objectUri" : "pLPL2hS",
-	"timestamp" : 1672862528181,
-	"checksum" : 100667391,
-	"platform_checksum" : 4095,
-	"data_pipeline_checksum" : 100663376
-}
-{
-    "total_events_count": 6,
-    "total_incomplete_events_count": 0
+  "total_events_count": 4,
+  "total_incomplete_events_count": 0,
+  "events": [
+    {
+      "eventId": "EVENT_1",
+      "eventType": "ENTITY_CHANGED",
+      "eventState": "DATAPIPELINE_PROCESSED",
+      "objectUri": "OBJECT_URI",
+      "timestamp": 1778804661713,
+      "checksum": 1979971583,
+      "platform_checksum": 260095,
+      "data_pipeline_checksum": 1979711488
+    },
+    {
+      "eventId": "EVENT_2",
+      "eventType": "ENTITY_CHANGED",
+      "eventState": "DATAPIPELINE_PROCESSED",
+      "objectUri": "OBJECT_URI",
+      "timestamp": 1778813105733,
+      "checksum": 1979971583,
+      "platform_checksum": 260095,
+      "data_pipeline_checksum": 1979711488
+    }
+  ]
 }
 ```
 
-To validate the complete event details, match the timestamp in the event ID and the object URI with your Snowflake UI.*Image: snowflake_eventmonapi.png*
+**Response when only ACTIVITY_CREATED_UPDATED events are present**
+
+When `detailed=Yes` and the time frame contains only `ACTIVITY_CREATED_UPDATED` events, the `events` array is not included. The response returns only the event counts.
+
+```
+{
+  "total_events_count": 4,
+  "total_incomplete_events_count": 0
+}
+```
+
+To validate complete event details, query the `entities` table in your Snowflake worksheet using the `objectUri` from the API response to locate the corresponding record and confirm the event was loaded correctly.
+
+The following example shows a Snowflake worksheet query and its results for a matching entity record.*Image: snowflake_eventmonapi.png*
 
 
 
@@ -126874,7 +127037,7 @@ For additional information about relation properties that can be used in filter 
 | Query | `offset` | No | Positive Integer value to identify starting what element in a result set should be returned in a response. Can be used to organize pagination in combination with `"max"` parameter.  Default value is `0`.  > **Note:** The updated maximum value and offset parameters, when combined, must not exceed the value of 10,000. Some examples of valid combinations are:  > - offset=9900 and max=100 > - offset=9800 and max=200 | `offset=120` |
 | Query | `sort` | No | Sort parameter is used with `Order` parameter. Sort parameter points to the attribute or a list of attributes where ordering must be applied. If you order the result set as ascending or descending (reversed), you must use the Sort parameter to list the attributes that must be used for ordering.parameter. Sort parameter points to the attribute or a list of attributes where ordering must be applied. If you order the result set as ascending or descending (reversed), you must use the Sort parameter to list the attributes that must be used for ordering.**Important:** The sorting will not be used if this parameter is not provided or the value is not recognized.Sorting is available on multiple parameters combining the parameters using **&** sign. The **&** symbol is encoded as **%26** in the request.Sorting priority of the parameters depends on the order you have added the parameters in the request while using multiple sorting. | `sort=uri`  `sort=uri&startObject`The result set is first sorted alphabetically by Uniform Resource Identifier (URI). The sorted result set will be sorted again by`sort=startObject` |
 | Query | `order` | No | Order of sorting. Can be used in combination with the `sort` parameter to have the reverse order.   Possible values:  - `asc`: results are shown in ascending order - `desc`: results are shown in descending order      Default sorting is by relation `asc`. | `order=desc` |
-| Query | `options` | No | This is a comma-separated list of different options that have an affect on a relation's JSON content in a response.  Available options:  - `sendHidden`: disabled by default, relation's JSON contain hidden attributes if this option is enabled. - `resolveMergedEntities`: `false` by default, returns actual winner URIs for start/end objects in the relation if set to `true`. | `options=sendHidden,resolveMergedEntities` |
+| Query | `options` | No | This is a comma-separated list of different options that have an affect on a relation's JSON content in a response.  Available options:  - `sendHidden`: disabled by default, relation's JSON contain hidden attributes if this option is enabled. - `resolveMergedEntities`: `false` by default, returns actual winner URIs for start/end objects in the relation if set to `true`. - `searchByOv`: disabled by default; to search by all relation attributes with Operational Value (OV) only. | `options=sendHidden,resolveMergedEntities,searchByOv` |
 | Query | `activeness` | No | Available options:  `active`: default value. This option allows a search among active relations  `all`: allows search among all (active/expired) relations  `not_active`: allows search among expired relations | `activeness=active` |
 | Body (Only for the `POST` method) | Body (Only for the `POST` method) | No | Indicates the JSON body that can have all the same fields as supported in the query parameters.**Note:** The query parameters have priority and override the body parameters. | `{ "filter": "(equals(startObject,'entities/1'))", "select": "uri,startObject,endObject", "max": 10, "offset": 120, "sort": "attributes.FirstName", "order": "desc", "options": "sortByOV,ovOnly", "activeness": "active" }` |
 
@@ -136456,6 +136619,823 @@ For more information see topics:
 
 ---
 
+# Batch attribute verification APIs
+
+> **Section:** Developer resources > Data Integration APIs > Data Integration APIs at a glance
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/batch-attribute-verification-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** attribute verification api, email batch verification, phone batch verification, bulk validation api, contact data cleansing, real-time contact verification
+
+
+Learn about the Batch APIs to verify email addresses and phone numbers in batch.
+
+Use the Batch attribute verification APIs to verify multiple email addresses and phone numbers in a single request. These APIs support bulk data quality workflows, such as onboarding and large-scale data cleanup.
+
+Each request submits multiple values and returns verification results for each value in the response. Depending on the API, the results include status, formatting, domain details, network details, and related verification metadata. 
+
+> **Note:** The Email batch verification and Phone batch verification APIs do not update data in Reltio, so you can use them in external applications or validate email addresses and phone numbers before loading data into Reltio.
+
+The following attribute verification APIs are available:
+
+- 
+
+  [Email batch verification API](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/batch-attribute-verification-apis/email-batch-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+- 
+
+  [Phone batch verification API](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/batch-attribute-verification-apis/phone-batch-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+
+
+---
+
+# Email batch verification
+
+> **Section:** Developer resources > Data Integration APIs > Data Integration APIs at a glance > Batch attribute verification APIs
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/batch-attribute-verification-apis/email-batch-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+
+Learn more about how to verify multiple email addresses in a single request.
+
+Use the `Email batch verification API` to verify multiple email addresses in one request. It is designed for bulk verification scenarios, such as scheduled cleanup jobs, large-scale validation, or onboarding workflows where you need to check many email addresses at once. Each email address is verified in real time, and the response returns verification results for each submitted value. 
+
+> **Note:** This API does not update data in Reltio, so you can use it in external applications or validate email addresses before loading data into Reltio.
+
+
+
+You can send up to 100 email addresses in a single request.
+
+## HTTP method and endpoint
+
+Use the following HTTP method and endpoint path to submit the request.
+
+```
+POST {EnvironmentURL}/reltio/api/{tenantId}/verification/email/_batchVerify
+```
+
+
+
+Replace`{EnvironmentURL}` with your Reltio environment URL.
+
+The following table describes the endpoint path parameters.
+
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| `tenantId` | String | Yes | The unique identifier of the tenant. Specifies the tenant context for the request. |
+
+## Request headers
+
+The following request headers must be included.
+
+| Header | Value | Required |
+| --- | --- | --- |
+| `Authorization` | Bearer `<access_token>` | Yes |
+| `Content-Type` | application/json | Yes |
+
+## Request body
+
+The following table describes the request body parameters, including accepted values and defaults.
+
+| Parameter | Type | Required | Description | Accepted values / Default |
+| --- | --- | --- | --- | --- |
+| `email` | String | Yes | The email address to verify. Each object in the array must include an `email` field. | Up to 100 records per request |
+
+## Example request
+
+Use the following example to see how a complete request is structured with headers and a JSON body.
+
+```
+POST {EnvironmentURL}/reltio/api/{tenantId}/verification/email/_batchVerify
+Authorization: Bearer <accessToken>
+Content-Type: application/json
+
+[
+  {"email": "jacob.evans27@gmail.com"},
+  {"email": "jane.smith2@gmail.com"}
+]
+```
+
+## Response body
+
+The following table describes the fields returned in the response body.
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `Status` | String | Verification result for the email address. Possible values include `Valid`, `Invalid`, or `Unknown`. |
+| `Account` | String | Email account name extracted from the address, when available. |
+| `Domain` | String | Domain part of the email address, such as `example.com`. |
+| `IsDisposable` | Boolean | Indicates whether the email address belongs to a disposable email provider. |
+| `IsSystemMailbox` | Boolean | Indicates whether the email address is a system-generated or non-user mailbox, such as `noreply@example.com`. |
+| `EmailAddress` | String | Email address that was verified. |
+| `VerifiedOn` | DateTime | Timestamp that shows when the verification was performed. |
+| `RequestStatus` | String | Result of the verification request for that email address. If verification fails, this field contains the status or error details for that record. |
+
+## Example response
+
+The following example shows a response with one result object for each submitted email address.
+
+```
+[
+  {
+    "Status": "Valid",
+    "Account": "jacob.evans27",
+    "Domain": "gmail.com",
+    "IsDisposable": false,
+    "IsSystemMailbox": false,
+    "EmailAddress": "jacob.evans27@gmail.com",
+    "VerifiedOn": "2025-09-10T09:35:03.807Z",
+    "RequestStatus": "Success"
+  },
+  {
+    "Status": "Valid",
+    "Account": "jane.smith2",
+    "Domain": "gmail.com",
+    "IsDisposable": false,
+    "IsSystemMailbox": false,
+    "EmailAddress": "jane.smith2@gmail.com",
+    "VerifiedOn": "2025-09-10T09:35:03.807Z",
+    "RequestStatus": "Success"
+  }
+]
+```
+
+
+
+---
+
+# Email verification task
+
+> **Section:** Developer resources > System Administration APIs > System Administration APIs at a glance > Tasks API
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/email-verification-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+
+Learn more about how to start an asynchronous task that verifies entity email attributes using the configured verifier.
+
+Use the `Email verification task API` to start an asynchronous background task that verifies email attributes for entities. The task can run for all entities in a tenant, entities of a specific type, or a subset of entities identified by URI. The API schedules the task and returns task metadata that you can use to track its status.
+
+This task runs in the background and does not support distributed execution.
+
+## HTTP method and endpoint
+
+Use the following HTTP method and endpoint path to submit the request:
+
+```
+POST {EnvironmentURL}/{tenantId}/verification/emailVerifyTask
+```
+
+
+
+Replace`{EnvironmentURL}` with your Reltio environment URL.
+
+The following table describes the endpoint path parameters.
+
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| `tenantId` | String | Yes | The unique identifier of the tenant. Specifies the tenant context for the request. |
+
+## Query parameters
+
+The following table describes the query parameters and their values.
+
+| Name | Type | Required | Description | Accepted values / Default |
+| --- | --- | --- | --- | --- |
+| `entityType` | String | No | Limits verification to entities of a specific type. | Example: `HCP` |
+| `updateSince` | Number | No | UNIX timestamp. When specified, only entities updated on or after this time are verified. | No default |
+| `forceVerify` | Boolean | No | Forces re-verification even when existing results are still within `maxVerificationAge`. | `true` or `false`. Default: `false` |
+
+## Request headers
+
+The following request headers must be included.
+
+| Header | Value | Required |
+| --- | --- | --- |
+| `Authorization` | Bearer `<access_token>` | Yes |
+| `Content-Type` | application/json | Yes |
+
+## Request body
+
+The following table describes the request body parameters, including accepted values and defaults.
+
+| Parameter | Type | Required | Description | Accepted values / Default |
+| --- | --- | --- | --- | --- |
+| `urisList` | Array of strings | No | List of entity URIs to verify. When provided, the task runs only for those entities. | No default |
+
+## Example request
+
+Use the following example to see how a complete request is structured with headers and a JSON body.
+
+```
+POST {EnvironmentURL}/{tenantId}/verification/emailVerifyTask?entityType=HCP&forceVerify=true
+Authorization: Bearer <accessToken>
+Content-Type: application/json
+
+[
+  "entities/f143fa23",
+  "entities/156sf156",
+  "entities/0000N4L"
+]
+```
+
+## Response body
+
+The following table describes the fields returned in the response body.
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `id` | String | Unique identifier of the task instance. |
+| `groupId` | String | Identifier of the task group associated with the task instance. |
+| `createdTime` | Number | Time when the task was created, in epoch milliseconds. |
+| `createdBy` | String | User who created the task. |
+| `updatedTime` | Number | Time when the task was last updated, in epoch milliseconds. |
+| `updatedBy` | String | User or process that last updated the task. |
+| `type` | String | Internal task type for the scheduled email verification task. |
+| `status` | String | Current task status, such as `SCHEDULED`, `RUNNING`, or `COMPLETED`. |
+| `name` | String | Human-readable task name. |
+| `createdOnHost` | String | Host where the task was created. |
+| `parallelExecution` | Boolean | Indicates whether the task supports parallel execution. |
+| `nodesGroup` | String | Node group assigned to the task. |
+| `parameters` | Object | Parameters used to run the task, such as tenant, entity type, force flag, and URI list. |
+| `currentState` | Object | Current runtime state of the task. |
+| `duration` | String | Elapsed task duration. |
+
+## Example response
+
+The following example starts an email verification task for a specific entity type and a specific list of entities.
+
+```
+[[
+  {
+    "id": "ac72c210-5921-4eca-a6a0-1bd896696b9e",
+    "groupId": "32636aad-bd93-43cf-9a9d-63aa4a48a379",
+    "createdTime": 1760512978272,
+    "createdBy": "testuser@reltio.com",
+    "updatedTime": 1760512978272,
+    "updatedBy": "testuser@reltio.com",
+    "type": "com.reltio.businesslogic.tasks.cleanse.validator.EmailVerificationTask",
+    "status": "SCHEDULED",
+    "name": "Re-Validation of tenant ThiruTest background task. (started by user@example.com)",
+    "createdOnHost": "Thirupathis-MacBook-Pro.local",
+    "parallelExecution": false,
+    "nodesGroup": "default",
+    "parameters": {
+      "tenantId": "ThiruTest",
+      "entityType": "HCP",
+      "updatedSince": "0",
+      "force": "true",
+      "uriList": "",
+      "batchSize": "100",
+      "forceCleansing": "false"
+    },
+    "currentState": {},
+    "duration": "0s"
+  }
+]
+```
+
+
+
+---
+
+# Entity verification
+
+> **Section:** Developer resources > Entity Management APIs > Entity Management APIs at a glance > Entities API > Update entities
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/entities-api/update-entities/entity-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** entity verification api, verify email and phone attributes, persist verification results, force verify entity attributes, entity verification max verification age, emailverifier client filter, phoneverifier client filter, attribute verification verify endpoint
+
+
+Learn more about how to verify mapped email and phone attributes on an entity and persist the results.
+
+Use the `Entity verification API` to verify mapped email and phone attributes on a specific entity and persist the results. The API updates verification-related attributes based on the configured output mappings and returns the full updated entity. To reduce external calls, the API reuses previous verification results when they are still within the configured `maxVerificationAge`. Set `forceVerify` to `true` to run a new verification.
+
+This API requires a valid license for email and phone verification. To persist verification results, configure `attributeVerificationConfig` in your tenant's [L3 configuration](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-operation/email-and-phone-verification/configure-email-and-phone-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+## HTTP method and endpoint
+
+Use the following HTTP method and endpoint path to submit the request:
+
+```
+POST {EnvironmentURL}/entities/{entityUri}/attributeVerification/_verify
+```
+
+
+
+Replace`{EnvironmentURL}` with your Reltio environment URL.
+
+The following table describes the endpoint path parameters.
+
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| `entityURI` | String | Yes | URI of the entity to verify. |
+
+## Query parameters
+
+The following table describes the query parameters and their values.
+
+| Name | Type | Required | Description | Accepted values / Default |
+| --- | --- | --- | --- | --- |
+| `forceVerify` | Boolean | No | Forces a new verification even when existing results are still within `maxVerificationAge`. | `true` or `false` |
+| `clientFilter` | String | No | Restricts verification to one verification function. | `EmailVerifier` or `PhoneVerifier`. If omitted, the API runs all configured verifications. |
+
+## Request headers
+
+The following request headers must be included.
+
+| Header | Value | Required |
+| --- | --- | --- |
+| `Authorization` | Bearer `<access_token>` | Yes |
+| `Content-Type` | application/json | Yes |
+
+## Request body
+
+This operation does not require a request body.
+
+## Example request
+
+Use the following example to see how a complete request is structured with headers and a JSON body.
+
+```
+POST {EnvironmentURL}/entities/0000N4L/attributeVerification/_verify?forceVerify=true&clientFilter=PhoneVerifier
+Authorization: Bearer <accessToken>
+Content-Type: application/json
+```
+
+## Response body
+
+The response contains same fields as the [Get Entity](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/entities-api/get-entity?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) API response. If verification attributes are mapped to your entity attributes, the response also includes the additional attributes returned by the verification process.
+
+## Example response
+
+The following example shows a response with updated verification attributes returned as part of the full entity JSON.
+
+```
+{
+  "uri": "entities/0000N4L",
+  "type": "configuration/entityTypes/HCP",
+  "createdBy": "ayush.shetty@reltio.com",
+  "createdTime": 1757578426739,
+  "updatedBy": "ayush.shetty@reltio.com",
+  "updatedTime": 1757578434846,
+  "attributes": {
+    "Phone": [
+      {
+        "label": "9686777126",
+        "value": {
+          "Number": [
+            {
+              "type": "configuration/entityTypes/HCP/attributes/Phone/attributes/Number",
+              "ov": true,
+              "value": "9686777126",
+              "uri": "entities/0000N4L/attributes/Phone/1n1iFl/Number/1n1mW1"
+            }
+          ],
+          "CountryCode": [
+            {
+              "type": "configuration/entityTypes/HCP/attributes/Phone/attributes/CountryCode",
+              "ov": true,
+              "value": "IN",
+              "uri": "entities/0000N4L/attributes/Phone/1n1iFl/CountryCode/1n1qmH"
+            }
+          ],
+          "isValid": [
+            {
+              "type": "configuration/entityTypes/HCP/attributes/Phone/attributes/isValid",
+              "ov": true,
+              "value": "Yes",
+              "uri": "entities/0000N4L/attributes/Phone/1n1iFl/isValid/1n2wyP"
+            }
+          ],
+          "LastVerifiedTime": [
+            {
+              "type": "configuration/entityTypes/HCP/attributes/Phone/attributes/LastVerifiedTime",
+              "ov": true,
+              "value": "2025-09-11T08:13:56.361591200Z",
+              "uri": "entities/0000N4L/attributes/Phone/1n1iFl/LastVerifiedTime/1n35Uv"
+            }
+          ],
+          "NetworkName": [
+            {
+              "type": "configuration/entityTypes/HCP/attributes/Phone/attributes/NetworkName",
+              "ov": true,
+              "value": "Airtel India - Karnataka (45) (Bharti Airtel)",
+              "uri": "entities/0000N4L/attributes/Phone/1n1iFl/NetworkName/1n3E1R"
+            }
+          ]
+        },
+        "ov": true,
+        "uri": "entities/0000N4L/attributes/Phone/1n1iFl"
+      }
+    ],
+    "Email": [
+      {
+        "label": "jane.doe@healthcare.org",
+        "value": {
+          "Email": [
+            {
+              "type": "configuration/entityTypes/HCP/attributes/Email/attributes/Email",
+              "ov": true,
+              "value": "jane.doe@healthcare.org",
+              "uri": "entities/0000N4L/attributes/Email/1n1RCj/Email/1n1VSz"
+            }
+          ],
+          "VerificationStatus": [
+            {
+              "type": "configuration/entityTypes/HCP/attributes/Email/attributes/VerificationStatus",
+              "ov": true,
+              "value": "Invalid",
+              "uri": "entities/0000N4L/attributes/Email/1n1RCj/VerificationStatus/1n27pJ"
+            }
+          ],
+          "LastVerifiedTime": [
+            {
+              "type": "configuration/entityTypes/HCP/attributes/Email/attributes/LastVerifiedTime",
+              "ov": true,
+              "value": "2025-09-11T08:13:54.894801500Z",
+              "uri": "entities/0000N4L/attributes/Email/1n1RCj/LastVerifiedTime/1n2GLp"
+            }
+          ],
+          "IsSystemMailbox": [
+            {
+              "type": "configuration/entityTypes/HCP/attributes/Email/attributes/IsSystemMailbox",
+              "ov": true,
+              "value": "false",
+              "uri": "entities/0000N4L/attributes/Email/1n1RCj/IsSystemMailbox/1n2OsL"
+            }
+          ]
+        },
+        "ov": true,
+        "uri": "entities/0000N4L/attributes/Email/1n1RCj"
+      },
+      {
+        "label": "john.doe@healthcare.org",
+        "value": {
+          "Email": [
+            {
+              "type": "configuration/entityTypes/HCP/attributes/Email/attributes/Email",
+              "ov": true,
+              "value": "john.doe@healthcare.org",
+              "uri": "entities/0000N4L/attributes/Email/1n1ZjF/Email/1n1dzV"
+            }
+          ],
+          "VerificationStatus": [
+            {
+              "type": "configuration/entityTypes/HCP/attributes/Email/attributes/VerificationStatus",
+              "ov": true,
+              "value": "Invalid",
+              "uri": "entities/0000N4L/attributes/Email/1n1ZjF/VerificationStatus/1n2XOr"
+            }
+          ],
+          "LastVerifiedTime": [
+            {
+              "type": "configuration/entityTypes/HCP/attributes/Email/attributes/LastVerifiedTime",
+              "ov": true,
+              "value": "2025-09-11T08:13:54.894801500Z",
+              "uri": "entities/0000N4L/attributes/Email/1n1ZjF/LastVerifiedTime/1n2fvN"
+            }
+          ],
+          "IsSystemMailbox": [
+            {
+              "type": "configuration/entityTypes/HCP/attributes/Email/attributes/IsSystemMailbox",
+              "ov": true,
+              "value": "false",
+              "uri": "entities/0000N4L/attributes/Email/1n1ZjF/IsSystemMailbox/1n2oRt"
+            }
+          ]
+        },
+        "ov": true,
+        "uri": "entities/0000N4L/attributes/Email/1n1ZjF"
+      }
+    ]
+  },
+  "isFavorite": false,
+  "crosswalks": [
+    {
+      "uri": "entities/0000N4L/crosswalks/1n1v2X",
+      "type": "configuration/sources/Reltio",
+      "value": "0000N4L",
+      "reltioLoadDate": "2025-09-11T13:43:46.739+05:30",
+      "createDate": "2025-09-11T13:43:46.739+05:30",
+      "updateDate": "2025-09-11T13:43:46.739+05:30",
+      "attributes": [
+        "entities/0000N4L/attributes/Phone/1n1iFl/Number/1n1mW1",
+        "entities/0000N4L/attributes/Email/1n1ZjF",
+        "entities/0000N4L/attributes/Email/1n1RCj",
+        "entities/0000N4L/attributes/Phone/1n1iFl",
+        "entities/0000N4L/attributes/Email/1n1RCj/Email/1n1VSz",
+        "entities/0000N4L/attributes/Phone/1n1iFl/CountryCode/1n1qmH",
+        "entities/0000N4L/attributes/Email/1n1ZjF/Email/1n1dzV"
+      ],
+      "singleAttributeUpdateDates": {}
+    },
+    {
+      "uri": "entities/0000N4L/crosswalks/1n23Z3",
+      "type": "configuration/sources/ReltioVerifier",
+      "value": "0000N4L",
+      "reltioLoadDate": "2025-09-11T13:43:54.846+05:30",
+      "createDate": "2025-09-11T13:43:54.846+05:30",
+      "updateDate": "2025-09-11T13:43:54.846+05:30",
+      "attributes": [
+        "entities/0000N4L/attributes/Email/1n1RCj/IsSystemMailbox/1n2OsL",
+        "entities/0000N4L/attributes/Phone/1n1iFl/LastVerifiedTime/1n35Uv",
+        "entities/0000N4L/attributes/Phone/1n1iFl/NetworkName/1n3E1R",
+        "entities/0000N4L/attributes/Email/1n1RCj/LastVerifiedTime/1n2GLp",
+        "entities/0000N4L/attributes/Email/1n1ZjF/VerificationStatus/1n2XOr",
+        "entities/0000N4L/attributes/Email/1n1ZjF/LastVerifiedTime/1n2fvN",
+        "entities/0000N4L/attributes/Phone/1n1iFl/isValid/1n2wyP",
+        "entities/0000N4L/attributes/Email/1n1RCj/VerificationStatus/1n27pJ",
+        "entities/0000N4L/attributes/Email/1n1ZjF/IsSystemMailbox/1n2oRt"
+      ],
+      "singleAttributeUpdateDates": {
+        "entities/0000N4L/attributes/Email/1n1RCj/IsSystemMailbox/1n2OsL": "2025-09-11T13:43:54.846+05:30",
+        "entities/0000N4L/attributes/Phone/1n1iFl/LastVerifiedTime/1n35Uv": "2025-09-11T13:43:54.846+05:30",
+        "entities/0000N4L/attributes/Phone/1n1iFl/NetworkName/1n3E1R": "2025-09-11T13:43:54.846+05:30",
+        "entities/0000N4L/attributes/Email/1n1RCj/LastVerifiedTime/1n2GLp": "2025-09-11T13:43:54.846+05:30",
+        "entities/0000N4L/attributes/Email/1n1ZjF/VerificationStatus/1n2XOr": "2025-09-11T13:43:54.846+05:30",
+        "entities/0000N4L/attributes/Email/1n1ZjF/LastVerifiedTime/1n2fvN": "2025-09-11T13:43:54.846+05:30",
+        "entities/0000N4L/attributes/Phone/1n1iFl/isValid/1n2wyP": "2025-09-11T13:43:54.846+05:30",
+        "entities/0000N4L/attributes/Email/1n1RCj/VerificationStatus/1n27pJ": "2025-09-11T13:43:54.846+05:30",
+        "entities/0000N4L/attributes/Email/1n1ZjF/IsSystemMailbox/1n2oRt": "2025-09-11T13:43:54.846+05:30"
+      }
+    }
+  ],
+  "analyticsAttributes": {},
+  "label": "",
+  "secondaryLabel": ""
+}
+```
+
+
+
+---
+
+# Phone batch verification
+
+> **Section:** Developer resources > Data Integration APIs > Data Integration APIs at a glance > Batch attribute verification APIs
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/batch-attribute-verification-apis/phone-batch-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** phone batch verification api, verify phone numbers in bulk, real time phone validation, bulk phone number verification, reltio phone api, loqate phone verification, validate mobile and landline numbers, phone validation rest api, verify phone country prefix, check phone network name
+
+
+Learn more about how to verify multiple phone numbers in a single request using real-time validation.
+
+Use the `Phone batch verification API` to verify multiple phone numbers in a single request. It is designed for bulk validation scenarios, such as checking contact numbers during onboarding or data cleansing. Each phone number is verified in real time, and the response returns verification results for each submitted value.
+
+> **Note:** This API does not update data in Reltio, so you can use it in external applications or validate phone numbers before loading data into Reltio.
+
+The API accepts phone numbers in international format, such as `+447528471411`, or in national format, such as `07528471411`, when you also provide a country code. The `country` field supports ISO2 codes, such as `GB`, and ISO3 codes, such as `GBR`.
+
+The `Phone batch verification API` always performs real-time verification and does not reuse previous verification results. You can send up to 100 email addresses in a single request.
+
+## HTTP method and endpoint
+
+Use the following HTTP method and endpoint path to submit the request:
+
+```
+POST {EnvironmentURL}/reltio/api/{tenantId}/verification/phone/_batchVerify
+```
+
+
+
+Replace`{EnvironmentURL}` with your Reltio environment URL.
+
+The following table describes the endpoint path parameters.
+
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| `tenantId` | String | Yes | The unique identifier of the tenant. Specifies the tenant context for the request. |
+
+## Request headers
+
+The following request headers must be included.
+
+| Header | Value | Required |
+| --- | --- | --- |
+| `Authorization` | Bearer `<access_token>` | Yes |
+| `Content-Type` | application/json | Yes |
+
+## Request body
+
+The following table describes the request body parameters, including accepted values and defaults.
+
+| Parameter | Type | Required | Description | Accepted values / Default |
+| --- | --- | --- | --- | --- |
+| `phone` | String | Yes | The phone number to verify. The value can be in international or national format. | No default |
+| `country` | String | No | The country code used when the phone number is not in international format. | ISO2 or ISO3 country code |
+
+## Example request
+
+Use the following example to see how a complete request is structured with headers and a JSON body.
+
+```
+POST {EnvironmentURL}/reltio/api/{tenantId}/verification/phone/_batchVerify
+Authorization: Bearer <accessToken>
+Content-Type: application/json
+
+[
+  {"phone": "+91 8476547434"},
+  {"phone": "8674845846", "country": "IN"}
+]
+```
+
+## Response body
+
+The following table describes the fields returned in the response body.
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `PhoneNumber` | String | Normalized international phone number used for verification, including the country code. |
+| `CountryPrefix` | Integer | International dialing prefix of the verified phone number. |
+| `NationalFormat` | String | Phone number formatted for the detected country. |
+| `NetworkName` | String | Name of the network provider or carrier associated with the number. |
+| `NumberType` | String | Type of phone number detected, such as `Mobile`, `Landline`, or `VoIP`. |
+| `VerifiedOn` | DateTime | Timestamp that shows when the verification was performed. |
+| `IsValid` | String | Indicates whether the phone number is valid. Possible values include `Yes`, `No`, or `Unknown`. |
+| `RequestStatus` | String | Result of the verification request for that phone number. If verification fails, this field contains the status or error details for that record. |
+
+## Example response
+
+The following example shows a response with one result object for each submitted phone number.
+
+```
+[
+  {
+    "CountryPrefix": 91,
+    "RequestProcessed": true,
+    "NetworkName": "Bharat Sanchar Nigam Ltd (BSNL) (83560049)",
+    "NumberType": "Landline",
+    "VerifiedOn": "2025-09-10T09:39:31.566526277Z",
+    "NationalFormat": "084765 47434",
+    "PhoneNumber": "+918476547434",
+    "NetworkCountry": "IN",
+    "IsValid": "Yes",
+    "RequestStatus": "Success"
+  },
+  {
+    "CountryPrefix": 91,
+    "RequestProcessed": true,
+    "NetworkName": "Airtel India - Bihar Jharkhand (52) (Bharti Airtel)",
+    "NumberType": "Mobile",
+    "VerifiedOn": "2025-09-10T09:39:31.117153339Z",
+    "NationalFormat": "086748 45846",
+    "PhoneNumber": "+918674845846",
+    "NetworkCountry": "IN",
+    "NetworkCode": "52",
+    "IsValid": "Yes",
+    "RequestStatus": "Success"
+  }
+]
+```
+
+
+
+---
+
+# Phone verification task
+
+> **Section:** Developer resources > System Administration APIs > System Administration APIs at a glance > Tasks API
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/phone-verification-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** phone verification task api, asynchronous phone verification, phone verify task, verify phone attributes task, phone verification batch task, phone verification by entity type, phone verification by uris, phone verification force verify
+
+
+Learn more about how to start an asynchronous task that verifies entity phone attributes using the configured verification provider.
+
+Use the `Phone verification task API` to start an asynchronous background task that verifies entity phone attributes using the configured external verifier. You can run the task for all entities in a tenant, entities of a specific type, or a subset of entities identified by URI.
+
+The Phone verification task runs in the background and does not support distributed execution.
+
+## HTTP method and endpoint
+
+Use the following HTTP method and endpoint path to submit the request:
+
+```
+POST {EnvironmentURL}/reltio/api/{tenantId}/verification/phoneVerifyTask
+```
+
+
+
+Replace`{EnvironmentURL}` with your Reltio environment URL.
+
+The following table describes the endpoint path parameters.
+
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| `tenantId` | String | Yes | The unique identifier of the tenant. Specifies the tenant context for the request. |
+
+## Query parameters
+
+The following table describes the query parameters and their values.
+
+| Name | Type | Required | Description | Accepted values / Default |
+| --- | --- | --- | --- | --- |
+| `entityType` | String | No | Limits verification to entities of a specific type. | Example: `HCP` |
+| `updateSince` | Number | No | UNIX timestamp. When specified, only entities updated at or after this time are verified. | No default |
+| `forceVerify` | Boolean | No | Forces verification regardless of the max age of the last verification result. | `true` or `false`. Default: `false` |
+
+## Request headers
+
+The following request headers must be included.
+
+| Header | Value | Required |
+| --- | --- | --- |
+| `Authorization` | Bearer `<access_token>` | Yes |
+| `Content-Type` | application/json | Yes |
+
+## Request body
+
+The following table describes the request body parameters, including accepted values and defaults.
+
+| Parameter | Type | Required | Description | Accepted values / Default |
+| --- | --- | --- | --- | --- |
+| `urisList` | Array of strings | No | List of entity URIs to verify. When provided, the task runs only for those entities. | No default |
+
+## Example request
+
+Use the following example to see how a complete request is structured with headers and a JSON body.
+
+```
+POST {EnvironmentURL}/reltio/api/ThiruTest/verification/phoneVerifyTask?entityType=HCP&forceVerify=true
+Authorization: Bearer <accessToken>
+Content-Type: application/json
+
+[
+  "entities/f143fa23",
+  "entities/156sf156",
+  "entities/0000N4L"
+]
+```
+
+## Response body
+
+The following table describes the fields returned in the response body.
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `id` | String | Unique identifier of the task instance. |
+| `groupId` | String | Identifier of the task group associated with the task instance. |
+| `createdTime` | Number | Time when the task was created, in epoch milliseconds. |
+| `createdBy` | String | User who created the task. |
+| `updatedTime` | Number | Time when the task was last updated, in epoch milliseconds. |
+| `updatedBy` | String | User or process that last updated the task. |
+| `type` | String | Internal task type for the scheduled phone verification task. |
+| `status` | String | Current task status, such as `SCHEDULED`, `RUNNING`, or `COMPLETED`. |
+| `name` | String | Human-readable task name. |
+| `createdOnHost` | String | Host where the task was created. |
+| `parallelExecution` | Boolean | Indicates whether the task supports parallel execution. |
+| `nodesGroup` | String | Node group assigned to the task. |
+| `parameters` | Object | Parameters used to run the task, such as tenant, entity type, updated-since value, force flag, and URI list. |
+| `currentState` | Object | Current runtime state of the task. |
+| `duration` | String | Elapsed task duration. |
+
+## Example response
+
+The following example starts an phone verification task for a specific entity type and a specific list of entities.
+
+```
+[
+  {
+    "id": "ac72c210-5921-4eca-a6a0-1bd896696b9e",
+    "groupId": "32636aad-bd93-43cf-9a9d-63aa4a48a379",
+    "createdTime": 1760512978272,
+    "createdBy": "testuser@reltio.com",
+    "updatedTime": 1760512978272,
+    "updatedBy": "testuser@reltio.com",
+    "type": "[To confirm: phone verification task type]",
+    "status": "SCHEDULED",
+    "name": "[To confirm: phone verification task name]",
+    "createdOnHost": "Thirupathis-MacBook-Pro.local",
+    "parallelExecution": false,
+    "nodesGroup": "default",
+    "parameters": {
+      "tenantId": "ThiruTest",
+      "entityType": "HCP",
+      "updatedSince": "0",
+      "force": "true",
+      "uriList": "",
+      "batchSize": "100",
+      "forceCleansing": "false"
+    },
+    "currentState": {},
+    "duration": "0s"
+  }
+]
+```
+
+
+
+---
+
 # Activate a Process Instance
 
 > **Section:** Developer resources > Workflow APIs > Workflow APIs at a glance > Workflow API
@@ -142234,6 +143214,8 @@ FERN is Reltio's LLM-based technology for matching. It enhances traditional enti
 
 FERN is available today for the Individual entity type and the Organization entity type, FERN should not be considered a replacement for manually configured match rules. Instead, think of FERN as an additional match engine, identifying matches in parallel with your configured match rules. For more details, see topics [Individual entity type for B2C Data Domains](https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-b2c-data-domains-velocity-pack/data-model-for-b2c-data-domains/entity-types-for-b2c-data-domains/individual-entity-type-for-b2c-data-domains?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Organization entity type for B2B Data Domains](https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-b2b-data-domains-velocity-pack/data-model-for-b2b-data-domains/entity-types-for-b2b-data-domains/organization-entity-type-for-b2b-data-domains?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). It's useful to consider that as an LLM, FERN is able to detect similarities across attributes and records that aren't possible with manually-configured rules. Conversely, you may have some matching requirements that are so explicit, that manually-crafted rules are the most efficient approach. That is why an optimized matching solution may very well involve a blend of both approaches.
 
+For more information about which entity types in each velocity pack support pretrained FERN models and which model applies, see [Reltio Multidomain Master Data Management (MDM) velocity packs](https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
 Similar to the behavior of manually crafted rules, FERN can produce potential matches and auto-merges. From the Reltio Console, you are able to declare what range of FERN scores should result in potential matches and what range should result in auto-merging. In this way, potential matches can come from both your manually-configured rules and/or via FERN scores.
 
 Naturally, you will begin by declaring all ranges of FERN scores to result in potential matches. Then, as you gain comfort through analysis. you'll likely promote FERN's higher-range scores to an auto-merging effect In the manner then, auto-merges will likely come in part from your manually-configured rules and in part from FERN.
@@ -142323,6 +143305,8 @@ Learn about the entity types for which you can use a pretrained machine learning
 Flexible Entity Resolution Network (FERN) is an AI-powered matching engine that compares data attribute values between two sources. Reltio pretrains FERN models to resolve data attributes defined for a given entity type, such as the Individual and Organization entity types. You configure the way FERN matches attributes for an entity type between internal and external data sources.
 
 Topics in this section provide details about the pretrained FERN models available as add-on subscriptions.
+
+For more information about which entity types in each velocity pack support pretrained FERN models and which model applies, see [Reltio Multidomain Master Data Management (MDM) velocity packs](https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 For information on preparing to use one of these models, see topic [Enable a pretrained FERN model](https://docs.reltio.com/en/applications/console/configuration-applications/ai-powered-flexible-entity-resolution-network-fern-model-based-matching-at-a-glance/fern-based-matching/use-a-pretrained-fern-model/enable-a-pretrained-fern-model?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
@@ -146669,6 +147653,33 @@ Explore the Cleanse configurations to tailor how addresses are cleansed, verifie
 | Message streaming | Message streaming enables the Reltio platform to process events from an internal queue into an external queue or topic in JSON format.   Enable or disable messaging on all queues, including hidden ones like GBQ (Google BigQuery) and SFDC (Salesforce). | `Enabled` | `Enabled`  `Disabled` | [Message streaming](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/events-api/message-streaming?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
 | Hierarchical OV for delta calculation | Controls how operational values (OV) are calculated for nested attributes in streamed delta messages. Enable this option when you want OV values in external message payloads to align more closely with the OV behavior returned by the current entity state in the UI and GET APIs. This option is useful for downstream integrations that rely on streamed messages for traceability, reconciliation, or audit processing. | `Disabled` | `EnabledDisabled` | [Message streaming](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/events-api/message-streaming?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)**Note:** For nested attributes, streamed delta payloads can evaluate OV differently from the current entity state. Enable `hierarchicalOvForDeltaCalculation` when you need delta-message OV behavior to align more closely with the OV returned by the UI and GET APIs. |
 | Message Streaming API | Controls whether events triggered by REST API operations such as data loads or reindex requests are delivered to external streaming destinations.  When this setting is disabled, external delivery is paused, but internal pipelines such as Grouping and DataPipeline continue to operate if message streaming remains enabled.  This setting takes effect only when Message Streaming is enabled. | `Enabled` | `Enabled`  `Disabled` | [Message streaming](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/events-api/message-streaming?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
+
+## Email verification
+
+> **Note:** Email verification is available only for tenants with a valid license. To enable it for your tenant, contact your CSM or account manager.
+
+
+
+
+
+| Parameter | Description | Default value | Allowed values |
+| --- | --- | --- | --- |
+| Email verification service provider | The provider used to verify email addresses. | `Loqate` | Supported provider name |
+| Email verification API key | The API key that you acquire from the email verification provider. | — | Valid API key |
+| Email max verification age (days) | The maximum number of days a previous email verification result can be reused before a new verification is required. | — | Positive integer |
+
+## Phone verification
+
+Use these settings to enable phone verification, allowing users to validate phone numbers and identify invalid or incorrectly formatted numbers.
+
+> **Note:** Phone verification is available only for tenants with a valid license. To enable it for your tenant, contact your CSM or account manager.
+
+| Parameter | Description | Default value | Allowed values |
+| --- | --- | --- | --- |
+| Phone verification service provider | The provider used to verify phone numbers. | `Loqate` | Supported provider name |
+| Phone verification API key | The API key that you acquire from the phone verification provider. | — | Valid provider API key |
+| Phone — ISO3 country format | When enabled, the phone verification response returns ISO3 country codes instead of ISO2 country codes. When disabled, it returns ISO2 country codes. | `Enabled` | `Enabled`, `Disabled` |
+| Phone max verification age (days) | The maximum number of days for which a previous phone verification result can be reused. | — | Positive integer |
 
 
 
@@ -154095,7 +155106,14 @@ The following table displays the available versions of the managed package.
 
 | Version number | Date of availability | Description |
 | --- | --- | --- |
+| **1.10039** | 18-03-2026 | Bulk Sync by IDs now processes records in configurable batches instead of a single transaction. This update helps prevent heap size issues during large sync operations and improves processing performance when syncing higher record volumes.  Download managed package: [1.10039](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tJ50000000Zol) |
+| **1.10038** | 20-03-2026 | Improved performance for sync queue pickup by optimizing how eligible records are selected for processing. This update helps reduce latency and improves reliability during sync operations. |
+| **1.10037** | 12-03-2026 | The managed Permission Set for Bulk Sync was corrected to remove references that block installation or upgrade in some Salesforce orgs. This update helps ensure the package installs successfully and allows you to use the packaged Permission Set for consistent Bulk Sync behavior. |
 | **1.10036** | 27-02-2026 | Introduced a new packaged Permission Set that grants the minimum required permissions for Bulk Sync to run successfully without requiring full `Modify All` access. Aligns permission behavior across environments and resolves inconsistencies for the **Reltio Sync** and **Reltio Sync Config** objects. |
+| **1.10034** | 09-01-2026 | Added support to automatically link crosswalks when Salesforce detects a duplicate record during sync. When a matching Salesforce record already exists, the connector links the Reltio entity to that record and continues processing as an update. |
+| **1.10033** | 20-11-2025 | Updated SBC Mapping to generate the unique tuple automatically from the Salesforce object type and record type. This update replaces the legacy workflow used for unique tuple generation. |
+| **1.10032** | 30-10-2025 | Added support to skip processing records when the custom `IsInactive__c` field is set to `true`. This update applies to supported Salesforce objects that participate in connector sync. |
+| **1.10031** | 27-10-2025 | Added an option to filter empty Email and Phone values from the outbound payload. This update lets you control whether these attributes are included only when Salesforce contains a value. |
 | **1.10030** | 18-11-2024 | The Salesforce connection no longer raises the **Missing Password** error. |
 | **1.10029** | 18-09-2024 | Implemented support for **Client Credentials** authentication when connecting to Salesforce. |
 | **1.10028** | 08-08-2024 | The following issues were fixed:   - The search by **Account name** feature now returns the expected results in the UI - Address data no longer appears twice in the search results |
@@ -154127,6 +155145,9 @@ The following table displays the available versions of the Salesforce managed pa
 
 | Version number | Date of availability | Description |
 | --- | --- | --- |
+| **1.10017** | 22-06-2026 | When connecting the Reltio recipe endpoint to a different Salesforce org, RIH now validates the Salesforce Org ID in the background, and displays an error message if the configuration doesn't match. This prevents you from saving a misconfigured connection and helps avoid unexpected import failures |
+| **1.10016** | 17-06-2026 | - Fixed an issue where Search Before Create did not load in the Salesforce Mobile App when users created a new account. - Updated navigation to use Salesforce's mobile-compatible API so the New Account flow opens the Search Before Create screen correctly in the Salesforce Mobile App. - Fixed a record type resolution issue that prevented Search Before Create from loading in orgs with no default record type configured. **Important:** Salesforce no longer supports mobile browser access. This fix was verified for the Salesforce Mobile App on iOS and Android. You must use the Salesforce Mobile App on mobile devices, or use Lightning Experience on iPad Safari where it's supported by Salesforce. |
+| **1.10015** | 28-01-2026 | Added the Auto-Select Required Fields checkbox in SBC Settings so you can control whether required fields are automatically selected and locked in the SBC configuration. |
 | **1.10014** | 12-05-2025 | The **Click Here** link on the SBC Control Panel now opens a valid, up-to-date documentation page with instructions for configuring endpoints. |
 | **1.10012** | 14-04-2025 | The following issues were fixed:  - Simple users now see a clear notification if they don't have the **RIH SBC Other Users** permission, along with instructions to resolve it. - The **Preview** button no longer triggers an error when opening the screen. |
 | **1.10011** | 17-03-2025 | Fields like **Account name** in the Control Panel's **Available Fields** section and on the **Configure Search** page are now fixed in place and can no longer be moved by users. |
@@ -160735,80 +161756,74 @@ The data model for the 340B Data Tenant is derived from the `Reltio L3 Pharma` c
 
 Learn about Reltio Enrichment with 340B data model and mapping 340B.
 
-The 340B Data Tenant uses an extension of the HCO entity from the Life Sciences Customer 360 Application. The table below lists the HCO attributes and how they are mapped to the 340B data file downloaded from the HRSA website.
+The 340B Data Tenant uses an extension of the HCO entity from the Life Sciences Customer 360 Application. The table below lists the HCO attributes and how they are mapped to the 340B data file downloaded from the HRSA website. All attributes in this mapping use `String` as the data type.
 
 **HCO Attributes Mapped to the 340B Data File**
 
-| Reltio Attribute | Attribute Type | Sub-Attribute Name | Data Type | HRSA 340B Attribute | Description |
-| --- | --- | --- | --- | --- | --- |
-| Name | Simple |  | String | Entity Name |  |
-| Identifiers#1 | Nested | Type | String | value=340B | Identifier Type |
-| Identifiers#1 | Nested | ID | String | 340B ID | Identifier ID |
-| Identifiers#1 | Nested | ActivationDate | String | Participating Start Date | Activation Date |
-| Identifiers#1 | Nested | DeactivationReasonCode | String | Termination Code | Deactivation Reason Code |
-| Identifiers#1 | Nested | DeactivationDate | String | Term Date | Deactivation Date |
-| Identifiers#2 | Nested | Type | String | value="Grant Number" | Identifier Type |
-| Identifiers#2 | Nested | ID | String | Grant Number | Identifier ID |
-| Identifiers#3 | Nested | Type | String | Site | Identifier Type |
-| Identifiers#3 | Nested | ID | String | Site ID | Identifier ID |
-| Identifiers#4 | Nested | Type | String | value="Medicare Provider Number" | Identifier Type |
-| Identifiers#4 | Nested | ID | String | Medicare Provider Number | Identifier ID |
-| Identifiers#5 | Nested | Type | String | value="Covered Entity" | Identifier Type |
-| Identifiers#5 | Nested | ID | String | CE ID | Identifier ID |
-| Identifiers#6 | Nested | Type | String | value="Medicaid Number" | Identifier Type |
-| Identifiers#6 | Nested | ID | String | Medicaid Number | Identifier ID |
-| Identifiers#7 | Nested | Type | String | value="NPI" | Identifier Type |
-| Identifiers#7 | Nested | ID | String | NPI | Identifier ID |
-| Identifiers#8 | Nested | Type | String | value="Contract" | Identifier Type |
-| Identifiers#8 | Nested | ID | String | Contract Identifier | Identifier ID |
-| Addresses#1 | Nested | AddressType | String | value="Main" | Main Address Type |
-| Addresses#1 | Nested | AddressLine1 | String | Address 1 | Main Address Line 1 |
-| Addresses#1 | Nested | AddressLine2 | String | Address 2 | Main Address Line 2 |
-| Addresses#1 | Nested | City | String | City | City |
-| Addresses#1 | Nested | StateProvince | String | State | State Province |
-| Addresses#1 | Nested | Zip5 | String | Zip | Zip |
-| Addresses#1 | Nested | Zip4 | String | SecondZip | Second Zip |
-| Addresses#2 | Nested | AddressType | String | value="Billing" | Billing Address Type |
-| Addresses#2 | Nested | Organization | String | Billing Organization | Billing Organization |
-| Addresses#2 | Nested | AddressLine1 | String | Billing Address 1 | Billing Address Line 1 |
-| Addresses#2 | Nested | AddressLine2 | String | Billing Address 2 | Billing Address Line 2 |
-| Addresses#2 | Nested | City | String | Billing City | Billing City |
-| Addresses#2 | Nested | StateProvince | String | Billing State | Billing State Province |
-| Addresses#2 | Nested | Zip5 | String | Billing Zip | Billing Zip |
-| Addresses#2 | Nested | Zip4 | String | Billing Second Zip | Billing Second Zip |
-| Addresses#3 | Nested | AddressType | String | value="Shipping" | Shipping Address Type |
-| Addresses#3 | Nested | Organization | String | Shipping Organization | Shipping Organization |
-| Addresses#3 | Nested | AddressLine1 | String | Shipping Address 1 | Shipping Address Line 1 |
-| Addresses#3 | Nested | AddressLine2 | String | Shipping Address 2 | Shipping Address Line 2 |
-| Addresses#3 | Nested | City | String | Shipping City | Shipping City |
-| Addresses#3 | Nested | StateProvince | String | Shipping State | Shipping State Province |
-| Addresses#3 | Nested | Zip5 | String | Shipping Zip | Shipping Zip |
-| Addresses#3 | Nested | Zip4 | String | Shipping Second Zip | Shipping Second Zip |
-| 340b | Nested | EntitySubDivisionName | String | Entity Sub-Division Name | Entity Sub-Division Name |
-| 340b | Nested | ProgramCode | String | Program Code | Program Code |
-| 340b | Nested | Participating | String | Participating | Participating |
-| 340b | Nested | EntryComments | String | Entry Comments | Entry Comments |
-| 340b | Nested | NatureOfSupport | String | Nature Of Support | Nature of Support |
-| 340b | Nested | AuthorizingOfficialName | String | Authorizing Official Name | Authorizing Official's Name |
-| 340b | Nested | AuthorizingOfficialTitle | String | Authorizing Official Title | Authorizing Official's Title |
-| 340b | Nested | AuthorizingOfficialTel | String | Authorizing Official Tel | Authorizing Official’s Telephone Number |
-| 340b | Nested | AuthorizingOfficialTelExt | String | Authorizing Official Tel Ext | Authorizing Official’s Telephone Extension |
-| 340b | Nested | ContactName | String | Contact Name | Contact's Name |
-| 340b | Nested | ContactTitle | String | Contact Title | Contact's Title |
-| 340b | Nested | ContactTelephone | String | Contact Telephone | Contact's Telephone Number |
-| 340b | Nested | ContactTelephoneExt | String | Contact Telephone Ext | Contact's Telephone Extension |
-| 340b | Nested | SignedByName | String | Signed By Name |  |
-| 340b | Nested | SignedByTitle | String | Signed By Title |  |
-| 340b | Nested | SignedByTelephone | String | Signed By Telephone |  |
-| 340b | Nested | SignedByTelephoneExt | String | Signed By Telephone Ext |  |
-| 340b | Nested | SignedByDate | String | Signed By Date |  |
-| 340b | Nested | CertifiedDecertifiedDate | String | Certified/Decertified Date |  |
-| 340b | Nested | Rural | String | Rural |  |
-| 340b | Nested | 340BID | String | 340B ID | 340B ID |
-| 340b | Nested | EditDate | String | Edit Date | Edit Date |
-| 340b | Nested | ParticipatingStartDate | String | Participating Start Date | Participating Start Date |
-| 340b | Nested | TerminationDate | String | Term Date | Termination Date |
-| 340b | Nested | TerminationCode | String | Termination Code | Termination Code |
+| Reltio Attribute | Attribute Type | Sub-Attribute Name | HRSA 340B Attribute | Description |
+| --- | --- | --- | --- | --- |
+| Name | Simple |  | Entity Name |  |
+| Identifiers#1 | Nested | Type | value=340B | Identifier Type |
+| Identifiers#1 | Nested | ID | 340B ID | Identifier ID |
+| Identifiers#1 | Nested | ActivationDate | Participating Start Date | Activation Date |
+| Identifiers#1 | Nested | DeactivationReasonCode | Termination Code | Deactivation Reason Code |
+| Identifiers#1 | Nested | DeactivationDate | Term Date | Deactivation Date |
+| Identifiers#2 | Nested | Type | value="Grant Number" | Identifier Type |
+| Identifiers#2 | Nested | ID | Grant Number | Identifier ID |
+| Identifiers#3 | Nested | Type | Site | Identifier Type |
+| Identifiers#3 | Nested | ID | Site ID | Identifier ID |
+| Identifiers#4 | Nested | Type | value="Medicare Provider Number" | Identifier Type |
+| Identifiers#4 | Nested | ID | Medicare Provider Number | Identifier ID |
+| Identifiers#5 | Nested | Type | value="Covered Entity" | Identifier Type |
+| Identifiers#5 | Nested | ID | CE ID | Identifier ID |
+| Identifiers#6 | Nested | Type | value="Medicaid Number" | Identifier Type |
+| Identifiers#6 | Nested | ID | Medicaid Number | Identifier ID |
+| Identifiers#7 | Nested | Type | value="NPI" | Identifier Type |
+| Identifiers#7 | Nested | ID | NPI | Identifier ID |
+| Identifiers#8 | Nested | Type | value="Contract" | Identifier Type |
+| Identifiers#8 | Nested | ID | Contract Identifier | Identifier ID |
+| Addresses#1 | Nested | AddressType | value="Main" | Main Address Type |
+| Addresses#1 | Nested | AddressLine1 | Address 1 | Main Address Line 1 |
+| Addresses#1 | Nested | AddressLine2 | Address 2 | Main Address Line 2 |
+| Addresses#1 | Nested | City | City | City |
+| Addresses#1 | Nested | StateProvince | State | State Province |
+| Addresses#1 | Nested | Zip5 | Zip | Zip |
+| Addresses#1 | Nested | Zip4 | SecondZip | Second Zip |
+| Addresses#2 | Nested | AddressType | value="Billing" | Billing Address Type |
+| Addresses#2 | Nested | Organization | Billing Organization | Billing Organization |
+| Addresses#2 | Nested | AddressLine1 | Billing Address 1 | Billing Address Line 1 |
+| Addresses#2 | Nested | AddressLine2 | Billing Address 2 | Billing Address Line 2 |
+| Addresses#2 | Nested | City | Billing City | Billing City |
+| Addresses#2 | Nested | StateProvince | Billing State | Billing State Province |
+| Addresses#2 | Nested | Zip5 | Billing Zip | Billing Zip |
+| Addresses#2 | Nested | Zip4 | Billing Second Zip | Billing Second Zip |
+| Addresses#3 | Nested | AddressType | value="Shipping" | Shipping Address Type |
+| Addresses#3 | Nested | Organization | Shipping Organization | Shipping Organization |
+| Addresses#3 | Nested | AddressLine1 | Shipping Address 1 | Shipping Address Line 1 |
+| Addresses#3 | Nested | AddressLine2 | Shipping Address 2 | Shipping Address Line 2 |
+| Addresses#3 | Nested | City | Shipping City | Shipping City |
+| Addresses#3 | Nested | StateProvince | Shipping State | Shipping State Province |
+| Addresses#3 | Nested | Zip5 | Shipping Zip | Shipping Zip |
+| Addresses#3 | Nested | Zip4 | Shipping Second Zip | Shipping Second Zip |
+| 340b | Nested | EntitySubDivisionName | Entity Sub-Division Name | Entity Sub-Division Name |
+| 340b | Nested | ProgramCode | Program Code | Program Code |
+| 340b | Nested | Participating | Participating | Participating |
+| 340b | Nested | EntryComments | Entry Comments | Entry Comments |
+| 340b | Nested | AuthorizingOfficialName | Authorizing Official Name | Authorizing Official's Name |
+| 340b | Nested | AuthorizingOfficialTitle | Authorizing Official Title | Authorizing Official's Title |
+| 340b | Nested | AuthorizingOfficialTel | Authorizing Official Tel | Authorizing Official’s Telephone Number |
+| 340b | Nested | AuthorizingOfficialTelExt | Authorizing Official Tel Ext | Authorizing Official’s Telephone Extension |
+| 340b | Nested | ContactName | Contact Name | Contact's Name |
+| 340b | Nested | ContactTitle | Contact Title | Contact's Title |
+| 340b | Nested | ContactTelephone | Contact Telephone | Contact's Telephone Number |
+| 340b | Nested | ContactTelephoneExt | Contact Telephone Ext | Contact's Telephone Extension |
+| 340b | Nested | CertifiedDecertifiedDate | Certified/Decertified Date |  |
+| 340b | Nested | Rural | Rural |  |
+| 340b | Nested | 340BID | 340B ID | 340B ID |
+| 340b | Nested | EditDate | Edit Date | Edit Date |
+| 340b | Nested | ParticipatingStartDate | Participating Start Date | Participating Start Date |
+| 340b | Nested | TerminationDate | Term Date | Termination Date |
+| 340b | Nested | TerminationCode | Termination Code | Termination Code |
 
 
 
@@ -185536,9 +186551,12 @@ For general information, see Create table in the [Snowflake SQL Command Referenc
 
 Learn how to transition your existing Snowflake pipeline using external stage and Snowpipe ingestion to the internal stage–based architecture.
 
-You must have: - An existing Reltio pipeline set up using Snowpipe and external cloud storage
-- A Snowflake account with administrative access
-- Reltio Data Pipeline for Snowflake add-on enabled
+Before you begin, confirm that the following requirements are met. - You have an existing Snowflake pipeline configured with Snowpipe and external cloud storage.
+- Your Snowflake account has administrative access.
+- The Reltio Data Pipeline for Snowflake add-on is enabled on your tenant.
+- Your data pipelines are paused for the duration of the migration to prevent event processing conflicts. To pause your data pipelines, contact [Reltio Support](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+> **Note:** Pausing data pipelines causes some downtime and pauses all events for all data pipelines on your tenant until resumed. Updates queued during this period are not lost, they reflect in Snowflake once data pipelines are resumed.
 
 1. Create a new Snowflake user and role for the internal stage pipeline.
    - Create the Snowflake user or choose an existing one.
@@ -185664,7 +186682,7 @@ POST <hub-url>/api/tenants/<tenantId>/adapters/<adapterName>/delete_pipeline
 ```
 
 To construct the `hub-url`, use the format `{reltio-environment}-data-pipeline-hub.reltio.com`. For example, if your Reltio environment is `test`, your hub URL will be `test-data-pipeline-hub.reltio.com`.
-10. Trigger a full sync to push historical data to the new pipeline.
+10. Optionally, trigger a full sync to push historical data to the new pipeline.
    ```
 POST <reltio-url>/reltio/api/<tenantId>/syncToDataPipeline
    ```
@@ -185672,6 +186690,8 @@ POST <reltio-url>/reltio/api/<tenantId>/syncToDataPipeline
    This syncs all entities, relations, interactions, potential matches, and merges to the new pipeline adapter.
 
 After migration, your Reltio events stream into Snowflake using internal stage ingestion. The legacy Snowpipe-based configuration is fully decommissioned.
+
+Contact [Reltio Support](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) to resume your data pipelines. All updates queued during the migration reflect in Snowflake automatically once your data pipelines are re-enabled.
 
 
 
@@ -193111,21 +194131,28 @@ The following table summarizes the benchmark conditions and measured result for 
 
 ---
 
-# Monitoring data sharing
+# Monitoring data share
 
 > **Section:** Applications > Data Integrations > Reltio Data Sharing at a glance
 
 
-**Source:** https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing-at-a-glance/monitoring-data-sharing?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing-at-a-glance/monitoring-data-share?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
-**Keywords:** monitor data sharing in reltio, track data pipeline queue activity, monitor external queue for data warehouse, check data sharing event progress, review reltio external queue status, data sharing monitoring, external queue, data pipeline, cloud data warehouse
+**Keywords:** monitor data sharing in reltio, data volume processed per data share, messages sent across data shares, track data share activity, confirm data sharing is working, data sharing monitoring, data volume, messages sent, data share
 
 
-Learn how to monitor Reltio generated data sharing events through the external queue.
+Learn about the data volume and messages processed for your data shares.
 
-Monitor data events generated in Reltio to support data sharing with the cloud data warehouse through the external queue. Review queue activity to assess the volume of events in progress. In the external queue list, locate the queue that contains **Data Pipeline** in its name. Use it to track event progress and confirm that data sharing is functioning as expected.
+Monitoring data share shows the data volume and the CRUD events processed within a time period for the data shares set up in your Reltio tenant. Review them to monitor the throughput of the data shared with your cloud data warehouse.
 
-For more information, see [Monitoring the External Queue](https://docs.reltio.com/en/applications/console/tenant-management-applications/tenant-management-at-a-glance/queues-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+To see these measures for a specific data share, [view data sharing activity](https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing-at-a-glance/monitoring-data-share/view-data-sharing-activity?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) in the console.
+
+## Monitoring measures
+
+Monitoring covers two measures of data sharing activity:
+
+- **Data volume processed**: The amount of data, in bytes, processed for a single data share. The volume indicates whether a specific data share is active and how much data is shared within a time period.
+- **Messages sent**: The total number of messages processed across all outbound data shares and pipelines in your tenant. Each message represents a CRUD event processed for your data. The count indicates the overall throughput of your data sharing.
 
 
 
@@ -193344,6 +194371,38 @@ GRANT USE PROVIDER ON METASTORE TO `<user-email-address>`;
 GRANT USE RECIPIENT ON METASTORE TO `<user-email-address>`;
 GRANT CREATE CATALOG ON METASTORE TO `<user-email-address>`;
 ```
+
+
+
+---
+
+# View data sharing activity
+
+> **Section:** Applications > Data Integrations > Reltio Data Sharing at a glance > Monitoring data share
+
+
+**Source:** https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing-at-a-glance/monitoring-data-share/view-data-sharing-activity?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** view data sharing activity in reltio, open data share monitoring page, check data volume processed for data share, view messages sent across data shares, monitor data share in console, set time range for monitoring, data sharing monitoring, data volume, messages sent, time range
+
+
+Learn how to view the data volume processed and messages sent for a data share in Reltio Console.
+
+Monitor your data shares to review that data is shared with your cloud data warehouse. Each data share has its own Monitoring page, where you can see the volume of data processed for that data share and the messages processed across all of your data shares and data pipelines in your Reltio tenant.
+
+
+To view data sharing activity for a data share
+
+1. In the Reltio **Console**, go to **Data Sharing > Data Share**.
+2. Navigate to the data share you want to review.
+3. Click **Monitor**.
+   The **Monitoring** page displays for the data share.
+4. From the **Time range** list, select the period to report on; for example, **Last 1 week**.
+5. Review the two summary totals and two graphs on the **Monitoring** page.
+   - **Total data volume processed**: The data volume processed for the selected data share.
+   - **Total messages sent**: The count of messages processed across all outbound data shares and data pipelines.
+   - **Data volume processed**: A graph of the data volume for the selected data share over the selected time range, which indicates the health of the data share and the volume of data it shared.
+   - **Messages sent (all outbound data shares and data pipelines)**: A graph of the messages processed across all outbound data shares and data pipelines, independent of the selected data share.
 
 
 
@@ -197167,8 +198226,6 @@ You can choose to remove the saved search as a global filter, or delete the sear
 
 The Quick Filters panel allows you to seamlessly and efficiently narrow down your search results in real time.
 
-## Using Quick Filters
-
 Quick Filters have the following sections:
 
 Located in the Left panel are facet filters that allow you to quickly filter through your dataset. We understand how busy our users are and the need for them to quickly filter through the dataset so they can be as productive as possible. We have added ways to better assist your search experience by introducing **Recommended attributes**. **Recommended attributes** are suggested attributes based on your search behavior and patterns. It is driven by machine learning techniques such as **Classification**, **Clustering** and **Collaborative filtering** to provide the most likely usable attributes for the specific user. In addition, we have included visual graphical representation of your dataset in attribute facets to guide you in your search experience and get accurate results.
@@ -197186,6 +198243,14 @@ Below the **Entity types** list, you will find a list of attributes you can filt
 In the attribute section, you will find a list of recommended attributes that dynamically change based on your personal search behavior. Our recommendation engine continues to learn and refines itself based on your history of search events. This allows you to have a quick access to frequently filtered attributes without having to search for them. If you don't find the attributes that you want to filter on, you can search for them using the search bar. The menu includes all the attributes that are marked as 'faceted' in the data model. It first lists **Recommended attributes**, followed by **entity-type specific** attributes and finally, **Basic** attributes. Basic attributes are attributes that are common across all entities like creation date.
 
 When you add attributes, it displays them in the left panel where you can filter on specific values. The attribute facets render based on the data types that you have defined in your data model. As you filter on your dataset, notice that the search result refreshes in real time so you can immediately validate your search query based on the number of search results and records returned.
+
+## Search entity types
+
+The **Entity types** section includes a search field that helps you find a specific entity type quickly when your tenant has many configured entity types, long labels, or similarly named entity types. This reduces the need to scan the full list manually before you apply a filter.
+
+*Image: i-search-entity-type.png*
+
+The entity type list updates as you type and displays only entity types where labels match the entered text. The match is not case-sensitive. Selected entity types remain selected even if the current search text hides them temporarily. When the search text is cleared, the full list appears again with the existing selections preserved.
 
 ## Adding Default Faceted Attributes
 
@@ -212835,6 +213900,139 @@ GET {ValidationServiceURL}/monitoring/statistics_json?select=ValidationControlle
   }
 }
 ```
+
+
+
+---
+
+# Configure email and phone verification
+
+> **Section:** Objectives > Cleanse and verify data > Data cleansing at a glance > Data cleansing operation > Email and phone verification
+
+
+**Source:** https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-operation/email-and-phone-verification/configure-email-and-phone-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** email verification, phone verification, Loqate configuration, attributeVerificationConfig
+
+
+Learn how to configure email and phone verification in your tenant.
+
+Configure email and phone verification by adding an `attributeVerificationConfig` section to your tenant's L3 configuration. This section defines the verification function, input and output mappings, and freshness settings used when verification results are written back to entity attributes.
+
+Some provider-level settings are configured separately in **Tenant Configuration** in Reltio **Console**. For more information, see [Tenant Configuration at a glance](https://docs.reltio.com/en/applications/console/tenant-management-applications/tenant-management-at-a-glance/tenant-configuration-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Tenant Configuration at a glance](https://docs.reltio.com/en/applications/console/tenant-management-applications/tenant-management-at-a-glance/tenant-configuration-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+L3 configuration is required for the Entity Verification API, Email Verification Task, and Phone Verification Task. It is not required for batch verification APIs, which return verification results in the response without writing them to entities.
+
+**Prerequisites**
+
+- 
+
+  Make sure your tenant has a valid license for this feature. Contact your CSM or account manager to enable it for your tenant.
+- 
+
+  You must have the `ROLE_ADMIN_TENANT` role, or a custom role with permission to update the L3 configuration.
+
+
+To configure email and phone verification:
+
+1. Get your tenant’s L3 configuration. See [GET Configuration](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/configuration-api/get-configuration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+2. Under the relevant entity type, add an `attributeVerificationConfig` section inside `cleanseConfig`.
+3. Define the `verificationFunction`, `resultingValuesSourceTypeUri`, `params`, `inputMapping`, and `outputMapping` values for email and phone verification.
+   The following example shows mappings for an HCP entity type:
+   ```
+{ "uri": "configuration/entityTypes/HCP", "cleanseConfig": { "attributeVerificationConfig": [ { "verificationFunction": "EmailVerifier", "resultingValuesSourceTypeUri": "configuration/sources/ReltioVerifier", "params": { "maxVerificationAge": 21 }, "inputMapping": [ { "attribute": "configuration/entityTypes/HCP/attributes/Email/attributes/Email", "verificationAttribute": "Email", "mandatory": true } ], "outputMapping": [ { "attribute": "configuration/entityTypes/HCP/attributes/Email/attributes/VerificationStatus", "verificationAttribute": "Status", "mandatory": true }, { "attribute": "configuration/entityTypes/HCP/attributes/Email/attributes/LastVerifiedTime", "verificationAttribute": "VerifiedOn", "mandatory": true }, { "attribute": "configuration/entityTypes/HCP/attributes/Email/attributes/IsDisposable", "verificationAttribute": "IsDisposable", "mandatory": false }, { "attribute": "configuration/entityTypes/HCP/attributes/Email/attributes/IsSystemMailbox", "verificationAttribute": "IsSystemMailbox", "mandatory": false } ] }, { "verificationFunction": "PhoneVerifier", "resultingValuesSourceTypeUri": "configuration/sources/ReltioVerifier", "params": { "maxVerificationAge": 21 }, "inputMapping": [ { "attribute": "configuration/entityTypes/HCP/attributes/Phone/attributes/Number", "verificationAttribute": "Phone", "mandatory": true }, { "attribute": "configuration/entityTypes/HCP/attributes/Phone/attributes/CountryCode", "verificationAttribute": "Country", "mandatory": false } ], "outputMapping": [ { "attribute": "configuration/entityTypes/HCP/attributes/Phone/attributes/IsValid", "verificationAttribute": "IsValid", "mandatory": true }, { "attribute": "configuration/entityTypes/HCP/attributes/Phone/attributes/LastVerifiedTime", "verificationAttribute": "VerifiedOn", "mandatory": true }, { "attribute": "configuration/entityTypes/HCP/attributes/Phone/attributes/NetworkName", "verificationAttribute": "NetworkName", "mandatory": false } ] } ] } }
+   ```
+   The following parameters control the behavior of the email and phone verification function: 
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `verificationFunction` | String | Defines the verification function to use. Use `EmailVerifier` for email verification and `PhoneVerifier` for phone verification. |
+| `resultingValuesSourceTypeUri` | String | Specifies the source type used to store verification results. You can reuse an existing source, such as `configuration/sources/ReltioCleanser`, or create a dedicated source, such as `configuration/sources/ReltioVerifier`. |
+| `maxVerificationAge` | Integer | Specifies the number of days a previous verification result can be reused before a new verification is required. This parameter applies to the Entity Verification API and the Email Verification Task. It does not apply to batch verification APIs. When `forceVerify` is `false` and the stored result is older than this value, the platform performs a new verification. When `forceVerify` is `true`, the platform ignores `maxVerificationAge` and performs a new verification. |
+| `inputMapping` | Array | Maps verification request attributes to your entity attributes. Use this mapping to define which entity attributes provide the input values for verification. For more information about supported request attributes, see [Email batch verification](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/batch-attribute-verification-apis/email-batch-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Phone batch verification](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/batch-attribute-verification-apis/phone-batch-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
+| `outputMapping` | Array | Maps verification response attributes to your entity attributes. Use this mapping to define where verification results are written on the entity. For more information about supported response attributes, see [Email batch verification](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/batch-attribute-verification-apis/email-batch-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Phone batch verification](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/batch-attribute-verification-apis/phone-batch-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
+4. [Save the updated configuration](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/configuration-api/set-configuration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) back to your tenant.
+
+**Result**
+
+Your tenant is now configured for entity-based email and phone verification. The [Entity Verification API](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/entities-api/update-entities/entity-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and the [Email Verification Task](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/email-verification-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) can use this configuration to validate values, apply freshness rules, and write verification results to mapped attributes.
+
+
+
+---
+
+# Email and phone verification
+
+> **Section:** Objectives > Cleanse and verify data > Data cleansing at a glance > Data cleansing operation
+
+
+**Source:** https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-operation/email-and-phone-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** email verification, phone verification, Loqate, real-time verification, batch verification
+
+
+Learn about email and phone verification in Reltio, including entity, batch, and task-based verification modes.
+
+You can verify email addresses and phone numbers in real time to confirm whether the values are valid and active. Depending on the verification mode, verification results are either written to mapped entity attributes or returned in the API response. Email and phone verification helps you maintain more accurate contact data across operational workflows, bulk data quality processes, and external integrations.
+
+> **Note:** Email and phone verification is available only for tenants with a valid license. Tenant enablement is handled through your CSM or account manager.
+
+## Verification modes
+
+The following verification modes are supported:
+
+- **Entity verification**: Verifies mapped attributes on a specific entity. This mode can update verification-related attributes, such as verification status, validity, and last verified time, based on your tenant configuration. It can also reuse previous verification results when they are still within the configured `maxVerificationAge`. For more information, see [Entity verification](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/entities-api/update-entities/entity-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+- **Batch verification**: Checks email addresses or phone numbers passed in the request without updating entity data. The results are returned in the API response. Use this mode when you need to validate values from external systems or verify contact data before loading it into Reltio. For more information, see [Email batch verification](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/batch-attribute-verification-apis/email-batch-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Phone batch verification](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/batch-attribute-verification-apis/phone-batch-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+- **Verification Task**: Processes large sets of email and phone number values asynchronously. Use this mode for periodic re-verification, post-load cleanup, or other large-scale verification jobs. This mode can also reuse previous verification results when they are still within the configured `maxVerificationAge`. For more information, see [Email verification task](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/email-verification-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Phone verification task](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/phone-verification-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+## When to use it
+
+Use email and phone verification when you need to:
+
+- validate new contact details before they enter business processes.
+- recheck existing contact data in bulk.
+- verify values from external applications without persisting the results in Reltio.
+
+
+
+---
+
+# Verify email and phone attributes in the Profile view
+
+> **Section:** Objectives > Cleanse and verify data > Data cleansing at a glance > Data cleansing operation > Email and phone verification
+
+
+**Source:** https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-operation/email-and-phone-verification/verify-email-and-phone-attributes-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** verify email addresses in reltio hub profile view, verify phone numbers in reltio profile, how to run email verification in reltio, check email and phone verification status reltio, real-time verification request reltio profile, email phone verification status icons reltio, verify all email and phone numbers reltio hub, email verification, phone verification, verification status
+
+
+Learn how to verify email addresses and phone numbers directly from the Profile view in Reltio Hub.
+
+You can verify all supported email addresses and phone numbers directly from the **Profile** view in Reltio **Hub**. The system runs a real-time verification request and updates the status shown for each value.
+
+**Prerequisites**
+
+- [Configure email and phone verification](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-operation/email-and-phone-verification/configure-email-and-phone-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) for your tenant.
+
+
+To verify phone numbers and email addresses:
+
+1. In the **Hub**, select **Search** from the left navigation pane.
+2. In the **Search** page, select a profile to open it in the **Profile** view.
+   *Image: ui-emailphoneverifymain.png*
+3. Click **Verify contact details** at the top right corner of the screen.
+   The system sends a real-time verification request for all supported email addresses and phone numbers in the profile.
+4. Review the verification status shown next to each value in the **Phone** and **Email** sections of the Contact Attributes panel.
+   The system displays a status icon next to each verified phone number and email address.
+   - A **green icon** indicates that the value is valid.
+   - An **orange icon** indicates that the value is valid, but the verification result has expired.
+   - A **red icon** indicates that the value is invalid.
+   - **No icon** indicates that the value has not been verified, or that the status is unknown.
+
+**Result**
+
+The profile shows the updated verification status for each verified email address and phone number.
 
 
 
