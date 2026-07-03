@@ -1,8 +1,8 @@
 # Reltio Documentation
 
-_Generated: 2026-07-01 02:14 UTC_
+_Generated: 2026-07-03 02:16 UTC_
 
-_Topics: 3345_
+_Topics: 3346_
 
 ---
 
@@ -69724,6 +69724,140 @@ POST: {{tenantURL}}/entities/_conditional?filter=(equals(type,'configuration/ent
     }
 ]
 ```
+
+
+
+---
+
+# Delete entity history
+
+> **Section:** Developer resources > Entity Management APIs > Entity Management APIs at a glance > Entities API > Delete Entity
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/entities-api/delete-entity/delete-entity-history?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** delete entity history api reltio, bulk delete entity history and activity log, post entities deletehistory endpoint, remove entity history entries in reltio, delete activity log for reltio entities, retain audit trail on history deletion, entity history deletion with loser resolution, mdm data entities history permission, deleteHistory, entity history, activity log, audit trail
+
+
+Learn more about how to use the Delete Entity History API to bulk delete history and activity log entries for a list of entities.
+
+Use the `Delete Entity History API` to bulk delete history and activity log entries for a list of entities. The request body accepts an array of entity URIs.
+
+For each entity, all history and activity log entries are removed except for the first and last entries. When the `retainAuditTrail` option is omitted, all information except the entity URI is also removed from those boundary entries. To preserve the information in those entries, pass `options=retainAuditTrail` as a query parameter.
+
+The deletion applies to all losers associated with the submitted entity. If an entity is itself a loser, the API resolves it to its winner and collects all associated losers to delete their history as well.
+
+> **Important:** All activities must be indexed for the entity before running this request. Unindexed activity log entries are not removed correctly.
+
+## HTTP method and endpoint
+
+Use the following HTTP method and endpoint path to submit the request for deleting history and activity log entries for a list of entities.
+
+```
+POST {TenantURL}/entities/_deleteHistory
+```
+
+The following table describes the endpoint path parameter.
+
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| `TenantURL` | String | Yes | The base URL of the tenant. Example: `https://test.reltio.com/reltio/api/SampleTenant`. |
+
+## Query parameters
+
+The following table describes the supported query parameters.
+
+| Parameter | Type | Required | Description | Accepted values / Default |
+| --- | --- | --- | --- | --- |
+| `options` | String | No | Controls whether audit trail entries are retained after deletion. | `retainAuditTrail` preserves the information in the first and last history and activity log entries. When omitted, all information except the entity URI is removed from those entries. |
+
+## Request headers
+
+The following request headers must be included.
+
+| Header | Value | Required |
+| --- | --- | --- |
+| `Authorization` | Bearer `<access_token>` | Yes |
+| `Content-Type` | `application/json` | Yes |
+
+## Request body
+
+The request body accepts a JSON array of entity URIs whose history and activity log entries will be deleted. The maximum number of entity URIs per request is 100.
+
+| Parameter | Type | Required | Description | Accepted values / Default |
+| --- | --- | --- | --- | --- |
+| Entity URI array | Array of strings | Yes | JSON array of entity URI strings to delete history and activity log entries for. Each string in the array is an entity URI, for example, `entities/11`. | Maximum: 100 URIs per request. |
+
+## Example request
+
+Use the following example to see how a complete request is structured with headers and a JSON body.
+
+```
+POST {TenantURL}/entities/_deleteHistory
+[
+  "entities/11",
+  "entities/22"
+]
+```
+
+To preserve the content of the first and last audit entries, add the `retainAuditTrail` option to the endpoint.
+
+```
+POST {TenantURL}/entities/_deleteHistory?options=retainAuditTrail
+[
+  "entities/11",
+  "entities/22"
+]
+```
+
+## Response body
+
+The following table describes the fields returned in the response body.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `<entityURI>` | Object | Top-level key corresponding to each entity URI submitted in the request body. Contains the deletion results for that entity. |
+| `<entityURI>.activity` | Object | Result of the activity log deletion for the entity. |
+| `<entityURI>.activity.status` | String | Outcome of the activity log deletion. Accepted values: `success`, `failed`. |
+| `<entityURI>.activity.error` | String | Error message returned when the activity log deletion fails. Present only when `status` is `failed`. |
+| `<entityURI>.history` | Object | Result of the history deletion for the entity. |
+| `<entityURI>.history.status` | String | Outcome of the history deletion. Accepted values: `success`, `failed`. |
+
+## Example response
+
+The following example shows a response with success and failed statuses for two submitted entity URIs.
+
+```
+{
+  "entities/11": {
+    "activity": {
+      "status": "success"
+    },
+    "history": {
+      "status": "success"
+    }
+  },
+  "entities/22": {
+    "activity": {
+      "status": "failed",
+      "error": "Some activity error"
+    },
+    "history": {
+      "status": "success"
+    }
+  }
+}
+```
+
+## Error codes and recommended actions
+
+The following table lists the possible error responses returned by this API. 
+
+| HTTP status | Description | Recommended action |
+| --- | --- | --- |
+| `400 Bad Request` | The request contains invalid or missing parameters, or the entity URI array exceeds 100 entries. | Review the request payload, ensure the URI list does not exceed 100 entries, and resend the request. |
+| `401 Unauthorized` | The access token is missing, expired, or invalid. | Obtain a valid access token and resubmit the request. For details, see [Authentication API](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/authentication-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
+| `403 Forbidden` | The authenticated user does not have the `DELETE` privilege on the `MDM.Data.Entities.History` resource. | Contact your tenant administrator to verify that the required permissions are assigned to your role. |
 
 
 
@@ -167187,21 +167321,21 @@ The RIH proxy enables on-demand D&B enrichment requests from UI buttons to invok
 
 ---
 
-# Configure the Reltio UI for BvD on-demand buttons
+# Configure the Reltio UI for D&B on-demand buttons
 
 > **Section:** Applications > Data Integrations > Data Enrichment Integrations at a glance > Reltio Enrichment with D&B Data Blocks at a glance > Get started with Reltio Enrichment with D&B Data Blocks > Install and configure RIH recipes for Reltio Enrichment with D&B Data Blocks > Mode-specific configuration for Reltio Enrichment with D&B Data Blocks > Prepare the configuration of on demand UI buttons for Reltio Enrichment with D&B Data Blocks
 
 
-**Source:** https://docs.reltio.com/en/applications/data-integrations/data-enrichment-integrations-at-a-glance/reltio-enrichment-with-db-data-blocks-at-a-glance/get-started-with-reltio-enrichment-with-db-data-blocks/install-and-configure-rih-recipes-for-reltio-enrichment-with-db-data-blocks/mode-specific-configuration-for-reltio-enrichment-with-db-data-blocks/prepare-the-configuration-of-on-demand-ui-buttons-for-reltio-enrichment-with-db-data-blocks/configure-the-reltio-ui-for-bvd-on-demand-buttons?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/applications/data-integrations/data-enrichment-integrations-at-a-glance/reltio-enrichment-with-db-data-blocks-at-a-glance/get-started-with-reltio-enrichment-with-db-data-blocks/install-and-configure-rih-recipes-for-reltio-enrichment-with-db-data-blocks/mode-specific-configuration-for-reltio-enrichment-with-db-data-blocks/prepare-the-configuration-of-on-demand-ui-buttons-for-reltio-enrichment-with-db-data-blocks/configure-the-reltio-ui-for-db-on-demand-buttons?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
-**Keywords:** configure bvd on-demand buttons, configure reltio ui for bvd, bvd buttons in organization profile, add bvd side panel views, update config json for bvd, configure organization ui for bvd, bvd side panel buttons, rih proxy for bvd buttons, workato endpoint for bvd, publish ui modeler configuration, bvd match button, bvd details button
+**Keywords:** configure D&B on-demand buttons, configure reltio ui for D&B, D&B buttons in organization profile, add D&B side panel views, update config json for D&B, configure organization ui for D&B, D&B side panel buttons, rih proxy for D&B buttons, workato endpoint for D&B, publish ui modeler configuration, D&B match button, D&B details button
 
 
-Learn how to configure the Reltio UI for BvD on-demand buttons so that BvD actions appear in the Organization profile side panel.
+Learn how to configure the Reltio UI for D&B on-demand buttons so that D&B actions appear in the Organization profile side panel.
 
-Configure the Reltio UI to add BvD on-demand buttons to the profile side panel.These buttons use the RIH proxy to send secure requests to the configured Integration Hub endpoint and support actions such as BvD match, company information retrieval, and hierarchy or contact enrichment.
+Configure the Reltio UI to add D&B on-demand buttons to the profile side panel.These buttons use the RIH proxy to send secure requests to the configured Integration Hub endpoint and support actions such as D&B match, company information retrieval, and hierarchy or contact enrichment.
 
-After you complete this configuration, you can run BvD actions directly from the profile side panel.
+After you complete this configuration, you can run D&B actions directly from the profile side panel.
 
 **Prerequisites**
 
@@ -167209,10 +167343,10 @@ After you complete this configuration, you can run BvD actions directly from the
 - You have created a [Reltio Support](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) ticket to request RIH proxy creation for your environment.
 - Your ticket includes the Reltio tenant ID, environment, and RIH API profile name.
 - The RIH API profile name does not contain spaces or special characters.
-- You have the BvD API endpoints configured in your Workato environment.
+- You have the D&B API endpoints configured in your Workato environment.
 - You have a backup of the current `config.json`.
 
-To configure the UI for BvD buttons
+To configure the UI for D&B buttons
 
 1. In the **Console**, select **UI Modeler**.
 2. Generate an access token for the RIH proxy. For more information, see [Create Access Token for RIH Proxy](https://docs.reltio.com/en/applications/data-integrations/data-enrichment-integrations-at-a-glance/reltio-enrichment-with-db-data-blocks-at-a-glance/get-started-with-reltio-enrichment-with-db-data-blocks/install-and-configure-rih-recipes-for-reltio-enrichment-with-db-data-blocks/mode-specific-configuration-for-reltio-enrichment-with-db-data-blocks/prepare-the-configuration-of-on-demand-ui-buttons-for-reltio-enrichment-with-db-data-blocks/configure-proxy-for-on-demand-mode-ui-buttons?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
@@ -167222,65 +167356,102 @@ To configure the UI for BvD buttons
 5. Click **Export**. The file is exported to your local file system.
    - Open the downloaded JSON file in a text editor.
    - Under the entity definition, add the required `sidePanelViews`. For more information, see [Configure profile screens](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/configure-reltio-ui-with-the-configuration-file/configure-profile-screens?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
-   - If the BvD buttons do not appear, confirm that the updated `config.json` file was published to the correct environment.
-   - Add the BvD button definition object with `"id": "BvD"`.
+   - If the D&B buttons do not appear, confirm that the updated `config.json` file was published to the correct environment.
+   - Add the D&B button definition object with `"id": "D&B"`.
      **Example**```
 {
-                            "id": "BvD",
-                            "views": [
-                                {
-                                    "point": "com.reltio.plugins.ui.view",
-                                    "id": "com.reltio.plugins.entity.org.BvDMatch",
-                                    "class": "com.reltio.plugins.ui.CustomActionView",
-                                    "label": "BvD match",
-                                    "url": "https://tst-01-rih-proxy.reltio.com/api/v1/proxy/workato/invoke_endpoints?xxx=",
-                                    "success": "Success:",
-                                    "fail": "Failure:",
-                                    "loading": "Loading...",
-                                    "height": 34,
-                                    "profileName": "<profile_name>", // fetched from previous doc
-                                    "workatoEndpoint": "https://apim.workato.com/reltioapi/bvd-v1/tst-01/BvDIntegrationCT/match",
-                                    "proxyMethod": "GET",
-                                    "action": {
-                                        "permissions": [
-                                            "https://tst-01-rih-proxy.reltio.com",
-                                            "https://apim.workato.com"
-                                        ],
-                                        "files": [
-                                            "https://reltio-ui-files.s3.amazonaws.com/custom-scripts/b2b_application_bvd_proxy.js"
-                                        ]
-                                    }
-                                },
-                                {
-                                    "point": "com.reltio.plugins.ui.view",
-                                    "id": "com.reltio.plugins.entity.org.BvDDetails",
-                                    "class": "com.reltio.plugins.ui.CustomActionView",
-                                    "label": "BvD details",
-                                    "url": "https://tst-01-rih-proxy.reltio.com/api/v1/proxy/workato/invoke_endpoints?xxx=",
-                                    "checkAttributeToEnable": "BvDId",
-                                    "success": "Success:",
-                                    "fail": "Failure:",
-                                    "loading": "Loading...",
-                                    "height": 34,
-                                    "profileName": "<profile_name>",
-                                    "workatoEndpoint": "https://apim.workato.com/reltioapi/bvd-v1/tst-01/BvDIntegrationCT/hierarchy",
-                                    "proxyMethod": "GET",
-                                    "action": {
-                                        "permissions": [
-                                            "https://tst-01-rih-proxy.reltio.com",
-                                            "https://apim.workato.com"
-                                        ],
-                                        "files": [
-                                            "https://reltio-ui-files.s3.amazonaws.com/custom-scripts/b2b_application_bvd_proxy.js"
-                                        ]
-                                    }
-                                }
-                            ]
-                        }
+  "id": "D&B",
+  "views": [
+    {
+      "id": "GetMatchButtonView",
+      "component": "Custom",
+      "label": "Get D&B Match",
+      "url": "https://360-rih-proxy.reltio.com/api/v1/proxy/workato/invoke_endpoints",
+      "success": "Success! Please reload this profile and review the 'Verification' details to check whether a match was found. Resolve the Potential Match to enrich the profile.",
+      "fail": "Failure:",
+      "loading": "Processing...",
+      "height": 34,
+      "profileName": "{{tenantId}}_DnB_-_REST_API_Collections",
+      "workatoEndpoint": "https://apim.workato.com/{{workatoEndpoint}}/trigger-recipes/dev-dnb-api-real-time-enrichment-rest-api?doNotMerge=true&dataBlocks=companyinfo_L3_v1,diversityinsight_L1_v1&entityURI=",
+      "proxyMethod": "POST",
+      "action": {
+        "permissions": [
+          "https://360-rih-proxy.reltio.com",
+          "https://apim.workato.com"
+        ],
+        "files": [
+          "https://reltio-ui-files.s3.amazonaws.com/custom-scripts/b2b_application_dnb_proxy.js"
+        ]
+      },
+      "canRead": {
+        "roles": [
+          "ROLE_DNB_CONNECTOR",
+          "ROLE_DNB_CONNECTOR_ADMIN"
+        ]
+      }
+    },
+    {
+      "id": "GetCompanyDetailsButtonView",
+      "class": "CustomActionView",
+      "label": "Get D&B Company Info",
+      "url": "https://360-rih-proxy.reltio.com/api/v1/proxy/workato/invoke_endpoints",
+      "success": "Success! This profile should now be updated with the latest company information.",
+      "fail": "Failure:",
+      "loading": "Processing...",
+      "height": 34,
+      "profileName": "{{tenantId}}_DnB_-_REST_API_Collections",
+      "workatoEndpoint": "https://apim.workato.com/{{workatoEndpoint}}/trigger-recipes/dev-dnb-api-real-time-enrichment-rest-api?doNotMerge=false&dataBlocks=companyinfo_L3_v1,diversityinsight_L1_v1&entityURI=",
+      "proxyMethod": "POST",
+      "action": {
+        "permissions": [
+          "https://360-rih-proxy.reltio.com",
+          "https://apim.workato.com"
+        ],
+        "files": [
+          "https://reltio-ui-files.s3.amazonaws.com/custom-scripts/b2b_application_dnb_proxy.js"
+        ]
+      },
+      "canRead": {
+        "roles": [
+          "ROLE_DNB_CONNECTOR",
+          "ROLE_DNB_CONNECTOR_ADMIN"
+        ]
+      }
+    },
+    {
+      "id": "GetAssociationButtonView",
+      "class": "CustomActionView",
+      "label": "Get D&B Hierarchy & Contacts",
+      "url": "https://360-rih-proxy.reltio.com/api/v1/proxy/workato/invoke_endpoints",
+      "success": "Success! If Contact and Hierarchy data was available, this profile should now be enriched with the corresponding Company Hierarchy and Principal Contacts' relationships. Please reload the profile.",
+      "fail": "Failure:",
+      "loading": "Processing...",
+      "height": 34,
+      "profileName": "{{tenantId}}_DnB_-_REST_API_Collections",
+      "workatoEndpoint": "https://apim.workato.com/{{workatoEndpoint}}/trigger-recipes/dev-dnb-api-real-time-enrichment-rest-api?doNotMerge=false&dataBlocks=hierarchyconnections_L1_v1,principalscontacts_L1_v2&entityURI=",
+      "proxyMethod": "POST",
+      "action": {
+        "permissions": [
+          "https://360-rih-proxy.reltio.com",
+          "https://apim.workato.com"
+        ],
+        "files": [
+          "https://reltio-ui-files.s3.amazonaws.com/custom-scripts/b2b_application_dnb_proxy.js"
+        ]
+      },
+      "canRead": {
+        "roles": [
+          "ROLE_DNB_CONNECTOR",
+          "ROLE_DNB_CONNECTOR_ADMIN"
+        ]
+      }
+    }
+  ]
+}
 ```
    - Replace the `url` value with the RIH proxy URL provided by Reltio Support.
    - Replace `<profile_name>` in `profileName` with the profile name created for the RIH proxy.
-   - Replace the `workatoEndpoint` value with the BvD real-time REST API endpoint configured in your Workato environment. Do not change the parameters in the `workatoEndpoint` value.
+   - Replace the `workatoEndpoint` value with the D&B real-time REST API endpoint configured in your Workato environment. Do not change the parameters in the `workatoEndpoint` value.
      > **Note:** If the environment is not `tst-01`, change the `action.permissions` URL from `https://tst-01-rih-proxy.reltio.com` to `https://360-rih-proxy.reltio.com`.
    - Save the `config.json` file.
 6. In the **UI Modeler**, select the configuration file, and then select **Import & Replace**. The **Select file** page is displayed.
@@ -167292,16 +167463,16 @@ To configure the UI for BvD buttons
 
 **Result**
 
-The BvD buttons appear in the side panel of the profile in the Reltio UI. You can use these buttons for BvD-related actions, including record enrichment.
+The D&B buttons appear in the side panel of the profile in the Reltio UI. You can use these buttons for D&B-related actions, including record enrichment.
 
-The BvD Details button remains inactive until you run BvD Match and merge a suitable potential match with the entity so that the entity receives the BvD Identifier attribute.
+The D&B Details button remains inactive until you run D&B Match and merge a suitable potential match with the entity so that the entity receives the D&B Identifier attribute.
 
 **Verification steps**
 
 1. Open the profile in the Reltio UI.
-2. Confirm that the BvD buttons appear in the side panel view.
-3. Select BvD Match and confirm that the action starts as expected.
-4. After the entity receives the **BvD Identifier** attribute, confirm that the **BvD Details** button becomes active.
+2. Confirm that the D&B buttons appear in the side panel view.
+3. Select D&B Match and confirm that the action starts as expected.
+4. After the entity receives the **D&B Identifier** attribute, confirm that the **D&B Details** button becomes active.
 
 
 
