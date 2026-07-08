@@ -1,8 +1,8 @@
 # Reltio Documentation
 
-_Generated: 2026-07-03 02:16 UTC_
+_Generated: 2026-07-08 02:15 UTC_
 
-_Topics: 3346_
+_Topics: 3355_
 
 ---
 
@@ -324,6 +324,18 @@ Images are in SVG format. Use the icons on their own or with text labels as appr
 | Technical Writer | icon_role_int_tech_writer_labeled |
 | UX Designer | icon_role_int_ux_designer_labeled |
 | Subject Matter Expert (SME) | con_role_int_sme_labeled |
+
+**Role names with links**
+
+| Role | Icon ID |
+| --- | --- |
+| [Business User](https://docs.reltio.com/en/roles/business-user/business-user-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | link_role_bizuser |
+| [Data Product Owner](https://docs.reltio.com/en/roles/data-product-owner/data-product-owner-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | link_role_dataprodowner |
+| [Data Steward](https://docs.reltio.com/en/roles/data-steward/data-steward-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | link_role_datasteward |
+| [Developer](https://docs.reltio.com/en/roles/developer/developer-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | link_role_dev |
+| [Reltio Configurator](https://docs.reltio.com/en/roles/reltio-configurator/reltio-configurator-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | link_role_configurator |
+| [Solution Architect](https://docs.reltio.com/en/roles/solution-architect/solution-architect-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | link_role_solarch |
+| [System Administrator](https://docs.reltio.com/en/roles/system-administrator/system-administrator-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | link_role_sysadmin |
 
 **Market segment icons - full size**
 
@@ -15157,7 +15169,7 @@ Reltio real-time email and phone verification lets you verify email addresses an
 
 You can write verification results directly to the record or return them in the API response without storing them. Use this capability to validate contact data during onboarding, bulk data cleanup, and external system workflows.
 
-For more information, see [Email and phone verification](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-operation/email-and-phone-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+For more information, see [Email and phone verification](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/email-and-phone-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 ## Monitor your Data Shares
 
@@ -15166,6 +15178,20 @@ Monitoring data share is now available for each of your data shares in the **Dat
 Available in **Console > Data Sharing > Data Share**. Select **Monitor** for a data share to open its Monitoring page.
 
 For more information, see [Monitoring data share](https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing-at-a-glance/monitoring-data-share?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [View data sharing activity](https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing-at-a-glance/monitoring-data-share/view-data-sharing-activity?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+## Real-time address suggestions with Address autocomplete
+
+In the Profile view, you can now search for and select address suggestions as you type in supported address fields. When you select a suggestion, the mapped address fields are populated with standardized address values. This reduces manual entry and helps improve address consistency at the point of entry.
+
+For more information, see [Address autocomplete](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/address-autocomplete?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+## Reltio Data Sharing with Databricks now uses streaming tables
+
+Reltio Data Sharing with Databricks shared entity, relation, and interaction objects as materialized views, which provided a simplified schema for operational values (OV) data shares. These objects are now shared as streaming tables instead, bringing near real-time data latency while keeping the same simplified schema. The streaming tables use the same names as the materialized views they replace, so your existing downstream queries, dashboards, and applications continue working without changes.
+
+New Reltio tenants that enable Reltio Data Sharing with Databricks receive streaming tables automatically, with no additional configuration required. Tenants with an existing Databricks data share continue using materialized views. However, we strongly recommend upgrading your data shares to use streaming tables. Contact [Reltio Support](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) to upgrade your tenant and existing data shares to streaming tables.
+
+For more information, see [Best practices for Reltio Data Sharing with Databricks](https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing-at-a-glance/reltio-data-sharing-with-databricks-at-a-glance/best-practices-for-reltio-data-sharing-with-databricks?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
@@ -87029,6 +87055,252 @@ The following example shows the response body.
 
 ---
 
+# Address autocomplete APIs
+
+> **Section:** Developer resources > Data Integration APIs > Data Integration APIs at a glance
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/address-autocomplete-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** address autocomplete apis, address search api reltio, address fetch api reltio, loqate address apis reltio, real-time address suggestion api, address autocomplete data integration api
+
+
+Learn about the Search API and Fetch API to find and retrieve validated addresses for Address autocomplete.
+
+The [Address autocomplete](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/address-autocomplete?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) feature enables you to quickly find and populate accurate address data by offering real-time suggestions as you type. The feature uses APIs to retrieve real-time address suggestions and full, validated address details for use in the Reltio Hub. These APIs support data quality at the point of entry by reducing typos, inconsistent formatting, and incomplete address records.
+
+> **Note:** The Search and Fetch APIs can also be integrated into external applications to provide Address autocomplete functionality.
+
+The following APIs are available for this feature:
+
+- 
+
+  [Fetch address details with the Address autocomplete Fetch API](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/address-autocomplete-apis/fetch-address-details-with-the-address-autocomplete-fetch-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- 
+
+  [Search addresses with the Address autocomplete Search API](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/address-autocomplete-apis/search-addresses-with-the-address-autocomplete-search-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+
+
+---
+
+# Fetch address details with the Address autocomplete Fetch API
+
+> **Section:** Developer resources > Data Integration APIs > Data Integration APIs at a glance > Address autocomplete APIs
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/address-autocomplete-apis/fetch-address-details-with-the-address-autocomplete-fetch-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** address autocomplete fetch api, fetch address details, retrieve full address from id, address details api, selected address fetch, address retrieve api, address fetch, autocomplete, loqate
+
+
+Learn more about how to use the Address autocomplete Fetch API to retrieve full address details for a selected address identifier.
+
+Use the `Address autocomplete Fetch API` to retrieve the full details of an address from its unique identifier. This operation is typically called after an address suggestion is selected from the Search API response. For more information, see [Address autocomplete](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/address-autocomplete?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+## HTTP method and endpoint
+
+Use the following HTTP method and endpoint path to submit the request:
+
+```
+GET {TenantURL}/address/fetch
+```
+
+Replace `{TenantURL}` with your tenant base URL.
+
+## Request headers
+
+Include the following headers in each request:
+
+| **Name** | **Required** | **Description** |
+| --- | --- | --- |
+| `Authorization` | Yes | Bearer access token in the format `Bearer <accessToken>`. For authentication details, see [Authentication API](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/authentication-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
+| `Content-Type` | Yes | Set to `application/json`. |
+
+## Query parameters
+
+The following table describes the supported query parameters.
+
+| **Name** | **Type** | **Required** | **Description** |
+| --- | --- | --- | --- |
+| `ID` | String | Yes | Unique address identifier returned by the Search API. |
+
+## Request body
+
+This operation does not require a request body.
+
+## Example request
+
+The following example fetches the details for a selected address identifier:
+
+```
+GET {TenantURL}/address/fetch?ID=IN%7CLP%7CB%7C14161031%7C_ENG
+Authorization: Bearer <accessToken>
+Content-Type: application/json
+```
+
+## Example response
+
+The following example shows the response returned by the API:
+
+```
+[
+  {
+    "Id": "IN|LP|B|55231200|_ENG",
+    "DomesticId": "55231200",
+    "Language": "ENG",
+    "LanguageAlternatives": "ENG,HIN,KAN",
+    "Company": "Reltio",
+    "Neighbourhood": "AMR Tech Park",
+    "District": "Hongasandra",
+    "City": "Bengaluru",
+    "Line1": "Hongasandra",
+    "AdminAreaName": "Bengaluru District",
+    "Province": "KA",
+    "ProvinceName": "Karnataka",
+    "ProvinceCode": "KA",
+    "PostalCode": "560068",
+    "CountryName": "India",
+    "CountryIso2": "IN",
+    "CountryIso3": "IND",
+    "CountryIsoNumber": "356",
+    "Label": "Reltio\n\nBengaluru\n560068\nINDIA",
+    "Type": "Unknown",
+    "DataLevel": "Premise"
+  }
+]
+```
+
+## Response fields
+
+The following table describes the fields shown in the sample response.
+
+| **Field** | **Type** | **Description** |
+| --- | --- | --- |
+| `Id` | String | Unique identifier of the returned address. |
+| `DomesticId` | String | Unique reference number of the address in the provider dataset. |
+| `Language` | String | Language code of the returned address. |
+| `LanguageAlternatives` | String | Comma-separated list of alternative language versions. |
+| `Company` | String | Company name associated with the address. |
+| `Neighbourhood` | String | Neighbourhood of the address. |
+| `District` | String | District name. |
+| `City` | String | Town or city name. |
+| `Line1` | String | First line of the formatted address. |
+| `AdminAreaName` | String | Name of the administrative area. |
+| `Province` | String | Province value returned for the address format. |
+| `ProvinceName` | String | Name of the administrative division. |
+| `ProvinceCode` | String | Code of the administrative division. |
+| `PostalCode` | String | Postal code. |
+| `CountryName` | String | Full country name. |
+| `CountryIso2` | String | Two-character country code. |
+| `CountryIso3` | String | Three-character country code. |
+| `CountryIsoNumber` | String | Numeric country code. |
+| `Label` | String | Formatted address label. |
+| `Type` | String | Returned address type. |
+| `DataLevel` | String | Granularity level of the returned address data. |
+
+
+
+---
+
+# Search addresses with the Address autocomplete Search API
+
+> **Section:** Developer resources > Data Integration APIs > Data Integration APIs at a glance > Address autocomplete APIs
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/address-autocomplete-apis/search-addresses-with-the-address-autocomplete-search-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** address autocomplete search api, search addresses with address autocomplete, retrieve address suggestions, address suggestion api, search address by container, type ahead address search, address search, autocomplete, loqate
+
+
+Learn more about how to use the Address autocomplete Search API to retrieve real-time address suggestions.
+
+Use the `Address autocomplete search API` to retrieve candidate addresses for entered text or for a selected container. The response returns formatted address suggestions that an application displays in a suggestion list. For more information, see [Address autocomplete](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/address-autocomplete?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+## HTTP method and endpoint
+
+Use the following HTTP method and endpoint path to submit the request:
+
+```
+GET {TenantURL}/address/search
+```
+
+Replace `{TenantURL}` with your tenant base URL.
+
+## Request headers
+
+Include the following headers in each request:
+
+| **Name** | **Required** | **Description** |
+| --- | --- | --- |
+| `Authorization` | Yes | Bearer access token in the format `Bearer <accessToken>`. For authentication details, see [Authentication API](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/authentication-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
+| `Content-Type` | Yes | Set to `application/json`. |
+
+## Query parameters
+
+The following table describes the supported query parameters.
+
+| **Name** | **Type** | **Required** | **Description** |
+| --- | --- | --- | --- |
+| `Text` | String | No | Free-text input used to search for matching addresses. |
+| `Container` | String | No | Container identifier used to restrict the search to a selected building or apartment container. |
+| `Countries` | String | No | Comma-separated country codes used to restrict results. |
+| `Language` | String | No | Preferred language for returned results. |
+| `Limit` | Integer | No | Maximum number of suggestions to return. |
+
+## Request body
+
+This operation does not require a request body.
+
+## Example request
+
+The following example searches for addresses by text:
+
+```
+GET {TenantURL}/address/search?Text=Reltio&Countries=US,IN&Limit=10
+Authorization: Bearer <accessToken>
+Content-Type: application/json
+```
+
+## Example response
+
+The following example shows address suggestions returned by the API:
+
+```
+[
+  {
+    "Id": "IN|LP|B|14161031|_ENG",
+    "Type": "Address",
+    "Text": "Reltio 17th Cross Road HSR Layout Bengaluru 560102",
+    "Highlight": "0-6",
+    "Description": ""
+  },
+  {
+    "Id": "IN|LP|B|55231200|_ENG",
+    "Type": "Address",
+    "Text": "Reltio Hongasandra Bengaluru 560068",
+    "Highlight": "0-6",
+    "Description": ""
+  }
+]
+```
+
+## Response fields
+
+The following table describes the fields returned for each address suggestion in the response array.
+
+| **Field** | **Type** | **Description** |
+| --- | --- | --- |
+| `Id` | String | Unique identifier of the returned address suggestion. |
+| `Type` | String | Classification of the returned suggestion, for example `Address`. |
+| `Text` | String | Formatted suggestion text that an application can display in an address list. |
+| `Highlight` | String | Highlight information returned for the matching text. |
+| `Description` | String | Additional context returned for the suggestion. |
+
+
+
+---
+
 # Delta Lake API
 
 > **Section:** Developer resources > Data Integration APIs > Data Integration APIs at a glance
@@ -103872,14 +104144,14 @@ Learn how to configure the Claude desktop application to securely connect to the
 
 Before you begin, make sure you have:
 
-- The MCP feature enabled in the physical configuration of your tenant. Contact Reltio Support if you need help enabling the MCP feature.
+- The MCP feature enabled in the physical configuration of your tenant. Contact Reltio Support if you need help enabling the MCP feature
 - One of the following roles in your tenant:
   - ROLE_EXECUTE_MCP, or
   - ROLE_ADMIN_MCP
-- The AgentFlow MCP server endpoint,
-- Claude desktop app (version 0.7.0 or later),
-- Permission to access and edit Claude's configuration file on your local machine,
-- Node.js installed.
+- The AgentFlow MCP server endpoint
+- Claude desktop app (version 0.7.0 or later)
+- Permission to access and edit Claude's configuration file on your local machine
+- Node.js is installed
 
 
 To configure Claude to connect to Reltio AgentFlow MCP Server:
@@ -103887,41 +104159,24 @@ To configure Claude to connect to Reltio AgentFlow MCP Server:
 1. Locate the configuration file for Claude desktop based on your OS:
    | Operating system | Configuration file path |
 | --- | --- |
-| **Windows** | `%APPDATA%\Claude\claude_desktop_config.json` |
+| **Windows** | `%APPDATA%\\Claude\\claude_desktop_config.json` |
 | **macOS** | `~/Library/Application Support/Claude/claude_desktop_config.json` |
 | **Linux** | `~/.config/Claude/claude_desktop_config.json` |
 2. Open or create the configuration file in a JSON-capable text editor with the following base structure:
    ```
 { "mcpServers": {} }
    ```
-3. Add the Reltio AgentFlow MCP Server connection under the `mcpServers` object.
-   AgentFlow MCP via `npx`
-   AgentFlow MCP via `npx`
+3. Add the Reltio AgentFlow MCP Server connection under the `mcpServers` object using the correct `command` path for your operating system.
+   **Windows configuration**
    ```
-{ "mcpServers": { "reltio-mcp-server": { "command": "npx", "args": [ "mcp-remote", "https://<reltio-namespace>.reltio.com/ai/tools/mcp/", "9696", "--header", "Authorization:${AUTH_HEADER}" ], "env": { "AUTH_HEADER": "Bearer <YOUR_AUTH_TOKEN>" } } } }
+{ "mcpServers": { "ReltioMcpServer": { "command": "C:\\PROGRA~1\\nodejs\\npx.cmd", "args": [ "mcp-remote", "https://<Env>.reltio.com/ai/tools/mcp/", "9696", "--debug" ] } } }
    ```
-   - Replace `<reltio-namespace>` with the namespace of your tenant (for example, test). This ensures the MCP connection targets the correct tenant-specific endpoint.
-   - Replace `<YOUR_AUTH_TOKEN>` with a valid authentication token for that tenant. This token authorizes the agent or tool to access the MCP server securely..
-   > **Note:**
-   > - The MCP server listens on port `9696`.
-   > - The `npx` command fetches and runs the MCP tool automatically.
+   **Mac and Linux configuration**
+   ```
+{ "mcpServers": { "ReltioMcpServer": { "command": "npx", "args": [ "mcp-remote", "https://<Env>.reltio.com/ai/tools/mcp/", "9696", "--debug" ] } } }
+   ```
 4. Save your configuration file.
-5. Validate the JSON file syntax using a validator tool or command-line utility:
-   - **Windows PowerShell**
-
-```
-
-Get-Content "$env:APPDATA\Claude\claude_desktop_config.json" | ConvertFrom-Json
-                     
-```
-   - **macOS/Linux**
-
-```
-
-python -m json.tool ~/Library/Application\ Support/Claude/claude_desktop_config.json
-                     
-```
-6. Restart the Claude desktop application.
+5. Restart the Claude desktop application.
    - Completely exit Claude, ensuring no background processes are running.
    - Reopen Claude to apply your configuration.
 
@@ -103940,11 +104195,11 @@ python -m json.tool ~/Library/Application\ Support/Claude/claude_desktop_config.
 
 **Bearer token expires and Claude fails to connect**
 
-**Cause** - the configuration uses a Reltio bearer token, which expires after a set duration. When the token becomes invalid, authentication requests to the MCP server will fail with a **403 Forbidden error**.
+**Cause** — the configuration uses a Reltio bearer token, which expires after a set duration. When the token becomes invalid, authentication requests to the MCP server will fail with a **401 invalid access token**.
 
-**Customer IP not allowlisted for AgentFlow MCP Server access**
+**Clear cached MCP authentication data**
 
-**Cause** - Reltio currently applies IP filtering to all MCP environments as a security measure. If your organization has not yet purchased an AgentFlow MCP Server access, your IP address will not be allowlisted. This results in a **403 Forbidden error** when trying to connect, even with valid credentials and tokens.
+**Cause** — Cached authentication data in the local MCP authentication directory may prevent Claude from connecting to the Reltio AgentFlow MCP Server or completing tool execution.
 
 
 
@@ -137049,7 +137304,7 @@ Learn more about how to verify mapped email and phone attributes on an entity an
 
 Use the `Entity verification API` to verify mapped email and phone attributes on a specific entity and persist the results. The API updates verification-related attributes based on the configured output mappings and returns the full updated entity. To reduce external calls, the API reuses previous verification results when they are still within the configured `maxVerificationAge`. Set `forceVerify` to `true` to run a new verification.
 
-This API requires a valid license for email and phone verification. To persist verification results, configure `attributeVerificationConfig` in your tenant's [L3 configuration](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-operation/email-and-phone-verification/configure-email-and-phone-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+This API requires a valid license for email and phone verification. To persist verification results, configure `attributeVerificationConfig` in your tenant's [L3 configuration](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/email-and-phone-verification/configure-email-and-phone-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 ## HTTP method and endpoint
 
@@ -147788,32 +148043,50 @@ Explore the Cleanse configurations to tailor how addresses are cleansed, verifie
 | Hierarchical OV for delta calculation | Controls how operational values (OV) are calculated for nested attributes in streamed delta messages. Enable this option when you want OV values in external message payloads to align more closely with the OV behavior returned by the current entity state in the UI and GET APIs. This option is useful for downstream integrations that rely on streamed messages for traceability, reconciliation, or audit processing. | `Disabled` | `EnabledDisabled` | [Message streaming](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/events-api/message-streaming?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)**Note:** For nested attributes, streamed delta payloads can evaluate OV differently from the current entity state. Enable `hierarchicalOvForDeltaCalculation` when you need delta-message OV behavior to align more closely with the OV returned by the UI and GET APIs. |
 | Message Streaming API | Controls whether events triggered by REST API operations such as data loads or reindex requests are delivered to external streaming destinations.  When this setting is disabled, external delivery is paused, but internal pipelines such as Grouping and DataPipeline continue to operate if message streaming remains enabled.  This setting takes effect only when Message Streaming is enabled. | `Enabled` | `Enabled`  `Disabled` | [Message streaming](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/events-api/message-streaming?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
 
+## Address autocomplete
+
+Use these settings to enable Address autocomplete. Address autocomplete lets you select an address from validated suggestions as you type.
+
+> **Note:** Address autocomplete is available only for tenants with a valid license. To enable it for your tenant, contact your CSM or account manager.
+
+The following table describes the configurable parameters to enable Address autocomplete. 
+
+| Parameter | Description | Default value | Allowed values |
+| --- | --- | --- | --- |
+| Address autocomplete provider | The provider used to return address suggestions. | `Loqate` | Supported provider name |
+| Address autocomplete API key | The API key from the address autocomplete provider. | — | Valid API key |
+| Address — minimum search text length | The minimum number of characters required before address suggestions are returned. | — | Positive integer |
+| Address — countries | The countries for which address suggestions are returned. | — | Comma separated list of country codes.   > **Note:** Leave this field empty to return address suggestions worldwide. |
+| Address — suggestions limit | The maximum number of address suggestions returned. | 10 | Positive integer |
+
 ## Email verification
 
 > **Note:** Email verification is available only for tenants with a valid license. To enable it for your tenant, contact your CSM or account manager.
 
 
 
-
+The following table describes the configurable parameters to enable Email verification.
 
 | Parameter | Description | Default value | Allowed values |
 | --- | --- | --- | --- |
 | Email verification service provider | The provider used to verify email addresses. | `Loqate` | Supported provider name |
 | Email verification API key | The API key that you acquire from the email verification provider. | — | Valid API key |
-| Email max verification age (days) | The maximum number of days a previous email verification result can be reused before a new verification is required. | — | Positive integer |
+| Email max verification age (days) | The maximum number of days a previous email verification result can be reused before a new verification is required. | 30 | Positive integer |
 
 ## Phone verification
 
-Use these settings to enable phone verification, allowing users to validate phone numbers and identify invalid or incorrectly formatted numbers.
+Use these settings to enable phone verification. Phone verification lets you validate phone numbers and identify invalid or incorrectly formatted numbers.
 
 > **Note:** Phone verification is available only for tenants with a valid license. To enable it for your tenant, contact your CSM or account manager.
+
+The following table describes the configurable parameters to enable Phone verification. 
 
 | Parameter | Description | Default value | Allowed values |
 | --- | --- | --- | --- |
 | Phone verification service provider | The provider used to verify phone numbers. | `Loqate` | Supported provider name |
 | Phone verification API key | The API key that you acquire from the phone verification provider. | — | Valid provider API key |
-| Phone — ISO3 country format | When enabled, the phone verification response returns ISO3 country codes instead of ISO2 country codes. When disabled, it returns ISO2 country codes. | `Enabled` | `Enabled`, `Disabled` |
-| Phone max verification age (days) | The maximum number of days for which a previous phone verification result can be reused. | — | Positive integer |
+| Phone — ISO3 country format | When enabled, the phone verification response returns ISO3 country codes instead of ISO2 country codes. When disabled, it returns ISO2 country codes. | `Disabled` | `Enabled`, `Disabled` |
+| Phone max verification age (days) | The maximum number of days for which a previous phone verification result can be reused. | 30 | Positive integer |
 
 
 
@@ -161794,6 +162067,8 @@ Access the program through the following:
 - APIs: Access preconfigured endpoints to enrich data directly in your workflows
 - Health Resources and Services Administration (HRSA) Data: Daily updates ensure that the latest 340B compliance information is available for integration​
 
+To configure and enable Reltio Enrichment with 340B for your tenant, see [Configure and enable Reltio Enrichment with 340B](https://docs.reltio.com/en/applications/data-integrations/data-enrichment-integrations-at-a-glance/reltio-enrichment-with-340b-at-a-glance/reltio-enrichment-with-340b-set-up/configure-and-enable-reltio-enrichment-with-340b?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
 
 
 ---
@@ -161959,6 +162234,8 @@ The 340B Data Tenant uses an extension of the HCO entity from the Life Sciences 
 | 340b | Nested | TerminationDate | Term Date | Termination Date |
 | 340b | Nested | TerminationCode | Termination Code | Termination Code |
 
+To apply these attributes to your tenant subscription, see [Configure and enable Reltio Enrichment with 340B](https://docs.reltio.com/en/applications/data-integrations/data-enrichment-integrations-at-a-glance/reltio-enrichment-with-340b-at-a-glance/reltio-enrichment-with-340b-set-up/configure-and-enable-reltio-enrichment-with-340b?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
 
 
 ---
@@ -161978,6 +162255,8 @@ Learn about the 340B Data Tenant.
 The 340B Data Tenant enables you to subscribe your Reltio Customer Tenant to a Data Tenant containing details of 340B covered healthcare organizations.
 
 The data in the 340B Data Tenant can then be used to enrich the customer data in the Customer Tenant. Multiple customer tenants can subscribe to the 340B Data Tenant through the Data Tenant Subscription Service (DTSS) connection. DTSS enables a seamless sharing of 340B data between the Reltio Customer Tenants without any external ETL (Extract, Transform, and Load) or integration effort.
+
+To configure and enable Reltio Enrichment with 340B for your tenant, see [Configure and enable Reltio Enrichment with 340B](https://docs.reltio.com/en/applications/data-integrations/data-enrichment-integrations-at-a-glance/reltio-enrichment-with-340b-at-a-glance/reltio-enrichment-with-340b-set-up/configure-and-enable-reltio-enrichment-with-340b?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
@@ -162094,6 +162373,83 @@ The predefined lookups or standardized reference data helps to improve the data 
 | `340BAddressType` | Address Types |
 | `340BProgramCode` | Program Codes |
 | `340BTerminationCode` | Termination Codes |
+
+
+
+---
+
+# Configure and enable Reltio Enrichment with 340B
+
+> **Section:** Applications > Data Integrations > Data Enrichment Integrations at a glance > Reltio Enrichment with 340B at a glance > Reltio Enrichment with 340B set up
+
+
+**Source:** https://docs.reltio.com/en/applications/data-integrations/data-enrichment-integrations-at-a-glance/reltio-enrichment-with-340b-at-a-glance/reltio-enrichment-with-340b-set-up/configure-and-enable-reltio-enrichment-with-340b?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** configure 340B enrichment, enable 340B DTSS subscription, 340B configuration enablement, ROLE_DTSS_CT_MANAGER, DTSS subscription template, 340B HCO matching Exact340B
+
+
+Learn how to configure and enable Reltio Enrichment with 340B for your tenant.
+
+Enabling Reltio Enrichment with 340B adds the 340B program as a new data source in your tenant. Treat it as a new source and assess the impact on your existing implementation before you begin. Depending on how your tenant is configured, enabling this enrichment results in matching, merging, and data enrichment activity. The resulting profiles can cause further consolidation based on your tenant's match rules.
+
+**Prerequisites**
+
+Before you begin, make sure you meet the following requirements:
+
+- 
+
+  You must have reviewed the [Reltio Enrichment with 340B data model and mapping](https://docs.reltio.com/en/applications/data-integrations/data-enrichment-integrations-at-a-glance/reltio-enrichment-with-340b-at-a-glance/reltio-enrichment-with-340b-set-up/reltio-enrichment-with-340b-data-model-and-mapping?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and identified the attributes you want to synchronize.
+- 
+
+  Provisioning must be complete for Reltio Enrichment with 340B. This means that:
+
+  1. 
+
+     Your tenant is registered for DTSS.
+  2. 
+
+     Your customer administrator is assigned the `ROLE_DTSS_DEPLOYER` role.
+- 
+
+  You must have reviewed your existing RDM, cleanser, survivorship, and match rule configurations and applied any required changes before enabling the enrichment.
+
+> **Important:** If you plan to use `REALTIME` mode, [enable both streaming and](https://docs.reltio.com/en/applications/console/tenant-management-applications/tenant-management-at-a-glance/tenant-configuration-at-a-glance/view-and-edit-tenant-configuration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)`streamingAPI`in your tenant before you begin. You can confirm the `streamingEnabled` and `streamingAPIEnabled` in your tenant configuration before you begin.
+> [Get help in Support Portal](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) if you need help.
+
+
+To configure and enable Reltio Enrichment with 340B:
+
+1. Review the attributes available from the 340B data tenant.
+   For more information, see [Reltio Enrichment with 340B data model and mapping](https://docs.reltio.com/en/applications/data-integrations/data-enrichment-integrations-at-a-glance/reltio-enrichment-with-340b-at-a-glance/reltio-enrichment-with-340b-set-up/reltio-enrichment-with-340b-data-model-and-mapping?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+2. If your customer tenant is missing attributes you want to synchronize, add them using the JSON in [Reltio Enrichment with 340B data model and mapping](https://docs.reltio.com/en/applications/data-integrations/data-enrichment-integrations-at-a-glance/reltio-enrichment-with-340b-at-a-glance/reltio-enrichment-with-340b-set-up/reltio-enrichment-with-340b-data-model-and-mapping?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) before continuing.
+3. Copy the 340B DTSS subscription template.
+   It applies to both the **Healthcare** and **Life Sciences** velocity packs.
+   Show the template
+   ```language-json
+{ "dataTenantId": { "id": "{{dataTenantId340b}}" }, "customerTenantId": { "id": "{{tenantId}}" }, "bringGoldenRecord": true, "mappings": [ { "copyFromDT": "configuration/entityTypes/HCO", "copyToCT": "configuration/entityTypes/HCO", "attributes": [ { "copyFromDT": "configuration/entityTypes/HCO/attributes/Name", "copyToCT": [ "configuration/entityTypes/HCO/attributes/Name" ] }, { "copyFromDT": "configuration/entityTypes/HCO/attributes/Identifiers", "copyToCT": [ "configuration/entityTypes/HCO/attributes/Identifiers" ], "attributes": [ { "copyFromDT": "configuration/entityTypes/HCO/attributes/Identifiers/attributes/ID", "copyToCT": [ "configuration/entityTypes/HCO/attributes/Identifiers/attributes/ID" ] }, { "copyFromDT": "configuration/entityTypes/HCO/attributes/Identifiers/attributes/Type", "copyToCT": [ "configuration/entityTypes/HCO/attributes/Identifiers/attributes/Type" ] }, { "copyFromDT": "configuration/entityTypes/HCO/attributes/Identifiers/attributes/Status", "copyToCT": [ "configuration/entityTypes/HCO/attributes/Identifiers/attributes/Status" ] }, { "copyFromDT": "configuration/entityTypes/HCO/attributes/Identifiers/attributes/ActivationDate", "copyToCT": [ "configuration/entityTypes/HCO/attributes/Identifiers/attributes/ActivationDate" ] }, { "copyFromDT": "configuration/entityTypes/HCO/attributes/Identifiers/attributes/DeactivationDate", "copyToCT": [ "configuration/entityTypes/HCO/attributes/Identifiers/attributes/DeactivationDate" ] }, { "copyFromDT": "configuration/entityTypes/HCO/attributes/Identifiers/attributes/ReactivationDate", "copyToCT": [ "configuration/entityTypes/HCO/attributes/Identifiers/attributes/ReactivationDate" ] } ] } ] } ], "synchronizationConfig": { "entities": [ { "action": "AUTOSUBSCRIBE", "types": [ "configuration/entityTypes/HCO" ], "matchRules": [ "configuration/entityTypes/HCO/matchGroups/Exact340B" ], "thresholds": { "default": 1, "custom": [ { "matchRules": [ "configuration/entityTypes/HCO/matchGroups/Exact340B" ], "threshold": 10 } ] } } ], "dtSyncType": "REALTIME", "ctSyncType": "REALTIME", "contracts": [] }, "autoRematch": true }
+   ```
+   You can also download the template as a JSON file: [340B DTSS subscription template](340B_Healthcare_LifeSciences_DTSS.json).
+4. Edit the template to match your requirements:
+   - Replace `{{dataTenantId340b}}` with your 340B data tenant ID.
+   - Replace `{{tenantId}}` with your customer tenant ID.
+   - Update the attribute mappings to match your customer tenant configuration. Data types must match even when naming conventions differ.
+   - Verify the match rules meet your requirements. The template uses `Exact340B` by default. For the full list of available match rules, see [Healthcare Organization (HCO) match rules](https://docs.reltio.com/en/applications/data-integrations/data-enrichment-integrations-at-a-glance/reltio-enrichment-with-340b-at-a-glance/reltio-enrichment-with-340b-set-up/reltio-enrichment-with-340b-match-rules/healthcare-organization-hco-match-rules?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+5. Post the completed subscription JSON to the [DTSS subscription endpoint](https://docs.reltio.com/en/applications/data-integrations/data-enrichment-integrations-at-a-glance/reltio-data-tenant-subscription-service-dtss-at-a-glance/reltio-dtss-set-up/subscription-configuration/subscriptions-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+   The request body is the subscription JSON you edited in the previous step.
+6. Verify the subscription was added successfully by confirming the response is `200 OK`.
+7. If your customer tenant contains existing data before adding the subscription, or if you change the match rules in the subscription, run a [manual match task](https://docs.reltio.com/en/applications/data-integrations/data-enrichment-integrations-at-a-glance/reltio-data-tenant-subscription-service-dtss-at-a-glance/reltio-dtss-operation/dtss-bulk-operations-tasks/manual-match-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) to perform DTSS matching and surface potential matches.
+   If you are deploying to a new empty tenant with `ctSyncType` set to `REALTIME`, skip this step and [step 8](#task-57/manual-subsc-task-step). Matching will occur as entities are created or updated in the customer tenant.
+8. Run a [manual subscribe task](https://docs.reltio.com/en/applications/data-integrations/data-enrichment-integrations-at-a-glance/reltio-data-tenant-subscription-service-dtss-at-a-glance/reltio-dtss-operation/dtss-bulk-operations-tasks/manual-subscribe-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) to automatically process merges, based on the auto-subscribe rules defined in the DTSS subscription. This step completes the backfill and enriches the customer tenant profiles.
+
+**Result**
+
+Reltio Enrichment with 340B is active for your tenant. The 340B data tenant begins synchronizing HCO data to your customer tenant in real time based on your subscription configuration and match rules. If you ran the backfill tasks, existing profiles are enriched during the initial match.
+
+**Validation**
+
+Confirm that 340B data appears on matching HCO profiles in your customer tenant. If profiles already existed, confirm the backfill tasks completed successfully before checking profile enrichment.
+
+For more information, see [Reltio Enrichment with 340B at a glance](https://docs.reltio.com/en/applications/data-integrations/data-enrichment-integrations-at-a-glance/reltio-enrichment-with-340b-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
@@ -173324,7 +173680,7 @@ Before you begin, confirm the following:
 - Your tenant's data model aligns with the **B2C velocity pack** or contains equivalent **Individual** and **Location** entity types. If your model differs, you may need to modify your tenant configuration and adjust mappings during provisioning. Reltio Identity Builder also supports nested addresses.
 - Required match attributes are configured: `FirstName`, `LastName`, `YoB`, `MoB`, and one of: `Address`, `Email`, or `Phone`. Optionally: `MiddleName`, `Suffix`, and `Gender`.
 
-This topic describes how to configure and enable Reltio Identity Builder for your tenant. The process involves verifying your provisioning, selecting a subscription tier, configuring attribute mappings and match rules, and posting the subscription to the DTSS endpoint.
+This topic describes how to configure and enable Reltio Identity Builder for your tenant. The process involves verifying your provisioning, configuring attribute mappings and match rules, and posting the subscription to the DTSS endpoint.
 
 1. Verify that Reltio Identity Builder has been provisioned for your tenant.
 2. Verify that you have been assigned one of the following roles based on your licensed tier: `ROLE_IDENTITY_BUILDER_ENRICH` or `ROLE_IDENTITY_BUILDER_ENRICH_PLUS`.
@@ -173337,11 +173693,13 @@ This topic describes how to configure and enable Reltio Identity Builder for you
    For more information, see [Data model](https://docs.reltio.com/en/applications/data-integrations/reltio-identity-builder-at-a-glance/data-model?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 6. Copy the subscription template that matches your licensed tier and save it as a JSON file.
    For **Identity Builder Enrich**, use the following template:
-   ```
+   Show template
+   ```language-json
 [ { "customerTenantId": { "id": "{tenantId}" }, "bringGoldenRecord": true, "validation": { "strictMappingCheck": true }, "synchronizationConfig": { "entities": [ { "types": [ "configuration/entityTypes/Individual" ], "action": "AUTOSUBSCRIBE", "matchRules": [ "configuration/entityTypes/Individual/matchGroups/RMAUTO01", "configuration/entityTypes/Individual/matchGroups/RMAUTO02", "configuration/entityTypes/Individual/matchGroups/RMAUTO03" ], "thresholds": { "default": 1, "extendSubscription": false, "custom": [] } } ], "dtSyncType": "REALTIME", "ctSyncType": "REALTIME", "relations": [] }, "mappings": [ { "copyFromDT": "configuration/entityTypes/Individual", "copyToCT": "configuration/entityTypes/Individual", "attributes": [ { "copyFromDT": "configuration/entityTypes/Individual/attributes/NamePrefix", "copyToCT": [ "configuration/entityTypes/Individual/attributes/NamePrefix" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/FirstName", "copyToCT": [ "configuration/entityTypes/Individual/attributes/FirstName" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/MiddleName", "copyToCT": [ "configuration/entityTypes/Individual/attributes/MiddleName" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/LastName", "copyToCT": [ "configuration/entityTypes/Individual/attributes/LastName" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/NameSuffix", "copyToCT": [ "configuration/entityTypes/Individual/attributes/NameSuffix" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Gender", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Gender" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/YoB", "copyToCT": [ "configuration/entityTypes/Individual/attributes/YoB" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/MoB", "copyToCT": [ "configuration/entityTypes/Individual/attributes/MoB" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/EstimatedAge", "copyToCT": [ "configuration/entityTypes/Individual/attributes/EstimatedAge" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/DataProviderFirstSeen", "copyToCT": [ "configuration/entityTypes/Individual/attributes/DataProviderFirstSeen" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/DataProviderLastSeen", "copyToCT": [ "configuration/entityTypes/Individual/attributes/DataProviderLastSeen" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Email", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Email" ], "attributes": [ { "copyFromDT": "configuration/entityTypes/Individual/attributes/Email/attributes/Type", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Email/attributes/Type" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Email/attributes/Email", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Email/attributes/Email" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Email/attributes/FirstSeen", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Email/attributes/FirstSeen" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Email/attributes/LastSeen", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Email/attributes/LastSeen" ] } ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/OtherNames", "copyToCT": [ "configuration/entityTypes/Individual/attributes/OtherNames" ], "attributes": [ { "copyFromDT": "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherName", "copyToCT": [ "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherName" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/OtherNames/attributes/Type", "copyToCT": [ "configuration/entityTypes/Individual/attributes/OtherNames/attributes/Type" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherNamePrefix", "copyToCT": [ "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherNamePrefix" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherFirstName", "copyToCT": [ "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherFirstName" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherMiddleName", "copyToCT": [ "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherMiddleName" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherLastName", "copyToCT": [ "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherLastName" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherNameSuffix", "copyToCT": [ "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherNameSuffix" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherNameGender", "copyToCT": [ "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherNameGender" ] } ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address" ], "attributes": [ { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/AddressLine1", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/AddressLine1" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/AddressLine2", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/AddressLine2" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/City", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/City" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/StateProvince", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/StateProvince" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/Country", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/Country" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/Zip5", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/Zip5" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/Zip4", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/Zip4" ] } ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/AddressType", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/AddressType" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/AddressFirstSeen", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/AddressFirstSeen" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Phone", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Phone" ], "attributes": [ { "copyFromDT": "configuration/entityTypes/Individual/attributes/Phone/attributes/Number", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Phone/attributes/Number" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Phone/attributes/Type", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Phone/attributes/Type" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Phone/attributes/FirstSeen", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Phone/attributes/FirstSeen" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Phone/attributes/LastSeen", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Phone/attributes/LastSeen" ] } ] } ] } ] } ]
    ```
    For **Identity Builder Enrich Plus**, use the following template:
-   ```
+   Show template
+   ```language-json
 [ { "customerTenantId": { "id": "{tenantId}" }, "bringGoldenRecord": true, "validation": { "strictMappingCheck": true }, "synchronizationConfig": { "entities": [ { "types": [ "configuration/entityTypes/Individual" ], "action": "AUTOSUBSCRIBE", "matchRules": [ "configuration/entityTypes/Individual/matchGroups/RMAUTO01", "configuration/entityTypes/Individual/matchGroups/RMAUTO02", "configuration/entityTypes/Individual/matchGroups/RMAUTO03" ], "thresholds": { "default": 1, "extendSubscription": false, "custom": [] } } ], "dtSyncType": "REALTIME", "ctSyncType": "REALTIME", "relations": [] }, "mappings": [ { "copyFromDT": "configuration/entityTypes/Individual", "copyToCT": "configuration/entityTypes/Individual", "attributes": [ { "copyFromDT": "configuration/entityTypes/Individual/attributes/NamePrefix", "copyToCT": [ "configuration/entityTypes/Individual/attributes/NamePrefix" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/FirstName", "copyToCT": [ "configuration/entityTypes/Individual/attributes/FirstName" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/MiddleName", "copyToCT": [ "configuration/entityTypes/Individual/attributes/MiddleName" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/LastName", "copyToCT": [ "configuration/entityTypes/Individual/attributes/LastName" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/NameSuffix", "copyToCT": [ "configuration/entityTypes/Individual/attributes/NameSuffix" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Gender", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Gender" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/YoB", "copyToCT": [ "configuration/entityTypes/Individual/attributes/YoB" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/MoB", "copyToCT": [ "configuration/entityTypes/Individual/attributes/MoB" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/EstimatedAge", "copyToCT": [ "configuration/entityTypes/Individual/attributes/EstimatedAge" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/DataProviderFirstSeen", "copyToCT": [ "configuration/entityTypes/Individual/attributes/DataProviderFirstSeen" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/DataProviderLastSeen", "copyToCT": [ "configuration/entityTypes/Individual/attributes/DataProviderLastSeen" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/SourceIP", "copyToCT": [ "configuration/entityTypes/Individual/attributes/SourceIP" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/DeceasedIndicator", "copyToCT": [ "configuration/entityTypes/Individual/attributes/DeceasedIndicator" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/DataProviderHouseholdID", "copyToCT": [ "configuration/entityTypes/Individual/attributes/DataProviderHouseholdID" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/WebsiteURL", "copyToCT": [ "configuration/entityTypes/Individual/attributes/WebsiteURL" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/WebInterests", "copyToCT": [ "configuration/entityTypes/Individual/attributes/WebInterests" ], "attributes": [ { "copyFromDT": "configuration/entityTypes/Individual/attributes/WebInterests/attributes/WebsiteURL", "copyToCT": [ "configuration/entityTypes/Individual/attributes/WebInterests/attributes/WebsiteURL" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/WebInterests/attributes/WebsiteType", "copyToCT": [ "configuration/entityTypes/Individual/attributes/WebInterests/attributes/WebsiteType" ] } ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Email", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Email" ], "attributes": [ { "copyFromDT": "configuration/entityTypes/Individual/attributes/Email/attributes/Type", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Email/attributes/Type" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Email/attributes/Email", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Email/attributes/Email" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Email/attributes/FirstSeen", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Email/attributes/FirstSeen" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Email/attributes/LastSeen", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Email/attributes/LastSeen" ] } ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/OtherNames", "copyToCT": [ "configuration/entityTypes/Individual/attributes/OtherNames" ], "attributes": [ { "copyFromDT": "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherName", "copyToCT": [ "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherName" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/OtherNames/attributes/Type", "copyToCT": [ "configuration/entityTypes/Individual/attributes/OtherNames/attributes/Type" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherNamePrefix", "copyToCT": [ "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherNamePrefix" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherFirstName", "copyToCT": [ "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherFirstName" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherMiddleName", "copyToCT": [ "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherMiddleName" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherLastName", "copyToCT": [ "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherLastName" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherNameSuffix", "copyToCT": [ "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherNameSuffix" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherNameGender", "copyToCT": [ "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherNameGender" ] } ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address" ], "attributes": [ { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/AddressLine1", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/AddressLine1" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/AddressLine2", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/AddressLine2" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/City", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/City" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/StateProvince", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/StateProvince" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/Country", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/Country" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/Zip5", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/Zip5" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/Zip4", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/Zip4" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/DeliveryPointBarCode", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/DeliveryPointBarCode" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/DPVConfirmedIndicator", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/DPVConfirmedIndicator" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/RecordType", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/RecordType" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/CarrierRoute", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/CarrierRoute" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/VacantIndicator", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/VacantIndicator" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/FIPSCountyCode", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/FIPSCountyCode" ] } ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/AddressType", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/AddressType" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/AddressFirstSeen", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/AddressFirstSeen" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/AddressLastValidated", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/AddressLastValidated" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Phone", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Phone" ], "attributes": [ { "copyFromDT": "configuration/entityTypes/Individual/attributes/Phone/attributes/Number", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Phone/attributes/Number" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Phone/attributes/Type", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Phone/attributes/Type" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Phone/attributes/FirstSeen", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Phone/attributes/FirstSeen" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Phone/attributes/LastSeen", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Phone/attributes/LastSeen" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Phone/attributes/ConfidenceScore", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Phone/attributes/ConfidenceScore" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Phone/attributes/LineType", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Phone/attributes/LineType" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Phone/attributes/DirectInDial", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Phone/attributes/DirectInDial" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Phone/attributes/DirectoryAssistanceCode", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Phone/attributes/DirectoryAssistanceCode" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Phone/attributes/OriginalProvider", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Phone/attributes/OriginalProvider" ] } ] } ] } ] } ]
    ```
 7. Modify the subscription based on your requirements.
@@ -173355,8 +173713,8 @@ This topic describes how to configure and enable Reltio Identity Builder for you
    - For Identity Builder Enrich: `POST https://{env}.reltio.com/dtss/subscription/identityBuilder`
    - For Identity Builder Enrich Plus: `POST https://{env}.reltio.com/dtss/subscription/identityBuilderPlus`
    The request body is the subscription JSON you prepared in the previous steps.
-11. Verify that the subscription is active.
-12. Run a manual match task to confirm the configuration is working.
+11. Confirm the subscription was deployed successfully.
+12. Run a manual match task to begin matching the existing profiles in your tenant against Identity Builder.
    Submit the following request using the Data Tenant ID you noted in step 3:
    `POST https://{env}.reltio.com/dtss/tasks/manual_match`
    Use the following request body:
@@ -193983,7 +194341,7 @@ Start here to explore how Reltio Data Sharing with Databricks delivers trusted d
 
 ## What is Reltio Data Sharing with Databricks?
 
-Reltio Data Sharing with Databricks is an integration that lets you access unified, trusted, and AI-ready data from Reltio Context Intelligence Platform directly within your Databricks Unity Catalog. It provides near real-time access to data without physically moving or duplicating it, enabling analytics, machine learning, and AI workloads on governed and trusted data.
+Reltio Data Sharing with Databricks is an integration that lets you access unified, trusted, and AI-ready data from Reltio Context Intelligence Platform directly within your Databricks Unity Catalog. It provides access to data within minutes, without physically moving or duplicating it. This enables analytics, machine learning, and AI workloads on governed and trusted data.
 
 *Image: i-apps-integ-zerocopy-databricks.png*
 
@@ -193998,7 +194356,7 @@ Data Product OwnerData StewardReltio Configurator
 Use this integration to:
 
 - Eliminate ETL complexities as you don't need to move data manually, reducing operational overhead.
-- Ensure near-real-time access to always up-to-date data, improving your business intelligence.
+- Access up-to-date data within minutes, improving your business intelligence.
 - Enhance security and compliance as your data stays within the Reltio ecosystem, ensuring governance.
 - Reduce data redundancy and costs since you don't need multiple copies of the same data, improving efficiency.
 - Consume simplified, flattened schema formats for analytics and AI/ML workloads.
@@ -194007,7 +194365,7 @@ Use this integration to:
 
 Use this feature when you want to:
 
-- Share data in near real-time between Reltio and Databricks for AI/ML or analytics use cases.
+- Share data within minutes between Reltio and Databricks for AI/ML or analytics use cases.
 - Enforce strict data governance policies that prohibit unnecessary data movement.
 - Seamlessly integrate with Databricks Unity Catalog.
 - Access data in the simplified schema or a flattened format.
@@ -194336,10 +194694,40 @@ Monitoring covers two measures of data sharing activity:
 
 **Source:** https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing-at-a-glance/reltio-data-sharing-with-databricks-at-a-glance/best-practices-for-reltio-data-sharing-with-databricks?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
+**Keywords:** Databricks data share best practices, streaming tables vs materialized views, data share tenant configuration, upgrade data share to streaming tables, materialized views data share Databricks, streaming tables data share Databricks, Reltio Data Sharing with Databricks, data share upgrade status, choosing streaming tables or materialized views, contact Reltio Support data share
+
+
+Best practices for sharing Reltio data with Databricks, covering both streaming tables and materialized views.
+
+## 
+
+Reltio shares data with Databricks using either streaming tables or materialized views, depending on your tenant's configuration. The best practices you should follow depend on which mechanism your tenant's data share currently uses.
+
+- 
+
+  If you have upgraded your data share to streaming tables, follow [Best practices for Reltio Data Sharing with Databricks with Streaming tables](https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing-at-a-glance/reltio-data-sharing-with-databricks-at-a-glance/best-practices-for-reltio-data-sharing-with-databricks/best-practices-for-reltio-data-sharing-with-databricks-with-streaming-tables?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+- 
+
+  If your data share still uses materialized views, follow [Best practices for Reltio Data Sharing with Databricks with Materialized views](https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing-at-a-glance/reltio-data-sharing-with-databricks-at-a-glance/best-practices-for-reltio-data-sharing-with-databricks/best-practices-for-reltio-data-sharing-with-databricks-with-materialized-views?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+- 
+
+  If you are unsure which configuration applies to your tenant, or your data share has not yet been upgraded, contact [Reltio Support](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) for assistance.
+
+
+
+---
+
+# Best practices for Reltio Data Sharing with Databricks with Materialized views
+
+> **Section:** Applications > Data Integrations > Reltio Data Sharing at a glance > Reltio Data Sharing with Databricks at a glance > Best practices for Reltio Data Sharing with Databricks
+
+
+**Source:** https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing-at-a-glance/reltio-data-sharing-with-databricks-at-a-glance/best-practices-for-reltio-data-sharing-with-databricks/best-practices-for-reltio-data-sharing-with-databricks-with-materialized-views?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
 **Keywords:** Data Sharing best practices, Data Share usage guidelines, Serverless compute optimization, Materialized views performance, Streaming tables querying, Supported data sets, Analytics workloads, Data engineering workflows, BI and reporting integration, ML pipelines, Query performance optimization, Direct access to materialized views, Data Share architecture, Unsupported tables, Landing tables and JSON tables, Compute best practices, Avoid non-dedicated compute, Data access patterns, Downstream analytics systems, Data pipeline optimization
 
 
-Learn about best practices for using Reltio Data Sharing with Databricks so that you can choose the recommended compute type, query the supported tables and views, and avoid unsupported downstream usage.
+Learn more about best practices for using Reltio Data Sharing with Databricks so that you can choose the recommended compute type, query the supported tables and views, and avoid unsupported downstream usage.
 
 ## Recommended practices
 
@@ -194373,7 +194761,7 @@ Use the following materialized views to query data.
 
 ## Interactive data analysis vs traditional (batch) data analysis
 
-**Interactive data analysis**: This analysis involves exploratory, ad-hoc queries where users expect near real-time access to the latest data. To support this, datasets typically need to be refreshed at a higher frequency.
+**Interactive data analysis**: This analysis involves exploratory, ad-hoc queries where users expect access to the latest data within minutes. To support this, datasets typically need to be refreshed at a higher frequency.
 
 For interactive data analysis use cases,
 
@@ -194397,7 +194785,7 @@ For traditional data analysis use cases,
 
 
 
-> **Note:** Materialized views are refreshed at a controlled interval of **one hour**, which means the data may not reflect the most recent updates in real time.
+> **Note:** Materialized views are refreshed at a controlled interval of **one hour**, so the data might reflect the most recent updates in around one hour and ten minutes.
 
 ## Practices to avoid
 
@@ -194413,6 +194801,63 @@ Do not use the following streaming tables to query data.
 - `entities_landingtable`
 - `relations_landingtable`
 - `interactions_landingtable`
+- `links_landingtable`
+- `matches_landingtable`
+- `merges_landingtable`
+- `workflows_landingtable`
+
+## Avoid using data shares for non-analytics downstream systems
+
+Do not use data shares to build downstream systems for non-analytics use cases.
+
+
+
+---
+
+# Best practices for Reltio Data Sharing with Databricks with Streaming tables
+
+> **Section:** Applications > Data Integrations > Reltio Data Sharing at a glance > Reltio Data Sharing with Databricks at a glance > Best practices for Reltio Data Sharing with Databricks
+
+
+**Source:** https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing-at-a-glance/reltio-data-sharing-with-databricks-at-a-glance/best-practices-for-reltio-data-sharing-with-databricks/best-practices-for-reltio-data-sharing-with-databricks-with-streaming-tables?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** Data Sharing best practices, Data Share usage guidelines, Serverless compute optimization, Materialized views performance, Streaming tables querying, Supported data sets, Analytics workloads, Data engineering workflows, BI and reporting integration, ML pipelines, Query performance optimization, Direct access to materialized views, Data Share architecture, Unsupported tables, Landing tables and JSON tables, Compute best practices, Avoid non-dedicated compute, Data access patterns, Downstream analytics systems, Data pipeline optimization
+
+
+Learn more about best practices for using Reltio Data Sharing with Databricks so that you can choose the recommended compute type, query the supported tables and views, and avoid unsupported downstream usage.
+
+## Recommended practices
+
+## Use data shares for analytics and data engineering workloads
+
+Use data shares for downstream systems such as BI, reporting, and ML pipelines.
+
+## Query supported streaming tables
+
+Use the following streaming tables to query data.
+
+- `entity_<entity_type>`
+- `relation_<relation_type>`
+- `interaction_<interaction_type>`
+- `activities`
+- `links`
+- `matches`
+- `merges`
+- `workflows`
+
+Based on the data share setup, these streaming tables use a simplified schema, which makes the data easier to consume in downstream applications.
+
+> **Note:** The data share supports a cumulative maximum of 490 entity, relationship, and interaction types. If your business configuration defines more than 490 of these types, apply filtering to limit the data share to 490 types. Contact [Reltio Support](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) to learn more about configuring the filter.
+
+## Practices to avoid
+
+## Avoid querying landing tables
+
+Do not use the following streaming tables to query data.
+
+- `entities_<entity_type>_landingtable`
+- `relations_<relation_type>_landingtable`
+- `interactions_<interaction_type>_landingtable`
 - `links_landingtable`
 - `matches_landingtable`
 - `merges_landingtable`
@@ -194785,7 +195230,7 @@ Start here to explore how Reltio Data Sharing with Microsoft Fabric shares AI-re
 
 ## What is Reltio Data Sharing with Microsoft Fabric?
 
-With Reltio Data Sharing with Microsoft Fabric, you can securely and efficiently access AI-ready and trusted data from Reltio Context Intelligence Platform within Microsoft Fabric without physically moving or copying data. This integration ensures near-real-time data availability, helping you streamline advanced analytics, AI applications, and BI solutions while enhancing security and governance.
+With Reltio Data Sharing with Microsoft Fabric, you can securely and efficiently access AI-ready and trusted data from Reltio Context Intelligence Platform within Microsoft Fabric without physically moving or copying data. This integration makes data available within minutes, helping you streamline advanced analytics, AI applications, and BI solutions while enhancing security and governance.
 
 *Image: i-apps-integ-zerocopy-msfabric.png*
 
@@ -194800,7 +195245,7 @@ Data Product OwnerData StewardReltio Configurator
 If you're leveraging Microsoft Fabric for analytics and AI/ML workloads, Zero Copy data sharing helps you by:
 
 - Eliminating ETL complexities as you don't need to move data manually, reducing operational overhead.
-- Ensuring near-real-time access as your data is always up to date, enhancing your business intelligence.
+- Ensuring access within minutes so your data is always up to date, enhancing your business intelligence.
 - Enhancing security and compliance as your data stays within the Reltio ecosystem, ensuring governance.
 - Reducing data redundancy and costs as you don’t need multiple copies of the same data, improving efficiency.
 - Simplifying the shared data schema into a flattened format, making it easier to consume for analytics and AI/ML workloads
@@ -194809,7 +195254,7 @@ If you're leveraging Microsoft Fabric for analytics and AI/ML workloads, Zero Co
 
 Use Data Sharing with Microsoft Fabric when you need:
 
-- Near-real-time data sharing between Reltio and Microsoft Fabric for analytics and AI workloads.
+- Data sharing within minutes between Reltio and Microsoft Fabric for analytics and AI workloads.
 - To enforce strict data governance policies that prohibit unnecessary data movement.
 - Seamless integration with Microsoft Fabric’s OneLake storage.
 - Access data in the simplified schema or a flattened format.
@@ -196025,7 +196470,7 @@ Start here to explore how Reltio Data Sharing deliver governed, AI-ready 360 dat
 
 ## What is Data Sharing?
 
-Data Sharing provides a seamless way to securely deliver trusted, high-quality, AI-ready data from the Reltio Context Intelligence Platform to cloud data warehouses. Without physically moving or duplicating data, it ensures governance, security, and cost efficiency. Unlike traditional ETL/ELT pipelines, Data Sharing enable near real-time access to data for advanced analytics, business intelligence, and AI/ML use cases.
+Data Sharing provides a seamless way to securely deliver trusted, high-quality, AI-ready data from the Reltio Context Intelligence Platform to cloud data warehouses. Without physically moving or duplicating data, it ensures governance, security, and cost efficiency. Unlike traditional ETL/ELT pipelines, Data Sharing makes data available within minutes for advanced analytics, business intelligence, and AI/ML use cases.
 
 *Image: i-apps-integ-zerocopy.png*
 
@@ -196039,7 +196484,7 @@ Data Product OwnerData StewardReltio Configurator
 
 Organizations face growing challenges with data silos, latency, and governance when delivering data to cloud data platforms. Reltio Data Sharing address these issues by:
 
-- Providing near real-time data access for analytics, BI, and AI/ML workloads
+- Providing access to data within minutes, for analytics, BI and AL/ML workloads
 - Reducing infrastructure and storage costs by avoiding data duplication
 - Enhancing governance and compliance through secure data access
 - Enabling fast time-to-insight with AI-ready, consumption-optimized data
@@ -196048,7 +196493,7 @@ Organizations face growing challenges with data silos, latency, and governance w
 
 Use Reltio Data Sharing when you need to:
 
-- Deliver AI-ready and trusted data directly to cloud data warehouses in real time
+- Deliver AI-ready and trusted data directly to cloud data warehouses within minutes
 - Avoid copying data while still enabling full downstream consumption
 - Accelerate AI-driven analysis, operational reporting, or regulatory insight delivery
 
@@ -214076,12 +214521,132 @@ GET {ValidationServiceURL}/monitoring/statistics_json?select=ValidationControlle
 
 ---
 
+# Address autocomplete
+
+> **Section:** Objectives > Cleanse and verify data > Data cleansing at a glance
+
+
+**Source:** https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/address-autocomplete?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** address autocomplete, address autocomplete reltio, real-time address suggestions, address data quality reltio, loqate address search reltio, address autofill reltio hub, address search api reltio, address fetch api reltio, type-ahead address lookup, address entry reltio profiles
+
+
+Learn about how Address autocomplete helps you find, select, and apply accurate address values while creating or updating profiles.
+
+The Address autocomplete feature provides real-time address suggestions as you type in address fields while creating or updating profiles in the Reltio Hub. When you select a suggestion, the full, validated address is automatically populated across the relevant address attributes.
+
+Manual address entry is a common source of data quality issues, including typos, inconsistent formatting, and incomplete records. Address autocomplete reduces these issues by validating address data at the point of entry, before it is saved to the tenant.
+
+This feature is designed for the following users who create or manage location data in the Reltio Hub:
+
+- 
+- 
+
+## How it works
+
+Address autocomplete uses the following two APIs:
+
+- 
+
+  [Search API](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/address-autocomplete-apis/search-addresses-with-the-address-autocomplete-search-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs): Returns real-time, type-ahead address suggestions based on the text entered in an address field. A search starts after you enter the minimum number of characters.
+- 
+
+  [Fetch API](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/address-autocomplete-apis/fetch-address-details-with-the-address-autocomplete-fetch-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs): Returns the full, validated address for a selected suggestion, and populates the address attributes in the profile according to the output mapping configured for that entity type.
+
+The two APIs work in sequence. The Search API surfaces candidate addresses as you type. Once you select an address from the list, the Fetch API retrieves the complete address record and maps it to the appropriate attributes in the entity.
+
+## Enable Address autocomplete feature
+
+[Tenant Configuration](https://docs.reltio.com/en/applications/console/tenant-management-applications/tenant-management-at-a-glance/tenant-configuration-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+---
+
+# Find and select an address with Address autocomplete
+
+> **Section:** Objectives > Cleanse and verify data > Data cleansing at a glance > Address autocomplete
+
+
+**Source:** https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/address-autocomplete/find-and-select-an-address-with-address-autocomplete?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** use address autocomplete reltio hub, find address suggestions reltio, select address from suggestions reltio, autofill address reltio profile, address search dropdown reltio hub, populate address fields reltio, type ahead address reltio profile, address container drill down reltio, create location profile reltio, update address reltio hub
+
+
+Learn how to use Address autocomplete to find, select, and populate accurate address values while creating or updating a profile.
+
+Address autocomplete lets you search for and select a validated address as you type. When you select a suggestion, the system populates the mapped address fields in the profile.
+
+**Prerequisites**- License for [Address autocomplete](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/address-autocomplete?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) enabled on your tenant.
+- Address autocomplete configured for the entity type of the profile you're creating or editing (for example, Location). See [Configure address autocomplete for an entity type](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/address-autocomplete/configure-address-autocomplete-for-an-entity-type?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). If it isn't, contact your Reltio Customer Support team.
+- Permission to create or edit profiles of the configured entity type.
+
+
+To find and apply an address suggestion:
+
+1. In **Hub**, open an existing profile using **Search** or select **Create a new profile** from the left navigation to create a new profile.
+2. In the relevant Address field, begin typing the address. A list of address suggestions appear below the field.
+   > **Note:** The Address Input field is defined in the `inputMapping` section of your [L3 configuration for the entity type](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/address-autocomplete/configure-address-autocomplete-for-an-entity-type?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+   *Image: ui-autoaddress-profileselectaddress.png*
+   > **Note:** To restrict suggestions to a specific country, select a value in the **Country** field before you start typing. This field is mapped to the `Countries` parameter in the `inputMapping` section of your [L3 configuration](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/address-autocomplete/configure-address-autocomplete-for-an-entity-type?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). If no country is selected, suggestions are restricted only by the countries configured in the[Address autocomplete tenant configuration](https://docs.reltio.com/en/applications/console/tenant-management-applications/tenant-management-at-a-glance/tenant-configuration-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+3. From the list of addresses displayed, select the address you want to use. The address fields are populated with the selected address.
+4. Review the populated address attributes, such as **Address Line 1**, **Address Line 2**, **City**, **State** or **Province**, and **Postal Code**.
+5. Click **Save**.
+
+**Result**The profile is updated with the selected address. The address fields populated are determined by the `outputMapping` configuration in your [L3 configuration for the entity type](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/address-autocomplete/configure-address-autocomplete-for-an-entity-type?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+
+
+---
+
+# Configure address autocomplete for an entity type
+
+> **Section:** Objectives > Cleanse and verify data > Data cleansing at a glance > Address autocomplete
+
+
+**Source:** https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/address-autocomplete/configure-address-autocomplete-for-an-entity-type?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+
+Learn how to configure address autocomplete for an entity type in your tenant to enable real-time address suggestions in the Reltio Hub.
+
+[Address autocomplete](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/address-autocomplete?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) is configured at the entity type level by adding an `addressAutoCompleteConfig` block to the `cleanseConfig` section of the entity type definition in the L3 configuration.
+
+> **Note:** The entity type level configuration is required only if you want to use Address autocomplete in the Reltio Hub. If you intend to use the Search API and Fetch API in an external application, this configuration is not required.
+
+**Prerequisites**Before you begin, confirm the following:
+
+- License for [Address autocomplete](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/address-autocomplete?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) enabled for your tenant.
+- Access to edit the L3 configuration for the tenant.
+
+
+To add the address autocomplete configuration:
+
+1. Open the L3 configuration for the entity type you want to configure.
+2. Locate the `cleanseConfig` section for the entity type.
+3. Add the `addressAutoCompleteConfig` block inside `cleanseConfig`, as shown in the following example:
+   ```
+{ "uri": "configuration/entityTypes/Location", "label": "Location", "cleanseConfig": { "addressAutoCompleteConfig": { "uri": "configuration/entityTypes/Location/cleanse/addressAutoCompleteConfig", "inputMapping": [ { "attribute": "configuration/entityTypes/Location/attributes/AddressInput", "mandatory": true, "allValues": false, "cleanseAttribute": "Text" }, { "attribute": "configuration/entityTypes/Location/attributes/ISO3166-2", "mandatory": false, "allValues": false, "cleanseAttribute": "Countries" } ], "outputMapping": [ { "attribute": "configuration/entityTypes/Location/attributes/AdministrativeArea", "mandatory": false, "allValues": false, "cleanseAttribute": "AdminAreaName" }, { "attribute": "configuration/entityTypes/Location/attributes/Building", "mandatory": false, "allValues": false, "cleanseAttribute": "BuildingNumber" } ] } } }
+   ```
+   - Define `inputMapping` entries to map entity attributes to the [>Search](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/address-autocomplete-apis/search-addresses-with-the-address-autocomplete-search-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) request parameters. At minimum, map one attribute to the `Text` parameter, which carries the user's search input.
+     > **Note:** The entity attribute mapped to the `Text` parameter is used as the address autocomplete input field in the Reltio Hub. For the `Countries` parameter, use only ISO 3166-1 two-character (Alpha-2) or three-character (Alpha-3) country codes. Full country names are not supported.
+   - Define `outputMapping` entries to map the [Fetch](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/address-autocomplete-apis/fetch-address-details-with-the-address-autocomplete-fetch-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) response fields to entity attributes. Each entry maps a Fetch API field (for example, `AdminAreaName`) to the corresponding attribute in the entity type (for example, `AdministrativeArea`).
+     > **Note:** The address fields populated in the profile when a user selects an address are determined by the `outputMapping` configuration.
+   - Save the configuration.
+
+**Result**Address fields in the configured entity type now display real-time suggestions as users type. When you select a suggestion, the Fetch API populates the mapped attributes with the full, validated address data.
+
+**Verification steps**
+
+In the Reltio Hub, open a profile and verify that address suggestions appear, and address fields are populated correctly. For more information, see [Find and select an address with Address autocomplete](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/address-autocomplete/find-and-select-an-address-with-address-autocomplete?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+
+
+---
+
 # Configure email and phone verification
 
-> **Section:** Objectives > Cleanse and verify data > Data cleansing at a glance > Data cleansing operation > Email and phone verification
+> **Section:** Objectives > Cleanse and verify data > Data cleansing at a glance > Email and phone verification
 
 
-**Source:** https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-operation/email-and-phone-verification/configure-email-and-phone-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/email-and-phone-verification/configure-email-and-phone-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** email verification, phone verification, Loqate configuration, attributeVerificationConfig
 
@@ -214134,10 +214699,10 @@ Your tenant is now configured for entity-based email and phone verification. The
 
 # Email and phone verification
 
-> **Section:** Objectives > Cleanse and verify data > Data cleansing at a glance > Data cleansing operation
+> **Section:** Objectives > Cleanse and verify data > Data cleansing at a glance
 
 
-**Source:** https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-operation/email-and-phone-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/email-and-phone-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** email verification, phone verification, Loqate, real-time verification, batch verification
 
@@ -214170,10 +214735,10 @@ Use email and phone verification when you need to:
 
 # Verify email and phone attributes in the Profile view
 
-> **Section:** Objectives > Cleanse and verify data > Data cleansing at a glance > Data cleansing operation > Email and phone verification
+> **Section:** Objectives > Cleanse and verify data > Data cleansing at a glance > Email and phone verification
 
 
-**Source:** https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-operation/email-and-phone-verification/verify-email-and-phone-attributes-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/email-and-phone-verification/verify-email-and-phone-attributes-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** verify email addresses in reltio hub profile view, verify phone numbers in reltio profile, how to run email verification in reltio, check email and phone verification status reltio, real-time verification request reltio profile, email phone verification status icons reltio, verify all email and phone numbers reltio hub, email verification, phone verification, verification status
 
@@ -214184,7 +214749,7 @@ You can verify all supported email addresses and phone numbers directly from the
 
 **Prerequisites**
 
-- [Configure email and phone verification](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-operation/email-and-phone-verification/configure-email-and-phone-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) for your tenant.
+- [Configure email and phone verification](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/email-and-phone-verification/configure-email-and-phone-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) for your tenant.
 
 
 To verify phone numbers and email addresses:
@@ -215863,15 +216428,17 @@ Tab with class as **Sources** doesn't support additional parameters beyond the s
 {
   "class": "Sources",
   "label": "Data Sources",
-  "visible": ["configuration/entityTypes/Person"]
-"showAppliedSurvivorshipRules": false 
+  "visible": ["configuration/entityTypes/Person"],
+  "showAppliedSurvivorshipRules": false,
+  "personalizableAttributes": true
 }
 
 ```
 
 | Parameter | Description | Possible values | Example |
 | --- | --- | --- | --- |
-| `showAppliedSurvivorshipRules` | When set to true, enables the Sources view to display the actual survivorship rule used to determine the OV for all attributes. | boolean | `"showAppliedSurvivorshipRules": false` |
+| `showAppliedSurvivorshipRules` | When set to `true`, enables the Sources view to display the actual survivorship rule used to determine the OV for all attributes. | Boolean | `"showAppliedSurvivorshipRules": false` |
+| `personalizableAttributes` (optional) | When enabled, the Sources view lets users hide attribute rows and reorder them by drag-and-drop.Visibility and row order persist per entity type in `visibleRows`. The **Add attributes** list expands to include hidden attributes and readable attribute types that are creatable or already have values on the entity. Nested attributes remain available to add. | Boolean | `"personalizableAttributes": true` |
 
 **Relationships tab**
 
@@ -230847,11 +231414,15 @@ To hide an attribute, click the **X** icon corresponding to the required attribu
 
 To add an attribute back, click **+ATTRIBUTE** and select the required attribute from the list.
 
+> **Note:** You can hide attributes only when the `personalizableAttributes` parameter is enabled in the [Profiles section in the UI configuration](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/configure-reltio-ui-with-the-configuration-file/configure-profile-screens?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). If this parameter is not enabled, the option to hide attributes is unavailable.
+
 **Reorder attributes**
 
 To reorder an attribute, drag the attribute row to the required position in the list.
 
 *Image: i-reorder-attribute.gif*
+
+> **Note:** You can reorder attributes only when the `personalizableAttributes` parameter is enabled in the [Profiles section in the UI configuration](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/configure-reltio-ui-with-the-configuration-file/configure-profile-screens?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). If this parameter is not enabled, the option to reorder attributes is unavailable.
 
 **Dependent crosswalks**
 
