@@ -1,5 +1,5 @@
 # Reltio Documentation Index
-_Generated: 2026-07-03 02:16 UTC — 3222 topics (3169 unique)_
+_Generated: 2026-07-08 02:15 UTC — 3231 topics (3178 unique)_
 
 This file is a structured navigation index of the Reltio documentation portal.
 It contains the full parent-child hierarchy, topic URLs, keywords, summaries,
@@ -5288,7 +5288,7 @@ _Topics in this section: Reltio Entity Resolution Deployment options, Reltio Ent
 - **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Entity Management APIs > Entity Management APIs at a glance > Entities API > Update entities
 - **Summary:** Learn more about how to verify mapped email and phone attributes on an entity and persist the results.
 - **Keywords:** entity verification api, verify email and phone attributes, persist verification results, force verify entity attributes, entity verification max verification age, emailverifier client filter, phoneverifier client filter, attribute verification verify endpoint
-- **See also:** [L3 configuration](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-operation/email-and-phone-verification/configure-email-and-phone-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Get Entity](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/entities-api/get-entity?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [L3 configuration](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/email-and-phone-verification/configure-email-and-phone-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Get Entity](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/entities-api/get-entity?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Managing Entity Roles
 
@@ -7668,6 +7668,30 @@ _Topics in this section: Reltio Entity Resolution Deployment options, Reltio Ent
 - **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Data Integration APIs > Data Integration APIs at a glance > Batch attribute verification APIs
 - **Summary:** Learn more about how to verify multiple phone numbers in a single request using real-time validation.
 - **Keywords:** phone batch verification api, verify phone numbers in bulk, real time phone validation, bulk phone number verification, reltio phone api, loqate phone verification, validate mobile and landline numbers, phone validation rest api, verify phone country prefix, check phone network name
+
+#### Address autocomplete APIs
+
+- **URL:** https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/address-autocomplete-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Data Integration APIs > Data Integration APIs at a glance
+- **Summary:** Learn about the Search API and Fetch API to find and retrieve validated addresses for Address autocomplete.
+- **Keywords:** address autocomplete apis, address search api reltio, address fetch api reltio, loqate address apis reltio, real-time address suggestion api, address autocomplete data integration api
+- **See also:** [Address autocomplete](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/address-autocomplete?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Fetch address details with the Address autocomplete Fetch API](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/address-autocomplete-apis/fetch-address-details-with-the-address-autocomplete-fetch-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Search addresses with the Address autocomplete Search API](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/address-autocomplete-apis/search-addresses-with-the-address-autocomplete-search-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Search addresses with the Address autocomplete Search API
+
+- **URL:** https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/address-autocomplete-apis/search-addresses-with-the-address-autocomplete-search-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Data Integration APIs > Data Integration APIs at a glance > Address autocomplete APIs
+- **Summary:** Learn more about how to use the Address autocomplete Search API to retrieve real-time address suggestions.
+- **Keywords:** address autocomplete search api, search addresses with address autocomplete, retrieve address suggestions, address suggestion api, search address by container, type ahead address search, address search, autocomplete, loqate
+- **See also:** [Address autocomplete](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/address-autocomplete?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Authentication API](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/authentication-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Fetch address details with the Address autocomplete Fetch API
+
+- **URL:** https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/address-autocomplete-apis/fetch-address-details-with-the-address-autocomplete-fetch-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Data Integration APIs > Data Integration APIs at a glance > Address autocomplete APIs
+- **Summary:** Learn more about how to use the Address autocomplete Fetch API to retrieve full address details for a selected address identifier.
+- **Keywords:** address autocomplete fetch api, fetch address details, retrieve full address from id, address details api, selected address fetch, address retrieve api, address fetch, autocomplete, loqate
+- **See also:** [Address autocomplete](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/address-autocomplete?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Authentication API](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/authentication-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Reltio Data Pipeline for Snowflake APIs
 
@@ -14357,7 +14381,7 @@ _Topics in this section: Data integrations at a glance, Application Integration 
 - **URL:** https://docs.reltio.com/en/applications/data-integrations/data-enrichment-integrations-at-a-glance/reltio-enrichment-with-340b-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Data Enrichment Integrations at a glance
 - **Summary:** Get a high-level view of Reltio Enrichment with 340B.
-- **See also:** [About roles](https://docs.reltio.com/en/roles/about-roles?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [About roles](https://docs.reltio.com/en/roles/about-roles?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Configure and enable Reltio Enrichment with 340B](https://docs.reltio.com/en/applications/data-integrations/data-enrichment-integrations-at-a-glance/reltio-enrichment-with-340b-at-a-glance/reltio-enrichment-with-340b-set-up/configure-and-enable-reltio-enrichment-with-340b?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Reltio Enrichment with 340B set up
 
@@ -14365,6 +14389,7 @@ _Topics in this section: Data integrations at a glance, Application Integration 
 - **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Data Enrichment Integrations at a glance > Reltio Enrichment with 340B at a glance
 - **Summary:** Learn about the 340B Data Tenant.
 - **Keywords:** 340B Data Tenant, 340B Covered Healthcare Organizations, 340B data tenant, 340B covered healthcare organizations
+- **See also:** [Configure and enable Reltio Enrichment with 340B](https://docs.reltio.com/en/applications/data-integrations/data-enrichment-integrations-at-a-glance/reltio-enrichment-with-340b-at-a-glance/reltio-enrichment-with-340b-set-up/configure-and-enable-reltio-enrichment-with-340b?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Reltio Enrichment with 340B resources
 
@@ -14428,6 +14453,7 @@ _Topics in this section: Data integrations at a glance, Application Integration 
 - **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Data Enrichment Integrations at a glance > Reltio Enrichment with 340B at a glance > Reltio Enrichment with 340B set up
 - **Summary:** Learn about Reltio Enrichment with 340B data model and mapping 340B.
 - **Keywords:** 340B Data Model and Mapping, Reltio 340B HCO Attributes, 340B data model and mapping, Reltio 340B hco attributes
+- **See also:** [Configure and enable Reltio Enrichment with 340B](https://docs.reltio.com/en/applications/data-integrations/data-enrichment-integrations-at-a-glance/reltio-enrichment-with-340b-at-a-glance/reltio-enrichment-with-340b-set-up/configure-and-enable-reltio-enrichment-with-340b?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Reltio Enrichment with 340B termination reason codes
 
@@ -14435,6 +14461,14 @@ _Topics in this section: Data integrations at a glance, Application Integration 
 - **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Data Enrichment Integrations at a glance > Reltio Enrichment with 340B at a glance > Reltio Enrichment with 340B set up
 - **Summary:** Learn about the termination codes that are associated with the 340B Data Tenant.
 - **Keywords:** 340B Termination Reason Code, Active Codes, Inactive Codes, HRSA Functional Requirement Specifications, 340B data model and mapping, active code, inactive code, hrsa functional requirement specifications
+
+#### Configure and enable Reltio Enrichment with 340B
+
+- **URL:** https://docs.reltio.com/en/applications/data-integrations/data-enrichment-integrations-at-a-glance/reltio-enrichment-with-340b-at-a-glance/reltio-enrichment-with-340b-set-up/configure-and-enable-reltio-enrichment-with-340b?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Data Enrichment Integrations at a glance > Reltio Enrichment with 340B at a glance > Reltio Enrichment with 340B set up
+- **Summary:** Learn how to configure and enable Reltio Enrichment with 340B for your tenant.
+- **Keywords:** configure 340B enrichment, enable 340B DTSS subscription, 340B configuration enablement, ROLE_DTSS_CT_MANAGER, DTSS subscription template, 340B HCO matching Exact340B
+- **See also:** [Reltio Enrichment with 340B data model and mapping](https://docs.reltio.com/en/applications/data-integrations/data-enrichment-integrations-at-a-glance/reltio-enrichment-with-340b-at-a-glance/reltio-enrichment-with-340b-set-up/reltio-enrichment-with-340b-data-model-and-mapping?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [enable both streaming and](https://docs.reltio.com/en/applications/console/tenant-management-applications/tenant-management-at-a-glance/tenant-configuration-at-a-glance/view-and-edit-tenant-configuration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Get help in Support Portal](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Healthcare Organization (HCO) match rules](https://docs.reltio.com/en/applications/data-integrations/data-enrichment-integrations-at-a-glance/reltio-enrichment-with-340b-at-a-glance/reltio-enrichment-with-340b-set-up/reltio-enrichment-with-340b-match-rules/healthcare-organization-hco-match-rules?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [DTSS subscription endpoint](https://docs.reltio.com/en/applications/data-integrations/data-enrichment-integrations-at-a-glance/reltio-data-tenant-subscription-service-dtss-at-a-glance/reltio-dtss-set-up/subscription-configuration/subscriptions-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [manual match task](https://docs.reltio.com/en/applications/data-integrations/data-enrichment-integrations-at-a-glance/reltio-data-tenant-subscription-service-dtss-at-a-glance/reltio-dtss-operation/dtss-bulk-operations-tasks/manual-match-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [manual subscribe task](https://docs.reltio.com/en/applications/data-integrations/data-enrichment-integrations-at-a-glance/reltio-data-tenant-subscription-service-dtss-at-a-glance/reltio-dtss-operation/dtss-bulk-operations-tasks/manual-subscribe-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Reltio Enrichment with 340B at a glance](https://docs.reltio.com/en/applications/data-integrations/data-enrichment-integrations-at-a-glance/reltio-enrichment-with-340b-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Reltio Enrichment with Moody’s Orbis at a glance
 
@@ -18151,9 +18185,25 @@ _Topics in this section: Data integrations at a glance, Application Integration 
 
 - **URL:** https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing-at-a-glance/reltio-data-sharing-with-databricks-at-a-glance/best-practices-for-reltio-data-sharing-with-databricks?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Reltio Data Sharing at a glance > Reltio Data Sharing with Databricks at a glance
-- **Summary:** Learn about best practices for using Reltio Data Sharing with Databricks so that you can choose the recommended compute type, query the supported tables and views, and avoid unsupported downstream usa
+- **Summary:** Best practices for sharing Reltio data with Databricks, covering both streaming tables and materialized views.
+- **Keywords:** Databricks data share best practices, streaming tables vs materialized views, data share tenant configuration, upgrade data share to streaming tables, materialized views data share Databricks, streaming tables data share Databricks, Reltio Data Sharing with Databricks, data share upgrade status, choosing streaming tables or materialized views, contact Reltio Support data share
+- **See also:** [Best practices for Reltio Data Sharing with Databricks with Streaming tables](https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing-at-a-glance/reltio-data-sharing-with-databricks-at-a-glance/best-practices-for-reltio-data-sharing-with-databricks/best-practices-for-reltio-data-sharing-with-databricks-with-streaming-tables?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Best practices for Reltio Data Sharing with Databricks with Materialized views](https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing-at-a-glance/reltio-data-sharing-with-databricks-at-a-glance/best-practices-for-reltio-data-sharing-with-databricks/best-practices-for-reltio-data-sharing-with-databricks-with-materialized-views?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Reltio Support](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Best practices for Reltio Data Sharing with Databricks with Materialized views
+
+- **URL:** https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing-at-a-glance/reltio-data-sharing-with-databricks-at-a-glance/best-practices-for-reltio-data-sharing-with-databricks/best-practices-for-reltio-data-sharing-with-databricks-with-materialized-views?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Reltio Data Sharing at a glance > Reltio Data Sharing with Databricks at a glance > Best practices for Reltio Data Sharing with Databricks
+- **Summary:** Learn more about best practices for using Reltio Data Sharing with Databricks so that you can choose the recommended compute type, query the supported tables and views, and avoid unsupported downstrea
 - **Keywords:** Data Sharing best practices, Data Share usage guidelines, Serverless compute optimization, Materialized views performance, Streaming tables querying, Supported data sets, Analytics workloads, Data engineering workflows, BI and reporting integration, ML pipelines
 - **See also:** [schema simplification](https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing-at-a-glance/schema-simplification-for-data-share?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Best practices for Reltio Data Sharing with Databricks with Streaming tables
+
+- **URL:** https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing-at-a-glance/reltio-data-sharing-with-databricks-at-a-glance/best-practices-for-reltio-data-sharing-with-databricks/best-practices-for-reltio-data-sharing-with-databricks-with-streaming-tables?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Reltio Data Sharing at a glance > Reltio Data Sharing with Databricks at a glance > Best practices for Reltio Data Sharing with Databricks
+- **Summary:** Learn more about best practices for using Reltio Data Sharing with Databricks so that you can choose the recommended compute type, query the supported tables and views, and avoid unsupported downstrea
+- **Keywords:** Data Sharing best practices, Data Share usage guidelines, Serverless compute optimization, Materialized views performance, Streaming tables querying, Supported data sets, Analytics workloads, Data engineering workflows, BI and reporting integration, ML pipelines
+- **See also:** [Reltio Support](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Configure Reltio Data Sharing with Databricks
 
@@ -20706,30 +20756,6 @@ _Topics in this section: Data loading at a glance, Data exporting at a glance_
 - **Keywords:** validate data before ingestion reltio, pre ingestion dvf validation, external data quality validation, run dvf before loading data, prevent invalid data ingestion, data quality, dvf, validation api
 - **See also:** [Validation APIs](https://docs.reltio.com/en/developer-resources/data-validation-apis/data-validation-apis-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
-#### Email and phone verification
-
-- **URL:** https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-operation/email-and-phone-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-- **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Cleanse and verify data > Data cleansing at a glance > Data cleansing operation
-- **Summary:** Learn about email and phone verification in Reltio, including entity, batch, and task-based verification modes.
-- **Keywords:** email verification, phone verification, Loqate, real-time verification, batch verification
-- **See also:** [Entity verification](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/entities-api/update-entities/entity-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Email batch verification](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/batch-attribute-verification-apis/email-batch-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Phone batch verification](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/batch-attribute-verification-apis/phone-batch-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Email verification task](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/email-verification-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Phone verification task](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/phone-verification-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-
-#### Configure email and phone verification
-
-- **URL:** https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-operation/email-and-phone-verification/configure-email-and-phone-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-- **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Cleanse and verify data > Data cleansing at a glance > Data cleansing operation > Email and phone verification
-- **Summary:** Learn how to configure email and phone verification in your tenant.
-- **Keywords:** email verification, phone verification, Loqate configuration, attributeVerificationConfig
-- **See also:** [Tenant Configuration at a glance](https://docs.reltio.com/en/applications/console/tenant-management-applications/tenant-management-at-a-glance/tenant-configuration-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [GET Configuration](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/configuration-api/get-configuration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Email batch verification](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/batch-attribute-verification-apis/email-batch-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Phone batch verification](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/batch-attribute-verification-apis/phone-batch-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Save the updated configuration](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/configuration-api/set-configuration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Entity Verification API](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/entities-api/update-entities/entity-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Email Verification Task](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/email-verification-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-
-#### Verify email and phone attributes in the Profile view
-
-- **URL:** https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-operation/email-and-phone-verification/verify-email-and-phone-attributes-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-- **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Cleanse and verify data > Data cleansing at a glance > Data cleansing operation > Email and phone verification
-- **Summary:** Learn how to verify email addresses and phone numbers directly from the Profile view in Reltio Hub.
-- **Keywords:** verify email addresses in reltio hub profile view, verify phone numbers in reltio profile, how to run email verification in reltio, check email and phone verification status reltio, real-time verification request reltio profile, email phone verification status icons reltio, verify all email and phone numbers reltio hub, email verification, phone verification, verification status
-- **See also:** [Configure email and phone verification](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-operation/email-and-phone-verification/configure-email-and-phone-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-
 #### Data cleansing reference
 
 - **URL:** https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-reference?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
@@ -21144,6 +21170,53 @@ _Topics in this section: Data loading at a glance, Data exporting at a glance_
 - **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Cleanse and verify data > Data cleansing at a glance > Data cleansing reference > Custom Cleanse Functions
 - **Summary:** Not adhering to the best practices for data profiling and cleanse may result in false conclusions about the overall data quality.
 - **Keywords:** Non-adherence to Data Profiling Best Practices, Non-adherence to Data Cleanse Best Practices, non-adherence to data profiling best practices, non-adherence to data cleanse best practices
+
+#### Email and phone verification
+
+- **URL:** https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/email-and-phone-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Cleanse and verify data > Data cleansing at a glance
+- **Summary:** Learn about email and phone verification in Reltio, including entity, batch, and task-based verification modes.
+- **Keywords:** email verification, phone verification, Loqate, real-time verification, batch verification
+- **See also:** [Entity verification](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/entities-api/update-entities/entity-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Email batch verification](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/batch-attribute-verification-apis/email-batch-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Phone batch verification](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/batch-attribute-verification-apis/phone-batch-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Email verification task](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/email-verification-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Phone verification task](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/phone-verification-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Configure email and phone verification
+
+- **URL:** https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/email-and-phone-verification/configure-email-and-phone-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Cleanse and verify data > Data cleansing at a glance > Email and phone verification
+- **Summary:** Learn how to configure email and phone verification in your tenant.
+- **Keywords:** email verification, phone verification, Loqate configuration, attributeVerificationConfig
+- **See also:** [Tenant Configuration at a glance](https://docs.reltio.com/en/applications/console/tenant-management-applications/tenant-management-at-a-glance/tenant-configuration-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [GET Configuration](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/configuration-api/get-configuration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Email batch verification](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/batch-attribute-verification-apis/email-batch-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Phone batch verification](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/batch-attribute-verification-apis/phone-batch-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Save the updated configuration](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/configuration-api/set-configuration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Entity Verification API](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/entities-api/update-entities/entity-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Email Verification Task](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/email-verification-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Verify email and phone attributes in the Profile view
+
+- **URL:** https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/email-and-phone-verification/verify-email-and-phone-attributes-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Cleanse and verify data > Data cleansing at a glance > Email and phone verification
+- **Summary:** Learn how to verify email addresses and phone numbers directly from the Profile view in Reltio Hub.
+- **Keywords:** verify email addresses in reltio hub profile view, verify phone numbers in reltio profile, how to run email verification in reltio, check email and phone verification status reltio, real-time verification request reltio profile, email phone verification status icons reltio, verify all email and phone numbers reltio hub, email verification, phone verification, verification status
+- **See also:** [Configure email and phone verification](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/email-and-phone-verification/configure-email-and-phone-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Address autocomplete
+
+- **URL:** https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/address-autocomplete?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Cleanse and verify data > Data cleansing at a glance
+- **Summary:** Learn about how Address autocomplete helps you find, select, and apply accurate address values while creating or updating profiles.
+- **Keywords:** address autocomplete, address autocomplete reltio, real-time address suggestions, address data quality reltio, loqate address search reltio, address autofill reltio hub, address search api reltio, address fetch api reltio, type-ahead address lookup, address entry reltio profiles
+- **See also:** [Search API](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/address-autocomplete-apis/search-addresses-with-the-address-autocomplete-search-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Fetch API](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/address-autocomplete-apis/fetch-address-details-with-the-address-autocomplete-fetch-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Tenant Configuration](https://docs.reltio.com/en/applications/console/tenant-management-applications/tenant-management-at-a-glance/tenant-configuration-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Configure address autocomplete for an entity type
+
+- **URL:** https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/address-autocomplete/configure-address-autocomplete-for-an-entity-type?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Cleanse and verify data > Data cleansing at a glance > Address autocomplete
+- **Summary:** Learn how to configure address autocomplete for an entity type in your tenant to enable real-time address suggestions in the Reltio Hub.
+- **See also:** [Address autocomplete](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/address-autocomplete?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [>Search](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/address-autocomplete-apis/search-addresses-with-the-address-autocomplete-search-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Fetch](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/address-autocomplete-apis/fetch-address-details-with-the-address-autocomplete-fetch-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Find and select an address with Address autocomplete](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/address-autocomplete/find-and-select-an-address-with-address-autocomplete?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Find and select an address with Address autocomplete
+
+- **URL:** https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/address-autocomplete/find-and-select-an-address-with-address-autocomplete?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Cleanse and verify data > Data cleansing at a glance > Address autocomplete
+- **Summary:** Learn how to use Address autocomplete to find, select, and populate accurate address values while creating or updating a profile.
+- **Keywords:** use address autocomplete reltio hub, find address suggestions reltio, select address from suggestions reltio, autofill address reltio profile, address search dropdown reltio hub, populate address fields reltio, type ahead address reltio profile, address container drill down reltio, create location profile reltio, update address reltio hub
+- **See also:** [Address autocomplete](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/address-autocomplete?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Configure address autocomplete for an entity type](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/address-autocomplete/configure-address-autocomplete-for-an-entity-type?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Address autocomplete tenant configuration](https://docs.reltio.com/en/applications/console/tenant-management-applications/tenant-management-at-a-glance/tenant-configuration-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 ### Integrate data
 
