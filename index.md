@@ -1,5 +1,5 @@
 # Reltio Documentation Index
-_Generated: 2026-07-08 02:15 UTC — 3231 topics (3178 unique)_
+_Generated: 2026-07-10 02:15 UTC — 3230 topics (3177 unique)_
 
 This file is a structured navigation index of the Reltio documentation portal.
 It contains the full parent-child hierarchy, topic URLs, keywords, summaries,
@@ -1983,7 +1983,7 @@ relationships, locate sibling topics, and follow cross-references.
 
 - **URL:** https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agent-builder-for-agentflow-at-a-glance/create-test-and-submit-an-agent-for-review?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Products > AgentFlow > Reltio AgentFlow™ at a glance > Agent Builder for AgentFlow at a glance
-- **Summary:** Learn how to create a new agent or update a published one in Agent Builder, verify its behavior in the test panel, and submit it for governance review.
+- **Summary:** Learn how to create a new agent or update a published agent in Agent Builder, verify its behavior in the test panel, and submit the agent for governance review.
 - **Keywords:** create agent reltio agentflow builder, edit published agent agentflow builder, test draft agent agentflow builder, submit agent for review agentflow, write system prompt agentflow agent, select tools agentflow agent builder, agentflow agent draft and publish workflow, agent builder author workflow, publish, agentflow
 - **See also:** [Agent Builder for AgentFlow at a glance](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agent-builder-for-agentflow-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [AgentFlow system prompt guidelines](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agent-builder-for-agentflow-at-a-glance/agentflow-system-prompt-guidelines?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Upload an agent from another tenant](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agent-builder-for-agentflow-at-a-glance/upload-an-agent-from-another-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Assign Agent Builder roles to users](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agent-builder-for-agentflow-at-a-glance/assign-agent-builder-roles-to-users?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Agent states in Agent Builder](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agent-builder-for-agentflow-at-a-glance/agent-states-in-agent-builder?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Review and act on a publish request](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agent-builder-for-agentflow-at-a-glance/review-and-act-on-a-publish-request?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
@@ -18258,20 +18258,13 @@ _Topics in this section: Data integrations at a glance, Application Integration 
 - **Summary:** Learn how Reltio structures its catalog, schemas, and tables to support Delta Sharing with Databricks.
 - **Keywords:** databricks delta sharing schema, delta sharing table types, dynamic entity tables, flattened schema for delta sharing, databricks integration tables, schema structure for data sharing, landing tables for reltio databricks, json parsed tables, delta lake schema overview, data share schema table naming
 
-#### Monitoring data share
+#### Monitoring data sharing
 
-- **URL:** https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing-at-a-glance/monitoring-data-share?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **URL:** https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing-at-a-glance/monitoring-data-sharing?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Reltio Data Sharing at a glance
-- **Summary:** Learn about the data volume and messages processed for your data shares.
-- **Keywords:** monitor data sharing in reltio, data volume processed per data share, messages sent across data shares, track data share activity, confirm data sharing is working, data sharing monitoring, data volume, messages sent, data share
-- **See also:** [view data sharing activity](https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing-at-a-glance/monitoring-data-share/view-data-sharing-activity?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-
-#### View data sharing activity
-
-- **URL:** https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing-at-a-glance/monitoring-data-share/view-data-sharing-activity?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Reltio Data Sharing at a glance > Monitoring data share
-- **Summary:** Learn how to view the data volume processed and messages sent for a data share in Reltio Console.
-- **Keywords:** view data sharing activity in reltio, open data share monitoring page, check data volume processed for data share, view messages sent across data shares, monitor data share in console, set time range for monitoring, data sharing monitoring, data volume, messages sent, time range
+- **Summary:** Learn how to monitor Reltio generated data sharing events through the external queue.
+- **Keywords:** monitor data sharing in reltio, track data pipeline queue activity, monitor external queue for data warehouse, check data sharing event progress, review reltio external queue status, data sharing monitoring, external queue, data pipeline, cloud data warehouse
+- **See also:** [Monitoring the External Queue](https://docs.reltio.com/en/applications/console/tenant-management-applications/tenant-management-at-a-glance/queues-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Zero Copy Integration at a glance
 

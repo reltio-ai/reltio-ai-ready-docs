@@ -1,8 +1,8 @@
 # Reltio Documentation
 
-_Generated: 2026-07-08 02:15 UTC_
+_Generated: 2026-07-10 02:15 UTC_
 
-_Topics: 3355_
+_Topics: 3354_
 
 ---
 
@@ -15171,14 +15171,6 @@ You can write verification results directly to the record or return them in the 
 
 For more information, see [Email and phone verification](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/email-and-phone-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
-## Monitor your Data Shares
-
-Monitoring data share is now available for each of your data shares in the **Data Sharing** application. For a selected data share, it shows the volume of data processed, and the total messages processed across all the outbound data shares and data pipelines in your Reltio tenant. Monitoring gives you a direct view of the health of the data share and the rate at which data is shared with your cloud data warehouse.
-
-Available in **Console > Data Sharing > Data Share**. Select **Monitor** for a data share to open its Monitoring page.
-
-For more information, see [Monitoring data share](https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing-at-a-glance/monitoring-data-share?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [View data sharing activity](https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing-at-a-glance/monitoring-data-share/view-data-sharing-activity?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
-
 ## Real-time address suggestions with Address autocomplete
 
 In the Profile view, you can now search for and select address suggestions as you type in supported address fields. When you select a suggestion, the mapped address fields are populated with standardized address values. This reduces manual entry and helps improve address consistency at the point of entry.
@@ -25964,7 +25956,7 @@ You can assign different roles to the same user across different tenants. For ex
 **Keywords:** create agent reltio agentflow builder, edit published agent agentflow builder, test draft agent agentflow builder, submit agent for review agentflow, write system prompt agentflow agent, select tools agentflow agent builder, agentflow agent draft and publish workflow, agent builder author workflow, publish, agentflow, governance
 
 
-Learn how to create a new agent or update a published one in Agent Builder, verify its behavior in the test panel, and submit it for governance review.
+Learn how to create a new agent or update a published agent in Agent Builder, verify its behavior in the test panel, and submit the agent for governance review.
 
 Agent Builder provides you with the following structured authoring workflow:
 
@@ -25986,7 +25978,7 @@ For more information about writing an effective system prompt, see [AgentFlow sy
 
 Before you begin, confirm that:
 
-- You must have the `ROLE_AGENT_AUTHOR` on the target tenant. For more information about how to get this role, see [Assign Agent Builder roles to users](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agent-builder-for-agentflow-at-a-glance/assign-agent-builder-roles-to-users?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+- You have the `ROLE_AGENT_AUTHOR` on the target tenant. For more information about how to get this role, see [Assign Agent Builder roles to users](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agent-builder-for-agentflow-at-a-glance/assign-agent-builder-roles-to-users?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 - At least one user on the tenant must have the `ROLE_AGENT_AUTHOR` role (PUBLISH permission). Publishing requires an approver with PUBLISH permission.
 - The tools you plan to use must be in the tenant-approved tool catalog.
 
@@ -26122,13 +26114,37 @@ The history panel displays events in chronological order for the selected agent 
 
 ## Update a published agent
 
-Use this path when you want to revise an agent that is already published. An Agent Author (for their own agents) or an Agent Admin can initiate this. The published version remains live and available to users throughout the editing and review process.
+To update a published agent, create a new draft from the published version. This allows you to make changes while the latest published version is available to users. Your ability to update an agent depends on your assigned roles:
+
+- `ROLE_AGENT_AUTHOR`: Create a new draft for agents you published.
+- `ROLE_ADMIN_AGENTS` and `ROLE_ADMIN_TENANT`: Create or edit drafts for all published agents in a tenant.
+
+To update an agent, perform the following steps:
 
 1. Log in to **AgentFlow** and go to **Agent Builder**.
-2. Locate the published agent and select the option to create a new version. Agent Builder creates a new draft version. The latest published version remains active in Discover Agents.
-3. Proceed to write the system prompt and select tools. See [#concept-9378/select_tools](#concept-9378/select_tools).
+2. Select the required agent.
 
-Version history is maintained across all draft and published versions of the agent.
+   The agent details page appears.
+3. Select **Create New Draft** / **Edit Draft**.
+
+   On updating the agent, Agent Builder creates a new draft version. The latest published version is still available in the **Discover Agents** page while you update the agent.
+4. Update the system prompt and select the required tools. See [#concept-9378/select_tools](#concept-9378/select_tools).
+5. Select **Save & Continue**.
+
+**Result**
+
+Your agent is updated, and Agent Builder maintains [version history](#concept-9378/section-234) across all draft and published versions.
+
+**Handling save conflicts**
+
+If another user saves changes to the agent after you make your own changes, Agent Builder blocks your next save and displays a conflict error.
+
+Refreshing the page loads the latest version and allows you to continue editing, but it also discards your unsaved changes. To avoid losing your progress, perform the following steps:
+
+1. Select **Go back without refreshing**.
+2. Copy your changes to a separate location.
+3. Refresh the page to load the latest version.
+4. Reapply your changes and click **Save**.
 
 ## Result
 
@@ -194660,28 +194676,21 @@ The following table summarizes the benchmark conditions and measured result for 
 
 ---
 
-# Monitoring data share
+# Monitoring data sharing
 
 > **Section:** Applications > Data Integrations > Reltio Data Sharing at a glance
 
 
-**Source:** https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing-at-a-glance/monitoring-data-share?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing-at-a-glance/monitoring-data-sharing?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
-**Keywords:** monitor data sharing in reltio, data volume processed per data share, messages sent across data shares, track data share activity, confirm data sharing is working, data sharing monitoring, data volume, messages sent, data share
+**Keywords:** monitor data sharing in reltio, track data pipeline queue activity, monitor external queue for data warehouse, check data sharing event progress, review reltio external queue status, data sharing monitoring, external queue, data pipeline, cloud data warehouse
 
 
-Learn about the data volume and messages processed for your data shares.
+Learn how to monitor Reltio generated data sharing events through the external queue.
 
-Monitoring data share shows the data volume and the CRUD events processed within a time period for the data shares set up in your Reltio tenant. Review them to monitor the throughput of the data shared with your cloud data warehouse.
+Monitor data events generated in Reltio to support data sharing with the cloud data warehouse through the external queue. Review queue activity to assess the volume of events in progress. In the external queue list, locate the queue that contains **Data Pipeline** in its name. Use it to track event progress and confirm that data sharing is functioning as expected.
 
-To see these measures for a specific data share, [view data sharing activity](https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing-at-a-glance/monitoring-data-share/view-data-sharing-activity?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) in the console.
-
-## Monitoring measures
-
-Monitoring covers two measures of data sharing activity:
-
-- **Data volume processed**: The amount of data, in bytes, processed for a single data share. The volume indicates whether a specific data share is active and how much data is shared within a time period.
-- **Messages sent**: The total number of messages processed across all outbound data shares and pipelines in your tenant. Each message represents a CRUD event processed for your data. The count indicates the overall throughput of your data sharing.
+For more information, see [Monitoring the External Queue](https://docs.reltio.com/en/applications/console/tenant-management-applications/tenant-management-at-a-glance/queues-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
@@ -194987,38 +194996,6 @@ GRANT USE PROVIDER ON METASTORE TO `<user-email-address>`;
 GRANT USE RECIPIENT ON METASTORE TO `<user-email-address>`;
 GRANT CREATE CATALOG ON METASTORE TO `<user-email-address>`;
 ```
-
-
-
----
-
-# View data sharing activity
-
-> **Section:** Applications > Data Integrations > Reltio Data Sharing at a glance > Monitoring data share
-
-
-**Source:** https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing-at-a-glance/monitoring-data-share/view-data-sharing-activity?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
-**Keywords:** view data sharing activity in reltio, open data share monitoring page, check data volume processed for data share, view messages sent across data shares, monitor data share in console, set time range for monitoring, data sharing monitoring, data volume, messages sent, time range
-
-
-Learn how to view the data volume processed and messages sent for a data share in Reltio Console.
-
-Monitor your data shares to review that data is shared with your cloud data warehouse. Each data share has its own Monitoring page, where you can see the volume of data processed for that data share and the messages processed across all of your data shares and data pipelines in your Reltio tenant.
-
-
-To view data sharing activity for a data share
-
-1. In the Reltio **Console**, go to **Data Sharing > Data Share**.
-2. Navigate to the data share you want to review.
-3. Click **Monitor**.
-   The **Monitoring** page displays for the data share.
-4. From the **Time range** list, select the period to report on; for example, **Last 1 week**.
-5. Review the two summary totals and two graphs on the **Monitoring** page.
-   - **Total data volume processed**: The data volume processed for the selected data share.
-   - **Total messages sent**: The count of messages processed across all outbound data shares and data pipelines.
-   - **Data volume processed**: A graph of the data volume for the selected data share over the selected time range, which indicates the health of the data share and the volume of data it shared.
-   - **Messages sent (all outbound data shares and data pipelines)**: A graph of the messages processed across all outbound data shares and data pipelines, independent of the selected data share.
 
 
 
