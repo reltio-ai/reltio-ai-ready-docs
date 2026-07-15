@@ -1,8 +1,8 @@
 # Reltio Documentation
 
-_Generated: 2026-07-10 02:15 UTC_
+_Generated: 2026-07-15 02:14 UTC_
 
-_Topics: 3354_
+_Topics: 3356_
 
 ---
 
@@ -8775,9 +8775,6 @@ We build on each GA release with a steady stream of bi-weekly updates that deliv
 
 | Release Name | Stage | Tenant Type | Release Date |
 | --- | --- | --- | --- |
-| 2026.1.6.0 | 1 | Development (DEV) | July 10, 2026 |
-| 2026.1.6.0 | 2 | Test (TEST) | July 10, 2026 |
-| 2026.1.6.0 | 3 | Production (PRD) | July 17, 2026 |
 | 2026.1.7.0 | 1 | Development (DEV) | July 24, 2026 |
 | 2026.1.7.0 | 2 | Test (TEST) | July 24, 2026 |
 | 2026.1.7.0 | 3 | Production (PRD) | July 31, 2026 |
@@ -15171,6 +15168,14 @@ You can write verification results directly to the record or return them in the 
 
 For more information, see [Email and phone verification](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/email-and-phone-verification?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
+## Monitor your Data Shares
+
+Monitoring data share is now available for each of your data shares in the **Data Sharing** application. For a selected data share, it shows the volume of data processed, and the total messages processed across all the outbound data shares and data pipelines in your Reltio tenant. Monitoring gives you a direct view of the health of the data share and the rate at which data is shared with your cloud data warehouse.
+
+Available in **Console > Data Sharing > Data Share**. Select **Monitor** for a data share to open its Monitoring page.
+
+For more information, see [Monitoring data share](https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing-at-a-glance/monitoring-data-share?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [View data sharing activity](https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing-at-a-glance/monitoring-data-share/view-data-sharing-activity?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
 ## Real-time address suggestions with Address autocomplete
 
 In the Profile view, you can now search for and select address suggestions as you type in supported address fields. When you select a suggestion, the mapped address fields are populated with standardized address values. This reduces manual entry and helps improve address consistency at the point of entry.
@@ -15184,6 +15189,44 @@ Reltio Data Sharing with Databricks shared entity, relation, and interaction obj
 New Reltio tenants that enable Reltio Data Sharing with Databricks receive streaming tables automatically, with no additional configuration required. Tenants with an existing Databricks data share continue using materialized views. However, we strongly recommend upgrading your data shares to use streaming tables. Contact [Reltio Support](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) to upgrade your tenant and existing data shares to streaming tables.
 
 For more information, see [Best practices for Reltio Data Sharing with Databricks](https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing-at-a-glance/reltio-data-sharing-with-databricks-at-a-glance/best-practices-for-reltio-data-sharing-with-databricks?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+
+
+---
+
+# 2026.1.6.0 RN | 17-July-2026
+
+Learn about the new features and enhancements introduced in this 2026.1.6.0 release.
+
+**Deployment dates**
+
+| Stage | Tenant type | When |
+| --- | --- | --- |
+| 1 | Development (DEV) | July 10, 2026 |
+| 2 | Test (TEST) | July 10, 2026 |
+| 3 | Production (PRD) | July 17, 2026 |
+
+## LCA and DVF errors are now easier to understand and resolve
+
+Life Cycle Action (LCA) and Data Validation Framework (DVF) error messages in **Hub** now display as plain-language messages instead of the raw internal templates, error codes, and combined error blocks shown previously. Depending on the type of failure, **Hub** simplifies the message as follows:
+
+- When a single LCA operation fails, **Hub** shows only the underlying error message instead of the full internal template.
+- When a DVF validation fails, **Hub** separates the results into two numbered lists, one for errors and one for warnings.
+- When multiple errors occur during the same operation, **Hub** lists each one as a bulleted item in plain language.
+
+The simplified format lets you quickly identify what caused a save or validation failure and resolve it without interpreting technical error codes.
+
+The updated error format is available wherever LCA and DVF error messages appear in **Hub**, including the **Profile** page, **Graph** perspective, and **Review DCR** page. API responses still use the previous error format.
+
+For more information, see [Life Cycle Actions](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Data Validation Functions](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-operation/define-data-validation-functions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+## Admins can now update published agents in Agent Builder
+
+Agentflow admins can now update all published agents in a tenant, even if an agent was originally created by another user. This enhancement supports ongoing maintenance of agents by allowing admins to make timely updates, respond to changing business needs, and keep published agents accurate without depending on the availability of the original author.
+
+Users with the `ROLE_ADMIN_AGENTS` and `ROLE_ADMIN_TENANT` roles can update all published agents in Agent Builder.
+
+For more information, see [Create, test, and submit an agent for review](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agent-builder-for-agentflow-at-a-glance/create-test-and-submit-an-agent-for-review?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
@@ -18198,6 +18241,10 @@ You can define a comparator class for each attribute using *exact*, *fuzzy*, *ex
 
 > **Note:** Comparators always check for exact matches only. If you want to apply the fuzzy match logic, the *Fuzzy* operator option must be selected manually.
 
+
+
+To test a comparator class configuration without building a full match rule, use the[Compare Strings API](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/potential-matches-api/explanation-of-match-tokens-and-match-documents/working-with-strings/compare-strings?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
 The table below lists available comparator classes:
 
 **Description and Recommended Use of Comparator Classes**
@@ -18464,6 +18511,8 @@ The following table shows how to perform a relevance calculation. S1 and S2 repr
 - [Metaphone](http://en.wikipedia.org/wiki/Metaphone)
 - [Regular Expression Patterns](https://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html)
 - [Soundex](http://en.wikipedia.org/wiki/Soundex)
+- [Get a List of Comparator Classes](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/potential-matches-api/explanation-of-match-tokens-and-match-documents/working-with-strings/get-a-list-of-comparator-classes?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Compare Strings with Multi Operand](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/potential-matches-api/explanation-of-match-tokens-and-match-documents/working-with-strings/compare-strings-with-multi-operand?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 
 
@@ -21046,6 +21095,8 @@ This article describes each of the available match token classes in the Reltio C
 
 Reltio Context Intelligence Platform uses match token classes to identify correct pairs of records for quick and efficient match rule comparison and adjudication. Each match token class generates a match token that helps to identify candidates to be matched.
 
+To generate tokens for a match token class configuration without building a full match rule, use the [Generate Tokens for the Specified Strings API](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/potential-matches-api/explanation-of-match-tokens-and-match-documents/working-with-strings/generate-tokens-for-the-specified-strings?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
 This table describes each match token class and the potential number of tokens that may be generated.
 
 **Available Match Token Classes**
@@ -21071,6 +21122,8 @@ This table describes each match token class and the potential number of tokens t
 
 - [Regular Expression Patterns](https://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html)
 - [Soundex](http://en.wikipedia.org/wiki/Soundex)
+- [Get a List of Match Token Classes](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/potential-matches-api/explanation-of-match-tokens-and-match-documents/working-with-strings/get-a-list-of-match-token-classes?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Generate Tokens for Specified Strings with Multi Operand](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/potential-matches-api/explanation-of-match-tokens-and-match-documents/working-with-strings/generate-tokens-for-specified-strings-with-multi-operand?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 
 
@@ -103221,7 +103274,7 @@ The following table describes the supported query parameters.
 | --- | --- | --- | --- | --- |
 | `dataTypes` | String | No | Comma-separated list of data types to reindex and stream. If omitted, all data types are processed. | `entities`, `relations`, `interactions`, `matches`, `merges`, `activities`, `deleted_entities`, `deleted_relations`, `deleted_interactions`.   Default: all |
 | `updatedSince` | Integer (int64) | No | Reindexes objects updated after the specified timestamp in epoch milliseconds.   Default: `0`. | Default: `0` |
-| `adapters` | String | No | Specifies the target adapter to stream data to. If omitted, all enabled adapters are used. | — |
+| `adapters` | String | No | Comma-separated list of adapter names that process the sync and stream data to their target platforms. Among your tenant's enabled adapters, only the adapters named in this parameter process the sync.   Adapter names are case-sensitive and must exactly match the adapter name shown in the **Console**.  If the value is omitted, empty, or contains only commas, all enabled adapters process the sync.  If the value contains only adapter names that are not enabled or not recognized, the API returns `200 OK`, but no data is streamed to any adapter, and only a sync activity record is created. | Comma-separated adapter names.  Default: All enabled adapters in your tenant |
 | `reindexDeleted` | Boolean | No | If set to `true`, adds sub-tasks to reindex deleted entities and relations. This parameter is ignored when specific `dataTypes` values are provided. | `true` or `false`.   Default: `false` |
 | `entityType` | String | No | Restricts the reindex scope to a specific entity type. Only applies when `dataTypes` includes `entities`. | Example: `Individual` |
 | `relationType` | String | No | Restricts the reindex scope to a specific relation type. Only applies when `dataTypes` includes `relations`. | Example: `HasAddress` |
@@ -103247,6 +103300,7 @@ The following table shows common ways to use the Sync to Data Pipeline API. Use 
 | --- | --- | --- |
 | Send all data (default) | Reindex and stream all tenant data to the Data Pipeline Hub. | `POST https://{env}.reltio.com/reltio/api/{tenantId}/syncToDataPipeline` |
 | Include deleted and loser records | Reindex all data, including deleted entities and relations and loser records from merges. | `POST https://{env}.reltio.com/reltio/api/{tenantId}/syncToDataPipeline?reindexDeleted=true` |
+| Sync to specific adapters | Sync to specific enabled adapters. Enter each adapter name exactly as it appears in the **Console**, including the same capitalization. To sync to more than one adapter, separate the names with commas. | `POST https://{env}.reltio.com/reltio/api/{tenantId}/syncToDataPipeline?adapters=snowflakeIntrl1` |
 | Sync only entities | Reindex and stream entity data only, excluding all other data types. | `POST https://{env}.reltio.com/reltio/api/{tenantId}/syncToDataPipeline?dataTypes=entities` |
 | Sync only relations | Reindex and stream relation data only, excluding all other data types. | `POST https://{env}.reltio.com/reltio/api/{tenantId}/syncToDataPipeline?dataTypes=relations` |
 | Sync a specific entity type | Restrict the reindex scope to a single entity type. Replace `HCP` with your entity type. | `POST https://{env}.reltio.com/reltio/api/{tenantId}/syncToDataPipeline?dataTypes=entities&entityType=HCP` |
@@ -144386,7 +144440,7 @@ The Workflow Modeler has no prerequisites; however, it’s helpful if you’re f
 
 ## Open an existing BPMN file
 
-In the Workflow Modeler, you can either open an existing BPMN diagram *.bpmn20.xml file or you can import the existing Out-of-the-box (OOTB) workflows from Bitbucket and enhance the workflow according to your business needs. Out-of-the-box process definitions are available at [Workflow - Default Process Definitions Bitbucket Repo](https://bitbucket.org/reltio-ondemand/workflow/src/production/default%20process%20definitions/). You can also open a BPMN file that is already published and displayed in the **Business processes** tab.
+In the Workflow Modeler, you can either open an existing BPMN diagram *.bpmn20.xml file or you can import the existing Out-of-the-box (OOTB) workflows from Bitbucket and enhance the workflow according to your business needs. Out-of-the-box process definitions are available at [Workflow - Default Process Definitions Github Repo](https://github.com/reltio-ai/workflow/tree/main/default%20process%20definitions). You can also open a BPMN file that is already published and displayed in the **Business processes** tab.
 
 To open an existing BPMN file:
 
@@ -160117,12 +160171,12 @@ The following table outlines how crosswalks are used to maintain identity, track
 
 ---
 
-# Configure event queues: SQS, Pub/Sub, or Azure
+# Configure event queues: SQS, Pub/Sub, Azure, or DataTable
 
 > **Section:** Applications > Data Integrations > Application Integration at a glance > Introduction to the Reltio Integration for Veeva Vault CRM
 
 
-**Source:** https://docs.reltio.com/en/applications/data-integrations/application-integration-at-a-glance/introduction-to-the-reltio-integration-for-veeva-vault-crm/configure-event-queues-sqs-pubsub-or-azure?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/applications/data-integrations/application-integration-at-a-glance/introduction-to-the-reltio-integration-for-veeva-vault-crm/configure-event-queues-sqs-pubsub-azure-or-datatable?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** configure event queues reltio veeva integration, set up aws sqs for reltio, azure service bus topic reltio connection, gcp pubsub configuration for reltio veeva, reltio veeva real time queue setup, reltio integration hub queue configuration, connect reltio to aws sqs, configure azure topic for veeva vault, google pubsub reltio event delivery, veeva reltio queue integration, cloud event queue reltio recipes, real time sync queue setup reltio veeva
 
@@ -160152,7 +160206,7 @@ Before you begin, make sure you have the following:
    - Queue ARN
    - Region
    - For authentication, use RIH to access AWS with IAM roles; follow the steps mentioned in the topic [Prerequisites - AWS security configuration](https://docs.reltio.com/en/applications/data-integrations/application-integration-at-a-glance/reltio-integration-for-salesforce-with-rih-at-a-glance/reltio-integration-for-salesforce-with-rih-overview/get-started-with-reltio-integration-for-salesforce-with-rih/prerequisites-for-installing-reltio-integration-for-salesforce-with-rih/prerequisites---aws-security-configuration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
-5. Use the AWS CLI or SDK to validate that the queue is accessible.In your RIH project, open the connection `VeevaReltioIntegrationQueue_Comm`.
+5. Use the AWS CLI or SDK to validate that the queue is accessible.In your RIH project, open the connection `Veeva | CON | AWS SQS Connection`.
 6. Save and test the connection.
 
 To use IAM Role Auth, follow the steps below.
@@ -160205,6 +160259,31 @@ Ensure the following are ready:
 7. Save and test the connection in the RIH Console.
 
 Once configured, your queue will begin receiving entity change events from Reltio. RIH recipes will automatically trigger in response to these events based on the connection.
+
+## Set up a DataTable connection
+
+Use these steps to set up a DataTable connection in Reltio Integration Hub (RIH).
+
+Before you begin, make sure you have the following:
+
+- Access to RIH
+- Permissions to create client roles and API clients
+- Access to the DataTable connector configuration
+
+To set up a DataTable connection, perform the following steps:
+
+1. In RIH, navigate to **API clients**.
+2. Create a **Client role** to provide DataTable access.
+3. In the client role page, select **Tools**.
+4. Enable the required permissions for **Data tables** and **Data table records**.
+5. Save the client role changes.
+6. Create an API client, and assign the client role you created.
+7. Generate the API key for the client.
+8. Copy the API key to use it when you configure the DataTable connector.
+9. In RIH, open the connection `Veeva | CON | Workato Data Table connection`, enter the API key in **Your API Key**.
+10. Save and test the connection in the RIH console.
+
+Once configured, your DataTable connection is available in Reltio Integration Hub. RIH recipes can use this connection to access DataTable records based on the connection.
 
 ## Validation steps
 
@@ -160329,7 +160408,7 @@ This topic explains how to enable and configure delta detection using Reltio que
 
 Delta detection ensures that integration recipes run only when specified attributes change in Reltio. It allows recipes to ignore updates that don't affect mapped fields.
 
-For real-time event setup, see [Configure event queues: SQS, Pub/Sub, or Azure](https://docs.reltio.com/en/applications/data-integrations/application-integration-at-a-glance/introduction-to-the-reltio-integration-for-veeva-vault-crm/configure-event-queues-sqs-pubsub-or-azure?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+For real-time event setup, see [Configure event queues: SQS, Pub/Sub, Azure, or DataTable](https://docs.reltio.com/en/applications/data-integrations/application-integration-at-a-glance/introduction-to-the-reltio-integration-for-veeva-vault-crm/configure-event-queues-sqs-pubsub-azure-or-datatable?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 ## Configure external queue streaming in Reltio Tenant Management
 
@@ -160649,7 +160728,7 @@ Include the following request headers in every request.
 | --- | --- | --- |
 | accept | Yes | Response media type. Use `application/json`. |
 | Content-Type | Yes | Request media type. Use `multipart/form-data`. |
-| API-TOKEN | Yes | API token from the Workato API collection client configuration for the SBC API. |
+| API-TOKEN | Yes | API token from the RIH API collection client configuration for the SBC API. |
 
 ## Request body
 
@@ -160657,7 +160736,7 @@ The following table describes the request fields.
 
 | **Field** | **Required** | **Description** | **Accepted values / Default** |
 | --- | --- | --- | --- |
-| file | No | ZIP file that contains the UI configuration for Search Before Create. | Example: `sbc.zip`. If omitted, the API uses the most recent ZIP file stored under `SBC_setup_UI_zip_file`. |
+| file | No | ZIP file that contains the UI configuration for Search Before Create. | Example: `sbc.zip`. If omitted, the API uses the most recent ZIP file stored under `SBC_setup_UI_zip_file` in RIH Data tables. |
 | name__v | Yes | Name of the `html_report__v` record. | Example: `Test Page - SBC` |
 | platform__v | Yes | Platform value for the `html_report__v` record. | Example: `online__v` |
 | name__v_sbc_config__c | Yes | Name of the `sbc_config__c` record. | Example: `rec_token_test` |
@@ -160670,7 +160749,7 @@ The following table describes the request fields.
 The following example shows a complete request with headers and request fields.
 
 ```
-curl --location --request POST 'https://{workato_api_base_url}/{environment}/veeva-sbc-vv1/veeva/sbc/setup' \
+curl --location --request POST 'https://{RIH_api_base_url}/{environment}/veeva-sbc-vv1/veeva/sbc/setup' \
 --header 'accept: application/json' \
 --header 'Content-Type: multipart/form-data' \
 --header 'API-TOKEN: <api_token>' \
@@ -160714,7 +160793,7 @@ The API returns the following HTTP status codes based on the processing result.
 | **Status code** | **Description** |
 | --- | --- |
 | 200 | The setup request completed successfully. |
-| 400 | No input file was available from the API request or file storage. |
+| 400 | No input file was available from the API request or in RIH Data tables. |
 | 500 | The setup request failed during processing. The response includes an error message and the job URL. |
 
 
@@ -160744,7 +160823,7 @@ Before you begin, confirm that the following prerequisites are met:
 
   To get the page name ID, in Veeva Vault CRM, navigate to **Admin > Configuration > Pages**, open the X-Page, and copy the value in **Name**.
 - The `X-page for SBC` project property is set to the page name ID of the activated top-level X-Page.
-- The ZIP file that contains the frontend configuration is stored in file storage under `SBC_setup_UI_zip_file` in RIH. If you provide a file in the API request, that file takes precedence. Otherwise, the most recent file in file storage is used for the SBC interface.
+- The ZIP file that contains the frontend configuration is stored in file storage under `SBC_setup_UI_zip_file` in RIH Data tables. If you provide a file in the API request, that file takes precedence. Otherwise, the most recent file in file storage is used for the SBC interface.
 
 ## SBC Setup API endpoint
 
@@ -160807,7 +160886,7 @@ Use the following steps to submit the SBC Setup API request.
    --form 'timeout_seconds__c_sbc_config__c=30' \
    --form 'file=@sbc.zip'
    ```
-4. Optional: Attach the ZIP file in the `file` field if you want to use a file from the request. If you do not attach a file, the API uses the most recent file stored under `SBC_setup_UI_zip_file`.
+4. Optional: Attach the ZIP file in the `file` field if you want to use a file from the request. If you do not attach a file, the API uses the most recent file stored under `SBC_setup_UI_zip_file` in RIH Data tables.
 5. Submit the request.
 
 ## Result
@@ -194676,21 +194755,28 @@ The following table summarizes the benchmark conditions and measured result for 
 
 ---
 
-# Monitoring data sharing
+# Monitoring data share
 
 > **Section:** Applications > Data Integrations > Reltio Data Sharing at a glance
 
 
-**Source:** https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing-at-a-glance/monitoring-data-sharing?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing-at-a-glance/monitoring-data-share?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
-**Keywords:** monitor data sharing in reltio, track data pipeline queue activity, monitor external queue for data warehouse, check data sharing event progress, review reltio external queue status, data sharing monitoring, external queue, data pipeline, cloud data warehouse
+**Keywords:** monitor data sharing in reltio, data volume processed per data share, messages sent across data shares, track data share activity, confirm data sharing is working, data sharing monitoring, data volume, messages sent, data share
 
 
-Learn how to monitor Reltio generated data sharing events through the external queue.
+Learn about the data volume and messages processed for your data shares.
 
-Monitor data events generated in Reltio to support data sharing with the cloud data warehouse through the external queue. Review queue activity to assess the volume of events in progress. In the external queue list, locate the queue that contains **Data Pipeline** in its name. Use it to track event progress and confirm that data sharing is functioning as expected.
+Monitoring data share shows the data volume and the CRUD events processed within a time period for the data shares set up in your Reltio tenant. Review them to monitor the throughput of the data shared with your cloud data warehouse.
 
-For more information, see [Monitoring the External Queue](https://docs.reltio.com/en/applications/console/tenant-management-applications/tenant-management-at-a-glance/queues-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+To see these measures for a specific data share, [view data sharing activity](https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing-at-a-glance/monitoring-data-share/view-data-sharing-activity?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) in the console.
+
+## Monitoring measures
+
+Monitoring covers two measures of data sharing activity:
+
+- **Data volume processed**: The amount of data, in bytes, processed for a single data share. The volume indicates whether a specific data share is active and how much data is shared within a time period.
+- **Messages sent**: The total number of messages processed across all outbound data shares and pipelines in your tenant. Each message represents a CRUD event processed for your data. The count indicates the overall throughput of your data sharing.
 
 
 
@@ -194996,6 +195082,38 @@ GRANT USE PROVIDER ON METASTORE TO `<user-email-address>`;
 GRANT USE RECIPIENT ON METASTORE TO `<user-email-address>`;
 GRANT CREATE CATALOG ON METASTORE TO `<user-email-address>`;
 ```
+
+
+
+---
+
+# View data sharing activity
+
+> **Section:** Applications > Data Integrations > Reltio Data Sharing at a glance > Monitoring data share
+
+
+**Source:** https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing-at-a-glance/monitoring-data-share/view-data-sharing-activity?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** view data sharing activity in reltio, open data share monitoring page, check data volume processed for data share, view messages sent across data shares, monitor data share in console, set time range for monitoring, data sharing monitoring, data volume, messages sent, time range
+
+
+Learn how to view the data volume processed and messages sent for a data share in Reltio Console.
+
+Monitor your data shares to review that data is shared with your cloud data warehouse. Each data share has its own Monitoring page, where you can see the volume of data processed for that data share and the messages processed across all of your data shares and data pipelines in your Reltio tenant.
+
+
+To view data sharing activity for a data share
+
+1. In the Reltio **Console**, go to **Data Sharing > Data Share**.
+2. Navigate to the data share you want to review.
+3. Click **Monitor**.
+   The **Monitoring** page displays for the data share.
+4. From the **Time range** list, select the period to report on; for example, **Last 1 week**.
+5. Review the two summary totals and two graphs on the **Monitoring** page.
+   - **Total data volume processed**: The data volume processed for the selected data share.
+   - **Total messages sent**: The count of messages processed across all outbound data shares and data pipelines.
+   - **Data volume processed**: A graph of the data volume for the selected data share over the selected time range, which indicates the health of the data share and the volume of data it shared.
+   - **Messages sent (all outbound data shares and data pipelines)**: A graph of the messages processed across all outbound data shares and data pipelines, independent of the selected data share.
 
 
 
@@ -237751,8 +237869,10 @@ When editing an existing role: Choose the Trust Relationships tab and select Edi
             "Effect": "Allow",
             "Principal": {
                 "AWS": [
-                    "arn:aws:iam::123456789876:user/reltio.platform.dataload",
-                    "arn:aws:iam::123456789876:user/reltio.platform.api"
+					"arn:aws:iam::123456789012:user/reltio.platform.dataload",
+				 	"arn:aws:iam::123456789012:user/reltio.platform.api",
+				 	"arn:aws:iam::123456789012:role/role-reltio.platform.dataload",
+					"arn:aws:iam::123456789012:role/role-reltio.platform.api"
                 ]
             },
             "Action": "sts:AssumeRole",
@@ -237766,6 +237886,13 @@ When editing an existing role: Choose the Trust Relationships tab and select Edi
 }
 
 ```
+
+
+
+
+
+> **Important:** Reltio authenticates using both IAM users and IAM roles. List both principal types in the trust policy.
+> If your policy lists only the IAM role principals, requests from a service that still uses the IAM user fail with a `sts:AssumeRole` authorization error. We recommend keeping both principal types until Reltio completes the migration.
 
 
 
@@ -237790,7 +237917,7 @@ When editing an existing role: Choose the Trust Relationships tab and select Edi
 5. Save the policy.
    The following example shows a complete trust policy for a HIPAA environment, including the standard Reltio principals and the HIPAA principal:
    ```
-{ "Version": "2012-10-17", "Statement": [ { "Effect": "Allow", "Principal": { "AWS": [ "arn:aws:iam::123456789876:user/reltio.platform.dataload", "arn:aws:iam::123456789876:user/reltio.platform.api" ] }, "Action": "sts:AssumeRole", "Condition": { "StringEquals": { "sts:ExternalId": "{your-external-id}" } } }, { "Effect": "Allow", "Principal": { "AWS": "arn:aws:iam::682505635934:user/reltio.platform.dev-h360" }, "Action": "sts:AssumeRole" } ] }
+{ "Version": "2012-10-17", "Statement": [ { "Effect": "Allow", "Principal": { "AWS": [ "arn:aws:iam::123456789012:user/reltio.platform.dataload", "arn:aws:iam::123456789012:user/reltio.platform.api", "arn:aws:iam::123456789012:role/role-reltio.platform.dataload", "arn:aws:iam::123456789012:role/role-reltio.platform.api" ] }, "Action": "sts:AssumeRole", "Condition": { "StringEquals": { "sts:ExternalId": "{your-external-id}" } } }, { "Effect": "Allow", "Principal": { "AWS": "arn:aws:iam::682505635934:user/reltio.platform.dev-h360" }, "Action": "sts:AssumeRole" } ] }
    ```
 
 
