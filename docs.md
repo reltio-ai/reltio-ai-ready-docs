@@ -1,6 +1,6 @@
 # Reltio Documentation
 
-_Generated: 2026-07-15 02:14 UTC_
+_Generated: 2026-07-17 02:15 UTC_
 
 _Topics: 3356_
 
@@ -45121,48 +45121,104 @@ The following example shows a successful response. The response format is the sa
 **Source:** https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/data-change-request-api/add-delete-attribute-request?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 
-Creates a change item inside data change request for deleting of an existing attribute.
+Learn more about how to add a DELETE_ATTRIBUTE change item to a data change request for an existing attribute.
 
-It should be used in the same way as the request for deleting attributes. The only difference is the `changeRequestId` parameter-it indicates that these changes must not be done in the real object; instead, they must be added to the given data change request for future review.
+Use the **Add DELETE Attribute Request** operation to queue an attribute for deletion within a data change request, instead of deleting the attribute directly from the object. Reltio uses the attribute's URI to identify which attribute to delete. This approach is useful when your workflow requires change review and approval before data is permanently modified, or when you have initiation privileges but not direct delete privileges.
 
-Request:
+## HTTP method and endpoint
+
+Use the following HTTP method and endpoint path to submit the request:
 
 ```
-DELETE <TenantURL>/{attributeValueURI} 
+DELETE <TenantURL>/{attributeValueURI}
 ```
 
-**Parameters**
+The following table describes the endpoint path parameters.
 
-| Parameter | Name | Required | Details |
+| Parameter | Type | Required | Description |
 | --- | --- | --- | --- |
-| Headers | `Authorization` | Yes | Information about authentication access token in format "Bearer `<accessToken>` " (see details in Auth API). |
-|  | `Source-System` | No | Source system this request is representing. Example: "configuration/sources/Reltio" when data is not loaded from other source systems and is created in Reltio Platform directly. |
-|  | `Content-Type` | Yes | Should be `"Content-Type: application/json"`. |
-| Query | `changeRequestId` | No | ID of the data change request to which a new change item should be added. |
-| Query | `crosswalkValue` | Yes-if `Source-System` is not 'Reltio' | ID of the entity object providing this attribute in the source system.  Example: an entity comes from Facebook and its identifier in Facebook is 'id3562'. For this entity,`Source-System` will be 'configuration/sources/Facebook' and`crosswalkValue` will be 'id3562'. |
-| Query | `crosswalkSourceTable` | No |  |
-| Body |  | Yes | JSON object representing attribute values to be used for creating/updating the data change request. |
+| `TenantURL` | String | Yes | Base URL of your Reltio tenant. |
+| `attributeValueURI` | String | Yes | URI of the existing attribute value to delete. This path parameter identifies the attribute that Reltio adds to the data change request as a `DELETE_ATTRIBUTE` change item. |
 
-> **Note:** The`changeRequestId` parameter is not required if the user has `READ` privilege for the object and attribute, has `INITIATE_CHANGE_REQUEST` privilege for the attribute, but does not have `DELETE` privilege for the attribute. A new data change request will be created automatically in this case.
+## Request headers
 
-**Response**
+Include the following headers in every request:
 
-JSON object representing the new change item.
+| Name | Required | Description |
+| --- | --- | --- |
+| `Authorization` | Yes | Authentication access token in the format `Bearer <access_token>`. |
+| `Source-System` | No | Source system that the request represents. Example: `configuration/sources/Reltio` when the data is created directly in Reltio Platform. |
+| `Content-Type` | Yes | `application/json` |
 
+## Query parameters
+
+The following table describes the query parameters and their values.
+
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| `changeRequestId` | String | No | ID of the data change request to which the new change item is added. |
+| `crosswalkValue` | String | Yes, if `Source-System` is not `Reltio` | ID of the entity object that provides this attribute in the source system. |
+| `crosswalkSourceTable` | String | No | Source table for the crosswalk, when applicable. |
+
+**Behavior based on privileges and changeRequestId**
+
+The following table describes the behavior of Add DELETE Attribute Request based on whether `changeRequestId` is provided and on the user's privileges for the object and attribute.
+
+| `changeRequestId` provided | User privileges | Result |
+| --- | --- | --- |
+| Yes | `READ`, `INITIATE_CHANGE_REQUEST`, or `DELETE`, as applicable for the request | Reltio appends the `DELETE_ATTRIBUTE` item to the specified existing data change request. |
+| No | User has `READ` privilege for the object and attribute and `INITIATE_CHANGE_REQUEST` privilege for the attribute, but does not have `DELETE` privilege | Reltio automatically creates a new data change request and returns it. |
+| No | User has `DELETE` privilege for the attribute | Reltio deletes the attribute directly without creating a data change request. |
+
+## Request body
+
+This operation does not require a request body.
+
+The `attributeValueURI` in the request path identifies the attribute to delete. After Reltio validates the request, it creates a data change request change item of type `DELETE_ATTRIBUTE`.
+
+## Example request
+
+Use the following example to see how to submit the request with headers and no request body.
+
+```language-bash
+curl -X POST \
+  "{TenantURL}/<existing-delete-attribute-dcr-endpoint>" \
+  -H "Authorization: Bearer <access_token>" \
+  -H "Content-Type: application/json"
 ```
+
+## Response body
+
+The following table describes the fields returned in the response body.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `id` | String | Unique identifier of the generated change item. |
+| `type` | String | Type of the generated change item. For this request, the value is `DELETE_ATTRIBUTE`. |
+| `createdTime` | Number | Time when the change item was created, in epoch milliseconds. |
+| `createdBy` | String | User who created the change item. |
+| `attributePath` | String | Path of the attribute targeted for deletion. |
+| `oldValue` | Object | Previous value of the attribute before the delete request was added. |
+| `crosswalk` | Object | Crosswalk information associated with the attribute value. |
+
+## Example response
+
+The following example shows a response with the generated change item.
+
+```language-json
 {
-   "id":"0000sLJ",
-   "type":"DELETE_ATTRIBUTE",
-   "createdTime":1445443808276,
-   "createdBy":"User",
-   "attributePath":"ProductMetrics/3/NumberPatients/5",
-   "oldValue":{
-      "value":"1111"
-   },
-   "crosswalk":{
-      "type":"configuration/sources/Veeva",
-      "value":"e1"
-   }
+  "id": "0000sLJ",
+  "type": "DELETE_ATTRIBUTE",
+  "createdTime": 1445443808276,
+  "createdBy": "User",
+  "attributePath": "ProductMetrics/3/NumberPatients/5",
+  "oldValue": {
+    "value": "1111"
+  },
+  "crosswalk": {
+    "type": "configuration/sources/Veeva",
+    "value": "e1"
+  }
 }
 ```
 
@@ -167611,31 +167667,32 @@ In order to use the D&B monitoring integration, you must prepare an S3 bucket to
 
 Learn how to configure on-demand UI buttons for RIH with D&B Data Blocks.
 
-**Prerequisites**
-
-Before you begin, make sure that users who run the on-demand D&B UI buttons have the `ROLE_DNB_CONNECTOR` role and the `ROLE_USER_RIH_INVOKER` role. The `ROLE_USER_RIH_INVOKER` role is required to execute the RIH proxy used by the on-demand enrichment flow.
-
 The RIH proxy enables on-demand D&B enrichment requests from UI buttons to invoke the configured Integration Hub endpoint securely. When this configuration is in place, you can trigger D&B match, company information, and hierarchy or contact enrichment actions from Organization profiles.
 
-1. Create Access Token for RIH Proxy
-   - Navigate to **Tools > API platform**.
-   - On the **Clients** tab select **Create new API Client**.
-     - Name the new API Client **RIH-Proxy**.
-- Choose Authentication method as **Auth Token**.
-- Choose the D&B - REST API Collections collection
+**Prerequisites**
+
+- 
+
+  You must have he `ROLE_DNB_CONNECTOR` role and the `ROLE_USER_RIH_INVOKER` role assigned.
+- 
+
+  The `ROLE_USER_RIH_INVOKER` role is required to execute the RIH proxy used by the on-demand enrichment flow.
+
+To configure a proxy for on-demand mode:
+
+1. Navigate to **Tools > API platform**.
+2. On the **Clients** tab select **Create new API Client**.
+   - In the **Profile Name** field, enter **RIH-Proxy**
+   - Choose Authentication method as **Auth Token**.
+     *Image: i-dnb-dblocks-proxyui-1.png*
+   - Choose the **D&B - REST API Collections** collection.
+     *Image: i-dnb-dblocks-proxyui-2.png*
    - On the **API Keys** tab select **Create API key**.
    - Set the profile name to `{tenantID}_{apiCollection}`.
    - Select **Generate**.
-   - Store this token for use in Step #2
-   - Be sure to use a consistent naming convention for example “tenantID+APICollectionName”
-   - Store the profile name and value
-     *Image: i-dnb-dblocks-proxyui-2.png**Image: i-dnb-dblocks-proxyui-1.png*
-2. Update UI configuration for on-demand buttons
-   Configure the UI configuration file so that on-demand enrichment buttons appear on profile pages.
-   - Navigate to **Reltio Console > UI Modeler**.
-   - Select **Import/Export UI Config Files**.
-     *Image: uimod_impexpmultiplefiles.png*
-   - In the right pane, hover over the file name, and select Export to download the JSON file.
+     [#task-rih-dnb-db-on-demand-configuration/step-1826](#task-rih-dnb-db-on-demand-configuration/step-1826)
+3. In the Reltio Console, select **UI Modeler**.
+   - From the left navigation pane, select **Import/Export UI Config Files** and [export the UI configuration file](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/export-and-import-of-ui-configuration-files/exporting-ui-configuration-files?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
    - Open the file and locate the top-level `sidePanelViews` array.
    - Add a new object to define the D&B buttons using `"id": "D&B"`.
      ```
@@ -167651,7 +167708,7 @@ The RIH proxy enables on-demand D&B enrichment requests from UI buttons to invok
 {
                    
                      "id": "GetMatchButtonView",
-                     "class": "CustomActionView",
+                     "component": "Custom",
                      "label": "Get D&B Match",
                      "url": "https://360-rih-proxy.reltio.com/api/v1/proxy/workato/invoke_endpoints",
                      "success": "Success! Please reload this profile and review the 'Verification' details to check whether a match was found. Resolve the Potential Match to enrich the profile.",
@@ -167737,7 +167794,7 @@ The RIH proxy enables on-demand D&B enrichment requests from UI buttons to invok
                   }
 ```
    - Update the following keys in each button JSON with tenant-specific values:
-     - `url` — Use the RIH proxy URL (e.g., `https://360-rih-proxy.reltio.com/api/v1/proxy/workato/invoke_endpoints`).
+     - `url` — Use the RIH proxy URL (example, `https://360-rih-proxy.reltio.com/api/v1/proxy/workato/invoke_endpoints`).
 - `profileName` — Use the API profile created in the proxy setup (e.g., `{{tenantId}}_DnB_-_REST_API_Collections`).
 - `action.permissions` — Add proxy and Workato URLs as allowed domains.
 
@@ -167756,15 +167813,14 @@ The RIH proxy enables on-demand D&B enrichment requests from UI buttons to invok
      *Image: i-dnb-dblocks-proxyui-4.png*
 
 *Image: i-dnb-dblocks-proxyui-5.png*
-3. Configure the on-demand buttons.
+4. Configure the on-demand buttons.
    > **Note:** The **doNotMerge** parameter for these buttons are different per button, by design. Do not change these values. The **dataBlocks** parameter for these buttons are different per button, by design. You should change these values according to the data blocks and versions being utilized.
    Modify the `workatoEndpoint` value for each button to set the appropriate `dataBlocks` parameter based on licensed D&B blocks:
    - `companyinfo_L1_v1`, `L2`, or `L3`
    - `diversityinsight_L1_v1`
    - `hierarchyconnections_L1_v1`
    - `principalscontacts_L1_v2`
-4. Validate the outcome on the tenant profile UI
-   - Re-upload the modified JSON to UI Modeler and publish.
+5. [Re-upload the modified JSON](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/export-and-import-of-ui-configuration-files/importing-ui-configuration-files?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) to UI Modeler and publish.
    - Ensure that all three buttons appear under the D&B panel and trigger expected enrichment behavior.
      *Image: i-dnb-dblocks-proxyui-6.png*
 
@@ -178820,38 +178876,127 @@ Trigger jobs by scheduling CRON expressions through the **Custom Schedule** opti
 
 **Source:** https://docs.reltio.com/en/applications/data-integrations/data-enrichment-integrations-at-a-glance/reltio-enrichment-with-zoominfo-at-a-glance/reltio-enrichment-with-zoominfo-set-up/configure-reltio-enrichment-with-zoominfo/mode-specific-configuration/configure-on-demand-ui-buttons/configure-proxy-for-on-demand-mode-ui-buttons?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
+**Keywords:** configure zoominfo proxy, zoominfo on demand buttons, rih proxy setup, configure access profile, zoominfo auth token, export ui configuration, workato endpoint configuration, profile name configuration, proxy, workato, enrichment
+
 
 Learn how to configure proxy for on-demand UI buttons for RIH with ZoomInfo.
 
-1. Create Access Token for RIH Proxy
-   - Navigate to **Tools > API platform**.
-   - Navigate to **Clients** and select **+ New Client**.
-   - Select and Create access profile. Choose the ZoomInfo - REST API collection. Use Auth Token type.
-   - Store this token for use in Step 2.
-   - Ensure you use a consistent naming convention, e.g., “tenantID+APICollectionName”.
-   - Store the profile name and its value.
-     *Image: i-integ-enrich-zoominfo-access-token.png*
-2. Create RIH Proxy
-   Submit a request to Reltio Support to create this profile. You'll need to share your `Access Profile` name and `Auth Token` with our support team. For more information, see topic [Get help in Support Portal](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
-3. Update UI Configuration
-   Update Organization plugin to include correct values for the ZoomInfo On-Demand buttons and update the values for the following keys:
-   - `url` - from Step 2
-   - `profileName` - from Step 2
-   - `action.permissions` - rih proxy domain from Step 2
-   - `workatoEndpoint` - from RIH API Management for real-time enrichment
-   ```
-{ "id": "com.reltio.plugins.entity.org.ZIGetCompanyMatchButtonView", "class": "com.reltio.plugins.ui.CustomActionView", "label": "Get ZoomInfo Match", "url": "https://360-rih-proxy.reltio.com/api/v1/proxy/workato/invoke_endpoints", "success": "Success! Please reload this profile and review the 'Verification' details to check whether a match was found. Resolve the Potential Match to enrich the profile.", "fail": "Failure:", "loading": "Processing: Please Wait", "height": 34, "profileName": "{{tenantId}}_ZoomInfo_-_REST_API", "workatoEndpoint": "https://apim.workato.com/{{workatoEndpoint}}/zoominfo-rest-api-vv1/company-real-time-enrichment?doNotMerge=true&entityURI=", "proxyMethod": "POST", "action": { "permissions": [ "https://360-rih-proxy.reltio.com", "https://apim.workato.com" ], "files": [ "https://reltio-ui-files.s3.amazonaws.com/custom-scripts/b2b_application_dnb_proxy.js" ] }, "canRead": { "roles": [ "ROLE_ZOOMINFO_CONNECTOR", "ROLE_ZOOMINFO_CONNECTOR_ADMIN" ] } }, { "id": "com.reltio.plugins.entity.org.ZIGetCompanyInfoButtonView", "class": "com.reltio.plugins.ui.CustomActionView", "label": "Get ZoomInfo Company Info", "url": "https://360-rih-proxy.reltio.com/api/v1/proxy/workato/invoke_endpoints", "success": "Success! This profile should now be enriched with company information. Please reload the profile.", "fail": "Failure:", "loading": "Processing: Please Wait", "height": 34, "profileName": "{{tenantId}}_ZoomInfo_-_REST_API", "workatoEndpoint": "https://apim.workato.com/{{workatoEndpoint}}/zoominfo-rest-api-vv1/company-real-time-enrichment?doNotMerge=false&entityURI=", "proxyMethod": "POST", "action": { "permissions": [ "https://360-rih-proxy.reltio.com", "https://apim.workato.com" ], "files": [ "https://reltio-ui-files.s3.amazonaws.com/custom-scripts/b2b_application_dnb_proxy.js" ] }, "canRead": { "roles": [ "ROLE_ZOOMINFO_CONNECTOR", "ROLE_ZOOMINFO_CONNECTOR_ADMIN" ] } }
-   ```
-4. Update UI Configuration for Individual
-   Update Individual plugin to include correct values for the ZoomInfo On-Demand buttons and update the values for the following keys:
-   - `url` - from Step 2
-   - `profileName` - from Step 2
-   - `action.permissions` - rih proxy domain from Step 2
-   - `workatoEndpoint` - from RIH API Management for real-time enrichment
-   > **Attention:** The `doNotMerge` parameter is intentionally configured differently for each button. Do NOT modify these values.
-   ```
-{ "id": "com.reltio.plugins.entity.org.ZIGetContactMatchButtonView", "class": "com.reltio.plugins.ui.CustomActionView", "label": "Get ZoomInfo Match", "url": "https://360-rih-proxy.reltio.com/api/v1/proxy/workato/invoke_endpoints", "success": "Success! Please reload this profile and review the 'Verification' details to check whether a match was found. Resolve the Potential Match to enrich the profile.", "fail": "Failure:", "loading": "Processing: Please Wait", "height": 34, "profileName": "{{tenantId}}_ZoomInfo_-_REST_API", "workatoEndpoint": "https://apim.workato.com/{{workatoEndpoint}}/zoominfo-rest-api-vv1/contact-real-time-enrichment?doNotMerge=true&entityURI=", "proxyMethod": "POST", "action": { "permissions": [ "https://360-rih-proxy.reltio.com", "https://apim.workato.com" ], "files": [ "https://reltio-ui-files.s3.amazonaws.com/custom-scripts/b2b_application_dnb_proxy.js" ] }, "canRead": { "roles": [ "ROLE_ZOOMINFO_CONNECTOR", "ROLE_ZOOMINFO_CONNECTOR_ADMIN" ] } }
-   ```
+Configure a proxy to let ZoomInfo on-demand UI buttons call RIH in real time. You'll create an access profile and client in API Platform, submit a request to Reltio Support to create the corresponding RIH proxy, and then update your UI configuration to reference it.
+
+**Prerequisites**Before you continue, make sure the following prerequisites are met:
+
+- 
+
+  You need a ZoomInfo integration configured for your tenant.
+
+
+To configure a proxy for ZoomInfo on-demand UI buttons:
+
+1. Navigate to **Tools > API platform**, then select **Clients** and click **+ New Client**.
+2. Select **Create access profile**.
+   - Choose the **ZoomInfo - REST API** collection and select **Auth Token** as the token type.
+     [#task-dcgz7h8n/step-23299](#task-dcgz7h8n/step-23299)*Image: i-integ-enrich-zoominfo-access-token.png*
+   - In the **Profile name**, enter the profile name. Ensure you use a consistent naming convention, example, `tenantID+APICollectionName`.
+   - Click Next and on the **Set up authentication** page, enter the required details.
+   - Save the profile .
+3. Create the RIH Proxy. Submit a request to Reltio Support to create this profile. You'll need to share your `Access Profile` name and `Auth Token` with our support team. For more information, see topic [Get help in Support Portal](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+4. In the **Console**, select **UI Modeler**.
+   - From the left navigation pane, select Import/Export UI Config Files and [export the UI configuration file](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/export-and-import-of-ui-configuration-files/exporting-ui-configuration-files?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+   - Update the UI configuration file to include correct values for the ZoomInfo On-Demand buttons and update the values for the following keys:
+     - `url` - from Step [#task-dcgz7h8n/step-5437](#task-dcgz7h8n/step-5437)
+- `profileName` - from Step [#task-dcgz7h8n/step-5437](#task-dcgz7h8n/step-5437)
+- `action.permissions` - rih proxy domain from Step 2
+- `workatoEndpoint` - from RIH API Management for real-time enrichment
+     ```
+ {
+             
+               "component": "Custom",
+			"id": "Some uniq id",
+               "label": "Get ZoomInfo Match",
+               "url": "https://360-rih-proxy.reltio.com/api/v1/proxy/workato/invoke_endpoints",
+               "success": "Success! Please reload this profile and review the 'Verification' details to check whether a match was found. Resolve the Potential Match to enrich the profile.",
+               "fail": "Failure:",
+               "loading": "Processing: Please Wait",
+               "height": 34,
+               "profileName": "{{tenantId}}_ZoomInfo_-_REST_API",
+               "workatoEndpoint": "https://apim.workato.com/{{workatoEndpoint}}/zoominfo-rest-api-vv1/company-real-time-enrichment?doNotMerge=true&entityURI=",
+               "proxyMethod": "POST",
+               "action": {
+                  "permissions": [
+                     "https://360-rih-proxy.reltio.com",
+                     "https://apim.workato.com"
+                  ],
+                  "files": [
+                     "https://reltio-ui-files.s3.amazonaws.com/custom-scripts/b2b_application_dnb_proxy.js"
+                  ]
+               },
+               "canRead": [
+                     "ROLE_ZOOMINFO_CONNECTOR",
+                     "ROLE_ZOOMINFO_CONNECTOR_ADMIN"
+                  ]
+            },
+            {
+               "id": "com.reltio.plugins.entity.org.ZIGetCompanyInfoButtonView",
+               "component": "Custom",
+               "label": "Get ZoomInfo Company Info",
+               "url": "https://360-rih-proxy.reltio.com/api/v1/proxy/workato/invoke_endpoints",
+               "success": "Success! This profile should now be enriched with company information. Please reload the profile.",
+               "fail": "Failure:",
+               "loading": "Processing: Please Wait",
+               "height": 34,
+               "profileName": "{{tenantId}}_ZoomInfo_-_REST_API",
+               "workatoEndpoint": "https://apim.workato.com/{{workatoEndpoint}}/zoominfo-rest-api-vv1/company-real-time-enrichment?doNotMerge=false&entityURI=",
+               "proxyMethod": "POST",
+               "action": {
+                  "permissions": [
+                     "https://360-rih-proxy.reltio.com",
+                     "https://apim.workato.com"
+                  ],
+                  "files": [
+                     "https://reltio-ui-files.s3.amazonaws.com/custom-scripts/b2b_application_dnb_proxy.js"
+                  ]
+               },
+              
+            }
+```
+   - Update UI Configuration for Individual.
+     > **Attention:** The `doNotMerge` parameter controls whether ZoomInfo data is applied automatically or held for review. Setting it `true` returns a potential match for manual review. Setting it `false` merges it immediately. It is intentionally configured differently for each button. Do NOT modify these values.
+     Update the UI configuration file to include correct values for the ZoomInfo On-Demand buttons and update the values for the following keys:
+
+- `url` - from Step [#task-dcgz7h8n/step-5437](#task-dcgz7h8n/step-5437)
+- `profileName` - from Step [#task-dcgz7h8n/step-5437](#task-dcgz7h8n/step-5437)
+- `action.permissions` - rih proxy domain from Step [#task-dcgz7h8n/step-5437](#task-dcgz7h8n/step-5437)
+- `workatoEndpoint` - from RIH API Management for real-time enrichment
+     ```
+{
+ 			 "component": "Custom",
+			"id": "Some uniq id",
+			"label": "Get ZoomInfo Match",
+               "url": "https://360-rih-proxy.reltio.com/api/v1/proxy/workato/invoke_endpoints",
+               "success": "Success! Please reload this profile and review the 'Verification' details to check whether a match was found. Resolve the Potential Match to enrich the profile.",
+               "fail": "Failure:",
+               "loading": "Processing: Please Wait",
+               "height": 34,
+               "profileName": "{{tenantId}}_ZoomInfo_-_REST_API",
+               "workatoEndpoint": "https://apim.workato.com/{{workatoEndpoint}}/zoominfo-rest-api-vv1/contact-real-time-enrichment?doNotMerge=true&entityURI=",
+               "proxyMethod": "POST",
+               "action": {
+                  "permissions": [
+                     "https://360-rih-proxy.reltio.com",
+                     "https://apim.workato.com"
+                  ],
+                  "files": [
+                     "https://reltio-ui-files.s3.amazonaws.com/custom-scripts/b2b_application_dnb_proxy.js"
+                  ]
+               },
+               "canRead": [
+                     "ROLE_ZOOMINFO_CONNECTOR",
+                     "ROLE_ZOOMINFO_CONNECTOR_ADMIN"
+                  ] // or can be omitted 
+            }           
+```
+
+**Result**
 
 Your proxy for on-demand UI buttons is now set up.
 
@@ -213583,40 +213728,31 @@ To edit a DVF:
 
 **Source:** https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-set-up/configure-data-validation-functions/enable-dvfs-for-relationship-types?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
+**Keywords:** enable relationship dvfs, relationship validation functions, validate relations parameter, ui configuration validation, export ui configuration, import ui configuration, relationship validation warnings, dvfs, validation, relationships
+
 
 Learn how to enable data validation functions for relationship types
 
-Before you create Data Validation Functions, you must enable validation functions for the relationship type you want to validate.
+When you run validation logic for relationship data, warning messages are added to relationship objects as analytical attributes. For these warning messages to appear on the **Relationships** view, you must set the *validateRelations* parameter to true in the `properties` section of the [UI configuration JSON file](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/configure-reltio-ui-with-the-configuration-file/configure-the-properties-object?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
-When you run validation logic for relationship data, warning messages are added to relationship objects as analytical attributes. For these warning messages to appear on the **Relationships** view, you must set the `validateRelations` parameter to true in one of your tenant UI configuration JSON files.
+**Prerequisites**
+
+Before you continue, make sure the following prerequisites are met:
+
+- Enable validation functions for the relationship type you want to validate.
 
 
-To enable DVFs for relationship types in a UI configuration file:
+To enable data validation functions for relationship types:
 
 1. From the Reltio App Selector, select **Console > UI Modeler**.
-2. In the **UI Modeler** navigation panel, select **Import/ export UI config files**.
-   *Image: import-export-ui_new.png*
-3. If the `com.reltio.plugins.entity.Validation` file is on this list, edit it (if not, skip to step 4):
-   - Hover your mouse pointer over the `com.reltio.plugins.entity.Validation` and then in the displayed action bar select **Export**.
-   - In a JSON editor, open the exported `com.reltio.plugins.entity.Validation` file and add the following code:
-     ```
-"validateRelations": true
-     ```
-   - Save and close the file.
-4. If the `com.reltio.plugins.entity.Validation` file isn't on this list, edit another UI configuration file:
-   - Hover your mouse pointer over any file from the list, for example `com.reltio.plugins.entity.json`, then in the displayed action bar select **Export**.
-   - In a JSON editor, open the exported file and add the following code:
-     ```
-{ "point": "com.reltio.plugins.ui.configuration", "id": "com.reltio.plugins.entity.Validation", "validateRelations": true }
-     ```
-   - Save and close the file.
-5. In the **Import/ export UI config files** page, hover your mouse pointer over the file you edited and then in the displayed action bar select **Import & replace**.
-6. In the **Import & replace** page, browse to the file you want to import and replace, and then select **Continue**.
-   *Image: dm_select_UIconfig.png*
-7. Select **Replace**.
-   *Image: dm_replace_ok_UIconfig.png*
-8. In the displayed confirmation message, select **OK**.
-   *Image: dm_replace_UIconfig.png*
+2. In the **UI Modeler** navigation panel, select **Import/ export UI config files** and [export the configuration file](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/export-and-import-of-ui-configuration-files/exporting-ui-configuration-files?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+3. In a JSON editor, open the exported file and go to the `properties` section.
+4. In the `validation` section, add the `validateRelations` parameter as shown below:
+   ```
+"validation": { "validateRelations": true, },
+   ```
+5. Save and close the file.
+6. [Import the UI configuration](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/export-and-import-of-ui-configuration-files/importing-ui-configuration-files?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) file with the latest changes.
 
 
 
@@ -215150,36 +215286,6 @@ For more information, see topic [Role based access for facets in Profile view](h
 
 ---
 
-# Configuration to sort list alphabetically
-
-> **Section:** Objectives > Configure the Reltio UI > UI configuration at a glance > UI Custom Components
-
-
-**Source:** https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/ui-custom-components/configuration-to-sort-list-alphabetically?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
-
-Learn more about the configuration to sort attribute list alphabetorically.
-
-While editing the new Profile view, you can add new values for an attribute by clicking the **More attributes** link. For more information, see topic [Editing profiles](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/editing-profiles?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). To sort this list alphabetically, configure your UI configuration by using JSON similar to the following example.
-
-```
-{
-      "point": "com.reltio.plugins.ui.configuration",
-      "id": "com.reltio.plugins.ui.AttributesSorting",
-      "strategy": "ascByName"
-    },
-```
-
-
-
-
-
-> **Note:** If you do not add this configuration in your JSON, then the list is configured as per the L3 configuration.
-
-
-
----
-
 # Configure your profile perspective for an entity type
 
 > **Section:** Objectives > Configure the Reltio UI > UI configuration at a glance > Configure your profile pages
@@ -215241,46 +215347,6 @@ Configure your UI to display a **?** next to attributes in your **Profile** and 
 
 ---
 
-# Buttons
-
-> **Section:** Objectives > Configure the Reltio UI > UI configuration at a glance > UI Custom Components
-
-
-**Source:** https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/ui-custom-components/buttons?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
-**Keywords:** Custom Buttons Configuration, custom buttons configuration, custom buttons
-
-
-You can customize Buttons.
-
-To configure custom buttons in the UI configuration use JSON similar to the following example.
-
-## Custom Button
-
-```
-{
-   "point":"com.reltio.plugins.ui.view",
-   "id":"com.reltio.plugins.entity.DataQuality",
-   "class":"com.reltio.plugins.ui.CustomActionButtonView",
-   "icon":"http://reltio.images.s3.amazonaws.com/ui/quality-icon.png",
-   "height":26,
-   "width":50,
-   "action":{
-      "files":[
-         "https://dl.dropboxusercontent.com/u/28898220/dataQuality.js"
-      ]
-   }
-}
-```
-
-As shown, this is a normal view configuration, but with class `"com.reltio.plugins.ui.CustomActionButtonView"` and an additional `"action"` property. Refer to [Menu items](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/ui-custom-components/menu-items?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) for more information about the `"action"` property.
-
-You can use this custom button as the normal view on any perspective.
-
-
-
----
-
 # Script
 
 > **Section:** Objectives > Configure the Reltio UI > UI configuration at a glance > UI Custom Components
@@ -215293,396 +215359,107 @@ You can use this custom button as the normal view on any perspective.
 
 Learn about custom scripts needed for custom components.
 
-With every custom component you create you must use a custom script. Files with custom scripts are specified in the `action` property of the UI configuration for a component.
+Every custom component requires a custom script. Specify the script file in the `action` property of the component's UI configuration.
 
 > **Important:** Custom script is executed inside the sandbox and does not have access to the DOM tree of the UI client, local storage, or any other parameters directly. However, there is a way to communicate with the UI client and execute different actions. To do this, you must use global object **UI** in your custom script and call `async` methods on this object.
 
 ## General
 
+The following example shows the API path and UI configuration of a custom component. The linked script (iframe.js) uses this configuration to render a B2B integration view and call alerts on the UI client. 
+
 ```
+
 {
-                    "point":"com.reltio.plugins.ui.view",
-                    "id":"com.reltio.plugins.entity.bbChartView",
-                    "class":"com.reltio.plugins.ui.CustomActionView",
-                    "caption":"B2B Integration",
-                    "url":"https://cgraph-dev.reltio.com/custom-graph/bbChart?entityUri=",
-                    "height":200,
-                    "action":{
-                    "files":[
-                    "https://dl.dropboxusercontent.com/u/465285497/iframe.js"
-                    ]
-                    }
-                    }
-```
-
-In this example, the API path and UI configuration of the current custom component is shown, and then two call alerts on the UI client.
-
-## log
-
-```
-UI.log(message);
-```
-
-This method allows a message to be logged.
-
-```
-@param message {String|Object} log message
-```
-
-## setEnabled
-
-```
-UI.setEnabled(value);
-```
-
-This method allows a change to the enabled state of control (must be used only with custom buttons).
-
-```
-@param value {Boolean} is enabled
-```
-
-## setVisibility
-
-```
-UI.setVisibility(value);
-```
-
-This method allows a change in the visibility of the control state.
-
-```
-@param value {String} "visible" | "hidden" | "excluded"
-```
-
-## setHtml
-
-```
-UI.setEnabled(value);
-```
-
-Set widget's internal HTML (can be used only with custom view).
-
-```
-@param html {String?} HTML
-```
-
-## setChildHtml
-
-```
-UI.setChildHtml(id, html);
-```
-
-Set widget child's internal HTML (can be used only with custom view).
-
-```
-@param id {String} widget child's id
-           @param html {String?} HTML
-```
-
-## setHeight
-
-```
-UI.setHeight(height);
-```
-
-Set widget's height (can be used only with custom buttons and views).
-
-```
-@param height {Number?} height in pixels
-```
-
-## setWidth
-
-```
-UI.setWidth(width);
-```
-
-Set widget's width (can be used only with custom buttons and views).
-
-```
-@param height {Number?} width in pixels
-```
-
-## setToolTip
-
-```
-UI.setEnabled(value); 
-```
-
-Set widget's tooltip.
-
-```
-@param toolTip {String?} tool tip
-```
-
-## onAction
-
-```
-UI.onAction(function(){
-   //Some code
-});
-```
-
-`@deprecated`: `Use UI.onEvent(...)` and listen for event `"execute"` instead.
-
-The entry point of the script. When the all scripts are loaded, then the on action is invoked (can be used only with custom buttons and menu items/actions).
-
-## onEvent
-
-```
-UI.onEvent(function(type, data) {
-  
-});
-```
-
-The entry point of the script when a new event is thrown.
-
-```
-@param type {String} type of event
-```
-
-- `"execute"`: when you click a custom button or menu item. `"data"` is null.
-- `"updateEntity"`: when a new entity is loaded from API. `"data"` is JSON of the entity.
-- `"changeSearchQuery"`: when search criteria are changed. `"data"` is string with search query.
-- `"changeVisibility"`: when visibility of custom component is changed. `"data"` is `true` or `false`.
-- `"uiAction"`: when specified ui action occurs on DOM element of custom view. `"data"` is JSON: {type: `uiAction`, id: `id`, event: `event` }.
-  - `uiAction`: name of action (`"click"`, `"mousemove"`, `"mousedown"`, etc.).
-  - `id`: id of target DOM element.
-  - `event`: clone of javascript event object.
-
-```
-@param data {String} additional data (see above)
-```
-
-## getEntityURI
-
-```
-UI.getEntityUri().then(function(entityUri){
-   //Code here
-});
-```
-
-This method allows a `get` of the current entity uri.
-
-## getEntity
-
-```
-UI.getEntity().then(function(entity){
-   //Code here
-});
-```
-
-This method allows a `get` of the current entity.
-
-## getApiPath
-
-```
-UI.getApiPath().then(function(apiPath){
-   //Code here
-});
-```
-
-This method allows a `get` of the api path url.
-
-## getSearchQuery
-
-```
-UI.getApiPath().then(function(apiPath){
-   //Code here
-});
-```
-
-This method allows a `get` of the current search query.
-
-## getTenant
-
-```
-UI.getTenant().then(function(tenant){
-   //Code here
-});
-```
-
-The method allows a `get` of the current tenant name.
-
-## getPerspective
-
-```
-UI.getPerspective().then(function(perspective){
-   //Code here
-});
-```
-
-This method allows a `get` of the current perspective id.
-
-## setPerspective
-
-```
-UI.setPerspective(perspective).then(function(){
-   //Code here
-});
-```
-
-The method allows a `set` to the current perspective.
-
-```
-@param perspective {String} perspective id
-```
-
-## setEntityUri
-
-```
-UI.setEntityUri(entityUri).then(function(){
-   //Code here
-});
-```
-
-This method allows a `set` to the entity uri.
-
-```
-@param entityUri {String} entity URI.
-```
-
-## api
-
-```
-UI.api(url, method, tenant, headers, data).then(function(response){
-   //Code here
-});
-```
-
-This method allows a send of the api or external request.
-
-```
-
-           @param url {String} url.
-           @param method {String?} request method: GET, POST, PUT, DELETE
-           @param tenant {String?} tenant
-           @param headers {Object?} headers
-           @param data {Object|String?} request body
-```
-
-For example:
-
-```
-UI.api('https://test.reltio.com/nui/version', 'GET')
-```
-
-## alert
-
-```
-UI.alert(text).then(function(){
-   //Code here
-});
-```
-
-This method allows showing the alert box with text.
-
-```
-@param text {String} alert text
-```
-
-## confirm
-
-```
-UI.confirm(text).then(function(response){
-   //Code here
-});
-```
-
-This method allows showing the confirm box with text.
-
-```
-@param text {String} confirm text
-```
-
-## prompt
-
-```
-UI.prompt(text,
-defaultText).then(function(response){
-   //Code here
-});
-```
-
-This method allows showing the prompt box.
-
-```
-@param text {String} prompt text
-           @param defaultText {String?} prompt default value
-```
-
-## getConfiguration
-
-```
-UI.getConfiguration().then(function(jsonApiConfiguration){
-   //Code here
-});
-```
-
-Get metadata configuration.
-
-## getUiConfiguration
-
-```
-UI.getUiConfiguration().then(function(jsonUiConfiguration){
-   //Code here
-});
-```
-
-Get UI configuration of current custom component.
-
-## openSearch
-
-```
-UI.openSearch(searchState).then(function(){
-   //Code here
-});
-```
-
-Open search screen with some state.
-
-```
-@param searchState {Object?} search state json
-```
+  "id": "bbChartView",
+  "component": "CustomActionView",
+  "caption": "B2B Integration",
+  "url": "https://cgraph-dev.reltio.com/custom-graph/bbChart?entityUri=",
+  "height": 200,
+  "action": {
+    "files": [
+      "https://dl.dropboxusercontent.com/u/465285497/iframe.js"
+    ]
+  }
+} 
+```
+
+## UI Object methods
+
+The global UI object provides methods that enable custom scripts to communicate with the UI client. The following table describes the available methods, their syntax, parameters, and usage.
+
+| Method | Syntax | Description | Parameters | Notes/Example |
+| --- | --- | --- | --- | --- |
+| `log` | `UI.log(message)` | Logs a message for debugging. | **message** (String \| Object): Message or object to log. | — |
+| `setEnabled` | `UI.setEnabled(value)` | Changes the enabled state of a control. Use only with custom buttons. | **value** (Boolean): Specifies whether the control is enabled. | — |
+| `setVisibility` | `UI.setVisibility(value)` | Changes the visibility state of a control. | **value** (String): `visible`, `hidden`, or `excluded`. | — |
+| `setHtml` | `UI.setHtml(html)` | Sets the widget's internal HTML. Use only with custom views. | **html** (String): HTML content. | — |
+| `setChildHtml` | `UI.setChildHtml(id, html)` | Sets the internal HTML of a child widget. Use only with custom views. | **id** (String): Child widget ID.**html** (String): HTML content. | — |
+| `setHeight` | `UI.setHeight(height)` | Sets the widget height. Use only with custom buttons and custom views. | **height** (Number): Height in pixels. | — |
+| `setWidth` | `UI.setWidth(width)` | Sets the widget width. Use only with custom buttons and custom views. | **width** (Number): Width in pixels. | Correct parameter name from the current topic. |
+| `setToolTip` | `UI.setToolTip(toolTip)` | Sets the widget tooltip. | **toolTip** (String): Tooltip text. | — |
+| `onAction` | `UI.onAction(function(){...})` | Entry point that runs after all scripts are loaded. | None | **Deprecated.** Use `UI.onEvent()` and listen for the `"execute"` event instead. |
+| `onEvent` | `UI.onEvent(function(type, data){...})` | Registers an event handler that runs when an event occurs. | **type** (String): Event type.**data** (String \| Object): Event-specific data. | [Supported events](#customscript/section-8392): `execute`, `updateEntity`, `changeSearchQuery`, `changeVisibility`, `uiAction`. |
+| `getEntityUri` | `UI.getEntityUri()` | Retrieves the current entity URI. | None | Returns a Promise. |
+| `getEntity` | `UI.getEntity()` | Retrieves the current entity. | None | Returns a Promise. |
+| `getApiPath` | `UI.getApiPath()` | Retrieves the current API path. | None | Returns a Promise. |
+| `getSearchQuery` | `UI.getSearchQuery()` | Retrieves the current search query. | None | Returns a Promise. |
+| `getTenant` | `UI.getTenant()` | Retrieves the current tenant name. | None | Returns a Promise. |
+| `getPerspective` | `UI.getPerspective()` | Retrieves the current perspective ID. | None | Returns a Promise. |
+| `setPerspective` | `UI.setPerspective(perspective)` | Sets the current perspective. | **perspective** (String): Perspective ID. | Returns a Promise. |
+| `setEntityUri` | `UI.setEntityUri(entityUri)` | Sets the current entity URI. | **entityUri** (String): Entity URI. | Returns a Promise. |
+| `api` | `UI.api(url, method, tenant, headers, data)` | Sends an API request or an external request. | **url** (String): Request URL.**method** (String): `GET`, `POST`, `PUT`, or `DELETE`.**tenant** (String): Tenant name.**headers** (Object): Request headers.**data** (Object \| String): Request body. | Example: `UI.api('https://test.reltio.com/nui/version', 'GET')` |
+| `alert` | `UI.alert(text)` | Displays an alert dialog. | **text** (String): Alert message. | Returns a Promise. |
+| `confirm` | `UI.confirm(text)` | Displays a confirmation dialog. | **text** (String): Confirmation message. | Returns a Promise that resolves with the user's response. |
+| `prompt` | `UI.prompt(text, defaultText)` | Displays a prompt dialog. | **text** (String): Prompt message.**defaultText** (String): Default value. | Returns a Promise that resolves with the user's input. |
+| `getConfiguration` | `UI.getConfiguration()` | Retrieves the metadata configuration. | None | Returns a Promise. |
+| `getUiConfiguration` | `UI.getUiConfiguration()` | Retrieves the UI configuration of the current custom component. | None | Returns a Promise. |
+| `openSearch` | `UI.openSearch(searchState)` | Opens the search screen with the specified state. | **searchState** (Object): Search state JSON. | Returns a Promise. |
+
+## Supported event types
+
+The `onEvent()` method supports the following event types:
+
+| Event | Description |
+| --- | --- |
+| `execute` | Triggered when a custom button or menu item is selected. The `data` parameter is `null`. |
+| `updateEntity` | Triggered when a new entity is loaded. The `data` parameter contains the entity JSON. |
+| `changeSearchQuery` | Triggered when the search criteria change. The `data` parameter contains the search query string. |
+| `changeVisibility` | Triggered when the visibility of a custom component changes. The `data` parameter is `true` or `false`. |
+| `uiAction` | Triggered when a specified UI action occurs on a DOM element in a custom view. The `data` parameter contains the action type, element ID, and event object. |
 
 
 
 ---
 
-# Views
+# Custom views
 
 > **Section:** Objectives > Configure the Reltio UI > UI configuration at a glance > UI Custom Components
 
 
-**Source:** https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/ui-custom-components/views?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/ui-custom-components/custom-views?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
-**Keywords:** Custom Views Configuration, custom views configuration, custom views
+**Keywords:** custom views, dashboard custom views, profile custom views, profile side panels, unified ui configuration, global custom scripts, left navigation actions, custom action screen, dashboard, profile, scripts
 
 
-You can customize views.
+Learn about where custom views are supported in the unified UI configuration file, including dashboard views, profile views, and profile side panels.
 
-To configure custom views in the UI configuration use JSON similar to the following example.
+In the [UI configuration file](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/configure-reltio-ui-with-the-configuration-file?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), configure custom views in the following areas:
 
-## Custom View
+- 
 
-```
-{
-   "point":"com.reltio.plugins.ui.view",
-   "id":"com.reltio.plugins.entity.bbChartView",
-   "class":"com.reltio.plugins.ui.CustomActionView",
-   "caption":"B2B Integration",
-   "url":"https://cgraph-dev.reltio.com/custom-graph/bbChart?entityUri=",
-   "height":200,
-   "action":{
-      "files":[
-         "https://dl.dropboxusercontent.com/u/465285497/iframe.js"
-      ]
-   }
-}
-```
+  **Dashboard custom views**: Configure dashboard custom views in [dashboard views](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/configure-reltio-ui-with-the-configuration-file/configure-the-layout-section---dashboards?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) to display custom content in the dashboard UI.
+- 
 
-As shown, this is a normal view configuration but with class `"com.reltio.plugins.ui.CustomActionView"` and an additional `"action"` property. Refer to [Menu items](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/ui-custom-components/menu-items?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) for more information about the `"action"` property
+  **Profile custom views**: Profile custom views are configured in the `profile` section as `Custom` components in `views`. Use [profile custom views](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/configure-reltio-ui-with-the-configuration-file/configure-profile-screens/profile-view-components-facets?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) when you need to display custom content in the context of the current profile entity.
+- 
 
-You can use this custom view as the normal view on any perspective.
+  **Profile custom side panels**: [Profile custom side panels](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/configure-reltio-ui-with-the-configuration-file/configure-profile-screens?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) are configured in `sidePanelViews` in the `profile` section. Use them to display integration actions or additional contextual information in the profile view.
+- 
+
+  **Related custom configuration for global custom scripts**: [Global custom scripts](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/configure-reltio-ui-with-the-configuration-file/configure-the-properties-object?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) are configured in the `properties` section. Use them for global custom script behavior, such as request or response interception.
+- 
+
+  **Related custom configuration for left navigation actions**: [Left navigation custom actions](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/configure-reltio-ui-with-the-configuration-file/configure-the-layout-section---other-screens?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) are configured in the `layout` section by using the `CustomAction` screen type.
 
 
 
@@ -216217,50 +215994,6 @@ Your tenant should be localized as well:
 *Image: l10n02.png*
 
 If you have any issues, questions or suggestions, contact [Reltio Support Team](mailto:support@reltio.com).
-
-
-
----
-
-# Menu items
-
-> **Section:** Objectives > Configure the Reltio UI > UI configuration at a glance > UI Custom Components
-
-
-**Source:** https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/ui-custom-components/menu-items?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
-**Keywords:** Configure menu items in the UI configuration, configure menu items in the UI configuration, menu items in UI configuration
-
-
-You can configure menu items in the UI configuration.
-
-To configure menu items in the UI configuration use JSON similar to the following example.
-
-## Custom Action
-
-```
-{
-                    "point":"com.reltio.plugins.ui.action",
-                    "id":"com.reltio.plugins.CustomAlertOnTopMenu",
-                    "class":"com.reltio.plugins.ui.actions.CustomAction",
-                    "label":"Custom Alert",
-                    "type":"com.reltio.plugins.ui.first_level_action",
-                    "action":{
-                    "files":[
-                    "https://reltio-ui-files.s3.amazonaws.com/custom-scripts/RP-16394.js"
-                    ]
-                    }
-                    }
-```
-
-As shown, this is normal menu item configuration, but with class `"com.reltio.plugins.ui.actions.CustomAction"` and an additional `"action"` property.
-
-In `"action"` you can configure these two property parameters:
-
-- `"files"` (Array): array of links to files with Javascript. These javascript files are used when you click a menu item. Normally, you need one Javascript file with the custom script. Other files can be sued for additional Javascript libraries, and so on.
-- `"permissions"` (Array): array of URLs (for example, "https://{environment}.reltio.com"). Custom scripts can make requests only on these urls (any path and query parts can be sued with specified urls). You need this parameter only if you want to use external requests from your script.
-
-You can add the property `"parent": "com.reltio.plugins.search.toolbar.actions"` to add this menu item to `"Actions"` in the search screen.
 
 
 
@@ -218305,46 +218038,6 @@ To configure the Segments facet in the Profile view:
    By default, it displays Segments.
 7. In the **Max shown** field, enter the maximum number of segments that can be displayed in this facet.
 8. Select **Publish** to publish the changes.
-
-
-
----
-
-# Pivoting attributes
-
-> **Section:** Objectives > Configure the Reltio UI > UI configuration at a glance > UI Custom Components
-
-
-**Source:** https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/ui-custom-components/pivoting-attributes?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
-
-Learn how to edit and define your pivoting attributes
-
-A pivoting attribute in Reltio is a data attribute that serves as a key field for reorganizing, filtering, or analyzing data across different perspectives in the UI. It allows you to dynamically group, sort, or visualize data based on your specific entity attributes, enabling more interactive and insightful data explorations.
-
-
-Edit your pivoting attributes
-
-1. Navigate to **Console > UI Modeler**
-2. Select **Import/Export UI config files**
-3. Find and export the `com.reltio.plugins.pivoting.json` file
-   *Image: i-obj-ui-modeler-pivot-attribute.png*
-4. Open the exported file and locate the section with `"id": "com.reltio.plugins.pivoting.PivotingSettings"`
-5. Add or remove attributes from the array `pivotingAttributes` as needed.
-   Each object inside `pivotingAttributes` contains:
-   | Name | Type | Description |
-| --- | --- | --- |
-| `uri` | String | attribute URI. |
-| `children` | Array.<String> | attribute URIs. If pivoting attribute is nested, then we can specify which sub-attribute of it must be used in pivoting. |
-| `popup` | Object | pivoting popup configuration:  - `label` (String) - Pivoting popup caption. - `entityType` (String) - Entity type URI. Only entities of this type are shown on the popup. |
-   Here is an example:
-   ```
-{ "point": "com.reltio.plugins.ui.configuration", "id": "com.reltio.plugins.pivoting.PivotingSettings", "pivotingAttributes": [ { "uri": "configuration/entityTypes/HCP/attributes/FirstName" }, { "uri": "configuration/entityTypes/HCP/attributes/BirthCountry" }, { "uri": "configuration/entityTypes/HCP/attributes/Phone", "children": [ "configuration/entityTypes/HCP/attributes/Phone/attributes/Number", "configuration/entityTypes/HCP/attributes/Phone/attributes/Type" ], "popup": { "label": "Organizations", "entityType": "configuration/entityTypes/Organization" } } ] }
-   ```
-6. Save the updated file.
-7. Import the modified file back into the system.
-
-Your `com.reltio.plugins.pivoting.json` file is now updated with your defined pivoting attributes.file is now updated with your defined pivoting attributes.
 
 
 
@@ -227626,6 +227319,164 @@ Since all source data is maintained in Reltio, if the goal is to simply return t
 
 ---
 
+# Hierarchy types in Data Modeler
+
+> **Section:** Objectives > Model data > Data modeling at a glance > Data modeling operation
+
+
+**Source:** https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/hierarchy-types-in-data-modeler?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** hierarchy types, data modeler, materialized hierarchy, hierarchy tab, profile view, entity type hierarchy, hierarchy type details, hierarchy configuration, display name, entity types
+
+
+Learn about hierarchy types and how they define the entity structures used to build hierarchies in your tenant.
+
+A hierarchy type defines a structural relationship between entity types, such as an organization structure or an employee reporting line.
+
+In the **Data Modeler**, configure the hierarchy types that use the Materialized hierarchy structure. Each hierarchy type requires a name, a display name, and the entity types that can use the hierarchy type. You can have multiple hierarchy types for different structural views, like an organization hierarchy and an employee hierarchy.
+
+From the **Hierarchy types** page, you can:
+
+- [Create hierarchy types](https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/hierarchy-types-in-data-modeler/create-a-hierarchy-type?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Edit hierarchy types](https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/hierarchy-types-in-data-modeler/edit-a-hierarchy-type?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Delete hierarchy types](https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/hierarchy-types-in-data-modeler/delete-a-hierarchy-type?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- View hierarchy type details
+
+
+
+---
+
+# Create a hierarchy type
+
+> **Section:** Objectives > Model data > Data modeling at a glance > Data modeling operation > Hierarchy types in Data Modeler
+
+
+**Source:** https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/hierarchy-types-in-data-modeler/create-a-hierarchy-type?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** create hierarchy type, data modeler hierarchy, materialized hierarchy, hierarchy type setup, hierarchy type creation, entity type mapping, hierarchy display name, hierarchy type uri, data modeler, entity types
+
+
+Learn how to create a hierarchy type so that it is available for Materialized hierarchy in the tenant.
+
+You can define a new materialized hierarchy type in **Data Modeler** for a specific set of entity types.
+
+**Prerequisites**Before you continue, make sure the following prerequisites are met: 
+
+- You have access to the **Data Modeler** application in **Console**
+
+
+
+
+
+- You have access to the **Data Modeler** application in **Console**.
+- The entity types you want to associate with the hierarchy type already exist.
+
+
+To add a hierarchy type:
+
+1. In the **Console**, select **Data Modeler**.
+2. In the **Data Modeler**, select **Hierarchy types** from the left navigation pane. A list of hierarchy types is displayed.
+3. Select **Create New**.
+   *Image: dm-createhierarchytype.png*
+4. Enter the required values.
+   | **Field** | **Description** |
+| --- | --- |
+| **Name** | Enter a unique identifier for the hierarchy type. This value forms part of the configuration URI `configuration/hierarchyTypes/<Name>` and cannot be changed after you save the hierarchy type. |
+| **Display name** | Enter the label shown for this hierarchy type in the **Profile** view. |
+| **Entity types** | Select the entity types that this hierarchy type applies to. |
+5. Select **Save**.
+
+**Result**The new hierarchy type appears in the **Hierarchy types** list with its name, display name, and associated entity types.
+
+**Verification steps**
+
+1. 
+
+   In the Hub, select a profile belonging to one of the entity types you added for the hierarchy type.
+2. 
+
+   Go to the [Hierarchy](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/hierarchy-perspective?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) tab.
+3. 
+
+   Confirm that the new hierarchy type appears in the **Hierarchy type** dropdown list.
+
+
+
+---
+
+# Delete a hierarchy type
+
+> **Section:** Objectives > Model data > Data modeling at a glance > Data modeling operation > Hierarchy types in Data Modeler
+
+
+**Source:** https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/hierarchy-types-in-data-modeler/delete-a-hierarchy-type?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** delete hierarchy type, remove hierarchy type, data modeler hierarchy, materialized hierarchy, hierarchy type deletion, delete hierarchy settings, remove hierarchy settings, hierarchy type removal, data modeler, delete
+
+
+Learn how to delete a hierarchy type.
+
+In the **Data Modeler**, you can delete a hierarchy type so that it is no longer available for Materialized hierarchy.
+
+**Prerequisites**Before you continue, make sure the following prerequisites are met: 
+
+- You have access to the **Data Modeler** application in **Console**.
+- You have created hierarchy types with associated entity types.
+
+
+To delete a hierarchy type:
+
+1. In the **Console**, select **Data Modeler**.
+2. In the **Data Modeler**, select **Hierarchy types** from the left navigation pane. A list of hierarchy types is displayed.
+3. Hover over the Hierarchy type you want to edit and select the Delete icon.
+   *Image: dm-deletehierarchytype.png*
+4. In the confirmation dialog, select **Yes**. A confirmation message appears indicating that the hierarchy type was successfully deleted.
+
+**Result**The hierarchy type is removed from the **Hierarchy types** list and is no longer available for Materialized hierarchy.
+
+
+
+---
+
+# Edit a hierarchy type
+
+> **Section:** Objectives > Model data > Data modeling at a glance > Data modeling operation > Hierarchy types in Data Modeler
+
+
+**Source:** https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/hierarchy-types-in-data-modeler/edit-a-hierarchy-type?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** create hierarchy type, data modeler hierarchy, materialized hierarchy, hierarchy type setup, hierarchy type creation, entity type mapping, hierarchy display name, hierarchy type uri, data modeler, entity types
+
+
+Learn how to edit a hierarchy type so that you can update its display name or associated entity types.
+
+You can update an existing hierarchy type in **Data Modeler**.
+
+**Prerequisites**Before you continue, make sure the following prerequisites are met: 
+
+- You have access to the **Data Modeler** application in **Console**.
+- You have created hierarchy types with associated entity types.
+
+
+To edit a hierarchy type:
+
+1. In the **Console**, select **Data Modeler**.
+2. In the **Data Modeler**, select **Hierarchy types** from the left navigation pane. A list of hierarchy types is displayed.
+3. Hover over the Hierarchy type you want to edit and select the pencil (edit) icon.
+   *Image: dm-edithierarchytype.png*
+4. Update the fields as needed.
+   | **Field** | **Description** |
+| --- | --- |
+| **Display name** | Update the name displayed for the hierarchy type. |
+| **Entity types** | Add or remove associated entity types. To remove an entity type, select the **x** on its tag. |
+5. Select **Save**.
+
+**Result**The updated hierarchy type is saved and the changes appear in the **Hierarchy types** list.
+
+
+
+---
+
 # Using Activeness
 
 > **Section:** Objectives > Model data > Data modeling at a glance > Data modeling operation > Managing Object Deletion and Activeness
@@ -232450,7 +232301,7 @@ To create a profile:
 
 1. From the **More attributes** list, select the attributes that you want to add for the new profile.
 
-   > **Note:** By default, the list of attributes isn't sorted alphabetically. To view this list in an alphabetical order, add a configuration in your UI JSON file. For more details, see topic [Configuration to sort list alphabetically](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/ui-custom-components/configuration-to-sort-list-alphabetically?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+   > **Note:** By default, the list of attributes isn't sorted alphabetically. To view this list in an alphabetical order, add a configuration in your UI JSON file. For more details, see topic [c uicomponents sortorder](https://docs.reltio.com/search?q=c_uicomponents_sortorder&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 2. 
 
    In the **Search** field, you can enter search criteria to search for a specific attribute. The icon adjacent to the attribute in the list indicates the attribute type, which can be a simple, nested, or reference attribute.
@@ -233223,7 +233074,7 @@ To edit a profile:
    *Image: ui_moreattributes.png*
 6. From the list of attributes displayed, select one or more attributes you want to add to the profile. For longer lists, use the field to find the desired attribute.
 
-   > **Note:** By default, the list of attributes isn't sorted alphabetically. To view this list in an alphabetical order, you must add a configuration in your UI configuration file. For more details, see topic [Configuration to sort list alphabetically](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/ui-custom-components/configuration-to-sort-list-alphabetically?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+   > **Note:** By default, the list of attributes isn't sorted alphabetically. To view this list in an alphabetical order, you must add a configuration in your UI configuration file. For more details, see topic [c uicomponents sortorder](https://docs.reltio.com/search?q=c_uicomponents_sortorder&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
    1. Enter the attribute name in the search field to filter the list of available attributes you can select. The icon next to the attribute in the list indicates the attribute type: 
 
 - `simple` attribute: *Image: ui_pro_simattricon.png*
@@ -234721,21 +234572,42 @@ When `hierarchyTypes` entries with the same `uri` are inherited, the values are 
 
 Learn how to configure profile clone functionality in the UI Modeler.
 
-If you’re an administrator who is in charge of configuring entities, then this topic is for you. Before you can clone a profile, you need to turn on the **Clone** functionality in the entities configuration JSON file in **UI Modeler**. You configure the entity types and relationships that will be copied for all profiles during the cloning process.
+Before you can clone profiles, you must add the clone configuration to the entity UI configuration file in UI Modeler. This configuration determines which entity types, attribute values, and relationship types are copied during profile cloning.
+
+**Prerequisites**
+
+Before you continue, make sure the following prerequisites are met:
+
+- 
+
+  You must have access to the Console application in your tenant.
+- A JSON editor you can use to update the exported file.
 
 To add profile cloning functionality to your tenant:
 
 1. From the Reltio **Console**, select **UI Modeler**.
-2. In the **UI Modeler** page, from the left navigation pane, select **Import/export UI config files**.
-3. From the list of configuration files available in your tenant, select the entity's configuration file.
-4. Select **Export**. The JSON file is exported to your local system. For more information, see topic [Exporting UI Configuration Files](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/export-and-import-of-ui-configuration-files/exporting-ui-configuration-files?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+2. In the **UI Modeler** page, from the left navigation pane, select **Import/export UI config files**. The UI configuration file name is displayed, along with the last update date and last updated by details.
+3. Hover over the file name and select **Export** from the options displayed. The JSON file is exported to your local system. For more information, see topic [Exporting UI Configuration Files](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/export-and-import-of-ui-configuration-files/exporting-ui-configuration-files?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
-   *Image: clone_configjson.png*
-5. In your operating system file explorer, navigate to the entity's configuration file and open it in a JSON editor.
-6. Go to the *Profileband* section and add the details you want to copy while cloning a profile.
+   *Image: uimod_impexpmultiplefiles.png*
+4. Open the downloaded file in a JSON editor.
+5. Go to the *Profileband* section, navigate to the relevant entity type and add the details you want to copy while cloning a profile.
 
    ```
-
+   "profileBand": {
+     "cloneAction": [
+       {
+         "entityTypeUris": ["configuration/entityTypes/HCP"],
+         "attributeReplacementMapping": {
+           "attributes/Name": "Copy of {value}",
+           "attributes/ID": null
+         },
+         "relationshipTypesToCopy": [
+           "configuration/relationTypes/HasAddress"
+         ]
+       }
+     ]
+   }
    ```
    1. Specify the entity types that must be copied into the cloned profile. For example, `"entityTypeUris": [ "configuration/entityTypes/Contact"`, which will copy details of the Entity type **Contact**.
    2. Add the *attributeReplacementMapping* section and specify the list of attributes whose value you do not want to copy, in the following format: `"attribute/attributename":"value"`, where the *attributename* is the name of a specific attribute such as **FirstName** or **Age**. The *value* is the specific content to include. 
@@ -234745,32 +234617,13 @@ To add profile cloning functionality to your tenant:
 
 - **[*]** - copy all relationship types
 - **[]** - copy no relationship types
-- **[uri1, uri2]** = copy the specified relationship types
-   4. Save and close the file. Refer to the example after the procedure for more details.
-7. Back in the **UI Modeler**, in the **Import/export UI config files** page, select the entity's configuration file and then select **Import and replace**. For more information, see topic [Importing UI Configuration Files](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/export-and-import-of-ui-configuration-files/importing-ui-configuration-files?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+- **[uri1, uri2]** - copy the specified relationship types
+   4. Save and close the file.
+6. In the **UI Modeler**, in the **Import/export UI config files** page, select the entity's configuration file and then select **Import and replace**. For more information, see topic [Importing UI Configuration Files](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/export-and-import-of-ui-configuration-files/importing-ui-configuration-files?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
-   You’ve now configured the **Clone** feature in your tenant. To learn how to clone a profile, see topic [Clone a profile](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/profile-cloning/clone-a-profile?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+**Result**
 
-**Example**
-
-We want to clone a profile so that the **FirstName** attribute value is prefixed with *Copy of*, the **Age** attribute is set to null, and all relationship types are copied. In Step 5 in the above procedure, edit the entities configuration file, search and navigate to the *Profileband* section, and add the following details:
-
-```
-"id": "com.reltio.plugins.entity.ProfileBand",
-                "cloneAction": [
-                {
-                "entityTypeUris": [
-                "configuration/entityTypes/Contact"
-                ],
-                "attributeReplacementMapping": {
-                "attributes/FirstName": "Copy of {value}",
-                "attributes/Age": null
-                },
-                "relationshipTypesToCopy": ["*"]
-                }
-                ],
-            
-```
+You've now configured the Clone feature in your tenant. To learn how to clone a profile, see [Clone a profile](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/profile-cloning/clone-a-profile?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
@@ -234863,17 +234716,17 @@ Here's a sample gauge chart in the Profile view:
 
 Notice the gauge chart that shows the credit score for the entity.
 
-So, how do you do this? Edit your UI JSON configuration file to include the required configuration.
+[Edit your UI JSON configuration file](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/export-and-import-of-ui-configuration-files/exporting-ui-configuration-files?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) to include the required configuration.
 
-Here's an example configuration for the gauge chart:
+Here's an example configuration for the gauge chart. In this example, the value for each range is set to 100. As a result, the first range covers 0–100, the second covers 101–200, and each subsequent range follows the same pattern. In the Gauge chart in Profile view, the first range appears in the color specified for range 1, the second appears in the color specified for range 2, and so on.
 
 ```
 {
-    "id": "com.reltio.plugins.GaugeView",
-    "class": "com.reltio.plugins.entity.GaugeView",
+    "id": "GaugeView",
+    "component": "Gauge",
     "caption": "Caption",
     "label": "test label",
-    "point": "com.reltio.plugins.ui.view"
+   
     "attributeUri": "configuration/entityTypes/HCP/attributes/Int",
     "ranges": [
 	{
@@ -234888,8 +234741,6 @@ Here's an example configuration for the gauge chart:
 		]
 },
 ```
-
-> **Note:** In the example above, we've specified the value for each range as 100. This denotes that the first range is from 0-100, the second one from 101-200, and so on. When you see the Gauge chart in the Profile view, the first range is displayed in the color specified in range 1 above, the second range in the color form range 2 here, and so on.
 
 
 
@@ -235117,24 +234968,24 @@ For recent customers (Sept 2018 to present day), Image Hosting is automatically 
 
 Learn about facts that show data based on a numerical value.
 
-Configure facets in your Profile view to show specific details based on a numerical value of an attribute. For example, let's say you want to display the loyalty status for an entity. The attribute Loyalty points — a numerical value — determines if the entity is a Silver, Gold, or a Platinum member. So, using this attribute, configure a script that displays a different icon and label for each type of membership.
+Custom charts enable you to display profile information based on the numerical value of an attribute. You can use these charts to present meaningful visual indicators that help quickly understand profile information.
+
+For example, suppose you want to display the loyalty status of an entity. The numerical attribute **Loyalty points** determines whether the entity is a Silver, Gold, or Platinum member. You can configure a custom script that displays a different icon and label for each membership level.
 
 Here's a sample custom chart:
 
 *Image: dp_profile_customchart.png*
 
-Notice the facet that indicates the customer is a Platinum member. The image changes based on the status. You can configure the image that you want displayed with each status.
+Let's configure the facet with a different icon for each status. [Edit your UI JSON configuration file](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/export-and-import-of-ui-configuration-files/exporting-ui-configuration-files?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), navigate to the `profiles` section, and add the [custom script](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/configure-reltio-ui-with-the-configuration-file/configure-profile-screens/profile-view-components-facets?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) configuration.
 
-So, how do you do this? Edit your UI JSON configuration file and add the custom script configuration.
-
-Here's an example configuration for the custom chart:
+The following example shows the custom chart configuration:
 
 ```
 {
-  "id": "com.reltio.plugins.TestDialog_numbers",
-  "point": "com.reltio.plugins.ui.view"
+  "id": "TestDialog_numbers",
+  
   "caption": "<caption>",
-  "class": "com.reltio.plugins.ui.CustomActionView",
+  "component": "custom",
   "ranges": [
 	{
   		"0": {
@@ -235160,7 +235011,9 @@ Here's an example configuration for the custom chart:
 }
 ```
 
-> **Note:** When you're adding images to represent the icons for a status, ensure you save the images in publicly accessible URLs. The custom script mentioned under the `action:files` section in the above code isn't configurable. You must give the same link as above.
+Each key in ranges represents the minimum attribute value for that tier. For example, an attribute value of 50 or higher displays the Silver member icon and label, and this continues until the next threshold (65, for Gold) is reached.
+
+> **Note:** When you add images to represent the icons for a status, ensure you save the images in publicly accessible URLs.The custom script referenced in the `action:files` section of the example above is not configurable. You must use the exact URL shown, without modification.
 
 
 

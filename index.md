@@ -1,5 +1,5 @@
 # Reltio Documentation Index
-_Generated: 2026-07-15 02:15 UTC — 3231 topics (3178 unique)_
+_Generated: 2026-07-17 02:15 UTC — 3232 topics (3178 unique)_
 
 This file is a structured navigation index of the Reltio documentation portal.
 It contains the full parent-child hierarchy, topic URLs, keywords, summaries,
@@ -8977,7 +8977,7 @@ _Topics in this section: Reltio Entity Resolution Deployment options, Reltio Ent
 
 - **URL:** https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/data-change-request-api/add-delete-attribute-request?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > System Administration APIs > System Administration APIs at a glance > Data Change Request API
-- **Summary:** Creates a change item inside data change request for deleting of an existing attribute.
+- **Summary:** Learn more about how to add a DELETE_ATTRIBUTE change item to a data change request for an existing attribute.
 
 #### Add External Info to Data Change Request
 
@@ -14820,6 +14820,7 @@ _Topics in this section: Data integrations at a glance, Application Integration 
 - **URL:** https://docs.reltio.com/en/applications/data-integrations/data-enrichment-integrations-at-a-glance/reltio-enrichment-with-db-data-blocks-at-a-glance/get-started-with-reltio-enrichment-with-db-data-blocks/install-and-configure-rih-recipes-for-reltio-enrichment-with-db-data-blocks/mode-specific-configuration-for-reltio-enrichment-with-db-data-blocks/prepare-the-configuration-of-on-demand-ui-buttons-for-reltio-enrichment-with-db-data-blocks/configure-proxy-for-on-demand-mode-ui-buttons?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Data Enrichment Integrations at a glance > Reltio Enrichment with D&B Data Blocks at a glance > Get started with Reltio Enrichment with D&B Data Blocks > Install and configure RIH recipes for Reltio Enrichment with D&B Data Blocks > Mode-specific configuration for Reltio Enrichment with D&B Data Blocks > Prepare the configuration of on demand UI buttons for Reltio Enrichment with D&B Data Blocks
 - **Summary:** Learn how to configure on-demand UI buttons for RIH with D&B Data Blocks.
+- **See also:** [export the UI configuration file](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/export-and-import-of-ui-configuration-files/exporting-ui-configuration-files?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Re-upload the modified JSON](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/export-and-import-of-ui-configuration-files/importing-ui-configuration-files?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Configure the Reltio UI for D&B on-demand buttons
 
@@ -15770,7 +15771,8 @@ _Topics in this section: Data integrations at a glance, Application Integration 
 - **URL:** https://docs.reltio.com/en/applications/data-integrations/data-enrichment-integrations-at-a-glance/reltio-enrichment-with-zoominfo-at-a-glance/reltio-enrichment-with-zoominfo-set-up/configure-reltio-enrichment-with-zoominfo/mode-specific-configuration/configure-on-demand-ui-buttons/configure-proxy-for-on-demand-mode-ui-buttons?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Data Enrichment Integrations at a glance > Reltio Enrichment with ZoomInfo at a glance > Reltio Enrichment with ZoomInfo set up > Configure Reltio Enrichment with ZoomInfo > Mode-specific configuration > Configure on demand UI buttons
 - **Summary:** Learn how to configure proxy for on-demand UI buttons for RIH with ZoomInfo.
-- **See also:** [Get help in Support Portal](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **Keywords:** configure zoominfo proxy, zoominfo on demand buttons, rih proxy setup, configure access profile, zoominfo auth token, export ui configuration, workato endpoint configuration, profile name configuration, proxy, workato
+- **See also:** [Get help in Support Portal](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [export the UI configuration file](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/export-and-import-of-ui-configuration-files/exporting-ui-configuration-files?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Configure real-time mode
 
@@ -19126,6 +19128,36 @@ _Topics in this section: Reltio Ontology Builder, Data modeling at a glance_
 - **Summary:** Learn why it's important to explicitly mark NULL values in MDM systems, and how it affects survivorship and golden record creation in Reltio.
 - **See also:** [survivorship](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-navigation/design-survivorship-rules?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Recency](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-navigation/design-survivorship-rules/survivorship-rules?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
+#### Hierarchy types in Data Modeler
+
+- **URL:** https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/hierarchy-types-in-data-modeler?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Model data > Data modeling at a glance > Data modeling operation
+- **Summary:** Learn about hierarchy types and how they define the entity structures used to build hierarchies in your tenant.
+- **Keywords:** hierarchy types, data modeler, materialized hierarchy, hierarchy tab, profile view, entity type hierarchy, hierarchy type details, hierarchy configuration, display name, entity types
+- **See also:** [Create hierarchy types](https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/hierarchy-types-in-data-modeler/create-a-hierarchy-type?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Edit hierarchy types](https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/hierarchy-types-in-data-modeler/edit-a-hierarchy-type?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Delete hierarchy types](https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/hierarchy-types-in-data-modeler/delete-a-hierarchy-type?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Create a hierarchy type
+
+- **URL:** https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/hierarchy-types-in-data-modeler/create-a-hierarchy-type?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Model data > Data modeling at a glance > Data modeling operation > Hierarchy types in Data Modeler
+- **Summary:** Learn how to create a hierarchy type so that it is available for Materialized hierarchy in the tenant.
+- **Keywords:** create hierarchy type, data modeler hierarchy, materialized hierarchy, hierarchy type setup, hierarchy type creation, entity type mapping, hierarchy display name, hierarchy type uri, data modeler, entity types
+- **See also:** [Hierarchy](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/hierarchy-perspective?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Edit a hierarchy type
+
+- **URL:** https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/hierarchy-types-in-data-modeler/edit-a-hierarchy-type?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Model data > Data modeling at a glance > Data modeling operation > Hierarchy types in Data Modeler
+- **Summary:** Learn how to edit a hierarchy type so that you can update its display name or associated entity types.
+- **Keywords:** create hierarchy type, data modeler hierarchy, materialized hierarchy, hierarchy type setup, hierarchy type creation, entity type mapping, hierarchy display name, hierarchy type uri, data modeler, entity types
+
+#### Delete a hierarchy type
+
+- **URL:** https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/hierarchy-types-in-data-modeler/delete-a-hierarchy-type?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Model data > Data modeling at a glance > Data modeling operation > Hierarchy types in Data Modeler
+- **Summary:** Learn how to delete a hierarchy type.
+- **Keywords:** delete hierarchy type, remove hierarchy type, data modeler hierarchy, materialized hierarchy, hierarchy type deletion, delete hierarchy settings, remove hierarchy settings, hierarchy type removal, data modeler, delete
+
 #### Define hierarchies
 
 - **URL:** https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/define-hierarchies?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
@@ -19945,6 +19977,13 @@ _Topics in this section: Reltio Ontology Builder, Data modeling at a glance_
 - **Summary:** Learn how to configure the profile view components in the Profile page.
 - **See also:** [Interactions perspective navigation](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/interactions-perspective/interactions-perspective-navigation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Interactions table in Profile view](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/interactions-perspective/interactions-perspective-navigation/interactions-table-in-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Configure custom charts for numerical values in the Profile view](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-reference/configure-custom-charts-for-numerical-values-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
+#### Configure custom charts for numerical values in the Profile view
+
+- **URL:** https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-reference/configure-custom-charts-for-numerical-values-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Configure the Reltio UI > UI configuration at a glance > Configure Reltio UI with the configuration file > Configure profile screens
+- **Summary:** Learn about facts that show data based on a numerical value.
+- **See also:** [Edit your UI JSON configuration file](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/export-and-import-of-ui-configuration-files/exporting-ui-configuration-files?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [custom script](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/configure-reltio-ui-with-the-configuration-file/configure-profile-screens/profile-view-components-facets?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
 #### Configure the Properties object
 
 - **URL:** https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/configure-reltio-ui-with-the-configuration-file/configure-the-properties-object?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
@@ -20074,27 +20113,6 @@ _Topics in this section: Reltio Ontology Builder, Data modeling at a glance_
 - **Summary:** Customize your own UI components and scripts.
 - **Keywords:** custom script, executing, UI custom components, custom buttons, custom script, custom views
 
-#### Buttons
-
-- **URL:** https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/ui-custom-components/buttons?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-- **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Configure the Reltio UI > UI configuration at a glance > UI Custom Components
-- **Summary:** You can customize Buttons.
-- **Keywords:** Custom Buttons Configuration, custom buttons configuration, custom buttons
-- **See also:** [Menu items](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/ui-custom-components/menu-items?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-
-#### Menu items
-
-- **URL:** https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/ui-custom-components/menu-items?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-- **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Configure the Reltio UI > UI configuration at a glance > UI Custom Components
-- **Summary:** You can configure menu items in the UI configuration.
-- **Keywords:** Configure menu items in the UI configuration, configure menu items in the UI configuration, menu items in UI configuration
-
-#### Pivoting attributes
-
-- **URL:** https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/ui-custom-components/pivoting-attributes?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-- **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Configure the Reltio UI > UI configuration at a glance > UI Custom Components
-- **Summary:** Learn how to edit and define your pivoting attributes
-
 #### Script
 
 - **URL:** https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/ui-custom-components/script?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
@@ -20102,20 +20120,13 @@ _Topics in this section: Reltio Ontology Builder, Data modeling at a glance_
 - **Summary:** Learn about custom scripts needed for custom components.
 - **Keywords:** Creating a Custom Scrip, creating a custom scrip, custom scrip creation, custom scrip
 
-#### Views
+#### Custom views
 
-- **URL:** https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/ui-custom-components/views?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **URL:** https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/ui-custom-components/custom-views?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Configure the Reltio UI > UI configuration at a glance > UI Custom Components
-- **Summary:** You can customize views.
-- **Keywords:** Custom Views Configuration, custom views configuration, custom views
-- **See also:** [Menu items](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/ui-custom-components/menu-items?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-
-#### Configuration to sort list alphabetically
-
-- **URL:** https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/ui-custom-components/configuration-to-sort-list-alphabetically?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-- **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Configure the Reltio UI > UI configuration at a glance > UI Custom Components
-- **Summary:** Learn more about the configuration to sort attribute list alphabetorically.
-- **See also:** [Editing profiles](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/editing-profiles?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **Summary:** Learn about where custom views are supported in the unified UI configuration file, including dashboard views, profile views, and profile side panels.
+- **Keywords:** custom views, dashboard custom views, profile custom views, profile side panels, unified ui configuration, global custom scripts, left navigation actions, custom action screen, dashboard, profile
+- **See also:** [UI configuration file](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/configure-reltio-ui-with-the-configuration-file?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [dashboard views](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/configure-reltio-ui-with-the-configuration-file/configure-the-layout-section---dashboards?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [profile custom views](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/configure-reltio-ui-with-the-configuration-file/configure-profile-screens/profile-view-components-facets?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Profile custom side panels](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/configure-reltio-ui-with-the-configuration-file/configure-profile-screens?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Global custom scripts](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/configure-reltio-ui-with-the-configuration-file/configure-the-properties-object?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Left navigation custom actions](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/configure-reltio-ui-with-the-configuration-file/configure-the-layout-section---other-screens?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Internationalization and Localization
 
@@ -20625,6 +20636,8 @@ _Topics in this section: Data loading at a glance, Data exporting at a glance_
 - **URL:** https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-set-up/configure-data-validation-functions/enable-dvfs-for-relationship-types?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Cleanse and verify data > Data cleansing at a glance > Data cleansing set up > Configure data validation functions
 - **Summary:** Learn how to enable data validation functions for relationship types
+- **Keywords:** enable relationship dvfs, relationship validation functions, validate relations parameter, ui configuration validation, export ui configuration, import ui configuration, relationship validation warnings, dvfs, validation, relationships
+- **See also:** [UI configuration JSON file](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/configure-reltio-ui-with-the-configuration-file/configure-the-properties-object?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [export the configuration file](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/export-and-import-of-ui-configuration-files/exporting-ui-configuration-files?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Import the UI configuration](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/export-and-import-of-ui-configuration-files/importing-ui-configuration-files?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Data cleansing operation
 
@@ -22237,7 +22250,7 @@ _Topics in this section: Data loading at a glance, Data exporting at a glance_
 - **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Manage profiles > Profile management at a glance > Profile management operation
 - **Summary:** Learn how to create a new profile for an entity type.
 - **Keywords:** Adding a Profile, Add a profile, add a profile in Reltio, create new profile Reltio Hub, how to add profile for entity, Reltio create entity profile, manual profile creation in Reltio, profile creation permissions, save profile in Hub, add profile attributes in Reltio
-- **See also:** [Entity type grouping](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-information-model/data-model/reltio-object-types/reltio-entity-types/entity-type-grouping?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [UI Modeler at a glance](https://docs.reltio.com/en/applications/console/configuration-applications/ui-modeler-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Configure your profile perspective for an entity type](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/configure-your-profile-pages/configure-your-profile-perspective-for-an-entity-type?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Configuration to sort list alphabetically](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/ui-custom-components/configuration-to-sort-list-alphabetically?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Conditional attributes](https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/define-entity-types-and-attributes/create-entity-type-attributes/conditional-attributes?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Configure conditional attributes](https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/define-entity-types-and-attributes/create-entity-type-attributes/conditional-attributes/configure-conditional-attributes?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [Entity type grouping](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-information-model/data-model/reltio-object-types/reltio-entity-types/entity-type-grouping?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [UI Modeler at a glance](https://docs.reltio.com/en/applications/console/configuration-applications/ui-modeler-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Configure your profile perspective for an entity type](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/configure-your-profile-pages/configure-your-profile-perspective-for-an-entity-type?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Conditional attributes](https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/define-entity-types-and-attributes/create-entity-type-attributes/conditional-attributes?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Configure conditional attributes](https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/define-entity-types-and-attributes/create-entity-type-attributes/conditional-attributes/configure-conditional-attributes?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Editing profiles
 
@@ -22245,7 +22258,7 @@ _Topics in this section: Data loading at a glance, Data exporting at a glance_
 - **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Manage profiles > Profile management at a glance > Profile management operation
 - **Summary:** Learn how to edit profiles or add suggestions in your profiles.
 - **Keywords:** Editing Profiles, Edit Profile, editing a profile, edit a profile, profile editing
-- **See also:** [Export and Import of UI Configuration Files](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/export-and-import-of-ui-configuration-files?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Profiles at a glance](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Attributes configuration](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/configuration-api/attributes-configuration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Configuration to sort list alphabetically](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/ui-custom-components/configuration-to-sort-list-alphabetically?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Conditional attributes](https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/define-entity-types-and-attributes/create-entity-type-attributes/conditional-attributes?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Add conditional attributes when creating a profile](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/add-conditional-attributes-when-creating-a-profile?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Working with Advanced Search Filter Options](https://docs.reltio.com/en/applications/search/search-at-a-glance/search-reference/working-with-advanced-search-filter-options?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [Export and Import of UI Configuration Files](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/export-and-import-of-ui-configuration-files?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Profiles at a glance](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Attributes configuration](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/configuration-api/attributes-configuration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Conditional attributes](https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/define-entity-types-and-attributes/create-entity-type-attributes/conditional-attributes?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Add conditional attributes when creating a profile](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/add-conditional-attributes-when-creating-a-profile?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Working with Advanced Search Filter Options](https://docs.reltio.com/en/applications/search/search-at-a-glance/search-reference/working-with-advanced-search-filter-options?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Deleting a Profile
 
@@ -22634,12 +22647,14 @@ _Topics in this section: Data loading at a glance, Data exporting at a glance_
 - **URL:** https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-reference/gauge-chart-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Manage profiles > Profile management at a glance > Profile management reference
 - **Summary:** Learn more about the gauge chart in the Profile view .
+- **See also:** [Edit your UI JSON configuration file](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/export-and-import-of-ui-configuration-files/exporting-ui-configuration-files?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Configure custom charts for numerical values in the Profile view
 
 - **URL:** https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-reference/configure-custom-charts-for-numerical-values-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Manage profiles > Profile management at a glance > Profile management reference
 - **Summary:** Learn about facts that show data based on a numerical value.
+- **See also:** [Edit your UI JSON configuration file](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/export-and-import-of-ui-configuration-files/exporting-ui-configuration-files?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [custom script](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/configure-reltio-ui-with-the-configuration-file/configure-profile-screens/profile-view-components-facets?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Hide/show profile information based on user roles
 
