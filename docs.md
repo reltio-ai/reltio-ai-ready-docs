@@ -1,8 +1,8 @@
 # Reltio Documentation
 
-_Generated: 2026-07-17 02:15 UTC_
+_Generated: 2026-07-22 02:15 UTC_
 
-_Topics: 3356_
+_Topics: 3359_
 
 ---
 
@@ -15205,6 +15205,16 @@ Learn about the new features and enhancements introduced in this 2026.1.6.0 rele
 | 1 | Development (DEV) | July 10, 2026 |
 | 2 | Test (TEST) | July 10, 2026 |
 | 3 | Production (PRD) | July 17, 2026 |
+
+## Clone and export hierarchies from the Profile view
+
+You can now clone an existing hierarchy and export hierarchy data directly from the **Hierarchy** tab in the **Profile** view.
+
+Cloning creates a new hierarchy instance with the same node structure. This enhancement helps you reuse hierarchy structures more efficiently. For example, you can clone a current customer or product hierarchy to create a new version for a regional structure, seasonal plan, or future reorganization without rebuilding it manually.
+
+You can also export hierarchy instance data, including the hierarchy structure and related hierarchy details, in> CSV and JSON output formats. Export request submits an export job that you can track on the Export page.
+
+For more information, see [Materialized hierarchy](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Clone a hierarchy in the Profile view](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/clone-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), and [Export a hierarchy in the Profile view](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/export-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 ## LCA and DVF errors are now easier to understand and resolve
 
@@ -54203,7 +54213,7 @@ The following table describes the supported query parameters.
 | `taskPartsCount` | No |  |
 | `forceIgnoreInStreaming` | No | If set to `true`, only events produced by the task are ignored in streaming. Default value: , only events produced by the task are ignored in streaming. Default value: `false`. . **Note:** When you set this parameter to true, events are generated but not streamed to external queues. The generated events are still used by the internal queue to rebuild the index. For more information about internal and external queues, see [Queues at a glance](https://docs.reltio.com/en/applications/console/tenant-management-applications/tenant-management-at-a-glance/queues-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
 | `forceIndexing` | No | If `forceIndexing` is set to `true`, reindexes all objects of the entity types specified in `entityType`, even if they have not changed since the last index update. Use this parameter after changing survivorship strategies to ensure that updated Operational Values (OV) are reflected in search results. Default value: `false`. |
-| `enableSeparateIndexing` | No | If set to `true`, the Reindex Data task builds a new Elasticsearch index for the tenant's entity data. When the task is completed, the task replaces the old index with the new one. Run the Reindex Data task with this parameter to continue your activities in Reltio Cloud without waiting for the task to finish. **Note:** When `enableSeparateIndexing=true`, `PotentialMatchesReindexTask` is automatically triggered upon completion of the entity reindex because the new index must contain potential matches data before the tenant switches to the new index..Default value: `false`. |
+| `enableSeparateIndexing` | No | If set to `true`, the Reindex Data task builds a new Elasticsearch index for the tenant's entity data. When the task is completed, the task replaces the old index with the new one. Run the Reindex Data task with this parameter to continue your activities in Reltio Cloud without waiting for the task to finish. When `enableSeparateIndexing=true`, the task automatically triggers `PotentialMatchesReindexTask` on completion. The new index must contain potential matches data before the tenant switches to the new index. Separate indexing is compatible with distributed mode, so you can set `distributed=true` in the same request. **Note:** Set `enableSeparateIndexing=true` only when reindexing the entire tenant. Do not use it for a subset of records.Default value: `false`. |
 | `bucket` | No | Bucket name. |
 | `s3Region` | No | AWS S3 region. |
 
@@ -54250,6 +54260,7 @@ To control task scope and reduce processing overhead, you can:
 - Skip a number of entities with `skipEntitiesCount`.
 - Limit the number of processed entities with `entitiesLimit`.
 - Run the task in distributed mode with `distributed=true` and `taskPartsCount`.
+- Set `distributed=true` and `enableSeparateIndexing=true` in the same request to run the reindex in parallel parts while building a new index that replaces the existing one on completion.
 - Run the task only for selected entities by passing entity URIs in the request body.
 - Prevent task-generated events from being sent to external queues by setting `forceIgnoreInStreaming=true`.
 
@@ -58230,6 +58241,8 @@ Status of the operation returned as `success` or as an`error`.
 Learn about running Reltio background tasks and how to support LCA execution with reference attribute payloads.
 
 A **task** is a Reltio REST API background process used when you have large tasks that cannot be completed within one REST request (for example, re-indexing).
+
+> **Important:** A task payload accepts a maximum of 10,000 entity URIs when the request includes an explicit URI list. Requests that exceed this limit are rejected with HTTP 400 (Bad Request) because the payload exceeds the supported limit. For larger datasets, invoke the task at the entity type level without an explicit URI list so that the platform paginates internally.
 
 ## LCA compatibility and reference attributes
 
@@ -115405,6 +115418,8 @@ The following example demonstrates how to insert and delete parents for a single
 
 **Source:** https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-api/partial-update-in-rdm-lookups/partial-updates-for-source-mappings?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
+**Keywords:** INSERT operation, UPDATE operation, DELETE operation, oldValue, canonicalValue, downStreamDefaultValue, sourceMappings, Targeted UPDATE, Lookup source values, Combining operations
+
 
 Learn how to use partial operations to add, modify or remove source mapped values in lookups.
 
@@ -115425,9 +115440,9 @@ The following table describes the request body parameters for the `INSERT` opera
 | `operation` | String | Yes | Specifies `INSERT` operation. | None | "INSERT" |
 | `code` | String | Yes | Source value identifier to be added. | None | "US" |
 | `value` | String | Yes | Source value description to be added. | None | "United States" |
-| `enabled` | Boolean | No | Indicates whether the source value is active. | true | "true" or "false" |
-| `canonicalValue` | Boolean | No | Marks if the value is canonical. | false | "true" or "false" |
-| `downStreamDefaultValue` | Boolean | No | Indicates if the value should be default for downstream processes. | false | "true" or "false" |
+| `enabled` | Boolean | No | Indicates whether the source value is active. | `true` | `true` or `false` |
+| `canonicalValue` | Boolean | No | Marks if the value is canonical. | `false` | `true` or `false` |
+| `downStreamDefaultValue` | Boolean | No | Indicates if the value should be default for downstream processes. | `false` | `true` or `false` |
 | `description` | String | No | Description for source values | None | None |
 
 **Example request for INSERT operation**
@@ -115444,23 +115459,32 @@ The following table describes the request body parameters for the `INSERT` opera
 
 ```
 
+This INSERT operation adds a new source value with code "`US` " and value "`United States` " to a lookup, marking it active and setting it as the default value used in downstream processes.
+
 ## UPDATE - Modify attributes of an existing source value
 
-The following table describes the request body parameters for the `UPDATE` operation, which modifies an existing source-mapped value. You must match both the `code` and `value` fields exactly to apply updates.
+The `UPDATE` operation modifies an existing source-mapped value. There are two `UPDATE` modes:
 
-The `UPDATE` operation can only modify the following parameters: `enabled`, `canonicalValue`, and `downStreamDefaultValue`. You cannot use the `UPDATE` operation to change the `code` or `value` fields of an existing lookup entry.
+- Standard `UPDATE` without `oldValue` uses the `code` and `value` fields to identify the entry to update.
+- Targeted `UPDATE` with `oldValue` uses the `oldValue` object to identify one exact existing entry.
+
+**Standard UPDATE without oldValue**
+
+Use a standard `UPDATE` to modify an existing source-mapped value by matching both the `code` and `value` fields exactly. If multiple entries share the same `code` and `value`, all matching entries are replaced with the new values.
+
+The following table describes the request body parameters for a standard `UPDATE` operation, which identifies entries by matching the `code` and `value` fields.
 
 | Parameter | Type | Required | Description | Default Value | Accepted values |
 | --- | --- | --- | --- | --- | --- |
 | `operation` | String | Yes | Specifies UPDATE operation. | None | "UPDATE" |
 | `code` | String | Yes | Must match existing code for update. | None | "US" |
 | `value` | String | Yes | Must match existing value for update. | None | "United States" |
-| `enabled` | Boolean | No | Updated enabled status. | true | "true" or "false" |
-| `canonicalValue` | Boolean | No | Updated canonical flag. | false | "true" or "false" |
-| `downStreamDefaultValue` | Boolean | No | Updated downstream default flag. | false | "true" or "false" |
+| `enabled` | Boolean | No | Updated enabled status. | `true` | `true` or `false` |
+| `canonicalValue` | Boolean | No | Updated canonical flag. | `false` | `true` or `false` |
+| `downStreamDefaultValue` | Boolean | No | Updated downstream default flag. | `false` | `true` or `false` |
 | `description` | String | No | Description for source values | None | None |
 
-**Example request for UPDATE operation**
+**Example request for standard UPDATE operation**
 
 ```
 {
@@ -115474,9 +115498,94 @@ The `UPDATE` operation can only modify the following parameters: `enabled`, `can
 
 ```
 
-This request updates the `enabled` value to `false`.
+This request updates the `enabled` value to `false` for the entry matching code `US` and value `United States`.
+
+**Targeted UPDATE with oldValue**
+
+Use a targeted `UPDATE` when you need to update one specific entry, especially when multiple entries share the same `code` and `value`, or when you want to change the `code` or `value` fields themselves.
+
+The `oldValue` object specifies the exact existing entry to replace. All fields in `oldValue` must match the existing entry exactly, including `enabled`, `canonicalValue`, `downStreamDefaultValue`, and `description` when present.
+
+The following table describes the request body parameters for a targeted `UPDATE` operation, which uses `oldValue` to identify the exact entry to replace.
+
+| Parameter | Type | Required | Description | Default Value | Accepted Values |
+| --- | --- | --- | --- | --- | --- |
+| `operation` | String | Yes | Specifies UPDATE operation. | None | `"UPDATE"` |
+| `code` | String | Yes | New code for the entry | None | `"US_NEW"` |
+| `value` | String | Yes | New value for entry | None | "United States of America" |
+| `enabled` | Boolean | No | New enabled status | `true` | `true` or `false` |
+| `canonicalValue` | Boolean | No | New canonical flag | `false` | `true` or `false` |
+| `downStreamDefaultValue` | Boolean | No | New downstream default flag. | `false` | `true` or `false` |
+| `description` | String | No | New description for the entry. | None | Any string |
+| `oldValue` | Object | No | The exact existing source value to replace. See below for fields. | None | See oldValue fields |
+
+**oldValue fields**
+
+The following table describes the fields supported in the `oldValue` object.
+
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| `code` | String | Yes | Must match existing code exactly. |
+| `value` | String | Yes | Must match existing value exactly. |
+| `description` | String | No | Must match existing description if present. |
+| `enabled` | Boolean | No | Must match existing enabled flag. |
+| `canonicalValue` | Boolean | No | Must match existing canonical flag. |
+| `downStreamDefaultValue` | Boolean | No | Must match existing downstream default flag. |
+
+**Example: Targeted UPDATE to change identity fields**
+
+```
+
+{
+  "operation": "UPDATE",
+  "code": "USA",
+  "value": "United States of America",
+  "enabled": true,
+  "canonicalValue": false,
+  "downStreamDefaultValue": true,
+  "oldValue": {
+    "code": "US",
+    "value": "United States",
+    "enabled": true,
+    "canonicalValue": false,
+    "downStreamDefaultValue": true
+  }
+}
+```
+
+This targeted UPDATE looks for an entry that matches all the fields in `oldValue`: `code: "US"`,`value: "United States` ", `enabled: true`, `canonicalValue: false`, and`downStreamDefaultValue: true`. Once it finds that exact match, it replaces the entry's code and value with`"USA"` and `"United States of America"`. The other settings, `enabled`, `canonicalValue`, and `downStreamDefaultValue`, stay the same as before.
+
+**Example: Targeted UPDATE to modify one duplicate among several**
+
+```
+
+{
+  "operation": "UPDATE",
+  "code": "USA",
+  "value": "United States of America",
+  "enabled": true,
+  "canonicalValue": false,
+  "downStreamDefaultValue": false,
+  "description": "updated description",
+  "oldValue": {
+    "code": "US",
+    "value": "United States",
+    "enabled": true,
+    "canonicalValue": false,
+    "downStreamDefaultValue": true,
+    "description": "original description"
+  }
+}
+
+```
+
+Only the entry matching all fields in `oldValue` is replaced. Other entries with the same `code` and `value` remain unchanged.
+
+> **Note:** The `oldValue` field is supported only for `UPDATE` operations. Providing `oldValue` with `INSERT` or `DELETE` returns an error.
 
 ## DELETE - Remove an existing source value
+
+The `DELETE` operation removes only the first entry that matches all provided fields exactly. If multiple identical entries exist with the same `code`, `value`, `description`, `enabled`, `canonicalValue`, and `downStreamDefaultValue`, only one is removed per `DELETE` operation.
 
 The following table describes the request body parameters for the `DELETE` operation, which removes a source-specific value from the lookup. All fields must match the existing entry exactly.
 
@@ -115485,9 +115594,9 @@ The following table describes the request body parameters for the `DELETE` opera
 | `operation` | String | Yes | Specifies DELETE operation. | None | "DELETE" |
 | `code` | String | Yes | Must match existing code exactly for deletion. | None | "US" |
 | `value` | String | Yes | Must match existing value exactly for deletion. | None | "United States" |
-| `enabled` | Boolean | Yes | Must match existing enabled value. | true | "true" or "false" |
-| `canonicalValue` | Boolean | Yes | Must match existing canonical flag. | false | "true" or "false" |
-| `downStreamDefaultValue` | Boolean | Yes | Must match existing downstream default flag. | false | "true" or "false" |
+| `enabled` | Boolean | Yes | Must match existing enabled value. | `true` | `true` or `false` |
+| `canonicalValue` | Boolean | Yes | Must match existing canonical flag. | `false` | `true` or `false` |
+| `downStreamDefaultValue` | Boolean | Yes | Must match existing downstream default flag. | `false` | `true` or false |
 | `description` | String | No | Description for source values | None | None |
 
 **Example request for DELETE operation**
@@ -115504,13 +115613,55 @@ The following table describes the request body parameters for the `DELETE` opera
 
 ```
 
+This DELETE operation looks for an entry with `code: "US"`, `value: "United States"`, `enabled: true`, `canonicalValue: false`, and `downStreamDefaultValue: true`. When it finds an entry that matches all these fields exactly, The DELETE operationremoves that entry from the lookup.
+
+**Example: Deleting one of multiple identical entries**
+
+```
+{
+  "source": "Reltio",
+  "values": [
+    { "code": "US", "value": "United States", "enabled": true, "canonicalValue": false, "downStreamDefaultValue": false },
+    { "code": "US", "value": "United States", "enabled": true, "canonicalValue": false, "downStreamDefaultValue": false }
+  ]
+}
+```
+
+This example shows a lookup source named "`Reltio` " that has two identical entries. Both entries have`code: "US"`, `value: "United States"`, `enabled: true`, `canonicalValue: false`, and `downStreamDefaultValue: false`. Since both entries match on every field, a single DELETE operation can only target one of them at a time.
+
+**Example: A single DELETE removes only the first match**
+
+```
+{
+  "operation": "DELETE",
+  "code": "US",
+  "value": "United States",
+  "enabled": true,
+  "canonicalValue": false,
+  "downStreamDefaultValue": false
+}
+```
+
+This DELETE operation matches both duplicate entries, but removes only one. Two DELETE operations are needed to remove both.
+
 ## Using multiple operations in a single request
 
-You can combine `INSERT`, `UPDATE`, and `DELETE` operations in the same request body. This allows you to update multiple source-mapped values efficiently without replacing the full lookup. When combining operations, follow these rules:
+You can combine INSERT, UPDATE, and DELETE operations in the same request body. This allows you to update multiple source-mapped values efficiently without replacing the full lookup.
+
+When combining operations in a single request, the system applies them in the following order regardless of their position in the request:
+
+1. `DELETE`
+2. `UPDATE`
+3. `INSERT`
+
+**Rules for combining operations**
 
 - Only one value per lookup code can have "canonicalValue": true. If multiple values are marked as canonical, the system returns an error.
 - Only one value per source can have "downStreamDefaultValue": true. If none is specified, the first enabled value for that source becomes the default.
 - Only Include the source mappings you want to modify; any sources or source values not included in the request will remain unchanged.
+- You can combine `INSERT` and `DELETE` on the same `code` and `value` pair in a single request.
+- You cannot combine a standard UPDATE without oldValue with INSERT or DELETE on the same code and value pair. The system returns a duplicate error.
+- Targeted UPDATE operations with `oldValue` can coexist with any other operation in the same request, because `oldValue` uniquely identifies the entry.
 
 **Example: Existing lookup**
 
@@ -115602,7 +115753,7 @@ You can combine `INSERT`, `UPDATE`, and `DELETE` operations in the same request 
 ]
 ```
 
-This request performs three operations on the existing lookup. It inserts a new source value `"Male"` and sets its `canonicalValue` to `true`. It updates the existing value `"Men"` by changing its `canonicalValue` to `false`. Finally, it deletes the source value `"0"` from the lookup.
+This request performs multiple operations on the existing lookup. For source "`Reltio` ", it inserts a new source value "`Male` " and sets its `canonicalValue` to true, updates the existing value "`Men` " by changing its `canonicalValue` to false, and deletes the source value "`0` ". It also inserts a new source value "Male" for source "Reltio2", with canonicalValue set to false and downStreamDefaultValue set to true.
 
 **Response body**
 
@@ -115620,29 +115771,17 @@ This request performs three operations on the existing lookup. It inserts a new 
           "source": "Reltio",
           "values": [
             {
-              "code": "Male",
-              "value": "Male",
-              "enabled": true,
-              "canonicalValue": true,
-              "downStreamDefaultValue": true
-            },
-            {
               "code": "Men",
               "value": "Men",
               "enabled": true,
               "canonicalValue": false,
               "downStreamDefaultValue": false
-            }
-          ]
-        },
-        {
-          "source": "Reltio1",
-          "values": [
+            },
             {
-              "code": "m",
-              "value": "m",
+              "code": "Male",
+              "value": "Male",
               "enabled": true,
-              "canonicalValue": false,
+              "canonicalValue": true,
               "downStreamDefaultValue": true
             }
           ]
@@ -115670,6 +115809,44 @@ This request performs three operations on the existing lookup. It inserts a new 
 ]
 
 ```
+
+**Example: Targeted UPDATE to change identity fields**
+
+This lookup has a source value with code `US` and value `United States`. The following request uses `oldValue` to match that entry and update its code and value in place.
+
+```
+[
+  {
+    "tenantId": "{{rdm_tenant}}",
+    "type": "rdm/lookupTypes/Country",
+    "code": "US",
+    "sourceMappings": [
+      {
+        "source": "Reltio",
+        "values": [
+          {
+            "operation": "UPDATE",
+            "code": "USA",
+            "value": "United States of America",
+            "enabled": true,
+            "canonicalValue": false,
+            "downStreamDefaultValue": false,
+            "oldValue": {
+              "code": "US",
+              "value": "United States",
+              "enabled": true,
+              "canonicalValue": false,
+              "downStreamDefaultValue": false
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
+```
+
+This targeted UPDATE changes the entry's code from "`US` " to "`USA` " and its value to "`United States of America` ". The entry is not deleted and re-added, it is updated in place, so it stays in the same position in the source mapping list.
 
 
 
@@ -230831,31 +231008,33 @@ Learn about how the Hierarchy perspective in the Profile view helps you explore,
 
 The **Hierarchy** perspective in the **Profile** view lets you review and manage hierarchy data for a selected entity. It brings together the hierarchy instances associated with that entity so you can understand where the entity sits in a structure, review related branches, and manage hierarchy changes in context.
 
-The Hierarchy perspective supports the following actions::
+The Hierarchy perspective supports the following actions:
 
 - 
 
   View the hierarchy instances associated with an entity.
 - 
 
-  Create or import a hierarchy structure.
+  [Create](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/add-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) or [import](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/import-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) a hierarchy structure.
 - 
 
-  Add parent and child connections to extend a hierarchy, along with their start and end dates
+  [Add parent and child connections](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/add-parent-and-child-nodes-in-a-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) to extend a hierarchy, along with their start and end dates
 - 
 
-  Move or copy a hierarchy branch from one one node to another within the same hierarchy instance.
+  [Move or copy a hierarchy branch](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/move-or-copy-hierarchy-nodes?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) from one one node to another within the same hierarchy instance.
 - 
 
-  Delete a hierarchy or a node in the hierarchy
+  Delete a hierarchy or a node in the hierarchy.
 - 
 
   Work with multiple versions of the same hierarchy when versioning is enabled.
 - 
 
   Review hierarchy data using an effective date so that the displayed structure matches the required business timeframe.
+- [Clone a hierarchy](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/clone-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) to create a copy of an existing hierarchy structure.
+- [Export a hierarchy](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/export-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) to download the hierarchy structure for external use.
 
-The **Hierarchy** perspective depends on both backend and UI setup. Tenant business configuration defines the hierarchy types available to the tenant and the entity types that can use them. UI configuration controls whether and where the Hierarchy tab appears in the Profile view for a given entity type and which users can access it. For more information, see [Configure tenant business settings for hierarchy](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/hierarchy-perspective/configure-tenant-business-settings-for-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Configure UI settings for the Hierarchy tab](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/hierarchy-perspective/configure-ui-settings-for-the-hierarchy-tab?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+The **Hierarchy** perspective depends on both backend and UI setup. Tenant business configuration defines the hierarchy types available to the tenant and the entity types that can use them. UI configuration controls whether and where the Hierarchy tab appears in the Profile view for a given entity type and which users can access it. For more information, see [Configure tenant business settings for hierarchy](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/configure-tenant-business-settings-for-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Configure UI settings for the Hierarchy tab](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/configure-ui-settings-for-the-hierarchy-tab?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 ## Watch how Hierarchy perspective works
 
@@ -231635,6 +231814,32 @@ The following sections explain the APIs used for the Activation service. Ensure 
 
 ---
 
+# Materialized hierarchy
+
+> **Section:** Objectives > Manage profiles > Profile management at a glance > Profile management operation
+
+
+**Source:** https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** materialized hierarchy, hierarchy management, profile hierarchies, hierarchy versions, effective date hierarchy, hierarchy perspective, parent child hierarchy, hierarchy structures, versioning, profiles
+
+
+Learn about how Materialized hierarchy helps you create, view, and manage hierarchy structures for profiles in Hub.
+
+Materialized hierarchy is a feature that organizes related profiles into parent-child structures. It helps represent business relationships in a clear hierarchy, such as organizational, account, or product structures.
+
+Materialized hierarchy is node based. Profiles are connected within the hierarchy structure itself, so a separate relationship object is not required between connected entities.
+
+Materialized hierarchy also supports changes over time. It can include hierarchy versions and effective dates, which makes it possible to work with current, future, or historical hierarchy structures without replacing existing hierarchy data.
+
+In Hub, Materialized hierarchy is available through the [Hierarchy perspective](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/hierarchy-perspective?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) in the **Profile** view. This perspective shows the hierarchy instances associated with a selected profile and provides the context for reviewing and managing hierarchy data.
+
+Materialized hierarchy depends on both tenant and UI configuration. [Tenant business configuration](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/configure-tenant-business-settings-for-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) defines the hierarchy types available in the tenant and the entity types that can use them. [UI configuration](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/configure-ui-settings-for-the-hierarchy-tab?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) controls whether the Hierarchy perspective appears in the Profile view for a given entity type and which roles can access it.
+
+
+
+---
+
 # View entity relationships in a graph
 
 > **Section:** Objectives > Manage profiles > Profile management at a glance > Profile management operation
@@ -232061,10 +232266,10 @@ Your modifications are saved.You can also use the API to update a segment. For m
 
 # Add a hierarchy in the Profile view
 
-> **Section:** Objectives > Manage profiles > Profile management at a glance > Profile management operation
+> **Section:** Objectives > Manage profiles > Profile management at a glance > Profile management operation > Materialized hierarchy
 
 
-**Source:** https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/add-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/add-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** add hierarchy profile view, create hierarchy instance, new hierarchy setup, hierarchy creation flow, hierarchy versioning setup, hierarchy type selection, initial hierarchy connection, create versioned hierarchy, hierarchy, versioning
 
@@ -232073,10 +232278,10 @@ Learn how to add a hierarchy so that you can create a new hierarchy instance for
 
 **Prerequisites**::- 
 
-  You must enable hierarchy in the tenant configuration. For more information, see [Configure tenant business settings for hierarchy](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/hierarchy-perspective/configure-tenant-business-settings-for-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+  You must enable hierarchy in the tenant configuration. For more information, see [Configure tenant business settings for hierarchy](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/configure-tenant-business-settings-for-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 - 
 
-  You must enable hierarchy in the UI configuration. For more information, see [Configure UI settings for the Hierarchy tab](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/hierarchy-perspective/configure-ui-settings-for-the-hierarchy-tab?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+  You must enable hierarchy in the UI configuration. For more information, see [Configure UI settings for the Hierarchy tab](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/configure-ui-settings-for-the-hierarchy-tab?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 Create a new hierarchy when you need to organize an entity within a hierarchy type, prepare a hierarchy for future updates, or create a new versioned hierarchy instance.
 
@@ -232109,10 +232314,10 @@ The new hierarchy instance is created and is available in the Hierarchy tab for 
 
 # Add parent and child nodes in a hierarchy
 
-> **Section:** Objectives > Manage profiles > Profile management at a glance > Profile management operation
+> **Section:** Objectives > Manage profiles > Profile management at a glance > Profile management operation > Materialized hierarchy
 
 
-**Source:** https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/add-parent-and-child-nodes-in-a-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/add-parent-and-child-nodes-in-a-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** add hierarchy nodes, add parent node, add child node, expand hierarchy structure, update hierarchy tree, select parent profile, select child profile, hierarchy node actions, parent node, child node
 
@@ -232124,13 +232329,13 @@ Learn how to add parent and child nodes in a hierarchy so that you can expand an
   You must have the ROLE_API or MDM.Data.Hr permission (for custom roles) assigned to you
 - 
 
-  You must enable hierarchy in the tenant configuration. For more information, see [Configure tenant business settings for hierarchy](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/hierarchy-perspective/configure-tenant-business-settings-for-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+  You must enable hierarchy in the tenant configuration. For more information, see [Configure tenant business settings for hierarchy](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/configure-tenant-business-settings-for-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 - 
 
-  You must enable hierarchy in the UI configuration. For more information, see [Configure UI settings for the Hierarchy tab](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/hierarchy-perspective/configure-ui-settings-for-the-hierarchy-tab?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+  You must enable hierarchy in the UI configuration. For more information, see [Configure UI settings for the Hierarchy tab](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/configure-ui-settings-for-the-hierarchy-tab?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 - 
 
-  You must create a hierarchy for a profile. For more information, see [Add a hierarchy in the Profile view](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/add-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+  You must create a hierarchy for a profile. For more information, see [Add a hierarchy in the Profile view](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/add-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 Connect another profile to an existing hierarchy as a parent or child node.
 
@@ -232156,12 +232361,100 @@ To add a parent or child node
 
 ---
 
+# Clone a hierarchy in the Profile view
+
+> **Section:** Objectives > Manage profiles > Profile management at a glance > Profile management operation > Materialized hierarchy
+
+
+**Source:** https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/clone-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** clone hierarchy in profile view, clone an existing hierarchy in hub, create a new hierarchy from existing structure, use the hierarchy tab to clone, clone hierarchy with versioning, create a versioned hierarchy from a clone, hierarchy, cloning, versioning
+
+
+Learn how to clone a hierarchy so that you can create a new hierarchy from an existing structure in the Hierarchy tab.
+
+In the Hierarchy tab, you can create a new hierarchy by reusing an existing hierarchy structure instead of rebuilding it manually.
+
+**Prerequisites**Before you continue, make sure the following prerequisites are met: 
+
+- You must [enable hierarchy in the tenant configuration](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/configure-tenant-business-settings-for-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+- You must [enable hierarchy in the UI configuration](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/configure-ui-settings-for-the-hierarchy-tab?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+- [Add a hierarchy](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/add-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) in the Hierarchy tab.
+
+
+To clone an existing hierarchy:
+
+1. In the **Hub**, search and select a profile that you want to view.
+2. In the Profile view, select the **Hierarchy** tab.
+3. From the **Hierarchy type** dropdown, select the hierarchy instance you want to clone.
+4. Select the **More options** icon, and then select **Clone hierarchy**.
+   *Image: ui-clonehierarchy.png*
+   - In the **Target hierarchy** field, select the hierarchy type for the cloned hierarchy.
+   - In the **Hierarchy name** field, enter a name for the cloned hierarchy.
+   - Select **Enable versioning** to create the cloned hierarchy as a versioned hierarchy.
+   - In the **Version name** field, enter a name for the version.
+   - In the **Start date** and **End date** fields, select the date range for which the version is valid.
+   - Select **Clone hierarchy**. A confirmation message indicating the successful creation of the clone is displayed.
+
+**Result**The cloned hierarchy is created and appears in the **Hierarchy** tab for review and further updates. The hierarchy connections from the source hierarchy are cloned automatically.
+
+**Verification steps**
+
+1. 
+
+   From the **Hierarchy type** list, select the newly cloned hierarchy.
+2. 
+
+   Confirm that its node structure matches the source hierarchy at the time of cloning.
+
+
+
+---
+
+# Export a hierarchy in the Profile view
+
+> **Section:** Objectives > Manage profiles > Profile management at a glance > Profile management operation > Materialized hierarchy
+
+
+**Source:** https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/export-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** export hierarchy in profile view, export hierarchy from hierarchy tab, export hierarchy as csv file, export hierarchy as json file, download hierarchy structure from hub, track hierarchy export job status, hierarchy, export, csv, json
+
+
+Learn how to export a hierarchy so that you can download its structure as a CSV or JSON file for use outside Reltio.
+
+You can extract the hierarchy structure from the Profile view. Download it as a CSV or JSON file for use outside Reltio.
+
+**Prerequisites**Before you continue, make sure the following prerequisites are met: 
+
+- You must [enable hierarchy in the tenant configuration](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/configure-tenant-business-settings-for-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+- You must [enable hierarchy in the UI configuration](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/configure-ui-settings-for-the-hierarchy-tab?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+- [Add a hierarchy](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/add-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) in the Hierarchy tab.
+
+
+To export a hierarchy structure:
+
+1. In the **Hub**, search and select a profile that you want to view.
+2. In the Profile view, select the **Hierarchy** tab.
+3. From the **Hierarchy type** dropdown, select the hierarchy instance you want to export.
+4. Select the **Export** icon.
+5. Select **Export as CSV file** or **Export as JSON file**. A confirmation message is displayed.
+   In the confirmation message, select **VIEW PROGRESS** to view the progress of the export job in the **Export** application in **Console**.
+
+**Result**The job appears under the **Pending** tab of the **Export** application in Console with a status of **Processing**.
+
+When the export job finishes, you will receive an email notification confirming that the export completed successfully. The email includes a link to download the exported file directly. You can also view the completed job in the Export application
+
+
+
+---
+
 # Import a hierarchy in the Profile view
 
-> **Section:** Objectives > Manage profiles > Profile management at a glance > Profile management operation
+> **Section:** Objectives > Manage profiles > Profile management at a glance > Profile management operation > Materialized hierarchy
 
 
-**Source:** https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/import-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/import-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** import hierarchy profile view, hierarchy import workflow, import hierarchy file, download hierarchy template, upload hierarchy template, hierarchy import dialog, create hierarchy import, hierarchy file upload, import hierarchy, template
 
@@ -232173,10 +232466,10 @@ Learn how to import a hierarchy so that you can create a hierarchy structure fro
   You must have the ROLE_API or MDM.Data.Hr permission (for custom roles) assigned to you
 - 
 
-  You must enable hierarchy in the tenant configuration. For more information, see [Configure tenant business settings for hierarchy](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/hierarchy-perspective/configure-tenant-business-settings-for-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+  You must enable hierarchy in the tenant configuration. For more information, see [Configure tenant business settings for hierarchy](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/configure-tenant-business-settings-for-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 - 
 
-  You must enable hierarchy in the UI configuration. For more information, see [Configure UI settings for the Hierarchy tab](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/hierarchy-perspective/configure-ui-settings-for-the-hierarchy-tab?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+  You must enable hierarchy in the UI configuration. For more information, see [Configure UI settings for the Hierarchy tab](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/configure-ui-settings-for-the-hierarchy-tab?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 - 
 
   You must have access to a hierarchy template.
@@ -232207,10 +232500,10 @@ After the import is complete, the hierarchy instance appears in the **Hierarchy*
 
 # Move or copy hierarchy nodes
 
-> **Section:** Objectives > Manage profiles > Profile management at a glance > Profile management operation
+> **Section:** Objectives > Manage profiles > Profile management at a glance > Profile management operation > Materialized hierarchy
 
 
-**Source:** https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/move-or-copy-hierarchy-nodes?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/move-or-copy-hierarchy-nodes?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** move hierarchy nodes, copy hierarchy nodes, reorganize hierarchy branches, move hierarchy branch, copy hierarchy branch, paste as child, hierarchy node actions, hierarchy tree update, move nodes, copy nodes
 
@@ -232222,13 +232515,13 @@ Learn how to move or copy hierarchy nodes so that you can reorganize an existing
   You must have the ROLE_API or MDM.Data.Hr permission (for custom roles) assigned to you
 - 
 
-  You must enable hierarchy in the tenant configuration. For more information, see [Configure tenant business settings for hierarchy](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/hierarchy-perspective/configure-tenant-business-settings-for-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+  You must enable hierarchy in the tenant configuration. For more information, see [Configure tenant business settings for hierarchy](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/configure-tenant-business-settings-for-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 - 
 
-  You must enable hierarchy in the UI configuration. For more information, see [Configure UI settings for the Hierarchy tab](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/hierarchy-perspective/configure-ui-settings-for-the-hierarchy-tab?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+  You must enable hierarchy in the UI configuration. For more information, see [Configure UI settings for the Hierarchy tab](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/configure-ui-settings-for-the-hierarchy-tab?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 - 
 
-  You must create a hierarchy structure for a profile. For more information, see [Add a hierarchy in the Profile view](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/add-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+  You must create a hierarchy structure for a profile. For more information, see [Add a hierarchy in the Profile view](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/add-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 Relocate a node from one place in the hierarchy to another or reuse the same node in more than one place in the hierarchy. In this workflow, selecting a node also includes all of its descendant nodes.
 
@@ -232301,7 +232594,7 @@ To create a profile:
 
 1. From the **More attributes** list, select the attributes that you want to add for the new profile.
 
-   > **Note:** By default, the list of attributes isn't sorted alphabetically. To view this list in an alphabetical order, add a configuration in your UI JSON file. For more details, see topic [c uicomponents sortorder](https://docs.reltio.com/search?q=c_uicomponents_sortorder&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+   > **Note:** By default, the list of attributes isn't sorted alphabetically. To view this list in an alphabetical order, add a configuration in your UI JSON file. For more details, see topic [Configure the Properties object](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/configure-reltio-ui-with-the-configuration-file/configure-the-properties-object?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 2. 
 
    In the **Search** field, you can enter search criteria to search for a specific attribute. The icon adjacent to the attribute in the list indicates the attribute type, which can be a simple, nested, or reference attribute.
@@ -233074,7 +233367,7 @@ To edit a profile:
    *Image: ui_moreattributes.png*
 6. From the list of attributes displayed, select one or more attributes you want to add to the profile. For longer lists, use the field to find the desired attribute.
 
-   > **Note:** By default, the list of attributes isn't sorted alphabetically. To view this list in an alphabetical order, you must add a configuration in your UI configuration file. For more details, see topic [c uicomponents sortorder](https://docs.reltio.com/search?q=c_uicomponents_sortorder&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+   > **Note:** By default, the list of attributes isn't sorted alphabetically. To view this list in an alphabetical order, you must add a configuration in your UI configuration file. For more details, see topic [Configure the Properties object](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/configure-reltio-ui-with-the-configuration-file/configure-the-properties-object?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
    1. Enter the attribute name in the search field to filter the list of available attributes you can select. The icon next to the attribute in the list indicates the attribute type: 
 
 - `simple` attribute: *Image: ui_pro_simattricon.png*
@@ -234497,10 +234790,10 @@ See the following topics in this section for additional reference information on
 
 # Configure tenant business settings for hierarchy
 
-> **Section:** Applications > Hub > Profiles at a glance > Profile perspectives tabs > Profile perspectives navigation > Hierarchy perspective
+> **Section:** Objectives > Manage profiles > Profile management at a glance > Profile management operation > Materialized hierarchy
 
 
-**Source:** https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/hierarchy-perspective/configure-tenant-business-settings-for-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/configure-tenant-business-settings-for-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** tenant hierarchy settings, hierarchy type configuration, allowed entity types, hierarchy type uri, tenant business configuration, hierarchy type inheritance, configure hierarchy types, hierarchyTypes settings, hierarchyTypes, inheritance
 
@@ -235068,10 +235361,10 @@ Based on the above example, only a user who is assigned the `ROLE_A360_STEWARD` 
 
 # Configure UI settings for the Hierarchy tab
 
-> **Section:** Applications > Hub > Profiles at a glance > Profile perspectives tabs > Profile perspectives navigation > Hierarchy perspective
+> **Section:** Objectives > Manage profiles > Profile management at a glance > Profile management operation > Materialized hierarchy
 
 
-**Source:** https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/hierarchy-perspective/configure-ui-settings-for-the-hierarchy-tab?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/configure-ui-settings-for-the-hierarchy-tab?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** hierarchy tab settings, hierarchy tab configuration, profile tab configuration, config json hierarchy, hierarchy tab visibility, hierarchy tab roles, import template url, profile array settings, canRead, visible
 
@@ -235080,7 +235373,7 @@ Learn more about the UI configuration settings used to display the Hierarchy tab
 
 The Hierarchy tab is configured in the new UI configuration format in `config.json` as a profile screen with `class: "Hierarchy"`. Hierarchy is a profile tab, like Relationships, Interactions, and Activity. To display the Hierarchy tab for an entity type, add a Hierarchy screen object to the top-level `profile` array in the UI configuration. For more information, see [Configure profile screens](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/configure-reltio-ui-with-the-configuration-file/configure-profile-screens?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
-Before you configure the tab, make sure the required [tenant business configuration](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/hierarchy-perspective/configure-tenant-business-settings-for-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and tenant physical configuration for hierarchy are in place.
+Before you configure the tab, make sure the required [tenant business configuration](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/configure-tenant-business-settings-for-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and tenant physical configuration for hierarchy are in place.
 
 Add the Hierarchy screen object to the top-level `profile` array in `config.json`.
 
