@@ -1,6 +1,6 @@
 # Reltio Documentation
 
-_Generated: 2026-07-22 02:15 UTC_
+_Generated: 2026-07-24 02:15 UTC_
 
 _Topics: 3359_
 
@@ -16204,6 +16204,11 @@ Profile B:
 
 `First name = “Smith”; Family name = “John”; Address Line1 = “123 Main St”, and so on`
 
+You can define the logical attribute used for cross-attribute matching in one of two ways:
+
+- Add a virtual attribute to the tenant's data model, then define a match token class and a comparator class for it.
+- Declare the mapping directly in the match group definition using the `overrides.attributesMapping` section, without adding a new attribute to the data model. For more information, see [Overrides Element](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/match-group-elements---description-and-configuration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
 To match on profiles that have this characteristic, construct a virtual attribute that is defined as the combination of the actual attributes that contain each other’s values. To do this: 
 
 1. 
@@ -19907,6 +19912,133 @@ Specify as
 ```
 com.reltio.businesslogic.match.providers.internal.InternalMatchService
 ```
+
+## Overrides Element
+
+The `overrides` element lets a match group reference the attribute names that a match method expects. The match service then reads the actual values from the attributes that exist in your tenant's data model.
+
+Without the `overrides` element, every attribute reference in the match group resolves directly against the data model, with no mapping applied. When present, the mapping is resolved consistently for every match group element that references an attribute: operands, cleansers, match token classes, comparator classes, and the document tokenizer.
+
+**attributesMapping**
+
+`attributesMapping` is a list of mapping entries, declared under `overrides.attributesMapping`. Each entry contains the following two fields.
+
+**attributesMapping fields**
+
+| **Field** | **Required** | **Description** |
+| --- | --- | --- |
+| `matchMethodAttribute` | Yes | The attribute name used inside the match group definition. It does not have to exist in the tenant's data model, it can be a purely logical (virtual) attribute. |
+| `dataModelAttribute` | Yes | The attribute in your tenant's data model that holds the actual values. Must refer to an attribute that exists in the tenant's data model. |
+
+> **Note:** Both fields are required in a mapping entry. "Required" refers to whether the field must be present in the entry, it does not mean the value must already exist in the tenant's data model.
+
+**Supported reference formats**
+
+Both `matchMethodAttribute` and `dataModelAttribute` accept any of the following three equivalent formats.
+
+**Supported reference formats**
+
+| **Format** | **Example** |
+| --- | --- |
+| Full URI | `configuration/entityTypes/Individual/attributes/Identifiers/attributes/ID` |
+| Relative path, `/` separator | `Identifiers/ID` |
+
+**Single-attribute mapping**
+
+The following mapping resolves the method-facing name `Name` to the tenant's `OrganizationName` attribute.
+
+```language-json
+{
+  "overrides": {
+    "attributesMapping": [
+      {
+        "dataModelAttribute": "OrganizationName",
+        "matchMethodAttribute": "Name"
+      }
+    ]
+  }
+}
+```
+
+The match group elements are then written using the `matchMethodAttribute` name. In the following fragment, an `exact` operand references `Name` in full-URI form; the mapping above resolves it to `OrganizationName` at match time.
+
+```language-json
+{
+  "rule": {
+    "and": {
+      "exact": [
+        "configuration/entityTypes/Organization/attributes/Name"
+      ]
+    }
+  }
+}
+```
+
+**Validation rules**
+
+Reltio validates the mapping when you save the configuration:
+
+- 
+
+  Names, paths, and URIs may contain letters, numbers, slash (`/`) only.
+- 
+
+  `dataModelAttribute` must refer to an attribute that exists in the tenant's data model. `matchMethodAttribute` is not required to exist in the data model, which is what allows it to be a virtual attribute.
+
+An invalid mapping is rejected at configuration time, so a typo or a reference to a non-existent tenant attribute is caught before it can affect matching.
+
+**Cross-attribute matching**
+
+Cross-attribute matching maps more than one `dataModelAttribute` to the same `matchMethodAttribute`, so the logical attribute aggregates the values of all mapped tenant attributes. The following match group matches an organization when its name equals the other profile's "doing business as" name, and vice versa. Both `OrganizationName` and `DoingBusinessAsName` map onto one logical attribute, `AnyOrganizationName`, which does not exist in the data model — it is defined only by the mapping.
+
+```language-json
+{
+  "uri": "configuration/entityTypes/Organization/matchGroups/CrossOrganizationName",
+  "label": "Organization name matches DBA name",
+  "type": "suspect",
+  "scope": "ALL",
+  "useOvOnly": "true",
+  "rule": {
+    "and": {
+      "exact": [
+        "configuration/entityTypes/Organization/attributes/AnyOrganizationName"
+      ]
+    },
+    "matchTokenClasses": {
+      "mapping": [
+        {
+          "attribute": "configuration/entityTypes/Organization/attributes/AnyOrganizationName",
+          "class": "<match-token-class-selected-for-this-rule>"
+        }
+      ]
+    },
+    "comparatorClasses": {
+      "mapping": [
+        {
+          "attribute": "configuration/entityTypes/Organization/attributes/AnyOrganizationName",
+          "class": "<comparator-class-selected-for-this-rule>"
+        }
+      ]
+    }
+  },
+  "overrides": {
+    "attributesMapping": [
+      {
+        "dataModelAttribute": "OrganizationName",
+        "matchMethodAttribute": "AnyOrganizationName"
+      },
+      {
+        "dataModelAttribute": "DoingBusinessAsName",
+        "matchMethodAttribute": "AnyOrganizationName"
+      }
+    ]
+  }
+}
+```
+
+Because `AnyOrganizationName` aggregates the values of both attributes, a match is found when either attribute of one entity shares a value with either attribute of the other entity; for example, entity A's `OrganizationName` equal to entity B's `DoingBusinessAsName`.
+
+For more information, see [Relevance-Based Matching - Detailed Explanation](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/relevance-based-matching---detailed-explanation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Comparator Classes](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/match-group-elements---description-and-configuration/rule-element/comparator-classes?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
@@ -199582,9 +199714,20 @@ When you select the **Export** option in the **Search** screen, you'll see the f
 
 *Image: ui-newexportdialog.png*
 
-The **Export** dialog lets you review and start an export without leaving the Search screen. You can name your export job, see a summary of the data selected (number of profiles, entity type, and the number of attributes included), and choose a file format from the **File format** list, such as **CSV Flattened**. If you need additional configuration options, you can select **GO TO EXPORT APPLICATION**, or proceed immediately by selecting **EXPORT** or cancel the action with **CANCEL**.
+The **Export** dialog lets you review and start an export without leaving the **Search** screen. You can:
 
-> **Note:** The export criteria specified above is saved automatically, and can be used in future references.
+- Name your export job.
+- View a summary of the data selected, including the number of profiles, entity type, and number of attributes included.
+- Choose a file format from the **File format** list, such as **CSV Flattened**.
+- Select the **Export Operation Values (OV) only** checkbox to export only those attribute values that were selected by the survivorship rules. If this checkbox is cleared, the export includes all configured attribute values. This option behaves the same as **Export Operation Values (OV) only** in the Export application. For more information, see [Export entities and relationships](https://docs.reltio.com/en/applications/console/tenant-management-applications/data-export-at-a-glance/export-entities-and-relationships?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+When you're ready, select one of the following:
+
+- **GO TO EXPORT APPLICATION** to open the Export application if you need additional configuration options.
+- **EXPORT** to start the export immediately.
+- **CANCEL** to cancel the action.
+
+> **Note:** The export criteria you specify above is saved automatically and can be reused for future exports.
 
 ## Requesting a Match Review
 
