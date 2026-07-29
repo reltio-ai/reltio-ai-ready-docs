@@ -1,5 +1,5 @@
 # Reltio Documentation Index
-_Generated: 2026-07-24 02:15 UTC — 3235 topics (3181 unique)_
+_Generated: 2026-07-29 02:15 UTC — 3237 topics (3183 unique)_
 
 This file is a structured navigation index of the Reltio documentation portal.
 It contains the full parent-child hierarchy, topic URLs, keywords, summaries,
@@ -705,8 +705,9 @@ relationships, locate sibling topics, and follow cross-references.
 
 - **URL:** https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-information-model/lookups-for-attribute-code-values/auto-populate-single-value-for-lookups?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Reltio > What does Reltio do? > What Reltio does at a glance > Data unification and MDM at a glance > Data unification and MDM in detail > Reltio information model > Lookups for attribute code values
-- **Summary:** If there is only one correct value for an attribute, it is possible to auto-populate the attribute with that value.
+- **Summary:** Learn about how auto-populate fills in a dependent lookup value automatically when a parent selection leaves only one valid option.
 - **Keywords:** Auto-Populate Lookups, auto populate properties, auto populate lookups
+- **See also:** [dependent lookup](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-information-model/lookups-for-attribute-code-values/dependent-lookups?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Configure the Properties object](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/configure-reltio-ui-with-the-configuration-file/configure-the-properties-object?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Dependent Lookups
 
@@ -810,7 +811,7 @@ relationships, locate sibling topics, and follow cross-references.
 - **Path:** Reltio Documentation Portal v2 sitemap > Reltio > What does Reltio do? > What Reltio does at a glance > Data unification and MDM at a glance > Data unification and MDM in detail > Reltio match and merge
 - **Summary:** You must understand match group elements to define correct match rules.
 - **Keywords:** Match Group Elements, match group elements, match elements, group elements, configure match group elements, configure match group
-- **See also:** [Relevance-Based Matching - Detailed Explanation](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/relevance-based-matching---detailed-explanation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Comparator Classes](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/match-group-elements---description-and-configuration/rule-element/comparator-classes?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [Configuring relevance-based matching rules](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/configuring-relevance-based-matching-rules?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Comparator Classes](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/match-group-elements---description-and-configuration/rule-element/comparator-classes?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Rule Element
 
@@ -950,7 +951,7 @@ relationships, locate sibling topics, and follow cross-references.
 - **Path:** Reltio Documentation Portal v2 sitemap > Reltio > What does Reltio do? > What Reltio does at a glance > Data unification and MDM at a glance > Data unification and MDM in detail > Reltio match and merge > Match Group Elements - Description and Configuration > Rule Element > The Comparison Formula
 - **Summary:** You will have a better understanding on how match candidates are compared by getting a deeper insight about the comparison process.
 - **Keywords:** Additional Topics Regarding the Comparison process, multiple values in an attribute, comparing only the OV of the attribute, case insensitivity during comparison
-- **See also:** [Relevance-Based Matching - Detailed Explanation](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/relevance-based-matching---detailed-explanation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [Configuring relevance-based matching rules](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/configuring-relevance-based-matching-rules?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Negative Rule
 
@@ -981,9 +982,9 @@ relationships, locate sibling topics, and follow cross-references.
 - **Summary:** You can remove entities marked as not-a-match to ensure that they can participate in matching.
 - **Keywords:** Not-a-Match Flag, reset the not-a-match flag, reset not-a-match, reset flag, not-a-match flag, reset not-a-match flag
 
-#### Relevance-Based Matching - Detailed Explanation
+#### Configuring relevance-based matching rules
 
-- **URL:** https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/relevance-based-matching---detailed-explanation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **URL:** https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/configuring-relevance-based-matching-rules?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Reltio > What does Reltio do? > What Reltio does at a glance > Data unification and MDM at a glance > Data unification and MDM in detail > Reltio match and merge
 - **Summary:** Learn about configuring relevance-based matching rules for optimal data matching and merging.
 - **Keywords:** Relevance Based Matching, relevance based matching, relevance based rule, relevance matching rule, relevance rule, weights, action thresholds, relevance score
@@ -6210,8 +6211,8 @@ _Topics in this section: Reltio Entity Resolution Deployment options, Reltio Ent
 
 - **URL:** https://docs.reltio.com/en/developer-resources/relation-management-apis/relation-management-apis-at-a-glance/relations-api/edit-relationship?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Relation Management APIs > Relation Management APIs at a glance > Relations API
-- **Summary:** It is possible to make granular changes for a relationship:
-- **See also:** [Using Activeness](https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/managing-object-deletion-and-activeness/using-activeness?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **Summary:** Learn about the Edit Relationship capability and how it updates selected parts of an existing relationship object without replacing the full object.
+- **See also:** [Relations API](https://docs.reltio.com/en/developer-resources/relation-management-apis/relation-management-apis-at-a-glance/relations-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Change Attributes](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/attribute-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Add/Update/Delete Crosswalks](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/crosswalks-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Cumulative Relations Update](https://docs.reltio.com/en/developer-resources/relation-management-apis/relation-management-apis-at-a-glance/relations-api/cumulative-relations-update?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Delete Relationship
 
@@ -10950,215 +10951,215 @@ _Topics in this section: Reltio Entity Resolution Deployment options, Reltio Ent
 - **Keywords:** validate entities using dvf api, pre ingestion entity validation reltio, run dvf validation without saving entity, entity validation api reltio, external dvf execution api, dvf validation, entity validation, data validation api
 - **See also:** [Authentication API](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/authentication-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Validate data before ingestion](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-operation/define-data-validation-functions/validate-data-before-ingestion?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
-### Hiererchy Management APIs
+### Materialized Hierarchy Management APIs
 
-#### Hierarchy management APIs
+#### Materialized Hierarchy Management APIs
 
-- **URL:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Hiererchy Management APIs
+- **URL:** https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Materialized Hierarchy Management APIs
 - **Summary:** Learn about the hierarchy management APIs used to create and manage hierarchies.
 - **Keywords:** hierarchy management apis overview, retrieve hierarchy views api, search hierarchy members api, retrieve object hierarchy paths, manage parent child connections, create hierarchy versions api, clone hierarchy instances api, delete hierarchy connections api, import hierarchy data bulk, hierarchies
-- **See also:** [About roles](https://docs.reltio.com/en/roles/about-roles?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Get hierarchy view for an object](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/get-hierarchy-view-for-an-object?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Get hierarchy paths for an object](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/get-hierarchy-paths-for-an-object?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [List children of an entity in a hierarchy instance](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/list-children-of-an-entity-in-a-hierarchy-instance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [List parent objects in a hierarchy instance](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/list-parents-objects-in-a-hierarchy-instance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Search hierarchy labels in a hierarchy instance](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/search-hierarchy-labels-in-a-hierarchy-instance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Get a hierarchy connection by ID](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/get-a-hierarchy-connection-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Create hierarchy connections](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/create-hierarchy-connections?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Delete hierarchy connections](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/delete-hierarchy-connections?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [List hierarchy instances for an object](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/list-hierarchy-instances-for-an-object?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [List hierarchies for an object](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/list-hierarchies-for-an-object?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [List hierarchy versions for an object](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/list-hierarchy-versions-for-an-object?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Get a hierarchy by ID](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/get-a-hierarchy-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [List hierarchy versions](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/list-hierarchy-versions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Get a hierarchy version by ID](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/get-a-hierarchy-version-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [About roles](https://docs.reltio.com/en/roles/about-roles?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Get hierarchy view for an object](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/get-hierarchy-view-for-an-object?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Get hierarchy paths for an object](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/get-hierarchy-paths-for-an-object?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [List children of an entity in a hierarchy instance](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/list-children-of-an-entity-in-a-hierarchy-instance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [List parent objects in a hierarchy instance](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/list-parents-objects-in-a-hierarchy-instance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Search hierarchy labels in a hierarchy instance](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/search-hierarchy-labels-in-a-hierarchy-instance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Get a hierarchy connection by ID](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/get-a-hierarchy-connection-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Create hierarchy connections](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/create-hierarchy-connections?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Delete hierarchy connections](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/delete-hierarchy-connections?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [List hierarchy instances for an object](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/list-hierarchy-instances-for-an-object?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [List hierarchies for an object](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/list-hierarchies-for-an-object?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [List hierarchy versions for an object](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/list-hierarchy-versions-for-an-object?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Get a hierarchy by ID](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/get-a-hierarchy-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [List hierarchy versions](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/list-hierarchy-versions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Get a hierarchy version by ID](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/get-a-hierarchy-version-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Get hierarchy view for an object
 
-- **URL:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/get-hierarchy-view-for-an-object?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+- **URL:** https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/get-hierarchy-view-for-an-object?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Materialized Hierarchy Management APIs > Materialized Hierarchy Management APIs
 - **Summary:** Learn more about how to use the Get hierarchy view API to return a path from an object to one root in a hierarchy instance.
 - **Keywords:** get hierarchy view for object, hierarchy view api for object, return object path to root, retrieve hierarchy path by instance, get hierarchy state by date, use torootonly hierarchy option, hierarchy instance object view api, retrieve parent child hierarchy path, hierarchy view response fields, hierarchy
-- **See also:** [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [Materialized Hierarchy Management APIs](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Get hierarchy paths for an object
 
-- **URL:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/get-hierarchy-paths-for-an-object?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+- **URL:** https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/get-hierarchy-paths-for-an-object?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Materialized Hierarchy Management APIs > Materialized Hierarchy Management APIs
 - **Summary:** Learn more about how to use the Get hierarchy path API to return all paths from an object to each root in a hierarchy instance.
 - **Keywords:** get hierarchy paths for object, hierarchy path view api, return all paths to roots, retrieve hierarchy paths by date, get object paths in hierarchy, retrieve all root paths, hierarchy instance path view, use hierarchy pathview api, hierarchy path response fields, hierarchy
-- **See also:** [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [Materialized Hierarchy Management APIs](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### List children of an entity in a hierarchy instance
 
-- **URL:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/list-children-of-an-entity-in-a-hierarchy-instance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+- **URL:** https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/list-children-of-an-entity-in-a-hierarchy-instance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Materialized Hierarchy Management APIs > Materialized Hierarchy Management APIs
 - **Summary:** Learn more about how to use the List children of an entity API to return a flat list of child objects for an entity in a hierarchy instance.
 - **Keywords:** list child objects in hierarchy instance, children view api for hierarchy, return flat list of child objects, get child objects for entity, retrieve hierarchy children by date, list direct children in hierarchy, get hierarchy children response fields, use children api in hierarchy, retrieve child connections in hierarchy, children
-- **See also:** [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [Materialized Hierarchy Management APIs](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### List parents objects in a hierarchy instance
 
-- **URL:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/list-parents-objects-in-a-hierarchy-instance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+- **URL:** https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/list-parents-objects-in-a-hierarchy-instance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Materialized Hierarchy Management APIs > Materialized Hierarchy Management APIs
 - **Summary:** Learn more about how to use the List parent objects to return a flat list of parent objects for an entity in a hierarchy instance.
 - **Keywords:** list parent objects in hierarchy, parents view api for hierarchy, return flat list of parents, get parent objects for entity, retrieve hierarchy parents by date, list direct parents in hierarchy, get hierarchy parents response fields, use parents api in hierarchy, retrieve parent connections in hierarchy, parents
-- **See also:** [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [Materialized Hierarchy Management APIs](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Search hierarchy labels in a hierarchy instance
 
-- **URL:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/search-hierarchy-labels-in-a-hierarchy-instance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+- **URL:** https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/search-hierarchy-labels-in-a-hierarchy-instance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Materialized Hierarchy Management APIs > Materialized Hierarchy Management APIs
 - **Summary:** Learn more about how to use the search hierarchy label API to return matching entries and their paths in a hierarchy instance.
 - **Keywords:** search hierarchy labels in instance, hierarchy label search api, return matching hierarchy entries, find hierarchy labels by query, retrieve matched labels and paths, search hierarchy labels by date, use label search api, get hierarchy search response fields, return label paths for entity, labelsearch
-- **See also:** [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [Materialized Hierarchy Management APIs](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Get a hierarchy connection by ID
 
-- **URL:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/get-a-hierarchy-connection-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+- **URL:** https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/get-a-hierarchy-connection-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Materialized Hierarchy Management APIs > Materialized Hierarchy Management APIs
 - **Summary:** Learn more about how to use the Get hierarchy connections API to return the definition of a hierarchy connection by ID.
 - **Keywords:** get hierarchy connection by id, hierarchy connections api, retrieve hierarchy connection details, get parent child connection by id, return hierarchy connection definition, hierarchy connection effective dates, retrieve hierarchy connection audit fields, use hierarchy connection get api, hierarchy connection response fields, connectionid
-- **See also:** [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [Materialized Hierarchy Management APIs](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Create hierarchy connections
 
-- **URL:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/create-hierarchy-connections?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+- **URL:** https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/create-hierarchy-connections?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Materialized Hierarchy Management APIs > Materialized Hierarchy Management APIs
 - **Summary:** Learn more about how to use the hierarchy connections API to create one or more connections in a hierarchy instance.
 - **Keywords:** create hierarchy connections api, post hierarchy connections endpoint, create parent child connections, bulk create hierarchy connections, set effective dates on connections, create hierarchy connection definitions, submit hierarchy connection request body, return created hierarchy connections, use hierarchy connections post, connections
-- **See also:** [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [Materialized Hierarchy Management APIs](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Delete hierarchy connections
 
-- **URL:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/delete-hierarchy-connections?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+- **URL:** https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/delete-hierarchy-connections?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Materialized Hierarchy Management APIs > Materialized Hierarchy Management APIs
 - **Summary:** Learn more about how to use the hierarchy connections API to delete connections in a hierarchy instance.
 - **Keywords:** delete hierarchy connections api, delete connections in hierarchy instance, remove hierarchy connections by id, bulk delete hierarchy connections, submit hierarchy connection delete request, use hierarchy connections delete api, delete hierarchy links by connection id, hierarchy connection delete response, delete connection list in hierarchy, deletion
-- **See also:** [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [Materialized Hierarchy Management APIs](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### List hierarchy instances for an object
 
-- **URL:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/list-hierarchy-instances-for-an-object?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+- **URL:** https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/list-hierarchy-instances-for-an-object?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Materialized Hierarchy Management APIs > Materialized Hierarchy Management APIs
 - **Summary:** Learn more about how to use the List hierarchy instances API to return the hierarchy instances that include an object.
 - **Keywords:** list hierarchy instances for object, hierarchy instances listing api, return hierarchy instances by object, find hierarchy instances containing object, get object hierarchy instances, retrieve hierarchy instance details, identify versioned hierarchy instances, list hierarchy instance labels, hierarchy instance response fields, instanceid
-- **See also:** [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [Materialized Hierarchy Management APIs](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### List hierarchies for an object
 
-- **URL:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/list-hierarchies-for-an-object?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+- **URL:** https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/list-hierarchies-for-an-object?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Materialized Hierarchy Management APIs > Materialized Hierarchy Management APIs
 - **Summary:** Learn more about how to use the List hierarchies API to return the hierarchies that include an object.
 - **Keywords:** list hierarchies for object, hierarchy listing api for object, return hierarchies that include object, get hierarchies by entity id, find hierarchies containing object, retrieve hierarchy list for object, identify versioned hierarchies for object, list hierarchy names and types, hierarchy listing response fields, hierarchyid
-- **See also:** [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [Materialized Hierarchy Management APIs](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### List hierarchy versions for an object
 
-- **URL:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/list-hierarchy-versions-for-an-object?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+- **URL:** https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/list-hierarchy-versions-for-an-object?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Materialized Hierarchy Management APIs > Materialized Hierarchy Management APIs
 - **Summary:** Learn more about how to use the List hierarchy versions API to return the versions of a hierarchy that include an object.
 - **Keywords:** list hierarchy versions for object, hierarchy versions listing api, return versions for hierarchy, get hierarchy versions by object, find hierarchy versions containing object, retrieve version list for hierarchy, list version names by hierarchy, get hierarchy version response, use hierarchy versions api, versioning
-- **See also:** [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [Materialized Hierarchy Management APIs](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Get a hierarchy by ID
 
-- **URL:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/get-a-hierarchy-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+- **URL:** https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/get-a-hierarchy-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Materialized Hierarchy Management APIs > Materialized Hierarchy Management APIs
 - **Summary:** Learn more about how to use the Get hierarchy API to return the definition of a hierarchy by ID.
 - **Keywords:** get hierarchy by id, retrieve hierarchy definition by id, hierarchy api by id, return hierarchy details by id, get hierarchy metadata response, retrieve hierarchy audit fields, identify versioned hierarchy definition, get single instance hierarchy, hierarchy response fields, hierarchyid
-- **See also:** [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [Materialized Hierarchy Management APIs](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### List hierarchy versions
 
-- **URL:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/list-hierarchy-versions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+- **URL:** https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/list-hierarchy-versions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Materialized Hierarchy Management APIs > Materialized Hierarchy Management APIs
 - **Summary:** Learn more about how to use the hierarchy versions API to return all versions of a hierarchy by ID.
 - **Keywords:** get hierarchy by id, retrieve hierarchy definition by id, hierarchy api by id, return hierarchy details by id, get hierarchy metadata response, retrieve hierarchy audit fields, identify versioned hierarchy definition, get single instance hierarchy, hierarchy response fields, hierarchyid
-- **See also:** [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [Materialized Hierarchy Management APIs](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Get a hierarchy version by ID
 
-- **URL:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/get-a-hierarchy-version-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+- **URL:** https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/get-a-hierarchy-version-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Materialized Hierarchy Management APIs > Materialized Hierarchy Management APIs
 - **Summary:** Learn more about how to use the Get Hierarchy Version API to retrieve the metadata for a specific hierarchy version by ID.
 - **Keywords:** get hierarchy version by id, retrieve hierarchy version details, hierarchy versions api by id, return hierarchy version metadata, get version status and dates, retrieve hierarchy version response, get hierarchy version audit fields, view hierarchy version definition, get hierarchy version instance, versionid
-- **See also:** [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [Materialized Hierarchy Management APIs](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Get a hierarchy instance by ID
 
-- **URL:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/get-a-hierarchy-instance-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+- **URL:** https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/get-a-hierarchy-instance-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Materialized Hierarchy Management APIs > Materialized Hierarchy Management APIs
 - **Summary:** Learn more about how to use the Get hierarchy instance to return a hierarchy instance by ID.
 - **Keywords:** get hierarchy instance by id, retrieve hierarchy instance details, hierarchy instance api by id, return hierarchy instance metadata, get versioned hierarchy instance, view hierarchy instance version, retrieve hierarchy instance audit fields, get hierarchy version inside instance, hierarchy instance response fields, instanceid
-- **See also:** [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [Materialized Hierarchy Management APIs](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Create a hierarchy
 
-- **URL:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/create-a-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+- **URL:** https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/create-a-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Materialized Hierarchy Management APIs > Materialized Hierarchy Management APIs
 - **Summary:** Learn more about how to use the Create hierarchy API to create a hierarchy and, optionally, its first version and first connection.
 - **Keywords:** create hierarchy api, create hierarchy definition, create hierarchy with version, create hierarchy with connection, create first hierarchy connection, create hierarchy version and instance, submit hierarchy create request, hierarchy create response fields, create versioned hierarchy, versioning
-- **See also:** [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [Materialized Hierarchy Management APIs](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Create a hierarchy version
 
-- **URL:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/create-a-hierarchy-version?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+- **URL:** https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/create-a-hierarchy-version?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Materialized Hierarchy Management APIs > Materialized Hierarchy Management APIs
 - **Summary:** Learn more about how to use the Create hierarchy version to create a hierarchy version.
 - **Keywords:** create hierarchy version api, create version for existing hierarchy, create hierarchy version with connection, post hierarchy versions endpoint, submit hierarchy version request body, set effective dates for version, create first connection in version, hierarchy version create response fields, use hierarchy versions create api, versioning
-- **See also:** [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [Materialized Hierarchy Management APIs](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Clone an unversioned hierarchy instance
 
-- **URL:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/clone-an-unversioned-hierarchy-instance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+- **URL:** https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/clone-an-unversioned-hierarchy-instance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Materialized Hierarchy Management APIs > Materialized Hierarchy Management APIs
 - **Summary:** Learn more about how to use the Clone unversioned hierarchy instance to create a hierarchy and, optionally, its first connection.
 - **Keywords:** clone hierarchy by id, clone existing hierarchy api, create cloned hierarchy from existing, clone hierarchy with versions, clone hierarchy with connections, copy hierarchy definition and connections, post hierarchy clone endpoint, create versioned cloned hierarchy, hierarchy clone response fields, cloning
-- **See also:** [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [Materialized Hierarchy Management APIs](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Clone a hierarchy version
 
-- **URL:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/clone-a-hierarchy-version?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+- **URL:** https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/clone-a-hierarchy-version?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Materialized Hierarchy Management APIs > Materialized Hierarchy Management APIs
 - **Summary:** Learn more about how to use the Clone hierarchy version API to clone a hierarchy version.
 - **Keywords:** clone hierarchy version api, clone existing hierarchy version, create new version from clone, post hierarchy version clone endpoint, copy hierarchy version with connections, clone hierarchy version by id, submit hierarchy version clone request, set cloned version metadata, hierarchy version clone response fields, cloning
-- **See also:** [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [Materialized Hierarchy Management APIs](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Clone a versioned hierarchy instance
 
-- **URL:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/clone-a-versioned-hierarchy-instance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+- **URL:** https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/clone-a-versioned-hierarchy-instance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Materialized Hierarchy Management APIs > Materialized Hierarchy Management APIs
 - **Summary:** Learn more about how to use the Clone hierarchy API to clone a hierarchy instance.
 - **Keywords:** clone hierarchy instance api, clone existing hierarchy instance, create hierarchy from instance clone, copy hierarchy instance with connections, clone versioned hierarchy instance, post hierarchy instance clone endpoint, create cloned hierarchy definition, set version metadata for clone, hierarchy instance clone response fields, cloning
-- **See also:** [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [Materialized Hierarchy Management APIs](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Update a hierarchy by ID
 
-- **URL:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/update-a-hierarchy-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+- **URL:** https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/update-a-hierarchy-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Materialized Hierarchy Management APIs > Materialized Hierarchy Management APIs
 - **Summary:** Learn more about how to use the hierarchy update API to update a hierarchy by ID.
 - **Keywords:** update hierarchy by id, hierarchy update api, update hierarchy metadata, change hierarchy name and type, enable hierarchy versioning setting, put hierarchy endpoint by id, hierarchy update request body, hierarchy update response fields, update hierarchy versioning option, versioning
-- **See also:** [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [Materialized Hierarchy Management APIs](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Update a hierarchy version by ID
 
-- **URL:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/update-a-hierarchy-version-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+- **URL:** https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/update-a-hierarchy-version-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Materialized Hierarchy Management APIs > Materialized Hierarchy Management APIs
 - **Summary:** Learn more about how to use the hierarchy versions API to update a hierarchy version by ID.
 - **Keywords:** update hierarchy version by id, hierarchy version update api, change hierarchy version metadata, put hierarchy version endpoint, update version status and dates, edit hierarchy version description, update hierarchy version context, modify hierarchy version by id, hierarchy version response fields, versionid
-- **See also:** [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [Materialized Hierarchy Management APIs](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Delete a hierarchy by ID
 
-- **URL:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/delete-a-hierarchy-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+- **URL:** https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/delete-a-hierarchy-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Materialized Hierarchy Management APIs > Materialized Hierarchy Management APIs
 - **Summary:** Learn more about how to use the Delete hierarchy API to delete a hierarchy by ID.
 - **Keywords:** delete hierarchy by id, hierarchy delete api, delete hierarchy with api, remove hierarchy by hierarchy id, delete hierarchy endpoint, submit hierarchy delete request, hierarchy delete response fields, delete hierarchy definition, delete hierarchy using bearer token, deletion
-- **See also:** [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [Materialized Hierarchy Management APIs](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Delete a hierarchy version by ID
 
-- **URL:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/delete-a-hierarchy-version-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+- **URL:** https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/delete-a-hierarchy-version-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Materialized Hierarchy Management APIs > Materialized Hierarchy Management APIs
 - **Summary:** Learn more about how to use the Delete Hierarchy Version API to delete a specific hierarchy version by ID.
 - **Keywords:** get hierarchy by id, retrieve hierarchy definition by id, hierarchy api by id, return hierarchy details by id, get hierarchy metadata response, retrieve hierarchy audit fields, identify versioned hierarchy definition, get single instance hierarchy, hierarchy response fields, hierarchyid
-- **See also:** [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [Materialized Hierarchy Management APIs](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Import a hierarchy
 
-- **URL:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/import-a-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+- **URL:** https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/import-a-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Materialized Hierarchy Management APIs > Materialized Hierarchy Management APIs
 - **Summary:** Learn more about how to use the Import Hierarchy API to import hierarchy data from a CSV or JSON file.
 - **Keywords:** create hierarchy api, create hierarchy definition, create hierarchy with version, create hierarchy with connection, create first hierarchy connection, create hierarchy version and instance, submit hierarchy create request, hierarchy create response fields, create versioned hierarchy, versioning
-- **See also:** [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [Materialized Hierarchy Management APIs](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 ## Roles
 
@@ -11602,7 +11603,7 @@ _Topics in this section: Hub at a glance, Profile Stats dashboard at a glance, D
 - **Path:** Reltio Documentation Portal v2 sitemap > Applications > Hub > Profiles at a glance > Profile perspectives tabs > Profile perspectives navigation > Potential Matches perspective
 - **Summary:** Learn more about the Potential Match perspective.
 - **Keywords:** Potential Matches, Potential Matches Perspective, potential matches perspective, merge, merge all, Merge All, merge all potential matches, add a relationship, add relationship, add relation
-- **See also:** [Potential Matches perspective](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/potential-matches-perspective?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Find potential matches manually for a Profile](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-operation/review-potential-matches-overview/find-potential-matches-manually-for-a-profile?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Negative Rule](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/match-group-elements---description-and-configuration/negative-rule?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Enable a pretrained FERN model](https://docs.reltio.com/en/applications/console/configuration-applications/ai-powered-flexible-entity-resolution-network-fern-model-based-matching-at-a-glance/fern-based-matching/use-a-pretrained-fern-model/enable-a-pretrained-fern-model?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Relevance-Based Matching - Detailed Explanation](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/relevance-based-matching---detailed-explanation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Merge potential matches](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-operation/review-potential-matches-overview/merge-potential-matches?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [Potential Matches perspective](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/potential-matches-perspective?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Find potential matches manually for a Profile](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-operation/review-potential-matches-overview/find-potential-matches-manually-for-a-profile?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Negative Rule](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/match-group-elements---description-and-configuration/negative-rule?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Enable a pretrained FERN model](https://docs.reltio.com/en/applications/console/configuration-applications/ai-powered-flexible-entity-resolution-network-fern-model-based-matching-at-a-glance/fern-based-matching/use-a-pretrained-fern-model/enable-a-pretrained-fern-model?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Configuring relevance-based matching rules](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/configuring-relevance-based-matching-rules?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Merge potential matches](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-operation/review-potential-matches-overview/merge-potential-matches?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Interactions perspective
 
@@ -11623,6 +11624,7 @@ _Topics in this section: Hub at a glance, Profile Stats dashboard at a glance, D
 - **URL:** https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/interactions-perspective/interactions-perspective-navigation/interactions-table-in-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Applications > Hub > Profiles at a glance > Profile perspectives tabs > Profile perspectives navigation > Interactions perspective > Interactions perspective navigation
 - **Summary:** Learn about the Interactions table in the Profile view.
+- **See also:** [Interaction permissions](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/configuration-api/role-based-security/metadata-security?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Select the appropriate interaction type view
 
@@ -18830,7 +18832,7 @@ _Topics in this section: Data integrations at a glance, Application Integration 
 - **URL:** https://docs.reltio.com/en/objectives/administer-system/system-administration-at-a-glance/access-management-at-a-glance/access-management-reference/authorization/system-roles/resource-specific-roles/role_dtss_deployer-access-permissions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Administer system > System administration at a glance > Access management at a glance > Access management reference > Authorization > System roles > Resource-specific roles
 - **Summary:** Learn about ROLE_DTSS_DEPLOYER role to manage access permissions for <x> Reltio resources.
-- **See also:** [System roles](https://docs.reltio.com/en/objectives/administer-system/system-administration-at-a-glance/access-management-at-a-glance/access-management-reference/authorization/system-roles?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [System roles](https://docs.reltio.com/en/objectives/administer-system/system-administration-at-a-glance/access-management-at-a-glance/access-management-reference/authorization/system-roles?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [ROLE_DTSS_CT_SUBSCRIPTION_MANAGER Access permissions](https://docs.reltio.com/en/objectives/administer-system/system-administration-at-a-glance/access-management-at-a-glance/access-management-reference/authorization/system-roles/resource-specific-roles/role_dtss_ct_subscription_manager-access-permissions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [ROLE_DTSS_DT_SUBSCRIPTION_MANAGER Access permissions](https://docs.reltio.com/en/objectives/administer-system/system-administration-at-a-glance/access-management-at-a-glance/access-management-reference/authorization/system-roles/resource-specific-roles/role_dtss_dt_subscription_manager-access-permissions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### ROLE_DTSS_DT_MANAGER Access permissions
 
@@ -18838,6 +18840,18 @@ _Topics in this section: Data integrations at a glance, Application Integration 
 - **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Administer system > System administration at a glance > Access management at a glance > Access management reference > Authorization > System roles > Resource-specific roles
 - **Summary:** Learn about ROLE_DTSS_DT_MANAGER role to manage access permissions for <x> Reltio resources.
 - **See also:** [System roles](https://docs.reltio.com/en/objectives/administer-system/system-administration-at-a-glance/access-management-at-a-glance/access-management-reference/authorization/system-roles?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### ROLE_DTSS_CT_SUBSCRIPTION_MANAGER Access permissions
+
+- **URL:** https://docs.reltio.com/en/objectives/administer-system/system-administration-at-a-glance/access-management-at-a-glance/access-management-reference/authorization/system-roles/resource-specific-roles/role_dtss_ct_subscription_manager-access-permissions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Administer system > System administration at a glance > Access management at a glance > Access management reference > Authorization > System roles > Resource-specific roles
+- **Summary:** Learn more about the ROLE_DTSS_CT_SUBSCRIPTION_MANAGER role and the access permissions it grants for tenant-scoped DTSS subscription management on a data tenant.
+
+#### ROLE_DTSS_DT_SUBSCRIPTION_MANAGER Access permissions
+
+- **URL:** https://docs.reltio.com/en/objectives/administer-system/system-administration-at-a-glance/access-management-at-a-glance/access-management-reference/authorization/system-roles/resource-specific-roles/role_dtss_dt_subscription_manager-access-permissions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Administer system > System administration at a glance > Access management at a glance > Access management reference > Authorization > System roles > Resource-specific roles
+- **Summary:** Learn more about the ROLE_DTSS_DT_SUBSCRIPTION_MANAGER role and the access permissions it grants for tenant-scoped DTSS subscription management on a data tenant.
 
 #### ROLE_DVF_ADMIN Access permissions
 
@@ -19975,6 +19989,7 @@ _Topics in this section: Reltio Ontology Builder, Data modeling at a glance_
 - **URL:** https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/configure-reltio-ui-with-the-configuration-file/configure-the-properties-object?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Configure the Reltio UI > UI configuration at a glance > Configure Reltio UI with the configuration file
 - **Summary:** Learn how to configure the Properties section in the UI configuration file.
+- **See also:** [lookup attributes](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-information-model/lookups-for-attribute-code-values?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [dependent lookup](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-information-model/lookups-for-attribute-code-values/dependent-lookups?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Apply changes to the UI configuration file
 
@@ -21533,7 +21548,7 @@ _Topics in this section: Data loading at a glance, Data exporting at a glance_
 - **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Resolve potential matches > Potential matching at a glance > Potential matching navigation > Configure match rules overview > Create initial match rules
 - **Summary:** This first phase is exclusively about designing a set of match rules, strictly from the standpoint of the formulae they will use for comparison of match candidates that are presented to them.
 - **Keywords:** Comparison Formulas, comparison formulas, comparator class, custom rule, sort match rules, data quality, fix data quality, profile your data, data profile, match scheme
-- **See also:** [String Replacement Cleanser](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/match-group-elements---description-and-configuration/rule-element/match-cleansers/string-replacement-cleanser?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Name Dictionary Cleanser](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/match-group-elements---description-and-configuration/rule-element/match-cleansers/name-dictionary-cleanser?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Comparator Classes](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/match-group-elements---description-and-configuration/rule-element/comparator-classes?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Relevance-Based Matching - Detailed Explanation](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/relevance-based-matching---detailed-explanation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [String Replacement Cleanser](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/match-group-elements---description-and-configuration/rule-element/match-cleansers/string-replacement-cleanser?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Name Dictionary Cleanser](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/match-group-elements---description-and-configuration/rule-element/match-cleansers/name-dictionary-cleanser?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Comparator Classes](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/match-group-elements---description-and-configuration/rule-element/comparator-classes?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Configuring relevance-based matching rules](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/configuring-relevance-based-matching-rules?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Design your Match Tokenization Scheme
 
@@ -21716,7 +21731,7 @@ _Topics in this section: Data loading at a glance, Data exporting at a glance_
 - **URL:** https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-operation/review-potential-matches-overview/search-profiles-using-relevance-score-and-match-action?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Resolve potential matches > Potential matching at a glance > Potential matching operation > Review potential matches overview
 - **Summary:** Learn how to search for profiles based on their relevance score and match action.
-- **See also:** [Relevance-Based Matching - Detailed Explanation](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/relevance-based-matching---detailed-explanation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [Configuring relevance-based matching rules](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/configuring-relevance-based-matching-rules?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Select the potential matches for a profile
 
@@ -21724,7 +21739,7 @@ _Topics in this section: Data loading at a glance, Data exporting at a glance_
 - **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Resolve potential matches > Potential matching at a glance > Potential matching operation > Review potential matches overview
 - **Summary:** Learn how to select profiles that are a potential match for your main entity. If you’re a data steward working with profiles, then this topic is for you.
 - **Keywords:** Potential Matches, Potential Matches Perspective, potential matches perspective, merge, merge all, merge all potential matches, Merge, Merge All
-- **See also:** [Potential Matches perspective navigation](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/potential-matches-perspective/potential-matches-perspective-navigation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Relevance-Based Matching - Detailed Explanation](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/relevance-based-matching---detailed-explanation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Merge potential matches](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-operation/review-potential-matches-overview/merge-potential-matches?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [Potential Matches perspective navigation](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/potential-matches-perspective/potential-matches-perspective-navigation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Configuring relevance-based matching rules](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/configuring-relevance-based-matching-rules?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Merge potential matches](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-operation/review-potential-matches-overview/merge-potential-matches?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Find potential matches manually for a Profile
 
@@ -21748,7 +21763,7 @@ _Topics in this section: Data loading at a glance, Data exporting at a glance_
 - **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Resolve potential matches > Potential matching at a glance > Potential matching operation > Review potential matches overview
 - **Summary:** Learn how to merge potential matches with the main entity Profile. If you’re a data steward who works with profiles, then this topic is for you.
 - **Keywords:** Potential Matches, Potential Matches Perspective, potential matches perspective, merge, merge all, Merge All, Merge, merge all potential matches, add a relationship, add relationship
-- **See also:** [Select the Potential Matches for a profile](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-operation/review-potential-matches-overview/select-the-potential-matches-for-a-profile?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Find Potential Matches manually for a profile](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-operation/review-potential-matches-overview/find-potential-matches-manually-for-a-profile?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Select profiles from the Not-a-match list](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-operation/review-potential-matches-overview/select-profiles-from-the-not-a-match-list?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Relevance-Based Matching - Detailed Explanation](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/relevance-based-matching---detailed-explanation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [Select the Potential Matches for a profile](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-operation/review-potential-matches-overview/select-the-potential-matches-for-a-profile?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Find Potential Matches manually for a profile](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-operation/review-potential-matches-overview/find-potential-matches-manually-for-a-profile?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Select profiles from the Not-a-match list](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-operation/review-potential-matches-overview/select-profiles-from-the-not-a-match-list?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Configuring relevance-based matching rules](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/configuring-relevance-based-matching-rules?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Request a potential match review
 
@@ -21846,7 +21861,7 @@ _Topics in this section: Data loading at a glance, Data exporting at a glance_
 - **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Resolve potential matches > Potential matching at a glance > Potential matching operation > Unmerge entity records
 - **Summary:** Learn how Reltio reassigns the winner when the origin contributor is unmerged, and how to enable this behavior in your tenant configuration.
 - **Keywords:** origin contributor, automatic unmerge, manual unmerge, winner election, feature flag, survivorship, merge tree, crosswalk, unmerge logic
-- **See also:** [submit a request](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [Enable automatic unmerge on the tenant configuration](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-operation/unmerge-entity-records/enable-automatic-unmerge-on-the-tenant-configuration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Potential matching reference
 
@@ -21954,7 +21969,7 @@ _Topics in this section: Data loading at a glance, Data exporting at a glance_
 - **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Manage profiles > Profile management at a glance > Profile navigation > Profile Attributes
 - **Summary:** Learn how to identiry potential matches and merge duplicate profiles.
 - **Keywords:** Potential Matches, Potential Matches Summary, potential matches, potential matches summary, potential match
-- **See also:** [Relevance-Based Matching - Detailed Explanation](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/relevance-based-matching---detailed-explanation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Potential Matches perspective](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/potential-matches-perspective?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [Configuring relevance-based matching rules](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/configuring-relevance-based-matching-rules?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Potential Matches perspective](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/potential-matches-perspective?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Profile perspectives tabs
 

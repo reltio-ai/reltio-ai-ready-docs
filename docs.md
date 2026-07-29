@@ -1,8 +1,8 @@
 # Reltio Documentation
 
-_Generated: 2026-07-24 02:15 UTC_
+_Generated: 2026-07-29 02:15 UTC_
 
-_Topics: 3359_
+_Topics: 3362_
 
 ---
 
@@ -8775,9 +8775,6 @@ We build on each GA release with a steady stream of bi-weekly updates that deliv
 
 | Release Name | Stage | Tenant Type | Release Date |
 | --- | --- | --- | --- |
-| 2026.1.7.0 | 1 | Development (DEV) | July 24, 2026 |
-| 2026.1.7.0 | 2 | Test (TEST) | July 24, 2026 |
-| 2026.1.7.0 | 3 | Production (PRD) | July 31, 2026 |
 | 2026.1.8.0 | 1 | Development (DEV) | August 07, 2026 |
 | 2026.1.8.0 | 2 | Test (TEST) | August 07, 2026 |
 | 2026.1.8.0 | 3 | Production (PRD) | August 14, 2026 |
@@ -15242,6 +15239,50 @@ For more information, see [Create, test, and submit an agent for review](https:/
 
 ---
 
+# 2026.1.7.0 RN | 31-July-2026
+
+Learn about the new features and enhancements introduced in this 2026.1.7.0 release.
+
+**Deployment dates**
+
+| Stage | Tenant type | When |
+| --- | --- | --- |
+| 1 | Development (DEV) | July 24, 2026 |
+| 2 | Test (TEST) | July 24, 2026 |
+| 3 | Production (PRD) | July 31, 2026 |
+
+## Default completion email for External Match tasks
+
+When you run an External Match task without the `emails` parameter, Reltio now sends a completion notification to the email address of the user who started the task. This ensures that you always receive an email when a task is complete, even when no recipients are specified.
+
+For more information, see [External match API](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/potential-matches-api/external-match-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+## Control role-based access to interaction types and attributes
+
+You can now apply role-based access control to interaction types and interaction attributes. This capability helps protect sensitive interaction data and ensures that users can access and manage only the interaction information permitted for their roles.
+
+For more information, see [Interaction permissions](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/configuration-api/role-based-security/metadata-security?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+## Winner re-election on by default for origin contributor detachment
+
+Winner re-election after origin contributor detachment is enabled by default for new tenants. When the origin contributor is detached from a composite profile, a real contributor is elected as the new winner instead of the remaining contributors being grouped into a shell composite. Electing a real winner improves survivorship consistency and data continuity when unmerging profiles with complex contributor histories.
+
+This winner re-election behavior is available by default for newly created tenants, for both manual and automatic unmerge of the origin contributor. Existing tenants keep the value already configured for them.
+
+For more information, see [Control winner re-election after origin contributor detachment](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-operation/unmerge-entity-records/control-winner-re-election-after-origin-contributor-detachment?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+## Count and length virtual properties in Data Validation Functions
+
+Data Validation Functions (DVF) now support the `.count` and `.length` expressions, matching the syntax already available in the `Search API`. You can use these expressions to enforce cardinality and length-based validation rules against live entity data. For example, you can enforce a minimum number of values for an attribute or set a maximum permitted length for a value.
+
+Support for the `.count` and `.length` expressions applies wherever you define DVF rules, including at the crosswalk level.
+
+For more information, see topic and [DVF string functions](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-operation/define-data-validation-functions/understanding-the-expression-attribute/dvf-string-functions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+
+
+---
+
 # 2026.1 bi-weekly Release Notes (RN)
 
 > **Section:** Reltio > What’s new and notable? > What's new at a glance > Release Notes at a glance > 2026.1 Release Notes
@@ -16021,7 +16062,7 @@ How does the test for similarity at the attribute level rollup to one directive 
   In either of these types of rules, each Comparison Operator within the rule will evaluate to `TRUE` or `FALSE`. The outcome of the rule is the boolean algebraic sum of the Comparison Operators. For example, if you have a simple rule that indicates a logical `automatic` ‘AND’ of `(Fuzzy(First Name, Last Name)`, `Exact(AddrLine1)`, then there are three comparisons taking place. In order for the rule to evaluate to `TRUE`, all three comparisons must evaluate to `TRUE`.
 - `relevance_based` rule
 
-  With this type of rule, the directive coming from the rule is based on a score calculated from an algorithm specified by you using `weights` and `actionThresholds` within the rule. For more information, see [Relevance-Based Matching - Detailed Explanation](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/relevance-based-matching---detailed-explanation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+  With this type of rule, the directive coming from the rule is based on a score calculated from an algorithm specified by you using `weights` and `actionThresholds` within the rule. For more information, see [Configuring relevance-based matching rules](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/configuring-relevance-based-matching-rules?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
@@ -16292,37 +16333,35 @@ After roles have been configured in your system, you can complete the following 
 **Keywords:** Auto-Populate Lookups, auto populate properties, auto populate lookups
 
 
-If there is only one correct value for an attribute, it is possible to auto-populate the attribute with that value.
+Learn about how auto-populate fills in a dependent lookup value automatically when a parent selection leaves only one valid option.
 
-Auto-population of values with attributes that have only one possible value simplifies data entry since the user doesn't need to go through the process of choosing the item from the drop-down list. There is an extension for defining this feature.
+Auto-populate uses the `autocomplete` parameter to fill a [dependent lookup](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-information-model/lookups-for-attribute-code-values/dependent-lookups?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) attribute when only one valid value remains. A dependent lookup is a lookup attribute whose valid values depend on a parent attribute. For example, in an address form, the Country you select controls which States are available for you to choose from.
 
-```
- com.reltio.plugins.ui.LookupAutocomplete
-```
+When a parent selection narrows a dependent lookup to one valid value, auto-populate fills it in automatically for you. This reduces manual selection during data entry and helps keep dependent lookup values consistent.
 
-It uses two arrays:
+## Auto-populate attributes
 
-- `includeAttributes`: The list of attribute types that have this feature.
-- `excludeAttributes`: The list of attribute types do not have this feature.
+Auto-populate is controlled by the `autocomplete` parameter, which you add to the `lookups` object in the Properties object of the UI configuration file. The `autocomplete` parameter uses the following arrays to control which attribute URIs the behavior applies to:
 
-**Properties**
+- `includeAttributes`: Enables auto-populate only for the listed attribute URIs.
+- `excludeAttributes`: Enables auto-populate for all lookup attributes except the listed attribute URIs.
 
-| Name | Type | Attributes | Description |
-| --- | --- | --- | --- |
-| `point` | String |  | ID of the configuration extension point. It must be "`com.reltio.plugins.ui.configuration` ". |
-| `ID` | String |  | Extension ID "`com.reltio.plugins.ui.LookupAutocomplete` ". |
-| `includeAttributes` | String Array | <optional> | List of attribute types for which the lookup value `autocomplete` must be on. |
-| `excludeAttributes` | String Array | <optional> | List of attribute types for which the lookup value `autocomplete` must be off. Ignored if "`includeAttributes` " is present. |
+If you set both, `includeAttributes` takes precedence and `excludeAttributes` is ignored. This means the behavior applies only where it's useful, while manual selection remains in place elsewhere.
 
 **Example**
 
 ```
-{
- "point": "com.reltio.plugins.ui.configuration",
- "id": "com.reltio.plugins.ui.LookupAutocomplete",
- "includeAttributes": [...attrURI... ]
+
+lookups: {
+  autocomplete: {
+    includeAttributes: ["configuration/entityTypes/Location/attributes/State"],
+    excludeAttributes: []
+  }
 }
+    
 ```
+
+For more information about the `lookups` object and other UI configuration properties, see [Configure the Properties object](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/configure-reltio-ui-with-the-configuration-file/configure-the-properties-object?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
@@ -17218,19 +17257,18 @@ When a composite profile contains three or more contributors, and the origin con
 - The unmerge method (manual or automatic)
 - The status of the `NEW_WINNER_ELECTED_ON_ORIGIN_DETACHMENT` feature flag
 
+For new tenants, Reltio enables this feature by default and selects a new winner from the remaining contributors instead of creating a shell composite. Existing tenants retain their current setting.
+
 **Manual unmerge**
 
-When you manually detach the origin contributor:
+When you manually detach the origin contributor, the outcome depends on the feature status:
 
-- Reltio always creates a **shell composite** for the remaining contributors.
-- This shell doesn't represent a real source record and can't exist outside the merge context.
+- **Feature enabled (default for new tenants)**: A new winner is elected from the remaining contributors.
+- **Feature disabled**: A shell composite is created for the remaining contributors. This shell doesn't represent a real source record and can't exist outside the merge context.
 
 **Automatic unmerge**
 
-By default, Reltio **prevents** automatic detachment of the origin. But if the feature flag is enabled:
-
-- The origin can be automatically unmerged.
-- Reltio elects a new winner from the remaining contributors (not a shell).
+For new tenants, Reltio allows automatic detachment of the origin contributor by default and elects a new winner from the remaining contributors. Automatic detachment of the origin contributor requires winner re-election to be enabled. Existing tenants where winner re-election was never enabled, and any tenant that later disables it, cannot use automatic detachment..
 
 ## Outcomes by unmerge method and flag status
 
@@ -17238,10 +17276,10 @@ The following table shows the outcomes of manual and automatic unmerge operation
 
 | Feature | Operation | Resulting Objects | Winner after Unmerge |
 | --- | --- | --- | --- |
-| **Disabled**  (default) | Manual Unmerge of E1  (always allowed) | Standalone E1   E_shell (E2, E3, ...) | E_shell is the winner   (contains only former losers) |
-| **Disabled**  (default) | Automatic Unmerge of E1 | Not allowed | — |
-| **Enabled** | Manual Unmerge of E1 | Standalone E1   Composite (E2, E3, ...) | E2 is the new winner |
-| **Enabled** | Automatic Unmerge of E1 | Standalone E1   Composite (E2, E3, ...) | E2 is the new winner |
+| **Enabled** (default for new tenants) | Manual Unmerge of E1 | Standalone E1   Composite (E2, E3, ...) | E2 is the new winner |
+| **Enabled** (default for new tenants) | Automatic Unmerge of E1 | Standalone E1   Composite (E2, E3, ...) | E2 is the new winner |
+| **Disabled**  (default for existing tenants) | Manual Unmerge of E1  (always allowed) | Standalone E1   E_shell (E2, E3, ...) | E_shell is the winner   (contains only former losers) |
+| **Disabled**  (default for existing tenants) | Automatic Unmerge of E1 | Not allowed | — |
 
 ## Winner selection logic
 
@@ -17255,9 +17293,9 @@ When the feature is `enabled`:
 
 By electing a real contributor as the new winner — instead of creating a shell — Reltio improves survivorship consistency, ensures data continuity, and increases reliability when unmerging profiles with complex contributor histories.
 
-## Request feature enablement in your tenant configuration
+## Tenant configuration
 
-To enable the `NEW_WINNER_ELECTED_ON_ORIGIN_DETACHMENT` feature, [submit a request](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). In the support request, mention to enable the `newWinnerElectedOnOriginDetachmentEnabled` tenant parameter for your tenant.
+New tenants can disable winner re-election, overriding the enabled default. Existing tenants keep the value already configured for them and can change it at any time. For information about checking or changing this setting for your tenant, see [Enable automatic unmerge on the tenant configuration](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-operation/unmerge-entity-records/enable-automatic-unmerge-on-the-tenant-configuration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
@@ -19852,7 +19890,7 @@ The custom rule type is provided to give you the ability to invent your own rule
 
 **Behavior of the relevance_based type**
 
-Unlike the preceding rules, all of which are based on a boolean construction of the rule formula, the `relevance-based` type expects you to define an arithmetic scoring algorithm. The range of the match score determines whether to merge records automatically or create potential matches. For more information, see [Relevance-Based Matching - Detailed Explanation](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/relevance-based-matching---detailed-explanation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+Unlike the preceding rules, all of which are based on a boolean construction of the rule formula, the `relevance-based` type expects you to define an arithmetic scoring algorithm. The range of the match score determines whether to merge records automatically or create potential matches. For more information, see [Configuring relevance-based matching rules](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/configuring-relevance-based-matching-rules?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 The rule types and their ability to issue directives to the match engine are as follows:
 
@@ -20038,7 +20076,7 @@ Cross-attribute matching maps more than one `dataModelAttribute` to the same `ma
 
 Because `AnyOrganizationName` aggregates the values of both attributes, a match is found when either attribute of one entity shares a value with either attribute of the other entity; for example, entity A's `OrganizationName` equal to entity B's `DoingBusinessAsName`.
 
-For more information, see [Relevance-Based Matching - Detailed Explanation](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/relevance-based-matching---detailed-explanation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Comparator Classes](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/match-group-elements---description-and-configuration/rule-element/comparator-classes?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+For more information, see [Configuring relevance-based matching rules](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/configuring-relevance-based-matching-rules?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Comparator Classes](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/match-group-elements---description-and-configuration/rule-element/comparator-classes?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
@@ -22189,19 +22227,21 @@ Introduce a surrogate crosswalk for the `Location` entity:
 
 ---
 
-# Relevance-Based Matching - Detailed Explanation
+# Configuring relevance-based matching rules
 
 > **Section:** Reltio > What does Reltio do? > What Reltio does at a glance > Data unification and MDM at a glance > Data unification and MDM in detail > Reltio match and merge
 
 
-**Source:** https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/relevance-based-matching---detailed-explanation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/configuring-relevance-based-matching-rules?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** Relevance Based Matching, relevance based matching, relevance based rule, relevance matching rule, relevance rule, weights, action thresholds, relevance score
 
 
 Learn about configuring relevance-based matching rules for optimal data matching and merging.
 
-Relevance-based matching is designed primarily as a replacement of the strategy that uses `automatic` and `suspect` rule types. With relevance-based matching you use a scoring algorithm of your own design. The advantage is that in most cases, a strategy based on relevance-based matching can reduce the complexity and overall number of rules. The reason for this is that the two directives of merge and queue for review which normally require separate rules (`automatic` and `suspect`, respectively) can often be represented by a single relevance-based rule.
+Relevance-based matching gives you a scoring algorithm of your own design. You can express the strength of a match as a graduated score rather than a simple true or false.It complements the binary outcome based matching strategy such as `automatic` and `suspect`. Use relevance-based matching for use cases where how well two records match matters, not just whether they match.
+
+A secondary advantage is that a relevance-based rule can reduce the complexity and overall number of rules. The two directives of merge and queue for review normally require separate rules (automatic and suspect, respectively), but a single relevance-based rule can often represent both.
 
 When you configure relevance-based match rules, two effective comparators are the Jaro and Levenshtein distances. The Jaro distance measures the similarity between two sequences, useful for short texts. The Levenshtein distance, or edit distance, quantifies how dissimilar two strings are by counting the minimum number of operations required to transform one string into the other. Both of these comparators return scores from 0 to 1 and are therefore useful for relevance matching. However, if you use a comparator that does not return a score from 0 to 1, relevance matching may not work as desired.
 
@@ -42315,7 +42355,7 @@ The following example configures an `ExhibitionEvent` interaction type with `att
 
 Learn about how the Reltio platform uses role-based metadata security to control access to entity types, relationship types, and attributes.
 
-The Reltio Context Intelligence Platform platform supports role-based access control (RBAC) with its metadata security framework. Each role has a list of resources with operations that users assigned to the role can do on each resource. Security can be set at an entity/relationship type level or for individual attributes.
+The Reltio Context Intelligence Platform platform supports role-based access control (RBAC) with its metadata security framework. Each role has a list of resources with operations that users assigned to the role can do on each resource. You can apply security to entity types, relationship types, interaction types, and to individual attributes on those types.
 
 For a newly created tenant, metadata security is disabled. It is enabled when any permissions configuration (even an empty configuration) is applied to the tenant. You may require metadata permissions to perform some tasks through **Hub**, such as crosswalk deletion.
 
@@ -42959,6 +42999,81 @@ Body:
 ```
 
 > **Note:** Metadata security is not compatible with Analytics attributes. You cannot apply the Metadata security rules to analytics attributes.
+
+## Interaction permissions
+
+Use RBAC to manage access to interaction types and corresponding attributes. Interaction permissions ensures that users can view and manage only the interaction data that their role permits, while protecting sensitive information from unauthorized access.
+
+Use the [Set Permissions](#metadatasecurity/setpermissions) endpoint to configure access for interaction types and interaction attributes.
+
+The following table lists the supported permissions.
+
+| Resource | Supported permissions |
+| --- | --- |
+| Interaction types | - `READ`: View interactions of the specified type. - `CREATE`: Create interactions of the specified type. - `DELETE`: Delete interactions of the specified type. |
+| Interaction attributes | - `READ`: View the attribute and its value. - `READ_MASKED`: View the attribute with its value masked. - `CREATE`: Create the attribute when creating an interaction. |
+
+## Securing an interaction type
+
+The following example grants read access to the `SalesActivity` interaction type for `ROLE_SALES` and grants read, create, and delete access to `ROLE_SALES_ADMIN`.
+
+**HTTP method and endpoint**
+
+```
+POST {env_uri}/reltio/permissions/{tenant}
+```
+
+**Request body**
+
+```
+[
+  {
+    "uri": "configuration/interactionTypes/SalesActivity",
+    "permissions": [
+      {
+        "role": "ROLE_SALES",
+        "access": ["READ"]
+      },
+      {
+        "role": "ROLE_SALES_ADMIN",
+        "access": ["READ", "CREATE", "DELETE"]
+      }
+    ]
+  }
+]
+```
+
+## Securing interaction attributes
+
+The following example grants masked read access to the `Amount` attribute for `ROLE_SALES` and grants read and create access to the same attribute for `ROLE_SALES_ADMIN`. 
+
+> **Note:** If you configure an interaction attribute permission without a matching type-level permission for the parent interaction type, the interaction type remains hidden.
+
+**HTTP method and endpoint**
+
+```
+POST {env_uri}/reltio/permissions/{tenant}
+```
+
+**Request body**
+
+```
+[
+  {
+    "uri": "configuration/interactionTypes/SalesActivity/attributes/Amount",
+    "permissions": [
+      {
+        "role": "ROLE_SALES",
+        "access": ["READ_MASKED"]
+      },
+      {
+        "role": "ROLE_SALES_ADMIN",
+        "access": ["READ", "CREATE"]
+      }
+    ]
+  }
+]
+```
 
 **Related links**
 
@@ -77755,7 +77870,7 @@ These are the path and query request parameters:
 | `entitiesLimit` | No | Defines the number of entities to be processed from the source. |
 | `skipEntitiesCount` | No | Defines the number of entities to skip from the source file. |
 | `distributedTaskIndex` | No | Defines task index to start only. If not defined, all created tasks will be started automatically. |
-| `emails` | No | Defines a comma-separated list of emails to which a notification of completion will be sent. |
+| `emails` | No | Defines a comma-separated list of emails to which a notification of completion will be sent. If no email addresses are provided, the notification is sent to the user who created the task by default. |
 | `maxPotentialMatchesPerChunk` | No | External match goes through entities by chunk (10 entities), each chunk has a limitation for the maximum of potential matches found by chunk. Default value is 200. |
 | `rules` | No | Defines a comma separated set of match group URIs which must take part in the matching process. All other match groups will be ignored if this parameter is defined. Sample format: `rules=configuration/entityTypes/HCP/matchGroups/MatchByMiddleName,configuration/entityTypes/HCP/matchGroups/MatchByMiddleNameAndLastName` |
 | `cleanse` | No | If set to true, the API enriches the entities with the cleansed values for attributes. The cleansed entities are then matched with the entities in the tenant. The default value is false. |
@@ -84610,23 +84725,23 @@ Body:
 
 ---
 
-# Hierarchy management APIs
+# Materialized Hierarchy Management APIs
 
-> **Section:** Developer resources > Hiererchy Management APIs
+> **Section:** Developer resources > Materialized Hierarchy Management APIs
 
 
-**Source:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** hierarchy management apis overview, retrieve hierarchy views api, search hierarchy members api, retrieve object hierarchy paths, manage parent child connections, create hierarchy versions api, clone hierarchy instances api, delete hierarchy connections api, import hierarchy data bulk, hierarchies, connections, versions
 
 
 Learn about the hierarchy management APIs used to create and manage hierarchies.
 
-The Hierarchy management APIs provide access to node based hierarchy data in Reltio. It lets you retrieve hierarchy views, search hierarchy members, manage parent-child connections, work with hierarchies and hierarchy versions, and import hierarchy data in bulk.
+The Materialized Hierarchy Management APIs provide access to node based hierarchy data in Reltio. It lets you retrieve hierarchy views, search hierarchy members, manage parent-child connections, work with hierarchies and hierarchy versions, and import hierarchy data in bulk.
 
-Hierarchy management APIs complement the hierarchy experience in the Profile view. While the UI helps business users explore and manage hierarchies interactively, these APIs provide a programmatic way to retrieve the same structures and apply controlled changes at scale.
+Materialized Hierarchy Management APIs complement the hierarchy experience in the Profile view. While the UI helps business users explore and manage hierarchies interactively, these APIs provide a programmatic way to retrieve the same structures and apply controlled changes at scale.
 
-## Who are Hierarchy Management APIs for?
+## Who are Materialized Hierarchy Management APIs for?
 
 This content is curated for these Reltio user roles defined in topic [About roles](https://docs.reltio.com/en/roles/about-roles?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs):
 
@@ -84634,7 +84749,7 @@ DeveloperReltio ConfiguratorSystem Administrator
 
 ## What you can do with these APIs
 
-Hierarchy management APIs support the following use cases:
+Materialized Hierarchy Management APIs support the following use cases:
 
 - retrieve the hierarchy position of an object
 - return all available paths from an object to its roots
@@ -84653,35 +84768,35 @@ Hierarchy data can change over time and can exist in multiple versions. These AP
 
 ## List of APIs
 
-The following table lists the hierarchy management APIs and describes the purpose of each API.
+The following table lists the Materialized Hierarchy Management APIs and describes the purpose of each API.
 
 | API | Purpose |
 | --- | --- |
-| [Get hierarchy view for an object](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/get-hierarchy-view-for-an-object?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Returns one path from the requested object to a root in a hierarchy instance. |
-| [Get hierarchy paths for an object](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/get-hierarchy-paths-for-an-object?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Returns all available root paths for the requested object in a hierarchy instance. |
-| [List children of an entity in a hierarchy instance](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/list-children-of-an-entity-in-a-hierarchy-instance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Returns a flat list of child objects for the requested object. |
-| [List parent objects in a hierarchy instance](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/list-parents-objects-in-a-hierarchy-instance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Returns a flat list of parent objects for the requested object. |
-| [Search hierarchy labels in a hierarchy instance](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/search-hierarchy-labels-in-a-hierarchy-instance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Returns matching objects and their label paths in a hierarchy instance. |
-| [Get a hierarchy connection by ID](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/get-a-hierarchy-connection-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Returns the definition of a hierarchy connection. |
-| [Create hierarchy connections](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/create-hierarchy-connections?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Creates one or more hierarchy connections in a hierarchy instance. |
-| [Delete hierarchy connections](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/delete-hierarchy-connections?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Deletes one or more hierarchy connections. |
-| [List hierarchy instances for an object](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/list-hierarchy-instances-for-an-object?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Returns the hierarchy instances in which an object participates. |
-| [List hierarchies for an object](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/list-hierarchies-for-an-object?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Returns the hierarchies in which an object participates, without version details. |
-| [List hierarchy versions for an object](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/list-hierarchy-versions-for-an-object?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Returns the versions of a hierarchy in which an object participates. |
-| [Get a hierarchy by ID](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/get-a-hierarchy-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Returns hierarchy metadata. |
-| [List hierarchy versions](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/list-hierarchy-versions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Returns all versions for a hierarchy. |
-| [Get a hierarchy version by ID](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/get-a-hierarchy-version-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Returns metadata for a single hierarchy version. |
-| [Get a hierarchy instance by ID](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/get-a-hierarchy-instance-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Returns metadata for a hierarchy instance. |
-| [Create a hierarchy](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/create-a-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Creates a hierarchy and, optionally, its first version and first connection. |
-| [Create a hierarchy version](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/create-a-hierarchy-version?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Creates a hierarchy version and, optionally, its first connection. |
-| [Clone an unversioned hierarchy instance](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/clone-an-unversioned-hierarchy-instance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Creates a new hierarchy by cloning an existing hierarchy. |
-| [Clone a hierarchy version](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/clone-a-hierarchy-version?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Creates a new hierarchy version by cloning an existing hierarchy version. |
-| [Clone a versioned hierarchy instance](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/clone-a-versioned-hierarchy-instance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Creates a new hierarchy by cloning an existing hierarchy instance. |
-| [Update a hierarchy by ID](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/update-a-hierarchy-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Updates hierarchy metadata. |
-| [Update a hierarchy version by ID](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/update-a-hierarchy-version-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Updates hierarchy version metadata. |
-| [Delete a hierarchy by ID](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/delete-a-hierarchy-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Deletes a hierarchy. |
-| [Delete a hierarchy version by ID](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/delete-a-hierarchy-version-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Deletes a hierarchy version. |
-| [Import a hierarchy](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/import-a-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Imports hierarchy data from a CSV or JSON file. |
+| [Get hierarchy view for an object](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/get-hierarchy-view-for-an-object?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Returns one path from the requested object to a root in a hierarchy instance. |
+| [Get hierarchy paths for an object](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/get-hierarchy-paths-for-an-object?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Returns all available root paths for the requested object in a hierarchy instance. |
+| [List children of an entity in a hierarchy instance](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/list-children-of-an-entity-in-a-hierarchy-instance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Returns a flat list of child objects for the requested object. |
+| [List parent objects in a hierarchy instance](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/list-parents-objects-in-a-hierarchy-instance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Returns a flat list of parent objects for the requested object. |
+| [Search hierarchy labels in a hierarchy instance](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/search-hierarchy-labels-in-a-hierarchy-instance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Returns matching objects and their label paths in a hierarchy instance. |
+| [Get a hierarchy connection by ID](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/get-a-hierarchy-connection-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Returns the definition of a hierarchy connection. |
+| [Create hierarchy connections](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/create-hierarchy-connections?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Creates one or more hierarchy connections in a hierarchy instance. |
+| [Delete hierarchy connections](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/delete-hierarchy-connections?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Deletes one or more hierarchy connections. |
+| [List hierarchy instances for an object](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/list-hierarchy-instances-for-an-object?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Returns the hierarchy instances in which an object participates. |
+| [List hierarchies for an object](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/list-hierarchies-for-an-object?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Returns the hierarchies in which an object participates, without version details. |
+| [List hierarchy versions for an object](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/list-hierarchy-versions-for-an-object?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Returns the versions of a hierarchy in which an object participates. |
+| [Get a hierarchy by ID](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/get-a-hierarchy-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Returns hierarchy metadata. |
+| [List hierarchy versions](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/list-hierarchy-versions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Returns all versions for a hierarchy. |
+| [Get a hierarchy version by ID](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/get-a-hierarchy-version-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Returns metadata for a single hierarchy version. |
+| [Get a hierarchy instance by ID](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/get-a-hierarchy-instance-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Returns metadata for a hierarchy instance. |
+| [Create a hierarchy](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/create-a-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Creates a hierarchy and, optionally, its first version and first connection. |
+| [Create a hierarchy version](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/create-a-hierarchy-version?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Creates a hierarchy version and, optionally, its first connection. |
+| [Clone an unversioned hierarchy instance](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/clone-an-unversioned-hierarchy-instance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Creates a new hierarchy by cloning an existing hierarchy. |
+| [Clone a hierarchy version](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/clone-a-hierarchy-version?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Creates a new hierarchy version by cloning an existing hierarchy version. |
+| [Clone a versioned hierarchy instance](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/clone-a-versioned-hierarchy-instance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Creates a new hierarchy by cloning an existing hierarchy instance. |
+| [Update a hierarchy by ID](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/update-a-hierarchy-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Updates hierarchy metadata. |
+| [Update a hierarchy version by ID](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/update-a-hierarchy-version-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Updates hierarchy version metadata. |
+| [Delete a hierarchy by ID](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/delete-a-hierarchy-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Deletes a hierarchy. |
+| [Delete a hierarchy version by ID](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/delete-a-hierarchy-version-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Deletes a hierarchy version. |
+| [Import a hierarchy](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/import-a-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Imports hierarchy data from a CSV or JSON file. |
 
 
 
@@ -84689,10 +84804,10 @@ The following table lists the hierarchy management APIs and describes the purpos
 
 # Clone an unversioned hierarchy instance
 
-> **Section:** Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+> **Section:** Developer resources > Materialized Hierarchy Management APIs > Materialized Hierarchy Management APIs
 
 
-**Source:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/clone-an-unversioned-hierarchy-instance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/clone-an-unversioned-hierarchy-instance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** clone hierarchy by id, clone existing hierarchy api, create cloned hierarchy from existing, clone hierarchy with versions, clone hierarchy with connections, copy hierarchy definition and connections, post hierarchy clone endpoint, create versioned cloned hierarchy, hierarchy clone response fields, cloning, versioning, connections
 
@@ -84810,7 +84925,7 @@ The following example shows the response body.
 
 **Related links**
 
-- [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Materialized Hierarchy Management APIs](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 
 
@@ -84818,10 +84933,10 @@ The following example shows the response body.
 
 # Clone a versioned hierarchy instance
 
-> **Section:** Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+> **Section:** Developer resources > Materialized Hierarchy Management APIs > Materialized Hierarchy Management APIs
 
 
-**Source:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/clone-a-versioned-hierarchy-instance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/clone-a-versioned-hierarchy-instance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** clone hierarchy instance api, clone existing hierarchy instance, create hierarchy from instance clone, copy hierarchy instance with connections, clone versioned hierarchy instance, post hierarchy instance clone endpoint, create cloned hierarchy definition, set version metadata for clone, hierarchy instance clone response fields, cloning, versioning, instanceid
 
@@ -84939,7 +85054,7 @@ The following example shows the response body.
 
 **Related links**
 
-- [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Materialized Hierarchy Management APIs](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 
 
@@ -84947,10 +85062,10 @@ The following example shows the response body.
 
 # Clone a hierarchy version
 
-> **Section:** Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+> **Section:** Developer resources > Materialized Hierarchy Management APIs > Materialized Hierarchy Management APIs
 
 
-**Source:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/clone-a-hierarchy-version?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/clone-a-hierarchy-version?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** clone hierarchy version api, clone existing hierarchy version, create new version from clone, post hierarchy version clone endpoint, copy hierarchy version with connections, clone hierarchy version by id, submit hierarchy version clone request, set cloned version metadata, hierarchy version clone response fields, cloning, versionid, instanceid
 
@@ -85048,7 +85163,7 @@ The following example shows the response body.
 
 **Related links**
 
-- [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Materialized Hierarchy Management APIs](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 
 
@@ -85056,10 +85171,10 @@ The following example shows the response body.
 
 # Create hierarchy connections
 
-> **Section:** Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+> **Section:** Developer resources > Materialized Hierarchy Management APIs > Materialized Hierarchy Management APIs
 
 
-**Source:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/create-hierarchy-connections?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/create-hierarchy-connections?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** create hierarchy connections api, post hierarchy connections endpoint, create parent child connections, bulk create hierarchy connections, set effective dates on connections, create hierarchy connection definitions, submit hierarchy connection request body, return created hierarchy connections, use hierarchy connections post, connections, parentid, childid
 
@@ -85168,7 +85283,7 @@ The following example shows the response body.
 
 **Related links**
 
-- [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Materialized Hierarchy Management APIs](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 
 
@@ -85176,10 +85291,10 @@ The following example shows the response body.
 
 # Create a hierarchy
 
-> **Section:** Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+> **Section:** Developer resources > Materialized Hierarchy Management APIs > Materialized Hierarchy Management APIs
 
 
-**Source:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/create-a-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/create-a-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** create hierarchy api, create hierarchy definition, create hierarchy with version, create hierarchy with connection, create first hierarchy connection, create hierarchy version and instance, submit hierarchy create request, hierarchy create response fields, create versioned hierarchy, versioning, hierarchyid, firstconnection
 
@@ -85320,7 +85435,7 @@ The following example shows the response body.
 
 **Related links**
 
-- [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Materialized Hierarchy Management APIs](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 
 
@@ -85328,10 +85443,10 @@ The following example shows the response body.
 
 # Create a hierarchy version
 
-> **Section:** Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+> **Section:** Developer resources > Materialized Hierarchy Management APIs > Materialized Hierarchy Management APIs
 
 
-**Source:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/create-a-hierarchy-version?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/create-a-hierarchy-version?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** create hierarchy version api, create version for existing hierarchy, create hierarchy version with connection, post hierarchy versions endpoint, submit hierarchy version request body, set effective dates for version, create first connection in version, hierarchy version create response fields, use hierarchy versions create api, versioning, versionid, firstconnection
 
@@ -85453,7 +85568,7 @@ The following example shows the response body.
 
 **Related links**
 
-- [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Materialized Hierarchy Management APIs](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 
 
@@ -85461,10 +85576,10 @@ The following example shows the response body.
 
 # Delete hierarchy connections
 
-> **Section:** Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+> **Section:** Developer resources > Materialized Hierarchy Management APIs > Materialized Hierarchy Management APIs
 
 
-**Source:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/delete-hierarchy-connections?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/delete-hierarchy-connections?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** delete hierarchy connections api, delete connections in hierarchy instance, remove hierarchy connections by id, bulk delete hierarchy connections, submit hierarchy connection delete request, use hierarchy connections delete api, delete hierarchy links by connection id, hierarchy connection delete response, delete connection list in hierarchy, deletion, connectionid, targetobject
 
@@ -85542,7 +85657,7 @@ The following example shows the response body.
 
 **Related links**
 
-- [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Materialized Hierarchy Management APIs](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 
 
@@ -85550,10 +85665,10 @@ The following example shows the response body.
 
 # Delete a hierarchy by ID
 
-> **Section:** Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+> **Section:** Developer resources > Materialized Hierarchy Management APIs > Materialized Hierarchy Management APIs
 
 
-**Source:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/delete-a-hierarchy-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/delete-a-hierarchy-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** delete hierarchy by id, hierarchy delete api, delete hierarchy with api, remove hierarchy by hierarchy id, delete hierarchy endpoint, submit hierarchy delete request, hierarchy delete response fields, delete hierarchy definition, delete hierarchy using bearer token, deletion, hierarchyid, deleted
 
@@ -85613,7 +85728,7 @@ The following example shows the response body.
 
 **Related links**
 
-- [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Materialized Hierarchy Management APIs](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 
 
@@ -85621,10 +85736,10 @@ The following example shows the response body.
 
 # Delete a hierarchy version by ID
 
-> **Section:** Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+> **Section:** Developer resources > Materialized Hierarchy Management APIs > Materialized Hierarchy Management APIs
 
 
-**Source:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/delete-a-hierarchy-version-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/delete-a-hierarchy-version-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** get hierarchy by id, retrieve hierarchy definition by id, hierarchy api by id, return hierarchy details by id, get hierarchy metadata response, retrieve hierarchy audit fields, identify versioned hierarchy definition, get single instance hierarchy, hierarchy response fields, hierarchyid, versioning, singleinstanceid
 
@@ -85689,7 +85804,7 @@ The following example shows the response body.
 
 **Related links**
 
-- [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Materialized Hierarchy Management APIs](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 
 
@@ -85697,10 +85812,10 @@ The following example shows the response body.
 
 # Get a hierarchy by ID
 
-> **Section:** Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+> **Section:** Developer resources > Materialized Hierarchy Management APIs > Materialized Hierarchy Management APIs
 
 
-**Source:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/get-a-hierarchy-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/get-a-hierarchy-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** get hierarchy by id, retrieve hierarchy definition by id, hierarchy api by id, return hierarchy details by id, get hierarchy metadata response, retrieve hierarchy audit fields, identify versioned hierarchy definition, get single instance hierarchy, hierarchy response fields, hierarchyid, versioning, singleinstanceid
 
@@ -85773,7 +85888,7 @@ The following example shows the response body.
 
 **Related links**
 
-- [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Materialized Hierarchy Management APIs](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 
 
@@ -85781,10 +85896,10 @@ The following example shows the response body.
 
 # Get a hierarchy instance by ID
 
-> **Section:** Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+> **Section:** Developer resources > Materialized Hierarchy Management APIs > Materialized Hierarchy Management APIs
 
 
-**Source:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/get-a-hierarchy-instance-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/get-a-hierarchy-instance-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** get hierarchy instance by id, retrieve hierarchy instance details, hierarchy instance api by id, return hierarchy instance metadata, get versioned hierarchy instance, view hierarchy instance version, retrieve hierarchy instance audit fields, get hierarchy version inside instance, hierarchy instance response fields, instanceid, versionid, versioning
 
@@ -85885,7 +86000,7 @@ The following example shows the response body.
 
 **Related links**
 
-- [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Materialized Hierarchy Management APIs](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 
 
@@ -85893,10 +86008,10 @@ The following example shows the response body.
 
 # Get hierarchy paths for an object
 
-> **Section:** Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+> **Section:** Developer resources > Materialized Hierarchy Management APIs > Materialized Hierarchy Management APIs
 
 
-**Source:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/get-hierarchy-paths-for-an-object?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/get-hierarchy-paths-for-an-object?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** get hierarchy paths for object, hierarchy path view api, return all paths to roots, retrieve hierarchy paths by date, get object paths in hierarchy, retrieve all root paths, hierarchy instance path view, use hierarchy pathview api, hierarchy path response fields, hierarchy, pathview, roots
 
@@ -85992,7 +86107,7 @@ The following example shows the response body.
 
 **Related links**
 
-- [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Materialized Hierarchy Management APIs](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 
 
@@ -86000,10 +86115,10 @@ The following example shows the response body.
 
 # Get a hierarchy version by ID
 
-> **Section:** Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+> **Section:** Developer resources > Materialized Hierarchy Management APIs > Materialized Hierarchy Management APIs
 
 
-**Source:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/get-a-hierarchy-version-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/get-a-hierarchy-version-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** get hierarchy version by id, retrieve hierarchy version details, hierarchy versions api by id, return hierarchy version metadata, get version status and dates, retrieve hierarchy version response, get hierarchy version audit fields, view hierarchy version definition, get hierarchy version instance, versionid, instanceid, versioning
 
@@ -86083,7 +86198,7 @@ The following example shows the response body.
 
 **Related links**
 
-- [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Materialized Hierarchy Management APIs](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 
 
@@ -86091,10 +86206,10 @@ The following example shows the response body.
 
 # List hierarchy versions
 
-> **Section:** Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+> **Section:** Developer resources > Materialized Hierarchy Management APIs > Materialized Hierarchy Management APIs
 
 
-**Source:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/list-hierarchy-versions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/list-hierarchy-versions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** get hierarchy by id, retrieve hierarchy definition by id, hierarchy api by id, return hierarchy details by id, get hierarchy metadata response, retrieve hierarchy audit fields, identify versioned hierarchy definition, get single instance hierarchy, hierarchy response fields, hierarchyid, versioning, singleinstanceid
 
@@ -86185,7 +86300,7 @@ The following example shows the response body.
 
 **Related links**
 
-- [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Materialized Hierarchy Management APIs](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 
 
@@ -86193,10 +86308,10 @@ The following example shows the response body.
 
 # Get hierarchy view for an object
 
-> **Section:** Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+> **Section:** Developer resources > Materialized Hierarchy Management APIs > Materialized Hierarchy Management APIs
 
 
-**Source:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/get-hierarchy-view-for-an-object?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/get-hierarchy-view-for-an-object?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** get hierarchy view for object, hierarchy view api for object, return object path to root, retrieve hierarchy path by instance, get hierarchy state by date, use torootonly hierarchy option, hierarchy instance object view api, retrieve parent child hierarchy path, hierarchy view response fields, hierarchy, instance, path
 
@@ -86333,7 +86448,7 @@ The following example shows the response body.
 
 **Related links**
 
-- [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Materialized Hierarchy Management APIs](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 
 
@@ -86341,10 +86456,10 @@ The following example shows the response body.
 
 # Import a hierarchy
 
-> **Section:** Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+> **Section:** Developer resources > Materialized Hierarchy Management APIs > Materialized Hierarchy Management APIs
 
 
-**Source:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/import-a-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/import-a-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** create hierarchy api, create hierarchy definition, create hierarchy with version, create hierarchy with connection, create first hierarchy connection, create hierarchy version and instance, submit hierarchy create request, hierarchy create response fields, create versioned hierarchy, versioning, hierarchyid, firstconnection
 
@@ -86476,7 +86591,7 @@ The following example shows the response body.
 
 **Related links**
 
-- [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Materialized Hierarchy Management APIs](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 
 
@@ -86484,10 +86599,10 @@ The following example shows the response body.
 
 # Search hierarchy labels in a hierarchy instance
 
-> **Section:** Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+> **Section:** Developer resources > Materialized Hierarchy Management APIs > Materialized Hierarchy Management APIs
 
 
-**Source:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/search-hierarchy-labels-in-a-hierarchy-instance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/search-hierarchy-labels-in-a-hierarchy-instance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** search hierarchy labels in instance, hierarchy label search api, return matching hierarchy entries, find hierarchy labels by query, retrieve matched labels and paths, search hierarchy labels by date, use label search api, get hierarchy search response fields, return label paths for entity, labelsearch, pathlabels, entityid
 
@@ -86572,7 +86687,7 @@ The following example shows the response body.
 
 **Related links**
 
-- [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Materialized Hierarchy Management APIs](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 
 
@@ -86580,10 +86695,10 @@ The following example shows the response body.
 
 # List children of an entity in a hierarchy instance
 
-> **Section:** Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+> **Section:** Developer resources > Materialized Hierarchy Management APIs > Materialized Hierarchy Management APIs
 
 
-**Source:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/list-children-of-an-entity-in-a-hierarchy-instance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/list-children-of-an-entity-in-a-hierarchy-instance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** list child objects in hierarchy instance, children view api for hierarchy, return flat list of child objects, get child objects for entity, retrieve hierarchy children by date, list direct children in hierarchy, get hierarchy children response fields, use children api in hierarchy, retrieve child connections in hierarchy, children, connectionid, hierarchies
 
@@ -86675,7 +86790,7 @@ The following example shows the response body.
 
 **Related links**
 
-- [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Materialized Hierarchy Management APIs](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 
 
@@ -86683,10 +86798,10 @@ The following example shows the response body.
 
 # List parents objects in a hierarchy instance
 
-> **Section:** Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+> **Section:** Developer resources > Materialized Hierarchy Management APIs > Materialized Hierarchy Management APIs
 
 
-**Source:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/list-parents-objects-in-a-hierarchy-instance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/list-parents-objects-in-a-hierarchy-instance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** list parent objects in hierarchy, parents view api for hierarchy, return flat list of parents, get parent objects for entity, retrieve hierarchy parents by date, list direct parents in hierarchy, get hierarchy parents response fields, use parents api in hierarchy, retrieve parent connections in hierarchy, parents, connections, instances
 
@@ -86778,7 +86893,7 @@ The following example shows the response body.
 
 **Related links**
 
-- [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Materialized Hierarchy Management APIs](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 
 
@@ -86786,10 +86901,10 @@ The following example shows the response body.
 
 # Update a hierarchy by ID
 
-> **Section:** Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+> **Section:** Developer resources > Materialized Hierarchy Management APIs > Materialized Hierarchy Management APIs
 
 
-**Source:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/update-a-hierarchy-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/update-a-hierarchy-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** update hierarchy by id, hierarchy update api, update hierarchy metadata, change hierarchy name and type, enable hierarchy versioning setting, put hierarchy endpoint by id, hierarchy update request body, hierarchy update response fields, update hierarchy versioning option, versioning, hierarchyid, singleinstanceid
 
@@ -86874,7 +86989,7 @@ The following example shows the response body.
 
 **Related links**
 
-- [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Materialized Hierarchy Management APIs](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 
 
@@ -86882,10 +86997,10 @@ The following example shows the response body.
 
 # Update a hierarchy version by ID
 
-> **Section:** Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+> **Section:** Developer resources > Materialized Hierarchy Management APIs > Materialized Hierarchy Management APIs
 
 
-**Source:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/update-a-hierarchy-version-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/update-a-hierarchy-version-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** update hierarchy version by id, hierarchy version update api, change hierarchy version metadata, put hierarchy version endpoint, update version status and dates, edit hierarchy version description, update hierarchy version context, modify hierarchy version by id, hierarchy version response fields, versionid, versioning, metadata
 
@@ -86983,7 +87098,7 @@ The following example shows the response body.
 
 **Related links**
 
-- [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Materialized Hierarchy Management APIs](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 
 
@@ -86991,10 +87106,10 @@ The following example shows the response body.
 
 # Get a hierarchy connection by ID
 
-> **Section:** Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+> **Section:** Developer resources > Materialized Hierarchy Management APIs > Materialized Hierarchy Management APIs
 
 
-**Source:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/get-a-hierarchy-connection-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/get-a-hierarchy-connection-by-id?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** get hierarchy connection by id, hierarchy connections api, retrieve hierarchy connection details, get parent child connection by id, return hierarchy connection definition, hierarchy connection effective dates, retrieve hierarchy connection audit fields, use hierarchy connection get api, hierarchy connection response fields, connectionid, parentid, childid
 
@@ -87068,7 +87183,7 @@ The following example shows the response body.
 
 **Related links**
 
-- [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Materialized Hierarchy Management APIs](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 
 
@@ -87076,10 +87191,10 @@ The following example shows the response body.
 
 # List hierarchies for an object
 
-> **Section:** Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+> **Section:** Developer resources > Materialized Hierarchy Management APIs > Materialized Hierarchy Management APIs
 
 
-**Source:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/list-hierarchies-for-an-object?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/list-hierarchies-for-an-object?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** list hierarchies for object, hierarchy listing api for object, return hierarchies that include object, get hierarchies by entity id, find hierarchies containing object, retrieve hierarchy list for object, identify versioned hierarchies for object, list hierarchy names and types, hierarchy listing response fields, hierarchyid, versioning, singleinstanceid
 
@@ -87153,7 +87268,7 @@ The following example shows the response body.
 
 **Related links**
 
-- [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Materialized Hierarchy Management APIs](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 
 
@@ -87161,10 +87276,10 @@ The following example shows the response body.
 
 # List hierarchy instances for an object
 
-> **Section:** Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+> **Section:** Developer resources > Materialized Hierarchy Management APIs > Materialized Hierarchy Management APIs
 
 
-**Source:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/list-hierarchy-instances-for-an-object?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/list-hierarchy-instances-for-an-object?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** list hierarchy instances for object, hierarchy instances listing api, return hierarchy instances by object, find hierarchy instances containing object, get object hierarchy instances, retrieve hierarchy instance details, identify versioned hierarchy instances, list hierarchy instance labels, hierarchy instance response fields, instanceid, versioning, hierarchytypes
 
@@ -87242,7 +87357,7 @@ The following example shows the response body.
 
 **Related links**
 
-- [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Materialized Hierarchy Management APIs](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 
 
@@ -87250,10 +87365,10 @@ The following example shows the response body.
 
 # List hierarchy versions for an object
 
-> **Section:** Developer resources > Hiererchy Management APIs > Hierarchy management APIs
+> **Section:** Developer resources > Materialized Hierarchy Management APIs > Materialized Hierarchy Management APIs
 
 
-**Source:** https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis/list-hierarchy-versions-for-an-object?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/list-hierarchy-versions-for-an-object?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** list hierarchy versions for object, hierarchy versions listing api, return versions for hierarchy, get hierarchy versions by object, find hierarchy versions containing object, retrieve version list for hierarchy, list version names by hierarchy, get hierarchy version response, use hierarchy versions api, versioning, versionid, hierarchyid
 
@@ -87319,7 +87434,7 @@ The following example shows the response body.
 
 **Related links**
 
-- [Hierarchy management APIs](https://docs.reltio.com/en/developer-resources/hiererchy-management-apis/hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Materialized Hierarchy Management APIs](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 
 
@@ -125230,17 +125345,20 @@ Headers: Authorization: Bearer {your-access-token}
 **Source:** https://docs.reltio.com/en/developer-resources/relation-management-apis/relation-management-apis-at-a-glance/relations-api/edit-relationship?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 
-It is possible to make granular changes for a relationship:
+Learn about the Edit Relationship capability and how it updates selected parts of an existing relationship object without replacing the full object.
 
-- Change Attributes
-- Add/Update/Delete Crosswalks
-- Change object activeness
+The Edit Relationship capability updates selected parts of an existing relationship object while preserving unchanged data. You can use this capability to modify relationship attributes and maintain source crosswalks.
 
-In the nearest future we will support override whole relation object representing a certain source system.
+A relationship object links entities in the graph. It can include attributes, crosswalks, tags, and optional `startDate` and `endDate` values that define whether the relationship is active. For more information, see [Relations API](https://docs.reltio.com/en/developer-resources/relation-management-apis/relation-management-apis-at-a-glance/relations-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
-**Related links**
+**Supported updates**
 
-- [Using Activeness](https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/managing-object-deletion-and-activeness/using-activeness?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+The following updates are currently supported for a relationship object:
+
+- [Change Attributes](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/attribute-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs): Insert, update, delete, pin, or ignore attribute values in the relationship.
+- [Add/Update/Delete Crosswalks](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/crosswalks-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs): Add, update, or delete crosswalks associated with source systems.
+
+You can combine multiple changes in a single request by using a cumulative relations update. For more information, see, [Cumulative Relations Update](https://docs.reltio.com/en/developer-resources/relation-management-apis/relation-management-apis-at-a-glance/relations-api/cumulative-relations-update?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 
 
@@ -150563,6 +150681,8 @@ Learn about the Interactions table in the Profile view.
 
 An interaction represents an event (or transaction) that occurs at a particular moment, such as, making a retail purchase, opening an email, opening a support case, or, visiting a website. Interactions can be associated with multiple entities (actors), have an interaction type, and have associated attributes. Effectively, interactions represent transactional data associated with an entity.
 
+The Interactions table displays only the interaction types and attributes permitted for your role. For more information, see [Interaction permissions](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/configuration-api/role-based-security/metadata-security?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
 Configure your **Profile view** to include the **Interactions view table**. Update your UI configuration file to add the configuration for interactions, for example:
 
 ```
@@ -153072,7 +153192,7 @@ Use this integration when you need to sync and maintain the latest data related 
 
 ## Where do I find Reltio Integration for Salesforce (with RIH)?
 
-Reltio Integration for Salesforce (with RIH) are available from Reltio Integration Hub. Access RIH from **Applications > Inetgration Hub**.
+Reltio Integration for Salesforce (with RIH) are available from Reltio Integration Hub. Access RIH from **Applications > Integration Hub**.
 
 
 
@@ -155948,6 +156068,7 @@ The following table displays the available versions of the managed package.
 
 | Version number | Date of availability | Description |
 | --- | --- | --- |
+| **1.10040** | 23 Jul 2026 | Enabled the following OAuth security controls:  - PKCE (Proof Key for Code Exchange) - Refresh Token Rotation - 30-day idle refresh token expiration - IP allowlist for refresh token requests      This security update brings the Reltio Connected App in compliance with Salesforce's OAuth security requirements. Installing this update requires no additional configuration, and your existing Salesforce integration continues to work as expected.  Download managed package: [1.10040](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tJ50000000aA3) |
 | **1.10039** | 18-03-2026 | Bulk Sync by IDs now processes records in configurable batches instead of a single transaction. This update helps prevent heap size issues during large sync operations and improves processing performance when syncing higher record volumes.  Download managed package: [1.10039](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tJ50000000Zol) |
 | **1.10038** | 20-03-2026 | Improved performance for sync queue pickup by optimizing how eligible records are selected for processing. This update helps reduce latency and improves reliability during sync operations. |
 | **1.10037** | 12-03-2026 | The managed Permission Set for Bulk Sync was corrected to remove references that block installation or upgrade in some Salesforce orgs. This update helps ensure the package installs successfully and allows you to use the packaged Permission Set for consistent Bulk Sync behavior. |
@@ -171666,10 +171787,7 @@ The Subscription controls how changes in the DT are applied to the CT. There are
     "eventsConfiguration": "{eventsConfiguration}",
     "importRelationsConfig": "{importConnectionConfiguration}",
     "groupContributors": "{groupContributors}",
-    "supportEmail": "{email}",
-    "fullImportLogCF": "{cassandraColumnFamily}",
-    "fullImportLogESIndex": "{elasticsearchIndex}"
-  }
+    "supportEmail": "{email}"}
 ]
 ```
 
@@ -171683,6 +171801,8 @@ Explanations for some of the important parameters in the **subscriptions** API a
 6. `eventsConfiguration` - This controls which events in the DT should be processed for each CT.
 7. `synchronizationConfig` - This controls how synchronization between the DT and CT should be handled. You can choose to either do the transfer in real time or do it in batch mode. You can also specify which DT match rule should be used for matching with the CT.
 8. `importRelationsConfig` - This specifies how changes to relations in the DT should be handled.
+
+`dataTenantId` and `customerTenantId` also determine role-based authorization for subscription creation. Creating a subscription requires `ROLE_DTSS_CT_SUBSCRIPTION_MANAGER` scoped to the `customerTenantId` and `ROLE_DTSS_DT_SUBSCRIPTION_MANAGER` scoped to the `dataTenantId` in this configuration. For more information, see [Subscriptions API](https://docs.reltio.com/en/applications/data-integrations/data-enrichment-integrations-at-a-glance/reltio-data-tenant-subscription-service-dtss-at-a-glance/reltio-dtss-set-up/subscription-configuration/subscriptions-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 For more information, see the following related topics: 
 
@@ -173022,9 +173142,11 @@ The filter can be used to control which records on the DT can be subscribed to a
 
 Learn about Subscriptions API to configure subscriptions between your data tenants and customer tenants.
 
-## Request
+## HTTP method and endpoint
 
-Tenant subscription enables you to request and obtain data from a Data Tenant to a Customer Tenant.
+Use the `Subscriptions API` to create DTSS subscriptions that share data from a Data Tenant (DT) to a Customer Tenant (CT).
+
+Use the following HTTP method and endpoint path to create a subscription:
 
 ```
 POST {DTSSURL}/subscriptions
@@ -173048,12 +173170,25 @@ POST {DTSSURL}/subscriptions
     "eventsConfiguration": "{eventsConfiguration}",
     "importRelationsConfig": "{importConnectionConfiguration}",
     "groupContributors": "{groupContributors}",
-    "supportEmail": "{email}",
-    "fullImportLogCF": "{cassandraColumnFamily}",
-    "fullImportLogESIndex": "{elasticsearchIndex}"
+    "supportEmail": "{email}"
   }
 ]
 ```
+
+## Authorization requirements
+
+Creating a subscription requires authorization for both tenants identified in the request body.
+
+| **Tenant** | **Required privilege** | **Permission resource** |
+| --- | --- | --- |
+| Customer Tenant (CT) | `CREATE` | `Dtss.Config.Subscription.Ct` |
+| Data Tenant (DT) | `CREATE` | `Dtss.Config.Subscription.Dt` |
+
+For customer self-service, assign `ROLE_DTSS_CT_SUBSCRIPTION_MANAGER` to the Customer Tenant identified by `customerTenant.id`. Assign `ROLE_DTSS_DT_SUBSCRIPTION_MANAGER` to the Data Tenant identified by `dataTenant.id`.
+
+DTSS authorizes each tenant independently, and both checks must pass. A role assigned to a different Customer Tenant or Data Tenant does not authorize the request.
+
+Existing supported administrator, `ROLE_DTSS_DEPLOYER`, Identity Builder, and legacy privileged access remains available during migration.
 
 ## Request Example
 
@@ -173070,7 +173205,6 @@ POST {DTSSURL}/subscriptions
     "configuration/sources/Veeva",
     "configuration/sources/AMA"
   ],
-  "id": "DTData_TestData",
   "mappings": [
     {
       "copyFromDT": "configuration/entityTypes/HCP",
@@ -202189,6 +202323,58 @@ This table identifies the Reltio access permissions for Reltio services, resourc
 
 ---
 
+# ROLE_DTSS_CT_SUBSCRIPTION_MANAGER Access permissions
+
+> **Section:** Objectives > Administer system > System administration at a glance > Access management at a glance > Access management reference > Authorization > System roles > Resource-specific roles
+
+
+**Source:** https://docs.reltio.com/en/objectives/administer-system/system-administration-at-a-glance/access-management-at-a-glance/access-management-reference/authorization/system-roles/resource-specific-roles/role_dtss_ct_subscription_manager-access-permissions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+
+Learn more about the ROLE_DTSS_CT_SUBSCRIPTION_MANAGER role and the access permissions it grants for tenant-scoped DTSS subscription management on a data tenant.
+
+## Access permissions
+
+The ROLE_DTSS_CT_SUBSCRIPTION_MANAGER system role grants tenant-scoped access for DTSS subscription management on a specific customer tenant (CT). Assign this role on the `customerTenantId` that the user is approved to manage.
+
+This role represents the CT-side permission for subscription creation. It allows a user to create a DTSS subscription for the assigned customer tenant only when the same user also has the matching DT-side subscription permission for the requested data tenant.
+
+This table identifies the DTSS services, resources, and sub resources defined for the ROLE_DTSS_CT_SUBSCRIPTION_MANAGER system role.
+
+| Permissions for | Access rights | Access privileges |
+| --- | --- | --- |
+| Creating and reading subscriptions for an assigned customer tenant | dtss:config.subscription.ct | `CREATE`, `READ` |
+
+
+
+---
+
+# ROLE_DTSS_DT_SUBSCRIPTION_MANAGER Access permissions
+
+> **Section:** Objectives > Administer system > System administration at a glance > Access management at a glance > Access management reference > Authorization > System roles > Resource-specific roles
+
+
+**Source:** https://docs.reltio.com/en/objectives/administer-system/system-administration-at-a-glance/access-management-at-a-glance/access-management-reference/authorization/system-roles/resource-specific-roles/role_dtss_dt_subscription_manager-access-permissions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+
+Learn more about the ROLE_DTSS_DT_SUBSCRIPTION_MANAGER role and the access permissions it grants for tenant-scoped DTSS subscription management on a data tenant.
+
+The ROLE_DTSS_DT_SUBSCRIPTION_MANAGER system role grants tenant-scoped access for DTSS subscription management on a specific data tenant (DT). Assign this role on the dataTenantId that the user is approved to use as the source tenant for DTSS subscriptions.
+
+This role represents the DT-side permission for subscription creation. It allows a user to create a DTSS subscription from the assigned data tenant only when the same user also has the matching CT-side subscription permission for the requested customer tenant.
+
+## Access permissions
+
+This table identifies the DTSS services, resources, and sub resources defined for the ROLE_DTSS_DT_SUBSCRIPTION_MANAGER system role.
+
+| Permissions for | Access rights | Access privileges |
+| --- | --- | --- |
+| Creating and reading subscriptions for an assigned customer tenant | dtss:config.subscription.dt | `CREATE`, `READ` |
+
+
+
+---
+
 # ROLE_ADMIN_MCP Access permissions
 
 > **Section:** Objectives > Administer system > System administration at a glance > Access management at a glance > Access management reference > Authorization > System roles > Resource-specific roles
@@ -202750,9 +202936,11 @@ Learn about ROLE_DTSS_DEPLOYER role to manage access permissions for <x> Reltio 
 
 Assign roles to user and group accounts to grant them permissions (access rights and privileges). For more information, see topic [System roles](https://docs.reltio.com/en/objectives/administer-system/system-administration-at-a-glance/access-management-at-a-glance/access-management-reference/authorization/system-roles?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
-The ROLE_DTSS_DEPLOYER system role grants permissions for creating new subscriptions and registering new Customer Tenant (CT) and Reltio Data Tenant (DT) in the Reltio Data Tenant Subscription Service (DTSS). You must also grant the ROLE_ADMIN_TENANT role for the CT and DT to this user.
+The ROLE_DTSS_DEPLOYER system role grants permissions for creating new subscriptions and registering new Customer Tenant (CT) and Reltio Data Tenant (DT) in the Reltio Data Tenant Subscription Service (DTSS). You must also grant the ROLE_ADMIN_TENANT role for the CT and DT to this user. For new customer self-service subscriptions, assign `ROLE_DTSS_CT_SUBSCRIPTION_MANAGER` role on the customer tenant and `ROLE_DTSS_DT_SUBSCRIPTION_MANAGER` role on approved data tenants instead. For more information, see [ROLE_DTSS_CT_SUBSCRIPTION_MANAGER Access permissions](https://docs.reltio.com/en/objectives/administer-system/system-administration-at-a-glance/access-management-at-a-glance/access-management-reference/authorization/system-roles/resource-specific-roles/role_dtss_ct_subscription_manager-access-permissions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [ROLE_DTSS_DT_SUBSCRIPTION_MANAGER Access permissions](https://docs.reltio.com/en/objectives/administer-system/system-administration-at-a-glance/access-management-at-a-glance/access-management-reference/authorization/system-roles/resource-specific-roles/role_dtss_dt_subscription_manager-access-permissions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
-Permissions of this role can be set by default security endpoint, in example `POST - /permissions/{tenantId}` to add a permission, or/and can be changed by ROLE_DTSS_ADMIN
+Permissions of this role can be set by default security endpoint, in example `POST - /permissions/{tenantId}` to add a permission, or/and can be changed by ROLE_DTSS_ADMIN.
+
+> **Important:** DTSS provisioning no longer assigns `ROLE_DTSS_DEPLOYER` role by default for customer self-service. The `ROLE_DTSS_DEPLOYER` role is retained only for backward compatibility with existing users.
 
 This table identifies the Reltio access permissions for Reltio services, resources, and sub resources defined for the ROLE_DTSS_DEPLOYER system role.
 
@@ -204899,8 +205087,10 @@ Use either of these methods to define Data Validation Functions:
 | Finding entities with attributes having no values | Exist but Empty | `regexp(attributes.FirstName.value, '^\s*$')` | Attribute value must not be empty. |
 | Finding entities with attributes having space or any non-readable character like \n \t \r as values. | Has Non-Readable Characters | `regexp(attributes.FirstName.value, '(?s)^.*(?:\s\|\t).*$')` | Attribute value can’t contain space and non-readable characters. |
 | Finding entities with attributes having space as the prefix of the value. For example, `“ text“ ()`. | Space as prefix | `regexp(attributes.FirstName.value, '^\s+.*$')` | Attribute value can’t start with space. |
-| Finding attributes exceeding the 21 character value length. | Character length limit exceeded | `not(regexp(attributes.FirstName.value,'^.{0,21}$'))` | Attribute value has exceeded the 21 characters limit. |
+| Finding attributes exceeding the 21 character value length. | Character length limit exceeded | `not(regexp(attributes.FirstName.value,'^.{0,21}$'))` | Attribute value has exceeded the 21 characters limit. For new DVFs, use the `.length` virtual property instead of a regex-based length check. |
 | Finding entities with values containing special characters | Only English letters and numbers are enabled | `not(regexp(attributes.FirstName.value, '^[a-zA-Z0-9]+$'))` | Only English letters and numbers can be used in the value field. All other languages and characters aren’t enabled. |
+| Finding attributes exceeding a character value length using the length virtual property | FirstName length check | `gt(attributes.FirstName.length, 21)` | Attribute value has exceeded the 21 characters limit. Recommended over the regex-based approach. |
+| Finding entities with more than one value for an attribute that should have only one value | Single Email required | `gt(attributes.Email.count, 1)` | Email attribute must have only one value. |
 
 ## Defining Validation Functions in Reltio UI
 
@@ -206146,9 +206336,10 @@ The initials cleanser generates initials by extracting the first letter of each 
 }
 ```
 
-**Example**
+> **Note:** The `cleanseAttribute` field in the input and output mapping only supports the values `Name` and `Initial`. Custom values, such as `MiddleName` or `MiddleNameInitial`, are not supported, and the cleanser returns no output.
+> To generate initials from a middle name, map the source attribute to `cleanseAttribute: "Name"` in the input mapping, and set `cleanseAttribute` to "Initial" for the target attribute in the output mapping, regardless of the underlying attribute name.
 
-**Example**
+**Initials generation examples**
 
 | Option | Inputs (In) | Initials (Out) |
 | --- | --- | --- |
@@ -213832,6 +214023,8 @@ Use string functions in Data Validation Functions (DVF) to validate attributes t
 | `fuzzy` | The validation function checks if the attribute value is similar to the given value. This permits minor differences between the query and the intended value.  This function supports the NOT conditional operator, and it works with empty values. | `fuzzy(attributes.Name.value,'Smth')` |
 | `fullText` | The validation function checks if the attribute value is exactly the same as the given value. The search for the given value is case sensitive.  This function supports the NOT conditional operator, and it works with empty values. | `fullText(attributes.Name.value,'Smith')` |
 | `in` | The validation function checks that the attribute value exists in a list of static strings. If the validation is met then the appropriate validation message is displayed.  This function supports the NOT conditional operator, and it works with empty values.  > **Note:** If the attribute you want to validate is a string containing commas use the function `listEquals`. | `in(attributes.Gender.value,'Male','Female')` |
+| `.count` | The `.count` expression resolves to the number of OV-true instances of the attribute at runtime, for use as the compared value inside a comparison function such as `gt`, `gte`, `lt`, `lte`, or `equals`.  Unlike the other entries on this page, `.count` applies to any attribute regardless of its data type, not only string attributes.  If the attribute does not exist on the entity, `.count` resolves to `0` instead of throwing an error.  The surrounding comparison function supports the NOT conditional operator. | `gt(attributes.Phone.count, 0)` |
+| `.length` | The `.length` expression resolves to the character length of each OV-true value of the attribute at runtime, for use as the compared value inside a comparison function such as `gt`, `gte`, `lt`, `lte`, or `equals`.  Unlike the other entries on this page, `.length` applies to any attribute regardless of its data type, not only string attributes. For textual values, the length is the string length; for non-textual values (numeric, date), the length is computed from the value's string representation.  The surrounding comparison function supports the NOT conditional operator. | `gt(attributes.FirstName.length, 100)` |
 
 ## Regex function implementation
 
@@ -217321,7 +217514,7 @@ Before editing the properties object:
 | `headerColor` (optional) | Specifies the background color of the UI header. | String | `headerColor: "#002855"` |
 | `i18n` (optional) | Map from locale to translation file URL. | Object (key=locale, value=file URL) | `i18n: { en: "https://reltio-ui-localization.s3.amazonaws.com/en.json" }` |
 | `logo` (optional) | Specifies the link to the image that is displayed on the top-left corner of the screen. The height of the icon should be 35 px or less. | String (URL) | `logo: "https://mysite.com/my-logo.png"` |
-| `lookups` | Lookup configuration. **showCode**: boolean  **autocomplete** (optional): object with fields:  -     **includeAttributes** (optional): array of string -     **excludeAttributes** (optional): array of string | Object with fields | `lookups: { showCode: true, autocomplete: { includeAttributes: ["configuration/entityTypes/HCO/attributes/Status"], excludeAttributes: ["configuration/entityTypes/HCO/attributes/Name"] } }` |
+| `lookups` | Configures the display and behavior of [lookup attributes](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-information-model/lookups-for-attribute-code-values?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) in the Reltio UI. The `lookups` object contains the following fields:  - `showCode`: Boolean. Determines whether lookup codes are displayed alongside their values. - `autocomplete` (optional): Object that controls automatic population of [dependent lookup](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-information-model/lookups-for-attribute-code-values/dependent-lookups?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) attributes. The `autocomplete` object contains the following fields:   - `includeAttributes` (optional): Enables auto-populate only for the listed attribute URIs.   - `excludeAttributes` (optional): Enables auto-populate for all lookup attributes except the listed attribute URIs. | Object with fields | `lookups: { showCode: true, autocomplete: { includeAttributes: ["configuration/entityTypes/HCO/attributes/Status"], excludeAttributes: ["configuration/entityTypes/HCO/attributes/Name"] } }` |
 | `masks` (optional) | Configuration for date and date-time masking.   - **dateMask** (optional): string - **dateTimeMask** (optional): string | Object with fields (optional) | `masks: { dateMask: "99-99-9999", dateTimeMask: "99-99-9999 99:99:99" }` |
 | `profileCheckUpdate` (optional) | Configuration options for checking updates after saving a profile.   - **autoUpdateInReadMode** (optional): array of string - **entityTypes** (optional): array of string | Object with fields | `profileCheckUpdate: { entityTypes: ["*"], autoUpdateInReadMode: ["HCP"] }` |
 | `showAttributeDescription` (optional) | Determines whether to show attribute descriptions in Profile and Relationship views. | Boolean | `showAttributeDescription: true` |
@@ -222104,7 +222297,7 @@ It is usually good housekeeping to order your rules so that the resulting matchG
 
 ## Consider Using Relevance-Based Matching
 
-In short, Relevance Based Matching uses an arithmetic scoring approach to rule design (rather than a boolean evaluation) and can often reduce your number of rules. Now that you have a clear strategy for your rules, consider converting your rules to a relevance based scheme. For more information, see [Relevance-Based Matching - Detailed Explanation](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/relevance-based-matching---detailed-explanation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+In short, Relevance Based Matching uses an arithmetic scoring approach to rule design (rather than a boolean evaluation) and can often reduce your number of rules. Now that you have a clear strategy for your rules, consider converting your rules to a relevance based scheme. For more information, see [Configuring relevance-based matching rules](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/configuring-relevance-based-matching-rules?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 ## Consider Using a Custom Rule Type
 
@@ -225447,7 +225640,7 @@ To merge profiles:
 2. In the **Profile** view, in the left navigation pane, select **Profile > Potential Matches** to view the **Potential Matches** perspective. Based on match rules, three profiles are displayed by default.
    *Image: pm_pmnewmain.png* The attribute value that matches with the main profile is highlighted in a different color (e.g., if the Email address in a profile matches the one in the main entity, then this value is highlighted). *Image: pm_attributevalmatch.png*
    You can also look at the **Relevance score** of each entity to determine if the profile is a match to the main entity.*Image: ui_pmrelevancescore.png*
-   > **Note:** The Relevance score is available only for those records that are matched based on the relevance based match rule type. For more information, see topic [Relevance-Based Matching - Detailed Explanation](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/relevance-based-matching---detailed-explanation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+   > **Note:** The Relevance score is available only for those records that are matched based on the relevance based match rule type. For more information, see topic [Configuring relevance-based matching rules](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/configuring-relevance-based-matching-rules?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 3. Select the **Show/Hide columns** option to select/deselect the columns that must be displayed in the table.
 4. Select any attribute that you want added in your Potential Match review.
 5. Select a row, and drag and drop it to the desired location. For example, if you want to view the **Sources** details right on the top of the table, you can drag it from its current position and drop it to the desired location.
@@ -225619,7 +225812,7 @@ To select profiles as potential matches for an entity:
    *Image: pm_newselectprofilerules.png*
    You can also sort the list of matches displayed here based on their relevance score and action label. In the dropdown list, select **Relevance score**, and by default the matches displayed here are sorted highest to lowest based on the relevance score. Click the arrow button to view the matches with the lowest score first, as shown below. You can also sort the matches based on the match action by selecting the **Match action** option from the drop down.
    *Image: pm_sortrelevancescore.png*
-   > **Note:** The Relevance score is available only for those records that are matched based on the relevance based match rule type. For more information, see topic [Relevance-Based Matching - Detailed Explanation](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/relevance-based-matching---detailed-explanation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+   > **Note:** The Relevance score is available only for those records that are matched based on the relevance based match rule type. For more information, see topic [Configuring relevance-based matching rules](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/configuring-relevance-based-matching-rules?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
    Profiles selected here are displayed in different columns next to the main entity in the **Potential Matches** page.
    > **Note:** You can resize the width of the columns here to suit your requirements. Hover your cursor over the boundary of the column till you see the double-headed arrow and drag it to the desired width. These changes are saved as user level preferences, and displayed as is when you log in the next time.
    If the profile you selected belongs to a data tenant, an icon indicating the data tenant is displayed for the profile in the **Potential Matches** page and in its respective profile column in the main page as shown in this image:
@@ -225693,7 +225886,7 @@ To raise a potential match review request:
 
 Learn how to search for profiles based on their relevance score and match action.
 
-When trying to review matches, it is easier if you can easily identify potential matches that are pending review i.e. identifying duplicate matches that can be merged with the main entity. Any additional piece of information that helps you identify such matches is a huge help. The relevance score and match action are two such attributes that can help you in your quest to identify matches.Relevance score, as the name indicates, helps you to determine how relevant or close an entity is as a potential match. For more information, see topic [Relevance-Based Matching - Detailed Explanation](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/relevance-based-matching---detailed-explanation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). The Match Action indicates the action you need to perform on a profile with regards to merging, such as **merge**, **review**, and so on. You can search for profiles that have a specific action designated to them.
+When trying to review matches, it is easier if you can easily identify potential matches that are pending review i.e. identifying duplicate matches that can be merged with the main entity. Any additional piece of information that helps you identify such matches is a huge help. The relevance score and match action are two such attributes that can help you in your quest to identify matches.Relevance score, as the name indicates, helps you to determine how relevant or close an entity is as a potential match. For more information, see topic [Configuring relevance-based matching rules](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/configuring-relevance-based-matching-rules?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). The Match Action indicates the action you need to perform on a profile with regards to merging, such as **merge**, **review**, and so on. You can search for profiles that have a specific action designated to them.
 
 Based on these two attributes, you can quickly identify the potential matches that are duplicates and resolve them. This is definitely helpful when you are dealing with a large amount of data that can have an equally high number of potential matches.
 
@@ -231307,7 +231500,7 @@ The main entity for which you want to view the potential matches. By default, th
 
 *Image: ml_match_aipower_2.png*
   - **Not a match** - If the record was marked as **Not a match** earlier, this field displays the "Not a match" label here.
-- **Relevance score** - the relevance score for the profile. Relevance-based match rule generates a score between two profiles. Based on the relevance score, the data steward can decide if the two profiles are a match or not. A profile can have similarities, as well as differences between them. In such instances, the data steward can look at the relevance score to decide whether to merge the profiles or not. For example, a score of 80% or more would help you to easily determine if the profile is a match. For more information on relevance score, see topic [Relevance-Based Matching - Detailed Explanation](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/relevance-based-matching---detailed-explanation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). *Image: ui_pmrelevancehoverover.png*
+- **Relevance score** - the relevance score for the profile. Relevance-based match rule generates a score between two profiles. Based on the relevance score, the data steward can decide if the two profiles are a match or not. A profile can have similarities, as well as differences between them. In such instances, the data steward can look at the relevance score to decide whether to merge the profiles or not. For example, a score of 80% or more would help you to easily determine if the profile is a match. For more information on relevance score, see topic [Configuring relevance-based matching rules](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/configuring-relevance-based-matching-rules?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). *Image: ui_pmrelevancehoverover.png*
 
   *Image: ui_pmrelevancescore.png*
 
@@ -231376,7 +231569,7 @@ Are you a data steward trying to avoid duplicate profiles? Use the Potential Mat
 
 The **Potential Matches** facet in the **Profile** view displays a summary of the potential matches for the selected profile. It displays a list of profiles that can be a match to the main entity, including details such as the profile name, entity ID, and the match rules that determined if the profile was a match.
 
-A relevance-based match rule generates a score between two profiles. Based on the relevance score, you can decide if the two profiles are a match or not. For example, a score of 80% or more would help you to easily determine if the profile is a match. For more information on relevance score, see topic [Relevance-Based Matching - Detailed Explanation](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/relevance-based-matching---detailed-explanation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). For more information on the details in the **Potential Matches** view, see topic [Potential Matches perspective](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/potential-matches-perspective?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+A relevance-based match rule generates a score between two profiles. Based on the relevance score, you can decide if the two profiles are a match or not. For example, a score of 80% or more would help you to easily determine if the profile is a match. For more information on relevance score, see topic [Configuring relevance-based matching rules](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/configuring-relevance-based-matching-rules?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). For more information on the details in the **Potential Matches** view, see topic [Potential Matches perspective](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/potential-matches-perspective?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 The relevance score is displayed along with a label that denotes if the match is strong or weak.
 
