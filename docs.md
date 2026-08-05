@@ -1,8 +1,8 @@
 # Reltio Documentation
 
-_Generated: 2026-07-31 02:14 UTC_
+_Generated: 2026-08-05 02:14 UTC_
 
-_Topics: 3362_
+_Topics: 3371_
 
 ---
 
@@ -15097,7 +15097,7 @@ AgentFlow now analyzes your prompts and contextually displays charts or graphs w
 
 This enhancement is available for all Reltio agents available in **AgentFlow**.
 
-For more information, see [Charts in AgentFlow](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/charts-in-agentflow?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+For more information, see [Charts and Diagrams in AgentFlow](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/charts-and-diagrams-in-agentflow?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 ## Materialized hierarchy support for GCP and Azure
 
@@ -15250,6 +15250,48 @@ Learn about the new features and enhancements introduced in this 2026.1.7.0 rele
 | 1 | Development (DEV) | July 24, 2026 |
 | 2 | Test (TEST) | July 24, 2026 |
 | 3 | Production (PRD) | July 31, 2026 |
+
+## Reltio IDE: Build Business Configurations Faster with AI
+
+Business configuration is the foundation of every Reltio implementation. As data models grow and evolve, teams need a faster, more intuitive way to design, manage, and deploy business configuration. That's why **Reltio IDE** was built: a modern, AI-powered development experience for VS Code and Cursor that helps data modelers, solution architects, and implementation teams build and evolve Reltio business configurations with greater speed, ease, and confidence.
+
+With Reltio IDE, you can:
+
+- **Build business configurations** faster with AI-assisted authoring that creates entities, relationships, hierarchies, and other objects using guided actions or natural-language prompts.
+- **Work more efficiently** with intelligent navigation that lets you quickly find, understand, and update any part of your business configuration.
+- **Reduce errors before deployment** with intelligent code completion and real-time validation that helps you build accurate configurations from the start.
+- **Understand your data model at a glance** with ontology visualization that provides a clear view of entities and their relationships.
+- **Deploy changes with confidence** by reviewing configuration differences before applying updates to your tenant.
+- **Improve collaboration and governance** with built-in version history that lets you compare configurations and understand who changed what and when.
+
+Reltio IDE is available as a `.vsix` file from the [Reltio GitHub repository](https://github.com/reltio-ai/reltio-ide/) for VS Code and Cursor.
+
+For more information, see [Reltio IDE overview](https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-ide-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+## Reltio AgentFlow mobile app now available for iOS and Android
+
+Reltio AgentFlow mobile app brings the AgentFlow conversational experience to your mobile device - so you can query and act on governed Reltio data on the go. Available natively for iOS and Android, the app lets you interact with Reltio agents and custom agents using text or voice, browse the marketplace, switch between tenants, and share conversations as PDF or Markdown.
+
+You can download the app from either of the following platforms: 
+
+- 
+
+  [App Store](https://apps.apple.com/in/app/reltio-agentflow/id6761982918) (iOS)
+- 
+
+  [Google Play](https://play.google.com/store/apps/details?id=com.reltio.agent_flow_mobile) (Android)
+
+
+
+For more information, see[Reltio AgentFlow Mobile overview](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/reltio-agentflow-mobile-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+## Diagrams in AgentFlow conversations
+
+AgentFlow can now interpret the context of your prompt and generate relevant diagrams such as relationship maps, flowcharts, and timelines. These diagrams make processes and structures easier to understand when a visual representation is more effective than a text description.
+
+You can interact with the rendered diagram, download it as a PNG or SVG image, and copy the diagram code for further use.
+
+For more information, see [Charts and Diagrams in AgentFlow](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/charts-and-diagrams-in-agentflow?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 ## Default completion email for External Match tasks
 
@@ -24200,7 +24242,7 @@ The following diagram shows the end-to-end process for building and publishing a
 
 An agent author writes a system prompt, selects the tools the agent is allowed to use, and tests the agent interactively before submitting it for review. When a publish request is submitted, the system automatically scans the system prompt for security violations. If a violation is detected, the request is auto-blocked before it reaches a reviewer. Valid requests move to a reviewer for approval. Once approved, the agent is published and immediately available in **Discover Agents**. End users can find it in the catalog and start a conversation with it right away.
 
-While a request is pending review, the agent is locked. If the author needs to make changes, they can withdraw the pending request at any time. Withdrawing returns the agent to **Draft** state and unlocks the editor. If an agent already has a published version, that version remains live while the new version is under review.
+While a request is pending review, the agent is locked. If aauthor needs to make changes, they can withdraw the pending request at any time. Withdrawing returns the agent to **Draft** state and unlocks the editor. If an agent already has a published version, that version remains live while the new version is under review.
 
 *Image: Agent Builder home page showing the All agents and Your drafts and requests tabs, empty state with no custom agents, and the Build new agent button in the top right corner*
 
@@ -24270,6 +24312,72 @@ The following behaviors apply when BYO LLM is enabled for your tenant:
 | --- | --- |
 | System Administrator | How to request BYO LLM setup, what credentials to provide, and how to view LLM configurations. For more information, see [Request BYO LLM setup and view your LLM configuration](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/bring-your-own-llm-for-agentflow-at-a-glance/request-byo-llm-setup-and-view-your-llm-configuration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
 | Data StewardData Product Owner | How to select a model when starting a conversation with an agent. For more information, see [Select a model in a conversation](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/bring-your-own-llm-for-agentflow-at-a-glance/select-a-model-in-a-conversation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
+
+
+
+---
+
+# Reltio AgentFlow Mobile overview
+
+> **Section:** Products > AgentFlow > Reltio AgentFlow™ at a glance
+
+
+**Source:** https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/reltio-agentflow-mobile-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** agentflow mobile, agentflow mobile app, ios android agentflow app, chat with ai agents on mobile, agentflow mobile at a glance
+
+
+Learn about Reltio AgentFlow Mobile app, the AgentFlow companion app for iOS and Android.
+
+Reltio AgentFlow Mobile is a native app for iOS and Android that lets you interact with agents from your mobile device, using text or voice. Sign in using your Reltio tenant credentials, with SSO or a username and password depending on your organization's configuration.
+
+The mobile app is a companion app to the AgentFlow workspace on the web. Use it to chat with agents and review responses on the go. If you have access to more than one Reltio tenant, you can switch between them directly in the app.
+
+You can download Reltio AgentFlow Mobile app for either of the following platforms:
+
+- 
+
+  [App Store](https://apps.apple.com/in/app/reltio-agentflow/id6761982918) (iOS)
+- 
+
+  [Google Play](https://play.google.com/store/apps/details?id=com.reltio.agent_flow_mobile) (Android)
+
+## Key Features
+
+Reltio AgentFlow Mobile supports the following features:
+
+- 
+
+  Select a Reltio agent or a custom agent your organization has created from the **Discover Agents** tab, and [start a conversation](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/reltio-agentflow-mobile-overview/use-the-reltio-agentflow-mobile-workspace?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+- 
+
+  Interact with an agent by voice using speech-to-text.
+- 
+
+  View rich content in a conversation, including Markdown and tables.
+- 
+
+  Switch between the Reltio tenants you have access to.
+
+## Limitations
+
+Reltio AgentFlow Mobile allows you to chat with Reltio agents and custom agents your organization has created. The following features are available only in the AgentFlow workspace on the web application:
+
+- 
+
+  Agent Builder
+- 
+
+  Automated long-running tasks
+- 
+
+  Charts and Diagrams
+- 
+
+  AgentFlow Unstructured
+- 
+
+  Setting custom instructions for agents
 
 
 
@@ -25618,7 +25726,7 @@ Use AgentFlow when you need to:
 - Search and review profiles using natural language
 - Investigate possible duplicates and match history
 - Make confident decisions about merges with explainable AI input
-- Review data visually using [graphs and charts](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/charts-in-agentflow?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- Review data visually using [graphs and charts](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/charts-and-diagrams-in-agentflow?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 - Enrich profiles with validated external data (optional)
 - Maintain governance traceability while working faster
 
@@ -26058,19 +26166,19 @@ In addition to the standard role mappings shown above, AgentFlow enforces a dedi
 
 ---
 
-# Charts in AgentFlow
+# Charts and Diagrams in AgentFlow
 
 > **Section:** Products > AgentFlow > Reltio AgentFlow™ at a glance
 
 
-**Source:** https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/charts-in-agentflow?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/charts-and-diagrams-in-agentflow?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
-**Keywords:** agentflow graphs, inline graphs in agentflow, agentflow graph types, agentflow graph examples, bar chart in agentflow, line chart in agentflow, donut chart in agentflow, gauge chart in agentflow, graph chart in agentflow, set overlap chart in agentflow, visualization
+**Keywords:** agentflow graphs, inline graphs in agentflow, agentflow graph types, agentflow graph examples, bar chart in agentflow, line chart in agentflow, donut chart in agentflow, gauge chart in agentflow, graph chart in agentflow, set overlap chart in agentflow, visualization, charts in agentflow
 
 
 Learn more about the charts that AgentFlow can display in conversations and example prompts that can produce them.
 
-AgentFlow contextually displays charts or graphs in a conversation when information is easier to understand visually than through text. These contextual visualizations help you identify patterns, compare results, and explore relationships more efficiently.
+AgentFlow contextually displays charts, graphs, or diagrams in a conversation when information is easier to understand visually than through text. These contextual visualizations help you identify patterns, compare results, and explore relationships more efficiently.
 
 The following types of charts are supported in AgentFlow:
 
@@ -26121,6 +26229,48 @@ Use a set overlap chart to understand how records are distributed across overlap
 **Example prompt:** Show overlap across SAP, Oracle, and Salesforce source systems.
 
 *Image: i-set-overlap-graph.png*
+
+## Diagrams
+
+AgentFlow displays diagrams such as relationship maps, flowcharts, and timelines to help you visualize connections and processes in a conversation.
+
+Show supported diagram types
+
+| Type | Description |
+| --- | --- |
+| `flowchart` | Shows a process, pipeline, or decision tree as a series of connected steps. |
+| `sequenceDiagram` | Shows the step-by-step interactions between systems or components over time. |
+| `erDiagram` | Shows a data model and the relationships between entities. |
+| `stateDiagram-v2` | Shows a state machine or lifecycle, including the transitions between states. |
+| `classDiagram` | Shows the structure of objects or schemas and how they relate to each other. |
+| `mindmap` | Shows a topic broken down into a hierarchy of related ideas. |
+| `gantt` | Shows a project timeline as a schedule of tasks. |
+| `timeline` | Shows a sequence of events in chronological order. |
+| `quadrantChart` | Shows items plotted across two dimensions in a 2x2 matrix, useful for prioritization. |
+| `journey` | Shows the steps and experience a user goes through to complete a task. |
+| `sankey` | Shows how a quantity, such as data or flow volume, is distributed across categories. |
+
+Use the following controls to interact with a diagram:
+
+- 
+
+  **Expand** (*Image: expand-diagram.svg*): Opens the diagram in a full-screen view with pan and zoom controls.
+- 
+
+  **Diagram** (*Image: diagram-icon.svg*) / **Code** (*Image: show-raw-code.svg*): Toggle the view between a rendered diagram (default view) and diagram code.
+- 
+
+  **PNG** (*Image: download-as-png.svg*): Download the diagram as a PNG image.
+- 
+
+  **SVG** (*Image: download-as-svg.svg*): Download the diagram as an SVG image.
+- 
+
+  **Copy** (*Image: copy-diagram-source.svg*): Copy the diagram code to your clipboard.
+
+**Example prompt**: Build a merge plan for all duplicate locations. Before you execute, show the workflow as a flowchart. Include the steps from duplicate detection through evaluation to merge execution.
+
+*Image: mermaid-demo.png*
 
 
 
@@ -26988,7 +27138,7 @@ To use AgentFlow workspace, follow these steps:
 3. Enter a prompt or question in the input box and press Enter or select the send icon.
    For example, try "*Show me the organization record for XYZ Corp.* ”
 4. Review the agent's response in the conversation panel.
-   Responses may include tables, summaries, lists, follow-up suggestions, or [visualizations (charts and graphs)](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/charts-in-agentflow?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) depending on your agent and permissions.
+   Responses may include tables, summaries, lists, follow-up suggestions, or [visualizations (charts and graphs)](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/charts-and-diagrams-in-agentflow?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) depending on your agent and permissions.
 5. Access recent threads or agent options using the left navigation panel.
    You can revisit prior conversations, toggle web search, or adjust agent instructions.
 
@@ -27238,6 +27388,166 @@ After enabling the agent, start a profiling job in AgentFlow. See [Run your firs
 
 ---
 
+# Download, Install, and Sign in to Reltio AgentFlow Mobile app
+
+> **Section:** Products > AgentFlow > Reltio AgentFlow™ at a glance > Reltio AgentFlow Mobile overview
+
+
+**Source:** https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/reltio-agentflow-mobile-overview/download-install-and-sign-in-to-reltio-agentflow-mobile-app?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** sign in to agentflow mobile, agentflow mobile login, ios android agentflow sign in, sso agentflow mobile, download agentflow mobile app store google play
+
+
+Learn how to sign in to Reltio AgentFlow Mobile.
+
+Reltio AgentFlow mobile app is available on iOS and Android. You can sign in using your Reltio tenant credentials, and your organization determines whether you use single sign-on (SSO) or a username and password.
+
+**Prerequisites**
+
+Before you begin, ensure you meet the following requirements:
+
+- 
+
+  You have a device that meets the following minimum requirements:
+  - Android 7.0 (Nougat) or later
+  - iOS 15.1 or later
+- 
+
+  You have your Reltio tenant URL and user access credentials.
+- 
+
+  You have multi-factor authentication (MFA) set up for your account.
+- 
+
+  You have the required [permissions](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-capabilities-and-permissions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) to access AgentFlow,
+
+**Download and install the Reltio AgentFlow Mobile app**
+
+To download and install the Reltio AgentFlow mobile app:
+
+1. 
+
+   Go to the app store for your device:
+   - [App Store](https://apps.apple.com/in/app/reltio-agentflow/id6761982918) (iOS)
+   - [Google Play](https://play.google.com/store/apps/details?id=com.reltio.agent_flow_mobile) (Android)
+2. 
+
+   Select **Get** or **Install** to download the **Reltio AgentFlow** mobile app.
+
+Reltio AgentFlow mobile app is now installed on your device.
+
+
+To sign in to the Reltio AgentFlow mobile app:
+
+1. Open the **Reltio AgentFlow** app.
+2. Enter your Reltio tenant ID.
+3. Sign in with your organization's authentication method.
+   - **SSO**: Complete authentication in the window that opens.
+   - **Non-SSO**: Enter your username and password. Then, enter your multi-factor authentication (MFA) code.
+4. If you have access to more than one tenant, select the required tenant.
+
+**Result**
+
+The Reltio AgentFlow mobile app home page appears.
+
+**Verification steps**
+
+To confirm you're signed in, check that the agent marketplace and your available tenants are visible in the app.
+
+
+
+---
+
+# Use the Reltio AgentFlow Mobile workspace
+
+> **Section:** Products > AgentFlow > Reltio AgentFlow™ at a glance > Reltio AgentFlow Mobile overview
+
+
+**Source:** https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/reltio-agentflow-mobile-overview/use-the-reltio-agentflow-mobile-workspace?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** use reltio agentflow mobile workspace, chat with an agent on mobile, discover agents agentflow mobile, agentflow mobile appearance preferences, export conversation agentflow mobile, dark mode agentflow mobile
+
+
+Learn how to use the Reltio AgentFlow Mobile workspace.
+
+The Reltio AgentFlow Mobile workspace is the interface for interacting with agents and managing your app [user preferences](#task-8261/postreq-1443).
+
+**Prerequisites**
+
+Before you begin, ensure that you're signed in to Reltio AgentFlow Mobile app.
+
+For more information, see [Download, Install, and Sign in to Reltio AgentFlow Mobile app](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/reltio-agentflow-mobile-overview/download-install-and-sign-in-to-reltio-agentflow-mobile-app?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+
+To chat with an agent:
+
+1. Select the menu icon *Image: i-icon-afmobile-menu.svg* in the top-left corner of the screen.
+   The left navigation panel appears.
+2. Select **Discover agents**.
+3. Select the arrow icon *Image: i-icon-afmobile-agent-arrow.svg* corresponding to the required agent.
+   The home page appears.
+4. Enter your prompt in the **Ask AgentFlow** field, or select the microphone icon *Image: i-icon-afmobile-microphone.svg* to use a voice input.
+5. Select send.
+
+**Result**
+
+Your message appears in the conversation, followed by the agent's response.
+
+**Verification steps**
+
+To confirm the workspace is working as expected, check that the agent's response appears in the conversation.
+
+**Set your preferences**
+
+To set your user preferences, perform the following steps:
+
+1. 
+
+   Select the menu icon in the top-left corner of the screen.
+
+   The left navigation panel opens.
+2. 
+
+   Select **Settings**.
+3. 
+
+   Set the following user preferences:
+
+   - 
+
+     **Appearance**: Controls the color scheme of the app.
+   - 
+
+     **Export format**: Determines the file type used to share a conversation.
+
+**View conversation history**
+
+Select the menu icon *Image: i-icon-afmobile-menu.svg*.
+
+The left navigation panel opens and displays your conversation history.
+
+**Switch tenants**
+
+Select the menu icon *Image: i-icon-afmobile-menu.svg*, then select the **Tenants** tab in the left navigation panel. Use the search field at the top of the tab to search the list of available tenants by name, ID, or environment .
+
+The workspace switches to the tenant you selected.
+
+**Start a new conversation**
+
+Select the new conversation icon *Image: i-icon-afmobile-new-chat.svg*.
+
+A new conversation opens in the workspace.
+
+**Share a conversation**
+
+Select **Share***Image: i-icon-afmobile-share.svg*.
+
+You can share the conversation as a PDF or Markdown file, based on your [user preference settings](#task-8261/postreq-1443).
+
+
+
+---
+
 # Segmentation
 
 > **Section:** Products > Reltio Intelligent 360 > Reltio Intelligent 360 at a glance > Reltio Intelligent 360 navigation
@@ -27448,6 +27758,60 @@ Reltio for Healthcare is the Reltio Context Intelligence Platform customized for
 The prebuilt configuration of this velocity pack is built on a standardized base with additional preconfigured content for Healthcare.
 
 *Image: start-top-image-health-v3.png*
+
+
+
+---
+
+# Cleansers for Life Sciences
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > Reltio for Life Sciences velocity pack > Configurations for Life Sciences
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-life-sciences-velocity-pack/configurations-for-life-sciences/cleansers-for-life-sciences?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+
+Learn what cleansers are preconfigured in entity types for Reltio for Life Sciences.
+
+The Location cleanser is available to view and edit. Reltio for Life Sciences also automatically applies these additional cleansers, which are not available in the Data Modeler:
+
+- 
+
+  Email cleanser to standardize email ID formats.
+- 
+
+  Phone cleanser to standardize telephone number and formats.
+
+For details of the preconfigured entity types that come with Reltio for Life Sciences, see [Entity types for Life Sciences](https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-life-sciences-velocity-pack/data-models-for-life-sciences/entity-types-for-life-sciences?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+## Location entity type cleansers (Life Sciences)
+
+This table identifies the Reltio for Life Sciences cleansers for the Location entity. Use these cleansers when you create a record for a health care provider or organization.
+
+| Cleanser | Description | Attribute | Type |
+| --- | --- | --- | --- |
+| `Loqate` | Cleanses addresses stored as a single address attribute. | AddressInput | default |
+| `Loqate` | Cleanses multiple address attributes (such as Address Line 1, Address Line 2, City, State, and Country) individually. | AddressLine1 | other |
+
+
+
+---
+
+# Entity types for Life Sciences
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > Reltio for Life Sciences velocity pack > Data models for Life Sciences
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-life-sciences-velocity-pack/data-models-for-life-sciences/entity-types-for-life-sciences?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+
+Learn about the preconfigured Entity types that come in your Reltio for Life Sciences data model.
+
+Entity types form the foundation of your Reltio for Life Sciences data model. They contain attributes and properties that define the types of data you manage in the Reltio Context Intelligence Platform.
+
+Reltio designed velocity packs to give you a head start. Your industry-specific pack comes fully configured with the components and rules you will need to realize value in as few as 90 days. If you need to modify it in any way, Reltio Support can help. We do recommend you discuss your configuration changes with Reltio Professional Services or a Reltio partner to ensure they align to the Reltio Way Delivery Methodology.
+
+The following topics in this section detail the preconfigured entity types that come with your Reltio for Life Sciences data model. For general information on these data model building blocks, see topic [Reltio entity types](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-information-model/data-model/reltio-object-types/reltio-entity-types?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). For information on working with entity types, see topic [Define entity types and attributes](https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/define-entity-types-and-attributes?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
@@ -34279,40 +34643,6 @@ View, edit, and extend lookup types referenced by your preconfigured data model.
 
 ---
 
-# Cleansers for Life Sciences
-
-> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > Reltio for Life Sciences velocity pack > Configurations for Life Sciences
-
-
-**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-life-sciences-velocity-pack/configurations-for-life-sciences/cleansers-for-life-sciences?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
-
-Learn what cleansers are preconfigured in entity types for Reltio for Life Sciences.
-
-The Location cleanser is available to view and edit. Reltio for Life Sciences also automatically applies these additional cleansers, which are not available in the Data Modeler:
-
-- 
-
-  Email cleanser to standardize email ID formats.
-- 
-
-  Phone cleanser to standardize telephone number and formats.
-
-For details of the preconfigured entity types that come with Reltio for Life Sciences, see [Entity types for Life Sciences](https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-life-sciences-velocity-pack/data-models-for-life-sciences/entity-types-for-life-sciences?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
-
-## Location entity type cleansers (Life Sciences)
-
-This table identifies the Reltio for Life Sciences cleansers for the Location entity. Use these cleansers when you create a record for a health care provider or organization.
-
-| Cleanser | Description | Attribute | Type |
-| --- | --- | --- | --- |
-| `Loqate` | Cleanses addresses stored as a single address attribute. | AddressInput | default |
-| `Loqate` | Cleanses multiple address attributes (such as Address Line 1, Address Line 2, City, State, and Country) individually. | AddressLine1 | other |
-
-
-
----
-
 # Survivorship groups for Life Sciences
 
 > **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > Reltio for Life Sciences velocity pack > Configurations for Life Sciences
@@ -35618,26 +35948,6 @@ The Substance entity type contains data about substances of any type that are us
 This table identifies the properties for the Substance entity type specified in the Reltio for Life Sciences configuration and lists the attributes preconfigured in the order they appear in the Data Modeler.
 
 > **Note:** On the table above, the top level attributes are represented in bold.
-
-
-
----
-
-# Entity types for Life Sciences
-
-> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > Reltio for Life Sciences velocity pack > Data models for Life Sciences
-
-
-**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-life-sciences-velocity-pack/data-models-for-life-sciences/entity-types-for-life-sciences?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
-
-Learn about the preconfigured Entity types that come in your Reltio for Life Sciences data model.
-
-Entity types form the foundation of your Reltio for Life Sciences data model. They contain attributes and properties that define the types of data you manage in the Reltio Context Intelligence Platform.
-
-Reltio designed velocity packs to give you a head start. Your industry-specific pack comes fully configured with the components and rules you will need to realize value in as few as 90 days. If you need to modify it in any way, Reltio Support can help. We do recommend you discuss your configuration changes with Reltio Professional Services or a Reltio partner to ensure they align to the Reltio Way Delivery Methodology.
-
-The following topics in this section detail the preconfigured entity types that come with your Reltio for Life Sciences data model. For general information on these data model building blocks, see topic [Reltio entity types](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-information-model/data-model/reltio-object-types/reltio-entity-types?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). For information on working with entity types, see topic [Define entity types and attributes](https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/define-entity-types-and-attributes?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
@@ -54297,7 +54607,9 @@ The following table describes the supported query parameters.
 **Keywords:** Rebuild Match Tables Task, rebuild match tables task, rebuild match task, rebuild tables task, match tables, rebuild tables
 
 
-Learn about the Rebuild match table API
+Learn about the Rebuild match table API.
+
+Use the `Rebuild Match Table Task API` to rebuild match tables for a tenant.
 
 Before you run the `RebuildMatchTableTask`, especially for large datasets (> tens of millions of entities), review and optimize your match rules. See [Analyze match strategy](https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/define-entity-types-and-attributes/analyze-match-strategy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) to identify any rules that could slow performance. Running this task with unoptimized rules may result in significantly slower throughput.
 
@@ -54313,19 +54625,28 @@ You want to be sure that all relevant data is considered when you run a matching
 
 Stop and Pause are supported.
 
-**Requests**
+## HTTP method and endpoint
 
-Tenant admin role is required:
+Use the following HTTP method and endpoint path to submit the request:
 
 ```
 POST {ApplicationURL}/rebuildmatchtable
 ```
 
-Tenant admin role is required:
-
 ```
 POST {ApplicationURL}/api/{tenantId}/rebuildmatchtable
 ```
+
+## Request headers
+
+The following request headers must be included.
+
+| Header | Value | Required |
+| --- | --- | --- |
+| `Authorization` | `Bearer <token>` | Yes |
+| `Content-Type` | `application/json` | Yes |
+
+## Query parameters
 
 | Parameter | Required | Default Value | Description |
 | --- | --- | --- | --- |
@@ -54338,8 +54659,9 @@ POST {ApplicationURL}/api/{tenantId}/rebuildmatchtable
 | `deleteOldCF` | No | false | If set to true, the task deletes old matching Column Family after it is completed. |
 | `distributedTaskIndex` | No | none | `1 <= distributedTaskIndex <= taskPartsCount` |
 | `maintenanceOptions=skipMatchEvents` | No | false | If set to `true`, the task will rebuild match structures without triggering match events. Default value is `false`, which will trigger the match events. |
+| `runFernReindexBeforeRebuild` | No | false | If true, the task runs FERN vectorization first. The match table rebuild starts only after vectorization completes successfully. If vectorization fails, the match table rebuild does not start. |
 
-**Body** (optional)
+## Request body
 
 JSON Array of entity URIs to rebuild match tables. Only match table records related to the URIs are rebuilt in this case.
 
@@ -70786,7 +71108,7 @@ Learn more about searching entity records by attribute values, types, tags, and 
 | Query | `select` | No | Comma-separated list of properties from entity structure that should be returned in a response. Allows you to return partial entity object. List of entity object properties you can find here-Entities. Additional system properties are:   - `attributes._lookupCodes`: return codes for lookup attributes. - `attributes._lookupValues`: return values for lookup attributes.    Example:`select=URI,label,attributes._lookupCodes,attributes._lookupValues` |
 | Query | `max` | No | Positive Integer value to identify maximum number of entities to return in a response. Can be used to organize pagination in combination with the `offset` parameter. Default value is `50`. |
 | Query | `offset` | No | Positive Integer value to identify starting what element in a result set should be returned in a response. Can be used to organize pagination in combination with the `max` parameter. Default value is parameter. Default value is `0`..**Note:** The updated maximum value and offset parameters, when combined, must not exceed the value of 10,000. Some examples of valid combinations are: offset=9900 and max=100offset=9800 and max=200 |
-| Query | `sort` | No | Sort parameter is used with `Order` parameter. Sort parameter points to the attribute or a list of attributes where ordering must be applied. If you order the result set as ascending or descending (reversed), you must use the Sort parameter to list the attributes that must be used for ordering.parameter. Sort parameter points to the attribute or a list of attributes where ordering must be applied. If you order the result set as ascending or descending (reversed), you must use the Sort parameter to list the attributes that must be used for ordering.Example: `sort=attributes.FirstName` **Important:** The sorting will not be used if this parameter is not provided or the value is not recognized. Sorting is available on multiple parameters combining the parameters using **&** sign. The **&** symbol is encoded as **%26** in the request.Sorting priority of the parameters depends upon the order you have added the parameters in the request while using multiple sorting. `sort=attributes.FirstName``sort=attributes.FirstName&attributes.LastName` At first, the result set is sorted alphabetically by `attributes.FirstName`. Then, for results that share the same first name, the list is sorted again by . Then, for results that share the same first name, the list is sorted again by `attributes.LastName`..**Note:** You can also sort by sub-attributes of complex attributes, such as nested or reference attributes. Example: `sort=attributes.Address.Country` |
+| Query | `sort` | No | Sort parameter is used with `Order` parameter. Sort parameter points to the attribute or a list of attributes where ordering must be applied. If you order the result set as ascending or descending (reversed), you must use the `Sort` parameter to list the attributes that must be used for ordering. Example: sort=attributes.FirstName **Important:** Sorting is available on multiple parameters combining the parameters using & sign. The & symbol is encoded as %26 in the request. Sorting priority of the parameters depends upon the order you have added the parameters in the request while using multiple sorting..At first, the result set is sorted alphabetically by `attributes.FirstName`. Then, for results that share the same first name, the list is sorted again by `attributes.LastName`. **Note:** You can also sort by sub-attributes of complex attributes, such as nested or reference attributes. Example: `sort=attributes.Address.Country.`When you don't specify the `sort` parameter, or the value isn't recognized, search results are sorted first by relevance score and then by ID. When you disable `searchStorageConfiguration.applyDefaultSorting`, searches without the `sort` parameter return results in the search index's natural order. Searches without the sort parameter, or with an unrecognized value, return results in the search index's internal order instead. For more information, see [Tenant Configuration Parameters Reference](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/tenant-configuration-parameters-reference?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). You can set the sort parameter to one of the following values: - score: Sorts results by relevance score. Unlike attribute-based sorts, which default to ascending order, `score` defaults to descending order when `order` isn't specified, so the highest-scoring results appear first. - none: Returns results in the order they appear in the search index. This is the fastest option because it doesn't calculate relevance scores or apply a tie-breaker. **Note:** The `applyDefaultSorting` setting applies only to searches that don't already require a specific sort order. It doesn't change sorting when the request:Includes a `sort` parameter.Is an activity search, which is always sorted by timestamp.Is a type-ahead search.Includes `scoreEnabled=true`.Comes from the Reltio UI.Is a `_scan` or other background-task search that uses a predefined sort to keep pagination consistent. |
 | Query | `order` | No | Order of sorting. Applicable only in combination with the `sort` parameter. Possible values:   - `asc`: results are shown in ascending order. - `desc`: results are shown in descending order.    Default sorting is`asc`.  Example: `order=desc` |
 | Query | `options` | No | Comma-separated list of different options. Available options:   - `sendHidden`: disabled by default; entity's JSON will contain hidden attributes if this option is enabled. - `searchByOv`: disabled by default, to search by all attributes with Operational Value (OV) only.   - You can use the `searchByOv` and `sortByOv` options in case of STATIC index OV strategy. If you use `searchByOv` option, sorting by OV works automatically.   - In case of NONE strategy, the `sortByOv` option is ignored. If you want to sort by OV, you should switch `indexOvStrategy` to STATIC. - `ovOnly`: return only attribute values that have the `ov=true` flag. - `nonOvOnly`: return only attribute values that have the `ov=false` flag. If you have a nested or reference attribute value, where `ov=true`, but sub-attributes, where `ov=false`, then these sub-attributes do not appear in the response.      Example: `options=searchByOv`  - `cleanEntity` - Set this option to `true` to get entities without certain properties. Here's what you get in the response:   - `URI` is null.   - `Type` of entity is available.   - `createdBy`, `createdTime`, `updatedBy`, and `updatedTime` are included.   - Simple and nested attributes are displayed without the `uri`, `ov`, `type`, and `label` parameters.   - For `refEntity` and `refRelation`, the `uri`, `type`, `createDate`,`updateDate`, `attributeURIs`, `startRefPinned`, `endRefPinned`, `startRefIgnored`, `endRefIgnored`, and `objectURI` are included.   - Field crosswalks type is updated with its `short name`, `reltioLoadDate`, `createDate`, and `updateDate`.   - Field attributes for crosswalk block contains only short URIs.   - `singleAttributeUpdateDates` field for crosswalk block is empty.   - `analyticsAttributes` is not included. |
 | Query | `defaultMaxValues` | No | Specifies maximum number of values listed in attributes. This restriction is intended for UI convenience in the case of very long lists of values in some attributes.  Example: `defaultMaxValues=10` |
@@ -87435,6 +87757,377 @@ The following example shows the response body.
 **Related links**
 
 - [Materialized Hierarchy Management APIs](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+
+
+---
+
+# Reltio IDE overview
+
+> **Section:** Developer resources > AI Integrations
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-ide-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** reltio ide overview, metadata modeling, l3 configuration editor, ai-assisted business configuration, ontology visualization, configuration version history, entity types relationship types attributes, reference attributes, vsix extension reltio, reltio ide roles, reltio configurator, solution architect, data modeler comparison, intelligent json editor, reltio ide workflow
+
+
+Learn about how Reltio IDE brings business configuration modeling into a modern development workflow, with intelligent navigation, AI-assisted authoring, validation, ontology visualization, and version history.
+
+Reltio IDE transforms how teams design and manage Reltio business configurations by making data modeling faster, simpler, and more intuitive. From AI-assisted configuration to safe deployment and version tracking, it helps you accelerate implementation while maintaining quality and control.
+
+## Build Business Configurations Faster with AI
+
+Business configuration is foundational to every Reltio implementation. Whether you're introducing new business entities, extending an existing data model, or evolving your organization's configuration over time, you need tools that help you move quickly without compromising quality or control.
+
+Reltio IDE is an AI-powered editor extension for VS Code and Cursor that simplifies how teams design, manage, validate, and deploy Reltio business configurations. It brings together AI-assisted authoring, intelligent navigation, ontology visualization, real-time validation, version history, and deployment in one place. The result is a faster way to build and evolve your Reltio data model.
+
+Reltio IDE is intended for the following roles:
+
+- 
+
+
+- 
+
+
+- 
+
+
+- 
+
+
+
+## How Reltio IDE helps your team
+
+Reltio IDE offers you the following benefits:
+
+- **Build business configurations faster** with AI-assisted authoring and automation.
+- **Reduce manual effort** through guided authoring, automatic dependency creation, and code completion.
+- **Work with confidence** using real-time validation, configuration comparison, and safe deployment.
+- **Understand complex data models** with ontology visualization and intelligent navigation across business configuration objects.
+- **Collaborate more effectively** with built-in version history and change tracking.
+
+Whether you're implementing Reltio for the first time or continuously evolving an existing data model, Reltio IDE helps your team spend less time managing configuration and more time delivering trusted, AI-ready data.
+
+## Key capabilities
+
+Reltio IDE provides the following capabilities across the modeling workflow:
+
+| Capability | Description |
+| --- | --- |
+| Tenant connectivity | Connect securely to your Reltio environment and the tenant and start modeling. |
+| Intelligent navigation | Browse the complete business configuration and navigate among entity, relationship, interaction, hierarchy and other object types. |
+| AI-assisted authoring | Create different object types through guided actions or natural-language prompts. |
+| Code completion and validation | Get context-aware suggestions and real-time validation while you edit metadata. |
+| Automatic dependency management | When you add a reference attribute, Reltio IDE creates the required relation type automatically. |
+| Ontology visualization | Visualize your business configuration to understand entities, relationships, and their connections. |
+| Safe deployment | Review your changes with a comparison before you apply them to your tenant. |
+| Version history | View configuration history, compare versions, and see who changed what and when. |
+
+## Workflow overview
+
+Working in Reltio IDE involves the following stages:
+
+1. **Install and connect:** Install the Reltio IDE extension for [Cursor](https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-ide-overview/install-reltio-ide-on-cursor-and-connect-to-your-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) or [VS Code](https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-ide-overview/install-reltio-ide-on-vs-code-and-connect-to-your-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), authenticate with your Reltio environment, select a tenant, and open your business configuration in the editor.
+2. **Create and edit:** Add new objects through the context menu or natural-language prompts in your editor's AI assistant. Reltio IDE validates changes inline and highlights errors.
+3. **Visualize:** Open the [ontology view](https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-ide-overview/visualize-the-ontology-in-reltio-ide?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) to review entity types and the relationships between them.
+4. **Review and apply:** Review the differences and [apply your configuration to the tenant](https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-ide-overview/apply-configuration-and-track-changes-in-reltio-ide?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+
+
+---
+
+# Install Reltio IDE on Cursor and connect to your tenant
+
+> **Section:** Developer resources > AI Integrations > Reltio IDE overview
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-ide-overview/install-reltio-ide-on-cursor-and-connect-to-your-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** install reltio ide cursor, connect reltio ide to tenant, reltio ide vsix installation, reltio ide oauth bearer token, add environment add tenant, open l3 configuration editor, reltio ide setup cursor, reltio metadata editor connection
+
+
+Learn how to install the Reltio IDE extension in Cursor, connect to your Reltio tenant, and open your configuration.
+
+**Prerequisites**
+
+Before you install Reltio IDE, make sure you have the following requirements:
+
+- The Reltio IDE `.vsix` file, downloaded from **Releases > Assets** of the [Reltio GitHub repository](https://github.com/reltio-ai/reltio-ide).
+- A Reltio tenant and valid credentials, copied and ready to paste: An OAuth Client ID and Client secret (with your SSO routing tenant ID) from your identity provider, or a bearer token from the Reltio authentication API or your tenant administrator.
+
+
+To install Reltio IDE in Cursor
+
+1. Open Cursor.
+2. Press Cmd+Shift+P on macOS, or Ctrl+Shift+P on Windows and Linux to open the Command Palette.
+3. Type **Install from VSIX**, then select **Extensions: Install from VSIX...**.
+4. Browse to the location where you downloaded the `.vsix` file. Select the .`vsix` file and click **Install**.
+5. Open the Extensions view and confirm that Reltio IDE appears in the list of installed extensions.
+
+To connect to your tenant
+
+6. Select **Reltio** in the activity bar or Reltio IDE from the extensions to open the **RELTIO IDE** view.
+7. Select **Connect your Reltio Tenant** to start setup.
+8. Select **Add Environment**, then enter your environment ID (for example, `test-usg.reltio.com`).
+9. Authenticate using one of the following methods, using the credentials you copied in the prerequisites.
+   - **•** Select **Sign in with browser (recommended)**. Enter your **Client ID** and **Client secret**, then enter your **SSO routing tenant ID** when prompted. Reltio IDE opens your browser to complete single sign-on. Cursor stores these credentials in your operating system's secure credential store.
+   - **•** Select **Paste a Bearer token**, then paste the token you kept ready and press Enter. Reltio IDE keeps the token in memory for the current session only.
+10. After authentication, select your tenant from the tenant list.
+
+To open and navigate your configuration
+
+11. In the **RELTIO IDE** view, select your tenant.
+12. Select the **Open L3** icon beside the tenant ID to open your configuration file in the editor.
+13. Expand your tenant to browse its configuration.
+14. Use the context menu at the tenant level and on objects in the tree view to perform modeling actions, such as:
+   - **•** Adding a new entity type or relationship type
+   - **•** Adding a new attribute
+   - **•** Viewing the ontology
+   - **•** Applying your configuration changes to the tenant
+
+**Result**
+
+Reltio IDE connects to your tenant, and your configuration file opens in the editor. Your tenant appears in the RELTIO IDE view, and you can expand it to browse its configuration. You are ready to add or modify configuration objects.
+
+**Validation**
+
+To confirm the connection was successful:
+
+1. Confirm that your tenant appears in the RELTIO IDE view with no authentication errors.
+2. Select the **Open L3** icon beside the tenant ID and confirm that your configuration opens in the editor.
+3. Expand your tenant and confirm that its configuration appears.
+
+
+
+---
+
+# Install Reltio IDE on VS Code and connect to your tenant
+
+> **Section:** Developer resources > AI Integrations > Reltio IDE overview
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-ide-overview/install-reltio-ide-on-vs-code-and-connect-to-your-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** install reltio ide vs code, connect reltio ide to tenant, reltio ide vsix installation, reltio ide oauth bearer token, add environment add tenant, open l3 configuration editor, reltio ide setup vs code, reltio metadata editor connection
+
+
+Learn how to install the Reltio IDE extension in VS Code, connect to your Reltio tenant, and open your configuration.
+
+**Prerequisites**
+
+Before you install Reltio IDE, make sure you have the following requirements:
+
+- The Reltio IDE `.vsix` file, downloaded from **Releases > Assets** of the [Reltio GitHub repository](https://github.com/reltio-ai/reltio-ide).
+- A Reltio tenant and valid credentials, copied and ready to paste: An OAuth Client ID and Client secret (with your SSO routing tenant ID) from your identity provider, or a bearer token from the Reltio authentication API or your tenant administrator.
+
+
+To install Reltio IDE in VS Code using the Extensions view
+
+1. Open VS Code.
+2. Select the **Extensions** icon in the activity bar to open the Extensions view.
+3. Select the **...** (More Actions) menu at the top of the Extensions view, then select **Install from VSIX...**.
+4. Browse to the location where you downloaded the `.vsix` file. Select the `.vsix` file and click **Install**.
+5. Open the Extensions view and confirm that Reltio IDE appears in the list of installed extensions.
+
+To install Reltio IDE in VS Code using the Command Palette
+
+6. Open VS Code.
+7. Press Cmd+Shift+P on macOS, or Ctrl+Shift+P on Windows and Linux to open the Command Palette.
+8. Type **Install from VSIX**, then select **Extensions: Install from VSIX...**.
+9. Browse to the location where you downloaded the `.vsix` file. Select the `.vsix` file and click **Install**.
+10. Open the Extensions view and confirm that Reltio IDE appears in the list of installed extensions.
+
+To connect to your tenant
+
+11. Select **Reltio** in the activity bar or Reltio IDE from the extensions to open the **RELTIO IDE** view.
+12. Select **Connect your Reltio Tenant** to start setup.
+13. Select **Add Environment**, then enter your environment ID (for example, `test-usg.reltio.com`).
+14. Authenticate using one of the following methods, using the credentials you copied in the prerequisites.
+   - **•** Select **Sign in with browser (recommended)**. Enter your **Client ID** and **Client secret**, then enter your **SSO routing tenant ID** when prompted. Reltio IDE opens your browser to complete single sign-on. VS Code stores these credentials in your operating system's secure credential store.
+   - **•** Select **Paste a Bearer token**, then paste your token and press Enter. Reltio IDE keeps the token in memory for the current session only.
+15. After authentication, select your tenant from the tenant list.
+
+To open and navigate your configuration
+
+16. In the **RELTIO IDE** view, select your tenant.
+17. Select the **Open L3** icon beside the tenant ID to open your configuration file in the editor.
+18. Expand your tenant to browse its configuration.
+19. Use the context menu at the tenant level and on objects in the tree view to perform modeling actions, such as:
+   - **•** Adding a new entity type or relationship type
+   - **•** Adding a new attribute
+   - **•** Viewing the ontology
+   - **•** Applying your configuration changes to the tenant
+
+**Result**
+
+Reltio IDE connects to your tenant, and your configuration file opens in the editor. Your tenant appears in the RELTIO IDE view, and you can expand it to browse its configuration. You are ready to add or modify configuration objects.
+
+**Validation**
+
+To confirm the connection was successful:
+
+1. Confirm that your tenant appears in the RELTIO IDE view with no authentication errors.
+2. Select the **Open L3** icon beside the tenant ID and confirm that your configuration opens in the editor.
+3. Expand your tenant and confirm that its configuration appears.
+
+
+
+---
+
+# Apply configuration and track changes in Reltio IDE
+
+> **Section:** Developer resources > AI Integrations > Reltio IDE overview
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-ide-overview/apply-configuration-and-track-changes-in-reltio-ide?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** apply configuration to tenant reltio ide, fetch configuration reltio ide, fetching l3 configuration, configuration history reltio ide, who changed what reltio ide, version history reltio ide, deploy l3 configuration reltio ide, compare configuration versions reltio ide
+
+
+Learn how to fetch the latest tenant configuration, apply your changes to the tenant, and review configuration history in Reltio IDE.
+
+Reltio IDE supports two configuration management workflows:
+
+- Use **Fetch Configuration** to fetch the configuration from your tenant and overwrite the local changes you made in Reltio IDE.
+- Use **Apply Configuration to Tenant** to deploy your local configuration to the tenant.
+
+
+
+Use configuration history to see who changed what and when, and to compare past versions of the configuration.
+
+
+To fetch and apply configuration
+
+1. Right-click your tenant in the **RELTIO IDE** view and select **Fetch Configuration** to retrieve the latest configuration from the tenant. A **Fetching L3 configuration...** indicator appears in the status bar while the fetch is in progress. Reltio IDE updates your local configuration file with the retrieved configuration once complete.
+2. If your editor detects that your local file was overwritten while you had unsaved changes, select **Keep File** to retain your local edits, or **Undo File** to accept the fetched version.
+3. Edit the configuration file with the changes you want to apply to the tenant.
+4. Right-click your tenant in the **RELTIO IDE** view and select **Apply Configuration to Tenant**. Reltio IDE displays a confirmation dialog to view changes before applying.
+5. Review and respond to the confirmation dialog using one of the following options:
+   - Select **View Changes** to open a difference view and review your changes before applying.
+   - Select **Yes** to apply your local configuration changes to the tenant.
+   - Select **Don't apply** to cancel the deployment and return to editing.
+   - Select **Cancel** to dismiss the dialog without taking action.
+
+To review configuration history and compare versions
+
+6. Right-click your tenant in the **RELTIO IDE** view and select **Fetch Configuration History**. A **History** section appears in the **RELTIO IDE** view, listing past versions by timestamp and the name of the user who made each change.
+7. To load older entries, right-click your tenant and select **Fetch More Configuration History**.
+8. Select a history entry to open that version of the configuration.
+9. Compare versions using one of the following methods.
+   - Select **Compare with Current L3** to compare a snapshot against your current local configuration.
+   - Select **Compare with Previous Snapshot** to compare a snapshot against the version before it.
+   - Right-click a snapshot, select **Select for Compare**, then right-click a second snapshot and select **Compare Selected** to compare any two versions.
+
+**Result**
+
+Reltio IDE applies your configuration to the tenant, and the configuration history records who changed what and when, and supports version comparison.
+
+**Validation**
+
+To confirm the configuration was applied and history is available:
+
+1. Right-click your tenant and select **Fetch Configuration** to retrieve the updated tenant configuration, and confirm your changes are reflected in the configuration file.
+2. Select **Fetch Configuration History** and confirm the latest entry shows your apply action with the correct timestamp and user.
+
+
+
+---
+
+# Create configuration objects in Reltio IDE
+
+> **Section:** Developer resources > AI Integrations > Reltio IDE overview
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-ide-overview/create-configuration-objects-in-reltio-ide?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** create configuration objects reltio ide, insert entity type reltio ide, insert relation type, ai-assisted authoring reltio ide, natural language configuration authoring, reference attribute relation type, automatic dependency creation, edit l3 reltio json
+
+
+Learn how to create configuration objects in Reltio IDE by adding them manually or through natural language prompts with AI-assisted authoring.
+
+Reltio IDE supports two ways to create configuration objects such as entity types, relation types, and others:
+
+- Add an object using the context menu, then complete its definition in the configuration file.
+- Describe the object you want using natural language in your editor's AI assistant and have it generate the object for you.
+
+AI-assisted authoring also creates supporting resources intelligently, such as the relation type required for a reference attribute.
+
+
+To add an object through the context menu
+
+1. Right-click your tenant in the **RELTIO IDE** view, then select the object you want to create, such as .
+   - **Add a new Entity Type**
+   - **Add a new Relation Type**
+   - **Add a new Grouping Type**
+   - **Add a new Graph Type**
+   - **Add a new Source**
+   - **Add a new Hierarchy Type**
+2. Locate the new object in the configuration file. Reltio IDE adds the object with the required elements.
+3. Edit the object in the editor to complete its definition.
+4. Save the changes. Reltio IDE validates your changes and highlights any errors in the editor so you can fix them before you apply your configuration.
+
+To create an object with AI-assisted authoring
+
+5. Open the AI assistant in your editor: Cursor or VS Code.
+6. Describe the object you want to create. For example, *Create an Employee entity type with the relevant attributes and a reference attribute to Organization*.
+7. Review the configuration that Reltio IDE generates. In this example, Reltio IDE creates the Employee entity type, adds relevant attributes, adds the reference attribute to the Organization entity type, and creates the required relation type that connects Employee to Organization.
+   When a reference attribute requires a relation type, Reltio IDE creates the relation type automatically, so you do not have to create it as a separate step.
+8. Review and manually edit the generated object to complete any remaining details, then save the configuration.
+
+**Result**
+
+Your new configuration objects appear in the **RELTIO IDE** view under their object type, and their definitions are added to the configuration. You are ready to review your changes and apply them to your tenant.
+
+**Validation**
+
+To confirm the objects were created:
+
+1. Expand your tenant in the **RELTIO IDE** view and confirm that the new objects appear under their object type.
+2. Confirm that the configuration shows no validation errors for the new objects.
+3. For a reference attribute created with AI-assisted authoring, confirm that the supporting relation type appears under **Relation Types**.
+
+
+
+---
+
+# Visualize the ontology in Reltio IDE
+
+> **Section:** Developer resources > AI Integrations > Reltio IDE overview
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-ide-overview/visualize-the-ontology-in-reltio-ide?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** ontology view reltio ide, visualize data model reltio ide, entity types relationships diagram, ontology visualization reltio, show ontology preview reltio ide, reltio ide ontology diagram, l3 configuration visualization
+
+
+Learn how to open the ontology view in Reltio IDE to see your tenant's entity types and the relationships between them.
+
+The ontology view in Reltio IDE displays entity types and the relationships between them. Use the ontology view to understand how your entity types relate to each other after you create or change configuration objects. The ontology view reflects your local configuration file, not the live tenant configuration.
+
+
+To open the ontology view
+
+1. Open the ontology view using one of the following methods.
+   - Select the **...** (More Actions) menu in the editor toolbar and select **Reltio: Show Ontology Preview**.
+   - Right-click an entity type or relation type in the **RELTIO IDE** view and select **Show in Ontology**.
+   - Press Cmd+Shift+P on macOS, or Ctrl+Shift+P on Windows and Linux to open the Command Palette, type `ontology`, and select **Reltio: Show Ontology Preview**.
+   - Right-click an object type (such as an entity type, relation type, and so on) in the **RELTIO IDE** view, and select **Show in Ontology**.
+2. In the ontology preview, review each entity type node, which shows its name, the number of attributes (Attrs), the number of connections (Conn), and the number of match rules.
+3. Review the labeled arrows connecting entity types. Arrows show the relation type name, inheritance connections labeled **extends**, and reference attribute connections showing the number of reference attributes between entity types.
+4. To reset the ontology preview to its default arrangement, press Cmd+Shift+P on macOS, or Ctrl+Shift+P on Windows and Linux to open the Command Palette, then run **Reltio: Reset Ontology Layout**.
+
+**Result**
+
+The ontology preview displays your entity types and the relationships between them, based on your local configuration file. It's for visualization only, you cannot edit objects or export the diagram from it.
+
+**Validation**
+
+To confirm the ontology view opened correctly:
+
+1. Confirm that the ontology view panel opens alongside the editor.
+2. Confirm that your entity types appear as labeled nodes with their attribute and connection counts.
+3. Confirm that the relationships between entity types appear as labeled arrows.
 
 
 
@@ -113854,14 +114547,14 @@ These parameters identify the tenant and control general operational behavior.
 
 | Parameter | Description | Type | Default |
 | --- | --- | --- | --- |
-| tenantId | Unique identifier of the tenant. | String | Required |
-| tenantName | Human-readable name of the tenant; defaults to tenantId if omitted. | String | None |
-| customerName | Name of the customer organization associated with the tenant. | String | None |
-| ownerEmails | List of tenant owner email addresses notified about configuration actions. | Array | None |
-| maxRequestsPerCluster | Maximum number of concurrent requests processed per cluster for this tenant. | Integer | Unlimited |
-| maxPeriodicTasksPerTenant | Maximum number of periodic tasks allowed to run for the tenant. | Integer | None |
-| immutableRefAttrsByDefault | Specifies whether reference attributes are treated as immutable unless explicitly configured otherwise. | Boolean | false |
-| useActivityLogInTasks | Enables use of the activity log as a data source for tasks and processing. | Boolean | false |
+| `tenantId` | Unique identifier of the tenant. | String | Required |
+| `tenantName` | Human-readable name of the tenant; defaults to tenantId if omitted. | String | None |
+| `customerName` | Name of the customer organization associated with the tenant. | String | None |
+| `ownerEmails` | List of tenant owner email addresses notified about configuration actions. | Array | None |
+| `maxRequestsPerCluster` | Maximum number of concurrent requests processed per cluster for this tenant. | Integer | Unlimited |
+| `maxPeriodicTasksPerTenant` | Maximum number of periodic tasks allowed to run for the tenant. | Integer | None |
+| `immutableRefAttrsByDefault` | Specifies whether reference attributes are treated as immutable unless explicitly configured otherwise. | Boolean | false |
+| `useActivityLogInTasks` | Enables use of the activity log as a data source for tasks and processing. | Boolean | false |
 
 For more information about tenant-level setup, see [Tenant Configuration at a glance](https://docs.reltio.com/en/applications/console/tenant-management-applications/tenant-management-at-a-glance/tenant-configuration-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
@@ -113871,13 +114564,13 @@ These parameters influence database storage behavior, history handling, and obje
 
 | Parameter | Description | Type | Default |
 | --- | --- | --- | --- |
-| dataStorageConfig | Defines primary data storage configuration for the tenant. | JSON | Required |
-| historyDataStorageMode | Controls whether history data is stored in normal or compact mode. | String | standard |
-| interactionTtl | Time-to-live for interactions, after which they may be purged from storage. | Integer | None |
-| eventsSizeLimit | Maximum serialized size of event messages published for the tenant. | Long | Unlimited |
-| maxChangedObjects | Maximum number of entity changed events generated from a single operation. | Integer | -1 (unlimited) |
-| updateAttributesEntitiesBatchSize | Number of entities processed per batch for attribute updates. | Integer | None |
-| interactionTtl | Configures retention period of interaction objects before deletion. | Integer | None |
+| `dataStorageConfig` | Defines primary data storage configuration for the tenant. | JSON | Required |
+| `historyDataStorageMode` | Controls whether history data is stored in normal or compact mode. | String | standard |
+| `interactionTtl` | Time-to-live for interactions, after which they may be purged from storage. | Integer | None |
+| `eventsSizeLimit` | Maximum serialized size of event messages published for the tenant. | Long | Unlimited |
+| `maxChangedObjects` | Maximum number of entity changed events generated from a single operation. | Integer | -1 (unlimited) |
+| `updateAttributesEntitiesBatchSize` | Number of entities processed per batch for attribute updates. | Integer | None |
+| `interactionTtl` | Configures retention period of interaction objects before deletion. | Integer | None |
 
 For details on storage options, see [Configuration API](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/configuration-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
@@ -113887,33 +114580,34 @@ These parameters control search index structure, performance tuning, and indexin
 
 | Parameter | Description | Type | Default |
 | --- | --- | --- | --- |
-| searchStorageConfiguration | Defines configuration of search indices, shards, and replicas. | JSON | Required |
-| waitForAllShards | Waits for all shards to be available before returning index operations. | Boolean | true |
-| prefixSearchMaxExpansions | Maximum term expansions allowed for prefix searches. | Integer | 50 |
-| maxAttributeLength | Maximum length of attribute text stored in the search index. | Integer | None |
-| preserveCursor | Preserves search cursor between paginated requests. | Boolean | false |
-| indexRDMLookups | Enables indexing of RDM lookups for search. | Boolean | false |
-| indexOnlySearchableAttributes | Indexes only attributes marked as searchable. | Boolean | false |
-| indexOvStrategy | Defines strategy for indexing operational values versus all values. | String | OV_ONLY |
-| indexMLRules | Includes machine learning rules in the index where applicable. | Boolean | false |
-| indexActivityDelta | Enables indexing of activity delta information. | Boolean | false |
-| indexRefreshInterval | Frequency at which the index is refreshed. | String | 1s |
-| useSingleIndex | Uses a single shared index for all entity types. | Boolean | false |
-| refreshIndexOnInserts | Refreshes the index immediately after insert operations. | Boolean | false |
-| maxNumberOfResults | Maximum number of search results returned in a single query. | Integer | 10000 |
-| numberOfShards | Number of primary shards for main search indices. | Integer | 5 |
-| numberOfRelationsShards | Number of shards for relation indices. | Integer | 5 |
-| numberOfInteractionsShards | Number of shards for interaction indices. | Integer | 5 |
-| numberOfActivitiesShards | Number of shards for activity indices. | Integer | 5 |
-| indexingErrorsMonitoring | Enables monitoring and tracking of indexing errors. | Boolean | false |
-| prepareRelationIndex | Configures whether relation data is prepared specifically for indexing. | Boolean | true |
-| indexRelations | Enables indexing of relations for search and reporting. | Boolean | true |
-| maxSearchFileLines | Maximum number of lines allowed in search export files. | Integer | 1000000 |
-| defaultBoostFactor | Default relevance boost factor applied to indexed fields. | Float | 1.0 |
-| indexRequestTimeout | Maximum time allowed for index requests before timeout. | Integer | 60000 |
-| indexExportCsvHeaders | Controls whether CSV downloads include header rows. | Boolean | true |
-| appendEqualsAnalyzedForContainsWordStartingWith | Tunes analyzers for contains-word-starting-with and equals queries. | Boolean | false |
-| proximateGeoTokenVersion | Version of the geo tokenization algorithm used for proximity searches. | Integer | 1 |
+| `searchStorageConfiguration` | Defines configuration of search indices, shards, and replicas. | JSON | Required |
+| `waitForAllShards` | Waits for all shards to be available before returning index operations. | Boolean | true |
+| `prefixSearchMaxExpansions` | Maximum term expansions allowed for prefix searches. | Integer | 50 |
+| `maxAttributeLength` | Maximum length of attribute text stored in the search index. | Integer | None |
+| `preserveCursor` | Preserves search cursor between paginated requests. | Boolean | false |
+| `indexRDMLookups` | Enables indexing of RDM lookups for search. | Boolean | false |
+| `indexOnlySearchableAttributes` | Indexes only attributes marked as searchable. | Boolean | false |
+| `indexOvStrategy` | Defines strategy for indexing operational values versus all values. | String | OV_ONLY |
+| `indexMLRules` | Includes machine learning rules in the index where applicable. | Boolean | false |
+| `indexActivityDelta` | Enables indexing of activity delta information. | Boolean | false |
+| `indexRefreshInterval` | Frequency at which the index is refreshed. | String | 1s |
+| `useSingleIndex` | Uses a single shared index for all entity types. | Boolean | false |
+| `refreshIndexOnInserts` | Refreshes the index immediately after insert operations. | Boolean | false |
+| `maxNumberOfResults` | Maximum number of search results returned in a single query. | Integer | 10000 |
+| `numberOfShards` | Number of primary shards for main search indices. | Integer | 5 |
+| `numberOfRelationsShards` | Number of shards for relation indices. | Integer | 5 |
+| `numberOfInteractionsShards` | Number of shards for interaction indices. | Integer | 5 |
+| `numberOfActivitiesShards` | Number of shards for activity indices. | Integer | 5 |
+| `indexingErrorsMonitoring` | Enables monitoring and tracking of indexing errors. | Boolean | false |
+| `prepareRelationIndex` | Configures whether relation data is prepared specifically for indexing. | Boolean | true |
+| `indexRelations` | Enables indexing of relations for search and reporting. | Boolean | true |
+| `maxSearchFileLines` | Maximum number of lines allowed in search export files. | Integer | 1000000 |
+| `defaultBoostFactor` | Default relevance boost factor applied to indexed fields. | Float | 1.0 |
+| `indexRequestTimeout` | Maximum time allowed for index requests before timeout. | Integer | 60000 |
+| `indexExportCsvHeaders` | Controls whether CSV downloads include header rows. | Boolean | true |
+| `appendEqualsAnalyzedForContainsWordStartingWith` | Tunes analyzers for contains-word-starting-with and equals queries. | Boolean | false |
+| `proximateGeoTokenVersion` | Version of the geo tokenization algorithm used for proximity searches. | Integer | 1 |
+| `applyDefaultSorting` | Determines whether entity and relation searches sort by relevance score and ID when the request omits the sort parameter. When disabled, these searches return results in the search index's natural order, which is faster because it skips relevance scoring. | Boolean | true |
 
 For information on search behavior and tuning, see [Search API](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/search-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
@@ -113923,13 +114617,13 @@ These parameters control matching behavior, grouping logic, and operational valu
 
 | Parameter | Description | Type | Default |
 | --- | --- | --- | --- |
-| collapseNonOvNestedsWhenMatchOvOnlyEnabled | Collapses non-OV nested values when matchOvOnly is enabled for attributes. | Boolean | false |
-| dropOvBeforeAndAfterLcaForNonDefaultGroups | Drops OV calculation before and after lifecycle actions for non-default groups. | Boolean | false |
-| suppressRelevanceInMatchOutput | Omits relevance scores from match output responses. | Boolean | false |
-| doNotTakeRequiredFromSubnested | Prevents required constraint propagation from sub-nested attributes. | Boolean | false |
-| groupingConfig | Defines grouping behavior and grouping rules for entities. | JSON | None |
-| enabled | Turns the grouping functionality on or off for the tenant. | Boolean | false |
-| ovCalculationVersion | Selects the algorithm version for OV calculation. | Integer | 1 |
+| `collapseNonOvNestedsWhenMatchOvOnlyEnabled` | Collapses non-OV nested values when matchOvOnly is enabled for attributes. | Boolean | false |
+| `dropOvBeforeAndAfterLcaForNonDefaultGroups` | Drops OV calculation before and after lifecycle actions for non-default groups. | Boolean | false |
+| `suppressRelevanceInMatchOutput` | Omits relevance scores from match output responses. | Boolean | false |
+| `doNotTakeRequiredFromSubnested` | Prevents required constraint propagation from sub-nested attributes. | Boolean | false |
+| `groupingConfig` | Defines grouping behavior and grouping rules for entities. | JSON | None |
+| `enabled` | Turns the grouping functionality on or off for the tenant. | Boolean | false |
+| `ovCalculationVersion` | Selects the algorithm version for OV calculation. | Integer | 1 |
 
 For matching and survivorship configuration, see [Configuring Survivorship Rules in the L3](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/configuration-api/configuring-survivorship-rules-in-the-l3?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
@@ -113939,36 +114633,36 @@ These parameters control how references, crosswalks, and lookup values behave ac
 
 | Parameter | Description | Type | Default |
 | --- | --- | --- | --- |
-| resolveLoserStartEndObjectsInRelations | Reassigns relations to winner entities when start/end entities are merged. | Boolean | false |
-| sortCrosswalksInLUDNonAdvanced | Sorts crosswalks in last updated date order for non-advanced flows. | Boolean | false |
-| updateRawValueToCanonicalCode | Updates raw attribute values to canonical lookup codes. | Boolean | false |
-| readEntitiesInAutoMergeHandlerAsInMergeByCrosswalks | Reads entities during auto-merge using merge-by-crosswalks semantics. | Boolean | false |
-| useRawValueAsDefaultForCleanse | Uses the raw value as default when cleanse does not return a result. | Boolean | false |
-| enableCleanseCrosswalkLog | Logs crosswalk changes resulting from cleansing operations. | Boolean | false |
-| changeCleanseCrosswalkUpdateDate | Updates crosswalk update dates when cleanse changes values. | Boolean | false |
-| cleanse.chain.resolvelookup | Enables resolve-lookup step within the cleanse chain. | Boolean | false |
-| populateSingleAttributeUpdateDatesInRefCrosswalk | Populates update dates for single attributes in reference crosswalks. | Boolean | false |
-| excludeMergeCrosswalksFromMergeTree | Excludes merge crosswalks when building merge tree. | Boolean | false |
-| skipEndDatedReferenceAttributes | Skips end-dated reference attributes in specific API responses. | Boolean | false |
-| ignoreNonOVChangesWhenUpdateThroughReferencedEntity | Suppresses events when only non-OV values change in referenced entities. | Boolean | false |
-| useOnlyOvValuesInReferencedEntities | Restricts referenced entities to OV values so non-OV changes do not propagate. | Boolean | false |
-| permanentLookupsStore | Configures use of permanent storage for lookup values. | Boolean | false |
-| transcodeByEndDatedCrosswalks | Allows lookup transcoding using end-dated crosswalks. | Boolean | false |
-| includeDisabledLookups | Includes disabled lookup values during transcoding. | Boolean | false |
-| multiParentTranscoding | Enables transcoding where a lookup can have multiple parent values. | Boolean | false |
-| publishRDMErrors | Publishes RDM-related errors to logs or monitoring. | Boolean | false |
-| cache | Controls whether RDM lookup data is cached. | Boolean | true |
-| cached | Indicates if the RDM tenant configuration is cached. | Boolean | true |
-| rdmTenants | Defines the list or mapping of RDM tenants used by this tenant. | Array | None |
-| oauthInstance | OAuth instance identifier used for RDM integration. | String | None |
-| serviceUri | Service endpoint URI for RDM or external lookup services. | String | None |
-| loqateDefaultCountry | Default country code used when cleansing addresses with Loqate. | String | USA |
-| Verification status mapping | Maps Loqate verification statuses to tenant-specific statuses. | JSON | None |
-| Address cleanser process | Defines which address cleanse process (for example, CASS or SERP) is used. | String | License-dependent |
-| dataProtectionTaskTimeWaitThreshold | Maximum number of days a data protection task waits before processing. | Integer | 7 |
-| updateAttributeUpdateDatesOnActualChanges | Updates attribute updatedDate only when the underlying value changes. | Boolean | true |
-| alwaysFillStartEndObjectCrosswalks | Ensures both start and end object crosswalks are always populated when creating relations. | Boolean | false |
-| connectRelationsToDefaultCrosswalk | Uses the tenant's default crosswalk as start/end crosswalk when relations are created using URIs. | Boolean | true |
+| `resolveLoserStartEndObjectsInRelations` | Reassigns relations to winner entities when start/end entities are merged. | Boolean | false |
+| `sortCrosswalksInLUDNonAdvanced` | Sorts crosswalks in last updated date order for non-advanced flows. | Boolean | false |
+| `updateRawValueToCanonicalCode` | Updates raw attribute values to canonical lookup codes. | Boolean | false |
+| `readEntitiesInAutoMergeHandlerAsInMergeByCrosswalks` | Reads entities during auto-merge using merge-by-crosswalks semantics. | Boolean | false |
+| `useRawValueAsDefaultForCleanse` | Uses the raw value as default when cleanse does not return a result. | Boolean | false |
+| `enableCleanseCrosswalkLog` | Logs crosswalk changes resulting from cleansing operations. | Boolean | false |
+| `changeCleanseCrosswalkUpdateDate` | Updates crosswalk update dates when cleanse changes values. | Boolean | false |
+| `cleanse.chain.resolvelookup` | Enables resolve-lookup step within the cleanse chain. | Boolean | false |
+| `populateSingleAttributeUpdateDatesInRefCrosswalk` | Populates update dates for single attributes in reference crosswalks. | Boolean | false |
+| `excludeMergeCrosswalksFromMergeTree` | Excludes merge crosswalks when building merge tree. | Boolean | false |
+| `skipEndDatedReferenceAttributes` | Skips end-dated reference attributes in specific API responses. | Boolean | false |
+| `ignoreNonOVChangesWhenUpdateThroughReferencedEntity` | Suppresses events when only non-OV values change in referenced entities. | Boolean | false |
+| `useOnlyOvValuesInReferencedEntities` | Restricts referenced entities to OV values so non-OV changes do not propagate. | Boolean | false |
+| `permanentLookupsStore` | Configures use of permanent storage for lookup values. | Boolean | false |
+| `transcodeByEndDatedCrosswalks` | Allows lookup transcoding using end-dated crosswalks. | Boolean | false |
+| `includeDisabledLookups` | Includes disabled lookup values during transcoding. | Boolean | false |
+| `multiParentTranscoding` | Enables transcoding where a lookup can have multiple parent values. | Boolean | false |
+| `publishRDMErrors` | Publishes RDM-related errors to logs or monitoring. | Boolean | false |
+| `cache` | Controls whether RDM lookup data is cached. | Boolean | true |
+| `cached` | Indicates if the RDM tenant configuration is cached. | Boolean | true |
+| `rdmTenants` | Defines the list or mapping of RDM tenants used by this tenant. | Array | None |
+| `oauthInstance` | OAuth instance identifier used for RDM integration. | String | None |
+| `serviceUri` | Service endpoint URI for RDM or external lookup services. | String | None |
+| `loqateDefaultCountry` | Default country code used when cleansing addresses with Loqate. | String | USA |
+| `Verification status mapping` | Maps Loqate verification statuses to tenant-specific statuses. | JSON | None |
+| `Address cleanser process` | Defines which address cleanse process (for example, CASS or SERP) is used. | String | License-dependent |
+| `dataProtectionTaskTimeWaitThreshold` | Maximum number of days a data protection task waits before processing. | Integer | 7 |
+| `updateAttributeUpdateDatesOnActualChanges` | Updates attribute updatedDate only when the underlying value changes. | Boolean | true |
+| `alwaysFillStartEndObjectCrosswalks` | Ensures both start and end object crosswalks are always populated when creating relations. | Boolean | false |
+| `connectRelationsToDefaultCrosswalk` | Uses the tenant's default crosswalk as start/end crosswalk when relations are created using URIs. | Boolean | true |
 
 For lookup and RDM configuration, see [RDM Lookups API](https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-api/rdm-lookups-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Set Cleanse Functions Configuration](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/configuration-api/set-cleanse-functions-configuration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
@@ -113978,24 +114672,24 @@ These parameters control event streaming, JMS publishing behavior, filters, and 
 
 | Parameter | Description | Type | Default |
 | --- | --- | --- | --- |
-| streamingEnabled | Enables or disables event streaming for the tenant. | Boolean | true |
-| streamingAPIEnabled | Controls whether events from API operations are published to streaming destinations. | Boolean | true |
-| JMSEventsFilteringFields | Defines entity fields included in JMS event payloads. | Array | None |
-| RelationEventsFilteringFields | Defines relation fields included in JMS event payloads. | Array | None |
-| skipPayload | When true, sends metadata-only events without full payload body. | Boolean | false |
-| analyzeOvChanges | Analyzes OV changes when determining whether to publish events. | Boolean | false |
-| emptyStartEndRelationCrosswalks | Controls whether relation events may contain empty start/end crosswalks. | Boolean | false |
-| largeObjectsSupport | Enables support for publishing large objects in events. | Boolean | false |
-| JMSEventsTimeToLive | Time-to-live for JMS events in the message broker. | Integer | TBD |
-| JMSIncludeMergeTime | Includes merge time information in JMS event payloads. | Boolean | false |
-| typeFilter | Filters event publication by object type. | String | None |
-| dtssQueue | Defines the queue name used for DTSS-related streaming. | String | None |
-| messaging | Grouping object for messaging configuration parameters. | JSON | None |
-| messagingName | Logical name for the messaging configuration. | String | None |
-| name | Name of an individual messaging endpoint configuration. | String | None |
-| type | Type of messaging provider (for example, JMS or cloud queue). | String | None |
-| provider | Provider identifier for the messaging system. | String | None |
-| JMSDestinationPrefix | Prefix applied to JMS destination names. | String | None |
+| `streamingEnabled` | Enables or disables event streaming for the tenant. | Boolean | true |
+| `streamingAPIEnabled` | Controls whether events from API operations are published to streaming destinations. | Boolean | true |
+| `JMSEventsFilteringFields` | Defines entity fields included in JMS event payloads. | Array | None |
+| `RelationEventsFilteringFields` | Defines relation fields included in JMS event payloads. | Array | None |
+| `skipPayload` | When true, sends metadata-only events without full payload body. | Boolean | false |
+| `analyzeOvChanges` | Analyzes OV changes when determining whether to publish events. | Boolean | false |
+| `emptyStartEndRelationCrosswalks` | Controls whether relation events may contain empty start/end crosswalks. | Boolean | false |
+| `largeObjectsSupport` | Enables support for publishing large objects in events. | Boolean | false |
+| `JMSEventsTimeToLive` | Time-to-live for JMS events in the message broker. | Integer | TBD |
+| `JMSIncludeMergeTime` | Includes merge time information in JMS event payloads. | Boolean | false |
+| `typeFilter` | Filters event publication by object type. | String | None |
+| `dtssQueue` | Defines the queue name used for DTSS-related streaming. | String | None |
+| `messaging` | Grouping object for messaging configuration parameters. | JSON | None |
+| `messagingName` | Logical name for the messaging configuration. | String | None |
+| `name` | Name of an individual messaging endpoint configuration. | String | None |
+| `type` | Type of messaging provider (for example, JMS or cloud queue). | String | None |
+| `provider` | Provider identifier for the messaging system. | String | None |
+| `JMSDestinationPrefix` | Prefix applied to JMS destination names. | String | None |
 
 For details on streaming configuration, see [Configuration API](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/configuration-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
@@ -114005,11 +114699,11 @@ These parameters control how lifecycle actions and hooks are invoked and how eve
 
 | Parameter | Description | Type | Default |
 | --- | --- | --- | --- |
-| earlyPublishEventsBeforeAfterSaveLCAHook | Publishes events before afterSave or afterMerge lifecycle hooks are executed. | Boolean | false |
-| triggerBeforeMergeLCAonManualOnly | Triggers beforeMerge and afterMerge lifecycle hooks only for manual merges. | Boolean | false |
-| lifecycleActionsService | Specifies the service endpoint handling lifecycle actions. | String | None |
-| dropOvBeforeAndAfterLcaForNonDefaultGroups | Disables OV recalculation before and after lifecycle actions for non-default groups. | Boolean | false |
-| alwaysLoadReferenceAttributesInBulkUpdateTask | Ensures that entity payloads passed to LCA hooks during background tasks include reference attributes. Enable this when your afterSave logic depends on values from referenced entities (e.g., `MainSubstance.PreferredName`). For more information, see [Tasks API](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). | Boolean | false |
+| `earlyPublishEventsBeforeAfterSaveLCAHook` | Publishes events before afterSave or afterMerge lifecycle hooks are executed. | Boolean | false |
+| `triggerBeforeMergeLCAonManualOnly` | Triggers beforeMerge and afterMerge lifecycle hooks only for manual merges. | Boolean | false |
+| `lifecycleActionsService` | Specifies the service endpoint handling lifecycle actions. | String | None |
+| `dropOvBeforeAndAfterLcaForNonDefaultGroups` | Disables OV recalculation before and after lifecycle actions for non-default groups. | Boolean | false |
+| `alwaysLoadReferenceAttributesInBulkUpdateTask` | Ensures that entity payloads passed to LCA hooks during background tasks include reference attributes. Enable this when your afterSave logic depends on values from referenced entities (e.g., `MainSubstance.PreferredName`). For more information, see [Tasks API](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). | Boolean | false |
 
 For lifecycle action configuration, see [Life Cycle Actions (LCA) Service API](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/life-cycle-actions-lca-service-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
@@ -114019,13 +114713,13 @@ These parameters configure storage, retention, and usage of the activity log.
 
 | Parameter | Description | Type | Default |
 | --- | --- | --- | --- |
-| activityLogConfig | Container for tenant-level activity log configuration. | JSON | None |
-| ttl | Retention period for activity log records in primary storage. | String | 4 months |
-| longTermStorage | Parameters controlling long-term storage of activity logs in external systems (for example, GBQ). | JSON | Disabled |
-| returnObjectLabelsInScan | Determines whether object labels are returned when scanning activity logs. | Boolean | true |
-| convertNullsToEmptyLabelsInCassandra | Returns empty labels instead of null for unspecified labels in activity storage. | Boolean | false |
-| useActivityLogInTasks | Enables activity log usage as a data source for tasks. | Boolean | false |
-| extendedLogMaxObjectsPerPostLimitExceeded | Maximum number of objects logged when post-limit-exceeded events occur. | Integer | None |
+| `activityLogConfig` | Container for tenant-level activity log configuration. | JSON | None |
+| `ttl` | Retention period for activity log records in primary storage. | String | 4 months |
+| `longTermStorage` | Parameters controlling long-term storage of activity logs in external systems (for example, GBQ). | JSON | Disabled |
+| `returnObjectLabelsInScan` | Determines whether object labels are returned when scanning activity logs. | Boolean | true |
+| `convertNullsToEmptyLabelsInCassandra` | Returns empty labels instead of null for unspecified labels in activity storage. | Boolean | false |
+| `useActivityLogInTasks` | Enables activity log usage as a data source for tasks. | Boolean | false |
+| `extendedLogMaxObjectsPerPostLimitExceeded` | Maximum number of objects logged when post-limit-exceeded events occur. | Integer | None |
 
 For usage of the activity log, see [Search using Activity Log API](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/search-using-activity-log-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
@@ -114035,12 +114729,12 @@ These parameters control export behavior, GBQ integration, quotas, and JSON comp
 
 | Parameter | Description | Type | Default |
 | --- | --- | --- | --- |
-| exportConfig | Defines tenant-level configuration for export operations. | JSON | None |
-| quotasLowWatermarkPercent | Percentage threshold at which quota low-watermark alerts are generated. | Integer | 80 |
-| quotasControlEnabled | Enables enforcement of tenant quotas. | Boolean | false |
-| compressJsons | Compresses JSON payloads for exports and storage where supported. | Boolean | false |
-| gbqLimitBytes | Maximum number of bytes allowed per GBQ export operation. | Long | None |
-| table | Target table name used for GBQ or external export destinations. | String | None |
+| `exportConfig` | Defines tenant-level configuration for export operations. | JSON | None |
+| `quotasLowWatermarkPercent` | Percentage threshold at which quota low-watermark alerts are generated. | Integer | 80 |
+| `quotasControlEnabled` | Enables enforcement of tenant quotas. | Boolean | false |
+| `compressJsons` | Compresses JSON payloads for exports and storage where supported. | Boolean | false |
+| `gbqLimitBytes` | Maximum number of bytes allowed per GBQ export operation. | Long | None |
+| `table` | Target table name used for GBQ or external export destinations. | String | None |
 
 For export options and quotas, see [Export Service APIs](https://docs.reltio.com/en/developer-resources/load-and-export-apis/load-and-export-apis-at-a-glance/export-service-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
@@ -114050,12 +114744,12 @@ These parameters control tenant history, Bigtable usage, and storage behavior fo
 
 | Parameter | Description | Type | Default |
 | --- | --- | --- | --- |
-| historyGBTMigration | Enables dual-writing history to Google Bigtable during migration. | Boolean | false |
-| historyBigTableConfig | Defines the configuration for storing history in Google Bigtable. | JSON | None |
-| historyKeyspaceConfig | Specifies the keyspace configuration for primary history storage. | JSON | None |
-| historySecondaryKeyspaceConfig | Defines secondary history keyspace configuration when dual storage is enabled. | JSON | None |
-| matchKeyspaceConfig | Configuration for the Cassandra keyspace used for match column families. | JSON | None |
-| interactionKeyspaceConfig | Keyspace configuration for storing interaction objects. | JSON | None |
+| `historyGBTMigration` | Enables dual-writing history to Google Bigtable during migration. | Boolean | false |
+| `historyBigTableConfig` | Defines the configuration for storing history in Google Bigtable. | JSON | None |
+| `historyKeyspaceConfig` | Specifies the keyspace configuration for primary history storage. | JSON | None |
+| `historySecondaryKeyspaceConfig` | Defines secondary history keyspace configuration when dual storage is enabled. | JSON | None |
+| `matchKeyspaceConfig` | Configuration for the Cassandra keyspace used for match column families. | JSON | None |
+| `interactionKeyspaceConfig` | Keyspace configuration for storing interaction objects. | JSON | None |
 
 ## Optional and Miscellaneous Parameters
 
@@ -114063,16 +114757,16 @@ These parameters control optional behaviors and fine-tuning aspects for the tena
 
 | Parameter | Description | Type | Default |
 | --- | --- | --- | --- |
-| useNewDCRs | Enables use of the new Data Change Request (DCR) model. | Boolean | false |
-| useNewDCRsAsDefault | Uses the new DCR model as the default for change management. | Boolean | false |
-| repeatAllOperationsOnConflict | Repeats operations when conflicts are detected during updates. | Boolean | false |
-| allowRebuildInBackground | Allows rebuild operations to run in the background. | Boolean | false |
-| detailedTracing | Enables detailed tracing logs for troubleshooting. | Boolean | false |
-| disableUseHashForRecleanse | Disables hash-based optimization for recleanse operations. | Boolean | false |
-| fullySerializeStartEndCrosswalks | Serializes full start and end crosswalk content for relation objects. | Boolean | false |
-| allowSkipReferenceObjectsUpdate | Prevents skipping ENTITY_CHANGED events for referenced entities when optimizations apply. | Boolean | false |
-| allowSkipRefChecks | Skips validation of reference object consistency when assembling business objects. | Boolean | false |
-| overridePrevValueStatus | Allows a new value to override pin or ignore status even when identical to the previous value. | Boolean | false |
+| `useNewDCRs` | Enables use of the new Data Change Request (DCR) model. | Boolean | false |
+| `useNewDCRsAsDefault` | Uses the new DCR model as the default for change management. | Boolean | false |
+| `repeatAllOperationsOnConflict` | Repeats operations when conflicts are detected during updates. | Boolean | false |
+| `allowRebuildInBackground` | Allows rebuild operations to run in the background. | Boolean | false |
+| `detailedTracing` | Enables detailed tracing logs for troubleshooting. | Boolean | false |
+| `disableUseHashForRecleanse` | Disables hash-based optimization for recleanse operations. | Boolean | false |
+| `fullySerializeStartEndCrosswalks` | Serializes full start and end crosswalk content for relation objects. | Boolean | false |
+| `allowSkipReferenceObjectsUpdate` | Prevents skipping ENTITY_CHANGED events for referenced entities when optimizations apply. | Boolean | false |
+| `allowSkipRefChecks` | Skips validation of reference object consistency when assembling business objects. | Boolean | false |
+| `overridePrevValueStatus` | Allows a new value to override pin or ignore status even when identical to the previous value. | Boolean | false |
 
 For optional configuration patterns, see [Tenant Configuration at a glance](https://docs.reltio.com/en/applications/console/tenant-management-applications/tenant-management-at-a-glance/tenant-configuration-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
@@ -127977,7 +128671,7 @@ For additional information about relation properties that can be used in filter 
 | Query | `select` | No | This is a comma-separated list of properties from relation structure that should be returned in a response. Allows a return of the partial relationship object. You can find a list of relationship object properties under [Relations API](https://docs.reltio.com/en/developer-resources/relation-management-apis/relation-management-apis-at-a-glance/relations-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). | `select=uri,startObject,endObject` |
 | Query | `max` | No | Positive Integer value to identify maximum number of relations to return in a response. Can be used to organize pagination in combination with `"offset"` parameter.  Default value depends on the tenant configuration. | `max=10` |
 | Query | `offset` | No | Positive Integer value to identify starting what element in a result set should be returned in a response. Can be used to organize pagination in combination with `"max"` parameter.  Default value is `0`.  > **Note:** The updated maximum value and offset parameters, when combined, must not exceed the value of 10,000. Some examples of valid combinations are:  > - offset=9900 and max=100 > - offset=9800 and max=200 | `offset=120` |
-| Query | `sort` | No | Sort parameter is used with `Order` parameter. Sort parameter points to the attribute or a list of attributes where ordering must be applied. If you order the result set as ascending or descending (reversed), you must use the Sort parameter to list the attributes that must be used for ordering.parameter. Sort parameter points to the attribute or a list of attributes where ordering must be applied. If you order the result set as ascending or descending (reversed), you must use the Sort parameter to list the attributes that must be used for ordering.**Important:** The sorting will not be used if this parameter is not provided or the value is not recognized.Sorting is available on multiple parameters combining the parameters using **&** sign. The **&** symbol is encoded as **%26** in the request.Sorting priority of the parameters depends on the order you have added the parameters in the request while using multiple sorting. | `sort=uri`  `sort=uri&startObject`The result set is first sorted alphabetically by Uniform Resource Identifier (URI). The sorted result set will be sorted again by`sort=startObject` |
+| Query | `sort` | No | Sort parameter is used with `Order` parameter. Sort parameter points to the attribute or a list of attributes where ordering must be applied. If you order the result set as ascending or descending (reversed), you must use the parameter. Sort parameter points to the attribute or a list of attributes where ordering must be applied. If you order the result set as ascending or descending (reversed), you must use the `Sort` parameter to list the attributes that must be used for ordering.parameter to list the attributes that must be used for ordering.Example: sort=attributes.FirstName **Important:** Sorting is available on multiple parameters combining the parameters using & sign. The & symbol is encoded as %26 in the request. Sorting priority of the parameters depends upon the order you have added the parameters in the request while using multiple sorting.When you don't specify the `sort` parameter, or the value isn't recognized, search results are sorted first by relevance score and then by ID. When you disable `searchStorageConfiguration.applyDefaultSorting`, searches without the `sort` parameter return results in the search index's natural order. Searches without the sort parameter, or with an unrecognized value, return results in the search index's internal order instead. For more information, see [Tenant Configuration Parameters Reference](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/tenant-configuration-parameters-reference?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). You can also set the `sort` parameter to one of the following values: - `score`: Sorts relations by relevance score. Unlike attribute-based sorts, which default to ascending order, `score` defaults to descending order when `order` isn't specified, so the highest-scoring relations appear first. - `none`: Returns relations in the order they appear in the search index. This is the fastest option because it doesn't calculate relevance scores or apply a tie-breaker. **Note:** The `applyDefaultSorting` setting applies only to searches that don't already require a specific sort order. It doesn't change sorting when the request:Includes a `sort` parameter.Is an activity search, which is always sorted by timestamp.Is a type-ahead search.Includes `scoreEnabled=true`.Comes from the Reltio UI.Is a `_scan` or other background-task search that uses a predefined sort to keep pagination consistent. | `sort=uri`  `sort=uri&startObject`The result set is first sorted alphabetically by Uniform Resource Identifier (URI). The sorted result set will be sorted again by`sort=startObject` |
 | Query | `order` | No | Order of sorting. Can be used in combination with the `sort` parameter to have the reverse order.   Possible values:  - `asc`: results are shown in ascending order - `desc`: results are shown in descending order      Default sorting is by relation `asc`. | `order=desc` |
 | Query | `options` | No | This is a comma-separated list of different options that have an affect on a relation's JSON content in a response.  Available options:  - `sendHidden`: disabled by default, relation's JSON contain hidden attributes if this option is enabled. - `resolveMergedEntities`: `false` by default, returns actual winner URIs for start/end objects in the relation if set to `true`. - `searchByOv`: disabled by default; to search by all relation attributes with Operational Value (OV) only. | `options=sendHidden,resolveMergedEntities,searchByOv` |
 | Query | `activeness` | No | Available options:  `active`: default value. This option allows a search among active relations  `all`: allows search among all (active/expired) relations  `not_active`: allows search among expired relations | `activeness=active` |
@@ -132308,7 +133002,7 @@ Headers: Authorization: Bearer <Access-Token>
 
 Learn about updating the client associated with the customer as specified in the request body.
 
-Use this API to update the client associated with the customer as specified in the request body. All client parameters must be defined in the body of the request, else they are overwritten with empty values. The only exception is the client secret, where if no client secret is sent, the current client secret will remain. However, any other missing attributes are considered to be empty.
+Use `Update a customer client API` to update the client associated with the customer as specified in the request body. All client parameters must be defined in the body of the request, else they are overwritten with empty values. The only exception is the client secret, where if no client secret is sent, the current client secret will remain. However, any other missing attributes are considered to be empty.
 
 You need either of the following role and permission to use this API:
 
@@ -132319,89 +133013,175 @@ To reset a client secret, you must be assigned the `ROLE_ADMIN_CUSTOMER` role. I
 
 > **Important:** Clients tokens are revoked if the list of roles, or, the secret is modified during the update.
 
-## Request
+## HTTP method and endpoint
+
+Use the following HTTP method and endpoint to submit the request:
 
 ```
 PUT https://auth.reltio.com/oauth/customers/{customerId}/clients/{clientId}
 ```
 
-**Parameters**
+Use the GET client API to retrieve the current client configuration. Edit the returned JSON, and then submit the complete document with this PUT API. The PUT request replaces the stored client configuration with the request body, so omitted values might not be retained.
 
-| Name | Name | Required | Description |
+The following table describes the endpoint path parameters.
+
+| Parameter | Type | Required | Description |
 | --- | --- | --- | --- |
-| Headers | `Authorization` | Yes | Information about the authentication access token should be in the format: "Bearer {accessToken}". For more information, see topic [Authentication API](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/authentication-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
-| URL Parameters | `customerId` | Yes | A valid Customer ID. |
-| URL Parameters | `clientId` | Yes | A valid Client ID. |
+| `customerId` | String | Yes | Identifier of the customer associated with the client. |
+| `clientId` | String | Yes | Identifier of the client to update. |
 
-## Response
+## Query parameters
 
-The updated client information associated with the customer.## Example
+The following table describes the query parameters and their values.
 
-**Request**```
-PUT https://auth.reltio.com/oauth/customers/ABC/clients/test_client
-Headers: Authorization: Bearer <Access-Token>
-Body:
+| Parameter | Type | Required | Description | Accepted values / Default |
+| --- | --- | --- | --- | --- |
+| `skipTokenRevocation` | Boolean | No | Prevents active client tokens from being revoked when the update changes the client's roles. Use this parameter only for controlled migrations. | Accepted values: `true`, `false`. Default: not confirmed in the provided source. |
+
+## Request headers
+
+Include the following headers in the request.
+
+| Header | Value | Required |
+| --- | --- | --- |
+| `Authorization` | `Bearer <access_token>` | Yes |
+| `Content-Type` | `application/json` | Yes |
+
+## Request body
+
+The following table describes the request body parameters.
+
+| Parameter | Type | Required | Description | Accepted values / Example |
+| --- | --- | --- | --- | --- |
+| `clientId` | String | Yes | Identifier of the client. | `{clientId}` |
+| `scope` | Array | No | Scopes assigned to the client. | `[]` |
+| `authorities` | Array | No | Authorities assigned to the client. | `[]` |
+| `resourceIds` | Array | Yes | Resource identifiers associated with the client. | `[]` |
+| `authorizedGrantTypes` | Array | Yes | OAuth grant types assigned to the client. | `client_credentials` |
+| `clientDescription` | String | Yes | Description of the client. | `Test client 005 - API only` |
+| `clientName` | String | Yes | Name of the client. | `Migration Test Client 005` |
+| `clientEmail` | String or null | Yes | Email address associated with the client. | `null` |
+| `redirectUri` | Array | Yes | Redirect URIs configured for the client. | `[]` |
+| `accessTokenValidity` | Number or null | Yes | Access token validity value configured for the client. | `null` |
+| `refreshTokenValidity` | Number or null | Yes | Refresh token validity value configured for the client. | `null` |
+| `defaultRolesAssignmentEnabled` | Boolean | No | Controls whether `ROLE_API` is assigned by default when tokens are issued. If omitted or set to `true`, `ROLE_API` may be assigned for all customer tenants. Set it to `false` to use only the roles defined in `clientPermissions.roles`. | `true`,`false` |
+| `clientAuthenticationMethods` | Array | Yes | Authentication methods supported by the client. | `client_secret_post`, `client_secret_basic` |
+| `enabled` | Boolean | Yes | Indicates whether the client is enabled. | `true` |
+| `clientPermissions.roles` | Object | Yes | Maps each registered role name to an array of tenant scopes assigned to that role. Role names can be standard or custom. `ROLE_API` and `ROLE_USER` are examples only and are not required. | Contains `roles`, `permissions`, and `permissionsByService`. |
+| `permissions` | Object | Yes | Permissions assigned to the client. | `{}` |
+| `permissionsByService` | Object | Yes | Permissions assigned to the client and grouped by service. | `{}` |
+| `clientSecret` | String | No | Specifies a new secret for the client. Omit this parameter unless you intend to rotate the secret. If omitted, the existing client secret remains unchanged. | Accepted value: a valid client secret.  Default: retains the existing secret when omitted. |
+| `jwtVersion` | Eum | No | Specifies the JWT version associated with the client. If this parameter is present in the current client configuration, include it in the PUT request to preserve its value. | Accepted value: "V1", Default value: null |
+| `consumer` | String | No | Specifies the consumer value associated with the client. If this parameter is present in the current client configuration, include it in the PUT request to preserve its value. | Any string. The value isn't validated against an allowlist, and no length restriction is enforced. |
+
+## Example request
+
+The following example updates a customer client:
+
+```
+PUT https://auth.reltio.com/oauth/customers/{customerId}/clients/{clientId}
+
 {
-    "clientId": "test_client",
-     "clientPermissions": 
-	{
-        "roles":{
-            "ROLE_ADMIN_TENANT": ["tenant1"],
-            "ROLE_API": ["tenant1"]
-        	}
-    	},
+    "clientId": "{{clientId}}",
+    "scope": [],
     "authorities": [],
     "resourceIds": [],
-    "authorizedGrantTypes": [
-        "client_credentials"
-    ],
-    "clientDescription": null,
-    "clientName": null,
-    "clientEmail": null,
-    "redirectUri": [],
-    "accessTokenValidity": null,
-    "refreshTokenValidity": null,
-    "defaultRolesAssignmentEnabled": false,
-    "clientAuthenticationMethods": [
-        "client_secret_post",
-        "client_secret_basic"
-     ],
- enabled=true
+  "authorizedGrantTypes": [
+    "client_credentials"
+  ],
+  "clientDescription": "Description of the client",
+  "clientName": "Name of the client",
+  "clientEmail": null,
+  "redirectUri": [],
+  "accessTokenValidity": null,
+  "refreshTokenValidity": null,
+  "defaultRolesAssignmentEnabled": false,
+  "clientAuthenticationMethods": [
+    "client_secret_post",
+    "client_secret_basic"
+  ],
+  "enabled": true,
+  "clientPermissions": {
+    "roles": {
+      "ROLE_API": [],
+      "ROLE_USER": []
+    },
+    "permissions": {},
+    "permissionsByService": {}
+  }
 }
 ```
 
-**Response**```
+## Example response
+
+The following example shows the updated client definition:
+
+```
 {
-    "clientId": "test_client",
-    "scope":[]
-       "clientPermissions": 
-	{
-        "roles":{
-            "ROLE_ADMIN_TENANT": ["tenant1"],
-            "ROLE_API": ["tenant1"]
-        	}
-    	},
+     "clientId": "{{clientId}}"",
+    "scope": [],
     "authorities": [],
     "resourceIds": [],
-    "authorizedGrantTypes": [
-        "client_credentials"
-    ],
-    "clientDescription": null,
-    "clientName": null,
-    "clientEmail": null,
-    "redirectUri": [
-        "http://localhost"
-    ],
-    "accessTokenValidity": null,
-    "refreshTokenValidity": null,
-    "defaultRolesAssignmentEnabled": false,
-    "clientAuthenticationMethods": [
-        "client_secret_post",
-        "client_secret_basic"
-    ],
-"enabled" : true
+  "authorizedGrantTypes": [
+    "client_credentials"
+  ],
+  "clientDescription": "Description of the client.",
+  "clientName": "Name of the client",
+  "clientEmail": null,
+  "redirectUri": [],
+  "accessTokenValidity": null,
+  "refreshTokenValidity": null,
+  "defaultRolesAssignmentEnabled": false,
+  "clientAuthenticationMethods": [
+    "client_secret_post",
+    "client_secret_basic"
+  ],
+  "enabled": true,
+  "clientPermissions": {
+    "roles": {
+      "ROLE_API": [],
+      "ROLE_USER": []
+    },
+    "permissions": {},
+    "permissionsByService": {}
+  },
+  "createdBy": "xyz@reltio.com",
+  "updatedBy": "xyz@reltio.com",
+  "createdDate": 1785230002716,
+  "updatedDate": 1785230046420
 }
 ```
+
+## Response body
+
+The following table describes the fields returned in the response body.
+
+| **Field** | **Type** | **Description** |
+| --- | --- | --- |
+| `clientId` | String | Identifier of the updated client. |
+| `scope` | Array | Scopes assigned to the client. |
+| `authorities` | Array | Authorities assigned to the client. |
+| `resourceIds` | Array | Resource identifiers associated with the client. |
+| `authorizedGrantTypes` | Array | OAuth grant types configured for the client. |
+| `clientDescription` | String | Description of the client. |
+| `clientName` | String | Name of the client. |
+| `clientEmail` | String or null | Email address associated with the client. |
+| `redirectUri` | Array | Redirect URIs configured for the client. |
+| `accessTokenValidity` | Number or null | Access token validity value configured for the client. |
+| `refreshTokenValidity` | Number or null | Refresh token validity value configured for the client. |
+| `defaultRolesAssignmentEnabled` | Boolean | Indicates whether default role assignment is enabled for the client. |
+| `clientAuthenticationMethods` | Array | Authentication methods configured for the client. |
+| `enabled` | Boolean | Indicates whether the client is enabled. |
+| `clientPermissions` | Object | Contains the roles and permissions assigned to the client. |
+| `roles` | Object | Maps each registered role name to an array of tenant scopes assigned to that role. Role names can include standard or custom roles.`ROLE_API` and `ROLE_USER` are examples of valid role names. |
+| `ROLE_API` | Array | Assignments associated with the `ROLE_API` role. |
+| `ROLE_USER` | Array | Assignments associated with the `ROLE_USER` role. |
+| `permissions` | Object | Permissions assigned to the client. |
+| `permissionsByService` | Object | Permissions assigned to the client, grouped by service. |
+| `createdBy` | String | User who created the client. |
+| `updatedBy` | String | User who last updated the client. |
+| `createdDate` | Number | Date and time when the client was created, represented as an epoch timestamp in milliseconds. |
+| `updatedDate` | Number | Date and time when the client was last updated, represented as an epoch timestamp in milliseconds. |
 
 
 
@@ -148730,20 +149510,78 @@ This job performs background comparison of primary and secondary storages to fin
 
 **Source:** https://docs.reltio.com/en/applications/console/tenant-management-applications/tenant-management-at-a-glance/jobs-at-a-glance/creating-a-rebuild-match-tables-job?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
-**Keywords:** Rebuild Match Tables Job, create rebuild match tables job, rebuild match tables job, rebuild match tables, rebuild tables job
+**Keywords:** create rebuild match table job tenant management, rebuild match tables job reltio, include fern vectorization toggle, fern vector rebuild before match table, runFernReindexBeforeRebuild parameter, tenant management rebuild match table console
 
 
-You must run this job after a data load or if there are changes to match rules.
+Learn how to create a Rebuild Match Tables job in Tenant Management, including the optional FERN vectorization step.
 
-1. In Console, click on the **Tenant Management** application.
+The **Rebuild Match Tables** job recalculates potential matches for a tenant based on the current match rules. Run this job when you need potential matches to reflect recent changes; for example, after loading data or updating match rules.
+
+If your tenant uses FERN for AI-powered matching, the Rebuild Match Tables job includes vectorization by default to update vector data before the rebuild starts. You can turn off vectorization if vectors are already up to date.
+
+**Prerequisites**
+
+Before you create a Rebuild Match Tables job, make sure you have the following permissions and access:
+
+- 
+
+  Permission to update the L3 tenant configuration using the Configuration API
+- 
+
+  `ROLE_ADMIN_TENANT` role to run the Rebuild Match Table task from Console
+- 
+
+  Access to the **Tenant Management** application in **Console**
+
+
+To create a Rebuild Match Tables job:
+
+1. In the **Console**, select the **Tenant Management** application.
 2. Click **NEW JOB**.
-   The **Create new job** screen displays all the jobs that the user can run as shown below:
+   The **Create new job** page displays all the jobs that you can run.
    *Image: em_selectnewjob.png*
-3. Click on **Rebuild match table** job.
-   The job parameters appear as follows:
+3. Select the **Rebuild match table** job to view to view the **Rebuild match table** page.
    *Image: em_rebuild_job.png*
 4. Specify values for the job parameters based on your requirement.
+   | Parameter | Description | Default |
+| --- | --- | --- |
+| **Entity type** | Select the entity type, or select **All types** to process every entity type. | All types |
+| **Skip entities count** | Number of entities to skip before the job starts processing. | 0 |
+| **Entities limit** | Number of entities to process. Leave blank to process all entities. | All |
+| **AI-powered vectorization** | Turn on to run FERN vectorization before the rebuild. The **AI-powered vectorization** parameter appears only if your tenant uses [FERN](https://docs.reltio.com/en/applications/console/configuration-applications/ai-powered-flexible-entity-resolution-network-fern-model-based-matching-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). This parameter is on by default. When on, the job runs vectorization to update your records for AI-powered matching. The rebuild starts only after vectorization completes successfully. When off, the job rebuilds the match table without running vectorization. | On |
+| **Delete Old Column Families** | Turn on to delete existing column families as part of this run. | Off |
+| **Distributed** | Turn on to split work across multiple parallel jobs on different API nodes. | Off |
+| **Job parts count** | Number of parallel jobs for distributed mode. Available only when **Distributed** is on. Reltio recommends setting this to the number of API nodes available to run the job. | 2 |
 5. Click **RUN JOB**.
+
+**Result**The job rebuilds the match table for the selected entities based on the current match rules, so that new or changed data is considered during matching. The result depends on the parameters you selected:
+
+- 
+
+  **AI-powered vectorization on**: The job checks whether vectorization is needed. If needed, the job runs vectorization first and starts the rebuild only after vectorization completes successfully. If not needed, the job proceeds directly to the rebuild.
+- 
+
+  **AI-powered vectorization off**: The job rebuilds the match table without running vectorization.
+- 
+
+  **Delete Old Column Families on**: The job deletes existing column families before rebuilding. Distributed on: The job splits work across the number of parts set in Job parts count.
+
+**Verification steps**
+
+- 
+
+  Check the job status in **Tenant Management** to confirm the job completed successfully.
+- 
+
+  If AI-powered vectorization was on and vectorization ran, check the Completed tab for these jobs in execution order:
+  1. AI vectorization task
+  2. AI vectorization worker task
+  3. Rebuild match table
+- 
+
+  Review potential matches in **Hub** to confirm they reflect the current match rules and, if applicable, current vector data.
+
+For API parameter names and additional options not available in Console, see [Rebuild Match Table Task](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/rebuild-match-table-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
@@ -166496,6 +167334,7 @@ D&B Data Blocks can be used in several occasions:
 - If you want to identify corporate hierarchies and cross-link related entities for a single view.
 - If you need to add verified principal and contact information for better outreach and governance.
 - If you need to classify entities by diversity attributes to support supplier diversity and ESG initiatives.
+- If you need to maintain data integrity after Unmerge events. Recertification automatically re-evaluates resulting entities against D&B and removes D&B data from entities that no longer qualify.
 
 ## Key features
 
@@ -166509,16 +167348,18 @@ Leverage the prebuilt integration in Reltio Integration Hub (RIH) to realize sev
 - Configurable parameters, including confidence code thresholds for auto-merge vs. suspect match
 - Support for “Potential Match only” mode via configuration
 - Enrich multiple Reltio profiles that match the same DUNS number
-- Unified functionality across all modes of operation: real-time, batch, on-demand, and monitoring
+- Unified functionality across all modes of operation: real-time, batch, on-demand, monitoring, and recertification
 - Ability to add and configure D&B Data Blocks to suit your requirements
 - Optimized recipe design and consolidated SDKs for improved performance and maintainability
+- Approximately 2× performance improvement versus prior versions
+- MDP attributes automatically populated and visible in the Reltio record after enrichment
 - Recertification workflows to ensure enriched data stays accurate and current
 
 **Bridge gaps in your data with D&B curated “Data Blocks”**
 
 The Reltio D&B Data Blocks integration unfolds the latest D&B enrichment technologies in a structured, extensible format.
 
-**Enrich profiles across four modes of operation**
+**Enrich profiles across five modes of operation**
 
 Use the D&B Data Blocks connector to get trusted, accurate, and current organization data from D&B’s database. Records are matched against D&B using basic firmographic information.
 
@@ -166534,6 +167375,7 @@ Supported modes:
 2. Batch (scheduled or invoked manually via API)
 3. On-demand (user-initiated via UI buttons)
 4. Monitoring (based on change events for registered DUNS numbers)
+5. Recertification (scheduled re-verification and real-time re-enrichment triggered by Unmerge events; entities that no longer qualify have their D&B data removed)
 
 **Enrich organization data with hierarchies and contact relationships**
 
@@ -196346,128 +197188,104 @@ Always use the restore API if you need to reuse the same mapping definition afte
 
 **Source:** https://docs.reltio.com/en/applications/data-integrations/zero-copy-integration-at-a-glance/reltio-zero-copy-integration-with-snowflake-at-a-glance/reltio-zero-copy-segmentation-with-snowflake/configure-snowflake-permissions-for-zero-copy-segmentation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
-**Keywords:** configure snowflake permissions segmentation, zero copy segmentation snowflake setup, snowflake role permissions for segmentation, segmentation execution permissions reltio, grant permissions for snowflake segmentation, snowflake segmentation access control, segmentation setup, snowflake roles, permissions
+**Keywords:** configure snowflake permissions segmentation, zero copy segmentation snowflake setup, snowflake role permissions for segmentation, segmentation execution permissions reltio, grant permissions for snowflake segmentation, snowflake segmentation access control, segmentation setup, snowflake roles, permissions, dedicated schema for segmentation
 
 
-Configure and validate Snowflake permissions to enable Zero Copy segmentation to execute securely within your environment.
+Learn how to configure and verify the Snowflake permissions required to enable Zero Copy segmentation.
 
-Segmentation tasks on Zero Copy integrations runs directly inside the Snowflake instance, requiring a specific set of permissions to control how the system accesses and processes data. You must configure these permissions to allow the segmentation role to read source data, create execution objects, and write results to the target table. This topic explains the required permissions and how they enable secure, controlled execution of segmentation tasks within the boundaries of the Snowflake instance.
+Zero Copy segmentation evaluates segments directly inside your Snowflake instance. To run segmentation securely, grant your segmentation role `<role>` a specific set of Snowflake permissions that allow the role to read source data from the Snowflake tables that sync with Reltio, create the tables and tasks it needs in a dedicated schema, and write segment results to a shared results table, all within that same Snowflake instance.
 
-## Prerequisites
+Apply these permissions only if you enable segmentation for your Zero Copy integration. If you use Zero Copy integration without segmentation, you don't need these permissions.
 
-Before you begin, make sure you have:
+**Prerequisites**
 
-- Access to a Snowflake account with privileges to grant roles and permissions.
-- A warehouse, database, and schema created or identified
-- A dedicated role for segmentation.
-- Completed Zero Copy Integration configuration.
+Before you begin, make sure you have the following roles and resources.
 
-## Grant access to Snowflake resources
+Roles you need:
 
-Grant access to the warehouse, database, and schema so that the segmentation role can operate within the defined environment.
+| Role | Used for |
+| --- | --- |
+| `<role>`, your segmentation role | The role every permission in this procedure is granted to. This is the same role you created for your [Zero Copy integration](https://docs.reltio.com/en/applications/data-integrations/zero-copy-integration-at-a-glance/reltio-zero-copy-integration-with-snowflake-at-a-glance/configure-zero-copy-data-integration-with-snowflake-using-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs); segmentation adds permissions to this role rather than requiring a new role. |
+| `SECURITYADMIN`, or a custom role with the [MANAGE GRANTS permission](https://docs.snowflake.com/en/user-guide/security-access-control-privileges) | Runs every command in this procedure except granting `EXECUTE TASK ON ACCOUNT`, which requires `ACCOUNTADMIN` specifically. |
+| `ACCOUNTADMIN` | Runs only the command that grants `EXECUTE TASK ON ACCOUNT`. Snowflake requires this specific role for that account-level permission. |
 
-```
+Resources you need:
 
-GRANT USAGE ON WAREHOUSE <warehouse> TO ROLE <role>;
-GRANT USAGE ON DATABASE <db> TO ROLE <role>;
-GRANT USAGE ON SCHEMA <db>.<schema> TO ROLE <role>;
-      
-```
+- A warehouse and database identified for segmentation.
+- A dedicated, empty schema for segmentation, for example `RELTIO_ZEROCOPY`, so your segmentation role's access stays limited to the tables it creates and manages.
 
-These permissions allow the role to use compute resources, access the database, and work within the schema.
+Throughout this procedure, replace `<role>` with your segmentation role, and replace `<warehouse>`, `<db>`, and `<schema>` with your warehouse, database, and schema names.
 
-## Grant object creation permissions in the schema
+Complete the following procedure in a Snowflake SQL worksheet or the SnowSQL client.
 
-Allow the segmentation role to create Snowflake objects required for execution.
 
-```
+To configure the Snowflake permissions required for segmentation
 
-GRANT CREATE TASK ON SCHEMA <db>.<schema> TO ROLE <role>;
-GRANT CREATE TABLE ON SCHEMA <db>.<schema> TO ROLE <role>;
-GRANT CREATE PROCEDURE ON SCHEMA <db>.<schema> TO ROLE <role>;
-      
-```
-
-These permissions allow the system to create tasks, procedures, and the `segment_results` table.
-
-## Grant data access for segment evaluation
-
-Allow the segmentation role to read source data required for segment evaluation.
-
-```
-
-GRANT SELECT ON TABLE <db>.<schema>."entities" TO ROLE <role>;
-GRANT SELECT ON TABLE <db>.<schema>."interactions" TO ROLE <role>;
-      
-```
-
-These permissions allow the system to read entity data and interaction data when segment logic requires it.
-
-## Grant write and cleanup permissions
-
-Allow the segmentation role to write results and remove outdated data during execution.
-
-```
-
-GRANT INSERT ON FUTURE TABLES IN SCHEMA <db>.<schema> TO ROLE <role>;
-GRANT DELETE ON FUTURE TABLES IN SCHEMA <db>.<schema> TO ROLE <role>;
-GRANT DELETE ON ALL TABLES IN SCHEMA <db>.<schema> TO ROLE <role>;
-      
-```
-
-These permissions allow the system to insert new results and delete stale data before each execution.
-
-## Grant task execution capability
-
-Allow Snowflake to execute tasks created by the segmentation role.
-
-```
-
-GRANT EXECUTE TASK ON ACCOUNT TO ROLE <role>;
-      
-```
-
-This permission allows task execution without granting additional data access.
-
-## Enable tagging for segmentation tasks
-
-This step is optional. Grant tagging permissions if you want to track and filter segmentation tasks.
-
-```
-
+1. Log in to your Snowflake account.
+2. In the navigation menu, click **Worksheets > + Worksheet > SQL Worksheet** to open a new SQL worksheet.
+3. Grant your segmentation role, `<role>`, access to the warehouse, database, and schema used for segmentation.
+   ```
+GRANT USAGE ON WAREHOUSE <warehouse> TO ROLE <role>; GRANT USAGE ON DATABASE <db> TO ROLE <role>; GRANT USAGE ON SCHEMA <db>.<schema> TO ROLE <role>;
+   ```
+   These permissions let the segmentation role use compute resources, access the database, and operate within the schema.
+4. Grant the segmentation role permission to create the tables, tasks, and procedures it needs for segment evaluation.
+   ```
+GRANT CREATE TASK ON SCHEMA <db>.<schema> TO ROLE <role>; GRANT CREATE TABLE ON SCHEMA <db>.<schema> TO ROLE <role>; GRANT CREATE PROCEDURE ON SCHEMA <db>.<schema> TO ROLE <role>;
+   ```
+   The segmentation role uses these permissions to create the shared results table in the next step, and the tasks and procedures it runs for each segment evaluation.
+5. Using `<role>`, create the shared results table.
+   ```
+USE ROLE <role>; CREATE TABLE IF NOT EXISTS <db>.<schema>.segment_results ( segment_id VARCHAR(128) NOT NULL, entity_id VARCHAR(128) NOT NULL ) CLUSTER BY (segment_id, entity_id);
+   ```
+   Segmentation writes every segment's results to this shared table and uses `segment_id` to separate the rows that belong to each segment. You create this table once, during initial setup, not per segment.
+6. Grant the segmentation role permission to read the source tables it needs for evaluation.
+   ```
+GRANT SELECT ON ALL TABLES IN SCHEMA <db>.<schema> TO ROLE <role>; GRANT SELECT ON FUTURE TABLES IN SCHEMA <db>.<schema> TO ROLE <role>;
+   ```
+   `SELECT ON ALL TABLES` covers the tables that already exist, such as `entities` and `interactions`. `SELECT ON FUTURE TABLES` extends that same access to tables created later. You don't need to grant this again when new tables appear.
+7. Grant the segmentation role permission to write new results and remove stale rows.
+   ```
+GRANT INSERT ON ALL TABLES IN SCHEMA <db>.<schema> TO ROLE <role>; GRANT INSERT ON FUTURE TABLES IN SCHEMA <db>.<schema> TO ROLE <role>; GRANT DELETE ON TABLE <db>.<schema>.segment_results TO ROLE <role>; GRANT DELETE ON TABLE <db>.<schema>."datatable" TO ROLE <role>;
+   ```
+   The insert permission lets the segmentation role write segment results. The delete permission on `segment_results` removes stale rows before writing updated results. The delete permission on `datatable` applies to Reltio's internal event processing table.
+8. Using `ACCOUNTADMIN`, grant the segmentation role permission to execute the [tasks](https://docs.snowflake.com/en/user-guide/tasks-intro) segmentation creates.
+   ```
+USE ROLE ACCOUNTADMIN; GRANT EXECUTE TASK ON ACCOUNT TO ROLE <role>;
+   ```
+   This grant lets Snowflake's task scheduler run tasks owned by the segmentation role. It doesn't grant access to any table data in your schema.
+   If you accidentally run this command while acting as the segmentation role instead of `ACCOUNTADMIN`, the permission appears valid in `SHOW GRANTS TO ROLE <role>`, but fails at runtime for dedicated service users. If this occurs, revoke the incorrect permission using the segmentation role, then reapply it using `ACCOUNTADMIN`.
+   To revoke,
+   To revoke,
+   ```
+USE ROLE <role>; REVOKE EXECUTE TASK ON ACCOUNT FROM ROLE <role>; USE ROLE ACCOUNTADMIN; GRANT EXECUTE TASK ON ACCOUNT TO ROLE <role>;
+   ```
+9. Grant the segmentation role permission to apply [tags](https://docs.snowflake.com/en/user-guide/object-tagging/introduction) to the tasks it creates.
+   ```
+GRANT APPLY ON ALL TAGS IN SCHEMA <db>.<schema> TO ROLE <role>;
+   ```
+   Grant this permission, even if you don't plan to use tagging. Snowflake requires it before a role can apply any tag to a task, and it has no effect until you create a tag.
+10. (Optional) Enable tagging for segmentation tasks.
+   Run this step only if you want to track and filter segmentation tasks by tag.
+   ```
 GRANT CREATE TAG ON SCHEMA <db>.<schema> TO ROLE <role>;
-      
-```
+   ```
+   If you skip this step, Snowflake logs a warning stating that the tag couldn't be created or applied. You can ignore this warning; the segmentation task continues to run normally.
 
-If you do not grant this permission, the system skips tagging and continues execution.
+**Result**
 
-## Transfer ownership of the segment_results table
+The segmentation role reads source data, creates and runs the objects it needs for segment evaluation, and writes and cleans up results in `segment_results`, all within the boundaries of your dedicated schema.
 
-This step is required only if another role owns the `segment_results` table.
+**Validation**
 
-```
+Run the following commands to verify the permissions are in place and segmentation is ready to run.
 
-GRANT OWNERSHIP ON TABLE <db>.<schema>.segment_results
-TO ROLE <role> COPY CURRENT GRANTS;
-      
-```
-
-This ensures that the segmentation role can manage the table without removing existing access.
-
-## Validation
-
-Run the following commands to verify permissions and execution readiness.
-
-```
-
-SHOW GRANTS TO ROLE <role>;
-SHOW GRANTS ON SCHEMA <db>.<schema>;
-SHOW GRANTS ON TABLE <db>.<schema>.segment_results;
-SHOW GRANTS ON ACCOUNT;
-      
-```
-
-Confirm that all required permissions exist and that segmentation tasks execute successfully.
+| Command | Expected result |
+| --- | --- |
+| `SHOW GRANTS TO ROLE <role>;` | The output lists every permission granted in this procedure. |
+| `SHOW GRANTS ON SCHEMA <db>.<schema>;` | The output includes `USAGE`, `CREATE TASK`, `CREATE TABLE`, `CREATE PROCEDURE`, and `APPLY` on tags. |
+| `SHOW GRANTS ON TABLE <db>.<schema>.segment_results;` | The output includes `SELECT`, `INSERT`, and `DELETE`. |
+| `SHOW GRANTS ON ACCOUNT;` | The output shows `EXECUTE TASK` granted to `<role>` with `granted_by = ACCOUNTADMIN`. |
+| `USE ROLE <role>; DELETE FROM <db>.<schema>."entities" WHERE 1=0;` | Fails with `SQL access control error: insufficient privileges to operate on table 'entities'`, confirming the segmentation role has no delete permission on protected tables. |
 
 
 
@@ -214323,7 +215141,7 @@ The definition of the `expression` attribute in a data validation function objec
 
 - **Condition Type** - Indicates the condition to be applied on the attribute.
   - **Syntax of Condition Type** - `ConditionName(attributeName, value1 [, value 2 ..]*)`
-  - **Example of Condition Type** - `gte(attribute.Age.value, '60')`. For more examples, see topics [DVF string functions](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-operation/define-data-validation-functions/understanding-the-expression-attribute/dvf-string-functions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [DVF number functions](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-operation/define-data-validation-functions/understanding-the-expression-attribute/dvf-number-functions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [DVF date functions](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-operation/define-data-validation-functions/understanding-the-expression-attribute/dvf-date-functions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+  - **Example of Condition Type** - `gte(attribute.Age.value, '60')`. For more examples, see topics [DVF string functions](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-operation/define-data-validation-functions/understanding-the-expression-attribute/dvf-string-functions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [DVF number functions](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-operation/define-data-validation-functions/understanding-the-expression-attribute/dvf-number-functions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs),[DVF date functions](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-operation/define-data-validation-functions/understanding-the-expression-attribute/dvf-date-functions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 - **Logical Operator** - Includes the `AND/OR` logical operators.
 
 If you use a Data Validation Function on a nested attribute like an identifier, the expression must include the `inSameAttributeValue` function. For example:
@@ -221557,12 +222375,12 @@ To specify record update preferences:
 
 ---
 
-# Download error Files
+# Download error Files - NNC
 
 > **Section:** Objectives > Load and export data > Data loading at a glance > Data loading operation > Load data with Data Loader > Job Definitions capabilities > View Data Analysis Information about a Job
 
 
-**Source:** https://docs.reltio.com/en/objectives/load-and-export-data/data-loading-at-a-glance/data-loading-operation/load-data-with-data-loader/job-definitions-capabilities/view-data-analysis-information-about-a-job/download-error-files?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/objectives/load-and-export-data/data-loading-at-a-glance/data-loading-operation/load-data-with-data-loader/job-definitions-capabilities/view-data-analysis-information-about-a-job/download-error-files---nnc?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** Data Loader, Downloading Error Files, Downloading Source Files, View Job Data Analysis, data loader, downloading error files, downloading source files, view job data analysis
 
@@ -233218,39 +234036,49 @@ In the Profile view, you can add and edit tags associated with the selected prof
 
 Learn how to create a new profile using the Profile Creation Wizard.
 
-Enable the Collaborative Profile Creation feature for an entity type in the UI Modeler. For more information, see topic [Configure Collaborative Profile Creation for an entity type](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/configure-your-profile-pages/configure-collaborative-profile-creation-for-an-entity-type?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). .
+Use the Collaborative Profile Creation wizard to create profiles for entity types configured for collaborative authoring. When this feature is enabled in UI Modeler, the wizard opens when you create a profile for that entity type.
 
-When you enable and configure the Collaborative Profile Creation for an entity type, the profile creation wizard appears when you try to create a new profile for the entity type. Watch this video to learn how to add and save a profile using the Collaborative Profile Creation process.
+**Prerequisites**
+
+- [Configure Collaborative Profile Creation for an entity type](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/configure-your-profile-pages/configure-collaborative-profile-creation-for-an-entity-type?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) in the UI Modeler.
+- 
+
+  You have [permission](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/configure-your-profile-pages/role-based-access-for-steps-in-profile-creation-wizard?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) to create profiles in the collaborate profile wizard.
 
 
-To create a new profile using the Collaborative Profile Creation wizard:
+To create a new profile using the Collaborative Profile Creation wizard
 
 1. In the **Hub** from the left navigation menu, select **Create new profile**.
-2. From the list of entity types, select the entity type for which you want to create a profile. For example, the **Organization** entity type.
-   The profile creation wizard opens.
+2. From the list of entity types, select the entity type for which you want to create a profile. For example, the **Organization** entity type. The profile creation wizard opens.
    *Image: profile_addprofilenew.png*
-   > **Note:** At the top right corner of the page, you will see a dropdown with 2 modes based on roles and permissions assigned to you - **Suggesting** and **Editing**. Select Editing to directly save the profile and select **Suggesting** to suggest changes using the Collaborative Profile Creation process. You should have sufficient permission on attributes based on the mode you selected
+   - In the upper-right corner of the page, select the mode selector.
+   - Select **Editing** to save the profile directly, or select **Suggesting** to submit the profile for review through the Collaborative Profile Creation process.
+   - Continue to enter the profile details.
 3. In the first step, select **Search** from the right pane to open the **Search results** tab.
-4. Start entering details in the attributes in the facet.
-   Entering attribute values displays a corresponding profile list in the **Search results** tab in the right pane. This also includes values entered for reference attributes related to existing reference entities. For example, if you select Distributor as the Organization type from the drop down, a list of Distributors is displayed.
-   > **Note:** This search feature is available in all steps in the wizard. It helps you determine if the profile already exists in the system by listing similar profiles. Select on any of these profiles to open the profile in a new tab.
-5. Enter details in the displayed attribute fields. For nested attributes, select **Create Attribute.** to display all attributes belonging to the nested attribute.
+4. Enter details in the attributes in the facet.
+   As you enter attribute values, the **Search results** tab displays similar profiles. This includes values entered for reference attributes related to existing reference entities. This search is available in all steps in the wizard and helps you determine whether the profile already exists in the system. To open one of the listed profiles, select it.
+5. Enter details in the displayed attribute fields. For nested attributes, select **Create Attribute** to display the attributes that belong to the nested attribute..
    For example, you can view and enter details for all attributes for an Address attribute.
-6. Select **Continue** or the name of a step to navigate to the step.
-   In our example Organization entity type, the next step is **Finance**.
-   > **Note:** If you don't see a step, you don't have permissions to access it. Ensure only relevant users have access to steps. For more information, see topic [Role based access for steps in Profile creation wizard](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/configure-your-profile-pages/role-based-access-for-steps-in-profile-creation-wizard?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). You can also control how validation behaves across these steps. For more information, see topic [Partial validation support in authoring workflows](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/configure-your-profile-pages/partial-validation-support-in-authoring-workflows?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-7. Enter details in the facets, and select **Continue** to go to the next step.
-8. After entering all details, do one of the following:
+6. Select **Continue** or select a step name to move through the wizard.
+   > **Note:** If a step does not appear, you do not have permission to access it. For more information, see [Role based access for steps in Profile creation wizard](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/configure-your-profile-pages/role-based-access-for-steps-in-profile-creation-wizard?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Partial validation support in authoring workflows](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/configure-your-profile-pages/partial-validation-support-in-authoring-workflows?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+7. Enter details in each step, and select **Continue** to move to the next step.
+8. After you enter all details, do one of the following:
    After all details are added and the record is ready for consumption by downstream systems and business process, the last user to accept the task actually saves the profile. The profile is then saved in the database, and you can view it in the the Profile view.
    View, edit, or delete the profile, based on your settings, in the Profile view tab for the entity type in the UI Modeler.
-   - Collaborate in Suggest mode - Select **Suggest** to create the profile in pending mode as a suggested entity.
-     > **Note:** These profiles are not available outside the profile creation process; this means that you cannot search for nor view them in the Hub.
+   - Select **Suggest** to create an Authoring workflow task and [save the profile](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/add-a-profile-using-collaborative-profile-creation-wizard/suggest-and-save-profiles-using-the-authoring-workflow?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) in pending mode. A confirmation message appears, the Profile Authoring window closes automatically, and you are redirected to the default page.
+   - To save the profile, from the mode selector dropdown, select **Editing** and then select **Save**.
+   - Select **Cancel** to discard unsaved changes and return to the main Hub.
 
-When you select the **Suggest**, the system creates a new Authoring workflow task for the Collaborative Profile Creation process. This task enables other users to review and update the profile before saving it. The user who is assigned the task receives an email with a link to open the pending entity. The user can update the profile, reassign the task to another user, or approve/reject the task.. For more information about how the authoring workflow operates, see topic [Suggest and save profiles using the authoring workflow](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/add-a-profile-using-collaborative-profile-creation-wizard/suggest-and-save-profiles-using-the-authoring-workflow?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+**Result**
 
-> **Note:** Alternatively, navigate to the Inbox application to view the Authoring workflow. Open the workflow, update the profile and either save it or select Suggest to assign the task to another user who has reviewer access.
-   - Save the profile - To save the profile, from the mode selector dropdown, select **Editing**. This displays the **Save** button. Select **Save** to save the profile.
-   - Select **Cancel** to discard your unsaved changes or updates and return to the main Hub.
+- Pending profiles are not available outside the profile creation process, so you cannot search for them or view them in Hub.
+- Assigned reviewers can open the task from the email link or from Inbox and then update, reassign, approve, or reject it, based on workflow configuration and permissions.
+- If a reviewer approves the task and additional review is required, the authoring page closes, and the reviewer is redirected to the default page.
+- When the final reviewer approves the task, the system saves the profile in the database and makes it available for downstream systems and processes.
+
+In the Hub, [search](https://docs.reltio.com/en/applications/search/search-at-a-glance/search-navigation/accessing-search?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) for the profile you created and saved using the Collaborative Profile Creation wizard, and view its details in the Profile view.
+
+**Video walkthrough**Watch this video to learn how to add and save a profile using the Collaborative Profile Creation process.
 
 
 
@@ -234811,37 +235639,38 @@ To select the operation:
 
 **Source:** https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/add-a-profile-using-collaborative-profile-creation-wizard/suggest-and-save-profiles-using-the-authoring-workflow?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
+**Keywords:** review authoring workflow task, resolve profile authoring task, approve reject profile workflow, collaborative profile creation review, authoring workflow inbox task, profile workflow reviewer
+
 
 Learn how to review, suggest, and save profiles in the authoring workflow.
 
-Use the Collaborative Profile Creation feature to create profiles, and save them in the pending mode. For more information, see topic [Add a profile using Collaborative Profile Creation wizard](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/add-a-profile-using-collaborative-profile-creation-wizard?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). In other words, start an authoring workflow by selecting the Suggest button after you enter details in the profile attributes. . In other words, start an authoring workflow by selecting the Suggest button after you enter details in the profile attributes.
+When you create a profile in **Suggest** mode, an authoring workflow task is created. Based on the workflow configuration, reviewers can review, update, approve, or reject the pending profile. After all required reviewers approve the profile, the last reviewer accepts the task to save it. In some workflows, a rejection can also complete the process. This procedure shows an authoring workflow with two reviewers: **Reviewer 1** and **Reviewer 2**.
 
-When a profile is created in the Suggest mode, an authoring workflow based task is created. Each reviewer based on workflow configuration gets a chance to review and update the profile before saving it. Each reviewer can update or approve /reject the profile based on workflow configuration and permissions. Once all reviewers approve (or reject in some cases) the updates, the last reviewer in the workflow reviews, updates, and accepts the task to save the profile.> **Note:** To update an entity in pending mode you need the `INITIATE_CHANGE_REQUEST` permission assigned to your role. To approve, the `ACCEPT_CHANGE_REQUEST`, `INITIATE_CHANGE_REQUEST`, and `CREATE` permissions must be assigned.
+**Prerequisites**
 
-In this topic, let's see how the authoring workflow operates. By now, a user has created a profile in the pending state that has resulted in an authoring workflow. There are 2 reviewers in this workflow - Reviewer 1 and Reviewer 2.
+- [Add a profile using the Collaborative Profile Creation](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/add-a-profile-using-collaborative-profile-creation-wizard?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) feature in the pending state.
+- 
+
+  Your role must be assigned the `INITIATE_CHANGE_REQUEST` permission to update the entity and `ACCEPT_CHANGE_REQUEST`, `INITIATE_CHANGE_REQUEST`, and `CREATE` permissions to approve the entity.
 
 
-To suggest and save profiles using the authoring workflow:
+To suggest and save profiles using the authoring workflow
 
-1. Reviewer 1 logs into Reltio.
-2. In the **Dashboard**, go to the **Notification Inbox** facet.
+1. In the **Hub**, select **Profile Stats** from the left navigation pane.
+2. In the **Profile stats** dashboard, go to the **Notification Inbox** facet.
    *Image: profile_authoringnotificationfacet.png*
-3. Select the link that denotes the authoring workflow.
-   The Collaborative Profile Creation page opens to the first step by default.*Image: profile_authoringupdate.png*
-   > **Note:** Reviewer 1 can update the profile, assign it to another user, or approve/reject the task to, move the profile to the next reviewer in the workflow. In other words, the dropdown in the top right corner only contains the Suggesting option.
-4. Review the profile, make changes, and do one of the following:
-   > **Note:**
-   > After you select one of the options, you might be required to enter a comment that explains your decision. The prompt only appears if the workflow definition has been configured. In that case, you're asked to type a comment before your decision takes effect. For more information, see topic [Business process definition overview](https://docs.reltio.com/en/objectives/manage-workflow-tasks/workflow-management-at-a-glance/workflow-management-reference/business-process-definition-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
-   - Update - Select the **Update** button to ensure that the changes you made reflect in the profile. At this point, the workflow is still assigned to you.
-   - Reassign task - Make changes, if required, and select this option to reassign this task to another user, based on workflow configuration and user role assignment.
-   - Approve - Review the profile and make the required changes. Select **Approve** to approve the changes and move the task to next step in the authoring workflow. The next reviewer based on the workflow configuration now receives notification to review the profile
-   - Reject - Review the changes and select **Reject** to reject the changes.
-5. Reviewer 2 logs into Reltio.
-6. In the **Dashboard**, go to the **Notification Inbox** facet.
-7. Select the link that denotes the authoring workflow based task.
-8. In the step driven wizard, review the profile, and make the required changes in each step.
-9. After reviewing and making the required changes, select the **Approve** option from action menu item.
-   Since this is the last step in the authoring workflow, the profile is saved in the database and is available for use by downstream systems and processes. In the Hub, use the Search option to search for this profile, and view its details in the Profile view.
+3. Select the link for the authoring workflow task. The Collaborative Profile Creation page opens to the first first step by default.
+   *Image: profile_authoringupdate.png*
+4. Review the profile, and update the required values in each step.
+5. From the action menu, choose one of the following actions:
+   - Select **Update** to to save the changes that you made. The workflow remains assigned to you.
+   - Select **Reassign task** to assign the task to another user, based on workflow configuration and user role assignment.
+   - Select **Approve** to approve the changes.
+     If this is the final approval in the workflow, the profile is saved in the database and becomes available for downstream systems and processes.
+   - Select **Reject** to reject the changes.
+   - If prompted, enter a comment, and submit your decision. This prompt appears only when the workflow definition requires a comment.
+
+If your approval moves the task to another reviewer, the page closes and you're redirected to the default page. If your approval is the final step in the workflow, the profile is saved in the database. You can then search for the profile in **Hub** and open it in the **Profile** view.
 
 
 
@@ -240804,8 +241633,23 @@ keytool -genkeypair -alias workflow -keyalg RSA -keysize 2048 -storetype PKCS12 
 
 Learn how to install and start the Reltio Workflow Adapter locally so that you can test workflows in a self contained environment.
 
-1. Obtain the Workflow Adapter JAR file from Reltio and save it to your local machine.
-2. Copy it to *C:/Reltio/workflow* directory.
+1. Obtain the Workflow Adapter JAR file from Reltio *Maven* repository.
+   - Open the Reltio *Maven* repository folder: [Workflow JAR Repository](https://{artifact-repository-host}/#browse/browse:releases:com%2Freltio%2Fworkflow%2Fweb).
+     Use these credentials to log in and download the file:
+
+```
+
+username = {username}
+password = {password}
+
+```
+   - Navigate to the folder for the version you want.
+     > **Note:** Choose the latest available version as mentioned in the About dialog box in *Hub*.
+
+*Image: getstart_previewlabel.png*
+   - Download the JAR file for the version you want. The file name follows the format `web-{{version}}.jar`.
+   - Save the JAR file in your local machine.
+2. Copy the JAR file to the *C:/Reltio/workflow* directory.
 3. Open a Command Prompt window
 4. Run the command as follows:
    ```

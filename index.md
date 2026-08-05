@@ -1,5 +1,5 @@
 # Reltio Documentation Index
-_Generated: 2026-07-31 02:15 UTC — 3237 topics (3183 unique)_
+_Generated: 2026-08-05 02:14 UTC — 3246 topics (3192 unique)_
 
 This file is a structured navigation index of the Reltio documentation portal.
 It contains the full parent-child hierarchy, topic URLs, keywords, summaries,
@@ -1759,7 +1759,7 @@ relationships, locate sibling topics, and follow cross-references.
 - **Path:** Reltio Documentation Portal v2 sitemap > Products > AgentFlow
 - **Summary:** Learn about how Reltio AgentFlow enables real-time, AI-driven data stewardship through secure, governed conversations with purpose-built agents.
 - **Keywords:** agentflow overview, agentflow at a glance, conversational data stewardship, ai agents in reltio, mcp server capabilities, secure data interaction, live data workflows, workflow, mcp, governance
-- **See also:** [About roles](https://docs.reltio.com/en/roles/about-roles?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Data Explorer](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-agents-catalog/data-explorer?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Profiler](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-agents-catalog/profiler?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Resolver](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-agents-catalog/resolver?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [AgentFlow™ agents catalog](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-agents-catalog?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [AgentFlow billing and credit usage](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-billing-and-credit-usage?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [graphs and charts](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/charts-in-agentflow?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Use the AgentFlow workspace](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/use-the-agentflow-workspace?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Navigate between AgentFlow and other Reltio applications](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/navigate-between-agentflow-and-other-reltio-applications?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [About roles](https://docs.reltio.com/en/roles/about-roles?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Data Explorer](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-agents-catalog/data-explorer?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Profiler](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-agents-catalog/profiler?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Resolver](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-agents-catalog/resolver?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [AgentFlow™ agents catalog](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-agents-catalog?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [AgentFlow billing and credit usage](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-billing-and-credit-usage?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [graphs and charts](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/charts-and-diagrams-in-agentflow?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Use the AgentFlow workspace](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/use-the-agentflow-workspace?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Navigate between AgentFlow and other Reltio applications](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/navigate-between-agentflow-and-other-reltio-applications?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Use the AgentFlow workspace
 
@@ -1767,11 +1767,11 @@ relationships, locate sibling topics, and follow cross-references.
 - **Path:** Reltio Documentation Portal v2 sitemap > Products > AgentFlow > Reltio AgentFlow™ at a glance
 - **Summary:** Learn how to navigate the AgentFlow interface, select agents, and interact with your data through a conversational workspace.
 - **Keywords:** agentflow workspace, how to use agentflow ui, agent selection in reltio, navigate agentflow interface, input field and conversation, agentflow settings, rbac access agentflow, data explorer interface, chat ui, agent
-- **See also:** [AgentFlow capabilities and permissions](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-capabilities-and-permissions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [visualizations (charts and graphs)](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/charts-in-agentflow?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Navigate between AgentFlow and other Reltio applications](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/navigate-between-agentflow-and-other-reltio-applications?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Reltio AgentFlow™ at a glance](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [AgentFlow™ agents catalog](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-agents-catalog?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [AgentFlow capabilities and permissions](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-capabilities-and-permissions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [visualizations (charts and graphs)](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/charts-and-diagrams-in-agentflow?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Navigate between AgentFlow and other Reltio applications](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/navigate-between-agentflow-and-other-reltio-applications?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Reltio AgentFlow™ at a glance](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [AgentFlow™ agents catalog](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-agents-catalog?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
-#### Charts in AgentFlow
+#### Charts and Diagrams in AgentFlow
 
-- **URL:** https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/charts-in-agentflow?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **URL:** https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/charts-and-diagrams-in-agentflow?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Products > AgentFlow > Reltio AgentFlow™ at a glance
 - **Summary:** Learn more about the charts that AgentFlow can display in conversations and example prompts that can produce them.
 - **Keywords:** agentflow graphs, inline graphs in agentflow, agentflow graph types, agentflow graph examples, bar chart in agentflow, line chart in agentflow, donut chart in agentflow, gauge chart in agentflow, graph chart in agentflow, set overlap chart in agentflow
@@ -1973,6 +1973,30 @@ relationships, locate sibling topics, and follow cross-references.
 - **Path:** Reltio Documentation Portal v2 sitemap > Products > AgentFlow > Reltio AgentFlow™ at a glance > AgentFlow™ agents catalog > Segmenter
 - **Summary:** Learn how to interact with Segmenter by using clear natural language prompts for segment creation, segment review, and supported follow-up actions.
 - **Keywords:** prompt samples for segmenter, segmenter prompt examples, create segments with segmenter prompts, review segments with segmenter prompts, manage segments in agentflow prompts, natural language segmentation prompts, prompt writing tips for segmenter, segmenter, segmentation, prompts
+
+#### Reltio AgentFlow Mobile overview
+
+- **URL:** https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/reltio-agentflow-mobile-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Products > AgentFlow > Reltio AgentFlow™ at a glance
+- **Summary:** Learn about Reltio AgentFlow Mobile app, the AgentFlow companion app for iOS and Android.
+- **Keywords:** agentflow mobile, agentflow mobile app, ios android agentflow app, chat with ai agents on mobile, agentflow mobile at a glance
+- **See also:** [start a conversation](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/reltio-agentflow-mobile-overview/use-the-reltio-agentflow-mobile-workspace?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Download, Install, and Sign in to Reltio AgentFlow Mobile app
+
+- **URL:** https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/reltio-agentflow-mobile-overview/download-install-and-sign-in-to-reltio-agentflow-mobile-app?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Products > AgentFlow > Reltio AgentFlow™ at a glance > Reltio AgentFlow Mobile overview
+- **Summary:** Learn how to sign in to Reltio AgentFlow Mobile.
+- **Keywords:** sign in to agentflow mobile, agentflow mobile login, ios android agentflow sign in, sso agentflow mobile, download agentflow mobile app store google play
+- **See also:** [permissions](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/agentflow-capabilities-and-permissions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Use the Reltio AgentFlow Mobile workspace
+
+- **URL:** https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/reltio-agentflow-mobile-overview/use-the-reltio-agentflow-mobile-workspace?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Products > AgentFlow > Reltio AgentFlow™ at a glance > Reltio AgentFlow Mobile overview
+- **Summary:** Learn how to use the Reltio AgentFlow Mobile workspace.
+- **Keywords:** use reltio agentflow mobile workspace, chat with an agent on mobile, discover agents agentflow mobile, agentflow mobile appearance preferences, export conversation agentflow mobile, dark mode agentflow mobile
+- **See also:** [Download, Install, and Sign in to Reltio AgentFlow Mobile app](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/reltio-agentflow-mobile-overview/download-install-and-sign-in-to-reltio-agentflow-mobile-app?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Agent Builder for AgentFlow at a glance
 
@@ -4920,6 +4944,8 @@ _Topics in this section: Reltio Entity Resolution Deployment options, Reltio Ent
 
 ### AI Integrations
 
+_Topics in this section: Reltio Model Context Protocol (MCP) Server at a glance, Reltio IDE overview_
+
 #### Reltio Model Context Protocol (MCP) Server at a glance
 
 - **URL:** https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-model-context-protocol-mcp-server-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
@@ -5009,6 +5035,49 @@ _Topics in this section: Reltio Entity Resolution Deployment options, Reltio Ent
 - **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > AI Integrations > Reltio Model Context Protocol (MCP) Server at a glance
 - **Summary:** Learn answers to common questions about the Reltio Model Context Protocol (MCP) Server, its editions, use cases, and strategic value.
 - **See also:** [MCP Metadata API](https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-model-context-protocol-mcp-server-at-a-glance/mcp-metadata-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Reltio IDE overview
+
+- **URL:** https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-ide-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > AI Integrations
+- **Summary:** Learn about how Reltio IDE brings business configuration modeling into a modern development workflow, with intelligent navigation, AI-assisted authoring, validation, ontology visualization, and versio
+- **Keywords:** reltio ide overview, metadata modeling, l3 configuration editor, ai-assisted business configuration, ontology visualization, configuration version history, entity types relationship types attributes, reference attributes, vsix extension reltio, reltio ide roles
+- **See also:** [Cursor](https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-ide-overview/install-reltio-ide-on-cursor-and-connect-to-your-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [VS Code](https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-ide-overview/install-reltio-ide-on-vs-code-and-connect-to-your-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [ontology view](https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-ide-overview/visualize-the-ontology-in-reltio-ide?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [apply your configuration to the tenant](https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-ide-overview/apply-configuration-and-track-changes-in-reltio-ide?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Install Reltio IDE on Cursor and connect to your tenant
+
+- **URL:** https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-ide-overview/install-reltio-ide-on-cursor-and-connect-to-your-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > AI Integrations > Reltio IDE overview
+- **Summary:** Learn how to install the Reltio IDE extension in Cursor, connect to your Reltio tenant, and open your configuration.
+- **Keywords:** install reltio ide cursor, connect reltio ide to tenant, reltio ide vsix installation, reltio ide oauth bearer token, add environment add tenant, open l3 configuration editor, reltio ide setup cursor, reltio metadata editor connection
+
+#### Install Reltio IDE on VS Code and connect to your tenant
+
+- **URL:** https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-ide-overview/install-reltio-ide-on-vs-code-and-connect-to-your-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > AI Integrations > Reltio IDE overview
+- **Summary:** Learn how to install the Reltio IDE extension in VS Code, connect to your Reltio tenant, and open your configuration.
+- **Keywords:** install reltio ide vs code, connect reltio ide to tenant, reltio ide vsix installation, reltio ide oauth bearer token, add environment add tenant, open l3 configuration editor, reltio ide setup vs code, reltio metadata editor connection
+
+#### Create configuration objects in Reltio IDE
+
+- **URL:** https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-ide-overview/create-configuration-objects-in-reltio-ide?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > AI Integrations > Reltio IDE overview
+- **Summary:** Learn how to create configuration objects in Reltio IDE by adding them manually or through natural language prompts with AI-assisted authoring.
+- **Keywords:** create configuration objects reltio ide, insert entity type reltio ide, insert relation type, ai-assisted authoring reltio ide, natural language configuration authoring, reference attribute relation type, automatic dependency creation, edit l3 reltio json
+
+#### Visualize the ontology in Reltio IDE
+
+- **URL:** https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-ide-overview/visualize-the-ontology-in-reltio-ide?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > AI Integrations > Reltio IDE overview
+- **Summary:** Learn how to open the ontology view in Reltio IDE to see your tenant's entity types and the relationships between them.
+- **Keywords:** ontology view reltio ide, visualize data model reltio ide, entity types relationships diagram, ontology visualization reltio, show ontology preview reltio ide, reltio ide ontology diagram, l3 configuration visualization
+
+#### Apply configuration and track changes in Reltio IDE
+
+- **URL:** https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-ide-overview/apply-configuration-and-track-changes-in-reltio-ide?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > AI Integrations > Reltio IDE overview
+- **Summary:** Learn how to fetch the latest tenant configuration, apply your changes to the tenant, and review configuration history in Reltio IDE.
+- **Keywords:** apply configuration to tenant reltio ide, fetch configuration reltio ide, fetching l3 configuration, configuration history reltio ide, who changed what reltio ide, version history reltio ide, deploy l3 configuration reltio ide, compare configuration versions reltio ide
 
 ### Entity Management APIs
 
@@ -5205,7 +5274,7 @@ _Topics in this section: Reltio Entity Resolution Deployment options, Reltio Ent
 - **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Entity Management APIs > Entity Management APIs at a glance > Entities API > Get Entity
 - **Summary:** Learn more about searching entity records by attribute values, types, tags, and roles using the Entity Search API.
 - **Keywords:** search for entities by attribute values, tags, type, and roles, Search for entities by attribute values, tags, type, and roles
-- **See also:** [Search Entities with Cursor API](https://docs.reltio.com/en/applications/data-integrations/ipaas-connectors-at-a-glance/reltio-connector-for-mulesoft-at-a-glance/reltio-connector-for-mulesoft-set-up/test-a-project-with-the-reltio-connector-for-mulesoft/reltio-connector-for-mulesoft-operations/search-entity-with-cursor?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Entities Export API](https://docs.reltio.com/en/objectives/load-and-export-data/data-exporting-at-a-glance/data-exporting-operation/export-data-using-reltio-export-service/export-entities?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Authentication API](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/authentication-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Filtering Entities](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/entities-api/get-entity/filtering-entities?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [Search Entities with Cursor API](https://docs.reltio.com/en/applications/data-integrations/ipaas-connectors-at-a-glance/reltio-connector-for-mulesoft-at-a-glance/reltio-connector-for-mulesoft-set-up/test-a-project-with-the-reltio-connector-for-mulesoft/reltio-connector-for-mulesoft-operations/search-entity-with-cursor?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Entities Export API](https://docs.reltio.com/en/objectives/load-and-export-data/data-exporting-at-a-glance/data-exporting-operation/export-data-using-reltio-export-service/export-entities?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Authentication API](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/authentication-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Filtering Entities](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/entities-api/get-entity/filtering-entities?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Tenant Configuration Parameters Reference](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/tenant-configuration-parameters-reference?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Get Segmentation
 
@@ -6085,7 +6154,7 @@ _Topics in this section: Reltio Entity Resolution Deployment options, Reltio Ent
 - **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Relation Management APIs > Relation Management APIs at a glance > Relations API
 - **Summary:** This operation performs search for relationships.
 - **Keywords:** relationships, search for, indexing enabled for relations, Search for relationships, Relations indexing enabled
-- **See also:** [Relations Export API](https://docs.reltio.com/en/objectives/load-and-export-data/data-exporting-at-a-glance/data-exporting-operation/export-data-using-reltio-export-service/export-relations?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Filtering Entities](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/entities-api/get-entity/filtering-entities?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Authentication API](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/authentication-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Relations Filtering](https://docs.reltio.com/en/developer-resources/relation-management-apis/relation-management-apis-at-a-glance/relations-api/relations-filtering?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Relations API](https://docs.reltio.com/en/developer-resources/relation-management-apis/relation-management-apis-at-a-glance/relations-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [Relations Export API](https://docs.reltio.com/en/objectives/load-and-export-data/data-exporting-at-a-glance/data-exporting-operation/export-data-using-reltio-export-service/export-relations?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Filtering Entities](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/entities-api/get-entity/filtering-entities?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Authentication API](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/authentication-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Relations Filtering](https://docs.reltio.com/en/developer-resources/relation-management-apis/relation-management-apis-at-a-glance/relations-api/relations-filtering?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Relations API](https://docs.reltio.com/en/developer-resources/relation-management-apis/relation-management-apis-at-a-glance/relations-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Tenant Configuration Parameters Reference](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/tenant-configuration-parameters-reference?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Ignore a relationship's end-date
 
@@ -9865,7 +9934,7 @@ _Topics in this section: Reltio Entity Resolution Deployment options, Reltio Ent
 
 - **URL:** https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/rebuild-match-table-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > System Administration APIs > System Administration APIs at a glance > Tasks API
-- **Summary:** Learn about the Rebuild match table API
+- **Summary:** Learn about the Rebuild match table API.
 - **Keywords:** Rebuild Match Tables Task, rebuild match tables task, rebuild match task, rebuild tables task, match tables, rebuild tables
 - **See also:** [Analyze match strategy](https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/define-entity-types-and-attributes/analyze-match-strategy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Get help in Support Portal](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Tokenization Using Query Filter](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/tokenization-using-query-filter?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Rebuild Match Table Task Version 2](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/rebuild-match-table-task-version-2?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
@@ -10212,7 +10281,6 @@ _Topics in this section: Reltio Entity Resolution Deployment options, Reltio Ent
 - **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > System Administration APIs > System Administration APIs at a glance > Authentication API > Application Client Management APIs
 - **Summary:** Learn about updating the client associated with the customer as specified in the request body.
 - **Keywords:** clientid, customerid, ClientID, CustomerID
-- **See also:** [Authentication API](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/authentication-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Delete a customer client
 
@@ -12099,8 +12167,9 @@ _Topics in this section: Hub at a glance, Profile Stats dashboard at a glance, D
 
 - **URL:** https://docs.reltio.com/en/applications/console/tenant-management-applications/tenant-management-at-a-glance/jobs-at-a-glance/creating-a-rebuild-match-tables-job?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Applications > Console > Tenant management applications > Tenant Management at a glance > Jobs at a glance
-- **Summary:** You must run this job after a data load or if there are changes to match rules.
-- **Keywords:** Rebuild Match Tables Job, create rebuild match tables job, rebuild match tables job, rebuild match tables, rebuild tables job
+- **Summary:** Learn how to create a Rebuild Match Tables job in Tenant Management, including the optional FERN vectorization step.
+- **Keywords:** create rebuild match table job tenant management, rebuild match tables job reltio, include fern vectorization toggle, fern vector rebuild before match table, runFernReindexBeforeRebuild parameter, tenant management rebuild match table console
+- **See also:** [FERN](https://docs.reltio.com/en/applications/console/configuration-applications/ai-powered-flexible-entity-resolution-network-fern-model-based-matching-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Rebuild Match Table Task](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/rebuild-match-table-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Create an Analyze match strategy job
 
@@ -18314,8 +18383,9 @@ _Topics in this section: Data integrations at a glance, Application Integration 
 
 - **URL:** https://docs.reltio.com/en/applications/data-integrations/zero-copy-integration-at-a-glance/reltio-zero-copy-integration-with-snowflake-at-a-glance/reltio-zero-copy-segmentation-with-snowflake/configure-snowflake-permissions-for-zero-copy-segmentation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Zero Copy Integration at a glance > Reltio Zero Copy integration with Snowflake at a glance > Reltio Zero Copy segmentation with Snowflake
-- **Summary:** Configure and validate Snowflake permissions to enable Zero Copy segmentation to execute securely within your environment.
-- **Keywords:** configure snowflake permissions segmentation, zero copy segmentation snowflake setup, snowflake role permissions for segmentation, segmentation execution permissions reltio, grant permissions for snowflake segmentation, snowflake segmentation access control, segmentation setup, snowflake roles, permissions
+- **Summary:** Learn how to configure and verify the Snowflake permissions required to enable Zero Copy segmentation.
+- **Keywords:** configure snowflake permissions segmentation, zero copy segmentation snowflake setup, snowflake role permissions for segmentation, segmentation execution permissions reltio, grant permissions for snowflake segmentation, snowflake segmentation access control, segmentation setup, snowflake roles, permissions, dedicated schema for segmentation
+- **See also:** [Zero Copy integration](https://docs.reltio.com/en/applications/data-integrations/zero-copy-integration-at-a-glance/reltio-zero-copy-integration-with-snowflake-at-a-glance/configure-zero-copy-data-integration-with-snowflake-using-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Reltio Zero Copy Interaction Integration from Databricks at a glance
 
@@ -20358,9 +20428,9 @@ _Topics in this section: Data loading at a glance, Data exporting at a glance_
 - **Summary:** You can view the basic statistics about a job from the summary information on the **Pending** or **Completed** tabs.
 - **Keywords:** Analysis Information about a Job, View Job Data Analysis, Pending Job, Completed Job, analysis information about a Job, view job data analysis, pending job, completed job
 
-#### Download error Files
+#### Download error Files - NNC
 
-- **URL:** https://docs.reltio.com/en/objectives/load-and-export-data/data-loading-at-a-glance/data-loading-operation/load-data-with-data-loader/job-definitions-capabilities/view-data-analysis-information-about-a-job/download-error-files?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **URL:** https://docs.reltio.com/en/objectives/load-and-export-data/data-loading-at-a-glance/data-loading-operation/load-data-with-data-loader/job-definitions-capabilities/view-data-analysis-information-about-a-job/download-error-files---nnc?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Load and export data > Data loading at a glance > Data loading operation > Load data with Data Loader > Job Definitions capabilities > View Data Analysis Information about a Job
 - **Summary:** Learn how to download error files. On a Data loader interface, when a specific job is completed with errors, you can find out the information about any job error directly on the Data Loader page.
 - **Keywords:** Data Loader, Downloading Error Files, Downloading Source Files, View Job Data Analysis, data loader, downloading error files, downloading source files, view job data analysis
@@ -22282,14 +22352,15 @@ _Topics in this section: Data loading at a glance, Data exporting at a glance_
 - **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Manage profiles > Profile management at a glance > Profile management operation
 - **Summary:** Learn how to create a new profile using the Profile Creation Wizard.
 - **Keywords:** add profile using wizard, how to create profile reltio, collaborative profile creation hub, create entity profile with wizard, profile creation steps in hub, suggest or edit profile mode, authoring workflow for profile creation, save or suggest profile changes, profile approval workflow reltio, profile creation wizard
-- **See also:** [Configure Collaborative Profile Creation for an entity type](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/configure-your-profile-pages/configure-collaborative-profile-creation-for-an-entity-type?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Role based access for steps in Profile creation wizard](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/configure-your-profile-pages/role-based-access-for-steps-in-profile-creation-wizard?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Partial validation support in authoring workflows](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/configure-your-profile-pages/partial-validation-support-in-authoring-workflows?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Suggest and save profiles using the authoring workflow](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/add-a-profile-using-collaborative-profile-creation-wizard/suggest-and-save-profiles-using-the-authoring-workflow?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [Configure Collaborative Profile Creation for an entity type](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/configure-your-profile-pages/configure-collaborative-profile-creation-for-an-entity-type?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [permission](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/configure-your-profile-pages/role-based-access-for-steps-in-profile-creation-wizard?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Partial validation support in authoring workflows](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/configure-your-profile-pages/partial-validation-support-in-authoring-workflows?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [save the profile](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/add-a-profile-using-collaborative-profile-creation-wizard/suggest-and-save-profiles-using-the-authoring-workflow?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [search](https://docs.reltio.com/en/applications/search/search-at-a-glance/search-navigation/accessing-search?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Suggest and save profiles using the authoring workflow
 
 - **URL:** https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/add-a-profile-using-collaborative-profile-creation-wizard/suggest-and-save-profiles-using-the-authoring-workflow?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Objectives > Manage profiles > Profile management at a glance > Profile management operation > Add a profile using Collaborative Profile Creation wizard
 - **Summary:** Learn how to review, suggest, and save profiles in the authoring workflow.
-- **See also:** [Add a profile using Collaborative Profile Creation wizard](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/add-a-profile-using-collaborative-profile-creation-wizard?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Business process definition overview](https://docs.reltio.com/en/objectives/manage-workflow-tasks/workflow-management-at-a-glance/workflow-management-reference/business-process-definition-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **Keywords:** review authoring workflow task, resolve profile authoring task, approve reject profile workflow, collaborative profile creation review, authoring workflow inbox task, profile workflow reviewer
+- **See also:** [Add a profile using the Collaborative Profile Creation](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/add-a-profile-using-collaborative-profile-creation-wizard?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Required Attributes
 
