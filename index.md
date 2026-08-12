@@ -1,5 +1,5 @@
 # Reltio Documentation Index
-_Generated: 2026-08-07 02:14 UTC — 3246 topics (3192 unique)_
+_Generated: 2026-08-12 02:15 UTC — 3246 topics (3192 unique)_
 
 This file is a structured navigation index of the Reltio documentation portal.
 It contains the full parent-child hierarchy, topic URLs, keywords, summaries,
@@ -11170,7 +11170,7 @@ _Topics in this section: Reltio Model Context Protocol (MCP) Server at a glance,
 - **URL:** https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/clone-an-unversioned-hierarchy-instance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Materialized Hierarchy Management APIs > Materialized Hierarchy Management APIs
 - **Summary:** Learn more about how to use the Clone unversioned hierarchy instance to create a hierarchy and, optionally, its first connection.
-- **Keywords:** clone hierarchy by id, clone existing hierarchy api, create cloned hierarchy from existing, clone hierarchy with versions, clone hierarchy with connections, copy hierarchy definition and connections, post hierarchy clone endpoint, create versioned cloned hierarchy, hierarchy clone response fields, cloning
+- **Keywords:** clone an unversioned hierarchy instance, use unversioned hierarchy clone api, copy hierarchy connections automatically, create hierarchy from existing hierarchy, clone hierarchy by hierarchy id, set cloned hierarchy version metadata, submit unversioned hierarchy clone request, cloning, versioning, hierarchyid
 - **See also:** [Materialized Hierarchy Management APIs](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Clone a hierarchy version
@@ -11186,7 +11186,7 @@ _Topics in this section: Reltio Model Context Protocol (MCP) Server at a glance,
 - **URL:** https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/clone-a-versioned-hierarchy-instance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Materialized Hierarchy Management APIs > Materialized Hierarchy Management APIs
 - **Summary:** Learn more about how to use the Clone hierarchy API to clone a hierarchy instance.
-- **Keywords:** clone hierarchy instance api, clone existing hierarchy instance, create hierarchy from instance clone, copy hierarchy instance with connections, clone versioned hierarchy instance, post hierarchy instance clone endpoint, create cloned hierarchy definition, set version metadata for clone, hierarchy instance clone response fields, cloning
+- **Keywords:** clone a hierarchy instance, use clone hierarchy api, copy hierarchy instance connections, clone versioned hierarchy instance, create hierarchy from clone, set hierarchy version metadata, submit hierarchy clone request, cloning, versioning, instanceid
 - **See also:** [Materialized Hierarchy Management APIs](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Update a hierarchy by ID
@@ -11226,7 +11226,7 @@ _Topics in this section: Reltio Model Context Protocol (MCP) Server at a glance,
 - **URL:** https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/import-a-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Materialized Hierarchy Management APIs > Materialized Hierarchy Management APIs
 - **Summary:** Learn more about how to use the Import Hierarchy API to import hierarchy data from a CSV or JSON file.
-- **Keywords:** create hierarchy api, create hierarchy definition, create hierarchy with version, create hierarchy with connection, create first hierarchy connection, create hierarchy version and instance, submit hierarchy create request, hierarchy create response fields, create versioned hierarchy, versioning
+- **Keywords:** import hierarchy data in bulk, use import hierarchy api, upload hierarchy csv file, upload hierarchy json file, configure hierarchy import policies, create versioned hierarchy connections, handle hierarchy import conflicts, versioning, permissions, connections
 - **See also:** [Materialized Hierarchy Management APIs](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 ## Roles
@@ -16144,9 +16144,9 @@ _Topics in this section: Data integrations at a glance, Application Integration 
 
 - **URL:** https://docs.reltio.com/en/applications/data-integrations/reltio-identity-builder-at-a-glance/configure-and-enable-reltio-identity-builder?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Reltio Identity Builder™ at a glance
-- **Summary:** Learn about the prerequisites to enable Reltio Identity Builder so that your tenant can perform identity resolution and enrichment
+- **Summary:** Learn how to configure and enable Reltio Identity Builder so that your tenant can perform identity resolution and enrichment.
 - **Keywords:** identity builder configuration, enable identity builder, configure dtss, autosubscribe mode, manual match mode, identity resolution setup, enrichment configuration, data tenant subscription service, matching, configuration
-- **See also:** [Enrichment attributes and output data](https://docs.reltio.com/en/applications/data-integrations/reltio-identity-builder-at-a-glance/enrichment-attributes-and-output-data?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Data model](https://docs.reltio.com/en/applications/data-integrations/reltio-identity-builder-at-a-glance/data-model?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Match strategies and logic](https://docs.reltio.com/en/applications/data-integrations/reltio-identity-builder-at-a-glance/match-strategies-and-logic?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [Enrichment attributes and output data](https://docs.reltio.com/en/applications/data-integrations/reltio-identity-builder-at-a-glance/enrichment-attributes-and-output-data?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Data model](https://docs.reltio.com/en/applications/data-integrations/reltio-identity-builder-at-a-glance/data-model?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Reltio Data Tenant Subscription Service (DTSS) at a glance](https://docs.reltio.com/en/applications/data-integrations/data-enrichment-integrations-at-a-glance/reltio-data-tenant-subscription-service-dtss-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Match strategies and logic](https://docs.reltio.com/en/applications/data-integrations/reltio-identity-builder-at-a-glance/match-strategies-and-logic?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Manual match API](https://docs.reltio.com/en/applications/data-integrations/data-enrichment-integrations-at-a-glance/reltio-data-tenant-subscription-service-dtss-at-a-glance/reltio-dtss-operation/dtss-bulk-operations-tasks/manual-match-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Manual subscribe API](https://docs.reltio.com/en/applications/data-integrations/data-enrichment-integrations-at-a-glance/reltio-data-tenant-subscription-service-dtss-at-a-glance/reltio-dtss-operation/dtss-bulk-operations-tasks/manual-subscribe-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Data model
 
@@ -16174,15 +16174,16 @@ _Topics in this section: Data integrations at a glance, Application Integration 
 
 - **URL:** https://docs.reltio.com/en/applications/data-integrations/reltio-identity-builder-at-a-glance/enrichment-attributes-and-output-data?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Reltio Identity Builder™ at a glance
-- **Summary:** Learn about the enriched attributes that Reltio Identity Builder provides after matching customer records against the reference data.
+- **Summary:** Learn more about the enriched attributes that Reltio Identity Builder provides after matching customer records against the reference data.
 - **Keywords:** enrichment attributes, output data fields, identity builder enrichment, address validation, phone confidence score, email enrichment, individual attributes, identity graph enrichment, matching, enrichment
 
 #### Limitations and troubleshooting reference
 
 - **URL:** https://docs.reltio.com/en/applications/data-integrations/reltio-identity-builder-at-a-glance/limitations-and-troubleshooting-reference?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Reltio Identity Builder™ at a glance
-- **Summary:** Review known limitations, configuration issues, and guidance for resolving common problems in Reltio Identity Builder.
+- **Summary:** Learn more about known limitations, configuration issues, and troubleshooting guidance for Reltio Identity Builder.
 - **Keywords:** limitations, troubleshooting reference, identity builder, configuration issues, aws tenants, hipaa restriction, financial services, ncoa clarification, matching, enrichment
+- **See also:** [Reltio DTSS set up](https://docs.reltio.com/en/applications/data-integrations/data-enrichment-integrations-at-a-glance/reltio-data-tenant-subscription-service-dtss-at-a-glance/reltio-dtss-set-up?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Data Pipelines at a glance
 

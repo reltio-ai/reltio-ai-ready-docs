@@ -1,8 +1,8 @@
 # Reltio Documentation
 
-_Generated: 2026-08-07 02:14 UTC_
+_Generated: 2026-08-12 02:14 UTC_
 
-_Topics: 3371_
+_Topics: 3372_
 
 ---
 
@@ -8775,9 +8775,6 @@ We build on each GA release with a steady stream of bi-weekly updates that deliv
 
 | Release Name | Stage | Tenant Type | Release Date |
 | --- | --- | --- | --- |
-| 2026.1.8.0 | 1 | Development (DEV) | August 07, 2026 |
-| 2026.1.8.0 | 2 | Test (TEST) | August 07, 2026 |
-| 2026.1.8.0 | 3 | Production (PRD) | August 14, 2026 |
 | 2026.1.9.0 | 1 | Development (DEV) | August 21, 2026 |
 | 2026.1.9.0 | 2 | Test (TEST) | August 21, 2026 |
 | 2026.1.9.0 | 3 | Production (PRD) | August 28, 2026 |
@@ -12883,7 +12880,7 @@ Learn about the new features and enhancements introduced in this 2025.1.8.0 week
 
 We're shifting from three to two major product releases each year. This updated cadence allows us to deliver more impactful features, improve planning, and reduce disruption. You can expect major releases to arrive in **April** and **October** going forward.
 
-For details on upcoming preview and general availability dates, see our [release schedule](https://docs.reltio.com/en/reltio/whats-new-and-notable/whats-new-at-a-glance/release-notes-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+For details on upcoming preview and general availability dates, see our [release schedule](https://docs.reltio.com/en/reltio/whats-new-and-notable/whats-new-at-a-glance/release-notes-at-a-glance/release-cadence-and-delivery-schedule?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 If you have any questions, please reach out to [Support](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
@@ -15320,6 +15317,28 @@ Data Validation Functions (DVF) now support the `.count` and `.length` expressio
 Support for the `.count` and `.length` expressions applies wherever you define DVF rules, including at the crosswalk level.
 
 For more information, see topic and [DVF string functions](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-operation/define-data-validation-functions/understanding-the-expression-attribute/dvf-string-functions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+
+
+---
+
+# 2026.1.8.0 RN | 14-Aug-2026
+
+Learn about the new features and enhancements introduced in this 2026.1.8.0 release.
+
+**Deployment dates**
+
+| Stage | Tenant type | When |
+| --- | --- | --- |
+| 1 | Development (DEV) | August 7, 2026 |
+| 2 | Test (TEST) | August 7, 2026 |
+| 3 | Production (PRD) | August 14, 2026 |
+
+## Unique names for Materialized hierarchies and versions
+
+Hierarchy names must now be unique within each tenant, and version names must be unique within each hierarchy. Reltio validates uniqueness when you create, clone, or edit a hierarchy or version. When you split a hierarchy, the resulting hierarchies and versions receive numbered suffixes, such as VersionName_1 and VersionName_2, to ensure the generated names are unique..
+
+For more information, see [Add a hierarchy in the Profile view](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/add-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Clone a hierarchy in the Profile view](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/clone-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), and [Import a hierarchy in the Profile view](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/import-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
@@ -71108,7 +71127,7 @@ Learn more about searching entity records by attribute values, types, tags, and 
 | Query | `select` | No | Comma-separated list of properties from entity structure that should be returned in a response. Allows you to return partial entity object. List of entity object properties you can find here-Entities. Additional system properties are:   - `attributes._lookupCodes`: return codes for lookup attributes. - `attributes._lookupValues`: return values for lookup attributes.    Example:`select=URI,label,attributes._lookupCodes,attributes._lookupValues` |
 | Query | `max` | No | Positive Integer value to identify maximum number of entities to return in a response. Can be used to organize pagination in combination with the `offset` parameter. Default value is `50`. |
 | Query | `offset` | No | Positive Integer value to identify starting what element in a result set should be returned in a response. Can be used to organize pagination in combination with the `max` parameter. Default value is parameter. Default value is `0`..**Note:** The updated maximum value and offset parameters, when combined, must not exceed the value of 10,000. Some examples of valid combinations are: offset=9900 and max=100offset=9800 and max=200 |
-| Query | `sort` | No | Sort parameter is used with `Order` parameter. Sort parameter points to the attribute or a list of attributes where ordering must be applied. If you order the result set as ascending or descending (reversed), you must use the `Sort` parameter to list the attributes that must be used for ordering. Example: sort=attributes.FirstName **Important:** Sorting is available on multiple parameters combining the parameters using & sign. The & symbol is encoded as %26 in the request. Sorting priority of the parameters depends upon the order you have added the parameters in the request while using multiple sorting..At first, the result set is sorted alphabetically by `attributes.FirstName`. Then, for results that share the same first name, the list is sorted again by `attributes.LastName`. **Note:** You can also sort by sub-attributes of complex attributes, such as nested or reference attributes. Example: `sort=attributes.Address.Country.`When you don't specify the `sort` parameter, or the value isn't recognized, search results are sorted first by relevance score and then by ID. When you disable `searchStorageConfiguration.applyDefaultSorting`, searches without the `sort` parameter return results in the search index's natural order. Searches without the sort parameter, or with an unrecognized value, return results in the search index's internal order instead. For more information, see [Tenant Configuration Parameters Reference](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/tenant-configuration-parameters-reference?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). You can set the sort parameter to one of the following values: - score: Sorts results by relevance score. Unlike attribute-based sorts, which default to ascending order, `score` defaults to descending order when `order` isn't specified, so the highest-scoring results appear first. - none: Returns results in the order they appear in the search index. This is the fastest option because it doesn't calculate relevance scores or apply a tie-breaker. **Note:** The `applyDefaultSorting` setting applies only to searches that don't already require a specific sort order. It doesn't change sorting when the request:Includes a `sort` parameter.Is an activity search, which is always sorted by timestamp.Is a type-ahead search.Includes `scoreEnabled=true`.Comes from the Reltio UI.Is a `_scan` or other background-task search that uses a predefined sort to keep pagination consistent. |
+| Query | `sort` | No | Sort parameter is used with `Order` parameter. Sort parameter points to the attribute or a list of attributes where ordering must be applied. If you order the result set as ascending or descending (reversed), you must use the `Sort` parameter to list the attributes that must be used for ordering. Example: sort=attributes.FirstName **Important:** Sorting is available on multiple parameters combining the parameters using "&" sign. The "&" sign is encoded as %26 in the request. Sorting priority of the parameters depends upon the order you have added the parameters in the request while using multiple sorting.At first, the result set is sorted alphabetically by `attributes.FirstName`. Then, for results that share the same first name, the list is sorted again by `attributes.LastName`. **Note:** You can also sort by sub-attributes of complex attributes, such as nested or reference attributes. Example: `sort=attributes.Address.Country.`When you don't specify the sort parameter search results are sorted by relevance score and then by ID; unless `searchStorageConfiguration.applyDefaultSorting` is disabled, in which case results return in the search index's natural order. For more information, see [Tenant Configuration Parameters Reference](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/tenant-configuration-parameters-reference?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). In addition to attribute paths, you can set the sort parameter to one of the following special values: - score: Sorts results by relevance score. Unlike attribute-based sorts, which default to ascending order, `score` defaults to descending order when `order` isn't specified, so the highest-scoring results appear first. - none: Returns results in the order they appear in the search index. This is the fastest option because it doesn't calculate relevance scores or apply a tie-breaker. Use `sort=none` to skip sorting for a single request, regardless of the tenant's `applyDefaultSorting` setting. **Note:** The `applyDefaultSorting` setting applies only to searches that don't already require a specific sort order. It doesn't change sorting when the request:Includes a `sort` parameter.Is an activity search, which is always sorted by timestamp.Is a type-ahead search.Includes `scoreEnabled=true`.Comes from the Reltio UI.Is a `_scan` or other background-task search that uses a predefined sort to keep pagination consistent. |
 | Query | `order` | No | Order of sorting. Applicable only in combination with the `sort` parameter. Possible values:   - `asc`: results are shown in ascending order. - `desc`: results are shown in descending order.    Default sorting is`asc`.  Example: `order=desc` |
 | Query | `options` | No | Comma-separated list of different options. Available options:   - `sendHidden`: disabled by default; entity's JSON will contain hidden attributes if this option is enabled. - `searchByOv`: disabled by default, to search by all attributes with Operational Value (OV) only.   - You can use the `searchByOv` and `sortByOv` options in case of STATIC index OV strategy. If you use `searchByOv` option, sorting by OV works automatically.   - In case of NONE strategy, the `sortByOv` option is ignored. If you want to sort by OV, you should switch `indexOvStrategy` to STATIC. - `ovOnly`: return only attribute values that have the `ov=true` flag. - `nonOvOnly`: return only attribute values that have the `ov=false` flag. If you have a nested or reference attribute value, where `ov=true`, but sub-attributes, where `ov=false`, then these sub-attributes do not appear in the response.      Example: `options=searchByOv`  - `cleanEntity` - Set this option to `true` to get entities without certain properties. Here's what you get in the response:   - `URI` is null.   - `Type` of entity is available.   - `createdBy`, `createdTime`, `updatedBy`, and `updatedTime` are included.   - Simple and nested attributes are displayed without the `uri`, `ov`, `type`, and `label` parameters.   - For `refEntity` and `refRelation`, the `uri`, `type`, `createDate`,`updateDate`, `attributeURIs`, `startRefPinned`, `endRefPinned`, `startRefIgnored`, `endRefIgnored`, and `objectURI` are included.   - Field crosswalks type is updated with its `short name`, `reltioLoadDate`, `createDate`, and `updateDate`.   - Field attributes for crosswalk block contains only short URIs.   - `singleAttributeUpdateDates` field for crosswalk block is empty.   - `analyticsAttributes` is not included. |
 | Query | `defaultMaxValues` | No | Specifies maximum number of values listed in attributes. This restriction is intended for UI convenience in the case of very long lists of values in some attributes.  Example: `defaultMaxValues=10` |
@@ -71123,18 +71142,147 @@ JSON array of entity objects from the tenant (that match the filter request) in 
 ## Request-Find Individual Entities
 
 ```
-GET {TenantURL}/entities?filter=(equals(type,'configuration/entityTypes/Individual'))&max=2
+GET {TenantURL}/entities?sort=attributes.FirstName%26attributes.LastName
 Headers: Authorization: Bearer {your-access-token}
 ```
 
 **Response**
 
 ```
-GET {TenantURL}/entities?filter=(equals(type,'configuration/entityTypes/Individual'))&max=2
-Headers:
-Authorization: Bearer {your-access-token},
-[ { "URI": "entities/20",      ... },
-{ "URI": "entities/142",        ... } ]
+[
+    {
+        "uri": "entities/0SaAwWv",
+        "type": "configuration/entityTypes/Individual",
+        "attributes": {
+            "FirstName": [
+                {
+                    "type": "configuration/entityTypes/Individual/attributes/FirstName",
+                    "ov": true,
+                    "value": "Alice",
+                    "uri": "entities/0SaAwWv/attributes/FirstName/3CKVUplZ"
+                }
+            ],
+            "LastName": [
+                {
+                    "type": "configuration/entityTypes/Individual/attributes/LastName",
+                    "ov": true,
+                    "value": "Anderson",
+                    "uri": "entities/0SaAwWv/attributes/LastName/3CKVUu1p"
+                }
+            ]
+        }
+    },
+    {
+        "uri": "entities/0SaB0nB",
+        "type": "configuration/entityTypes/Individual",
+        "attributes": {
+            "FirstName": [
+                {
+                    "type": "configuration/entityTypes/Individual/attributes/FirstName",
+                    "ov": true,
+                    "value": "Alice",
+                    "uri": "entities/0SaB0nB/attributes/FirstName/3CKVV6ob"
+                }
+            ],
+            "LastName": [
+                {
+                    "type": "configuration/entityTypes/Individual/attributes/LastName",
+                    "ov": true,
+                    "value": "Brooks",
+                    "uri": "entities/0SaB0nB/attributes/LastName/3CKVVB4r"
+                }
+            ]
+        }
+    },
+    {
+        "uri": "entities/0XEBoTl",
+        "type": "configuration/entityTypes/Individual",
+        "attributes": {
+            "FirstName": [
+                {
+                    "type": "configuration/entityTypes/Individual/attributes/FirstName",
+                    "ov": true,
+                    "value": "Alice",
+                    "uri": "entities/0XEBoTl/attributes/FirstName/35nJyGwf"
+                }
+            ],
+            "LastName": [
+                {
+                    "type": "configuration/entityTypes/Individual/attributes/LastName",
+                    "ov": true,
+                    "value": "Carter",
+                    "uri": "entities/0XEBoTl/attributes/LastName/35nJyLCv"
+                }
+            ]
+        }
+    },
+    {
+        "uri": "entities/0XEBx0H",
+        "type": "configuration/entityTypes/Individual",
+        "attributes": {
+            "FirstName": [
+                {
+                    "type": "configuration/entityTypes/Individual/attributes/FirstName",
+                    "ov": true,
+                    "value": "Brian",
+                    "uri": "entities/0XEBx0H/attributes/FirstName/35nJyp2j"
+                }
+            ],
+            "LastName": [
+                {
+                    "type": "configuration/entityTypes/Individual/attributes/LastName",
+                    "ov": true,
+                    "value": "Anderson",
+                    "uri": "entities/0XEBx0H/attributes/LastName/35nJytIz"
+                }
+            ]
+        }
+    },
+    {
+        "uri": "entities/0XEBsk1",
+        "type": "configuration/entityTypes/Individual",
+        "attributes": {
+            "FirstName": [
+                {
+                    "type": "configuration/entityTypes/Individual/attributes/FirstName",
+                    "ov": true,
+                    "value": "Brian",
+                    "uri": "entities/0XEBsk1/attributes/FirstName/35nJyXzh"
+                }
+            ],
+            "LastName": [
+                {
+                    "type": "configuration/entityTypes/Individual/attributes/LastName",
+                    "ov": true,
+                    "value": "Brooks",
+                    "uri": "entities/0XEBsk1/attributes/LastName/35nJycFx"
+                }
+            ]
+        }
+    },
+    {
+        "uri": "entities/0XEC1GX",
+        "type": "configuration/entityTypes/Individual",
+        "attributes": {
+            "FirstName": [
+                {
+                    "type": "configuration/entityTypes/Individual/attributes/FirstName",
+                    "ov": true,
+                    "value": "Brian",
+                    "uri": "entities/0XEC1GX/attributes/FirstName/35nJz65l"
+                }
+            ],
+            "LastName": [
+                {
+                    "type": "configuration/entityTypes/Individual/attributes/LastName",
+                    "ov": true,
+                    "value": "Carter",
+                    "uri": "entities/0XEC1GX/attributes/LastName/35nJzAM1"
+                }
+            ]
+        }
+    }
+]
 ```
 
 The following examples explain how to include *activeness* in your GET Entities API call. This query will return all HCP entities with *LastName = Smith* which are not *active*:
@@ -85131,7 +85279,7 @@ The following table lists the Materialized Hierarchy Management APIs and describ
 
 **Source:** https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/clone-an-unversioned-hierarchy-instance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
-**Keywords:** clone hierarchy by id, clone existing hierarchy api, create cloned hierarchy from existing, clone hierarchy with versions, clone hierarchy with connections, copy hierarchy definition and connections, post hierarchy clone endpoint, create versioned cloned hierarchy, hierarchy clone response fields, cloning, versioning, connections
+**Keywords:** clone an unversioned hierarchy instance, use unversioned hierarchy clone api, copy hierarchy connections automatically, create hierarchy from existing hierarchy, clone hierarchy by hierarchy id, set cloned hierarchy version metadata, submit unversioned hierarchy clone request, cloning, versioning, hierarchyid
 
 
 Learn more about how to use the Clone unversioned hierarchy instance to create a hierarchy and, optionally, its first connection.
@@ -85161,10 +85309,10 @@ The request body is a JSON array of connection definition objects.
 | Field | Nested field | Type | Required | Description |
 | --- | --- | --- | --- | --- |
 | `type` | — | String | Yes | The hierarchy type name as defined in the business configuration. |
-| `name` | — | String | Yes | The name of the new hierarchy. |
+| `name` | — | String | Yes | The name of the new hierarchy. It must be unique within the tenant. |
 | `hasVersioning` | — | Boolean | No | Indicates whether the cloned hierarchy is versioned. |
 | `version` | — | Object | Yes, if `hasVersioning=true` | The object that describes the version to create. |
-| `version` | `name` | String | See `version` | The name of the version. |
+| `version` | `name` | String | See `version` | The name of the version. It must be unique within the hierarchy. |
 | `version` | `status` | String | See `version` | Optional. The status of the version. |
 | `version` | `effectiveStartDate` | String | See `version` | Optional. The start effective date of the version in ISO 8601 date format. |
 | `version` | `effectiveEndDate` | String | See `version` | Optional. The end effective date of the version in ISO 8601 date format. |
@@ -85245,6 +85393,14 @@ The following example shows the response body.
 }
 ```
 
+## Error codes and recommended actions
+
+The following table lists the possible error responses returned by this API.
+
+| HTTP status | Description | Recommended action |
+| --- | --- | --- |
+| `400 Bad Request` | The request contains invalid or missing parameters. | Review the error message, correct the request as indicated, and submit the request again. For example, if the error identifies a duplicate version name, specify a unique name before resubmitting the request. |
+
 **Related links**
 
 - [Materialized Hierarchy Management APIs](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
@@ -85260,7 +85416,7 @@ The following example shows the response body.
 
 **Source:** https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/clone-a-versioned-hierarchy-instance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
-**Keywords:** clone hierarchy instance api, clone existing hierarchy instance, create hierarchy from instance clone, copy hierarchy instance with connections, clone versioned hierarchy instance, post hierarchy instance clone endpoint, create cloned hierarchy definition, set version metadata for clone, hierarchy instance clone response fields, cloning, versioning, instanceid
+**Keywords:** clone a hierarchy instance, use clone hierarchy api, copy hierarchy instance connections, clone versioned hierarchy instance, create hierarchy from clone, set hierarchy version metadata, submit hierarchy clone request, cloning, versioning, instanceid
 
 
 Learn more about how to use the Clone hierarchy API to clone a hierarchy instance.
@@ -85290,7 +85446,7 @@ The request body is a JSON array of connection definition objects.
 | Field | Field | Type | Required | Description |
 | --- | --- | --- | --- | --- |
 | `type` | — | String | Yes | The hierarchy type name as defined in the business configuration. |
-| `name` | — | String | Yes | The name of the new hierarchy. |
+| `name` | — | String | Yes | The name of the new hierarchy. It must be unique in the tenant. |
 | `hasVersioning` | — | Boolean | No | Indicates whether the cloned hierarchy is versioned. |
 | `version` | — | Object | Yes, if `hasVersioning=true` | The object that describes the version to create. |
 | `version` | `name` | String | See `version` | The name of the version. |
@@ -85330,13 +85486,13 @@ The following table describes the fields returned in the response body, which is
 | Field | Field | Type | Description |
 | --- | --- | --- | --- |
 | `type` | — | String | The hierarchy type name as defined in the business configuration. |
-| `name` | — | String | The name of the hierarchy. |
+| `name` | — | String | The name of the hierarchy. It must be unique within the tenant. |
 | `hasVersioning` | — | Boolean | Indicates whether the hierarchy is versioned. |
 | `hierarchyId` | — | String | The ID of the created hierarchy. |
 | `instanceId` | — | String | The ID of the created hierarchy instance. |
 | `version` | — | Object | Optional. The created hierarchy version. |
 | `version` | `versionId` | String | The ID of the created version. |
-| `version` | `name` | String | The name of the version. |
+| `version` | `name` | String | The name of the version. It must be unique within the hierarchy. |
 | `version` | `status` | String | Optional. The status of the version. |
 | `version` | `effectiveStartDate` | String | Optional. The start effective date of the version in ISO 8601 date format. |
 | `version` | `effectiveEndDate` | String | Optional. The end effective date of the version in ISO 8601 date format. |
@@ -85373,6 +85529,14 @@ The following example shows the response body.
   "updatedTime": "2025-04-01T13:30:00"
 }
 ```
+
+## Error codes and recommended actions
+
+The following table lists the possible error responses returned by this API.
+
+| HTTP status | Description | Recommended action |
+| --- | --- | --- |
+| `400 Bad Request` | The request contains invalid or missing parameters. | Review the error message, correct the request as indicated, and submit the request again. For example, if the error identifies a duplicate version name, specify a unique name before resubmitting the request. |
 
 **Related links**
 
@@ -85418,7 +85582,7 @@ The request body is a JSON array of connection definition objects.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `name` | String | Yes | The name of the new version. |
+| `name` | String | Yes | The name of the new version. It must be unique within the hierarchy. |
 | `status` | String | No | The status of the version. |
 | `effectiveStartDate` | String | No | The start effective date of the version in ISO 8601 date format. |
 | `effectiveEndDate` | String | No | The end effective date of the version in ISO 8601 date format. |
@@ -85482,6 +85646,14 @@ The following example shows the response body.
   "updatedTime": "2025-04-01T13:30:00"
 }
 ```
+
+## Error codes and recommended actions
+
+The following table lists the possible error responses returned by this API.
+
+| HTTP status | Description | Recommended action |
+| --- | --- | --- |
+| `400 Bad Request` | The request contains invalid or missing parameters. | Review the error message, correct the request as indicated, and submit the request again. For example, if the error identifies a duplicate version name, specify a unique name before resubmitting the request. |
 
 **Related links**
 
@@ -85648,10 +85820,10 @@ The request body is a JSON array of connection definition objects.
 | Field | Field | Type | Required | Description |
 | --- | --- | --- | --- | --- |
 | `type` | — | String | Yes | The hierarchy type name as defined in the business configuration. |
-| `name` | — | String | Yes | The name of the hierarchy. |
+| `name` | — | String | Yes | The name of the hierarchy. It must be unique within the tenant. |
 | `hasVersioning` | — | Boolean | No | Indicates whether the hierarchy is versioned. |
 | `version` | — | Object | Yes, if `hasVersioning=true` | The object that describes the version to create. |
-| `version` | `name` | String | No | The name of the version. |
+| `version` | `name` | String | No | The name of the version. It must be unique within the hierarchy. |
 | `version` | `effectiveStartDate` | String | No | Optional. The start effective date of the version in ISO 8601 date format. |
 | `version` | `effectiveEndDate` | String | No | Optional. The end effective date of the version in ISO 8601 date format. |
 | `version` | `description` | String | No | Optional. The description of the version. |
@@ -85755,6 +85927,14 @@ The following example shows the response body.
 }
 ```
 
+## Error codes and recommended actions
+
+The following table lists the possible error responses returned by this API.
+
+| HTTP status | Description | Recommended action |
+| --- | --- | --- |
+| `400 Bad Request` | The request contains invalid or missing parameters. | Review the error message, correct the request as indicated, and submit the request again. For example, if the error identifies a duplicate version name, specify a unique name before resubmitting the request. |
+
 **Related links**
 
 - [Materialized Hierarchy Management APIs](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
@@ -85799,7 +85979,7 @@ The request body is a JSON array of connection definition objects.
 
 | Field | Field | Type | Required | Description |
 | --- | --- | --- | --- | --- |
-| `name` | — | String | Yes | The name of the version. |
+| `name` | — | String | Yes | The name of the version. It must be unique within the hierarchy. |
 | `status` | — | String | No | The status of the version. |
 | `effectiveStartDate` | — | String | No | The start effective date of the version in ISO 8601 date format. |
 | `effectiveEndDate` | — | String | No | The end effective date of the version in ISO 8601 date format. |
@@ -85887,6 +86067,14 @@ The following example shows the response body.
   "updatedTime": "2025-04-01T13:30:00"
 }
 ```
+
+## Error codes and recommended actions
+
+The following table lists the possible error responses returned by this API.
+
+| HTTP status | Description | Recommended action |
+| --- | --- | --- |
+| `400 Bad Request` | The request contains invalid or missing parameters. | Review the error message, correct the request as indicated, and submit the request again. For example, if the error identifies a duplicate version name, specify a unique name before resubmitting the request. |
 
 **Related links**
 
@@ -86783,7 +86971,7 @@ The following example shows the response body.
 
 **Source:** https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/import-a-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
-**Keywords:** create hierarchy api, create hierarchy definition, create hierarchy with version, create hierarchy with connection, create first hierarchy connection, create hierarchy version and instance, submit hierarchy create request, hierarchy create response fields, create versioned hierarchy, versioning, hierarchyid, firstconnection
+**Keywords:** import hierarchy data in bulk, use import hierarchy api, upload hierarchy csv file, upload hierarchy json file, configure hierarchy import policies, create versioned hierarchy connections, handle hierarchy import conflicts, versioning, permissions, connections
 
 
 Learn more about how to use the Import Hierarchy API to import hierarchy data from a CSV or JSON file.
@@ -86818,7 +87006,7 @@ The request body is a JSON array of connection definition objects.
 | `conflictsPolicy` | String | No | Determines how to handle conflicts in connection dates for defined hierarchies. | `FORBID` or `MERGE`. Default: `FORBID` |
 | `errorPolicy` | String | No | Determines what happens when individual lines in the imported file are in an incorrect format. | `IGNORE` or `FAIL`. Default: `FAIL` |
 | `file` | File | Yes | The file that contains the hierarchy definition. | CSV or JSON file |
-| `version` | String | No | The version name of the hierarchy. | Any string. Default is none. |
+| `version` | String | No | The version name of the hierarchy. It must be unique within the hierarchy. | Any string. Default is none. |
 | `startDate` | Date | No | The start date of the connection. | Date format YYYY-MM-DD. |
 | `endDate` | Date | No | The end date of the connection. | Date format YYYY-MM-DD. |
 
@@ -86865,6 +87053,8 @@ The following example shows the content of an import JSON file.
 ]
 ```
 
+> **Note:** Hierarchy names in an import file must be unique within the tenant. Version names must be unique within each hierarchy.
+
 ## Example request
 
 The following example shows a CSV upload request. To upload a JSON file, set `format` to `JSON` and upload a JSON file in the `file` field.
@@ -86910,6 +87100,14 @@ The following example shows the response body.
   ]
 }
 ```
+
+## Error codes and recommended actions
+
+The following table lists the possible error responses returned by this API.
+
+| HTTP status | Description | Recommended action |
+| --- | --- | --- |
+| `400 Bad Request` | The request contains invalid or missing parameters. | Review the error message, correct the request as indicated, and submit the request again. For example, if the error identifies a duplicate version name, specify a unique name before resubmitting the request. |
 
 **Related links**
 
@@ -87258,7 +87456,7 @@ The request body is a JSON array of connection definition objects.
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `type` | String | Yes | The hierarchy type name as defined in the business configuration. |
-| `name` | String | Yes | The name of the hierarchy. |
+| `name` | String | Yes | The name of the hierarchy. If the request changes the name, the new name must be unique within the tenant. If the name remains unchanged, uniqueness validation isn't performed. |
 | `hasVersioning` | Boolean | No | Indicates whether hierarchy versioning must be enabled or disabled. If the hierarchy has multiple versions, you can't disable versioning. |
 
 ## Example request
@@ -87309,6 +87507,14 @@ The following example shows the response body.
 }
 ```
 
+## Error codes and recommended actions
+
+The following table lists the possible error responses returned by this API.
+
+| HTTP status | Description | Recommended action |
+| --- | --- | --- |
+| `400 Bad Request` | The request contains invalid or missing parameters. | Review the error message, correct the request as indicated, and submit the request again. For example, if the error identifies a duplicate version name, specify a unique name before resubmitting the request. |
+
 **Related links**
 
 - [Materialized Hierarchy Management APIs](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
@@ -87353,7 +87559,7 @@ The request body is a JSON array of connection definition objects.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `name` | String | Yes | The name of the version. |
+| `name` | String | Yes | The name of the version. If the request changes the name, the new name must be unique within the hierarchy. If the name remains unchanged, uniqueness validation isn't performed. |
 | `status` | String | No | The status of the version. |
 | `effectiveStartDate` | String | No | The start effective date of the version in ISO 8601 date format. |
 | `effectiveEndDate` | String | No | The end effective date of the version in ISO 8601 date format. |
@@ -87417,6 +87623,14 @@ The following example shows the response body.
   "updatedTime": "2024-10-10T10:15:30"
 }
 ```
+
+## Error codes and recommended actions
+
+The following table lists the possible error responses returned by this API.
+
+| HTTP status | Description | Recommended action |
+| --- | --- | --- |
+| `400 Bad Request` | The request contains invalid or missing parameters. | Review the error message, correct the request as indicated, and submit the request again. For example, if the error identifies a duplicate version name, specify a unique name before resubmitting the request. |
 
 **Related links**
 
@@ -87871,8 +88085,8 @@ To connect to your tenant
 7. Select **Connect your Reltio Tenant** to start setup.
 8. Select **Add Environment**, then enter your environment ID (for example, `test-usg.reltio.com`).
 9. Authenticate using one of the following methods, using the credentials you copied in the prerequisites.
-   - **•** Select **Sign in with browser (recommended)**. Enter your **Client ID** and **Client secret**, then enter your **SSO routing tenant ID** when prompted. Reltio IDE opens your browser to complete single sign-on. Cursor stores these credentials in your operating system's secure credential store.
-   - **•** Select **Paste a Bearer token**, then paste the token you kept ready and press Enter. Reltio IDE keeps the token in memory for the current session only.
+   - Select **Sign in with browser (recommended)**. Enter your **Client ID** and **Client secret**, then enter your **SSO routing tenant ID** when prompted. Reltio IDE opens your browser to complete single sign-on. Cursor stores these credentials in your operating system's secure credential store.
+   - Select **Paste a Bearer token**, then paste the token you kept ready and press Enter. Reltio IDE keeps the token in memory for the current session only.
 10. After authentication, select your tenant from the tenant list.
 
 To open and navigate your configuration
@@ -87881,10 +88095,10 @@ To open and navigate your configuration
 12. Select the **Open L3** icon beside the tenant ID to open your configuration file in the editor.
 13. Expand your tenant to browse its configuration.
 14. Use the context menu at the tenant level and on objects in the tree view to perform modeling actions, such as:
-   - **•** Adding a new entity type or relationship type
-   - **•** Adding a new attribute
-   - **•** Viewing the ontology
-   - **•** Applying your configuration changes to the tenant
+   - Adding a new entity type or relationship type
+   - Adding a new attribute
+   - Viewing the ontology
+   - Applying your configuration changes to the tenant
 
 **Result**
 
@@ -87944,8 +88158,8 @@ To connect to your tenant
 12. Select **Connect your Reltio Tenant** to start setup.
 13. Select **Add Environment**, then enter your environment ID (for example, `test-usg.reltio.com`).
 14. Authenticate using one of the following methods, using the credentials you copied in the prerequisites.
-   - **•** Select **Sign in with browser (recommended)**. Enter your **Client ID** and **Client secret**, then enter your **SSO routing tenant ID** when prompted. Reltio IDE opens your browser to complete single sign-on. VS Code stores these credentials in your operating system's secure credential store.
-   - **•** Select **Paste a Bearer token**, then paste your token and press Enter. Reltio IDE keeps the token in memory for the current session only.
+   - Select **Sign in with browser (recommended)**. Enter your **Client ID** and **Client secret**, then enter your **SSO routing tenant ID** when prompted. Reltio IDE opens your browser to complete single sign-on. VS Code stores these credentials in your operating system's secure credential store.
+   - Select **Paste a Bearer token**, then paste your token and press Enter. Reltio IDE keeps the token in memory for the current session only.
 15. After authentication, select your tenant from the tenant list.
 
 To open and navigate your configuration
@@ -87954,10 +88168,10 @@ To open and navigate your configuration
 17. Select the **Open L3** icon beside the tenant ID to open your configuration file in the editor.
 18. Expand your tenant to browse its configuration.
 19. Use the context menu at the tenant level and on objects in the tree view to perform modeling actions, such as:
-   - **•** Adding a new entity type or relationship type
-   - **•** Adding a new attribute
-   - **•** Viewing the ontology
-   - **•** Applying your configuration changes to the tenant
+   - Adding a new entity type or relationship type
+   - Adding a new attribute
+   - Viewing the ontology
+   - Applying your configuration changes to the tenant
 
 **Result**
 
@@ -106364,7 +106578,7 @@ For more information, see [Interactions Search](https://developer.reltio.com/pri
 | Query | `select` | No | This is a comma-separated list of properties from interaction structure that must be returned in a response. Allows you to return a partial interaction object. Additional system properties are as follows:  - `attributes._lookupCodes` - returns codes for lookup attributes - `attributes._lookupValues` - return values for lookup attributes    For example,`select=URI,label,attributes._lookupCodes,attributes._lookupValues`. |
 | Query | `max` | No | This parameter represents a positive integer value to identify the maximum number of interactions to return in a response. Can be used to organize pagination in combination with the `offset` parameter. The default value is 50. |
 | Query | `offset` | No | This parameter represents a positive integer value to identify what element in a result set must be returned in a response. Can be used to organize pagination in combination with the `max` parameter. The default value is 0.parameter. The default value is 0.**Note:** The updated maximum value and offset parameters, when combined, must not exceed the value of 10,000. Some examples of valid combinations are: offset=9900 and max=100offset=9800 and max=200 |
-| Query | `sort` | No | The Sort parameter is used with the `Order` parameter. Sort parameter points to the attribute or a list of attributes where ordering must be applied. If you order the result set as ascending or descending (reversed), you must use the Sort parameter to list the attributes that must be used for ordering.parameter. Sort parameter points to the attribute or a list of attributes where ordering must be applied. If you order the result set as ascending or descending (reversed), you must use the Sort parameter to list the attributes that must be used for ordering.**Important:** The sorting will not be used if this parameter is not provided or the value is not recognized. Sorting is available on multiple parameters combining the parameters using **&** sign. The **&** symbol is encoded as **%26** in the request.Sorting priority of the parameters depends upon the order you have added the parameters in the request while using multiple sorting. For example, `sort=attributes.FirstName``sort=attributes.FirstName&attributes.LastName`. . At first the resultset is sorted alphabetically by `attributes.FirstName`. Then the sorted result set will be sorted again by `sort=attributes.LastName`. |
+| Query | `sort` | No | The Sort parameter is used with the `Order` parameter. Sort parameter points to the attribute or a list of attributes where ordering must be applied. If you order the result set as ascending or descending (reversed), you must use the Sort parameter to list the attributes that must be used for ordering.parameter. Sort parameter points to the attribute or a list of attributes where ordering must be applied. If you order the result set as ascending or descending (reversed), you must use the Sort parameter to list the attributes that must be used for ordering.**Important:** Sorting is available on multiple parameters combining the parameters using "&" sign. The "&" sign is encoded as %26 in the request. Sorting priority of the parameters depends upon the order you have added the parameters in the request while using multiple sorting.For example, `sort=attributes.FirstName``sort=attributes.FirstName&attributes.LastName`. . At first the result set is sorted alphabetically by `attributes.FirstName`. Then the sorted result set will be sorted again by `sort=attributes.LastName`. When you don't specify the sort parameter search results are sorted by relevance score and then by ID; unless `searchStorageConfiguration.applyDefaultSorting` is disabled, in which case results return in the search index's natural order. For more information, see [Tenant Configuration Parameters Reference](https://docs.reltio.com/developer-resources/about-developer-resources/developer-resources-at-a-glance/tenant-configuration-parameters-reference?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). You can set the sort parameter to one of the following values: - score: Sorts interactions by relevance score. Unlike attribute-based sorts, which default to ascending order, `score` defaults to descending order when `order` isn't specified, so the highest-scoring results appear first. - none: Returns results in the order they appear in the search index. This is the fastest option because it doesn't calculate relevance scores or apply a tie-breaker. Use `sort=none` to skip sorting for a single request, regardless of the tenant's `applyDefaultSorting` setting. **Note:** The `applyDefaultSorting` setting applies only to searches that don't already require a specific sort order. It doesn't change sorting when the request:Includes a `sort` parameter.Is an activity search, which is always sorted by timestamp.Is a type-ahead search.Includes `scoreEnabled=true`.Comes from the Reltio UI.Is a `_scan` or other background-task search that uses a predefined sort to keep pagination consistent. |
 | Query | `order` | No | This parameter indicates the order of sorting and is used only in combination with the `sort` parameter. The possible values are as follows:  - `asc` - Indicates that the results are shown in ascending order. - `desc` - Indicates that the results are shown in descending order.    The default sorting order is`asc`. For example, `order=desc`. |
 | Query | `options` | No | This is a comma-separated list. `sendHidden` is disabled by default. The interaction's JSON contains hidden attributes if this option is enabled. For example, `options=sendHidden`. |
 | Query | `defaultMaxValues` | No | This parameter specifies the maximum number of values listed in the attributes. This restriction is intended for UI convenience in the case of very long lists of values in some attributes. For example, `defaultMaxValues=10`. |
@@ -114607,7 +114821,7 @@ These parameters control search index structure, performance tuning, and indexin
 | `indexExportCsvHeaders` | Controls whether CSV downloads include header rows. | Boolean | true |
 | `appendEqualsAnalyzedForContainsWordStartingWith` | Tunes analyzers for contains-word-starting-with and equals queries. | Boolean | false |
 | `proximateGeoTokenVersion` | Version of the geo tokenization algorithm used for proximity searches. | Integer | 1 |
-| `applyDefaultSorting` | Determines whether entity and relation searches sort by relevance score and ID when the request omits the sort parameter. When disabled, these searches return results in the search index's natural order, which is faster because it skips relevance scoring. | Boolean | true |
+| `applyDefaultSorting` | Determines whether entity, relation, and interaction searches sort by relevance score and ID when the request omits the sort parameter. When disabled, these searches return results in the search index's natural order, which is faster because it skips relevance scoring.  > **Note:** ​The `applyDefaultSorting` setting applies only to searches that don't already require a specific sort order. It doesn't change sorting when the request: > - Includes a `sort` parameter. > - Is an activity search, which is always sorted by timestamp. > - Is a type-ahead search. > - Includes `scoreEnabled=true`. > - Comes from the Reltio UI. > - Is a `_scan` or other background-task search that uses a predefined sort to keep pagination consistent. | Boolean | true |
 
 For information on search behavior and tuning, see [Search API](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/search-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
@@ -128671,7 +128885,7 @@ For additional information about relation properties that can be used in filter 
 | Query | `select` | No | This is a comma-separated list of properties from relation structure that should be returned in a response. Allows a return of the partial relationship object. You can find a list of relationship object properties under [Relations API](https://docs.reltio.com/en/developer-resources/relation-management-apis/relation-management-apis-at-a-glance/relations-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). | `select=uri,startObject,endObject` |
 | Query | `max` | No | Positive Integer value to identify maximum number of relations to return in a response. Can be used to organize pagination in combination with `"offset"` parameter.  Default value depends on the tenant configuration. | `max=10` |
 | Query | `offset` | No | Positive Integer value to identify starting what element in a result set should be returned in a response. Can be used to organize pagination in combination with `"max"` parameter.  Default value is `0`.  > **Note:** The updated maximum value and offset parameters, when combined, must not exceed the value of 10,000. Some examples of valid combinations are:  > - offset=9900 and max=100 > - offset=9800 and max=200 | `offset=120` |
-| Query | `sort` | No | Sort parameter is used with `Order` parameter. Sort parameter points to the attribute or a list of attributes where ordering must be applied. If you order the result set as ascending or descending (reversed), you must use the parameter. Sort parameter points to the attribute or a list of attributes where ordering must be applied. If you order the result set as ascending or descending (reversed), you must use the `Sort` parameter to list the attributes that must be used for ordering.parameter to list the attributes that must be used for ordering.Example: sort=attributes.FirstName **Important:** Sorting is available on multiple parameters combining the parameters using & sign. The & symbol is encoded as %26 in the request. Sorting priority of the parameters depends upon the order you have added the parameters in the request while using multiple sorting.When you don't specify the `sort` parameter, or the value isn't recognized, search results are sorted first by relevance score and then by ID. When you disable `searchStorageConfiguration.applyDefaultSorting`, searches without the `sort` parameter return results in the search index's natural order. Searches without the sort parameter, or with an unrecognized value, return results in the search index's internal order instead. For more information, see [Tenant Configuration Parameters Reference](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/tenant-configuration-parameters-reference?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). You can also set the `sort` parameter to one of the following values: - `score`: Sorts relations by relevance score. Unlike attribute-based sorts, which default to ascending order, `score` defaults to descending order when `order` isn't specified, so the highest-scoring relations appear first. - `none`: Returns relations in the order they appear in the search index. This is the fastest option because it doesn't calculate relevance scores or apply a tie-breaker. **Note:** The `applyDefaultSorting` setting applies only to searches that don't already require a specific sort order. It doesn't change sorting when the request:Includes a `sort` parameter.Is an activity search, which is always sorted by timestamp.Is a type-ahead search.Includes `scoreEnabled=true`.Comes from the Reltio UI.Is a `_scan` or other background-task search that uses a predefined sort to keep pagination consistent. | `sort=uri`  `sort=uri&startObject`The result set is first sorted alphabetically by Uniform Resource Identifier (URI). The sorted result set will be sorted again by`sort=startObject` |
+| Query | `sort` | No | Sort parameter is used with `Order` parameter. Sort parameter points to the attribute or a list of attributes where ordering must be applied. If you order the result set as ascending or descending (reversed), you must use the parameter. Sort parameter points to the attribute or a list of attributes where ordering must be applied. If you order the result set as ascending or descending (reversed), you must use the `Sort` parameter to list the attributes that must be used for ordering.parameter to list the attributes that must be used for ordering.Example: sort=attributes.FirstName **Important:** Sorting is available on multiple parameters combining the parameters using "&" sign. The "&" sign is encoded as %26 in the request. Sorting priority of the parameters depends upon the order you have added the parameters in the request while using multiple sorting.When you don't specify the sort parameter search results are sorted by relevance score and then by ID; unless `searchStorageConfiguration.applyDefaultSorting` is disabled, in which case results return in the search index's natural order. For more information, see [Tenant Configuration Parameters Reference](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/tenant-configuration-parameters-reference?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). You can also set the `sort` parameter to one of the following values: - `score`: Sorts relations by relevance score. Unlike attribute-based sorts, which default to ascending order, `score` defaults to descending order when `order` isn't specified, so the highest-scoring relations appear first. - `none`: Returns relations in the order they appear in the search index. This is the fastest option because it doesn't calculate relevance scores or apply a tie-breaker. Use `sort=none` to skip sorting for a single request, regardless of the tenant's `applyDefaultSorting` setting. **Note:** The `applyDefaultSorting` setting applies only to searches that don't already require a specific sort order. It doesn't change sorting when the request:Includes a `sort` parameter.Is an activity search, which is always sorted by timestamp.Is a type-ahead search.Includes `scoreEnabled=true`.Comes from the Reltio UI.Is a `_scan` or other background-task search that uses a predefined sort to keep pagination consistent. | `sort=uri`  `sort=uri&startObject`The result set is first sorted alphabetically by Uniform Resource Identifier (URI). The sorted result set will be sorted again by`sort=startObject` |
 | Query | `order` | No | Order of sorting. Can be used in combination with the `sort` parameter to have the reverse order.   Possible values:  - `asc`: results are shown in ascending order - `desc`: results are shown in descending order      Default sorting is by relation `asc`. | `order=desc` |
 | Query | `options` | No | This is a comma-separated list of different options that have an affect on a relation's JSON content in a response.  Available options:  - `sendHidden`: disabled by default, relation's JSON contain hidden attributes if this option is enabled. - `resolveMergedEntities`: `false` by default, returns actual winner URIs for start/end objects in the relation if set to `true`. - `searchByOv`: disabled by default; to search by all relation attributes with Operational Value (OV) only. | `options=sendHidden,resolveMergedEntities,searchByOv` |
 | Query | `activeness` | No | Available options:  `active`: default value. This option allows a search among active relations  `all`: allows search among all (active/expired) relations  `not_active`: allows search among expired relations | `activeness=active` |
@@ -174608,29 +174822,51 @@ Learn about Reltio Identity Builder, an advanced identity resolution and enrichm
 
 The reference dataset includes:
 
-- More than **550 million** unique individuals
-- More than **630 million** validated phone numbers, including mobile, landline, VoIP, and business numbers
-- More than **860 million** unique email addresses associated with individuals and households
-- More than **1.3 billion** current and historical addresses collected across more than 30 years
+- 
+
+  More than 550 million unique individuals
+- 
+
+  More than 630 million validated phone numbers, including mobile, landline, VoIP, and business numbers
+- 
+
+  More than 860 million unique email addresses associated with individuals and households
+- 
+
+  More than 1.3 billion current and historical addresses collected across more than 30 years
 
 **Reltio Identity Builder** uses this dataset with the Reltio Intelligent Identity Graph to:
 
-- Link identity records that refer to the same individual
-- Track historical changes to names, addresses, phone numbers, and email addresses
-- Maintain household relationships and lineage across systems and time
+- 
+
+  Link identity records that refer to the same individual
+- 
+
+  Track historical changes to names, addresses, phone numbers, and email addresses
+- 
+
+  Maintain household relationships and lineage across systems and time
 
 Identity Builder performs identity resolution and enrichment so that identity data in Reltio Context Intelligence Platform stays aligned with the reference dataset and reflects the most current known state for each individual.
 
-The resulting insights can be visualized in **Hub** dashboards, the **Individual profile** view, or the **Potential Matches** view.*Image: i-identity-builder-overview.png*
+Reltio Identity Builder has no dedicated user interface or console application. It is a data product that appears in **Hub** as a source. The resulting insights can be visualized in **Hub** dashboards, the **Individual profile** view, or the **Potential Matches** view.*Image: i-identity-builder-overview.png*
 
 ## Who is it for?
 
 It's designed for a:
 
-- Data Product Owner defining requirements for consumer identity data, ensuring outputs support the organization's data products, governance standards, and downstream consumption needs
-- Data Steward ensuring data accuracy, completeness and reliability, who manages quality by resolving duplicates, updating records and upholding data governance standards
-- Solution Architect designing and implementing solutions that meet business goals
-- Reltio Configurator configuring data model mappings and match strategies
+- 
+
+  Data Product Owner defining requirements for consumer identity data, ensuring outputs support the organization's data products, governance standards, and downstream consumption needs
+- 
+
+  Data Steward ensuring data accuracy, completeness and reliability, who manages quality by resolving duplicates, updating records and upholding data governance standards
+- 
+
+  Solution Architect designing and implementing solutions that meet business goals
+- 
+
+  Reltio Configurator configuring data model mappings and match strategies
 
 For more information, see [About roles](https://docs.reltio.com/en/roles/about-roles?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
@@ -174640,21 +174876,43 @@ Organizations often work with consumer identity data that is incomplete, inconsi
 
 You would use **Reltio Identity Builder** when you need to address challenges such as:
 
-- **Duplicate or fragmented records** that make it difficult to maintain a single, consistent identity for each individual.
-- **Incomplete profiles** that limit identity resolution because required attributes are missing or vary across systems.
-- **Limited historical visibility** that prevents understanding of identity changes over time, including changes to names, addresses, phones, or emails.
-- **Low-confidence match results** that require manual review when matching rules cannot confirm whether two records represent the same individual.
-- **Manual reconciliation processes** that do not scale as data volume grows and increase operational cost.
-- **AI and automated workflows** that need accurate and current identity data to function correctly.
-- **Governance and fraud-prevention requirements** that depend on consistent and explainable identity information.
+- Duplicate or fragmented records that make it difficult to maintain a single, consistent identity for each individual.
+- 
 
-**Reltio Identity Builder** supports these needs by:
+  Incomplete profiles that limit identity resolution because required attributes are missing or vary across systems.
+- 
 
-- **Resolving duplicate records** using consistent and explainable match rules.
-- **Enriching profiles** with verified identity attributes from a continuously updated reference dataset.
-- **Maintaining identity continuity** across historical changes, including household relationships and updates to contact information.
-- **Reducing manual review** by producing structured match outcomes that are clearer and more reliable.
-- **Providing identity data** that supports analytics, compliance activities, and AI or agentic workflows that require high-confidence inputs.
+  Limited historical visibility that prevents understanding of identity changes over time, including changes to names, addresses, phones, or emails.
+- 
+
+  Low-confidence match results that require manual review when matching rules cannot confirm whether two records represent the same individual.
+- 
+
+  Manual reconciliation processes that do not scale as data volume grows and increase operational cost.
+- 
+
+  AI and automated workflows that need accurate and current identity data to function correctly.
+- 
+
+  Governance and fraud-prevention requirements that depend on consistent and explainable identity information.
+
+Reltio Identity Builder supports these needs by:
+
+- 
+
+  Resolving duplicate records using consistent and explainable match rules.
+- 
+
+  Enriching profiles with verified identity attributes from a continuously updated reference dataset.
+- 
+
+  Maintaining identity continuity across historical changes, including household relationships and updates to contact information.
+- 
+
+  Reducing manual review by producing structured match outcomes that are clearer and more reliable.
+- 
+
+  Providing identity data that supports analytics, compliance activities, and AI or agentic workflows that require high-confidence inputs.
 
 You can review match activity, examine potential duplicate records, and view enrichment lineage in the **Hub** through the available dashboards and entity pages.*Image: i-identity-builder-benefits.png*
 
@@ -174662,25 +174920,46 @@ You can review match activity, examine potential duplicate records, and view enr
 
 Use **Reltio Identity Builder** when you need to:
 
-- Onboard and consolidate large volumes of consumer records and apply consistent identity resolution
-- Enrich US consumer records with verified address, phone, email, and date-of-birth information
-- Support analytics or AI models that depend on high-confidence identity data
-- Maintain historical visibility for long-term analysis and operational processes
+- 
+
+  Onboard and consolidate large volumes of consumer records and apply consistent identity resolution
+- 
+
+  Enrich US consumer records with verified address, phone, email, and date-of-birth information
+- 
+
+  Support analytics or AI models that depend on high-confidence identity data
+- 
+
+  Maintain historical visibility for long-term analysis and operational processes
 
 ## When can’t I use it?
 
 Reltio Identity Builder is currently subject to the following limitations:
 
-- Available only for US consumer data
-- Supported on AWS tenants hosted in the US
-- Not available for Health Insurance Portability and Accountability Act (HIPAA) or Financial Services Cloud environments
+- 
+
+  Available only for US consumer data
+- 
+
+  Supported on AWS tenants hosted in the US
+- 
+
+  Not available for Health Insurance Portability and Accountability Act (HIPAA) or Financial Services Cloud environments
+- 
+
+  Not available in China
 
 ## Where do I find it?
 
 You can access Reltio Identity Builder directly in the Hub application:
 
-1. Explore the **Dashboard**, **Individual**, **Potential Matches**, views to view match results and enrichment details.
-2. Use the **Sources** and **History** views to trace merged attributes and source provenance.
+1. 
+
+   Explore the **Dashboard**, **Individual**, **Potential Matches**, views to view match results and enrichment details.
+2. 
+
+   Use the **Sources** and **History** views to trace merged attributes and source provenance.
 
 *Image: i-identity-builder-sources-view.png*
 
@@ -174704,95 +174983,98 @@ The following video demonstrates how Reltio Identity Builder connects fragmented
 **Keywords:** enrichment attributes, output data fields, identity builder enrichment, address validation, phone confidence score, email enrichment, individual attributes, identity graph enrichment, matching, enrichment
 
 
-Learn about the enriched attributes that Reltio Identity Builder provides after matching customer records against the reference data.
+Learn more about the enriched attributes that Reltio Identity Builder provides after matching customer records against the reference data.
 
-When an **Individual** entity matches the reference dataset through an automatic match strategy, Reltio Identity Builder™ can enrich that record with demographic, contact, and validation attributes. The attributes you receive depend on your licensed product tier and the options selected during provisioning.
+When an **Individual** entity matches the reference dataset through a match strategy, Reltio Identity Builder™ can enrich that record with demographic, contact, and validation attributes. The attributes you receive depend on your licensed product tier and the options selected during provisioning.
+
+There are three product tiers: **Match**, **Enrich**, and **Enrich Plus**. Match entitles you to matching attributes only. Enrich is the standard enrichment attribute package. Enrich Plus contains everything Enrich contains, plus additional premium attributes.
 
 ## Individual
 
 The `Individual` attribute group includes demographic and activity attributes used to enrich the person record.
 
-| Attribute | Description | Product |
-| --- | --- | --- |
-| Name Prefix | Name prefix, such as Mr. or Ms | Enrich |
-| First Name | First name of the individual | Enrich |
-| Middle Name | Middle name of the individual | Enrich |
-| Last Name | Last name of the individual | Enrich |
-| Name Suffix | Name suffix, such as Jr., Sr., I, II, or III | Enrich |
-| Gender | Gender of the individual | Enrich |
-| Year of Birth | Known year of birth, where available | Enrich |
-| Month of Birth | Known month of birth, where available | Enrich |
-| Estimated Age | Estimated age of the individual | Enrich |
-| First Seen | First time the dataset observed the individual | Enrich |
-| Last Seen | Most recent time the dataset observed activity for the individual | Enrich |
-| IP Address | IP address or addresses associated with the individual | Enrich Plus |
-| Website URL | Website URL that the individual has interacted with | Enrich Plus |
-| Website Type | Type of website that the individual has interacted with | Enrich Plus |
-| Deceased Indicator | Indicates whether the individual is deceased | Enrich Plus |
-| Household ID | Household identifier associated with the individual | Enrich Plus |
+| Attribute | Description | Match | Enrich | Enrich Plus |
+| --- | --- | --- | --- | --- |
+| Name Prefix | Name prefix, such as Mr. or Ms. | — | ✓ | ✓ |
+| First Name | First name of the individual | ✓ | ✓ | ✓ |
+| Middle Name | Middle name of the individual | ✓ | ✓ | ✓ |
+| Last Name | Last name of the individual | ✓ | ✓ | ✓ |
+| Name Suffix | Name suffix, such as Jr., Sr., I, II, or III | ✓ | ✓ | ✓ |
+| Gender | Gender of the individual | ✓ | ✓ | ✓ |
+| Year of Birth | Known year of birth, where available | ✓ | ✓ | ✓ |
+| Month of Birth | Known month of birth, where available | ✓ | ✓ | ✓ |
+| Estimated Age | Estimated age of the individual | — | ✓ | ✓ |
+| First Seen | First time the dataset observed the individual | — | ✓ | ✓ |
+| Last Seen | Most recent time the dataset observed activity for the individual | — | ✓ | ✓ |
+| IP Address | IP address or addresses associated with the individual | — | — | ✓ |
+| Website URL | Website URL that the individual has interacted with | — | — | ✓ |
+| Website Type | Type of website that the individual has interacted with | — | — | ✓ |
+| Deceased Indicator | Indicates whether the individual is deceased | — | — | ✓ |
+| Household ID | Household identifier associated with the individual | — | — | ✓ |
 
 ## OtherNames (Aliases)
 
 The `OtherNames` attribute group lists alternate names associated with the individual.
 
-| Attribute | Description | Product |
-| --- | --- | --- |
-| Other Name | Alternate spelling or name for the individual | Enrich |
-| Other Name Prefix | Prefix associated with the alternate name | Enrich |
-| Other First Name | Alternate first name | Enrich |
-| Other Middle Name | Alternate middle name | Enrich |
-| Other Last Name | Alternate last name | Enrich |
-| Other Name Suffix | Suffix associated with the alternate name | Enrich |
-| Other Name Gender | Gender associated with the alternate name | Enrich |
+| Attribute | Description | Match | Enrich | Enrich Plus |
+| --- | --- | --- | --- | --- |
+| Other Name | Alternate spelling or name for the individual | — | ✓ | ✓ |
+| Other Name Prefix | Prefix associated with the alternate name | — | ✓ | ✓ |
+| Other First Name | Alternate first name | — | ✓ | ✓ |
+| Other Middle Name | Alternate middle name | — | ✓ | ✓ |
+| Other Last Name | Alternate last name | — | ✓ | ✓ |
+| Other Name Suffix | Suffix associated with the alternate name | — | ✓ | ✓ |
+| Other Name Gender | Gender associated with the alternate name | — | ✓ | ✓ |
 
 ## Address
 
 The `Address` attribute group contains address elements and validation indicators sourced from the reference dataset.
 
-| Attribute | Description | Product |
-| --- | --- | --- |
-| Address Line 1 | Primary address line, such as house number and street | Enrich |
-| Address Line 2 | Secondary address line, such as a unit or apartment number | Enrich |
-| City | City name | Enrich |
-| State | Two-letter state abbreviation | Enrich |
-| Country | Country name | Enrich |
-| Zip 5 | Five-digit ZIP code | Enrich |
-| Zip 4 | Four-digit ZIP+4 code | Enrich |
-| First Seen | First time the dataset observed the individual at this address | Enrich |
-| Last Validated Date | Date the dataset last validated the address (YYYYMMDD) | Enrich Plus |
-| Vacancy Indicator | Indicates whether USPS identifies the address as vacant:   - `Y` – USPS lists the address as vacant. - `N` – USPS lists the address as occupied | Enrich Plus |
-| Delivery Point Code | Delivery point code that includes a check digit. | Enrich Plus |
-| DPV | Delivery Point Validation (DPV) results:   - `Y` – DPV confirmed for primary and secondary numbers - `D` – DPV confirmed for the primary number only; secondary is missing - `S` – DPV confirmed for the primary number only; secondary is present but unconfirmed - `N` – DPV failed for primary and secondary numbers | Enrich Plus |
-| Zip 4 Type | ZIP+4 type:   - `F` – Firm or company - `G` – General delivery - `H` – High-rise or business complex - `P` – PO Box - `R` – Rural route. - `S` – Street or residential | Enrich Plus |
-| Carrier Route Code | Carrier route code for the address | Enrich Plus |
-| FIPS County Code | FIPS county code for the address | Enrich Plus |
+| Attribute | Description | Match | Enrich | Enrich Plus |
+| --- | --- | --- | --- | --- |
+| Address Line 1 | Primary address line, such as house number and street | ✓ | ✓ | ✓ |
+| Address Line 2 | Secondary address line, such as a unit or apartment number | ✓ | ✓ | ✓ |
+| City | City name | ✓ | ✓ | ✓ |
+| State | Two-letter state abbreviation | ✓ | ✓ | ✓ |
+| Country | Country name | ✓ | ✓ | ✓ |
+| Zip 5 | Five-digit ZIP code | ✓ | ✓ | ✓ |
+| Zip 4 | Four-digit ZIP+4 code | ✓ | ✓ | ✓ |
+| Address Type | Address type classification returned by the reference dataset. | ✓ | ✓ | ✓ |
+| First Seen | First time the dataset observed the individual at this address | — | ✓ | ✓ |
+| Last Validated Date | Date the dataset last validated the address (YYYYMMDD) | — | — | ✓ |
+| Vacancy Indicator | Indicates whether USPS identifies the address as vacant:   -     `Y` – USPS lists the address as vacant. -     `N` – USPS lists the address as occupied | — | — | ✓ |
+| Delivery Point Code | Delivery point code that includes a check digit. | — | — | ✓ |
+| DPV | Delivery Point Validation (DPV) results:   -     `Y` – DPV confirmed for primary and secondary numbers -     `D` – DPV confirmed for the primary number only; secondary is missing -     `S` – DPV confirmed for the primary number only; secondary is present but unconfirmed -     `N` – DPV failed for primary and secondary numbers | — | — | ✓ |
+| Zip 4 Type | ZIP+4 type:   -     `F` – Firm or company -     `G` – General delivery -     `H` – High-rise or business complex -     `P` – PO Box -     `R` – Rural route -     `S` – Street or residential | — | — | ✓ |
+| Carrier Route Code | Carrier route code for the address | — | — | ✓ |
+| FIPS County Code | FIPS county code for the address | — | — | ✓ |
 
 ## Email
 
 The `Email` attribute group lists email address values and related metadata.
 
-| Attribute | Description | Product |
-| --- | --- | --- |
-| Email | Email address for the individual | Enrich |
-| Email Type | Email type:   - `B` – Business. - `P` – Personal. | Enrich |
-| Email First Seen | Date the dataset first observed the email (YYYYMMDD) | Enrich |
-| Email Last Seen | Date the dataset last observed the email (YYYYMMDD) | Enrich |
+| Attribute | Description | Match | Enrich | Enrich Plus |
+| --- | --- | --- | --- | --- |
+| Email | Email address for the individual | ✓ | ✓ | ✓ |
+| Email Type | Email type:   -     `B` – Business. -     `P` – Personal. | — | ✓ | ✓ |
+| Email First Seen | Date the dataset first observed the email (YYYYMMDD) | — | ✓ | ✓ |
+| Email Last Seen | Date the dataset last observed the email (YYYYMMDD) | — | ✓ | ✓ |
 
 ## Phone
 
 The `Phone` attribute group includes phone number values, validation indicators, and related metadata.
 
-| Attribute | Description | Product |
-| --- | --- | --- |
-| Phone Number | Phone number associated with the individual | Enrich |
-| First Seen Date | Date the dataset first observed the individual using the number (YYYYMMDD) | Enrich |
-| Last Seen Date | Date the dataset last observed the individual using the umber (YYYYMMDD) | Enrich |
-| Phone Type | Phone type:   - `R` – Residential - `B` – Business - `P` – Payphone | Enrich |
-| Confidence Score | Validation confidence score:   - `1` – Daily validation - `2` – Near-term telco and transactional verification - `3` – Moderate-term telco and transactional verification - `4` – No recent validation and no disconnect transaction - `5` – Disconnect or delisted transaction | Enrich Plus |
-| Line Type | Probable line type:   - `L` – Landline - `V` – VOIP - `W` – Wireless - `O` – Other - `F` – Fax | Enrich Plus |
-| Direct In-Dial Number | Indicates whether the number is a direct in-dial number | Enrich Plus |
-| Original Telco Provider | Name of the original telecommunications provider | Enrich Plus |
-| Directory Assistance Code | Directory assistance listing:   - `Y` – Telephone number is listed in directory assistance - `D` – Telephone number is delisted or disconnected | Enrich Plus |
+| Attribute | Description | Match | Enrich | Enrich Plus |
+| --- | --- | --- | --- | --- |
+| Phone Number | Phone number associated with the individual | ✓ | ✓ | ✓ |
+| First Seen Date | Date the dataset first observed the individual using the number (YYYYMMDD) | — | ✓ | ✓ |
+| Last Seen Date | Date the dataset last observed the individual using the number (YYYYMMDD) | — | ✓ | ✓ |
+| Phone Type | Phone type:   -     `R` – Residential -     `B` – Business -     `P` – Payphone | — | ✓ | ✓ |
+| Confidence Score | Validation confidence score:   -     `1` – Daily validation -     `2` – Near-term telco and transactional verification -     `3` – Moderate-term telco and transactional verification -     `4` – No recent validation and no disconnect transaction -     `5` – Disconnect or delisted transaction | — | — | ✓ |
+| Line Type | Probable line type:   -     `L` – Landline -     `V` – VOIP -     `W` – Wireless -     `O` – Other -     `F` – Fax | — | — | ✓ |
+| Direct In-Dial Number | Indicates whether the number is a direct in-dial number | — | — | ✓ |
+| Original Telco Provider | Name of the original telecommunications provider | — | — | ✓ |
+| Directory Assistance Code | Directory assistance listing:   -     `Y` – Telephone number is listed in directory assistance -     `D` – Telephone number is delisted or disconnected | — | — | ✓ |
 
 ## Additional information
 
@@ -174812,39 +175094,100 @@ Attribute availability depends on your enrichment entitlement and on the attribu
 **Keywords:** limitations, troubleshooting reference, identity builder, configuration issues, aws tenants, hipaa restriction, financial services, ncoa clarification, matching, enrichment
 
 
-Review known limitations, configuration issues, and guidance for resolving common problems in Reltio Identity Builder.
+Learn more about known limitations, configuration issues, and troubleshooting guidance for Reltio Identity Builder.
 
 ## Common issues and causes
 
 Use this section to identify typical issues that may occur when configuring or running Reltio Identity Builder.
 
-- **No matches generated after data load:** Required matching attributes such as `FirstName`, `LastName`, `YoB`, `MoB`, and at least one of `Address`, `Email`, or `Phone` may be missing or unmapped.
-- **Matches not merging automatically:** Only suspect match strategies are enabled; automatic strategies (1–4) are needed for self-resolving profiles.
-- **Incomplete enrichment values:** The record did not meet the required matching conditions, the attribute is not populated in the reference data, or the enrichment attribute is available only in the Enrich Plus tier.
+- 
+
+  **No matches generated after data load:** Required matching attributes such as `FirstName`, `LastName`, and at least one of `Address`, `Email`, or `Phone` may be missing or unmapped. `YoB` and `MoB` are optional and improve match confidence but are not required for a match.
+- 
+
+  **Matches not merging automatically:** Only suspect match strategies are enabled; the automatic match strategy is needed for self-resolving profiles.
+- 
+
+  **Incomplete enrichment values:** The record did not meet the required matching conditions, the attribute is not populated in the reference data, or the enrichment attribute is available only at a higher tier (Enrich or Enrich Plus).
 
 ## Licensing and prerequisites
 
 Reltio Identity Builder is a premium add-on that requires separate entitlement and provisioning.
 
-- Requires an MDM or 360 data product base package
-- Works only with tenants provisioned under the B2C data model or an equivalent custom mapping.
-- Provisioning and attribute-mapping assistance is available through Reltio Professional Services.
+- 
+
+  Requires an MDM or 360 data product base package
+- 
+
+  Works only with tenants provisioned under the B2C data model or an equivalent custom mapping.
+- 
+
+  If you need to build this custom mapping, we recommend adopting the required configuration elements in their entirety; if equivalent elements already exist in your tenant, review and reconcile any differences (for example, survivorship rules).
+- 
+
+  Provisioning and attribute-mapping assistance is available through Reltio Professional Services or an implementation partner.
+- 
+
+  Available only for US consumer data, on AWS tenants hosted in the US.
+- 
+
+  Not supported for HIPAA tenants or on Azure or GCP; support for these environments is on the roadmap. The reference dataset does not contain HIPAA data.
+- 
+
+  Not available in China.
 
 ## Data provider and privacy considerations
 
 The Reltio Intelligent Identity Graph data is compiled from hundreds of verified public and proprietary sources and complies with U.S. privacy and permissible-use regulations.
 
-- Identity Builder matches and enriches only customer-provided data; it does not support prospecting or direct dataset queries.
-- The reference dataset is not downloadable or searchable outside of governed matching processes.
-- Matching and enrichment occur on a point-in-time basis against Reltio's currently available data at the time of the query. Reltio does not update the matches and enrichment at a later date unless another query is run.
-- Reltio Identity Builder is not a replacement for National Change of Address (NCOA) processing. If you prepare mailings that must meet USPS change-of-address certification rules, run the NCOA process through your mailing provider at the time of mail preparation.
+- 
+
+  Source data is compiled from three categories: government public records (for example, tax assessor and deed files, voter registration, or state occupational licenses, where permitted by federal and state law), publicly available sources (for example, telephone directory assistance), and third-party data aggregators and original sources.
+- 
+
+  Identity Builder matches and enriches only customer-provided data; it does not support prospecting or direct dataset queries.
+- 
+
+  The reference dataset is not downloadable or searchable outside of governed matching processes.
+- 
+
+  Matching and enrichment occur on a point-in-time basis against Reltio's currently available data at the time of the query. Reltio does not update the matches and enrichment at a later date unless another query is run.
+- 
+
+  USPS National Change of Address (NCOA) data is one of the sources in the reference dataset, but Reltio Identity Builder is not a surrogate or replacement for formal NCOA processing, and does not convey NCOA "nixie" codes. If you prepare mailings that must meet USPS change-of-address certification rules, run the NCOA process through your mailing provider at the time of mail preparation.
+- 
+
+  Identity Builder does not support SSN verification — the reference dataset does not contain SSN data.
+- 
+
+  Identity Builder data is not obtained through web scraping or crawling.
+- 
+
+  Identity Builder data does not contain Personal Information considered Sensitive Personal Information (SPI) under data protection laws.
+- 
+
+  Identity Builder data does not contain Consumer Health Data as defined by Washington's My Health My Data Act or Nevada's Consumer Health Data Privacy Act.
+- 
+
+  Reltio does not knowingly accept, process, or share person-level data concerning children aged 16 and under from its Identity Builder data sources.
 
 ## Workarounds and support
 
-- Verify that your tenant is provisioned with the **Reltio Identity Builder** entitlement.
-- Reconfirm mapping of `FirstName`, `LastName`, `DOB`, and at least one of `Address`, `Email`, or `Phone`.
-- Review Hub’s *Data Sources and History* tabs to confirm that enrichment values originate from the **Reltio Identity Builder**.
-- Contact Reltio Support with your tenant ID, environment, and record examples if problems persist.
+- 
+
+  Verify that your tenant is provisioned with the **Reltio Identity Builder** entitlement.
+- 
+
+  Reconfirm mapping of `FirstName`, `LastName`, and at least one of `Address`, `Email`, or `Phone`. Optionally confirm `YoB` /`MoB` or a full date-of-birth attribute if your subscription uses match strategies that require them.
+- 
+
+  Review Hub's *Data Sources and History* tabs to confirm that enrichment values originate from the **Reltio Identity Builder**.
+- 
+
+  For DTSS-level issues, see [Reltio DTSS set up](https://docs.reltio.com/en/applications/data-integrations/data-enrichment-integrations-at-a-glance/reltio-data-tenant-subscription-service-dtss-at-a-glance/reltio-dtss-set-up?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+- 
+
+  Contact Reltio Support with your tenant ID, environment, and record examples if problems persist.
 
 
 
@@ -174864,7 +175207,20 @@ Learn more about the automatic and suspect match strategies used by Reltio Ident
 
 **Reltio Identity Builder™** evaluates entity data in your tenant against the Reltio Intelligent Identity Graph using a combination of deterministic and probabilistic match rules. These rules define how attributes such as `FirstName`, `LastName`, `Email`, `Phone`, and `Address` are compared to determine whether two records represent the same individual.
 
-The system supports both **automatic match strategies** and **suspect match strategies**. Automatic strategies create and enrich profiles automatically when thresholds are met. Suspect strategies flag potential duplicates for your review in the **Hub**.
+Pick the match strategies that suit your business needs. In your DTSS subscription, assign the match rules for the strategies you want to resolve automatically to the `AUTOSUBSCRIBE` action, and assign the match rules for strategies you want to review manually to the `MANUAL_MATCH` action. If you select only strategies under `MANUAL_MATCH`, no profiles are automatically resolved and enriched — Reltio Identity Builder creates potential matches for your review instead.
+
+## Match strategies
+
+The following table lists all 6 match strategies Reltio Identity Builder supports. In your DTSS subscription, assign the match rule URIs for the strategies you select to the `AUTOSUBSCRIBE` action if you want them to resolve automatically, or to the `MANUAL_MATCH` action if you want to review them as potential matches in **Hub** first.
+
+| Strategy | Description | Match attributes | Match rules | Match rule URIs |
+| --- | --- | --- | --- | --- |
+| 1 — Exact | Primary deterministic match using full name, birth date, and contact detail. | FirstName, LastName, YoB, MoB, and one of: Address, Email, or Phone | Exact + EON (MiddleName, Suffix, Gender) | -     `configuration/entityTypes/Individual/matchGroups/IB_01_PersonByExactNameDoBAddress` -     `configuration/entityTypes/Individual/matchGroups/IB_02_PersonByExactNameDoBEmail` -     `configuration/entityTypes/Individual/matchGroups/IB_03_PersonByExactNameDoBPhone` |
+| 2 — Exact | Alternate deterministic strategy when full date of birth is not present. | FirstName, LastName, and one of: Address, Email, or Phone | EON (YoB, MiddleName, Suffix, Gender) | -     `configuration/entityTypes/Individual/matchGroups/IB_04_PersonByExactNameAddress` -     `configuration/entityTypes/Individual/matchGroups/IB_05_PersonByExactNameEmail` -     `configuration/entityTypes/Individual/matchGroups/IB_06_PersonByExactNamePhone` |
+| 3 — Fuzzy + Exact | Probabilistic first name matching with deterministic last name and contact detail comparison. | Fuzzy (FirstName), Exact (LastName, YoB, MoB), Address or Email or Phone | EON (MiddleName, Suffix, Gender) | -     `configuration/entityTypes/Individual/matchGroups/IB_07_PersonByFuzzyFirstExactLastNameDoBAddress` -     `configuration/entityTypes/Individual/matchGroups/IB_08_PersonByFuzzyFirstExactLastNameDoBEmail` -     `configuration/entityTypes/Individual/matchGroups/IB_09_PersonByFuzzyFirstExactLastNameDoBPhone` |
+| 4 — Fuzzy + Exact | Comprehensive probabilistic strategy for first and last name variation tolerance. | Fuzzy (FirstName, LastName), Exact (YoB, MoB), Address or Email or Phone | EON (MiddleName, Suffix, Gender) | -     `configuration/entityTypes/Individual/matchGroups/IB_10_PersonByFuzzyNameDoBAddress` -     `configuration/entityTypes/Individual/matchGroups/IB_11_PersonByFuzzyNameDoBEmail` -     `configuration/entityTypes/Individual/matchGroups/IB_12_PersonByFuzzyNameDoBPhone` |
+| 5 — Fuzzy + Exact | Compares similar first names and identical last names or contact details. | Fuzzy (FirstName), Exact (LastName, Address or Email or Phone) | EON (YoB, Gender) | -     `configuration/entityTypes/Individual/matchGroups/IB_13_PersonByFuzzyFirstExactLastNameAddress` -     `configuration/entityTypes/Individual/matchGroups/IB_14_PersonByFuzzyFirstExactLastNameEmail` -     `configuration/entityTypes/Individual/matchGroups/IB_15_PersonByFuzzyFirstExactLastNamePhone` |
+| 6 — Fuzzy + Exact | Matches similar first and last names with identical contact details. | Fuzzy (FirstName, LastName), Exact (Address or Email or Phone) | EON (YoB, Gender) | -     `configuration/entityTypes/Individual/matchGroups/IB_16_PersonByFuzzyNameAddress` -     `configuration/entityTypes/Individual/matchGroups/IB_17_PersonByFuzzyNameEmail` -     `configuration/entityTypes/Individual/matchGroups/IB_18_PersonByFuzzyNamePhone` |
 
 ## Match type definitions
 
@@ -174874,53 +175230,36 @@ The system supports both **automatic match strategies** and **suspect match stra
 | Fuzzy | Evaluates similar or variant strings using probabilistic matching for name attributes. | “Jon Smith” matches “John Smyth.” |
 | Exact or Null (EON) | Treats attributes as matching if values are identical, or if one or both are null. Used for optional attributes such as `MiddleName` or `Suffix`. | “John S Smith” matches “John Smith.” |
 
-## Automatic match strategies
-
-Automatic strategies enable Reltio Identity Builder to resolve and enrich records without user intervention. These strategies compare combinations of attributes using Exact, Fuzzy, and EON match types.
-
-| Strategy | Description | Match attributes | Match rules |
-| --- | --- | --- | --- |
-| 1 — Exact | Primary deterministic match using full name, birth date, and contact detail. | FirstName, LastName, YoB, MoB, and one of: Address, Email, or Phone | Exact + EON (MiddleName, Suffix, Gender) |
-| 2 — Exact | Alternate deterministic strategy when full date of birth is not present. | FirstName, LastName, and one of: Address, Email, or Phone | EON (YoB, MiddleName, Suffix, Gender) |
-| 3 — Fuzzy + Exact | Probabilistic first name matching with deterministic last name and contact detail comparison. | Fuzzy (FirstName), Exact (LastName, YoB, MoB), Address or Email or Phone | EON (MiddleName, Suffix, Gender) |
-| 4 — Fuzzy + Exact | Comprehensive probabilistic strategy for first and last name variation tolerance. | Fuzzy (FirstName, LastName), Exact (YoB , MoB), Address or Email or Phone | EON (MiddleName, Suffix, Gender) |
-
-## Suspect match strategies
-
-Suspect strategies identify records that are likely, but not certain, to be the same individual. These profiles are flagged as potential matches for review in Hub under the **Potential Matches** tab.
-
-| Strategy | Description | Match attributes | Match rules |
-| --- | --- | --- | --- |
-| 5 — Fuzzy + Exact | Compares similar first names and identical last names or contact details. | Fuzzy (FirstName), Exact (LastName, Address or Email or Phone) | EON (YoB, Gender) |
-| 6 — Fuzzy + Exact | Matches similar first and last names with identical contact details. | Fuzzy (FirstName, LastName), Exact (Address or Email or Phone) | EON (YoB, Gender) |
-
 ## How match strategies are applied
 
 When records are created or updated, **Reltio Identity Builder** continuously evaluates them against all active automatic and suspect strategies. Automatic matches trigger enrichment immediately. Suspect matches are presented for your review in the **Hub**. If only suspect match strategies are configured, no records are automatically enriched.
+
+In a DTSS subscription, automatic strategies are configured under the `AUTOSUBSCRIBE` action, and suspect strategies under the `MANUAL_MATCH` action.
 
 ## Attribute matching hierarchy
 
 The following hierarchy determines the order of attribute importance during comparison:
 
-1. `FirstName`, `LastName`, `YearOfBirth`, and `MonthOfBirth` (primary identifiers).
-2. `Address` or `Email` or `Phone` (contact linkage)
-3. `MiddleName`, `Gender`, and `Suffix` (secondary verification using EON)
+1. 
+
+   `FirstName`, `LastName`, `YearOfBirth`, and `MonthOfBirth` (primary identifiers).
+2. 
+
+   `Address` or `Email` or `Phone` (contact linkage)
+3. 
+
+   `MiddleName`, `Gender`, and `Suffix` (secondary verification using EON)
 
 This hierarchy ensures consistent and explainable matching across all Identity Builder strategies.
 
 ## Mandatory attributes for matching
 
-The following attributes are required for all matching strategies. These values must exist in your data model and be populated for each record.
+The following attributes are required for all matching strategies. `FirstName` and `LastName` must be populated for each record, along with at least one of `Address`, `Email`, or `Phone`.
 
 | Attribute | Description | Data type | Match role |
 | --- | --- | --- | --- |
 | `FirstName` | Given name of the individual. | String | Exact or fuzzy match key |
 | `LastName` | Family name of the individual. | String | Exact or fuzzy match key |
-| `MiddleName (EON)` | Middle name of the individual. | String | Exact or fuzzy match key |
-| `NameSuffix (EON)` | Name Suffix of the individual | String | Exact or fuzzy match key |
-| `Gender (EON)` | Gender of of the individual | String | Exact match key |
-| `YoB` | Year of birth | Date / String | Exact match key |
-| `MoB` | Month of birth | Date / String | Exact match key |
 | `Address` | Primary address line (AddressLine1, City, State, Zip). | String | Exact match or fallback if email/phone missing |
 | `Email` | Primary email address of the individual. | String | Alternate exact match key |
 | `Phone` | Primary phone number (mobile, landline, or VoIP). | String | Alternate exact match key |
@@ -174931,6 +175270,8 @@ These attributes strengthen probabilistic or fuzzy match accuracy and contribute
 
 | Attribute | Description | Data type | Usage |
 | --- | --- | --- | --- |
+| `YoB` | Year of birth. Required for Strategies 1, 3, and 4; used as an EON confidence booster in Strategies 2, 5, and 6. | Date / String | Strategy-dependent |
+| `MoB` | Month of birth. Required for Strategies 1, 3, and 4; not used in Strategies 2, 5, or 6. | Date / String | Strategy-dependent |
 | `MiddleName` | Additional name element used for Exact or Null (EON) match evaluation. | String | Optional fuzzy support |
 | `NameSuffix` | Suffix (e.g., Jr., Sr., II) used for EON matching. | String | Optional exact or null comparison |
 | `Gender` | Used for EON validation; improves disambiguation for common names. | String | Optional EON parameter |
@@ -174951,7 +175292,7 @@ These attributes strengthen probabilistic or fuzzy match accuracy and contribute
 
 Learn more about the required entity types and attributes that Reltio Identity Builder uses to perform matching and enrichment.
 
-The Reltio Identity Builder data model is derived from the Reltio B2C velocity pack. The model is based on the **Individual** and **Location** entity types.
+The **Reltio Identity Builder™** data model is derived from the Reltio B2C velocity pack. The model is based on the **Individual** and **Location** entity types.
 
 Individual records store person-level identity attributes and related nested attributes. Location records store address details. The `IndividualHasAddress` relationship connects Individual records to Location records.
 
@@ -174963,9 +175304,9 @@ Custom attributes are not part of the B2C velocity pack. Add them to your tenant
 
 Reltio Identity Builder requires the following source in your tenant configuration. If this source is missing during provisioning, the system adds it automatically.
 
-| Source name | Label | Abbreviation | Source JSON |
-| --- | --- | --- | --- |
-| `DT_ReltioIdentityBuilder` | DT_ReltioIdentityBuilder | Identity Builder | `{ "uri": "configuration/sources/DT_ReltioIdentityBuilder", "label": "DT_ReltioIdentityBuilder", "abbreviation": "Identity Builder" }` |
+| Source name | Label | Source JSON |
+| --- | --- | --- |
+| `DT_ReltioIdentityBuilder` | DT_ReltioIdentityBuilder | Show Source JSON `{ "uri": "configuration/sources/DT_ReltioIdentityBuilder", "label": "DT_ReltioIdentityBuilder", "abbreviation": "DT_ReltioIdentityBuilder" }` |
 
 ## Entity types and relationships
 
@@ -174984,114 +175325,91 @@ The following elements make up the core Identity Builder data model.
 
 These attributes describe the individual and their activity history.
 
-| Attribute | Description | Reltio attribute | Type | Custom | Attribute JSON |
-| --- | --- | --- | --- | --- | --- |
-| Name Prefix | Name prefix, such as Mr. or Ms. | `NamePrefix` | String | No | — |
-| First Name | First name of the individual. | `FirstName` | String | No | — |
-| Middle Name | Middle name of the individual. | `MiddleName` | String | No | — |
-| Last Name | Last name of the individual. | `LastName` | String | No | — |
-| Name Suffix | Suffix, such as Jr., Sr., I, II, or III. | `NameSuffix` | String | No | — |
-| Gender | Gender of the individual. | `Gender` | String | No | — |
-| Year of Birth | Known year of birth of the individual. | `YoB` | String | Yes | `{ "label": "Year of Birth", "name": "YoB", "description": "Year in which the individual was born", "type": "Int", "hidden": false, "important": false, "system": false, "faceted": true, "searchable": true, "attributeOrdering": { "orderType": "ASC", "orderingStrategy": "LUD" }, "uri": "configuration/entityTypes/Individual/attributes/YoB", "skipInDataAccess": false }` |
-| Month of Birth | Known month of birth of the individual. | `MoB` | String | Yes | `{ "label": "Month of Birth", "name": "MoB", "description": "Month in which the individual was born", "type": "Int", "hidden": false, "important": false, "system": false, "faceted": true, "searchable": true, "attributeOrdering": { "orderType": "ASC", "orderingStrategy": "LUD" }, "uri": "configuration/entityTypes/Individual/attributes/MoB", "skipInDataAccess": false }` |
-| Estimated Age | Estimated age of the individual. | `EstimatedAge` | Int | Yes | `{ "label": "Estimated Age", "name": "EstimatedAge", "description": "Estimated age of the individual", "type": "Int", "hidden": false, "important": false, "system": false, "faceted": true, "searchable": true, "attributeOrdering": { "orderingStrategy": "LUD" }, "uri": "configuration/entityTypes/Individual/attributes/EstimatedAge", "skipInDataAccess": false }` |
-| First Seen | First time activity for the individual was observed in the dataset. | `FirstSeen` | Date | Yes | `{ "label": "First Seen", "name": "FirstSeen", "description": "First time activity for the individual was seen", "type": "Date", "hidden": false, "important": false, "system": false, "faceted": true, "searchable": true, "attributeOrdering": { "orderType": "ASC", "orderingStrategy": "LUD" }, "uri": "configuration/entityTypes/Individual/attributes/FirstSeen", "skipInDataAccess": false }` |
-| Last Seen | Most recent time activity for the individual was observed in the dataset. | `LastSeen` | Date | Yes | `{ "label": "Last Seen", "name": "LastSeen", "description": "Last time activity for the individual was seen", "type": "Date", "hidden": false, "important": false, "system": false, "faceted": true, "searchable": true, "attributeOrdering": { "orderType": "ASC", "orderingStrategy": "LUD" }, "uri": "configuration/entityTypes/Individual/attributes/LastSeen", "skipInDataAccess": false }` |
-| IP Address | IP address or addresses associated with the individual. | `SourceIP` | String | No | — |
-| Web Interests | URLs and classifications of websites the individual has interacted with. | `WebInterests` | Nested | Yes | See the full JSON for this nested attribute and its sub-attributes (`WebsiteURL`, `WebsiteType`) in the Reltio Identity Builder Attributes source. |
-| Deceased Indicator | Indicates whether the individual is deceased. | `DeceasedIndicator` | Boolean | Yes | `{ "label": "Deceased Indicator", "name": "DeceasedIndicator", "description": "Indicates whether or not the individual is deceased", "type": "Boolean", "hidden": false, "important": false, "system": false, "required": false, "faceted": true, "searchable": true, "attributeOrdering": { "orderType": "ASC", "orderingStrategy": "LUD" }, "uri": "configuration/entityTypes/Individual/attributes/DeceasedIndicator", "skipInDataAccess": false }` |
-| Household ID | Household identifier assigned to the individual by Identity Builder. | `IdentityBuilderHouseholdID` | String | Yes | `{ "label": "Household ID", "name": "IdentityBuilderHouseholdID", "description": "Household ID assigned to the individual by Identity Builder", "type": "String", "hidden": false, "important": false, "system": false, "faceted": true, "searchable": true, "attributeOrdering": { "orderType": "ASC", "orderingStrategy": "LUD" }, "uri": "configuration/entityTypes/Individual/attributes/IdentityBuilderHouseholdID", "skipInDataAccess": false }` |
+| Attribute | Description | Reltio attribute | Type | Custom | Attribute JSON | Fill rate |
+| --- | --- | --- | --- | --- | --- | --- |
+| Name Prefix | Name prefix, such as Mr. or Ms. | `NamePrefix` | String | No | — | 0.24% |
+| First Name | First name of the individual. | `FirstName` | String | No | — | 98.84% |
+| Middle Name | Middle name of the individual. | `MiddleName` | String | No | — | 60.92% |
+| Last Name | Last name of the individual. | `LastName` | String | No | — | 98.94% |
+| Name Suffix | Suffix, such as Jr., Sr., I, II, or III. | `NameSuffix` | String | No | — | 2.22% |
+| Gender | Gender of the individual. | `Gender` | String | No | — | 99.83% |
+| Year of Birth | Known year of birth of the individual. | `YoB` | String | Yes | Show attribute JSON `{ "label": "Year of Birth", "name": "YoB", "description": "Year in which the individual was born", "type": "Int", "hidden": false, "important": false, "system": false, "faceted": true, "searchable": true, "attributeOrdering": { "orderType": "ASC", "orderingStrategy": "LUD" }, "uri": "configuration/entityTypes/Individual/attributes/YoB", "skipInDataAccess": false }` | 54.29% |
+| Month of Birth | Known month of birth of the individual. | `MoB` | String | Yes | Show attribute JSON `{ "label": "Month of Birth", "name": "MoB", "description": "Month in which the individual was born", "type": "Int", "hidden": false, "important": false, "system": false, "faceted": true, "searchable": true, "attributeOrdering": { "orderType": "ASC", "orderingStrategy": "LUD" }, "uri": "configuration/entityTypes/Individual/attributes/MoB", "skipInDataAccess": false }` | 53.63% |
+| Estimated Age | Estimated age of the individual. | `EstimatedAge` | Int | Yes | Show attribute JSON `{ "label": "Estimated Age", "name": "EstimatedAge", "description": "Estimated age of the individual", "type": "Int", "hidden": false, "important": false, "system": false, "faceted": true, "searchable": true, "attributeOrdering": { "orderingStrategy": "LUD" }, "uri": "configuration/entityTypes/Individual/attributes/EstimatedAge", "skipInDataAccess": false }` | 29.43% |
+| First Seen | First time activity for the individual was observed in the dataset. | `FirstSeen` | Date | Yes | Show attribute JSON `{ "label": "First Seen", "name": "FirstSeen", "description": "First time activity for the individual was seen", "type": "Date", "hidden": false, "important": false, "system": false, "faceted": true, "searchable": true, "attributeOrdering": { "orderType": "ASC", "orderingStrategy": "LUD" }, "uri": "configuration/entityTypes/Individual/attributes/FirstSeen", "skipInDataAccess": false }` | 98.03% |
+| Last Seen | Most recent time activity for the individual was observed in the dataset. | `LastSeen` | Date | Yes | Show attribute JSON `{ "label": "Last Seen", "name": "LastSeen", "description": "Last time activity for the individual was seen", "type": "Date", "hidden": false, "important": false, "system": false, "faceted": true, "searchable": true, "attributeOrdering": { "orderType": "ASC", "orderingStrategy": "LUD" }, "uri": "configuration/entityTypes/Individual/attributes/LastSeen", "skipInDataAccess": false }` | 98.08% |
+| IP Address | IP address or addresses associated with the individual. | `SourceIP` | String | No | — | 33.23% |
+| Web Interests | URLs and classifications of websites the individual has interacted with. | `WebInterests` | Nested | Yes | Show attribute JSON `{ "label": "Web Interests", "name": "WebInterests", "description": "URLs and classifications of websites the individual has had interactions with", "type": "Nested", "hidden": false, "important": false, "system": false, "required": false, "faceted": true, "searchable": true, "attributeOrdering": { "fieldURI": "configuration/entityTypes/Individual/attributes/WebInterests/attributes/WebsiteURL", "orderType": "ASC", "orderingStrategy": "FieldBased" }, "uri": "configuration/entityTypes/Individual/attributes/WebInterests", "dataLabelPattern": "[{WebsiteURL}][ {WebsiteType}]", "matchFieldURIs": [ "configuration/entityTypes/Individual/attributes/WebInterests/attributes/WebsiteURL" ], "matchOvOnly": true, "attributes": [ { "label": "Website URL", "name": "WebsiteURL", "description": "URL of website", "type": "String", "hidden": false, "important": false, "system": false, "required": false, "faceted": true, "searchable": true, "uri": "configuration/entityTypes/Individual/attributes/WebInterests/attributes/WebsiteURL", "skipInDataAccess": false }, { "label": "Website Type", "name": "WebsiteType", "description": "Type of website", "type": "String", "hidden": false, "important": false, "system": false, "required": false, "faceted": true, "searchable": true, "uri": "configuration/entityTypes/Individual/attributes/WebInterests/attributes/WebsiteType", "skipInDataAccess": false } ], "skipInDataAccess": false }` | 33.44% |
+| Deceased Indicator | Indicates whether the individual is deceased. | `DeceasedIndicator` | Boolean | Yes | Show attribute JSON `{ "label": "Deceased Indicator", "name": "DeceasedIndicator", "description": "Indicates whether or not the individual is deceased", "type": "Boolean", "hidden": false, "important": false, "system": false, "required": false, "faceted": true, "searchable": true, "attributeOrdering": { "orderType": "ASC", "orderingStrategy": "LUD" }, "uri": "configuration/entityTypes/Individual/attributes/DeceasedIndicator", "skipInDataAccess": false }` | 6.49% |
+| Household ID | Household identifier assigned to the individual by Identity Builder. | `IdentityBuilderHouseholdID` | String | Yes | Show attribute JSON `{ "label": "Household ID", "name": "IdentityBuilderHouseholdID", "description": "Household ID assigned to the individual by Identity Builder", "type": "String", "hidden": false, "important": false, "system": false, "faceted": true, "searchable": true, "attributeOrdering": { "orderType": "ASC", "orderingStrategy": "LUD" }, "uri": "configuration/entityTypes/Individual/attributes/IdentityBuilderHouseholdID", "skipInDataAccess": false }` | 46.13% |
 
 ## Alias (OtherNames) attributes
 
 This nested attribute group stores alternate names for the Individual entity type. The B2C velocity pack includes the parent `OtherNames` attribute, but you must add some sub-attributes to your tenant configuration.
 
-| Attribute | Description | Reltio attribute | Type | Custom | Attribute JSON |
-| --- | --- | --- | --- | --- | --- |
-| OtherNames (parent) | Other name(s) used to refer to the individual. | `OtherNames` | Nested | No | See the full JSON for this nested attribute and all sub-attributes in the Reltio Identity Builder Attributes source. |
-| Other Name | Combined alternate name value, including all name elements. | `OtherName` | String | No | — |
-| Type | Type of alternate name. | `Type` | String | No | — |
-| Other Name Prefix | Prefix for the alternate name. | `OtherNamePrefix` | String | Yes | See nested attribute JSON |
-| Other First Name | Alternate first name, such as a nickname or abbreviation. | `OtherFirstName` | String | No | — |
-| Other Middle Name | Alternate middle name. | `OtherMiddleName` | String | No | — |
-| Other Last Name | Alternate last name, such as a maiden or prior married name. | `OtherLastName` | String | No | — |
-| Other Name Suffix | Suffix for the alternate name. | `OtherNameSuffix` | String | Yes | See nested attribute JSON |
-| Other Name Gender | Gender value associated with the alternate name. | `OtherNameGender` | String | Yes | See nested attribute JSON |
-| Display Sequence | Order in which the alternate name is intended to be displayed. | `DisplaySequence` | Int | No | — |
+| Attribute | Description | Reltio attribute | Type | Custom | Attribute JSON | Fill rate |
+| --- | --- | --- | --- | --- | --- | --- |
+| OtherNames (parent) | Other name(s) used to refer to the individual. | `OtherNames` | Nested | No | Show attribute JSON `{ "label": "Other Name(s)", "name": "OtherNames", "description": "Other name(s) used to refer to the individual", "type": "Nested", "hidden": false, "important": false, "system": false, "searchable": true, "attributeOrdering": { "fieldURI": "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherFirstName", "orderType": "ASC", "orderingStrategy": "FieldBased" }, "uri": "configuration/entityTypes/Individual/attributes/OtherNames", "dataLabelPattern": "[{OtherNamePrefix}][ {OtherFirstName}][ {OtherLastName}][ {OtherNameSuffix}]", "matchFieldURIs": [ "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherFirstName", "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherLastName" ], "matchFieldURIsExactOrNull": [ "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherName", "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherNamePrefix", "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherMiddleName", "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherNameSuffix", "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherNameGender" ], "matchOvOnly": true, "attributes": [ { "label": "Other Name", "name": "OtherName", "description": "Other name of the individual, including the concatenation of all name elements", "type": "String", "hidden": false, "important": false, "system": false, "faceted": true, "searchable": true, "attributeOrdering": { "orderingStrategy": "LUD" }, "uri": "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherName", "skipInDataAccess": false }, { "label": "Type", "name": "Type", "description": "Type of other name", "type": "String", "hidden": false, "important": false, "system": false, "faceted": true, "searchable": true, "attributeOrdering": { "orderingStrategy": "LUD" }, "uri": "configuration/entityTypes/Individual/attributes/OtherNames/attributes/Type", "skipInDataAccess": false }, { "label": "Other Name Prefix", "name": "OtherNamePrefix", "description": "Prefix(es) that appear at the beginning of the individual's name, such as common or professional titles", "type": "String", "hidden": false, "important": false, "system": false, "faceted": true, "searchable": true, "attributeOrdering": { "orderingStrategy": "LUD" }, "uri": "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherNamePrefix", "skipInDataAccess": false }, { "label": "Other First Name", "name": "OtherFirstName", "description": "Other first name, such as an abbreviation or a nickname that the individual goes by", "type": "String", "hidden": false, "important": false, "system": false, "faceted": true, "searchable": true, "attributeOrdering": { "orderingStrategy": "LUD" }, "uri": "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherFirstName", "skipInDataAccess": false }, { "label": "Other Middle Name", "name": "OtherMiddleName", "description": "Other middle name", "type": "String", "hidden": false, "important": false, "system": false, "faceted": true, "searchable": true, "attributeOrdering": { "orderingStrategy": "LUD" }, "uri": "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherMiddleName", "skipInDataAccess": false }, { "label": "Other Last Name", "name": "OtherLastName", "description": "Other last name, such as a maiden name or prior, married name (i.e., if divorced, then name changed))", "type": "String", "hidden": false, "important": false, "system": false, "faceted": true, "searchable": true, "attributeOrdering": { "orderingStrategy": "LUD" }, "uri": "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherLastName", "skipInDataAccess": false }, { "label": "Other Name Suffix", "name": "OtherNameSuffix", "description": "Suffix that follows the individual's last name, typically to signify generational lineage", "type": "String", "hidden": false, "important": false, "system": false, "faceted": true, "searchable": true, "attributeOrdering": { "orderingStrategy": "LUD" }, "uri": "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherNameSuffix", "skipInDataAccess": false }, { "label": "Other Name Gender", "name": "OtherNameGender", "description": "Individual's gender identity, which refers to their internal sense of being male, female, both, neither, or another gender", "type": "String", "hidden": false, "important": false, "system": false, "faceted": true, "searchable": true, "attributeOrdering": { "orderingStrategy": "LUD" }, "uri": "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherNameGender", "skipInDataAccess": false }, { "label": "Display Sequence", "name": "DisplaySequence", "description": "Order in which the value from the current nest of data for this attribute is intended to be displayed", "type": "Int", "hidden": false, "important": false, "system": false, "faceted": true, "searchable": true, "attributeOrdering": { "orderingStrategy": "LUD" }, "uri": "configuration/entityTypes/Individual/attributes/OtherNames/attributes/DisplaySequence", "skipInDataAccess": false } ], "skipInDataAccess": false }` | 99.92% |
+| Other Name | Combined alternate name value, including all name elements. | `OtherName` | String | No | — | 16.24% |
+| Other Name Prefix | Prefix for the alternate name. | `OtherNamePrefix` | String | Yes | See nested attribute JSON | 0.01% |
+| Other First Name | Alternate first name, such as a nickname or abbreviation. | `OtherFirstName` | String | No | — | 99.82% |
+| Other Middle Name | Alternate middle name. | `OtherMiddleName` | String | No | — | 9.77% |
+| Other Last Name | Alternate last name, such as a maiden or prior married name. | `OtherLastName` | String | No | — | 99.92% |
+| Other Name Suffix | Suffix for the alternate name. | `OtherNameSuffix` | String | Yes | See nested attribute JSON | 0.18% |
+| Other Name Gender | Gender value associated with the alternate name. | `OtherNameGender` | String | Yes | See nested attribute JSON | 15.63% |
 
 ## Address attributes
 
 The `Address` attribute references the Location entity through the `IndividualHasAddress` relationship. The following table lists the attributes on the relationship and Location entity.
 
-| Attribute | Description | Reltio attribute | Type | Custom | Attribute JSON |
-| --- | --- | --- | --- | --- | --- |
-| Address (parent) | Address of the individual. | `Address` | Reference | No | See the full JSON for this reference attribute in the Reltio Identity Builder Attributes source. |
-| Address Type | Type of address. | `AddressType` | String | No | — |
-| Address First Seen | First time the address was seen for the individual. | `AddressFirstSeen` | Date | Yes | `{ "label": "Address First Seen", "name": "AddressFirstSeen", "description": "First time the address was seen for this individual", "type": "Date", "hidden": false, "important": false, "system": false, "faceted": true, "searchable": true, "attributeOrdering": { "orderType": "ASC", "orderingStrategy": "LUD" }, "uri": "configuration/relationTypes/IndividualHasAddress/attributes/AddressFirstSeen", "skipInDataAccess": false }` |
-| Address Last Validated | Last time the individual was validated to reside at the address. | `AddressLastValidated` | Date | Yes | `{ "label": "Address Last Validated", "name": "AddressLastValidated", "description": "Last time the individual was validated to be residing at this address", "type": "Date", "hidden": false, "important": false, "system": false, "faceted": true, "searchable": true, "attributeOrdering": { "orderType": "ASC", "orderingStrategy": "LUD" }, "uri": "configuration/relationTypes/IndividualHasAddress/attributes/AddressLastValidated", "skipInDataAccess": false }` |
-| Address Line 1 | Primary address line, such as house number and street. | `AddressLine1` | String | No | — |
-| Address Line 2 | Secondary address line, such as unit or apartment. | `AddressLine2` | String | No | — |
-| City | City name. | `City` | String | No | — |
-| State | State abbreviation. | `StateProvince` | String | No | — |
-| Country | Country name. | `Country` | String | No | — |
-| Zip 5 | Five-digit ZIP code. | `Zip5` | String | No | — |
-| Zip 4 | Four-digit ZIP+4 suffix. | `Zip4` | String | No | — |
-| Vacancy Indicator | Indicates whether USPS lists the address as vacant. | `VacantIndicator` | Boolean | No | — |
-| Delivery Point Code | Delivery point code with check digit. | `DeliveryPointBarCode` | String | No | — |
-| DPV | Delivery Point Validation result for the address. | `DPVConfirmedIndicator` | String | No | — |
-| Zip 4 Type | ZIP+4 type, such as firm, general delivery, high-rise, PO Box, rural route, or street. | `RecordType` | String | No | — |
-| Carrier Route Code | Carrier route code for the address. | `CarrierRoute` | String | No | — |
-| FIPS County Code | FIPS county code for the address. | `FIPSCountyCode` | String | No | — |
+| Attribute | Description | Reltio attribute | Type | Custom | Attribute JSON | Fill rate |
+| --- | --- | --- | --- | --- | --- | --- |
+| Address (parent) | Address of the individual. | `Address` | Reference | No | Show attribute JSON `{ "label": "Address", "name": "Address", "description": "Address of the individual", "type": "Reference", "hidden": false, "important": false, "system": false, "faceted": true, "searchable": true, "relationshipLabelPattern": "", "attributeOrdering": { "fieldURI": "configuration/relationTypes/IndividualHasAddress/attributes/AddressLastValidated", "orderType": "DESC", "orderingStrategy": "FieldBased" }, "uri": "configuration/entityTypes/Individual/attributes/Address", "referencedAttributeURIs": [ "configuration/relationTypes/IndividualHasAddress/attributes/AddressType", "configuration/relationTypes/IndividualHasAddress/attributes/AddressFirstSeen", "configuration/relationTypes/IndividualHasAddress/attributes/AddressLastValidated", "configuration/entityTypes/Location/attributes/AddressLine1", "configuration/entityTypes/Location/attributes/AddressLine2", "configuration/entityTypes/Location/attributes/City", "configuration/entityTypes/Location/attributes/StateProvince", "configuration/entityTypes/Location/attributes/PostalCode", "configuration/entityTypes/Location/attributes/Zip5", "configuration/entityTypes/Location/attributes/Zip4", "configuration/entityTypes/Location/attributes/Country", "configuration/entityTypes/Location/attributes/DeliveryPointBarCode", "configuration/entityTypes/Location/attributes/DPVConfirmedIndicator", "configuration/entityTypes/Location/attributes/CarrierRoute", "configuration/entityTypes/Location/attributes/FIPSCountyCode", "configuration/entityTypes/Location/attributes/RecordType", "configuration/entityTypes/Location/attributes/VacantIndicator", "configuration/entityTypes/Location/attributes/VerificationStatus" ], "immutable": true, "referencedEntityTypeURI": "configuration/entityTypes/Location", "relationshipTypeURI": "configuration/relationTypes/IndividualHasAddress", "skipInDataAccess": false }` | 99.97% |
+| Address Type | Type of address. | `AddressType` | String | No | — | 99.97% |
+| Address First Seen | First time the address was seen for the individual. | `AddressFirstSeen` | Date | Yes | Show attribute JSON `{ "label": "Address First Seen", "name": "AddressFirstSeen", "description": "First time the address was seen for this individual", "type": "Date", "hidden": false, "important": false, "system": false, "faceted": true, "searchable": true, "attributeOrdering": { "orderType": "ASC", "orderingStrategy": "LUD" }, "uri": "configuration/relationTypes/IndividualHasAddress/attributes/AddressFirstSeen", "skipInDataAccess": false }` | 97.79% |
+| Address Last Validated | Last time the individual was validated to reside at the address. | `AddressLastValidated` | Date | Yes | Show attribute JSON `{ "label": "Address Last Validated", "name": "AddressLastValidated", "description": "Last time the individual was validated to be residing at this address", "type": "Date", "hidden": false, "important": false, "system": false, "faceted": true, "searchable": true, "attributeOrdering": { "orderType": "ASC", "orderingStrategy": "LUD" }, "uri": "configuration/relationTypes/IndividualHasAddress/attributes/AddressLastValidated", "skipInDataAccess": false }` | 24.17% |
+| Address Line 1 | Primary address line, such as house number and street. | `AddressLine1` | String | No | — | 98.33% |
+| Address Line 2 | Secondary address line, such as unit or apartment. | `AddressLine2` | String | No | — | 32.09% |
+| City | City name. | `City` | String | No | — | 99.96% |
+| State | State abbreviation. | `StateProvince` | String | No | — | 99.97% |
+| Country | Country name. | `Country` | String | No | — | 93.16% |
+| Zip 5 | Five-digit ZIP code. | `Zip5` | String | No | — | 99.95% |
+| Zip 4 | Four-digit ZIP+4 suffix. | `Zip4` | String | No | — | 95.09% |
+| Vacancy Indicator | Indicates whether USPS lists the address as vacant. | `VacantIndicator` | Boolean | No | — | 45.45% |
+| Delivery Point Code | Delivery point code with check digit. | `DeliveryPointBarCode` | String | No | — | 93.55% |
+| DPV | Delivery Point Validation result for the address. | `DPVConfirmedIndicator` | String | No | — | 94.93% |
+| Zip 4 Type | ZIP+4 type, such as firm, general delivery, high-rise, PO Box, rural route, or street. | `RecordType` | String | No | — | 93.65% |
+| Carrier Route Code | Carrier route code for the address. | `CarrierRoute` | String | No | — | 93.61% |
+| FIPS County Code | FIPS county code for the address. | `FIPSCountyCode` | String | No | — | 87.41% |
 
 ## Email attributes
 
 The **Email** nested attribute group stores email addresses and related metadata. The B2C velocity pack includes the parent attribute.
 
-| Attribute | Description | Reltio attribute | Type | Custom | Attribute JSON |
-| --- | --- | --- | --- | --- | --- |
-| Email (parent) | Email address(es) used to contact the individual. | `Email` | Nested | No | See the full JSON for this nested attribute and all sub-attributes in the Reltio Identity Builder Attributes source. |
-| Email | Full email address, including local part and domain. | `Email` | String | No | — |
-| Email Type | Type of email address, such as business or personal. | `EmailType` | String | No | — |
-| Domain | Domain portion of the email address. | `Domain` | String | No | — |
-| Domain Type | Type of email domain. | `DomainType` | String | No | — |
-| Username | Username portion of the email address. | `Username` | String | No | — |
-| Rank | Ordinal rank of the email address for contacting the individual. | `Rank` | Int | No | — |
-| Validation Status | Validation status of the email address. | `ValidationStatus` | String | No | — |
-| Active | Indicates whether the email address is active. | `Active` | Boolean | No | — |
-| Email First Seen | First time the email address for the individual was seen. | `EmailFirstSeen` | Date | Yes | See nested attribute JSON |
-| Email Last Seen | Last time the email address for the individual was seen. | `EmailLastSeen` | Date | Yes | See nested attribute JSON |
-| Email Received Date | Date when the email record was received in the dataset. | `EmailReceivedDate` | Date | No | — |
+| Attribute | Description | Reltio attribute | Type | Custom | Attribute JSON | Fill rate |
+| --- | --- | --- | --- | --- | --- | --- |
+| Email (parent) | Email address(es) used to contact the individual. | `Email` | Nested | No | Show attribute JSON `{ "label": "Email", "name": "Email", "description": "Email address(es) used to contact the individual", "type": "Nested", "hidden": false, "important": false, "system": false, "faceted": true, "searchable": true, "attributeOrdering": { "fieldURI": "configuration/entityTypes/Individual/attributes/Email/attributes/LastSeen", "orderType": "DESC", "orderingStrategy": "FieldBased" }, "uri": "configuration/entityTypes/Individual/attributes/Email", "dataLabelPattern": "[{Email}]", "matchFieldURIs": [ "configuration/entityTypes/Individual/attributes/Email/attributes/Email" ], "matchFieldURIsExactOrNull": [ "configuration/entityTypes/Individual/attributes/Email/attributes/Type" ], "matchOvOnly": true, "attributes": [ { "label": "Type", "name": "Type", "description": "Type of email address", "type": "String", "hidden": false, "important": false, "system": false, "faceted": true, "searchable": true, "uri": "configuration/entityTypes/Individual/attributes/Email/attributes/Type", "skipInDataAccess": false }, { "label": "Email", "name": "Email", "description": "Full email address including both the local-part (e.g., a username) and domain", "type": "String", "hidden": false, "important": false, "system": false, "faceted": true, "searchable": true, "uri": "configuration/entityTypes/Individual/attributes/Email/attributes/Email", "skipInDataAccess": false }, { "label": "Domain", "name": "Domain", "description": "Domain of the email address", "type": "String", "hidden": true, "important": false, "system": false, "faceted": true, "searchable": true, "uri": "configuration/entityTypes/Individual/attributes/Email/attributes/Domain", "skipInDataAccess": false }, { "label": "Domain Type", "name": "DomainType", "description": "Domain type of the email address", "type": "String", "hidden": true, "important": false, "system": false, "faceted": true, "searchable": true, "uri": "configuration/entityTypes/Individual/attributes/Email/attributes/DomainType", "skipInDataAccess": false }, { "label": "Username", "name": "Username", "description": "Username of the email address", "type": "String", "hidden": true, "important": false, "system": false, "faceted": true, "searchable": true, "uri": "configuration/entityTypes/Individual/attributes/Email/attributes/Username", "skipInDataAccess": false }, { "label": "Rank", "name": "Rank", "description": "Ordinal rank of the email address for contacting the individual", "type": "Int", "hidden": true, "important": false, "system": false, "faceted": true, "searchable": true, "uri": "configuration/entityTypes/Individual/attributes/Email/attributes/Rank", "skipInDataAccess": false }, { "label": "Validation Status", "name": "ValidationStatus", "description": "Validation status of the email address", "type": "String", "hidden": true, "important": false, "system": false, "faceted": true, "searchable": true, "uri": "configuration/entityTypes/Individual/attributes/Email/attributes/ValidationStatus", "skipInDataAccess": false }, { "label": "Active", "name": "Active", "description": "Indicates whether or not the email address is active", "type": "Boolean", "hidden": true, "important": false, "system": false, "faceted": true, "searchable": true, "uri": "configuration/entityTypes/Individual/attributes/Email/attributes/Active", "skipInDataAccess": false }, { "label": "First Seen", "name": "FirstSeen", "description": "First time the email address for the individual was seen", "type": "Date", "hidden": false, "important": false, "system": false, "faceted": true, "searchable": true, "uri": "configuration/entityTypes/Individual/attributes/Email/attributes/FirstSeen", "skipInDataAccess": false }, { "label": "Last Seen", "name": "LastSeen", "description": "Last time the the email address for the individual was seen", "type": "Date", "hidden": false, "important": false, "system": false, "faceted": true, "searchable": true, "uri": "configuration/entityTypes/Individual/attributes/Email/attributes/LastSeen", "skipInDataAccess": false } ], "skipInDataAccess": false }` | 38.60% |
+| Email | Full email address, including local part and domain. | `Email` | String | No | — | 38.60% |
+| Email Type | Type of email address, such as business or personal. | `Type` | String | No | — | 38.43% |
+| Email First Seen | First time the email address for the individual was seen. | `FirstSeen` | Date | Yes | See nested attribute JSON | 36.03% |
+| Email Last Seen | Last time the email address for the individual was seen. | `LastSeen` | Date | Yes | See nested attribute JSON | 36.03% |
 
 ## Phone attributes
 
 The **Phone** nested attribute group stores phone numbers and related metadata. The B2C velocity pack includes the parent attribute.
 
-| Attribute | Description | Reltio attribute | Type | Custom | Attribute JSON |
-| --- | --- | --- | --- | --- | --- |
-| Phone (parent) | Phone number(s) used to contact the individual. | `Phone` | Nested | No | See the full JSON for this nested attribute and all sub-attributes in the Reltio Identity Builder Attributes source. |
-| Type | Type of phone number used by the individual. | `Type` | String | No | — |
-| Number | Phone number. | `Number` | String | No | — |
-| Country Code | Country code for the phone number. | `CountryCode` | String | No | — |
-| Formatted Number | Formatted version of the phone number. | `FormattedNumber` | String | No | — |
-| Extension | Extension number for reaching the individual. | `Extension` | String | No | — |
-| Rank | Ordinal ranking of the phone number for contacting the individual. | `Rank` | Int | No | — |
-| Area Code | Area code for the phone number. | `AreaCode` | String | No | — |
-| Local Number | Phone number in local service format. | `LocalNumber` | String | No | — |
-| Validation Status | Validation status of the phone number. | `ValidationStatus` | String | No | — |
-| Line Type | Probable line type, such as landline, VOIP, wireless, other, or fax. | `LineType` | String | No | — |
-| Format Mask | Format mask applied to the phone number. | `FormatMask` | String | No | — |
-| Digit Count | Number of digits in the phone number. | `DigitCount` | Int | No | — |
-| Geo Area | Geographic area associated with the phone number. | `GeoArea` | String | No | — |
-| Geo Country | Country associated with the phone number. | `GeoCountry` | String | No | — |
-| Primary Phone Flag | Indicates whether the number is the primary phone for the individual. | `PrimaryPhoneFlag` | Boolean | No | — |
-| Active | Indicates whether the number is active. | `Active` | Boolean | No | — |
-| Unreachable | Indicates whether the individual has been unreachable at this number. | `Unreachable` | Boolean | No | — |
-| Confidence Score | Indicates whether the phone number or provider was validated, verified, or disconnected or delisted. | `ConfidenceScore` | String | Yes | See nested attribute JSON |
-| Direct In-Dial | Indicates whether the number is a direct in-dial number. | `DirectInDial` | Boolean | Yes | See nested attribute JSON |
-| Directory Assistance Code | Indicates whether the number is listed in directory assistance or delisted or disconnected. | `DirectoryAssistanceCode` | String | Yes | See nested attribute JSON |
-| Original Provider | Name of the original telecommunications provider associated with the phone number. | `OriginalProvider` | String | Yes | See nested attribute JSON |
-| Phone First Seen | First time the phone number for the individual was seen. | `FirstSeen` | Date | Yes | See nested attribute JSON |
-| Phone Last Seen | Last time the phone number for the individual was seen. | `LastSeen` | Date | Yes | See nested attribute JSON |
+| Attribute | Description | Reltio attribute | Type | Custom | Attribute JSON | Fill rate |
+| --- | --- | --- | --- | --- | --- | --- |
+| Phone (parent) | Phone number(s) used to contact the individual. | `Phone` | Nested | No | Show attribute JSON `{ "label": "Phone", "name": "Phone", "description": "Phone number(s) used to contact the individual", "type": "Nested", "hidden": false, "important": false, "system": false, "faceted": true, "searchable": true, "attributeOrdering": { "fieldURI": "configuration/entityTypes/Individual/attributes/Phone/attributes/LastSeen", "orderType": "DESC", "orderingStrategy": "FieldBased" }, "uri": "configuration/entityTypes/Individual/attributes/Phone", "dataLabelPattern": "[{Number}]", "matchFieldURIs": [ "configuration/entityTypes/Individual/attributes/Phone/attributes/Number" ], "matchFieldURIsExactOrNull": [ "configuration/entityTypes/Individual/attributes/Phone/attributes/LineType", "configuration/entityTypes/Individual/attributes/Phone/attributes/ConfidenceScore", "configuration/entityTypes/Individual/attributes/Phone/attributes/DirectInDial", "configuration/entityTypes/Individual/attributes/Phone/attributes/DirectoryAssistanceCode", "configuration/entityTypes/Individual/attributes/Phone/attributes/OriginalProvider" ], "matchOvOnly": true, "attributes": [ { "label": "Type", "name": "Type", "description": "Type of phone number used by the individual", "type": "String", "hidden": false, "important": false, "system": false, "faceted": true, "searchable": true, "uri": "configuration/entityTypes/Individual/attributes/Phone/attributes/Type", "skipInDataAccess": false }, { "label": "Number", "name": "Number", "description": "Phone number", "type": "String", "hidden": false, "important": false, "system": false, "faceted": true, "searchable": true, "uri": "configuration/entityTypes/Individual/attributes/Phone/attributes/Number", "skipInDataAccess": false }, { "label": "Country Code", "name": "CountryCode", "description": "Indicates the country of the phone number", "type": "String", "hidden": true, "important": false, "system": false, "faceted": true, "searchable": true, "uri": "configuration/entityTypes/Individual/attributes/Phone/attributes/CountryCode", "skipInDataAccess": false }, { "label": "Formatted Number", "name": "FormattedNumber", "description": "Formatted version of the phone number", "type": "String", "hidden": true, "important": false, "system": false, "faceted": true, "searchable": true, "uri": "configuration/entityTypes/Individual/attributes/Phone/attributes/FormattedNumber", "skipInDataAccess": false }, { "label": "Extension", "name": "Extension", "description": "Extension at which the individual can be reached", "type": "String", "hidden": true, "important": false, "system": false, "faceted": true, "searchable": true, "uri": "configuration/entityTypes/Individual/attributes/Phone/attributes/Extension", "skipInDataAccess": false }, { "label": "Rank", "name": "Rank", "description": "Ordinal ranking of the phone number for contacting the individual", "type": "Int", "hidden": true, "important": false, "system": false, "faceted": true, "searchable": true, "uri": "configuration/entityTypes/Individual/attributes/Phone/attributes/Rank", "skipInDataAccess": false }, { "label": "Area Code", "name": "AreaCode", "description": "Area code for the phone number", "type": "String", "hidden": true, "important": false, "system": false, "faceted": true, "searchable": true, "uri": "configuration/entityTypes/Individual/attributes/Phone/attributes/AreaCode", "skipInDataAccess": false }, { "label": "Local Number", "name": "LocalNumber", "description": "Phone number in the local service format of the calling area", "type": "String", "hidden": true, "important": false, "system": false, "faceted": true, "searchable": true, "uri": "configuration/entityTypes/Individual/attributes/Phone/attributes/LocalNumber", "skipInDataAccess": false }, { "label": "Validation Status", "name": "ValidationStatus", "description": "Validation status of the phone number", "type": "String", "hidden": true, "important": false, "system": false, "faceted": true, "searchable": true, "uri": "configuration/entityTypes/Individual/attributes/Phone/attributes/ValidationStatus", "skipInDataAccess": false }, { "label": "Line Type", "name": "LineType", "description": "Line type of the phone number", "type": "String", "hidden": false, "important": false, "system": false, "faceted": true, "searchable": true, "uri": "configuration/entityTypes/Individual/attributes/Phone/attributes/LineType", "skipInDataAccess": false }, { "label": "Format Mask", "name": "FormatMask", "description": "Format mask applied to the phone number", "type": "String", "hidden": true, "important": false, "system": false, "faceted": true, "searchable": true, "uri": "configuration/entityTypes/Individual/attributes/Phone/attributes/FormatMask", "skipInDataAccess": false }, { "label": "Digit Count", "name": "DigitCount", "description": "Number of digits in the phone number", "type": "Int", "hidden": true, "important": false, "system": false, "faceted": true, "searchable": true, "uri": "configuration/entityTypes/Individual/attributes/Phone/attributes/DigitCount", "skipInDataAccess": false }, { "label": "Geo Area", "name": "GeoArea", "description": "Area associated with the phone number", "type": "String", "hidden": true, "important": false, "system": false, "faceted": true, "searchable": true, "uri": "configuration/entityTypes/Individual/attributes/Phone/attributes/GeoArea", "skipInDataAccess": false }, { "label": "Geo Country", "name": "GeoCountry", "description": "Area associated with the phone number", "type": "String", "hidden": true, "important": false, "system": false, "faceted": true, "searchable": true, "uri": "configuration/entityTypes/Individual/attributes/Phone/attributes/GeoCountry", "skipInDataAccess": false }, { "label": "Primary Phone Flag", "name": "PrimaryPhoneFlag", "description": "Indicates whether or not the phone number is the primary number that should be used to reach the individual", "type": "Boolean", "hidden": true, "important": false, "system": false, "required": false, "faceted": true, "searchable": true, "uri": "configuration/entityTypes/Individual/attributes/Phone/attributes/PrimaryPhoneFlag", "skipInDataAccess": false }, { "label": "Active", "name": "Active", "description": "Indicates whether or not the number is active", "type": "Boolean", "hidden": true, "important": false, "system": false, "faceted": true, "searchable": true, "uri": "configuration/entityTypes/Individual/attributes/Phone/attributes/Active", "skipInDataAccess": false }, { "label": "Unreachable", "name": "Unreachable", "description": "Indicates whether or not the individual has been unreachable at this phone number", "type": "Boolean", "hidden": true, "important": false, "system": false, "faceted": true, "searchable": true, "uri": "configuration/entityTypes/Individual/attributes/Phone/attributes/Unreachable", "skipInDataAccess": false }, { "label": "Confidence Score", "name": "ConfidenceScore", "description": "Indicates whether the invidual's phone number or telco provider was validated, verified or disconnected / delisted", "type": "String", "hidden": false, "important": false, "system": false, "faceted": true, "searchable": true, "uri": "configuration/entityTypes/Individual/attributes/Phone/attributes/ConfidenceScore", "skipInDataAccess": false }, { "label": "Direct In-Dial", "name": "DirectInDial", "description": "Indicates whether or not the individual's phone number is a direct in-dail number", "type": "Boolean", "hidden": false, "important": false, "system": false, "faceted": true, "searchable": true, "uri": "configuration/entityTypes/Individual/attributes/Phone/attributes/DirectInDial", "skipInDataAccess": false }, { "label": "Directory Assistance Code", "name": "DirectoryAssistanceCode", "description": "Indicates whether or not the individual's phone number is in directory assistance or delisted/disconnected", "type": "String", "hidden": false, "important": false, "system": false, "faceted": true, "searchable": true, "uri": "configuration/entityTypes/Individual/attributes/Phone/attributes/DirectoryAssistanceCode", "skipInDataAccess": false }, { "label": "Original Provider", "name": "OriginalProvider", "description": "Name of original telco provider associated with the phone number", "type": "String", "hidden": false, "important": false, "system": false, "faceted": true, "searchable": true, "uri": "configuration/entityTypes/Individual/attributes/Phone/attributes/OriginalProvider", "skipInDataAccess": false }, { "label": "Phone First Seen", "name": "FirstSeen", "description": "First time the phone number for the individual was seen", "type": "Date", "hidden": false, "important": false, "system": false, "faceted": true, "searchable": true, "uri": "configuration/entityTypes/Individual/attributes/Phone/attributes/FirstSeen", "skipInDataAccess": false }, { "label": "Phone Last Seen", "name": "LastSeen", "description": "Last time the phone number for the individual was seen", "type": "Date", "hidden": false, "important": false, "system": false, "faceted": true, "searchable": true, "uri": "configuration/entityTypes/Individual/attributes/Phone/attributes/LastSeen", "skipInDataAccess": false } ], "skipInDataAccess": false }` | 64.78% |
+| Type | Type of phone number used by the individual. | `Type` | String | No | — | 64.78% |
+| Number | Phone number. | `Number` | String | No | — | 64.78% |
+| Line Type | Probable line type, such as landline, VOIP, wireless, other, or fax. | `LineType` | String | No | — | 24.60% |
+| Confidence Score | Indicates whether the phone number or provider was validated, verified, or disconnected or delisted. | `ConfidenceScore` | String | Yes | See nested attribute JSON | 24.60% |
+| Direct In-Dial | Indicates whether the number is a direct in-dial number. | `DirectInDial` | Boolean | Yes | See nested attribute JSON | <0.1% |
+| Directory Assistance Code | Indicates whether the number is listed in directory assistance or delisted or disconnected. | `DirectoryAssistanceCode` | String | Yes | See nested attribute JSON | 14.20% |
+| Original Provider | Name of the original telecommunications provider associated with the phone number. | `OriginalProvider` | String | Yes | See nested attribute JSON | 24.54% |
+| Phone First Seen | First time the phone number for the individual was seen. | `FirstSeen` | Date | Yes | See nested attribute JSON | 36.60% |
+| Phone Last Seen | Last time the phone number for the individual was seen. | `LastSeen` | Date | Yes | See nested attribute JSON | 59.89% |
 
 
 
@@ -175107,56 +175425,79 @@ The **Phone** nested attribute group stores phone numbers and related metadata. 
 **Keywords:** identity builder configuration, enable identity builder, configure dtss, autosubscribe mode, manual match mode, identity resolution setup, enrichment configuration, data tenant subscription service, matching, configuration, enrichment, workflow
 
 
-Learn about the prerequisites to enable Reltio Identity Builder so that your tenant can perform identity resolution and enrichment
+Learn how to configure and enable Reltio Identity Builder so that your tenant can perform identity resolution and enrichment.
 
-Before you begin, confirm the following:
+Configure and enable Reltio Identity Builder for your tenant. This involves verifying your provisioning, configuring attribute mappings and match rules, and posting the subscription to the DTSS endpoint.
 
-- Your organization has a valid **Reltio Identity Builder** entitlement.
-- Your tenant is hosted on **AWS** within the United States.
-- Your tenant's data model aligns with the **B2C velocity pack** or contains equivalent **Individual** and **Location** entity types. If your model differs, you may need to modify your tenant configuration and adjust mappings during provisioning. Reltio Identity Builder also supports nested addresses.
-- Required match attributes are configured: `FirstName`, `LastName`, `YoB`, `MoB`, and one of: `Address`, `Email`, or `Phone`. Optionally: `MiddleName`, `Suffix`, and `Gender`.
+**Prerequisites**
 
-This topic describes how to configure and enable Reltio Identity Builder for your tenant. The process involves verifying your provisioning, configuring attribute mappings and match rules, and posting the subscription to the DTSS endpoint.
+- 
 
-1. Verify that Reltio Identity Builder has been provisioned for your tenant.
-2. Verify that you have been assigned one of the following roles based on your licensed tier: `ROLE_IDENTITY_BUILDER_ENRICH` or `ROLE_IDENTITY_BUILDER_ENRICH_PLUS`.
-3. Confirm that you have received the Data Tenant IDs for Reltio Identity Builder.
-   Note the correct tenant ID for each environment (DEV, TEST, PROD).
-4. Verify the attributes you want to synchronize from the data tenant.
+  Your organization has a valid **Reltio Identity Builder** entitlement.
+- 
+
+  Reltio Identity Builder has been provisioned for your tenant.
+- 
+
+  You have been assigned one of the following roles based on your licensed tier: `ROLE_DTSS_IDBUILDER_MATCH_MANAGER`, `ROLE_DTSS_IDBUILDER_ENRICH_MANAGER`, or `ROLE_DTSS_IDBUILDER_ENRICHPLUS_MANAGER`.
+- 
+
+  Your tenant is hosted on **AWS** within the United States.
+- 
+
+  Your tenant's data model aligns with the **B2C velocity pack** or contains equivalent **Individual** and **Location** entity types. If your model differs, you may need to modify your tenant configuration and adjust mappings during provisioning. Reltio Identity Builder also supports nested addresses.
+- 
+
+  Required match attributes are configured: `FirstName` and `LastName`, and one of: `Address`, `Email`, or `Phone`. Optionally, for stronger match confidence: `MiddleName`, `Suffix`, `Gender`, `YoB`, and `MoB`.
+- 
+
+  If you plan to use `REALTIME` sync, confirm that `streamingEnabled` and `streamingAPIEnabled` are both set to `true` in your tenant's physical configuration before you begin.
+
+
+To configure and enable Reltio Identity Builder
+
+1. Verify the attributes you want to synchronize from the data tenant.
    For more information, see [Enrichment attributes and output data](https://docs.reltio.com/en/applications/data-integrations/reltio-identity-builder-at-a-glance/enrichment-attributes-and-output-data?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
-5. Add any missing attributes to your customer tenant configuration.
+2. Add any missing attributes to your customer tenant configuration.
    If the data tenant includes attributes that do not exist in your customer tenant, use the supplied JSON to add them.
    For more information, see [Data model](https://docs.reltio.com/en/applications/data-integrations/reltio-identity-builder-at-a-glance/data-model?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
-6. Copy the subscription template that matches your licensed tier and save it as a JSON file.
+3. Copy the subscription template that matches your licensed tier and save it as a JSON file.
+   For **Identity Builder Match**, use the following template:
+   Show template
+   ```language-json
+[ { "customerTenantId": { "id": "{tenantId}" }, "bringGoldenRecord": true, "validation": { "strictMappingCheck": true }, "synchronizationConfig": { "entities": [ { "types": [ "configuration/entityTypes/Individual" ], "action": "AUTOSUBSCRIBE", "matchRules": [ "configuration/entityTypes/Individual/matchGroups/IB_01_PersonByExactNameDoBAddress", "configuration/entityTypes/Individual/matchGroups/IB_02_PersonByExactNameDoBEmail", "configuration/entityTypes/Individual/matchGroups/IB_03_PersonByExactNameDoBPhone" ], "thresholds": { "default": 1, "extendSubscription": false, "custom": [] } }, { "types": [ "configuration/entityTypes/Individual" ], "action": "MANUAL_MATCH", "matchRules": [ "configuration/entityTypes/Individual/matchGroups/IB_04_PersonByExactNameAddress", "configuration/entityTypes/Individual/matchGroups/IB_05_PersonByExactNameEmail", "configuration/entityTypes/Individual/matchGroups/IB_06_PersonByExactNamePhone", "configuration/entityTypes/Individual/matchGroups/IB_07_PersonByFuzzyFirstExactLastNameDoBAddress", "configuration/entityTypes/Individual/matchGroups/IB_08_PersonByFuzzyFirstExactLastNameDoBEmail", "configuration/entityTypes/Individual/matchGroups/IB_09_PersonByFuzzyFirstExactLastNameDoBPhone", "configuration/entityTypes/Individual/matchGroups/IB_10_PersonByFuzzyNameDoBAddress", "configuration/entityTypes/Individual/matchGroups/IB_11_PersonByFuzzyNameDoBEmail", "configuration/entityTypes/Individual/matchGroups/IB_12_PersonByFuzzyNameDoBPhone", "configuration/entityTypes/Individual/matchGroups/IB_13_PersonByFuzzyFirstExactLastNameAddress", "configuration/entityTypes/Individual/matchGroups/IB_14_PersonByFuzzyFirstExactLastNameEmail", "configuration/entityTypes/Individual/matchGroups/IB_15_PersonByFuzzyFirstExactLastNamePhone", "configuration/entityTypes/Individual/matchGroups/IB_16_PersonByFuzzyNameAddress", "configuration/entityTypes/Individual/matchGroups/IB_17_PersonByFuzzyNameEmail", "configuration/entityTypes/Individual/matchGroups/IB_18_PersonByFuzzyNamePhone" ] } ], "dtSyncType": "REALTIME", "ctSyncType": "REALTIME", "relations": [] }, "mappings": [ { "copyFromDT": "configuration/entityTypes/Individual", "copyToCT": "configuration/entityTypes/Individual", "attributes": [ { "copyFromDT": "configuration/entityTypes/Individual/attributes/FirstName", "copyToCT": [ "configuration/entityTypes/Individual/attributes/FirstName" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/MiddleName", "copyToCT": [ "configuration/entityTypes/Individual/attributes/MiddleName" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/LastName", "copyToCT": [ "configuration/entityTypes/Individual/attributes/LastName" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/NameSuffix", "copyToCT": [ "configuration/entityTypes/Individual/attributes/NameSuffix" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Gender", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Gender" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/YoB", "copyToCT": [ "configuration/entityTypes/Individual/attributes/YoB" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/MoB", "copyToCT": [ "configuration/entityTypes/Individual/attributes/MoB" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address" ], "attributes": [ { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/AddressLine1", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/AddressLine1" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/AddressLine2", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/AddressLine2" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/City", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/City" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/StateProvince", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/StateProvince" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/Country", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/Country" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/Zip5", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/Zip5" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/Zip4", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/Zip4" ] } ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/AddressType", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/AddressType" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Email", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Email" ], "attributes": [ { "copyFromDT": "configuration/entityTypes/Individual/attributes/Email/attributes/Email", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Email/attributes/Email" ] } ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Phone", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Phone" ], "attributes": [ { "copyFromDT": "configuration/entityTypes/Individual/attributes/Phone/attributes/Number", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Phone/attributes/Number" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Phone/attributes/Type", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Phone/attributes/Type" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Phone/attributes/FirstSeen", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Phone/attributes/FirstSeen" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Phone/attributes/LastSeen", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Phone/attributes/LastSeen" ] } ] } ] } ] } ]
+   ```
    For **Identity Builder Enrich**, use the following template:
    Show template
    ```language-json
-[ { "customerTenantId": { "id": "{tenantId}" }, "bringGoldenRecord": true, "validation": { "strictMappingCheck": true }, "synchronizationConfig": { "entities": [ { "types": [ "configuration/entityTypes/Individual" ], "action": "AUTOSUBSCRIBE", "matchRules": [ "configuration/entityTypes/Individual/matchGroups/RMAUTO01", "configuration/entityTypes/Individual/matchGroups/RMAUTO02", "configuration/entityTypes/Individual/matchGroups/RMAUTO03" ], "thresholds": { "default": 1, "extendSubscription": false, "custom": [] } } ], "dtSyncType": "REALTIME", "ctSyncType": "REALTIME", "relations": [] }, "mappings": [ { "copyFromDT": "configuration/entityTypes/Individual", "copyToCT": "configuration/entityTypes/Individual", "attributes": [ { "copyFromDT": "configuration/entityTypes/Individual/attributes/NamePrefix", "copyToCT": [ "configuration/entityTypes/Individual/attributes/NamePrefix" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/FirstName", "copyToCT": [ "configuration/entityTypes/Individual/attributes/FirstName" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/MiddleName", "copyToCT": [ "configuration/entityTypes/Individual/attributes/MiddleName" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/LastName", "copyToCT": [ "configuration/entityTypes/Individual/attributes/LastName" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/NameSuffix", "copyToCT": [ "configuration/entityTypes/Individual/attributes/NameSuffix" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Gender", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Gender" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/YoB", "copyToCT": [ "configuration/entityTypes/Individual/attributes/YoB" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/MoB", "copyToCT": [ "configuration/entityTypes/Individual/attributes/MoB" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/EstimatedAge", "copyToCT": [ "configuration/entityTypes/Individual/attributes/EstimatedAge" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/DataProviderFirstSeen", "copyToCT": [ "configuration/entityTypes/Individual/attributes/DataProviderFirstSeen" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/DataProviderLastSeen", "copyToCT": [ "configuration/entityTypes/Individual/attributes/DataProviderLastSeen" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Email", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Email" ], "attributes": [ { "copyFromDT": "configuration/entityTypes/Individual/attributes/Email/attributes/Type", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Email/attributes/Type" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Email/attributes/Email", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Email/attributes/Email" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Email/attributes/FirstSeen", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Email/attributes/FirstSeen" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Email/attributes/LastSeen", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Email/attributes/LastSeen" ] } ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/OtherNames", "copyToCT": [ "configuration/entityTypes/Individual/attributes/OtherNames" ], "attributes": [ { "copyFromDT": "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherName", "copyToCT": [ "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherName" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/OtherNames/attributes/Type", "copyToCT": [ "configuration/entityTypes/Individual/attributes/OtherNames/attributes/Type" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherNamePrefix", "copyToCT": [ "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherNamePrefix" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherFirstName", "copyToCT": [ "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherFirstName" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherMiddleName", "copyToCT": [ "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherMiddleName" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherLastName", "copyToCT": [ "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherLastName" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherNameSuffix", "copyToCT": [ "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherNameSuffix" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherNameGender", "copyToCT": [ "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherNameGender" ] } ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address" ], "attributes": [ { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/AddressLine1", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/AddressLine1" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/AddressLine2", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/AddressLine2" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/City", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/City" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/StateProvince", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/StateProvince" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/Country", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/Country" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/Zip5", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/Zip5" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/Zip4", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/Zip4" ] } ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/AddressType", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/AddressType" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/AddressFirstSeen", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/AddressFirstSeen" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Phone", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Phone" ], "attributes": [ { "copyFromDT": "configuration/entityTypes/Individual/attributes/Phone/attributes/Number", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Phone/attributes/Number" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Phone/attributes/Type", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Phone/attributes/Type" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Phone/attributes/FirstSeen", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Phone/attributes/FirstSeen" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Phone/attributes/LastSeen", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Phone/attributes/LastSeen" ] } ] } ] } ] } ]
+[ { "customerTenantId": { "id": "{tenantId}" }, "bringGoldenRecord": true, "validation": { "strictMappingCheck": true }, "synchronizationConfig": { "entities": [ { "types": [ "configuration/entityTypes/Individual" ], "action": "AUTOSUBSCRIBE", "matchRules": [ "configuration/entityTypes/Individual/matchGroups/IB_01_PersonByExactNameDoBAddress", "configuration/entityTypes/Individual/matchGroups/IB_02_PersonByExactNameDoBEmail", "configuration/entityTypes/Individual/matchGroups/IB_03_PersonByExactNameDoBPhone" ], "thresholds": { "default": 1, "extendSubscription": false, "custom": [] } }, { "types": [ "configuration/entityTypes/Individual" ], "action": "MANUAL_MATCH", "matchRules": [ "configuration/entityTypes/Individual/matchGroups/IB_04_PersonByExactNameAddress", "configuration/entityTypes/Individual/matchGroups/IB_05_PersonByExactNameEmail", "configuration/entityTypes/Individual/matchGroups/IB_06_PersonByExactNamePhone", "configuration/entityTypes/Individual/matchGroups/IB_07_PersonByFuzzyFirstExactLastNameDoBAddress", "configuration/entityTypes/Individual/matchGroups/IB_08_PersonByFuzzyFirstExactLastNameDoBEmail", "configuration/entityTypes/Individual/matchGroups/IB_09_PersonByFuzzyFirstExactLastNameDoBPhone", "configuration/entityTypes/Individual/matchGroups/IB_10_PersonByFuzzyNameDoBAddress", "configuration/entityTypes/Individual/matchGroups/IB_11_PersonByFuzzyNameDoBEmail", "configuration/entityTypes/Individual/matchGroups/IB_12_PersonByFuzzyNameDoBPhone", "configuration/entityTypes/Individual/matchGroups/IB_13_PersonByFuzzyFirstExactLastNameAddress", "configuration/entityTypes/Individual/matchGroups/IB_14_PersonByFuzzyFirstExactLastNameEmail", "configuration/entityTypes/Individual/matchGroups/IB_15_PersonByFuzzyFirstExactLastNamePhone", "configuration/entityTypes/Individual/matchGroups/IB_16_PersonByFuzzyNameAddress", "configuration/entityTypes/Individual/matchGroups/IB_17_PersonByFuzzyNameEmail", "configuration/entityTypes/Individual/matchGroups/IB_18_PersonByFuzzyNamePhone" ] } ], "dtSyncType": "REALTIME", "ctSyncType": "REALTIME", "relations": [] }, "mappings": [ { "copyFromDT": "configuration/entityTypes/Individual", "copyToCT": "configuration/entityTypes/Individual", "attributes": [ { "copyFromDT": "configuration/entityTypes/Individual/attributes/NamePrefix", "copyToCT": [ "configuration/entityTypes/Individual/attributes/NamePrefix" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/FirstName", "copyToCT": [ "configuration/entityTypes/Individual/attributes/FirstName" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/MiddleName", "copyToCT": [ "configuration/entityTypes/Individual/attributes/MiddleName" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/LastName", "copyToCT": [ "configuration/entityTypes/Individual/attributes/LastName" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/NameSuffix", "copyToCT": [ "configuration/entityTypes/Individual/attributes/NameSuffix" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Gender", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Gender" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/YoB", "copyToCT": [ "configuration/entityTypes/Individual/attributes/YoB" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/MoB", "copyToCT": [ "configuration/entityTypes/Individual/attributes/MoB" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/EstimatedAge", "copyToCT": [ "configuration/entityTypes/Individual/attributes/EstimatedAge" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/DataProviderFirstSeen", "copyToCT": [ "configuration/entityTypes/Individual/attributes/DataProviderFirstSeen" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/DataProviderLastSeen", "copyToCT": [ "configuration/entityTypes/Individual/attributes/DataProviderLastSeen" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/OtherNames", "copyToCT": [ "configuration/entityTypes/Individual/attributes/OtherNames" ], "attributes": [ { "copyFromDT": "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherName", "copyToCT": [ "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherName" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherNamePrefix", "copyToCT": [ "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherNamePrefix" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherFirstName", "copyToCT": [ "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherFirstName" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherMiddleName", "copyToCT": [ "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherMiddleName" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherLastName", "copyToCT": [ "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherLastName" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherNameSuffix", "copyToCT": [ "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherNameSuffix" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherNameGender", "copyToCT": [ "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherNameGender" ] } ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address" ], "attributes": [ { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/AddressLine1", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/AddressLine1" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/AddressLine2", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/AddressLine2" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/City", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/City" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/StateProvince", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/StateProvince" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/Country", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/Country" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/Zip5", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/Zip5" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/Zip4", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/Zip4" ] } ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/AddressType", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/AddressType" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/AddressFirstSeen", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/AddressFirstSeen" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Email", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Email" ], "attributes": [ { "copyFromDT": "configuration/entityTypes/Individual/attributes/Email/attributes/Type", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Email/attributes/Type" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Email/attributes/Email", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Email/attributes/Email" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Email/attributes/FirstSeen", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Email/attributes/FirstSeen" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Email/attributes/LastSeen", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Email/attributes/LastSeen" ] } ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Phone", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Phone" ], "attributes": [ { "copyFromDT": "configuration/entityTypes/Individual/attributes/Phone/attributes/Number", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Phone/attributes/Number" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Phone/attributes/FirstSeen", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Phone/attributes/FirstSeen" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Phone/attributes/LastSeen", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Phone/attributes/LastSeen" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Phone/attributes/Type", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Phone/attributes/Type" ] } ] } ] } ] } ]
    ```
    For **Identity Builder Enrich Plus**, use the following template:
    Show template
    ```language-json
-[ { "customerTenantId": { "id": "{tenantId}" }, "bringGoldenRecord": true, "validation": { "strictMappingCheck": true }, "synchronizationConfig": { "entities": [ { "types": [ "configuration/entityTypes/Individual" ], "action": "AUTOSUBSCRIBE", "matchRules": [ "configuration/entityTypes/Individual/matchGroups/RMAUTO01", "configuration/entityTypes/Individual/matchGroups/RMAUTO02", "configuration/entityTypes/Individual/matchGroups/RMAUTO03" ], "thresholds": { "default": 1, "extendSubscription": false, "custom": [] } } ], "dtSyncType": "REALTIME", "ctSyncType": "REALTIME", "relations": [] }, "mappings": [ { "copyFromDT": "configuration/entityTypes/Individual", "copyToCT": "configuration/entityTypes/Individual", "attributes": [ { "copyFromDT": "configuration/entityTypes/Individual/attributes/NamePrefix", "copyToCT": [ "configuration/entityTypes/Individual/attributes/NamePrefix" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/FirstName", "copyToCT": [ "configuration/entityTypes/Individual/attributes/FirstName" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/MiddleName", "copyToCT": [ "configuration/entityTypes/Individual/attributes/MiddleName" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/LastName", "copyToCT": [ "configuration/entityTypes/Individual/attributes/LastName" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/NameSuffix", "copyToCT": [ "configuration/entityTypes/Individual/attributes/NameSuffix" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Gender", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Gender" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/YoB", "copyToCT": [ "configuration/entityTypes/Individual/attributes/YoB" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/MoB", "copyToCT": [ "configuration/entityTypes/Individual/attributes/MoB" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/EstimatedAge", "copyToCT": [ "configuration/entityTypes/Individual/attributes/EstimatedAge" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/DataProviderFirstSeen", "copyToCT": [ "configuration/entityTypes/Individual/attributes/DataProviderFirstSeen" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/DataProviderLastSeen", "copyToCT": [ "configuration/entityTypes/Individual/attributes/DataProviderLastSeen" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/SourceIP", "copyToCT": [ "configuration/entityTypes/Individual/attributes/SourceIP" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/DeceasedIndicator", "copyToCT": [ "configuration/entityTypes/Individual/attributes/DeceasedIndicator" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/DataProviderHouseholdID", "copyToCT": [ "configuration/entityTypes/Individual/attributes/DataProviderHouseholdID" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/WebsiteURL", "copyToCT": [ "configuration/entityTypes/Individual/attributes/WebsiteURL" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/WebInterests", "copyToCT": [ "configuration/entityTypes/Individual/attributes/WebInterests" ], "attributes": [ { "copyFromDT": "configuration/entityTypes/Individual/attributes/WebInterests/attributes/WebsiteURL", "copyToCT": [ "configuration/entityTypes/Individual/attributes/WebInterests/attributes/WebsiteURL" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/WebInterests/attributes/WebsiteType", "copyToCT": [ "configuration/entityTypes/Individual/attributes/WebInterests/attributes/WebsiteType" ] } ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Email", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Email" ], "attributes": [ { "copyFromDT": "configuration/entityTypes/Individual/attributes/Email/attributes/Type", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Email/attributes/Type" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Email/attributes/Email", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Email/attributes/Email" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Email/attributes/FirstSeen", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Email/attributes/FirstSeen" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Email/attributes/LastSeen", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Email/attributes/LastSeen" ] } ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/OtherNames", "copyToCT": [ "configuration/entityTypes/Individual/attributes/OtherNames" ], "attributes": [ { "copyFromDT": "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherName", "copyToCT": [ "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherName" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/OtherNames/attributes/Type", "copyToCT": [ "configuration/entityTypes/Individual/attributes/OtherNames/attributes/Type" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherNamePrefix", "copyToCT": [ "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherNamePrefix" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherFirstName", "copyToCT": [ "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherFirstName" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherMiddleName", "copyToCT": [ "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherMiddleName" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherLastName", "copyToCT": [ "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherLastName" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherNameSuffix", "copyToCT": [ "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherNameSuffix" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherNameGender", "copyToCT": [ "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherNameGender" ] } ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address" ], "attributes": [ { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/AddressLine1", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/AddressLine1" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/AddressLine2", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/AddressLine2" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/City", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/City" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/StateProvince", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/StateProvince" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/Country", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/Country" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/Zip5", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/Zip5" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/Zip4", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/Zip4" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/DeliveryPointBarCode", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/DeliveryPointBarCode" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/DPVConfirmedIndicator", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/DPVConfirmedIndicator" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/RecordType", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/RecordType" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/CarrierRoute", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/CarrierRoute" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/VacantIndicator", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/VacantIndicator" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/FIPSCountyCode", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/FIPSCountyCode" ] } ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/AddressType", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/AddressType" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/AddressFirstSeen", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/AddressFirstSeen" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/AddressLastValidated", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/AddressLastValidated" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Phone", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Phone" ], "attributes": [ { "copyFromDT": "configuration/entityTypes/Individual/attributes/Phone/attributes/Number", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Phone/attributes/Number" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Phone/attributes/Type", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Phone/attributes/Type" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Phone/attributes/FirstSeen", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Phone/attributes/FirstSeen" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Phone/attributes/LastSeen", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Phone/attributes/LastSeen" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Phone/attributes/ConfidenceScore", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Phone/attributes/ConfidenceScore" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Phone/attributes/LineType", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Phone/attributes/LineType" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Phone/attributes/DirectInDial", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Phone/attributes/DirectInDial" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Phone/attributes/DirectoryAssistanceCode", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Phone/attributes/DirectoryAssistanceCode" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Phone/attributes/OriginalProvider", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Phone/attributes/OriginalProvider" ] } ] } ] } ] } ]
+[ { "customerTenantId": { "id": "{tenantId}" }, "bringGoldenRecord": true, "validation": { "strictMappingCheck": true }, "synchronizationConfig": { "entities": [ { "types": [ "configuration/entityTypes/Individual" ], "action": "AUTOSUBSCRIBE", "matchRules": [ "configuration/entityTypes/Individual/matchGroups/IB_01_PersonByExactNameDoBAddress", "configuration/entityTypes/Individual/matchGroups/IB_02_PersonByExactNameDoBEmail", "configuration/entityTypes/Individual/matchGroups/IB_03_PersonByExactNameDoBPhone" ], "thresholds": { "default": 1, "extendSubscription": false, "custom": [] } }, { "types": [ "configuration/entityTypes/Individual" ], "action": "MANUAL_MATCH", "matchRules": [ "configuration/entityTypes/Individual/matchGroups/IB_04_PersonByExactNameAddress", "configuration/entityTypes/Individual/matchGroups/IB_05_PersonByExactNameEmail", "configuration/entityTypes/Individual/matchGroups/IB_06_PersonByExactNamePhone", "configuration/entityTypes/Individual/matchGroups/IB_07_PersonByFuzzyFirstExactLastNameDoBAddress", "configuration/entityTypes/Individual/matchGroups/IB_08_PersonByFuzzyFirstExactLastNameDoBEmail", "configuration/entityTypes/Individual/matchGroups/IB_09_PersonByFuzzyFirstExactLastNameDoBPhone", "configuration/entityTypes/Individual/matchGroups/IB_10_PersonByFuzzyNameDoBAddress", "configuration/entityTypes/Individual/matchGroups/IB_11_PersonByFuzzyNameDoBEmail", "configuration/entityTypes/Individual/matchGroups/IB_12_PersonByFuzzyNameDoBPhone", "configuration/entityTypes/Individual/matchGroups/IB_13_PersonByFuzzyFirstExactLastNameAddress", "configuration/entityTypes/Individual/matchGroups/IB_14_PersonByFuzzyFirstExactLastNameEmail", "configuration/entityTypes/Individual/matchGroups/IB_15_PersonByFuzzyFirstExactLastNamePhone", "configuration/entityTypes/Individual/matchGroups/IB_16_PersonByFuzzyNameAddress", "configuration/entityTypes/Individual/matchGroups/IB_17_PersonByFuzzyNameEmail", "configuration/entityTypes/Individual/matchGroups/IB_18_PersonByFuzzyNamePhone" ] } ], "dtSyncType": "REALTIME", "ctSyncType": "REALTIME", "relations": [] }, "mappings": [ { "copyFromDT": "configuration/entityTypes/Individual", "copyToCT": "configuration/entityTypes/Individual", "attributes": [ { "copyFromDT": "configuration/entityTypes/Individual/attributes/NamePrefix", "copyToCT": [ "configuration/entityTypes/Individual/attributes/NamePrefix" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/FirstName", "copyToCT": [ "configuration/entityTypes/Individual/attributes/FirstName" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/MiddleName", "copyToCT": [ "configuration/entityTypes/Individual/attributes/MiddleName" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/LastName", "copyToCT": [ "configuration/entityTypes/Individual/attributes/LastName" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/NameSuffix", "copyToCT": [ "configuration/entityTypes/Individual/attributes/NameSuffix" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Gender", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Gender" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/YoB", "copyToCT": [ "configuration/entityTypes/Individual/attributes/YoB" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/MoB", "copyToCT": [ "configuration/entityTypes/Individual/attributes/MoB" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/EstimatedAge", "copyToCT": [ "configuration/entityTypes/Individual/attributes/EstimatedAge" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/DataProviderFirstSeen", "copyToCT": [ "configuration/entityTypes/Individual/attributes/DataProviderFirstSeen" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/DataProviderLastSeen", "copyToCT": [ "configuration/entityTypes/Individual/attributes/DataProviderLastSeen" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/SourceIP", "copyToCT": [ "configuration/entityTypes/Individual/attributes/SourceIP" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/WebInterests", "copyToCT": [ "configuration/entityTypes/Individual/attributes/WebInterests" ], "attributes": [ { "copyFromDT": "configuration/entityTypes/Individual/attributes/WebInterests/attributes/WebsiteURL", "copyToCT": [ "configuration/entityTypes/Individual/attributes/WebInterests/attributes/WebsiteURL" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/WebInterests/attributes/WebsiteType", "copyToCT": [ "configuration/entityTypes/Individual/attributes/WebInterests/attributes/WebsiteType" ] } ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/DeceasedIndicator", "copyToCT": [ "configuration/entityTypes/Individual/attributes/DeceasedIndicator" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/DataProviderHouseholdID", "copyToCT": [ "configuration/entityTypes/Individual/attributes/DataProviderHouseholdID" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/OtherNames", "copyToCT": [ "configuration/entityTypes/Individual/attributes/OtherNames" ], "attributes": [ { "copyFromDT": "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherName", "copyToCT": [ "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherName" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherNamePrefix", "copyToCT": [ "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherNamePrefix" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherFirstName", "copyToCT": [ "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherFirstName" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherMiddleName", "copyToCT": [ "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherMiddleName" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherLastName", "copyToCT": [ "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherLastName" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherNameSuffix", "copyToCT": [ "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherNameSuffix" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherNameGender", "copyToCT": [ "configuration/entityTypes/Individual/attributes/OtherNames/attributes/OtherNameGender" ] } ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address" ], "attributes": [ { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/AddressLine1", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/AddressLine1" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/AddressLine2", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/AddressLine2" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/City", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/City" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/StateProvince", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/StateProvince" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/Country", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/Country" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/Zip5", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/Zip5" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/Zip4", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/Zip4" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/VacantIndicator", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/VacantIndicator" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/DeliveryPointBarCode", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/DeliveryPointBarCode" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/DPVConfirmedIndicator", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/DPVConfirmedIndicator" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/RecordType", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/RecordType" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/CarrierRoute", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/CarrierRoute" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/FIPSCountyCode", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/FIPSCountyCode" ] } ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/AddressType", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/AddressType" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/AddressFirstSeen", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/AddressFirstSeen" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Address/attributes/AddressLastValidated", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Address/attributes/AddressLastValidated" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Email", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Email" ], "attributes": [ { "copyFromDT": "configuration/entityTypes/Individual/attributes/Email/attributes/Type", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Email/attributes/Type" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Email/attributes/Email", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Email/attributes/Email" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Email/attributes/FirstSeen", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Email/attributes/FirstSeen" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Email/attributes/LastSeen", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Email/attributes/LastSeen" ] } ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Phone", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Phone" ], "attributes": [ { "copyFromDT": "configuration/entityTypes/Individual/attributes/Phone/attributes/Number", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Phone/attributes/Number" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Phone/attributes/FirstSeen", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Phone/attributes/FirstSeen" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Phone/attributes/LastSeen", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Phone/attributes/LastSeen" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Phone/attributes/Type", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Phone/attributes/Type" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Phone/attributes/ConfidenceScore", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Phone/attributes/ConfidenceScore" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Phone/attributes/LineType", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Phone/attributes/LineType" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Phone/attributes/DirectInDial", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Phone/attributes/DirectInDial" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Phone/attributes/OriginalProvider", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Phone/attributes/OriginalProvider" ] }, { "copyFromDT": "configuration/entityTypes/Individual/attributes/Phone/attributes/DirectoryAssistanceCode", "copyToCT": [ "configuration/entityTypes/Individual/attributes/Phone/attributes/DirectoryAssistanceCode" ] } ] } ] } ] } ]
    ```
-7. Modify the subscription based on your requirements.
+4. Modify the subscription based on your requirements.
    The configurable elements for Identity Builder subscriptions are: `synchronizationConfig` and `mappings`.
-8. Verify that the attributes are mapped correctly to your customer tenant attributes.
+   For more information about Data Tenant Subscription Service concepts and configuration, see [Reltio Data Tenant Subscription Service (DTSS) at a glance](https://docs.reltio.com/en/applications/data-integrations/data-enrichment-integrations-at-a-glance/reltio-data-tenant-subscription-service-dtss-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+5. Verify that the attributes are mapped correctly to your customer tenant attributes.
    Naming conventions may differ between the data tenant and your customer tenant, but data types must match.
-9. Select the correct match rules for your subscription.
-   Both subscription templates default to Strategy 1 only (`RMAUTO01`, `RMAUTO02`, `RMAUTO03`). Add or replace rule URIs in the `matchRules` array based on your requirements.
-   For more information, see [Match strategies and logic](https://docs.reltio.com/en/applications/data-integrations/reltio-identity-builder-at-a-glance/match-strategies-and-logic?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
-10. Post the subscription to the appropriate endpoint for your licensed tier and environment.
-   - For Identity Builder Enrich: `POST https://{env}.reltio.com/dtss/subscription/identityBuilder`
-   - For Identity Builder Enrich Plus: `POST https://{env}.reltio.com/dtss/subscription/identityBuilderPlus`
+6. Select the correct match rules for your subscription.
+   Each subscription template ships with a conservative starting configuration: the `AUTOSUBSCRIBE` group contains the match rules for Strategy 1, and the `MANUAL_MATCH` group contains the match rules for Strategies 2 through 6. You can move rule URIs between the two groups based on your own business requirements — placing a rule under `AUTOSUBSCRIBE` resolves matching records automatically, and placing it under `MANUAL_MATCH` creates potential matches for your review in Hub instead.
+   For the full list of match rule URIs and which strategy each belongs to, see [Match strategies and logic](https://docs.reltio.com/en/applications/data-integrations/reltio-identity-builder-at-a-glance/match-strategies-and-logic?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+7. Post the subscription to the appropriate endpoint for your licensed tier and environment.
+   - For Identity Builder Match: `POST https://{env}.reltio.com/dtss/subscriptions/identityBuilderMatch`
+   - For Identity Builder Enrich: `POST https://{env}.reltio.com/dtss/subscriptions/identityBuilderEnrich`
+   - For Identity Builder Enrich Plus: `POST https://{env}.reltio.com/dtss/subscriptions/identityBuilderEnrichPlus`
    The request body is the subscription JSON you prepared in the previous steps.
-11. Confirm the subscription was deployed successfully.
-12. Run a manual match task to begin matching the existing profiles in your tenant against Identity Builder.
-   Submit the following request using the Data Tenant ID you noted in step 3:
-   `POST https://{env}.reltio.com/dtss/tasks/manual_match`
-   Use the following request body:
-   ```
-{ "dataTenant": "{DTtenantId}", "customerTenant": "{tenantId}", "entityUris": { "urisList": [ ] }, "entitiesFilterInDtMetadata": {} }
-   ```
+8. Confirm the subscription was deployed successfully.
+9. Run a manual match task to begin matching the existing profiles in your tenant against Identity Builder.
+   Complete this task and the next task if your tenant already contains data, or if you changed the match rules in this subscription. If you are deploying to a new, empty tenant using `REALTIME` sync, skip both tasks — matching occurs automatically as entities are created or updated in the customer tenant.
+   For the request format, see [Manual match API](https://docs.reltio.com/en/applications/data-integrations/data-enrichment-integrations-at-a-glance/reltio-data-tenant-subscription-service-dtss-at-a-glance/reltio-dtss-operation/dtss-bulk-operations-tasks/manual-match-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+10. Run a manual subscribe task to complete merging and enrichment for your existing profiles.
+   For the request format, see [Manual subscribe API](https://docs.reltio.com/en/applications/data-integrations/data-enrichment-integrations-at-a-glance/reltio-data-tenant-subscription-service-dtss-at-a-glance/reltio-dtss-operation/dtss-bulk-operations-tasks/manual-subscribe-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+**Result**
 
 Reltio Identity Builder is now configured and enabled for your tenant. The subscription is active. Reltio Identity Builder will match and enrich records based on your selected strategies and attribute mappings.
 
@@ -175176,22 +175517,31 @@ Reltio Identity Builder is now configured and enabled for your tenant. The subsc
 
 Learn how to use the Reltio Hub interface to monitor match results, review potential duplicates, and verify enriched data provided by Reltio Identity Builder.
 
+**Reltio Identity Builder™** produces match and enrichment results that appear in existing **Hub** views, such as **Dashboard**, **Individual Profile**, and **Potential Matches**. These views let you review matched records, potential duplicates, and enrichment details.
+
 **Prerequisites**
 
 Before you begin, ensure that Reltio Identity Builder is successfully configured and enabled for your tenant. You must have:
 
-- A valid Reltio Identity Builder entitlement and provisioned product
-- Entity data (for example, Individual profiles) loaded in your tenant
-- Appropriate Entity, Relationship and **Hub** access permissions
+- 
 
-Reltio Identity Builder produces match and enrichment results that appear in existing **Hub** views, such as **Dashboard**, **Individual Profile**, and **Potential Matches**. These views let you review matched records, potential duplicates, and enrichment details.
+  A valid Reltio Identity Builder entitlement and provisioned product
+- 
+
+  Entity data (for example, Individual profiles) loaded in your tenant
+- 
+
+  Appropriate Entity, Relationship and **Hub** access permissions
+
+
+To monitor and review matches in Hub
 
 1. Review the **Dashboard** view for overall match activity.
    This page displays a high-level summary of the number of matched, enriched, and suspect records processed by Reltio Identity Builder.*Image: i-identity-builder-dashboard.png*
 2. In the **Hub > Search**, select the **Individual** entity type. Find the **Individual** profile for which you want to view the detailed profile-level data.
-   Each record represents a single Individual entity enriched by the Reltio Intelligent Identity Graph. You can click any record to open its profile page.*Image: i-identity-builder-overview.png*
+   Each record represents a single Individual entity enriched by the Reltio Intelligent Identity Graph. You can click any record to open its profile page. You can also use Advanced Search to filter directly on **Reltio Identity Builder Match Rules**.*Image: i-identity-builder-overview.png*
 3. Open the **Potential Matches** tab to review unresolved duplicates.
-   **Reltio Identity Builder** automatically flags records that exceed fuzzy or suspect match thresholds defined during provisioning.*Image: i-identity-builder-benefits.png*
+   **Reltio Identity Builder** automatically flags records that exceed fuzzy or suspect match thresholds defined during provisioning. Each potential match displays the name of the match rule that identified it, rather than the rule's underlying URI.*Image: i-identity-builder-benefits.png*
    - Optionally, use the **Potential Matches**, **Find Matches**, or **Not a Match** icons on the right pane to: filter, select potential matches, or find profiles currently marked as "not a match".
    - Select one or more profiles and choose whether to *Merge* or mark them as *Not a Match*.
    - Save your selections to update match results in the tenant.
@@ -175200,9 +175550,12 @@ Reltio Identity Builder produces match and enrichment results that appear in exi
    - Click the **Sources** tab to see which datasets contributed to the merged profile.
    - Review enrichment attributes such as `DeceasedIndicator`, `HouseholdID`, or `ConfidenceScore`.
    - Confirm that enrichment values are sourced from **Reltio Identity Builder**, not customer-provided data.*Image: i-identity-builder-sources-view.png*
+   - Select the **History** icon to review a timeline of merge and enrichment events for the profile.
 5. Optionally, in the **Hub > Search**, select the **Location** entity type, and find the Location profile for which you want to confirm address-level validation and enrichment.
    The Location view displays standardized addresses and validation indicators (for example, `VacantIndicator`, `LastValidatedDate`, or `DPVConfirmedIndicator`).
    *Image: i-identity-builder-location.png*
+
+**Result**
 
 After completing these steps, you can monitor Identity Builder activity, validate match accuracy, and confirm enrichment results directly in the **Hub**. All views reflect real-time updates processed through the Reltio Intelligent Identity Graph.
 
@@ -233430,19 +233783,21 @@ Your modifications are saved.You can also use the API to update a segment. For m
 
 Learn how to add a hierarchy so that you can create a new hierarchy instance for a selected entity and start building its structure in the Hierarchy tab.
 
-**Prerequisites**::- 
+Create a new hierarchy when you need to organize an entity within a hierarchy type, prepare a hierarchy for future updates, or create a new versioned hierarchy instance.
+
+**Prerequisites**::Before you add a hierarchy, ensure you've completed the following requirements:
+
+- 
 
   You must enable hierarchy in the tenant configuration. For more information, see [Configure tenant business settings for hierarchy](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/configure-tenant-business-settings-for-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 - 
 
   You must enable hierarchy in the UI configuration. For more information, see [Configure UI settings for the Hierarchy tab](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/configure-ui-settings-for-the-hierarchy-tab?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
-Create a new hierarchy when you need to organize an entity within a hierarchy type, prepare a hierarchy for future updates, or create a new versioned hierarchy instance.
 
+To add a hierarchy:
 
-To add a hierarchy
-
-1. In the Hub, select the profile you want to view.
+1. In the **Hub**, select the profile you want to view.
 2. In the Profile view, select the **Hierarchy** tab.
    *Image: hierarchy-addhierarchy.png*
    If no hierarchy exists for the profile, the tab shows an empty state with options to create a new hierarchy or import a hierarchy.
@@ -233450,9 +233805,9 @@ To add a hierarchy
 3. Select **+New Hierarchy** and then select **Create**.
    *Image: hierarchy-createnew.png*
    - From the **Hierarchy type** dropdown, select the type of hierarchy you want to create. The hierarchy types must be configured in the tenant business configuration, and the current entity type must be included in the `allowedEntityTypes` list for that hierarchy type.
-   - In the **Hierarchy name** field, enter a name for the hierarchy.
+   - In the **Hierarchy name** field, enter a unique name for the hierarchy. Hierarchy names must be unique within the tenant.
    - To create a versioned hierarchy, select **Enable versioning**.
-   - In the **Version name** field, enter a name for the version.
+   - In the **Version name** field, enter a unique name for the version. Version names must be unique within the hierarchy.
    - In the **Start Date** and **End Date** field, select the date range for which the version is valid.
    - Under **Initial connection to entity name**, select **Add child** or **Add parent**.
    - Select the entity for the initial connection..
@@ -233460,7 +233815,7 @@ To add a hierarchy
 
 **Result**
 
-The new hierarchy instance is created and is available in the Hierarchy tab for further updates.
+The new hierarchy instance is created and is available in the **Hierarchy** tab for further updates.tab for further updates.
 
 
 
@@ -233544,9 +233899,9 @@ To clone an existing hierarchy:
 4. Select the **More options** icon, and then select **Clone hierarchy**.
    *Image: ui-clonehierarchy.png*
    - In the **Target hierarchy** field, select the hierarchy type for the cloned hierarchy.
-   - In the **Hierarchy name** field, enter a name for the cloned hierarchy.
+   - In the **Hierarchy name** field, enter a unique name for the cloned hierarchy. Hierarchy names must be unique within the tenant.
    - Select **Enable versioning** to create the cloned hierarchy as a versioned hierarchy.
-   - In the **Version name** field, enter a name for the version.
+   - In the **Version name** field, enter a unique name for the version. Version names must be unique within the hierarchy.
    - In the **Start date** and **End date** fields, select the date range for which the version is valid.
    - Select **Clone hierarchy**. A confirmation message indicating the successful creation of the clone is displayed.
 
@@ -233615,9 +233970,13 @@ When the export job finishes, you will receive an email notification confirming 
 
 Learn how to import a hierarchy so that you can create a hierarchy structure from an import file instead of adding it manually.
 
-**Prerequisites**::- 
+Use this task when a profile does not yet have a hierarchy and you want to load the hierarchy structure from a supported `.csv` or **.json** import file.
 
-  You must have the ROLE_API or MDM.Data.Hr permission (for custom roles) assigned to you
+**Prerequisites**::Before you import a hierarchy, ensure you meet the following requirements:
+
+- 
+
+  You must have the `ROLE_API` or `MDM.Data.Hr` permission (for custom roles) assigned to you
 - 
 
   You must enable hierarchy in the tenant configuration. For more information, see [Configure tenant business settings for hierarchy](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/configure-tenant-business-settings-for-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
@@ -233628,10 +233987,8 @@ Learn how to import a hierarchy so that you can create a hierarchy structure fro
 
   You must have access to a hierarchy template.
 
-Use this task when a profile does not yet have a hierarchy and you want to load the hierarchy structure from a supported `.csv` or or **.json** import file.import file.
 
-
-To import a hierarchy
+To import a hierarchy:
 
 1. In the Hub, select the profile you want to view.
 2. In the **Profile** view, select the **Hierarchy** tab.
@@ -233641,6 +233998,7 @@ To import a hierarchy
    *Image: hierarchy-import.png*
    - In the **Import hierarchy** dialog, select **DOWNLOAD TEMPLATE** to get the import template.
    - Open the downloaded file and enter your hierarchy data.
+     > **Note:** Import creates a new hierarchy in the tenant. Hierarchy names in the import must be unique within the tenant. Version names must be unique within each hierarchy.
    - In the **Select file** area, drag the completed file into the dialog, or select **BROWSE** to locate the file.
    - Select **IMPORT HIERARCHY**.
 
@@ -241633,23 +241991,18 @@ keytool -genkeypair -alias workflow -keyalg RSA -keysize 2048 -storetype PKCS12 
 
 Learn how to install and start the Reltio Workflow Adapter locally so that you can test workflows in a self contained environment.
 
-1. Obtain the Workflow Adapter JAR file from Reltio *Maven* repository.
-   - Open the Reltio *Maven* repository folder: [Workflow JAR Repository](https://{artifact-repository-host}/#browse/browse:releases:com%2Freltio%2Fworkflow%2Fweb).
-     Use these credentials to log in and download the file:
-
-```
-
-username = {username}
-password = {password}
-
-```
-   - Navigate to the folder for the version you want.
-     > **Note:** Choose the latest available version as mentioned in the About dialog box in *Hub*.
-
-*Image: getstart_previewlabel.png*
-   - Download the JAR file for the version you want. The file name follows the format `web-{{version}}.jar`.
-   - Save the JAR file in your local machine.
-2. Copy the JAR file to the *C:/Reltio/workflow* directory.
+1. Use the following links from Reltio *Maven* repository, download Workflow *JAR* file by [Workflow JAR File](https://{artifact-repository-host}/repository/releases/com/reltio/workflow/web/%7B%7Bversion%7D%7D/web-%7B%7Bversion%7D%7D.jar).
+   where *{{version}}* is the release version.
+   where *{{version}}* is the release version.
+   > **Note:** Use the latest available version as mentioned in the about dialog box in *Hub*.
+   For example: [web-2024.2.7.0.jar](https://{artifact-repository-host}/repository/releases/com/reltio/workflow/web/2024.2.7.0/web-2024.2.7.0.jar)
+   Use these credentials to download the file:
+   Use these credentials to download the file:
+   ```
+username = {username} password = {password}
+   ```
+   *Image: getstart_previewlabel.png*
+2. Copy it to *C:/Reltio/workflow* directory.
 3. Open a Command Prompt window
 4. Run the command as follows:
    ```
