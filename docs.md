@@ -1,6 +1,6 @@
 # Reltio Documentation
 
-_Generated: 2026-08-12 02:14 UTC_
+_Generated: 2026-08-14 02:15 UTC_
 
 _Topics: 3372_
 
@@ -27129,7 +27129,7 @@ To check access requirements and agent availability, see[AgentFlow capabilities 
 
 **Source:** https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/use-the-agentflow-workspace?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
-**Keywords:** agentflow workspace, how to use agentflow ui, agent selection in reltio, navigate agentflow interface, input field and conversation, agentflow settings, rbac access agentflow, data explorer interface, chat ui, agent
+**Keywords:** agentflow workspace, how to use agentflow ui, agent selection in reltio, navigate agentflow interface, input field and conversation, agentflow settings, rbac access agentflow, data explorer interface, chat ui, agent, agentflow ui
 
 
 Learn how to navigate the AgentFlow interface, select agents, and interact with your data through a conversational workspace.
@@ -27144,8 +27144,12 @@ You need an active Reltio tenant with AgentFlow enabled and the appropriate role
 To use AgentFlow workspace, follow these steps:
 
 1. Open the [AgentFlow workspace](https://reltio.ai/agent-flow) in your browser.
-   You'll be prompted to select your tenant and environment.*Image: i-agentflow-select-tenant.png* The welcome panel greets you and prompts for input. The input field accepts natural language questions or instructions.*Image: i-agentflow-homepage.png*
-2. Choose an agent.
+2. Enter your Reltio **Tenant ID**.
+   *Image: i-af-tenantID.png*
+3. Enter your **Username** and **Password**.
+   *Image: i-af-login-screen.png*
+4. The welcome panel greets you and prompts for input. The input field accepts natural language questions or instructions.*Image: i-agentflow-homepage.png*
+5. Choose an agent.
    If you're logging in to AgentFlow for the first time, the **Data Explorer** agent appears by default in the left panel under **RELTIO AGENTS**. To explore and launch additional agents, select **Discover agents** in the left navigation panel.*Image: i-agentflow-discover-agents.png*
    On the Discover Agents page, agents are organized into two groups:
    - **Reltio Agents:** Prebuilt agents shipped by Reltio
@@ -27154,11 +27158,11 @@ To use AgentFlow workspace, follow these steps:
    *Image: i-agentflow-agent-cards.png*
    **The agent name, provider, and a short description**
    After you launch an agent, it appears in the left panel under **RELTIO AGENTS** and stays visible across sessions, unless you remove it. The left panel shows the first five agents you add in the order you've launched them. Additional active agents are accessible by scrolling. *Image: i-agentflow-agent-left-list.png*
-3. Enter a prompt or question in the input box and press Enter or select the send icon.
+6. Enter a prompt or question in the input box and press Enter or select the send icon.
    For example, try "*Show me the organization record for XYZ Corp.* ”
-4. Review the agent's response in the conversation panel.
+7. Review the agent's response in the conversation panel.
    Responses may include tables, summaries, lists, follow-up suggestions, or [visualizations (charts and graphs)](https://docs.reltio.com/en/products/agentflow/reltio-agentflow-at-a-glance/charts-and-diagrams-in-agentflow?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) depending on your agent and permissions.
-5. Access recent threads or agent options using the left navigation panel.
+8. Access recent threads or agent options using the left navigation panel.
    You can revisit prior conversations, toggle web search, or adjust agent instructions.
 
 You'll have an interactive chat-based view of your data, scoped by your agent and RBAC privileges. Agent responses are governed, read-only, or actionable depending on the agent type.> **Important:** All responses returned by agents follow your tenant's role-based access control (RBAC) policies and respect attribute masking. If you don't have access to a specific attribute or entity type, the agent won't display that data.
@@ -87990,7 +87994,7 @@ Learn about how Reltio IDE brings business configuration modeling into a modern 
 
 Reltio IDE transforms how teams design and manage Reltio business configurations by making data modeling faster, simpler, and more intuitive. From AI-assisted configuration to safe deployment and version tracking, it helps you accelerate implementation while maintaining quality and control.
 
-## Build Business Configurations Faster with AI
+## Build business configurations faster with AI
 
 Business configuration is foundational to every Reltio implementation. Whether you're introducing new business entities, extending an existing data model, or evolving your organization's configuration over time, you need tools that help you move quickly without compromising quality or control.
 
@@ -88067,15 +88071,16 @@ Learn how to install the Reltio IDE extension in Cursor, connect to your Reltio 
 
 Before you install Reltio IDE, make sure you have the following requirements:
 
-- The Reltio IDE `.vsix` file, downloaded from **Releases > Assets** of the [Reltio GitHub repository](https://github.com/reltio-ai/reltio-ide).
+- The Reltio IDE `.vsix` file from the [Reltio IDE GitHub repository](https://github.com/reltio-ai/reltio-ide). Download the file from the **Assets** section on the [Releases](https://github.com/reltio-ai/reltio-ide/releases) page.
 - A Reltio tenant and valid credentials, copied and ready to paste: An OAuth Client ID and Client secret (with your SSO routing tenant ID) from your identity provider, or a bearer token from the Reltio authentication API or your tenant administrator.
 
 
 To install Reltio IDE in Cursor
 
-1. Open Cursor.
+1. Open Cursor and open a folder. Reltio IDE uses the folder as your local workspace for downloading and managing business configurations.
 2. Press Cmd+Shift+P on macOS, or Ctrl+Shift+P on Windows and Linux to open the Command Palette.
 3. Type **Install from VSIX**, then select **Extensions: Install from VSIX...**.
+   *Image: cursor-install-vsix.png*
 4. Browse to the location where you downloaded the `.vsix` file. Select the .`vsix` file and click **Install**.
 5. Open the Extensions view and confirm that Reltio IDE appears in the list of installed extensions.
 
@@ -88084,7 +88089,9 @@ To connect to your tenant
 6. Select **Reltio** in the activity bar or Reltio IDE from the extensions to open the **RELTIO IDE** view.
 7. Select **Connect your Reltio Tenant** to start setup.
 8. Select **Add Environment**, then enter your environment ID (for example, `test-usg.reltio.com`).
+   *Image: add-env-dialog-vscode.png*
 9. Authenticate using one of the following methods, using the credentials you copied in the prerequisites.
+   *Image: sign-in-vscode.png*
    - Select **Sign in with browser (recommended)**. Enter your **Client ID** and **Client secret**, then enter your **SSO routing tenant ID** when prompted. Reltio IDE opens your browser to complete single sign-on. Cursor stores these credentials in your operating system's secure credential store.
    - Select **Paste a Bearer token**, then paste the token you kept ready and press Enter. Reltio IDE keeps the token in memory for the current session only.
 10. After authentication, select your tenant from the tenant list.
@@ -88093,6 +88100,7 @@ To open and navigate your configuration
 
 11. In the **RELTIO IDE** view, select your tenant.
 12. Select the **Open L3** icon beside the tenant ID to open your configuration file in the editor.
+   *Image: first-view.png*
 13. Expand your tenant to browse its configuration.
 14. Use the context menu at the tenant level and on objects in the tree view to perform modeling actions, such as:
    - Adding a new entity type or relationship type
@@ -88132,13 +88140,13 @@ Learn how to install the Reltio IDE extension in VS Code, connect to your Reltio
 
 Before you install Reltio IDE, make sure you have the following requirements:
 
-- The Reltio IDE `.vsix` file, downloaded from **Releases > Assets** of the [Reltio GitHub repository](https://github.com/reltio-ai/reltio-ide).
+- The Reltio IDE `.vsix` file from the [Reltio IDE GitHub repository](https://github.com/reltio-ai/reltio-ide). Download the file from the **Assets** section on the [Releases](https://github.com/reltio-ai/reltio-ide/releases) page.
 - A Reltio tenant and valid credentials, copied and ready to paste: An OAuth Client ID and Client secret (with your SSO routing tenant ID) from your identity provider, or a bearer token from the Reltio authentication API or your tenant administrator.
 
 
 To install Reltio IDE in VS Code using the Extensions view
 
-1. Open VS Code.
+1. Open VS Code and open a folder. Reltio IDE uses the folder as your local workspace for downloading and managing business configurations.
 2. Select the **Extensions** icon in the activity bar to open the Extensions view.
 3. Select the **...** (More Actions) menu at the top of the Extensions view, then select **Install from VSIX...**.
 4. Browse to the location where you downloaded the `.vsix` file. Select the `.vsix` file and click **Install**.
@@ -88149,6 +88157,7 @@ To install Reltio IDE in VS Code using the Command Palette
 6. Open VS Code.
 7. Press Cmd+Shift+P on macOS, or Ctrl+Shift+P on Windows and Linux to open the Command Palette.
 8. Type **Install from VSIX**, then select **Extensions: Install from VSIX...**.
+   *Image: cursor-install-vsix.png*
 9. Browse to the location where you downloaded the `.vsix` file. Select the `.vsix` file and click **Install**.
 10. Open the Extensions view and confirm that Reltio IDE appears in the list of installed extensions.
 
@@ -88157,7 +88166,9 @@ To connect to your tenant
 11. Select **Reltio** in the activity bar or Reltio IDE from the extensions to open the **RELTIO IDE** view.
 12. Select **Connect your Reltio Tenant** to start setup.
 13. Select **Add Environment**, then enter your environment ID (for example, `test-usg.reltio.com`).
+   *Image: add-env-dialog-vscode.png*
 14. Authenticate using one of the following methods, using the credentials you copied in the prerequisites.
+   *Image: sign-in-vscode.png*
    - Select **Sign in with browser (recommended)**. Enter your **Client ID** and **Client secret**, then enter your **SSO routing tenant ID** when prompted. Reltio IDE opens your browser to complete single sign-on. VS Code stores these credentials in your operating system's secure credential store.
    - Select **Paste a Bearer token**, then paste your token and press Enter. Reltio IDE keeps the token in memory for the current session only.
 15. After authentication, select your tenant from the tenant list.
@@ -88166,6 +88177,7 @@ To open and navigate your configuration
 
 16. In the **RELTIO IDE** view, select your tenant.
 17. Select the **Open L3** icon beside the tenant ID to open your configuration file in the editor.
+   *Image: first-view.png*
 18. Expand your tenant to browse its configuration.
 19. Use the context menu at the tenant level and on objects in the tree view to perform modeling actions, such as:
    - Adding a new entity type or relationship type
@@ -88196,7 +88208,7 @@ To confirm the connection was successful:
 
 **Source:** https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-ide-overview/apply-configuration-and-track-changes-in-reltio-ide?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
-**Keywords:** apply configuration to tenant reltio ide, fetch configuration reltio ide, fetching l3 configuration, configuration history reltio ide, who changed what reltio ide, version history reltio ide, deploy l3 configuration reltio ide, compare configuration versions reltio ide
+**Keywords:** apply configuration to tenant reltio ide, fetch configuration reltio ide, fetching l3 configuration, configuration history reltio ide, who changed what reltio ide, version history reltio ide, deploy l3 configuration reltio ide, compareconfiguration versions reltio ide
 
 
 Learn how to fetch the latest tenant configuration, apply your changes to the tenant, and review configuration history in Reltio IDE.
@@ -88216,17 +88228,21 @@ To fetch and apply configuration
 1. Right-click your tenant in the **RELTIO IDE** view and select **Fetch Configuration** to retrieve the latest configuration from the tenant. A **Fetching L3 configuration...** indicator appears in the status bar while the fetch is in progress. Reltio IDE updates your local configuration file with the retrieved configuration once complete.
 2. If your editor detects that your local file was overwritten while you had unsaved changes, select **Keep File** to retain your local edits, or **Undo File** to accept the fetched version.
 3. Edit the configuration file with the changes you want to apply to the tenant.
-4. Right-click your tenant in the **RELTIO IDE** view and select **Apply Configuration to Tenant**. Reltio IDE displays a confirmation dialog to view changes before applying.
+4. Right-click your tenant in the **RELTIO IDE** view and select **Apply Configuration to Tenant**.
+   *Image: Apply_Configuration_to_Tenant.png*
+   Reltio IDE displays a confirmation dialog to view changes before applying.
+   *Image: Apply_configuration_confirmation.png*
 5. Review and respond to the confirmation dialog using one of the following options:
-   - Select **View Changes** to open a difference view and review your changes before applying.
    - Select **Yes** to apply your local configuration changes to the tenant.
+   - Select **View Changes** to open a difference view and review your changes before applying.
    - Select **Don't apply** to cancel the deployment and return to editing.
    - Select **Cancel** to dismiss the dialog without taking action.
 
 To review configuration history and compare versions
 
 6. Right-click your tenant in the **RELTIO IDE** view and select **Fetch Configuration History**. A **History** section appears in the **RELTIO IDE** view, listing past versions by timestamp and the name of the user who made each change.
-7. To load older entries, right-click your tenant and select **Fetch More Configuration History**.
+   *Image: Configuration_history_in_RELTIO_IDE.png*
+7. To load older entries, right-click **History** and select **Fetch More Configuration History**.
 8. Select a history entry to open that version of the configuration.
 9. Compare versions using one of the following methods.
    - Select **Compare with Current L3** to compare a snapshot against your current local configuration.
@@ -88270,14 +88286,17 @@ AI-assisted authoring also creates supporting resources intelligently, such as t
 
 To add an object through the context menu
 
-1. Right-click your tenant in the **RELTIO IDE** view, then select the object you want to create, such as .
+1. Right-click your tenant in the **RELTIO IDE** view, then select the object you want to create, such as:
    - **Add a new Entity Type**
    - **Add a new Relation Type**
    - **Add a new Grouping Type**
    - **Add a new Graph Type**
    - **Add a new Source**
    - **Add a new Hierarchy Type**
-2. Locate the new object in the configuration file. Reltio IDE adds the object with the required elements.
+2. Locate the new object in the configuration file. Reltio IDE adds the object with default values.
+   The following image shows a new entity type added to configuration with default values.
+
+*Image: new-entity-type.png*
 3. Edit the object in the editor to complete its definition.
 4. Save the changes. Reltio IDE validates your changes and highlights any errors in the editor so you can fix them before you apply your configuration.
 
@@ -88287,7 +88306,9 @@ To create an object with AI-assisted authoring
 6. Describe the object you want to create. For example, *Create an Employee entity type with the relevant attributes and a reference attribute to Organization*.
 7. Review the configuration that Reltio IDE generates. In this example, Reltio IDE creates the Employee entity type, adds relevant attributes, adds the reference attribute to the Organization entity type, and creates the required relation type that connects Employee to Organization.
    When a reference attribute requires a relation type, Reltio IDE creates the relation type automatically, so you do not have to create it as a separate step.
-8. Review and manually edit the generated object to complete any remaining details, then save the configuration.
+
+*Image: Screenshot_2026-08-11_160319.png*
+8. Review and manually edit the generated object to complete any remaining details, then select **Yes** to apply the configuration.
 
 **Result**
 
@@ -88327,6 +88348,8 @@ To open the ontology view
    - Right-click an entity type or relation type in the **RELTIO IDE** view and select **Show in Ontology**.
    - Press Cmd+Shift+P on macOS, or Ctrl+Shift+P on Windows and Linux to open the Command Palette, type `ontology`, and select **Reltio: Show Ontology Preview**.
    - Right-click an object type (such as an entity type, relation type, and so on) in the **RELTIO IDE** view, and select **Show in Ontology**.
+   The ontology view displays your entity types as labeled nodes and shows the relationships between them.
+   *Image: ontology.png*
 2. In the ontology preview, review each entity type node, which shows its name, the number of attributes (Attrs), the number of connections (Conn), and the number of match rules.
 3. Review the labeled arrows connecting entity types. Arrows show the relation type name, inheritance connections labeled **extends**, and reference attribute connections showing the number of reference attributes between entity types.
 4. To reset the ontology preview to its default arrangement, press Cmd+Shift+P on macOS, or Ctrl+Shift+P on Windows and Linux to open the Command Palette, then run **Reltio: Reset Ontology Layout**.
@@ -133218,10 +133241,7 @@ Learn about updating the client associated with the customer as specified in the
 
 Use `Update a customer client API` to update the client associated with the customer as specified in the request body. All client parameters must be defined in the body of the request, else they are overwritten with empty values. The only exception is the client secret, where if no client secret is sent, the current client secret will remain. However, any other missing attributes are considered to be empty.
 
-You need either of the following role and permission to use this API:
-
-- ROLE_ADMIN_CUSTOMER
-- Auth.Customer.Clients UPDATE
+To use this API, you must have either the `ROLE_ADMIN_CUSTOMER` role or the `Auth.Customer.Clients UPDATE` permission.
 
 To reset a client secret, you must be assigned the `ROLE_ADMIN_CUSTOMER` role. If you are not assigned this role, but are assigned any other role along with the `Auth.Customer.Clients UPDATE` permission, the role that you are assigned must have the permission to access all your tenants. We have added this additional security control to ensure users who have access to only one tenant, cannot access other tenants using clients. This rule does not apply if you need to modify any other attribute of the client.
 
@@ -133275,18 +133295,20 @@ The following table describes the request body parameters.
 | `clientDescription` | String | Yes | Description of the client. | `Test client 005 - API only` |
 | `clientName` | String | Yes | Name of the client. | `Migration Test Client 005` |
 | `clientEmail` | String or null | Yes | Email address associated with the client. | `null` |
-| `redirectUri` | Array | Yes | Redirect URIs configured for the client. | `[]` |
+| `redirectUri` | Array | Yes | Redirect URIs configured for the client. | `[]` or `["https://yourapp.example.com/oauth/callback"]` |
 | `accessTokenValidity` | Number or null | Yes | Access token validity value configured for the client. | `null` |
 | `refreshTokenValidity` | Number or null | Yes | Refresh token validity value configured for the client. | `null` |
-| `defaultRolesAssignmentEnabled` | Boolean | No | Controls whether `ROLE_API` is assigned by default when tokens are issued. If omitted or set to `true`, `ROLE_API` may be assigned for all customer tenants. Set it to `false` to use only the roles defined in `clientPermissions.roles`. | `true`,`false` |
+| `defaultRolesAssignmentEnabled` | Boolean | No | Controls whether `ROLE_API` is assigned by default when tokens are issued. If omitted or set to `true`, `ROLE_API` may be assigned for all customer tenants. Set it to `false` to use only the roles defined in `clientPermissions.roles`. | `true`, `false` |
 | `clientAuthenticationMethods` | Array | Yes | Authentication methods supported by the client. | `client_secret_post`, `client_secret_basic` |
 | `enabled` | Boolean | Yes | Indicates whether the client is enabled. | `true` |
 | `clientPermissions.roles` | Object | Yes | Maps each registered role name to an array of tenant scopes assigned to that role. Role names can be standard or custom. `ROLE_API` and `ROLE_USER` are examples only and are not required. | Contains `roles`, `permissions`, and `permissionsByService`. |
-| `permissions` | Object | Yes | Permissions assigned to the client. | `{}` |
-| `permissionsByService` | Object | Yes | Permissions assigned to the client and grouped by service. | `{}` |
-| `clientSecret` | String | No | Specifies a new secret for the client. Omit this parameter unless you intend to rotate the secret. If omitted, the existing client secret remains unchanged. | Accepted value: a valid client secret.  Default: retains the existing secret when omitted. |
+| `permissions` | Object | Yes | A read-only, derived representation of the expanded permissions calculated from `clientPermissions.roles`. You do not need to construct this value manually. Send `{}` and the server derives the effective permissions from the specified roles. | `{}` |
+| `permissionsByService` | Object | Yes | Internal/system-managed field. Not intended for external use; always send `{}`. | `{}` |
+| `clientSecret` | String | No | Specifies a new secret for the client. Omit this parameter unless you intend to rotate the secret. If omitted, the existing client secret remains unchanged. | Accepted value: A valid client secret.  Default: Retains the existing secret when omitted. |
 | `jwtVersion` | Eum | No | Specifies the JWT version associated with the client. If this parameter is present in the current client configuration, include it in the PUT request to preserve its value. | Accepted value: "V1", Default value: null |
 | `consumer` | String | No | Specifies the consumer value associated with the client. If this parameter is present in the current client configuration, include it in the PUT request to preserve its value. | Any string. The value isn't validated against an allowlist, and no length restriction is enforced. |
+
+> **Note:** The fields `scope`, `authorities`, and `resourceIds` support older OAuth2 client configurations for backward compatibility. The current authorization framework does not use these fields; it determines permissions from `clientPermissions.roles`. If your client uses the current authorization framework, specify the value as `[]` for these fields.
 
 ## Example request
 

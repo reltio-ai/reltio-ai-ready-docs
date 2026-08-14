@@ -1,5 +1,5 @@
 # Reltio Documentation Index
-_Generated: 2026-08-12 02:15 UTC — 3246 topics (3192 unique)_
+_Generated: 2026-08-14 02:15 UTC — 3246 topics (3192 unique)_
 
 This file is a structured navigation index of the Reltio documentation portal.
 It contains the full parent-child hierarchy, topic URLs, keywords, summaries,
@@ -5077,7 +5077,7 @@ _Topics in this section: Reltio Model Context Protocol (MCP) Server at a glance,
 - **URL:** https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-ide-overview/apply-configuration-and-track-changes-in-reltio-ide?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > AI Integrations > Reltio IDE overview
 - **Summary:** Learn how to fetch the latest tenant configuration, apply your changes to the tenant, and review configuration history in Reltio IDE.
-- **Keywords:** apply configuration to tenant reltio ide, fetch configuration reltio ide, fetching l3 configuration, configuration history reltio ide, who changed what reltio ide, version history reltio ide, deploy l3 configuration reltio ide, compare configuration versions reltio ide
+- **Keywords:** apply configuration to tenant reltio ide, fetch configuration reltio ide, fetching l3 configuration, configuration history reltio ide, who changed what reltio ide, version history reltio ide, deploy l3 configuration reltio ide, compareconfiguration versions reltio ide
 
 ### Entity Management APIs
 
