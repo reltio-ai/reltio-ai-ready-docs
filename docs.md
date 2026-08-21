@@ -1,8 +1,8 @@
 # Reltio Documentation
 
-_Generated: 2026-08-19 02:15 UTC_
+_Generated: 2026-08-21 02:15 UTC_
 
-_Topics: 3372_
+_Topics: 3378_
 
 ---
 
@@ -15334,6 +15334,23 @@ Learn about the new features and enhancements introduced in this 2026.1.8.0 rele
 | 2 | Test (TEST) | August 7, 2026 |
 | 3 | Production (PRD) | August 14, 2026 |
 
+## Reltio AgentFlow™ Quality is now available in Early Access: Assess data quality before loading
+
+> **Note:** This feature is available to limited users through the Reltio Early Access (EA) program. Interested in finding out more about this feature or participating in our EA program? Get details in topic Early Access (EA) features.
+
+Reltio AgentFlow™ Quality enables you to connect to a source system and assess the quality of your data before loading it into Reltio. Databricks is the first supported source in Early Access, with support for additional source systems planned.
+
+You can connect to a Databricks source, evaluate a selected table, and investigate data quality issues. After the data quality results are available, you can continue to **Data Loader** to publish validated data to Reltio, all in a single conversation.
+
+AgentFlow Quality has the following capabilities:
+
+- **Get rule suggestions based on your data**: Analyze a table's structure and sample data to receive recommended rules, including uniqueness and format checks.
+- **Identify data quality issues before a data load**: Evaluate a Databricks table against data quality rules and identify the rows and columns that violate each rule.
+- **Investigate issues directly in the conversation**: Ask why specific rows or columns failed a quality check and receive suggestions for resolving issues.
+- **Work in one interface**: Move directly from data quality assessment to a Data Loader job without switching screens or re-entering connection details.
+
+For more information, see [Reltio AgentFlow™ Quality overview](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/reltio-agentflow-quality-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
 ## Unique names for Materialized hierarchies and versions
 
 Hierarchy names must now be unique within each tenant, and version names must be unique within each hierarchy. Reltio validates uniqueness when you create, clone, or edit a hierarchy or version. When you split a hierarchy, the resulting hierarchies and versions receive numbered suffixes, such as VersionName_1 and VersionName_2, to ensure the generated names are unique..
@@ -24413,6 +24430,87 @@ Reltio AgentFlow Mobile allows you to chat with Reltio agents and custom agents 
 
 ---
 
+# Reltio AgentFlow™ Quality overview
+
+> **Section:** Products > Reltio AgentFlow™ > Reltio AgentFlow™ overview
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/reltio-agentflow-quality-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** assess databricks table quality before reltio load, connect a databricks source in agentflow, generate data quality rules automatically, validate warehouse data quality with ai agents, publish validated data to reltio with data loader, review data quality check results in agentflow, prepare source data for reltio mdm, databricks, data quality, data loader, remediation, agentflow quality
+
+
+Learn about Reltio AgentFlow™ Quality and how it helps you assess and prepare Databricks source data for Reltio.
+
+> **Note:** This feature is available to limited users through the Reltio Early Access (EA) program. Interested in finding out more about this feature or participating in our EA program? Get details in topic Early Access (EA) features.
+
+Reltio AgentFlow™ Quality connects to a Databricks source, assesses the quality of a selected table, and publishes validated data to Reltio. Based on the table's structure and a sample of its data, AgentFlow Quality suggests data quality rules tailored to the table's content. It validates the selected rules against the full table, and if the results are acceptable, you can confirm the publish to Reltio. AgentFlow Quality maps the table to your Reltio tenant schema and loads the data using Data Loader. The entire workflow takes place within a single conversation in the AgentFlow Quality workspace.
+
+AgentFlow Quality is designed for the following user roles who prepare warehouse data for Reltio:
+
+- 
+
+  [Data Steward](https://docs.reltio.com/en/roles/data-steward?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- 
+
+  [Reltio Configurator](https://docs.reltio.com/en/roles/reltio-configurator?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+To use AgentFlow Quality, you need the following system roles:
+
+- 
+
+  `ROLE_AGENT_FLOW_QUALITY`
+- 
+
+  `ROLE_EXECUTE_AGENTS`
+- 
+
+  `ROLE_EXECUTE_MCP`
+- 
+
+  `ROLE_DATALOADER`
+
+## Key capabilities
+
+AgentFlow Quality supports the following capabilities within a single guided conversation:
+
+- 
+
+  Connects to a Databricks source.
+- 
+
+  Suggests data quality rules, such as uniqueness or format checks, based on the table's structure and a sample of its data.
+- 
+
+  Runs the selected rules against the full table and returns pass/fail results for each rule.
+- 
+
+  Answers follow-up questions about failed checks and suggests ways to resolve the issues.
+- 
+
+  Maps the source table to your Reltio tenant schema and publishes validated data to Reltio using Data Loader.
+
+## When to use AgentFlow Quality
+
+Use AgentFlow Quality in the following scenarios:
+
+- 
+
+  Assess a Databricks table against data quality rules before loading it into Reltio, instead of discovering issues after a failed or incomplete load.
+- 
+
+  Get data quality rule suggestions based on your table data instead of drafting it manually.
+- 
+
+  Investigate why specific rows or columns failed a quality check and troubleshoot the issues using natural language.
+- 
+
+  Run the assessment and publish workflow in a single conversation instead of switching between multiple configuration screens.
+
+
+
+---
+
 # AgentFlow™ agents catalog
 
 > **Section:** Products > Reltio AgentFlow™ > Reltio AgentFlow™ overview
@@ -26196,6 +26294,97 @@ In addition to the standard role mappings shown above, AgentFlow enforces a dedi
 
 ---
 
+# Prompt samples for AgentFlow™ Quality
+
+> **Section:** Products > Reltio AgentFlow™ > Reltio AgentFlow™ overview > Reltio AgentFlow™ Quality overview
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/reltio-agentflow-quality-overview/prompt-samples-for-agentflow-quality?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** prompt samples for agentflow quality, sample prompts for data quality assessment, ask agentflow quality to add a custom rule, publish to reltio with agentflow quality prompts, agentflow quality conversation examples
+
+
+Learn about sample prompts for assessing data quality and publishing Databricks tables using AgentFlow™ Quality.
+
+> **Note:** This feature is available to limited users through the Reltio Early Access (EA) program. Interested in finding out more about this feature or participating in our EA program? Get details in topic Early Access (EA) features.
+
+AgentFlow™ Quality uses natural-language prompts to guide you through data quality assessment and publishing validated data to Reltio. The following samples show how to start an assessment, adjust rules, publish validated data to Reltio, and revise or repeat steps in the current workflow.
+
+## Assessing data quality
+
+✅ Prompt: "Start data quality on my Databricks source."
+
+Why it works: TThe phrase "start data quality" matches the assessment workflow and opens a new conversation.
+
+## Adjusting quality rules
+
+Use prompts that describe the rule you want to add, or the change you want to make to the suggested rules.
+
+- 
+
+  ✅ Prompt: "Add a rule that flags rows with duplicate customer IDs."
+
+  Why it works: Describing the rule logic in natural language lets the agent add it alongside the suggested rules.
+- 
+
+  ✅ Prompt: "Add a few more rules for this table."
+
+  Why it works: The agent adds to the existing rule set without replacing rules you already selected.
+- 
+
+  ✅ Prompt: "I only need 2 rules for this table."
+
+  Why it works: Specifying a number reduces the suggested rules to that count.
+- 
+
+  ✅ Prompt: "Why did the duplicate customer ID rule fail, and how do I fix it?"
+
+  Why it works: Naming the specific rule and asking for both an explanation and next steps returns a targeted diagnosis.
+
+## Publishing validated data to Reltio
+
+Use prompts that confirm you want to continue from an assessment into a Reltio Data Loader job.
+
+- 
+
+  ✅ Prompt: "Map and load this table into Reltio."
+
+  Why it works: The prompt triggers the agent to start a Data Loader workflow to map the assessed table to your Reltio tenant schema, reusing the Databricks connection from the current conversation.
+- 
+
+  ✅ Prompt: "Yes, publish to Reltio."
+
+  Why it works: After a data quality run, the agent offers to publish. Accepting keeps the same connection and table without re-authentication.
+
+## Revising, repeating or canceling a step
+
+Use prompts that describe the step you want to revise or the workflow you want to stop.
+
+- 
+
+  ✅ Prompt: "Go back."
+
+  Why it works: The agent returns to the previous step so you can change your selection.
+- 
+
+  ✅ Prompt: "Regenerate the rules."
+
+  Why it works: The current rules are discarded and a new set is generated based on the same table.
+- 
+
+  ✅ Prompt: "Redo table selection with a different table."
+
+  Why it works: The agent replays table selection without restarting the connection.
+- 
+
+  ✅ Prompt: "Cancel."
+
+  Why it works: The current workflow stops. You can start a new conversation at any time.
+
+
+
+---
+
 # Charts and Diagrams in AgentFlow
 
 > **Section:** Products > Reltio AgentFlow™ > Reltio AgentFlow™ overview
@@ -27429,6 +27618,203 @@ Configure cloud storage access before running profiling jobs. See [Configure an 
 ## Next steps
 
 After enabling the agent, start a profiling job in AgentFlow. See [Run your first data profiling job](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agentflow-agents-catalog/profiler/run-your-first-data-profiling-job?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+
+
+---
+
+# Publish a Databricks table to Reltio using AgentFlow™ Quality
+
+> **Section:** Products > Reltio AgentFlow™ > Reltio AgentFlow™ overview > Reltio AgentFlow™ Quality overview
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/reltio-agentflow-quality-overview/publish-a-databricks-table-to-reltio-using-agentflow-quality?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** publish a databricks table to reltio with agentflow quality, review automapping in agentflow quality, confirm a data loader publish plan in agentflow, run a data loader job from agentflow quality, map databricks columns to reltio attributes, review data loader job results in agentflow, data loader, agentflow quality, databricks, reltio
+
+
+Learn how to connect to a Databricks source, select a table, and publish it to Reltio using AgentFlow™ Quality.
+
+> **Note:** This feature is available to limited users through the Reltio Early Access (EA) program. Interested in finding out more about this feature or participating in our EA program? Get details in topic Early Access (EA) features.
+
+AgentFlow™ Quality maps source table columns to Reltio entity attributes and creates a Data Loader job. For example, you can publish a Databricks `customers` table as HCP profiles. No file export or re-authentication is required, the entire workflow uses the same connection and table within a single conversation.
+
+> **Note:** If you have already completed a [data quality assessment](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/reltio-agentflow-quality-overview/assess-data-quality-using-agentflow-quality?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) for a table and want to publish it, see [To review the mapping and publish the data](#task-8261/stepsection-11447). AgentFlow Quality reuses the same connection and table from the conversation.
+
+**Prerequisites**
+
+Before you begin, ensure that you have the required system roles and Databricks connection details:
+
+- 
+
+  The following system roles to access AgentFlow Quality:
+  - `ROLE_AGENT_FLOW_QUALITY`
+  - `ROLE_EXECUTE_AGENTS`
+  - `ROLE_EXECUTE_MCP`.
+  - `ROLE_DATALOADER`
+- 
+
+  Access to a Databricks account
+- 
+
+  Connection details for your Databricks workspace:
+  - Server hostname
+  - HTTP path
+  - Access token
+  - Catalog name
+  - Schema name
+
+
+To connect to a Databricks source
+
+1. Open **AgentFlow Quality**.
+2. Select the required tenant.
+3. Select **Start Data Load**.
+   The Data Loader orchestrator appears.
+4. Select **Databricks** to connect to your source data.
+5. In the **Connect to Databricks** page, enter the following connection details.
+6. Select **Connect**.
+   AgentFlow Quality validates your credentials, saves the connection under the name you provided, and displays the Select tables screen for the catalog and schema you provided.
+7. Select the checkbox for the table you want to load, then choose **Select**.
+   The suggested mappings appear.
+
+To review the mapping and publish the data
+
+8. Review the suggested mapping between the source table columns and the target Reltio attributes.
+   AgentFlow Quality groups the mappings by the following confidence levels.
+
+| Confidence level | Description |
+| --- | --- |
+| **High** | The source column name and data type closely match a Reltio attribute. |
+| **Medium** | The source column partially matches a Reltio attribute. Review the mapping carefully before accepting. |
+| **Skipped** | The source column has no matching attribute, so AgentFlow Quality does not include it in the mapping. |
+9. Select the checkbox for each mapping you want to include, or clear it to exclude the mapping.*Image: i-afq-table-select.png*
+10. Select **Accept**.
+   The **Confirm load** summary appears.
+11. Review the **Confirm load** summary.
+   The summary lists the table, object type, and number of accepted mappings.
+12. Select **Confirm**.
+   On completion, AgentFlow Quality displays a summary of the data load job in the conversation.*Image: i-afq-dataload.png*
+
+**Result**
+
+AgentFlow Quality runs the data load and returns a completed load summary that includes the following details:
+
+- 
+
+  The success rate
+- 
+
+  The number of records loaded, failed, and total
+- 
+
+  A load outcome chart
+- 
+
+  Job details, such as the source table, object type, load type, and job ID
+
+> **Tip:** If any records fail in the data load job, ask AgentFlow Quality to help diagnose and resolve the issue directly in the conversation
+
+**Verification steps**
+
+To verify the data load, check the results in the conversation, Console, and Hub:
+
+- 
+
+  In the conversation, review the summary of the data load job.
+- 
+
+  In **Console**, confirm the job status and any load errors by performing the following steps:
+  1. In a new browser tab, sign in to your Reltio MDM tenant.
+  2. From the **Applications** menu, select **Console**.
+  3. Select **Data Loader**.
+  4. On the left navigation panel, select **Job Status**.
+  5. Select the **COMPLETED** tab.
+  6. Identify the job using the job ID provided in the conversation.
+- 
+
+  In **Hub**, confirm the loaded records match the source table by performing the following steps:
+  1. In a new browser tab, sign in to your Reltio MDM tenant.
+  2. From the **Applications** menu, select **Hub**.
+  3. On the left navigation panel, select **Search**.
+  4. Search for the loaded records and confirm the attribute values match the source table.
+
+
+
+---
+
+# Assess data quality using AgentFlow™ Quality
+
+> **Section:** Products > Reltio AgentFlow™ > Reltio AgentFlow™ overview > Reltio AgentFlow™ Quality overview
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/reltio-agentflow-quality-overview/assess-data-quality-using-agentflow-quality?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** assess data quality with agentflow quality, connect a databricks source to agentflow quality, review suggested data quality rules in agentflow, run a data quality check on a databricks table, review agentflow quality report and rule outcomes, start a data loader project from agentflow quality, databricks, data quality, agentflow quality, data loader
+
+
+Learn how to assess the quality of a Databricks table and publish validated data to Reltio using AgentFlow™ Quality.
+
+> **Note:** This feature is available to limited users through the Reltio Early Access (EA) program. Interested in finding out more about this feature or participating in our EA program? Get details in topic Early Access (EA) features.
+
+AgentFlow™ Quality assesses a Databricks table against data quality rules and returns pass/fail results for each rule. You can then publish the validated data to Reltio using Data Loader, all in the same conversation without re-entering connection details.
+
+**Prerequisites**
+
+Before you begin, ensure that you have the required system roles and Databricks connection details:
+
+- 
+
+  The following system roles to access AgentFlow Quality:
+  - `ROLE_AGENT_FLOW_QUALITY`
+  - `ROLE_EXECUTE_AGENTS`
+  - `ROLE_EXECUTE_MCP`.
+  - `ROLE_DATALOADER`
+- 
+
+  Access to a Databricks account
+- 
+
+  Connection details for your Databricks workspace:
+  - Server hostname
+  - HTTP path
+  - Access token
+  - Catalog name
+  - Schema name
+
+
+To connect to a Databricks source
+
+1. Open **AgentFlow Quality**.
+2. Select the required tenant.
+3. Select **Start Data Quality**.
+   The **Data Quality** orchestrator appears.
+4. Select **Databricks** to connect to your source data.
+5. In the **Connect to Databricks** page, enter the following connection details.
+6. Select **Connect**.
+   AgentFlow Quality validates your credentials, saves the connection under the name you provided, and displays the Select tables screen for the catalog and schema you provided.
+
+To assess data quality using AgentFlow Quality
+
+7. Select the checkbox for each table you want to assess, then choose **Select**.
+   AgentFlow Quality lists each table's description, number of columns, and number of rows to help you choose. You can select more than one table in the same conversation.
+8. In the **Suggested rules** section, review the rules AgentFlow Quality suggests for each table.
+   (Optional) To add a custom rule, describe it in natural language, and AgentFlow Quality adds it to the suggested rules.*Image: i-afq-suggested-rules.png*
+9. Select the checkboxes for each rule you want to run, and choose **Select**.
+   The **Project Review** summary appears.
+10. Review the **Project Review** summary, then select **Approve**.
+   The summary lists the project name, source, number of datasets, and number of rules linked to the project.
+   AgentFlow Quality runs the selected rules against the table and displays the AgentFlow Quality Report and DQ rule outcomes.
+
+To publish validated data using AgentFlow Quality
+
+11. Review the following reports.
+   *Image: i-afq-assessment.png*
+12. Respond to the AgentFlow Quality prompt asking whether to map the table and load it into Reltio.
+
+**Result**AgentFlow Quality generates the quality report and displays it in the conversation. If you continue to publish the validated data, AgentFlow Quality creates a [Reltio Data Loader job](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/reltio-agentflow-quality-overview/publish-a-databricks-table-to-reltio-using-agentflow-quality?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) from the current conversation.
+
+To review the mapping and run the data loader job, see [Publish a Databricks table to Reltio using AgentFlow™ Quality](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/reltio-agentflow-quality-overview/publish-a-databricks-table-to-reltio-using-agentflow-quality?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
@@ -141218,6 +141604,203 @@ You can create, update, retrieve, and delete, tenant configuration with the work
 You need CRUD privileges on the Configuration Service API to be able to work with tenant specific configurations for Workflow:
 
 *Image: inboxapi_editrole.png*
+
+
+
+---
+
+# Generate a description for a BPMN workflow definition using an LLM
+
+> **Section:** Developer resources > Workflow APIs > Workflow APIs at a glance > Workflow API
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/workflow-apis/workflow-apis-at-a-glance/workflow-api/generate-a-description-for-a-bpmn-workflow-definition-using-an-llm?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** describe bpmn workflow with ai, explain bpmn xml with ai, workflow ai steps api, bpmn explanation api, workflow adapter ai steps endpoint, human readable bpmn description, bpmn ai assistant steps, workflow, bpmn, ai
+
+
+Learn about how generate a human-readable description of a BPMN workflow definition from BPMN XML.
+
+## Overview
+
+Use `Workflow API` to generate a human-readable description of a BPMN workflow definition from BPMN XML.
+
+## HTTP method and endpoint
+
+Use the following HTTP method and endpoint path to submit the request for generating a human-readable description of a BPMN workflow definition.
+
+```
+POST {host}/workflow-adapter/workflow/{tenant}/ai/steps
+```
+
+The following table describes the endpoint path parameters.
+
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| `tenant` | String | Yes | Unique identifier of the tenant. |
+
+Replace `{host}` with the base URL of your environment.
+
+## Request headers
+
+The following request headers must be included.
+
+| Header | Value | Required |
+| --- | --- | --- |
+| `Authorization` | Bearer `<access_token>` | Yes |
+| `Content-Type` | application/xml | Yes |
+
+## Request body
+
+This operation requires a BPMN workflow definition in XML format in the request body.
+
+## Example request
+
+Use the following example to see how a complete request is structured with headers and an XML body.
+
+```
+POST {host}/workflow-adapter/workflow/{tenant}/ai/steps
+Authorization: Bearer <access_token>
+Content-Type: application/xml
+
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions>
+    <!-- BPMN workflow definition goes here -->
+</definitions>
+```
+
+## Response body
+
+The following table describes the fields returned in the response body.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `stepNumber` | Integer | Sequence number of the step in the workflow description. |
+| `id` | String | Unique identifier of the BPMN element. |
+| `type` | String | Type of the BPMN element, such as `Start Event` or `User Task`. |
+| `name` | String | Name of the BPMN element. |
+| `description` | String | Human-readable description of the workflow step. |
+
+## Example response
+
+The following example shows a response with a human-readable description of the BPMN workflow definition.
+
+```
+[
+    {
+        "stepNumber": 1,
+        "id": "startevent1",
+        "type": "Start Event",
+        "name": "Start",
+        "description": "Process initiated."
+    },
+    {
+        "stepNumber": 2,
+        "id": "usertask1",
+        "type": "User Task",
+        "name": "DCR Review",
+        "description": "A reviewer from the \"ROLE_REVIEWER\" group is assigned to review a data change request. The task has a due date of two days. The reviewer must make a decision using a form with options: \"Approve\" (default) or \"Reject\" (required). The form also displays read-only information about \"AccessTypes\" (set to \"ACCEPT_CHANGE_REQUEST\"), a \"Validator\" class (\"com.reltio.workflow.core.task.validator.DataChangeRequestValidator\"), and flags indicating that notifications are disabled for both assignment and completion. Task listeners are triggered on creation and assignment for specific logging and entity type handling."
+    }
+]
+```
+
+**Related links**
+
+- [Generate or update a BPMN workflow definition using an LLM](https://docs.reltio.com/en/developer-resources/workflow-apis/workflow-apis-at-a-glance/workflow-api/generate-or-update-a-bpmn-workflow-definition-using-an-llm?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+
+
+---
+
+# Generate or update a BPMN workflow definition using an LLM
+
+> **Section:** Developer resources > Workflow APIs > Workflow APIs at a glance > Workflow API
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/workflow-apis/workflow-apis-at-a-glance/workflow-api/generate-or-update-a-bpmn-workflow-definition-using-an-llm?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** generate bpmn workflow with ai, update bpmn workflow with ai, workflow ai bpmn api, create bpmn from prompt, modify bpmn using prompt history, workflow adapter ai endpoint, bpmn ai assistant api, workflow, bpmn, ai
+
+
+Learn more about how to generate a new BPMN workflow definition or update an existing BPMN workflow definition from prompt history.
+
+## Overview
+
+Use the `Workflow API` to generate a BPMN workflow definition from user prompts or update an existing BPMN workflow definition based on conversation history.
+
+## HTTP method and endpoint
+
+Use the following HTTP method and endpoint path to submit the request for generating a new BPMN workflow definition or updating an existing BPMN workflow definition.
+
+```
+POST {host}/workflow-adapter/workflow/{tenant}/ai
+```
+
+The following table describes the endpoint path parameters.
+
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| `tenant` | String | Yes | Unique identifier of the tenant. |
+
+Replace `{host}` with the base URL of your environment.
+
+## Request headers
+
+The following request headers must be included.
+
+| Header | Value | Required |
+| --- | --- | --- |
+| `Authorization` | Bearer `<access_token>` | Yes |
+| `Content-Type` | application/json | Yes |
+
+## Request body
+
+The following table describes the request body parameters.
+
+| Parameter | Type | Required | Description | Accepted values / Default |
+| --- | --- | --- | --- | --- |
+| `messages` | Array of strings | Yes | List of user prompts that define the requested workflow changes. The most recent prompt appears at the end of the array. | One or more prompt strings |
+| `currentXml` | String | No | Existing BPMN XML definition to update. Escape string-breaking characters before sending the XML in the JSON payload. | BPMN XML string / Optional |
+
+## Example request
+
+Use the following example to see how a complete request is structured with headers and a JSON body.
+
+```
+POST {host}/workflow-adapter/workflow/{tenant}/ai
+Authorization: Bearer <access_token>
+Content-Type: application/json
+
+{
+  "messages": [
+    "improve the default data change review process by adding a second step that is assigned to data stewards with 'ROLE_REVIEWER_DS' role"
+  ],
+  "currentXml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>...."
+}
+```
+
+## Response body
+
+The response body contains the generated or updated BPMN workflow definition in XML format.
+
+## Example response
+
+The following example shows a response with a BPMN workflow definition in XML format.
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL">
+    <process id="dataChangeRequestReview" name="Data Change Request Review" isExecutable="true">
+        <startEvent id="startEvent1" name="Start"/>
+        <userTask id="userTask1" name="DCR Review"/>
+        <endEvent id="endEvent1" name="End"/>
+    </process>
+</definitions>
+```
+
+**Related links**
+
+- [Generate a description for a BPMN workflow definition using an LLM](https://docs.reltio.com/en/developer-resources/workflow-apis/workflow-apis-at-a-glance/workflow-api/generate-a-description-for-a-bpmn-workflow-definition-using-an-llm?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 
 

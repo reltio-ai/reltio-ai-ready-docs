@@ -1,5 +1,5 @@
 # Reltio Documentation Index
-_Generated: 2026-08-19 02:15 UTC — 3246 topics (3192 unique)_
+_Generated: 2026-08-21 02:15 UTC — 3252 topics (3198 unique)_
 
 This file is a structured navigation index of the Reltio documentation portal.
 It contains the full parent-child hierarchy, topic URLs, keywords, summaries,
@@ -2140,6 +2140,37 @@ _Topics in this section: Reltio AgentFlow™ overview, Reltio AgentFlow™ Mobil
 - **Summary:** Learn how to review and update a failed automated long-running task in Reltio AgentFlow so that you can review the failure, correct the prompt, and prepare the task for the next run.
 - **Keywords:** Reltio AgentFlow, automated long-running tasks, failed automated long-running task, update and rerun failed task, Task management, failed job, Fix Prompt, Update Prompt, Go to Conversation, job details
 - **See also:** [role-based access control (RBAC) permissions](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agentflow-capabilities-and-permissions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [created and scheduled](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/automated-long-running-tasks/schedule-an-automated-long-running-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Reltio AgentFlow™ Quality overview
+
+- **URL:** https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/reltio-agentflow-quality-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Products > Reltio AgentFlow™ > Reltio AgentFlow™ overview
+- **Summary:** Learn about Reltio AgentFlow™ Quality and how it helps you assess and prepare Databricks source data for Reltio.
+- **Keywords:** assess databricks table quality before reltio load, connect a databricks source in agentflow, generate data quality rules automatically, validate warehouse data quality with ai agents, publish validated data to reltio with data loader, review data quality check results in agentflow, prepare source data for reltio mdm, databricks, data quality, data loader
+- **See also:** [Data Steward](https://docs.reltio.com/en/roles/data-steward?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Reltio Configurator](https://docs.reltio.com/en/roles/reltio-configurator?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Assess data quality using AgentFlow™ Quality
+
+- **URL:** https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/reltio-agentflow-quality-overview/assess-data-quality-using-agentflow-quality?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Products > Reltio AgentFlow™ > Reltio AgentFlow™ overview > Reltio AgentFlow™ Quality overview
+- **Summary:** Learn how to assess the quality of a Databricks table and publish validated data to Reltio using AgentFlow™ Quality.
+- **Keywords:** assess data quality with agentflow quality, connect a databricks source to agentflow quality, review suggested data quality rules in agentflow, run a data quality check on a databricks table, review agentflow quality report and rule outcomes, start a data loader project from agentflow quality, databricks, data quality, agentflow quality, data loader
+- **See also:** [Reltio Data Loader job](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/reltio-agentflow-quality-overview/publish-a-databricks-table-to-reltio-using-agentflow-quality?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Publish a Databricks table to Reltio using AgentFlow™ Quality
+
+- **URL:** https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/reltio-agentflow-quality-overview/publish-a-databricks-table-to-reltio-using-agentflow-quality?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Products > Reltio AgentFlow™ > Reltio AgentFlow™ overview > Reltio AgentFlow™ Quality overview
+- **Summary:** Learn how to connect to a Databricks source, select a table, and publish it to Reltio using AgentFlow™ Quality.
+- **Keywords:** publish a databricks table to reltio with agentflow quality, review automapping in agentflow quality, confirm a data loader publish plan in agentflow, run a data loader job from agentflow quality, map databricks columns to reltio attributes, review data loader job results in agentflow, data loader, agentflow quality, databricks, reltio
+- **See also:** [data quality assessment](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/reltio-agentflow-quality-overview/assess-data-quality-using-agentflow-quality?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Prompt samples for AgentFlow™ Quality
+
+- **URL:** https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/reltio-agentflow-quality-overview/prompt-samples-for-agentflow-quality?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Products > Reltio AgentFlow™ > Reltio AgentFlow™ overview > Reltio AgentFlow™ Quality overview
+- **Summary:** Learn about sample prompts for assessing data quality and publishing Databricks tables using AgentFlow™ Quality.
+- **Keywords:** prompt samples for agentflow quality, sample prompts for data quality assessment, ask agentflow quality to add a custom rule, publish to reltio with agentflow quality prompts, agentflow quality conversation examples
 
 #### AgentFlow Unstructured
 
@@ -8472,6 +8503,22 @@ _Topics in this section: Reltio Model Context Protocol (MCP) Server at a glance,
 - **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Workflow APIs > Workflow APIs at a glance > Workflow API
 - **Summary:** **Request**
 - **See also:** [Authentication API](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/authentication-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Generate or update a BPMN workflow definition using an LLM
+
+- **URL:** https://docs.reltio.com/en/developer-resources/workflow-apis/workflow-apis-at-a-glance/workflow-api/generate-or-update-a-bpmn-workflow-definition-using-an-llm?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Workflow APIs > Workflow APIs at a glance > Workflow API
+- **Summary:** Learn more about how to generate a new BPMN workflow definition or update an existing BPMN workflow definition from prompt history.
+- **Keywords:** generate bpmn workflow with ai, update bpmn workflow with ai, workflow ai bpmn api, create bpmn from prompt, modify bpmn using prompt history, workflow adapter ai endpoint, bpmn ai assistant api, workflow, bpmn, ai
+- **See also:** [Generate a description for a BPMN workflow definition using an LLM](https://docs.reltio.com/en/developer-resources/workflow-apis/workflow-apis-at-a-glance/workflow-api/generate-a-description-for-a-bpmn-workflow-definition-using-an-llm?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Generate a description for a BPMN workflow definition using an LLM
+
+- **URL:** https://docs.reltio.com/en/developer-resources/workflow-apis/workflow-apis-at-a-glance/workflow-api/generate-a-description-for-a-bpmn-workflow-definition-using-an-llm?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Workflow APIs > Workflow APIs at a glance > Workflow API
+- **Summary:** Learn about how generate a human-readable description of a BPMN workflow definition from BPMN XML.
+- **Keywords:** describe bpmn workflow with ai, explain bpmn xml with ai, workflow ai steps api, bpmn explanation api, workflow adapter ai steps endpoint, human readable bpmn description, bpmn ai assistant steps, workflow, bpmn, ai
+- **See also:** [Generate or update a BPMN workflow definition using an LLM](https://docs.reltio.com/en/developer-resources/workflow-apis/workflow-apis-at-a-glance/workflow-api/generate-or-update-a-bpmn-workflow-definition-using-an-llm?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Get Dynamically Deployed JAR
 
