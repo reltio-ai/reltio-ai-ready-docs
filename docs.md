@@ -1,8 +1,8 @@
 # Reltio Documentation
 
-_Generated: 2026-08-21 02:15 UTC_
+_Generated: 2026-08-26 02:15 UTC_
 
-_Topics: 3378_
+_Topics: 3381_
 
 ---
 
@@ -233,6 +233,46 @@ Follow the below practices to avoid this error in the future.
 - Modify batching and request patterns to minimize conflicts, ensuring that the same object is not included in multiple concurrent batches.
 - Sequence updates instead of sending them concurrently so that changes to the same object are processed in order.
 - Investigate and redesign the data ingestion process if retries do not help, focusing on reducing parallelism for the same object.
+
+## Error 2007: Too Many Concurrent Requests for Crosswalks
+
+**Error:**`TOO_MANY_CONCURRENT_REQUESTS_WITH_NEW_CROSSWALK (2007)`
+
+**What this error means**
+
+The system could not complete the request because too many simultaneous operations targeted the same crosswalk. The response returns the following error text: `Too many concurrent requests are trying to update the data with same crosswalks. Please try again later.`
+
+**Why the error occurs**
+
+Multiple concurrent operations attempt to update the same crosswalk at the same time. This most commonly occurs when a crosswalk is shared across many source records, such as a common address or location record referenced by multiple entities, which increases contention on that shared crosswalk under high concurrency.
+
+**How to fix the issue**
+
+Use the following steps to resolve the error when it occurs.
+
+- 
+
+  Retry the request using a controlled retry mechanism with exponential backoff, since retry handling for this error is the responsibility of the calling process.
+- 
+
+  Reduce the concurrency of loaders or jobs that write to the same crosswalk, and avoid running overlapping load jobs against the same source data.
+
+**Preventive measures**
+
+Follow these practices to avoid this error in the future.
+
+- 
+
+  Avoid parallel loads or updates that target the same crosswalk.
+- 
+
+  Keep the number of crosswalks per entity within the platform limit of 200, since entities with a large number of crosswalks increase contention.
+- 
+
+  Deduplicate or consolidate shared reference data, such as duplicate source addresses, that many records point to through the same crosswalk.
+- 
+
+  Ensure loaders honor configured error thresholds so they fail or stop retrying instead of looping indefinitely on this error.
 
 
 
@@ -2561,70 +2601,72 @@ Drill down to this section from the Reltio tile on the Documentation Portal home
 
 ---
 
-# Implementation assistance at a glance
+# Implementation assistance overview
 
 > **Section:** Reltio > What’s in the box? > What's in the box at a glance
 
 
-**Source:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** reltio professional services implementation assistance, 90 day mvp reltio way delivery methodology, expert services systems integrator, advisory services office hours, reltio 360 assessment match rule tuning
 
 
-Get a high-level view of Implementation assistance.
+Learn about implementation assistance from Reltio Professional Services, including how engagements are scoped to your outcomes and budget.
 
-Take it from the top with Implementation assistance. Get the overview here, then see the sub topics in this section to drill down to the details.
+Implementation assistance is a Reltio Professional Services engagement that deploys [Reltio Context Intelligence Platform](https://docs.reltio.com/en/products/reltio-context-intelligence-platform/reltio-context-intelligence-platform-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and improves an existing deployment. Reltio Professional Services scopes each engagement to your outcomes and budget. You determine how Reltio Professional Services is included in the implementation, including the role Reltio takes and how closely you want Reltio involved.
 
-## What is Implementation assistance?
+Reltio Professional Services helps reduce the time required to achieve a production-ready implementation while ensuring alignment with Reltio implementation guidance. Depending on the offering you choose, it also supports ongoing enhancements and improvements after the solution goes into production.
 
-Reltio Professional Services (PS) has a host of offerings depending on your need, targeted to your outcomes and budget. Offerings include: 
+The following roles use implementation assistance when they plan, design, or operate a Reltio Context Intelligence Platform implementation:
 
 - 
 
-  90 Day MVP: A MVP utilizing the Reltio Way Delivery Methodology following a phased approach with a targeted scope and milestone. Reltio PS will enable customers on this methodology and how to deliver value early and often.
+
 - 
 
-  Expert Services: Recommended when a Customer is working with a Systems Integrator (SI) to deliver a Phase 1 or MVP. Reltio team will participate alongside the Customer and SI Partner to provide technical knowledge and best practice guidance during project execution.
+
 - 
 
-  Advisory Services: Available with limited office hours to provide guidance and answer questions from Customers and their SI Partner during an implementation. Recommended when a Customer is working with a certified SI Partner or is implementing post MVP and has strong Reltio implementation experience.
+
+
+## Implementation and consultative offerings
+
+Reltio Professional Services provides implementation and consulting offerings for the Reltio Context Intelligence Platform. The following table outlines each offering and the work Reltio Professional Services delivers in that engagement, so you know which offering to choose.
+
+| Offering | What Reltio Professional Services provides |
+| --- | --- |
+| Custom implementation statements of work (SOWs) | Reltio Professional Services scopes the engagement based on your value outcomes and business user stories. |
+| 90 Day minimum viable product (MVP) | Reltio Professional Services delivers an initial production-ready implementation using the Reltio Way Delivery Methodology. The work follows a phased approach with clear scope and milestones. Your team is also enabled on the methodology so you can continue delivering value quickly and consistently. |
+| Expert Services | The Reltio team works with you and your systems integrator throughout the project. When a systems integrator delivers Phase 1 or an MVP, Reltio Professional Services provides technical expertise and best-practice guidance. |
+| Advisory Services | Reltio Professional Services offers limited office hours for implementation guidance and questions. This is best suited for projects led by a certified systems integrator or for post-MVP implementations where your team already has strong Reltio experience. |
+| Reltio 360 Assessment | Reltio Professional Services reviews your current implementation and maturity level. The assessment helps define a roadmap for using Reltio platform capabilities to achieve greater business value. |
+| Match Rule Tuning and Assistance | Reltio Professional Services reviews your [match rules](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and recommends ways to improve matching accuracy and performance. The offering uses match tuning, analysis, and machine learning capabilities to make data unification more effective. |
+
+## When to use implementation assistance
+
+Use implementation assistance when you need Reltio experts involved in your implementation, beyond product documentation or [technical assistance](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). Typical use cases include the following scenarios:
+
 - 
 
-  Data Governance Accelerator: This is an 8-week offering, with Reltio educating and guiding customers on the activities and processes needed to achieve the value realization of their use case.This offering provides a framework for organizations to follow with best practices and expertise in building a governance structure on Reltio.
+  You're implementing the Reltio Context Intelligence Platform for the first time or improving an existing implementation.
 - 
 
-  Data Automation: Accelerate your data by integrating it real time. This offering is based on a 10-week delivery timeline, leveraging Reltio Integration Hub (RIH) Automation of up to three sources and 2 additional sources for outbound integration.
+  A systems integrator leads the project, but you need additional Reltio expertise.
 - 
 
-  Reltio 360 Assessment: Assess both your current implementation as well as your maturity leveraging this offering. Build your roadmap to take advantage of new features to achieve your business value.
+  You need targeted guidance rather than a full delivery team.
 - 
 
-  Match Rule Tuning & Assistance: Increase the efficiency and effectiveness of data unification with Match Tuning and Analysis and ML matching capabilities. Evaluate your current match rules, and get recommendations and prescriptive steps on how to improve matching and performance
+  You need to review your current implementation and define a roadmap for improvement.
+- 
 
-## Who is Implementation assistance for?
+  You need to improve record matching and match performance.
 
-This content is curated for these Reltio user roles defined in topic [About roles](https://docs.reltio.com/en/roles/about-roles?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs):
+## How to get implementation assistance
 
-Business UserSolution ArchitectSystem Administrator
+Contact your Reltio representative or partner for help getting started. They will arrange the Professional Services engagement. Your Reltio Customer Success Manager (CSM) will then contact you and remain your main Reltio point of contact.
 
-## Why would I use Implementation assistance?
-
-Leverage Reltio Professional Services (PS) to make your use cases successful!
-
-## When would I use Implementation assistance?
-
-Engage Reltio PS to get your new Reltio Context Intelligence Platform up and running or to fine-tune an existing implementation. Get
-
-## Where do I find Implementation assistance?
-
-Contact your Reltio representative or partner for initial implementation assistance.
-
-Your Reltio Customer Success Manager (CSM) will get in touch early in your engagement with Reltio and begin the process of forging what we believe will be a long and valuable relationship with you.
-
-Our Customer Success program covers these four key areas:
-
-- **Partnership**: Fosters a long-term strategic relationship with you as your trusted advisor for modern data management.
-- **Thought Leadership**: Provides insight on how to leveraging Reltio products to get the best match with your requirements.
-- **Measurement**: Aligns Reltio product and service teams with your success measures for meeting the business objectives.
-- **Communication**: Shares comprehensive information from Reltio while maintaining a single point of contact for you.
+For Customer Engineering and support options, see [Technical assistance](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
@@ -2632,10 +2674,10 @@ Our Customer Success program covers these four key areas:
 
 # API Latency Benchmark
 
-> **Section:** Reltio > What’s in the box? > What's in the box at a glance > Implementation assistance at a glance > Implementation assistance operation > Identify performance factors
+> **Section:** Reltio > What’s in the box? > What's in the box at a glance > Implementation assistance overview > Implementation assistance operation > Identify performance factors
 
 
-**Source:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-at-a-glance/implementation-assistance-operation/identify-performance-factors/api-latency-benchmark?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-overview/implementation-assistance-operation/identify-performance-factors/api-latency-benchmark?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** API Latency, API Latency Benchmark, Latency Benchmark, Benchmark, api latency benchmark, api latency, benchmark
 
@@ -2704,10 +2746,10 @@ We calculated the latency based on the following baseline parameters. Changes in
 
 # Implementation assistance operation
 
-> **Section:** Reltio > What’s in the box? > What's in the box at a glance > Implementation assistance at a glance
+> **Section:** Reltio > What’s in the box? > What's in the box at a glance > Implementation assistance overview
 
 
-**Source:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-at-a-glance/implementation-assistance-operation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-overview/implementation-assistance-operation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 
 Learn how to use Implementation assistance.
@@ -2724,10 +2766,10 @@ The topics in this section provide information on some of the factors they'll as
 
 # Identify performance factors
 
-> **Section:** Reltio > What’s in the box? > What's in the box at a glance > Implementation assistance at a glance > Implementation assistance operation
+> **Section:** Reltio > What’s in the box? > What's in the box at a glance > Implementation assistance overview > Implementation assistance operation
 
 
-**Source:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-at-a-glance/implementation-assistance-operation/identify-performance-factors?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-overview/implementation-assistance-operation/identify-performance-factors?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 
 Learn about the factors that can affect your Reltio Context Intelligence Platform performance
@@ -2736,10 +2778,10 @@ Your Reltio or partner implementation team will lead you through the design and 
 
 - 
 
-  [Quota and limits](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-at-a-glance/implementation-assistance-operation/identify-performance-factors/quota-and-limits?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+  [Quota and limits](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-overview/implementation-assistance-operation/identify-performance-factors/quota-and-limits?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 - 
 
-  [API Latency Benchmark](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-at-a-glance/implementation-assistance-operation/identify-performance-factors/api-latency-benchmark?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+  [API Latency Benchmark](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-overview/implementation-assistance-operation/identify-performance-factors/api-latency-benchmark?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 
 
@@ -2747,10 +2789,10 @@ Your Reltio or partner implementation team will lead you through the design and 
 
 # API request limits
 
-> **Section:** Reltio > What’s in the box? > What's in the box at a glance > Implementation assistance at a glance > Implementation assistance operation > Identify performance factors > Quota and limits
+> **Section:** Reltio > What’s in the box? > What's in the box at a glance > Implementation assistance overview > Implementation assistance operation > Identify performance factors > Quota and limits
 
 
-**Source:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-at-a-glance/implementation-assistance-operation/identify-performance-factors/quota-and-limits/api-request-limits?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-overview/implementation-assistance-operation/identify-performance-factors/quota-and-limits/api-request-limits?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** HTTP limits, API POST size, request payload, 413 error
 
@@ -2794,10 +2836,10 @@ To avoid request failures and ensure optimal API performance:
 
 # Cleanser Quota Limits
 
-> **Section:** Reltio > What’s in the box? > What's in the box at a glance > Implementation assistance at a glance > Implementation assistance operation > Identify performance factors > Quota and limits
+> **Section:** Reltio > What’s in the box? > What's in the box at a glance > Implementation assistance overview > Implementation assistance operation > Identify performance factors > Quota and limits
 
 
-**Source:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-at-a-glance/implementation-assistance-operation/identify-performance-factors/quota-and-limits/cleanser-quota-limits?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-overview/implementation-assistance-operation/identify-performance-factors/quota-and-limits/cleanser-quota-limits?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** Cleansers quota Limits, cleansers quota limits, cleansers quota, quota for cleansers on cloud, quota for cleansers
 
@@ -2816,10 +2858,10 @@ Quota limits can be defined for Cleansers in Reltio Context Intelligence Platfor
 
 # Validation Constraints for a Tenant
 
-> **Section:** Reltio > What’s in the box? > What's in the box at a glance > Implementation assistance at a glance > Implementation assistance operation > Identify performance factors > Quota and limits
+> **Section:** Reltio > What’s in the box? > What's in the box at a glance > Implementation assistance overview > Implementation assistance operation > Identify performance factors > Quota and limits
 
 
-**Source:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-at-a-glance/implementation-assistance-operation/identify-performance-factors/quota-and-limits/validation-constraints-for-a-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-overview/implementation-assistance-operation/identify-performance-factors/quota-and-limits/validation-constraints-for-a-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** Validation Constraints, validation constraints, tenant validation, tenant constraints, tenant validation constraints, constraints
 
@@ -2853,10 +2895,10 @@ You can add the `dataModelerConstraints` tenant property to the tenant physical 
 
 # Data Tenant Quota Limits
 
-> **Section:** Reltio > What’s in the box? > What's in the box at a glance > Implementation assistance at a glance > Implementation assistance operation > Identify performance factors > Quota and limits
+> **Section:** Reltio > What’s in the box? > What's in the box at a glance > Implementation assistance overview > Implementation assistance operation > Identify performance factors > Quota and limits
 
 
-**Source:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-at-a-glance/implementation-assistance-operation/identify-performance-factors/quota-and-limits/data-tenant-quota-limits?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-overview/implementation-assistance-operation/identify-performance-factors/quota-and-limits/data-tenant-quota-limits?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** Data Tenants quota Limits, data tenants quota limits, quota limits for data tenants in cloud
 
@@ -2877,10 +2919,10 @@ Quota limits can be defined for Data Tenants in Reltio Context Intelligence Plat
 
 # Factors for GET Entities API Latency
 
-> **Section:** Reltio > What’s in the box? > What's in the box at a glance > Implementation assistance at a glance > Implementation assistance operation > Identify performance factors > API Latency Benchmark > Factors Affecting API Latency
+> **Section:** Reltio > What’s in the box? > What's in the box at a glance > Implementation assistance overview > Implementation assistance operation > Identify performance factors > API Latency Benchmark > Factors Affecting API Latency
 
 
-**Source:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-at-a-glance/implementation-assistance-operation/identify-performance-factors/api-latency-benchmark/factors-affecting-api-latency/factors-for-get-entities-api-latency?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-overview/implementation-assistance-operation/identify-performance-factors/api-latency-benchmark/factors-affecting-api-latency/factors-for-get-entities-api-latency?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** Factors for GET Entities API Latency, Factors for Get entities latency, Factors for GET Entities API latency, get entities api latency factors, GET /entities
 
@@ -2915,10 +2957,10 @@ Two other factors to consider for **GET /entities** API latency include:
 
 # Factors for GET Entities Hops API Latency
 
-> **Section:** Reltio > What’s in the box? > What's in the box at a glance > Implementation assistance at a glance > Implementation assistance operation > Identify performance factors > API Latency Benchmark > Factors Affecting API Latency
+> **Section:** Reltio > What’s in the box? > What's in the box at a glance > Implementation assistance overview > Implementation assistance operation > Identify performance factors > API Latency Benchmark > Factors Affecting API Latency
 
 
-**Source:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-at-a-glance/implementation-assistance-operation/identify-performance-factors/api-latency-benchmark/factors-affecting-api-latency/factors-for-get-entities-hops-api-latency?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-overview/implementation-assistance-operation/identify-performance-factors/api-latency-benchmark/factors-affecting-api-latency/factors-for-get-entities-hops-api-latency?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** Factors for GET Entities Hops API Latency, Factors for Get entity hops, get entity id api latency factors, GET /entities/{id}/_hops
 
@@ -2950,10 +2992,10 @@ Baseline latency: 85 milliseconds
 
 # Factors for GET Entity ID API Latency
 
-> **Section:** Reltio > What’s in the box? > What's in the box at a glance > Implementation assistance at a glance > Implementation assistance operation > Identify performance factors > API Latency Benchmark > Factors Affecting API Latency
+> **Section:** Reltio > What’s in the box? > What's in the box at a glance > Implementation assistance overview > Implementation assistance operation > Identify performance factors > API Latency Benchmark > Factors Affecting API Latency
 
 
-**Source:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-at-a-glance/implementation-assistance-operation/identify-performance-factors/api-latency-benchmark/factors-affecting-api-latency/factors-for-get-entity-id-api-latency?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-overview/implementation-assistance-operation/identify-performance-factors/api-latency-benchmark/factors-affecting-api-latency/factors-for-get-entity-id-api-latency?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** Factors for GET Entity ID API Latency, Factors for Get entity ID latency, Factors for GET Entity ID API latency, get entity id api latency factors, GET /entity/{id}
 
@@ -2986,10 +3028,10 @@ Another factor to consider is that defining a specific time frame to extract the
 
 # Factors for GET Entities Tree API Latency
 
-> **Section:** Reltio > What’s in the box? > What's in the box at a glance > Implementation assistance at a glance > Implementation assistance operation > Identify performance factors > API Latency Benchmark > Factors Affecting API Latency
+> **Section:** Reltio > What’s in the box? > What's in the box at a glance > Implementation assistance overview > Implementation assistance operation > Identify performance factors > API Latency Benchmark > Factors Affecting API Latency
 
 
-**Source:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-at-a-glance/implementation-assistance-operation/identify-performance-factors/api-latency-benchmark/factors-affecting-api-latency/factors-for-get-entities-tree-api-latency?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-overview/implementation-assistance-operation/identify-performance-factors/api-latency-benchmark/factors-affecting-api-latency/factors-for-get-entities-tree-api-latency?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** Factors for GET Entities Tree API Latency, Factors for Get entity Tree, get entities tree api latency, GET /entities/{id}/_tree
 
@@ -3019,10 +3061,10 @@ Baseline latency: 260 milliseconds
 
 # Factors for GET Entity Matches API Latency
 
-> **Section:** Reltio > What’s in the box? > What's in the box at a glance > Implementation assistance at a glance > Implementation assistance operation > Identify performance factors > API Latency Benchmark > Factors Affecting API Latency
+> **Section:** Reltio > What’s in the box? > What's in the box at a glance > Implementation assistance overview > Implementation assistance operation > Identify performance factors > API Latency Benchmark > Factors Affecting API Latency
 
 
-**Source:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-at-a-glance/implementation-assistance-operation/identify-performance-factors/api-latency-benchmark/factors-affecting-api-latency/factors-for-get-entity-matches-api-latency?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-overview/implementation-assistance-operation/identify-performance-factors/api-latency-benchmark/factors-affecting-api-latency/factors-for-get-entity-matches-api-latency?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** Factors for GET Entity Matches API Latency, Factors for Get entity matches latency, Factors for GET Entity Matches API latency, get entity matches api latency factors, GET /entity/_matches
 
@@ -3052,10 +3094,10 @@ Baseline latency: 97 milliseconds
 
 # Factors Affecting API Latency
 
-> **Section:** Reltio > What’s in the box? > What's in the box at a glance > Implementation assistance at a glance > Implementation assistance operation > Identify performance factors > API Latency Benchmark
+> **Section:** Reltio > What’s in the box? > What's in the box at a glance > Implementation assistance overview > Implementation assistance operation > Identify performance factors > API Latency Benchmark
 
 
-**Source:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-at-a-glance/implementation-assistance-operation/identify-performance-factors/api-latency-benchmark/factors-affecting-api-latency?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-overview/implementation-assistance-operation/identify-performance-factors/api-latency-benchmark/factors-affecting-api-latency?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** Factors that affect API latency, Factors Affecting API Latency, api latency factors, latency factors
 
@@ -3066,13 +3108,13 @@ To further predict the performance of your implementation, you can reference the
 
 For more information, see the following topics: 
 
-- [Factors for POST Entities API Latency](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-at-a-glance/implementation-assistance-operation/identify-performance-factors/api-latency-benchmark/factors-affecting-api-latency/factors-for-post-entities-api-latency?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- [Factors for GET Entities API Latency](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-at-a-glance/implementation-assistance-operation/identify-performance-factors/api-latency-benchmark/factors-affecting-api-latency/factors-for-get-entities-api-latency?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- [Factors for GET Entity ID API Latency](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-at-a-glance/implementation-assistance-operation/identify-performance-factors/api-latency-benchmark/factors-affecting-api-latency/factors-for-get-entity-id-api-latency?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- [Factors for GET Entity Matches API Latency](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-at-a-glance/implementation-assistance-operation/identify-performance-factors/api-latency-benchmark/factors-affecting-api-latency/factors-for-get-entity-matches-api-latency?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- [Factors for GET Entities Tree API Latency](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-at-a-glance/implementation-assistance-operation/identify-performance-factors/api-latency-benchmark/factors-affecting-api-latency/factors-for-get-entities-tree-api-latency?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- [Factors for GET Entities Hops API Latency](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-at-a-glance/implementation-assistance-operation/identify-performance-factors/api-latency-benchmark/factors-affecting-api-latency/factors-for-get-entities-hops-api-latency?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- [Factors for POST Entities Connections API Latency](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-at-a-glance/implementation-assistance-operation/identify-performance-factors/api-latency-benchmark/factors-affecting-api-latency/factors-for-post-entities-connections-api-latency?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Factors for POST Entities API Latency](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-overview/implementation-assistance-operation/identify-performance-factors/api-latency-benchmark/factors-affecting-api-latency/factors-for-post-entities-api-latency?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Factors for GET Entities API Latency](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-overview/implementation-assistance-operation/identify-performance-factors/api-latency-benchmark/factors-affecting-api-latency/factors-for-get-entities-api-latency?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Factors for GET Entity ID API Latency](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-overview/implementation-assistance-operation/identify-performance-factors/api-latency-benchmark/factors-affecting-api-latency/factors-for-get-entity-id-api-latency?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Factors for GET Entity Matches API Latency](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-overview/implementation-assistance-operation/identify-performance-factors/api-latency-benchmark/factors-affecting-api-latency/factors-for-get-entity-matches-api-latency?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Factors for GET Entities Tree API Latency](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-overview/implementation-assistance-operation/identify-performance-factors/api-latency-benchmark/factors-affecting-api-latency/factors-for-get-entities-tree-api-latency?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Factors for GET Entities Hops API Latency](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-overview/implementation-assistance-operation/identify-performance-factors/api-latency-benchmark/factors-affecting-api-latency/factors-for-get-entities-hops-api-latency?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Factors for POST Entities Connections API Latency](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-overview/implementation-assistance-operation/identify-performance-factors/api-latency-benchmark/factors-affecting-api-latency/factors-for-post-entities-connections-api-latency?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 
 
@@ -3080,10 +3122,10 @@ For more information, see the following topics:
 
 # RDM Quota Limits for MDM
 
-> **Section:** Reltio > What’s in the box? > What's in the box at a glance > Implementation assistance at a glance > Implementation assistance operation > Identify performance factors > Quota and limits
+> **Section:** Reltio > What’s in the box? > What's in the box at a glance > Implementation assistance overview > Implementation assistance operation > Identify performance factors > Quota and limits
 
 
-**Source:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-at-a-glance/implementation-assistance-operation/identify-performance-factors/quota-and-limits/rdm-quota-limits-for-mdm?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-overview/implementation-assistance-operation/identify-performance-factors/quota-and-limits/rdm-quota-limits-for-mdm?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** RDM Quota Limits, rdm quota limits for mdm, quota limits for rdm for mdm
 
@@ -3105,10 +3147,10 @@ Quota limits can be defined for Reference Data Management (RDM).
 
 # Object size limits
 
-> **Section:** Reltio > What’s in the box? > What's in the box at a glance > Implementation assistance at a glance > Implementation assistance operation > Identify performance factors > Quota and limits
+> **Section:** Reltio > What’s in the box? > What's in the box at a glance > Implementation assistance overview > Implementation assistance operation > Identify performance factors > Quota and limits
 
 
-**Source:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-at-a-glance/implementation-assistance-operation/identify-performance-factors/quota-and-limits/object-size-limits?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-overview/implementation-assistance-operation/identify-performance-factors/quota-and-limits/object-size-limits?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** Object Size Limits, Object Limits, Object Quota, Size Limits, Size Quota, object size limits, object limits, object size quota, object quota, size limits, size quota
 
@@ -3457,10 +3499,10 @@ POST {{api_uri}}{{tenant}}/entities
 
 # Factors for POST Entities Connections API Latency
 
-> **Section:** Reltio > What’s in the box? > What's in the box at a glance > Implementation assistance at a glance > Implementation assistance operation > Identify performance factors > API Latency Benchmark > Factors Affecting API Latency
+> **Section:** Reltio > What’s in the box? > What's in the box at a glance > Implementation assistance overview > Implementation assistance operation > Identify performance factors > API Latency Benchmark > Factors Affecting API Latency
 
 
-**Source:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-at-a-glance/implementation-assistance-operation/identify-performance-factors/api-latency-benchmark/factors-affecting-api-latency/factors-for-post-entities-connections-api-latency?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-overview/implementation-assistance-operation/identify-performance-factors/api-latency-benchmark/factors-affecting-api-latency/factors-for-post-entities-connections-api-latency?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** Factors for POST Entities Connections API Latency, Factors for Post entities connections latency, post entities api latency factors, POST /entities{id}/_connections
 
@@ -3492,10 +3534,10 @@ Baseline latency: 227 milliseconds
 
 # Factors for POST Entities API Latency
 
-> **Section:** Reltio > What’s in the box? > What's in the box at a glance > Implementation assistance at a glance > Implementation assistance operation > Identify performance factors > API Latency Benchmark > Factors Affecting API Latency
+> **Section:** Reltio > What’s in the box? > What's in the box at a glance > Implementation assistance overview > Implementation assistance operation > Identify performance factors > API Latency Benchmark > Factors Affecting API Latency
 
 
-**Source:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-at-a-glance/implementation-assistance-operation/identify-performance-factors/api-latency-benchmark/factors-affecting-api-latency/factors-for-post-entities-api-latency?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-overview/implementation-assistance-operation/identify-performance-factors/api-latency-benchmark/factors-affecting-api-latency/factors-for-post-entities-api-latency?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** Factors for POST Entities API Latency, Factors for Post entities latency, Factors for POST Entities API latency, post entities api latency factors, POST /entities
 
@@ -3533,10 +3575,10 @@ Two other factors to consider for POST API latency include:
 
 # Proactive Monitoring
 
-> **Section:** Reltio > What’s in the box? > What's in the box at a glance > Implementation assistance at a glance > Implementation assistance operation > Identify performance factors > Quota and limits
+> **Section:** Reltio > What’s in the box? > What's in the box at a glance > Implementation assistance overview > Implementation assistance operation > Identify performance factors > Quota and limits
 
 
-**Source:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-at-a-glance/implementation-assistance-operation/identify-performance-factors/quota-and-limits/proactive-monitoring?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-overview/implementation-assistance-operation/identify-performance-factors/quota-and-limits/proactive-monitoring?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** Proactive Monitoring, proactive monitoring, monitoring quotas, monitoring limits, monitoring quotas and limits, alert mechanism, email alert, exponential backoff, backoff
 
@@ -3575,10 +3617,10 @@ After you receive the email from Reltio, you can run the heavy operations API to
 
 # Storage Quota Limits
 
-> **Section:** Reltio > What’s in the box? > What's in the box at a glance > Implementation assistance at a glance > Implementation assistance operation > Identify performance factors > Quota and limits
+> **Section:** Reltio > What’s in the box? > What's in the box at a glance > Implementation assistance overview > Implementation assistance operation > Identify performance factors > Quota and limits
 
 
-**Source:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-at-a-glance/implementation-assistance-operation/identify-performance-factors/quota-and-limits/storage-quota-limits?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-overview/implementation-assistance-operation/identify-performance-factors/quota-and-limits/storage-quota-limits?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** Storage Quota Limits, Tenant Cloning, Snapshot & Restore, storage quota limits, quota limits for connected cloud storage, storage quota, tenant storage quota limits, tenant storage quota, tenant storage, tenant storage services, storage services, tenant services, cloning, snapshot and restore
 
@@ -3609,10 +3651,10 @@ For more information, see [Tenant cloning, backups, and snapshots](https://docs.
 
 # Tenant Quota Limits
 
-> **Section:** Reltio > What’s in the box? > What's in the box at a glance > Implementation assistance at a glance > Implementation assistance operation > Identify performance factors > Quota and limits
+> **Section:** Reltio > What’s in the box? > What's in the box at a glance > Implementation assistance overview > Implementation assistance operation > Identify performance factors > Quota and limits
 
 
-**Source:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-at-a-glance/implementation-assistance-operation/identify-performance-factors/quota-and-limits/tenant-quota-limits?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-overview/implementation-assistance-operation/identify-performance-factors/quota-and-limits/tenant-quota-limits?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** Quota Limits for Tenants, tenant quota limits, quota limits for connected cloud tenants
 
@@ -3634,10 +3676,10 @@ Quota limits can be defined for Tenants on Reltio Context Intelligence Platform.
 
 # Quota and limits
 
-> **Section:** Reltio > What’s in the box? > What's in the box at a glance > Implementation assistance at a glance > Implementation assistance operation > Identify performance factors
+> **Section:** Reltio > What’s in the box? > What's in the box at a glance > Implementation assistance overview > Implementation assistance operation > Identify performance factors
 
 
-**Source:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-at-a-glance/implementation-assistance-operation/identify-performance-factors/quota-and-limits?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-overview/implementation-assistance-operation/identify-performance-factors/quota-and-limits?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** Quota Limits, Reltio Quota Limits, Reltio Storage Unit, RSU, Activity Log and History Data Retention Periods, Retention Period Details per Industry, quota limits, quota limits for cloud, reltio storage unit, storage unit
 
@@ -8775,9 +8817,6 @@ We build on each GA release with a steady stream of bi-weekly updates that deliv
 
 | Release Name | Stage | Tenant Type | Release Date |
 | --- | --- | --- | --- |
-| 2026.1.9.0 | 1 | Development (DEV) | August 21, 2026 |
-| 2026.1.9.0 | 2 | Test (TEST) | August 21, 2026 |
-| 2026.1.9.0 | 3 | Production (PRD) | August 28, 2026 |
 | 2026.1.10.0 | 1 | Development (DEV) | September 04, 2026 |
 | 2026.1.10.0 | 2 | Test (TEST) | September 04, 2026 |
 | 2026.1.10.0 | 3 | Production (PRD) | September 11, 2026 |
@@ -15334,28 +15373,87 @@ Learn about the new features and enhancements introduced in this 2026.1.8.0 rele
 | 2 | Test (TEST) | August 7, 2026 |
 | 3 | Production (PRD) | August 14, 2026 |
 
-## Reltio AgentFlow™ Quality is now available in Early Access: Assess data quality before loading
-
-> **Note:** This feature is available to limited users through the Reltio Early Access (EA) program. Interested in finding out more about this feature or participating in our EA program? Get details in topic Early Access (EA) features.
-
-Reltio AgentFlow™ Quality enables you to connect to a source system and assess the quality of your data before loading it into Reltio. Databricks is the first supported source in Early Access, with support for additional source systems planned.
-
-You can connect to a Databricks source, evaluate a selected table, and investigate data quality issues. After the data quality results are available, you can continue to **Data Loader** to publish validated data to Reltio, all in a single conversation.
-
-AgentFlow Quality has the following capabilities:
-
-- **Get rule suggestions based on your data**: Analyze a table's structure and sample data to receive recommended rules, including uniqueness and format checks.
-- **Identify data quality issues before a data load**: Evaluate a Databricks table against data quality rules and identify the rows and columns that violate each rule.
-- **Investigate issues directly in the conversation**: Ask why specific rows or columns failed a quality check and receive suggestions for resolving issues.
-- **Work in one interface**: Move directly from data quality assessment to a Data Loader job without switching screens or re-entering connection details.
-
-For more information, see [Reltio AgentFlow™ Quality overview](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/reltio-agentflow-quality-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
-
 ## Unique names for Materialized hierarchies and versions
 
 Hierarchy names must now be unique within each tenant, and version names must be unique within each hierarchy. Reltio validates uniqueness when you create, clone, or edit a hierarchy or version. When you split a hierarchy, the resulting hierarchies and versions receive numbered suffixes, such as VersionName_1 and VersionName_2, to ensure the generated names are unique..
 
 For more information, see [Add a hierarchy in the Profile view](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/add-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Clone a hierarchy in the Profile view](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/clone-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), and [Import a hierarchy in the Profile view](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/import-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+
+
+---
+
+# 2026.1.9.0 RN | 28-Aug-2026
+
+Learn about the new features and enhancements introduced in this 2026.1.8.0 release.
+
+**Deployment dates**
+
+| Stage | Tenant type | When |
+| --- | --- | --- |
+| 1 | Development (DEV) | August 21, 2026 |
+| 2 | Test (TEST) | August 21, 2026 |
+| 3 | Production (PRD) | August 28, 2026 |
+
+## Custom headers support for ReltioApi in the Workflow SDK
+
+The Workflow SDK `ReltioApi` service is used to make REST requests from custom workflows. Previously, the service didn't support custom HTTP headers. If an API required an additional header, such as the `EnvironmentURL` header required by the Workflow API, the request had to be implemented outside of the `ReltioApi` service. For those requests, the built-in retry, logging, error-handling, and authentication capabilities of the SDK were not available.
+
+The `ReltioApi` service now supports passing custom HTTP headers through an additional `invokeApi` method. This allows requests that require headers, such as `EnvironmentURL,` to remain within the SDK-managed request lifecycle. The change is backward compatible. Existing implementations that use the current `invokeApi` method continue to work without modification.
+
+For more information, see [Overview of Workflow Customizations](https://docs.reltio.com/en/objectives/manage-workflow-tasks/workflow-management-at-a-glance/workflow-management-set-up/overview-of-workflow-customizations?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Start a Process Instance](https://docs.reltio.com/en/developer-resources/workflow-apis/workflow-apis-at-a-glance/workflow-api/start-a-process-instance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+## Detailed insights into applied survivorship decisions and source order
+
+Survivorship strategies use configured source order and fallback rules to determine the final OV. Validating an unexpected result can require finding the applicable L3 mapping or survivorship group and comparing its source order with the returned OV value. Tenant-wide source priority may not represent the order used by the applied rule.
+
+The **Sources** perspective on the entity **Profile** page now displays the source order when a [source systems](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-navigation/design-survivorship-rules/survivorship-rules?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) strategy determines the final OV. You can validate source selection and investigate unexpected OV results using the order applied during survivorship.
+
+Supported APIs, such as [Get entity](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/entities-api/get-entity?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Get relationship](https://docs.reltio.com/en/developer-resources/relation-management-apis/relation-management-apis-at-a-glance/relations-api/get-relationship?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), provide more detailed information through the following response fields:
+
+- 
+
+  `appliedSurvivorshipRuleTree`
+- 
+
+  `sourcesUriOrder`
+- 
+
+  `sourcesUriOrderDerivedFrom`
+
+The expanded response details let you trace each OV value to the applied strategy, fallback path, and effective source order. You can investigate survivorship outcomes without manually comparing the returned OV value with source-order settings across L3 mappings or survivorship groups.
+
+For more information, see [Source system order](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/sources-perspective?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Get entity](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/entities-api/get-entity?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+## Matching APIs truncate displayed relevance scores
+
+Matching APIs now truncate calculated relevance scores to two decimal places instead of rounding them up. For example, a calculated relevance of 0.948 is returned as 0.94, so the displayed score never exceeds the calculated relevance. This keeps displayed relevance consistent with action labels and threshold evaluation. APIs that return relevance scores at full precision remain unchanged.
+
+For more information, see [Potential matches API](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/potential-matches-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Get transitive matches](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/potential-matches-api/get-transitive-matches?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), and [Search for potential matches for entity specified in JSON with scoring](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/potential-matches-api/search-for-potential-matches-for-entity-specified-in-json-with-scoring?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+## Edit hierarchy details in the Profile view
+
+A materialized hierarchy represents the hierarchy structure of related profiles in **Hub** and can be versioned to reflect how that structure changes over time. Version start and end dates define when each hierarchy version is effective.
+
+The **Hierarchy** tab now lets you edit a hierarchy's metadata, including its name, versioning settings, and version start and end dates. This helps you keep hierarchy metadata up to date as the structure evolves, without recreating the hierarchy or its structure.
+
+For more information, see [Edit hierarchy details in the Profile view](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/edit-hierarchy-details-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+## Credential expiry alerts for Reltio Data Pipelines
+
+Reltio Data Pipelines use credentials configured during setup to connect to Databricks, Snowflake, or Google BigQuery and export tenant data. These credentials may expire or be rotated over time. If a credential becomes invalid, the affected pipeline can no longer export data to its destination. Without these notifications, you might not notice the interruption until it affects downstream data consumption.
+
+Reltio now sends email and in-app notifications and disables the affected pipeline after three failed connection attempts due to invalid credentials. The email and in-app notification identifies the affected pipeline and tenant, and provide steps to update the credential and restore data delivery.
+
+For more information, see [Notification Management at a glance](https://docs.reltio.com/en/applications/console/configuration-applications/notification-management-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Credential expiry alerts for Reltio Data Pipelines](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/credential-expiry-alerts-for-reltio-data-pipelines?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), and [Update credentials and re-enable a disabled Data Pipeline](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/update-credentials-and-re-enable-a-disabled-data-pipeline?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+## Estimate streaming event payload size for a destination
+
+Each streaming destination has a payload size limit. Without an estimate before publishing, you may discover an oversized event payload only after publishing fails.
+
+The new `Streaming Payload Estimate API` helps you estimate the event payload size for an entity or relation before publishing to a specific streaming destination. You can compare the estimate with the destination's limit and address oversized payloads before they cause publishing failures.
+
+For more information, see [Estimate streaming payload size](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/events-api/estimate-streaming-payload-size?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
@@ -20765,11 +20863,11 @@ The following table lists the L3 warnings with detailed error messages, the circ
 | `CLEANSE_FUNCTION_INVALID_NAMING_OUTPUT` | 732 | Cleanse function `cleanseFunctionName` has invalid output naming cleanse attribute. | Cleanse function `cleanseFunctionName` has incorrect output naming. Some attributes are nested and others are not. | Some attributes inside the cleanse input/output mapping are nested but some are not. | Use the correct attributes URI. |
 | `MISSING_OUTPUT_PARAMETER` | 733 | Cleanse function `cleanseFunctionName` has missing output cleanse attributes. | Cleanse function `cleanseFunctionName` has an option ''process = `process` '' . But no output configured for: `process specific fields` | For example, process `g` is configured, but process specific fields Longitude and Latitude are not mapped in the output mapping. | Configure the process specific fields in the cleanse output mapping. |
 | `CLEANSE_VALIDATION_MISSING_ALL_OUTPUT_PARAMETERS` | 734 | Cleanse function `cleanseFunctionName` has missing output cleanse attributes. | Cleanse function `cleanseFunctionName` has an option ''process = `process` '' but no output configured for any of: `process specific fields`. | For example, process `e` is configured, but none of the 'enhance' process specific fields are configured in the output mapping. | Configure at least one of the process specific fields in the cleanse output mapping. |
-| `MAX_ATTRIBUTES_PER_ENTITY_LIMIT_EXCEEDED` | 1800 | Number of defined attributes for an entity type `{0}` must not exceed `{1}` | The number of defined attributes for an entity type `{0}` must not exceed `{1}`, Please reduce the number attributes | Specifies the number of attributes defined for an entity. To disable this validation rule, update the tenant configuration to set a higher value. | Review the existing data or increase the restriction limit by changing the `dataModelerConstraints/maxAttributesCount` property in the tenant physical configuration. For more information, see [Validation Constraints for a Tenant](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-at-a-glance/implementation-assistance-operation/identify-performance-factors/quota-and-limits/validation-constraints-for-a-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
-| `NO_SURROGATE_KEY_DEFINED` | 1801 | No surrogate crosswalk defined for entity `{0}` | No surrogate crosswalk defined for entity `{0}`, Please define surrogate crosswalk | This property is used to ensure that all the entities, which are used as reference attributes, have a surrogate crosswalk. To disable this validation rule, update the tenant configuration to set the value to `false`. | Change the rules for surrogate crosswalks or disable this validation rule by updating the `dataModelerConstraints/surrogateKeyRequired` property to `false` in the tenant physical configuration. For more information, see [Validation Constraints for a Tenant](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-at-a-glance/implementation-assistance-operation/identify-performance-factors/quota-and-limits/validation-constraints-for-a-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
-| `MAX_NESTED_SUB_ATTRIBUTE_LIMIT_EXCEEDED` | 1805 | Number of attributes for a nested attribute `{0}` must not exceed {1} | Number of attributes for a nested attribute `{0}` must not exceed `{1}`, but the current value is `{2}`. Please reduce the number of nested sub attributes | The tenant physical configuration has a restriction on the maximum number of nested sub-attributes. The current number for some nested attribute exceeds this number. | Either remove some nested attributes to ensure that the number is within the restricted limit, or increase the restriction limit by changing the `dataModelerConstraints/maxNestedSubAttributesCountfield` property in the tenant physical configuration, or remove the restriction. For more information, see [Validation Constraints for a Tenant](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-at-a-glance/implementation-assistance-operation/identify-performance-factors/quota-and-limits/validation-constraints-for-a-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
-| `MAX_RELATIONSHIP_TYPES_BETWEEN_TWO_ENTITIES` | 1806 | Number of relationships between any two entity types `{0}` and `{1}` must not exceed `{2}`, current `{3}` | Number of relationships between any two entity types `{0}` and `{1}` must not exceed `{2}`,currently we have `{3}` relations defined. Please reduce the number of relationship types between reported entities | The tenant physical configuration has a restriction on the maximum number of relations between two entity types. The current number for some pair exceeds this number. | Either remove some relations to ensure that the number is within the restricted limit, increase the restriction limit by changing the `dataModelerConstraints/maxRelationshipTypeBetweenTwoEntitiesCountfield` property in the tenant physical configuration, or remove the restriction. For more information, see [Validation Constraints for a Tenant](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-at-a-glance/implementation-assistance-operation/identify-performance-factors/quota-and-limits/validation-constraints-for-a-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
-| `MAX_NESTED_ATTRIBUTE_DEPTH_LIMIT_EXCEEDED` | 1807 | Nested attributes depth limit (`{1}`) exceeded for attribute `{0}` | Nesting depth level for attribute `{0}` must not exceed `{1}`, current depth `{2}`. Please reduce nesting level for attribute |  | Perform the following steps to resolve the warning:   1. Remove the sub-nested attributes with depth more than the limit if it is not critical for your test. 2. Change the depth limit in the physical configuration by changing the `dataModelerConstraints/maxNestedAttributesDepth` property. This limit must not exceed the limit supported by Reltio. For more information, see [Validation Constraints for a Tenant](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-at-a-glance/implementation-assistance-operation/identify-performance-factors/quota-and-limits/validation-constraints-for-a-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
+| `MAX_ATTRIBUTES_PER_ENTITY_LIMIT_EXCEEDED` | 1800 | Number of defined attributes for an entity type `{0}` must not exceed `{1}` | The number of defined attributes for an entity type `{0}` must not exceed `{1}`, Please reduce the number attributes | Specifies the number of attributes defined for an entity. To disable this validation rule, update the tenant configuration to set a higher value. | Review the existing data or increase the restriction limit by changing the `dataModelerConstraints/maxAttributesCount` property in the tenant physical configuration. For more information, see [Validation Constraints for a Tenant](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-overview/implementation-assistance-operation/identify-performance-factors/quota-and-limits/validation-constraints-for-a-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
+| `NO_SURROGATE_KEY_DEFINED` | 1801 | No surrogate crosswalk defined for entity `{0}` | No surrogate crosswalk defined for entity `{0}`, Please define surrogate crosswalk | This property is used to ensure that all the entities, which are used as reference attributes, have a surrogate crosswalk. To disable this validation rule, update the tenant configuration to set the value to `false`. | Change the rules for surrogate crosswalks or disable this validation rule by updating the `dataModelerConstraints/surrogateKeyRequired` property to `false` in the tenant physical configuration. For more information, see [Validation Constraints for a Tenant](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-overview/implementation-assistance-operation/identify-performance-factors/quota-and-limits/validation-constraints-for-a-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
+| `MAX_NESTED_SUB_ATTRIBUTE_LIMIT_EXCEEDED` | 1805 | Number of attributes for a nested attribute `{0}` must not exceed {1} | Number of attributes for a nested attribute `{0}` must not exceed `{1}`, but the current value is `{2}`. Please reduce the number of nested sub attributes | The tenant physical configuration has a restriction on the maximum number of nested sub-attributes. The current number for some nested attribute exceeds this number. | Either remove some nested attributes to ensure that the number is within the restricted limit, or increase the restriction limit by changing the `dataModelerConstraints/maxNestedSubAttributesCountfield` property in the tenant physical configuration, or remove the restriction. For more information, see [Validation Constraints for a Tenant](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-overview/implementation-assistance-operation/identify-performance-factors/quota-and-limits/validation-constraints-for-a-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
+| `MAX_RELATIONSHIP_TYPES_BETWEEN_TWO_ENTITIES` | 1806 | Number of relationships between any two entity types `{0}` and `{1}` must not exceed `{2}`, current `{3}` | Number of relationships between any two entity types `{0}` and `{1}` must not exceed `{2}`,currently we have `{3}` relations defined. Please reduce the number of relationship types between reported entities | The tenant physical configuration has a restriction on the maximum number of relations between two entity types. The current number for some pair exceeds this number. | Either remove some relations to ensure that the number is within the restricted limit, increase the restriction limit by changing the `dataModelerConstraints/maxRelationshipTypeBetweenTwoEntitiesCountfield` property in the tenant physical configuration, or remove the restriction. For more information, see [Validation Constraints for a Tenant](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-overview/implementation-assistance-operation/identify-performance-factors/quota-and-limits/validation-constraints-for-a-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
+| `MAX_NESTED_ATTRIBUTE_DEPTH_LIMIT_EXCEEDED` | 1807 | Nested attributes depth limit (`{1}`) exceeded for attribute `{0}` | Nesting depth level for attribute `{0}` must not exceed `{1}`, current depth `{2}`. Please reduce nesting level for attribute |  | Perform the following steps to resolve the warning:   1. Remove the sub-nested attributes with depth more than the limit if it is not critical for your test. 2. Change the depth limit in the physical configuration by changing the `dataModelerConstraints/maxNestedAttributesDepth` property. This limit must not exceed the limit supported by Reltio. For more information, see [Validation Constraints for a Tenant](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-overview/implementation-assistance-operation/identify-performance-factors/quota-and-limits/validation-constraints-for-a-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
 | `FALLBACK_STRATEGIES_CHAIN_IS_USED` | 1808 | Fallback strategies chain is used in survivorship mapping for `{0}` | `fallbackStrategiesChain` field, that is mentioned in survivorship mapping for `{0}`, is deprecated for usage. Please replace it with `fallbackStrategies` configuration | One of the survivorship mappings contains the `fallbackStrategiesChain` field, which is deprecated now. | Replace the `fallbackStrategiesChain` field with the `fallbackStrategies` field. |
 | `SRC_SYS_WITHOUT_PRIORITIES` | 1809 | Survivorship mapping for `{0}` with `SRC_SYS` strategy doesn't have source priorities list | Survivorship mapping for `{0}` with `SRC_SYS` strategy doesn't have source priorities list, please specify it for the mapping itself or for the whole survivorship group | One of the survivorship mappings uses `SRC_SYS`, but there is no source priority list for it. This configuration is allowed because the source priorities are taken from the `source` definition section of the configuration. However, the recommended practice is to specify the source priority lists directly in the OV rules. | Add the `sourcesUriOrder` parameter to the mapping or to its parent survivorship group. |
 | `SURVIVORSHIP_GROUP_WITHOUT_ROLES` | 1810 | Not-default survivorship group `{0}` doesn't have any roles | Survivorship group `{0}` must have roles because it's not default, otherwise it will never be used | One group from the list of not-default survivorship groups does not have the `roles` field. The survivorship groups that are not marked as default can only be used if a user has some specific role specified in the `roles` field of the group; else they are not used. Such groups can temporarily exist during configuration switching to ensure that they are still considered as valid, but Reltio recommends to fix the warning. | Add some roles to the not-default survivorship group configuration, make the group default, or remove the group. |
@@ -23269,8 +23367,8 @@ Learn about the L3 errors, including error code, error message, detailed error m
 | ATTRIBUTE_NAME_DOESNT_MATCH_URI | **Error Code** 1811   **Error Message** Attribute name in URI doesn’t equal to value of "name" field from configuration.**Detailed Error Message** Last part of URI string doesn’t equal to value of "name" field from configuration. | There is a discrepancy between the attribute name and the URI fields. | Correct the attribute name or last part of attribute URI to make them equal. |
 | METADATA_SURVIVORSHIP_GROUP_MAPPINGS_INVALID_SORT_AS | **Error Code** 1812   **Error Message** The `sortAs` parameter has not allowed value.**Detailed Error Message** The 'sortAs' parameter has not allowed value, current value = `{0}`, allowed values = `{1}`. Please fix the mapping for the attribute `{2}` ' of survivorship group `{3}`. | The `sortAs` parameter value is invalid. | From the error message, use of any of the values listed in the allowed list as `SortAs` parameter. |
 | METADATA_SURVIVORSHIP_GROUP_SORT_AS_IN_NOT_MIN_MAX_STRATEGY | **Error Code** 1813   **Error Message** The `sortAs` parameter set for not allowed strategy.**Detailed Error Message** The `sortAs` parameter not allowed in `{0}` strategy. It is allowed only in MinValue/MaxValue strategies. Please fix the mapping for the attribute `{1}` of survivorship group `{2}`. | The `SortAs` parameter is allowed only for `Min` and `Max` values in OV strategies. | Do not use `SortAs` parameters in OV strategies that aren’t of `Min` or `Max` values. |
-| MAX_REFERENCE_ATTRIBUTE_PER_ENTITY_LIMIT_EXCEEDED | **Error Code** 1900   **Error Message** Number of reference attributes in a single entity record `type` must not exceed `value`.**Detailed Error Message** Number of reference attributes in a single entity record `type` must not exceed `value`, but the current number is `value`. Please reduce the number of reference attributes for the entity. | The tenant physical configuration has a restriction on a maximum amount of referenced attributes for an entity type. The current amount for the entity type exceeds this number. | Either remove some referenced attributes to fit the restriction number, or increase the restriction number in the tenant physical configuration (`dataModelerConstraints` /`maxReferenceAttributesCount` field), or remove the restriction. For more information, see [Validation Constraints for a Tenant](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-at-a-glance/implementation-assistance-operation/identify-performance-factors/quota-and-limits/validation-constraints-for-a-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
-| NO_DATATYPE_CHANGE_FOR_INHERITED_ATTRIBUTES | **Error Code** 1905   **Error Message** Data type changed for the inherited attribute `name` for entity `type` with parent type `type` from type `value` to type `value`.**Detailed Error Message** The data type changed for the inherited attribute `name` for entity `type` with parent type `type` from type `value` to type `value`. Data type changes aren’t allowed for inherited attributes. Please correct the data types. | The tenant physical configuration prohibits overriding of an attribute type from a parent entity type in an inherited one. Some attributes violate this restriction. | Either change the attribute type in the inherited attribute to the same type as a parent attribute has, or disable the restriction in the tenant physical configuration (`dataModelerConstraints` /`allowDataTypeOverRiding` field). For more information, see [Validation Constraints for a Tenant](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-at-a-glance/implementation-assistance-operation/identify-performance-factors/quota-and-limits/validation-constraints-for-a-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
+| MAX_REFERENCE_ATTRIBUTE_PER_ENTITY_LIMIT_EXCEEDED | **Error Code** 1900   **Error Message** Number of reference attributes in a single entity record `type` must not exceed `value`.**Detailed Error Message** Number of reference attributes in a single entity record `type` must not exceed `value`, but the current number is `value`. Please reduce the number of reference attributes for the entity. | The tenant physical configuration has a restriction on a maximum amount of referenced attributes for an entity type. The current amount for the entity type exceeds this number. | Either remove some referenced attributes to fit the restriction number, or increase the restriction number in the tenant physical configuration (`dataModelerConstraints` /`maxReferenceAttributesCount` field), or remove the restriction. For more information, see [Validation Constraints for a Tenant](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-overview/implementation-assistance-operation/identify-performance-factors/quota-and-limits/validation-constraints-for-a-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
+| NO_DATATYPE_CHANGE_FOR_INHERITED_ATTRIBUTES | **Error Code** 1905   **Error Message** Data type changed for the inherited attribute `name` for entity `type` with parent type `type` from type `value` to type `value`.**Detailed Error Message** The data type changed for the inherited attribute `name` for entity `type` with parent type `type` from type `value` to type `value`. Data type changes aren’t allowed for inherited attributes. Please correct the data types. | The tenant physical configuration prohibits overriding of an attribute type from a parent entity type in an inherited one. Some attributes violate this restriction. | Either change the attribute type in the inherited attribute to the same type as a parent attribute has, or disable the restriction in the tenant physical configuration (`dataModelerConstraints` /`allowDataTypeOverRiding` field). For more information, see [Validation Constraints for a Tenant](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-overview/implementation-assistance-operation/identify-performance-factors/quota-and-limits/validation-constraints-for-a-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
 | DUPLICATE_URIS_FOR_TYPE | **Error Code** 1907   **Error Message** There are duplicate URIs [`uri_list`] in mapping for the type [`type`].**Detailed Error Message** There are duplicate URIs [`uri_list`] in mapping for the type [type]. Please remove duplication. | The business configuration for object type (entities, relations) contains two or more definitions of an attribute with the same uri. | Remove duplicate definitions from the configuration. |
 | USE_ONLY_OV_VALUES_AND_IGNORE_NON_OV_CHANGES_FLAGS_ARE_INCOMPATIBLE | **Error Code** 1909   **Error Message** For `type` entity type, `useOnlyOvValuesInReferencedEntities` is set to `true`, but `ignoreNonOVChangesWhenUpdateThroughReferencedEntity` is `false`.**Detailed Error Message** For `type` entity type, `useOnlyOvValuesInReferencedEntities` is set to `true`, but `ignoreNonOVChangesWhenUpdateThroughReferencedEntity` is `false`. | For the entity type in the business configuration, it forbidden to have the `'ignoreNonOVChangesWhenUpdateThroughReferencedEntit’sy'` property as `false` when the `'useOnlyOvValuesInReferencedEntities'` property is enabled. | Set `'ignoreNonOVChangesWhenUpdateThroughReferencedEntity'` to `true` or set `'useOnlyOvValuesInReferencedEntities'` to `false`. |
 | PRIMARY_ATTRIBUTE_NOT_SPECIFIED_FOR_OTHER_ATTRIBUTE_STRATEGY | **Error Code** 1910   **Error Message** For the `attribute` attribute in tenant `name`, the survivorship strategy is `OtherAttributeWinnerCrosswalk`, but the strategy's required attribute `primaryAttributeUri` isn't specified.**Detailed Error Message** For the `attribute` attribute in tenant `name`, the survivorship strategy is `OtherAttributeWinnerCrosswalk`, but strategy's required attribute `primaryAttributeUri` isn't specified. | If `OtherAttributeWinnerCrosswalk` is used, `primaryAttributeUri` in a mapping must also be specified. | Add `primaryAttributeUri` to the attribute's survivorship mapping. |
@@ -24425,87 +24523,6 @@ Reltio AgentFlow Mobile allows you to chat with Reltio agents and custom agents 
 - 
 
   Setting custom instructions for agents
-
-
-
----
-
-# Reltio AgentFlow™ Quality overview
-
-> **Section:** Products > Reltio AgentFlow™ > Reltio AgentFlow™ overview
-
-
-**Source:** https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/reltio-agentflow-quality-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
-**Keywords:** assess databricks table quality before reltio load, connect a databricks source in agentflow, generate data quality rules automatically, validate warehouse data quality with ai agents, publish validated data to reltio with data loader, review data quality check results in agentflow, prepare source data for reltio mdm, databricks, data quality, data loader, remediation, agentflow quality
-
-
-Learn about Reltio AgentFlow™ Quality and how it helps you assess and prepare Databricks source data for Reltio.
-
-> **Note:** This feature is available to limited users through the Reltio Early Access (EA) program. Interested in finding out more about this feature or participating in our EA program? Get details in topic Early Access (EA) features.
-
-Reltio AgentFlow™ Quality connects to a Databricks source, assesses the quality of a selected table, and publishes validated data to Reltio. Based on the table's structure and a sample of its data, AgentFlow Quality suggests data quality rules tailored to the table's content. It validates the selected rules against the full table, and if the results are acceptable, you can confirm the publish to Reltio. AgentFlow Quality maps the table to your Reltio tenant schema and loads the data using Data Loader. The entire workflow takes place within a single conversation in the AgentFlow Quality workspace.
-
-AgentFlow Quality is designed for the following user roles who prepare warehouse data for Reltio:
-
-- 
-
-  [Data Steward](https://docs.reltio.com/en/roles/data-steward?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- 
-
-  [Reltio Configurator](https://docs.reltio.com/en/roles/reltio-configurator?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-
-To use AgentFlow Quality, you need the following system roles:
-
-- 
-
-  `ROLE_AGENT_FLOW_QUALITY`
-- 
-
-  `ROLE_EXECUTE_AGENTS`
-- 
-
-  `ROLE_EXECUTE_MCP`
-- 
-
-  `ROLE_DATALOADER`
-
-## Key capabilities
-
-AgentFlow Quality supports the following capabilities within a single guided conversation:
-
-- 
-
-  Connects to a Databricks source.
-- 
-
-  Suggests data quality rules, such as uniqueness or format checks, based on the table's structure and a sample of its data.
-- 
-
-  Runs the selected rules against the full table and returns pass/fail results for each rule.
-- 
-
-  Answers follow-up questions about failed checks and suggests ways to resolve the issues.
-- 
-
-  Maps the source table to your Reltio tenant schema and publishes validated data to Reltio using Data Loader.
-
-## When to use AgentFlow Quality
-
-Use AgentFlow Quality in the following scenarios:
-
-- 
-
-  Assess a Databricks table against data quality rules before loading it into Reltio, instead of discovering issues after a failed or incomplete load.
-- 
-
-  Get data quality rule suggestions based on your table data instead of drafting it manually.
-- 
-
-  Investigate why specific rows or columns failed a quality check and troubleshoot the issues using natural language.
-- 
-
-  Run the assessment and publish workflow in a single conversation instead of switching between multiple configuration screens.
 
 
 
@@ -26294,97 +26311,6 @@ In addition to the standard role mappings shown above, AgentFlow enforces a dedi
 
 ---
 
-# Prompt samples for AgentFlow™ Quality
-
-> **Section:** Products > Reltio AgentFlow™ > Reltio AgentFlow™ overview > Reltio AgentFlow™ Quality overview
-
-
-**Source:** https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/reltio-agentflow-quality-overview/prompt-samples-for-agentflow-quality?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
-**Keywords:** prompt samples for agentflow quality, sample prompts for data quality assessment, ask agentflow quality to add a custom rule, publish to reltio with agentflow quality prompts, agentflow quality conversation examples
-
-
-Learn about sample prompts for assessing data quality and publishing Databricks tables using AgentFlow™ Quality.
-
-> **Note:** This feature is available to limited users through the Reltio Early Access (EA) program. Interested in finding out more about this feature or participating in our EA program? Get details in topic Early Access (EA) features.
-
-AgentFlow™ Quality uses natural-language prompts to guide you through data quality assessment and publishing validated data to Reltio. The following samples show how to start an assessment, adjust rules, publish validated data to Reltio, and revise or repeat steps in the current workflow.
-
-## Assessing data quality
-
-✅ Prompt: "Start data quality on my Databricks source."
-
-Why it works: TThe phrase "start data quality" matches the assessment workflow and opens a new conversation.
-
-## Adjusting quality rules
-
-Use prompts that describe the rule you want to add, or the change you want to make to the suggested rules.
-
-- 
-
-  ✅ Prompt: "Add a rule that flags rows with duplicate customer IDs."
-
-  Why it works: Describing the rule logic in natural language lets the agent add it alongside the suggested rules.
-- 
-
-  ✅ Prompt: "Add a few more rules for this table."
-
-  Why it works: The agent adds to the existing rule set without replacing rules you already selected.
-- 
-
-  ✅ Prompt: "I only need 2 rules for this table."
-
-  Why it works: Specifying a number reduces the suggested rules to that count.
-- 
-
-  ✅ Prompt: "Why did the duplicate customer ID rule fail, and how do I fix it?"
-
-  Why it works: Naming the specific rule and asking for both an explanation and next steps returns a targeted diagnosis.
-
-## Publishing validated data to Reltio
-
-Use prompts that confirm you want to continue from an assessment into a Reltio Data Loader job.
-
-- 
-
-  ✅ Prompt: "Map and load this table into Reltio."
-
-  Why it works: The prompt triggers the agent to start a Data Loader workflow to map the assessed table to your Reltio tenant schema, reusing the Databricks connection from the current conversation.
-- 
-
-  ✅ Prompt: "Yes, publish to Reltio."
-
-  Why it works: After a data quality run, the agent offers to publish. Accepting keeps the same connection and table without re-authentication.
-
-## Revising, repeating or canceling a step
-
-Use prompts that describe the step you want to revise or the workflow you want to stop.
-
-- 
-
-  ✅ Prompt: "Go back."
-
-  Why it works: The agent returns to the previous step so you can change your selection.
-- 
-
-  ✅ Prompt: "Regenerate the rules."
-
-  Why it works: The current rules are discarded and a new set is generated based on the same table.
-- 
-
-  ✅ Prompt: "Redo table selection with a different table."
-
-  Why it works: The agent replays table selection without restarting the connection.
-- 
-
-  ✅ Prompt: "Cancel."
-
-  Why it works: The current workflow stops. You can start a new conversation at any time.
-
-
-
----
-
 # Charts and Diagrams in AgentFlow
 
 > **Section:** Products > Reltio AgentFlow™ > Reltio AgentFlow™ overview
@@ -27618,203 +27544,6 @@ Configure cloud storage access before running profiling jobs. See [Configure an 
 ## Next steps
 
 After enabling the agent, start a profiling job in AgentFlow. See [Run your first data profiling job](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agentflow-agents-catalog/profiler/run-your-first-data-profiling-job?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
-
-
-
----
-
-# Publish a Databricks table to Reltio using AgentFlow™ Quality
-
-> **Section:** Products > Reltio AgentFlow™ > Reltio AgentFlow™ overview > Reltio AgentFlow™ Quality overview
-
-
-**Source:** https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/reltio-agentflow-quality-overview/publish-a-databricks-table-to-reltio-using-agentflow-quality?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
-**Keywords:** publish a databricks table to reltio with agentflow quality, review automapping in agentflow quality, confirm a data loader publish plan in agentflow, run a data loader job from agentflow quality, map databricks columns to reltio attributes, review data loader job results in agentflow, data loader, agentflow quality, databricks, reltio
-
-
-Learn how to connect to a Databricks source, select a table, and publish it to Reltio using AgentFlow™ Quality.
-
-> **Note:** This feature is available to limited users through the Reltio Early Access (EA) program. Interested in finding out more about this feature or participating in our EA program? Get details in topic Early Access (EA) features.
-
-AgentFlow™ Quality maps source table columns to Reltio entity attributes and creates a Data Loader job. For example, you can publish a Databricks `customers` table as HCP profiles. No file export or re-authentication is required, the entire workflow uses the same connection and table within a single conversation.
-
-> **Note:** If you have already completed a [data quality assessment](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/reltio-agentflow-quality-overview/assess-data-quality-using-agentflow-quality?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) for a table and want to publish it, see [To review the mapping and publish the data](#task-8261/stepsection-11447). AgentFlow Quality reuses the same connection and table from the conversation.
-
-**Prerequisites**
-
-Before you begin, ensure that you have the required system roles and Databricks connection details:
-
-- 
-
-  The following system roles to access AgentFlow Quality:
-  - `ROLE_AGENT_FLOW_QUALITY`
-  - `ROLE_EXECUTE_AGENTS`
-  - `ROLE_EXECUTE_MCP`.
-  - `ROLE_DATALOADER`
-- 
-
-  Access to a Databricks account
-- 
-
-  Connection details for your Databricks workspace:
-  - Server hostname
-  - HTTP path
-  - Access token
-  - Catalog name
-  - Schema name
-
-
-To connect to a Databricks source
-
-1. Open **AgentFlow Quality**.
-2. Select the required tenant.
-3. Select **Start Data Load**.
-   The Data Loader orchestrator appears.
-4. Select **Databricks** to connect to your source data.
-5. In the **Connect to Databricks** page, enter the following connection details.
-6. Select **Connect**.
-   AgentFlow Quality validates your credentials, saves the connection under the name you provided, and displays the Select tables screen for the catalog and schema you provided.
-7. Select the checkbox for the table you want to load, then choose **Select**.
-   The suggested mappings appear.
-
-To review the mapping and publish the data
-
-8. Review the suggested mapping between the source table columns and the target Reltio attributes.
-   AgentFlow Quality groups the mappings by the following confidence levels.
-
-| Confidence level | Description |
-| --- | --- |
-| **High** | The source column name and data type closely match a Reltio attribute. |
-| **Medium** | The source column partially matches a Reltio attribute. Review the mapping carefully before accepting. |
-| **Skipped** | The source column has no matching attribute, so AgentFlow Quality does not include it in the mapping. |
-9. Select the checkbox for each mapping you want to include, or clear it to exclude the mapping.*Image: i-afq-table-select.png*
-10. Select **Accept**.
-   The **Confirm load** summary appears.
-11. Review the **Confirm load** summary.
-   The summary lists the table, object type, and number of accepted mappings.
-12. Select **Confirm**.
-   On completion, AgentFlow Quality displays a summary of the data load job in the conversation.*Image: i-afq-dataload.png*
-
-**Result**
-
-AgentFlow Quality runs the data load and returns a completed load summary that includes the following details:
-
-- 
-
-  The success rate
-- 
-
-  The number of records loaded, failed, and total
-- 
-
-  A load outcome chart
-- 
-
-  Job details, such as the source table, object type, load type, and job ID
-
-> **Tip:** If any records fail in the data load job, ask AgentFlow Quality to help diagnose and resolve the issue directly in the conversation
-
-**Verification steps**
-
-To verify the data load, check the results in the conversation, Console, and Hub:
-
-- 
-
-  In the conversation, review the summary of the data load job.
-- 
-
-  In **Console**, confirm the job status and any load errors by performing the following steps:
-  1. In a new browser tab, sign in to your Reltio MDM tenant.
-  2. From the **Applications** menu, select **Console**.
-  3. Select **Data Loader**.
-  4. On the left navigation panel, select **Job Status**.
-  5. Select the **COMPLETED** tab.
-  6. Identify the job using the job ID provided in the conversation.
-- 
-
-  In **Hub**, confirm the loaded records match the source table by performing the following steps:
-  1. In a new browser tab, sign in to your Reltio MDM tenant.
-  2. From the **Applications** menu, select **Hub**.
-  3. On the left navigation panel, select **Search**.
-  4. Search for the loaded records and confirm the attribute values match the source table.
-
-
-
----
-
-# Assess data quality using AgentFlow™ Quality
-
-> **Section:** Products > Reltio AgentFlow™ > Reltio AgentFlow™ overview > Reltio AgentFlow™ Quality overview
-
-
-**Source:** https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/reltio-agentflow-quality-overview/assess-data-quality-using-agentflow-quality?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
-**Keywords:** assess data quality with agentflow quality, connect a databricks source to agentflow quality, review suggested data quality rules in agentflow, run a data quality check on a databricks table, review agentflow quality report and rule outcomes, start a data loader project from agentflow quality, databricks, data quality, agentflow quality, data loader
-
-
-Learn how to assess the quality of a Databricks table and publish validated data to Reltio using AgentFlow™ Quality.
-
-> **Note:** This feature is available to limited users through the Reltio Early Access (EA) program. Interested in finding out more about this feature or participating in our EA program? Get details in topic Early Access (EA) features.
-
-AgentFlow™ Quality assesses a Databricks table against data quality rules and returns pass/fail results for each rule. You can then publish the validated data to Reltio using Data Loader, all in the same conversation without re-entering connection details.
-
-**Prerequisites**
-
-Before you begin, ensure that you have the required system roles and Databricks connection details:
-
-- 
-
-  The following system roles to access AgentFlow Quality:
-  - `ROLE_AGENT_FLOW_QUALITY`
-  - `ROLE_EXECUTE_AGENTS`
-  - `ROLE_EXECUTE_MCP`.
-  - `ROLE_DATALOADER`
-- 
-
-  Access to a Databricks account
-- 
-
-  Connection details for your Databricks workspace:
-  - Server hostname
-  - HTTP path
-  - Access token
-  - Catalog name
-  - Schema name
-
-
-To connect to a Databricks source
-
-1. Open **AgentFlow Quality**.
-2. Select the required tenant.
-3. Select **Start Data Quality**.
-   The **Data Quality** orchestrator appears.
-4. Select **Databricks** to connect to your source data.
-5. In the **Connect to Databricks** page, enter the following connection details.
-6. Select **Connect**.
-   AgentFlow Quality validates your credentials, saves the connection under the name you provided, and displays the Select tables screen for the catalog and schema you provided.
-
-To assess data quality using AgentFlow Quality
-
-7. Select the checkbox for each table you want to assess, then choose **Select**.
-   AgentFlow Quality lists each table's description, number of columns, and number of rows to help you choose. You can select more than one table in the same conversation.
-8. In the **Suggested rules** section, review the rules AgentFlow Quality suggests for each table.
-   (Optional) To add a custom rule, describe it in natural language, and AgentFlow Quality adds it to the suggested rules.*Image: i-afq-suggested-rules.png*
-9. Select the checkboxes for each rule you want to run, and choose **Select**.
-   The **Project Review** summary appears.
-10. Review the **Project Review** summary, then select **Approve**.
-   The summary lists the project name, source, number of datasets, and number of rules linked to the project.
-   AgentFlow Quality runs the selected rules against the table and displays the AgentFlow Quality Report and DQ rule outcomes.
-
-To publish validated data using AgentFlow Quality
-
-11. Review the following reports.
-   *Image: i-afq-assessment.png*
-12. Respond to the AgentFlow Quality prompt asking whether to map the table and load it into Reltio.
-
-**Result**AgentFlow Quality generates the quality report and displays it in the conversation. If you continue to publish the validated data, AgentFlow Quality creates a [Reltio Data Loader job](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/reltio-agentflow-quality-overview/publish-a-databricks-table-to-reltio-using-agentflow-quality?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) from the current conversation.
-
-To review the mapping and run the data loader job, see [Publish a Databricks table to Reltio using AgentFlow™ Quality](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/reltio-agentflow-quality-overview/publish-a-databricks-table-to-reltio-using-agentflow-quality?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
@@ -30885,7 +30614,7 @@ Learn techniques to refine the data you import into Reltio.
 
 This velocity pack comes with preconfigured cleansers, validation functions, match rules, survivorship groups, and reference data lookup types to make fast work of standardizing and harmonizing your data.
 
-Reltio designed velocity packs to give you a head start. Your industry-specific pack comes fully configured with the components and rules you will need to realize value in as few as 90 days. If you need to modify it in any way, see topic [Get help in Support Portal](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). We do recommend you discuss your configuration changes with Reltio Professional Services or a Reltio partner to ensure they align to the [Reltio Way Delivery Methodology](https://learn.reltio.com/the-reltio-way). For more information, see topic [Implementation assistance at a glance](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+Reltio designed velocity packs to give you a head start. Your industry-specific pack comes fully configured with the components and rules you will need to realize value in as few as 90 days. If you need to modify it in any way, see topic [Get help in Support Portal](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). We do recommend you discuss your configuration changes with Reltio Professional Services or a Reltio partner to ensure they align to the [Reltio Way Delivery Methodology](https://learn.reltio.com/the-reltio-way). For more information, see topic [Implementation assistance overview](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
@@ -39364,7 +39093,7 @@ To know more about the `filter` query parameter and the timestamp details, see t
 - [Search activity log records](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/search-using-activity-log-api/search-activity-log-records?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 - [Get Total Count of activity log records](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/search-using-activity-log-api/get-total-count-of-activity-log-records?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
-Retention and searching against the activity log data is governed by Quotas and Limits. For more information on this, see [Quota and limits](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-at-a-glance/implementation-assistance-operation/identify-performance-factors/quota-and-limits?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+Retention and searching against the activity log data is governed by Quotas and Limits. For more information on this, see [Quota and limits](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-overview/implementation-assistance-operation/identify-performance-factors/quota-and-limits?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 ## Activity Log Record Structure
 
@@ -67067,7 +66796,7 @@ GET {TenantURL}/{entity object URI}
 | Headers | `Authorization` | Yes | Provides information about authentication access token in the format "Bearer `<accessToken>` ". For more information, see [Authentication API](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/authentication-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
 | Query | `select` | No | Generates a comma-separated list of properties from the entity structure that must be returned in a response. The response generates a partial entity object.  For the `select` parameter, you can use the following fields in the request query:  - uri - type - tags - createdBy - createdTime - updatedBy - updatedTime - isFavorite - analyticsAttributes - label - secondaryLabel - crosswalks - attributes  For example:   - `select=attributes.FirstName,attributes.LastName` - `select=attributes`  The first query retrieves only the entity's first name and last name in the response. The second query retrieves all the entity's attributes.  Additional system properties are:   - `attributes._lookupCodes`: returns lookup codes for lookup attributes. - `attributes._lookupValues`: returns values for lookup attributes.  For example, `select=uri,label,attributes._lookupCodes,attributes._lookupValues.` |
 | Query | `time` | No | Generates an object as it was in the Reltio system at some point in time (timestamp in ms). |
-| Query | `options` | No | Passes a comma-separated list of options for content to include in the response:  - `sendHidden`: Entities with hidden attributes. Default is `disabled`. - `ovOnly`: Only attribute values that have the `ov=true` flag. - `nonOvOnly`: Only attribute values that have the `ov=false` flag. If you have a nested or reference attribute value, where `ov=true`, but subattributes, where `ov=false`, then these subattributes won’t appear in the response. - `serializeInitialSourcesInCrosswalks`: URIs of initial sources in crosswalks. - `cleanEntity` - Set this option to `true` to get entities without certain properties. Here's what you get in the response:   - `URI` is null.   - `Type` of entity is available.   - `createdBy`, `createdTime`, `updatedBy`, and `updatedTime` are included.   - Simple and nested attributes are displayed without the `uri`, `ov`, `type`, and `label` parameters.   - For `refEntity` and `refRelation`, the `uri`, `type`, `createDate`,`updateDate`, `attributeURIs`, `startRefPinned`, `endRefPinned`, `startRefIgnored`, `endRefIgnored`, and `objectURI` are included.   - Field crosswalks type is updated with its `short name`, `reltioLoadDate`, `createDate`, and `updateDate`.   - Field attributes for crosswalk block contains only short URIs.   - `singleAttributeUpdateDates` field for crosswalk block is empty.   - `analyticsAttributes` is not included. - `showAppliedSurvivorshipRules`: Returns the survivorship determination logic used to determine the OV value of an attribute, down to the lowest level for each attribute and each value of an attribute. In the `appliedSurvivorshipRules` object, the key is the main survivorship strategy. If fallback rules are present, the value is either a string for a single fallback or an array for multiple fallbacks. This response does not include crosswalk details. A sample response is given below:    ```   {     "ovDetails": {       "appliedSurvivorshipRules": {         "Frequency": "LUD"       },       "appliedSurvivorshipGroup": "default",       "participationStatus": "strategy"     }   }   ```    > **Note:** The `participationStatus` property indicates how an attribute value participates in OV calculation. This property supports the following enum values: `ignored`, `pinned`, `end-dated-crosswalk`, `not-participated`, and `strategy`. - `showEndDatedReferenceAttributes`: Includes reference attributes with an expired relationship end date. This option is displayed only when the tenant has `skipEndDatedReferenceAttributes` enabled. - `explainOv`: Returns additional survivorship diagnostics in the `ovDetails` section of the response. These diagnostic fields are populated only when `explainOv` is provided. The response includes all fields returned by `showAppliedSurvivorshipRules`, and the following root-level and rule-level fields:A sample response is given below:    ```   {     "ovDetails": {       "winnerCrosswalks": [         "configuration/sources/<sourceName>"       ],       "appliedSurvivorshipGroup": "default",       "participationStatus": "strategy",       "unmatchedFilters": [         {           "and": [             {               "uri": "configuration/entityTypes/HCO/attributes/MultipleFilters",               "value": "matchedValue",               "operator": "ne"             }           ]         }       ],       "appliedSurvivorshipRules": {         "appliedSurvivorshipRule": "Frequency",         "fallbacks": [           {             "appliedSurvivorshipRule": "LUD",             "fallbacks": [],             "fallbackCriteria": "MORE_THAN_ONE",             "winningSources": [               "configuration/sources/<sourceName>"             ],             "sourcesForOv": [               "configuration/sources/<sourceName>"             ]           }         ],         "fallbackCriteria": "MORE_THAN_ONE",         "winningSources": [           "configuration/sources/<sourceName>"         ],         "sourcesForOv": [           "configuration/sources/<sourceName>"         ]       },       "matchedFilters": [         {           "and": [             {               "uri": "configuration/entityTypes/HCO/attributes/MultipleFilters",               "value": "unmatchedValue",               "operator": "ne"             }           ]         },         {           "equals": [             {               "uri": "configuration/entityTypes/HCO/attributes/MultipleFilters",               "value": "matchedValue"             }           ]         }       ]     }   }   ```   - `appliedSurvivorshipGroup`: Applied survivorship group for the attribute value.   - `participationStatus`: Indicates how the attribute value participates in OV calculation.   - `matchedFilters`: Filters from the business configuration that matched during survivorship evaluation.   - `unmatchedFilters`: Filters from the business configuration that did not match during survivorship evaluation.   - `winnerCrosswalks`: Final list of winner crosswalk sources for the OV value.   - `appliedSurvivorshipRule`: The survivorship rule applied at the current level.   - `winningSources`: Winner crosswalk sources returned by the rule applied at the current level.   - `sourcesForOv`: Reference to the `sourcesForOv` setting from the business configuration for the current rule.   - `fallbackCriteria`: Reference to the fallback criteria from the business configuration. Supported values are `ZERO`, `ZERO_OR_MORE_THAN_ONE`, and `MORE_THAN_ONE`.   - `fallbacks`: List of fallback rules. Each fallback contains the same fields as the parent rule: `appliedSurvivorshipRule`, `winningSources`, `sourcesForOv`, `fallbackCriteria`, and `fallbacks`. |
+| Query | `options` | No | Passes a comma-separated list of options for content to include in the response:  - `sendHidden`: Entities with hidden attributes. Default is `disabled`. - `ovOnly`: Only attribute values that have the `ov=true` flag. - `nonOvOnly`: Only attribute values that have the `ov=false` flag. If you have a nested or reference attribute value, where `ov=true`, but subattributes, where `ov=false`, then these subattributes won’t appear in the response. - `serializeInitialSourcesInCrosswalks`: URIs of initial sources in crosswalks. - `cleanEntity` - Set this option to `true` to get entities without certain properties. Here's what you get in the response:   - `URI` is null.   - `Type` of entity is available.   - `createdBy`, `createdTime`, `updatedBy`, and `updatedTime` are included.   - Simple and nested attributes are displayed without the `uri`, `ov`, `type`, and `label` parameters.   - For `refEntity` and `refRelation`, the `uri`, `type`, `createDate`,`updateDate`, `attributeURIs`, `startRefPinned`, `endRefPinned`, `startRefIgnored`, `endRefIgnored`, and `objectURI` are included.   - Field crosswalks type is updated with its `short name`, `reltioLoadDate`, `createDate`, and `updateDate`.   - Field attributes for crosswalk block contains only short URIs.   - `singleAttributeUpdateDates` field for crosswalk block is empty.   - `analyticsAttributes` is not included. - `showAppliedSurvivorshipRules`: Returns the survivorship determination logic used to determine the OV value of an attribute, down to the lowest level for each attribute and each value of an attribute. When you use `showAppliedSurvivorshipRules`, the `ovDetails` section has the following fields:    A sample response is given below:    ```   {     "ovDetails": {       "appliedSurvivorshipRules": {         "SRC_SYS": [           "MinValue"         ]       },       "appliedSurvivorshipRuleTree": {         "appliedSurvivorshipRule": "SRC_SYS",         "sourcesUriOrder": [           "configuration/sources/SRC1",           "configuration/sources/SRC2"         ],         "sourcesUriOrderDerivedFrom": "mapping",         "fallbacks": [           {             "appliedSurvivorshipRule": "MinValue",             "fallbacks": []           }         ]       },       "appliedSurvivorshipGroup": "GroupA",       "participationStatus": "strategy"     }   }   ```    > **Note:** The `participationStatus` property indicates how an attribute value participates in OV calculation. This property supports the following enum values: `ignored`, `pinned`, `end-dated-crosswalk`, `not-participated`, and `strategy`.   - `appliedSurvivorshipRules` (legacy): Contains the applied survivorship strategy and fallback information. This legacy response format is retained for backward compatibility.   - `appliedSurvivorshipRuleTree` (recommended): Provides a more detailed version of the applied survivorship strategy and fallback strategies, including source ordering information where applicable. The following response fields are supported:  - `appliedSurvivorshipRule`: Name of the survivorship strategy applied at the current level. - `sourcesUriOrder`: Ordered list of source URIs for an `SRC_SYS` strategy. This field is omitted for other strategies and when `sourcesUriOrderDerivedFrom` is `none`. - `sourcesUriOrderDerivedFrom`: Indicates how `sourcesUriOrder` was derived for an `SRC_SYS` strategy. The following values are supported:   - `mapping`: The source order is configured at the mapping level. The API returns the `sourcesUriOrder` value from the L3 mapping configuration.   - `group`: The source order is configured at the group level. The API returns the `sourcesUriOrder` value from the L3 group configuration.   - `priority`: The source order is derived from sources associated with the attribute that have an L3 priority. The API returns the sources in descending priority order.   - `none`: No priority or source order is configured, or no applicable source order is found. The response omits `sourcesUriOrder`. - `fallbacks`: List of fallback strategies. Each fallback contains `appliedSurvivorshipRule` and `fallbacks`. An `SRC_SYS` fallback also includes `sourcesUriOrderDerivedFrom` and, where applicable, `sourcesUriOrder`. - `showEndDatedReferenceAttributes`: Includes reference attributes with an expired relationship end date. This option is displayed only when the tenant has `skipEndDatedReferenceAttributes` enabled. - `explainOv`: Returns additional survivorship diagnostics in the `ovDetails` section of the response. These diagnostic fields are populated only when `explainOv` is provided. The response includes the following root-level and rule-level fields:A sample response is given below:    ```   {     "ovDetails": {       "winnerCrosswalks": [         {           "type": "configuration/sources/LNKD",           "value": "LNKD_RANK"         }       ],       "appliedSurvivorshipGroup": "default",       "participationStatus": "strategy",       "unmatchedFilters": [         {           "and": [             {               "uri": "configuration/entityTypes/HCO/attributes/MultipleFilters",               "value": "matchedValue",               "operator": "ne"             }           ]         }       ],       "appliedSurvivorshipRules": {         "appliedSurvivorshipRule": "SRC_SYS",         "sourcesUriOrder": [           "configuration/sources/LNKD",           "configuration/sources/SRC2"         ],         "sourcesUriOrderDerivedFrom": "mapping",         "fallbacks": [           {             "appliedSurvivorshipRule": "MinValue",             "fallbacks": [],             "fallbackCriteria": "MORE_THAN_ONE",             "winningCrosswalks": [               {                 "type": "configuration/sources/LNKD",                 "value": "LNKD_RANK"               }             ],             "sourcesForOv": [               "configuration/sources/LNKD"             ]           }         ],         "fallbackCriteria": "MORE_THAN_ONE",         "winningCrosswalks": [           {             "type": "configuration/sources/LNKD",             "value": "LNKD_RANK"           }         ],         "sourcesForOv": [           "configuration/sources/LNKD"         ]       },       "matchedFilters": [         {           "and": [             {               "uri": "configuration/entityTypes/HCO/attributes/MultipleFilters",               "value": "unmatchedValue",               "operator": "ne"             }           ]         },         {           "equals": [             {               "uri": "configuration/entityTypes/HCO/attributes/MultipleFilters",               "value": "matchedValue"             }           ]         }       ]     }   }   ```   - `appliedSurvivorshipGroup`: Applied survivorship group for the attribute value.   - `participationStatus`: Indicates how the attribute value participates in OV calculation.   - `matchedFilters`: Filters from the business configuration that matched during survivorship evaluation.   - `unmatchedFilters`: Filters from the business configuration that did not match during survivorship evaluation.   - `winnerCrosswalks`: Final list of winner crosswalks for the OV value. Each object contains `type`, which identifies the source type URI, and `value`, which identifies the crosswalk value.   - `appliedSurvivorshipRule`: The survivorship rule applied at the current level.   - `sourcesUriOrder`: Displays an ordered list of source URIs for a `SRC_SYS` strategy. This field is omitted for other strategies and when `sourcesUriOrderDerivedFrom` is `none`.   - `sourcesUriOrderDerivedFrom`: Indicates how `sourcesUriOrder` was derived for an `SRC_SYS` strategy. The following values are supported:  - `mapping`: The source order is configured at the mapping level. The API returns the `sourcesUriOrder` value from the L3 mapping configuration. - `group`: The source order is configured at the group level. The API returns the `sourcesUriOrder` value from the L3 group configuration. - `priority`: The source order is derived from sources associated with the attribute that have an L3 priority. The API returns the sources in descending priority order. - `none`: No priority or source order is configured, or no applicable source order is found. The response omits `sourcesUriOrder`.   - `winningCrosswalks`: Winner crosswalks returned by the rule applied at the current level.   - `sourcesForOv`: Reference to the `sourcesForOv` setting from the business configuration for the current rule.   - `fallbackCriteria`: Reference to the fallback criteria from the business configuration. Supported values are `ZERO`, `ZERO_OR_MORE_THAN_ONE`, and `MORE_THAN_ONE`.   - `fallbacks`: List of fallback rules. Each fallback contains the same fields as the parent rule: `appliedSurvivorshipRule`, `winningCrosswalks`, `sourcesForOv`, `fallbackCriteria`, and `fallbacks`. An `SRC_SYS` fallback also includes `sourcesUriOrderDerivedFrom` and, where applicable, `sourcesUriOrder`. |
 | Query | `mergeDuplicateCrosswalks` | No | Checks if all crosswalks for the required entity are unique if set to `true`. |
 | Query | `defaultMaxValues` | No | Specifies the maximum number of values listed in attributes. This restriction is intended for the UI convenience, in cases where there are long lists of values in some attributes.  > **Note:** This restriction is intended for the UI convenience, when there are long lists of values for some of the attributes. |
 | Query | `explicitSurvivorshipGroup` | No | Specifies the survivorship group that must be used for OV calculation. For example, `explicitSurvivorshipGroup=configuration/entityTypes/Individual/survivorshipGroups/FirstNameFrequency`. |
@@ -67146,7 +66875,7 @@ POST {TenantURL}/entities/_byCrosswalk?type=JDE
 | Query | `crosswalkValue` | Yes | ID of the object in the source system defined in the `sourceType` property. This property is required ONLY for entities. Example: an entity comes from Facebook source system and its identifier in Facebook is 'id3562'. For this entity, we will have a crosswalk with type 'configuration/sources/Facebook', value will be '`id3562` ' and `url` 'https://www.facebook.com/id3562' |
 |  | `sourceType` | Yes | Source type of the crosswalk. This is a reference to the source configuration by its URI. A crosswalk can have just one source. |
 |  | `sourceTable` | No | `sourceTable` parameter of crosswalk. |
-|  | `options` | No | Comma-separated list of different options which affect the entity's JSON content in the response. Available options:   - `sendHidden`: disabled by default, entity's JSON will contain hidden attributes if this option is enabled. - `ovOnly`: return only attribute values that have `ov=true` flag. - `nonOvOnly`: return only attribute values that have `ov=false` flag. If you have a nested or reference attribute value where `ov=true`, but sub-attributes where `ov=false`, then these sub-attributes will not appear in the response. - `showAppliedSurvivorshipRules` - Returns the survivorship determination logic used to determine the OV value of an attribute, down to the lowest level for each attribute and each value of an attribute. In the `appliedSurvivorshipRules` object, the key is the main survivorship strategy. If fallback rules are present, the value is either a string for a single fallback or an array for multiple fallbacks. This response does not include crosswalk details. A sample response is given below:    ```   {     "ovDetails": {       "appliedSurvivorshipRules": {         "Frequency": "LUD"       },       "appliedSurvivorshipGroup": "default",       "participationStatus": "strategy"     }   }   ```    > **Note:** The `participationStatus` property indicates how an attribute value participates in OV calculation. This property supports the following enum values: `ignored`, `pinned`, `end-dated-crosswalk`, `not-participated`, and `strategy`. - `explainOv`: Returns additional survivorship diagnostics in the `ovDetails` section of the response. The diagnostic fields are populated only when `explainOv` is provided. The response includes all fields returned by `showAppliedSurvivorshipRules`, and the following root-level and rule-level fields:A sample response is given below:    ```   {     "ovDetails": {       "winnerCrosswalks": [         "configuration/sources/<sourceName>"       ],       "appliedSurvivorshipGroup": "default",       "participationStatus": "strategy",       "unmatchedFilters": [         {           "and": [             {               "uri": "configuration/entityTypes/HCO/attributes/MultipleFilters",               "value": "matchedValue",               "operator": "ne"             }           ]         }       ],       "appliedSurvivorshipRules": {         "appliedSurvivorshipRule": "Frequency",         "fallbacks": [           {             "appliedSurvivorshipRule": "LUD",             "fallbacks": [],             "fallbackCriteria": "MORE_THAN_ONE",             "winningSources": [               "configuration/sources/<sourceName>"             ],             "sourcesForOv": [               "configuration/sources/<sourceName>"             ]           }         ],         "fallbackCriteria": "MORE_THAN_ONE",         "winningSources": [           "configuration/sources/<sourceName>"         ],         "sourcesForOv": [           "configuration/sources/<sourceName>"         ]       },       "matchedFilters": [         {           "and": [             {               "uri": "configuration/entityTypes/HCO/attributes/MultipleFilters",               "value": "unmatchedValue",               "operator": "ne"             }           ]         },         {           "equals": [             {               "uri": "configuration/entityTypes/HCO/attributes/MultipleFilters",               "value": "matchedValue"             }           ]         }       ]     }   }   ```   - `appliedSurvivorshipGroup`: Applied survivorship group for the attribute value.   - `participationStatus`: Indicates how the attribute value participates in OV calculation.   - `matchedFilters`: Filters from the business configuration that matched during survivorship evaluation.   - `unmatchedFilters`: Filters from the business configuration that did not match during survivorship evaluation.   - `winnerCrosswalks`: Final list of winner crosswalks for the OV value.   - `appliedSurvivorshipRule`: The survivorship rule applied at the current level.   - `winningSources`: Winner crosswalks from the rule applied at the current level.   - `sourcesForOv`: Reference to the `sourcesForOv` setting from the business configuration for the current rule.   - `fallbackCriteria`: Reference to the fallback criteria from the business configuration. Supported values are `ZERO`, `ZERO_OR_MORE_THAN_ONE`, and `MORE_THAN_ONE`.   - `fallbacks`: List of fallback rules. Each fallback contains the same fields as the parent rule: `appliedSurvivorshipRule`, `winningSources`, `sourcesForOv`, `fallbackCriteria`, and `fallbacks`. |
+|  | `options` | No | Comma-separated list of different options which affect the entity's JSON content in the response. Available options:   - `sendHidden`: disabled by default, entity's JSON will contain hidden attributes if this option is enabled. - `ovOnly`: return only attribute values that have `ov=true` flag. - `nonOvOnly`: return only attribute values that have `ov=false` flag. If you have a nested or reference attribute value where `ov=true`, but sub-attributes where `ov=false`, then these sub-attributes will not appear in the response. - `showAppliedSurvivorshipRules`: Returns the survivorship determination logic used to determine the OV value of an attribute, down to the lowest level for each attribute and each value of an attribute. When you use `showAppliedSurvivorshipRules`, the `ovDetails` section has the following fields:    A sample response is given below:    ```   {     "ovDetails": {       "appliedSurvivorshipRules": {         "SRC_SYS": [           "MinValue"         ]       },       "appliedSurvivorshipRuleTree": {         "appliedSurvivorshipRule": "SRC_SYS",         "sourcesUriOrder": [           "configuration/sources/SRC1",           "configuration/sources/SRC2"         ],         "sourcesUriOrderDerivedFrom": "mapping",         "fallbacks": [           {             "appliedSurvivorshipRule": "MinValue",             "fallbacks": []           }         ]       },       "appliedSurvivorshipGroup": "GroupA",       "participationStatus": "strategy"     }   }   ```    > **Note:** The `participationStatus` property indicates how an attribute value participates in OV calculation. This property supports the following enum values: `ignored`, `pinned`, `end-dated-crosswalk`, `not-participated`, and `strategy`.   - `appliedSurvivorshipRules` (legacy): Contains the applied survivorship strategy and fallback information. This legacy response format is retained for backward compatibility.   - `appliedSurvivorshipRuleTree` (recommended): Provides a more detailed version of the applied survivorship strategy and fallback strategies, including source ordering information where applicable. The following response fields are supported:  - `appliedSurvivorshipRule`: Name of the survivorship strategy applied at the current level. - `sourcesUriOrder`: Ordered list of source URIs for an `SRC_SYS` strategy. This field is omitted for other strategies and when `sourcesUriOrderDerivedFrom` is `none`. - `sourcesUriOrderDerivedFrom`: Indicates how `sourcesUriOrder` was derived for an `SRC_SYS` strategy. The following response fields are supported:   - `mapping`: The source order is configured at the mapping level. The API returns the `sourcesUriOrder` value from the L3 mapping configuration.   - `group`: The source order is configured at the group level. The API returns the `sourcesUriOrder` value from the L3 group configuration.   - `priority`: The source order is derived from sources associated with the attribute that have an L3 priority. The API returns the sources in descending priority order.   - `none`: No priority or source order is configured, or no applicable source order is found. The response omits `sourcesUriOrder`. - `fallbacks`: List of fallback strategies. Each fallback contains `appliedSurvivorshipRule` and `fallbacks`. An `SRC_SYS` fallback also includes `sourcesUriOrderDerivedFrom` and, where applicable, `sourcesUriOrder`. - `explainOv`: Returns additional survivorship diagnostics in the `ovDetails` section of the response. The diagnostic fields are populated only when `explainOv` is provided. The response includes the following root-level and rule-level fields:A sample response is given below:    ```   {     "ovDetails": {       "winnerCrosswalks": [         {           "type": "configuration/sources/LNKD",           "value": "LNKD_RANK"         }       ],       "appliedSurvivorshipGroup": "default",       "participationStatus": "strategy",       "unmatchedFilters": [         {           "and": [             {               "uri": "configuration/entityTypes/HCO/attributes/MultipleFilters",               "value": "matchedValue",               "operator": "ne"             }           ]         }       ],       "appliedSurvivorshipRules": {         "appliedSurvivorshipRule": "SRC_SYS",         "sourcesUriOrder": [           "configuration/sources/LNKD",           "configuration/sources/SRC2"         ],         "sourcesUriOrderDerivedFrom": "mapping",         "fallbacks": [           {             "appliedSurvivorshipRule": "MinValue",             "fallbacks": [],             "fallbackCriteria": "MORE_THAN_ONE",             "winningCrosswalks": [               {                 "type": "configuration/sources/LNKD",                 "value": "LNKD_RANK"               }             ],             "sourcesForOv": [               "configuration/sources/LNKD"             ]           }         ],         "fallbackCriteria": "MORE_THAN_ONE",         "winningCrosswalks": [           {             "type": "configuration/sources/LNKD",             "value": "LNKD_RANK"           }         ],         "sourcesForOv": [           "configuration/sources/LNKD"         ]       },       "matchedFilters": [         {           "and": [             {               "uri": "configuration/entityTypes/HCO/attributes/MultipleFilters",               "value": "unmatchedValue",               "operator": "ne"             }           ]         },         {           "equals": [             {               "uri": "configuration/entityTypes/HCO/attributes/MultipleFilters",               "value": "matchedValue"             }           ]         }       ]     }   }   ```   - `appliedSurvivorshipGroup`: Applied survivorship group for the attribute value.   - `participationStatus`: Indicates how the attribute value participates in OV calculation.   - `matchedFilters`: Filters from the business configuration that matched during survivorship evaluation.   - `unmatchedFilters`: Filters from the business configuration that did not match during survivorship evaluation.   - `winnerCrosswalks`: Final list of winner crosswalks for the OV value. Each object contains `type`, which identifies the source type URI, and `value`, which identifies the crosswalk value.   - `appliedSurvivorshipRule`: The survivorship rule applied at the current level.   - `sourcesUriOrder`: Displays an ordered list of source URIs for a `SRC_SYS` strategy. This field is omitted for other strategies and when `sourcesUriOrderDerivedFrom` is `none`.   - `sourcesUriOrderDerivedFrom`: Indicates how `sourcesUriOrder` was derived for an `SRC_SYS` strategy. The following values are supported:  - `mapping`: The source order is configured at the mapping level. The API returns the `sourcesUriOrder` value from the L3 mapping configuration. - `group`: The source order is configured at the group level. The API returns the `sourcesUriOrder` value from the L3 group configuration. - `priority`: The source order is derived from sources associated with the attribute that have an L3 priority. The API returns the sources in descending priority order. - `none`: No priority or source order is configured, or no applicable source order is found. The response omits `sourcesUriOrder`.   - `winningCrosswalks`: Winner crosswalks from the rule applied at the current level.   - `sourcesForOv`: Reference to the `sourcesForOv` setting from the business configuration for the current rule.   - `fallbackCriteria`: Reference to the fallback criteria from the business configuration. Supported values are `ZERO`, `ZERO_OR_MORE_THAN_ONE`, and `MORE_THAN_ONE`.   - `fallbacks`: List of fallback rules. Each fallback contains the same fields as the parent rule: `appliedSurvivorshipRule`, `winningCrosswalks`, `sourcesForOv`, `fallbackCriteria`, and `fallbacks`. An `SRC_SYS` fallback also includes `sourcesUriOrderDerivedFrom` and, where applicable, `sourcesUriOrder`. |
 
 **Response**
 
@@ -100252,6 +99981,117 @@ For more information, see [Events API](https://docs.reltio.com/en/developer-reso
 
 ---
 
+# Estimate streaming payload size
+
+> **Section:** Developer resources > Data Integration APIs > Data Integration APIs at a glance > Events API
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/events-api/estimate-streaming-payload-size?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** estimate streaming payload size, streaming payloadEstimate API, payloadSizeBytes, isLargeObject, streaming destination
+
+
+Learn more about estimating the size of a streaming event payload for a destination and whether the object is classified as a large object.
+
+Use the `Streaming Payload Estimate API` to determine the event payload size for an entity or relation sent to a specific streaming destination and whether it exceeds that size limit. Estimating the payload size helps you identify and avoid unexpected size-limit failures before events are sent to the destination.
+
+The `Streaming Payload Estimate API` requires read privileges on entities, the same authorization as other data-read endpoints.
+
+## HTTP method and endpoint
+
+Use the following HTTP method and endpoint path to submit the request for estimating the streaming payload size for an entity or relation on a given destination.
+
+```
+POST /{tenantId}/streaming/payloadEstimate
+```
+
+The following table describes the endpoint path parameters.
+
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| `tenantId` | String | Yes | The unique identifier of the tenant. Specifies the tenant context for the request. |
+
+## Request headers
+
+The following request headers must be included.
+
+| Header | Value | Required |
+| --- | --- | --- |
+| `Authorization` | Bearer `<access_token>` | Yes |
+| `Content-Type` | application/json | Yes |
+
+## Request body
+
+The following table describes the request body parameters, including accepted values and defaults.
+
+| Parameter | Type | Required | Description | Accepted values / Default |
+| --- | --- | --- | --- | --- |
+| `objectUri` | String | Yes | URI of an existing entity or relation. | Example: `entities/{id}` or `relations/{id}` |
+| `destinationName` | String | Yes | Name of a streaming destination configured for the tenant (queue or topic). Works even if the destination is currently disabled. | Example: `queue.MyTenant.allEvents` |
+
+## Example request
+
+Use the following example to see how a complete request is structured with headers and a JSON body.
+
+```
+POST /{tenantId}/streaming/payloadEstimate
+Authorization: Bearer <access_token>
+Content-Type: application/json
+{
+  "objectUri": "entities/ABC123",
+  "destinationName": "my-destination"
+}
+```
+
+## Response body
+
+The following table describes the fields returned in the response body.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `payloadSizeBytes` | Number | Size (in bytes) of the message that would be sent to the destination for this object. |
+| `isLargeObject` | Boolean | `true` if the estimated payload exceeds the destination's message-size limit.if the estimated payload exceeds the destination's message-size limit.**Note:** If no publisher or connection is available for the destination, `payloadSizeBytes` falls back to the serialized body length and `isLargeObject` defaults to false. |
+| `maxMessageSize` | Number | Maximum message size (in bytes) supported by the destination. |
+
+## Example response
+
+The following example shows a response with the estimated payload size and large-object classification.
+
+```
+{
+    "payloadSizeBytes": 5718,
+    "maxMessageSize": 1048576,
+    "isLargeObject": false
+}
+```
+
+## Error codes and recommended actions
+
+The following table lists the possible error responses returned by this API.
+
+| HTTP status | Description | Recommended action |
+| --- | --- | --- |
+| 400 Bad Request | Missing `objectUri` or `destinationName`, malformed object URI, URI does not point to an entity or relation, or unknown destination name. | Review the request payload, verify that `objectUri` and `destinationName` are valid, and resend the request. |
+| 404 Not Found | Object does not exist. | Verify that the entity or relation URI exists for the tenant, then resend the request. |
+| 503 Service Unavailable | Destination's messaging broker is unreachable. | Retry the request when the destination messaging broker is available. |
+| 500 Internal Server Error | An unexpected error occurred while processing the request. | Retry the request. If the issue persists, contact [Reltio Support](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
+
+## Payload estimate behavior and limitations
+
+- 
+
+  The endpoint evaluates the entity or relation as a full `*_CREATED` event (worst-case, full-object payload). For destinations configured with `payloadType: DELTA`, the reported size is a conservative upper bound, not the exact delta size.
+- 
+
+  The destination's `objectFilter` is not evaluated. The endpoint checks payload size only, not whether the entity or relation would actually be streamed to the destination.
+- 
+
+  The `Streaming Payload Estimate API` differs from the Statistics API (`GET entities/{id}/statistic` with the `is_large_object` field), which measures internal queue-serialization size independent of any destination. The Streaming Payload Estimate API measures the resolved payload for a specific destination, accounting for destination-specific configuration such as `payloadType`, `ovOnly`, `JMSEventsFilteringFields`, and `largeObjectsSupport`.
+
+
+
+---
+
 # Handle duplicate record errors using auto-link in the Salesforce Connector
 
 > **Section:** Developer resources > Data Integration APIs > Data Integration APIs at a glance > Salesforce Connector API
@@ -114211,6 +114051,211 @@ The default value of the template is `part-{{n}}`.
 
 ---
 
+# Delete Task Files API
+
+> **Section:** Developer resources > Load and Export APIs > Load and Export APIs at a glance > Export Service APIs > Export Tasks Management API
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/load-and-export-apis/load-and-export-apis-at-a-glance/export-service-apis/export-tasks-management-api/delete-task-files-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** delete task files api, delete export task files, delete result files Reltio bucket, export tasks _files endpoint, remove export result files, ExportServiceURL jobs, taskId, export
+
+
+Learn more about deleting result files for an export task using `Delete Task Files API`.
+
+The `Delete Task Files API` deletes files generated by the export service that are stored in a Reltio bucket. If the task is part of a group, the API deletes files for all tasks in the group. If the files are stored in a custom destination, the API does not delete them and returns an error. For Reltio bucket paths and custom destinations, see [Store export results](https://docs.reltio.com/en/developer-resources/load-and-export-apis/load-and-export-apis-at-a-glance/export-service-apis/store-export-results?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). To delete files for a specific tenant, see [Delete Task Files for Tenant API](https://docs.reltio.com/en/developer-resources/load-and-export-apis/load-and-export-apis-at-a-glance/export-service-apis/export-tasks-management-api/delete-task-files-for-tenant-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+The following role can delete the result files:
+
+- 
+
+
+
+## HTTP method and endpoint
+
+Use the following HTTP method and endpoint path to submit the request for deleting result files of an export task.
+
+```
+DELETE {ExportServiceURL}/tasks/{taskId}/_files
+```
+
+Replace `{ExportServiceURL}` with the [Export Service URL](https://docs.reltio.com/en/developer-resources/load-and-export-apis/load-and-export-apis-at-a-glance/export-service-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) for your environment, for example, `http://example.reltio.com/jobs`.
+
+The following table describes the endpoint path parameters.
+
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| `taskId` | String | Yes | Unique identifier of the export task.   Example: `4313a9ff-a3a1-4a8e-bd90-d508b9f2ac66` |
+
+## Request headers
+
+The following request headers must be included.
+
+| Header | Value | Required |
+| --- | --- | --- |
+| `Authorization` | Bearer `<access_token>` | Yes |
+
+## Request body
+
+This operation does not require a request body.
+
+## Example request
+
+Use the following example to see how a complete request is structured with headers to delete result files.
+
+```
+DELETE {ExportServiceURL}/tasks/{taskId}/_files
+
+```
+
+## Response body
+
+The following table describes the fields returned in the response body.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `status` | String | Result of a successful delete. Value: `success`. Failures return an error response instead of this field. See [Error codes and recommended actions](#reference-7916/section-686). |
+
+## Example response
+
+The following example shows a response with a successful delete.
+
+```
+{
+    "status": "success"
+}
+```
+
+## Additional examples
+
+The following table lists additional sample requests and responses.
+
+| Scenario | Request | Response |
+| --- | --- | --- |
+| Task has no result files (for example, `FAILED` before any output was written) | `DELETE {ExportServiceURL}/tasks/{taskId}/_files` | `{"status": "success"}`There are no files to remove |
+| Delete files that were already deleted | `DELETE {ExportServiceURL}/tasks/{taskId}/_files` | `{"status": "success"}`The operation is idempotent; no error is returned. |
+| Delete files exported to a destination you configure | `DELETE {ExportServiceURL}/tasks/{taskId}/_files` | `{"severity": "Error", "errorMessage": "Operation not permitted", "errorCode": 565, "errorDetailMessage": "Files exported to a custom destination cannot be deleted"}` |
+| Delete files for a task ID that does not exist | `DELETE {ExportServiceURL}/tasks/{taskId}/_files` | `{"severity": "Error", "errorMessage": "Object with id={taskId} not found", "errorCode": 101, "errorDetailMessage": "No object with specified id found"}` |
+| Delete files for a task in `PROCESSING` | `DELETE {ExportServiceURL}/tasks/{taskId}/_files` | `{"severity": "Error", "errorMessage": "This operation can not be done with task in PROCESSING state.", "errorCode": 437, "errorDetailMessage": "This operation can not be done with task in PROCESSING state."}` |
+| Delete files for a task in `PAUSED` | `DELETE {ExportServiceURL}/tasks/{taskId}/_files` | `{"severity": "Error", "errorMessage": "This operation can not be done with task in PAUSED state.", "errorCode": 437, "errorDetailMessage": "This operation can not be done with task in PAUSED state."}` |
+
+## Error codes and recommended actions
+
+The following table lists the possible error responses returned by this API.
+
+| HTTP status | Error code | Description | Recommended action |
+| --- | --- | --- | --- |
+| `400 Bad Request` | `437` | The task is in an active state. The `errorMessage` names the current status.   Active statuses: `SCHEDULED`, `SCHEDULED_POLL`, `SCHEDULED_CANCELLING`, `PROCESSING`, `WAITING_FOR_RESOURCE`, `PAUSING`, `PAUSED`, `CANCELING`, `WAITING`, `WAITING_FOR_QUEUE`. | Resend the request after the task status is `COMPLETED`, `FAILED`, or `CANCELED`. |
+| `400 Bad Request` | `565` | The export wrote files to a custom destination. `Delete Task Files API` deletes files from the Reltio bucket only. | Delete the files in your Reltio storage. |
+| `404 Not Found` | `101` | No task is found for this `taskId`. | Confirm the task ID and resend the request. |
+
+
+
+---
+
+# Delete Task Files for Tenant API
+
+> **Section:** Developer resources > Load and Export APIs > Load and Export APIs at a glance > Export Service APIs > Export Tasks Management API
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/load-and-export-apis/load-and-export-apis-at-a-glance/export-service-apis/export-tasks-management-api/delete-task-files-for-tenant-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** delete task files for tenant api, delete export task files tenant, delete result files Reltio bucket, export tasks _files endpoint, Tenant taskId, ROLE_ADMIN_TENANT, ExportServiceURL jobs, export
+
+
+Learn more about deleting result files for an export task in a specified tenant.
+
+The `Delete Task Files for Tenant API` deletes files generated by the export service that are stored in a Reltio bucket. If the files are in a custom destination, the API does not delete them and returns an error. For Reltio bucket paths and custom destinations, see [Store export results](https://docs.reltio.com/en/developer-resources/load-and-export-apis/load-and-export-apis-at-a-glance/export-service-apis/store-export-results?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+The following role can delete the result files:
+
+- 
+
+  (`ROLE_ADMIN_TENANT`)
+
+## HTTP method and endpoint
+
+Use the following HTTP method and endpoint path to submit the request for deleting result files of an export task in a specified tenant.
+
+```
+DELETE {ExportServiceURL}/{Tenant}/tasks/{taskId}/_files
+```
+
+Replace `{ExportServiceURL}` with the [Export Service URL](https://docs.reltio.com/en/developer-resources/load-and-export-apis/load-and-export-apis-at-a-glance/export-service-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) for your environment, for example, `http://example.reltio.com/jobs`.
+
+The following table describes the endpoint path parameters.
+
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| `Tenant` | String | Yes | Unique identifier of the tenant where you want to delete the result files.  Example: `jsmith123` |
+| `taskId` | String | Yes | Unique identifier of the export task.   Example: `4313a9ff-a3a1-4a8e-bd90-d508b9f2ac66` |
+
+## Request headers
+
+The following request headers must be included.
+
+| Header | Value | Required |
+| --- | --- | --- |
+| `Authorization` | Bearer `<access_token>` | Yes |
+
+## Request body
+
+This operation does not require a request body.
+
+## Example request
+
+Use the following example to see how a complete request is structured with headers to delete result files.
+
+```
+DELETE {ExportServiceURL}/{Tenant}/tasks/{taskId}/_files
+
+```
+
+## Response body
+
+The following table describes the fields returned in the response body.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `status` | String | Result of a successful delete. Value: `success`. Failures return an error response instead of this field. See [Error codes and recommended actions](#reference-7916/section-686). |
+
+## Example response
+
+The following example shows a response with a successful delete.
+
+```
+{
+    "status": "success"
+}
+```
+
+## Additional examples
+
+The following table lists additional sample requests and responses.
+
+| Scenario | Request | Response |
+| --- | --- | --- |
+| Task has no result files (for example, `FAILED` before any output was written) | `DELETE {ExportServiceURL}/{Tenant}/tasks/{taskId}/_files` | `{"status": "success"}`There are no files to remove. |
+| Delete files that were already deleted | `DELETE {ExportServiceURL}/tasks/{taskId}/_files` | `{"status": "success"}`The operation is idempotent; no error is returned. |
+| Delete files exported to a custom destination | `DELETE {ExportServiceURL}/{Tenant}/tasks/{taskId}/_files` | `{"severity": "Error", "errorMessage": "Operation not permitted", "errorCode": 565, "errorDetailMessage": "Files exported to a custom destination cannot be deleted"}` |
+| Delete files for a task that belongs to another tenant | `DELETE {ExportServiceURL}/{Tenant}/tasks/{taskId}/_files` | `{"severity": "Error", "errorMessage": "Object with id={taskId} not found", "errorCode": 101, "errorDetailMessage": "No object with specified id found"}` |
+| Delete files for a task in `PROCESSING` | `DELETE {ExportServiceURL}/{Tenant}/tasks/{taskId}/_files` | `{"severity": "Error", "errorMessage": "This operation can not be done with task in PROCESSING state.", "errorCode": 437, "errorDetailMessage": "This operation can not be done with task in PROCESSING state."}` |
+| Delete files for a task in `PAUSED` | `DELETE {ExportServiceURL}/{Tenant}/tasks/{taskId}/_files` | `{"severity": "Error", "errorMessage": "This operation can not be done with task in PAUSED state.", "errorCode": 437, "errorDetailMessage": "This operation can not be done with task in PAUSED state."}` |
+
+## Error codes and recommended actions
+
+The following table lists the possible error responses returned by this API.
+
+| HTTP status | Error code | Description | Recommended action |
+| --- | --- | --- | --- |
+| `400 Bad Request` | `437` | The task is in an active state. The `errorMessage` names the current status.   Active statuses: `SCHEDULED`, `SCHEDULED_POLL`, `SCHEDULED_CANCELLING`, `PROCESSING`, `WAITING_FOR_RESOURCE`, `PAUSING`, `PAUSED`, `CANCELING`, `WAITING`, `WAITING_FOR_QUEUE`. | Resend the request after the task status is `COMPLETED`, `FAILED`, or `CANCELED`. |
+| `400 Bad Request` | `565` | The export wrote files to a custom destination. `Delete Task Files for Tenant API` deletes files from the Reltio bucket only. | Delete the files in your own storage. |
+| `404 Not Found` | `101` | No task is found for this `taskId` in the specified `{Tenant}`. If the task belongs to another tenant, the API returns this error. | Confirm `{Tenant}` and the task ID, then resend the request. |
+
+
+
+---
+
 # Uploading data with the Data Loader: Supported formats and limits
 
 > **Section:** Developer resources > Load and Export APIs > Load and Export APIs at a glance > Data Loader API
@@ -127997,7 +128042,7 @@ GET {TenantURL}/entities/{entity object URI}/_hops
 | Query | `activeness_enabled` | No | Flag to determine whether to return only active entities and relations.  If set to `false`, the response includes both active and inactive entities and relations, regardless of their `endDate` values.  Default is `true`. |
 | Query | `filterLastLevel` | No | Flag to NOT count relationships from the last level of deep to the next level after the last. In a response it affects these entity parameters: `untraversedRelationsCount` and `traversedRelationsCount`.   Default is `true`. |
 | Query | `returnDataAnyway` | No | Flag that allows the API to return partial data when used with `limitCreditConsumption=true`. If the request exceeds the credit consumption limit, the response includes all retrieved data along with the `dataComplete=false` flag.   Default is `false`. |
-| Query | `options` | No | Comma-separated list of options that affect the structure of entities in the response. Available options:   - `sendHidden`: Disabled by default. Includes hidden attributes in the entity JSON if enabled. - `ovOnly`: Returns only attribute values where `ov=true`. - `nonOvOnly`: Returns only attribute values where `ov=false`. If a nested or reference attribute has `ov=true` but contains sub-attributes with `ov=false`, those sub-attributes won’t appear in the response. - `sendMasked`: Returns masked attribute values if masking is configured in the L2 or L3 configuration. - `showAppliedSurvivorshipRules`: Returns the survivorship determination logic used to determine the OV value of an attribute, down to the lowest level (the primary and fallback strategies in order they were applied) for each attribute and each value of an attribute. A sample response is given below:    ```   {     "ovDetails": {       "appliedSurvivorshipRules": {         "Aggregation": [           "Aggregation ",           "LUD"         ]       },       "appliedSurvivorshipGroup": "default",       "participationStatus": "strategy",       "matchedFilters": [         {           "and": [             {               "uri": "configuration/entityTypes/HCO/attributes/MultipleFilters",               "value": "unmatchedValue",               "operator": "ne"             }           ]         }       ],       "unmatchedFilters": [         {           "uri": "configuration/entityTypes/HCO/attributes/MultipleFilters",           "value": "matchedValue",           "operator": "ne"         }       ]     }   }   ```    > **Note:** The new `ovParticipationStatus` property indicates how an attribute value participates in OV calculation. It explicitly represents values that are excluded or handled differently during OV processing. This property supports the following enum values: `ignored`, `pinned`, `end-dated-crosswalk`, `not-participated`, and `strategy`. - `explainOv`: returns additional survivorship diagnostics in the `ovDetails` section, including matched and unmatched filters as defined in the business configuration. It also includes all fields returned by `showAppliedSurvivorshipRule`. A sample response is given below:    ```   {     "ovDetails": {       "appliedSurvivorshipRules": {         "Aggregation": [           "Aggregation ",           "LUD"         ]       },       "appliedSurvivorshipGroup": "default",       "participationStatus": "strategy",       "matchedFilters": [         {           "and": [             {               "uri": "configuration/entityTypes/HCO/attributes/MultipleFilters",               "value": "unmatchedValue",               "operator": "ne"             }           ]         }       ],       "unmatchedFilters": [         {           "uri": "configuration/entityTypes/HCO/attributes/MultipleFilters",           "value": "matchedValue",           "operator": "ne"         }       ]     }   }   ``` |
+| Query | `options` | No | Comma-separated list of options that affect the structure of entities in the response. Available options:   - `sendHidden`: Disabled by default. Includes hidden attributes in the entity JSON if enabled. - `ovOnly`: Returns only attribute values where `ov=true`. - `nonOvOnly`: Returns only attribute values where `ov=false`. If a nested or reference attribute has `ov=true` but contains sub-attributes with `ov=false`, those sub-attributes won’t appear in the response. - `sendMasked`: Returns masked attribute values if masking is configured in the L2 or L3 configuration. - `showAppliedSurvivorshipRules`: Returns the survivorship determination logic used to determine the OV value of an attribute, down to the lowest level for each attribute and each value of an attribute. When you use `showAppliedSurvivorshipRules`, the `ovDetails` section has the following fields:    A sample response is given below:    ```   {     "ovDetails": {       "appliedSurvivorshipRules": {         "SRC_SYS": [           "MinValue"         ]       },       "appliedSurvivorshipRuleTree": {         "appliedSurvivorshipRule": "SRC_SYS",         "sourcesUriOrder": [           "configuration/sources/SRC1",           "configuration/sources/SRC2"         ],         "sourcesUriOrderDerivedFrom": "mapping",         "fallbacks": [           {             "appliedSurvivorshipRule": "MinValue",             "fallbacks": []           }         ]       },       "appliedSurvivorshipGroup": "GroupA",       "participationStatus": "strategy"     }   }   ```    > **Note:** The new `ovParticipationStatus` property indicates how an attribute value participates in OV calculation. It explicitly represents values that are excluded or handled differently during OV processing. This property supports the following enum values: `ignored`, `pinned`, `end-dated-crosswalk`, `not-participated`, and `strategy`.   - `appliedSurvivorshipRules` (legacy): Contains the applied survivorship strategy and fallback information. This legacy response format is retained for backward compatibility.   - `appliedSurvivorshipRuleTree` (recommended): Provides a more detailed version of the applied survivorship strategy and fallback strategies, including source ordering information where applicable. The following response fields are supported:  - `appliedSurvivorshipRule`: Name of the survivorship strategy applied at the current level. - `sourcesUriOrder`: Ordered list of source URIs for an `SRC_SYS` strategy. This field is omitted for other strategies and when `sourcesUriOrderDerivedFrom` is `none`. - `sourcesUriOrderDerivedFrom`: Indicates how `sourcesUriOrder` was derived for an `SRC_SYS` strategy. The following values are supported:   - `mapping`: The source order is configured at the mapping level. The API returns the `sourcesUriOrder` value from the L3 mapping configuration.   - `group`: The source order is configured at the group level. The API returns the `sourcesUriOrder` value from the L3 group configuration.   - `priority`: The source order is derived from sources associated with the attribute that have an L3 priority. The API returns the sources in descending priority order.   - `none`: No priority or source order is configured, or no applicable source order is found. The response omits `sourcesUriOrder`. - `fallbacks`: List of fallback strategies. Each fallback contains `appliedSurvivorshipRule` and `fallbacks`. An `SRC_SYS` fallback also includes `sourcesUriOrderDerivedFrom` and, where applicable, `sourcesUriOrder`. - `explainOv`: returns additional survivorship diagnostics in the `ovDetails` section, including matched and unmatched filters as defined in the business configuration. It includes the following root-level and rule-level fields:A sample response is given below:    ```   {     "ovDetails": {       "winnerCrosswalks": [         {           "type": "configuration/sources/LNKD",           "value": "LNKD_RANK"         }       ],       "appliedSurvivorshipGroup": "default",       "participationStatus": "strategy",       "unmatchedFilters": [         {           "and": [             {               "uri": "configuration/entityTypes/HCO/attributes/MultipleFilters",               "value": "matchedValue",               "operator": "ne"             }           ]         }       ],       "appliedSurvivorshipRules": {         "appliedSurvivorshipRule": "SRC_SYS",         "sourcesUriOrder": [           "configuration/sources/LNKD",           "configuration/sources/SRC2"         ],         "sourcesUriOrderDerivedFrom": "mapping",         "fallbacks": [           {             "appliedSurvivorshipRule": "MinValue",             "fallbacks": [],             "fallbackCriteria": "MORE_THAN_ONE",             "winningCrosswalks": [               {                 "type": "configuration/sources/LNKD",                 "value": "LNKD_RANK"               }             ],             "sourcesForOv": [               "configuration/sources/LNKD"             ]           }         ],         "fallbackCriteria": "MORE_THAN_ONE",         "winningCrosswalks": [           {             "type": "configuration/sources/LNKD",             "value": "LNKD_RANK"           }         ],         "sourcesForOv": [           "configuration/sources/LNKD"         ]       },       "matchedFilters": [         {           "and": [             {               "uri": "configuration/entityTypes/HCO/attributes/MultipleFilters",               "value": "unmatchedValue",               "operator": "ne"             }           ]         },         {           "equals": [             {               "uri": "configuration/entityTypes/HCO/attributes/MultipleFilters",               "value": "matchedValue"             }           ]         }       ]     }   }   ```   - `appliedSurvivorshipGroup`: Applied survivorship group for the attribute value.   - `participationStatus`: Indicates how the attribute value participates in OV calculation.   - `matchedFilters`: Filters from the business configuration that matched during survivorship evaluation.   - `unmatchedFilters`: Filters from the business configuration that did not match during survivorship evaluation.   - `winnerCrosswalks`: Final list of winner crosswalks for the OV value. Each object contains `type`, which identifies the source type URI, and `value`, which identifies the crosswalk value.   - `appliedSurvivorshipRule`: The survivorship rule applied at the current level.   - `sourcesUriOrder`: Displays an ordered list of source URIs for an `SRC_SYS` strategy. This field is omitted for other strategies and when `sourcesUriOrderDerivedFrom` is `none`.   - `sourcesUriOrderDerivedFrom`: Indicates how `sourcesUriOrder` was derived for an `SRC_SYS` strategy. The following values are supported:  - `mapping`: The source order is configured at the mapping level. The API returns the `sourcesUriOrder` value from the L3 mapping configuration. - `group`: The source order is configured at the group level. The API returns the `sourcesUriOrder` value from the L3 group configuration. - `priority`: The source order is derived from sources associated with the attribute that have an L3 priority. The API returns the sources in descending priority order. - `none`: No priority or source order is configured, or no applicable source order is found. The response omits `sourcesUriOrder`.   - `winningCrosswalks`: Winner crosswalks returned by the rule applied at the current level.   - `sourcesForOv`: Reference to the `sourcesForOv` setting from the business configuration for the current rule.   - `fallbackCriteria`: Reference to the fallback criteria from the business configuration. Supported values are `ZERO`, `ZERO_OR_MORE_THAN_ONE`, and `MORE_THAN_ONE`.   - `fallbacks`: List of fallback rules. Each fallback contains the same fields as the parent rule: `appliedSurvivorshipRule`, `winningCrosswalks`, `sourcesForOv`, `fallbackCriteria`, and `fallbacks`. An `SRC_SYS` fallback also includes `sourcesUriOrderDerivedFrom` and, where applicable, `sourcesUriOrder`. |
 
 **Response**
 
@@ -128347,7 +128392,7 @@ GET {TenantURL}/{relation object URI}
 | Parameter | Parameter | Required | Details |
 | --- | --- | --- | --- |
 | Headers | `authorization` | Yes | Provides information about the authentication access token in format "Bearer `<accessToken>` " (see details in [Authentication API](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/authentication-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)). |
-| Query | `options` | No | Passes a comma-separated list of options for the relationships the API should return:- `sendHidden`: Relationships with hidden attributes. - `resolveMergedEntities`: Actual winner URIs for start/end objects in the relation if `true`. - `showAppliedSurvivorshipRules` - Returns the survivorship determination logic used to determine the OV value of an attribute, down to the lowest level (the primary and fallback strategies in order they were applied) for each attribute and each value of an attribute. A sample response is given below: ``` { "ovDetails": { "appliedSurvivorshipRules": { "Aggregation": [ "Aggregation ", "LUD" ] }, "appliedSurvivorshipGroup": "default", "participationStatus": "strategy", "matchedFilters": [ { "and": [ { "uri": "configuration/entityTypes/HCO/attributes/MultipleFilters", "value": "unmatchedValue", "operator": "ne" } ] } ], "unmatchedFilters": [ { "uri": "configuration/entityTypes/HCO/attributes/MultipleFilters", "value": "matchedValue", "operator": "ne" } ] } } ``` > **Note:** The `ovParticipationStatus` property indicates how an attribute value participates in OV calculation. It explicitly represents values that are excluded or handled differently during OV processing. This property supports the following values: `ignored`, `pinned`, `end-dated-crosswalk`, `not-participated`, and `strategy`. - `explainOv` - returns additional survivorship diagnostics in the `ovDetails` section, including matched and unmatched filters as defined in the business configuration. It also includes all fields returned by `showAppliedSurvivorshipRule`. A sample response is given below: `{ "ovDetails": { "appliedSurvivorshipRules": { "Aggregation": [ "Aggregation ", "LUD" ] }, "appliedSurvivorshipGroup": "default", "participationStatus": "strategy", "matchedFilters": [ { "and": [ { "uri": "configuration/entityTypes/HCO/attributes/MultipleFilters", "value": "unmatchedValue", "operator": "ne" } ] } ], "unmatchedFilters": [ { "uri": "configuration/entityTypes/HCO/attributes/MultipleFilters", "value": "matchedValue", "operator": "ne" } ] } }` |
+| Query | `options` | No | Passes a comma-separated list of options for the relationships the API should return:- `sendHidden`: Relationships with hidden attributes. - `resolveMergedEntities`: Actual winner URIs for start/end objects in the relation if `true`. - `showAppliedSurvivorshipRules`: Returns the survivorship determination logic used to determine the OV value of an attribute, down to the lowest level for each attribute and each value of an attribute. When you use `showAppliedSurvivorshipRules`, the `ovDetails` section has the following fields: A sample response is given below: ``` { "ovDetails": { "appliedSurvivorshipRules": { "SRC_SYS": [ "MinValue" ] }, "appliedSurvivorshipRuleTree": { "appliedSurvivorshipRule": "SRC_SYS", "sourcesUriOrder": [ "configuration/sources/SRC1", "configuration/sources/SRC2" ], "sourcesUriOrderDerivedFrom": "mapping", "fallbacks": [ { "appliedSurvivorshipRule": "MinValue", "fallbacks": [] } ] }, "appliedSurvivorshipGroup": "GroupA", "participationStatus": "strategy" } } ``` > **Note:** The `ovParticipationStatus` property indicates how an attribute value participates in OV calculation. It explicitly represents values that are excluded or handled differently during OV processing. This property supports the following values: `ignored`, `pinned`, `end-dated-crosswalk`, `not-participated`, and `strategy`. - `appliedSurvivorshipRules` (legacy): Contains the applied survivorship strategy and fallback information. This legacy response format is retained for backward compatibility. - `appliedSurvivorshipRuleTree` (recommended): Provides a more detailed version of the applied survivorship strategy and fallback strategies, including source ordering information where applicable. The following response fields are supported: - `appliedSurvivorshipRule`: Name of the survivorship strategy applied at the current level. - `sourcesUriOrder`: Ordered list of source URIs for an `SRC_SYS` strategy. This field is omitted for other strategies and when `sourcesUriOrderDerivedFrom` is `none`. - `sourcesUriOrderDerivedFrom`: Indicates how `sourcesUriOrder` was derived for an `SRC_SYS` strategy. The following values are supported: - `mapping`: The source order is configured at the mapping level. The API returns the `sourcesUriOrder` value from the L3 mapping configuration. - `group`: The source order is configured at the group level. The API returns the `sourcesUriOrder` value from the L3 group configuration. - `priority`: The source order is derived from sources associated with the attribute that have an L3 priority. The API returns the sources in descending priority order. - `none`: No priority or source order is configured, or no applicable source order is found. The response omits `sourcesUriOrder`. - `fallbacks`: List of fallback strategies. Each fallback contains `appliedSurvivorshipRule` and `fallbacks`. An `SRC_SYS` fallback also includes `sourcesUriOrderDerivedFrom` and, where applicable, `sourcesUriOrder`. - `explainOv` - returns additional survivorship diagnostics in the `ovDetails` section, including matched and unmatched filters as defined in the business configuration. It includes the following root-level and rule-level fields:A sample response is given below: - `appliedSurvivorshipGroup`: Applied survivorship group for the attribute value. - `participationStatus`: Indicates how the attribute value participates in OV calculation. - `matchedFilters`: Filters from the business configuration that matched during survivorship evaluation. - `unmatchedFilters`: Filters from the business configuration that did not match during survivorship evaluation. - `winnerCrosswalks`: Final list of winner crosswalks for the OV value. Each object contains `type`, which identifies the source type URI, and `value`, which identifies the crosswalk value. - `appliedSurvivorshipRule`: The survivorship rule applied at the current level. - `sourcesUriOrder`: Displays an ordered list of source URIs for a `SRC_SYS` strategy. This field is omitted for other strategies and when `sourcesUriOrderDerivedFrom` is `none`. - `sourcesUriOrderDerivedFrom`: Indicates how `sourcesUriOrder` was derived for an `SRC_SYS` strategy. The following values are supported: - `mapping`: The source order is configured at the mapping level. The API returns the `sourcesUriOrder` value from the L3 mapping configuration. - `group`: The source order is configured at the group level. The API returns the `sourcesUriOrder` value from the L3 group configuration. - `priority`: The source order is derived from sources associated with the attribute that have an L3 priority. The API returns the sources in descending priority order. - `none`: No priority or source order is configured, or no applicable source order is found. The response omits `sourcesUriOrder`. - `winningCrosswalks`: Winner crosswalk sources returned by the rule applied at the current level. - `sourcesForOv`: Reference to the `sourcesForOv` setting from the business configuration for the current rule. - `fallbackCriteria`: Reference to the fallback criteria from the business configuration. Supported values are `ZERO`, `ZERO_OR_MORE_THAN_ONE`, and `MORE_THAN_ONE`. - `fallbacks`: List of fallback rules. Each fallback contains the same fields as the parent rule: `appliedSurvivorshipRule`, `winningCrosswalks`, `sourcesForOv`, `fallbackCriteria`, and `fallbacks`. An `SRC_SYS` fallback also includes `sourcesUriOrderDerivedFrom` and, where applicable, `sourcesUriOrder`. `{ "ovDetails": { "winnerCrosswalks": [ { "type": "configuration/sources/LNKD", "value": "LNKD_RANK" } ], "appliedSurvivorshipGroup": "default", "participationStatus": "strategy", "unmatchedFilters": [ { "and": [ { "uri": "configuration/entityTypes/HCO/attributes/MultipleFilters", "value": "matchedValue", "operator": "ne" } ] } ], "appliedSurvivorshipRules": { "appliedSurvivorshipRule": "SRC_SYS", "sourcesUriOrder": [ "configuration/sources/LNKD", "configuration/sources/SRC2" ], "sourcesUriOrderDerivedFrom": "mapping", "fallbacks": [ { "appliedSurvivorshipRule": "MinValue", "fallbacks": [], "fallbackCriteria": "MORE_THAN_ONE", "winningCrosswalks": [ { "type": "configuration/sources/LNKD", "value": "LNKD_RANK" } ], "sourcesForOv": [ "configuration/sources/LNKD" ] } ], "fallbackCriteria": "MORE_THAN_ONE", "winningCrosswalks": [ { "type": "configuration/sources/LNKD", "value": "LNKD_RANK" } ], "sourcesForOv": [ "configuration/sources/LNKD" ] }, "matchedFilters": [ { "and": [ { "uri": "configuration/entityTypes/HCO/attributes/MultipleFilters", "value": "unmatchedValue", "operator": "ne" } ] }, { "equals": [ { "uri": "configuration/entityTypes/HCO/attributes/MultipleFilters", "value": "matchedValue" } ] } ] } }` |
 | Query | `reverseTranscodeLookups` | No | Provides the destination system name for which the system needs to perform reverse transcoding of RDM attributes. For example, to reverse transcode the lookup values used in Reltio to the values in Salesforce, set this parameter to Salesforce:  `reverseTranscodeLookups=Salesforce`  > **Note:** You can use this parameter for RDM attributes in [Get entity API](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/entities-api/get-entity?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
 
 ## Reverse Transcoding
@@ -136101,7 +136146,7 @@ Each tenant is assigned separate quotas and replenishment rates for the followin
 - Synchronous batch operations: These include higher latency requests such as data load or synchronous requests.
 - Asynchronous batch operations: These include background or asynchronous requests and inconsistency resolution service activities like queries and tasks, or internal requests.
 
-An alert is generated when the credits go below a specific threshold (25%). For information on your quota limit, see [Quota and limits](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-at-a-glance/implementation-assistance-operation/identify-performance-factors/quota-and-limits?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+An alert is generated when the credits go below a specific threshold (25%). For information on your quota limit, see [Quota and limits](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-overview/implementation-assistance-operation/identify-performance-factors/quota-and-limits?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 ## Viewing the Credit Balance
 
@@ -158049,7 +158094,8 @@ The following table displays the available versions of the managed package.
 
 | Version number | Date of availability | Description |
 | --- | --- | --- |
-| **1.10040** | 23 Jul 2026 | Enabled the following OAuth security controls:  - PKCE (Proof Key for Code Exchange) - Refresh Token Rotation - 30-day idle refresh token expiration - IP allowlist for refresh token requests      This security update brings the Reltio Connected App in compliance with Salesforce's OAuth security requirements. Installing this update requires no additional configuration, and your existing Salesforce integration continues to work as expected.  Download managed package: [1.10040](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tJ50000000aA3) |
+| **1.10043** | 04-08-2026 | The managed package no longer references field-level security fields that could cause installation or upgrade to fail with an error such as `no CustomField named Account.<field> found`. This error could occur if your organization doesn't have a Data.com, D&B Optimizer, or Data.com Clean license.  The following fields were removed from field-level security:  - **Account:**`DandbCompanyId`, `DunsNumber`, `Jigsaw`, `NaicsCode`, `NaicsDesc`, `CleanStatus`, `Tradestyle`, `YearStarted` - **Contact:**`Jigsaw`, `CleanStatus`      You can install or upgrade to this version without any additional configuration.  Download managed package: [1.10043](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tQy000000Xm2h) |
+| **1.10040** | 23-07-2026 | Enabled the following OAuth security controls:  - PKCE (Proof Key for Code Exchange) - Refresh Token Rotation - 30-day idle refresh token expiration - IP allowlist for refresh token requests      This security update brings the Reltio Connected App in compliance with Salesforce's OAuth security requirements. Installing this update requires no additional configuration, and your existing Salesforce integration continues to work as expected.  Download managed package: [1.10040](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tJ50000000aA3) |
 | **1.10039** | 18-03-2026 | Bulk Sync by IDs now processes records in configurable batches instead of a single transaction. This update helps prevent heap size issues during large sync operations and improves processing performance when syncing higher record volumes.  Download managed package: [1.10039](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tJ50000000Zol) |
 | **1.10038** | 20-03-2026 | Improved performance for sync queue pickup by optimizing how eligible records are selected for processing. This update helps reduce latency and improves reliability during sync operations. |
 | **1.10037** | 12-03-2026 | The managed Permission Set for Bulk Sync was corrected to remove references that block installation or upgrade in some Salesforce orgs. This update helps ensure the package installs successfully and allows you to use the packaged Permission Set for consistent Bulk Sync behavior. |
@@ -158089,6 +158135,7 @@ The following table displays the available versions of the Salesforce managed pa
 
 | Version number | Date of availability | Description |
 | --- | --- | --- |
+| **1.10018** | 13-08-2026 | Search Before Create now carries over the correct State/Province value when you select a search result with a different State/Province than your initial search filter. This prevents the validation mismatch error that could occur when you save the new record. |
 | **1.10017** | 22-06-2026 | When connecting the Reltio recipe endpoint to a different Salesforce org, RIH now validates the Salesforce Org ID in the background, and displays an error message if the configuration doesn't match. This prevents you from saving a misconfigured connection and helps avoid unexpected import failures |
 | **1.10016** | 17-06-2026 | - Fixed an issue where Search Before Create did not load in the Salesforce Mobile App when users created a new account. - Updated navigation to use Salesforce's mobile-compatible API so the New Account flow opens the Search Before Create screen correctly in the Salesforce Mobile App. - Fixed a record type resolution issue that prevented Search Before Create from loading in orgs with no default record type configured. **Important:** Salesforce no longer supports mobile browser access. This fix was verified for the Salesforce Mobile App on iOS and Android. You must use the Salesforce Mobile App on mobile devices, or use Lightning Experience on iPad Safari where it's supported by Salesforce. |
 | **1.10015** | 28-01-2026 | Added the Auto-Select Required Fields checkbox in SBC Settings so you can control whether required fields are automatically selected and locked in the SBC configuration. |
@@ -191002,6 +191049,51 @@ For general information, see Create view in the in the [Snowflake SQL command re
 
 ---
 
+# Credential expiry alerts for Reltio Data Pipelines
+
+> **Section:** Applications > Data Integrations > Data Pipelines at a glance
+
+
+**Source:** https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/credential-expiry-alerts-for-reltio-data-pipelines?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** invalid data pipeline credentials, data pipeline credential alerts, expired storage credential email, snowflake key pair notification, notification management recipients, data pipeline hub disable, staging sas token alerts, databricks, snowflake, gbq
+
+
+Learn about email and in-app notifications for expired or invalid Data Pipeline credentials.
+
+Reltio Data Pipelines use credentials configured during setup to connect to Databricks, Snowflake, or Google BigQuery and export tenant data. These credentials may expire, be rotated, or otherwise become invalid. When a credential is no longer valid, the affected pipeline cannot export data to its destination.
+
+Reltio retries the write or authentication when the destination rejects the configured credential. After three failed attempts, Reltio sends email and in-app notifications to the configured recipients, then disables the affected Data Pipeline. The notifications identify the affected tenant and Data Pipeline, explain the credential failure, and provide recovery actions.
+
+Credential-failure notifications apply to these Reltio Data Pipelines:
+
+- 
+
+  [Reltio Data Pipeline for Databricks](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-databricks-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- 
+
+  [Reltio Data Pipeline for Google BigQuery](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-gbq-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- 
+
+  [Reltio Data Pipeline for Snowflake (Staging Pipeline)](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-staging-pipeline-architecture?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- 
+
+  [Reltio Data Pipeline for Snowflake (Direct Connect)](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-direct-connect-architecture?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+## Configure notification recipients
+
+Credential-failure notifications do not have default recipients. To receive these notifications, configure recipients in **Console > Configuration > Notification Management**.
+
+In **Notification services**, select the **Edit** icon for the notification service you want to update, then choose recipients in **Who will receive the notification**.
+
+## Update credentials and re-enable a disabled Data Pipeline
+
+When a Data Pipeline is disabled, tenant data is not exported to the destination. To restore data delivery, first update the expired, rotated, or invalid credential. Then follow [Update credentials and re-enable a disabled Data Pipeline](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/update-credentials-and-re-enable-a-disabled-data-pipeline?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) to validate the updated credential, re-enable the Data Pipeline, and synchronize missed tenant data.
+
+
+
+---
+
 # Resolve incorrect winner entity references in relationship data
 
 > **Section:** Applications > Data Integrations > Data Pipelines at a glance > Data pipelines datasets at a glance
@@ -191411,6 +191503,68 @@ Purging DPH tables ensures a clean transition between environments and helps you
 ## Related topics
 
 - [Data pipelines datasets at a glance](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/data-pipelines-datasets-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+
+
+---
+
+# Update credentials and re-enable a disabled Data Pipeline
+
+> **Section:** Applications > Data Integrations > Data Pipelines at a glance
+
+
+**Source:** https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/update-credentials-and-re-enable-a-disabled-data-pipeline?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** restore disabled data pipeline, re-enable data pipeline adapter, syncToDataPipeline after credential failure, validate data pipeline credentials, data pipeline status switch, resynchronize, databricks, snowflake, gbq
+
+
+Learn how to update failed credentials and re-enable a disabled data pipeline.
+
+Reltio Data Pipelines require valid storage or authentication credentials to connect to their destinations. When a credential becomes invalid, the destination rejects authentication or data-write requests. After three failed credential attempts, Reltio notifies the configured recipients, then disables the affected Data Pipeline.
+
+To resume data export, update the failed credential, validate the updated configuration, and re-enable the Data Pipeline. Then synchronize the tenant data that was not delivered while the pipeline was disabled.
+
+Review [Credential expiry alerts for Reltio Data Pipelines](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/credential-expiry-alerts-for-reltio-data-pipelines?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) for information about credential-failure notifications.
+
+
+To update credentials and re-enable a disabled Data Pipeline
+
+1. Update the failed credential.
+   Update the credential identified in the [credential-failure notification.](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/credential-expiry-alerts-for-reltio-data-pipelines?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+   - Databricks: Renew the cloud storage credential in the cloud account named in the email, and store the updated credential securely. For more information, see [Configure the Reltio Data Pipeline for Databricks](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-databricks-at-a-glance/reltio-data-pipeline-for-databricks-set-up?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+   - Google BigQuery: Generate or renew the GCP service-account key and update the pipeline credential. For more information, see [Configure the Reltio Data Pipeline for GBQ](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-gbq-at-a-glance/reltio-data-pipeline-for-gbq-set-up/configure-the-reltio-data-pipeline-for-gbq?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+   - Snowflake (Staging Pipeline): Renew the cloud storage credential in the cloud account named in the email, and store the updated credential securely. For more information, see [Configure the Reltio Data Pipeline for Snowflake (Staging Pipeline)](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-staging-pipeline-architecture?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+   - Snowflake (Direct Connect): Set the current RSA public key on the Snowflake user with `ALTER USER <user> SET RSA_PUBLIC_KEY='<public_key>';`. For more information on the key-pair configuration steps, see [Authenticate your Snowflake account with RSA public key](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/reltio-data-pipeline-for-snowflake-apis/customize-snowflake-views-using-the-scripts-api/authenticate-your-snowflake-account-with-rsa-public-key?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+2. Validate the updated configuration.
+   Send the validation request with a valid access token for the affected Data Pipeline:The `{{adapterName}}` value is the name of your Data Pipeline.
+   Send the validation request with a valid access token for the affected Data Pipeline:
+   ```
+POST https://{{environment}}-data-pipeline-hub.reltio.com/api/tenants/{{tenantId}}/adapters/{{adapterName}}/validate
+   ```
+   The `{{adapterName}}` value is the name of your Data Pipeline.
+   A `200 OK` response confirms that the Data Pipeline can connect to the destination using the updated credential. Re-enable the Data Pipeline after validation succeeds.
+3. Re-enable the Data Pipeline.
+   In **Console > Tenant Management > Data Sharing > Data Pipelines**, locate the affected pipeline and turn on **Status**. The Data Pipeline resumes exporting new tenant events to the destination.
+4. Synchronize missed tenant data to the destination.
+   Re-enabling the Data Pipeline resumes delivery of new events but does not automatically send events that were missed while the pipeline was disabled.
+   Run the [Sync to Data Pipeline API](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/reltio-data-pipeline-for-snowflake-apis/sync-to-data-pipeline-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and set `updatedSince` to the timestamp when the Data Pipeline stopped exporting data. The API synchronizes objects updated after that timestamp. If you omit `updatedSince`, its default value is `0`, and the API synchronizes all tenant data.
+
+**Result**
+
+The failed credential is updated and validated, and the affected Data Pipeline is re-enabled. Reltio resumes delivery of new tenant events to the destination.
+
+The synchronization task synchronizes objects updated after the timestamp specified in `updatedSince`.
+
+**Verification steps**
+
+To confirm the pipeline is restored, perform the following steps:
+
+1. 
+
+   In **Console > Tenant Management > Data Sharing > Data Pipelines**, confirm **Status** is on for the affected Data Pipeline.
+2. 
+
+   In **Console > Tenant Management > Jobs**, confirm that the [Sync to Data Pipeline API](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/reltio-data-pipeline-for-snowflake-apis/sync-to-data-pipeline-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) task has completed successfully.
 
 
 
@@ -215672,24 +215826,22 @@ Analytical attributes are the properties of an entity. There are two types of an
 
 ## Working with Analytical Attributes
 
-When an attribute fails a validation function for an attribute, that attribute must be updated to meet the validation function. The analytical attribute stores the following data of the attribute and the same data is displayed in the **Profile** facet of Hub: 
+When an attribute fails a validation function for an attribute, update the attribute to meet the validation function. The analytical attribute stores information about the failed validation. The same information appears in the **Profile** facet of Hub:
 
-- The attribute that failed the validation functions
-- The action (WARNING) for the failed validation function
-- The message associated with the validation function
-- The name of the validation function
+- The attribute that failed validation
+- The action for the failed validation function (`WARNING`)
+- The validation message
+- The validation function name
 - The function URI
 
-The analytical attribute only stores the data for the initial scenario when the attribute had failed the validation function and does not store any data about the update made to meet the failed validation function.
+The analytical attribute stores only the information from the initial validation failure. It does not store information about the update you make to correct the attribute.
 
-After you make the update, the analytical attribute behaves in one of the following ways: 
+If multiple validation functions fail for the same attribute, Reltio stores the results in a single `AttributeValidations` object rather than creating a separate object for each validation function.
 
-- If the failed validation function is met, the analytical attribute is deleted.
-- If the update leads to the failure of any other validation function, the analytical attribute displays a new set of data consisting of the attribute that failed the validation function, action for the failed validation, message, function name, and function URI.
+After you update the attribute:
 
-
-
-
+- If the attribute passes the failed validation function, the analytical attribute is deleted.
+- If the update causes another validation function to fail, the analytical attribute is updated with information about the new failure, including the attribute, action, message, function name, and function URI.
 
 > **Note:** Data validation function is only applicable for Operational Values (OVs).
 
@@ -221871,7 +222023,7 @@ The API exports activity logs and sends a link to the exported data (if post-pro
 
 By default, the Activity Log Export API returns results for the last four months. To retrieve data for a different time range, specify the `filter` query parameter for timestamp. For example, by using the `filter=gt(timestamp,1560800276000)` query, all activities from June 17, 2019, 7:37:56 PM are returned. The value of the timestamp must be specified in milliseconds.
 
-Retention and searching using the activity log data is governed by Quotas and Limits. For more information, see [Quota and limits](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-at-a-glance/implementation-assistance-operation/identify-performance-factors/quota-and-limits?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+Retention and searching using the activity log data is governed by Quotas and Limits. For more information, see [Quota and limits](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-overview/implementation-assistance-operation/identify-performance-factors/quota-and-limits?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 > **Note:** Some things to remember when you search/export activity log data:
 > - Some activity log events have attributes based on entities' URI. Export Service supports different output formats for such attributes. For more information, see [CSV Output Format for Exported Activities](https://docs.reltio.com/en/developer-resources/load-and-export-apis/load-and-export-apis-at-a-glance/export-service-apis/export-api-csv-output-format/csv-output-format-for-exported-activities?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
@@ -223446,7 +223598,7 @@ Here are some considerations when deciding to group multiple records into a sing
   The total size of all source files to be loaded in any job cannot be higher than 10GB. If this functionality is disabled there is no size limitation.
 - 
 
-  During the process of merging/grouping rows, if the total of values for an attribute is greater than 10,000, the data loading job fails with a status of ERROR. For more information, see topic [Quota and limits](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-at-a-glance/implementation-assistance-operation/identify-performance-factors/quota-and-limits?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+  During the process of merging/grouping rows, if the total of values for an attribute is greater than 10,000, the data loading job fails with a status of ERROR. For more information, see topic [Quota and limits](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/implementation-assistance-overview/implementation-assistance-operation/identify-performance-factors/quota-and-limits?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 ## Group multiple records into a single entity
 
@@ -233894,7 +234046,7 @@ You can specify a **Delete Date** for the crosswalk using the date picker to sel
 
 **Source:** https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/sources-perspective?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
-**Keywords:** Sources perspective, Attributes, Operational Value, Winner Source System, Rule Type, Attribute values, Pin, Ignore, Focus, Edit attribute values, Delete attribute values, Operational value, Winner source system, Rule type
+**Keywords:** Sources perspective, Attributes, Operational Value, Winner Source System, Rule Type, Rule Types, Attribute values, Pin, Ignore, Focus, Edit attribute values, Delete attribute values, Operational value, Winner source system, Rule type
 
 
 Learn about the various sources and crosswalks for a profile.
@@ -233933,19 +234085,33 @@ The winner source system, the attribute value, and crosswalks in the right panel
 
 ## Rule type
 
-This column displays the actual survivorship strategy applied during OV calculation. This reflects the rule recorded in the `appliedSurvivorshipRules` field rather than only the metadata-defined primary strategy. This is the default view.
+The **Rule type** column displays the actual survivorship strategy applied during OV calculation. It reflects the rule recorded in the `appliedSurvivorshipRules` field rather than only the metadata-defined primary strategy. This is the default view.
 
 *Image: i-rule-type.png*
+
+**Applied survivorship rule**
 
 If the `showAppliedSurvivorshipRules` option is disabled in the UI configuration, the column displays only the primary survivorship strategy defined in business configuration. For more information about the configuration, see [Configure profile screens](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/configure-reltio-ui-with-the-configuration-file/configure-profile-screens?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 When `showAppliedSurvivorshipRules` is enabled, the system includes the `showAppliedSurvivorshipRules=true` parameter in the entity API request. The **Rule Type** column displays the applied survivorship rule for each OV value.
 
-Displaying the applied survivorship rule is important when fallback strategies are applied to determine the OV. If the primary survivorship rule does not return a result, fallback rules are applied. The applied rule shows which strategy determined the OV.
+**Fallback strategies**
+
+The applied survivorship rule is important when fallback strategies are applied to determine the OV. If the primary survivorship rule does not return a result, fallback rules are applied. The applied rule shows which strategy determined the OV.
 
 When fallback rules are used, the OV decision path tooltip in the `Attributes & OV` column displays how the final strategy was determined, including the full chain of fallback strategies.
 
 *Image: ui_sourcestypesurvivorshiprule.png*
+
+**Source system order**
+
+The [Source system](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-navigation/design-survivorship-rules/survivorship-rules?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) survivorship rule selects an attribute value based on the priority of source systems configured.
+
+When the OV decision path includes a source system survivorship rule, an information icon appears next to **Source system** in the Rule type column. Select the icon *Image: information-icon.svg* to open the **Source sequence** list.
+
+*Image: i-source-system.png*
+
+The list displays the source systems in the order used by the winning **Source system** strategy during OV calculation. The **Source sequence** list is available only when **Source system** is the strategy that determines the final OV.
 
 ## Count
 
@@ -234844,6 +235010,77 @@ To clone an existing hierarchy:
 2. 
 
    Confirm that its node structure matches the source hierarchy at the time of cloning.
+
+
+
+---
+
+# Edit hierarchy details in the Profile view
+
+> **Section:** Objectives > Manage profiles > Profile management at a glance > Profile management operation > Materialized hierarchy
+
+
+**Source:** https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/edit-hierarchy-details-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** edit hierarchy details in the profile view, enable versioning hierarchy hub, hierarchy version start date end date, materialized hierarchy edit metadata, edit details more options hierarchy tab
+
+
+Learn how to edit hierarchy details in the Profile view.
+
+In the **Hierarchy** tab of the **Profile** view, edit the hierarchy name, versioning settings, and version dates of an existing [Materialized hierarchy](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). Use this when the structure evolves and you need to keep that metadata up to date without rebuilding the hierarchy.
+
+The following roles can edit hierarchy details in the Profile view:
+
+- 
+
+
+
+For role definitions, see [About roles](https://docs.reltio.com/en/roles/about-roles?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+**Prerequisites**
+
+Before you begin, make sure you have met the following requirements:
+
+- 
+
+  You must [enable hierarchy in the tenant configuration](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/configure-tenant-business-settings-for-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+- 
+
+  You must [enable hierarchy in the UI configuration](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/configure-ui-settings-for-the-hierarchy-tab?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+- 
+
+  You must have [added a hierarchy for the profile](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/add-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+
+To edit hierarchy details in the Profile view
+
+1. In the **Hub**, select the profile you want to view.
+2. In the **Profile** view, select the **Hierarchy** tab.
+3. From the **Hierarchy type** list, select the hierarchy you want to edit.
+4. Select the **More options** icon, and then select **Edit detail**.
+   *Image: ui-edithierarchy.png*
+5. In the **Edit hierarchy details** dialog, edit the fields as required.
+   *Image: ui-edithierarchydialog.png*
+   - In the **Hierarchy name** field, edit the hierarchy name. The hierarchy name must be unique within the tenant.
+   - Select or clear **Enable versioning**.
+     > **Note:** You can clear **Enable versioning** only when the hierarchy has a single version. If the hierarchy has multiple versions, the option is disabled.
+   - If you've selected **Enable versioning**, edit the **Version name**, **Version Start Date**, and **Version End Date**. The name of the version must be unique within the hierarchy.
+6. Select **Save**.
+
+**Result**
+
+Hub updates the hierarchy name, version, and version dates in the **Hierarchy** tab without reloading the page. If you enabled or disabled versioning, Hub reloads the page.
+
+**Verification steps**
+
+To confirm the hierarchy details are updated, perform the following steps:
+
+1. 
+
+   Confirm the hierarchy title in the **Hierarchy** tab matches the name you edited.
+2. 
+
+   Confirm the updated version dates appear next to the hierarchy version name.
 
 
 
