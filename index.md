@@ -1,5 +1,5 @@
 # Reltio Documentation Index
-_Generated: 2026-08-26 02:15 UTC — 3254 topics (3200 unique)_
+_Generated: 2026-08-28 02:15 UTC — 3256 topics (3202 unique)_
 
 This file is a structured navigation index of the Reltio documentation portal.
 It contains the full parent-child hierarchy, topic URLs, keywords, summaries,
@@ -1727,6 +1727,10 @@ relationships, locate sibling topics, and follow cross-references.
 - **Path:** Reltio Documentation Portal v2 sitemap > Reltio > What’s in the box? > What's in the box at a glance > Additional subscriptions at a glance
 - **Summary:** Learn about Reltio's data integrations you can add on to Reltio Integration Hub.
 - **See also:** [available out-of- the-box](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/tenants-at-a-glance/tenant-architecture/reltio-data-integrationsoob?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Integration Hub](https://docs.reltio.com/en/applications/integration-hub/integration-hub-at-a-glance/integration-hub?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Reltio Enrichment with 340B at a glance](https://docs.reltio.com/en/applications/data-integrations/data-enrichment-integrations-at-a-glance/reltio-enrichment-with-340b-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Reltio Enrichment with D&B Data Blocks at a glance](https://docs.reltio.com/en/applications/data-integrations/data-enrichment-integrations-at-a-glance/reltio-enrichment-with-db-data-blocks-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Reltio Enrichment with D&B at a glance](https://docs.reltio.com/en/applications/data-integrations/data-enrichment-integrations-at-a-glance/reltio-enrichment-with-db-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Reltio Enrichment with DEA at a glance](https://docs.reltio.com/en/applications/data-integrations/data-enrichment-integrations-at-a-glance/reltio-enrichment-with-dea-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Reltio Enrichment with MedPro at a glance](https://docs.reltio.com/en/applications/data-integrations/data-enrichment-integrations-at-a-glance/reltio-enrichment-with-medpro-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Reltio Enrichment with Moody’s Orbis at a glance](https://docs.reltio.com/en/applications/data-integrations/data-enrichment-integrations-at-a-glance/reltio-enrichment-with-moodys-orbis-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Reltio Enrichment with NPI at a glance](https://docs.reltio.com/en/applications/data-integrations/data-enrichment-integrations-at-a-glance/reltio-enrichment-with-npi-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Reltio Enrichment with ZoomInfo at a glance](https://docs.reltio.com/en/applications/data-integrations/data-enrichment-integrations-at-a-glance/reltio-enrichment-with-zoominfo-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Reltio Integration for Alation at a glance](https://docs.reltio.com/en/applications/data-integrations/data-catalog-integrations-at-a-glance/reltio-integration-for-alation-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Reltio Integration for Collibra at a glance](https://docs.reltio.com/en/applications/data-integrations/data-catalog-integrations-at-a-glance/reltio-integration-for-collibra-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Reltio Integration for Purview at a glance](https://docs.reltio.com/en/applications/data-integrations/data-catalog-integrations-at-a-glance/reltio-integration-for-purview-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Reltio Data Sharing with Microsoft Fabric at a glance](https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing-at-a-glance/reltio-data-sharing-with-microsoft-fabric-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Reltio Data Pipeline for Databricks at a glance](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-databricks-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Reltio Data Cloud Security Recommendations
+
+- **Path:** Reltio Documentation Portal v2 sitemap > Reltio > What’s in the box? > What's in the box at a glance
 
 ## Products
 
@@ -9734,6 +9738,12 @@ _Topics in this section: Reltio Model Context Protocol (MCP) Server at a glance,
 - **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > System Administration APIs > System Administration APIs at a glance > Tasks API
 - **Summary:** Learn about the DeleteEntitiesTask task
 
+#### Delete History Records Task
+
+- **URL:** https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/delete-history-records-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > System Administration APIs > System Administration APIs at a glance > Tasks API
+- **Summary:** Learn about the DeleteHistoryRecordsTask and how it removes history records in Reltio within a specified date range.
+
 #### Distributed mode
 
 - **URL:** https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/distributed-mode?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
@@ -9973,6 +9983,14 @@ _Topics in this section: Reltio Model Context Protocol (MCP) Server at a glance,
 - **Summary:** Information about when and how to run this task.
 - **Keywords:** Process Rebuilt Match Task, process rebuilt match task, rebuilt match task, match task, rebuilt task
 
+#### Rebuild Grouping Task
+
+- **URL:** https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/rebuild-grouping-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > System Administration APIs > System Administration APIs at a glance > Tasks API
+- **Summary:** Learn more about rebuilding grouping structures for Advanced mode.
+- **Keywords:** rebuild grouping task, advanced grouping rebuild, segmented grouping task, rebuildGrouping endpoint
+- **See also:** [Get Active Tasks for Tenant](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/get-active-tasks-for-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
 #### Rebuild Match Table Task
 
 - **URL:** https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/rebuild-match-table-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
@@ -9988,12 +10006,6 @@ _Topics in this section: Reltio Model Context Protocol (MCP) Server at a glance,
 - **Summary:** Learn about Rebuild Match Table Task Version 2, its use of Analytics Framework Server for match processing, and its deprecated status.
 - **Keywords:** rebuild match tables task version 2, version 2, match tables task, rebuild match tables task, Rebuild Match Tables Task, Rebuild Match Tables Task Version 2
 - **See also:** [Rebuild Match Table Task](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/rebuild-match-table-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Analyze match strategy](https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/define-entity-types-and-attributes/analyze-match-strategy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-
-#### Delete History Records Task
-
-- **URL:** https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/delete-history-records-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > System Administration APIs > System Administration APIs at a glance > Tasks API
-- **Summary:** Learn about the DeleteHistoryRecordsTask and how it removes history records in Reltio within a specified date range.
 
 #### Re-cleanse Data Task
 

@@ -1,8 +1,8 @@
 # Reltio Documentation
 
-_Generated: 2026-08-26 02:15 UTC_
+_Generated: 2026-08-28 02:15 UTC_
 
-_Topics: 3381_
+_Topics: 3382_
 
 ---
 
@@ -58388,6 +58388,85 @@ JSON Array of entity URIs to be processed. This is optional. For example:
     }
 ]
 ```
+
+
+
+---
+
+# Rebuild Grouping Task
+
+> **Section:** Developer resources > System Administration APIs > System Administration APIs at a glance > Tasks API
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/rebuild-grouping-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** rebuild grouping task, advanced grouping rebuild, segmented grouping task, rebuildGrouping endpoint
+
+
+Learn more about rebuilding grouping structures for Advanced mode.
+
+The RebuildGrouping task rebuilds the grouping information for entity types that use Advanced Grouping. The task runs in two sequential phases. The `RebuildGroupingUpdateDataPhaseTask` phase updates entity data and grouping structures. When every part of this phase completes, Reltio automatically starts the `RebuildGroupingMatchSyncPhaseTask` phase, which evaluates pairwise matches and rebuilds the group information.
+
+Run this task after you enable or modify grouping rules in your L3 configuration, after you change automatedgrouping match rules, after you remediate a broken grouping configuration, or after you delete groupentities or re-enable grouping.
+
+> **Note:** This task does not currently support a parameter to scope the rebuild to specific entity types. RebuildGrouping runs against all entity types in the tenant, but processes only the entity types that participate in grouping.
+
+> **Important:** Before you run this task, confirm that `groupingConfig.enabled` is set to `true` and `groupingConfig.version` is set to `v2` in the tenant's physical configuration. Do not include `messagingName` alongside `version: v2`. This combination reverts the tenant to v1 (classic) grouping behavior.
+
+## HTTP method and endpoint
+
+Use the following HTTP method and endpoint path to trigger the RebuildGrouping task.
+
+```
+POST {platformUrl}/reltio/api/{tenantId}/rebuildGrouping
+```
+
+Replace `{platformUrl}` with your Reltio platform base URL and `{tenantId}` with your tenant ID.
+
+> **Note:** Do not manually submit the `RebuildGroupingMatchSyncPhaseTask` phase. Reltio starts this phase automatically after every part of the `RebuildGroupingUpdateDataPhaseTask` phase completes.
+
+The following table describes the endpoint path parameters.
+
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| `tenantId` | String | Yes | Unique identifier of the tenant where you want to rebuild grouping. Specifies the tenant context for the request. |
+
+## Query parameters
+
+The following table describes the query parameters and their values.
+
+| Parameter | Type | Required | Description | Accepted values / Default |
+| --- | --- | --- | --- | --- |
+| `distributed` | Boolean | No | Runs the task across multiple parallel task parts instead of a single task part. We recommend setting this parameter to `true` for production-scale rebuilds. | `true` or `false` |
+| `taskPartsCount` | Integer | No | Number of parallel task parts to split the rebuild across. Use a higher value, for example `16`, for large tenants, and a lower value for smaller tenants. | Example: `16` |
+
+## Request headers
+
+The following request headers must be included.
+
+| Header | Value | Required |
+| --- | --- | --- |
+| `Authorization` | Bearer `<access_token>` | Yes |
+| `Content-Type` | application/json | Yes |
+
+## Request body
+
+This operation does not require a request body.
+
+## Example request
+
+Use the following example to trigger a distributed RebuildGrouping run across 16 task parts.
+
+```
+POST {platformUrl}/reltio/api/{tenantId}/rebuildGrouping
+     ?distributed=true
+     &taskPartsCount=16
+    
+```
+
+## Response body
+
+The request starts the task and returns a task object confirming submission, using the same task properties described in [Get Active Tasks for Tenant](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/get-active-tasks-for-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). When you submit the request with `distributed=true`, Reltio creates and returns one task object per task part.
 
 
 
