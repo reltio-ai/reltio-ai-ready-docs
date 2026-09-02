@@ -1,8 +1,8 @@
 # Reltio Documentation
 
-_Generated: 2026-08-28 02:15 UTC_
+_Generated: 2026-09-02 02:15 UTC_
 
-_Topics: 3382_
+_Topics: 3390_
 
 ---
 
@@ -2596,6 +2596,242 @@ If you're a new user, this section is a good place to start. An experienced user
 ## Where do I find What's in the box?
 
 Drill down to this section from the Reltio tile on the Documentation Portal home page or search for it by name.
+
+
+
+---
+
+# Reltio Docs for You overview
+
+> **Section:** Reltio > What’s in the box? > What's in the box at a glance
+
+
+**Source:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/reltio-docs-for-you-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** Reltio Docs for You, AI-generated documentation, personalized guide, Reltio Documentation Portal
+
+
+Learn about Reltio Docs for You, an AI-powered tool that builds a personalized guide from the official Reltio documentation.
+
+**Reltio Docs for You** is an AI-powered, personalized documentation experience available from the Reltio Documentation Portal.
+
+Instead of browsing the documentation portal's existing topic structure, you answer a short set of questions about your role, your goal, your preferred learning style, and your familiarity with Reltio. **Reltio Docs for You** searches the official Reltio documentation for the sections most relevant to your answers, and generates a guide formatted for how you learn best.
+
+*Image: ui_docsforyou_main.PNG*
+
+## Signing in
+
+Any Reltio customer with a Reltio tenant ID and valid user credentials can sign in to use **Reltio Docs for You**. The onboarding wizard's role question doesn't control who can access the tool. The role question only tailors the language, depth, and focus of the generated guide.
+
+For sign-in steps, see [Sign in to Reltio Docs for You](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/reltio-docs-for-you-overview/sign-in-to-reltio-docs-for-you?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+## How it works
+
+**Reltio Docs for You** presents its landing page as a three-step explanation:
+
+- 
+
+  **Tell us about you**: your role, what you need to accomplish, your experience level, and how you prefer to learn.
+- 
+
+  **AI finds the right docs**: the application searches the official Reltio documentation and selects the sections most relevant to your goal.
+- 
+
+  **Get your guide**: a personalized guide, formatted for your learning style, that you can download as Markdown or print as a PDF.
+
+## Limitations
+
+**Reltio Docs for You** has the following limitations:
+
+- 
+
+  **Language**: guides are generated in English (US) only.
+- 
+
+  **History scope**: your saved-guide history is stored per browser, using that browser's local storage, and is tied to the email address you used to sign in. This history doesn't sync across browsers or devices, and it clears when you sign out. For details on saved-guide storage, see [Saved guides in Reltio Docs for You](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/reltio-docs-for-you-overview/saved-guides-in-reltio-docs-for-you?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+- 
+
+  **Documentation freshness**: the application checks for documentation updates periodically. The **Source documentation** date, displayed on the disclaimer of the generated guide may occasionally be behind the latest published documentation.
+- 
+
+  **AI-generated content**: every generated guide carries a disclaimer stating that it was produced with AI assistance from official Reltio documentation, that it's an uncontrolled, personal-use copy not intended for distribution, and that you should verify critical steps against your own Reltio environment and the official documentation. To learn how to generate a guide, see [Generate a personalized guide](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/reltio-docs-for-you-overview/generate-a-personalized-guide?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+
+
+---
+
+# Saved guides in Reltio Docs for You
+
+> **Section:** Reltio > What’s in the box? > What's in the box at a glance > Reltio Docs for You overview
+
+
+**Source:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/reltio-docs-for-you-overview/saved-guides-in-reltio-docs-for-you?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** saved guides, guide history, Reltio Docs for You history panel
+
+
+Learn about saved guides in Reltio Docs for You.
+
+**Reltio Docs for You** saves your recently generated guides. You can access them from the history icon in the top-left corner of the landing page.
+
+## What the Saved guides panel shows
+
+Selecting the history icon opens the **Saved guides** panel.
+
+*Image: ui_docsforyou_history_button.PNG*
+
+Guides are grouped under date headings; for example, "TODAY". Each entry shows a truncated title, a role tag, and a date. Each entry has its own delete icon. The panel also includes a **Clear all** control and a close (X) control.
+
+*Image: ui_docsforyou_savedguides.PNG*
+
+## Storage and scope
+
+**Reltio Docs for You** keeps your 10 most recently generated guides. Your saved-guide history is stored per browser, using that browser's local storage, and is tied to the email address you used to sign in. It does not sync across browsers or devices, and it clears when you sign out or when you clear your browser's local storage. You can always regenerate a guide by answering the wizard the same way again.
+
+
+
+---
+
+# Give feedback on a generated guide
+
+> **Section:** Reltio > What’s in the box? > What's in the box at a glance > Reltio Docs for You overview
+
+
+**Source:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/reltio-docs-for-you-overview/give-feedback-on-a-generated-guide?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** rate a generated guide, guide feedback, thumbs up thumbs down feedback
+
+
+Learn how to give feedback on a Reltio Docs for You generated guide.
+
+After **Reltio Docs for You** generates a guide, you can rate it and add an optional comment, directly below the guide's disclaimer box.
+
+**Prerequisites**
+
+Before you begin, you must have a generated guide open and displayed on screen. To generate a guide, see topic [Generate a personalized guide](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/reltio-docs-for-you-overview/generate-a-personalized-guide?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+
+To give feedback on a generated guide
+
+1. Scroll to the **"Was this helpful?"** section , below the disclaimer box at the bottom of the guide.
+2. Select the thumbs-up or thumbs-down icon that matches your experience.
+   You can also enter a comment in the feedback text box.
+   *Image: ui_docsforyou_feedback.PNG*
+3. Select **Submit**.
+
+**Result**
+
+Reltio Docs for You replaces the rating icons with the confirmation message "Thanks — your feedback was noted."
+
+
+
+---
+
+# Generate a personalized guide
+
+> **Section:** Reltio > What’s in the box? > What's in the box at a glance > Reltio Docs for You overview
+
+
+**Source:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/reltio-docs-for-you-overview/generate-a-personalized-guide?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** generate a personalized guide, Reltio Docs for You onboarding wizard, AI-generated guide, Reltio documentation search
+
+
+Learn how to generate a personalized guide with Reltio Docs for You.
+
+**Reltio Docs for You** builds a guide by asking about your role, your goal, your learning style, and your familiarity with Reltio, then searching the official Reltio documentation for the sections most relevant to your answers.
+
+**Prerequisites**
+
+Before you begin:
+
+- 
+
+  You must be signed in to **Reltio Docs for You**. For sign-in steps, see [Sign in to Reltio Docs for You](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/reltio-docs-for-you-overview/sign-in-to-reltio-docs-for-you?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+
+To generate a personalized guide:
+
+1. Select **GET STARTED** on the landing page.
+   Alternatively, you can select **Create your guide** at the bottom of the **How it works** section.
+   *Image: ui_docsforyou_main_highlight.png*
+2. On the **YOUR ROLE** step, select the option that best matches your role.
+   If none of the roles fit yours, select **Other / Not sure**. A text box appears where you can describe your role.
+   *Image: ui_docsforyou_otherrole.PNG*
+3. Select **CONTINUE**.
+4. On the **YOUR GOAL** step, select a category, then describe your goal in the text box.
+   *Image: ui_docsforyou_goal.PNG*
+5. Select **CONTINUE**.
+6. On the **LEARNING STYLE** step, select one of the learning styles available.
+   A description of each learning style appears below its name.
+   *Image: ui_docsforyou_learn.PNG*
+7. Select **CONTINUE**.
+8. On the **EXPERIENCE** step, select the option that better represents your familiarity with Reltio.
+   You can also enter additional context in the **Anything else we should know?** text box.
+   *Image: ui_docsforyou_experience.PNG*
+9. Select **Generate my Guide**.
+   **Reltio Docs for You** displays a "Building your guide" progress screen with an elapsed-time counter, a summary chip showing your selected role and goal, and the status line while your guide streams in. Select **Stop** to cancel the generation.
+
+**Result**
+
+Your generated guide opens.
+
+*Image: ui_docsforyou_guide.PNG*
+
+The guide page shows a status bar reading "Your guide is ready" and four buttons:
+
+| Button | What it does |
+| --- | --- |
+| **Regenerate** | Produces a new version of the guide using the same role, goal, learning style, and experience answers, without repeating the wizard. |
+| **Copy link** | Copies the guide's link to your clipboard so you can share it with others. Only users with a Reltio tenant ID and valid credentials can open the link. |
+| **DOWNLOAD. MD** | Downloads the guide in Markdown format. |
+| **PRINT / SAVE AS PDF** | Opens the browser wizard for printing and saving files. |
+
+At the end of the guide **Reltio Docs for You** gives you the option to leave feedback on the current guide. To rate your guide, see [Give feedback on a generated guide](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/reltio-docs-for-you-overview/give-feedback-on-a-generated-guide?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+
+
+---
+
+# Sign in to Reltio Docs for You
+
+> **Section:** Reltio > What’s in the box? > What's in the box at a glance > Reltio Docs for You overview
+
+
+**Source:** https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/reltio-docs-for-you-overview/sign-in-to-reltio-docs-for-you?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** sign in to Reltio Docs for You, Reltio Login, Reltio Docs for You access
+
+
+Learn how to sign in to Reltio Docs for You.
+
+Signing in to **Reltio Docs for You** identifies you to the application. After you generate guides, your saved-guide history appears on the landing page..
+
+Any Reltio customer with a Reltio tenant ID and valid user credentials can sign in to use **Reltio Docs for You**.
+
+**Prerequisites**
+
+Before you begin, confirm that you have a valid Reltio tenant ID and user credentials.
+
+
+To sign in to Reltio Docs for You
+
+1. Go to the Reltio Documentation Portal.
+2. In the top-left corner of the page, select **Docs for You**.
+   *Image: ui_docsforyou_button.PNG*
+   The **Reltio Docs for You** sign-in page opens.
+3. Select **SIGN IN WITH RELTIO**
+   *Image: ui_docsforyou_signin.PNG*
+4. Enter your tenant ID and select **Continue**.
+   *Image: ui_docsforyou_tenantID.PNG*
+5. Enter your credentials and select **Sign in**.
+   *Image: ui_docsforyou_credentials.PNG*
+
+**Result**
+
+The application landing page opens. You can now start a new guide.
+
+For more information, see [Generate a personalized guide](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/reltio-docs-for-you-overview/generate-a-personalized-guide?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
@@ -7791,6 +8027,66 @@ The following GDH (Geographic Data Hierarchy) updates were applied:
 - **Spain (ES)**: Added `Vizcaya` as a valid alias of the `Bizkaia` administrative area.
 
 These updates improve address parsing, returned address structure, geographic hierarchy consistency, and verification accuracy during address cleansing.
+
+
+
+---
+
+# Reltio Address Cleanser update - July and August 2026
+
+> **Section:** Reltio > What’s new and notable? > What's new at a glance > Platform changes at a glance
+
+
+**Source:** https://docs.reltio.com/en/reltio/whats-new-and-notable/whats-new-at-a-glance/platform-changes-at-a-glance/reltio-address-cleanser-update---july-and-august-2026?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** address cleanser update, global data refresh, country input support kosovo, subbuilding parsing fix, thoroughfare correction canada, premise parsing fix, native output script taiwan, lexicon improvement australia, verification result fix, geocode reference data fix, verify api fix
+
+
+Learn about the updates to the Reltio Address Cleanser in the months of July and August, 2026.
+
+Here are the updates to the [Reltio Address Cleanser](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-reference/out-of-the-box-cleanse-functions/address-cleanser?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) in July and August, 2026.
+
+## Global data refreshes
+
+The following countries had a data refresh during the July and August 2026 cycle:
+
+| Australia (AU) | Austria (AT) | Canada (CA) |
+| --- | --- | --- |
+| Cyprus (CY) | Denmark (DK) | Finland (FI) |
+| France (FR) | Germany (DE) | Hong Kong (HK) |
+| India (IN) | Indonesia (ID) | Ireland (IE) |
+| Italy (IT) | Japan (JP) | Kazakhstan (KZ) |
+| Korea, Republic of (KR) | Latvia (LV) | Lithuania (LT) |
+| Macao (MO) | Mexico (MX) | Netherlands (NL) |
+| New Zealand (NZ) | Norway (NO) | Puerto Rico (PR) |
+| Serbia (RS) | Singapore (SG) | Slovenia (SI) |
+| Sweden (SE) | Switzerland (CH) | Thailand (TH) |
+| United Kingdom (GB) | United Kingdom Premium (GB_P) | United States (US) |
+| United States Premium (US_P) |  |  |
+
+## Data improvements
+
+The July and August 2026 releases include several case-level data improvements that enhance address parsing and verification accuracy. These improvements include:
+
+- Kosovo: Added `XKK` as a supported country input.
+- Canada: `Premise` values with an alpha post-suffix are now parsed correctly.
+- Canada: Improved address parsing.
+- Canada: Corrected `Thoroughfare` output.
+- Canada: Improved `Enhance` verification result.
+- Canada: Improved `Building` verification result.
+- Australia: Lexicon improvement.
+- India: `SubBuilding` unit and floor number no longer swap positions.
+- Lithuania: Improved parsing of `SubBuilding` addresses.
+- Taiwan: Added support for `Native` output script.
+- United Kingdom: Improved verification result.
+
+## Verify API updates
+
+The Verify API release includes the following fix:
+
+- **All countries**: Fixed an issue where geocode lookups returned incorrect reference data.
+
+These updates improve address parsing, verification accuracy, and geocode-based reference data during address cleansing.
 
 
 
@@ -15385,7 +15681,7 @@ For more information, see [Add a hierarchy in the Profile view](https://docs.rel
 
 # 2026.1.9.0 RN | 28-Aug-2026
 
-Learn about the new features and enhancements introduced in this 2026.1.8.0 release.
+Learn about the new features and enhancements introduced in this 2026.1.9.0 release.
 
 **Deployment dates**
 
@@ -15394,6 +15690,21 @@ Learn about the new features and enhancements introduced in this 2026.1.8.0 rele
 | 1 | Development (DEV) | August 21, 2026 |
 | 2 | Test (TEST) | August 21, 2026 |
 | 3 | Production (PRD) | August 28, 2026 |
+
+## Generate personalized guides with Reltio Docs for You
+
+**Reltio Docs for You** is an AI-powered application that generates a personalized guide from official Reltio documentation, tailored to your: 
+
+- Role,
+- Goal,
+- Learning style, and
+- Experience level.
+
+Each guide gives you a direct path to the task at hand. Whether you're a data steward, administrator, or developer, you can start working without piecing together the right topics from search results. This reduces the time you spend searching for documentation and getting started with Reltio.
+
+Sign in from the Reltio Documentation Portal with your Reltio account to quickly and easily build a guide from official Reltio documentation, tailored to what you need.
+
+For more information, see [Reltio Docs for You overview](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/reltio-docs-for-you-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).*Image: ui_docsforyou_main.PNG*
 
 ## Custom headers support for ReltioApi in the Workflow SDK
 
@@ -15425,6 +15736,12 @@ The expanded response details let you trace each OV value to the applied strateg
 
 For more information, see [Source system order](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/sources-perspective?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Get entity](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/entities-api/get-entity?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
+## Reltio Address Cleanser update
+
+The Reltio Address Cleanser is updated with the latest data refresh and verification enhancements. These updates include data improvements and issue fixes across multiple countries, along with a Verify API fix for geocode lookup reference data. They improve verification results and cleansed address output.
+
+`Thoroughfare`For more information, see [Reltio Address Cleanser update - July and August 2026](https://docs.reltio.com/en/reltio/whats-new-and-notable/whats-new-at-a-glance/platform-changes-at-a-glance/reltio-address-cleanser-update---july-and-august-2026?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
 ## Matching APIs truncate displayed relevance scores
 
 Matching APIs now truncate calculated relevance scores to two decimal places instead of rounding them up. For example, a calculated relevance of 0.948 is returned as 0.94, so the displayed score never exceeds the calculated relevance. This keeps displayed relevance consistent with action labels and threshold evaluation. APIs that return relevance scores at full precision remain unchanged.
@@ -15454,6 +15771,34 @@ Each streaming destination has a payload size limit. Without an estimate before 
 The new `Streaming Payload Estimate API` helps you estimate the event payload size for an entity or relation before publishing to a specific streaming destination. You can compare the estimate with the destination's limit and address oversized payloads before they cause publishing failures.
 
 For more information, see [Estimate streaming payload size](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/events-api/estimate-streaming-payload-size?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+## View winner re-election status in Tenant Management
+
+When the origin contributor is detached from a composite profile, Reltio either elects a new winner from the remaining contributors or groups them into a shell composite. Without visibility into this setting in Console, you need to contact Reltio Support to confirm which behavior is in effect for your tenant.
+
+Tenant Management now shows the**New winner elected on origin detachment** field, so you can confirm whether Reltio elects a new winner when the origin contributor is detached. This field is read-only. To change this setting, contact Reltio Support.
+
+For more information, see [Control winner re-election after origin contributor detachment](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-operation/unmerge-entity-records/control-winner-re-election-after-origin-contributor-detachment?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+## Clearer validation errors when applying data change requests
+
+The `useUiLcaErrorFormatOnDcrApply` tenant configuration parameter enables structured error formatting for Data Change Request (DCR) apply operations. When enabled, LCA and DVF validation errors are returned as separate, readable messages, making it easier to identify the specific issue blocking a data change request.
+
+The parameter is disabled by default. When enabled, it changes error formatting only for DCR apply operations; other API operations remain unchanged.
+
+For more information, see [Tenant Configuration Parameters Reference](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/tenant-configuration-parameters-reference?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [L3 validation errors](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-information-model/data-model/tenant-configuration-inheritance-across-layers/reltio-l3-layer----customer-tenant/l3-validation-errors?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+## Reltio IDE: Collaborate on Business Configuration with Git
+
+Reltio IDE is an AI-powered development experience for VS Code and Cursor that helps data modelers, solution architects, and implementation teams build and evolve Reltio business configurations more quickly, easily, and confidently. You can now connect Reltio IDE to not only your Reltio tenant but also to your Git repository.
+
+With Git repository support, teams can:
+
+- Collaborate with confidence: Manage Reltio business configurations in a shared, version-controlled repository.
+- Review and govern every change: Use familiar Git workflows before applying business configuration updates to a Reltio tenant.
+- Accelerate reliable delivery: Integrating business configuration into existing development and DevOps processes.
+
+For more information, see [Reltio IDE overview](https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-ide-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
@@ -17450,7 +17795,7 @@ When you manually detach the origin contributor, the outcome depends on the feat
 
 **Automatic unmerge**
 
-For new tenants, Reltio allows automatic detachment of the origin contributor by default and elects a new winner from the remaining contributors. Automatic detachment of the origin contributor requires winner re-election to be enabled. Existing tenants where winner re-election was never enabled, and any tenant that later disables it, cannot use automatic detachment..
+For new tenants, Reltio allows automatic detachment of the origin contributor by default and elects a new winner from the remaining contributors. Automatic detachment of the origin contributor requires winner re-election to be enabled. Existing tenants where winner re-election was never enabled, and any tenant that later disables it, cannot use automatic detachment.
 
 ## Outcomes by unmerge method and flag status
 
@@ -17477,7 +17822,9 @@ By electing a real contributor as the new winner — instead of creating a shell
 
 ## Tenant configuration
 
-New tenants can disable winner re-election, overriding the enabled default. Existing tenants keep the value already configured for them and can change it at any time. For information about checking or changing this setting for your tenant, see [Enable automatic unmerge on the tenant configuration](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-operation/unmerge-entity-records/enable-automatic-unmerge-on-the-tenant-configuration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+For new tenants, winner re-election is enabled by default. Existing tenants keep the value already configured for them. Contact Reltio Support to change the setting for your tenant.
+
+In[Tenant Management](https://docs.reltio.com/en/applications/console/tenant-management-applications/tenant-management-at-a-glance/tenant-configuration-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), the read-only **New winner elected on origin detachment** field shows the current setting. **Enabled** means Reltio elects a new winner from the remaining contributors when the origin contributor is detached. **Disabled** means a shell composite is created for the remaining contributors.
 
 
 
@@ -23408,6 +23755,9 @@ Learn about the L3 errors, including error code, error message, detailed error m
 | LIFE_CYCLE_ERROR_WHILE_LAMBDA_EXECUTION | **Error Code** 31007   **Error Message** Failed to verify the LCA lambda function.**Detailed Error Message** LCA lambda function `name` verification failed with the error. | An error has occurred when a mentioned Lambda Action was checked at the Amazon Lambda service. | If the details in the message don't clarify the reason of the error, contact support. |
 | LIFE_CYCLE_SERVICE_URI_IS_NOT_CONFIGURED_FOR_TENANT | **Error Code** 31008   **Error Message** Life cycle service URI isn’t configured for tenant `name`.**Detailed Error Message** Life cycle service URI isn’t configured for the tenant `name`. | For using Life Cycle Actions the Lifecycle Service should be registered. | Register the URI of the Lifecycle Service in the tenant physical configuration (`lifecycleAtionService` field). |
 | LIFE_CYCLE_INVALID_FILTER | **Error Code** 31009   **Error Message** Life cycle configured with invalid filter expression `value`.**Detailed Error Message** Parsing of life cycle filter expression `value` failed with an error. | A `filter` field inside a Life Cycle Group definition has an incorrect format. | Use the correct format of the expression (see more in [Conditional Execution of LCA](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/lca-configuration/conditional-execution-of-lca?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)). |
+| LIFE_CYCLE_ERROR_WHILE_EXECUTION | **Error Code** 31001  **Error Message** Life cycle error during execution {lcaName}: {error from LCA}  **Detailed Error Message** When more than one lifecycle action (LCA) error occurs, all of the errors are listed together in one message. For a Data Validation Framework (DVF) failure, the message states that the profile failed against one or more DVF functions. | More than one rule or validation check rejected the request, and the failures are combined into one message. On tenants where `useUiLcaErrorFormatOnDcrApply` is enabled, this list appears with bullets instead of commas. | Review each error in the message, fix the values that failed, and resubmit the request. |
+| LIFE_CYCLE_PROFILE_FAILED_AGAINST_DVF_RULES | **Error Code** 31010  **Error Message** States how many errors and warnings were found.  **Detailed Error Message** Lists each error and warning separately. | One or more attribute values in the request failed a validation rule configured for this entity type. | Check each numbered error and warning in the response, fix the values that failed, and resubmit the request. |
+| LIFE_CYCLE_UI_ERROR | **Error Code** 31015  **Error Message** States exactly what went wrong, with no extra text added.  **Detailed Error Message** This error code does not return a separate detailed message field. | Returned only for UI requests, such as Review DCR when `useUiLcaErrorFormatOnDcrApply` is enabled. It replaces three separate codes (`LIFE_CYCLE_ERROR_WHILE_EXECUTION`, `LIFE_CYCLE_PROFILE_FAILED_AGAINST_DVF_RULES`, and `LIFE_CYCLE_OPERATION_MULTIPLE_ERROR`) with one. The message itself still depends on what failed: a direct message for one lifecycle action (LCA) error, a bulleted list for multiple LCA errors, or a numbered list of errors and warnings for a Data Validation Framework (DVF) failure. Non-UI clients continue to receive the original codes instead. | Read the message to identify the specific field and issue, fix the values, and resubmit the request. |
 
 **Related links**
 
@@ -88215,6 +88565,21 @@ Business configuration is foundational to every Reltio implementation. Whether y
 
 Reltio IDE is an AI-powered editor extension for VS Code and Cursor that simplifies how teams design, manage, validate, and deploy Reltio business configurations. It brings together AI-assisted authoring, intelligent navigation, ontology visualization, real-time validation, version history, and deployment in one place. The result is a faster way to build and evolve your Reltio data model.
 
+You can connect Reltio IDE to the following business configuration sources:
+
+- 
+
+  [Your Reltio tenant](https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-ide-overview/connect-reltio-ide-to-your-reltio-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- 
+
+  [Your Git repository](https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-ide-overview/connect-reltio-ide-to-a-git-repository?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+
+
+
+
+> **Note:** While using Reltio IDE, you can connect to one of the two sources at a given time.
+
 Reltio IDE is intended for the following roles:
 
 - 
@@ -88249,6 +88614,7 @@ Reltio IDE provides the following capabilities across the modeling workflow:
 | Capability | Description |
 | --- | --- |
 | Tenant connectivity | Connect securely to your Reltio environment and the tenant and start modeling. |
+| Git repository connectivity | Connect to your Git repository and fetch the hosted business configuration files. |
 | Intelligent navigation | Browse the complete business configuration and navigate among entity, relationship, interaction, hierarchy and other object types. |
 | AI-assisted authoring | Create different object types through guided actions or natural-language prompts. |
 | Code completion and validation | Get context-aware suggestions and real-time validation while you edit metadata. |
@@ -88261,33 +88627,32 @@ Reltio IDE provides the following capabilities across the modeling workflow:
 
 Working in Reltio IDE involves the following stages:
 
-1. **Install and connect:** Install the Reltio IDE extension for [Cursor](https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-ide-overview/install-reltio-ide-on-cursor-and-connect-to-your-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) or [VS Code](https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-ide-overview/install-reltio-ide-on-vs-code-and-connect-to-your-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), authenticate with your Reltio environment, select a tenant, and open your business configuration in the editor.
+1. **Install and connect:** Install the Reltio IDE extension for [Cursor](https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-ide-overview/install-reltio-ide-in-cursor?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) or [VS Code](https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-ide-overview/install-reltio-ide-in-vs-code?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). To connect to a tenant, authenticate with your Reltio environment, select a tenant, and open your business configuration in the editor. To work from version control, connect to a [Git repository](https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-ide-overview/connect-reltio-ide-to-a-git-repository?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) by entering the Git URL or opening a Git folder, select a business configuration, and open it in the editor.
 2. **Create and edit:** Add new objects through the context menu or natural-language prompts in your editor's AI assistant. Reltio IDE validates changes inline and highlights errors.
 3. **Visualize:** Open the [ontology view](https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-ide-overview/visualize-the-ontology-in-reltio-ide?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) to review entity types and the relationships between them.
-4. **Review and apply:** Review the differences and [apply your configuration to the tenant](https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-ide-overview/apply-configuration-and-track-changes-in-reltio-ide?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+4. **Review and save:** If you work from a tenant, review the differences and [apply your configuration to the tenant](https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-ide-overview/apply-configuration-and-track-changes-in-reltio-ide?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). If you work from a Git repository, review, commit, and push your changes through the editor's Source Control view.
 
 
 
 ---
 
-# Install Reltio IDE on Cursor and connect to your tenant
+# Install Reltio IDE in Cursor
 
 > **Section:** Developer resources > AI Integrations > Reltio IDE overview
 
 
-**Source:** https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-ide-overview/install-reltio-ide-on-cursor-and-connect-to-your-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-ide-overview/install-reltio-ide-in-cursor?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
-**Keywords:** install reltio ide cursor, connect reltio ide to tenant, reltio ide vsix installation, reltio ide oauth bearer token, add environment add tenant, open l3 configuration editor, reltio ide setup cursor, reltio metadata editor connection
+**Keywords:** install reltio ide cursor, reltio ide vsix installation, reltio ide setup cursor
 
 
-Learn how to install the Reltio IDE extension in Cursor, connect to your Reltio tenant, and open your configuration.
+Learn how to install the Reltio IDE extension in Cursor from a `.vsix` file.
 
 **Prerequisites**
 
 Before you install Reltio IDE, make sure you have the following requirements:
 
 - The Reltio IDE `.vsix` file from the [Reltio IDE GitHub repository](https://github.com/reltio-ai/reltio-ide). Download the file from the **Assets** section on the [Releases](https://github.com/reltio-ai/reltio-ide/releases) page.
-- A Reltio tenant and valid credentials, copied and ready to paste: An OAuth Client ID and Client secret (with your SSO routing tenant ID) from your identity provider, or a bearer token from the Reltio authentication API or your tenant administrator.
 
 
 To install Reltio IDE in Cursor
@@ -88299,64 +88664,33 @@ To install Reltio IDE in Cursor
 4. Browse to the location where you downloaded the `.vsix` file. Select the .`vsix` file and click **Install**.
 5. Open the Extensions view and confirm that Reltio IDE appears in the list of installed extensions.
 
-To connect to your tenant
-
-6. Select **Reltio** in the activity bar or Reltio IDE from the extensions to open the **RELTIO IDE** view.
-7. Select **Connect your Reltio Tenant** to start setup.
-8. Select **Add Environment**, then enter your environment ID (for example, `test-usg.reltio.com`).
-   *Image: add-env-dialog-vscode.png*
-9. Authenticate using one of the following methods, using the credentials you copied in the prerequisites.
-   *Image: sign-in-vscode.png*
-   - Select **Sign in with browser (recommended)**. Enter your **Client ID** and **Client secret**, then enter your **SSO routing tenant ID** when prompted. Reltio IDE opens your browser to complete single sign-on. Cursor stores these credentials in your operating system's secure credential store.
-   - Select **Paste a Bearer token**, then paste the token you kept ready and press Enter. Reltio IDE keeps the token in memory for the current session only.
-10. After authentication, select your tenant from the tenant list.
-
-To open and navigate your configuration
-
-11. In the **RELTIO IDE** view, select your tenant.
-12. Select the **Open L3** icon beside the tenant ID to open your configuration file in the editor.
-   *Image: first-view.png*
-13. Expand your tenant to browse its configuration.
-14. Use the context menu at the tenant level and on objects in the tree view to perform modeling actions, such as:
-   - Adding a new entity type or relationship type
-   - Adding a new attribute
-   - Viewing the ontology
-   - Applying your configuration changes to the tenant
-
 **Result**
 
-Reltio IDE connects to your tenant, and your configuration file opens in the editor. Your tenant appears in the RELTIO IDE view, and you can expand it to browse its configuration. You are ready to add or modify configuration objects.
+Reltio IDE appears in your installed extensions, and the Reltio icon appears in the activity bar.
 
-**Validation**
-
-To confirm the connection was successful:
-
-1. Confirm that your tenant appears in the RELTIO IDE view with no authentication errors.
-2. Select the **Open L3** icon beside the tenant ID and confirm that your configuration opens in the editor.
-3. Expand your tenant and confirm that its configuration appears.
+Once installed, connect Reltio IDE to either [your Reltio tenant](https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-ide-overview/connect-reltio-ide-to-your-reltio-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) or a [Git repository](https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-ide-overview/connect-reltio-ide-to-a-git-repository?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
 ---
 
-# Install Reltio IDE on VS Code and connect to your tenant
+# Install Reltio IDE in VS Code
 
 > **Section:** Developer resources > AI Integrations > Reltio IDE overview
 
 
-**Source:** https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-ide-overview/install-reltio-ide-on-vs-code-and-connect-to-your-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-ide-overview/install-reltio-ide-in-vs-code?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
-**Keywords:** install reltio ide vs code, connect reltio ide to tenant, reltio ide vsix installation, reltio ide oauth bearer token, add environment add tenant, open l3 configuration editor, reltio ide setup vs code, reltio metadata editor connection
+**Keywords:** install reltio ide vs code, reltio ide vsix installation, reltio ide setup vs code
 
 
-Learn how to install the Reltio IDE extension in VS Code, connect to your Reltio tenant, and open your configuration.
+Learn how to install the Reltio IDE extension in VS Code from a `.vsix` file, using either the Extensions view or the Command Palette.
 
 **Prerequisites**
 
 Before you install Reltio IDE, make sure you have the following requirements:
 
 - The Reltio IDE `.vsix` file from the [Reltio IDE GitHub repository](https://github.com/reltio-ai/reltio-ide). Download the file from the **Assets** section on the [Releases](https://github.com/reltio-ai/reltio-ide/releases) page.
-- A Reltio tenant and valid credentials, copied and ready to paste: An OAuth Client ID and Client secret (with your SSO routing tenant ID) from your identity provider, or a bearer token from the Reltio authentication API or your tenant administrator.
 
 
 To install Reltio IDE in VS Code using the Extensions view
@@ -88369,48 +88703,18 @@ To install Reltio IDE in VS Code using the Extensions view
 
 To install Reltio IDE in VS Code using the Command Palette
 
-6. Open VS Code.
+6. Open VS Code and open a folder. Reltio IDE uses the folder as your local workspace for downloading and managing business configurations.
 7. Press Cmd+Shift+P on macOS, or Ctrl+Shift+P on Windows and Linux to open the Command Palette.
 8. Type **Install from VSIX**, then select **Extensions: Install from VSIX...**.
    *Image: cursor-install-vsix.png*
-9. Browse to the location where you downloaded the `.vsix` file. Select the `.vsix` file and click **Install**.
+9. Browse to the location where you downloaded the `.vsix` file. Select the `.vsix` file and select **Install**.
 10. Open the Extensions view and confirm that Reltio IDE appears in the list of installed extensions.
-
-To connect to your tenant
-
-11. Select **Reltio** in the activity bar or Reltio IDE from the extensions to open the **RELTIO IDE** view.
-12. Select **Connect your Reltio Tenant** to start setup.
-13. Select **Add Environment**, then enter your environment ID (for example, `test-usg.reltio.com`).
-   *Image: add-env-dialog-vscode.png*
-14. Authenticate using one of the following methods, using the credentials you copied in the prerequisites.
-   *Image: sign-in-vscode.png*
-   - Select **Sign in with browser (recommended)**. Enter your **Client ID** and **Client secret**, then enter your **SSO routing tenant ID** when prompted. Reltio IDE opens your browser to complete single sign-on. VS Code stores these credentials in your operating system's secure credential store.
-   - Select **Paste a Bearer token**, then paste your token and press Enter. Reltio IDE keeps the token in memory for the current session only.
-15. After authentication, select your tenant from the tenant list.
-
-To open and navigate your configuration
-
-16. In the **RELTIO IDE** view, select your tenant.
-17. Select the **Open L3** icon beside the tenant ID to open your configuration file in the editor.
-   *Image: first-view.png*
-18. Expand your tenant to browse its configuration.
-19. Use the context menu at the tenant level and on objects in the tree view to perform modeling actions, such as:
-   - Adding a new entity type or relationship type
-   - Adding a new attribute
-   - Viewing the ontology
-   - Applying your configuration changes to the tenant
 
 **Result**
 
-Reltio IDE connects to your tenant, and your configuration file opens in the editor. Your tenant appears in the RELTIO IDE view, and you can expand it to browse its configuration. You are ready to add or modify configuration objects.
+Reltio IDE appears in your installed extensions, and the Reltio icon appears in the activity bar.
 
-**Validation**
-
-To confirm the connection was successful:
-
-1. Confirm that your tenant appears in the RELTIO IDE view with no authentication errors.
-2. Select the **Open L3** icon beside the tenant ID and confirm that your configuration opens in the editor.
-3. Expand your tenant and confirm that its configuration appears.
+Once installed, connect Reltio IDE to either [your Reltio tenant](https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-ide-overview/connect-reltio-ide-to-your-reltio-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) or a [Git repository](https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-ide-overview/connect-reltio-ide-to-a-git-repository?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
@@ -88423,19 +88727,24 @@ To confirm the connection was successful:
 
 **Source:** https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-ide-overview/apply-configuration-and-track-changes-in-reltio-ide?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
-**Keywords:** apply configuration to tenant reltio ide, fetch configuration reltio ide, fetching l3 configuration, configuration history reltio ide, who changed what reltio ide, version history reltio ide, deploy l3 configuration reltio ide, compareconfiguration versions reltio ide
+**Keywords:** apply configuration to tenant reltio ide, fetch configuration reltio ide, fetching l3 configuration, configuration history reltio ide, who changed what reltio ide, version history reltio ide, deploy l3 configuration reltio ide, compare configuration versions reltio ide
 
 
 Learn how to fetch the latest tenant configuration, apply your changes to the tenant, and review configuration history in Reltio IDE.
 
-Reltio IDE supports two configuration management workflows:
+Reltio IDE provides tenant configuration workflows for workspaces connected to a Reltio tenant. If your configuration is stored in Git, use the editor's Source Control view to review, commit, and push your changes.
 
-- Use **Fetch Configuration** to fetch the configuration from your tenant and overwrite the local changes you made in Reltio IDE.
-- Use **Apply Configuration to Tenant** to deploy your local configuration to the tenant.
+Reltio IDE supports the following tenant configuration workflows:
 
+- 
 
+  Use **Fetch Configuration** to fetch the configuration from your tenant and overwrite the local changes you made in Reltio IDE.
+- 
 
-Use configuration history to see who changed what and when, and to compare past versions of the configuration.
+  Use **Apply Configuration to Tenant** to deploy your local configuration to the tenant.
+- 
+
+  Use configuration history to see who changed what and when, and to compare past versions of the configuration.
 
 
 To fetch and apply configuration
@@ -88479,6 +88788,149 @@ To confirm the configuration was applied and history is available:
 
 ---
 
+# Connect Reltio IDE to a Git repository
+
+> **Section:** Developer resources > AI Integrations > Reltio IDE overview
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-ide-overview/connect-reltio-ide-to-a-git-repository?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** connect reltio ide to git repository, reltio ide github integration, clone business configuration repository, businessconfig json discovery, reltio ide private repository, git executable not found, reltio ide configuration source
+
+
+Learn how to connect Reltio IDE to the Git repository that holds your business configuration, and open your configuration files in the editor.
+
+**Prerequisites**
+
+Before you connect a Git repository, make sure you have the following requirements:
+
+- 
+
+  Reltio IDE installed in [Cursor](https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-ide-overview/install-reltio-ide-in-cursor?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) or [VS Code](https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-ide-overview/install-reltio-ide-in-vs-code?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+- 
+
+  Git installed on your machine and available on your system path. Download Git from [git-scm.com/downloads](https://git-scm.com/downloads).
+- 
+
+  The URL of the Git repository that holds your business configuration. Read access to the repository. You also need write access if you need to commit and push changes.
+- 
+
+  An empty folder open in your editor. Reltio IDE clones your business configuration repository into that folder. If the repository is already cloned on your machine, open the folder that contains the clone instead.
+
+
+To connect a Git repository
+
+1. In the activity bar, select the **Reltio** icon to open the **RELTIO IDE** view.
+2. Select **Connect your Repository**.
+3. Enter the Git remote URL to clone, for example `https://github.com/org/repo.git`, and press Enter.
+   *Image: Connect_your_Repository_prompt_for_a_Git_remote_URL.png*
+   If the folder already contains a Git clone, Reltio IDE detects the repository and skips this step.
+4. Complete any sign-in that Git requests. The prompts depend on the Git provider and authentication method. While the repository is being cloned, Reltio IDE displays a `Cloning repository...` notification.
+   A public repository does not require additional sign-in. For a private repository, Git displays **Select an account**:
+   - Select an account that has access to the repository, and then select **Continue**.
+   - If none of the listed accounts has access to the repository, select **Add a new account** and sign in through your browser. The clone continues after you sign in.
+   *Image: Select_an_account_during_a_clone.png*
+   If Reltio IDE displays an error instead of cloning the repository, refer to the [Troubleshooting](#task-35/tasktroubleshooting-670) steps for the message displayed.
+5. Verify that the repository and its configurations appear in the **RELTIO IDE** view.
+   Reltio IDE automatically searches up to 10 folder levels in the repository for files named `BusinessConfig.json`. The file-name search is not case-sensitive. If the repository does not contain a `BusinessConfig.json` file, Reltio IDE displays the message `No BusinessConfig.json found. Locate the L3 configuration file` and opens a file picker. Select the configuration file you want to open.
+   *Image: Connected_repository_in_RELTIO_IDE.png*
+   The **RELTIO IDE** view reflects the repository folder structure and automatically discovers files named `BusinessConfig.json`. To add a configuration file with a different name, such as `L3.json`, right-click the `.json` file in Explorer and select **Add Config**. The file must contain a valid Reltio business configuration.
+
+To open and manage your configuration
+
+6. In the **RELTIO IDE** view, select a configuration.
+7. Select the **Open L3** icon beside the configuration to open it in the editor.
+8. Expand the configuration to browse its entity types, relation types, attribute types, and other object types.
+9. Use the context menu on the configuration and on the object type folders in the tree view to perform modeling actions, such as:
+   - Adding a new entity type or relationship type
+   - Adding a new attribute
+   - Viewing the ontology
+   These actions work the same way as they do for a tenant. To view the ontology, right-click the **Entity Types** or **Relation Types** folder and select **Show in Ontology**.
+10. To remove a configuration from the **RELTIO IDE** view, right-click the configuration and select **Remove Configuration**. This removes the configuration from the tree but does not delete the file from the Git repository. To disconnect the Git repository from the current workspace, right-click the repository and select **Remove Repository**. Reltio IDE removes the repository connection and deletes the cloned repository contents from the workspace folder.
+
+**Result**
+
+Reltio IDE connects to the Git repository and displays the discovered business configuration files in the **RELTIO IDE** view. You can open a configuration, browse its objects, perform supported modeling actions, add configuration files that are not named `BusinessConfig.json`, and remove configurations or disconnect the repository when needed.
+
+Reltio IDE uses Git to clone or detect the repository and open the business configuration files hosted in it. After that, your edits are saved as regular file changes. Use the built-in **Source Control** view in VS Code or Cursor to review diffs, stage changes, commit, and push them to the repository.
+
+**Troubleshooting**
+
+If Reltio IDE cannot clone the repository, use the following troubleshooting steps:
+
+- 
+
+  `Repository not found`: The selected account might not have access to the repository, or the repository URL might be incorrect. Verify the URL, select another account, or select **Add a new account**.
+- 
+
+  `Git executable not found`: Install Git from [git-scm.com/downloads](https://git-scm.com/downloads) and ensure that Git is available on your system path. Close and reopen the editor, and then run `git --version` in the terminal. After the command displays the installed Git version, select **Connect your Repository** again.
+
+
+
+---
+
+# Connect Reltio IDE to your Reltio tenant
+
+> **Section:** Developer resources > AI Integrations > Reltio IDE overview
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-ide-overview/connect-reltio-ide-to-your-reltio-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** connect reltio ide to tenant, reltio ide oauth bearer token, add environment add tenant, open l3 configuration editor, reltio metadata editor connection
+
+
+Learn how to connect Reltio IDE to your Reltio tenant and open your business configuration in the editor.
+
+**Prerequisites**
+
+Before you connect to your Reltio tenant, make sure you have the following requirements:
+
+- Reltio IDE installed in [Cursor](https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-ide-overview/install-reltio-ide-in-cursor?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) or [VS Code](https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-ide-overview/install-reltio-ide-in-vs-code?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+- A folder open in your editor. Reltio IDE uses the folder as your local workspace for downloading and managing business configurations.
+- A Reltio tenant and valid credentials, copied and ready to paste: An OAuth Client ID and Client secret (with your SSO routing tenant ID) from your identity provider, or a bearer token from the Reltio authentication API or your tenant administrator.
+
+
+To connect to your tenant
+
+1. Select **Reltio** icon in the activity bar or Reltio IDE from the extensions to open the **RELTIO IDE** view.
+2. Select **Connect your Reltio Tenant** to start setup.
+3. Select **Add Environment**, then enter your environment ID (for example, `test-usg.reltio.com`).
+   *Image: add-env-dialog-vscode.png.png*
+4. Authenticate using one of the following methods, using the credentials you copied in the prerequisites.
+   *Image: sign-in-vscode.png*
+   - Select **Sign in with browser (recommended)**. Enter your **Client ID** and **Client secret**, then enter your **SSO routing tenant ID** when prompted. Reltio IDE opens your browser to complete single sign-on. Your editor stores these credentials in your operating system's secure credential store.
+   - Select **Paste a Bearer token**, then paste the token you kept ready and press Enter. Reltio IDE keeps the token in memory for the current session only.
+5. After authentication, select your tenant from the tenant list.
+6. After you select the tenant, open and edit its local business configuration.
+
+To open and navigate your configuration
+
+7. In the **RELTIO IDE** view, select your tenant.
+8. Select the **Open L3** icon beside the tenant ID to open your configuration file in the editor.
+   *Image: first-view.png*
+9. Expand your tenant to browse its configuration.
+10. Use the context menu at the tenant level and on objects in the tree view to perform modeling actions, such as:
+   - Adding a new entity type or relationship type
+   - Adding a new attribute
+   - Viewing the ontology
+   - Applying your configuration changes to the tenant
+
+**Result**
+
+Reltio IDE connects to your tenant, and your configuration file opens in the editor. Your tenant appears in the RELTIO IDE view, and you can expand it to browse its configuration. You are ready to add or modify configuration objects.
+
+**Validation**
+
+To confirm the connection was successful:
+
+1. Confirm that your tenant appears in the RELTIO IDE view with no authentication errors.
+2. Select the **Open L3** icon beside the tenant ID and confirm that your configuration opens in the editor.
+3. Expand your tenant and confirm that its configuration appears.
+
+
+
+---
+
 # Create configuration objects in Reltio IDE
 
 > **Section:** Developer resources > AI Integrations > Reltio IDE overview
@@ -88491,6 +88943,8 @@ To confirm the configuration was applied and history is available:
 
 Learn how to create configuration objects in Reltio IDE by adding them manually or through natural language prompts with AI-assisted authoring.
 
+Reltio IDE adds objects to the local configuration file in both Reltio tenant-connected and Git-connected workspaces. In a tenant-connected workspace, apply the changes to the tenant when you are ready. In a Git-connected workspace, save the file, then commit and push your changes in your editor's Source Control view..
+
 Reltio IDE supports two ways to create configuration objects such as entity types, relation types, and others:
 
 - Add an object using the context menu, then complete its definition in the configuration file.
@@ -88501,7 +88955,7 @@ AI-assisted authoring also creates supporting resources intelligently, such as t
 
 To add an object through the context menu
 
-1. Right-click your tenant in the **RELTIO IDE** view, then select the object you want to create, such as:
+1. Right-click your connected tenant or cloned Git repository in the **RELTIO IDE** view, depending on your configuration source, then select the object you want to create, such as:
    - **Add a new Entity Type**
    - **Add a new Relation Type**
    - **Add a new Grouping Type**
@@ -88513,7 +88967,7 @@ To add an object through the context menu
 
 *Image: new-entity-type.png*
 3. Edit the object in the editor to complete its definition.
-4. Save the changes. Reltio IDE validates your changes and highlights any errors in the editor so you can fix them before you apply your configuration.
+4. Reltio IDE validates your changes and highlights errors in the editor so that you can fix them before applying the configuration to a tenant or committing the changes to Git.
 
 To create an object with AI-assisted authoring
 
@@ -88523,17 +88977,20 @@ To create an object with AI-assisted authoring
    When a reference attribute requires a relation type, Reltio IDE creates the relation type automatically, so you do not have to create it as a separate step.
 
 *Image: Screenshot_2026-08-11_160319.png*
-8. Review and manually edit the generated object to complete any remaining details, then select **Yes** to apply the configuration.
+8. Review and manually edit the generated object to complete any remaining details, then select **Yes** to apply the generated changes to the local configuration file.
+   Selecting **Yes** applies the generated changes only to the local configuration file. In a Reltio tenant-connected workspace, use **Apply Configuration to Tenant** to send the changes to the Reltio tenant. In a Git-connected workspace, save the file and use Source Control to commit and push the changes.
 
 **Result**
 
-Your new configuration objects appear in the **RELTIO IDE** view under their object type, and their definitions are added to the configuration. You are ready to review your changes and apply them to your tenant.
+Your new configuration objects appear in the **RELTIO IDE** view under their object type, and their definitions are added to the local configuration file.
+
+If you are connected to a Reltio tenant, you are ready to review and apply the changes to the Reltio tenant. If you work from a Git repository, review, commit, and push the changes through Source Control.
 
 **Validation**
 
 To confirm the objects were created:
 
-1. Expand your tenant in the **RELTIO IDE** view and confirm that the new objects appear under their object type.
+1. Expand your tenant or configuration in the **RELTIO IDE** view and confirm that the new objects appear under their object type.
 2. Confirm that the configuration shows no validation errors for the new objects.
 3. For a reference attribute created with AI-assisted authoring, confirm that the supporting relation type appears under **Relation Types**.
 
@@ -88551,27 +89008,24 @@ To confirm the objects were created:
 **Keywords:** ontology view reltio ide, visualize data model reltio ide, entity types relationships diagram, ontology visualization reltio, show ontology preview reltio ide, reltio ide ontology diagram, l3 configuration visualization
 
 
-Learn how to open the ontology view in Reltio IDE to see your tenant's entity types and the relationships between them.
+Learn how to open the ontology view in Reltio IDE to see the entity types in your configuration and the relationships between them.
 
-The ontology view in Reltio IDE displays entity types and the relationships between them. Use the ontology view to understand how your entity types relate to each other after you create or change configuration objects. The ontology view reflects your local configuration file, not the live tenant configuration.
+The Ontology view in Reltio IDE displays entity types and the relationships between them. Use the ontology view to understand how your entity types relate to each other after you create or change configuration objects. The ontology view reflects your local configuration file, not the live tenant configuration.
 
 
 To open the ontology view
 
-1. Open the ontology view using one of the following methods.
-   - Select the **...** (More Actions) menu in the editor toolbar and select **Reltio: Show Ontology Preview**.
-   - Right-click an entity type or relation type in the **RELTIO IDE** view and select **Show in Ontology**.
-   - Press Cmd+Shift+P on macOS, or Ctrl+Shift+P on Windows and Linux to open the Command Palette, type `ontology`, and select **Reltio: Show Ontology Preview**.
-   - Right-click an object type (such as an entity type, relation type, and so on) in the **RELTIO IDE** view, and select **Show in Ontology**.
-   The ontology view displays your entity types as labeled nodes and shows the relationships between them.
-   *Image: ontology.png*
+1. Open the ontology view by right-clicking an object type (such as an entity type, relation type, and so on) in the **RELTIO IDE** view, and select **Show in Ontology**.
+   The ontology view displays your entity types as labeled nodes and shows the relationships between them. 
+
+*Image: ontology.png*
 2. In the ontology preview, review each entity type node, which shows its name, the number of attributes (Attrs), the number of connections (Conn), and the number of match rules.
 3. Review the labeled arrows connecting entity types. Arrows show the relation type name, inheritance connections labeled **extends**, and reference attribute connections showing the number of reference attributes between entity types.
 4. To reset the ontology preview to its default arrangement, press Cmd+Shift+P on macOS, or Ctrl+Shift+P on Windows and Linux to open the Command Palette, then run **Reltio: Reset Ontology Layout**.
 
 **Result**
 
-The ontology preview displays your entity types and the relationships between them, based on your local configuration file. It's for visualization only, you cannot edit objects or export the diagram from it.
+The ontology preview displays your entity types and the relationships between them, based on your local configuration file. Ontology view is for visualization only, you cannot edit objects or export the diagram from it.
 
 **Validation**
 
@@ -115483,7 +115937,7 @@ These parameters control search index structure, performance tuning, and indexin
 
 | Parameter | Description | Type | Default |
 | --- | --- | --- | --- |
-| `searchStorageConfiguration` | Defines configuration of search indices, shards, and replicas. | JSON | Required |
+| `numberOfShards` | Number of primary shards for the primary data index. | Integer | 5 |
 | `waitForAllShards` | Waits for all shards to be available before returning index operations. | Boolean | true |
 | `prefixSearchMaxExpansions` | Maximum term expansions allowed for prefix searches. | Integer | 50 |
 | `maxAttributeLength` | Maximum length of attribute text stored in the search index. | Integer | None |
@@ -115607,6 +116061,7 @@ These parameters control how lifecycle actions and hooks are invoked and how eve
 | `lifecycleActionsService` | Specifies the service endpoint handling lifecycle actions. | String | None |
 | `dropOvBeforeAndAfterLcaForNonDefaultGroups` | Disables OV recalculation before and after lifecycle actions for non-default groups. | Boolean | false |
 | `alwaysLoadReferenceAttributesInBulkUpdateTask` | Ensures that entity payloads passed to LCA hooks during background tasks include reference attributes. Enable this when your afterSave logic depends on values from referenced entities (e.g., `MainSubstance.PreferredName`). For more information, see [Tasks API](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). | Boolean | false |
+| `useUiLcaErrorFormatOnDcrApply` | When enabled, the data change request (DCR) apply operation returns Life Cycle Action (LCA) errors as a direct message for a single error. Multiple LCA errors are returned as a bulleted list, and Data Validation Framework (DVF) failures are returned as a numbered list of errors and warnings. Entity save and update operations are not affected. For more information, see [L3 validation errors](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-information-model/data-model/tenant-configuration-inheritance-across-layers/reltio-l3-layer----customer-tenant/l3-validation-errors?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). | Boolean | false |
 
 For lifecycle action configuration, see [Life Cycle Actions (LCA) Service API](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas/life-cycle-actions-lca-service-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
@@ -150571,6 +151026,14 @@ Our support team is always happy to connect with you, and always has your back! 
 Do you have [ROLE_ADMIN_TENANT Access permissions](https://docs.reltio.com/en/objectives/administer-system/system-administration-at-a-glance/access-management-at-a-glance/access-management-reference/authorization/system-roles/critical-high-privilege-roles/role_admin_tenant-access-permissions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) ? If so, dive into this topic, specifically designed with your Tenant Configuration needs in mind! For more information, see topic [View and edit tenant configuration](https://docs.reltio.com/en/applications/console/tenant-management-applications/tenant-management-at-a-glance/tenant-configuration-at-a-glance/view-and-edit-tenant-configuration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 Here's a rundown of the parameters you can customize in the Tenant configuration page:
+
+## New winner elected on origin detachment
+
+The **New winner elected on origin detachment** field shows whether Reltio elects a new winner when the origin contributor is detached.
+
+| Parameter | Description | Default value | Allowed Values | Additional Info |
+| --- | --- | --- | --- | --- |
+| New winner elected on origin detachment | Indicates whether Reltio elects a new winner when the origin contributor is detached. This field is read-only. **Enabled** indicates that a new winner is elected. **Disabled** indicates that a shell composite is created. | **Enabled** for new tenants. Existing tenants keep their current value. | `Enabled`  `Disabled` | [Control winner re-election after origin contributor detachment](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-operation/unmerge-entity-records/control-winner-re-election-after-origin-contributor-detachment?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
 
 ## Cleanse configurations
 
