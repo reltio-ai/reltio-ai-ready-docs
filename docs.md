@@ -1,6 +1,6 @@
 # Reltio Documentation
 
-_Generated: 2026-09-02 02:15 UTC_
+_Generated: 2026-09-04 02:15 UTC_
 
 _Topics: 3390_
 
@@ -210990,7 +210990,7 @@ These status fields indicate how each address component was processed during cle
 | Fields | Description |
 | --- | --- |
 | `AVC`, `VerificationStatus`, and `VerificationStatusDetails` | For more information about these fields, see topic [Understanding Address Verification Code](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-reference/out-of-the-box-cleanse-functions/address-cleanser/understanding-address-verification-code?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
-| `DPVConfirmedIndicator`, `DPVFootnotes`, and `ResultsString` | These fields are returned only when the CASS2 process is used.   > **Note:** For more information about these fields, see the [CASS2 Field Descriptions](https://support.loqate.com/cass2-output-field-descriptions/) page. |
+| `DPVConfirmedIndicator`, `DPVFootnotes`, and `ResultsString` | These fields are returned only when the CASS2 process is used.   > **Note:** For more information about these fields, see the [CASS2 Field Descriptions](https://docs.loqate.com/support/cass2-output-field-descriptions) page. |
 | `SerpStatusEx`, `Questionable`, and `Result` | These fields are returned only when the SERP process is used.**Note:** For more information about these fields, see the [SERP Fields](https://support.loqate.com/documentation/fielddescrip/serp-fields/) page. |
 | **Component-level field status indicators** | **Component-level field status indicators** |
 | `AddressStatus`, `Address1Status`, `Address2Status`, `Address3Status`, `Address4Status`, `Address5Status`, `Address6Status`, `Address7Status`, and `Address8Status` | Show the verification result for the Address or Address line fields. Values are returned only when `returnUnverifiedStatus` is set to `true`. |

@@ -2,7 +2,7 @@
 
 > The complete Reltio product documentation corpus — 3,264 topics — optimized for AI consumption and available as structured Markdown. No authentication required.
 
-![Last synced](https://img.shields.io/badge/Last%20synced-2026--09--02-blue)
+![Last synced](https://img.shields.io/badge/Last%20synced-2026--09--04-blue)
 ![Topics](https://img.shields.io/badge/Topics-3%2C264-green)
 ![Format](https://img.shields.io/badge/Format-Markdown-lightgrey)
 ![Access](https://img.shields.io/badge/Access-Public%2C%20no%20auth-brightgreen)
