@@ -1,8 +1,8 @@
 # Reltio Documentation
 
-_Generated: 2026-09-04 02:15 UTC_
+_Generated: 2026-09-09 02:15 UTC_
 
-_Topics: 3390_
+_Topics: 3392_
 
 ---
 
@@ -6466,6 +6466,64 @@ This page is the first stop in the Reltio Documentation Portal, so you can't mis
 
 ---
 
+# RDM legacy URL deprecation – Aug 2027
+
+> **Section:** Reltio > What’s new and notable? > What's new at a glance > Deprecation Notices at a glance
+
+
+**Source:** https://docs.reltio.com/en/reltio/whats-new-and-notable/whats-new-at-a-glance/deprecation-notices-at-a-glance/rdm-legacy-url-deprecation--aug-2027?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** rdm google app engine urls, replace legacy rdm urls, appspot.com rdm endpoints, rdm production endpoint, reference data management api url, rdm tenant api endpoint, google app engine rdm, appspot, rdm-tasks, deprecation, integrations
+
+
+Learn about the deprecation of legacy RDM URLs.
+
+Legacy `appspot.com` URLs used in Reference Data Management (RDM) integrations will be decommissioned on August 31, 2027. Reltio is consolidating these endpoints onto your configured RDM production endpoint for API and UI access.
+
+## What are we deprecating?
+
+We're retiring the legacy RDM URLs used by some RDM integrations. The following URLs will be deprecated and decommissioned:
+
+- `https://api-dot-prod-155422.appspot.com/`
+- `https://api-dot-prod-155422.ue.r.appspot.com/`
+- `https://rdm-tasks-dot-prod-155422.ue.r.appspot.com/`
+
+These are older `appspot.com` endpoints that predate the current RDM production environment.
+
+## Why are we deprecating it?
+
+As part of our ongoing improvements to Reltio Data Cloud, we periodically retire legacy endpoints and services. The legacy URLs are being consolidated into your configured RDM production endpoint, providing a single, consistent URL for both API and UI integrations.
+
+## When are we deprecating it?
+
+Reltio will decommission the legacy `appspot.com` URLs listed above on August 31, 2027. After August 31, 2027, requests to these legacy URLs will fail. This change does not cause downtime. Your RDM tenant continues to operate through the configured production endpoint.
+
+## What does this mean to you?
+
+This affects customers with an RDM tenant who still call the legacy `appspot.com` URLs directly.
+
+- No impact to RDM functionality. Your tenant already runs in the current production environment.
+- No downtime. RDM continues to operate normally through and after the transition.
+- After August 31, 2027, any integration, API client, or script that still calls the deprecated URLs fails with an error.
+
+## What action do you need to take?
+
+If your integrations use hardcoded `appspot.com` URLs, review all integrations, scripts, API clients, and internal documentation that reference these URLs. Replace each hardcoded `appspot.com` URL with the RDM production endpoint configured for your tenant.
+
+You can find your RDM API endpoint in the provisioning email from Reltio, which lists the API and UI endpoints for your tenant.
+
+For more information, see [Account information at a glance](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/account-information-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+We recommend completing this update well ahead of the August 31, 2027 deadline to avoid interruption to your integrations that use hardcoded `appspot.com` URLs.
+
+## Still have questions?
+
+If you have questions, or need help confirming the correct URL for your API or UI integrations, contact [Reltio Support](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+
+
+---
+
 # AWS access key and secret in favor of IAM roles for Reltio-owned resources
 
 > **Section:** Reltio > What’s new and notable? > What's new at a glance > Deprecation Notices at a glance
@@ -9113,9 +9171,6 @@ We build on each GA release with a steady stream of bi-weekly updates that deliv
 
 | Release Name | Stage | Tenant Type | Release Date |
 | --- | --- | --- | --- |
-| 2026.1.10.0 | 1 | Development (DEV) | September 04, 2026 |
-| 2026.1.10.0 | 2 | Test (TEST) | September 04, 2026 |
-| 2026.1.10.0 | 3 | Production (PRD) | September 11, 2026 |
 | 2026.1.11.0 | 1 | Development (DEV) | September 18, 2026 |
 | 2026.1.11.0 | 2 | Test (TEST) | September 18, 2026 |
 | 2026.1.11.0 | 3 | Production (PRD) | September 25, 2026 |
@@ -13736,8 +13791,6 @@ For more details, see [Reltio Address Cleanser update - Aug 2025](https://docs.r
 
 Now available, Reltio Entity Resolution in Databricks. This production-grade ML solution lets you match **Individual** entity records directly inside your Databricks lakehouse — no data movement, no external MDM required. Clean, governed, and AI-ready data is just a notebook away.
 
-For more information, see [Reltio Embedded Entity Resolution in Databricks at a glance](https://docs.reltio.com/en/products/reltio-entity-resolution/reltio-embedded-entity-resolution-in-databricks-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
-
 **D&B Connector now supports updateAttributeUpdateDates**
 
 The D&B connector now supports the `updateAttributeUpdateDates` option. When set to true, the connector passes the parameter in API requests, and the Reltio platform updates the timestamps for attributes whose values have changed.
@@ -15315,6 +15368,102 @@ For more information, see [Reltio Address Cleanser update - April 2026](https://
 
 ---
 
+# 2026.1.10.0 RN | 11-Sep-2026
+
+Learn about the new features and enhancements introduced in this 2026.1.10.0 release.
+
+**Deployment dates**
+
+| Stage | Tenant type | When |
+| --- | --- | --- |
+| 1 | Development (DEV) | September 4, 2026 |
+| 2 | Test (TEST) | September 4, 2026 |
+| 3 | Production (PRD) | September 11, 2026 |
+
+## Share AgentFlow conversations with your team
+
+AgentFlow conversations contain important context such as prompts, agent responses, charts, and graphs. Sharing screenshots or copied messages can leave out important context and make collaboration less effective.
+
+You can create a shareable link to an AgentFlow conversation. Authenticated users in the same tenant can use the link to view a read-only snapshot of the conversation. This provides your team members with a complete view of the conversation and reduces the risk of missing important information. You can update the link to include new messages, or block it to revoke access.
+
+For more information, see [Share an AgentFlow conversation](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/share-an-agentflow-conversation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+## Interactive visualizations for custom agents and automated long-running tasks
+
+AgentFlow conversations contain data-rich results, such as batch outcomes, match statistics, trends, and entity relationships. Reviewing these results as text or tables can make patterns and comparisons difficult to identify.
+
+Interactive charts and diagrams are now available by default for custom agents created in [Agent Builder](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agent-builder-for-agentflow-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and agents used for [automated long-running tasks](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/automated-long-running-tasks?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), with no additional configuration. These visualizations help you compare outcomes, identify trends, and understand relationships between entities without leaving AgentFlow.
+
+For more information, see [Charts and Diagrams in AgentFlow](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/charts-and-diagrams-in-agentflow?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+## Email notifications for automated long-running tasks in AgentFlow
+
+Monitoring automated long-running tasks can require you to repeatedly check AgentFlow for status changes and processing outcomes. AgentFlow now sends email notifications to the user who created the job when a task starts, stops, completes, or fails, so you can stay informed about important updates.
+
+In the email, select **View Job** to review the details of a task in AgentFlow.
+
+For more information, see [Automated long-running tasks](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/automated-long-running-tasks/monitor-and-review-an-automated-long-running-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+## View multiple parent paths in a hierarchy
+
+An entity in a hierarchy can have more than one parent, resulting in multiple paths to the same entity. The tree shows one path at a time, so other parent paths for the same entity are not visible.
+
+The **Hierarchy** tab now lets you view every parent path for that entity. Profile details lists each shortened path, including the parent name, so you can switch the tree to a different path without leaving the hierarchy.
+
+For more information, see [View multiple parent paths in a hierarchy](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/view-multiple-parent-paths-in-a-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+## Identify hierarchy parents and children by crosswalk
+
+A materialized hierarchy represents the parent-child structure of related profiles and can be versioned over time. Hierarchy management APIs let you create materialized hierarchies, add connections, and import hierarchy data in bulk. Each connection identifies a parent entity and a child entity.
+
+Hierarchy management APIs supported only entity IDs for identifying parent and child entities. We've expanded this capability to support source-system crosswalks, giving you the flexibility to use identifiers from your source systems.
+
+For more information, see [Create a hierarchy](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/create-a-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Create a hierarchy version](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/create-a-hierarchy-version?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Create hierarchy connections](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/create-hierarchy-connections?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), and [Import a hierarchy](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/import-a-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+## Submit multiple bulk update of attributes tasks
+
+A Bulk update of attributes request starts a background task that applies the same attribute changes across multiple entities. By default, only one bulk update task can be active for the same user at a time, so a second request waits until the current task finishes. This constraint can delay workflows that require several bulk updates in sequence, such as data-retention processing.
+
+You can now submit more than one Bulk update of attributes task for the same user without waiting for the current task to finish. Set the `allowMultipleTasks` query parameter to `true` on each request. Tasks submitted while another task is active enter the SCHEDULED state and start automatically after the preceding task completes. Omit the parameter or set it to `false`, to retain the currentsingle-task-per-user behavior..
+
+For more information, see [Bulk update of attributes](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/entities-api/update-entities/bulk-update-of-attributes?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+## RDM legacy endpoints to be decommissioned in August 2027
+
+Legacy Reference Data Management (RDM) endpoints will be decommissioned on August 31, 2027. If your integrations, scripts, API clients, or internal documentation still use these legacy endpoints, update them to use the RDM production endpoint configured for your tenant to avoid integration errors after the decommissioning date.
+
+There is no downtime associated with this change, and RDM functionality is not affected. You can find your RDM API endpoint in the provisioning email sent by Reltio. If you need help confirming the correct endpoint, contact [Reltio Support](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+For more information, see [RDM legacy URL deprecation – Aug 2027](https://docs.reltio.com/en/reltio/whats-new-and-notable/whats-new-at-a-glance/deprecation-notices-at-a-glance/rdm-legacy-url-deprecation--aug-2027?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+## Additional object-level properties in Reltio Data Sharing with Databricks
+
+Reltio Data Sharing with Databricks now includes additional object-level properties in the supported streaming tables in the data share. These properties provide more information about object types, merge outcomes, and event timing, which helps you trace changes and understand how records were processed in your shared data.
+
+Reltio adds each applicable property automatically, so you do not need to take any action.
+
+The following table lists the new object-level properties, their data types, the object types they apply to, and what each property represents.
+
+| Property | Type | Streaming tables it applies to | Description |
+| --- | --- | --- | --- |
+| `objectType` | String | `entity_<entity_type>`, `relation_<relation_type>`, `interaction_<interaction_type>`, matches, merges, links, workflows, and activities | Type of Reltio object. |
+| `id` | String | `relation_<relation_type>` and `interaction _<interaction_type>` | Unique identifier for the object. Entities already include this property. |
+| `linked` | Boolean | `interaction_<interaction_type>` | Shows whether the interaction was replaced as part of a merge. Entities and relations already include this property. |
+| `directWinner` | String | Merges | Identifies the object that won the merge directly. |
+| `insertedTime` | Long (BIGINT) | Matches, merges, and links | Timestamp when the record was written to staging storage. |
+| `insertedTime`, `eventTime`, and `deletedTime` | Long (BIGINT) | `entity_<entity_type>`, `relation_<relation_type>`, and `interaction _<interaction_type>` when the data share is configured with `ov: true`. | Available only for data shares that synchronize Operational Values (`ov: true`).   `insertedTime`: Timestamp when the record was written to staging storage. `eventTime`: Timestamp when the source event occurred in Reltio. `deletedTime`: Timestamp when the delete event occurred in Reltio. |
+
+The data type of each property depends on whether the property already exists in your data share:
+
+- If the property already exists in the applicable streaming table of the data share, its current data type does not change.
+- If the property does not already exist in the respective streaming tables of the data share, Reltio adds it automatically with the data type listed in the above table.
+
+To change the data type of an existing property to its intended data type, contact [Reltio support](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+
+
+---
+
 # 2026.1.2.0 RN | 22-May-2026
 
 Learn about the new features and enhancements introduced in this 2026.1.1.0 release.
@@ -15762,7 +15911,7 @@ Reltio Data Pipelines use credentials configured during setup to connect to Data
 
 Reltio now sends email and in-app notifications and disables the affected pipeline after three failed connection attempts due to invalid credentials. The email and in-app notification identifies the affected pipeline and tenant, and provide steps to update the credential and restore data delivery.
 
-For more information, see [Notification Management at a glance](https://docs.reltio.com/en/applications/console/configuration-applications/notification-management-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Credential expiry alerts for Reltio Data Pipelines](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/credential-expiry-alerts-for-reltio-data-pipelines?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), and [Update credentials and re-enable a disabled Data Pipeline](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/update-credentials-and-re-enable-a-disabled-data-pipeline?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+For more information, see [Notification Management at a glance](https://docs.reltio.com/en/applications/console/configuration-applications/notification-management-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Credential-failure alerts for Reltio Data Pipelines](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/data-pipeline-alerts-and-notifications/credential-failure-alerts-for-reltio-data-pipelines?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), and [Update credentials and re-enable a disabled Data Pipeline](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/data-pipeline-alerts-and-notifications/update-credentials-and-re-enable-a-disabled-data-pipeline?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 ## Estimate streaming event payload size for a destination
 
@@ -16204,6 +16353,10 @@ Tucked safely away behind the enterprise firewall, a private cloud provides larg
 
 A packaged set of capabilities and configurations using the Reltio platform that is offered and sold to customers, often for a price. For example, Reltio Intelligent 360.
 
+****
+
+
+
 **Profile**
 
 A unified view of all attribute values, relationships, and interactions associated with an entity. A profile consolidates data from multiple sources into a single, enriched representation.
@@ -16234,10 +16387,6 @@ Reference Data Management (RDM) data is used to define and maintain reference da
 
 The Reltio user interface is used for administration and configuration activities. It provides a collection of applications, which allow you to configure, manage, and secure your data within the Reltio Context Intelligence Platform.
 
-**Reltio Embedded Entity Resolution in Databricks**
-
-A Databricks-native solution that identifies and groups matching Individual entity records directly in your Databricks environment, without data movement or duplication, and operates on data stored in Unity Catalog.
-
 **Reltio Storage Unit**
 
 The Reltio Storage Unit (RSU) is calculated as the combined total storage size across all primary and secondary storage spaces (including History, Activity Log, Match, Search Index, and Interactions). 1 RSU equates to 1 TB of storage usage. Current RSU usage for a tenant, including the breakdown of categories, can be found in the Tenant Management application of the Console.
@@ -16264,6 +16413,10 @@ Security Assertion Markup Language 2.0 (SAML) is an open federation standard tha
 
 Salesforce Data Connector (SFDC) is a shorthand term used in integration contexts to refer to Salesforce-related connector logic, processes, or assets that exchange data between Salesforce and another system. In Reltio documentation, SFDC commonly appears in recipe names and integration artifacts for synchronization between Reltio and Salesforce.
 
+**Service Level Agreements**
+
+A contractual agreement between Reltio and the customer that defines measurable service commitments (for example, availability and other operational targets), what is in scope, and how those commitments apply. SLA terms apply only to what the agreement and published product documentation describe; not every component, integration, or deployment pattern is covered the same way.
+
 **Similar Entities**
 
 Entities that may refer to the same person, place, or thing, based on matching attribute values. Also known as potential duplicates, similar entities appear in profiles under Potential Matches.
@@ -16276,13 +16429,13 @@ Single Sign-On (SSO) is an authentication method that enables you to use a singl
 
 Software as a Service (SaaS) refers to using a software program over the Internet, maintained by a SaaS company responsible for its creation and maintenance. The payment for use is periodic, and the concept is: you do not buy, you rent.
 
+**Statement of Work (SOW)**
+
+A contractual agreement between Reltio and the customer that defines the scope, deliverables, timeline, responsibilities, and commercial terms of a Professional Services engagement.
+
 **Survivorship**
 
 A survivorship strategy allows different attribute values to be selected as operational values based on the context in which data is retrieved. Survivorship applies predefined or dynamic rules to determine the most trusted value for use in profile views and downstream systems.
-
-**Service Level Agreements**
-
-A contractual agreement between Reltio and the customer that defines measurable service commitments (for example, availability and other operational targets), what is in scope, and how those commitments apply. SLA terms apply only to what the agreement and published product documentation describe; not every component, integration, or deployment pattern is covered the same way.
 
 **Simultaneous update**
 
@@ -24003,7 +24156,20 @@ To monitor and review an automated long-running task
    - Inspect the job results and any items that require follow-up.
    - Continue follow-up in the same conversation if needed.
 
-**Result**You can monitor scheduled, in-progress, and completed jobs from Task Management. When a job finishes, AgentFlow sends an email summary with processed and error counts and a link to the dashboard, where you can review the detailed report for that run.
+**Result**You can monitor scheduled, in-progress, and completed jobs from **Task Management**.
+
+**Email notifications**
+
+AgentFlow sends email notifications to the user who created the job at key stages of an automated long-running task. Emails are sent at the following stages of a long-running task:
+
+- **Started**: The task is running. The email includes a link to track progress in AgentFlow.
+- **Stopped**: The task stopped before all records were processed. The email includes a summary of the partial results.
+- **Completed**: The task completed successfully. The email includes a summary of the results.
+- 
+
+  **Failed**: A problem prevented the task from completing. The email includes a summary of the results.
+
+In the email, select **View Job** to open the job in AgentFlow, where you can review execution details, results, and the conversation associated with the job.
 
 
 
@@ -26675,6 +26841,8 @@ Learn more about the charts that AgentFlow can display in conversations and exam
 
 AgentFlow contextually displays charts, graphs, or diagrams in a conversation when information is easier to understand visually than through text. These contextual visualizations help you identify patterns, compare results, and explore relationships more efficiently.
 
+Charts and diagrams are available by default in all AgentFlow conversations, including conversations with Reltio agents, custom agents created in [Agent Builder](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agent-builder-for-agentflow-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), and agents used for [automated long-running tasks](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/automated-long-running-tasks?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) (LRTs).
+
 The following types of charts are supported in AgentFlow:
 
 ## Bar chart
@@ -27894,6 +28062,111 @@ Configure cloud storage access before running profiling jobs. See [Configure an 
 ## Next steps
 
 After enabling the agent, start a profiling job in AgentFlow. See [Run your first data profiling job](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agentflow-agents-catalog/profiler/run-your-first-data-profiling-job?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+
+
+---
+
+# Share an AgentFlow conversation
+
+> **Section:** Products > Reltio AgentFlow™ > Reltio AgentFlow™ overview
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/share-an-agentflow-conversation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** share an AgentFlow conversation, create an AgentFlow share link, update a shared conversation link, read-only AgentFlow conversation
+
+
+Learn how to share a read-only AgentFlow conversation with other users in your tenant.
+
+Sharing an AgentFlow conversation makes it easier to collaborate with other users in your tenant. You can create and send a shareable link that provides a read-only view of the conversation. This allows you to share the complete context of a conversation without relying on screenshots or copied messages.
+
+A shared conversation link preserves the prompts, agent responses, and supporting context available at the time you create the link. This gives recipients a complete view of the conversation and reduces the risk of missing important information.
+
+> **Important:** A shared conversation link provides a read-only view of the conversation. Messages added later aren't included unless you [update the conversation link](#task-8261/stepsection-698). Recipients cannot modify or continue the shared conversation.
+
+**Prerequisites**
+
+Before you begin, ensure you meet the following requirements:
+
+- 
+
+  You are [signed in](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/use-the-agentflow-workspace?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) to Reltio AgentFlow.
+- 
+
+  All recipients are signed in to AgentFlow and have access to the same tenant.
+
+
+To share a conversation
+
+1. Log in to **AgentFlow**.
+2. In the left navigation panel, select the conversation you want to share.
+3. Review the conversation carefully for private or sensitive data.
+   Do not share a conversation if it contains information the recipient shouldn't access.
+4. Select **Share**.
+   A dialog box opens.
+5. Select **Create Link** and then select **Copy link**.
+6. Send the copied link to the required recipients.
+   On selecting the link, recipients see a read-only view of the conversation, including prompt messages, agent responses, supporting context, charts, and graphs.
+
+To update the link of a shared conversation
+
+7. Select **Share**.
+   A dialog box opens displaying the existing link.
+8. Select **Update link**.
+   AgentFlow updates the shared snapshot:
+   - If new messages were added since the last share, AgentFlow generates a new link and disables the previous one.
+   - If no new messages were added, AgentFlow returns the existing link.
+   > **Important:** When a new link is generated, the previous link is disabled. Recipients must use the new link to access the updated snapshot.
+9. Select **Copy link**.
+10. Send the updated link to the required recipients.
+   The updated link provides recipients with a read-only view of the conversation. The conversation doesn't include messages or prompts added after you updated the link.
+
+To disable the link of a shared conversation
+
+11. In the left navigation panel, identify the shared conversation.
+12. Hover over the required conversation tab and select **More options**.
+   *Image: i-af-block-chat.png*
+13. Select **Block share link**.
+   A dialog box appears.
+14. Select **Block**.
+   The shared link is disabled. Recipients can no longer use the link to access the conversation.
+   > **Note:** Deleting a shared conversation automatically disables its share link. Recipients can no longer access the conversation.
+
+**Verification steps**
+
+To confirm that you shared a conversation, perform the following steps:
+
+1. 
+
+   As a recipient, select the copied link while signed in to the same tenant.
+2. 
+
+   Confirm that the shared conversation includes all the necessary context.
+3. 
+
+   Confirm that the conversation is read-only.
+
+To confirm that you updated a shared conversation link, perform the following steps:
+
+1. 
+
+   As a recipient, select the updated link while signed in to the same tenant.
+2. 
+
+   Confirm that the conversation includes the messages added since the previous link was shared.
+3. 
+
+   Confirm that the previous link no longer provides access to the conversation.
+
+To confirm that you disabled a shared conversation link, perform the following steps:
+
+1. 
+
+   As a recipient, select the disabled link while signed in to the same tenant.
+2. 
+
+   Confirm that the link no longer provides access to the conversation.
 
 
 
@@ -38140,209 +38413,6 @@ If you're here in the Reltio Documentation Portal, you may already have Reltio C
 
 ---
 
-# Set up your Databricks environment
-
-> **Section:** Products > Reltio Entity Resolution > Reltio Embedded Entity Resolution in Databricks at a glance
-
-
-**Source:** https://docs.reltio.com/en/products/reltio-entity-resolution/reltio-embedded-entity-resolution-in-databricks-at-a-glance/set-up-your-databricks-environment?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
-**Keywords:** setup reltio entity resolution databricks, prepare databricks environment for entity resolution, configure delta sharing unity catalog databricks, set up compute cluster for entity resolution, create unity catalog schema and permissions databricks, databricks prerequisites for entity resolution pipeline, configure workspace for reltio embedded entity resolution, databricks setup steps for entity resolution solution, delta sharing, unity catalog, compute cluster
-
-
-Learn how to prepare your Databricks environment so that you can set up and run entity resolution.
-
-Reltio Embedded Entity Resolution in Databricks requires both solution access and environment preparation before you can run the pipeline. This process includes preparing your Databricks workspace, accessing shared assets, and configuring compute resources.
-
-## Prerequisites
-
-Ensure that you have access to your Databricks workspace.
-
-## Enable Delta Sharing
-
-Enable Delta Sharing on a metastore in your Databricks environment to support secure access to ML models and notebooks. For more information, see [Enable Delta Sharing on a metastore](https://docs.databricks.com/gcp/en/delta-sharing/set-up#enable-delta-sharing-on-a-metastore).
-
-## Configure compute cluster
-
-Prepare a Databricks compute cluster with the following configuration. Refer to [Compute configuration reference](https://docs.databricks.com/aws/en/compute/configure) to create and configure a cluster with the following configuration to ensure that the entity resolution pipeline runs with the required performance and resource capacity.
-
-**Required configuration**
-
-| Requirement | Value |
-| --- | --- |
-| Databricks Runtime version | 16.4 LTS or later |
-| Performance mode | Machine Learning enabled |
-| Photon Acceleration | Disabled |
-| Single Node | Disabled |
-| Worker nodes | Minimum 2 (increase based on data volume) |
-| Autoscaling | Not recommended |
-| Worker type | `g5.4xlarge [A10G]` or equivalent with at least 64 GB memory and 1 GPU |
-
-## Configure Unity Catalog resources
-
-Create the required Unity Catalog objects and assign permissions for the user or service principal that runs the notebook.
-
-To manage catalogs, schemas, and permissions:
-
-1. In the Databricks workspace, click **Catalog** in the left sidebar to open **Catalog Explorer**.
-2. In **Catalog Explorer**, create a new catalog:
-   - Click **Create catalog**
-   - Enter the catalog name (`reltio_er_metadata_catalog`)
-   - Confirm the creation
-3. Select the created catalog, then create a schema:
-   - Click **Create schema**
-   - Enter the schema name (`metadata_schema`)
-   - Confirm the creation
-4. Assign permissions to the user or service principal:
-   - Select the catalog or schema
-   - Go to the **Permissions** tab
-   - Grant the required privileges
-
-**Required configuration**
-
-| Resource type | Name or details | Required permissions |
-| --- | --- | --- |
-| Catalog | `reltio_er_metadata_catalog` | `USE CATALOG`, `CREATE SCHEMA` |
-| Schema | `metadata_schema` in `reltio_er_metadata_catalog` | `CREATE TABLE`, `USE SCHEMA`, `SELECT`, `READ VOLUME`, `CREATE VOLUME`, `MODIFY`, `WRITE VOLUME` |
-| Source data | Your source catalogs and tables | `USE CATALOG` on each source catalog, `SELECT` on each source table |
-
-## Verification
-
-Verify that your Databricks environment meets the required prerequisites:
-
-- Delta Sharing is enabled in your Unity Catalog metastore.
-- A compute cluster is available with the required configuration.
-- The required Unity Catalog objects and permissions are defined.
-
-## Result
-
-Your Databricks environment is ready for onboarding Reltio Embedded Entity Resolution.
-
-You can now [clone the repository into your Databricks workspace](https://docs.reltio.com/en/products/reltio-entity-resolution/reltio-embedded-entity-resolution-in-databricks-at-a-glance/clone-the-repository-into-your-databricks-workspace?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and continue with the setup process.
-
-
-
----
-
-# Accept and mount the shared assets
-
-> **Section:** Products > Reltio Entity Resolution > Reltio Embedded Entity Resolution in Databricks at a glance
-
-
-**Source:** https://docs.reltio.com/en/products/reltio-entity-resolution/reltio-embedded-entity-resolution-in-databricks-at-a-glance/accept-and-mount-the-shared-assets?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
-**Keywords:** accept delta share databricks, mount delta share to catalog databricks, how to mount shared catalog databricks, access shared models databricks delta sharing, databricks shared with me provider reltio, configure shared assets catalog databricks, use delta sharing models in databricks pipeline, databricks mount to catalog steps, delta sharing, catalog explorer, mount to catalog
-
-
-Learn how to accept the Delta Share from Reltio and mount the shared ML models in your Databricks workspace so that you can run the entity resolution pipeline.
-
-After you [Provide your Delta Sharing identifier to Reltio](https://docs.reltio.com/en/products/reltio-entity-resolution/reltio-embedded-entity-resolution-in-databricks-at-a-glance/provide-your-delta-sharing-identifier-to-reltio?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), Reltio shares the required models with your workspace. Accept and mount the share to make the assets available in your workspace.
-
-## Prerequisites
-
-Before you begin, ensure that you have completed the following steps:
-
-- [Set up your Databricks environment](https://docs.reltio.com/en/products/reltio-entity-resolution/reltio-embedded-entity-resolution-in-databricks-at-a-glance/set-up-your-databricks-environment?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- [Clone the repository into your Databricks workspace](https://docs.reltio.com/en/products/reltio-entity-resolution/reltio-embedded-entity-resolution-in-databricks-at-a-glance/clone-the-repository-into-your-databricks-workspace?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- [Provide your Delta Sharing identifier to Reltio](https://docs.reltio.com/en/products/reltio-entity-resolution/reltio-embedded-entity-resolution-in-databricks-at-a-glance/provide-your-delta-sharing-identifier-to-reltio?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-
-## Steps to accept and mount the shared assets
-
-To accept and mount the shared assets, follow these steps:
-
-1. In the Databricks workspace, click **Catalog** in the left sidebar to open **Catalog Explorer**.
-2. In **Catalog Explorer**, navigate to the top-right toolbar, click the **gear icon**, and select **Delta Sharing**.
-3. In the **Delta Sharing** page, select the **Shared with me** tab.
-4. Locate the incoming share from the provider named **Reltio** and click on it to view its details.
-5. On the reltio provider page, look for "embedded-er-models-prd" and click **Mount to catalog** next to it.
-6. In the mounting dialog:
-   - Create a new catalog
-   - Select all the shared schemas
-   - Confirm the mount
-
-After you accept the share, a new read-only shared catalog appears in Catalog Explorer. This catalog contains the models and supporting resources required for the pipeline. When you run the pipeline, select this catalog as the location of the models.
-
-Grant the following permissions on the shared catalog to the user or service principal that runs the pipeline:
-
-| Resource type | Name or details | Required permissions |
-| --- | --- | --- |
-| Shared models catalog | Mounted Delta Share from Reltio | `USE CATALOG`, `USE SCHEMA`, `READ VOLUME`, `SELECT` |
-
-## Verification
-
-Verify that the shared assets are available in your workspace:
-
-- A new read-only catalog appears in Catalog Explorer.
-- The catalog contains the shared schemas, models, and related resources.
-- You can open the catalog and browse the available files.
-
-## Result
-
-The shared models and assets are available in your Databricks workspace. When you run the pipeline, select this catalog as the location of the models.
-
-Proceed to [Install the required library on the cluster](https://docs.reltio.com/en/products/reltio-entity-resolution/reltio-embedded-entity-resolution-in-databricks-at-a-glance/install-the-required-library-on-the-cluster?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) to enable pipeline execution .
-
-
-
----
-
-# Reltio Embedded Entity Resolution in Databricks at a glance
-
-> **Section:** Products > Reltio Entity Resolution
-
-
-**Source:** https://docs.reltio.com/en/products/reltio-entity-resolution/reltio-embedded-entity-resolution-in-databricks-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
-**Keywords:** entity resolution in databricks overview, embedded entity resolution in databricks, identify duplicate records in delta tables, group matching entity records databricks, ai powered matching using fern models, generate match groups and match scores, analyze entity match results in databricks, databricks marketplace entity resolution solution, entity resolution, match groups, match score
-
-
-Learn about Reltio Embedded Entity Resolution in Databricks, a Databricks-native solution that identifies and groups matching individual records directly in your Databricks environment.
-
-Reltio Embedded Entity Resolution for Databricks is a Databricks-native solution that identifies and groups matching Individual entity records directly within your Databricks environment, without requiring any data movement or duplication. It operates entirely on data stored in your Unity Catalog, ensuring processing stays within your Databricks account.
-
-Reltio Embedded Entity Resolution uses Reltio's Flexible Entity Resolution Network (FERN) models to identify matching records and group them together at scale. The solution generates match scores between the grouped records. These match groups can support downstream analytics, machine learning workloads, and operational processes that depend on consistent individual data.
-
-## Who can use this solution
-
-Reltio Embedded Entity Resolution is designed for organizations that manage large volumes of individual data in Databricks and need to identify duplicate or matching records. It's intended for the following user roles:
-
-Data Product OwnerSolution ArchitectData StewardDeveloperSystem Administrator
-
-## Benefits of Reltio Embedded Entity Resolution
-
-Individual data often remains fragmented across catalogs, schemas, and tables, even when it is stored in Databricks. Records that represent the same person can appear multiple times with differences in names, contact details, addresses, or identifiers.
-
-With Reltio Embedded Entity Resolution, you can:
-
-- Identify duplicate or related individual records.
-- Create consistent entity groupings across datasets.
-- Improve the accuracy of analytics and machine learning models.
-- Support reliable reporting and decision-making.
-
-Reltio Embedded Entity Resolution helps you create more consistent entity groupings while keeping resolution processing in your Databricks environment.
-
-## Key capabilities
-
-- **AI-powered matching in Databricks:** Uses pretrained Flexible Entity Resolution Network (FERN) models to identify and group records that refer to the same individual entity across one or more datasets.
-- **Native execution in Databricks:** Runs entirely within your Databricks environment and works with Delta Lake, Unity Catalog, and Databricks compute resources.
-- **Configurable matching:** Allows you to map source columns to standard individual entity attributes and adjust matching behavior using predefined or custom configuration settings.
-- **Match groups and scores:** Generates grouped records with a stable group ID and match score, enabling analysis, validation, and downstream processing.
-- **Interactive result exploration:** Enables you to review matched records, inspect group details, and analyze match outcomes directly in Databricks.
-
-## Where to access the solution
-
-You can access [Reltio Embedded Entity Resolution in Databricks](https://marketplace.databricks.com/details/20366a07-f190-4d2e-898f-58cace5ece07/Reltio-Inc_Reltio-Entity-Resolution) on the Databricks Marketplace.
-
-For setup instructions, see [Onboarding setup workflow](https://docs.reltio.com/en/products/reltio-entity-resolution/reltio-embedded-entity-resolution-in-databricks-at-a-glance/onboarding-setup-workflow?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
-
-**Related links**
-
-- [Reltio Entity Resolution at a glance](https://docs.reltio.com/en/products/reltio-entity-resolution/reltio-entity-resolution-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-
-
-
----
-
 # Reltio Entity Resolution at a glance
 
 > **Section:** Products > Reltio Entity Resolution
@@ -38404,131 +38474,6 @@ Learn more about Reltio Entity Resolution.
 Reltio Entity Resolution provides velocity packs for the Reltio Context Intelligence Platform customized for consumer data industry. These velocity packs gives you a jump start with a preconfigured data model, including match rules, that helps in resolving entity records. Take a look at what's in the box.
 
 See the following topics in this section for additional reference information on setting up or using Reltio Entity Resolution.
-
-
-
----
-
-# Clone the repository into your Databricks workspace
-
-> **Section:** Products > Reltio Entity Resolution > Reltio Embedded Entity Resolution in Databricks at a glance
-
-
-**Source:** https://docs.reltio.com/en/products/reltio-entity-resolution/reltio-embedded-entity-resolution-in-databricks-at-a-glance/clone-the-repository-into-your-databricks-workspace?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
-**Keywords:** clone repository in databricks workspace, clone bitbucket repo in databricks, how to import git folder databricks, setup reltio entity resolution repository, access notebooks in databricks git folder, configure git integration databricks workspace, databricks clone repository steps, bitbucket repository access databricks setup, git folder, bitbucket, databricks workspace
-
-
-Learn how to clone the Reltio-provided notebooks repository into your Databricks workspace so that you can access the notebook required to run the entity resolution pipeline.
-
-Clone the Reltio-provided notebooks repository into your Databricks workspace to access the notebook required to run the entity resolution pipeline.
-
-## Prerequisites
-
-Before you begin, ensure that you have completed the following step:
-
-- [Set up your Databricks environment](https://docs.reltio.com/en/products/reltio-entity-resolution/reltio-embedded-entity-resolution-in-databricks-at-a-glance/set-up-your-databricks-environment?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-
-## Steps to clone the repository into your Databricks workspace
-
-To clone the repository, follow these steps:
-
-1. Sign in to the Databricks workspace.
-2. In the left navigation pane, select **Workspace**.
-3. In the **Workspace** open the folder where you want to clone the repository (for example, Workspace/Users/john.doe@databricks.com).
-4. On the top-right toolbar, click **Create**, then select **Git folder** to open the **Create Git folder** dialog.
-   - In the **Git repository URL** field, enter the Bitbucket repository URL provided by Reltio. Remove the `git clone` prefix from the copied URL before using it.
-   - Select **Bitbucket Cloud** as the Git provider.
-5. Click **Create Git folder**.
-
-## Verification
-
-Verify that the repository is cloned successfully in your Databricks workspace:
-
-- The Git folder appears in the workspace.
-- The repository files and folders (for example, `src`, `.gitignore`) are visible inside the Git folder.
-- You can open the Git folder and browse its contents.
-
-## Result
-
-The repository is cloned into your Databricks workspace. The Git folder appears in the workspace, containing the repository files.
-
-To proceed, [provide your Delta Sharing identifier to Reltio](https://docs.reltio.com/en/products/reltio-entity-resolution/reltio-embedded-entity-resolution-in-databricks-at-a-glance/provide-your-delta-sharing-identifier-to-reltio?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) so that the required models can be shared with your workspace.
-
-
-
----
-
-# Run Reltio Embedded Entity Resolution in Databricks
-
-> **Section:** Products > Reltio Entity Resolution > Reltio Embedded Entity Resolution in Databricks at a glance
-
-
-**Source:** https://docs.reltio.com/en/products/reltio-entity-resolution/reltio-embedded-entity-resolution-in-databricks-at-a-glance/run-reltio-embedded-entity-resolution-in-databricks?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
-**Keywords:** run embedded entity resolution, run entity resolution notebook, execute databricks matching pipeline, attach cluster to notebook, generate entity resolution output, share telemetry through delta sharing, configure reverse share telemetry, monitor pipeline telemetry data, review databricks entity results, telemetry, matching, monitoring
-
-
-Learn how to run Reltio Embedded Entity Resolution in Databricks by opening the solution notebook, attaching the configured cluster, executing the notebook cells in sequence, and sharing telemetry data with Reltio.
-
-After you [Install the required library on the cluster](https://docs.reltio.com/en/products/reltio-entity-resolution/reltio-embedded-entity-resolution-in-databricks-at-a-glance/install-the-required-library-on-the-cluster?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), run the Entity Resolution pipeline notebook from the cloned repository in your Databricks workspace to process your data and generate Entity Resolution output.
-
-After the first successful run, you can optionally share telemetry data with Reltio for operational monitoring and support.
-
-## Prerequisites
-
-Before you begin, ensure that you meet the following requirements:
-
-- [Set up your Databricks environment](https://docs.reltio.com/en/products/reltio-entity-resolution/reltio-embedded-entity-resolution-in-databricks-at-a-glance/set-up-your-databricks-environment?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- [Clone the repository into your Databricks workspace](https://docs.reltio.com/en/products/reltio-entity-resolution/reltio-embedded-entity-resolution-in-databricks-at-a-glance/clone-the-repository-into-your-databricks-workspace?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- [Provide your Delta Sharing identifier to Reltio](https://docs.reltio.com/en/products/reltio-entity-resolution/reltio-embedded-entity-resolution-in-databricks-at-a-glance/provide-your-delta-sharing-identifier-to-reltio?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- [Accept and mount the shared assets](https://docs.reltio.com/en/products/reltio-entity-resolution/reltio-embedded-entity-resolution-in-databricks-at-a-glance/accept-and-mount-the-shared-assets?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- [Install the required library on the cluster](https://docs.reltio.com/en/products/reltio-entity-resolution/reltio-embedded-entity-resolution-in-databricks-at-a-glance/install-the-required-library-on-the-cluster?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-
-## Run the pipeline notebook
-
-1. In Databricks, go to the cloned solution repository in your workspace which you created in the step [Clone the repository into your Databricks workspace](https://docs.reltio.com/en/products/reltio-entity-resolution/reltio-embedded-entity-resolution-in-databricks-at-a-glance/clone-the-repository-into-your-databricks-workspace?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), navigate to the `src/tasks/home_page` path and open the notebook.
-2. Locate the compute selector on the notebook toolbar. It appears on the right side, between **Run all** and **Schedule**. Select the cluster that you configured earlier in the step [Install the required library on the cluster](https://docs.reltio.com/en/products/reltio-entity-resolution/reltio-embedded-entity-resolution-in-databricks-at-a-glance/install-the-required-library-on-the-cluster?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
-3. Follow the instructions in the notebook and run each cell in sequence. Provide the required inputs in each cell as prompted.
-
-## Mandatory: Share operational telemetry with Reltio
-
-After a successful run, you must share operational telemetry with Reltio for monitoring and support. The pipeline creates this table automatically during the first run.
-
-The telemetry data does not include personally identifiable information (PII) or your source data. The telemetry table contains only operational execution metrics, such as:
-
-- Session ID
-- Workspace ID
-- Record counts
-- Execution duration
-- Job status
-
-The telemetry table is created at `reltio_er_metadata_catalog.metadata_schema.pipeline_telemetry`
-
-To enable Reltio to read this metrics data, you must configure a "Data Share" by following the below steps.
-
-1. In Databricks, open **Catalog Explorer**.
-2. Navigate to the telemetry table present at `reltio_er_metadata_catalog.metadata_schema.pipeline_telemetry`.
-3. On the top right cornier, click on **Share > Share via Delta Sharing**.
-4. Select **Create a new share with the streaming table** and enter a name for the Delta Share.
-5. In the **Recipients** field, enter the recipient ID **aws:us-east-1:a1958d2c-99c9-4481-a52c-f50cd6f003ba** and click on **Share**.
-6. Wait for Reltio to confirm that the telemetry share is visible and accessible.
-
-> **Caution:** Do not modify the telemetry table. Any unauthorized changes may result in breaching of legal contract.
-
-The pipeline runs successfully in your Databricks environment, generates the initial Entity Resolution output, and you must share telemetry data with Reltio for operational monitoring and support.
-
-## Verification
-
-Verify that the pipeline runs successfully:
-
-- All notebook cells run without errors.
-- The telemetry sharing step completes successfully.
-- Output tables and match results are generated.
-
-## Result
-
-The entity resolution pipeline runs successfully, and matched records are generated. You can now review match results, grouped records, and resolution metrics in the output. The telemetry data is shared with Reltio to enable operational monitoring and support.
 
 
 
@@ -38647,179 +38592,6 @@ Learn about the relationship types in your Reltio Entity Resolution for Individu
 Relationship types contain metadata properties and attributes that define the connection between two specific entities. Like entity types, relationship types contain attributes. Relationship types have a start object and an end object, and a defined direction in which the relationship works: directed, bidirectional, and unidirectional. Think of these relationship types as nodes in a web of interconnected data that enable you to make best use of the entities in your data model.
 
 For general information on relationship types, see topic [Reltio relationship types](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-information-model/data-model/reltio-object-types/reltio-relationship-types?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). For details on the preconfigured entity types that come with Reltio Entity Resolution for Individual, see [Entity types for Reltio Entity Resolution](https://docs.reltio.com/en/products/reltio-entity-resolution/reltio-entity-resolution-at-a-glance/reltio-entity-resolution-reference/reltio-entity-resolution-data-model/entity-types-for-reltio-entity-resolution?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
-
-
-
----
-
-# Install the required library on the cluster
-
-> **Section:** Products > Reltio Entity Resolution > Reltio Embedded Entity Resolution in Databricks at a glance
-
-
-**Source:** https://docs.reltio.com/en/products/reltio-entity-resolution/reltio-embedded-entity-resolution-in-databricks-at-a-glance/install-the-required-library-on-the-cluster?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
-**Keywords:** install derp core library databricks cluster, how to install whl file databricks compute, configure library on databricks cluster volumes, install python wheel file databricks cluster, set up databricks cluster for entity resolution, add library to databricks compute cluster, databricks install library from volumes, restart cluster after library installation databricks, compute cluster, library installation, python wheel
-
-
-Learn how to install the library shared by Reltio on your Databricks compute cluster so that you can run the entity resolution pipeline.
-
-After you [accept and mount the shared assets](https://docs.reltio.com/en/products/reltio-entity-resolution/reltio-embedded-entity-resolution-in-databricks-at-a-glance/accept-and-mount-the-shared-assets?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), install the shared library on your compute cluster to enable pipeline execution.
-
-## Prerequisites
-
-Before you begin, ensure that you have completed the following steps:
-
-- [Set up your Databricks environment](https://docs.reltio.com/en/products/reltio-entity-resolution/reltio-embedded-entity-resolution-in-databricks-at-a-glance/set-up-your-databricks-environment?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- [Clone the repository into your Databricks workspace](https://docs.reltio.com/en/products/reltio-entity-resolution/reltio-embedded-entity-resolution-in-databricks-at-a-glance/clone-the-repository-into-your-databricks-workspace?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- [Provide your Delta Sharing identifier to Reltio](https://docs.reltio.com/en/products/reltio-entity-resolution/reltio-embedded-entity-resolution-in-databricks-at-a-glance/provide-your-delta-sharing-identifier-to-reltio?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- [Accept and mount the shared assets](https://docs.reltio.com/en/products/reltio-entity-resolution/reltio-embedded-entity-resolution-in-databricks-at-a-glance/accept-and-mount-the-shared-assets?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-
-## Steps to install the required library on the cluster
-
-To install the required library on your cluster, follow these steps:
-
-1. In the Databricks workspace, click **Compute** in the left sidebar.
-2. Select the cluster that you prepared for entity resolution in the step [Accept and mount the shared assets](https://docs.reltio.com/en/products/reltio-entity-resolution/reltio-embedded-entity-resolution-in-databricks-at-a-glance/accept-and-mount-the-shared-assets?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). This opens the cluster details page.
-3. In the cluster details page, go to the **Libraries** tab and click **Install new**.
-4. In the **Install library** dialog:
-   - Select **Volumes** as the source
-   - Browse to the `.whl` file in the shared catalog that you mounted earlier in the step [Accept and mount the shared assets](https://docs.reltio.com/en/products/reltio-entity-resolution/reltio-embedded-entity-resolution-in-databricks-at-a-glance/accept-and-mount-the-shared-assets?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), for example: `<delta_shared_catalog_name> → backend → wheel → <file>.whl`.
-5. Click on **Install** and wait for the library installation to complete.
-6. Restart the cluster to ensure that the library is loaded into the environment.
-
-## Verification
-
-Verify that the library is installed successfully:
-
-- The library appears in the **Libraries** tab of the cluster.
-- The status of the library shows as **Installed**.
-- The cluster restarts successfully without errors.
-
-## Result
-
-The shared library is installed on the compute cluster. You can now use this cluster to run the entity resolution pipeline notebook.
-
-Your Databricks workspace is ready for Reltio Embedded Entity Resolution in Databricks. You can now [Run Reltio Embedded Entity Resolution in Databricks](https://docs.reltio.com/en/products/reltio-entity-resolution/reltio-embedded-entity-resolution-in-databricks-at-a-glance/run-reltio-embedded-entity-resolution-in-databricks?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) using the configured cluster and notebook.
-
-
-
----
-
-# Onboarding setup workflow
-
-> **Section:** Products > Reltio Entity Resolution > Reltio Embedded Entity Resolution in Databricks at a glance
-
-
-**Source:** https://docs.reltio.com/en/products/reltio-entity-resolution/reltio-embedded-entity-resolution-in-databricks-at-a-glance/onboarding-setup-workflow?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
-**Keywords:** onboarding workflow reltio entity resolution databricks, entity resolution setup workflow databricks steps, how to onboard reltio embedded entity resolution, databricks entity resolution setup sequence reltio, reltio embedded entity resolution onboarding steps, configure reltio entity resolution databricks workflow, entity resolution pipeline setup flow databricks, reltio databricks onboarding process entity resolution, workflow, delta sharing, match groups
-
-
-Learn about the onboarding process through this workflow, which provides an overview and the sequence for setting up Reltio Embedded Entity Resolution in Databricks.
-
-The onboarding workflow shows the end-to-end onboarding flow for setting up Reltio Embedded Entity Resolution in Databricks. It outlines the sequence of actions performed by you and the Reltio, along with the expected outcome at each stage.
-
-In this workflow:
-
-- **Customer** steps represent actions that you perform in your Databricks environment.
-- **Reltio** steps represent actions performed by Reltio to provision the solution and share required assets.
-- **Expected outcomes** describe the result of each step and confirm readiness for the next stage.
-
-## Onboarding workflow
-
-Follow this sequence of steps to prepare your environment, access the required assets, and enable execution of the entity resolution pipeline.
-
-*Image: mermaid-diagram_for_setup_REER.png*
-
-To complete the setup, perform the following steps:
-
-| Step | Task | See topic |
-| --- | --- | --- |
-| A | Prepare your Databricks workspace, compute resources, catalogs, and required permissions. | [Set up your Databricks environment](https://docs.reltio.com/en/products/reltio-entity-resolution/reltio-embedded-entity-resolution-in-databricks-at-a-glance/set-up-your-databricks-environment?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
-| B | Reltio provides access to the repository for Databricks notebooks. | — |
-| C | Use the provided access details to clone the Databricks notebooks repository | [Clone the repository into your Databricks workspace](https://docs.reltio.com/en/products/reltio-entity-resolution/reltio-embedded-entity-resolution-in-databricks-at-a-glance/clone-the-repository-into-your-databricks-workspace?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
-| D | Provide your Delta Sharing identifier to Reltio to enable ML model and library sharing. | [Provide your Delta Sharing Identifier to Reltio](https://docs.reltio.com/en/products/reltio-entity-resolution/reltio-embedded-entity-resolution-in-databricks-at-a-glance/provide-your-delta-sharing-identifier-to-reltio?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
-| E | Reltio shares the required models and library through Delta Sharing. | — |
-| F | Accept the shared assets and mount them to a catalog in your workspace. | [Accept and mount the shared assets](https://docs.reltio.com/en/products/reltio-entity-resolution/reltio-embedded-entity-resolution-in-databricks-at-a-glance/accept-and-mount-the-shared-assets?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
-| G | Install the shared library on your compute cluster. | [Install the required library on the cluster](https://docs.reltio.com/en/products/reltio-entity-resolution/reltio-embedded-entity-resolution-in-databricks-at-a-glance/install-the-required-library-on-the-cluster?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
-| H | Run the entity resolution pipeline using the configured notebook and cluster. | [Run Reltio Embedded Entity Resolution in Databricks](https://docs.reltio.com/en/products/reltio-entity-resolution/reltio-embedded-entity-resolution-in-databricks-at-a-glance/run-reltio-embedded-entity-resolution-in-databricks?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
-
-To begin onboarding, prepare your Databricks environment by completing the required setup, see [Set up your Databricks environment](https://docs.reltio.com/en/products/reltio-entity-resolution/reltio-embedded-entity-resolution-in-databricks-at-a-glance/set-up-your-databricks-environment?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
-
-
-
----
-
-# Provide your Delta Sharing identifier to Reltio
-
-> **Section:** Products > Reltio Entity Resolution > Reltio Embedded Entity Resolution in Databricks at a glance
-
-
-**Source:** https://docs.reltio.com/en/products/reltio-entity-resolution/reltio-embedded-entity-resolution-in-databricks-at-a-glance/provide-your-delta-sharing-identifier-to-reltio?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
-**Keywords:** get delta sharing identifier databricks, how to copy sharing identifier databricks, configure delta sharing databricks workspace, provide sharing identifier to reltio admin, databricks delta sharing setup steps, access delta sharing settings catalog explorer, enable model sharing in databricks, delta sharing identifier setup reltio, delta sharing, catalog explorer, sharing identifier
-
-
-Learn how to obtain your Delta Sharing identifier and provide it to Reltio Admin so that the required assets can be shared with your Databricks workspace.
-
-Reltio shares the entity resolution ML models and library to your Databricks workspace using Delta Sharing. To enable this process, provide your Delta Sharing identifier to Reltio.
-
-## Prerequisites
-
-Before you begin, ensure that you have completed the following steps:
-
-- [Set up your Databricks environment](https://docs.reltio.com/en/products/reltio-entity-resolution/reltio-embedded-entity-resolution-in-databricks-at-a-glance/set-up-your-databricks-environment?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- [Clone the repository into your Databricks workspace](https://docs.reltio.com/en/products/reltio-entity-resolution/reltio-embedded-entity-resolution-in-databricks-at-a-glance/clone-the-repository-into-your-databricks-workspace?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-
-## Steps to provide your Delta Sharing identifier to Reltio
-
-To obtain and provide your Delta Sharing identifier, follow these steps:
-
-1. In the Databricks workspace, click **Catalog** in the left sidebar to open Catalog Explorer.
-2. In **Catalog Explorer**, go to the top-right toolbar and click the **gear icon** and from the dropdown menu, select **Delta Sharing**.
-3. In the Delta Sharing page, go to the top-right corner and click on **organization/account name**.
-4. Click on **Copy sharing identifier** to copy the sharing identifier.
-5. Provide the copied identifier to the Reltio so that they can share the required models with your workspace.
-
-## Result
-
-Reltio receives your Delta Sharing identifier and proceeds to share the required models with your Databricks workspace.
-
-[Accept and mount the shared assets](https://docs.reltio.com/en/products/reltio-entity-resolution/reltio-embedded-entity-resolution-in-databricks-at-a-glance/accept-and-mount-the-shared-assets?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) to make the models available for running the entity resolution pipeline.
-
-
-
----
-
-# Reltio Entity Resolution Deployment options
-
-> **Section:** Products > Reltio Entity Resolution
-
-
-**Source:** https://docs.reltio.com/en/products/reltio-entity-resolution/reltio-entity-resolution-deployment-options?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
-**Keywords:** reltio entity resolution deployment options, compare reltio data cloud and databricks entity resolution, choose entity resolution deployment reltio, entity resolution in databricks vs reltio platform, how to use reltio entity resolution solutions, reltio embedded entity resolution databricks overview, reltio entity resolution product overview, entity resolution deployment comparison reltio, entity resolution, databricks, match rules
-
-
-Learn about Reltio Entity Resolution and the available deployment options for resolving and matching entity data.
-
-Reltio Entity Resolution is an AI-powered capability that identifies and groups records that refer to the same real-world entity. It helps improve data quality, reduce duplication, and generate trusted datasets for analytics, operations, and machine learning.
-
-Reltio provides multiple ways to use entity resolution based on your data architecture and operational requirements.
-
-## Reltio Entity Resolution deployment options
-
-Reltio Entity Resolution is available in multiple deployment options depending on your data environment and how you want to process it.
-
-You can use Reltio Entity Resolution in the following deployment options.
-
-| Option | Description | When to use | Learn more |
-| --- | --- | --- | --- |
-| Reltio Entity Resolution in Reltio Context Intelligence Platform | Runs within Reltio Context Intelligence Platform as part of a governed MDM solution with match, merge, and survivorship capabilities. | When you need a unified, governed data model with golden record creation and cross-domain management. | See [Reltio Entity Resolution at a glance](https://docs.reltio.com/en/products/reltio-entity-resolution/reltio-entity-resolution-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
-| Reltio Embedded Entity Resolution in Databricks | Runs natively in Databricks to identify and group matching records without moving data outside your environment. | When you want to perform entity resolution directly in Databricks without data movement. | See [Reltio Entity Resolution in Databricks at a glance](https://docs.reltio.com/en/products/reltio-entity-resolution/reltio-embedded-entity-resolution-in-databricks-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
-
-Select the deployment option that best fits your data architecture and operational needs.
 
 
 
@@ -43895,6 +43667,41 @@ POST {env_uri}/reltio/permissions/{tenant}
   }
 ]
 ```
+
+## Interaction permissions for segment rules
+
+A segment rule references entity types, interaction types, and their attributes. When you create or run a segment, Reltio requires `READ` access to every entity type, interaction type, and attribute referenced in the rule.
+
+Reltio checks these references:
+
+- 
+
+  Entity type
+- 
+
+  Interaction type
+- 
+
+  Entity attributes, including nested attributes
+- 
+
+  Interaction attributes
+- 
+
+  Binary-aggregator attribute targets (entity, interaction, or analytic)
+
+The following rule selects HCP entities with a specific first name that have an `Email` interaction with a status value. To run the rule, you need `READ` access to `HCP`, `FirstName`, `Email`, and `status1`:
+
+```
+equals(entity.type, 'configuration/entityTypes/HCP')
+  AND equals(entity.attributes.FirstName, 'name')
+  AND equals(interaction.type, 'Email')
+  AND exists(interaction.attributes.status1)
+```
+
+If any referenced type or attribute lacks `READ` access, Reltio rejects the whole segment and returns an error that identifies the access failure.
+
+To grant a role access to the resources the rule references, use the [Set Permissions](#metadatasecurity/setpermissions) endpoint described earlier in the topic.
 
 **Related links**
 
@@ -60178,46 +59985,105 @@ This section lists all the APIs related to Segmentation:
 
 ---
 
-# Create new segment using API
+# Create segment API
 
 > **Section:** Developer resources > Entity Management APIs > Entity Management APIs at a glance > Entities API > Segmentation APIs
 
 
-**Source:** https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/entities-api/segmentation-apis/create-new-segment-using-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/entities-api/segmentation-apis/create-segment-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** create segment, segmentation API, create new segment using API, segment rule, metadata security
 
 
-Learn more about the Segmentation Api to create a new segment.
+Learn more about creating a new segment.
 
-This POST API will enable you to create a new segment.
+A segment is a saved rule that selects profiles based on entity and interaction attributes. Use the `Create segment API` to save the segment in your tenant. You can also [create a segment in Hub](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/work-with-segments/create-a-segment?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
-## Request
+## HTTP method and endpoint
+
+Use the following HTTP method and endpoint path to create a segment.
 
 ```
-POST /{tenantId}/segments
+POST {platformUrl}/reltio/api/{tenantId}/segments
 ```
 
-| Parameter | Parameter | Required | Description |
+Replace `{platformUrl}` with your Reltio platform base URL.
+
+The following table describes the endpoint path parameters.
+
+| Parameter | Type | Required | Description |
 | --- | --- | --- | --- |
-| Headers | `Authorization` | Yes | Information about authentication access token in the format "Bearer `<accessToken>` ". For more information, see [Authentication API](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/authentication-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
+| `tenantId` | String | Yes | ID of the tenant where you create the segment. Example: `ce5627DYnQ6abcD` |
+
+## Request headers
+
+The following request headers must be included.
+
+| Header | Value | Required |
+| --- | --- | --- |
+| `Authorization` | Bearer `<accessToken>`. | Yes |
+| `Content-Type` | `application/json` | Yes |
 
 ## Request body
 
+The following table describes the request body parameters required to create a segment.
+
+| Parameter | Type | Required | Description | Accepted values / Default |
+| --- | --- | --- | --- | --- |
+| `label` | String | Yes | Name of the segment. | Any string. Example: `Platinum Members` |
+| `sharing` | String | Yes | Who can see the segment. | `private` or `public`. |
+| `rule` | String | Yes | Defines the criteria for the segment by specifying the attributes and conditions used to select profiles.  Your role must have `READ` access to every entity type, interaction type, and attribute referenced in the `rule`. If your role lacks `READ` access, Reltio does not save the segment and returns an error. To grant access, see [Set Permissions](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/configuration-api/role-based-security/metadata-security?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). | Segment filter expression. |
+| `schedule` | Object | No | When to run a batch segment. | Object with `startTime` and `repeat`. |
+| `schedule.startTime` | String | No | Start time for the batch schedule. | ISO 8601 datetime. Example: `2000-10-31T01:30:00.000-05:00`. |
+| `schedule.repeat` | String | No | Frequency at which the batch segment runs. | iCal RRULE string. Example: `RRULE:FREQ=WEEKLY;BYDAY=FR`.   Minimum frequency: once per hour. |
+| `description` | String | No | Description of the segment. | Any string. |
+| `parentId` | String | No | ID of the folder that contains the segment. | Folder ID. |
+| `favorite` | Boolean | No | Adds the segment to your Hub favorites. | `true` or `false`. |
+| `integrationIDs` | Array of String | No | IDs of the integrations used for activation. | Array of integration IDs. |
+
+## Example request
+
+The following example shows how a complete request is structured to create a segment.
+
 ```
+POST {platformUrl}/reltio/api/{tenantId}/segments
 [
   {
     "label": "Platinum Members",
-    "sharing":"private",
+    "sharing": "private",
     "rule": "equals(entity.attributes.Gender, 'M') and range(entity.attributes.Age, 30, 40) and equals(entity.attributes.Address.City, 'NY') and gte(count(equals(interaction.type, 'configuration/interactionTypes/Meeting')), 2)",
     "schedule": {
-        "startTime": "2000-10-31T01:30:00.000-05:00",
-        "repeat":"RRULE:FREQ=WEEKLY;BYDAY=FR"
+      "startTime": "2000-10-31T01:30:00.000-05:00",
+      "repeat": "RRULE:FREQ=WEEKLY;BYDAY=FR"
     },
-    "description": "<description provided by the user>",
+    "description": "<description provided by the user>"
   }
 ]
 ```
 
-## Response
+## Response body
+
+The following table describes the fields returned in the response body when the request succeeds.
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `index` | Number | Index of the request item that produced this result. |
+| `object` | Object | Details of the created segment. |
+| `object.id` | String | ID of the segment. |
+| `object.label` | String | Name of the segment. |
+| `object.owner` | String | Owner of the segment. |
+| `object.sharing` | String | Defines who can view the segment. |
+| `object.type` | String | Type of segment. |
+| `object.status` | String | Current status of the segment. |
+| `object.rule` | String | Filter expression that defines the segment criteria. |
+| `object.schedule` | Object | Schedule for running a batch segment. |
+| `object.schedule.startTime` | String | Start time for the batch schedule. |
+| `object.schedule.repeat` | String | Frequency at which the batch segment runs. |
+| `object.description` | String | Description of the segment. |
+
+## Example response
+
+The following example shows a successful response.
 
 ```
 [
@@ -60240,6 +60106,14 @@ POST /{tenantId}/segments
   }
 ]
 ```
+
+## Error codes and recommended actions
+
+The following table lists the possible error responses returned by `Create segment API`.
+
+| HTTP status | Error code | Description | Recommended action |
+| --- | --- | --- | --- |
+| `200 OK` | `800` | Suggestion: If your role lacks `READ` on any entity type, interaction type, or attribute named in the `rule`, Reltio rejects the segment. | Grant `READ` with [Set Permissions](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/configuration-api/role-based-security/metadata-security?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), then retry. |
 
 
 
@@ -60390,23 +60264,79 @@ For more information about the other body parameters, see topic [Export entities
 
 Learn more about the Segmentation Api to find out the total number of profiles in a segment.
 
-This Get Segments API returns a count of the total number of profiles in a segment.
+Use the `Segments API` to return the total number of profiles in a segment.
 
-## Request
+## HTTP method and endpoint
+
+Use the following HTTP method and endpoint path to retrieve the count of profiles in a segment.
 
 ```
-GET  /api/{tenantId}/segments/{id}/entities/total
+GET {platformUrl}/api/{tenantId}/segments/{id}/entities/total
 ```
 
-## Response
+Replace `{platformUrl}` with your Reltio platform base URL and `{tenantId}` with your tenant ID.
 
-The response contains an array list of entity objects in a JSON format.
+The following table describes the endpoint path parameters.
+
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| `tenantId` | String | Yes | Unique identifier of the tenant. |
+| `id` | String | Yes | Unique identifier of the segment. |
+
+## Query parameters
+
+The following table describes the query parameters and their values.
+
+| Parameter | Type | Required | Description | Accepted values / Default |
+| --- | --- | --- | --- | --- |
+| `returnPartialResults` | Boolean | No | When set to `true` and the segment's `status` is `submitted` or `in_progress`, the response returns the count that currently exists instead of returning the `SEGMENT_NOT_EVALUATED` error. When set to `false` or omitted, the response returns profiles only after the segment has finished evaluating. | `true`, `false`; Default: `false` |
+
+## Request headers
+
+The following request headers must be included.
+
+| Header | Value | Required |
+| --- | --- | --- |
+| `Authorization` | Bearer `<access_token>` | Yes |
+| `Content-Type` | application/json | Yes |
+
+## Request body
+
+This operation does not require a request body.
+
+## Example request
+
+Use the following example to retrieve the count of profiles in a segment. Replace the sample values with values from your environment.
+
+```
+GET {platformUrl}/api/ce5627DYnQ6abcD/segments/3prE0YZ/entities/total
+```
+
+## Response body
+
+The following table describes the field returned in the response body.
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `total` | Integer | Total number of profiles in the segment. |
+
+## Example response
+
+The following example shows a response with the total number of profiles in the segment.
 
 ```
 {
   "total": 12345
 }
 ```
+
+## Error codes and recommended actions
+
+The following table lists the possible error responses returned by this API.
+
+| HTTP status | Error code | Description | Recommended action |
+| --- | --- | --- | --- |
+| `400 Bad Request` | `32006` | The segment has not finished evaluating and `returnPartialResults` was not set to `true`. | Retry the request after the segment finishes evaluating, or resend the request with `returnPartialResults` set to `true` to receive the count that currently exists. |
 
 
 
@@ -60419,29 +60349,86 @@ The response contains an array list of entity objects in a JSON format.
 
 **Source:** https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/entities-api/segmentation-apis/get-profiles-for-a-segment?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
+**Keywords:** segment, returnPartialResults, partial results, segmentation API, get profiles in a segment
 
-Learn more about the Segmentation Api to retrieve profiles part of a segment.
 
-This API retrieves a list of profiles that belong to a segment.
+Learn more about the Segments Api to retrieve profiles part of a segment.
 
-## Request
+Use the `Segments API` to retrieve the profiles that belong to a segment.
+
+## HTTP method and endpoint
+
+Use the following HTTP method and endpoint path to retrieve the profiles in a segment.
 
 ```
-GET {{tenantURL}}/segments/3prE0YZ/entities 
+GET {platformUrl}/segments/{id}/entities
 ```
 
-| Parameter | Parameter | Required | Description |
+Replace `{platformUrl}` with your Reltio platform base URL.
+
+The following table describes the endpoint path parameters.
+
+| Parameter | Type | Required | Description |
 | --- | --- | --- | --- |
-| Headers | `Authorization` | Yes | Information about authentication access token in the format "Bearer `<accessToken>` ". For more information, see [Authentication API](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/authentication-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
-| Query | `sort` | No | Denotes the field that is used to sort the results. |
-| Query | `order` | No | Indicates whether the profiles are sorted in ascending or descending order. |
-| Query | `filter` | No | The Search API filter conditions against the segment fields. |
-| Query | `offset` | No | The pagination offset. |
-| Query | `max` | No | The maximum results to be displayed in the response. |
+| `id` | String | Yes | Unique identifier of the segment.  Example: `3prE0YZ` |
 
-## Response
+## Query parameters
 
-The response contains an array list of entity objects in a JSON format.
+The following table describes the query parameters and their values.
+
+| Parameter | Type | Required | Description | Accepted values / Default |
+| --- | --- | --- | --- | --- |
+| `sort` | String | No | The field used to sort the results. | Not stated in source. |
+| `order` | String | No | Indicates whether the profiles are sorted in ascending or descending order. | Not stated in source. |
+| `filter` | String | No | Search API filter conditions against the segment fields. Use Reltio QL syntax. | Not stated in source. |
+| `offset` | Integer | No | The pagination offset. | Not stated in source. |
+| `max` | Integer | No | The maximum number of results to return. | Not stated in source. |
+| `returnPartialResults` | Boolean | No | When set to `true` and the segment's `status` is `submitted` or `in_progress`, the response returns the data that currently exists for the segment instead of returning the `SEGMENT_NOT_EVALUATED` error. When set to `false` or omitted, the response returns profiles only after the segment has finished evaluating. | `true`, `false`; Default: `false` |
+
+## Request headers
+
+The following request headers must be included.
+
+| Header | Value | Required |
+| --- | --- | --- |
+| `Authorization` | Bearer `<access_token>` | Yes |
+| `Content-Type` | application/json | Yes |
+
+## Request body
+
+This operation does not require a request body.
+
+## Example request
+
+Use the following example to retrieve the profiles in a segment. Replace the sample values with values from your environment.
+
+```
+GET {platformUrl}/segments/3prE0YZ/entities
+```
+
+## Response body
+
+The following table describes the fields returned for each profile object in the response array.
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `uri` | String | Unique URI of the profile. |
+| `type` | String | Entity type of the profile. |
+| `createdBy` | String | Identifier of the user or service that created the profile. |
+| `createdTime` | Long | Timestamp, in epoch milliseconds, when the profile was created. |
+| `updatedBy` | String | Identifier of the user or service that last updated the profile. |
+| `updatedTime` | Long | Timestamp, in epoch milliseconds, when the profile was last updated. |
+| `attributes` | Object | The profile's attribute values. |
+| `isFavorite` | Boolean | Indicates whether the profile is marked as a favorite. |
+| `crosswalks` | Array | The source system crosswalk records associated with the profile. |
+| `analyticsAttributes` | Object | Computed analytics attribute values for the profile. |
+| `tags` | Array of String | Tags applied to the profile. |
+| `label` | String | Display label for the profile. |
+| `secondaryLabel` | String | Secondary display label for the profile. |
+
+## Example response
+
+The following example shows a response containing an array of profile objects.
 
 ```
 [
@@ -60452,20 +60439,24 @@ The response contains an array list of entity objects in a JSON format.
         "createdTime": 1729784968264,
         "updatedBy": "TQdhoABqN1DqSgj",
         "updatedTime": 1740974441362,
-        "attributes": {…
-  },
+        "attributes": {},
         "isFavorite": false,
-        "crosswalks": […
-    ],
+        "crosswalks": [],
         "analyticsAttributes": {},
-        "tags": [
-            "Demo Data"
-        ],
+        "tags": ["Demo Data"],
         "label": "Trammell Crow Company",
         "secondaryLabel": ""
     }
 ]
 ```
+
+## Error codes and recommended actions
+
+The following table lists the possible error responses returned by this API.
+
+| HTTP status | Error code | Description | Recommended action |
+| --- | --- | --- | --- |
+| `400 Bad Request` | `32006` | The segment has not finished evaluating and `returnPartialResults` was not set to `true`. | Wait for the segment to finish evaluating and retry the request, or resend the request with `returnPartialResults` set to `true` to receive the data that currently exists. |
 
 
 
@@ -60535,32 +60526,84 @@ GET /{tenantId}/segments
 
 Learn more about the Segmentation Api.
 
-This Get Segments API will get segment details by segment ID.
+Use the `Segments API` to retrieve the details of a segment by segment ID.
 
-## Request
+## HTTP method and endpoint
+
+Use the following HTTP method and endpoint path to retrieve segment details.
 
 ```
-GET /{tenantId}/segments/{id}
+GET {platformUrl}/{tenantId}/segments/{id}
 ```
 
-## Response
+Replace `{platformUrl}` with your Reltio platform base URL and `{tenantId}` with your tenant ID.
+
+The following table describes the endpoint path parameters.
+
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| `tenantId` | String | Yes | Unique identifier of the tenant. |
+| `id` | String | Yes | Unique identifier of the segment. |
+
+## Request headers
+
+The following request headers must be included.
+
+| Header | Value | Required |
+| --- | --- | --- |
+| `Authorization` | Bearer `<access_token>` | Yes |
+| `Content-Type` | application/json | Yes |
+
+## Request body
+
+This operation does not require a request body.
+
+## Example request
+
+Use the following example to retrieve segment details. Replace the sample values with values from your environment.
+
+```
+GET {platformUrl}/ce5627DYnQ6abcD/segments/S1
+```
+
+## Response body
+
+The following table describes the fields returned in the response body.
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `id` | String | Unique identifier of the segment. |
+| `status` | String | The evaluation state of the segment. `live`: evaluation is complete and the profile set is final. `submitted` and `in_progress`: evaluation is currently running. `disabled`: the segment is not being evaluated. |
+| `label` | String | Display name of the segment. |
+| `lastEvaluationDate` | String | Timestamp, in ISO 8601 format, of the segment's last evaluation. |
+| `segmentSize` | Integer | Number of profiles in the segment as of the last evaluation. |
+| `owner` | String | Identifier of the segment's owner. |
+| `sharing` | String | Sharing setting for the segment. |
+| `rule` | String | The segmentation rule that defines the criteria for including a profile in the segment, expressed in Reltio QL syntax. |
+| `type` | String | The evaluation type for the segment. |
+| `schedule` | Object | The evaluation schedule for the segment, containing `startTime` and `repeat` fields. |
+| `description` | String | User-provided description of the segment. |
+
+## Example response
+
+The following example shows a response with the details of a segment.
 
 ```
 {
   "id": "S1",
-  "status": "live"
+  "status": "live",
   "label": "Platinum Members",
   "lastEvaluationDate": "2000-10-31T01:30:00.000-05:00",
   "segmentSize": 123000,
   "owner": "noname@mail.com",
-  "sharing":"private",
-  "rule": "gte(count(gt(interaction.attributes.itemPrice, 100) and gt(interaction.attributes.PurchaseDate, {lastMonth}) and equals(interaction.type, 'Order')), 10) and equals(entity.type, 'customer')" 
+  "sharing": "private",
+  "rule": "gte(count(gt(interaction.attributes.itemPrice, 100) and gt(interaction.attributes.PurchaseDate, {lastMonth}) and equals(interaction.type, 'Order')), 10) and equals(entity.type, 'customer')",
   "type": "realtime",
   "schedule": {
-      "startTime": "2000-10-31T01:30:00.000-05:00",
-      "repeat":"RRULE:FREQ=HOURLY;INTERVAL=12" //every 12 hours
+    "startTime": "2000-10-31T01:30:00.000-05:00",
+    "repeat": "RRULE:FREQ=HOURLY;INTERVAL=12"
   },
-  "description": "<description given by the user>"",
+  "description": "<description given by the user>"
 }
 ```
 
@@ -60619,79 +60662,136 @@ GET /entities/{id}/segments
 
 ---
 
-# Search profiles in segment using API
+# Search for profiles in a segment
 
 > **Section:** Developer resources > Entity Management APIs > Entity Management APIs at a glance > Entities API > Segmentation APIs
 
 
-**Source:** https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/entities-api/segmentation-apis/search-profiles-in-segment-using-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/entities-api/segmentation-apis/search-for-profiles-in-a-segment?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** search profiles in a segment, scan segment entities with a cursor, paginate segment search results, segmentation api reference, return partial segment results
 
 
-Learn more about the Segmentation Api to search for profiles.
+Learn more about searching for profiles in a segment.
 
-This Segments API will search for profiles in a segment.
+Use the `Segments API` to search for profiles in a segment using a scroll cursor to page through results.
 
-## Request
+## HTTP method and endpoint
+
+Use the following HTTP method and endpoint path to search for profiles in a segment.
 
 ```
-POST  /api/{tenantId}/segments/{id}/entities/scan
+POST {platformUrl}/api/{tenantId}/segments/{id}/entities/scan
 ```
 
-| Parameter | Parameter | Required | Description |
+Replace `{platformUrl}` with your Reltio platform base URL and `{tenantId}` with your tenant ID.
+
+The following table describes the endpoint path parameters.
+
+| Parameter | Type | Required | Description |
 | --- | --- | --- | --- |
-| Headers | `Authorization` | Yes | Information about authentication access token in the format "Bearer `<accessToken>` ". For more information, see [Authentication API](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/authentication-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
-| Query | `sort` | No | Denotes the field that is used to sort the results. |
-| Query | `order` | No | Indicates whether the segments are sorted in ascending or descending order. |
-| Query | `filter` | No | The Search API filter conditions against the segment fields. |
-| Query | `offset` | No | The pagination offset. |
-| Query | `max` | No | The maximum results to be displayed in the response. |
+| `tenantId` | String | Yes | Unique identifier of the tenant |
+| `id` | String | Yes | Unique identifier of the segment |
 
-## Request body for first page
+## Query parameters
 
-The request body for the first page should be empty.
+The following table describes the query parameters and their values.
 
-## Response
+| Parameter | Type | Required | Description | Accepted values / Default |
+| --- | --- | --- | --- | --- |
+| `sort` | String | No | The field used to sort the results. | Not stated in source |
+| `order` | String | No | Indicates whether the profiles are sorted in ascending or descending order. | Not stated in source |
+| `filter` | String | No | Search API filter conditions against the segment fields. Use Reltio QL syntax. | Not stated in source |
+| `offset` | Integer | No | The pagination offset. | Not stated in source |
+| `max` | Integer | No | The maximum number of results to return. | Not stated in source |
+| `returnPartialResults` | Boolean | No | When set to `true` and the segment's `status` is `submitted` or `in_progress`, the response returns the data that currently exists instead of returning the `SEGMENT_NOT_EVALUATED` error. When set to `false` or omitted, the response returns profiles only after the segment has finished evaluating. | `true`, `false`; Default: `false` |
+
+## Request headers
+
+The following request headers must be included.
+
+| Header | Value | Required |
+| --- | --- | --- |
+| `Authorization` | Bearer `<access_token>` | Yes |
+| `Content-Type` | application/json | Yes |
+
+## Request body
+
+The request body differs between the first page and subsequent pages. For the first page, the request body must be empty. For each subsequent page, the request body contains the `cursor` object returned in the previous response.
+
+| Parameter | Type | Required | Description | Accepted values / Default |
+| --- | --- | --- | --- | --- |
+| `cursor.value` | String | No | Opaque scroll cursor value returned by the previous response. Required for every request after the first page; omit for the first page. | Value returned by the previous response |
+
+> **Note:** Combining `returnPartialResults` with a multi-page scan on a segment that has not finished evaluating can return a result set that changes between pages as evaluation continues.
+
+## Example request
+
+The following example shows the request body for the first page. The request body is empty.
+
+```
+POST {platformUrl}/api/{tenantId}/segments/3prE0YZ/entities/scan
+```
+
+The following example shows the request body for a subsequent page, using the cursor value from the previous response.
 
 ```
 {
-  "cursor" : {
-     "value" : "cXVlcnlBbmRGZXRjaDsxOzE0NDI3OmpzdTdBNGNnUWU2YlBqc1JQbTlNbnc7MDs="
-  },
+  "cursor": { "value": "cXVlcnlBbmRGZXRjaDsxOzE0NDI3OmpzdTdBNGNnUWU2YlBqc1JQbTlNbnc7MDs=" }
+}
+```
+
+## Response body
+
+The following table describes the fields returned in the response body. The last page of results returns an empty `objects` array.
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `cursor.value` | String | Opaque scroll cursor value to pass in the request body of the next request. |
+| `uri` | String | Unique URI of the profile. |
+| `type` | String | Entity type of the profile. |
+| `createdBy` | String | Identifier of the user or service that created the profile. |
+| `createdTime` | Long | Timestamp, in epoch milliseconds, when the profile was created. |
+| `updatedBy` | String | Identifier of the user or service that last updated the profile. |
+| `updatedTime` | Long | Timestamp, in epoch milliseconds, when the profile was last updated. |
+| `attributes` | Object | The profile's attribute values. |
+| `isFavorite` | Boolean | Indicates whether the profile is marked as a favorite. |
+| `crosswalks` | Array | The source system crosswalk records associated with the profile. |
+| `analyticsAttributes` | Object | Computed analytics attribute values for the profile. |
+| `tags` | Array of String | Tags applied to the profile. |
+| `label` | String | Display label for the profile. |
+| `secondaryLabel` | String | Secondary display label for the profile. |
+
+## Example response
+
+The following example shows a response for the first page.
+
+```
+{
+  "cursor" : { "value" : "cXVlcnlBbmRGZXRjaDsxOzE0NDI3OmpzdTdBNGNnUWU2YlBqc1JQbTlNbnc7MDs=" },
   "objects" : [
-    {
-       "uri" : "entities/0Fglh8Z",
-        ...
-    },
-    {
-       "uri" : "entities/0Fglh11",
-        ...
-    },
-    ...
+    { "uri" : "entities/0Fglh8Z" },
+    { "uri" : "entities/0Fglh11" }
   ]
 }
 ```
 
-## Request body for next pages
+The following example shows the response for the last page. The `objects` array is empty.
 
 ```
 {
-  "cursor": {
-    "value": "cXVlcnlBbmRGZXRjaDsxOzE0NDI3OmpzdTdBNGNnUWU2YlBqc1JQbTlNbnc7MDs="
-  }
-}
-
-```
-
-Response for last page do not contain objects:
-
-```
-{
-  "cursor" : {
-     "value" : "cXVlcnlBbmRGZXRjaDsxOzE0NDI3OmpzdTdBNGNnUWU2YlBqc1JQbTlNbnc7MDs="
-  },
+  "cursor" : { "value" : "cXVlcnlBbmRGZXRjaDsxOzE0NDI3OmpzdTdBNGNnUWU2YlBqc1JQbTlNbnc7MDs=" },
   "objects" : []
 }
 ```
+
+## Error codes and recommended actions
+
+The following table lists the possible error responses returned by this API.
+
+| HTTP status | Error code | Description | Recommended action |
+| --- | --- | --- | --- |
+| `400 Bad Request` | `32006` | The segment has not finished evaluating and `returnPartialResults` was not set to `true`. | Retry the request after the segment finishes evaluating, or resend the request with `returnPartialResults` set to `true` to receive the data that currently exists. |
 
 
 
@@ -60988,6 +61088,7 @@ POST {TenantURL}/entities/_update
 | Query | `options` | No | This is a comma-separated list of different options.  Available options:  -     `sendHidden` - disabled by default, entity's JSON will contain hidden attributes if this option is enabled. -     `searchByOv` - disabled by default, to search by all attributes with ov only. -     `ovOnly` - return only attribute values that have ov=true flag. -     `nonOvOnly` - return only attribute values that have ov=false flag. If we have nested or reference attribute value which has ov=true, but at the same time it has sub-attributes with ov=false then these subattributes will not appear in the response. |
 | Query | `activeness` | No | The possible values of this parameter are as follows:  - `active`: This is the default value. This option allows you to search amongst the active entities. - `all`: This option allows you to search amongst all the entities (active or expired). - `not_active`: This option allows you to search amongst the expired entities. |
 | Query | `returnUriOnly` | No | When set to `true`, the response includes only the URIs of the processed entities or relations, instead of the full object payloads. Use this option to reduce response size and improve performance in high-volume or bulk operations. |
+| Query | `allowMultipleTasks` | No | When set to `true`, you can submit more than one bulk update task without waiting for the current task to finish. Append `allowMultipleTasks=true` to the request URL to submit multiple tasks. Tasks submitted while another task is active enter the `SCHEDULED` state and start automatically after the preceding task completes. The parameter controls task submission only and does not change how each task is executed.  Concurrent bulk update tasks can process the same entities, which can cause conflicts or unexpected attribute values. Set `allowMultipleTasks` to `true` only when the URI lists do not include the same entities or the filters are mutually exclusive.  If the parameter is omitted or set to `false`, only one active bulk update task is allowed per user. Submitting a second task while one is active returns error 441 (Too many tasks of Update attribute type). |
 
 The `AddAttribute` operation adds a new attribute value to an entity. For every source type listed in the `sourceTypes` field, this value is a part of all winner crosswalks if the entity has crosswalks from the winner entity during a merge operation. All loser crosswalks are ignored. On the other hand, the value is a part of all loser crosswalks when the merged entity only has crosswalks from a loser entity. However, if there are no crosswalks for a listed source type, then a new crosswalk is created.
 
@@ -86244,7 +86345,7 @@ The following table lists the possible error responses returned by this API.
 
 Learn more about how to use the hierarchy connections API to create one or more connections in a hierarchy instance.
 
-Use the `Create Hierarchy connections API` to create new nodes in a hierarchy instance. This operation requires the `MDM.Data.Hierarchy` permission with the `CREATE` privilege.
+Use the `Create Hierarchy connections API` to create new connections in a hierarchy instance. This operation requires the `MDM.Data.Hierarchy` permission with the `CREATE` privilege.
 
 ## HTTP method and endpoint
 
@@ -86268,10 +86369,18 @@ The request body is a JSON array of connection definition objects.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `parentId` | String | Yes | The entity ID of the parent object. Either the parent or the child must already be part of the hierarchy that you are modifying. |
-| `childId` | String | Yes | The entity ID of the child object. Either the parent or the child must already be part of the hierarchy that you are modifying. |
-| `startDate` | String | No | The start effective date of the connection in ISO 8601 date format. |
-| `endDate` | String | No | The end effective date of the connection in ISO 8601 date format. |
+| `parent` | Object | Yes, when you identify the parent entity by crosswalk | The object that contains the parent details for the new connection.**Note:** Do not pass both `parentId` and the parent crosswalk (`type`, `value`, and `sourcetable`) object for the same connection. |
+| `parent.type` | String | Yes, when you use a crosswalk for the `parent` entity | The source type of the crosswalk that refers to the parent entity. Example:`configuration/sources/XYZ` |
+| `parent.value` | String | Yes, when you use a crosswalk for the `parent` entity | The value of the crosswalk that refers to the parent entity. Example: `I12345` |
+| `parent.sourceTable` | String | No | The source table of the crosswalk that refers to the parent entity. Example: `Users` |
+| `parentId` | String | Yes, when you identify the parent entity by entity ID | The entity ID of the parent entity. Either the parent entity or the child entity must already be part of the hierarchy that you are modifying. |
+| `child` | Object | Yes, when you identify the child entity by crosswalk | The object that will contain child details for the new connection..**Note:** Do not pass both `childId` and the child crosswalk (`type`, `value`, and `sourcetable`) object for the same connection. |
+| `child.type` | String | Yes, when you use a crosswalk for the `child` entity | The source type of the crosswalk that refers to the child entity. Example: `configuration/sources/XYZ` |
+| `child.value` | String | Yes, when you use a crosswalk for the `child` entity | The value of the crosswalk that refers to the child. Example: `I54321` |
+| `child.sourceTable` | String | No | Source table of the crosswalk that refers to the child entity. Example: `Users` |
+| `childId` | String | Yes, when you identify the child entity by entity ID | The entity ID of the child entityobject. Either the parent entity or the child entity must already be part of the hierarchy that you are modifying. |
+| `startDate` | String | No | The start effective date of the connection. Format: YYYY-MM-DD. |
+| `endDate` | String | No | The end effective date of the connection. Format: YYYY-MM-DD. |
 
 ## Example request
 
@@ -86282,18 +86391,25 @@ POST /{instanceId}/connections
 Authorization: Bearer <token>
 
 [
-  {
-    "parentId": "prtId",
-    "childId": "cldId",
-    "startDate": "2024-01-01",
-    "endDate": "2026-12-31"
-  },
-  {
-    "parentId": "cldId",
-    "childId": "grdcldId",
-    "startDate": "2024-05-01",
-    "endDate": "2025-12-31"
-  }
+    {
+        "parent": {
+            "type": "configuration/sources/XYZ",
+            "value": "I12345",
+            "sourceTable": "USERS"
+        },
+        "child": {
+            "type": "configuration/sources/Reltio",
+            "value": "cldId"
+        },
+        "startDate": "2024-01-01",
+        "endDate": "2026-12-31"
+    },
+    {
+        "parentId": "cldId",
+        "childId": "grdcldId",
+        "startDate": "2024-05-01",
+        "endDate": "2025-12-31"
+    }
 ]
 ```
 
@@ -86384,7 +86500,7 @@ The following request headers must be included.
 
 ## Request body
 
-The request body is a JSON array of connection definition objects.
+The request body is a JSON object with the hierarchy definition and, optionally, the first connection.
 
 | Field | Field | Type | Required | Description |
 | --- | --- | --- | --- | --- |
@@ -86397,11 +86513,19 @@ The request body is a JSON array of connection definition objects.
 | `version` | `effectiveEndDate` | String | No | Optional. The end effective date of the version in ISO 8601 date format. |
 | `version` | `description` | String | No | Optional. The description of the version. |
 | `version` | `context` | String | No | Optional. Additional context for the version. |
-| `version` | `firstConnection` | — | Object | No |
-| `parentId` | `firstConnection` | String | Yes | The entity ID of the parent object. Either the parent or the child must be part of the hierarchy being modified. |
-| `childId` | `firstConnection` | String | Yes | The entity ID of the child object. Either the parent or the child must be part of the hierarchy being modified. |
-| `startDate` | `firstConnection` | String | No | Optional. The start effective date of the connection in ISO 8601 date format. |
-| `endDate` | `firstConnection` | String | No | Optional. The end effective date of the connection in ISO 8601 date format. |
+| `firstConnection` | — | Object | Yes | The first connection in the hierarchy. Defines the parent-child edge created with the hierarchy. |
+| `firstConnection.parent` |  | Object | Yes | The object that defines the parent in the first connection in the hierarchy.**Note:** Do not pass both `parentId` and the parent crosswalk (`type`, `value`, and `sourcetable`) object for the same connection. |
+| `firstConnection.parent` | `type` | String | Yes, when you use crosswalk for `parent entity` | The source type of the crosswalk that refers to the parent. Example:`configuration/sources/XYZ` |
+| `firstConnection.parent` | `value` | String | Yes, when you use crosswalk for `parent entity` | The value of the crosswalk that refers to the parent. Example:`I12345` |
+| `firstConnection.parent` | `sourceTable` | String | No | Source table of the crosswalk that refers to the parent. Example:`Users` |
+| `firstConnection.parentID` |  | String | Yes, when you use an entity ID for the parent. | Entity ID of the parent. If you pass`parentId`, the parent is created with the Reltio crosswalk. Either the parent or the child must be part of the hierarchy being modified. Example:`0ABlXju` |
+| `firstConnection.child` |  | Object | Yes | Object that defines the child in the first connection in the hierarchy. **Note:** Do not pass both `childId` and the child crosswalk (`type`, `value`, and `sourcetable`) object for the same connection. |
+| `firstConnection.child` | `type` | String | Yes, when you use crosswalk for `child entity` | The source type of the crosswalk that refers to the child. Example:`configuration/sources/XYZ` |
+| `firstConnection.child` | `value` | String | Yes, when you use crosswalk for `child entity` | The value of the crosswalk that refers to the child. Example: `I54321` |
+| `firstConnection.child` | `sourceTable` | String | No | Source table of the crosswalk that refers to the child. Example:`Users` |
+| `firstConnection.childID` | — | String | Yes, when you use an entity ID for the child. | Entity ID of the child. If you pass`childId`, the child is created with the Reltio crosswalk. Either the parent or the child must be part of the hierarchy being modified. Example:`1XErCw7G` |
+| `startDate` | — | String | No | Optional. The start effective date of the connection. Format: YYYY-MM-DD. |
+| `endDate` | — | String | No | Optional. The end effective date of the connection. Format: YYYY-MM-DD. |
 
 ## Example request
 
@@ -86424,17 +86548,24 @@ Authorization: Bearer <token>
     "context": "longContextDescription"
   },
   "firstConnection": {
-    "parentId": "prtId",
-    "childId": "cldId",
-    "startDate": "2024-01-01",
-    "endDate": "2026-12-32"
+        "parent": {
+            "type": "configuration/sources/XYZ",
+            "value": "I12345",
+            "sourceTable": "USERS"
+        },
+        "child": {
+            "type": "configuration/sources/Reltio",
+            "value": "cldId"
+        },
+        "startDate": "2024-01-01",
+        "endDate": "2026-12-32"
   }
 }
 ```
 
 ## Response fields
 
-The following table describes the fields returned in the response body, which is an array of hierarchy connection objects.
+The following table describes the fields returned in the response body.
 
 | Field | Field | Type | Description |
 | --- | --- | --- | --- |
@@ -86451,14 +86582,12 @@ The following table describes the fields returned in the response body, which is
 | `version` | `effectiveEndDate` | String | Optional. The end effective date of the version in ISO 8601 date format. |
 | `version` | `description` | String | Optional. The description of the version. |
 | `version` | `context` | String | Optional. Additional context for the version. |
-| `firstConnection` |  | Object | Optional. The created first hierarchy connection. |
+| `firstConnection` |  | Object | Optional. The created first hierarchy connection. Repeats the request `firstConnection` (parent and child identification, `startDate`, and`endDate`) and includes `connectionId`. |
 | `firstConnection` | `connectionId` | String | The ID of the created connection. |
-| `firstConnection` | `parentId` | String | The entity ID of the parent object. |
-| `firstConnection` | `childId` | String | The entity ID of the child object. |
 | `firstConnection` | `startDate` | String | Optional. The start effective date of the connection in ISO 8601 date format. |
 | `firstConnection` | `endDate` | String | Optional. The end effective date of the connection in ISO 8601 date format. |
-| `createdBy` | — | String | The username of the user who created the hierarchy. |
-| `createdTime` | — | String | The time when the hierarchy was created, in ISO 8601 date-time format. |
+| `firstConnection` | `createdBy` | — | String |
+| `firstConnection` | `createdTime` | — | String |
 | `updatedBy` | — | String | The username of the user who last updated the hierarchy. |
 | `updatedTime` | — | String | The time when the hierarchy was last updated, in ISO 8601 date-time format. |
 
@@ -86482,10 +86611,17 @@ The following example shows the response body.
     "description": "longDescription",
     "context": "longContextDescription"
   },
-  "firstConnection": {
+   "firstConnection": {
     "connectionId": "0ABmA6E",
-    "parentId": "prtId",
-    "childId": "cldId",
+    "parent": {
+      "type": "configuration/sources/XYZ",
+      "value": "I12345",
+      "sourceTable": "USERS"
+    },
+    "child": {
+      "type": "configuration/sources/Reltio",
+      "value": "cldId"
+    },
     "startDate": "2024-01-01",
     "endDate": "2026-12-32"
   },
@@ -86554,11 +86690,19 @@ The request body is a JSON array of connection definition objects.
 | `effectiveEndDate` | — | String | No | The end effective date of the version in ISO 8601 date format. |
 | `description` | — | String | No | The description of the version. |
 | `context` | — | String | No | Additional context for the version. |
-| `firstConnection` | — | Object | No | The object that describes the first hierarchy connection to create. |
-| `firstConnection` | `parentId` | String | See `firstConnection` | The entity ID of the parent object. Either the parent or the child must be part of the hierarchy being modified. |
-| `firstConnection` | `childId` | String | See `firstConnection` | The entity ID of the child object. Either the parent or the child must be part of the hierarchy being modified. |
-| `firstConnection` | `startDate` | String | See `firstConnection` | Optional. The start effective date of the connection in ISO 8601 date format. |
-| `firstConnection` | `endDate` | String | See `firstConnection` | Optional. The end effective date of the connection in ISO 8601 date format. |
+| `firstConnection` | — | Object | Yes | The object that describes the first hierarchy connection to create. |
+| `firstConnection.parent` |  | Object | Yes | The object that defines the parent in the first connection in the hierarchy. **Note:** Do not pass both `parentId` and the parent crosswalk (`type`, `value`, and `sourcetable`) object for the same connection. |
+| `firstConnection.parent` | `type` | String | Yes, when you use crosswalk for `parent entity` | The source type of the crosswalk that refers to the parent. Example:`configuration/sources/XYZ` |
+| `firstConnection.parent` | `value` | String | Yes, when you use crosswalk for `parent entity` | The value of the crosswalk that refers to the parent. Example:`I12345` |
+| `firstConnection.parent` | `sourceTable` | String | No | Source table of the crosswalk that refers to the parent. Example:`Users` |
+| `firstConnection.parentID` |  | String | Yes, when you use an entity ID for the parent. | Entity ID of the parent. If you pass`parentId`, the parent is created with the Reltio crosswalk. Either the parent or the child must be part of the hierarchy being modified. Example:`0ABlXju` |
+| `firstConnection.child` |  | Object | Yes | Object that defines the child in the first connection in the hierarchy. **Note:** Do not pass both `childId` and the child crosswalk (`type`, `value`, and `sourcetable`) object for the same connection. |
+| `firstConnection.child` | `type` | String | Yes, when you use crosswalk for `child entity` | The source type of the crosswalk that refers to the child. Example:`configuration/sources/XYZ` |
+| `firstConnection.child` | `value` | String | Yes, when you use crosswalk for `child entity` | The value of the crosswalk that refers to the child. Example: `I54321` |
+| `firstConnection.child` | `sourceTable` | String | No | Source table of the crosswalk that refers to the child. Example:`Users` |
+| `firstConnection.childID` | — | String | Yes, when you use an entity ID for the child. | Entity ID of the child. If you pass`childId`, the child is created with the Reltio crosswalk. Either the parent or the child must be part of the hierarchy being modified. Example:`1XErCw7G` |
+| `startDate` | — | String | No | Optional. The start effective date of the connection in ISO 8601 date format. |
+| `endDate` | — | String | No | Optional. The end effective date of the connection in ISO 8601 date format. |
 
 ## Example request
 
@@ -86576,12 +86720,22 @@ Authorization: Bearer <token>
   "description": "longDescription",
   "context": "longContextDescription",
   "firstConnection": {
-    "parentId": "prtId",
-    "childId": "cldId",
-    "startDate": "2024-01-01",
-    "endDate": "2026-12-32"
-  }
+  "connectionId": "0ABmA6E",
+  "parent": {
+    "type": "configuration/sources/XYZ",
+    "value": "I12345",
+    "sourceTable": "USERS"
+  },
+  "child": {
+    "type": "configuration/sources/Reltio",
+    "value": "cldId"
+  },
+  "startDate": "2024-01-01",
+  "endDate": "2026-12-32"
 }
+
+            
+            
 ```
 
 ## Response fields
@@ -86598,10 +86752,8 @@ The following table describes the fields returned in the response body, which is
 | `effectiveEndDate` | — | String | Optional. The end effective date of the version in ISO 8601 date format. |
 | `description` | — | String | Optional. The description of the version. |
 | `context` | — | String | Optional. Additional context for the version. |
-| `firstConnection` | — | Object | Optional. The created first hierarchy connection. |
+| `firstConnection` | — | Object | Optional. The created first hierarchy connection. Repeats the request `firstConnection` and includes `connectionId`. |
 | `firstConnection` | `connectionId` | String | The ID of the created connection. |
-| `firstConnection` | `parentId` | String | The entity ID of the parent object. |
-| `firstConnection` | `childId` | String | The entity ID of the child object. |
 | `firstConnection` | `startDate` | String | Optional. The start effective date of the connection in ISO 8601 date format. |
 | `firstConnection` | `endDate` | String | Optional. The end effective date of the connection in ISO 8601 date format. |
 | `createdBy` | — | String | The username of the user who created the version. |
@@ -87581,28 +87733,25 @@ The request body is a JSON array of connection definition objects.
 
 ## Example CSV and JSON file
 
-The following example shows the content of an import CSV file.
+In the import file, identify each parent and each child with either an entity ID or a crosswalk. Do not pass both an entity ID and a crosswalk for the same parent or child. If you pass an entity ID, the connection is created with the Reltio crosswalk.
+
+In the parent and child columns of the CSV file, use an entity ID, or a crosswalk as `source#crosswalk-value` or `source#crosswalk-value#source-table`.
+
+The following example shows the content of an import CSV file that identifies parents and children by entity ID.
 
 ```
-
-# hiearchies with no versions
-configuration/hierarchyTypes/HierarchyType,Hierachy Name,0JecJqU,2YCLdAuY
-configuration/hierarchyTypes/HierarchyType,Hierachy Name,2YCLdAuY,2YCLdFAo
-
-# hiearchies with versions
-configuration/hierarchyTypes/HierarchyType,Hierachy Name,Version Name,0JecJqU,2YCLdAuY
-configuration/hierarchyTypes/HierarchyType,Hierachy Name,Version Name,2YCLdAuY,2YCLdFAo
-
-# hiearchies with no versions, but with start-end dates of connections
-configuration/hierarchyTypes/HierarchyType,Hierachy Name,0JecJqU,2YCLdAuY,2026-01-01,2026-02-28
-configuration/hierarchyTypes/HierarchyType,Hierachy Name,2YCLdAuY,2YCLdFAo,2026-01-05,2026-03-30
-
-# hiearchies with versions, and start-end dates of connections
-configuration/hierarchyTypes/HierarchyType,Hierachy Name,Version Name,0JecJqU,2YCLdAuY,2026-01-01,2026-02-28
-configuration/hierarchyTypes/HierarchyType,Hierachy Name,Version Name,2YCLdAuY,2YCLdFAo,2026-01-05,2026-03-30 
+configuration/hierarchyTypes/CompanyHierarchy,Hierarchy Name,parentId,childId
+configuration/hierarchyTypes/CompanyHierarchy,Hierarchy Name,childId,grandchildId
+configuration/hierarchyTypes/CompanyHierarchy,Second Hierarchy Name,secondParent,secondChild
 ```
 
-The following example shows the content of an import JSON file.
+The following example shows a CSV file that identifies parents and children by crosswalk.
+
+```
+configuration/hierarchyTypes/HierarchyType,Hierarchy Name,configuration/sources/XYZ#I12345#USERS,configuration/sources/XYZ#I54321#USERS
+```
+
+The following example shows a JSON file that identifies parents and children by entity ID.
 
 ```
 [
@@ -87614,6 +87763,34 @@ The following example shows the content of an import JSON file.
       {
         "parentId": "parent1",
         "childId": "child1",
+        "startDate": "2025-01-01",
+        "endDate": "2025-12-31"
+      }
+    ]
+  }
+]
+```
+
+The following example shows a JSON file that identifies parents and children by crosswalk.
+
+```
+[
+  {
+    "name": "test-hierarchy",
+    "type": "test-type",
+    "version": "1.0",
+    "connections": [
+      {
+        "parent": {
+          "type": "configuration/sources/XYZ",
+          "value": "I12345",
+          "sourceTable": "USERS"
+        },
+        "child": {
+          "type": "configuration/sources/XYZ",
+          "value": "I54321",
+          "sourceTable": "USERS"
+        },
         "startDate": "2025-01-01",
         "endDate": "2025-12-31"
       }
@@ -134722,6 +134899,89 @@ Example for a SAML SSO tenant with logout configured:
 
 ---
 
+# Authentication Token API rate limiting
+
+> **Section:** Developer resources > System Administration APIs > System Administration APIs at a glance > Authentication API
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/authentication-api/authentication-token-api-rate-limiting?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** authentication token api rate limiting, handle authentication http 429, reuse reltio access tokens, authentication token caching, oauth token exponential backoff, multi token support authentication, shared egress token requests, authentication, rate limiting, oauth
+
+
+Learn more about rate limiting for the Authentication Token API, how the service responds when the limit is exceeded, and practices for managing access tokens.
+
+The Reltio authentication service applies a rate limit to requests to `POST /oauth/token` on `auth.reltio.com`. The rate limit is evaluated per source IP address over a rolling time window, so requests from systems that share the same public IP address are counted together.
+
+The limit is intended to protect the availability of the authentication service when an unusually high volume of token requests is sent from the same source IP address. In normal integration patterns, , store it securely, and reuse it until it expires. Integrations that follow this pattern are not expected to be affected by the rate limit.
+
+The following table describes where the rate limit is applied and how it is evaluated.
+
+| Item | Value |
+| --- | --- |
+| Regions | EU, US, and AP |
+| Endpoint | `POST /oauth/token` on `auth.reltio.com` |
+| Limit scope | Per source IP address, per rolling time window. The rate limit is evaluated per source IP address, not per tenant, user, or OAuth client. |
+| Limit window | Rolling time window |
+
+## Response when the limit is exceeded
+
+When a source IP address exceeds the permitted request rate, the authentication service returns `HTTP 429 Too Many Requests` for requests from that source IP address. The condition is temporary, and access recovers automatically after the request rate decreases.
+
+This response doesn't result in a lasting account or IP address lockout. If your source IP address exceeds the rate limit, take the following actions:
+
+- Reduce the rate of token requests from the affected source IP address.
+- Allow time for the request rate to return to an acceptable level. Access generally recovers within a minute.
+- Retry the request using exponential backoff, with a longer wait between each attempt.
+
+You don't need to contact Reltio Support for standard rate-limit recovery.
+
+## Recommended practices
+
+Use the following practices to reduce unnecessary requests to the Authentication Token API.
+
+| Practice | Recommendation |
+| --- | --- |
+| **Cache and reuse access tokens** | Store access tokens securely and reuse them until they expire. Access tokens are [valid for 60 minutes by default](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/authentication-api/access-token-response?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) unless the client is configured with a different validity period. Request a new token near expiry or after a `401` response indicates the existing token is no longer valid. |
+| **Use exponential backoff after HTTP 429** | Retry requests with increasing delays after an `HTTP 429 Too Many Requests` response. Don't retry immediately in a tight loop. |
+| **Contact Support for exceptional high-volume needs** | If your integration generates a high volume of authentication requests and may be affected by rate limiting, submit a [support request](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) for proactive review. You can request a review before receiving `HTTP 429 Too Many Requests` responses. |
+| **Account for shared egress IP addresses** | Some deployment environments route traffic from multiple applications or workloads through the same public IP address by using NAT, VPN, proxy, or cloud egress. Requests that use the same public egress IP address are evaluated together for rate limiting. Use a shared token cache or token service so that individual processes do not independently generate unnecessary token requests through the same source IP address. |
+
+## Practices to avoid
+
+Use the following practices to avoid request patterns that can increase the likelihood of rate limiting.
+
+| Practice | Reason |
+| --- | --- |
+| **Requesting a new token for every API call** | Repeated token requests create unnecessary load on `/oauth/token` and increase the likelihood that requests from the source IP address will be rate limited. |
+| **Retrying immediately after HTTP 429** | Tight retry loops can keep the source IP address above the permitted request rate and delay recovery. |
+
+## Frequently asked questions
+
+**Will my integration be affected?**
+
+Only integrations that request access tokens at an unusually high rate from a single source IP address are expected to be affected. Integrations that cache and reuse access tokens until expiry aren't expected to be affected.
+
+**What is the exact rate limit?**
+
+The specific rate-limit threshold isn't disclosed and may change over time based on platform usage. If your integration sends a high volume of authentication requests, contact [reltio support](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) for review.
+
+**Does rate limiting change authentication or token contents?**
+
+No. Successful authentication, the token endpoint, and token contents are unchanged. Requests that exceed the permitted rate from a source IP address receive `HTTP 429 Too Many Requests`.
+
+**Which regions does rate limiting apply to?**
+
+Authentication Token API rate limiting applies in the EU, US, and AP regions.
+
+**How do I recover from HTTP 429?**
+
+Reduce the token-request rate from the source IP address. Access recovers automatically, typically within about a minute. Use exponential backoff for retry attempts, then return to caching and reusing access tokens.
+
+
+
+---
+
 # Refresh Token
 
 > **Section:** Developer resources > System Administration APIs > System Administration APIs at a glance > Authentication API
@@ -139757,17 +140017,20 @@ Content-Type: application/json
 
 ## Response body
 
-The response contains one result object per entity in the request. Each result indicates whether validation succeeded and provides error details when applicable.
+The following table describes the fields returned in the response body.
 
-| **Field** | **Type** | **Description** |
+| Field | Type | Description |
 | --- | --- | --- |
-| index | Number | Position of the object in the original request array. |
-| object | Object | Entity object returned when validation is successful. |
-| successful | Boolean | Indicates whether the entity passed all DVF validations. |
-| errors | Object | Contains validation error details when `successful` is `false`. |
-| errors.innerErrorData | Array | List of individual DVF execution results, including severity, function name, and validation message. |
+| `index` | Number | Position of the object in the original request array. |
+| `object` | Object | Entity object returned when validation is successful. |
+| `successful` | Boolean | Indicates whether the entity passed all DVF validations. |
+| `errors` | Object | Contains validation error details when `successful` is `false`. |
+| `errors.innerErrorData` | Array | List of individual DVF execution results, including severity, function name, and validation message. |
+| `errors.innerErrorData.functionURI` | String | URI of the DVF function that produced this validation result. |
 
 ## Example response
+
+The following example shows a response for a single entity that failed validation.
 
 ```
 
@@ -139792,7 +140055,9 @@ The response contains one result object per entity in the request. Each result i
             
 ```
 
-## Response codes
+## Error codes and recommended actions
+
+The following table lists the possible error responses returned by this API.
 
 | **HTTP status code** | **Description** |
 | --- | --- |
@@ -139815,6 +140080,399 @@ The response contains one result object per entity in the request. Each result i
 For more information see topics:
 
 - [Validate data before ingestion](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-operation/define-data-validation-functions/validate-data-before-ingestion?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+
+
+---
+
+# Get all DVFs
+
+> **Section:** Developer resources > Data Validation APIs > Data Validation APIs at a glance
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/data-validation-apis/data-validation-apis-at-a-glance/get-all-dvfs?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** get all DVFs, data validation functions API, list configured DVFs, DVF by environment
+
+
+Learn how to retrieve all Data Validation Functions (DVFs) configured for a tenant in a specific environment.
+
+Use this operation to retrieve the Data Validation Functions (DVFs) configured for a tenant. The `Data Validation API` runs on a dedicated service host, separate from your tenant's base API host. Reltio scopes the DVFs returned by the environment you specify in the request. For information about executing DVFs against entity data, see [Validate entities using DVF](https://docs.reltio.com/en/developer-resources/data-validation-apis/data-validation-apis-at-a-glance/validate-entities-using-dvf?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+## HTTP method and endpoint
+
+Use the following HTTP method and endpoint path to retrieve all DVFs for a tenant:
+
+```
+GET https://data-validation-functions.reltio.com/api/{tenantId}/dataValidationFunctions
+```
+
+The following table describes the endpoint path parameters.
+
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| `tenantId` | String | Yes | The unique identifier of the tenant. |
+
+## Request headers
+
+Include the following headers in the request. Use the `env` header to scope which DVFs are returned.
+
+| Header | Value | Required |
+| --- | --- | --- |
+| `Authorization` | Bearer `<access_token>` | Yes |
+| `env` | The environment identifier that scopes the DVFs returned by this request. Results reflect only the DVFs configured for the specified environment. | Yes |
+
+## Request body
+
+This operation doesn't require a request body.
+
+## Example request
+
+Use the following example to see how a complete request is structured with headers and a JSON body.
+
+```
+GET https://data-validation-functions.reltio.com/api/{tenantId}/dataValidationFunctions
+Authorization: Bearer <access_token>
+env: {environment}
+
+```
+
+## Response body
+
+The response is an array of DVF objects.
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `uri` | String | Unique identifier of the DVF. |
+| `name` | String | Name of the DVF. |
+| `label` | String | Display label of the DVF. |
+| `description` | String | Description of the DVF. |
+| `expression` | String | The validation expression evaluated by the DVF. |
+| `action` | String | The action taken when the DVF evaluates to true, for example `WARNING`. |
+| `message` | String | Validation message for the function when the expression is evaluated as true. |
+| `validationEvent` | String | The lifecycle event on which the DVF runs. |
+| `status` | String | Whether the DVF is `ACTIVE` or inactive. |
+| `attribute` | String | The attribute URI the DVF validates. |
+| `createdBy` | String | The user or system that created the DVF. |
+| `createdTime` | String | Epoch timestamp, in milliseconds, when the DVF was created. |
+| `updatedBy` | String | The user or system that last updated the DVF. |
+| `updatedTime` | String | Epoch timestamp, in milliseconds, when the DVF was last updated. |
+| `applyOn` | String | Scope the DVF applies to, for example `OV` (object version). |
+| `sourceTypes` | Array | Source types the DVF applies to. Empty when the DVF applies to all sources. |
+
+## Example response
+
+The following example shows a response with two DVFs.
+
+```
+[
+  {
+    "uri": "c71e300b-d992-4e9b-80d2-f2245cab6521",
+    "name": "ShortNameCheck",
+    "label": "",
+    "description": "Name is suspiciously short",
+    "expression": "regexp(attributes.Name.value, '^.{1,3}$')",
+    "action": "WARNING",
+	"message":"Name must contain at least 3 characters."
+    "validationEvent": "ALL",
+    "status": "ACTIVE",
+    "attribute": "configuration/entityTypes/Organization/attributes/Name",
+    "createdBy": "jane.doe@example.com",
+    "createdTime": "1783418619169",
+    "updatedBy": "jane.doe@example.com",
+    "updatedTime": "1783418619169",
+    "applyOn": "OV",
+    "sourceTypes": []
+  },
+  {
+    "uri": "5f3e9a21-7c44-4b8e-9d12-3a6f8e0b1c9d",
+    "name": "InvalidGTINFormat",
+    "label": "",
+    "description": "GTIN does not match the expected format",
+    "expression": "regexp(attributes.GTIN.value, '^[0-9]{12,14}$')",
+    "action": "ERROR",
+	"message": "GTIN must match the standard 14-digit format."
+    "validationEvent": "ALL",
+    "status": "ACTIVE",
+    "attribute": "configuration/entityTypes/Product/attributes/GTIN",
+    "createdBy": "jane.doe@example.com",
+    "createdTime": "1783418700000",
+    "updatedBy": "jane.doe@example.com",
+    "updatedTime": "1783418700000",
+    "applyOn": "OV",
+    "sourceTypes": []
+  },
+...
+]
+```
+
+## Error codes and recommended actions
+
+The following table lists the possible error responses returned by this API.
+
+| HTTP status code | Error code | Description | Recommended action |
+| --- | --- | --- | --- |
+| 401 Unauthorized | MISSING | Missing or invalid authentication credentials. | Provide a valid bearer token. |
+| 403 Forbidden | MISSING | Insufficient permissions. | Confirm the account has DVF read permissions. |
+| 500 Internal Server Error | MISSING | Unexpected server-side error. | Retry; contact support if the issue persists. |
+| 503 Service Unavailable | MISSING | The service is temporarily unavailable. | Retry after a delay. |
+
+## Related pages
+
+For more information, see [Validate entities using DVF](https://docs.reltio.com/en/developer-resources/data-validation-apis/data-validation-apis-at-a-glance/validate-entities-using-dvf?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Get DVFs by entity type](https://docs.reltio.com/en/developer-resources/data-validation-apis/data-validation-apis-at-a-glance/get-dvfs-by-entity-type?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), and [Get DVF by URI](https://docs.reltio.com/en/developer-resources/data-validation-apis/data-validation-apis-at-a-glance/get-dvf-by-uri?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+
+
+---
+
+# Get DVFs by entity type
+
+> **Section:** Developer resources > Data Validation APIs > Data Validation APIs at a glance
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/data-validation-apis/data-validation-apis-at-a-glance/get-dvfs-by-entity-type?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** get DVFs by entity type, data validation functions API, DVF by entity type, entity type validation functions
+
+
+Learn how to retrieve the Data Validation Functions (DVFs) configured for a specific entity type in your Reltio tenant.
+
+Use this operation to retrieve the DVFs configured for a specific entity type. The `Data Validation API` runs on a dedicated service host, separate from your tenant's base API host. Reltio scopes the DVFs returned by the environment you specify in the request, in addition to the entity type.
+
+## HTTP method and endpoint
+
+Use the following HTTP method and endpoint path to retrieve DVFs for an entity type:
+
+```
+GET https://data-validation-functions.reltio.com/api/{tenantId}/dataValidationFunctions/entityTypes/{entityType}
+```
+
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| `tenantId` | String | Yes | The unique identifier of the tenant. |
+| `entityType` | String | Yes | The short name of the entity type, for example `Organization`. Not the fully qualified entity type URI. |
+
+## Request headers
+
+Include the following headers in the request. Use the `env` header to scope which DVFs are returned.
+
+| Header | Value | Required |
+| --- | --- | --- |
+| `Authorization` | Bearer `<access_token>` | Yes |
+| `env` | The environment identifier that scopes the DVFs returned by this request. Results reflect only the DVFs configured for the specified environment. | Yes |
+
+## Request body
+
+This operation does not require a request body.
+
+## Example request
+
+Use the following example to see how a complete request is structured with headers and a JSON body.
+
+```
+GET https://data-validation-functions.reltio.com/api/{tenantId}/dataValidationFunctions/entityTypes/Organization
+Authorization: Bearer <access_token>
+
+
+```
+
+## Response body
+
+The response is an array of DVF objects.
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `uri` | String | Unique identifier of the DVF. |
+| `name` | String | Name of the DVF. |
+| `label` | String | Display label of the DVF. |
+| `description` | String | Description of the DVF. |
+| `expression` | String | The validation expression evaluated by the DVF. |
+| `action` | String | The action taken when the DVF evaluates to true, for example `WARNING`. |
+| `message` | String | Validation message for the function when the expression is evaluated as true. |
+| `validationEvent` | String | The lifecycle event on which the DVF runs. |
+| `status` | String | Whether the DVF is `ACTIVE` or inactive. |
+| `attribute` | String | The attribute URI the DVF validates. |
+| `createdBy` | String | The user or system that created the DVF. |
+| `createdTime` | String | Epoch timestamp, in milliseconds, when the DVF was created. |
+| `updatedBy` | String | The user or system that last updated the DVF. |
+| `updatedTime` | String | Epoch timestamp, in milliseconds, when the DVF was last updated. |
+| `applyOn` | String | Scope the DVF applies to, for example `OV` (object version). |
+| `sourceTypes` | Array | Source types the DVF applies to. Empty when the DVF applies to all sources. |
+
+## Example response
+
+The following example shows a response with two DVFs where every object in the response shares the entity type requested in the path, in this example, `Organization`.
+
+```
+[
+  {
+    "uri": "c71e300b-d992-4e9b-80d2-f2245cab6521",
+    "name": "ShortNameCheck",
+    "label": "",
+    "description": "Name is suspiciously short",
+    "expression": "regexp(attributes.Name.value, '^.{1,3}$')",
+    "action": "WARNING",
+	"message": "Name must contain at least 3 characters."
+	"validationEvent": "ALL",
+    "status": "ACTIVE",
+    "attribute": "configuration/entityTypes/Organization/attributes/Name",
+    "createdBy": "jane.doe@example.com",
+    "createdTime": "1783418619169",
+    "updatedBy": "jane.doe@example.com",
+    "updatedTime": "1783418619169",
+    "applyOn": "OV",
+    "sourceTypes": []
+  },
+  {
+    "uri": "8b2c4d61-3f77-4a19-b0e5-6d9a1c7e4f32",
+    "name": "MissingTaxID",
+    "label": "",
+    "description": "Tax ID is required for this organization type",
+    "expression": "isNull(attributes.TaxID.value)",
+    "action": "WARNING",
+	"message": "Tax ID is required for organizations of this type."
+    "validationEvent": "ALL",
+    "status": "ACTIVE",
+    "attribute": "configuration/entityTypes/Organization/attributes/TaxID",
+    "createdBy": "jane.doe@example.com",
+    "createdTime": "1783418750000",
+    "updatedBy": "jane.doe@example.com",
+    "updatedTime": "1783418750000",
+    "applyOn": "OV",
+    "sourceTypes": []
+  },
+...
+]
+```
+
+## Error codes and recommended actions
+
+The following table lists the possible error responses returned by this API
+
+| HTTP status code | Error code | Description | Recommended action |
+| --- | --- | --- | --- |
+| 401 Unauthorized | MISSING | Missing or invalid authentication credentials. | Provide a valid bearer token. |
+| 403 Forbidden | MISSING | Insufficient permissions. | Confirm the account has DVF read permissions. |
+| 500 Internal Server Error | MISSING | Unexpected server-side error. | Retry; contact support if the issue persists. |
+| 503 Service Unavailable | MISSING | The service is temporarily unavailable. | Retry after a delay. |
+
+## Related pages
+
+For more information, see [Validate entities using DVF](https://docs.reltio.com/en/developer-resources/data-validation-apis/data-validation-apis-at-a-glance/validate-entities-using-dvf?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Get all DVFs](https://docs.reltio.com/en/developer-resources/data-validation-apis/data-validation-apis-at-a-glance/get-all-dvfs?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), and [Get DVF by URI](https://docs.reltio.com/en/developer-resources/data-validation-apis/data-validation-apis-at-a-glance/get-dvf-by-uri?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+
+
+---
+
+# Get DVF by URI
+
+> **Section:** Developer resources > Data Validation APIs > Data Validation APIs at a glance
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/data-validation-apis/data-validation-apis-at-a-glance/get-dvf-by-uri?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** get DVF by URI, data validation functions API, DVF function URI, retrieve single DVF
+
+
+Learn how to retrieve a single Data Validation Function (DVF) using its function URI.
+
+Use this operation to retrieve a single DVF using its function URI. The `Data Validation API` runs on a dedicated service host, separate from your tenant's base API host. This operation identifies the DVF using the tenant ID and function URI only. Any environment header included in the request doesn't affect the result.
+
+## HTTP method and endpoint
+
+Use the following HTTP method and endpoint path to retrieve a DVF with a specific URI:
+
+```
+GET https://data-validation-functions.reltio.com/api/{tenantId}/dataValidationFunctions/{uri}
+```
+
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| `tenantId` | String | Yes | The unique identifier of the tenant. |
+| `uri` | String | Yes | The function URI of the DVF to retrieve. |
+
+## Request headers
+
+Include the following headers in the request. An `env` header isn't required for this operation.
+
+| Header | Value | Required |
+| --- | --- | --- |
+| `Authorization` | Bearer `<access_token>` | Yes |
+
+## Request body
+
+This operation doesn't require a request body.
+
+## Example request
+
+Use the following example to see how a complete request is structured with headers and a JSON body.
+
+```
+GET https://data-validation-functions.reltio.com/api/{tenantId}/dataValidationFunctions/171a5836-49f1-4928-b286-728a2e5bab79
+Authorization: Bearer <access_token>
+```
+
+## Response body
+
+The response is an array of DVF objects.
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `uri` | String | Unique identifier of the DVF. |
+| `name` | String | Name of the DVF. |
+| `label` | String | Display label of the DVF. |
+| `description` | String | Description of the DVF. |
+| `expression` | String | The validation expression evaluated by the DVF. |
+| `action` | String | The action taken when the DVF evaluates to true, for example `WARNING`. |
+| `message` | String | Validation message for the function when the expression is evaluated as true. |
+| `validationEvent` | String | The lifecycle event on which the DVF runs. |
+| `status` | String | Whether the DVF is `ACTIVE` or inactive. |
+| `attribute` | String | The attribute URI the DVF validates. |
+| `createdBy` | String | The user or system that created the DVF. |
+| `createdTime` | String | Epoch timestamp, in milliseconds, when the DVF was created. |
+| `updatedBy` | String | The user or system that last updated the DVF. |
+| `updatedTime` | String | Epoch timestamp, in milliseconds, when the DVF was last updated. |
+| `applyOn` | String | Scope the DVF applies to, for example `OV` (object version). |
+| `sourceTypes` | Array | Source types the DVF applies to. Empty when the DVF applies to all sources. |
+
+## Example response
+
+The following example shows a response with a DVFs for a specific URI.
+
+```
+{
+  "uri": "171a5836-49f1-4928-b286-728a2e5bab79",
+  "name": "ShortNameCheck",
+  "label": "",
+  "description": "Name is suspiciously short",
+  "expression": "regexp(attributes.Name.value, '^.{1,3}$')",
+  "action": "WARNING",
+  "message": "Name must contain at least 3 characters."
+  "validationEvent": "ALL",
+  "status": "ACTIVE",
+  "attribute": "configuration/entityTypes/Organization/attributes/Name",
+  "createdBy": "PLATFORM_CONTROL_CENTER",
+  "createdTime": "1783418619169",
+  "updatedBy": "PLATFORM_CONTROL_CENTER",
+  "updatedTime": "1783418619169",
+  "applyOn": "OV",
+  "sourceTypes": []
+}
+```
+
+## Error codes and recommended actions
+
+The following table lists the possible error responses returned by this API.
+
+| HTTP status code | Error code | Description | Recommended action |
+| --- | --- | --- | --- |
+| 401 Unauthorized | MISSING | Missing or invalid authentication credentials. | Provide a valid bearer token. |
+| 403 Forbidden | MISSING | Insufficient permissions. | Confirm the account has DVF read permissions. |
+| 404 Not Found | MISSING | No DVF exists for the specified URI in this tenant. | Confirm the function URI and tenant ID. |
+
+## Related pages
+
+For more information, see [Validate entities using DVF](https://docs.reltio.com/en/developer-resources/data-validation-apis/data-validation-apis-at-a-glance/validate-entities-using-dvf?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Get all DVFs](https://docs.reltio.com/en/developer-resources/data-validation-apis/data-validation-apis-at-a-glance/get-all-dvfs?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), and [Get DVFs by entity type](https://docs.reltio.com/en/developer-resources/data-validation-apis/data-validation-apis-at-a-glance/get-dvfs-by-entity-type?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
@@ -146990,6 +147648,18 @@ The notification to a particular service can be configured by clicking the `Edit
 *Image: console_notificationsmgmt_edit.png*
 
 The user added will receive emails and notifications in Reltio with information about the service and can access the notifications by clicking the `Bell` icon in the top-right corner of the page.
+
+## Data pipeline notification types
+
+Reltio Data Pipeline notify and send email alerts to recipients recipients when a credential is invalid or expired, or when an Azure staging SAS token is approaching expiration, so that administrators can resolve the issue before pipeline processing is disrupted. Configure recipients by selecting the **Edit** icon for a notification service and selecting users from **Who will receive the notification**.
+
+The following table describes when each Data Pipeline notification is sent and the corresponding recovery action:
+
+| Service | When to send notifications | Recovery action |
+| --- | --- | --- |
+| Snowflake Keypair for Data Pipeline | Snowflake keypair is invalid or has expired for a data pipeline | Update the Snowflake keypair for the affected data pipeline |
+| Storage Credential for Data Pipeline | Storage credential is invalid or has expired for a data pipeline | Update the storage credential for the affected data pipeline |
+| Staging SAS token for Data Pipeline | SAS token is going to expire within 30 days or has expired for a data pipeline | Update the staging SAS token for the affected data pipeline |
 
 
 
@@ -182235,6 +182905,43 @@ For information on where to obtain and how to use these data enrichment integrat
 
 ---
 
+# SAS token expiry alerts for Reltio Data Pipelines
+
+> **Section:** Applications > Data Integrations > Data Pipelines at a glance > Data Pipeline alerts and notifications
+
+
+**Source:** https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/data-pipeline-alerts-and-notifications/sas-token-expiry-alerts-for-reltio-data-pipelines?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** SAS token expiry alerts, Azure staging SAS tokens, Snowflake staging SAS token, Databricks staging SAS token, Data Pipeline SAS token recovery
+
+
+Learn about email and in-app notifications for expiring or expired Azure staging SAS tokens used by Reltio Data Pipelines.
+
+Reltio Data Pipelines use SAS tokens to authenticate and access Azure staging storage during data delivery. This authentication method applies to the Reltio Data Pipelines for Snowflake (Staging Pipeline) and Databricks when configured with Azure staging storage. Each SAS token has an expiration date defined when it is created.
+
+When a staging SAS token expires, the affected Data Pipeline fails to write data to the staging storage, interrupting data delivery. Reltio notifies configured recipients 30 days, 7 days, and 1 day before the token expires. Replace the token before it expires to prevent an interruption or after it expires to restore writing data to the staging storage.
+
+SAS token expiry notifications apply to these Data Pipelines:
+
+- Reltio Data Pipeline for Snowflake (Staging Pipeline) on Azure
+- Reltio Data Pipeline for Databricks on Azure
+
+## Notification delivery and recipients
+
+Reltio delivers SAS token expiry notifications by email and displays them as in-app notifications in the Reltio **Console** and **Hub**.
+
+SAS-token expiration notifications do not have default recipients. To receive these notifications, configure recipients in **Console > Configuration > Notification Management**.
+
+In **Notification services**, select the **Edit** icon for **Staging SAS Token for Data Pipeline**, and then select recipients under **Who will receive the notification**.
+
+## Update an expiring or expired staging SAS token
+
+An expired staging SAS token interrupts access to Azure staging storage and disrupts data delivery. Follow [Update an expiring or expired staging SAS token](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/data-pipeline-alerts-and-notifications/update-an-expiring-or-expired-staging-sas-token?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) to create a new token, store the updated value, and validate connectivity.
+
+
+
+---
+
 # Reltio Data Pipeline for Databricks at a glance
 
 > **Section:** Applications > Data Integrations > Data Pipelines at a glance
@@ -191591,12 +192298,53 @@ For general information, see Create view in the in the [Snowflake SQL command re
 
 ---
 
-# Credential expiry alerts for Reltio Data Pipelines
+# Data Pipeline alerts and notifications
 
 > **Section:** Applications > Data Integrations > Data Pipelines at a glance
 
 
-**Source:** https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/credential-expiry-alerts-for-reltio-data-pipelines?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/data-pipeline-alerts-and-notifications?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** Reltio Data Pipeline alerts, Data Pipeline notifications, credential expiry notifications, SAS token expiry alerts, Data Pipeline recovery
+
+
+Learn about alerts for expiring Azure staging SAS tokens and invalid Data Pipeline credentials, and the notifications Reltio sends to configured recipients.
+
+Reltio Data Pipelines use destination credentials to authenticate with Databricks, Snowflake, or Google BigQuery and export tenant data. For Azure staging configurations that use SAS-token authentication, the Reltio Data Pipeline for Snowflake (Staging Pipeline) and the Reltio Data Pipeline for Databricks use staging SAS tokens to access Azure storage.
+
+Reltio notifies configured recipients when a destination credential becomes invalid or a staging SAS token approaches expiration or has expired. These notifications help recipients prevent or resolve interruptions in data delivery.
+
+## Alert types
+
+Reltio sends notifications when a Data Pipeline credential fails or a staging SAS token approaches expiration or has expired. Use the following alert details to identify the applicable Data Pipelines, notification conditions, and Reltio actions.
+
+| Alert type | Applicable Data Pipelines | Notification condition | Reltio action |
+| --- | --- | --- | --- |
+| [Credential-failure alert](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/data-pipeline-alerts-and-notifications/credential-failure-alerts-for-reltio-data-pipelines?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | When destination credential authentication is configured:   - Reltio Data Pipeline for Databricks - Reltio Data Pipeline for Google BigQuery - Reltio Data Pipeline for Snowflake (Staging Pipeline) - Reltio Data Pipeline for Snowflake (Direct Connect) | A destination rejects an invalid credential during authentication or a data-write operation. | Reltio retries the failed authentication or data-write operation. After three failed attempts, Reltio sends email and in-app notifications to the configured recipients and disables the affected Data Pipeline. |
+| [SAS-token expiry alert](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/data-pipeline-alerts-and-notifications/sas-token-expiry-alerts-for-reltio-data-pipelines?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | When staging SAS-token authentication is configured:   - Reltio Data Pipeline for Snowflake (Staging Pipeline) - Reltio Data Pipeline for Databricks on Azure | A staging SAS token will expire within 30 days or has expired. | Reltio sends email and in-app notifications to configured recipients. |
+
+## Notification delivery and recipients
+
+Reltio sends email notifications to the configured recipients and displays in-app notifications in the Reltio **Console** and **Hub**.
+
+Credential-failure notifications do not have default recipients. To receive these notifications, configure notification recipients in [Notification Management](https://docs.reltio.com/en/applications/console/configuration-applications/notification-management-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) in the Reltio Console. Each notification service has a separate recipient list, you configure the recipients accordingly.
+
+The following notification services are available for Data Pipeline alerts:
+
+- Snowflake Keypair for Data Pipeline for notifications about an invalid or expired Snowflake key pair.
+- Storage Credential for Data Pipeline for notifications about an invalid or expired storage credential.
+- Staging SAS Token for Data Pipeline for notifications about Snowflake or Databricks staging SAS-token expiration.
+
+
+
+---
+
+# Credential-failure alerts for Reltio Data Pipelines
+
+> **Section:** Applications > Data Integrations > Data Pipelines at a glance > Data Pipeline alerts and notifications
+
+
+**Source:** https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/data-pipeline-alerts-and-notifications/credential-failure-alerts-for-reltio-data-pipelines?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** invalid data pipeline credentials, data pipeline credential alerts, expired storage credential email, snowflake key pair notification, notification management recipients, data pipeline hub disable, staging sas token alerts, databricks, snowflake, gbq
 
@@ -191605,7 +192353,7 @@ Learn about email and in-app notifications for expired or invalid Data Pipeline 
 
 Reltio Data Pipelines use credentials configured during setup to connect to Databricks, Snowflake, or Google BigQuery and export tenant data. These credentials may expire, be rotated, or otherwise become invalid. When a credential is no longer valid, the affected pipeline cannot export data to its destination.
 
-Reltio retries the write or authentication when the destination rejects the configured credential. After three failed attempts, Reltio sends email and in-app notifications to the configured recipients, then disables the affected Data Pipeline. The notifications identify the affected tenant and Data Pipeline, explain the credential failure, and provide recovery actions.
+Reltio retries the write or authentication when the destination rejects the configured credential. After three failed attempts, Reltio sends email and in-app notifications to the configured recipients, then disables the affected Data Pipeline. The notifications identify the affected tenant and Data Pipeline, explain the credential failure, and provide recovery.
 
 Credential-failure notifications apply to these Reltio Data Pipelines:
 
@@ -191630,7 +192378,7 @@ In **Notification services**, select the **Edit** icon for the notification serv
 
 ## Update credentials and re-enable a disabled Data Pipeline
 
-When a Data Pipeline is disabled, tenant data is not exported to the destination. To restore data delivery, first update the expired, rotated, or invalid credential. Then follow [Update credentials and re-enable a disabled Data Pipeline](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/update-credentials-and-re-enable-a-disabled-data-pipeline?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) to validate the updated credential, re-enable the Data Pipeline, and synchronize missed tenant data.
+When a Data Pipeline is disabled, tenant data is not exported to the destination. To restore data delivery, first update the expired, rotated, or invalid credential. Then follow [Update credentials and re-enable a disabled Data Pipeline](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/data-pipeline-alerts-and-notifications/update-credentials-and-re-enable-a-disabled-data-pipeline?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) to validate the updated credential, re-enable the Data Pipeline, and synchronize missed tenant data.
 
 
 
@@ -192052,10 +192800,10 @@ Purging DPH tables ensures a clean transition between environments and helps you
 
 # Update credentials and re-enable a disabled Data Pipeline
 
-> **Section:** Applications > Data Integrations > Data Pipelines at a glance
+> **Section:** Applications > Data Integrations > Data Pipelines at a glance > Data Pipeline alerts and notifications
 
 
-**Source:** https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/update-credentials-and-re-enable-a-disabled-data-pipeline?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/data-pipeline-alerts-and-notifications/update-credentials-and-re-enable-a-disabled-data-pipeline?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** restore disabled data pipeline, re-enable data pipeline adapter, syncToDataPipeline after credential failure, validate data pipeline credentials, data pipeline status switch, resynchronize, databricks, snowflake, gbq
 
@@ -192066,13 +192814,13 @@ Reltio Data Pipelines require valid storage or authentication credentials to con
 
 To resume data export, update the failed credential, validate the updated configuration, and re-enable the Data Pipeline. Then synchronize the tenant data that was not delivered while the pipeline was disabled.
 
-Review [Credential expiry alerts for Reltio Data Pipelines](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/credential-expiry-alerts-for-reltio-data-pipelines?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) for information about credential-failure notifications.
+Review [Credential-failure alerts for Reltio Data Pipelines](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/data-pipeline-alerts-and-notifications/credential-failure-alerts-for-reltio-data-pipelines?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) for information about credential-failure notifications.
 
 
 To update credentials and re-enable a disabled Data Pipeline
 
 1. Update the failed credential.
-   Update the credential identified in the [credential-failure notification.](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/credential-expiry-alerts-for-reltio-data-pipelines?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+   Update the credential identified in the [credential-failure notification.](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/data-pipeline-alerts-and-notifications/credential-failure-alerts-for-reltio-data-pipelines?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
    - Databricks: Renew the cloud storage credential in the cloud account named in the email, and store the updated credential securely. For more information, see [Configure the Reltio Data Pipeline for Databricks](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-databricks-at-a-glance/reltio-data-pipeline-for-databricks-set-up?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
    - Google BigQuery: Generate or renew the GCP service-account key and update the pipeline credential. For more information, see [Configure the Reltio Data Pipeline for GBQ](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-gbq-at-a-glance/reltio-data-pipeline-for-gbq-set-up/configure-the-reltio-data-pipeline-for-gbq?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
    - Snowflake (Staging Pipeline): Renew the cloud storage credential in the cloud account named in the email, and store the updated credential securely. For more information, see [Configure the Reltio Data Pipeline for Snowflake (Staging Pipeline)](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-staging-pipeline-architecture?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
@@ -192107,6 +192855,49 @@ To confirm the pipeline is restored, perform the following steps:
 2. 
 
    In **Console > Tenant Management > Jobs**, confirm that the [Sync to Data Pipeline API](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/reltio-data-pipeline-for-snowflake-apis/sync-to-data-pipeline-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) task has completed successfully.
+
+
+
+---
+
+# Update an expiring or expired staging SAS token
+
+> **Section:** Applications > Data Integrations > Data Pipelines at a glance > Data Pipeline alerts and notifications
+
+
+**Source:** https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/data-pipeline-alerts-and-notifications/update-an-expiring-or-expired-staging-sas-token?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** update staging SAS token, renew Azure SAS token, Data Pipeline Hub SAS token, Snowflake staging SAS token, Databricks staging SAS token
+
+
+Learn how to update an expiring or expired Azure staging SAS token for a Reltio Data Pipeline.
+
+Reltio Data Pipelines use SAS tokens to authenticate and access Azure staging storage during data delivery. This authentication method applies to the Reltio Data Pipelines for Snowflake (Staging Pipeline) and Databricks when configured with Azure staging storage. Each SAS token has an expiration date defined when it is created. Update the token before it expires to avoid disruption to functioning of Data . If the token has expired, create and store a replacement before validating the connection.
+
+Review [SAS token expiry alerts for Reltio Data Pipelines](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/data-pipeline-alerts-and-notifications/sas-token-expiry-alerts-for-reltio-data-pipelines?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) for information about SAS token expiry alerts.
+
+
+To update a Databricks staging SAS token
+
+1. Create a new token by following [Create Staging SAS tokens for Data Pipeline Hub](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-databricks-at-a-glance/reltio-data-pipeline-for-databricks-set-up/configure-the-reltio-data-pipeline-for-databricks-for-azure/configure-databricks-pipeline-for-azure-using-apis/configure-azure-cloud-storage-for-databricks/create-staging-sas-tokens-for-data-pipeline-hub?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+2. Store the updated token by following [Store secrets in Data Pipeline Hub (Azure)](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-databricks-at-a-glance/reltio-data-pipeline-for-databricks-set-up/configure-the-reltio-data-pipeline-for-databricks-for-azure/configure-databricks-pipeline-for-azure-using-apis/connect-reltio-to-azure-cloud-storage/provision-the-reltio-data-pipeline-for-databricks-for-your-reltio-tenant-azure/store-secrets-in-data-pipeline-hub-azure?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+3. Validate the updated configuration by following [Validate the Reltio-to-Azure cloud storage connection](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-databricks-at-a-glance/reltio-data-pipeline-for-databricks-set-up/configure-the-reltio-data-pipeline-for-databricks-for-azure/configure-databricks-pipeline-for-azure-using-apis/validate-and-sync-reltio-data-pipeline-for-databricks-with-azure/validate-the-reltio-to-azure-cloud-storage-connection?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+4. (Optional) Synchronize missed tenant data to the destination.
+   If the staging SAS token expired before you updated the token, the Data Pipeline may have missed tenant data while access to the staging storage was unavailable.
+   Run the [Sync to Data Pipeline API](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/reltio-data-pipeline-for-snowflake-apis/sync-to-data-pipeline-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and set `updatedSince` to the timestamp when the Data Pipeline stopped exporting data. The API synchronizes objects updated after that timestamp. If you omit `updatedSince`, its default value is `0`, and the API synchronizes all tenant data.
+
+To update a Snowflake staging SAS token
+
+5. Generate a replacement token by following [Create Azure SAS tokens for Snowflake staging](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/configure-snowflake-staging-pipeline/configure-the-reltio-data-pipeline-for-snowflake-for-azure/configure-azure-cloud-storage-for-snowflake/create-azure-sas-tokens-for-snowflake-staging?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+6. Store the updated token by following [Store secrets in Data Pipeline Hub (Azure)](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/configure-snowflake-staging-pipeline/configure-the-reltio-data-pipeline-for-snowflake-for-azure/connect-reltio-to-azure-cloud-storage/store-secrets-in-data-pipeline-hub-azure?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+7. Validate the updated configuration by following [Validate the Reltio-to-Azure cloud storage connection](https://docs.reltio.com/en/applications/data-integrations/data-pipelines-at-a-glance/reltio-data-pipeline-for-snowflake-at-a-glance/reltio-data-pipeline-for-snowflake-setup/configure-snowflake-staging-pipeline/configure-the-reltio-data-pipeline-for-snowflake-for-azure/validate-and-sync-with-the-reltio-data-pipeline-for-snowflake-for-azure/validate-the-reltio-to-azure-cloud-storage-connection?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+8. (Optional) Synchronize missed tenant data to the destination.
+   If the staging SAS token expired before you updated the token, the Data Pipeline may have missed tenant data while access to the staging storage was unavailable.
+   Run the [Sync to Data Pipeline API](https://docs.reltio.com/en/developer-resources/data-integration-apis/data-integration-apis-at-a-glance/reltio-data-pipeline-for-snowflake-apis/sync-to-data-pipeline-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and set `updatedSince` to the timestamp when the Data Pipeline stopped exporting data. The API synchronizes objects updated after that timestamp. If you omit `updatedSince`, its default value is `0`, and the API synchronizes all tenant data.
+
+**Result**
+
+The updated staging SAS token is stored for the affected Data Pipeline, and any missed tenant data is synchronized to the destination.
 
 
 
@@ -199981,6 +200772,19 @@ Use Reltio Data Sharing when you need to:
 Reltio Entity ResolutionReltio Multidomain MDMReltio Intelligent 360
 
 To learn more about where and how to configure Reltio Data Sharing, see the linked subtopics in this documentation section.
+
+## Schema evolution
+
+Schema evolution in Reltio Data Sharing refers to additive changes to the structure of your data, such as adding new attributes, entity types, relationship types, or interaction types. When you make an additive change to the structure of your data in Reltio, Reltio automatically synchronizes it to the data share and creates new columns or tables as needed.
+
+Reltio Data Sharing supports only the following new additions:
+
+- Attributes
+- Entity types
+- Relationship types
+- Interaction types
+
+Reltio Data Sharing does not support automatic schema evolution in the case of deleting an attribute or changing the data type of an existing attribute. When you make one of these changes in Reltio, Reltio does not apply it to the data share, and the existing tables keep the deleted attributes while the change in data type might affect the data share and will require recreation of the data share.
 
 
 
@@ -235274,6 +236078,7 @@ When creating a segment, you select attributes to filter your target audience. F
    - **My Segments** - lists segments that you created, and which are visible only to you.
    - **Favorites** - lists segments that you've added to as favorites.
 2. On the **Segments** page, select the **+ Create segment** button on the top left or select the **Create segment** button in the middle of the screen.
+   > **Note:** Your role must have `READ` access to every entity type, interaction type, and attribute in the rule. If your role lacks `READ` access to any of them, Reltio does not save the segment and returns an error. To grant access, see [Metadata Security](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/configuration-api/role-based-security/metadata-security?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
    *Image: dp_seg_createnewsegmentpage.png*
    On the **Create new segment** page, the segmentation rule builder appears. You can add additional rules by selecting **Add set**, if needed.
 3. In the **Entity type** field, select the entity type for which you want to create a segment. For example: *Individual*.
@@ -235313,7 +236118,7 @@ Your complete rule is also listed at the bottom of the page.
 Enter the frequency in terms of days, weeks, months or years it has to be repeated, along with the time. Specify the sync period. If you want this refresh to be done indefinitely, select the **No end date** checkbox.
 9. Select **Save**.
 
-See the segment's information, such as the name and description, with whom it is shared, who created it, the date of the last modification, and the number of the profiles contained in each segment. You can modify the segment details, or delete a segment. For more information, see topic [Work with segments](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/work-with-segments?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)..You can also use the API to create a new segment. For more information, see topic [Create new segment using API](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/entities-api/segmentation-apis/create-new-segment-using-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+See the segment's information, such as the name and description, with whom it is shared, who created it, the date of the last modification, and the number of the profiles contained in each segment. You can modify the segment details, or delete a segment. For more information, see topic [Work with segments](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/work-with-segments?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)..You can also use the API to create a new segment. For more information, see topic [Create segment API](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/entities-api/segmentation-apis/create-segment-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
@@ -235764,6 +236569,61 @@ To copy or move hierarchy nodes
 **Result**
 
 If you move a branch, the selected node is removed from its current location and added to the new location.
+
+
+
+---
+
+# View multiple parent paths in a hierarchy
+
+> **Section:** Objectives > Manage profiles > Profile management at a glance > Profile management operation > Materialized hierarchy
+
+
+**Source:** https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/view-multiple-parent-paths-in-a-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+
+Learn how to view multiple parent paths in a hierarchy to understand how an entity is connected to its parent entities.
+
+An entity in a [hierarchy](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) can have more than one parent, resulting in multiple paths to the same entity. Viewing these paths helps you understand the entity's relationships with its parent entities and its position within the hierarchy.
+
+The **Hierarchy** tab displays one of these paths in the hierarchy tree. For entities with multiple parents, you can view the available parent paths and select the path you want to display in the hierarchy tree.
+
+The following roles can view multiple parent paths in a hierarchy:
+
+- 
+
+
+
+**Prerequisites**
+
+Before you begin, ensure that you meet the following requirements:
+
+- 
+
+  You must [enable hierarchy in the tenant configuration](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/configure-tenant-business-settings-for-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+- 
+
+  You must [enable hierarchy in the UI configuration](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/configure-ui-settings-for-the-hierarchy-tab?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+- 
+
+  You must [add a hierarchy for the profile](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/add-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+
+To view multiple parent paths in a hierarchy
+
+1. In **Hub**, select the profile you want to view.
+2. In the **Profile** view, select the **Hierarchy** tab.
+3. From the **Hierarchy type** list, select the hierarchy you want to view.
+4. In the hierarchy tree, locate an entity with the **Show parents** icon next to its name. The icon indicates that the entity has more than one parent.
+   *Image: ui-hierarchymultipleparent.png*
+5. Select the **Show parents** icon.
+   *Image: ui-hierarchyprofiledetailstab.png*
+   The **Profile details** panel opens on the right pane and lists each path to the entity. Each path shows the parent name and a shortened path to the entity.
+6. In the **Profile details** panel, select a path. The hierarchy tree displays the selected path, which is also highlighted in **Profile details**.
+   *Image: ui-hierarchyselectpath.png*
+7. To close the **Profile details** panel, select the **X** icon.
+
+**Result**The hierarchy tree now displays the selected path. You can select a different path at any time to switch the tree view.
 
 
 
@@ -237954,7 +238814,7 @@ To search for a segment:
 5. Select **Apply** to save these changes.
    The list of segments are filtered as per your selection and displayed in the **Segments** page.
 
-You can also use the API to search for a segment. For more information, see topic [Search profiles in segment using API](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/entities-api/segmentation-apis/search-profiles-in-segment-using-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)..
+You can also use the API to search for a segment. For more information, see topic [Search for profiles in a segment](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/entities-api/segmentation-apis/search-for-profiles-in-a-segment?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)..
 
 
 
