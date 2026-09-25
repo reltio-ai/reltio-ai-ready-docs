@@ -1,8 +1,8 @@
 # Reltio Documentation
 
-_Generated: 2026-09-23 02:15 UTC_
+_Generated: 2026-09-25 02:15 UTC_
 
-_Topics: 3514_
+_Topics: 3515_
 
 ---
 
@@ -7215,6 +7215,80 @@ Also, any new LCAs should be created only as cloud native functions.
 ## Still have questions?
 
 Customers using native LCAs will receive an email notification. For help or further details, contact the [Reltio Customer Engineering team](https://docs.reltio.com/en/reltio/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+
+
+---
+
+# RIA Data Explorer deprecation – Apr 2026
+
+> **Section:** Reltio > Deprecation Notices at a glance
+
+
+**Source:** https://docs.reltio.com/en/reltio/deprecation-notices-at-a-glance/ria-data-explorer-deprecation--apr-2026?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** ria data explorer deprecation, reltio intelligent assistant data explorer, ria data exploration end of support, agentflow data explorer agent, ria documentation explorer, deprecation
+
+
+Learn about the RIA Data Explorer being deprecated.
+
+RIA (Reltio Intelligent Assistant) is Reltio's genAI assistant. It has two distinct components: a documentation and configuration explorer, available to all users of the Reltio Context Intelligence Platform, and Data Explorer, available only to customers with Reltio Intelligent 360 entitlements.
+
+## What are we deprecating?
+
+We're deprecating RIA Data Explorer, the component, in the **Hub**, that lets you explore and analyze your tenant data through conversational prompts.
+
+Only the data exploration capability is deprecated. The RIA documentation and configuration explorer, in the Documentation Portal, is not deprecated and remains available to all platform users.
+
+## Why are we deprecating it?
+
+Since the initial release of RIA, customer feedback and usage insights helped us better understand how you prefer to engage with AI in Reltio. We found that the next generation of AI assistance should:
+
+- 
+
+  Be more deeply embedded into day-to-day workflows across data management and analytics.
+- 
+
+  Offer richer contextual understanding of configurations and tenant metadata.
+- 
+
+  Support configurable, task-based automation rather than limited conversational guidance.
+
+To meet these needs, we invested in Reltio AgentFlow, an extensible AI framework that delivers intelligence, automation, and flexibility beyond the scope of RIA. The Data Explorer agent in Reltio AgentFlow meets these requirements.
+
+## When are we deprecating it?
+
+RIA Data Explorer reached end of support on April 24, 2026, with the 2026.1 release. The [Data Explorer](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agentflow-agents-catalog/data-explorer?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) agent in Reltio AgentFlow became generally available on the same date.
+
+## What does this mean to you?
+
+This affects customers with Reltio Intelligent 360 entitlements who used RIA Data Explorer.
+
+- 
+
+  RIA Data Explorer is no longer available in any tenant. Newly provisioned tenants don't include it.
+- 
+
+  RIA documentation and configuration exploration is unaffected and remains available to all platform users.
+- 
+
+  The Data Explorer agent in Reltio AgentFlow is available to all customers who previously had RIA Data Explorer.
+
+## What action do you need to take?
+
+- 
+
+  If you used RIA Data Explorer, adopt the Data Explorer agent in Reltio AgentFlow. For more information, see [Data Explorer](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agentflow-agents-catalog/data-explorer?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+- 
+
+  Contact your Reltio Customer Success Manager for guidance on migration and enablement.
+- 
+
+  No action is required to continue using RIA for documentation and configuration exploration.
+
+## Still have questions?
+
+If you use this feature, you should receive an email. For more details, contact [Reltio Support](https://docs.reltio.com/en/reltio/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
@@ -19262,8 +19336,8 @@ The table below lists available comparator classes:
 | Comparator class: com.reltio.match.comparator.* | Description |
 | --- | --- |
 | `BasicStringComparator` | This comparator treats the attribute values as strings and returns `true` if the strings are identical. All characters are supported. It is a good starting point for a basic exact match use case. if the strings are identical. All characters are supported. It is a good starting point for a basic exact match use case. - Behaves the same for the `Fuzzy` operator as it does for any of the `Exact` operators (`Exact`, `ExactOrNull`, `ExactOrAllNull`, and `notExactSame`). If chosen for any of the `Exact` operators, the comparator’s logic is used for the `Exact` part of them. - Recommended for cases where you wish to compare two strings in a basic manner with no additional processing to remove special characters or need for fuzzy variations of the strings. - Typical use cases are Exact matching on First Name, Last Name, Middle Name, Product SKU, and so on. - Supports non-Latin character sets. - Guidance regarding Match Token Class: `ExactMatchToken` class. **Note:** If your rule does not define a comparator class, the match engine will use this comparator class and the `ExactMatchToken` class. |
-| `DamerauLevenshteinDistance` | Consider the values of two attributes as S1 and S2. This comparator counts `n`, the minimum number of single-character operations (insert, delete, replace) required to convert string S1 to S2 most efficiently. The comparator returns `true` if `n` is:   - =0 (that is, the strings are already equal) - <=1 where the largest raw string length is <=4 - <= 2 where the largest raw string length is > 6 and <=10      Example, to make *John* equal to *jon*, n = 1. The comparator returns `true`.  Example, to make *John* equal to *jonathon*, n = 6; the comparator will return `false`.  - Behaves differently for the `Fuzzy` operator vs the `Exact` operators (`Exact`, `ExactOrNull`, `ExactOrAllNull`, and `notExactSame`). If chosen for `Exact`, `ExactOrNull`, `ExactOrAllNull`, and `notExactSame`, the comparator’s logic is used for the `Exact` part of these. - Can be used for the `Fuzzy Comparison` Operator. - Recommended for cases where you wish to compare two strings that might have spelling inconsistencies. - Typical use cases are matching words that are believed to have spelling errors. - Supports non-Latin character sets. - Guidance regarding Match Token Class: `FuzzyTextAndNumberMatchToken` class. If a match token class is not defined, the `FuzzyTextAndNumberMatchToken` class is used by default. - You can configure match tolerance by setting the `thresholds` parameter based on string length or percentage. |
-| `DynamicDamerauLevenshteinDistance` | Same as `DamerauLevnshteinDistance` comparator but this comparator supports a greater number of operations on longer strings.  - <= 1 where the largest raw string length is <=6 - <= 2 where the largest raw string length is > 6 and <=10 - <= 3 where the largest raw string length is > 10 and <= 20 - <= 4 where the largest raw string length is > 20 and <=30 - <= 5 where the largest raw string length is > 30 - Behaves the same for the `Fuzzy` operator as it does for any of the `Exact` operators (`Exact`, `ExactOrNull`, `ExactOrAllNull`, and `notExactSame`). If chosen for any of the `Exact` operators, the comparator’s logic is used for the `Exact` part of them. - Recommended for cases where you wish to compare two strings that might have spelling mistakes. - Typical use cases are matching words that are believed to have spelling errors. - Support non-Latin character sets. - Guidance regarding Match Token Class: `FuzzyTextAndNumberMatchToken` class. If a match token class is not defined, the `FuzzyTextAndNumberMatchToken` class is used by default. - You can configure match tolerance by setting the `thresholds` parameter based on string length or percentage. |
+| `DamerauLevenshteinDistance` | Consider the values of two attributes as S1 and S2. This comparator counts `n`, the minimum number of single-character operations (insert, delete, replace) required to convert string S1 to S2 most efficiently. The comparator returns `true` if `n` is:   - =0 (that is, the strings are already equal) - <=1 where the smallest raw string length is <=4 - <= 2 where the smallest raw string length is > 6 and <=10      Example, to make *John* equal to *jon*, n = 1. The comparator returns `true`.  Example, to make *John* equal to *jonathon*, n = 6; the comparator will return `false`.  - Behaves differently for the `Fuzzy` operator vs the `Exact` operators (`Exact`, `ExactOrNull`, `ExactOrAllNull`, and `notExactSame`). If chosen for `Exact`, `ExactOrNull`, `ExactOrAllNull`, and `notExactSame`, the comparator’s logic is used for the `Exact` part of these. - Can be used for the `Fuzzy Comparison` Operator. - Recommended for cases where you wish to compare two strings that might have spelling inconsistencies. - Typical use cases are matching words that are believed to have spelling errors. - Supports non-Latin character sets. - Guidance regarding Match Token Class: `FuzzyTextAndNumberMatchToken` class. If a match token class is not defined, the `FuzzyTextAndNumberMatchToken` class is used by default. - You can configure match tolerance by setting the `thresholds` parameter based on string length or percentage. |
+| `DynamicDamerauLevenshteinDistance` | Same as `DamerauLevneshteinDistance` comparator but this comparator supports a greater number of operations on longer strings.  - <= 1 where the smallest raw string length is <=6 - <= 2 where the smallest raw string length is > 6 and <=10 - <= 3 where the smallest raw string length is > 10 and <= 20 - <= 4 where the smallest raw string length is > 20 and <=30 - <= 5 where the smallest raw string length is > 30 - Behaves the same for the `Fuzzy` operator as it does for any of the `Exact` operators (`Exact`, `ExactOrNull`, `ExactOrAllNull`, and `notExactSame`). If chosen for any of the `Exact` operators, the comparator’s logic is used for the `Exact` part of them. - Recommended for cases where you wish to compare two strings that might have spelling mistakes. - Typical use cases are matching words that are believed to have spelling errors. - Support non-Latin character sets. - Guidance regarding Match Token Class: `FuzzyTextAndNumberMatchToken` class. If a match token class is not defined, the `FuzzyTextAndNumberMatchToken` class is used by default. - You can configure match tolerance by setting the `thresholds` parameter based on string length or percentage. |
 | `MetaphoneComparator` | The comparator returns `true` if the two strings are phonetically equal based on the Metaphone algorithm. The Metaphone algorithm is thought to improve upon the Soundex algorithm because it takes into consideration various inconsistencies in the English spelling and pronunciation.   - Behaves the same for the `Fuzzy` operator as it does for any of the `Exact` operators (`Exact`, `ExactOrNull`, `ExactOrAllNull`, and `notExactSame`). If chosen for any of the `Exact` operators, the comparator’s logic is used for the `Exact` part of them. - Recommended for cases where you wish to compare two strings that are likely to sound the same when spoken even if they are spelled somewhat differently. - Typical use cases are matching words that are believed to sound the same. - Does not support non-Latin character sets. - Guidance regarding Match Token Class: `DictionaryStatsPhoneticFuzzyToken` class. If a match token class is not defined, the `DictionaryStatsPhoneticFuzzyToken` class is used by default. |
 | `DoubleMetaphoneComparator` | The comparator returns `true` if the two strings are phonetically equal based on the Double Metaphone algorithm. The Double Metaphone algorithm is thought to be an improvement of the Metaphone algorithm.   - Behaves the same for the `Fuzzy` operator as it does for any of the `Exact` operators (`Exact`, `ExactOrNull`, `ExactOrAllNull`, and `notExactSame`). If chosen for any of the `Exact` operators, the comparator’s logic is used for the `Exact` part of them. - Recommended for cases where you wish to compare two strings that are likely to sound the same when spoken even if they are spelled somewhat differently. - Typical use cases are matching words that are believed to sound the same. - Does not support non-Latin character sets. - Guidance regarding Match Token Class: `DoubleMetaphoneMatchToken` class. If a match token class is not defined, the `DoubleMetaphoneMatchToken` class is used by default. |
 | `SoundexComparator` | The comparator returns `true` if the two strings are phonetically equal based on the Soundex algorithm.   - Behaves the same for the `Fuzzy` operator as it does for any of the `Exact` operators (`Exact`, `ExactOrNull`, `ExactOrAllNull`, and `notExactSame`). If chosen for any of the `Exact` operators, the comparator’s logic is used for the `Exact` part of them. - Recommended for cases where you wish to compare two strings that are likely to sound the same when spoken even if they are spelled somewhat differently. - Typical use cases are matching words that are believed to sound the same. - Does not support non-Latin character sets. - Guidance regarding Match Token Class: `SoundexTextMatchToken` class. If a match token class is not defined, the `SoundexTextMatchToken` class is used by default. - Additional Guidance: See other phonetic comparator options such as the Metaphone and Double Metaphone comparators. |
@@ -28883,7 +28957,7 @@ This table identifies the preconfigured Web events interaction type that comes f
 
 Learn about entities, attributes, relationships, and interactions included in the data model for B2C in Reltio Intelligent 360.
 
-The data model for B2C in Reltio Intelligent 360 provides a predefined set of entity types, each with specific attributes and relationship types similar to Reltio MDM. For more information, see topics [Entity types for B2C Data Domains](https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-b2c-data-domains-velocity-pack/entity-types-for-b2c-data-domains?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Relationship types for B2C Data Domains](https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-b2c-data-domains-velocity-pack/relationship-types-for-b2c-data-domains?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+The data model for B2C in Reltio Intelligent 360 provides a predefined set of entity types, each with specific attributes and relationship types similar to Reltio MDM. For more information, see topics [Entity types for B2C Data Domains](https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-b2c-data-domains-velocity-pack/data-model-for-b2c-data-domains/entity-types-for-b2c-data-domains?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Relationship types for B2C Data Domains](https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-b2c-data-domains-velocity-pack/data-model-for-b2c-data-domains/relationship-types-for-b2c-data-domains?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 With addition to entity and relationship types, B2C for Reltio Intelligent 360 provides interaction types relevant to the customer. For more information on the included Interaction types, see the topics on this section.
 
@@ -33074,6 +33148,12 @@ This table identifies the Reltio for B2B Data Domains organization validation fu
 
 # Data model for B2C Data Domains
 
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) velocity packs > Reltio for B2C Data Domains velocity pack
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-b2c-data-domains-velocity-pack/data-model-for-b2c-data-domains?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+
 Learn about the B2C data model.
 
 The Reltio for B2C Data Domains Data Model provides a predefined set of entity types with specific attributes, relationship types, and interaction types relevant to consumer organizations.
@@ -33113,6 +33193,12 @@ The prebuilt configuration of this velocity pack is built on a standardized base
 ---
 
 # Configurations for B2C Data Domains
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) velocity packs > Reltio for B2C Data Domains velocity pack
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-b2c-data-domains-velocity-pack/configurations-for-b2c-data-domains?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
 
 Learn techniques to refine the data you import into Reltio.
 
@@ -33161,6 +33247,12 @@ View, edit, and extend lookup types referenced by your preconfigured data model.
 ---
 
 # Reference data for B2C Data Domains
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) velocity packs > Reltio for B2C Data Domains velocity pack > Configurations for B2C Data Domains
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-b2c-data-domains-velocity-pack/configurations-for-b2c-data-domains/reference-data-for-b2c-data-domains?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
 
 Learn about the reference data (lookups) predefined for Reltio for B2C .
 
@@ -33214,6 +33306,12 @@ Reltio for B2C comes with these preconfigured reference data lookup types:
 ---
 
 # Cleansers for B2C Data Domains
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) velocity packs > Reltio for B2C Data Domains velocity pack > Configurations for B2C Data Domains
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-b2c-data-domains-velocity-pack/configurations-for-b2c-data-domains/cleansers-for-b2c-data-domains?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
 **Keywords:** Customer Data (B2B) cleansers, b2b, cleansers
 
 
@@ -33240,6 +33338,12 @@ This table identifies the Reltio for B2C cleansers for the Location entity type.
 
 # Household entity type for B2C Data Domains
 
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) velocity packs > Reltio for B2C Data Domains velocity pack > Data model for B2C Data Domains > Entity types for B2C Data Domains
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-b2c-data-domains-velocity-pack/data-model-for-b2c-data-domains/entity-types-for-b2c-data-domains/household-entity-type-for-b2c-data-domains?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+
 Learn about the Household entity type preconfigured in Reltio for B2C data model.
 
 The Household entity type contains data about a set of common demographics for a group of individuals who form a household.
@@ -33254,10 +33358,10 @@ This table identifies the properties for the Household entity type specified in 
 
 # Individual entity type for B2C Data Domains
 
-> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) velocity packs > Reltio for B2C Data Domains velocity pack > Entity types for B2C Data Domains
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) velocity packs > Reltio for B2C Data Domains velocity pack > Data model for B2C Data Domains > Entity types for B2C Data Domains
 
 
-**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-b2c-data-domains-velocity-pack/entity-types-for-b2c-data-domains/individual-entity-type-for-b2c-data-domains?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-b2c-data-domains-velocity-pack/data-model-for-b2c-data-domains/entity-types-for-b2c-data-domains/individual-entity-type-for-b2c-data-domains?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 
 Learn about the Individual entity type preconfigured in Reltio for B2C data model.
@@ -33274,6 +33378,12 @@ This table identifies the properties for the Individual entity type specified in
 
 # Location entity type for B2C Data Domains
 
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) velocity packs > Reltio for B2C Data Domains velocity pack > Data model for B2C Data Domains > Entity types for B2C Data Domains
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-b2c-data-domains-velocity-pack/data-model-for-b2c-data-domains/entity-types-for-b2c-data-domains/location-entity-type-for-b2c-data-domains?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+
 Learn about the Location entity type preconfigured in Reltio for B2C data model.
 
 The Location entity type contains data about basic location information, such as address details and geo-code attributes.
@@ -33288,10 +33398,10 @@ This table identifies the properties for the Location entity type specified in t
 
 # Entity types for B2C Data Domains
 
-> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) velocity packs > Reltio for B2C Data Domains velocity pack
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) velocity packs > Reltio for B2C Data Domains velocity pack > Data model for B2C Data Domains
 
 
-**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-b2c-data-domains-velocity-pack/entity-types-for-b2c-data-domains?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-b2c-data-domains-velocity-pack/data-model-for-b2c-data-domains/entity-types-for-b2c-data-domains?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 
 Learn about the preconfigured Entity types that come with the Reltio for B2C data model.
@@ -33311,6 +33421,12 @@ For general information on these data model building blocks, see topic [Reltio e
 ---
 
 # Match rules for B2C Data Domains
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) velocity packs > Reltio for B2C Data Domains velocity pack > Configurations for B2C Data Domains
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-b2c-data-domains-velocity-pack/configurations-for-b2c-data-domains/match-rules-for-b2c-data-domains?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
 **Keywords:** Customer Data (B2B) match rules, Account 360 Organization Match Rules, Account 360 Contact Match Rules, Account 360 Location Match Rules, B2B, match rules
 
 
@@ -33347,23 +33463,29 @@ B2C has the following match rules predefined out of the box:
 
 # Relationship types for B2C Data Domains
 
-> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) velocity packs > Reltio for B2C Data Domains velocity pack
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) velocity packs > Reltio for B2C Data Domains velocity pack > Data model for B2C Data Domains
 
 
-**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-b2c-data-domains-velocity-pack/relationship-types-for-b2c-data-domains?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-b2c-data-domains-velocity-pack/data-model-for-b2c-data-domains/relationship-types-for-b2c-data-domains?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 
 Learn about the Reltio for B2C prebuilt relationship types.
 
 Relationship types contain metadata properties and attributes that define the connection between two specific entities. Like entity types, relationship types contain attributes. Relationship types have a start object and an end object and a defined direction in which the relationship works: directed, bidirectional and unidirectional. Think of these relationship types as nodes in a web of interconnected data that enable you to make best use of the entities in your data model.
 
-For general information on relationship types, see topic [Reltio relationship types](https://docs.reltio.com/en/reltio/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-information-model/data-model/reltio-object-types/reltio-relationship-types?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). For details on the preconfigured entity types that come with Reltio for B2C Data Domains, see [Entity types for B2C Data Domains](https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-b2c-data-domains-velocity-pack/entity-types-for-b2c-data-domains?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). For information on working with the preconfigured relationship types that come with Reltio for B2C Data Domains, see topic [Preconfigured User Interface for B2C Data Domains](https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-b2c-data-domains-velocity-pack/preconfigured-user-interface-for-b2c-data-domains?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). For information on the preconfigured relationship types that come with B2C Data Domains, see the following sections.
+For general information on relationship types, see topic [Reltio relationship types](https://docs.reltio.com/en/reltio/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-information-model/data-model/reltio-object-types/reltio-relationship-types?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). For details on the preconfigured entity types that come with Reltio for B2C Data Domains, see [Entity types for B2C Data Domains](https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-b2c-data-domains-velocity-pack/data-model-for-b2c-data-domains/entity-types-for-b2c-data-domains?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). For information on working with the preconfigured relationship types that come with Reltio for B2C Data Domains, see topic [Preconfigured User Interface for B2C Data Domains](https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-b2c-data-domains-velocity-pack/preconfigured-user-interface-for-b2c-data-domains?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). For information on the preconfigured relationship types that come with B2C Data Domains, see the following sections.
 
 
 
 ---
 
 # Child relationship type for B2C Data Domains
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) velocity packs > Reltio for B2C Data Domains velocity pack > Data model for B2C Data Domains > Relationship types for B2C Data Domains
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-b2c-data-domains-velocity-pack/data-model-for-b2c-data-domains/relationship-types-for-b2c-data-domains/child-relationship-type-for-b2c-data-domains?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
 
 Learn about the Child relationship type preconfigured in entity types in Reltio for B2C.
 
@@ -33379,6 +33501,12 @@ This table identifies the preconfigured Child relationship type that comes with 
 
 # Dependent relationship type for B2C Data Domains
 
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) velocity packs > Reltio for B2C Data Domains velocity pack > Data model for B2C Data Domains > Relationship types for B2C Data Domains
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-b2c-data-domains-velocity-pack/data-model-for-b2c-data-domains/relationship-types-for-b2c-data-domains/dependent-relationship-type-for-b2c-data-domains?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+
 Learn about the Dependent relationship type preconfigured in entity types in Reltio for B2C.
 
 Relationship types contain metadata properties and attributes that define the connection between two specific entities.
@@ -33392,6 +33520,12 @@ This table identifies the preconfigured Dependent relationship type that comes w
 ---
 
 # Household address relationship type for B2C Data Domains
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) velocity packs > Reltio for B2C Data Domains velocity pack > Data model for B2C Data Domains > Relationship types for B2C Data Domains
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-b2c-data-domains-velocity-pack/data-model-for-b2c-data-domains/relationship-types-for-b2c-data-domains/household-address-relationship-type-for-b2c-data-domains?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
 
 Learn about the Household address relationship type preconfigured in entity types in Reltio for B2C.
 
@@ -33407,6 +33541,12 @@ This table identifies the preconfigured Household address relationship type that
 
 # Household membership relationship type for B2C Data Domains
 
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) velocity packs > Reltio for B2C Data Domains velocity pack > Data model for B2C Data Domains > Relationship types for B2C Data Domains
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-b2c-data-domains-velocity-pack/data-model-for-b2c-data-domains/relationship-types-for-b2c-data-domains/household-membership-relationship-type-for-b2c-data-domains?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+
 Learn about the Household membership relationship type preconfigured in entity types in Reltio for B2C.
 
 Relationship types contain metadata properties and attributes that define the connection between two specific entities.
@@ -33420,6 +33560,12 @@ This table identifies the preconfigured Household membership relationship type t
 ---
 
 # Individual address relationship type for B2C Data Domains
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) velocity packs > Reltio for B2C Data Domains velocity pack > Data model for B2C Data Domains > Relationship types for B2C Data Domains
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-b2c-data-domains-velocity-pack/data-model-for-b2c-data-domains/relationship-types-for-b2c-data-domains/individual-address-relationship-type-for-b2c-data-domains?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
 
 Learn about the Individual address relationship type preconfigured in entity types in Reltio for B2C.
 
@@ -33435,6 +33581,12 @@ This table identifies the preconfigured Individual address relationship type tha
 
 # Spouse relationship type for B2C Data Domains
 
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) velocity packs > Reltio for B2C Data Domains velocity pack > Data model for B2C Data Domains > Relationship types for B2C Data Domains
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-b2c-data-domains-velocity-pack/data-model-for-b2c-data-domains/relationship-types-for-b2c-data-domains/spouse-relationship-type-for-b2c-data-domains?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+
 Learn about the Spouse relationship type preconfigured in entity types in Reltio for B2C.
 
 Relationship types contain metadata properties and attributes that define the connection between two specific entities.
@@ -33448,6 +33600,12 @@ This table identifies the preconfigured Spouse relationship type that comes with
 ---
 
 # Survivorship for B2C Data Domains
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) velocity packs > Reltio for B2C Data Domains velocity pack > Configurations for B2C Data Domains
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-b2c-data-domains-velocity-pack/configurations-for-b2c-data-domains/survivorship-for-b2c-data-domains?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
 **Keywords:** Customer Data (B2B) Attributes, B2B, attributes
 
 
@@ -33455,7 +33613,7 @@ Learn about the Reltio for B2C prebuilt survivorship types.
 
 The Reltio for B2C Data Domains data model includes survivorship groups, which help you define the golden record (final state) of any object that your business considers important.
 
-For general information on survivorship, see topic [Survivorship groups](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-navigation/design-survivorship-rules/survivorship-groups?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). For details on the preconfigured entity types that come with Reltio for B2C Data Domains, see [Entity types for B2C Data Domains](https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-b2c-data-domains-velocity-pack/entity-types-for-b2c-data-domains?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). For information on advanced survivorship strategies that can only be defined through metadata configuration, see topics and [Survivorship Rules](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-navigation/design-survivorship-rules/survivorship-rules?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). For descriptions of the preconfigured survivorship groups that come with Reltio for B2C Data Domains, see the following sections.
+For general information on survivorship, see topic [Survivorship groups](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-navigation/design-survivorship-rules/survivorship-groups?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). For details on the preconfigured entity types that come with Reltio for B2C Data Domains, see [Entity types for B2C Data Domains](https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-b2c-data-domains-velocity-pack/data-model-for-b2c-data-domains/entity-types-for-b2c-data-domains?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). For information on advanced survivorship strategies that can only be defined through metadata configuration, see topics and [Survivorship Rules](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-navigation/design-survivorship-rules/survivorship-rules?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). For descriptions of the preconfigured survivorship groups that come with Reltio for B2C Data Domains, see the following sections.
 
 ## Location entity type survivorship groups B2C Data Domains
 
@@ -33602,6 +33760,12 @@ This table identifies the Reltio for B2C Data Domains default survivorship group
 ---
 
 # Validation functions for B2C Data Domains
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) velocity packs > Reltio for B2C Data Domains velocity pack > Configurations for B2C Data Domains
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-b2c-data-domains-velocity-pack/configurations-for-b2c-data-domains/validation-functions-for-b2c-data-domains?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
 **Keywords:** Individual, validation functions
 
 
@@ -33609,7 +33773,7 @@ Learn what validation functions are included for the contact entity type in Relt
 
 The Reltio for B2C data model includes the contact entity type. Ensure data accuracy and improve data quality by validating the entity data ingested into the Reltio platform against a set of validation functions and then report the correctness of the data.
 
-For information on validation functions, see topic [Define Data Validation Functions](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-operation/define-data-validation-functions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). For details on the preconfigured entity types that come with Reltio for B2C Data Domains, see topic [Entity types for B2C Data Domains](https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-b2c-data-domains-velocity-pack/entity-types-for-b2c-data-domains?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). For descriptions of these, see the following sections.
+For information on validation functions, see topic [Define Data Validation Functions](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-operation/define-data-validation-functions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). For details on the preconfigured entity types that come with Reltio for B2C Data Domains, see topic [Entity types for B2C Data Domains](https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-b2c-data-domains-velocity-pack/data-model-for-b2c-data-domains/entity-types-for-b2c-data-domains?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). For descriptions of these, see the following sections.
 
 ## Individual entity type validation functions B2C Data Domains
 
@@ -132121,8 +132285,6 @@ The following types of changes can be done for a relation:
 - *Delete an attribute*
 - *Pin an attribute*
 - *Ignore an attribute*
-- *Create a relationship*
-- *Delete a relationship*
 - *Update tags*
 - *Update the start date*
 - *Update the end date*
@@ -152254,7 +152416,7 @@ Learn about FERN-based matching
 
 FERN is Reltio's LLM-based technology for matching. It enhances traditional entity resolution by leveraging advanced pretrained knowledge. As an LLM, FERN applies various kinds of knowledge it has absorbed about the world (language semantics, geography, sociological patterns, name statistics, and colloquialisms) to the goal of matching entities.
 
-FERN is available today for the Individual entity type and the Organization entity type, FERN should not be considered a replacement for manually configured match rules. Instead, think of FERN as an additional match engine, identifying matches in parallel with your configured match rules. For more details, see topics [Individual entity type for B2C Data Domains](https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-b2c-data-domains-velocity-pack/entity-types-for-b2c-data-domains/individual-entity-type-for-b2c-data-domains?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Organization entity type for B2B Data Domains](https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-b2b-data-domains-velocity-pack/data-model-for-b2b-data-domains/entity-types-for-b2b-data-domains/organization-entity-type-for-b2b-data-domains?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). It's useful to consider that as an LLM, FERN is able to detect similarities across attributes and records that aren't possible with manually-configured rules. Conversely, you may have some matching requirements that are so explicit, that manually-crafted rules are the most efficient approach. That is why an optimized matching solution may very well involve a blend of both approaches.
+FERN is available today for the Individual entity type and the Organization entity type, FERN should not be considered a replacement for manually configured match rules. Instead, think of FERN as an additional match engine, identifying matches in parallel with your configured match rules. For more details, see topics [Individual entity type for B2C Data Domains](https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-b2c-data-domains-velocity-pack/data-model-for-b2c-data-domains/entity-types-for-b2c-data-domains/individual-entity-type-for-b2c-data-domains?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Organization entity type for B2B Data Domains](https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-b2b-data-domains-velocity-pack/data-model-for-b2b-data-domains/entity-types-for-b2b-data-domains/organization-entity-type-for-b2b-data-domains?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). It's useful to consider that as an LLM, FERN is able to detect similarities across attributes and records that aren't possible with manually-configured rules. Conversely, you may have some matching requirements that are so explicit, that manually-crafted rules are the most efficient approach. That is why an optimized matching solution may very well involve a blend of both approaches.
 
 For more information about which entity types in each velocity pack support pretrained FERN models and which model applies, see [Reltio Multidomain Master Data Management (MDM) velocity packs](https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-velocity-packs?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
@@ -152382,7 +152544,7 @@ This table identifies the structure of **Required Attributes** (mandatory) and *
 | --- | --- |
 | `FirstName`  `LastName`  `Phone / Type`  `Phone / Number`  `Email / Type`  `Email / Email`  `Address / AddressLine1`  `Address / City`  `Address / StateProvince`  `Address / Country`  `Address / PostalCode / Zip5`  `Identifiers/Value`  `Identifiers/Type` | `MiddleName`  `MiddleInitial`  `NameSuffix`  `NamePrefix`  `Address / AddressLine2`  `Address / PostalCode / Zip4`  `DoB`  `OtherNames / Type`  `OtherNames / OtherFirstName`  `OtherNames / OtherMiddleName`  `OtherNames / OtherLastName`  `OtherNames / OtherName` |
 
-For more information on these attributes, see topic [Individual entity type for B2C Data Domains](https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-b2c-data-domains-velocity-pack/entity-types-for-b2c-data-domains/individual-entity-type-for-b2c-data-domains?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+For more information on these attributes, see topic [Individual entity type for B2C Data Domains](https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-velocity-packs/reltio-for-b2c-data-domains-velocity-pack/data-model-for-b2c-data-domains/entity-types-for-b2c-data-domains/individual-entity-type-for-b2c-data-domains?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
