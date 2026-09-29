@@ -34,7 +34,7 @@ That's it — you now have the full Reltio documentation corpus locally. See [Ho
 
 ## Files in this repository
 
-### `docs.md` — Documentation corpus (~11 MB)
+### `docs.md` — Documentation corpus (<!-- DOCS_SIZE -->~17.7 MB<!-- /DOCS_SIZE -->)
 
 The complete Reltio documentation corpus compiled into a single Markdown file. It covers 3,578 topics across all Reltio products and documentation categories:
 
@@ -50,7 +50,7 @@ The complete Reltio documentation corpus compiled into a single Markdown file. I
 
 ---
 
-### `index.md` — Contextual retrieval index (~3 MB)
+### `index.md` — Contextual retrieval index (<!-- INDEX_SIZE -->~4.3 MB<!-- /INDEX_SIZE -->)
 
 A structured index of every published Reltio topic. For each topic, the index provides:
 
@@ -72,8 +72,8 @@ GitHub's web interface has file size limits for preview and rendering:
 
 | File | Size | GitHub behavior |
 |---|---|---|
-| `docs.md` | ~11 MB | "Sorry, this file is too large to display." |
-| `index.md` | ~3 MB | Shown as plain text; Markdown not rendered |
+| `docs.md` | <!-- DOCS_SIZE -->~17.7 MB<!-- /DOCS_SIZE --> | "Sorry, this file is too large to display." |
+| `index.md` | <!-- INDEX_SIZE -->~4.3 MB<!-- /INDEX_SIZE --> | Shown as plain text; Markdown not rendered |
 
 Both files exceed GitHub's 512 KB Markdown rendering limit, and `docs.md` exceeds the 5 MB display limit entirely.
 
