@@ -1,5 +1,5 @@
 # Reltio Documentation Index
-_Generated: 2026-09-29 02:25 UTC — 3578 topics (3523 unique)_
+_Generated: 2026-09-29 22:38 UTC — 3578 topics (3523 unique)_
 
 This file is a structured navigation index of the Reltio documentation portal.
 It contains the full parent-child hierarchy, topic URLs, keywords, summaries,
@@ -1743,7 +1743,11 @@ _Topics in this section: About Reltio, Release Notes at a glance, Platform chang
 
 #### Reltio Data Cloud Security Recommendations
 
+- **URL:** https://docs.reltio.com/en/reltio/whats-in-the-box-at-a-glance/reltio-data-cloud-security-recommendations?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Reltio > What's in the box at a glance
+- **Summary:** Learn more about security hardening settings and recommendations for Reltio Data Cloud.
+- **Keywords:** reltio data cloud security hardening checklist, reltio security recommendations, reltio multi-factor authentication mfa, reltio single sign-on sso configuration, reltio shield encryption at rest
+- **See also:** [Authenticate with SSO](https://docs.reltio.com/en/objectives/administer-system/system-administration-at-a-glance/access-management-at-a-glance/access-management-operation/authentication/authenticate-with-sso?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Enable MFA](https://docs.reltio.com/en/objectives/administer-system/system-administration-at-a-glance/access-management-at-a-glance/access-management-operation/authentication/multi-factor-authentication-mfa/get-started-with-mfa/enable-mfa?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Customer Password Policy APIs](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/customer-password-policy-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Client Credentials at a glance](https://docs.reltio.com/en/applications/console/security-applications/client-credentials-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Reltio Shield at a glance](https://docs.reltio.com/en/applications/console/configuration-applications/reltio-shield-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Activity Log perspective](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/activity-log-perspective?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Security Audit Log API](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/user-management-api/security-audit-log-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Reltio Private Link](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/additional-subscriptions-at-a-glance/reltio-private-link?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Connect securely to Reltio services](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/connect-securely-to-reltio-services?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Reltio Business Critical Edition](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/additional-subscriptions-at-a-glance/reltio-business-critical-edition?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Reltio Docs for You overview
 

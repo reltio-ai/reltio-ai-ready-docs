@@ -1,8 +1,8 @@
 # Reltio Documentation
 
-_Generated: 2026-09-29 02:25 UTC_
+_Generated: 2026-09-29 22:38 UTC_
 
-_Topics: 3705_
+_Topics: 3706_
 
 ---
 
@@ -4664,6 +4664,69 @@ To view historical uptime metrics:
      - timeline of the incident
      - list of impacted clouds
 4. At the bottom of the **Incident Detail** or **Historical uptime** page, select **Current status** to return to **Reltio platform status** page.
+
+
+
+---
+
+# Reltio Data Cloud Security Recommendations
+
+> **Section:** Reltio > What's in the box at a glance
+
+
+**Source:** https://docs.reltio.com/en/reltio/whats-in-the-box-at-a-glance/reltio-data-cloud-security-recommendations?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** reltio data cloud security hardening checklist, reltio security recommendations, reltio multi-factor authentication mfa, reltio single sign-on sso configuration, reltio shield encryption at rest
+
+
+Learn more about security hardening settings and recommendations for Reltio Data Cloud.
+
+## Shared responsibility model
+
+Reltio operates and secures the underlying Reltio Context Intelligence Platform infrastructure, including the cloud environments, network perimeter, and platform services described in this document. Many of the controls listed below — for example, enabling single sign-on, enforcing multi-factor authentication, configuring password policy, or subscribing to Reltio Shield or Reltio Private Link — must be actively configured, subscribed to, or operated by the customer. Reltio making a control available does not mean it is enabled or configured to a given standard, without customer action. This table is intended to help customers understand which controls exist, what the default behavior is, and what Reltio recommends configuring.
+
+## Explanation of table headings
+
+The following table explains what each column in the security hardening checklist means.
+
+| Heading | What it means |
+| --- | --- |
+| Service | The Reltio Data Cloud product, application, or platform area the setting belongs to (for example, Reltio Console, Reltio Hub, or Reltio Platform APIs). |
+| Priority | How much a given recommendation reduces risk or improves your security posture if it isn't already in place. See "Explanation of priority" below. |
+| Secure Operations Map | The security category the row falls under. |
+| Topic | The specific setting, feature, or control being described. |
+| Default Setting or Behavior | What the setting or behavior is out of the box, before any customer configuration, unless otherwise noted. |
+| Recommendation | What Reltio recommends you do about this setting. |
+| Recommendation Type | Whether the recommendation is Technical (something a system administrator configures in the product or via API) or Non-Technical (a customer-side process, policy, or organizational decision). |
+| More Information | Link to the published Reltio documentation topic covering this setting in detail. |
+
+## Explanation of priority
+
+The following table defines each priority level used in the security hardening checklist.
+
+| Priority | Meaning |
+| --- | --- |
+| Critical | The default setting or the absence of this control exposes the system to significant risk, or threatens system reliability, if not addressed. |
+| Recommended | Implementing this recommendation improves your security posture and reduces attack surface, even though the default setting does not expose you to a critical risk. |
+| Advanced | This recommendation extends security to a higher standard than Reltio's default posture, or addresses organization-specific requirements (for example, regulatory or contractual obligations). |
+
+## Security hardening checklist
+
+The following table lists security hardening settings and recommendations across Reltio Data Cloud.
+
+| Service | Priority | Secure Operations Map | Topic | Default Setting or Behavior | Recommendation | Recommendation Type | More Information |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Reltio Platform — Access Management | Recommended | Identity & Access | Single sign-on (SSO) | New tenants use Reltio-managed native accounts: users sign in with a username and password issued in their Welcome to Reltio email. SSO is not enabled by default; it requires configuration to integrate with your corporate identity provider (IdP). | Configure SSO (OAuth 2.0/OIDC or SAML) so users authenticate against your corporate IdP with a single set of credentials, instead of a separate Reltio-managed password. | Technical | [Authenticate with SSO](https://docs.reltio.com/en/objectives/administer-system/system-administration-at-a-glance/access-management-at-a-glance/access-management-operation/authentication/authenticate-with-sso?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
+| Reltio Platform — Access Management | Recommended | Identity & Access | Multi-factor authentication (MFA) | MFA is enforced by default for all non-SSO users, regardless of which tenant they access, and cannot be disabled. Only the Authenticator (app-based) MFA option can be toggled by an administrator. | Since MFA is enforced by default and can't be disabled, review which second factor your organization uses — app-based (TOTP Authenticator) or email-based code. | Technical | [Enable MFA](https://docs.reltio.com/en/objectives/administer-system/system-administration-at-a-glance/access-management-at-a-glance/access-management-operation/authentication/multi-factor-authentication-mfa/get-started-with-mfa/enable-mfa?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
+| Reltio Platform — Access Management | Critical | Identity & Access | Password policy | The default Reltio password policy applies to all native (non-SSO) users, in every tenant and region, unless a customer administrator overrides it: account lockout after 5 failed login attempts, account lockout after 90 days of inactivity, minimum password length of 10 characters, a 3-password reuse history, at least 1 uppercase letter, 1 lowercase letter, 1 digit, and 1 special character, plus restrictions on alphabetical/numerical/QWERTY sequences and a small dictionary of forbidden strings (for example, "reltio"). | Review the default policy against your organization's requirements. Use the Customer Password Policy API (requires ROLE_ADMIN_CUSTOMER) to strengthen length, complexity, history, and lockout thresholds, and enable `userSessionTimeoutSeconds` to force idle-session sign-out (coordinate with Reltio Support before enabling, since it also requires IdP-side configuration). | Technical | [Customer Password Policy APIs](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/customer-password-policy-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
+| Reltio Console — Security Applications | Recommended | Identity & Access | Client credentials (machine-to-machine authentication) | No Client ID/Client Secret pairs exist until a customer administrator creates them. Without them, a machine-to-machine (M2M) integration would otherwise need to authenticate using a human user's own username and password. | Use Client Credentials (OAuth 2.0 Client ID/Client Secret) for scoped M2M integrations instead of a human user's credentials, and limit who can create or manage them to customer administrators or users with client-management permissions. | Technical | [Client Credentials at a glance](https://docs.reltio.com/en/applications/console/security-applications/client-credentials-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
+| Reltio Console — Configuration Applications | Advanced | Data Protection | Encryption at rest (Reltio Shield) | Data at rest is encrypted by default, and Reltio creates and manages the encryption key on your behalf. Reltio Shield (customer-managed key / CMK) is an additional subscription — not included by default — and is only supported for tenants on AWS or GCP with DynamoDB as primary storage. | Subscribe to and enable Reltio Shield if your organization needs to generate, rotate, and revoke your own AES-256 encryption keys (CMK) instead of relying on a Reltio-managed key, for example to meet a specific compliance obligation. | Technical | [Reltio Shield at a glance](https://docs.reltio.com/en/applications/console/configuration-applications/reltio-shield-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
+| Reltio Hub | Recommended | Logging & Monitoring | Activity Log | The Activity Log perspective is populated automatically for every tenant; user activity (logins, profile searches, merges, deletions, and so on) is recorded without any setup. Administrators can view activity for all users, not just their own. | Have administrators periodically review the Activity Log as part of routine access monitoring, rather than only after a suspected incident. | Non-Technical | [Activity Log perspective](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/activity-log-perspective?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
+| Reltio Platform APIs — User Management API | Recommended | Logging & Monitoring | Security Audit Log API | The API exists and is callable by default, but nothing is pushed anywhere automatically — you must actively query it or integrate it with a downstream tool. Results are filterable by IP address, username, event type, and time range (up to 24 hours per request), and calling it requires the ROLE_ADMIN_CUSTOMER role. | Integrate the Security Audit Log API with your SIEM tool (for example, Splunk) on a regular polling interval for near real-time monitoring of logins, user modifications, and role changes, rather than relying on ad hoc pulls. | Technical | [Security Audit Log API](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/user-management-api/security-audit-log-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
+| Reltio Platform — Networking | Advanced | Network Security | Reltio Private Link | Traffic to the Reltio API travels over the public internet by default. Reltio Private Link is an additional subscription (included with Reltio Business Critical Edition) and isn't enabled unless purchased and configured. | Subscribe to and configure Reltio Private Link for workloads that must keep traffic off the public internet, using your cloud provider's private-connectivity controls (for example, AWS security groups, flow logs, and VPC firewall rules). | Technical | [Reltio Private Link](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/additional-subscriptions-at-a-glance/reltio-private-link?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
+| Reltio Platform — Networking | Recommended | Network Security | IP allowlisting for connectivity to Reltio | Reltio's cloud infrastructure (AWS, GCP, and Azure) relies on load balancers and auto-scaling groups, so IP addresses behind them change without notice; there is no static allowlist of Reltio IP addresses by default. Static public egress IPs (via NAT gateway) are provisioned only for specific scenarios — for example, a customer system that requires inbound/outbound IP allowlisting, a third-party API with source-IP restrictions, or a regulatory requirement for fixed egress addresses. This row describes allow-listing Reltio's addresses/domains on your side (outbound). For the separate, Reltio-side inbound control — restricting which source IPs may call your tenant's API — see "Tenant IP whitelist (inbound API restriction)" below. | Allow-list the Fully Qualified Domain Names (FQDNs) of Reltio service endpoints rather than IP addresses — this is Reltio Security's recommended and supported method. Request a static public egress IP only for the specific scenarios above, through your account team. | Technical | [Connect securely to Reltio services](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/connect-securely-to-reltio-services?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
+| Reltio Platform — Networking | Recommended | Network Security | Tenant IP whitelist (inbound API restriction) | Tenant IP whitelisting is not enabled by default; when disabled, your tenant's API endpoints accept requests from any source IP. The authentication/token endpoint (auth.reltio.com/oauth) is a shared, global endpoint and is never subject to a tenant's IP whitelist, even once whitelisting is enabled — only calls to the tenant's own API endpoints (for example, entity API calls) are checked against it. | Enable tenant IP whitelisting and contact Reltio Support to add your organization's approved source IP addresses. Once enabled, API requests to your tenant from non-whitelisted IPs receive a 403 Forbidden error. | Technical | [API Token and Tenant IP Whitelist restrictions (Reltio Support KB)](https://support.reltio.com/hc/en-us/articles/20782192597005-API-Token-and-Tenant-IP-Whitelist-restrictions) |
+| Reltio Platform — Resiliency | Advanced | Resiliency | Reltio Business Critical Edition | Standard Reltio tenants run on multi-AZ resilience without cross-region failover. Business Critical Edition is an additional subscription (requires Concierge Support) and isn't included by default. Once subscribed, core platform components carry a 99.99% availability SLA, a recovery point objective (RPO) under 1 minute for data at rest, and a recovery time objective (RTO) under 1 hour — excluding planned maintenance, force majeure events, and factors outside Reltio's control (for example, third-party outages or customer-controlled configurations). | Subscribe to Business Critical Edition for workloads where cross-region failover and these recovery objectives are a business requirement, and review the SLA's exclusions (data in transit, third-party integrations, custom configurations) against your own continuity requirements. | Non-Technical | [Reltio Business Critical Edition](https://docs.reltio.com/en/reltio/whats-in-the-box/whats-in-the-box-at-a-glance/additional-subscriptions-at-a-glance/reltio-business-critical-edition?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
 
 
 
@@ -28974,7 +29037,7 @@ This table identifies the preconfigured Email events interaction type that comes
 - **Label:** Email
 - **Description:** 
 - **ExtendsTypeURI:** 
-- **Members:** Individual\|
+- **Members:** Individual|
 
 
 | Label | Name | Type | Description | Hidden | Important | Uri | Lookup Code |
@@ -29011,7 +29074,7 @@ This table identifies the preconfigured Generic interaction type that comes for 
 - **Label:** Generic Interaction
 - **Description:** 
 - **ExtendsTypeURI:** 
-- **Members:** Organization\|Individual\|
+- **Members:** Organization|Individual|
 
 
 | Label | Name | Type | Description | Hidden | Important | Uri | Lookup Code |
@@ -29047,7 +29110,7 @@ This table identifies the preconfigured Orders interaction type that comes for B
 - **Label:** Orders
 - **Description:** 
 - **ExtendsTypeURI:** 
-- **Members:** Individual\|
+- **Members:** Individual|
 
 
 | Label | Name | Type | Description | Hidden | Important | Uri | Lookup Code |
@@ -29083,7 +29146,7 @@ This table identifies the preconfigured Service request interaction type that co
 - **Label:** Service Request
 - **Description:** 
 - **ExtendsTypeURI:** 
-- **Members:** Contact\|Organization\|
+- **Members:** Contact|Organization|
 
 
 | Label | Name | Type | Description | Hidden | Important | Uri | Lookup Code |
@@ -29119,7 +29182,7 @@ This table identifies the preconfigured Web events interaction type that comes f
 - **Label:** Web Events
 - **Description:** 
 - **ExtendsTypeURI:** 
-- **Members:** Individual\|
+- **Members:** Individual|
 
 
 | Label | Name | Type | Description | Hidden | Important | Uri | Lookup Code |
@@ -29178,7 +29241,7 @@ This table identifies the preconfigured Generic interaction type that comes for 
 - **Label:** Generic Interaction
 - **Description:** 
 - **ExtendsTypeURI:** 
-- **Members:** Organization\|Individual\|
+- **Members:** Organization|Individual|
 
 
 | Label | Name | Type | Description | Hidden | Important | Uri | Lookup Code |
@@ -29855,7 +29918,7 @@ This table identifies the preconfigured Generic interaction type that comes for 
 - **Label:** Generic Interaction
 - **Description:** 
 - **ExtendsTypeURI:** 
-- **Members:** Individual\|
+- **Members:** Individual|
 
 
 | Label | Name | Type | Description | Hidden | Important | Uri | Lookup Code |
@@ -29913,7 +29976,7 @@ This table identifies the preconfigured Claim interaction type that comes for He
 - **Label:** Claim
 - **Description:** 
 - **ExtendsTypeURI:** 
-- **Members:** Person\|Practioner\|Provider Organization\|Payer\|
+- **Members:** Person|Practioner|Provider Organization|Payer|
 
 
 | Label | Name | Type | Description | Hidden | Important | Uri | Lookup Code |
@@ -29956,7 +30019,7 @@ This table identifies the preconfigured Encounter interaction type that comes fo
 - **Label:** Encounter
 - **Description:** 
 - **ExtendsTypeURI:** 
-- **Members:** Person\|Practioner\|Provider Organization\|Payer\|
+- **Members:** Person|Practioner|Provider Organization|Payer|
 
 
 | Label | Name | Type | Description | Hidden | Important | Uri | Lookup Code |
@@ -29998,7 +30061,7 @@ This table identifies the preconfigured Generic interaction type that comes for 
 - **Label:** Generic Interaction
 - **Description:** 
 - **ExtendsTypeURI:** 
-- **Members:** Person\|Practioner\|Provider Organization\|Payer\|
+- **Members:** Person|Practioner|Provider Organization|Payer|
 
 
 | Label | Name | Type | Description | Hidden | Important | Uri | Lookup Code |
@@ -30056,7 +30119,7 @@ This table identifies the preconfigured Claim interaction type that comes for In
 - **Label:** Claim
 - **Description:** 
 - **ExtendsTypeURI:** 
-- **Members:** Organization\|Insured Asset\|Contract\|Individual\|Location\|
+- **Members:** Organization|Insured Asset|Contract|Individual|Location|
 
 
 | Label | Name | Type | Description | Hidden | Important | Uri | Lookup Code |
@@ -30097,7 +30160,7 @@ This table identifies the preconfigured Generic interaction type that comes for 
 - **Label:** Generic Interaction
 - **Description:** 
 - **ExtendsTypeURI:** 
-- **Members:** Organization\|Insured Asset\|Claim\|Contract\|Individual\|
+- **Members:** Organization|Insured Asset|Claim|Contract|Individual|
 
 
 | Label | Name | Type | Description | Hidden | Important | Uri | Lookup Code |
@@ -30165,7 +30228,7 @@ This table identifies the preconfigured Episode of Care interaction type that co
 - **Label:** Episode Of Care
 - **Description:** 
 - **ExtendsTypeURI:** 
-- **Members:** Person\|Care Manager\|Managing Organization\|
+- **Members:** Person|Care Manager|Managing Organization|
 
 
 | Label | Name | Type | Description | Hidden | Important | Uri | Lookup Code |
@@ -30202,7 +30265,7 @@ This table identifies the preconfigured Generic interaction type that comes for 
 - **Label:** Generic Interaction
 - **Description:** 
 - **ExtendsTypeURI:** 
-- **Members:** HCP\|HCO\|
+- **Members:** HCP|HCO|
 
 
 | Label | Name | Type | Description | Hidden | Important | Uri | Lookup Code |
@@ -45126,7 +45189,7 @@ This table identifies the properties for the Financial Account entity type speci
 - **Label:** Financial Account
 - **Description:** Account info and details of ownership, balances, rates, etc.
 - **Abstract:** 
-- **Data Label Pattern:** {AccountName} \| {AccountNumber} \| {AccountType}
+- **Data Label Pattern:** {AccountName} | {AccountNumber} | {AccountType}
 
 
 | Name | Label | Type | Description | Survivorship | Hidden | Important | System | Searchable | Faceted | Lookup Code | URI |
@@ -54790,126 +54853,7 @@ The IDN (integrated delivery network) entity type contains data about the Health
 
 This table identifies the properties for the IDN entity type specified in the Reltio for Life Sciences configuration and lists the attributes preconfigured in the order they appear in the Data Modeler.
 
-**IDN**
-- **URI:** configuration/entityTypes/IDN
-- **Label:** IDN
-- **Description:** An IDN (in the recent past also called integrated health network [IHN] or multihospital system [MHS]) is a network of healthcare providers and facilities within a specific geographic region that offers a full range of healthcare services.
-- **Abstract:** false
-- **Data Label Pattern:** {Name}
-
-
-| Name | Label | Type | Description | Survivorship | Hidden | Important | System | Searchable | Faceted | Lookup Code | URI |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| **StatusInformation** | Status Information | Nested | Set of attributes containing the details of the organization's status over time | LUD | false | false |  | true | true |  | configuration/entityTypes/IDN/attributes/StatusInformation |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ Status | Status | String | Status of the organization |  | false | false |  | true | true |  | configuration/entityTypes/IDN/attributes/StatusInformation/attributes/Status |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ StatusReason | Status Reason | String | Reason code for the selection of the status |  | false | false |  | true | true |  | configuration/entityTypes/IDN/attributes/StatusInformation/attributes/StatusReason |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ UpdateDate | Update Date | Date | Date on which the organization's status was updated |  | false | false |  | true | true |  | configuration/entityTypes/IDN/attributes/StatusInformation/attributes/UpdateDate |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ Comments | Comments | String | Comments related to the organization's status |  | false | false |  | true | true |  | configuration/entityTypes/IDN/attributes/StatusInformation/attributes/Comments |
-| **Name** | Name | String | Name used for the organization | LUD | false | false |  | true |  |  | configuration/entityTypes/IDN/attributes/Name |
-| **DoingBusinessAsName** | Doing Business As Name | String | Doing Business As Name | LUD | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/DoingBusinessAsName |
-| **TradestyleNames** | Tradestyle Names | Nested | List of other names of the organzation, example, Registered Name | Aggregation | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/TradestyleNames |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ Type | Type | String | Describes the type of tradestyle name used by the organization |  | false | false |  |  |  | rdm/lookupTypes/OtherNameTypes | configuration/entityTypes/IDN/attributes/TradestyleNames/attributes/Type |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ Language | Language | String | Describes the type of tradestyle name used by the organization |  | false | false |  |  |  | rdm/lookupTypes/Languages | configuration/entityTypes/IDN/attributes/TradestyleNames/attributes/Language |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ Name | Name | String | The value of the tradestyle name as used by the organization |  | true | false |  |  |  |  | configuration/entityTypes/IDN/attributes/TradestyleNames/attributes/Name |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ DisplaySequence | Display Sequence | Int | Defines the order in which this name is to be displayed relative to others |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/TradestyleNames/attributes/DisplaySequence |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ StartDate | Start Date | Date | The date on which the tradestyle name went into active use |  | false | false |  | true | true |  | configuration/entityTypes/IDN/attributes/TradestyleNames/attributes/StartDate |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ EndDate | End Date | Date | The date on which the tradestyle name ceased being used |  | false | false |  | true | true |  | configuration/entityTypes/IDN/attributes/TradestyleNames/attributes/EndDate |
-| **LegalEntityType** | Legal Entity Type | String | Type of legal entity the company uses to operate |  | false | false |  | true | true |  | configuration/entityTypes/IDN/attributes/LegalEntityType |
-| **LegalStatusCode** | Legal Status Code | String |  |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/LegalStatusCode |
-| **Type** | Type | String | Type of IDN | LUD | false | false |  | true | true |  | configuration/entityTypes/IDN/attributes/Type |
-| **SubType** | SubType | String | Sub Type of IDN | LUD | false | false |  | true | true |  | configuration/entityTypes/IDN/attributes/SubType |
-| **IDNIntegrationLevel** | IDN Integration Level | String | Integration classification level that provides insight into how the Integrated Delivery Network approaches strategic decision making | LUD | false | false |  | true | true | rdm/lookupTypes/IDNIntegrationLevels | configuration/entityTypes/IDN/attributes/IDNIntegrationLevel |
-| **Address** | Address | Reference | An address for the organization | Aggregation | false | false |  | true | true |  | configuration/entityTypes/IDN/attributes/Address |
-| **Phone** | Phone | Nested | Contact details for example, phone, fax number for the organization | Aggregation | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Phone |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ Type | Type | String | Type of phone number e.g. Business, Fax, Mobile etc. |  | false | false |  |  | true | rdm/lookupTypes/PhoneTypes | configuration/entityTypes/IDN/attributes/Phone/attributes/Type |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ Number | Number | String | Phone number |  | false | false |  |  | true |  | configuration/entityTypes/IDN/attributes/Phone/attributes/Number |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ Unreachable | Unreachable | Boolean | Indicator whether the number is reachable or not |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Phone/attributes/Unreachable |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ CountryCode | Country Code | String | Two character Country Code to identify the ISD code of the phone number |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Phone/attributes/CountryCode |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ Extension | Extension | String | Extension number to be used if any |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Phone/attributes/Extension |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ FormattedNumber | Formatted Number | String | Number as per the format |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Phone/attributes/FormattedNumber |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ Rank | Rank | Int | Rank used to assign priority to a Phone number |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Phone/attributes/Rank |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ AreaCode | Area Code | String | Area Code of the phone number |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Phone/attributes/AreaCode |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ LocalNumber | Local Number | String | Local Number of the phone number without the area code |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Phone/attributes/LocalNumber |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ ValidationStatus | Validation Status | String | Validation Status denoting whether the number is valid or not |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Phone/attributes/ValidationStatus |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ LineType | Line Type | String | Line Type, e.g., FIXED_LINE_OR_MOBILE |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Phone/attributes/LineType |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ FormatMask | Format Mask | String | Format in which the number is saved, for example, (nnn) nnn-nnnn |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Phone/attributes/FormatMask |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ DigitCount | Digit Count | Int | Number of Digits |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Phone/attributes/DigitCount |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ GeoArea | Geo Area | String | Geological area name |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Phone/attributes/GeoArea |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ GeoCountry | Geo Country | String | Geological country name |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Phone/attributes/GeoCountry |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ Active | Active | Boolean | Indicator whether phone number is active or not |  | true | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Phone/attributes/Active |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ PrimaryPhoneFlag | Primary Phone Flag | Boolean | Indicator of whether or not the phone number is the primary number at which to reach the organization |  | false | false |  | true | true |  | configuration/entityTypes/IDN/attributes/Phone/attributes/PrimaryPhoneFlag |
-| **Email** | Email | Nested | Contact details of the organization, like Email Address | Aggregation | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Email |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ Type | Type | String | Type of Email, for example, Home, Work |  | false | false |  |  |  | rdm/lookupTypes/EmailTypes | configuration/entityTypes/IDN/attributes/Email/attributes/Type |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ Email | Email | String | Email address |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Email/attributes/Email |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ Domain | Domain | String | Domain of the email address |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Email/attributes/Domain |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ DomainType | Domain Type | String | Domain Type, for example, PUBLIC |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Email/attributes/DomainType |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ Username | Username | String | Username part of Email address |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Email/attributes/Username |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ Rank | Rank | Int | Rank used to assign priority to a Email |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Email/attributes/Rank |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ ValidationStatus | Validation Status | String | Validation Status denoting whether the Email is valid or not |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Email/attributes/ValidationStatus |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ Active | Active | Boolean | Indicator whether the email address is active or not |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Email/attributes/Active |
-| **WebsiteURL** | Website URL | URL | Website URL of the organization | LUD | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/WebsiteURL |
-| **TaxID** | Tax ID | String | Tax Identifier of the organization |  | false | false |  | true | true |  | configuration/entityTypes/IDN/attributes/TaxID |
-| **Identifiers** | Identifiers | Nested | A business identifier associated with this IDN | Aggregation | false | false |  |  | true |  | configuration/entityTypes/IDN/attributes/Identifiers |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ Type | Type | String |  |  | false | false |  | true | true |  | configuration/entityTypes/IDN/attributes/Identifiers/attributes/Type |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ ID | ID | String |  |  | false | false |  | true |  |  | configuration/entityTypes/IDN/attributes/Identifiers/attributes/ID |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ Status | Status | String |  |  | false | false |  | true | true |  | configuration/entityTypes/IDN/attributes/Identifiers/attributes/Status |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ IssuedBy | Issued By | String |  |  | false | false |  | true | true |  | configuration/entityTypes/IDN/attributes/Identifiers/attributes/IssuedBy |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ IssuedRegion | Issued Region | String |  |  | false | false |  | true | true |  | configuration/entityTypes/IDN/attributes/Identifiers/attributes/IssuedRegion |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ CreatedDate | Created Date | Date |  |  | false | false |  | true | true |  | configuration/entityTypes/IDN/attributes/Identifiers/attributes/CreatedDate |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ IssuedDate | Issued Date | Date |  |  | false | false |  | true | true |  | configuration/entityTypes/IDN/attributes/Identifiers/attributes/IssuedDate |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ ActivationDate | Activation Date | Date |  |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Identifiers/attributes/ActivationDate |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ DeactivationReason | Deactivation Reason | String |  |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Identifiers/attributes/DeactivationReason |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ DeactivationDate | Deactivation Date | Date |  |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Identifiers/attributes/DeactivationDate |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ ReactivationDate | Reactivation Date | Date |  |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Identifiers/attributes/ReactivationDate |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ UpdateDate | Update Date | Date |  |  | false | false |  | true | true |  | configuration/entityTypes/IDN/attributes/Identifiers/attributes/UpdateDate |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ Rank | Rank | Int |  |  | false | false |  | true | true |  | configuration/entityTypes/IDN/attributes/Identifiers/attributes/Rank |
-| **OrganizationDetail** | Organization Detail | Nested | Additional details about this organization | LUD | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/OrganizationDetail |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ OrganizationSummaryText | Organization Summary Text | Blob | Text that records a brief statement or account of this organization |  | false | false |  | true | true |  | configuration/entityTypes/IDN/attributes/OrganizationDetail/attributes/OrganizationSummaryText |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ OperatingStatus | Operating Status | String | Organization's functional state / trading status, e.g. active, out of business, dormant. |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/OrganizationDetail/attributes/OperatingStatus |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ OperatingStatusComment | Operating Status Comment | String | Operating Status Comment |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/OrganizationDetail/attributes/OperatingStatusComment |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ OwnershipStatus | Ownership Status | String | Text that describes the type of controlling ownership, e.g., publicly owned, privately owned, state owned. |  | false | false |  | true | true |  | configuration/entityTypes/IDN/attributes/OrganizationDetail/attributes/OwnershipStatus |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ OwnershipType | Ownership Type | String |  |  | false | false |  | true | true |  | configuration/entityTypes/IDN/attributes/OrganizationDetail/attributes/OwnershipType |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ ControlOwnershipDate | Ownership Date | Date | The date when the current owners took over this business |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/OrganizationDetail/attributes/ControlOwnershipDate |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ EmailDomain | Email Domain | String | Email domain used by this organization |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/OrganizationDetail/attributes/EmailDomain |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ StartYear | Start Year | Int | Start Year |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/OrganizationDetail/attributes/StartYear |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ EndYear | End Year | Int | End Year |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/OrganizationDetail/attributes/EndYear |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ IPOYear | IPO Year | Int | IPO Year |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/OrganizationDetail/attributes/IPOYear |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ MemberRole | Member Role | String | Member Role |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/OrganizationDetail/attributes/MemberRole |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ FranchiseOperationType | Franchise Operation Type | String | Franchise Operation Type |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/OrganizationDetail/attributes/FranchiseOperationType |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ Standalone | Standalone | Boolean | When 'true' indicates that this organization is not a member of a legal family tree. This means it cannot play the role of a subsidiary, parent, headquarters or branch; i.e., FamilyTreeMemberRoleText cannot be present. When 'false' indicates that this organization is a member of a legal family tree. |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/OrganizationDetail/attributes/Standalone |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ MarketabilityIndicator | Marketability Indicator | String | Marketability Indicator |  | true | false |  |  |  |  | configuration/entityTypes/IDN/attributes/OrganizationDetail/attributes/MarketabilityIndicator |
-| **IsSubsidiary** | Is Subsidiary | String | Is Subsidiary indicator | LUD | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/IsSubsidiary |
-| **VendorVerificationDate** | Vendor Verification Date | Date | The date and time when this profile was last matched or enriched from an external vendor source | LUD | false | false |  | false |  |  | configuration/entityTypes/IDN/attributes/VendorVerificationDate |
-| **VendorVerificationStatus** | Vendor Verification Status | String | The status value indicates the results of the matching and enrichment from an external source. Matching statuses are Match, No Match, and Match Error. Data enrichment statuses are Enriched, and Enrichment Error | LUD | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/VendorVerificationStatus |
-| **LegalStatusDescription** | Legal Status Description | String | Legal Status Description | LUD | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/LegalStatusDescription |
-| **Industry** | Industry | String | Industry information of this organization | Aggregation | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Industry |
-| **Specialities** | Specialty | Nested | Specific medical specialty of the IDN | Aggregation | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Specialities |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ SpecialtyType | Specialty Type | String | Specific medical specialty of the GPO |  | false | false |  | true | true | rdm/lookupTypes/SpecialtyTypes | configuration/entityTypes/IDN/attributes/Specialities/attributes/SpecialtyType |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ Specialty | Specialty | String | Specific medical specialty of the IDN |  | false | false |  | true | true | rdm/lookupTypes/SpecialtyCodes | configuration/entityTypes/IDN/attributes/Specialities/attributes/Specialty |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ Group | Group | String | Specialty Group |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Specialities/attributes/Group |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ SpecialtyDetail | Specialty Detail | String | Specialty Detail |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Specialities/attributes/SpecialtyDetail |
-| **Taxonomy** | Taxonomy | Nested | Taxonomy related to IDN | Aggregation | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Taxonomy |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ Taxonomy | Taxonomy | String | A unique 10-character code issued by CMS that designates organization's classification and specialization |  | false | false |  |  |  | rdm/lookupTypes/TaxonomyCodes | configuration/entityTypes/IDN/attributes/Taxonomy/attributes/Taxonomy |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ Type | Type | String | Type of Taxonomy, for example, Primary |  | false | false |  | true | true | rdm/lookupTypes/TaxonomyTypes | configuration/entityTypes/IDN/attributes/Taxonomy/attributes/Type |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ ProviderType | Provider Type | String | Taxonomy Provider Type |  | false | false |  | true | true |  | configuration/entityTypes/IDN/attributes/Taxonomy/attributes/ProviderType |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ Classification | Classification | String | Classification of the taxonomy as assigned my CMS |  | false | false |  | true | true |  | configuration/entityTypes/IDN/attributes/Taxonomy/attributes/Classification |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ Specialization | Specialization | String | Specialization of the taxonomy |  | false | false |  | true | true |  | configuration/entityTypes/IDN/attributes/Taxonomy/attributes/Specialization |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ Priority | Priority | String | Priority of this Taxonomy |  | false | false |  | true | true |  | configuration/entityTypes/IDN/attributes/Taxonomy/attributes/Priority |
-| **DEA** | DEA Details | Nested | DEA Registration Details | Aggregation | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/DEA |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ Number | Number | String | DEA Registration Number |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/DEA/attributes/Number |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ BusinessActivity | Business Activity | String | Business Activity |  | false | false |  | true | true | rdm/lookupTypes/BusinessActivityCodes | configuration/entityTypes/IDN/attributes/DEA/attributes/BusinessActivity |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ BusinessActivityPlusSubCode | Business Activity SubCode | String | Business Activity SubCode |  | false | false |  |  |  | rdm/lookupTypes/BusinessActivitySubCodes | configuration/entityTypes/IDN/attributes/DEA/attributes/BusinessActivityPlusSubCode |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ BusinessActivityDescription | DEA Business Activity Description | String | Business Activity Description |  | false | false |  |  |  | rdm/lookupTypes/BusinessActivityDescription | configuration/entityTypes/IDN/attributes/DEA/attributes/BusinessActivityDescription |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ PaymentIndicator | Payment Indicator | String | Payment Indicator |  | false | false |  |  |  | rdm/lookupTypes/PaymentIndicatorCodes | configuration/entityTypes/IDN/attributes/DEA/attributes/PaymentIndicator |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ Status | Status | String | DEA Registration Status |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/DEA/attributes/Status |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ ExpirationDate | Expiration Date | Date | DEA Registration expiration date |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/DEA/attributes/ExpirationDate |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ DrugSchedule | Drug Schedule | String | Drug Schedule |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/DEA/attributes/DrugSchedule |
-| &nbsp;&nbsp;&nbsp;&nbsp;↳ DrugScheduleDescription | Drug Schedule Description | String | Drug Schedule Description |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/DEA/attributes/DrugScheduleDescription |
-| **StaffedBedSize** | Staffed Bed Size | Int | Staffed bed size | LUD | false | false |  | false | false |  | configuration/entityTypes/IDN/attributes/StaffedBedSize |
-| **MemberHospitals** | Total Number of Member Hospitals | Int | Total Number of Member Hospitals | LUD | false | false |  | false | false |  | configuration/entityTypes/IDN/attributes/MemberHospitals |
-| **NoOfDischarges** | Number of Discharges | Int | Number of Discharges | LUD | false | false |  | false | false |  | configuration/entityTypes/IDN/attributes/NoOfDischarges |
-| **NPR** | Net Patient Revenue | String | Net Patient Revenue | LUD | false | false |  | false | false |  | configuration/entityTypes/IDN/attributes/NPR |
-| **AnnualRevenue** | Annual Revenue | String | Annual Revenue | LUD | false | false |  | false | false |  | configuration/entityTypes/IDN/attributes/AnnualRevenue |
+*[Embedded content: https://docs.google.com/spreadsheets/d/e/2PACX-1vTbguWN5d4MU8GBa3ep1DYtrn6W0TWpG9cnypnWUBYQ5TFzi3hFaZ3l0TG6Rwxe9_9fUddO_y9rwvXo/pubhtml?gid=237238695&single=true&widget=true&headers=false&chrome=false]*
 
 > **Note:** On the table above, the top level attributes are represented in bold.
 
@@ -56752,23 +56696,7 @@ Relationship types contain metadata properties and attributes that define the co
 
 This table identifies the preconfigured Investigator relationship type that comes with the Life Sciences velocity pack. Use this relationship type when you want to identify connections between HCP and Clinical Study entity types.
 
-**Investigator**
-- **URI:** configuration/relationTypes/HCPtoStudy
-- **Label:** Investigator
-- **Description:** Researcher involved in a clinical study.
-- **Type:** 
-- **Direction:** directed
-- **Implicit:** false
-- **Start Object:** configuration/entityTypes/HCP
-- **Start Label:** associated HCP
-- **End Object:** configuration/entityTypes/ClinicalStudy
-- **End Label:** associated Study
-
-
-| Name | Label | Type | Description | Survivorship | Hidden | Important | System | Searchable | Faceted | Lookup Code | URI |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| **Role** | Investigator Role | String | A researcher involved in a clinical study. Related terms include site principal investigator, site sub-investigator, study chair, study director, and study principal investigator. |  | false | false |  |  |  | rdm/lookupTypes/InvestigatorRoles | configuration/relationTypes/HCPtoStudy/attributes/Role |
-| **ActiveFlag** | Active Flag | Boolean |  |  | false | false |  |  |  |  | configuration/relationTypes/HCPtoStudy/attributes/ActiveFlag |
+*[Embedded content: https://docs.google.com/spreadsheets/d/e/2PACX-1vTbguWN5d4MU8GBa3ep1DYtrn6W0TWpG9cnypnWUBYQ5TFzi3hFaZ3l0TG6Rwxe9_9fUddO_y9rwvXo/pubhtml?gid=717517231&single=true&widget=true&headers=false&chrome=false]*
 
 > **Note:** On the table above, the top level attributes are represented in bold.
 
@@ -57079,17 +57007,7 @@ Relationship types contain metadata properties and attributes that define the co
 
 This table identifies the preconfigured Package manufacturer relationship type that comes with the Life Sciences velocity pack. Use this relationship type when you want to identify connections between Packaged medicinal product and Organization entity types.
 
-**Pack Manufacturer**
-- **URI:** configuration/relationTypes/PackageManufacturer
-- **Label:** Manufacturer
-- **Description:** Manufacturer of this package type
-- **Type:** 
-- **Direction:** directed
-- **Implicit:** false
-- **Start Object:** configuration/entityTypes/PackagedMedicinalProduct
-- **Start Label:** Manufactured by
-- **End Object:** configuration/entityTypes/Organization
-- **End Label:** Manufacturer for
+*[Embedded content: https://docs.google.com/spreadsheets/d/e/2PACX-1vTbguWN5d4MU8GBa3ep1DYtrn6W0TWpG9cnypnWUBYQ5TFzi3hFaZ3l0TG6Rwxe9_9fUddO_y9rwvXo/pubhtml?gid=1271129225&single=true&widget=true&headers=false&chrome=false]*
 
 > **Note:** On the table above, the top level attributes are represented in bold.
 
@@ -57551,22 +57469,7 @@ Relationship types contain metadata properties and attributes that define the co
 
 This table identifies the preconfigured Reference product relationship type that comes with the Life Sciences velocity pack. Use this relationship type when you want to identify connections between Medicinal Product and Medicinal Product entity types.
 
-**Reference Product**
-- **URI:** configuration/relationTypes/ReferenceProduct
-- **Label:** Reference Product
-- **Description:** Reference to another product, e.g. for linking authorised to investigational product
-- **Type:** 
-- **Direction:** bidirectional
-- **Implicit:** false
-- **Start Object:** configuration/entityTypes/Drug
-- **Start Label:** Reference to
-- **End Object:** configuration/entityTypes/Drug
-- **End Label:** 
-
-
-| Name | Label | Type | Description | Survivorship | Hidden | Important | System | Searchable | Faceted | Lookup Code | URI |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| **ReferenceType** | Type | String | The type of relationship, for instance branded to generic or virtual to actual product |  | false | false |  | true |  |  | configuration/relationTypes/ReferenceProduct/attributes/ReferenceType |
+*[Embedded content: https://docs.google.com/spreadsheets/d/e/2PACX-1vTbguWN5d4MU8GBa3ep1DYtrn6W0TWpG9cnypnWUBYQ5TFzi3hFaZ3l0TG6Rwxe9_9fUddO_y9rwvXo/pubhtml?gid=1406471138&single=true&widget=true&headers=false&chrome=false]*
 
 > **Note:** On the table above, the top level attributes are represented in bold.
 
@@ -57888,17 +57791,7 @@ Relationship types contain metadata properties and attributes that define the co
 
 This table identifies the preconfigured Substance supplier relationship type that comes with the Life Sciences velocity pack. Use this relationship type when you want to identify connections between Substance and Organization entity types.
 
-**Substance Supplier**
-- **URI:** configuration/relationTypes/SubstanceSupplier
-- **Label:** Supplier
-- **Description:** An entity that is the source for the substance. It may be different from the manufacturer
-- **Type:** 
-- **Direction:** directed
-- **Implicit:** false
-- **Start Object:** configuration/entityTypes/Substance
-- **Start Label:** Supplied by
-- **End Object:** configuration/entityTypes/Organization
-- **End Label:** Supplier of
+*[Embedded content: https://docs.google.com/spreadsheets/d/e/2PACX-1vTbguWN5d4MU8GBa3ep1DYtrn6W0TWpG9cnypnWUBYQ5TFzi3hFaZ3l0TG6Rwxe9_9fUddO_y9rwvXo/pubhtml?gid=827530791&single=true&widget=true&headers=false&chrome=false]*
 
 > **Note:** On the table above, the top level attributes are represented in bold.
 
@@ -59016,7 +58909,7 @@ This table identifies the properties for the MaterialLot entity type specified i
 **MaterialLot**
 - **URI:** configuration/entityTypes/MaterialLot
 - **Label:** Material Lot
-- **Description:** Cross-industry material lot / batch golden record with ISA-95 MaterialLot semantics. Discriminator lotRole=PRODUCED\|INPUT. Composite identity: lotNumber + materialNumber + plantCode and/or siteCode. IndustryLotDetails carries only external identity and traceability keys for heat/cast, reel, roll, fiber/yarn/dye, cable drum, and prior-batch scenarios; manufacturing execution remains in the connected MES or ERP. An optional ERP batch-number crosswalk, including SAP, may be populated when connected.
+- **Description:** Cross-industry material lot / batch golden record with ISA-95 MaterialLot semantics. Discriminator lotRole=PRODUCED|INPUT. Composite identity: lotNumber + materialNumber + plantCode and/or siteCode. IndustryLotDetails carries only external identity and traceability keys for heat/cast, reel, roll, fiber/yarn/dye, cable drum, and prior-batch scenarios; manufacturing execution remains in the connected MES or ERP. An optional ERP batch-number crosswalk, including SAP, may be populated when connected.
 - **Abstract:** false
 - **Data Label Pattern:** {lotNumber}
 - **Secondary Label Pattern:** {lotRole} — {status}
@@ -238654,7 +238547,153 @@ Learn about Configuration service access permissions service access permissions 
 
 This table identifies the Reltio access permissions you can assign to custom roles for each resource and sub resource in the Configuration service access permissions service, identifying both its API endpoint and user interface name.
 
-*[Embedded content: https://docs.google.com/spreadsheets/d/e/2PACX-1vSTgjwEemABYvaj82ccmjnkVRKwXd_hHIHMrIoobCDUghYN0-fqycnTbEM7ekk8DL96zufPEZIQ-tJl/pubhtml]*
+| Permissions for | Access rights (resource/ sub resource) | Access privileges (CREATE, READ, UPDATE, DELETE, EXECUTE) | API endpoint (HTTP method and URI) | UI label |
+| --- | --- | --- | --- | --- |
+| **Managing all tenant-level configurations** | config | CRUDE |  | Tenant Configurations |
+| **Configuring generators** | config.generators | DELETE | DELETE /api/generators/{name} |  |
+|  |  | DELETE | DELETE /configuration/sources/{sourceName} |  |
+|  |  | READ | GET /api/generators |  |
+|  |  | READ | GET /api/generators/{name} |  |
+|  |  | READ | GET /api/generators/{name}/generate |  |
+| **Configuring the Business Model.** | config.businessModel | READ | GET /configuration/_etag | Business Model |
+|  |  | READ | GET /configuration/_history |  |
+|  |  | READ | GET /configuration/_history/_noInheritance |  |
+|  |  | READ | GET /configuration/_noInheritance |  |
+|  |  | READ | GET /configuration/_validateTenantConfiguration |  |
+|  |  | READ | GET /configuration/attributeTypes |  |
+|  |  | READ | GET /configuration/entityTypes |  |
+|  |  | READ | GET /configuration/entityTypes/{entityTypeName} |  |
+|  |  | READ | GET /configuration/entityTypes/{entityTypeName}/matchGroups |  |
+|  |  | READ | GET /configuration/entityTypes/{entityType}/_template |  |
+|  |  | READ | GET /configuration/graphTypes |  |
+|  |  | READ | GET /configuration/groupTypes |  |
+|  |  | READ | GET /configuration/groupingTypes |  |
+|  |  | READ | GET /configuration/hierarchyTypes |  |
+|  |  | READ | GET /configuration/interactionTypes |  |
+|  |  | READ | GET /configuration/noiseDictionaries |  |
+|  |  | READ | GET /configuration/noiseDictionaries/{dictionaryName} |  |
+|  |  | READ | GET /configuration/relationTypes |  |
+|  |  | READ | GET /configuration/roles |  |
+|  |  | READ | GET /configuration/sources |  |
+|  |  | CREATE | POST /api/generators |  |
+|  |  | CREATE | POST /configuration/_comparison |  |
+|  |  | CREATE | POST /configuration/_validation |  |
+|  |  | CREATE | POST /configuration/sources |  |
+|  |  | UPDATE | PUT /configuration |  |
+|  |  | CREATE | POST /configuration/entityTypes/{entityTypeName} |  |
+|  |  | UPDATE | PUT /configuration/entityTypes/{entityTypeName} |  |
+|  |  | DELETE | DELETE /configuration/entityTypes/{entityTypeName} |  |
+|  |  | READ | GET /configuration/relationTypes |  |
+|  |  | READ | GET /configuration/relationTypes/{relationTypeName} |  |
+|  |  | CREATE | POST /configuration/relationTypes/{relationTypeName} |  |
+|  |  | UPDATE | PUT /configuration/relationTypes/{relationTypeName} |  |
+|  |  | DELETE | DELETE /configuration/relationTypes/{relationTypeName} |  |
+|  |  | READ | GET /configuration/interactionTypes/{interactionTypeName} |  |
+|  |  | CREATE | POST /configuration/interactionTypes/{interactionTypeName} |  |
+|  |  | UPDATE | PUT /configuration/interactionTypes/{interactionTypeName} |  |
+|  |  | DELETE | DELETE /configuration/interactionTypes/{interactionTypeName} |  |
+|  |  | READ | GET /configuration/groupTypes/{groupTypeName} |  |
+|  |  | CREATE | POST /configuration/groupTypes/{groupTypeName} |  |
+|  |  | UPDATE | PUT /configuration/groupTypes/{groupTypeName} |  |
+|  |  | DELETE | DELETE /configuration/groupTypes/{groupTypeName} |  |
+|  |  | READ | GET /configuration/graphTypes/{graphTypeName} |  |
+|  |  | CREATE | POST /configuration/graphTypes/{graphTypeName} |  |
+|  |  | UPDATE | PUT /configuration/graphTypes/{graphTypeName} |  |
+|  |  | DELETE | DELETE /configuration/graphTypes/{graphTypeName} |  |
+|  |  | READ | GET /configuration/categoryTypes |  |
+|  |  | READ | GET /configuration/categoryTypes/{categoryTypeName} |  |
+|  |  | CREATE | POST /configuration/categoryTypes/{categoryTypeName} |  |
+|  |  | UPDATE | PUT /configuration/categoryTypes/{categoryTypeName} |  |
+|  |  | DELETE | DELETE /configuration/categoryTypes/{categoryTypeName} |  |
+|  |  | READ | GET /configuration/changeRequestTypes |  |
+|  |  | READ | GET /configuration/changeRequestTypes/{changeRequestType} |  |
+|  |  | UPDATE | PUT /configuration/changeRequestTypes/{changeRequestType} |  |
+|  |  | DELETE | DELETE /configuration/changeRequestTypes/{changeRequestType} |  |
+|  |  | CREATE | POST /configuration/entityTypes/{entityTypeName}/matchGroups |  |
+|  |  | READ | GET /configuration/entityTypes/{entityTypeName}/matchGroups/{matchGroupName} |  |
+|  |  | UPDATE | PUT /configuration/entityTypes/{entityTypeName}/matchGroups/{matchGroupName} |  |
+|  |  | DELETE | DELETE /configuration/entityTypes/{entityTypeName}/matchGroups/{matchGroupName} |  |
+|  |  | READ | GET /configuration/entityTypes/{entityTypeName}/cleanseConfig |  |
+|  |  | UPDATE | PUT /configuration/entityTypes/{entityTypeName}/cleanseConfig |  |
+|  |  | DELETE | DELETE /configuration/entityTypes/{entityTypeName}/cleanseConfig |  |
+|  |  | READ | GET /configuration/entityTypes/{entityTypeName}/attributes |  |
+|  |  | CREATE | POST /configuration/entityTypes/{entityTypeName}/attributes/{attributeUri} |  |
+|  |  | READ | GET /configuration/entityTypes/{entityTypeName}/attributes/{attributeName} |  |
+|  |  | UPDATE | PUT /configuration/entityTypes/{entityTypeName}/attributes/{attributeName} |  |
+|  |  | DELETE | DELETE /configuration/entityTypes/{entityTypeName}/attributes/{attributeName} |  |
+|  |  | READ | GET /configuration/relationTypes/{relationTypeName}/attributes |  |
+|  |  | CREATE | POST /configuration/relationTypes/{relationTypeName}/attributes/{attributeUri} |  |
+|  |  | READ | GET /configuration/relationTypes/{relationTypeName}/attributes/{attributeName} |  |
+|  |  | UPDATE | PUT /configuration/relationTypes/{relationTypeName}/attributes/{attributeName} |  |
+|  |  | DELETE | DELETE /configuration/relationTypes/{relationTypeName}/attributes/{attributeName} |  |
+|  |  | READ | GET /configuration/entityTypes/{entityTypeName}/surrogateCrosswalks |  |
+|  |  | UPDATE | PUT /configuration/entityTypes/{entityTypeName}/surrogateCrosswalks |  |
+|  |  | DELETE | DELETE /configuration/entityTypes/{entityTypeName}/surrogateCrosswalks |  |
+| **Configuring Activity properties in the Business Model** | config.businessModel.activity | READ | GET /activityConfiguration | Activity |
+|  |  | UPDATE | PUT /activityConfiguration |  |
+| **Configuring the Rating properties in the Business Model.** | config.businessModel.rating | READ | GET /ratingConfiguration | Rating |
+|  |  | UPDATE | PUT /ratingConfiguration/sources |  |
+|  |  | UPDATE | PUT /ratingConfiguration/userRoles |  |
+| **Configuring RuleSet properties in the Business Model.** | config.businessModel.ruleset | READ | GET /rulesetsConfiguration | RuleSet |
+|  |  | READ | GET /rulesetsConfiguration/currentRulesets |  |
+|  |  | UPDATE | PUT /rulesetsConfiguration |  |
+|  |  | UPDATE | PUT /rulesetsConfiguration/entityTypes/{entityTypeName}/survivorshipGroups |  |
+|  |  | UPDATE | PUT /rulesetsConfiguration/entityTypes/{entityTypeName}/survivorshipGroups/{groupUri} |  |
+| **Configuring the Source Publish Date in the Business Model.** | config.businessModel.source | READ | GET /configuration/sources/{sourceTypeName}/sourcePublishDate | Source Publish Date |
+|  |  | UPDATE | PUT /configuration/sources/{sourceTypeName}/sourcePublishDate |  |
+| **Configuring entity and relationship type survivorship rules in the Business Model.** | config.businessModel.survivorship | READ | GET /configuration/entityTypes/{entityTypeName}/survivorshipGroups | Survivorship Rule |
+|  |  | CREATE | POST /configuration/entityTypes/{entityTypeName}/survivorshipGroups |  |
+|  |  | READ | GET /configuration/entityTypes/{entityTypeName}/survivorshipGroups/{groupUri} |  |
+|  |  | CREATE | POST /configuration/entityTypes/{entityTypeName}/survivorshipGroups/{groupUri} |  |
+|  |  | UPDATE | PUT /configuration/entityTypes/{entityTypeName}/survivorshipGroups/{groupUri} |  |
+|  |  | DELETE | DELETE /configuration/entityTypes/{entityTypeName}/survivorshipGroups/{groupUri} |  |
+|  |  | READ | GET /configuration/relationTypes/{relationshipTypeName}/survivorshipGroups |  |
+|  |  | CREATE | POST /configuration/relationTypes/{relationshipTypeName}/survivorshipGroups |  |
+|  |  | CREATE | POST /configuration/relationTypes/{relationshipTypeName}/survivorshipGroups/{groupUri} |  |
+|  |  | UPDATE | PUT /configuration/relationTypes/{relationshipTypeName}/survivorshipGroups/{groupUri} |  |
+| **Configuring access to Tenant ManagementAPI endpoints.** | config.endpoint | DELETE | DELETE /access/{tenantId} | Endpoint Access |
+|  |  | READ | GET /access/{tenantId} |  |
+|  |  | CREATE | POST /access/{tenantId} |  |
+|  |  | CREATE | POST /access/{tenantId}/_check |  |
+|  |  | CREATE | POST /access/{tenantId}/_get |  |
+| **Configuring access to Tenant Lookup ManagementAPI endopoints.** | config.lookups | DELETE | DELETE /lookups | Lookups |
+|  |  | READ | GET /lookups |  |
+|  |  | READ | GET /lookups/{code}/{codeValue} |  |
+|  |  | CREATE | POST /lookups |  |
+|  |  | CREATE | POST /lookups/cascadeUpdate |  |
+|  |  | CREATE | POST /lookups/list |  |
+|  |  | CREATE | POST /lookups/resolve |  |
+|  |  | CREATE | POST /lookups/resolveList |  |
+|  |  | CREATE | POST /lookups/validate |  |
+|  |  | UPDATE | PUT /lookups |  |
+| **Configuring metadata security permissions for Tenant Management API endpoints** | config.permissions | DELETE | DELETE /permissions/{tenantId} | Data/Metadata Permissions |
+|  |  | READ | GET /permissions/{tenantId} |  |
+|  |  | CREATE | POST /permissions/{tenantId} |  |
+|  |  | CREATE | POST /permissions/{tenantId}/_check |  |
+|  |  | CREATE | POST /permissions/{tenantId}/_checkOption |  |
+|  |  | CREATE | POST /permissions/{tenantId}/_get |  |
+|  |  | CREATE | POST /permissions/{tenantId}/_getAccessRoles |  |
+| **Configuring access to Tenant Physical Configuration API endpoints** | config.physical | READ | GET /enhancedTenants | Physical |
+|  |  | READ | GET /tenants/{tenantId} |  |
+|  |  | READ | GET /tenants/{tenantId}/_history |  |
+|  |  | READ | GET /tenants/{tenantId}/_validateTenantConfiguration |  |
+|  |  | READ | GET /tenants/{tenantId}/cleanse |  |
+|  |  | READ | GET /tenants/{tenantId}/dataloadMode |  |
+|  |  | READ | GET /tenants/{tenantId}/messaging |  |
+|  |  | READ | GET /tenants/{tenantId}/name |  |
+|  |  | READ | GET /tenants/{tenantId}/rdmTenants |  |
+|  |  | READ | GET /tenants/{tenantId}/validateTenantConfiguration |  |
+|  |  | CREATE | POST /tenants/{tenantId}/messaging/destinations |  |
+|  |  | CREATE | POST /tenants/{tenantId}/messaging/destinations/_packRemove |  |
+|  |  | UPDATE | PUT /tenants/{tenantId}/cleanse |  |
+|  |  | UPDATE | PUT /tenants/{tenantId}/dataloadMode |  |
+|  |  | UPDATE | PUT /tenants/{tenantId}/name |  |
+|  |  | UPDATE | PUT /tenants/{tenantId}/rdmTenants |  |
+| **Configuring user preferences for functionality like saved Search.** | config.preference | READ | GET /personal/allSavedSearches | User Preferences |
+| **Configuring access to Resource Bundle ManagementAPIs endpoints.** | config.resources | DELETE | DELETE /{tenantId}/resources/i18n | Resource Bundle |
+|  |  | READ | GET /{tenantId}/resources/i18n |  |
+|  |  | READ | GET /{tenantId}/resources/i18n/languages |  |
+|  |  | CREATE | POST /{tenantId}/resources/i18n |  |
 
 
 
@@ -238758,7 +238797,48 @@ Learn about Data loader service access permissions to assign to resources and su
 
 This table identifies the Reltio access permissions you can assign to custom roles for each resource and sub resource in the Data Loader service, identifying both its API endpoint and user interface name.
 
-*[Embedded content: https://docs.google.com/spreadsheets/d/e/2PACX-1vR9eOvxWZYhYnlcaiIkSH6yo9SxBNIH2hHFQbfSnmt9cLdA0dOCnVq9zvKdJtLfGoVoCNkId2CL95ia/pubhtml?widget=true&headers=false&chrome=false]*
+| Permissions for | Access rights (resource/ sub resource) | Access privileges (CREATE, READ, UPDATE, DELETE, EXECUTE) | API endpoint (HTTP method and URI) | UI label |
+| --- | --- | --- | --- | --- |
+| **Configuring data loader application** | config | READ | GET /healthcheck | Configuration |
+|  |  | READ | GET swagger-ui.html |  |
+| **Accessing APIs that manage dataloader application configuration limits** | config.limits | CREATE | POST /dataloader/api/{tenantId}/configuration/_limits | Dataload Limits |
+|  |  | UPDATE | PUT /dataloader/api/{tenantId}/configuration/_limits/{id} |  |
+|  |  | DELETE | DELETE /dataloader/api/{tenantId}/configuration/_limits/{id} |  |
+|  |  | READ | GET /dataloader/api/{tenantId}/configuration/_limits/{id} |  |
+|  |  | READ | GET /dataloader/api/{tenantId}/configuration/_limits{?page,size,direction} |  |
+| **Accessing APIs that manage mapping files** | config.mappings | CREATE | POST /dataloader/api/{tenantId}/_mapping | Mappings |
+|  |  | UPDATE | PUT /dataloader/api/{tenantId}/_mapping/{mappingId} |  |
+|  |  | READ | GET /dataloader/api/{tenantId}/_mapping/{mappingId} |  |
+|  |  | READ | GET /dataloader/api/{tenantId}/_mappings{?entityType,createdBy,creationDate,page,size,direction} |  |
+|  |  | DELETE | DELETE /dataloader/api/{tenantId}/_mapping/{mappingId} |  |
+| **Accessing APIs that manage job definitions** | config.project | CREATE | POST /dataloader/api/{tenantId}/project | Job Definitions |
+|  |  | UPDATE | PUT /dataloader/api/{tenantId}/project/{projectId} |  |
+|  |  | DELETE | DELETE /dataloader/api/{tenantId}/project/{projectId} |  |
+|  |  | READ | GET /dataloader/api/{tenantId}/project/{projectId} |  |
+|  |  | READ | GET /dataloader/api/{tenantId}/projects{?status,mappingId,creationDate,page,size,direction} |  |
+| **Accessing APIs that manage jobs created for job definitions** | config.project.jobs | CREATE | POST /dataloader/api/{tenantId}/project/{projectId}/jobs | Jobs |
+|  |  | CREATE | POST /dataloader/api/{tenantId}/project/{projectId}/jobs/run |  |
+|  |  | UPDATE | PUT /dataloader/api/{tenantId}/project/job/{jobId} |  |
+|  |  | READ | GET /dataloader/api/{tenantId}/project/job/{jobId} |  |
+|  |  | READ | GET /dataloader/api/{tenantId}/project/jobs{?projectId,status,creationDate,page,size,direction} |  |
+|  |  | READ | GET /dataloader/api/{tenantId}/project/job/{jobId}/errors{?errorFile} |  |
+|  |  | READ | GET /dataloader/api/{tenantId}/project/{projectId}/jobs{?status,creationDate,page,size,direction} |  |
+|  |  | DELETE | DELETE /dataloader/api/{tenantId}/project/job/{jobId}{?softdelete} |  |
+| **Accessing APIs that manage customer data source information** | config.storage | CREATE | POST /dataloader/api/{tenantId}/storage/{directory}/upload{?replace,projectId} | Storage |
+|  |  | READ | GET /dataloader/api/{tenantId}/storage/{sourceId}/read{?linesToRead} |  |
+|  |  | DELETE | DELETE /dataloader/api/{tenantId}/storage/{sourceId} |  |
+|  |  | CREATE | POST /dataloader/api/{tenantId}/project/data/source |  |
+|  |  | UPDATE | PUT /dataloader/api/{tenantId}/project/data/source/{sourceId} |  |
+|  |  | READ | GET /dataloader/api/{tenantId}/project/data/source/{sourceId} |  |
+|  |  | READ | GET /dataloader/api/{tenantId}/project/data/source{?page,size,direction} |  |
+|  |  | DELETE | DELETE /dataloader/api/{tenantId}/project/data/source/{sourceId} |  |
+|  |  | CREATE | POST /dataloader/api/{tenantId}/storage/_account |  |
+|  |  | UPDATE | PUT /dataloader/api/{tenantId}/storage/_account/{accountId} |  |
+|  |  | READ | GET /dataloader/api/{tenantId}/storage/_account/{accountId} |  |
+|  |  | READ | GET /dataloader/api/{tenantId}/storage/_accounts{?accountType,page,size,direction} |  |
+|  |  | DELETE | DELETE /dataloader/api/{tenantId}/storage/_account/{accountId} |  |
+| **Accessing APIs to execute dataloafer jobs to load data** | tasks.job | CREATE | POST api/v1/jobcontroller/{tenantId}/jobs/{jobId}/launch | Jobs |
+|  |  | CREATE | POST api/v1/jobcontroller/{tenantId}/jobs/{jobId}/resume |  |
 
 
 
