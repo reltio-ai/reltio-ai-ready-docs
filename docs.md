@@ -1,6 +1,6 @@
 # Reltio Documentation
 
-_Generated: 2026-09-29 22:38 UTC_
+_Generated: 2026-09-30 02:24 UTC_
 
 _Topics: 3706_
 
@@ -54853,7 +54853,126 @@ The IDN (integrated delivery network) entity type contains data about the Health
 
 This table identifies the properties for the IDN entity type specified in the Reltio for Life Sciences configuration and lists the attributes preconfigured in the order they appear in the Data Modeler.
 
-*[Embedded content: https://docs.google.com/spreadsheets/d/e/2PACX-1vTbguWN5d4MU8GBa3ep1DYtrn6W0TWpG9cnypnWUBYQ5TFzi3hFaZ3l0TG6Rwxe9_9fUddO_y9rwvXo/pubhtml?gid=237238695&single=true&widget=true&headers=false&chrome=false]*
+**IDN**
+- **URI:** configuration/entityTypes/IDN
+- **Label:** IDN
+- **Description:** An IDN (in the recent past also called integrated health network [IHN] or multihospital system [MHS]) is a network of healthcare providers and facilities within a specific geographic region that offers a full range of healthcare services.
+- **Abstract:** false
+- **Data Label Pattern:** {Name}
+
+
+| Name | Label | Type | Description | Survivorship | Hidden | Important | System | Searchable | Faceted | Lookup Code | URI |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **StatusInformation** | Status Information | Nested | Set of attributes containing the details of the organization's status over time | LUD | false | false |  | true | true |  | configuration/entityTypes/IDN/attributes/StatusInformation |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Status | Status | String | Status of the organization |  | false | false |  | true | true |  | configuration/entityTypes/IDN/attributes/StatusInformation/attributes/Status |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ StatusReason | Status Reason | String | Reason code for the selection of the status |  | false | false |  | true | true |  | configuration/entityTypes/IDN/attributes/StatusInformation/attributes/StatusReason |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ UpdateDate | Update Date | Date | Date on which the organization's status was updated |  | false | false |  | true | true |  | configuration/entityTypes/IDN/attributes/StatusInformation/attributes/UpdateDate |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Comments | Comments | String | Comments related to the organization's status |  | false | false |  | true | true |  | configuration/entityTypes/IDN/attributes/StatusInformation/attributes/Comments |
+| **Name** | Name | String | Name used for the organization | LUD | false | false |  | true |  |  | configuration/entityTypes/IDN/attributes/Name |
+| **DoingBusinessAsName** | Doing Business As Name | String | Doing Business As Name | LUD | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/DoingBusinessAsName |
+| **TradestyleNames** | Tradestyle Names | Nested | List of other names of the organzation, example, Registered Name | Aggregation | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/TradestyleNames |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Type | Type | String | Describes the type of tradestyle name used by the organization |  | false | false |  |  |  | rdm/lookupTypes/OtherNameTypes | configuration/entityTypes/IDN/attributes/TradestyleNames/attributes/Type |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Language | Language | String | Describes the type of tradestyle name used by the organization |  | false | false |  |  |  | rdm/lookupTypes/Languages | configuration/entityTypes/IDN/attributes/TradestyleNames/attributes/Language |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Name | Name | String | The value of the tradestyle name as used by the organization |  | true | false |  |  |  |  | configuration/entityTypes/IDN/attributes/TradestyleNames/attributes/Name |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ DisplaySequence | Display Sequence | Int | Defines the order in which this name is to be displayed relative to others |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/TradestyleNames/attributes/DisplaySequence |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ StartDate | Start Date | Date | The date on which the tradestyle name went into active use |  | false | false |  | true | true |  | configuration/entityTypes/IDN/attributes/TradestyleNames/attributes/StartDate |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ EndDate | End Date | Date | The date on which the tradestyle name ceased being used |  | false | false |  | true | true |  | configuration/entityTypes/IDN/attributes/TradestyleNames/attributes/EndDate |
+| **LegalEntityType** | Legal Entity Type | String | Type of legal entity the company uses to operate |  | false | false |  | true | true |  | configuration/entityTypes/IDN/attributes/LegalEntityType |
+| **LegalStatusCode** | Legal Status Code | String |  |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/LegalStatusCode |
+| **Type** | Type | String | Type of IDN | LUD | false | false |  | true | true |  | configuration/entityTypes/IDN/attributes/Type |
+| **SubType** | SubType | String | Sub Type of IDN | LUD | false | false |  | true | true |  | configuration/entityTypes/IDN/attributes/SubType |
+| **IDNIntegrationLevel** | IDN Integration Level | String | Integration classification level that provides insight into how the Integrated Delivery Network approaches strategic decision making | LUD | false | false |  | true | true | rdm/lookupTypes/IDNIntegrationLevels | configuration/entityTypes/IDN/attributes/IDNIntegrationLevel |
+| **Address** | Address | Reference | An address for the organization | Aggregation | false | false |  | true | true |  | configuration/entityTypes/IDN/attributes/Address |
+| **Phone** | Phone | Nested | Contact details for example, phone, fax number for the organization | Aggregation | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Phone |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Type | Type | String | Type of phone number e.g. Business, Fax, Mobile etc. |  | false | false |  |  | true | rdm/lookupTypes/PhoneTypes | configuration/entityTypes/IDN/attributes/Phone/attributes/Type |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Number | Number | String | Phone number |  | false | false |  |  | true |  | configuration/entityTypes/IDN/attributes/Phone/attributes/Number |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Unreachable | Unreachable | Boolean | Indicator whether the number is reachable or not |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Phone/attributes/Unreachable |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ CountryCode | Country Code | String | Two character Country Code to identify the ISD code of the phone number |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Phone/attributes/CountryCode |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Extension | Extension | String | Extension number to be used if any |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Phone/attributes/Extension |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ FormattedNumber | Formatted Number | String | Number as per the format |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Phone/attributes/FormattedNumber |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Rank | Rank | Int | Rank used to assign priority to a Phone number |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Phone/attributes/Rank |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ AreaCode | Area Code | String | Area Code of the phone number |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Phone/attributes/AreaCode |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ LocalNumber | Local Number | String | Local Number of the phone number without the area code |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Phone/attributes/LocalNumber |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ ValidationStatus | Validation Status | String | Validation Status denoting whether the number is valid or not |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Phone/attributes/ValidationStatus |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ LineType | Line Type | String | Line Type, e.g., FIXED_LINE_OR_MOBILE |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Phone/attributes/LineType |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ FormatMask | Format Mask | String | Format in which the number is saved, for example, (nnn) nnn-nnnn |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Phone/attributes/FormatMask |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ DigitCount | Digit Count | Int | Number of Digits |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Phone/attributes/DigitCount |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ GeoArea | Geo Area | String | Geological area name |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Phone/attributes/GeoArea |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ GeoCountry | Geo Country | String | Geological country name |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Phone/attributes/GeoCountry |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Active | Active | Boolean | Indicator whether phone number is active or not |  | true | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Phone/attributes/Active |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ PrimaryPhoneFlag | Primary Phone Flag | Boolean | Indicator of whether or not the phone number is the primary number at which to reach the organization |  | false | false |  | true | true |  | configuration/entityTypes/IDN/attributes/Phone/attributes/PrimaryPhoneFlag |
+| **Email** | Email | Nested | Contact details of the organization, like Email Address | Aggregation | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Email |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Type | Type | String | Type of Email, for example, Home, Work |  | false | false |  |  |  | rdm/lookupTypes/EmailTypes | configuration/entityTypes/IDN/attributes/Email/attributes/Type |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Email | Email | String | Email address |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Email/attributes/Email |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Domain | Domain | String | Domain of the email address |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Email/attributes/Domain |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ DomainType | Domain Type | String | Domain Type, for example, PUBLIC |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Email/attributes/DomainType |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Username | Username | String | Username part of Email address |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Email/attributes/Username |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Rank | Rank | Int | Rank used to assign priority to a Email |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Email/attributes/Rank |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ ValidationStatus | Validation Status | String | Validation Status denoting whether the Email is valid or not |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Email/attributes/ValidationStatus |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Active | Active | Boolean | Indicator whether the email address is active or not |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Email/attributes/Active |
+| **WebsiteURL** | Website URL | URL | Website URL of the organization | LUD | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/WebsiteURL |
+| **TaxID** | Tax ID | String | Tax Identifier of the organization |  | false | false |  | true | true |  | configuration/entityTypes/IDN/attributes/TaxID |
+| **Identifiers** | Identifiers | Nested | A business identifier associated with this IDN | Aggregation | false | false |  |  | true |  | configuration/entityTypes/IDN/attributes/Identifiers |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Type | Type | String |  |  | false | false |  | true | true |  | configuration/entityTypes/IDN/attributes/Identifiers/attributes/Type |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ ID | ID | String |  |  | false | false |  | true |  |  | configuration/entityTypes/IDN/attributes/Identifiers/attributes/ID |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Status | Status | String |  |  | false | false |  | true | true |  | configuration/entityTypes/IDN/attributes/Identifiers/attributes/Status |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ IssuedBy | Issued By | String |  |  | false | false |  | true | true |  | configuration/entityTypes/IDN/attributes/Identifiers/attributes/IssuedBy |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ IssuedRegion | Issued Region | String |  |  | false | false |  | true | true |  | configuration/entityTypes/IDN/attributes/Identifiers/attributes/IssuedRegion |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ CreatedDate | Created Date | Date |  |  | false | false |  | true | true |  | configuration/entityTypes/IDN/attributes/Identifiers/attributes/CreatedDate |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ IssuedDate | Issued Date | Date |  |  | false | false |  | true | true |  | configuration/entityTypes/IDN/attributes/Identifiers/attributes/IssuedDate |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ ActivationDate | Activation Date | Date |  |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Identifiers/attributes/ActivationDate |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ DeactivationReason | Deactivation Reason | String |  |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Identifiers/attributes/DeactivationReason |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ DeactivationDate | Deactivation Date | Date |  |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Identifiers/attributes/DeactivationDate |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ ReactivationDate | Reactivation Date | Date |  |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Identifiers/attributes/ReactivationDate |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ UpdateDate | Update Date | Date |  |  | false | false |  | true | true |  | configuration/entityTypes/IDN/attributes/Identifiers/attributes/UpdateDate |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Rank | Rank | Int |  |  | false | false |  | true | true |  | configuration/entityTypes/IDN/attributes/Identifiers/attributes/Rank |
+| **OrganizationDetail** | Organization Detail | Nested | Additional details about this organization | LUD | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/OrganizationDetail |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ OrganizationSummaryText | Organization Summary Text | Blob | Text that records a brief statement or account of this organization |  | false | false |  | true | true |  | configuration/entityTypes/IDN/attributes/OrganizationDetail/attributes/OrganizationSummaryText |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ OperatingStatus | Operating Status | String | Organization's functional state / trading status, e.g. active, out of business, dormant. |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/OrganizationDetail/attributes/OperatingStatus |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ OperatingStatusComment | Operating Status Comment | String | Operating Status Comment |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/OrganizationDetail/attributes/OperatingStatusComment |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ OwnershipStatus | Ownership Status | String | Text that describes the type of controlling ownership, e.g., publicly owned, privately owned, state owned. |  | false | false |  | true | true |  | configuration/entityTypes/IDN/attributes/OrganizationDetail/attributes/OwnershipStatus |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ OwnershipType | Ownership Type | String |  |  | false | false |  | true | true |  | configuration/entityTypes/IDN/attributes/OrganizationDetail/attributes/OwnershipType |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ ControlOwnershipDate | Ownership Date | Date | The date when the current owners took over this business |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/OrganizationDetail/attributes/ControlOwnershipDate |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ EmailDomain | Email Domain | String | Email domain used by this organization |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/OrganizationDetail/attributes/EmailDomain |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ StartYear | Start Year | Int | Start Year |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/OrganizationDetail/attributes/StartYear |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ EndYear | End Year | Int | End Year |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/OrganizationDetail/attributes/EndYear |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ IPOYear | IPO Year | Int | IPO Year |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/OrganizationDetail/attributes/IPOYear |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ MemberRole | Member Role | String | Member Role |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/OrganizationDetail/attributes/MemberRole |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ FranchiseOperationType | Franchise Operation Type | String | Franchise Operation Type |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/OrganizationDetail/attributes/FranchiseOperationType |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Standalone | Standalone | Boolean | When 'true' indicates that this organization is not a member of a legal family tree. This means it cannot play the role of a subsidiary, parent, headquarters or branch; i.e., FamilyTreeMemberRoleText cannot be present. When 'false' indicates that this organization is a member of a legal family tree. |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/OrganizationDetail/attributes/Standalone |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ MarketabilityIndicator | Marketability Indicator | String | Marketability Indicator |  | true | false |  |  |  |  | configuration/entityTypes/IDN/attributes/OrganizationDetail/attributes/MarketabilityIndicator |
+| **IsSubsidiary** | Is Subsidiary | String | Is Subsidiary indicator | LUD | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/IsSubsidiary |
+| **VendorVerificationDate** | Vendor Verification Date | Date | The date and time when this profile was last matched or enriched from an external vendor source | LUD | false | false |  | false |  |  | configuration/entityTypes/IDN/attributes/VendorVerificationDate |
+| **VendorVerificationStatus** | Vendor Verification Status | String | The status value indicates the results of the matching and enrichment from an external source. Matching statuses are Match, No Match, and Match Error. Data enrichment statuses are Enriched, and Enrichment Error | LUD | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/VendorVerificationStatus |
+| **LegalStatusDescription** | Legal Status Description | String | Legal Status Description | LUD | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/LegalStatusDescription |
+| **Industry** | Industry | String | Industry information of this organization | Aggregation | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Industry |
+| **Specialities** | Specialty | Nested | Specific medical specialty of the IDN | Aggregation | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Specialities |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ SpecialtyType | Specialty Type | String | Specific medical specialty of the GPO |  | false | false |  | true | true | rdm/lookupTypes/SpecialtyTypes | configuration/entityTypes/IDN/attributes/Specialities/attributes/SpecialtyType |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Specialty | Specialty | String | Specific medical specialty of the IDN |  | false | false |  | true | true | rdm/lookupTypes/SpecialtyCodes | configuration/entityTypes/IDN/attributes/Specialities/attributes/Specialty |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Group | Group | String | Specialty Group |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Specialities/attributes/Group |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ SpecialtyDetail | Specialty Detail | String | Specialty Detail |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Specialities/attributes/SpecialtyDetail |
+| **Taxonomy** | Taxonomy | Nested | Taxonomy related to IDN | Aggregation | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/Taxonomy |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Taxonomy | Taxonomy | String | A unique 10-character code issued by CMS that designates organization's classification and specialization |  | false | false |  |  |  | rdm/lookupTypes/TaxonomyCodes | configuration/entityTypes/IDN/attributes/Taxonomy/attributes/Taxonomy |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Type | Type | String | Type of Taxonomy, for example, Primary |  | false | false |  | true | true | rdm/lookupTypes/TaxonomyTypes | configuration/entityTypes/IDN/attributes/Taxonomy/attributes/Type |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ ProviderType | Provider Type | String | Taxonomy Provider Type |  | false | false |  | true | true |  | configuration/entityTypes/IDN/attributes/Taxonomy/attributes/ProviderType |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Classification | Classification | String | Classification of the taxonomy as assigned my CMS |  | false | false |  | true | true |  | configuration/entityTypes/IDN/attributes/Taxonomy/attributes/Classification |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Specialization | Specialization | String | Specialization of the taxonomy |  | false | false |  | true | true |  | configuration/entityTypes/IDN/attributes/Taxonomy/attributes/Specialization |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Priority | Priority | String | Priority of this Taxonomy |  | false | false |  | true | true |  | configuration/entityTypes/IDN/attributes/Taxonomy/attributes/Priority |
+| **DEA** | DEA Details | Nested | DEA Registration Details | Aggregation | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/DEA |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Number | Number | String | DEA Registration Number |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/DEA/attributes/Number |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ BusinessActivity | Business Activity | String | Business Activity |  | false | false |  | true | true | rdm/lookupTypes/BusinessActivityCodes | configuration/entityTypes/IDN/attributes/DEA/attributes/BusinessActivity |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ BusinessActivityPlusSubCode | Business Activity SubCode | String | Business Activity SubCode |  | false | false |  |  |  | rdm/lookupTypes/BusinessActivitySubCodes | configuration/entityTypes/IDN/attributes/DEA/attributes/BusinessActivityPlusSubCode |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ BusinessActivityDescription | DEA Business Activity Description | String | Business Activity Description |  | false | false |  |  |  | rdm/lookupTypes/BusinessActivityDescription | configuration/entityTypes/IDN/attributes/DEA/attributes/BusinessActivityDescription |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ PaymentIndicator | Payment Indicator | String | Payment Indicator |  | false | false |  |  |  | rdm/lookupTypes/PaymentIndicatorCodes | configuration/entityTypes/IDN/attributes/DEA/attributes/PaymentIndicator |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Status | Status | String | DEA Registration Status |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/DEA/attributes/Status |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ ExpirationDate | Expiration Date | Date | DEA Registration expiration date |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/DEA/attributes/ExpirationDate |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ DrugSchedule | Drug Schedule | String | Drug Schedule |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/DEA/attributes/DrugSchedule |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ DrugScheduleDescription | Drug Schedule Description | String | Drug Schedule Description |  | false | false |  |  |  |  | configuration/entityTypes/IDN/attributes/DEA/attributes/DrugScheduleDescription |
+| **StaffedBedSize** | Staffed Bed Size | Int | Staffed bed size | LUD | false | false |  | false | false |  | configuration/entityTypes/IDN/attributes/StaffedBedSize |
+| **MemberHospitals** | Total Number of Member Hospitals | Int | Total Number of Member Hospitals | LUD | false | false |  | false | false |  | configuration/entityTypes/IDN/attributes/MemberHospitals |
+| **NoOfDischarges** | Number of Discharges | Int | Number of Discharges | LUD | false | false |  | false | false |  | configuration/entityTypes/IDN/attributes/NoOfDischarges |
+| **NPR** | Net Patient Revenue | String | Net Patient Revenue | LUD | false | false |  | false | false |  | configuration/entityTypes/IDN/attributes/NPR |
+| **AnnualRevenue** | Annual Revenue | String | Annual Revenue | LUD | false | false |  | false | false |  | configuration/entityTypes/IDN/attributes/AnnualRevenue |
 
 > **Note:** On the table above, the top level attributes are represented in bold.
 
@@ -56696,7 +56815,23 @@ Relationship types contain metadata properties and attributes that define the co
 
 This table identifies the preconfigured Investigator relationship type that comes with the Life Sciences velocity pack. Use this relationship type when you want to identify connections between HCP and Clinical Study entity types.
 
-*[Embedded content: https://docs.google.com/spreadsheets/d/e/2PACX-1vTbguWN5d4MU8GBa3ep1DYtrn6W0TWpG9cnypnWUBYQ5TFzi3hFaZ3l0TG6Rwxe9_9fUddO_y9rwvXo/pubhtml?gid=717517231&single=true&widget=true&headers=false&chrome=false]*
+**Investigator**
+- **URI:** configuration/relationTypes/HCPtoStudy
+- **Label:** Investigator
+- **Description:** Researcher involved in a clinical study.
+- **Type:** 
+- **Direction:** directed
+- **Implicit:** false
+- **Start Object:** configuration/entityTypes/HCP
+- **Start Label:** associated HCP
+- **End Object:** configuration/entityTypes/ClinicalStudy
+- **End Label:** associated Study
+
+
+| Name | Label | Type | Description | Survivorship | Hidden | Important | System | Searchable | Faceted | Lookup Code | URI |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **Role** | Investigator Role | String | A researcher involved in a clinical study. Related terms include site principal investigator, site sub-investigator, study chair, study director, and study principal investigator. |  | false | false |  |  |  | rdm/lookupTypes/InvestigatorRoles | configuration/relationTypes/HCPtoStudy/attributes/Role |
+| **ActiveFlag** | Active Flag | Boolean |  |  | false | false |  |  |  |  | configuration/relationTypes/HCPtoStudy/attributes/ActiveFlag |
 
 > **Note:** On the table above, the top level attributes are represented in bold.
 
@@ -57007,7 +57142,17 @@ Relationship types contain metadata properties and attributes that define the co
 
 This table identifies the preconfigured Package manufacturer relationship type that comes with the Life Sciences velocity pack. Use this relationship type when you want to identify connections between Packaged medicinal product and Organization entity types.
 
-*[Embedded content: https://docs.google.com/spreadsheets/d/e/2PACX-1vTbguWN5d4MU8GBa3ep1DYtrn6W0TWpG9cnypnWUBYQ5TFzi3hFaZ3l0TG6Rwxe9_9fUddO_y9rwvXo/pubhtml?gid=1271129225&single=true&widget=true&headers=false&chrome=false]*
+**Pack Manufacturer**
+- **URI:** configuration/relationTypes/PackageManufacturer
+- **Label:** Manufacturer
+- **Description:** Manufacturer of this package type
+- **Type:** 
+- **Direction:** directed
+- **Implicit:** false
+- **Start Object:** configuration/entityTypes/PackagedMedicinalProduct
+- **Start Label:** Manufactured by
+- **End Object:** configuration/entityTypes/Organization
+- **End Label:** Manufacturer for
 
 > **Note:** On the table above, the top level attributes are represented in bold.
 
@@ -57469,7 +57614,22 @@ Relationship types contain metadata properties and attributes that define the co
 
 This table identifies the preconfigured Reference product relationship type that comes with the Life Sciences velocity pack. Use this relationship type when you want to identify connections between Medicinal Product and Medicinal Product entity types.
 
-*[Embedded content: https://docs.google.com/spreadsheets/d/e/2PACX-1vTbguWN5d4MU8GBa3ep1DYtrn6W0TWpG9cnypnWUBYQ5TFzi3hFaZ3l0TG6Rwxe9_9fUddO_y9rwvXo/pubhtml?gid=1406471138&single=true&widget=true&headers=false&chrome=false]*
+**Reference Product**
+- **URI:** configuration/relationTypes/ReferenceProduct
+- **Label:** Reference Product
+- **Description:** Reference to another product, e.g. for linking authorised to investigational product
+- **Type:** 
+- **Direction:** bidirectional
+- **Implicit:** false
+- **Start Object:** configuration/entityTypes/Drug
+- **Start Label:** Reference to
+- **End Object:** configuration/entityTypes/Drug
+- **End Label:** 
+
+
+| Name | Label | Type | Description | Survivorship | Hidden | Important | System | Searchable | Faceted | Lookup Code | URI |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **ReferenceType** | Type | String | The type of relationship, for instance branded to generic or virtual to actual product |  | false | false |  | true |  |  | configuration/relationTypes/ReferenceProduct/attributes/ReferenceType |
 
 > **Note:** On the table above, the top level attributes are represented in bold.
 
@@ -57791,7 +57951,17 @@ Relationship types contain metadata properties and attributes that define the co
 
 This table identifies the preconfigured Substance supplier relationship type that comes with the Life Sciences velocity pack. Use this relationship type when you want to identify connections between Substance and Organization entity types.
 
-*[Embedded content: https://docs.google.com/spreadsheets/d/e/2PACX-1vTbguWN5d4MU8GBa3ep1DYtrn6W0TWpG9cnypnWUBYQ5TFzi3hFaZ3l0TG6Rwxe9_9fUddO_y9rwvXo/pubhtml?gid=827530791&single=true&widget=true&headers=false&chrome=false]*
+**Substance Supplier**
+- **URI:** configuration/relationTypes/SubstanceSupplier
+- **Label:** Supplier
+- **Description:** An entity that is the source for the substance. It may be different from the manufacturer
+- **Type:** 
+- **Direction:** directed
+- **Implicit:** false
+- **Start Object:** configuration/entityTypes/Substance
+- **Start Label:** Supplied by
+- **End Object:** configuration/entityTypes/Organization
+- **End Label:** Supplier of
 
 > **Note:** On the table above, the top level attributes are represented in bold.
 
