@@ -1,8 +1,8 @@
 # Reltio Documentation
 
-_Generated: 2026-09-30 02:24 UTC_
+_Generated: 2026-10-02 02:24 UTC_
 
-_Topics: 3706_
+_Topics: 3725_
 
 ---
 
@@ -742,7 +742,7 @@ When you need to indicate guidance or limitations for system performance, insert
 
 # Notes for feature status and availability
 
-Insert these reusable notes into topics requiring EA, Preview, or deprecation status or OOB vs add-on subscription availabilitly.
+Insert these reusable notes into topics requiring EA, Preview, or deprecation status or OOB vs add-on subscription availability.
 
 ## Release availability
 
@@ -757,6 +757,7 @@ When you need to indicate a feature's status, such as EA, Preview, or Deprecatio
 | **Attention:** Take a sneak peek at this new feature to be included in our upcoming GA release. For more information on our Preview release procedure, see topic [Reltio release process](https://docs.reltio.com/en/reltio/whats-in-the-box-at-a-glance/tenants-at-a-glance/tenant-operation/reltio-release-process?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). | note_preview_release |
 | **Attention:** This feature is available to limited users testing our new API Experience. Other users are welcome to take a look as this content evolves over the course of the limited testing program. Meanwhile, you can find our current API content in section [About developer resources](https://docs.reltio.com/en/developer-resources/about-developer-resources?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). | note_api_beta |
 | **Note:** You can obtain the sample code for building LCAs by cloning the repository directly. | note_LCA_repo_availability |
+| **Important:** This documentation applies only to Reltio Data Sharing subscriptions created before September 21, 2026. If your subscription was created on or after September 21, 2026, refer to the [Reltio data sharing - essentials](https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) documentation instead. | note_data_sharing |
 
 ## OOB or Add-on features
 
@@ -176172,6 +176173,8 @@ POST /reltio/api/{tenantId}/matching/accuracy/labels
 
 Saves one or more match labels for reviewed entity pairs.
 
+> **Note:** When you save labels in a tenant for the first time, the save request remains pending while resources are allocated for the labeling data. Wait for the request to complete before saving additional labels. After the initial resource allocation is complete, subsequent save requests complete without waiting for resource allocation..
+
 **Request body example**
 
 ```
@@ -223830,6 +223833,1377 @@ A dataset or view with current winner entity references in both start and end ob
 
 ---
 
+# Best practices for Reltio data sharing with Microsoft Fabric - essentials
+
+> **Section:** Applications > Data Integrations > Reltio data sharing - essentials > Reltio data sharing with Microsoft Fabric - essentials
+
+
+**Source:** https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/reltio-data-sharing-with-microsoft-fabric---essentials/best-practices-for-reltio-data-sharing-with-microsoft-fabric---essentials?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** Microsoft Fabric data share best practices, Data Share usage guidelines, streaming tables querying, supported data sets, analytics workloads, data engineering workflows, BI and reporting integration, ML pipelines, landing tables, 490 type limit, hierarchical All Values schema, four hour data synchronization, Reltio data sharing with Microsoft Fabric - essentials
+
+
+Learn about recommended practices for using streaming tables in Reltio data sharing with Microsoft Fabric - essentials so that you can query the supported tables and avoid unsupported downstream usage.
+
+## Recommended practices
+
+## Use data shares for analytics and data engineering workloads
+
+Use data shares for downstream systems such as BI, reporting, and ML pipelines.
+
+## Query supported tables
+
+Use the following tables to query data.
+
+- 
+
+  `EXTERNAL_entity_<entity_type>_Shortcut`
+- 
+
+  `EXTERNAL_relation_<relation_type>_Shortcut`
+- 
+
+  `EXTERNAL_interaction_<interaction_type>_Shortcut`
+- 
+
+  `EXTERNAL_links_Shortcut`
+- 
+
+  `EXTERNAL_matches_Shortcut`
+- 
+
+  `EXTERNAL_merges_Shortcut`
+
+These tables use the hierarchical All Values schema, which includes all values available for each attribute.
+
+> **Note:** Data synchronization is triggered every four hours. The time required for updates to become available in the shared tables depends on the volume of data to be processed and the processing duration.
+
+## Practices to avoid
+
+## Avoid using data shares for non-analytics downstream systems
+
+Do not use data shares to build downstream systems for non-analytics use cases.
+
+
+
+---
+
+# Configure Reltio data sharing with Databricks - essentials
+
+> **Section:** Applications > Data Integrations > Reltio data sharing - essentials > Reltio data sharing with Databricks - essentials
+
+
+**Source:** https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/reltio-data-sharing-with-databricks---essentials/configure-reltio-data-sharing-with-databricks---essentials?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** configure data sharing databricks, Reltio Data Sharing Essentials with Databricks, reltio data share adapter, create databricks delta share, reltio console data share setup, api based configuration databricks, delta sharing identifier databricks, data pipeline admin role, one share per tenant, test and production tenants
+
+
+Learn how to configure Reltio data sharing with Databricks - essentials using the Console UI or REST APIs.
+
+Reltio data sharing with Databricks - essentials shares your tenant data with a Databricks workspace through Open Sharing.
+
+Before configuring a data share with Databricks, confirm that your tenant is eligible and that you have the required configuration details and privileges.
+
+| Prerequisite | Required information |
+| --- | --- |
+| Reltio tenant | Tenant ID and environment name |
+| Supported tenant types | Test or production |
+| Data sharing subscription | Active subscription for Reltio data sharing with Databricks - essentials |
+| Databricks Open Sharing Identifier | Open Sharing identifier of the target Databricks environment |
+| User permissions | `ROLE_DATA_PIPELINE_ADMIN` or equivalent |
+
+
+
+
+
+> **Note:** Each tenant supports a single active All Values data share only.
+
+## Configuration methods for Reltio data sharing with Databricks - essentials
+
+To create a new Databricks data share, choose the method that best fits your environment:
+
+- [Configure Reltio data sharing with Databricks - essentials using Console UI](https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/reltio-data-sharing-with-databricks---essentials/configure-reltio-data-sharing-with-databricks---essentials/configure-reltio-data-sharing-with-databricks---essentials-using-console-ui?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs): Uses the Console UI for guided setup.
+- [Configure Reltio data sharing with Databricks - essentials using APIs](https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/reltio-data-sharing-with-databricks---essentials/configure-reltio-data-sharing-with-databricks---essentials/configure-reltio-data-sharing-with-databricks---essentials-using-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs): Uses REST APIs to programmatically configure the share.
+
+
+
+---
+
+# Configure Reltio data sharing with Microsoft Fabric - essentials
+
+> **Section:** Applications > Data Integrations > Reltio data sharing - essentials > Reltio data sharing with Microsoft Fabric - essentials
+
+
+**Source:** https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/reltio-data-sharing-with-microsoft-fabric---essentials/configure-reltio-data-sharing-with-microsoft-fabric---essentials?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** configure data sharing microsoft fabric, Reltio Data Sharing Essentials with Microsoft Fabric, reltio console data share setup, ui based configuration microsoft fabric, api based configuration fabric integration, check prerequisites for data sharing, subscription required for data sharing, recipient email for fabric data share, tenant admin configure data sharing, one share per tenant, test and production tenants, integration, governance, analytics
+
+
+Learn how to configure Reltio data sharing with Microsoft Fabric - essentials using the Console UI or REST APIs.
+
+Reltio data sharing with Microsoft Fabric - essentials shares your tenant data with a Microsoft Fabric Lakehouse.
+
+Before configuring Reltio data sharing with Microsoft Fabric - essentials, confirm that your tenant is eligible and that you have the required configuration details and privileges.
+
+| Prerequisite | Required information |
+| --- | --- |
+| Reltio tenant | Tenant ID and environment name |
+| Supported tenant types | Test or production |
+| Data sharing subscription | Active subscription for Reltio data sharing with Microsoft Fabric - essentials |
+| Fabric tenant details | Region and availability zone of the Fabric instance |
+| Recipient information | Email address of Fabric recipient for the data share |
+| Permissions | `ROLE_DATA_PIPELINE_ADMIN` or equivalent |
+
+
+
+
+
+> **Note:** Each tenant supports a single active All Values data share only.
+
+## Configuration methods for Reltio data sharing with Microsoft Fabric - essentials
+
+To create a new Microsoft Fabric data share, choose the method that best fits your environment: 
+
+- 
+
+  [Configure Reltio data sharing with Microsoft Fabric - essentials using Console UI](https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/reltio-data-sharing-with-microsoft-fabric---essentials/configure-reltio-data-sharing-with-microsoft-fabric---essentials/configure-reltio-data-sharing-with-microsoft-fabric---essentials-using-console-ui?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs): Uses the Console UI for guided setup.
+- 
+
+  [Configure Reltio data sharing with Microsoft Fabric - essentials using APIs](https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/reltio-data-sharing-with-microsoft-fabric---essentials/configure-reltio-data-sharing-with-microsoft-fabric---essentials/configure-reltio-data-sharing-with-microsoft-fabric---essentials-using-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs): Uses REST APIs to programmatically configure the share.
+
+
+
+---
+
+# Monitoring data share for Reltio data sharing - essentials
+
+> **Section:** Applications > Data Integrations > Reltio data sharing - essentials
+
+
+**Source:** https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/monitoring-data-share-for-reltio-data-sharing---essentials?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** monitor data sharing in reltio, Reltio Data Sharing Essentials monitoring, data volume processed per data share, messages sent across data shares, track data share activity, confirm data sharing is working, data sharing monitoring, data volume, messages sent, data share
+
+
+Learn about the data volume and messages processed for your data shares.
+
+Monitoring data share shows the data volume and the CRUD events processed within a time period for the data shares set up in your Reltio tenant. Review these [measures](#concept-9408/section-7243) to monitor the throughput of the data shared with your cloud data warehouse.
+
+To see these measures for a specific data share, [view data sharing activity](https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/monitoring-data-share-for-reltio-data-sharing---essentials/view-share-activity-in-reltio-data-sharing---essentials?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) in the console.
+
+## Monitoring measures
+
+Monitoring covers two measures of data sharing activity: 
+
+- Data volume processed: The amount of data, in bytes, processed for a single data share. The volume indicates whether a specific data share is active and how much data is shared within a time period.
+- Messages sent: The total number of messages processed across all outbound data shares and pipelines in your tenant. Each message represents a CRUD event processed for your data. The count indicates the overall throughput of your data sharing.
+
+
+
+---
+
+# Reltio data sharing - essentials
+
+> **Section:** Applications > Data Integrations
+
+
+**Source:** https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** Reltio Data Sharing Essentials, zero copy integrations overview, use zero copy in reltio, how to enable zero copy, cloud data warehouse governance, share data with databricks and microsoft fabric, four hour data refresh, schema evolution data share, test and production tenants, integration, governance, analytics, ai/ml
+
+
+Learn about Reltio data sharing - essentials and how it delivers data from the Reltio Context Intelligence Platform to your cloud data warehouses.
+
+Reltio data sharing - essentials delivers data from the Reltio Context Intelligence Platform directly to your cloud data warehouses for analytics, business intelligence, and AI/ML workloads.
+
+> **Important:** Reltio Data Sharing - essentials is supported only for Reltio non-BCE tenants. It is not supported for Reltio Business Critical Edition (BCE) tenants.
+
+The following roles use Reltio data sharing - essentials:
+
+- 
+
+
+- 
+
+
+- 
+
+
+
+## How Reltio data sharing - essentials works
+
+Reltio data sharing - essentials securely makes trusted data from the Reltio Context Intelligence Platform available to supported cloud data platforms without requiring traditional data movement or duplication. By eliminating the need for ETL/ELT-based data replication, it helps reduce operational complexity and data redundancy while supporting security and governance requirements. Data synchronization is triggered every four hours, enabling Reltio data to be used for advanced analytics, business intelligence, and AI/ML workloads.
+
+*Image: reltio_data_sharing_essentials.png*
+
+## Benefits of data sharing - essentials
+
+Delivering trusted data to cloud data platforms can introduce challenges related to data movement, operational complexity, cost, and governance. Reltio data sharing - essentials addresses these challenges by:
+
+- 
+
+  Enabling timely access to Reltio data for analytics, business intelligence, and AI/ML workloads, with data synchronization triggered every four hours.
+- 
+
+  Reducing infrastructure and storage overhead by minimizing the need to move and maintain duplicate copies of data.
+- 
+
+  Supporting security, governance, and compliance through controlled and governed access to shared data.
+- 
+
+  Simplifying downstream consumption by providing Reltio data in a consumption-optimized format.
+
+## When to use data sharing - essentials
+
+- 
+
+  Make trusted Reltio data available directly in supported cloud data platforms, with data synchronization triggered every four hours.
+- 
+
+  Minimize data movement and duplication while enabling downstream consumption of Reltio data.
+- 
+
+  Enable analytics, business intelligence, AI/ML, and reporting use cases using trusted data from the Reltio Context Intelligence Platform.
+
+## Products that include Reltio data sharing - essentials
+
+- Reltio Multidomain MDM
+- Reltio Intelligent 360
+
+## Schema evolution in data sharing - essentials
+
+Schema evolution in Reltio data sharing - essentials refers to additive changes to the structure of your data, such as adding new attributes, entity types, relationship types, or interaction types. When you make an additive change to the structure of your data in Reltio, Reltio automatically synchronizes it to the data share and creates new columns or tables as needed.
+
+Data sharing supports only the following new additions:
+
+- 
+
+  Attributes
+- 
+
+  Entity types
+- 
+
+  Relationship types
+- 
+
+  Interaction types
+
+Reltio data sharing - essentials does not support automatic schema evolution in the case of deleting an attribute or changing the data type of an existing attribute. When you make one of these changes in Reltio, Reltio does not apply it to the data share. The existing tables keep the deleted attributes. A change in data type might affect the data share and requires recreation of the data share.
+
+
+
+---
+
+# Reltio data sharing with Databricks - essentials
+
+> **Section:** Applications > Data Integrations > Reltio data sharing - essentials
+
+
+**Source:** https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/reltio-data-sharing-with-databricks---essentials?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** reltio data sharing essentials databricks, databricks zerocopy integration, delta sharing reltio databricks, zero copy data exchange, configure data sharing with databricks, analytics integration databricks, data lakehouse integration, delta lake open table format, hierarchical schema all values, four hour data refresh
+
+
+Learn about Reltio data sharing with Databricks - essentials and how it shares data with your Databricks Unity Catalog using Open Sharing.
+
+Reltio data sharing with Databricks - essentials delivers data directly into your Databricks Unity Catalog using Open Sharing.
+
+The following roles use Reltio data sharing with Databricks:
+
+- 
+
+
+- 
+
+
+-
+
+## Reltio data sharing with Databricks - essentials overview
+
+Reltio data sharing with Databricks - essentials provides a single, governed data share that makes trusted Reltio data available directly in Databricks Unity Catalog without physically moving or duplicating the data. Data synchronization is triggered every four hours, with the time required for updates to become available depending on the volume of data to be processed and the processing duration. This provides a predictable and efficient foundation for analytics, machine learning, AI, and other downstream data workloads.
+
+*Image: reltio_data_sharing_essentials_databricks.png*
+
+## Benefits of Reltio data sharing with Databricks - essentials
+
+Reltio data sharing with Databricks - essentials enables you to:
+
+- 
+
+  Eliminate ETL complexity by accessing Reltio data directly in Databricks without manually moving or replicating it, reducing operational overhead.
+- 
+
+  Access regularly synchronized data for analytics and business intelligence, with data synchronization triggered every four hours. The time required for updates to become available depends on the volume of data to be processed and the processing duration.
+- 
+
+  Maintain security, compliance, and governance while accessing Reltio data through a governed sharing mechanism.
+- 
+
+  Reduce data redundancy and associated costs by eliminating the need to maintain multiple copies of the same data for downstream consumption.
+- 
+
+  Access comprehensive Reltio data through the All Values schema, including operational and non-operational values for each attribute, with crosswalks data lineage supporting richer analytics and downstream use cases.
+
+## When to use Reltio data sharing with Databricks - essentials
+
+Consider Reltio data sharing with Databricks - essentials when you need to: 
+
+- 
+
+  Make trusted Reltio data available in Databricks for analytics, business intelligence, AI, and machine learning use cases.
+- 
+
+  Minimize data movement to support your organization's data security, governance, and compliance requirements.
+- 
+
+  Integrate directly with Databricks Unity Catalog for governed discovery and consumption of shared Reltio data.
+- 
+
+  Access key Reltio data objects in Databricks, including entities, relationships, interactions, matches, merges, and links.
+
+## Products that include Reltio data sharing with Databricks - essentials
+
+- Reltio Multidomain MDM
+- Reltio Intelligent 360
+
+Create data shares in **Console** under **Data Sharing**. Learn how the integration works in [Reltio data sharing with Databricks - essentials architecture](https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/reltio-data-sharing-with-databricks---essentials/reltio-data-sharing-with-databricks---essentials-architecture?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), then follow [Configure Reltio data sharing with Databricks - essentials](https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/reltio-data-sharing-with-databricks---essentials/configure-reltio-data-sharing-with-databricks---essentials?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) to set up a data share.
+
+
+
+---
+
+# Reltio data sharing with Databricks - essentials architecture
+
+> **Section:** Applications > Data Integrations > Reltio data sharing - essentials > Reltio data sharing with Databricks - essentials
+
+
+**Source:** https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/reltio-data-sharing-with-databricks---essentials/reltio-data-sharing-with-databricks---essentials-architecture?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** microsoft fabric data share architecture, reltio fabric adapter architecture, delta lake table format fabric, onelake lakehouse integration, reltio data pipeline service, fabric workspace data sharing, power bi copilot consumption, four hour data refresh
+
+
+Learn about the Reltio data sharing with Databricks - essentials architecture and how it shares Delta Lake-formatted data with your Databricks Unity Catalog.
+
+Reltio data sharing with Databricks - essentials automates the infrastructure required to prepare and share Delta Lake-formatted Reltio data with your Databricks Unity Catalog using Open Sharing. The Reltio Databricks architecture provides secure and governed access to trusted Reltio data for analytics, business intelligence, and AI/ML workloads, without requiring customers to move or maintain separate copies of the shared data.
+
+The following roles use the Reltio data sharing with Databricks - essentials: 
+
+- 
+
+
+- 
+
+
+-
+
+The following diagram shows how Reltio shares data with your Databricks workspace:
+
+*Image: reltio_data_sharing_essentials_image_2.png*
+
+## How the Reltio data sharing with Databricks - essentials architecture works
+
+The diagram above illustrates how data flows from the Reltio Context Intelligence Platform to your Databricks environment:
+
+- 
+
+  Data Pipeline Service in Reltio: Data from the Reltio Context Intelligence Platform, including entities, relationships, and interactions, is processed by the Data Pipeline Service, which queues, stages, and prepares the data for sharing.
+- 
+
+  Data sharing with Databricks: The data is transformed into the open Delta Lake table format and securely shared using the sharing identifier provided during data share setup. With Reltio data sharing with Databricks - essentials, data synchronization is triggered every four hours. The time required for updates to become available depends on the volume of data to be processed and the processing duration.
+- 
+
+  Consumption in Databricks: Once the shared data is available through Unity Catalog, you can use Databricks services and applications to query, analyze, govern, and consume the data for downstream use cases.
+
+## End-to-end data sharing with Databricks
+
+With this architecture, your tenant receives Reltio data directly in your own Databricks Unity Catalog. You can use the data for analytics, reporting, and compliance without additional integration work.
+
+To set up a data share, see [Configure Reltio data sharing with Databricks - essentials](https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/reltio-data-sharing-with-databricks---essentials/configure-reltio-data-sharing-with-databricks---essentials?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+
+
+---
+
+# Reltio data sharing with Microsoft Fabric - essentials
+
+> **Section:** Applications > Data Integrations > Reltio data sharing - essentials
+
+
+**Source:** https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/reltio-data-sharing-with-microsoft-fabric---essentials?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** reltio data sharing essentials microsoft fabric, microsoft fabric zerocopy integration, share data with microsoft fabric lakehouse, enable data governance in fabric, when to use microsoft fabric sharing, configure data sharing in console, onelake storage, hierarchical schema all values, four hour data refresh, integration, governance, analytics, ai/ml
+
+
+Learn about Reltio data sharing with Microsoft Fabric - essentials and how it shares data with your Microsoft Fabric Lakehouse.
+
+Reltio data sharing with Microsoft Fabric - essentials shares data directly with your Microsoft Fabric Lakehouse.
+
+The following roles use Reltio data sharing with Microsoft Fabric- essentials:
+
+- 
+
+
+- 
+
+
+-
+
+## Reltio data sharing with Microsoft Fabric - essentials overview
+
+Reltio data sharing with Microsoft Fabric - essentials provides a single, governed data share that makes trusted Reltio data available directly in your Microsoft Fabric Lakehouse without physically moving or duplicating the data. Data synchronization is triggered every four hours, with the time required for updates to become available depending on the volume of data to be processed and the processing duration. This provides a predictable and efficient foundation for analytics, machine learning, AI, and other downstream data workloads.
+
+*Image: reltio_data_sharing_essentials_MS_fabric.png*
+
+## Benefits of Reltio data sharing with Microsoft Fabric - essentials
+
+Reltio data sharing with Microsoft Fabric - essentials enables you to:
+
+- 
+
+  Eliminate ETL complexity by accessing Reltio data directly in Microsoft Fabric without manually moving or replicating it, reducing operational overhead.
+- 
+
+  Access regularly synchronized data for analytics and business intelligence, with data synchronization triggered every four hours. The time required for updates to become available depends on the volume of data to be processed and the processing duration.
+- 
+
+  Maintain security, compliance, and governance while accessing Reltio data through a governed sharing mechanism.
+- 
+
+  Reduce data redundancy and associated costs by eliminating the need to maintain multiple copies of the same data for downstream consumption.
+- 
+
+  Access comprehensive Reltio data through the All Values schema, including operational and non-operational values for each attribute, with crosswalks data lineage supporting richer analytics and downstream use cases.
+
+## When to use Reltio data sharing with Microsoft Fabric - essentials
+
+Consider Reltio data sharing with Microsoft Fabric - essentials when you need:
+
+- 
+
+  Make trusted Reltio data available in Microsoft Fabric for analytics, business intelligence, AI, and machine learning use cases.
+- 
+
+  Minimize data movement to support your organization's data security, governance, and compliance requirements.
+- 
+
+  Integrate directly with Microsoft Fabric for governed discovery and consumption of shared Reltio data.
+- 
+
+  Access key Reltio data objects in Microsoft Fabric, including entities, relationships, interactions, matches, merges, and links.
+
+## Products that include Reltio data sharing with Microsoft Fabric - essentials
+
+- Reltio Multidomain MDM
+- Reltio Intelligent 360
+
+Create data shares in **Console** under **Data Sharing**. Learn how the integration works in [Reltio data sharing with Microsoft Fabric - essentials architecture](https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/reltio-data-sharing-with-microsoft-fabric---essentials/reltio-data-sharing-with-microsoft-fabric---essentials-architecture?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), then follow [Configure Reltio data sharing with Microsoft Fabric - essentials](https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/reltio-data-sharing-with-microsoft-fabric---essentials/configure-reltio-data-sharing-with-microsoft-fabric---essentials?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) to set up a data share.
+
+
+
+---
+
+# Reltio data sharing with Microsoft Fabric - essentials architecture
+
+> **Section:** Applications > Data Integrations > Reltio data sharing - essentials > Reltio data sharing with Microsoft Fabric - essentials
+
+
+**Source:** https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/reltio-data-sharing-with-microsoft-fabric---essentials/reltio-data-sharing-with-microsoft-fabric---essentials-architecture?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** microsoft fabric data share architecture, reltio fabric adapter architecture, delta lake table format fabric, onelake lakehouse integration, reltio data pipeline service, fabric workspace data sharing, power bi copilot consumption, four hour data refresh
+
+
+Learn how Reltio shares data with Microsoft Fabric.
+
+Reltio data sharing with Microsoft Fabric - essentials automates the infrastructure required to prepare and share Delta Lake-formatted Reltio data with Microsoft Fabric using External Sharing. This architecture provides secure and governed access to trusted Reltio data for analytics, business intelligence, and AI/ML workloads, without requiring customers to move or maintain separate copies of the shared data.
+
+The following diagram shows how Reltio shares data with your Microsoft Fabric tenant:
+
+*Image: MF_removed_refresh_rate.png*
+
+## How the Reltio data sharing with Microsoft Fabric - essentials architecture works
+
+The above diagram illustrates the flow of data from the Reltio Context Intelligence Platform to your Microsoft Fabric environment:
+
+- 
+
+  Data Pipeline Service in Reltio: Data from the Reltio Context Intelligence Platform, including entities, relationships, and interactions, is processed by the Data Pipeline Service, which queues, stages, and prepares the data for sharing.
+- 
+
+  Data share with Microsoft Fabric: The data is transformed into streaming tables and securely shared with the recipient specified during data share setup. With Reltio data sharing with Microsoft Fabric - essentials, data synchronization is triggered every four hours. The time required for updates to become available depends on the volume of data to be processed and the processing duration.
+- 
+
+  Consumption in Microsoft Fabric: Once the shared data is available in the Lakehouse, you can use Microsoft Fabric services, including Power BI, Copilot, and other analytics tools, to query, analyze, govern, and consume the data.
+
+## End-to-end data sharing with Microsoft Fabric
+
+With this architecture, your tenant receives Reltio data directly in your own Fabric workspace. You can use the data for analytics, reporting, and compliance without additional integration work.
+
+To set up a data share, see [Configure Reltio data sharing with Microsoft Fabric - essentials](https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/reltio-data-sharing-with-microsoft-fabric---essentials/configure-reltio-data-sharing-with-microsoft-fabric---essentials?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+
+
+---
+
+# Best practices for Reltio data sharing with Databricks - essentials
+
+> **Section:** Applications > Data Integrations > Reltio data sharing - essentials > Reltio data sharing with Databricks - essentials
+
+
+**Source:** https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/reltio-data-sharing-with-databricks---essentials/best-practices-for-reltio-data-sharing-with-databricks---essentials?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** streaming tables best practices, Data Share usage guidelines, Streaming tables querying, Supported data sets, Analytics workloads, Data engineering workflows, BI and reporting integration, ML pipelines, Landing tables, 490 type limit, hierarchical schema all values, four hour refresh interval
+
+
+Learn about recommended practices for using streaming tables in Reltio data sharing with Databricks - essentials so that you can query the supported tables and avoid unsupported downstream usage.
+
+## Recommended practices
+
+## Use data shares for analytics and data engineering workloads
+
+Use data shares for downstream systems such as BI, reporting, and ML pipelines.
+
+## Query supported streaming tables
+
+Use the following streaming tables to query data.
+
+- `entity_<entity_type>`
+- `relation_<relation_type>`
+- `interaction_<interaction_type>`
+- `links`
+- `matches`
+- `merges`
+
+These streaming tables use the hierarchical All Values schema, which includes all values available for each attribute.
+
+> **Note:** - 
+>
+>   Data synchronization is triggered every four hours. The time required for updates to become available in the shared tables depends on the volume of data to be processed and the processing duration.
+> - 
+>
+>   The data share supports a cumulative maximum of 490 entity, relationship, and interaction types. If your business configuration contains more than 490 types, you must apply filtering to limit the data share to a maximum of 490 types.Contact [Reltio Support](https://docs.reltio.com/en/reltio/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) to learn more about configuring the filter.
+
+## Practices to avoid
+
+## Avoid querying landing tables
+
+Do not use the following streaming tables to query data.
+
+- `entities_<entity_type>_landingtable`
+- `relations_<relation_type>_landingtable`
+- `interactions_<interaction_type>_landingtable`
+- `links_landingtable`
+- `matches_landingtable`
+- `merges_landingtable`
+
+## Avoid using data shares for non-analytics downstream systems
+
+Do not use data shares to build downstream systems for non-analytics use cases.
+
+
+
+---
+
+# Best practices for setting up Reltio data sharing with Databricks - essentials
+
+> **Section:** Applications > Data Integrations > Reltio data sharing - essentials > Reltio data sharing with Databricks - essentials > Configure Reltio data sharing with Databricks - essentials
+
+
+**Source:** https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/reltio-data-sharing-with-databricks---essentials/configure-reltio-data-sharing-with-databricks---essentials/best-practices-for-setting-up-reltio-data-sharing-with-databricks---essentials?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** Databricks DataShare setup, DataShare sync best practices, Initial data load validation, Reltio data unification validation, Disable DataShare during initial load, Enable DataShare after validation, DataPipelineConfig configuration, Datashare adapter configuration, GET dataPipelineConfig API, PUT dataPipelineConfig API, syncToDataPipeline API, Initial full data sync sequence, Entity and relation data sync, Matches merges links sync, Interactions sync, Automatic data synchronization, Sequential data sync process, DataShare steady state behavior, Avoid early DataShare enablement, Avoid bulk sync performance issues, Data pipeline best practices, Reltio Databricks integration, DataShare configuration guidelines
+
+
+Follow these practices when you set up a Databricks data share so that the initial load and the ongoing sync perform as expected.
+
+## Recommended practices
+
+## Complete the initial data load before you set up data share
+
+Complete the initial data load into Reltio, and allow all match & merge operations to complete before you set up the Databricks data share.
+
+This prevents unintended events from being synced and protects overall sync performance.
+
+## Disable data share during initial load (if already enabled)
+
+If you set up data share before completing the initial data load, disable it until all the initial data load and all the related match and merge operations have completed and you have verified that the data unification outcomes match your expectations.
+
+To disable data share, follow the below steps.
+
+1. 
+
+   Obtain the current physical configuration of your tenant using the below endpoint.
+
+   ```
+   GET {Env_URL}/reltio/tenants/{TenantId}/dataPipelineConfig
+   ```
+2. 
+
+   In the JSON response, locate the desired data share within the `adapters` array, set its **enabled** parameter to **false**, and save the configuration.
+
+   ```
+   "adapters": [
+     {
+       "name": "<...>", // Find the exact data share that you want to disable
+       "enabled": false,
+       ...
+     }
+     ...
+   ]
+   ```
+3. 
+
+   Post the updated physical configuration to the tenant using the below endpoint.
+
+   ```
+   PUT {ENVIRONMENT_URL}/reltio/tenants/{TenantId}/dataPipelineConfig
+   ```
+
+   'Body' parameter should be set to JSON with the content of updated `dataPipelineConfig`.
+
+## Setup a new or enable an existing data share
+
+After the initial full data load is complete, verify the following:
+
+- 
+
+  All related match and merge operations have completed.
+- 
+
+  Data unification outcomes meet your expectations.
+
+To enable an existing data share, update the `enabled` parameter for the required data share to `true` by following below steps.
+
+1. 
+
+   Obtain the current physical configuration of your tenant using the below endpoint.
+
+   ```
+   GET {Env_URL}/reltio/tenants/{TenantId}/dataPipelineConfig
+   ```
+2. 
+
+   In the JSON response, locate the desired data share within the `adapters` array, set its `enabled` parameter to `true`, and save the configuration.
+
+   ```
+   "adapters": [
+     {
+       "name": "<...>", // Find the exact data share that you want to enable
+       "enabled": true,
+       ...
+     }
+     ...
+   ]
+   ```
+3. 
+
+   Post the updated physical configuration to the tenant using the below endpoint. 
+
+   ```
+   PUT {ENVIRONMENT_URL}/reltio/tenants/{TenantId}/dataPipelineConfig
+   ```
+
+
+
+   'Body' parameter should be set to JSON with the content of updated`dataPipelineConfig`.
+
+## Run the one time activity of initial full data sync in sequence
+
+Once the data share setup is complete and it is enabled, all subsequent events in Reltio, post the data share setup are automatically synchronized across all supported data objects. However, to initiate the full sync of the data that existed before the data share setup, trigger the `syncToDataPipeline` API once for each data type in the given sequence.
+
+1. 
+
+   Sync all entity data sets by using the `syncToDataPipeline` API with the `dataTypes` parameter set to `entities`.
+2. 
+
+   Sync all relation data sets by using the `syncToDataPipeline` API with the `dataTypes` parameter set to `relations`.
+3. 
+
+   Sync matches, merges, and links data sets by using the `syncToDataPipeline` API for each data type respectively.
+4. 
+
+   Sync any other data sets that you want, such as `interactions`, using the `syncToDataPipeline` API with the **dataTypes** parameter set to the required data type.
+
+   For more information on how to sync the data, see [API Guide](https://developer.reltio.com/private/swagger.htm?module=Tenant+Management#/DPH%20Reindex%20Jobs/syncToDataPipeline).
+
+## Practices to avoid
+
+## Avoid enabling data share before initial data load
+
+Do not enable data share until the initial load is complete and the data is validated. This prevents unnecessary or unintended events from being synced and protects overall sync performance.
+
+## Avoid syncing all data sets at once
+
+Do not trigger a full sync for all data sets simultaneously, as this can negatively impact overall sync performance.
+
+
+
+---
+
+# Best practices for setting up Reltio data sharing with Microsoft Fabric - essentials
+
+> **Section:** Applications > Data Integrations > Reltio data sharing - essentials > Reltio data sharing with Microsoft Fabric - essentials > Configure Reltio data sharing with Microsoft Fabric - essentials
+
+
+**Source:** https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/reltio-data-sharing-with-microsoft-fabric---essentials/configure-reltio-data-sharing-with-microsoft-fabric---essentials/best-practices-for-setting-up-reltio-data-sharing-with-microsoft-fabric---essentials?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** Microsoft Fabric data share setup, data share sync best practices, Initial data load validation, Reltio data unification validation, Disable data share during initial load, Enable data share after validation, DataPipelineConfig configuration, data share adapter configuration, GET dataPipelineConfig API, PUT dataPipelineConfig API, syncToDataPipeline API, Initial full data sync sequence, Entity and relation data sync, Matches merges links sync, Interactions sync, Sequential data sync process, Avoid early data share enablement, Avoid bulk sync performance issues, Reltio Microsoft Fabric integration, Reltio data sharing with Microsoft Fabric - essentials
+
+
+Follow these practices when you set up a Microsoft Fabric data share so that the initial load and the ongoing sync perform as expected.
+
+## Recommended practices
+
+## Complete the initial data load before you set up data share
+
+Complete the initial data load into Reltio, and allow all match & merge operations to complete before you set up the Microsoft Fabric data share.
+
+This prevents unintended events from being synced and protects overall sync performance.
+
+## Disable data share during initial load (if already enabled)
+
+If you set up data share before completing the initial data load, disable it until all the initial data load and all the related match and merge operations have completed and you have verified that the data unification outcomes match your expectations.
+
+To disable data share, follow the below steps.
+
+1. 
+
+   Obtain the current physical configuration of your tenant using the below endpoint.
+
+   ```
+   GET {Env_URL}/reltio/tenants/{TenantId}/dataPipelineConfig
+   ```
+2. 
+
+   In the JSON response, locate the desired data share within the `adapters` array, set its **enabled** parameter to **false**, and save the configuration.
+
+   ```
+   "adapters": [
+     {
+       "name": "<...>", // Find the exact data share that you want to disable
+       "enabled": false,
+       ...
+     }
+     ...
+   ]
+   ```
+3. 
+
+   Post the updated physical configuration to the tenant using the below endpoint.
+
+   ```
+   PUT {ENVIRONMENT_URL}/reltio/tenants/{TenantId}/dataPipelineConfig
+   ```
+
+   'Body' parameter should be set to JSON with the content of updated `dataPipelineConfig`.
+
+## Setup a new or enable an existing data share
+
+After the initial full data load is complete, verify the following:
+
+- 
+
+  All related match and merge operations have completed.
+- 
+
+  Data unification outcomes meet your expectations.
+
+To enable an existing data share, update the `enabled` parameter for the required data share to `true` by following below steps.
+
+1. 
+
+   Obtain the current physical configuration of your tenant using the below endpoint.
+
+   ```
+   GET {Env_URL}/reltio/tenants/{TenantId}/dataPipelineConfig
+   ```
+2. 
+
+   In the JSON response, locate the desired data share within the `adapters` array, set its `enabled` parameter to `true`, and save the configuration.
+
+   ```
+   "adapters": [
+     {
+       "name": "<...>", // Find the exact data share that you want to enable
+       "enabled": true,
+       ...
+     }
+     ...
+   ]
+   ```
+3. 
+
+   Post the updated physical configuration to the tenant using the below endpoint.
+
+   ```
+   PUT {ENVIRONMENT_URL}/reltio/tenants/{TenantId}/dataPipelineConfig
+   ```
+
+   'Body' parameter should be set to JSON with the content of updated `dataPipelineConfig`.
+
+## Run the one time activity of initial full data sync in sequence
+
+Once the data share setup is complete and it is enabled, all subsequent events in Reltio, post the data share setup are automatically synchronized across all supported data objects. However, to initiate the full sync of the data that existed before the data share setup, trigger the `syncToDataPipeline` API once for each data type in the given sequence.
+
+1. 
+
+   Sync all entity data sets by using the `syncToDataPipeline` API with the `dataTypes` parameter set to `entities`.
+2. 
+
+   Sync all relation data sets by using the `syncToDataPipeline` API with the `dataTypes` parameter set to `relations`.
+3. 
+
+   Sync matches, merges, and links data sets by using the `syncToDataPipeline` API for each data type respectively.
+4. 
+
+   Sync any other data sets that you want, such as `interactions`, using the `syncToDataPipeline` API with the **dataTypes** parameter set to the required data type.
+
+   For more information on how to sync the data, see [API Guide](https://developer.reltio.com/private/swagger.htm?module=Tenant+Management#/DPH%20Reindex%20Jobs/syncToDataPipeline).
+
+## Practices to avoid
+
+## Avoid enabling data share before initial data load
+
+Do not enable data share until the initial load is complete and the data is validated. This prevents unnecessary or unintended events from being synced and protects overall sync performance.
+
+## Avoid syncing all data sets at once
+
+Do not trigger a full sync for all data sets simultaneously, as this can negatively impact overall sync performance.
+
+
+
+---
+
+# Data structure for Reltio data sharing with Databricks - essentials
+
+> **Section:** Applications > Data Integrations > Reltio data sharing - essentials > Reltio data sharing with Databricks - essentials
+
+
+**Source:** https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/reltio-data-sharing-with-databricks---essentials/data-structure-for-reltio-data-sharing-with-databricks---essentials?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** Reltio Data Sharing Essentials with Databricks, Databricks shared schema, Databricks streaming tables, Delta Sharing, Open Sharing, landing tables and streaming tables, reltio_datashare schema name, hierarchical schema all values
+
+
+Learn more about the schema and streaming tables shared with your Databricks workspace.
+
+## 
+
+Reltio data sharing with Databricks - essentials provides your Databricks workspace with read-only access to Reltio-managed streaming tables through [Open Sharing](https://docs.databricks.com/aws/en/opensharing/).
+
+The shared schema contains streaming tables for entities, relations, interactions, matches, merges, and links. You can access these tables from Databricks SQL, notebooks, dashboards, and AI and machine learning workloads.
+
+## Shared schema in your Databricks catalog
+
+After the data share is received, a Databricks user creates a catalog from the share or mounts the share to an existing catalog. The user chooses the catalog name.
+
+Within the catalog, the shared streaming tables are grouped in a schema named `reltio_datashare_{datashareName}`. The `{datashareName}` value is the name assigned to your data share in Reltio.
+
+Reltio provides read-only access to every streaming table in the shared schema. These tables include type-specific landing and streaming tables for entities, relations, and interactions, as well as fixed-name landing and streaming tables for matches, merges, and links.
+
+## Data objects in the shared schema
+
+The shared schema organizes each Reltio data type into its corresponding landing and streaming tables.
+
+| Data objects | Landing table | Streaming table |
+| --- | --- | --- |
+| Entity | `entity_{entityType}_landingTable` | `entity_{entityType}` |
+| Relation | `relation_{relationshipType}_landingTable` | `relation_{relationshipType}` |
+| Interaction | `interaction_{interactionType}_landingTable` | `interaction_{interactionType}` |
+| Matches | `matches_landingTable` | `matches` |
+| Merges | `merges_landingTable` | `merges` |
+| Links | `links_landingTable` | `links` |
+
+Data synchronization for each streaming table is triggered every four hours, with updates becoming available after the corresponding events have been processed. Landing tables are visible in the shared schema but are intended for internal processing and should not be used for downstream consumption or analysis.
+
+[Best practices for Reltio data sharing with Databricks - essentials](https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/reltio-data-sharing-with-databricks---essentials/best-practices-for-reltio-data-sharing-with-databricks---essentials?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) explains which tables to query.
+
+
+
+---
+
+# Streaming table fields in Reltio data sharing with Databricks - essentials
+
+> **Section:** Applications > Data Integrations > Reltio data sharing - essentials > Reltio data sharing with Databricks - essentials
+
+
+**Source:** https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/reltio-data-sharing-with-databricks---essentials/streaming-table-fields-in-reltio-data-sharing-with-databricks---essentials?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** Databricks streaming-table fields, Reltio Data Sharing Essentials with Databricks fields, Databricks entity streaming tables, Databricks relation streaming tables, Databricks interaction streaming tables, match merge link fields, hierarchical schema attributes
+
+
+Learn more about the fields available in Reltio data sharing with Databricks - essentials streaming tables.
+
+## 
+
+Databricks streaming-table data shares provide type-specific tables for entities, relations, and interactions, and fixed-name streaming tables for matches, merges, and links.
+
+## Entity fields
+
+Reltio writes entity records to a streaming table named `entity_{entityType}`.
+
+The `attributes` field stores the entity attributes in a single `STRUCT`.
+
+The entity streaming tables contain the following fields:
+
+| Field | Data type | Description |
+| --- | --- | --- |
+| `objectType` | `STRING` | Type of Reltio object represented by the record. |
+| `id` | `STRING` | Unique identifier for the entity. |
+| `uri` | `STRING` | Unique URI for the entity. |
+| `version` | `BIGINT` | Version of the entity. |
+| `timestamp` | `BIGINT` | Time when Reltio recorded the entity event. |
+| `type` | `STRING` | Entity type defined in your tenant business model. |
+| `attributes` | `STRUCT` | Entity attributes in a hierarchical schema. |
+| `crosswalks` | `ARRAY<STRUCT>` | Source records associated with the entity. |
+| `analyticsAttributes` | `STRING` | Analytical attributes associated with the entity. |
+| `createdBy` | `STRING` | Identifier of the user who created the entity. |
+| `createdTime` | `BIGINT` | Time when the source system created the entity. |
+| `updatedBy` | `STRING` | Identifier of the user who last updated the entity. |
+| `updatedTime` | `BIGINT` | Time when the source system last updated the entity. |
+| `commitTime` | `BIGINT` | Time when the entity version was committed in Reltio. |
+| `deleted` | `BOOLEAN` | Indicates whether the entity is deleted. Always `false` because deleted entities are not included. |
+| `label` | `STRING` | Display label that Reltio generates from the configured label pattern. |
+| `linked` | `BOOLEAN` | Indicates whether the entity is linked to another object. |
+| `secondaryLabel` | `STRING` | Additional display label that Reltio generates from the configured secondary label pattern. |
+| `tags` | `ARRAY` | Tags associated with the entity. |
+| `startDate` | `BIGINT` | Date and time from which Reltio considers the entity active. Before this time, the entity is inactive. If `null`, no date is specified for the active period to begin. |
+| `endDate` | `BIGINT` | Date and time through which Reltio considers the entity active. After this time, the entity is inactive. If `null`, no date is specified for the active period to end. |
+| `ingestTime` | `TIMESTAMP` | Time when Databricks ingested the entity record from staging storage into the entity table. |
+
+## Relation fields
+
+Reltio writes relation records to a streaming table named `relation_{relationshipType}`.
+
+The `attributes` field contains the relation attributes as a `STRUCT`.
+
+The relation streaming tables contain the following fields:
+
+| Field | Data type | Description |
+| --- | --- | --- |
+| `objectType` | `STRING` | Type of Reltio object represented by the record. |
+| `id` | `STRING` | Unique identifier for the relation. |
+| `uri` | `STRING` | Unique URI for the relation. |
+| `type` | `STRING` | Relation type defined in your tenant business model. |
+| `attributes` | `STRUCT` | Relation attributes in a hierarchical schema. |
+| `commitTime` | `BIGINT` | Time when the relation version was committed in Reltio. |
+| `createdBy` | `STRING` | Identifier of the user who created the relation. |
+| `createdTime` | `BIGINT` | Time when the source system created the relation. |
+| `crosswalks` | `ARRAY<STRUCT>` | Source records associated with the relation. |
+| `deleted` | `BOOLEAN` | Indicates whether the relation is deleted. Always `false` because deleted relations are not included. |
+| `linked` | `BOOLEAN` | Indicates whether the relation is linked to another object. |
+| `timestamp` | `BIGINT` | Time when Reltio recorded the relation event. |
+| `updatedBy` | `STRING` | Identifier of the user who last updated the relation. |
+| `updatedTime` | `BIGINT` | Time when the source system last updated the relation. |
+| `version` | `BIGINT` | Version of the relation. |
+| `startObject` | `STRUCT` | Entity assigned to the start of the relationship. Includes the entity URI and crosswalks. |
+| `endObject` | `STRUCT` | Entity assigned to the end of the relationship. Includes the entity URI and crosswalks. |
+| `startRefIgnored` | `BOOLEAN` | Indicates whether the start-object reference is ignored. |
+| `startRefPinned` | `BOOLEAN` | Indicates whether the start-object reference is pinned. |
+| `endRefIgnored` | `BOOLEAN` | Indicates whether the end-object reference is ignored. |
+| `endRefPinned` | `BOOLEAN` | Indicates whether the end-object reference is pinned. |
+| `startDate` | `BIGINT` | Date and time from which the relation connects its start and end objects. Before this time, the relation is inactive. If `null`, no date is specified for the active period to begin. |
+| `endDate` | `BIGINT` | Date and time through which the relation connects its start and end objects. After this time, the relation is inactive. If `null`, no date is specified for the active period to end. |
+| `ingestTime` | `TIMESTAMP` | Time when Databricks ingested the relation record from staging storage into the relation table. |
+
+## Interaction fields
+
+Reltio writes interaction records to a streaming table named `interaction_{interactionType}`.
+
+The `attributes` field contains the interaction attributes as a `STRUCT`.
+
+The interaction streaming tables contain the following fields:
+
+| Field | Data type | Description |
+| --- | --- | --- |
+| `objectType` | `STRING` | Type of Reltio object represented by the record. |
+| `id` | `STRING` | Unique identifier for the interaction. |
+| `linked` | `BOOLEAN` | Indicates whether the interaction was replaced as part of an entity or relation merge. |
+| `uri` | `STRING` | Unique URI for the interaction. |
+| `version` | `BIGINT` | Version of the interaction. |
+| `timestamp` | `BIGINT` | Time when Reltio recorded the interaction event. |
+| `type` | `STRING` | Interaction type defined in your tenant business model. |
+| `deleted` | `BOOLEAN` | Indicates whether the interaction is deleted. Always `false` because deleted interactions are not included. |
+| `attributes` | `STRUCT` | Interaction attributes in a hierarchical schema. |
+| `crosswalks` | `ARRAY<STRUCT>` | Source records associated with the interaction. |
+| `members` | `MAP<STRING, STRUCT>` | Interaction roles and the entities assigned to each role. |
+| `createdBy` | `STRING` | Identifier of the user who created the interaction. |
+| `createdTime` | `BIGINT` | Time when the source system created the interaction. |
+| `updatedBy` | `STRING` | Identifier of the user who last updated the interaction. |
+| `updatedTime` | `BIGINT` | Time when the source system last updated the interaction. |
+| `commitTime` | `BIGINT` | Time when the interaction version was committed in Reltio. |
+| `ingestTime` | `TIMESTAMP` | Time when Databricks ingested the interaction record from staging storage into the interaction table. |
+
+## Match fields
+
+Reltio writes match records to the `matches` streaming table.
+
+The match streaming tables contain the following fields:
+
+| Field | Data type | Description |
+| --- | --- | --- |
+| `objectType` | `STRING` | Type of Reltio object represented by the record. |
+| `insertedTime` | `BIGINT` | Time when the match record was written to staging storage. |
+| `entityId` | `STRING` | Identifier of the entity for which match information is recorded. |
+| `manual_matches` | `ARRAY<STRUCT>` | Entity identifiers manually confirmed as matches to `entityId`. |
+| `not_matches` | `ARRAY<STRUCT>` | Entity identifiers marked as not matching `entityId`. |
+| `potential_matches` | `ARRAY<STRUCT>` | Entities identified as possible matches to `entityId`, including the applicable match rules and match score. |
+| `version` | `BIGINT` | Version of the match record. |
+| `deleted` | `BOOLEAN` | Indicates whether the match record is deleted. Always `false` because deleted match records are not included. |
+| `timestamp` | `BIGINT` | Time when Reltio recorded the match event. |
+| `ingestTime` | `TIMESTAMP` | Time when Databricks ingested the match record from staging storage into the matches table. |
+
+## Merge fields
+
+Reltio writes merge records to the `merges` streaming table.
+
+The merge streaming tables contain the following fields.
+
+| Field | Data type | Description |
+| --- | --- | --- |
+| `objectType` | `STRING` | Type of Reltio object represented by the record. |
+| `directWinner` | `STRING` | Identifier of the object that directly won the merge. |
+| `insertedTime` | `BIGINT` | Time when the merge record was written to staging storage. |
+| `winnerId` | `STRING` | Identifier of the entity that remains after the merge. |
+| `loserId` | `STRING` | Identifier of the entity merged into the winning entity. |
+| `mergeKey` | `STRING` | Identifier used to track the merge. The value matches `loserId`. |
+| `type` | `STRING` | Method used to merge the entities: `MANUAL`, `AUTO`, `ON_THE_FLY`, or `GROUP_MERGE`. |
+| `deleted` | `BOOLEAN` | Indicates whether the merge record is deleted. Always `false` because deleted merge records are not included. |
+| `mergeRulesUris` | `ARRAY` | URIs of the merge rules applied to the entities. |
+| `matchRules` | `ARRAY` | Labels of the match rules that identified the entities as matches before the merge. |
+| `version` | `BIGINT` | Version of the merge record. |
+| `timestamp` | `BIGINT` | Time when Reltio recorded the merge event. |
+| `ingestTime` | `TIMESTAMP` | Time when Databricks ingested the merge record from staging storage into the merges table. |
+
+## Link fields
+
+Reltio writes link records to the `links` streaming table.
+
+The link streaming tables contain the following fields.
+
+| Field | Data type | Description |
+| --- | --- | --- |
+| `objectType` | `STRING` | Type of Reltio object represented by the record. |
+| `insertedTime` | `BIGINT` | Time when the link record was written to staging storage. |
+| `winnerId` | `STRING` | Identifier of the entity that remains after the merge. |
+| `loserId` | `STRING` | Identifier of the merged entity that links to the winning entity. |
+| `deleted` | `BOOLEAN` | Indicates whether the link record is deleted. Always `false` because deleted link records are not included. |
+| `version` | `BIGINT` | Version of the link record. |
+| `timestamp` | `BIGINT` | Time when Reltio recorded the link event. |
+| `ingestTime` | `TIMESTAMP` | Time when Databricks ingested the link record from staging storage into the links table. |
+
+
+
+---
+
+# Configure Reltio data sharing with Databricks - essentials using APIs
+
+> **Section:** Applications > Data Integrations > Reltio data sharing - essentials > Reltio data sharing with Databricks - essentials > Configure Reltio data sharing with Databricks - essentials
+
+
+**Source:** https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/reltio-data-sharing-with-databricks---essentials/configure-reltio-data-sharing-with-databricks---essentials/configure-reltio-data-sharing-with-databricks---essentials-using-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** configure data share databricks api, Reltio Data Sharing Essentials with Databricks, create datashare adapter databricks, api setup data sharing, delta sharing api configuration, databricksConfig.identifier, adapter setup rest call, metastore permissions databricks recipient, all values hierarchical schema
+
+
+Learn how to create and configure a data share for Databricks using REST APIs.
+
+Using the REST APIs, create and configure a data share to make data from your Reltio tenant available in Databricks. Once the data share is set up and the data is available, Databricks users can access and query the shared Reltio tables through Unity Catalog.
+
+**Prerequisites**
+
+- Valid tenant ID and environment
+- Authentication token with the `ROLE_DATA_PIPELINE_ADMIN` role
+- Valid Databricks Open Sharing identifier
+- An active subscription for Reltio data sharing with Databricks - essentials
+
+> **Note:** While creating a new data share, ensure you provide a unique name for the data share that does not match any existing or deleted data shares.
+
+When configuring Reltio data sharing with Databricks - essentials, you must refer to [Best practices for setting up Reltio data sharing with Databricks - essentials](https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/reltio-data-sharing-with-databricks---essentials/configure-reltio-data-sharing-with-databricks---essentials/best-practices-for-setting-up-reltio-data-sharing-with-databricks---essentials?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+
+To configure a Databricks data share using APIs
+
+1. Create a new Databricks data share
+   Send a POST request to the DPH service to define a new Databricks data share:
+   ```
+POST {dphUrl}/api/tenants/{tenantID}/adapters
+   ```
+   Example request body:
+   ```
+{ "type": "datashare-databricks", "name": "datashare", "enabled": true, "createdBy": "user@example.com", "createdOn": "2025-06-09T10:05:07.864379Z", "databricksConfig": { "identifier": "identifier1" } }
+   ```
+   The `createdOn` timestamp is auto-generated.
+   Field reference:
+   | Parameter | Type | Description |
+| --- | --- | --- |
+| `type` | String | Data share type: must be `datashare-databricks` |
+| `name` | String | Data share name (alphanumeric, 3–20 characters, no spaces) |
+| `enabled` | Boolean | Enable or disable the data share |
+| `createdBy` | String | Username of data share creator |
+| `createdOn` | String | Data share creation time in UTC format |
+| `databricksConfig` | Object | Databricks specific config |
+| `databricksConfig.identifier` | String | Identifier for the Databricks Open Sharing |
+2. Set up the data share
+   Set up the data share and enable the share using the data share name:
+   ```
+POST {dphUrl}/api/tenants/{tenantID}/adapters/{adapterName}/actions/setup-databricks-datashare
+   ```
+
+**Result**
+
+Your data share is now set up and ready for Databricks users to access the shared streaming tables through their Databricks Unity Catalog under Open Sharing.
+
+Ensure that the Databricks recipient has the necessary metastore permissions to accept the data share. Grant the `USE SHARE`, `USE PROVIDER`, `USE RECIPIENT`, and `CREATE CATALOG` permissions to the recipient using the following commands:
+
+```
+GRANT USE SHARE ON METASTORE TO `<user-email-address>`;
+GRANT USE PROVIDER ON METASTORE TO `<user-email-address>`;
+GRANT USE RECIPIENT ON METASTORE TO `<user-email-address>`;
+GRANT CREATE CATALOG ON METASTORE TO `<user-email-address>`;
+```
+
+
+
+---
+
+# Configure Reltio data sharing with Databricks - essentials using Console UI
+
+> **Section:** Applications > Data Integrations > Reltio data sharing - essentials > Reltio data sharing with Databricks - essentials > Configure Reltio data sharing with Databricks - essentials
+
+
+**Source:** https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/reltio-data-sharing-with-databricks---essentials/configure-reltio-data-sharing-with-databricks---essentials/configure-reltio-data-sharing-with-databricks---essentials-using-console-ui?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** configure data sharing databricks, Reltio Data Sharing Essentials with Databricks, create databricks data share console, ui based databricks integration, sharing identifier field, databricks delta share console steps, metastore permissions databricks recipient, all values hierarchical schema
+
+
+Learn how to configure Reltio data sharing with Databricks - essentials in the Reltio Console UI.
+
+In the Console UI, create a data share to make data from your Reltio tenant available in your Databricks workspace. Once the data share is created and the data is available, you can access and query the shared Reltio tables through Databricks Unity Catalog.
+
+**Prerequisites**
+
+- Reltio user with the role `ROLE_DATA_PIPELINE_ADMIN`
+- Valid Databricks Open Sharing identifier
+- An active subscription for Reltio data sharing with Databricks - essentials
+
+> **Note:** While creating a new data share, ensure you provide a unique name for the data share that does not match any existing or deleted data shares.
+
+While configuring Reltio data sharing with Databricks - essentials, you must refer to [Best practices for setting up Reltio data sharing with Databricks - essentials](https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/reltio-data-sharing-with-databricks---essentials/configure-reltio-data-sharing-with-databricks---essentials/best-practices-for-setting-up-reltio-data-sharing-with-databricks---essentials?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+
+To configure a Databricks data share in Reltio Console
+
+1. In the Reltio **Console**, open the **Data Sharing** application.
+   For navigation details, see [Data Sharing at a glance](https://docs.reltio.com/en/applications/console/tenant-management-applications/data-sharing-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+2. Select **+ NEW DATA SHARE** and select **Databricks**.
+   *Image: i-apps-integ-zerocopy-databricks-newdatashare.png*
+3. Enter configuration details for the Databricks workspace.
+   Fill in the configuration fields as follows:
+   | Field | Value |
+| --- | --- |
+| **Name** | Enter a unique identifier for the data share. Must be 3–20 alphanumeric characters with no spaces. |
+| **Sharing identifier** | Enter the sharing identifier of the target Databricks environment. To find the sharing identifier using Catalog Explorer of your Databricks environment, see [Get access in the Databricks-to-Databricks model.](https://docs.databricks.com/aws/en/delta-sharing/recipient#get-access-in-the-databricks-to-databricks-model) |
+   *Image: new_data_share_databricks.png*
+   The data share provides data in a hierarchical format, including both operational and non-operational values for each attribute.
+4. Select **Save** to create the data share.
+   Wait for a few seconds. The Data share changes its status from **Not created yet** to **Active**. Reltio provisions the Databricks share using Open Sharing.
+
+*Image: datasharing_not_created_yet_databricks.png*
+
+
+
+
+
+*Image: datasharing_active_databricks.png*
+
+**Result**
+
+Your data share is now configured, and the recipient can access the streaming tables through their Databricks Unity Catalog under Open Sharing.
+
+Ensure that the Databricks recipient has the necessary metastore permissions to accept the data share. Grant the `USE SHARE`, `USE PROVIDER`, `USE RECIPIENT`, and `CREATE CATALOG` permissions to the recipient using the following commands:
+
+```
+GRANT USE SHARE ON METASTORE TO `<user-email-address>`;
+GRANT USE PROVIDER ON METASTORE TO `<user-email-address>`;
+GRANT USE RECIPIENT ON METASTORE TO `<user-email-address>`;
+GRANT CREATE CATALOG ON METASTORE TO `<user-email-address>`;
+```
+
+
+
+---
+
+# Configure Reltio data sharing with Microsoft Fabric - essentials using APIs
+
+> **Section:** Applications > Data Integrations > Reltio data sharing - essentials > Reltio data sharing with Microsoft Fabric - essentials > Configure Reltio data sharing with Microsoft Fabric - essentials
+
+
+**Source:** https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/reltio-data-sharing-with-microsoft-fabric---essentials/configure-reltio-data-sharing-with-microsoft-fabric---essentials/configure-reltio-data-sharing-with-microsoft-fabric---essentials-using-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** configure data sharing ms fabric api, Reltio Data Sharing Essentials with Microsoft Fabric, create data share adapter microsoft fabric, how to set up data share api, generate data share link with api, provision microsoft fabric resources, rest api for data sharing, adapter configuration parameters fabric, datashare-fabric adapter type, all values hierarchical schema, integration, governance, api
+
+
+Using the REST APIs, you create a Microsoft Fabric data share, set up the data share, and generate a share link for the recipient to accept.**Prerequisites**
+
+- A valid tenant ID and environment
+- An authentication token with the required role, `ROLE_DATA_PIPELINE_ADMIN`
+- Details of your Microsoft Fabric environment, including region and recipient email
+- An active subscription for Reltio data sharing with Microsoft Fabric - essentials
+
+
+To configure a Microsoft Fabric data share using APIs
+
+1. Create a new data share
+   Send a request to the DPH service with the configuration details:
+   ```
+POST {env}-data-pipeline-hub.reltio.com/api/tenants/{tenantId}/adapters
+   ```
+   Where:
+   Where:
+   - `{env}` represents your environment identifier (for example, prod, or test).
+   - `{tenantId}` is your tenant ID
+   Example request body:
+   Example request body:
+   ```
+POST test-data-pipeline-hub.reltio.com/api/tenants/f4K3XQ7EecQZGBE/adapters { "type": "datashare-fabric", "name": "datashare", "enabled": true, "fabricConfig": { "region": "eastus2", "receiverEmails": [ "user1@company.com" ] } }
+   ```
+   Field reference:
+   | Parameter | Type | Description |
+| --- | --- | --- |
+| `type` | String | Type of data share. Use `datashare-fabric` |
+| `name` | String | Name of the data share. The name must be alphanumeric, can be 3 to 20 characters in length, and cannot contain any spaces. |
+| `enabled` | Boolean | Enable or disable the data share |
+| `fabricConfig.region` | String | Region and availability zone of the Fabric instance |
+| `fabricConfig.receiverEmails` | Array | Email address of the recipient of the data share |
+2. Set up the data share
+   Send a request to provision the required Microsoft Fabric resources:
+   ```
+POST {env}-data-pipeline-hub.reltio.com/api/tenants/{tenantId}/adapters/{adapterName}/actions/setup
+   ```
+   Where:
+   Where:
+   - `{env}` represents your environment identifier (e.g. dev, prod, test, etc)
+   - `{tenantId}` is your tenant ID
+   - `{adapterName}` is the name you gave your data share when you created it
+3. Create a data share link
+   Send a request to generate a share link that MS Fabric users can use to log in and accept the data share:
+   ```
+POST {env}-data-pipeline-hub.reltio.com/api/tenants/{tenantId}/adapters/{adapterName}/shareLink
+   ```
+   Where:
+   Where:
+   - `{env}` represents your environment identifier (e.g., dev, , prod, test, etc)
+   - `{tenantId}` is your tenant ID
+   - `{adapterName}` is the name you gave your data share when you created it
+4. Get the data share link
+   Retrieve a previously generated link so the recipients can log in to Microsoft Fabric and accept the data share:
+   ```
+GET {env}-data-pipeline-hub.reltio.com/api/tenants/{tenantId}/adapters/{adapterName}/shareLink
+   ```
+   Where:
+   Where:
+   - `{env}` represents your environment identifier (e.g. dev, prod, test, etc)
+   - `{tenantId}` is your tenant ID
+   - `{adapterName}` is the name you gave your data share when you created it
+
+**Result**
+
+Your data share is created, set up, and ready to use. Microsoft Fabric recipient can now accept the shared data through the generated link.
+
+
+
+---
+
+# Configure Reltio data sharing with Microsoft Fabric - essentials using Console UI
+
+> **Section:** Applications > Data Integrations > Reltio data sharing - essentials > Reltio data sharing with Microsoft Fabric - essentials > Configure Reltio data sharing with Microsoft Fabric - essentials
+
+
+**Source:** https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/reltio-data-sharing-with-microsoft-fabric---essentials/configure-reltio-data-sharing-with-microsoft-fabric---essentials/configure-reltio-data-sharing-with-microsoft-fabric---essentials-using-console-ui?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** configure data sharing microsoft fabric, Reltio Data Sharing Essentials with Microsoft Fabric, set up ms fabric integration, data share console ui steps, how to share data with microsoft fabric, enable reltio data sharing fabric, create microsoft fabric data share, generate share link in console, recipient email fabric data share, all values hierarchical schema, integration, governance, sharing
+
+
+Learn how to configure Reltio data sharing with Microsoft Fabric - essentials in the Reltio Console UI.
+
+In the Console UI, you create a data share that connects your Reltio tenant to a Microsoft Fabric Lakehouse. After you create the data share, you generate a share link for the recipient to accept. **Prerequisites**
+
+- 
+
+  Reltio user with the role `ROLE_DATA_PIPELINE_ADMIN`
+- 
+
+  Details of your Microsoft Fabric environment, including region and receiver email
+- 
+
+  An active subscription for Reltio data sharing with Microsoft Fabric - essentials
+
+
+To configure a Microsoft Fabric data share in Reltio Console
+
+1. In the Reltio **Console**, open the **Data Sharing** application.
+   For navigation details, see [Data Sharing at a glance](https://docs.reltio.com/en/applications/console/tenant-management-applications/data-sharing-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+2. In **Data Share**, create a new data share.
+   Select **+ NEW DATA SHARE** and select **Microsoft Fabric**.
+3. Enter configuration details.
+   *Image: MF_new_datashare.png*
+   Provide the Fabric tenant region and the recipient email address and fill in the configuration fields as follows:
+   | Field | Value |
+| --- | --- |
+| **Name** | Enter an alphanumeric identifier, 3–20 characters long, with no spaces. |
+| **Region & availability zone** | Select the geographic region where your Microsoft Fabric account is hosted. |
+| **Recipient email address** | Enter a valid email address of the recipient. Press Enter after entering the address. |
+4. Save the configuration.
+   Reltio provisions the necessary Microsoft Fabric resources automatically.
+5. Generate a share link.
+   For the desired data share configuration, click the cloud icon to generate a share link:
+
+*Image: i-apps-console-tm-sharing-datashare-msfabric-create-link.png*
+6. Share the link with recipients.
+   In **Data Share**, click **OPEN LINK** to log in into your Microsoft Fabric account and accept the share.
+   *Image: i-apps-console-tm-sharing-datashare-msfabric-share-openlink.png*
+   > **Note:** Only the recipient mentioned while creating the data share can accept the invite. If the recipient is different from the one creating the data share, then the generated link needs to be copied and shared with the recipient, who can then log in to their Microsoft Fabric account and accept the share.
+
+**Result**
+
+Your data share is configured and the recipient can now access data in Microsoft Fabric.
+
+
+
+---
+
+# View share activity in Reltio data sharing - essentials
+
+> **Section:** Applications > Data Integrations > Reltio data sharing - essentials > Monitoring data share for Reltio data sharing - essentials
+
+
+**Source:** https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/monitoring-data-share-for-reltio-data-sharing---essentials/view-share-activity-in-reltio-data-sharing---essentials?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** view data sharing activity in reltio, Reltio Data Sharing Essentials monitoring, open data share monitoring page, check data volume processed for data share, view messages sent across data shares, monitor data share in console, set time range for monitoring, data sharing monitoring, data volume, messages sent, time range
+
+
+Learn how to view the data volume processed and messages sent for a data share in Reltio Console.
+
+Monitor your data shares to review that data is shared with your cloud data warehouse. Each data share has its own Monitoring page, where you can see the volume of data processed for that data share and the messages processed across all of your data shares and data pipelines in your Reltio tenant.
+
+
+To view data sharing activity for a data share
+
+1. In the Reltio **Console**, go to **Data Sharing > Data Share**.
+2. Navigate to the data share you want to review.
+3. Click **Monitor**.
+   The **Monitoring** page displays for the data share.
+4. From the **Time range** list, select the period to report on; for example, **Last 1 week**.
+5. Review the two summary totals and two graphs on the **Monitoring** page.
+   - **Total data volume processed**: The data volume processed for the selected data share.
+   - **Total messages sent**: The count of messages processed across all outbound data shares and data pipelines.
+   - **Data volume processed**: A graph of the data volume for the selected data share over the selected time range, which indicates the health of the data share and the volume of data it shared.
+   - **Messages sent (all outbound data shares and data pipelines)**: A graph of the messages processed across all outbound data shares and data pipelines, independent of the selected data share.
+
+
+
+---
+
 # Reltio Connector for MuleSoft operations
 
 > **Section:** Applications > Data Integrations > iPaaS Connectors at a glance > Reltio Connector for MuleSoft at a glance > Reltio Connector for MuleSoft set up > Test a project with the Reltio Connector for MuleSoft
@@ -229582,6 +230956,8 @@ You can start by reviewing [the architecture](https://docs.reltio.com/en/applica
 
 Learn about best practices for setting up Reltio Data Sharing with Databricks to ensure efficient and high-performance data sharing.
 
+## 
+
 ## Recommended practices
 
 ## Complete the initial data load before you set up Datashare
@@ -229861,6 +231237,8 @@ Reltio shares data with Databricks using either streaming tables or materialized
 
 Learn more about best practices for using Reltio Data Sharing with Databricks so that you can choose the recommended compute type, query the supported tables and views, and avoid unsupported downstream usage.
 
+## 
+
 ## Recommended practices
 
 ## Use Serverless Compute to read shared materialized views
@@ -229957,6 +231335,8 @@ Do not use data shares to build downstream systems for non-analytics use cases.
 
 
 Learn more about best practices for using Reltio Data Sharing with Databricks so that you can choose the recommended compute type, query the supported tables and views, and avoid unsupported downstream usage.
+
+## 
 
 ## Recommended practices
 

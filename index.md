@@ -1,5 +1,5 @@
 # Reltio Documentation Index
-_Generated: 2026-09-30 02:24 UTC — 3578 topics (3523 unique)_
+_Generated: 2026-10-02 02:24 UTC — 3597 topics (3542 unique)_
 
 This file is a structured navigation index of the Reltio documentation portal.
 It contains the full parent-child hierarchy, topic URLs, keywords, summaries,
@@ -15372,7 +15372,7 @@ _Topics in this section: Hub at a glance, Profile Stats dashboard at a glance, D
 
 ### Data Integrations
 
-_Topics in this section: Data integrations at a glance, Application Integration at a glance, Data Catalog integrations at a glance, Data Enrichment Integrations at a glance, Reltio Identity Builder™ at a glance, Data Pipelines at a glance, iPaaS Connectors at a glance, Reltio Data Sharing at a glance, Zero Copy Integration at a glance_
+_Topics in this section: Data integrations at a glance, Application Integration at a glance, Data Catalog integrations at a glance, Data Enrichment Integrations at a glance, Reltio Identity Builder™ at a glance, Data Pipelines at a glance, iPaaS Connectors at a glance, Reltio Data Sharing at a glance, Reltio data sharing - essentials, Zero Copy Integration at a glance_
 
 #### Data integrations at a glance
 
@@ -20612,6 +20612,151 @@ _Topics in this section: Data integrations at a glance, Application Integration 
 - **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Reltio Data Sharing at a glance > Monitoring data share
 - **Summary:** Learn how to view the data volume processed and messages sent for a data share in Reltio Console.
 - **Keywords:** view data sharing activity in reltio, open data share monitoring page, check data volume processed for data share, view messages sent across data shares, monitor data share in console, set time range for monitoring, data sharing monitoring, data volume, messages sent, time range
+
+#### Reltio data sharing - essentials
+
+- **URL:** https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations
+- **Summary:** Learn about Reltio data sharing - essentials and how it delivers data from the Reltio Context Intelligence Platform to your cloud data warehouses.
+- **Keywords:** Reltio Data Sharing Essentials, zero copy integrations overview, use zero copy in reltio, how to enable zero copy, cloud data warehouse governance, share data with databricks and microsoft fabric, four hour data refresh, schema evolution data share, test and production tenants, integration
+
+#### Reltio data sharing with Databricks - essentials
+
+- **URL:** https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/reltio-data-sharing-with-databricks---essentials?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Reltio data sharing - essentials
+- **Summary:** Learn about Reltio data sharing with Databricks - essentials and how it shares data with your Databricks Unity Catalog using Open Sharing.
+- **Keywords:** reltio data sharing essentials databricks, databricks zerocopy integration, delta sharing reltio databricks, zero copy data exchange, configure data sharing with databricks, analytics integration databricks, data lakehouse integration, delta lake open table format, hierarchical schema all values, four hour data refresh
+- **See also:** [Reltio data sharing with Databricks - essentials architecture](https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/reltio-data-sharing-with-databricks---essentials/reltio-data-sharing-with-databricks---essentials-architecture?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Configure Reltio data sharing with Databricks - essentials](https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/reltio-data-sharing-with-databricks---essentials/configure-reltio-data-sharing-with-databricks---essentials?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Reltio data sharing with Databricks - essentials architecture
+
+- **URL:** https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/reltio-data-sharing-with-databricks---essentials/reltio-data-sharing-with-databricks---essentials-architecture?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Reltio data sharing - essentials > Reltio data sharing with Databricks - essentials
+- **Summary:** Learn about the Reltio data sharing with Databricks - essentials architecture and how it shares Delta Lake-formatted data with your Databricks Unity Catalog.
+- **Keywords:** microsoft fabric data share architecture, reltio fabric adapter architecture, delta lake table format fabric, onelake lakehouse integration, reltio data pipeline service, fabric workspace data sharing, power bi copilot consumption, four hour data refresh
+- **See also:** [Configure Reltio data sharing with Databricks - essentials](https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/reltio-data-sharing-with-databricks---essentials/configure-reltio-data-sharing-with-databricks---essentials?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Best practices for Reltio data sharing with Databricks - essentials
+
+- **URL:** https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/reltio-data-sharing-with-databricks---essentials/best-practices-for-reltio-data-sharing-with-databricks---essentials?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Reltio data sharing - essentials > Reltio data sharing with Databricks - essentials
+- **Summary:** Learn about recommended practices for using streaming tables in Reltio data sharing with Databricks - essentials so that you can query the supported tables and avoid unsupported downstream usage.
+- **Keywords:** streaming tables best practices, Data Share usage guidelines, Streaming tables querying, Supported data sets, Analytics workloads, Data engineering workflows, BI and reporting integration, ML pipelines, Landing tables, 490 type limit
+- **See also:** [Reltio Support](https://docs.reltio.com/en/reltio/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Configure Reltio data sharing with Databricks - essentials
+
+- **URL:** https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/reltio-data-sharing-with-databricks---essentials/configure-reltio-data-sharing-with-databricks---essentials?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Reltio data sharing - essentials > Reltio data sharing with Databricks - essentials
+- **Summary:** Learn how to configure Reltio data sharing with Databricks - essentials using the Console UI or REST APIs.
+- **Keywords:** configure data sharing databricks, Reltio Data Sharing Essentials with Databricks, reltio data share adapter, create databricks delta share, reltio console data share setup, api based configuration databricks, delta sharing identifier databricks, data pipeline admin role, one share per tenant, test and production tenants
+- **See also:** [Configure Reltio data sharing with Databricks - essentials using Console UI](https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/reltio-data-sharing-with-databricks---essentials/configure-reltio-data-sharing-with-databricks---essentials/configure-reltio-data-sharing-with-databricks---essentials-using-console-ui?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Configure Reltio data sharing with Databricks - essentials using APIs](https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/reltio-data-sharing-with-databricks---essentials/configure-reltio-data-sharing-with-databricks---essentials/configure-reltio-data-sharing-with-databricks---essentials-using-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Best practices for setting up Reltio data sharing with Databricks - essentials
+
+- **URL:** https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/reltio-data-sharing-with-databricks---essentials/configure-reltio-data-sharing-with-databricks---essentials/best-practices-for-setting-up-reltio-data-sharing-with-databricks---essentials?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Reltio data sharing - essentials > Reltio data sharing with Databricks - essentials > Configure Reltio data sharing with Databricks - essentials
+- **Summary:** Follow these practices when you set up a Databricks data share so that the initial load and the ongoing sync perform as expected.
+- **Keywords:** Databricks DataShare setup, DataShare sync best practices, Initial data load validation, Reltio data unification validation, Disable DataShare during initial load, Enable DataShare after validation, DataPipelineConfig configuration, Datashare adapter configuration, GET dataPipelineConfig API, PUT dataPipelineConfig API
+
+#### Configure Reltio data sharing with Databricks - essentials using Console UI
+
+- **URL:** https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/reltio-data-sharing-with-databricks---essentials/configure-reltio-data-sharing-with-databricks---essentials/configure-reltio-data-sharing-with-databricks---essentials-using-console-ui?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Reltio data sharing - essentials > Reltio data sharing with Databricks - essentials > Configure Reltio data sharing with Databricks - essentials
+- **Summary:** Learn how to configure Reltio data sharing with Databricks - essentials in the Reltio Console UI.
+- **Keywords:** configure data sharing databricks, Reltio Data Sharing Essentials with Databricks, create databricks data share console, ui based databricks integration, sharing identifier field, databricks delta share console steps, metastore permissions databricks recipient, all values hierarchical schema
+- **See also:** [Best practices for setting up Reltio data sharing with Databricks - essentials](https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/reltio-data-sharing-with-databricks---essentials/configure-reltio-data-sharing-with-databricks---essentials/best-practices-for-setting-up-reltio-data-sharing-with-databricks---essentials?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Data Sharing at a glance](https://docs.reltio.com/en/applications/console/tenant-management-applications/data-sharing-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Configure Reltio data sharing with Databricks - essentials using APIs
+
+- **URL:** https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/reltio-data-sharing-with-databricks---essentials/configure-reltio-data-sharing-with-databricks---essentials/configure-reltio-data-sharing-with-databricks---essentials-using-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Reltio data sharing - essentials > Reltio data sharing with Databricks - essentials > Configure Reltio data sharing with Databricks - essentials
+- **Summary:** Learn how to create and configure a data share for Databricks using REST APIs.
+- **Keywords:** configure data share databricks api, Reltio Data Sharing Essentials with Databricks, create datashare adapter databricks, api setup data sharing, delta sharing api configuration, databricksConfig.identifier, adapter setup rest call, metastore permissions databricks recipient, all values hierarchical schema
+- **See also:** [Best practices for setting up Reltio data sharing with Databricks - essentials](https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/reltio-data-sharing-with-databricks---essentials/configure-reltio-data-sharing-with-databricks---essentials/best-practices-for-setting-up-reltio-data-sharing-with-databricks---essentials?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Data structure for Reltio data sharing with Databricks - essentials
+
+- **URL:** https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/reltio-data-sharing-with-databricks---essentials/data-structure-for-reltio-data-sharing-with-databricks---essentials?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Reltio data sharing - essentials > Reltio data sharing with Databricks - essentials
+- **Summary:** Learn more about the schema and streaming tables shared with your Databricks workspace.
+- **Keywords:** Reltio Data Sharing Essentials with Databricks, Databricks shared schema, Databricks streaming tables, Delta Sharing, Open Sharing, landing tables and streaming tables, reltio_datashare schema name, hierarchical schema all values
+- **See also:** [Best practices for Reltio data sharing with Databricks - essentials](https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/reltio-data-sharing-with-databricks---essentials/best-practices-for-reltio-data-sharing-with-databricks---essentials?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Streaming table fields in Reltio data sharing with Databricks - essentials
+
+- **URL:** https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/reltio-data-sharing-with-databricks---essentials/streaming-table-fields-in-reltio-data-sharing-with-databricks---essentials?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Reltio data sharing - essentials > Reltio data sharing with Databricks - essentials
+- **Summary:** Learn more about the fields available in Reltio data sharing with Databricks - essentials streaming tables.
+- **Keywords:** Databricks streaming-table fields, Reltio Data Sharing Essentials with Databricks fields, Databricks entity streaming tables, Databricks relation streaming tables, Databricks interaction streaming tables, match merge link fields, hierarchical schema attributes
+
+#### Reltio data sharing with Microsoft Fabric - essentials
+
+- **URL:** https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/reltio-data-sharing-with-microsoft-fabric---essentials?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Reltio data sharing - essentials
+- **Summary:** Learn about Reltio data sharing with Microsoft Fabric - essentials and how it shares data with your Microsoft Fabric Lakehouse.
+- **Keywords:** reltio data sharing essentials microsoft fabric, microsoft fabric zerocopy integration, share data with microsoft fabric lakehouse, enable data governance in fabric, when to use microsoft fabric sharing, configure data sharing in console, onelake storage, hierarchical schema all values, four hour data refresh, integration
+- **See also:** [Reltio data sharing with Microsoft Fabric - essentials architecture](https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/reltio-data-sharing-with-microsoft-fabric---essentials/reltio-data-sharing-with-microsoft-fabric---essentials-architecture?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Configure Reltio data sharing with Microsoft Fabric - essentials](https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/reltio-data-sharing-with-microsoft-fabric---essentials/configure-reltio-data-sharing-with-microsoft-fabric---essentials?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Reltio data sharing with Microsoft Fabric - essentials architecture
+
+- **URL:** https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/reltio-data-sharing-with-microsoft-fabric---essentials/reltio-data-sharing-with-microsoft-fabric---essentials-architecture?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Reltio data sharing - essentials > Reltio data sharing with Microsoft Fabric - essentials
+- **Summary:** Learn how Reltio shares data with Microsoft Fabric.
+- **Keywords:** microsoft fabric data share architecture, reltio fabric adapter architecture, delta lake table format fabric, onelake lakehouse integration, reltio data pipeline service, fabric workspace data sharing, power bi copilot consumption, four hour data refresh
+- **See also:** [Configure Reltio data sharing with Microsoft Fabric - essentials](https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/reltio-data-sharing-with-microsoft-fabric---essentials/configure-reltio-data-sharing-with-microsoft-fabric---essentials?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Best practices for Reltio data sharing with Microsoft Fabric - essentials
+
+- **URL:** https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/reltio-data-sharing-with-microsoft-fabric---essentials/best-practices-for-reltio-data-sharing-with-microsoft-fabric---essentials?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Reltio data sharing - essentials > Reltio data sharing with Microsoft Fabric - essentials
+- **Summary:** Learn about recommended practices for using streaming tables in Reltio data sharing with Microsoft Fabric - essentials so that you can query the supported tables and avoid unsupported downstream usage
+- **Keywords:** Microsoft Fabric data share best practices, Data Share usage guidelines, streaming tables querying, supported data sets, analytics workloads, data engineering workflows, BI and reporting integration, ML pipelines, landing tables, 490 type limit
+
+#### Configure Reltio data sharing with Microsoft Fabric - essentials
+
+- **URL:** https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/reltio-data-sharing-with-microsoft-fabric---essentials/configure-reltio-data-sharing-with-microsoft-fabric---essentials?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Reltio data sharing - essentials > Reltio data sharing with Microsoft Fabric - essentials
+- **Summary:** Learn how to configure Reltio data sharing with Microsoft Fabric - essentials using the Console UI or REST APIs.
+- **Keywords:** configure data sharing microsoft fabric, Reltio Data Sharing Essentials with Microsoft Fabric, reltio console data share setup, ui based configuration microsoft fabric, api based configuration fabric integration, check prerequisites for data sharing, subscription required for data sharing, recipient email for fabric data share, tenant admin configure data sharing, one share per tenant
+- **See also:** [Configure Reltio data sharing with Microsoft Fabric - essentials using Console UI](https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/reltio-data-sharing-with-microsoft-fabric---essentials/configure-reltio-data-sharing-with-microsoft-fabric---essentials/configure-reltio-data-sharing-with-microsoft-fabric---essentials-using-console-ui?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Configure Reltio data sharing with Microsoft Fabric - essentials using APIs](https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/reltio-data-sharing-with-microsoft-fabric---essentials/configure-reltio-data-sharing-with-microsoft-fabric---essentials/configure-reltio-data-sharing-with-microsoft-fabric---essentials-using-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Best practices for setting up Reltio data sharing with Microsoft Fabric - essentials
+
+- **URL:** https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/reltio-data-sharing-with-microsoft-fabric---essentials/configure-reltio-data-sharing-with-microsoft-fabric---essentials/best-practices-for-setting-up-reltio-data-sharing-with-microsoft-fabric---essentials?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Reltio data sharing - essentials > Reltio data sharing with Microsoft Fabric - essentials > Configure Reltio data sharing with Microsoft Fabric - essentials
+- **Summary:** Follow these practices when you set up a Microsoft Fabric data share so that the initial load and the ongoing sync perform as expected.
+- **Keywords:** Microsoft Fabric data share setup, data share sync best practices, Initial data load validation, Reltio data unification validation, Disable data share during initial load, Enable data share after validation, DataPipelineConfig configuration, data share adapter configuration, GET dataPipelineConfig API, PUT dataPipelineConfig API
+
+#### Configure Reltio data sharing with Microsoft Fabric - essentials using Console UI
+
+- **URL:** https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/reltio-data-sharing-with-microsoft-fabric---essentials/configure-reltio-data-sharing-with-microsoft-fabric---essentials/configure-reltio-data-sharing-with-microsoft-fabric---essentials-using-console-ui?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Reltio data sharing - essentials > Reltio data sharing with Microsoft Fabric - essentials > Configure Reltio data sharing with Microsoft Fabric - essentials
+- **Summary:** Learn how to configure Reltio data sharing with Microsoft Fabric - essentials in the Reltio Console UI.
+- **Keywords:** configure data sharing microsoft fabric, Reltio Data Sharing Essentials with Microsoft Fabric, set up ms fabric integration, data share console ui steps, how to share data with microsoft fabric, enable reltio data sharing fabric, create microsoft fabric data share, generate share link in console, recipient email fabric data share, all values hierarchical schema
+- **See also:** [Data Sharing at a glance](https://docs.reltio.com/en/applications/console/tenant-management-applications/data-sharing-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Configure Reltio data sharing with Microsoft Fabric - essentials using APIs
+
+- **URL:** https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/reltio-data-sharing-with-microsoft-fabric---essentials/configure-reltio-data-sharing-with-microsoft-fabric---essentials/configure-reltio-data-sharing-with-microsoft-fabric---essentials-using-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Reltio data sharing - essentials > Reltio data sharing with Microsoft Fabric - essentials > Configure Reltio data sharing with Microsoft Fabric - essentials
+- **Summary:** Using the REST APIs, you create a Microsoft Fabric data share, set up the data share, and generate a share link for the recipient to accept.**Prerequisites**
+- **Keywords:** configure data sharing ms fabric api, Reltio Data Sharing Essentials with Microsoft Fabric, create data share adapter microsoft fabric, how to set up data share api, generate data share link with api, provision microsoft fabric resources, rest api for data sharing, adapter configuration parameters fabric, datashare-fabric adapter type, all values hierarchical schema
+
+#### Monitoring data share for Reltio data sharing - essentials
+
+- **URL:** https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/monitoring-data-share-for-reltio-data-sharing---essentials?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Reltio data sharing - essentials
+- **Summary:** Learn about the data volume and messages processed for your data shares.
+- **Keywords:** monitor data sharing in reltio, Reltio Data Sharing Essentials monitoring, data volume processed per data share, messages sent across data shares, track data share activity, confirm data sharing is working, data sharing monitoring, data volume, messages sent, data share
+- **See also:** [view data sharing activity](https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/monitoring-data-share-for-reltio-data-sharing---essentials/view-share-activity-in-reltio-data-sharing---essentials?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### View share activity in Reltio data sharing - essentials
+
+- **URL:** https://docs.reltio.com/en/applications/data-integrations/reltio-data-sharing---essentials/monitoring-data-share-for-reltio-data-sharing---essentials/view-share-activity-in-reltio-data-sharing---essentials?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Data Integrations > Reltio data sharing - essentials > Monitoring data share for Reltio data sharing - essentials
+- **Summary:** Learn how to view the data volume processed and messages sent for a data share in Reltio Console.
+- **Keywords:** view data sharing activity in reltio, Reltio Data Sharing Essentials monitoring, open data share monitoring page, check data volume processed for data share, view messages sent across data shares, monitor data share in console, set time range for monitoring, data sharing monitoring, data volume, messages sent
 
 #### Zero Copy Integration at a glance
 
