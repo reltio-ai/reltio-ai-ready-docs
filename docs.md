@@ -1,8 +1,8 @@
 # Reltio Documentation
 
-_Generated: 2026-10-02 02:24 UTC_
+_Generated: 2026-10-07 02:27 UTC_
 
-_Topics: 3725_
+_Topics: 3794_
 
 ---
 
@@ -9501,11 +9501,9 @@ We build on each GA release with a steady stream of bi-weekly updates that deliv
 
 ## Future Bi-weekly releases
 
-| Release Name | Stage | Tenant Type | Release Date |
-| --- | --- | --- | --- |
-| 2026.1.12.0 | 1 | Development (DEV) | October 02, 2026 |
-| 2026.1.12.0 | 2 | Test (TEST) | October 02, 2026 |
-| 2026.1.12.0 | 3 | Production (PRD) | October 09, 2026 |
+> **Important:** Bi-weekly releases are paused for all customers in the following weeks: 
+> - November 23, 2026 – December 4, 2026
+> - December 21, 2026 – January 1, 2027During the Q4 peak period (November 23, 2026 – January 1, 2027), no major application or infrastructure changes will be made. Reltio may still provide emergency bug fixes (EBFs) for urgent issues with no workaround, or if a service is unavailable. For questions, contact your Reltio Customer Success Manager (CSM).
 
 ## Recent releases
 
@@ -15914,6 +15912,48 @@ RDM now supports validating dependent lookup values against parent values resolv
 To enable same-source validation, set `transcodeHierarchyOnSource` to `true` in the [RDM tenant configuration](https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-api/update-tenant-configuration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). If the property is `false` or not specified, RDM continues to validate dependent values against all successfully resolved parents of the same lookup type.
 
 For more information, see [Lookups and canonical values](https://docs.reltio.com/en/applications/rdm/rdm-at-a-glance/rdm-operation/lookups-and-canonical-values?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Transcode Hierarchical Lookups](https://docs.reltio.com/en/developer-resources/reference-data-management-apis/reference-data-management-apis-at-a-glance/rdm-api/transcode-api/transcode-hierarchical-lookups?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+
+
+---
+
+# 2026.1.12.0 RN | 09-Oct-2026
+
+Learn about the new features and enhancements introduced in this 2026.1.12.0 release.
+
+**Deployment dates**
+
+| Stage | Tenant type | When |
+| --- | --- | --- |
+| 1 | Development (DEV) | October 2, 2026 |
+| 2 | Test (TEST) | October 2, 2026 |
+| 3 | Production (PRD) | October 9, 2026 |
+
+## Introducing SAP Reltio's velocity pack for Banking
+
+SAP Reltio's Velocity Pack for Banking is a new, standalone velocity pack for retail and commercial banking. It covers the everyday mechanics of retail and commercial banking — accounts, products, and the bankers who serve them. It differs from Reltio for Financial Services by offering a banking product catalog, account types built for deposits, cards, and loans, and banking-specific roles such as bankers, branches, and signers, in place of a wealth and advisory model. It gives you a ready-to-use data model that connects your customers (individuals, households, and commercial organizations) to their accounts, the products behind those accounts, the applications that opened them, and the bankers and branches that serve them. The pack comes with match and survivorship rules, reference data, validation, cleansing, dashboards, and profile layouts, so you can start from a working golden record and realize value in as few as 90 days.
+
+The velocity pack brings customer records from checking, card, mortgage, and business banking systems into a single profile, including due diligence, verification, risk, and screening information. It also connects individuals into households and commercial customers into ownership and control structures, helping banks identify beneficial owners from documented relationships rather than reconstructing them from separate records.
+
+Applications link to existing customer profiles and remain connected to the requested product, banker, account, relationship manager, and servicing branch. This reduces duplicate customer records, gives teams a more complete view of each relationship, and supports faster onboarding, clearer risk assessment, and better visibility across the customer lifecycle.
+
+For more information, see [SAP Reltio's velocity pack for Banking](https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+## Structural validation for materialized hierarchy
+
+Materialized hierarchies organize entities into parent and child connections based on rules configured for a hierarchy entity type. For example, a configuration may allow a node only one child of an entity type. A node with multiple children then breaks that rule, making the hierarchy inconsistent with your data model. Without validation, you might not notice these structural violations until they affect processes that rely on the hierarchy.
+
+Materialized Hierarchy Management APIs now validate hierarchy structures against configured parent, child, and child-cardinality rules. Read operations return validation details for affected hierarchy connections, while write operations reject changes that introduce structural violations. In exceptional cases, you can apply a change even if it introduces structural violations..
+
+For more information, see [Materialized Hierarchy Management APIs](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Configure tenant business settings for hierarchy](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/configure-tenant-business-settings-for-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+## Preserve hierarchy connections during merge and unmerge
+
+Materialized hierarchies organize related profiles into parent-child structures and can include versions and effective dates. Materialized hierarchies now retain crosswalk information when entities merge, allowing connections to be restored to the appropriate entities during unmerge. Merges combine connections under the winning node, while unmerges use the stored crosswalks to restore connections to one or more resulting nodes.
+
+If unmerge processing produces a disconnected tree, the detached tree is moved to a separate hierarchy with a unique name.
+
+For more information, see [Effects of entity operations on materialized hierarchies](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/effects-of-entity-operations-on-materialized-hierarchies?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
@@ -29259,6 +29299,360 @@ This table identifies the preconfigured Generic interaction type that comes for 
 
 ---
 
+# Data Model for SAP Reltio's velocity pack for Banking in Reltio Intelligent 360
+
+> **Section:** Products > Reltio Intelligent 360 > Reltio Intelligent 360 at a glance > Reltio Intelligent 360 reference > Reltio Intelligent 360 velocity packs
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-intelligent-360/reltio-intelligent-360-at-a-glance/reltio-intelligent-360-reference/reltio-intelligent-360-velocity-packs/data-model-for-sap-reltios-velocity-pack-for-banking-in-reltio-intelligent-360?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** data model for banking in reltio intelligent 360, entity relationship and interaction types in intelligent 360, reltio intelligent 360 data model overview, view entities and interactions in intelligent 360, configure the banking data model for intelligent 360, intelligent 360, data model
+
+
+Learn about entities, attributes, relationships, and interactions included in the data model for SAP Reltio's velocity pack for Banking in Reltio Intelligent 360.
+
+The data model for SAP Reltio's velocity pack for Banking in Reltio Intelligent 360 provides a predefined set of entity types, each with specific attributes and relationship types similar to Reltio MDM. For more information, see topics [Entity types for SAP Reltio's velocity pack for Banking](https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/data-model-for-sap-reltios-velocity-pack-for-banking/entity-types-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Relationship types for SAP Reltio's velocity pack for Banking](https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/data-model-for-sap-reltios-velocity-pack-for-banking/relationship-types-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+With addition to entity and relationship types, SAP Reltio's velocity pack for Banking for Reltio Intelligent 360 provides interaction types relevant to the Banking industry. For more information on the included Interaction types, see the topics on this section.
+
+For general information on entity, attribute, relationship, and interaction types, see topic [Reltio object types](https://docs.reltio.com/en/reltio/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-information-model/data-model/reltio-object-types?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). For details on the preconfigured data model and other configurations provided with this velocity pack, see the sub topics in this section.
+
+
+
+---
+
+# Account Status Change interaction type for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Intelligent 360 > Reltio Intelligent 360 at a glance > Reltio Intelligent 360 reference > Reltio Intelligent 360 velocity packs > Data Model for SAP Reltio's velocity pack for Banking in Reltio Intelligent 360
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-intelligent-360/reltio-intelligent-360-at-a-glance/reltio-intelligent-360-reference/reltio-intelligent-360-velocity-packs/data-model-for-sap-reltios-velocity-pack-for-banking-in-reltio-intelligent-360/account-status-change-interaction-type-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** account status change interaction type in banking, track account status change events in reltio, banking velocity pack interaction types, configure account status change interaction in reltio console, record account status change activity in reltio mdm, account status change, interaction types, events
+
+
+Learn about the Account Status Change interaction type preconfigured in entity types in SAP Reltio's velocity pack for Banking.
+
+Interaction types define the kinds of transactional events that have an associated date and time.
+
+This table identifies the preconfigured Account Status Change interaction type that comes with SAP Reltio's velocity pack for Banking. Use this interaction type when you want to track Account Status Change events.
+
+**Account Status Change Event**
+- **URI:** configuration/interactionTypes/AccountStatusChangeEvent
+- **Label:** Account Status Change Event
+- **Description:** Single-entity lifecycle event on FinancialAccount recording status transitions (opened, active, dormant, closed, frozen, restricted). Captures timestamp, reason code, and initiating party. Used for account lifecycle reporting and regulatory dormancy tracking.
+- **hasMembers:** true
+
+
+| Parties |  |  |  |  |  |  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **Role** | Object Type URI | Min Occurs | Max Occurs | Required |  |  |  |  |  |  |  |
+| **Account** | configuration/entityTypes/FinancialAccount |  |  |  |  |  |  |  |  |  |  |
+
+
+| Name | Label | Type | Description | Survivorship | Hidden | Important | System | Searchable | Faceted | Lookup Code | URI |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **eventId** | Event ID | String |  | LUD | false | false | false | true | false |  | configuration/interactionTypes/AccountStatusChangeEvent/attributes/eventId |
+| **occurredAt** | Event Timestamp | Timestamp |  | LUD | false | false | false | false | false |  | configuration/interactionTypes/AccountStatusChangeEvent/attributes/occurredAt |
+| **previousStatus** | Previous Status | String |  | LUD | false | false | false | false | false | rdm/lookupTypes/AccountStatus | configuration/interactionTypes/AccountStatusChangeEvent/attributes/previousStatus |
+| **newStatus** | New Status | String | OPENED / ACTIVE / DORMANT / CLOSED / FROZEN / RESTRICTED. | LUD | false | false | false | false | false | rdm/lookupTypes/AccountStatus | configuration/interactionTypes/AccountStatusChangeEvent/attributes/newStatus |
+| **reasonCode** | Reason Code | String | CUSTOMER_REQUEST / INACTIVITY / FRAUD / REGULATORY / DECEASED / BANKRUPTCY. | LUD | false | false | false | false | false | rdm/lookupTypes/StatusChangeReason | configuration/interactionTypes/AccountStatusChangeEvent/attributes/reasonCode |
+| **initiatedBy** | Initiated By | String | User or system that initiated the status change. | LUD | false | false | false | false | false |  | configuration/interactionTypes/AccountStatusChangeEvent/attributes/initiatedBy |
+| **notes** | Notes | String |  | LUD | false | false | false | false | false |  | configuration/interactionTypes/AccountStatusChangeEvent/attributes/notes |
+
+> **Note:** On the table above, the top level attributes are represented in bold.
+
+
+
+---
+
+# Application Submission interaction type for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Intelligent 360 > Reltio Intelligent 360 at a glance > Reltio Intelligent 360 reference > Reltio Intelligent 360 velocity packs > Data Model for SAP Reltio's velocity pack for Banking in Reltio Intelligent 360
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-intelligent-360/reltio-intelligent-360-at-a-glance/reltio-intelligent-360-reference/reltio-intelligent-360-velocity-packs/data-model-for-sap-reltios-velocity-pack-for-banking-in-reltio-intelligent-360/application-submission-interaction-type-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** application submission interaction type in banking, track application submission events in reltio, banking velocity pack interaction types, configure application submission interaction in reltio console, record application submission activity in reltio mdm, application submission, interaction types, events
+
+
+Learn about the Application Submission interaction type preconfigured in entity types in SAP Reltio's velocity pack for Banking.
+
+Interaction types define the kinds of transactional events that have an associated date and time.
+
+This table identifies the preconfigured Application Submission interaction type that comes with SAP Reltio's velocity pack for Banking. Use this interaction type when you want to track Application Submission events.
+
+**Application Submission Event**
+- **URI:** configuration/interactionTypes/ApplicationSubmissionEvent
+- **Label:** Application Submission Event
+- **Description:** Account or loan application submission event linking an applicant (individual or organization) to a requested product and assigned banker. Records submission timestamp, channel, initial status, and application reference. Distinct from Application-as-Entity which tracks full lifecycle; this event captures the point-in-time submission action.
+- **hasMembers:** true
+
+
+| Parties |  |  |  |  |  |  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **Role** | Object Type URI | Min Occurs | Max Occurs | Required |  |  |  |  |  |  |  |
+| **Application** | configuration/entityTypes/Application |  |  |  |  |  |  |  |  |  |  |
+| **Applicant** | configuration/entityTypes/Individual |  |  |  |  |  |  |  |  |  |  |
+| **Requested Product** | configuration/entityTypes/Product |  |  |  |  |  |  |  |  |  |  |
+| **Assigned Banker** | configuration/entityTypes/Banker |  |  |  |  |  |  |  |  |  |  |
+
+
+| Name | Label | Type | Description | Survivorship | Hidden | Important | System | Searchable | Faceted | Lookup Code | URI |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **submissionId** | Submission ID | String |  | LUD | false | false | false | true | false |  | configuration/interactionTypes/ApplicationSubmissionEvent/attributes/submissionId |
+| **submittedAt** | Submission Timestamp | Timestamp |  | LUD | false | false | false | false | false |  | configuration/interactionTypes/ApplicationSubmissionEvent/attributes/submittedAt |
+| **channel** | Submission Channel | String | BRANCH / ONLINE / MOBILE / PHONE / MAIL. | LUD | false | false | false | false | false | rdm/lookupTypes/ApplicationChannel | configuration/interactionTypes/ApplicationSubmissionEvent/attributes/channel |
+| **applicationType** | Application Type | String | NEW_ACCOUNT / LOAN / CREDIT_CARD / MORTGAGE / LINE_OF_CREDIT. | LUD | false | false | false | false | false | rdm/lookupTypes/ApplicationType | configuration/interactionTypes/ApplicationSubmissionEvent/attributes/applicationType |
+| **initialStatus** | Initial Status | String | SUBMITTED / PENDING_REVIEW / INCOMPLETE. | LUD | false | false | false | false | false | rdm/lookupTypes/ApplicationStatus | configuration/interactionTypes/ApplicationSubmissionEvent/attributes/initialStatus |
+| **requestedAmount** | Requested Amount | Number | Requested loan amount or credit limit for lending applications. | LUD | false | false | false | false | false |  | configuration/interactionTypes/ApplicationSubmissionEvent/attributes/requestedAmount |
+| **currency** | Currency | String |  | LUD | false | false | false | false | false | rdm/lookupTypes/Currencies | configuration/interactionTypes/ApplicationSubmissionEvent/attributes/currency |
+
+> **Note:** On the table above, the top level attributes are represented in bold.
+
+
+
+---
+
+# Compliance Review interaction type for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Intelligent 360 > Reltio Intelligent 360 at a glance > Reltio Intelligent 360 reference > Reltio Intelligent 360 velocity packs > Data Model for SAP Reltio's velocity pack for Banking in Reltio Intelligent 360
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-intelligent-360/reltio-intelligent-360-at-a-glance/reltio-intelligent-360-reference/reltio-intelligent-360-velocity-packs/data-model-for-sap-reltios-velocity-pack-for-banking-in-reltio-intelligent-360/compliance-review-interaction-type-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** compliance review interaction type in banking, track compliance review events in reltio, banking velocity pack interaction types, configure compliance review interaction in reltio console, record compliance review activity in reltio mdm, compliance review, interaction types, events
+
+
+Learn about the Compliance Review interaction type preconfigured in entity types in SAP Reltio's velocity pack for Banking.
+
+Interaction types define the kinds of transactional events that have an associated date and time.
+
+This table identifies the preconfigured Compliance Review interaction type that comes with SAP Reltio's velocity pack for Banking. Use this interaction type when you want to track Compliance Review events.
+
+**Compliance Review Event**
+- **URI:** configuration/interactionTypes/ComplianceReviewEvent
+- **Label:** Compliance Review Event
+- **Description:** Periodic or trigger-driven compliance review of a customer relationship (individual or organization) with timestamp, reviewer, review type (annual, triggered, initial), and outcome. Captures KYC refresh, enhanced due diligence, beneficial ownership verification, and risk-rating updates. Aligns with Basel Committee guidance on customer due diligence and ongoing monitoring.
+- **hasMembers:** true
+
+
+| Parties |  |  |  |  |  |  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **Role** | Object Type URI | Min Occurs | Max Occurs | Required |  |  |  |  |  |  |  |
+| **Review Subject** | configuration/entityTypes/Individual |  |  |  |  |  |  |  |  |  |  |
+| **Reviewer** | configuration/entityTypes/Banker |  |  |  |  |  |  |  |  |  |  |
+
+
+| Name | Label | Type | Description | Survivorship | Hidden | Important | System | Searchable | Faceted | Lookup Code | URI |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **reviewId** | Review ID | String |  | LUD | false | false | false | true | false |  | configuration/interactionTypes/ComplianceReviewEvent/attributes/reviewId |
+| **reviewDate** | Review Date | Date |  | LUD | false | false | false | false | false |  | configuration/interactionTypes/ComplianceReviewEvent/attributes/reviewDate |
+| **reviewType** | Review Type | String | ANNUAL / TRIGGERED / PERIODIC / INITIAL / ENHANCED_DUE_DILIGENCE. | LUD | false | false | false | false | false | rdm/lookupTypes/ComplianceReviewType | configuration/interactionTypes/ComplianceReviewEvent/attributes/reviewType |
+| **triggerReason** | Trigger Reason | String | TRANSACTION_PATTERN / ADVERSE_MEDIA / SANCTIONS_HIT / REGULATORY_REQUEST / RISK_RATING_CHANGE. | LUD | false | false | false | false | false | rdm/lookupTypes/ReviewTriggerReason | configuration/interactionTypes/ComplianceReviewEvent/attributes/triggerReason |
+| **outcome** | Review Outcome | String | APPROVED / DECLINED / ESCALATED / RELATIONSHIP_EXITED / ENHANCED_MONITORING. | LUD | false | false | false | false | false | rdm/lookupTypes/ComplianceReviewOutcome | configuration/interactionTypes/ComplianceReviewEvent/attributes/outcome |
+| **newRiskRating** | New Risk Rating | String | LOW / MEDIUM / HIGH / PROHIBITED. | LUD | false | false | false | false | false | rdm/lookupTypes/KYCRiskRating | configuration/interactionTypes/ComplianceReviewEvent/attributes/newRiskRating |
+| **findings** | Review Findings | String |  | LUD | false | false | false | false | false |  | configuration/interactionTypes/ComplianceReviewEvent/attributes/findings |
+| **nextReviewDue** | Next Review Due | Date |  | LUD | false | false | false | false | false |  | configuration/interactionTypes/ComplianceReviewEvent/attributes/nextReviewDue |
+| **documentationComplete** | Documentation Complete | Boolean |  | LUD | false | false | false | false | false |  | configuration/interactionTypes/ComplianceReviewEvent/attributes/documentationComplete |
+
+> **Note:** On the table above, the top level attributes are represented in bold.
+
+
+
+---
+
+# Ownership Change interaction type for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Intelligent 360 > Reltio Intelligent 360 at a glance > Reltio Intelligent 360 reference > Reltio Intelligent 360 velocity packs > Data Model for SAP Reltio's velocity pack for Banking in Reltio Intelligent 360
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-intelligent-360/reltio-intelligent-360-at-a-glance/reltio-intelligent-360-reference/reltio-intelligent-360-velocity-packs/data-model-for-sap-reltios-velocity-pack-for-banking-in-reltio-intelligent-360/ownership-change-interaction-type-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** ownership change interaction type in banking, track ownership change events in reltio, banking velocity pack interaction types, configure ownership change interaction in reltio console, record ownership change activity in reltio mdm, ownership change, interaction types, events
+
+
+Learn about the Ownership Change interaction type preconfigured in entity types in SAP Reltio's velocity pack for Banking.
+
+Interaction types define the kinds of transactional events that have an associated date and time.
+
+This table identifies the preconfigured Ownership Change interaction type that comes with SAP Reltio's velocity pack for Banking. Use this interaction type when you want to track Ownership Change events.
+
+**Ownership Change Event**
+- **URI:** configuration/interactionTypes/OwnershipChangeEvent
+- **Label:** Ownership Change Event
+- **Description:** Beneficial ownership or controlling-party relationship change event recording updates to ownership percentage, control type, or effective dates. Links BeneficialOwner or ControllingParty relationship to the change timestamp and reason. Used for UBO traversal and regulatory reporting (e.g., FinCEN beneficial ownership rule).
+- **hasMembers:** true
+
+
+| Parties |  |  |  |  |  |  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **Role** | Object Type URI | Min Occurs | Max Occurs | Required |  |  |  |  |  |  |  |
+| **Ownership Relationship** | configuration/entityTypes/BeneficialOwner |  |  |  |  |  |  |  |  |  |  |
+
+
+| Name | Label | Type | Description | Survivorship | Hidden | Important | System | Searchable | Faceted | Lookup Code | URI |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **changeId** | Change ID | String |  | LUD | false | false | false | true | false |  | configuration/interactionTypes/OwnershipChangeEvent/attributes/changeId |
+| **changeDate** | Change Date | Date |  | LUD | false | false | false | false | false |  | configuration/interactionTypes/OwnershipChangeEvent/attributes/changeDate |
+| **changeType** | Change Type | String | PERCENTAGE_CHANGE / CONTROL_TYPE_CHANGE / NEW_OWNER / OWNER_REMOVED / EFFECTIVE_DATE_CHANGE. | LUD | false | false | false | false | false | rdm/lookupTypes/OwnershipChangeType | configuration/interactionTypes/OwnershipChangeEvent/attributes/changeType |
+| **previousPercentage** | Previous Ownership Percentage | Number |  | LUD | false | false | false | false | false |  | configuration/interactionTypes/OwnershipChangeEvent/attributes/previousPercentage |
+| **newPercentage** | New Ownership Percentage | Number |  | LUD | false | false | false | false | false |  | configuration/interactionTypes/OwnershipChangeEvent/attributes/newPercentage |
+| **previousControlType** | Previous Control Type | String |  | LUD | false | false | false | false | false | rdm/lookupTypes/ControlType | configuration/interactionTypes/OwnershipChangeEvent/attributes/previousControlType |
+| **newControlType** | New Control Type | String |  | LUD | false | false | false | false | false | rdm/lookupTypes/ControlType | configuration/interactionTypes/OwnershipChangeEvent/attributes/newControlType |
+| **reason** | Change Reason | String |  | LUD | false | false | false | false | false |  | configuration/interactionTypes/OwnershipChangeEvent/attributes/reason |
+| **verifiedBy** | Verified By | String |  | LUD | false | false | false | false | false |  | configuration/interactionTypes/OwnershipChangeEvent/attributes/verifiedBy |
+
+> **Note:** On the table above, the top level attributes are represented in bold.
+
+
+
+---
+
+# Screening interaction type for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Intelligent 360 > Reltio Intelligent 360 at a glance > Reltio Intelligent 360 reference > Reltio Intelligent 360 velocity packs > Data Model for SAP Reltio's velocity pack for Banking in Reltio Intelligent 360
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-intelligent-360/reltio-intelligent-360-at-a-glance/reltio-intelligent-360-reference/reltio-intelligent-360-velocity-packs/data-model-for-sap-reltios-velocity-pack-for-banking-in-reltio-intelligent-360/screening-interaction-type-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** screening interaction type in banking, track screening events in reltio, banking velocity pack interaction types, configure screening interaction in reltio console, record screening activity in reltio mdm, screening, interaction types, events
+
+
+Learn about the Screening interaction type preconfigured in entity types in SAP Reltio's velocity pack for Banking.
+
+Interaction types define the kinds of transactional events that have an associated date and time.
+
+This table identifies the preconfigured Screening interaction type that comes with SAP Reltio's velocity pack for Banking. Use this interaction type when you want to track Screening events.
+
+**Screening Event**
+- **URI:** configuration/interactionTypes/ScreeningEvent
+- **Label:** Screening Event
+- **Description:** KYC/AML screening event for a customer (individual or organization) with timestamp, screening provider, match results, and risk score. Captures sanctions screening (OFAC, UN, EU lists), PEP checks, adverse media searches, and watchlist monitoring. Aligns with FATF recommendations and jurisdiction-specific AML regulations.
+- **hasMembers:** true
+
+
+| Parties |  |  |  |  |  |  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **Role** | Object Type URI | Min Occurs | Max Occurs | Required |  |  |  |  |  |  |  |
+| **Screening Subject** | configuration/entityTypes/Individual |  |  |  |  |  |  |  |  |  |  |
+
+
+| Name | Label | Type | Description | Survivorship | Hidden | Important | System | Searchable | Faceted | Lookup Code | URI |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **screeningId** | Screening ID | String |  | LUD | false | false | false | true | false |  | configuration/interactionTypes/ScreeningEvent/attributes/screeningId |
+| **screeningDate** | Screening Date | Timestamp |  | LUD | false | false | false | false | false |  | configuration/interactionTypes/ScreeningEvent/attributes/screeningDate |
+| **screeningType** | Screening Type | String | SANCTIONS / PEP / ADVERSE_MEDIA / WATCHLIST / IDENTITY_VERIFICATION. | LUD | false | false | false | false | false | rdm/lookupTypes/ScreeningType | configuration/interactionTypes/ScreeningEvent/attributes/screeningType |
+| **provider** | Screening Provider | String | OFAC / WORLD_CHECK / LEXISNEXIS / DOWJONES / ACURIS. | LUD | false | false | false | false | false | rdm/lookupTypes/ScreeningProvider | configuration/interactionTypes/ScreeningEvent/attributes/provider |
+| **matchResult** | Match Result | String | NO_MATCH / POTENTIAL_MATCH / CONFIRMED_MATCH / FALSE_POSITIVE. | LUD | false | false | false | false | false | rdm/lookupTypes/ScreeningMatchResult | configuration/interactionTypes/ScreeningEvent/attributes/matchResult |
+| **riskScore** | Risk Score | Number | Numeric risk score from screening provider (0-100 scale). | LUD | false | false | false | false | false |  | configuration/interactionTypes/ScreeningEvent/attributes/riskScore |
+| **matchDetails** | Match Details | String | Details of potential or confirmed matches for investigation. | LUD | false | false | false | false | false |  | configuration/interactionTypes/ScreeningEvent/attributes/matchDetails |
+| **reviewedBy** | Reviewed By | String | Compliance officer who reviewed screening results. | LUD | false | false | false | false | false |  | configuration/interactionTypes/ScreeningEvent/attributes/reviewedBy |
+| **reviewDate** | Review Date | Date |  | LUD | false | false | false | false | false |  | configuration/interactionTypes/ScreeningEvent/attributes/reviewDate |
+
+> **Note:** On the table above, the top level attributes are represented in bold.
+
+
+
+---
+
+# Service interaction type for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Intelligent 360 > Reltio Intelligent 360 at a glance > Reltio Intelligent 360 reference > Reltio Intelligent 360 velocity packs > Data Model for SAP Reltio's velocity pack for Banking in Reltio Intelligent 360
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-intelligent-360/reltio-intelligent-360-at-a-glance/reltio-intelligent-360-reference/reltio-intelligent-360-velocity-packs/data-model-for-sap-reltios-velocity-pack-for-banking-in-reltio-intelligent-360/service-interaction-type-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** service interaction type in banking, track service events in reltio, banking velocity pack interaction types, configure service interaction in reltio console, record service activity in reltio mdm, service, interaction types, events
+
+
+Learn about the Service interaction type preconfigured in entity types in SAP Reltio's velocity pack for Banking.
+
+Interaction types define the kinds of transactional events that have an associated date and time.
+
+This table identifies the preconfigured Service interaction type that comes with SAP Reltio's velocity pack for Banking. Use this interaction type when you want to track Service events.
+
+**Service Interaction**
+- **URI:** configuration/interactionTypes/ServiceInteraction
+- **Label:** Service Interaction
+- **Description:** Customer service touchpoint event linking a customer (individual or organization) to a banker and servicing branch. Captures branch visits, call-center contacts, digital self-service sessions, and advisory meetings with timestamp, channel, service type, and outcome. Used by CRM and relationship-management workflows.
+- **hasMembers:** true
+
+
+| Parties |  |  |  |  |  |  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **Role** | Object Type URI | Min Occurs | Max Occurs | Required |  |  |  |  |  |  |  |
+| **Customer** | configuration/entityTypes/Individual |  |  |  |  |  |  |  |  |  |  |
+| **Banker** | configuration/entityTypes/Banker |  |  |  |  |  |  |  |  |  |  |
+| **Servicing Branch** | configuration/entityTypes/Location |  |  |  |  |  |  |  |  |  |  |
+
+
+| Name | Label | Type | Description | Survivorship | Hidden | Important | System | Searchable | Faceted | Lookup Code | URI |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **interactionId** | Interaction ID | String |  | LUD | false | false | false | true | false |  | configuration/interactionTypes/ServiceInteraction/attributes/interactionId |
+| **occurredAt** | Interaction Timestamp | Timestamp |  | LUD | false | false | false | false | false |  | configuration/interactionTypes/ServiceInteraction/attributes/occurredAt |
+| **channel** | Channel | String | BRANCH / PHONE / EMAIL / CHAT / VIDEO / MOBILE_APP. | LUD | false | false | false | false | false | rdm/lookupTypes/ServiceChannel | configuration/interactionTypes/ServiceInteraction/attributes/channel |
+| **serviceType** | Service Type | String | ACCOUNT_INQUIRY / TRANSACTION_DISPUTE / PRODUCT_INQUIRY / COMPLAINT / ADVISORY / ONBOARDING. | LUD | false | false | false | false | false | rdm/lookupTypes/ServiceType | configuration/interactionTypes/ServiceInteraction/attributes/serviceType |
+| **outcome** | Outcome | String | RESOLVED / ESCALATED / PENDING / REFERRED / CLOSED. | LUD | false | false | false | false | false | rdm/lookupTypes/ServiceOutcome | configuration/interactionTypes/ServiceInteraction/attributes/outcome |
+| **duration** | Duration (minutes) | Number |  | LUD | false | false | false | false | false |  | configuration/interactionTypes/ServiceInteraction/attributes/duration |
+| **summary** | Interaction Summary | String |  | LUD | false | false | false | false | false |  | configuration/interactionTypes/ServiceInteraction/attributes/summary |
+| **followUpRequired** | Follow-Up Required | Boolean |  | LUD | false | false | false | false | false |  | configuration/interactionTypes/ServiceInteraction/attributes/followUpRequired |
+
+> **Note:** On the table above, the top level attributes are represented in bold.
+
+
+
+---
+
+# Transaction interaction type for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Intelligent 360 > Reltio Intelligent 360 at a glance > Reltio Intelligent 360 reference > Reltio Intelligent 360 velocity packs > Data Model for SAP Reltio's velocity pack for Banking in Reltio Intelligent 360
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-intelligent-360/reltio-intelligent-360-at-a-glance/reltio-intelligent-360-reference/reltio-intelligent-360-velocity-packs/data-model-for-sap-reltios-velocity-pack-for-banking-in-reltio-intelligent-360/transaction-interaction-type-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** transaction interaction type in banking, track transaction events in reltio, banking velocity pack interaction types, configure transaction interaction in reltio console, record transaction activity in reltio mdm, transaction, interaction types, events
+
+
+Learn about the Transaction interaction type preconfigured in entity types in SAP Reltio's velocity pack for Banking.
+
+Interaction types define the kinds of transactional events that have an associated date and time.
+
+This table identifies the preconfigured Transaction interaction type that comes with SAP Reltio's velocity pack for Banking. Use this interaction type when you want to track Transaction events.
+
+**Transaction Interaction**
+- **URI:** configuration/interactionTypes/TransactionInteraction
+- **Label:** Transaction Interaction
+- **Description:** Financial transaction event (deposit, withdrawal, transfer, payment, purchase) linking an account to its holder (individual or organization) with amount, currency, channel, and merchant/counterparty reference. Covers full transaction lifecycle via transactionType discriminator. Aligns with ISO 20022 payment message families (pacs.*, pain.*, camt.*).
+- **hasMembers:** true
+
+
+| Parties |  |  |  |  |  |  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **Role** | Object Type URI | Min Occurs | Max Occurs | Required |  |  |  |  |  |  |  |
+| **Account** | configuration/entityTypes/FinancialAccount |  |  |  |  |  |  |  |  |  |  |
+| **Account Holder** | configuration/entityTypes/Individual |  |  |  |  |  |  |  |  |  |  |
+| **Counterparty** | configuration/entityTypes/Organization |  |  |  |  |  |  |  |  |  |  |
+
+
+| Name | Label | Type | Description | Survivorship | Hidden | Important | System | Searchable | Faceted | Lookup Code | URI |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **transactionId** | Transaction ID | String | Unique transaction reference; primary key. | LUD | false | false | false | true | false |  | configuration/interactionTypes/TransactionInteraction/attributes/transactionId |
+| **transactionType** | Transaction Type | String | DEPOSIT / WITHDRAWAL / TRANSFER / PAYMENT / PURCHASE / FEE. | LUD | false | false | false | false | false | rdm/lookupTypes/TransactionType | configuration/interactionTypes/TransactionInteraction/attributes/transactionType |
+| **occurredAt** | Transaction Timestamp | Timestamp |  | LUD | false | false | false | false | false |  | configuration/interactionTypes/TransactionInteraction/attributes/occurredAt |
+| **amount** | Transaction Amount | Number |  | LUD | false | false | false | false | false |  | configuration/interactionTypes/TransactionInteraction/attributes/amount |
+| **currency** | Currency | String |  | LUD | false | false | false | false | false | rdm/lookupTypes/Currencies | configuration/interactionTypes/TransactionInteraction/attributes/currency |
+| **channel** | Channel | String | BRANCH / ATM / ONLINE / MOBILE / PHONE / WIRE. | LUD | false | false | false | false | false | rdm/lookupTypes/TransactionChannel | configuration/interactionTypes/TransactionInteraction/attributes/channel |
+| **merchantReference** | Merchant Reference | String | Merchant name or counterparty reference for purchase transactions. | LUD | false | false | false | false | false |  | configuration/interactionTypes/TransactionInteraction/attributes/merchantReference |
+| **status** | Transaction Status | String | POSTED / PENDING / DECLINED / REVERSED. | LUD | false | false | false | false | false | rdm/lookupTypes/TransactionStatus | configuration/interactionTypes/TransactionInteraction/attributes/status |
+| **description** | Transaction Description | String |  | LUD | false | false | false | false | false |  | configuration/interactionTypes/TransactionInteraction/attributes/description |
+
+> **Note:** On the table above, the top level attributes are represented in bold.
+
+
+
+---
+
 # Data Model for SAP Reltio's velocity pack for Consumer Packaged Goods in Reltio Intelligent 360
 
 > **Section:** Products > Reltio Intelligent 360 > Reltio Intelligent 360 at a glance > Reltio Intelligent 360 reference > Reltio Intelligent 360 velocity packs
@@ -39409,6 +39803,4139 @@ This table identifies the Reltio for B2C organization validation functions used 
 | Attribute | Conditions | Validation Functions Summary | Description |
 | --- | --- | --- | --- |
 | SSN | Regular expression does not match | If SSN Regular expression does not match ^(?!666\|000\|9\d{2})\d{3}-(?!00)\d{2}-(?!0{4})\d{4}$, then display error with message "Not a valid Social Security Number". | Specifies an invalid Social Security Number. |
+
+
+
+---
+
+# Configurations for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > SAP Reltio's velocity pack for Banking
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/configurations-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** configurations included in banking velocity pack, preconfigured data quality settings for banking, cleansers match rules and survivorship overview, reltio velocity pack configuration overview, standardize and harmonize banking data, configurations, data quality
+
+
+Learn techniques to refine the data you import into Reltio.
+
+This velocity pack comes with preconfigured cleansers, validation functions, match rules, survivorship groups, and reference data lookup types to make fast work of standardizing and harmonizing your data.
+
+Reltio designed velocity packs to give you a head start. Your industry-specific pack comes fully configured with the components and rules you will need to realize value in as few as 90 days. If you need to modify it in any way, see topic [Get help in Support Portal](https://docs.reltio.com/en/reltio/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). We do recommend you discuss your configuration changes with Reltio Professional Services or a Reltio partner to ensure they align to the [Reltio Way Delivery Methodology](https://learn.reltio.com/the-reltio-way).
+
+
+
+---
+
+# Entity types for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > SAP Reltio's velocity pack for Banking > Data Model for SAP Reltio's velocity pack for Banking
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/data-model-for-sap-reltios-velocity-pack-for-banking/entity-types-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** entity types in banking velocity pack, preconfigured entity types for banking, manage entity types in reltio console, view entity type attributes for banking, configure entity types in reltio data modeler, entity types, data modeler
+
+
+Learn about the entity types in your SAP Reltio's velocity pack for Banking data model.
+
+Entity types form the foundation of your SAP Reltio's velocity pack for Banking data model. They contain attributes and metadata properties that define the types of data you manage in the Reltio Context Intelligence Platform.
+
+Reltio designed velocity packs to give you a head start. Your industry-specific pack comes fully configured with the components and rules you will need to realize value in as few as 90 days. If you need to modify it in any way, Reltio Support can help. We do recommend you discuss your configuration changes with Reltio Professional Services or a Reltio partner to ensure they align to the Reltio Way Delivery Methodology.
+
+For general information on these data model building blocks, see topic [Reltio entity types](https://docs.reltio.com/en/reltio/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-information-model/data-model/reltio-object-types/reltio-entity-types?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). For information on working with entity types, see topic [Define entity types and attributes](https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/define-entity-types-and-attributes?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+
+
+---
+
+# Preconfigured User Interface for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > SAP Reltio's velocity pack for Banking
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/preconfigured-user-interface-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** preconfigured user interface for banking velocity pack, reltio hub data modeler and ui modeler overview, customize your reltio user experience, get started with the reltio hub, view profiles and dashboards in reltio, hub, data modeler, ui modeler
+
+
+Learn how to configure your experience.
+
+Your Reltio user interface comes preconfigured to help you get started fast. Reltio designed velocity packs to give you a head start. Your industry-specific pack comes fully configured with the components and rules you will need to realize value in as few as 90 days. If you need to modify it in any way, see topic [Get help in Support Portal](https://docs.reltio.com/en/reltio/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). We do recommend you discuss your configuration changes with Reltio Professional Services or a Reltio partner to ensure they align to the [Reltio Way Delivery Methodology](https://learn.reltio.com/the-reltio-way).
+
+When you sign in to Reltio using the credentials we provide you, you land in the Hub. From this preconfigured user interface, you can view profiles, analyze dashboard charts, search data in your tenant, and navigate to other platform components to manage your master data.
+
+If this user interface works for you, no need to configure anything. If you want to fine tune the experience to your way of working, here are the Reltio components to do so.
+
+**Hub**
+
+Remediate, search, and segment tasks in a jiffy using the intuitive user experience for managing data in the preconfigured Reltio Hub. This is where you view specific instances of the data types defined in your data model. For further information, see topic [Hub at a glance](https://docs.reltio.com/en/applications/hub/hub-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+**Data Modeler**
+
+View, edit, and extend the preconfigured data model. Here's where you work with types of data, such as entity types, relationship types, and attributes. For further information, see topic [Data Modeler at a glance](https://docs.reltio.com/en/applications/console/configuration-applications/data-modeler-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+**UI Modeler**
+
+Customize your dashboard and profile layout. Choose the charts, maps or graphs that best represent your data. For further information, see topic [UI Modeler at a glance](https://docs.reltio.com/en/applications/console/configuration-applications/ui-modeler-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+**Reference Data Management**
+
+View, edit, and extend lookup types referenced by your preconfigured data model. For further information, see topic [Lookups and canonical values](https://docs.reltio.com/en/applications/rdm/rdm-at-a-glance/rdm-operation/lookups-and-canonical-values?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+
+
+---
+
+# Data Model for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > SAP Reltio's velocity pack for Banking
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/data-model-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** data model for banking velocity pack, entity and relationship types in banking, explore the banking data model in reltio, view the banking entity relationship diagram, configure the banking data model in reltio, data model, entity types, relationship types
+
+
+Learn about entities, attributes, and relationships included in the SAP Reltio's velocity pack for Banking data model.
+
+The SAP Reltio's velocity pack for Banking Data Model provides a predefined set of entity types, each with specific attributes, and relationship types relevant to the Banking industry.
+
+Reltio designed velocity packs to give you a head start. Your industry-specific pack comes fully configured with the components and rules you will need to realize value in as few as 90 days. If you need to modify it in any way, Reltio Support can help. We do recommend you discuss your configuration changes with Reltio Professional Services or a Reltio partner to ensure they align to the Reltio Way Delivery Methodology.
+
+For details on the preconfigured entity types in this SAP Reltio's velocity pack for Banking data model, see topic [Entity types for SAP Reltio's velocity pack for Banking](https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/data-model-for-sap-reltios-velocity-pack-for-banking/entity-types-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+
+
+---
+
+# SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** overview of the banking velocity pack, what's included in the banking velocity pack, reltio velocity pack for the banking industry, jump start banking master data management, get started with the banking velocity pack, velocity pack, banking, master data management
+
+
+Learn what's included in SAP Reltio's velocity pack for Banking.
+
+SAP Reltio's Velocity Pack for Banking is purpose-built for retail and commercial banking. It masters your customers individuals, households, and commercial organizations, along with their accounts, the products those accounts are built on, the applications that open them, and the bankers who serve them.
+
+This Velocity Pack gives you a jump start with a preconfigured data model and an intuitive user experience for managing your data. It loads into a bare tenant with no foundation-layer prerequisites, and ships match and survivorship rules, reference data lookups, validation rules, address and contact cleansing, and ready-to-use profile layouts. See what's included.
+
+*Image: start-top-image-mdm-banking.PNG*
+
+
+
+---
+
+# AccountHolder entity type for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > SAP Reltio's velocity pack for Banking > Data Model for SAP Reltio's velocity pack for Banking > Entity types for SAP Reltio's velocity pack for Banking
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/data-model-for-sap-reltios-velocity-pack-for-banking/entity-types-for-sap-reltios-velocity-pack-for-banking/accountholder-entity-type-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** account holder entity type in banking, master account holder data in reltio mdm, configure account holder entity type in reltio console, account holder match rules and survivorship configuration, banking velocity pack account holder attributes, model account holder entity type attributes in reltio, account holder, entity types, survivorship
+
+
+Learn about the AccountHolder entity type preconfigured in SAP Reltio's velocity pack for Banking data model.
+
+The AccountHolder entity type records who holds a financial account and in what capacity.
+
+This table identifies the properties for the AccountHolder entity type specified in the SAP Reltio's velocity pack for Banking configuration and lists the attributes preconfigured in the order they appear in the Data Modeler.
+
+**AccountHolder**
+- **URI:** configuration/entityTypes/AccountHolder
+- **Label:** Account Holder
+- **Description:** Relationship-as-entity linking Individual or Organization to FinancialAccount with role classification (primary, joint, custodian) and ownership percentage for joint accounts. Carries independent lifecycle attributes (effective dates, authorization status) for account authorization and tax reporting.
+- **Abstract:** false
+- **Data Label Pattern:** {holderName} - {role}
+- **Secondary Label Pattern:** {accountNumber}
+
+
+| Name | Label | Type | Description | Survivorship | Hidden | Important | System | Searchable | Faceted | Lookup Code | URI |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **authorizationID** | Authorization ID | String | Composite primary identifier (holder + account + effectiveDate) per plan identifier strategy for domain_authorization. | SRC_SYS [CBS,INT] | false | false | false | true | false |  | configuration/entityTypes/AccountHolder/attributes/authorizationID |
+| **internalAuthorizationID** | Internal Authorization ID | String | Internal system identifier for this account holder relationship; fallback identifier when composite key is unavailable. | LUD | false | false | false | true | false |  | configuration/entityTypes/AccountHolder/attributes/internalAuthorizationID |
+| **role** | Holder Role | String | Account ownership classification: PRIMARY (sole owner), JOINT (co-owner with percentage stake), CUSTODIAN (fiduciary holder for minor or trust). Used for authorization scope and tax reporting allocation. | LUD | false | false | false | false | true | rdm/lookupTypes/AccountHolderRole | configuration/entityTypes/AccountHolder/attributes/role |
+| **ownershipPercentage** | Ownership Percentage | Number | Percentage stake in joint account (0-100); required for JOINT role, null for PRIMARY and CUSTODIAN. Used for tax allocation and beneficial ownership reporting. | LUD | false | false | false | false | false |  | configuration/entityTypes/AccountHolder/attributes/ownershipPercentage |
+| **authorizationStatus** | Authorization Status | String | Lifecycle status of this authorization: ACTIVE, SUSPENDED, REVOKED, EXPIRED. Drives access control and transaction authorization. | ValueBasedPriority | false | false | false | false | true | rdm/lookupTypes/AuthorizationStatus | configuration/entityTypes/AccountHolder/attributes/authorizationStatus |
+| **effectiveDate** | Effective Date | Date | Date this account holder relationship became effective; part of composite primary identifier. ISO 8601 date format. | OldestValue | false | false | false | false | false |  | configuration/entityTypes/AccountHolder/attributes/effectiveDate |
+| **expirationDate** | Expiration Date | Date | Date this authorization expires; null for indefinite authorizations. Used for temporary custodianship or time-limited joint ownership. | LUD | false | false | false | false | false |  | configuration/entityTypes/AccountHolder/attributes/expirationDate |
+| **revocationDate** | Revocation Date | Date | Date this authorization was revoked; null while active. Populated when authorizationStatus transitions to REVOKED. | LUD | false | false | false | false | false |  | configuration/entityTypes/AccountHolder/attributes/revocationDate |
+| **holder** | Account Holder To Individual | Reference | Reference to Individual entity representing the account holder; polymorphic reference resolved via AccountHolderToIndividual or AccountHolderToOrganization relation. | LUD | false | false | false | false | false |  | configuration/entityTypes/AccountHolder/attributes/holder |
+| **holderOrganization** | Account Holder To Organization | Reference | Reference to Organization entity when holder is a legal entity (corporate account holder); mutually exclusive with holder Individual reference. | LUD | false | false | false | false | false |  | configuration/entityTypes/AccountHolder/attributes/holderOrganization |
+| **account** | Account Holder To Financial Account | Reference | Reference to FinancialAccount entity this holder is authorized on; resolved via AccountHolderToFinancialAccount relation. | LUD | false | false | false | false | false |  | configuration/entityTypes/AccountHolder/attributes/account |
+| **holderName** | Holder Name | String | Denormalized holder name (Individual: firstName + lastName; Organization: name) for search and display; sourced from referenced holder entity. | LUD | false | false | false | true | false |  | configuration/entityTypes/AccountHolder/attributes/holderName |
+| **accountNumber** | Account Number | String | Denormalized account number (IBAN or domestic format) for search and display; sourced from referenced FinancialAccount entity. | LUD | false | false | false | true | false |  | configuration/entityTypes/AccountHolder/attributes/accountNumber |
+| **taxReportingFlag** | Tax Reporting Flag | Boolean | Indicates whether this holder should receive tax reporting documents (1099-INT, 1099-DIV) for this account; typically true for PRIMARY and JOINT, false for CUSTODIAN. | LUD | false | false | false | false | false |  | configuration/entityTypes/AccountHolder/attributes/taxReportingFlag |
+| **beneficiaryDesignation** | Beneficiary Designation | String | Free-text beneficiary designation for this holder's stake (e.g., 'Per Stirpes', 'To Estate'); used in estate planning and account closure. | LUD | false | false | false | false | false |  | configuration/entityTypes/AccountHolder/attributes/beneficiaryDesignation |
+| **authorizationSource** | Authorization Source | String | Source system or document that established this authorization (e.g., 'Account Opening Form', 'Power of Attorney', 'Court Order'); audit trail for compliance. | LUD | false | false | false | false | false |  | configuration/entityTypes/AccountHolder/attributes/authorizationSource |
+| **authorizationDocumentID** | Authorization Document ID | String | Reference to external document (signature card, POA, court order) that evidences this authorization; used for compliance audit and dispute resolution. | LUD | false | false | false | false | false |  | configuration/entityTypes/AccountHolder/attributes/authorizationDocumentID |
+| **notes** | Notes | String | Free-text notes on this account holder relationship (e.g., special instructions, restrictions, compliance annotations). | LUD | false | false | false | false | false |  | configuration/entityTypes/AccountHolder/attributes/notes |
+
+
+| Match Rules |  |  |  |  |  |  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **Rule Name** | Type | Scope | Description |  |  |  |  |  |  |  |  |
+| **exact_authorization_id** | automatic | ALL | Auto-merge: exact authorization ID |  |  |  |  |  |  |  |  |
+| **exact_composite_key** | automatic | ALL | Auto-merge: holder + account + effective date |  |  |  |  |  |  |  |  |
+| **suspect_holder_account** | suspect | ALL | Suspect: fuzzy holder name + account number |  |  |  |  |  |  |  |  |
+
+
+| DVFs |  |  |  |  |  |  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **Function Name** | Attribute | Action | Validation Event | Message | Expression |  |  |  |  |  |  |
+| **InvalidAccountNumberFormat** | accountNumber | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.accountNumber.value) and not(regexp(attributes.accountNumber.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidAuthorizationDocumentIDFormat** | authorizationDocumentID | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.authorizationDocumentID.value) and not(regexp(attributes.authorizationDocumentID.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidAuthorizationIDFormat** | authorizationID | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.authorizationID.value) and not(regexp(attributes.authorizationID.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidAuthorizationSourceFormat** | authorizationSource | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.authorizationSource.value) and not(regexp(attributes.authorizationSource.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidAuthorizationStatusFormat** | authorizationStatus | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.authorizationStatus.value) and not(regexp(attributes.authorizationStatus.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidBeneficiaryDesignationFormat** | beneficiaryDesignation | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.beneficiaryDesignation.value) and not(regexp(attributes.beneficiaryDesignation.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidHolderNameFormat** | holderName | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.holderName.value) and not(regexp(attributes.holderName.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidInternalAuthorizationIDFormat** | internalAuthorizationID | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.internalAuthorizationID.value) and not(regexp(attributes.internalAuthorizationID.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidNotesFormat** | notes | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.notes.value) and not(regexp(attributes.notes.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidRoleFormat** | role | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.role.value) and not(regexp(attributes.role.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+
+> **Note:** On the table above, the top level attributes are represented in bold.
+
+
+
+---
+
+# Application entity type for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > SAP Reltio's velocity pack for Banking > Data Model for SAP Reltio's velocity pack for Banking > Entity types for SAP Reltio's velocity pack for Banking
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/data-model-for-sap-reltios-velocity-pack-for-banking/entity-types-for-sap-reltios-velocity-pack-for-banking/application-entity-type-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** application entity type in banking, master application data in reltio mdm, configure application entity type in reltio console, application match rules and survivorship configuration, banking velocity pack application attributes, model application entity type attributes in reltio, application, entity types, survivorship
+
+
+Learn about the Application entity type preconfigured in SAP Reltio's velocity pack for Banking data model.
+
+The Application entity type records an account or loan origination request and follows it from submission through the underwriting decision to the account it opens. It is a first-class entity rather than an interaction, so an application is matched against existing customers before a record is created, which is what stops origination from spawning duplicate customer profiles.
+
+This table identifies the properties for the Application entity type specified in the SAP Reltio's velocity pack for Banking configuration and lists the attributes preconfigured in the order they appear in the Data Modeler.
+
+**Application**
+- **URI:** configuration/entityTypes/Application
+- **Label:** Application
+- **Description:** Account or loan application entity with applicant matching, product request, decision outcome (approved, declined, abandoned, pending), and submission/decision dates. First-class entity (not Interaction subtype) with match-before-create workflow to prevent duplicate customer profiles during origination.
+- **Abstract:** false
+- **Data Label Pattern:** {applicationID}
+- **Secondary Label Pattern:** {applicationType} - {status}
+
+
+| Name | Label | Type | Description | Survivorship | Hidden | Important | System | Searchable | Faceted | Lookup Code | URI |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **applicationID** | Application ID | String | Primary identifier for application tracking; assigned by loan origination system or account opening platform at submission. | SRC_SYS [LOS,INT] | false | false | false | true | false |  | configuration/entityTypes/Application/attributes/applicationID |
+| **internalApplicationID** | Internal Application ID | String | Internal data warehouse identifier for cross-system application reconciliation. | SRC_SYS [INT,LOS] | false | false | false | true | false |  | configuration/entityTypes/Application/attributes/internalApplicationID |
+| **applicationType** | Application Type | String | Product category for routing and decisioning — new account (deposit), credit card, personal loan, mortgage, business loan, line of credit. | LUD | false | false | false | false | false | rdm/lookupTypes/ApplicationType | configuration/entityTypes/Application/attributes/applicationType |
+| **requestedProduct** | Application To Requested Product | Reference | Reference to Product entity representing the specific product requested (e.g., Premium Checking, Platinum Rewards Card, 30-Year Fixed Mortgage). | LUD | false | false | false | false | false |  | configuration/entityTypes/Application/attributes/requestedProduct |
+| **applicant** | Application To Individual Applicant | Reference | Reference to Individual applicant; matched to existing customer before record creation to prevent duplicate profiles. | LUD | false | false | false | false | false |  | configuration/entityTypes/Application/attributes/applicant |
+| **organizationApplicant** | Application To Organization Applicant | Reference | Reference to Organization applicant for business accounts and commercial loans; matched to existing legal entity before record creation. | LUD | false | false | false | false | false |  | configuration/entityTypes/Application/attributes/organizationApplicant |
+| **coApplicant** | Application To Co-Applicant | Reference | Reference to co-applicant Individual for joint applications (joint accounts, co-signed loans). | LUD | false | false | false | false | false |  | configuration/entityTypes/Application/attributes/coApplicant |
+| **submissionDate** | Submission Date | DateTime | Timestamp when application was submitted by applicant or captured by origination system. | OldestValue | false | false | false | false | false |  | configuration/entityTypes/Application/attributes/submissionDate |
+| **decisionDate** | Decision Date | DateTime | Timestamp when underwriting decision was finalized; null for pending applications. | LUD | false | false | false | false | false |  | configuration/entityTypes/Application/attributes/decisionDate |
+| **status** | Status | String | Application lifecycle status — PENDING, APPROVED, DECLINED, ABANDONED, WITHDRAWN, EXPIRED. | ValueBasedPriority | false | false | false | false | false | rdm/lookupTypes/ApplicationStatus | configuration/entityTypes/Application/attributes/status |
+| **decisionOutcome** | Decision Outcome | String | Underwriting decision outcome — APPROVED, DECLINED, CONDITIONAL_APPROVAL, REFER_TO_UNDERWRITER; null for pending or abandoned applications. | LUD | false | false | false | false | false | rdm/lookupTypes/DecisionOutcome | configuration/entityTypes/Application/attributes/decisionOutcome |
+| **decisionReason** | Decision Reason | String | Free-text explanation of decision outcome; required for declined applications per adverse-action notice requirements. | LUD | false | false | false | false | false |  | configuration/entityTypes/Application/attributes/decisionReason |
+| **requestedAmount** | Requested Amount | Number | Principal amount requested for loan applications; null for deposit accounts and credit cards. | LUD | false | false | false | false | false |  | configuration/entityTypes/Application/attributes/requestedAmount |
+| **approvedAmount** | Approved Amount | Number | Principal amount approved by underwriting; may differ from requested amount for conditional approvals. | LUD | false | false | false | false | false |  | configuration/entityTypes/Application/attributes/approvedAmount |
+| **requestedCurrency** | Requested Currency | String | ISO 4217 currency code for requested amount; defaults to institution's base currency. | LUD | false | false | false | false | false | rdm/lookupTypes/Currencies | configuration/entityTypes/Application/attributes/requestedCurrency |
+| **creditScoreAtApplication** | Credit Score at Application | Number | Applicant's credit score at submission time; sourced from credit bureau pull during underwriting. | SRC_SYS [EXP,EFX,D&B,INT] | false | false | false | false | false |  | configuration/entityTypes/Application/attributes/creditScoreAtApplication |
+| **creditBureau** | Credit Bureau | String | Credit reporting agency that provided credit score — Experian, Equifax, TransUnion. | LUD | false | false | false | false | false | rdm/lookupTypes/CreditBureau | configuration/entityTypes/Application/attributes/creditBureau |
+| **submissionChannel** | Submission Channel | String | Channel through which application was submitted — ONLINE, MOBILE_APP, BRANCH, PHONE, MAIL. | LUD | false | false | false | false | false | rdm/lookupTypes/SubmissionChannel | configuration/entityTypes/Application/attributes/submissionChannel |
+| **assignedBanker** | Application To Assigned Banker | Reference | Reference to Banker assigned to process application; null for fully-automated digital applications. | LUD | false | false | false | false | false |  | configuration/entityTypes/Application/attributes/assignedBanker |
+| **servicingBranch** | Application To Servicing Branch | Reference | Reference to Location (branch) where application was submitted or will be serviced; null for digital-only applications. | LUD | false | false | false | false | false |  | configuration/entityTypes/Application/attributes/servicingBranch |
+| **loanPurpose** | Loan Purpose | String | Purpose of loan for loan applications — HOME_PURCHASE, REFINANCE, DEBT_CONSOLIDATION, AUTO_PURCHASE, BUSINESS_EXPANSION; null for deposit accounts and credit cards. | LUD | false | false | false | false | false | rdm/lookupTypes/LoanPurpose | configuration/entityTypes/Application/attributes/loanPurpose |
+| **collateralType** | Collateral Type | String | Type of collateral securing loan — REAL_ESTATE, VEHICLE, SECURITIES, CASH_DEPOSIT; null for unsecured loans and non-loan applications. | LUD | false | false | false | false | false | rdm/lookupTypes/CollateralType | configuration/entityTypes/Application/attributes/collateralType |
+| **collateralValue** | Collateral Value | Number | Appraised value of collateral for secured loans; null for unsecured loans and non-loan applications. | LUD | false | false | false | false | false |  | configuration/entityTypes/Application/attributes/collateralValue |
+| **loanToValueRatio** | Loan-to-Value Ratio | Number | Ratio of requested loan amount to collateral value (percentage); calculated for secured loans only. | LUD | false | false | false | false | false |  | configuration/entityTypes/Application/attributes/loanToValueRatio |
+| **debtToIncomeRatio** | Debt-to-Income Ratio | Number | Ratio of applicant's total monthly debt payments to gross monthly income (percentage); key underwriting metric for loan applications. | LUD | false | false | false | false | false |  | configuration/entityTypes/Application/attributes/debtToIncomeRatio |
+| **employmentStatus** | Employment Status | String | Applicant's employment status at submission — EMPLOYED, SELF_EMPLOYED, UNEMPLOYED, RETIRED, STUDENT. | LUD | false | false | false | false | false | rdm/lookupTypes/EmploymentStatus | configuration/entityTypes/Application/attributes/employmentStatus |
+| **annualIncome** | Annual Income | Number | Applicant's reported annual income; used for debt-to-income ratio calculation and creditworthiness assessment. | LUD | false | false | false | false | false |  | configuration/entityTypes/Application/attributes/annualIncome |
+| **applicationNotes** | Application Notes | String | Free-text notes from underwriter or relationship manager regarding application processing, exceptions, or special circumstances. | LUD | false | false | false | false | false |  | configuration/entityTypes/Application/attributes/applicationNotes |
+| **expirationDate** | Expiration Date | Date | Date when pending application expires if not completed; typically 30-90 days from submission. | LUD | false | false | false | false | false |  | configuration/entityTypes/Application/attributes/expirationDate |
+| **linkedAccount** | Application To Linked Account | Reference | Reference to FinancialAccount created from approved application; null for declined or pending applications. | LUD | false | false | false | false | false |  | configuration/entityTypes/Application/attributes/linkedAccount |
+
+
+| Match Rules |  |  |  |  |  |  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **Rule Name** | Type | Scope | Description |  |  |  |  |  |  |  |  |
+| **exact_application_id** | automatic | ALL | Auto-merge: exact application ID |  |  |  |  |  |  |  |  |
+| **exact_internal_id** | automatic | ALL | Auto-merge: exact internal application ID |  |  |  |  |  |  |  |  |
+| **suspect_submission_match** | suspect | ALL | Suspect: submission date + type + amount |  |  |  |  |  |  |  |  |
+
+
+| DVFs |  |  |  |  |  |  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **Function Name** | Attribute | Action | Validation Event | Message | Expression |  |  |  |  |  |  |
+| **InvalidApplicationIDFormat** | applicationID | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.applicationID.value) and not(regexp(attributes.applicationID.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidApplicationNotesFormat** | applicationNotes | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.applicationNotes.value) and not(regexp(attributes.applicationNotes.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidApplicationTypeFormat** | applicationType | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.applicationType.value) and not(regexp(attributes.applicationType.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidCollateralTypeFormat** | collateralType | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.collateralType.value) and not(regexp(attributes.collateralType.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidCreditBureauFormat** | creditBureau | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.creditBureau.value) and not(regexp(attributes.creditBureau.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidDecisionOutcomeFormat** | decisionOutcome | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.decisionOutcome.value) and not(regexp(attributes.decisionOutcome.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidDecisionReasonFormat** | decisionReason | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.decisionReason.value) and not(regexp(attributes.decisionReason.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidEmploymentStatusFormat** | employmentStatus | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.employmentStatus.value) and not(regexp(attributes.employmentStatus.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidInternalApplicationIDFormat** | internalApplicationID | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.internalApplicationID.value) and not(regexp(attributes.internalApplicationID.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidLoanPurposeFormat** | loanPurpose | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.loanPurpose.value) and not(regexp(attributes.loanPurpose.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidRequestedCurrency** | requestedCurrency | WARNING | ALL | Must be a 3-letter ISO 4217 code | (exists(attributes.requestedCurrency.lookupCode) and not(regexp(attributes.requestedCurrency.lookupCode, '^[A-Z]{3}$'))) or (not(exists(attributes.requestedCurrency.lookupCode)) and exists(attributes.requestedCurrency.value) and not(regexp(attributes.requestedCurrency.value, '^[A-Z]{3}$'))) |  |  |  |  |  |  |
+| **InvalidRequestedCurrencyFormat** | requestedCurrency | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.requestedCurrency.value) and not(regexp(attributes.requestedCurrency.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidStatusFormat** | status | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.status.value) and not(regexp(attributes.status.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidSubmissionChannelFormat** | submissionChannel | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.submissionChannel.value) and not(regexp(attributes.submissionChannel.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+
+> **Note:** On the table above, the top level attributes are represented in bold.
+
+
+
+---
+
+# AuthorizedSigner entity type for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > SAP Reltio's velocity pack for Banking > Data Model for SAP Reltio's velocity pack for Banking > Entity types for SAP Reltio's velocity pack for Banking
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/data-model-for-sap-reltios-velocity-pack-for-banking/entity-types-for-sap-reltios-velocity-pack-for-banking/authorizedsigner-entity-type-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** authorized signer entity type in banking, master authorized signer data in reltio mdm, configure authorized signer entity type in reltio console, authorized signer match rules and survivorship configuration, banking velocity pack authorized signer attributes, model authorized signer entity type attributes in reltio, authorized signer, entity types, survivorship
+
+
+Learn about the AuthorizedSigner entity type preconfigured in SAP Reltio's velocity pack for Banking data model.
+
+The AuthorizedSigner entity type records who may act on a financial account without owning it, and within what limits. Like AccountHolder it is a relationship modeled as an entity, but it answers a different question: AccountHolder is about ownership, AuthorizedSigner is about delegated authority, a power of attorney, a court-appointed guardian, a trustee, or a staff member with a signing mandate. The authority is time-bound and revocable, and it carries its own verification and review dates.
+
+This table identifies the properties for the AuthorizedSigner entity type specified in the SAP Reltio's velocity pack for Banking configuration and lists the attributes preconfigured in the order they appear in the Data Modeler.
+
+**AuthorizedSigner**
+- **URI:** configuration/entityTypes/AuthorizedSigner
+- **Label:** Authorized Signer
+- **Description:** Relationship-as-entity linking an Individual to a FinancialAccount with authorization attributes (permission level, effective dates, role). Models non-owner authorization for transaction signing and account access control. Distinct from AccountHolder (ownership) — captures delegated authority with time-bound permissions.
+- **Abstract:** false
+- **Data Label Pattern:** {signer} → {account}
+- **Secondary Label Pattern:** {permissionLevel}
+
+
+| Name | Label | Type | Description | Survivorship | Hidden | Important | System | Searchable | Faceted | Lookup Code | URI |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **authorizationID** | Authorization ID | String | Composite internal identifier (signer + account + effectiveDate) per plan conventions for domain_authorization. | SRC_SYS [CBS,INT] | false | false | false | true | false |  | configuration/entityTypes/AuthorizedSigner/attributes/authorizationID |
+| **internalAuthorizationID** | Internal Authorization ID | String | System-generated internal identifier for this authorization record; fallback identifier per plan conventions. | LUD | false | false | false | true | false |  | configuration/entityTypes/AuthorizedSigner/attributes/internalAuthorizationID |
+| **signer** | Authorized Signer To Individual | Reference | Reference to Individual entity granted signing authority on the account. | LUD | false | false | false | false | false |  | configuration/entityTypes/AuthorizedSigner/attributes/signer |
+| **account** | Authorized Signer To Financial Account | Reference | Reference to FinancialAccount entity on which signing authority is granted. | LUD | false | false | false | false | false |  | configuration/entityTypes/AuthorizedSigner/attributes/account |
+| **permissionLevel** | Permission Level | String | Authorization scope for transaction limits — VIEW (inquiry only), TRANSACT (limited transaction authority), FULL (unrestricted signing authority). | LUD | false | false | false | false | true | rdm/lookupTypes/PermissionLevel | configuration/entityTypes/AuthorizedSigner/attributes/permissionLevel |
+| **authorizationType** | Authorization Type | String | Type of authorization — AUTHORIZED_SIGNER (standard delegation), POWER_OF_ATTORNEY (legal instrument), GUARDIAN (court-appointed), TRUSTEE (fiduciary). | LUD | false | false | false | false | true | rdm/lookupTypes/AuthorizationType | configuration/entityTypes/AuthorizedSigner/attributes/authorizationType |
+| **transactionLimit** | Transaction Limit | Number | Maximum transaction amount (in account currency) the signer may authorize per transaction; null for unlimited authority. | LUD | false | false | false | false | false |  | configuration/entityTypes/AuthorizedSigner/attributes/transactionLimit |
+| **dailyLimit** | Daily Transaction Limit | Number | Maximum aggregate transaction amount (in account currency) the signer may authorize per calendar day; null for unlimited. | LUD | false | false | false | false | false |  | configuration/entityTypes/AuthorizedSigner/attributes/dailyLimit |
+| **effectiveDate** | Effective Date | Date | Date on which signing authority becomes effective; part of composite primary identifier per plan conventions. | OldestValue | false | false | false | false | false |  | configuration/entityTypes/AuthorizedSigner/attributes/effectiveDate |
+| **expirationDate** | Expiration Date | Date | Date on which signing authority expires; null for indefinite authorization. Time-bound authorization for temporary signers. | LUD | false | false | false | false | false |  | configuration/entityTypes/AuthorizedSigner/attributes/expirationDate |
+| **status** | Status | String | Lifecycle status — ACTIVE (currently valid), SUSPENDED (temporarily revoked), EXPIRED (past expiration date), REVOKED (permanently terminated). | ValueBasedPriority | false | false | false | false | true | rdm/lookupTypes/AuthorizationStatus | configuration/entityTypes/AuthorizedSigner/attributes/status |
+| **revocationDate** | Revocation Date | Date | Date on which signing authority was revoked; null while active or suspended. | LUD | false | false | false | false | false |  | configuration/entityTypes/AuthorizedSigner/attributes/revocationDate |
+| **revocationReason** | Revocation Reason | String | Free-text reason for revocation (e.g., 'Account holder request', 'Fraud investigation', 'Signer deceased'). | LUD | false | false | false | false | false |  | configuration/entityTypes/AuthorizedSigner/attributes/revocationReason |
+| **documentReference** | Authorization Document Reference | String | Reference to legal document or form authorizing signing authority (e.g., power-of-attorney instrument number, signature card ID). | LUD | false | false | false | false | false |  | configuration/entityTypes/AuthorizedSigner/attributes/documentReference |
+| **verificationStatus** | Verification Status | String | Verification status of authorization documentation — VERIFIED (documentation reviewed and approved), PENDING (awaiting review), UNVERIFIED (no documentation on file). | ValueBasedPriority | false | false | false | false | false | rdm/lookupTypes/VerificationStatus | configuration/entityTypes/AuthorizedSigner/attributes/verificationStatus |
+| **verificationDate** | Verification Date | Date | Date on which authorization documentation was verified by compliance or operations staff. | LUD | false | false | false | false | false |  | configuration/entityTypes/AuthorizedSigner/attributes/verificationDate |
+| **verifiedBy** | Verified By | String | Employee ID or name of staff member who verified authorization documentation. | LUD | false | false | false | false | false |  | configuration/entityTypes/AuthorizedSigner/attributes/verifiedBy |
+| **nextReviewDue** | Next Review Due | Date | Date by which authorization should be reviewed for renewal or revocation per bank policy (e.g., annual review for power-of-attorney). | LUD | false | false | false | false | false |  | configuration/entityTypes/AuthorizedSigner/attributes/nextReviewDue |
+| **notes** | Notes | String | Free-text notes on authorization terms, restrictions, or special conditions (e.g., 'Limited to payroll transactions', 'Requires dual signature for amounts over $10,000'). | LUD | false | false | false | false | false |  | configuration/entityTypes/AuthorizedSigner/attributes/notes |
+| **agentCompensated** | Agent Receives Compensation | Boolean | Indicates the authorized agent is compensated for providing investment advice, placing trades, or managing the authorized account. | LUD | false | false | false | false | false |  | configuration/entityTypes/AuthorizedSigner/attributes/agentCompensated |
+
+
+| Match Rules |  |  |  |  |  |  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **Rule Name** | Type | Scope | Description |  |  |  |  |  |  |  |  |
+| **exact_authorization_id** | automatic | ALL | Auto-merge: exact authorization ID |  |  |  |  |  |  |  |  |
+
+
+| DVFs |  |  |  |  |  |  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **Function Name** | Attribute | Action | Validation Event | Message | Expression |  |  |  |  |  |  |
+| **InvalidAuthorizationIDFormat** | authorizationID | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.authorizationID.value) and not(regexp(attributes.authorizationID.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidAuthorizationTypeFormat** | authorizationType | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.authorizationType.value) and not(regexp(attributes.authorizationType.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidDocumentReferenceFormat** | documentReference | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.documentReference.value) and not(regexp(attributes.documentReference.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidInternalAuthorizationIDFormat** | internalAuthorizationID | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.internalAuthorizationID.value) and not(regexp(attributes.internalAuthorizationID.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidNotesFormat** | notes | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.notes.value) and not(regexp(attributes.notes.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidPermissionLevelFormat** | permissionLevel | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.permissionLevel.value) and not(regexp(attributes.permissionLevel.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidRevocationReasonFormat** | revocationReason | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.revocationReason.value) and not(regexp(attributes.revocationReason.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidStatusFormat** | status | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.status.value) and not(regexp(attributes.status.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidVerificationStatusFormat** | verificationStatus | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.verificationStatus.value) and not(regexp(attributes.verificationStatus.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidVerifiedByFormat** | verifiedBy | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.verifiedBy.value) and not(regexp(attributes.verifiedBy.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+
+> **Note:** On the table above, the top level attributes are represented in bold.
+
+
+
+---
+
+# Banker entity type for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > SAP Reltio's velocity pack for Banking > Data Model for SAP Reltio's velocity pack for Banking > Entity types for SAP Reltio's velocity pack for Banking
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/data-model-for-sap-reltios-velocity-pack-for-banking/entity-types-for-sap-reltios-velocity-pack-for-banking/banker-entity-type-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** banker entity type in banking, master banker data in reltio mdm, configure banker entity type in reltio console, banker match rules and survivorship configuration, banking velocity pack banker attributes, model banker entity type attributes in reltio, banker, entity types, survivorship
+
+
+Learn about the Banker entity type preconfigured in SAP Reltio's velocity pack for Banking data model.
+
+The Banker entity type records the customer-facing bank employee (relationship manager, loan officer, branch manager, teller) together with the credentials that govern what they may advise on. Alongside the employment basics it carries SRO registration, licenses, certificates, and professional designations, because a registered representative typically holds several licenses across several states and a single license field cannot express that. Book-of-business assignments to customers and accounts are carried on the coverage relationships rather than here.
+
+This table identifies the properties for the Banker entity type specified in the SAP Reltio's velocity pack for Banking configuration and lists the attributes preconfigured in the order they appear in the Data Modeler.
+
+**Banker**
+- **URI:** configuration/entityTypes/Banker
+- **Label:** Banker
+- **Description:** Bank employee (relationship manager, loan officer, branch staff) with book-of-business assignments to customers and accounts. Links to home branch for organizational hierarchy and customer service routing.
+- **Abstract:** false
+- **Data Label Pattern:** {firstName} {lastName}
+- **Secondary Label Pattern:** {role} - {homeBranch}
+
+
+| Name | Label | Type | Description | Survivorship | Hidden | Important | System | Searchable | Faceted | Lookup Code | URI |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **employeeID** | Employee ID | String | Internal HR identifier for banker; primary identifier per plan conventions for domain_bankers. | SRC_SYS [CBS,INT] | false | false | false | true | false |  | configuration/entityTypes/Banker/attributes/employeeID |
+| **internalEmployeeID** | Internal Employee ID | String | Internal warehouse identifier for banker; fallback identifier for cross-system reconciliation. | LUD | false | false | false | true | false |  | configuration/entityTypes/Banker/attributes/internalEmployeeID |
+| **firstName** | First Name | String | Banker's first name for customer communications and display. | SRC_SYS [CBS,INT] | false | false | false | true | false |  | configuration/entityTypes/Banker/attributes/firstName |
+| **lastName** | Last Name | String | Banker's last name for customer communications and display. | SRC_SYS [CBS,INT] | false | false | false | true | false |  | configuration/entityTypes/Banker/attributes/lastName |
+| **middleName** | Middle Name | String | Banker's middle name or initial. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/middleName |
+| **preferredName** | Preferred Name | String | Preferred or nickname for informal customer interactions. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/preferredName |
+| **role** | Role | String | Job function for book-of-business segmentation — relationship manager, loan officer, branch manager, teller, personal banker. | LUD | false | false | false | false | true | rdm/lookupTypes/BankerRole | configuration/entityTypes/Banker/attributes/role |
+| **title** | Title | String | Official job title as recorded in HR system. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/title |
+| **status** | Status | String | Employment status — ACTIVE, ON_LEAVE, TERMINATED, RETIRED. | LUD | false | false | false | false | true | rdm/lookupTypes/EmployeeStatus | configuration/entityTypes/Banker/attributes/status |
+| **hireDate** | Hire Date | Date | Date the banker was hired by the institution. | OldestValue | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/hireDate |
+| **terminationDate** | Termination Date | Date | Date the banker's employment ended; null while active. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/terminationDate |
+| **homeBranch** | Banker To Home Branch | Reference | Reference to primary branch location via BankerToHomeBranch relationship; determines organizational hierarchy and customer service routing. | Aggregation | false | false | false | false | true |  | configuration/entityTypes/Banker/attributes/homeBranch |
+| **department** | Department | String | Organizational department — retail banking, commercial banking, wealth management, mortgage lending. | LUD | false | false | false | false | false | rdm/lookupTypes/BankingDepartment | configuration/entityTypes/Banker/attributes/department |
+| **SRORegistration** | SRO Registration(s) | Nested | Self-regulatory organization registration details (FINRA, SEC). Drives whether this professional may advise or transact on a given product, and surfaces disclosure history during suitability review. | Aggregation | false | false | false | true | true |  | configuration/entityTypes/Banker/attributes/SRORegistration |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ IndividualCRDNumber | CRD Number | String | Central Registration Depository number assigned by FINRA to registered representatives. | LUD | false | false | false | true | false |  | configuration/entityTypes/Banker/attributes/SRORegistration/attributes/IndividualCRDNumber |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ RegisteredRepStatus | Status as Registered Representative (RR) | String | Current standing as a Registered Representative. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/SRORegistration/attributes/RegisteredRepStatus |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ YearsBDRepExperience | Years of Experience as RR | Int | Years served as a Registered Representative. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/SRORegistration/attributes/YearsBDRepExperience |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ NumOfFirmsBDRepExperience | Number of Firms Registered to as RR | Int | Number of firms at which they served as an RR. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/SRORegistration/attributes/NumOfFirmsBDRepExperience |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ HasBDRepDisclosures | Disclosures as RR | Boolean | Has required disclosures as an RR. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/SRORegistration/attributes/HasBDRepDisclosures |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ IARepStatus | Status as Investment Advisor Representative (IAR) | String | Current standing as an Investment Advisor Representative. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/SRORegistration/attributes/IARepStatus |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ YearsIARepExperience | Years of Experience as IAR | Int | Years served as an IAR. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/SRORegistration/attributes/YearsIARepExperience |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ NumOfFirmsIARepExperience | Number of Firms Registered to as IAR | Int | Number of firms at which they served as an IAR. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/SRORegistration/attributes/NumOfFirmsIARepExperience |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ HasIARepDisclosures | Disclosures as IAR | Boolean | Has required disclosures as an IAR. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/SRORegistration/attributes/HasIARepDisclosures |
+| **Licenses** | Licenses | Nested | Licences held or pursued by the professional, one entry per licence per jurisdiction. | Aggregation | false | false | false | true | true |  | configuration/entityTypes/Banker/attributes/Licenses |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Category | Category | String | Broad categorization of the licence type. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/Licenses/attributes/Category |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Type | Type | String | Specific type of licence (Series 7, Series 63, state insurance). | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/Licenses/attributes/Type |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ LicenseId | License ID | String | Identifier of the issued licence. | LUD | false | false | false | true | false |  | configuration/entityTypes/Banker/attributes/Licenses/attributes/LicenseId |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Status | Status | String | Status of the licence. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/Licenses/attributes/Status |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ IssuedBy | Issued By | String | Licensing body responsible for issuance. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/Licenses/attributes/IssuedBy |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ IssuedRegion | Issued Region | String | Region the licence applies in. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/Licenses/attributes/IssuedRegion |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ IssuedDate | Issued Date | Date | Date the licence was issued. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/Licenses/attributes/IssuedDate |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ ExpirationDate | Expiration Date | Date | Date the licence expires. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/Licenses/attributes/ExpirationDate |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ LicenseURL | License URL | URL | URL to a digital version of the credential. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/Licenses/attributes/LicenseURL |
+| **Certificates** | Certificates | Nested | Certificates held or pursued by the professional (CFP, CFA, CPA and similar). | Aggregation | false | false | false | true | true |  | configuration/entityTypes/Banker/attributes/Certificates |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Category | Category | String | Broad categorization of the certificate type. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/Certificates/attributes/Category |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Type | Type | String | Specific type of certificate. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/Certificates/attributes/Type |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ CertId | Cert ID | String | Identifier of the issued certificate. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/Certificates/attributes/CertId |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Status | Status | String | Status of the certificate. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/Certificates/attributes/Status |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ IssuedBy | Issued By | String | Body responsible for issuance. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/Certificates/attributes/IssuedBy |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ IssuedRegion | Issued Region | String | Region the certificate applies in. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/Certificates/attributes/IssuedRegion |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ IssuedDate | Issued Date | Date | Date the certificate was issued. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/Certificates/attributes/IssuedDate |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ ExpirationDate | Expiration Date | Date | Date the certificate expires. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/Certificates/attributes/ExpirationDate |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ CertificateURL | Certificate URL | URL | URL to a digital version of the credential. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/Certificates/attributes/CertificateURL |
+| **ProfDesignation** | Prof Designation | Nested | Professional designations earned by the professional and appended to the end of their name. | Aggregation | false | false | false | true | true |  | configuration/entityTypes/Banker/attributes/ProfDesignation |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Type | Type | String | Type of professional designation. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/ProfDesignation/attributes/Type |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Designation | Designation | String | Designation as it appears after the name. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/ProfDesignation/attributes/Designation |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ DisplaySequence | Display Sequence | Int | Display order for this entry. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/ProfDesignation/attributes/DisplaySequence |
+| **NamePrefix** | Name Prefix | Nested | Prefixes appearing at the beginning of the professional's name, such as common or professional titles. | Aggregation | false | false | false | true | true |  | configuration/entityTypes/Banker/attributes/NamePrefix |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Type | Type | String | Type of prefix (common, academic, honorific). | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/NamePrefix/attributes/Type |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Prefix | Prefix | String | Prefix as it appears before the name. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/NamePrefix/attributes/Prefix |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ DisplaySequence | Display Sequence | Int | Display order for this entry. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/NamePrefix/attributes/DisplaySequence |
+| **NameSuffix** | Name Suffix | String | Suffix following the last name, typically signifying generational lineage. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/NameSuffix |
+| **StatusInformation** | Status Information | Nested | Status of the professional over time. The flat `status` is the current value; this group retains the history behind it. | Aggregation | false | false | false | true | true |  | configuration/entityTypes/Banker/attributes/StatusInformation |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Status | Status | String | Status of the professional. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/StatusInformation/attributes/Status |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ StatusReason | Status Reason | String | Rationale for the status applied. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/StatusInformation/attributes/StatusReason |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ UpdateDate | Update Date | Date | Date the status was updated. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/StatusInformation/attributes/UpdateDate |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Comments | Comments | String | Comments related to the status. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/StatusInformation/attributes/Comments |
+| **Phone** | Phone | Nested | Phone numbers used to contact the professional. | Aggregation | false | false | false | true | true |  | configuration/entityTypes/Banker/attributes/Phone |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Type | Type | String | Type of phone number (desk, mobile, after-hours). | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/Phone/attributes/Type |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Number | Number | String | Phone number as supplied by the source. | LUD | false | false | false | true | false |  | configuration/entityTypes/Banker/attributes/Phone/attributes/Number |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ CountryCode | Country Code | String | Country dialling code. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/Phone/attributes/CountryCode |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ FormattedNumber | Formatted Number | String | Number normalized to ITU-T E.164 format. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/Phone/attributes/FormattedNumber |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Extension | Extension | String | Extension at which they can be reached. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/Phone/attributes/Extension |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ AreaCode | Area Code | String | Area code for the phone number. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/Phone/attributes/AreaCode |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ LocalNumber | Local Number | String | Number in the local service format of the calling area. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/Phone/attributes/LocalNumber |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ LineType | Line Type | String | Line type of the phone number. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/Phone/attributes/LineType |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ ValidationStatus | Validation Status | String | Validation status from a verification service. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/Phone/attributes/ValidationStatus |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ PrimaryPhoneFlag | Primary Phone Flag | Boolean | Primary number for reaching the professional. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/Phone/attributes/PrimaryPhoneFlag |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Active | Active | Boolean | Whether the number is active. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/Phone/attributes/Active |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Unreachable | Unreachable | Boolean | They have been unreachable at this number. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/Phone/attributes/Unreachable |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Rank | Rank | Int | Ordinal ranking of this number. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/Phone/attributes/Rank |
+| **Email** | Email | Nested | Email addresses used to contact the professional. | Aggregation | false | false | false | true | true |  | configuration/entityTypes/Banker/attributes/Email |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Type | Type | String | Type of email address (work, assistant). | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/Email/attributes/Type |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Email | Email | String | Full email address including local-part and domain. | LUD | false | false | false | true | false |  | configuration/entityTypes/Banker/attributes/Email/attributes/Email |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Domain | Domain | String | Domain of the email address. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/Email/attributes/Domain |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ DomainType | Domain Type | String | Domain type of the email address. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/Email/attributes/DomainType |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Username | Username | String | Local-part of the email address. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/Email/attributes/Username |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ ValidationStatus | Validation Status | String | Validation status from a verification service. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/Email/attributes/ValidationStatus |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Active | Active | Boolean | Whether the address is active. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/Email/attributes/Active |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Rank | Rank | Int | Ordinal rank of this address. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/Email/attributes/Rank |
+| **WebsiteURL** | Website URL | URL | URL to the professional's advisor profile or biography page. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/WebsiteURL |
+| **Address** | Banker Has Address | Reference | Mailing address for the professional. Distinct from `homeBranch`, which is the branch they operate out of. | Aggregation | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/Address |
+| **Communication** | Communication | Nested | Language fluency and preference details for the professional. | Aggregation | false | false | false | true | true |  | configuration/entityTypes/Banker/attributes/Communication |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Language | Language | String | Language the professional can communicate in, as an ISO 639-1 alpha-2 code. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/Communication/attributes/Language |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Preferred | Preferred | Boolean | Whether this is their preferred language. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/Communication/attributes/Preferred |
+| **EmploymentHistory** | Employment History | Nested | Current and past employment for the professional, including prior firms. | Aggregation | false | false | false | true | true |  | configuration/entityTypes/Banker/attributes/EmploymentHistory |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ EmployerName | Employer Name | String | Name of the employing organization. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/EmploymentHistory/attributes/EmployerName |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ EmploymentType | Employment Type | String | Type of employment held. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/EmploymentHistory/attributes/EmploymentType |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Title | Title | String | Title during the period indicated. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/EmploymentHistory/attributes/Title |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Department | Department | String | Department the role is assigned to. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/EmploymentHistory/attributes/Department |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ CurrentEmployee | Current Employee | Boolean | Currently serving as an employee. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/EmploymentHistory/attributes/CurrentEmployee |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ StartDate | Start Date | Date | Date they started in the role. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/EmploymentHistory/attributes/StartDate |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ EndDate | End Date | Date | Date they left the role. | LUD | false | false | false | false | false |  | configuration/entityTypes/Banker/attributes/EmploymentHistory/attributes/EndDate |
+
+
+| Match Rules |  |  |  |  |  |  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **Rule Name** | Type | Scope | Description |  |  |  |  |  |  |  |  |
+| **exact_employee_id** | automatic | ALL | Auto-merge: exact employee ID |  |  |  |  |  |  |  |  |
+| **fuzzy_name_role** | suspect | ALL | Suspect: fuzzy name and role |  |  |  |  |  |  |  |  |
+
+
+| DVFs |  |  |  |  |  |  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **Function Name** | Attribute | Action | Validation Event | Message | Expression |  |  |  |  |  |  |
+| **InvalidAreaCodeFormat** | AreaCode | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Phone.value.AreaCode.value) and not(regexp(attributes.Phone.value.AreaCode.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidCategoryFormat** | Category | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Certificates.value.Category.value) and not(regexp(attributes.Certificates.value.Category.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidCertIdFormat** | CertId | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Certificates.value.CertId.value) and not(regexp(attributes.Certificates.value.CertId.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidCommentsFormat** | Comments | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.StatusInformation.value.Comments.value) and not(regexp(attributes.StatusInformation.value.Comments.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidCountryCodeFormat** | CountryCode | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Phone.value.CountryCode.value) and not(regexp(attributes.Phone.value.CountryCode.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidDepartmentFormat** | Department | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.EmploymentHistory.value.Department.value) and not(regexp(attributes.EmploymentHistory.value.Department.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidDesignationFormat** | Designation | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.ProfDesignation.value.Designation.value) and not(regexp(attributes.ProfDesignation.value.Designation.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidDomainFormat** | Domain | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Email.value.Domain.value) and not(regexp(attributes.Email.value.Domain.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidDomainTypeFormat** | DomainType | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Email.value.DomainType.value) and not(regexp(attributes.Email.value.DomainType.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidEmailFormat** | Email | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Email.value.Email.value) and not(regexp(attributes.Email.value.Email.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidEmployeeIDFormat** | employeeID | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.employeeID.value) and not(regexp(attributes.employeeID.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidEmployerNameFormat** | EmployerName | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.EmploymentHistory.value.EmployerName.value) and not(regexp(attributes.EmploymentHistory.value.EmployerName.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidEmploymentTypeFormat** | EmploymentType | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.EmploymentHistory.value.EmploymentType.value) and not(regexp(attributes.EmploymentHistory.value.EmploymentType.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidExtensionFormat** | Extension | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Phone.value.Extension.value) and not(regexp(attributes.Phone.value.Extension.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidFirstNameFormat** | firstName | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.firstName.value) and not(regexp(attributes.firstName.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidFormattedNumberFormat** | FormattedNumber | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Phone.value.FormattedNumber.value) and not(regexp(attributes.Phone.value.FormattedNumber.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidIARepStatusFormat** | IARepStatus | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.SRORegistration.value.IARepStatus.value) and not(regexp(attributes.SRORegistration.value.IARepStatus.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidIndividualCRDNumberFormat** | IndividualCRDNumber | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.SRORegistration.value.IndividualCRDNumber.value) and not(regexp(attributes.SRORegistration.value.IndividualCRDNumber.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidInternalEmployeeIDFormat** | internalEmployeeID | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.internalEmployeeID.value) and not(regexp(attributes.internalEmployeeID.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidIssuedByFormat** | IssuedBy | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Certificates.value.IssuedBy.value) and not(regexp(attributes.Certificates.value.IssuedBy.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidIssuedRegionFormat** | IssuedRegion | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Certificates.value.IssuedRegion.value) and not(regexp(attributes.Certificates.value.IssuedRegion.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidLanguageFormat** | Language | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Communication.value.Language.value) and not(regexp(attributes.Communication.value.Language.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidLastNameFormat** | lastName | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.lastName.value) and not(regexp(attributes.lastName.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidLicenseIdFormat** | LicenseId | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Licenses.value.LicenseId.value) and not(regexp(attributes.Licenses.value.LicenseId.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidLineTypeFormat** | LineType | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Phone.value.LineType.value) and not(regexp(attributes.Phone.value.LineType.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidLocalNumberFormat** | LocalNumber | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Phone.value.LocalNumber.value) and not(regexp(attributes.Phone.value.LocalNumber.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidMiddleNameFormat** | middleName | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.middleName.value) and not(regexp(attributes.middleName.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidNameSuffixFormat** | NameSuffix | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.NameSuffix.value) and not(regexp(attributes.NameSuffix.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidNumberFormat** | Number | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Phone.value.Number.value) and not(regexp(attributes.Phone.value.Number.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidPreferredNameFormat** | preferredName | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.preferredName.value) and not(regexp(attributes.preferredName.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidPrefixFormat** | Prefix | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.NamePrefix.value.Prefix.value) and not(regexp(attributes.NamePrefix.value.Prefix.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidRegisteredRepStatusFormat** | RegisteredRepStatus | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.SRORegistration.value.RegisteredRepStatus.value) and not(regexp(attributes.SRORegistration.value.RegisteredRepStatus.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidRoleFormat** | role | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.role.value) and not(regexp(attributes.role.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidStatusFormat** | Status | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Certificates.value.Status.value) and not(regexp(attributes.Certificates.value.Status.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidStatusReasonFormat** | StatusReason | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.StatusInformation.value.StatusReason.value) and not(regexp(attributes.StatusInformation.value.StatusReason.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidTitleFormat** | Title | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.EmploymentHistory.value.Title.value) and not(regexp(attributes.EmploymentHistory.value.Title.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidTypeFormat** | Type | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Certificates.value.Type.value) and not(regexp(attributes.Certificates.value.Type.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidUsernameFormat** | Username | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Email.value.Username.value) and not(regexp(attributes.Email.value.Username.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidValidationStatusFormat** | ValidationStatus | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Email.value.ValidationStatus.value) and not(regexp(attributes.Email.value.ValidationStatus.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+
+> **Note:** On the table above, the top level attributes are represented in bold.
+
+
+
+---
+
+# BeneficialOwner entity type for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > SAP Reltio's velocity pack for Banking > Data Model for SAP Reltio's velocity pack for Banking > Entity types for SAP Reltio's velocity pack for Banking
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/data-model-for-sap-reltios-velocity-pack-for-banking/entity-types-for-sap-reltios-velocity-pack-for-banking/beneficialowner-entity-type-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** beneficial owner entity type in banking, master beneficial owner data in reltio mdm, configure beneficial owner entity type in reltio console, beneficial owner match rules and survivorship configuration, banking velocity pack beneficial owner attributes, model beneficial owner entity type attributes in reltio, ubo attributes on the beneficial owner entity, beneficial owner, ubo, aml, entity types, survivorship
+
+
+Learn about the BeneficialOwner entity type preconfigured in SAP Reltio's velocity pack for Banking data model.
+
+The BeneficialOwner entity type records who ultimately owns or controls an Organization, and on what evidence. It is a relationship modeled as an entity so the stake itself can be dated, verified, sourced, and disputed independently of either party, which is what AML and KYC review needs. Ownership chains are traversed through repeated BeneficialOwner records to reach the ultimate beneficial owner.
+
+This table identifies the properties for the BeneficialOwner entity type specified in the SAP Reltio's velocity pack for Banking configuration and lists the attributes preconfigured in the order they appear in the Data Modeler.
+
+**BeneficialOwner**
+- **URI:** configuration/entityTypes/BeneficialOwner
+- **Label:** Beneficial Owner
+- **Description:** Beneficial ownership relationship between Individual and Organization with ownership percentage and control type for UBO traversal. Relationship-as-entity with independent lifecycle tracking effective dates, verification status, and regulatory reporting requirements. Supports AML/KYC compliance and ultimate beneficial owner (UBO) identification per FATF recommendations.
+- **Abstract:** false
+- **Data Label Pattern:** {owner} owns {ownershipPercentage}% of {ownedEntity}
+- **Secondary Label Pattern:** {controlType}
+
+
+| Name | Label | Type | Description | Survivorship | Hidden | Important | System | Searchable | Faceted | Lookup Code | URI |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **ownershipID** | Ownership ID | String | Composite primary identifier (owner+ownedEntity+effectiveDate) per plan conventions for domain_ownership. | SRC_SYS [D&B,INT] | false | false | false | true | false |  | configuration/entityTypes/BeneficialOwner/attributes/ownershipID |
+| **internalOwnershipID** | Internal Ownership ID | String | Internal system identifier for this ownership relationship record. | LUD | false | false | false | true | false |  | configuration/entityTypes/BeneficialOwner/attributes/internalOwnershipID |
+| **owner** | Beneficial Owner To Individual | Reference | Reference to Individual entity representing the beneficial owner or controlling party. | LUD | false | false | false | false | false |  | configuration/entityTypes/BeneficialOwner/attributes/owner |
+| **ownedEntity** | Beneficial Owner To Organization | Reference | Reference to Organization entity representing the owned legal entity. | LUD | false | false | false | false | false |  | configuration/entityTypes/BeneficialOwner/attributes/ownedEntity |
+| **ownershipPercentage** | Ownership Percentage | Number | Percentage stake held by the beneficial owner (0-100). Used for UBO identification and regulatory reporting per FATF recommendations (typically 25% threshold for beneficial ownership). | LUD | false | false | false | false | true |  | configuration/entityTypes/BeneficialOwner/attributes/ownershipPercentage |
+| **controlType** | Control Type | String | Classification of ownership control: DIRECT (direct shareholding), INDIRECT (through intermediary entities), BENEFICIAL (ultimate economic interest), or JOINT (shared control arrangement). | LUD | false | false | false | false | true | rdm/lookupTypes/ControlType | configuration/entityTypes/BeneficialOwner/attributes/controlType |
+| **effectiveDate** | Effective Date | Date | Date when this ownership relationship became effective; used as part of composite primary identifier. | OldestValue | false | false | false | false | false |  | configuration/entityTypes/BeneficialOwner/attributes/effectiveDate |
+| **endDate** | End Date | Date | Date when this ownership relationship ended or was terminated; null while active. | LUD | false | false | false | false | false |  | configuration/entityTypes/BeneficialOwner/attributes/endDate |
+| **ownershipStatus** | Ownership Status | String | Lifecycle status of the ownership relationship: ACTIVE, INACTIVE, PENDING_VERIFICATION, or DISPUTED. | LUD | false | false | false | false | false | rdm/lookupTypes/OwnershipStatus | configuration/entityTypes/BeneficialOwner/attributes/ownershipStatus |
+| **votingRights** | Voting Rights | Number | Percentage of voting rights held (0-100); may differ from ownership percentage in dual-class share structures. | LUD | false | false | false | false | false |  | configuration/entityTypes/BeneficialOwner/attributes/votingRights |
+| **isUltimateBeneficialOwner** | Is Ultimate Beneficial Owner | Boolean | Flag indicating whether this individual is identified as an ultimate beneficial owner (UBO) per regulatory thresholds (typically 25% ownership or control). | LUD | false | false | false | false | false |  | configuration/entityTypes/BeneficialOwner/attributes/isUltimateBeneficialOwner |
+| **ownershipSource** | Ownership Source | String | Source of ownership information: REGULATORY_FILING, CORPORATE_REGISTRY, VENDOR_DATA (D&B, Orbis), or CUSTOMER_DECLARATION. | LUD | false | false | false | false | false | rdm/lookupTypes/OwnershipSource | configuration/entityTypes/BeneficialOwner/attributes/ownershipSource |
+| **filingReference** | Filing Reference | String | Reference number or identifier of the regulatory filing or corporate registry document evidencing this ownership relationship. | LUD | false | false | false | true | false |  | configuration/entityTypes/BeneficialOwner/attributes/filingReference |
+| **filingDate** | Filing Date | Date | Date of the regulatory filing or corporate registry update that reported this ownership relationship. | LUD | false | false | false | false | false |  | configuration/entityTypes/BeneficialOwner/attributes/filingDate |
+| **ownershipNotes** | Ownership Notes | String | Free-text notes on ownership structure, control arrangements, or verification details for compliance review. | LUD | false | false | false | false | false |  | configuration/entityTypes/BeneficialOwner/attributes/ownershipNotes |
+| **identifiers** | Ownership Identifiers | Nested | Multi-scheme identifier bag for cross-vendor ownership relationship identifiers from D&B, Moody's Orbis, or internal systems. | Aggregation | false | false | false | true | true |  | configuration/entityTypes/BeneficialOwner/attributes/identifiers |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ scheme | Scheme | String | Identifier scheme for ownership relationship (e.g., DnB_OwnershipID, Orbis_LinkID, Internal_OwnershipID). | LUD | false | false | false | false | false | rdm/lookupTypes/IdentifierScheme | configuration/entityTypes/BeneficialOwner/attributes/identifiers/attributes/scheme |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ value | Value | String | Value of the ownership relationship identifier in the cited scheme. | LUD | false | false | false | true | false |  | configuration/entityTypes/BeneficialOwner/attributes/identifiers/attributes/value |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ source | Source | String | Data vendor or system that assigned this ownership relationship identifier. | LUD | false | false | false | false | false |  | configuration/entityTypes/BeneficialOwner/attributes/identifiers/attributes/source |
+
+
+| Match Rules |  |  |  |  |  |  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **Rule Name** | Type | Scope | Description |  |  |  |  |  |  |  |  |
+| **exact_ownership_id** | automatic | ALL | Auto-merge: exact ownership ID |  |  |  |  |  |  |  |  |
+
+
+| DVFs |  |  |  |  |  |  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **Function Name** | Attribute | Action | Validation Event | Message | Expression |  |  |  |  |  |  |
+| **InvalidControlTypeFormat** | controlType | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.controlType.value) and not(regexp(attributes.controlType.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidFilingReferenceFormat** | filingReference | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.filingReference.value) and not(regexp(attributes.filingReference.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidInternalOwnershipIDFormat** | internalOwnershipID | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.internalOwnershipID.value) and not(regexp(attributes.internalOwnershipID.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidOwnershipIDFormat** | ownershipID | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.ownershipID.value) and not(regexp(attributes.ownershipID.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidOwnershipNotesFormat** | ownershipNotes | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.ownershipNotes.value) and not(regexp(attributes.ownershipNotes.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidOwnershipSourceFormat** | ownershipSource | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.ownershipSource.value) and not(regexp(attributes.ownershipSource.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidOwnershipStatusFormat** | ownershipStatus | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.ownershipStatus.value) and not(regexp(attributes.ownershipStatus.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidSchemeFormat** | scheme | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.identifiers.value.scheme.value) and not(regexp(attributes.identifiers.value.scheme.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidSourceFormat** | source | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.identifiers.value.source.value) and not(regexp(attributes.identifiers.value.source.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidValueFormat** | value | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.identifiers.value.value.value) and not(regexp(attributes.identifiers.value.value.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+
+> **Note:** On the table above, the top level attributes are represented in bold.
+
+
+
+---
+
+# ControllingParty entity type for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > SAP Reltio's velocity pack for Banking > Data Model for SAP Reltio's velocity pack for Banking > Entity types for SAP Reltio's velocity pack for Banking
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/data-model-for-sap-reltios-velocity-pack-for-banking/entity-types-for-sap-reltios-velocity-pack-for-banking/controllingparty-entity-type-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** controlling party entity type in banking, master controlling party data in reltio mdm, configure controlling party entity type in reltio console, controlling party match rules and survivorship configuration, banking velocity pack controlling party attributes, model controlling party entity type attributes in reltio, ubo attributes on the controlling party entity, controlling party, ubo, cdd, entity types, survivorship
+
+
+Learn about the ControllingParty entity type preconfigured in SAP Reltio's velocity pack for Banking data model.
+
+The ControllingParty entity type records who steers an Organization when ownership does not explain it. A party holding no shares can still direct a company through board representation, a voting proxy, a veto right, or a management contract, and regulators require that influence to be reported whether or not equity changes hands. The ControllingParty entity type is a relationship modeled as an entity, so the arrangement carries its own dates, evidence, and review status.
+
+This table identifies the properties for the ControllingParty entity type specified in the SAP Reltio's velocity pack for Banking configuration and lists the attributes preconfigured in the order they appear in the Data Modeler.
+
+**ControllingParty**
+- **URI:** configuration/entityTypes/ControllingParty
+- **Label:** Controlling Party
+- **Description:** Relationship-as-entity capturing control relationships between Individual/Organization and Organization with control percentage and mechanism for regulatory reporting. Distinct from BeneficialOwner when control is exercised without ownership (voting rights, board seats). Supports UBO traversal and FinCEN CDD reporting.
+- **Abstract:** false
+- **Data Label Pattern:** {controllingPartyName} controls {controlledEntityName}
+- **Secondary Label Pattern:** {controlPercentage}% via {controlMechanism}
+
+
+| Name | Label | Type | Description | Survivorship | Hidden | Important | System | Searchable | Faceted | Lookup Code | URI |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **ownershipID** | Ownership ID | String | Composite identifier: controllingParty + controlledEntity + effectiveDate per plan conventions for domain_ownership. | SRC_SYS [D&B,INT] | false | false | false | true | false |  | configuration/entityTypes/ControllingParty/attributes/ownershipID |
+| **internalOwnershipID** | Internal Ownership ID | String | Internal system identifier for this controlling-party relationship record. | LUD | false | false | false | true | false |  | configuration/entityTypes/ControllingParty/attributes/internalOwnershipID |
+| **controllingParty** | Controlling Party To Individual | Reference | Reference to Individual or Organization exercising control over the controlled entity. | LUD | false | false | false | false | false |  | configuration/entityTypes/ControllingParty/attributes/controllingParty |
+| **controllingPartyOrganization** | Controlling Party To Individual Organization | Reference | Reference to Organization exercising control when controlling party is a legal entity rather than individual. | LUD | false | false | false | false | false |  | configuration/entityTypes/ControllingParty/attributes/controllingPartyOrganization |
+| **controllingPartyName** | Controlling Party Name | String | Name of the controlling party (individual or organization) for display and search purposes. | LUD | false | false | false | true | false |  | configuration/entityTypes/ControllingParty/attributes/controllingPartyName |
+| **controlledEntity** | Controlling Party To Controlled Entity | Reference | Reference to Organization subject to control by the controlling party. | LUD | false | false | false | false | false |  | configuration/entityTypes/ControllingParty/attributes/controlledEntity |
+| **controlledEntityName** | Controlled Entity Name | String | Name of the controlled organization for display and search purposes. | LUD | false | false | false | true | false |  | configuration/entityTypes/ControllingParty/attributes/controlledEntityName |
+| **controlPercentage** | Control Percentage | Number | Percentage of voting or control stake exercised by the controlling party for regulatory reporting (0-100). | LUD | false | false | false | false | false |  | configuration/entityTypes/ControllingParty/attributes/controlPercentage |
+| **controlMechanism** | Control Mechanism | String | Basis of control per FinCEN CDD reporting: voting rights, board seats, management authority, veto rights, or other contractual control. | LUD | false | false | false | false | false | rdm/lookupTypes/ControlMechanism | configuration/entityTypes/ControllingParty/attributes/controlMechanism |
+| **controlType** | Control Type | String | Classification of control relationship: direct, indirect, joint, or ultimate beneficial owner (UBO). | LUD | false | false | false | false | false | rdm/lookupTypes/ControlType | configuration/entityTypes/ControllingParty/attributes/controlType |
+| **effectiveDate** | Effective Date | Date | Date the control relationship became effective; part of composite identifier per plan conventions. | OldestValue | false | false | false | false | false |  | configuration/entityTypes/ControllingParty/attributes/effectiveDate |
+| **expirationDate** | Expiration Date | Date | Date the control relationship expires or was terminated; null while active. | LUD | false | false | false | false | false |  | configuration/entityTypes/ControllingParty/attributes/expirationDate |
+| **status** | Status | String | Lifecycle status of the control relationship: ACTIVE, INACTIVE, PENDING, TERMINATED. | LUD | false | false | false | false | false | rdm/lookupTypes/RelationshipStatus | configuration/entityTypes/ControllingParty/attributes/status |
+| **sourceDocument** | Source Document | String | Reference to source document evidencing the control relationship (shareholder agreement, board resolution, regulatory filing). | LUD | false | false | false | false | false |  | configuration/entityTypes/ControllingParty/attributes/sourceDocument |
+| **regulatoryFilingReference** | Regulatory Filing Reference | String | Reference to regulatory filing (SEC Schedule 13D, FinCEN BOI report) documenting the control relationship. | LUD | false | false | false | false | false |  | configuration/entityTypes/ControllingParty/attributes/regulatoryFilingReference |
+| **notes** | Notes | String | Free-text notes on the control relationship, including rationale for control classification or special circumstances. | LUD | false | false | false | false | false |  | configuration/entityTypes/ControllingParty/attributes/notes |
+| **isUltimateBeneficialOwner** | Is Ultimate Beneficial Owner | Boolean | Flag indicating whether this controlling party is the ultimate beneficial owner (UBO) after traversing all indirect control chains. | LUD | false | false | false | false | false |  | configuration/entityTypes/ControllingParty/attributes/isUltimateBeneficialOwner |
+| **controlChainDepth** | Control Chain Depth | Number | Number of intermediate entities in the control chain from this controlling party to the controlled entity (0 for direct control). | LUD | false | false | false | false | false |  | configuration/entityTypes/ControllingParty/attributes/controlChainDepth |
+
+
+| Match Rules |  |  |  |  |  |  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **Rule Name** | Type | Scope | Description |  |  |  |  |  |  |  |  |
+| **exact_ownership_id** | automatic | ALL | Auto-merge: exact ownership ID |  |  |  |  |  |  |  |  |
+
+
+| DVFs |  |  |  |  |  |  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **Function Name** | Attribute | Action | Validation Event | Message | Expression |  |  |  |  |  |  |
+| **InvalidControlMechanismFormat** | controlMechanism | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.controlMechanism.value) and not(regexp(attributes.controlMechanism.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidControlTypeFormat** | controlType | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.controlType.value) and not(regexp(attributes.controlType.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidControlledEntityNameFormat** | controlledEntityName | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.controlledEntityName.value) and not(regexp(attributes.controlledEntityName.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidControllingPartyNameFormat** | controllingPartyName | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.controllingPartyName.value) and not(regexp(attributes.controllingPartyName.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidInternalOwnershipIDFormat** | internalOwnershipID | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.internalOwnershipID.value) and not(regexp(attributes.internalOwnershipID.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidNotesFormat** | notes | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.notes.value) and not(regexp(attributes.notes.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidOwnershipIDFormat** | ownershipID | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.ownershipID.value) and not(regexp(attributes.ownershipID.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidRegulatoryFilingReferenceFormat** | regulatoryFilingReference | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.regulatoryFilingReference.value) and not(regexp(attributes.regulatoryFilingReference.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidSourceDocumentFormat** | sourceDocument | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.sourceDocument.value) and not(regexp(attributes.sourceDocument.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidStatusFormat** | status | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.status.value) and not(regexp(attributes.status.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+
+> **Note:** On the table above, the top level attributes are represented in bold.
+
+
+
+---
+
+# FinancialAccount entity type for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > SAP Reltio's velocity pack for Banking > Data Model for SAP Reltio's velocity pack for Banking > Entity types for SAP Reltio's velocity pack for Banking
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/data-model-for-sap-reltios-velocity-pack-for-banking/entity-types-for-sap-reltios-velocity-pack-for-banking/financialaccount-entity-type-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** financial account entity type in banking, master financial account data in reltio mdm, configure financial account entity type in reltio console, financial account match rules and survivorship configuration, banking velocity pack financial account attributes, model financial account entity type attributes in reltio, iso attributes on the financial account entity, financial account, iso, entity types, survivorship
+
+
+Learn about the FinancialAccount entity type preconfigured in SAP Reltio's velocity pack for Banking data model.
+
+The FinancialAccount entity type is the single account master across every line of business. Rather than a separate entity per product, one polymorphic type carries the attributes common to all accounts and defers the product-specific terms to nested groups, overdraft terms for transactional deposits, card terms for credit cards, loan and mortgage terms for lending. The `accountType` discriminator decides which groups apply, so a customer's checking account, credit card, and mortgage resolve into one comparable profile.
+
+This table identifies the properties for the FinancialAccount entity type specified in the SAP Reltio's velocity pack for Banking configuration and lists the attributes preconfigured in the order they appear in the Data Modeler.
+
+**FinancialAccount**
+- **URI:** configuration/entityTypes/FinancialAccount
+- **Label:** Financial Account
+- **Description:** Polymorphic account master covering deposits, cards, loans, and mortgages with subtype-specific nested groups (overdraft terms, credit limit, loan principal). ISO 20022 account structure with balance types. Consolidates a customer's full relationship across all lines of business into a single best-version profile.
+- **Abstract:** false
+- **Data Label Pattern:** {accountNumber}
+- **Secondary Label Pattern:** {accountType} - {accountStatus}
+
+
+| Name | Label | Type | Description | Survivorship | Hidden | Important | System | Searchable | Faceted | Lookup Code | URI |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **accountNumber** | Account Number | String | Primary account identifier (IBAN or domestic account number) per ISO 20022 ExternalAccountIdentification1Code. | SRC_SYS [CBS,INT] | false | false | false | true | false |  | configuration/entityTypes/FinancialAccount/attributes/accountNumber |
+| **internalAccountID** | Internal Account ID | String | Internal system identifier for cross-reference and golden-record completion. | LUD | false | false | false | true | false |  | configuration/entityTypes/FinancialAccount/attributes/internalAccountID |
+| **accountType** | Account Type | String | Discriminator: Deposit, Card, Loan, Mortgage per ISO 20022 ExternalCashAccountType1Code. | LUD | false | false | false | false | false | rdm/lookupTypes/AccountType | configuration/entityTypes/FinancialAccount/attributes/accountType |
+| **accountStatus** | Account Status | String | Lifecycle state for transaction authorization: ACTIVE, CLOSED, DORMANT, SUSPENDED per ISO 20022 account status codes. | LUD | false | false | false | false | false | rdm/lookupTypes/AccountStatus | configuration/entityTypes/FinancialAccount/attributes/accountStatus |
+| **accountName** | Account Name | String | Customer-facing account name or nickname for display in digital banking channels. | LUD | false | false | false | true | false |  | configuration/entityTypes/FinancialAccount/attributes/accountName |
+| **currency** | Currency | String | ISO 4217 currency code for balance denomination and transaction settlement. | LUD | false | false | false | false | false | rdm/lookupTypes/Currencies | configuration/entityTypes/FinancialAccount/attributes/currency |
+| **openingDate** | Opening Date | Date | Date the account was opened; used for lifecycle tracking and tenure calculations. | OldestValue | false | false | false | false | false |  | configuration/entityTypes/FinancialAccount/attributes/openingDate |
+| **closingDate** | Closing Date | Date | Date the account was closed; null while active. | LUD | false | false | false | false | false |  | configuration/entityTypes/FinancialAccount/attributes/closingDate |
+| **interestRate** | Interest Rate | Number | Annual percentage rate (APR) for deposits and loans; expressed as decimal (e.g., 0.0325 for 3.25%). | LUD | false | false | false | false | false |  | configuration/entityTypes/FinancialAccount/attributes/interestRate |
+| **productRef** | Account To Product | Reference | Reference to the Product entity defining account terms, fees, and features. | LUD | false | false | false | false | false |  | configuration/entityTypes/FinancialAccount/attributes/productRef |
+| **servicingBranchRef** | Account To Servicing Branch | Reference | Reference to the Location entity representing the branch responsible for account servicing. | LUD | false | false | false | false | false |  | configuration/entityTypes/FinancialAccount/attributes/servicingBranchRef |
+| **balances** | Balance Details | Nested | Multi-value balance group carrying balance types per ISO 20022 (CLBD, ITAV, OPAV, PRCD) with amounts, dates, and credit/debit indicators. | Aggregation | false | false | false | true | true |  | configuration/entityTypes/FinancialAccount/attributes/balances |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ balanceType | Balance Type | String | ISO 20022 ExternalBalanceType1Code: CLBD (closing booked), ITAV (interim available), OPAV (opening available), PRCD (previously closed booked). | LUD | false | false | false | false | false | rdm/lookupTypes/BalanceType | configuration/entityTypes/FinancialAccount/attributes/balances/attributes/balanceType |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ amount | Amount | Number | Balance amount in account currency. | LUD | false | false | false | false | false |  | configuration/entityTypes/FinancialAccount/attributes/balances/attributes/amount |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ currency | Currency | String | ISO 4217 currency code; typically matches account currency but may differ for multi-currency accounts. | LUD | false | false | false | false | false | rdm/lookupTypes/Currencies | configuration/entityTypes/FinancialAccount/attributes/balances/attributes/currency |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ creditDebitIndicator | Credit/Debit Indicator | String | ISO 20022 credit/debit indicator: CRDT (credit), DBIT (debit). | LUD | false | false | false | false | false | rdm/lookupTypes/CreditDebitIndicator | configuration/entityTypes/FinancialAccount/attributes/balances/attributes/creditDebitIndicator |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ balanceDate | Balance Date | Date | Date the balance was calculated or reported. | LUD | false | false | false | false | false |  | configuration/entityTypes/FinancialAccount/attributes/balances/attributes/balanceDate |
+| **overdraftTerms** | Overdraft Terms | Nested | Deposit-specific: overdraft limit, interest rate, and fee structure for negative balances. Null for non-deposit accounts. | LUD | false | false | false | true | true |  | configuration/entityTypes/FinancialAccount/attributes/overdraftTerms |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ overdraftLimit | Overdraft Limit | Number | Maximum negative balance allowed; expressed as positive number (e.g., 1000.00 for $1,000 overdraft). | LUD | false | false | false | false | false |  | configuration/entityTypes/FinancialAccount/attributes/overdraftTerms/attributes/overdraftLimit |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ overdraftInterestRate | Overdraft Interest Rate | Number | APR charged on overdraft balances; expressed as decimal. | LUD | false | false | false | false | false |  | configuration/entityTypes/FinancialAccount/attributes/overdraftTerms/attributes/overdraftInterestRate |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ overdraftFee | Overdraft Fee | Number | Per-occurrence fee charged when account goes negative. | LUD | false | false | false | false | false |  | configuration/entityTypes/FinancialAccount/attributes/overdraftTerms/attributes/overdraftFee |
+| **cardTerms** | Card Terms | Nested | Card-specific: credit limit, available credit, minimum payment, billing cycle, and card network. Null for non-card accounts. | LUD | false | false | false | true | true |  | configuration/entityTypes/FinancialAccount/attributes/cardTerms |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ creditLimit | Credit Limit | Number | Maximum borrowing capacity for credit cards; expressed in account currency. | LUD | false | false | false | false | false |  | configuration/entityTypes/FinancialAccount/attributes/cardTerms/attributes/creditLimit |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ availableCredit | Available Credit | Number | Credit limit minus outstanding balance; updated after each transaction. | LUD | false | false | false | false | false |  | configuration/entityTypes/FinancialAccount/attributes/cardTerms/attributes/availableCredit |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ minimumPayment | Minimum Payment | Number | Monthly minimum payment due; calculated as percentage of outstanding balance or fixed amount. | LUD | false | false | false | false | false |  | configuration/entityTypes/FinancialAccount/attributes/cardTerms/attributes/minimumPayment |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ billingCycle | Billing Cycle | String | Statement generation schedule: day of month (e.g., '15' for 15th of each month) or frequency (e.g., 'MONTHLY'). | LUD | false | false | false | false | false |  | configuration/entityTypes/FinancialAccount/attributes/cardTerms/attributes/billingCycle |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ cardNetwork | Card Network | String | Payment network: Visa, Mastercard, American Express, Discover. | LUD | false | false | false | false | false | rdm/lookupTypes/CardNetwork | configuration/entityTypes/FinancialAccount/attributes/cardTerms/attributes/cardNetwork |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ lastStatementDate | Last Statement Date | Date | Date of most recent statement generation. | LUD | false | false | false | false | false |  | configuration/entityTypes/FinancialAccount/attributes/cardTerms/attributes/lastStatementDate |
+| **loanTerms** | Loan Terms | Nested | Loan-specific: principal, outstanding balance, payment schedule, maturity date, collateral reference, and delinquency status. Null for non-loan accounts. | LUD | false | false | false | true | true |  | configuration/entityTypes/FinancialAccount/attributes/loanTerms |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ principal | Principal Amount | Number | Original loan amount disbursed to borrower; expressed in account currency. | LUD | false | false | false | false | false |  | configuration/entityTypes/FinancialAccount/attributes/loanTerms/attributes/principal |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ outstandingBalance | Outstanding Balance | Number | Remaining principal plus accrued interest; updated after each payment. | LUD | false | false | false | false | false |  | configuration/entityTypes/FinancialAccount/attributes/loanTerms/attributes/outstandingBalance |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ paymentSchedule | Payment Schedule | String | Amortization schedule: MONTHLY, QUARTERLY, SEMI_ANNUAL, ANNUAL, or custom schedule reference. | LUD | false | false | false | false | false |  | configuration/entityTypes/FinancialAccount/attributes/loanTerms/attributes/paymentSchedule |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ paymentAmount | Payment Amount | Number | Scheduled payment amount per period; may vary for adjustable-rate loans. | LUD | false | false | false | false | false |  | configuration/entityTypes/FinancialAccount/attributes/loanTerms/attributes/paymentAmount |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ maturityDate | Maturity Date | Date | Final payment due date; loan closes when outstanding balance reaches zero on or before this date. | LUD | false | false | false | false | false |  | configuration/entityTypes/FinancialAccount/attributes/loanTerms/attributes/maturityDate |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ collateralReference | Collateral Reference | String | Identifier for secured loan collateral (property address, vehicle VIN, securities account); null for unsecured loans. | LUD | false | false | false | false | false |  | configuration/entityTypes/FinancialAccount/attributes/loanTerms/attributes/collateralReference |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ delinquencyStatus | Delinquency Status | String | Days past due for credit risk: CURRENT, 30_DAYS, 60_DAYS, 90_DAYS, 120_PLUS_DAYS, DEFAULT. | LUD | false | false | false | false | false | rdm/lookupTypes/DelinquencyStatus | configuration/entityTypes/FinancialAccount/attributes/loanTerms/attributes/delinquencyStatus |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ nextPaymentDueDate | Next Payment Due Date | Date | Date of next scheduled payment. | LUD | false | false | false | false | false |  | configuration/entityTypes/FinancialAccount/attributes/loanTerms/attributes/nextPaymentDueDate |
+| **mortgageTerms** | Mortgage Terms | Nested | Mortgage-specific: property address, loan-to-value ratio, escrow account flag, and property tax/insurance tracking. Extends loanTerms for real-estate-secured loans. Null for non-mortgage accounts. | LUD | false | false | false | true | true |  | configuration/entityTypes/FinancialAccount/attributes/mortgageTerms |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ propertyAddress | Property Address | String | Full address of mortgaged property; used for collateral tracking and tax assessment. | LUD | false | false | false | false | false |  | configuration/entityTypes/FinancialAccount/attributes/mortgageTerms/attributes/propertyAddress |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ loanToValueRatio | Loan-to-Value Ratio | Number | LTV ratio at origination; expressed as decimal (e.g., 0.80 for 80% LTV). | LUD | false | false | false | false | false |  | configuration/entityTypes/FinancialAccount/attributes/mortgageTerms/attributes/loanToValueRatio |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ escrowAccountFlag | Escrow Account Flag | Boolean | True if property taxes and insurance are escrowed; false if borrower pays directly. | LUD | false | false | false | false | false |  | configuration/entityTypes/FinancialAccount/attributes/mortgageTerms/attributes/escrowAccountFlag |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ propertyTaxAmount | Property Tax Amount | Number | Annual property tax amount; used for escrow calculations. | LUD | false | false | false | false | false |  | configuration/entityTypes/FinancialAccount/attributes/mortgageTerms/attributes/propertyTaxAmount |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ insurancePremium | Insurance Premium | Number | Annual homeowners insurance premium; used for escrow calculations. | LUD | false | false | false | false | false |  | configuration/entityTypes/FinancialAccount/attributes/mortgageTerms/attributes/insurancePremium |
+| **identifiers** | Cross-System Identifiers | Nested | Multi-scheme identifier bag for account numbers across core banking, data warehouse, and third-party systems. | Aggregation | false | false | false | true | true |  | configuration/entityTypes/FinancialAccount/attributes/identifiers |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ scheme | Scheme | String | Identifier scheme: IBAN, BBAN (domestic), CORE_BANKING_ID, WAREHOUSE_ID, VENDOR_ID. | LUD | false | false | false | false | false | rdm/lookupTypes/AccountIdentifierScheme | configuration/entityTypes/FinancialAccount/attributes/identifiers/attributes/scheme |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ value | Value | String | Identifier value in the cited scheme. | LUD | false | false | false | true | false |  | configuration/entityTypes/FinancialAccount/attributes/identifiers/attributes/value |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ source | Source | String | System or vendor that assigned this identifier. | LUD | false | false | false | false | false |  | configuration/entityTypes/FinancialAccount/attributes/identifiers/attributes/source |
+| **accountStatusChange** | Account Status Change | Nested | History of transitions between account statuses. The pack carried `accountStatus` but no record of what it changed from, when, or why — so dormancy, freeze, and closure audits had nothing to read. | Aggregation | false | false | false | true | true |  | configuration/entityTypes/FinancialAccount/attributes/accountStatusChange |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ statusChangeDate | Status Change Date | Date | Date on which the account transitioned between statuses. | LUD | false | false | false | false | false |  | configuration/entityTypes/FinancialAccount/attributes/accountStatusChange/attributes/statusChangeDate |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ fromStatus | From Status | String | Status the account transitioned from. | LUD | false | false | false | false | false | rdm/lookupTypes/AccountStatus | configuration/entityTypes/FinancialAccount/attributes/accountStatusChange/attributes/fromStatus |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ toStatus | To Status | String | Status the account transitioned to. | LUD | false | false | false | false | false | rdm/lookupTypes/AccountStatus | configuration/entityTypes/FinancialAccount/attributes/accountStatusChange/attributes/toStatus |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ comments | Comments | Blob | Comments explaining or relating to the transition between statuses. | LUD | false | false | false | false | false |  | configuration/entityTypes/FinancialAccount/attributes/accountStatusChange/attributes/comments |
+| **interestRateType** | Interest Rate Type | String | Type of interest rate used to calculate interest on the account (fixed, variable, prime-linked, introductory/teaser). Without it `interestRate` is a bare number that cannot be repriced or compared across products. | LUD | false | false | false | false | true |  | configuration/entityTypes/FinancialAccount/attributes/interestRateType |
+| **settlementCurrency** | Settlement Currency | String | ISO 4217 settlement currency for the account, which may differ from the base `currency` on multi-currency and cross-border accounts. | LUD | false | false | false | false | false | rdm/lookupTypes/Currencies | configuration/entityTypes/FinancialAccount/attributes/settlementCurrency |
+| **electronicStatementDelivery** | eStatement Delivery | Boolean | Indicates the account is enrolled to receive statements electronically rather than on paper. | LUD | false | false | false | false | false |  | configuration/entityTypes/FinancialAccount/attributes/electronicStatementDelivery |
+
+
+| Match Rules |  |  |  |  |  |  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **Rule Name** | Type | Scope | Description |  |  |  |  |  |  |  |  |
+| **exact_account_number** | automatic | ALL | Auto-merge: exact account number |  |  |  |  |  |  |  |  |
+| **exact_internal_id** | automatic | ALL | Auto-merge: exact internal account ID |  |  |  |  |  |  |  |  |
+
+
+| DVFs |  |  |  |  |  |  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **Function Name** | Attribute | Action | Validation Event | Message | Expression |  |  |  |  |  |  |
+| **InvalidAccountNameFormat** | accountName | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.accountName.value) and not(regexp(attributes.accountName.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidAccountNumberFormat** | accountNumber | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.accountNumber.value) and not(regexp(attributes.accountNumber.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidAccountStatusFormat** | accountStatus | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.accountStatus.value) and not(regexp(attributes.accountStatus.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidAccountTypeFormat** | accountType | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.accountType.value) and not(regexp(attributes.accountType.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidBalanceTypeFormat** | balanceType | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.balances.value.balanceType.value) and not(regexp(attributes.balances.value.balanceType.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidBillingCycleFormat** | billingCycle | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.cardTerms.value.billingCycle.value) and not(regexp(attributes.cardTerms.value.billingCycle.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidCardNetworkFormat** | cardNetwork | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.cardTerms.value.cardNetwork.value) and not(regexp(attributes.cardTerms.value.cardNetwork.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidCollateralReferenceFormat** | collateralReference | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.loanTerms.value.collateralReference.value) and not(regexp(attributes.loanTerms.value.collateralReference.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidCreditDebitIndicatorFormat** | creditDebitIndicator | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.balances.value.creditDebitIndicator.value) and not(regexp(attributes.balances.value.creditDebitIndicator.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidCurrency** | currency | WARNING | ALL | Must be a 3-letter ISO 4217 code | (exists(attributes.balances.value.currency.lookupCode) and not(regexp(attributes.balances.value.currency.lookupCode, '^[A-Z]{3}$'))) or (not(exists(attributes.balances.value.currency.lookupCode)) and exists(attributes.balances.value.currency.value) and not(regexp(attributes.balances.value.currency.value, '^[A-Z]{3}$'))) |  |  |  |  |  |  |
+| **InvalidCurrencyFormat** | currency | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.balances.value.currency.value) and not(regexp(attributes.balances.value.currency.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidDelinquencyStatusFormat** | delinquencyStatus | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.loanTerms.value.delinquencyStatus.value) and not(regexp(attributes.loanTerms.value.delinquencyStatus.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidFromStatusFormat** | fromStatus | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.accountStatusChange.value.fromStatus.value) and not(regexp(attributes.accountStatusChange.value.fromStatus.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidInterestRateTypeFormat** | interestRateType | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.interestRateType.value) and not(regexp(attributes.interestRateType.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidInternalAccountIDFormat** | internalAccountID | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.internalAccountID.value) and not(regexp(attributes.internalAccountID.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidPaymentScheduleFormat** | paymentSchedule | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.loanTerms.value.paymentSchedule.value) and not(regexp(attributes.loanTerms.value.paymentSchedule.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidPropertyAddressFormat** | propertyAddress | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.mortgageTerms.value.propertyAddress.value) and not(regexp(attributes.mortgageTerms.value.propertyAddress.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidSchemeFormat** | scheme | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.identifiers.value.scheme.value) and not(regexp(attributes.identifiers.value.scheme.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidSettlementCurrency** | settlementCurrency | WARNING | ALL | Must be a 3-letter ISO 4217 code | (exists(attributes.settlementCurrency.lookupCode) and not(regexp(attributes.settlementCurrency.lookupCode, '^[A-Z]{3}$'))) or (not(exists(attributes.settlementCurrency.lookupCode)) and exists(attributes.settlementCurrency.value) and not(regexp(attributes.settlementCurrency.value, '^[A-Z]{3}$'))) |  |  |  |  |  |  |
+| **InvalidSettlementCurrencyFormat** | settlementCurrency | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.settlementCurrency.value) and not(regexp(attributes.settlementCurrency.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidSourceFormat** | source | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.identifiers.value.source.value) and not(regexp(attributes.identifiers.value.source.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidToStatusFormat** | toStatus | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.accountStatusChange.value.toStatus.value) and not(regexp(attributes.accountStatusChange.value.toStatus.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidValueFormat** | value | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.identifiers.value.value.value) and not(regexp(attributes.identifiers.value.value.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+
+> **Note:** On the table above, the top level attributes are represented in bold.
+
+
+
+---
+
+# Household entity type for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > SAP Reltio's velocity pack for Banking > Data Model for SAP Reltio's velocity pack for Banking > Entity types for SAP Reltio's velocity pack for Banking
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/data-model-for-sap-reltios-velocity-pack-for-banking/entity-types-for-sap-reltios-velocity-pack-for-banking/household-entity-type-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** household entity type in banking, master household data in reltio mdm, configure household entity type in reltio console, household match rules and survivorship configuration, banking velocity pack household attributes, model household entity type attributes in reltio, household, entity types, survivorship
+
+
+Learn about the Household entity type preconfigured in SAP Reltio's velocity pack for Banking data model.
+
+The Household entity type groups individuals who share finances, and lets the bank see the relationship rather than the accounts. Pricing, service tier, and cross-sell all work better against a family's combined position than against any one member's balance, and AML review needs the same view. A risk that looks unremarkable per person can concentrate at the household level. Members join through the HouseholdMembership relationship, the aggregate figures here are derived from their accounts rather than entered by hand.
+
+This table identifies the properties for the Household entity type specified in the SAP Reltio's velocity pack for Banking configuration and lists the attributes preconfigured in the order they appear in the Data Modeler.
+
+**Household**
+- **URI:** configuration/entityTypes/Household
+- **Label:** Household
+- **Description:** Household grouping entity; typically no match groups in official packs. Household grouping entity; typically no match groups in official packs. Banking industry extensions for household relationship aggregation: internal identifier, primary member reference, total assets, relationship tier, and aggregated risk rating for cross-sell and compliance.
+- **Abstract:** false
+- **Data Label Pattern:** {HouseholdName}
+
+
+| Name | Label | Type | Description | Survivorship | Hidden | Important | System | Searchable | Faceted | Lookup Code | URI |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **HouseholdName** | Household Name | String |  | LUD | false | false | false | true | false |  | configuration/entityTypes/Household/attributes/HouseholdName |
+| **Address** | Household Has Address | Reference |  | Aggregation | false | false | false | false | false |  | configuration/entityTypes/Household/attributes/Address |
+| **householdID** | Household ID | String | Internal identifier for household grouping; no external registry. Primary identifier per plan conventions. | LUD | false | false | false | true | false |  | configuration/entityTypes/Household/attributes/householdID |
+| **householdType** | Household Type | String | Classification of household structure (single, couple, family, multi-generational) for marketing segmentation. | LUD | false | false | false | false | true | rdm/lookupTypes/HouseholdType | configuration/entityTypes/Household/attributes/householdType |
+| **relationshipTier** | Relationship Tier | String | Household relationship tier (basic, preferred, premier, private) based on total assets and product holdings for pricing and service level. | LUD | false | false | false | false | true | rdm/lookupTypes/RelationshipTier | configuration/entityTypes/Household/attributes/relationshipTier |
+| **establishedDate** | Established Date | Date | Date household grouping was first created in the system; used for relationship tenure calculations. | OldestValue | false | false | false | false | false |  | configuration/entityTypes/Household/attributes/establishedDate |
+| **riskRating** | Risk Rating | String | Aggregated AML/KYC risk rating for the household based on member risk profiles and screening results. | LUD | false | false | false | false | true | rdm/lookupTypes/RiskRating | configuration/entityTypes/Household/attributes/riskRating |
+| **HHDescription** | Description | String | Description or other comments relating to the household. | LUD | false | false | false | false | false |  | configuration/entityTypes/Household/attributes/HHDescription |
+| **TotalHouseholdAssets** | Total Household Assets | Nested | Aggregated balance across all household accounts, used for relationship pricing and tier qualification. Derived from FinancialAccount balances. | LUD | false | false | false | true | true |  | configuration/entityTypes/Household/attributes/TotalHouseholdAssets |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Amount | Amount | Number | Aggregate amount of all household account balances in the currency and as of the date shown. | LUD | false | false | false | false | false |  | configuration/entityTypes/Household/attributes/TotalHouseholdAssets/attributes/Amount |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Currency | Currency | String | ISO 4217 currency in which the aggregate amount is stated. | LUD | false | false | false | false | false | rdm/lookupTypes/Currencies | configuration/entityTypes/Household/attributes/TotalHouseholdAssets/attributes/Currency |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ AsOfDate | As of Date | Date | Date as of which the aggregate amount was calculated. | LUD | false | false | false | false | false |  | configuration/entityTypes/Household/attributes/TotalHouseholdAssets/attributes/AsOfDate |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ NumberOfAccounts | Number of Accounts | Int | Count of accounts included in the aggregate. | LUD | false | false | false | false | false |  | configuration/entityTypes/Household/attributes/TotalHouseholdAssets/attributes/NumberOfAccounts |
+| **PrimaryMember** | Household Has Primary Member | Reference | Individual designated as the primary account holder for household communications and relationship management. | LUD | false | false | false | false | false |  | configuration/entityTypes/Household/attributes/PrimaryMember |
+
+
+| Match Rules |  |  |  |  |  |  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **Rule Name** | Type | Scope | Description |  |  |  |  |  |  |  |  |
+| **exact_household_id** | automatic | ALL | Auto-merge on household ID |  |  |  |  |  |  |  |  |
+
+
+| DVFs |  |  |  |  |  |  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **Function Name** | Attribute | Action | Validation Event | Message | Expression |  |  |  |  |  |  |
+| **InvalidCurrency** | Currency | WARNING | ALL | Must be a 3-letter ISO 4217 code | (exists(attributes.TotalHouseholdAssets.value.Currency.lookupCode) and not(regexp(attributes.TotalHouseholdAssets.value.Currency.lookupCode, '^[A-Z]{3}$'))) or (not(exists(attributes.TotalHouseholdAssets.value.Currency.lookupCode)) and exists(attributes.TotalHouseholdAssets.value.Currency.value) and not(regexp(attributes.TotalHouseholdAssets.value.Currency.value, '^[A-Z]{3}$'))) |  |  |  |  |  |  |
+| **InvalidCurrencyFormat** | Currency | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.TotalHouseholdAssets.value.Currency.value) and not(regexp(attributes.TotalHouseholdAssets.value.Currency.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidHHDescriptionFormat** | HHDescription | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.HHDescription.value) and not(regexp(attributes.HHDescription.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidHouseholdIDFormat** | householdID | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.householdID.value) and not(regexp(attributes.householdID.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidHouseholdNameFormat** | HouseholdName | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.HouseholdName.value) and not(regexp(attributes.HouseholdName.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidHouseholdTypeFormat** | householdType | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.householdType.value) and not(regexp(attributes.householdType.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidRelationshipTierFormat** | relationshipTier | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.relationshipTier.value) and not(regexp(attributes.relationshipTier.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidRiskRatingFormat** | riskRating | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.riskRating.value) and not(regexp(attributes.riskRating.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+
+> **Note:** On the table above, the top level attributes are represented in bold.
+
+
+
+---
+
+# Individual entity type for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > SAP Reltio's velocity pack for Banking > Data Model for SAP Reltio's velocity pack for Banking > Entity types for SAP Reltio's velocity pack for Banking
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/data-model-for-sap-reltios-velocity-pack-for-banking/entity-types-for-sap-reltios-velocity-pack-for-banking/individual-entity-type-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** individual entity type in banking, master individual data in reltio mdm, configure individual entity type in reltio console, individual match rules and survivorship configuration, banking velocity pack individual attributes, model individual entity type attributes in reltio, fs attributes on the individual entity, individual, fs, kyc, entity types, survivorship
+
+
+Learn about the Individual entity type preconfigured in SAP Reltio's velocity pack for Banking data model.
+
+The Individual entity type is the person master (retail customers, applicants, beneficial owners, authorized signers, and anyone else the bank deals with as a natural person). Beyond name and contact details it carries the due-diligence record that regulation demands, tax identifiers, identity documents, citizenship and tax residency, politically-exposed-person and sanctions flags, screening status, risk rating, and credit scores. The compliance attributes sit on the person rather than the account, so one screening result serves every account the individual touches.
+
+This table identifies the properties for the Individual entity type specified in the SAP Reltio's velocity pack for Banking configuration and lists the attributes preconfigured in the order they appear in the Data Modeler.
+
+**Individual**
+- **URI:** configuration/entityTypes/Individual
+- **Label:** Individual
+- **Description:** Person master; party subtype from L1. Use Organization for legal entities, not a parallel Organisation spelling. Person master; party subtype from L1. Use Organization for legal entities, not a parallel Organisation spelling. Extends Reltio FS Individual foundation with retail banking KYC/AML due-diligence attributes: tax identifiers (SSN/TIN), government-issued ID documents, citizenship and tax residency for FATCA/CRS reporting, PEP and sanctions flags, screening status, risk rating, and credit score from primary bureau.
+- **Abstract:** false
+- **Data Label Pattern:** {FirstName} {LastName}
+
+
+| Name | Label | Type | Description | Survivorship | Hidden | Important | System | Searchable | Faceted | Lookup Code | URI |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **FirstName** | First Name | String |  | SRC_SYS [INT,D&B] | false | false | false | true | false |  | configuration/entityTypes/Individual/attributes/FirstName |
+| **LastName** | Last Name | String |  | SRC_SYS [INT,D&B] | false | false | false | true | false |  | configuration/entityTypes/Individual/attributes/LastName |
+| **Address** | Individual Has Address | Reference | Reference to Location via IndividualHasAddress — never model as a nested address entity or OrganisationAddress. | Aggregation | false | false | false | false | false |  | configuration/entityTypes/Individual/attributes/Address |
+| **taxIdentificationNumber** | Tax Identification Number | String | US Social Security Number (SSN) or Tax Identification Number (TIN) per IRS requirements; critical for FATCA/CRS reporting and Form 1099 generation. | LUD | false | false | false | true | false |  | configuration/entityTypes/Individual/attributes/taxIdentificationNumber |
+| **governmentIdNumber** | Primary Government ID Number | String | Denormalized copy of the primary government identifier number from Identifiers, kept as a top-level String because Reltio match rules accept only top-level simple attributes (error 375) and IndividualRule03 keys on it. Populate from the highest-ranked Identifiers entry; Identifiers remains the system of record. | LUD | false | false | false | true | false |  | configuration/entityTypes/Individual/attributes/governmentIdNumber |
+| **governmentIdIssuingCountry** | Primary Government ID Issuing Country | String | Denormalized copy of the primary government identifier's issuing country from Identifiers, kept as a top-level String so IndividualRule03 can pair it with governmentIdNumber. Identifiers remains the system of record. | LUD | false | false | false | false | false | rdm/lookupTypes/Countries | configuration/entityTypes/Individual/attributes/governmentIdIssuingCountry |
+| **fatcaStatus** | FATCA Status | String | Foreign Account Tax Compliance Act classification (US person, non-US person, recalcitrant account holder) per IRS regulations; determines Form 1099 and FATCA reporting obligations. | LUD | false | false | false | false | false | rdm/lookupTypes/FATCAStatus | configuration/entityTypes/Individual/attributes/fatcaStatus |
+| **pepFlag** | PEP Flag | Boolean | Politically Exposed Person indicator per FATF recommendations; triggers enhanced due diligence requirements for individuals holding prominent public functions or their family members. | LUD | false | false | false | false | false |  | configuration/entityTypes/Individual/attributes/pepFlag |
+| **sanctionsFlag** | Sanctions Flag | Boolean | Indicator that the individual appears on OFAC SDN list, EU sanctions list, or other regulatory watchlists; blocks account opening and transaction processing. | LUD | false | false | false | false | false |  | configuration/entityTypes/Individual/attributes/sanctionsFlag |
+| **screeningStatus** | Screening Status | String | Current KYC/AML screening status (clear, potential match, confirmed match, pending review) per Bank Secrecy Act and AML program requirements. | LUD | false | false | false | false | false | rdm/lookupTypes/ScreeningStatus | configuration/entityTypes/Individual/attributes/screeningStatus |
+| **riskRating** | Risk Rating | String | Customer risk assessment classification (low, medium, high, prohibited) per AML risk-based approach; determines monitoring intensity and review frequency. | LUD | false | false | false | false | true | rdm/lookupTypes/RiskRating | configuration/entityTypes/Individual/attributes/riskRating |
+| **internalCustomerID** | Internal Customer ID | String | Bank's internal customer identifier assigned by core banking system or CRM; used for cross-system reconciliation and as fallback identifier. | LUD | false | false | false | true | false |  | configuration/entityTypes/Individual/attributes/internalCustomerID |
+| **MiddleName** | Middle Name | String | Middle name of the individual. | LUD | false | false | false | false | false |  | configuration/entityTypes/Individual/attributes/MiddleName |
+| **NameSuffix** | Name Suffix | String | Suffix following the individual's last name, typically signifying generational lineage (e.g. Jr., III). | LUD | false | false | false | false | false |  | configuration/entityTypes/Individual/attributes/NameSuffix |
+| **NamePrefix** | Name Prefix | Nested | Prefixes appearing at the beginning of the individual's name, such as common, academic, religious, or honorific titles. | LUD | false | false | false | true | true |  | configuration/entityTypes/Individual/attributes/NamePrefix |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Type | Type | String | Type of prefix used with the name (common, academic, religious, honorific). | LUD | false | false | false | false | false |  | configuration/entityTypes/Individual/attributes/NamePrefix/attributes/Type |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Prefix | Prefix | String | Value of the prefix as it should appear at the onset of the individual's name. | LUD | false | false | false | false | false |  | configuration/entityTypes/Individual/attributes/NamePrefix/attributes/Prefix |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ DisplaySequence | Display Sequence | Int | Order in which this value is intended to be displayed. | LUD | false | false | false | false | false |  | configuration/entityTypes/Individual/attributes/NamePrefix/attributes/DisplaySequence |
+| **Phone** | Phone | Nested | Phone numbers used to contact the individual. Multi-valued so an individual can carry mobile, home, and work numbers at once. | LUD | false | false | false | true | true |  | configuration/entityTypes/Individual/attributes/Phone |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Type | Type | String | Type of phone number (mobile, home, work). | LUD | false | false | false | false | false |  | configuration/entityTypes/Individual/attributes/Phone/attributes/Type |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Number | Number | String | Phone number as supplied by the source. | LUD | false | false | false | true | false |  | configuration/entityTypes/Individual/attributes/Phone/attributes/Number |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ CountryCode | Country Code | String | Country dialling code for the phone number. | LUD | false | false | false | false | false |  | configuration/entityTypes/Individual/attributes/Phone/attributes/CountryCode |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ FormattedNumber | Formatted Number | String | Phone number normalized to ITU-T E.164 international format. | LUD | false | false | false | false | false |  | configuration/entityTypes/Individual/attributes/Phone/attributes/FormattedNumber |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Extension | Extension | String | Extension at which the individual can be reached. | LUD | false | false | false | false | false |  | configuration/entityTypes/Individual/attributes/Phone/attributes/Extension |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ AreaCode | Area Code | String | Area code for the phone number. | LUD | false | false | false | false | false |  | configuration/entityTypes/Individual/attributes/Phone/attributes/AreaCode |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ LocalNumber | Local Number | String | Phone number in the local service format of the calling area. | LUD | false | false | false | false | false |  | configuration/entityTypes/Individual/attributes/Phone/attributes/LocalNumber |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ LineType | Line Type | String | Line type of the phone number (landline, mobile, VoIP). | LUD | false | false | false | false | false |  | configuration/entityTypes/Individual/attributes/Phone/attributes/LineType |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ ValidationStatus | Validation Status | String | Validation status of the phone number as returned by a verification service. | LUD | false | false | false | false | false |  | configuration/entityTypes/Individual/attributes/Phone/attributes/ValidationStatus |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ PrimaryPhoneFlag | Primary Phone Flag | Boolean | Indicates the primary number that should be used to reach the individual. | LUD | false | false | false | false | false |  | configuration/entityTypes/Individual/attributes/Phone/attributes/PrimaryPhoneFlag |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Active | Active | Boolean | Indicates whether the number is active. | LUD | false | false | false | false | false |  | configuration/entityTypes/Individual/attributes/Phone/attributes/Active |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Unreachable | Unreachable | Boolean | Indicates the individual has been unreachable at this number. | LUD | false | false | false | false | false |  | configuration/entityTypes/Individual/attributes/Phone/attributes/Unreachable |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Rank | Rank | Int | Ordinal ranking of this number for contacting the individual. | LUD | false | false | false | false | false |  | configuration/entityTypes/Individual/attributes/Phone/attributes/Rank |
+| **Email** | Email | Nested | Email addresses used to contact the individual. Multi-valued so personal and work addresses can coexist. | LUD | false | false | false | true | true |  | configuration/entityTypes/Individual/attributes/Email |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Type | Type | String | Type of email address (personal, work). | LUD | false | false | false | false | false |  | configuration/entityTypes/Individual/attributes/Email/attributes/Type |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Email | Email | String | Full email address including both the local-part and the domain. | LUD | false | false | false | true | false |  | configuration/entityTypes/Individual/attributes/Email/attributes/Email |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Domain | Domain | String | Domain of the email address. | LUD | false | false | false | false | false |  | configuration/entityTypes/Individual/attributes/Email/attributes/Domain |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ DomainType | Domain Type | String | Domain type of the email address. | LUD | false | false | false | false | false |  | configuration/entityTypes/Individual/attributes/Email/attributes/DomainType |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Username | Username | String | Local-part of the email address. | LUD | false | false | false | false | false |  | configuration/entityTypes/Individual/attributes/Email/attributes/Username |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ ValidationStatus | Validation Status | String | Validation status of the email address as returned by a verification service. | LUD | false | false | false | false | false |  | configuration/entityTypes/Individual/attributes/Email/attributes/ValidationStatus |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Active | Active | Boolean | Indicates whether the email address is active. | LUD | false | false | false | false | false |  | configuration/entityTypes/Individual/attributes/Email/attributes/Active |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Rank | Rank | Int | Ordinal rank of this address for contacting the individual. | LUD | false | false | false | false | false |  | configuration/entityTypes/Individual/attributes/Email/attributes/Rank |
+| **DoB** | Date of Birth | Date | Date on which the individual was born. Match operand for IndividualRule04 and a required KYC data point. | LUD | false | false | false | true | false |  | configuration/entityTypes/Individual/attributes/DoB |
+| **YoB** | Year of Birth | Int | Year in which the individual was born, for sources that supply only a birth year. | LUD | false | false | false | false | false |  | configuration/entityTypes/Individual/attributes/YoB |
+| **BirthCountry** | Country of Birth | String | Country where the individual was born; used in sanctions and PEP screening. | LUD | false | false | false | false | true | rdm/lookupTypes/Countries | configuration/entityTypes/Individual/attributes/BirthCountry |
+| **CountryOfCitizenship** | Country Of Citizenship | String | Country where the individual currently maintains citizenship. Drives sanctions screening and FATCA/CRS classification. | LUD | false | false | false | false | true | rdm/lookupTypes/Countries | configuration/entityTypes/Individual/attributes/CountryOfCitizenship |
+| **CountryOfTaxResidence** | Country Of Tax Residence | String | Country where the individual is obligated to pay taxes. Required for FATCA and CRS reporting. | LUD | false | false | false | false | true | rdm/lookupTypes/Countries | configuration/entityTypes/Individual/attributes/CountryOfTaxResidence |
+| **Identifiers** | Identifiers | Nested | Identifiers issued to the individual (passport, driver's licence, national ID, tax ID). Multi-valued — a customer routinely presents more than one identity document during onboarding, which a flat set of governmentId* scalars cannot represent. | LUD | false | false | false | true | true |  | configuration/entityTypes/Individual/attributes/Identifiers |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Type | Type | String | Type of identifier issued to the individual (passport, driver's licence, national ID, TIN). Inherits the GovernmentIdType vocabulary that the removed governmentIdType scalar used to bind. | LUD | false | false | false | false | false | rdm/lookupTypes/GovernmentIdType | configuration/entityTypes/Individual/attributes/Identifiers/attributes/Type |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Value | Value | String | Value of the identifier. | LUD | false | false | false | true | false |  | configuration/entityTypes/Individual/attributes/Identifiers/attributes/Value |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Status | Status | String | Current status of the identifier. | LUD | false | false | false | false | false |  | configuration/entityTypes/Individual/attributes/Identifiers/attributes/Status |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ IssuedBy | Issued By | String | Organization, agency, or other body that issued the identifier. | LUD | false | false | false | false | false |  | configuration/entityTypes/Individual/attributes/Identifiers/attributes/IssuedBy |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ IssuedRegion | Issued Region | String | Region or locality over which the identifier has domain (e.g. state name for a state-issued driver's licence). | LUD | false | false | false | false | false |  | configuration/entityTypes/Individual/attributes/Identifiers/attributes/IssuedRegion |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ IssuedDate | Issued Date | Date | Date on which the identifier was issued. | LUD | false | false | false | false | false |  | configuration/entityTypes/Individual/attributes/Identifiers/attributes/IssuedDate |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ ExpirationDate | Expiration Date | Date | Date on which the identifier expires. | LUD | false | false | false | false | false |  | configuration/entityTypes/Individual/attributes/Identifiers/attributes/ExpirationDate |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ DeactivationDate | Deactivation Date | Date | Date on which the identifier was deactivated. | LUD | false | false | false | false | false |  | configuration/entityTypes/Individual/attributes/Identifiers/attributes/DeactivationDate |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ DeactivationReason | Deactivation Reason | String | Rationale for deactivation of the identifier. | LUD | false | false | false | false | false |  | configuration/entityTypes/Individual/attributes/Identifiers/attributes/DeactivationReason |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Rank | Rank | Int | Ordinal ranking of the identifier. | LUD | false | false | false | false | false |  | configuration/entityTypes/Individual/attributes/Identifiers/attributes/Rank |
+| **CreditScore** | Credit Score | Nested | Credit score data assigned to the individual by a consumer reporting agency or credit bureau. Multi-valued so scores from different bureaux and scoring models can coexist. | LUD | false | false | false | true | true |  | configuration/entityTypes/Individual/attributes/CreditScore |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ CreditReportingCompany | Credit Reporting Company | String | Credit bureau or reporting company that issued the score. | LUD | false | false | false | false | false |  | configuration/entityTypes/Individual/attributes/CreditScore/attributes/CreditReportingCompany |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ ScoringModel | Scoring Model | String | Model used to calculate the score (e.g. FICO, VantageScore). | LUD | false | false | false | false | false |  | configuration/entityTypes/Individual/attributes/CreditScore/attributes/ScoringModel |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ ScoreValue | Score Value | String | Credit score assigned to the individual. | LUD | false | false | false | false | false |  | configuration/entityTypes/Individual/attributes/CreditScore/attributes/ScoreValue |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ ScoreRange | Score Range | String | Banded range the score falls into (e.g. Excellent, Good). | LUD | false | false | false | false | false |  | configuration/entityTypes/Individual/attributes/CreditScore/attributes/ScoreRange |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ ScoreAsOfDate | Score As of Date | Date | Date as of which the score was calculated. | LUD | false | false | false | false | false |  | configuration/entityTypes/Individual/attributes/CreditScore/attributes/ScoreAsOfDate |
+| **IndividualRole** | Individual Role | String | Role the individual has been assigned by the customer or a source system (e.g. customer, prospect, beneficiary, authorized signer). | LUD | false | false | false | false | true |  | configuration/entityTypes/Individual/attributes/IndividualRole |
+| **StatusInformation** | Status Information | Nested | Status of the individual over time, including what changed, why, and when. Nested so status history is retained rather than overwritten. | LUD | false | false | false | true | true |  | configuration/entityTypes/Individual/attributes/StatusInformation |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Status | Status | String | Status of the individual. | LUD | false | false | false | false | false |  | configuration/entityTypes/Individual/attributes/StatusInformation/attributes/Status |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ StatusReason | Status Reason | String | Rationale for the status applied to the individual. | LUD | false | false | false | false | false |  | configuration/entityTypes/Individual/attributes/StatusInformation/attributes/StatusReason |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ UpdateDate | Update Date | Date | Date on which the individual's status was updated. | LUD | false | false | false | false | false |  | configuration/entityTypes/Individual/attributes/StatusInformation/attributes/UpdateDate |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Comments | Comments | String | Comments related to the individual's status. | LUD | false | false | false | false | false |  | configuration/entityTypes/Individual/attributes/StatusInformation/attributes/Comments |
+| **DeceasedIndicator** | Deceased Indicator | Boolean | Indicates whether the individual is deceased. Drives account closure, estate handling, and suppression of marketing. | LUD | false | false | false | false | false |  | configuration/entityTypes/Individual/attributes/DeceasedIndicator |
+| **DoD** | Date of Death | Date | Date on which the individual was declared deceased. | LUD | false | false | false | false | false |  | configuration/entityTypes/Individual/attributes/DoD |
+| **MaritalStatus** | Marital Status | String | Marital status of the individual; relevant to joint account eligibility and beneficiary defaults. | LUD | false | false | false | false | true |  | configuration/entityTypes/Individual/attributes/MaritalStatus |
+| **Gender** | Gender Identity | String | The individual's gender identity — their internal sense of being male, female, both, neither, or another gender. | LUD | false | false | false | false | false |  | configuration/entityTypes/Individual/attributes/Gender |
+| **Communication** | Communication | Nested | Language fluency and preference details for communicating with the individual. | LUD | false | false | false | true | true |  | configuration/entityTypes/Individual/attributes/Communication |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Language | Language | String | Language in which the individual can communicate, as an ISO 639-1 alpha-2 code. Intentionally unbound: there is no universal Languages seed in _lib/seeds/rdm/, and manifest_quality_repairs canonicalizes any `Languages` binding to `LanguageCode` — a pack-owned vocabulary that this pack does not declare, which fails the L3 cross-reference gate. Bind it to a declared LanguageCode lookup if a controlled language list is ever needed. | LUD | false | false | false | false | false |  | configuration/entityTypes/Individual/attributes/Communication/attributes/Language |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Preferred | Preferred | Boolean | Indicates the preferred language for communicating with the individual. | LUD | false | false | false | false | false |  | configuration/entityTypes/Individual/attributes/Communication/attributes/Preferred |
+| **PrivacyPreferences** | Privacy Preferences | Nested | Privacy and consent preferences of the individual. Required for GDPR and CCPA handling of a retail banking customer. | LUD | false | false | false | true | true |  | configuration/entityTypes/Individual/attributes/PrivacyPreferences |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ DoNotProcess | Do Not Process (GDPR) | Boolean | Do not process the individual's data under GDPR. | LUD | false | false | false | false | false |  | configuration/entityTypes/Individual/attributes/PrivacyPreferences/attributes/DoNotProcess |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ DoNotProfile | Do Not Profile | Boolean | Do not profile the individual. | LUD | false | false | false | false | false |  | configuration/entityTypes/Individual/attributes/PrivacyPreferences/attributes/DoNotProfile |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ DoNotTrack | Do Not Track | Boolean | Do not track the individual. | LUD | false | false | false | false | false |  | configuration/entityTypes/Individual/attributes/PrivacyPreferences/attributes/DoNotTrack |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ DoNotMarket | Do Not Market | Boolean | Do not market to the individual. | LUD | false | false | false | false | false |  | configuration/entityTypes/Individual/attributes/PrivacyPreferences/attributes/DoNotMarket |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ DoNotContact | Do Not Contact | Boolean | Do not contact the individual. | LUD | false | false | false | false | false |  | configuration/entityTypes/Individual/attributes/PrivacyPreferences/attributes/DoNotContact |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ ForgetIndividual | Forget Individual | Boolean | Right-to-erasure request registered for the individual. | LUD | false | false | false | false | false |  | configuration/entityTypes/Individual/attributes/PrivacyPreferences/attributes/ForgetIndividual |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ OktoStorePIIDataElsewhere | Ok to Store PII Data Elsewhere | Boolean | Individual permits storage of their PII outside the primary system. | LUD | false | false | false | false | false |  | configuration/entityTypes/Individual/attributes/PrivacyPreferences/attributes/OktoStorePIIDataElsewhere |
+
+
+| Match Rules |  |  |  |  |  |  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **Rule Name** | Type | Scope | Description |  |  |  |  |  |  |  |  |
+| **IndividualRule01** | suspect | ALL | Suspect match on name |  |  |  |  |  |  |  |  |
+| **IndividualRule02** | automatic | ALL | Exact match on tax ID |  |  |  |  |  |  |  |  |
+| **IndividualRule03** | automatic | ALL | Exact match on government ID |  |  |  |  |  |  |  |  |
+| **IndividualRule04** | suspect | ALL | Suspect match on name and date of birth |  |  |  |  |  |  |  |  |
+
+
+| DVFs |  |  |  |  |  |  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **Function Name** | Attribute | Action | Validation Event | Message | Expression |  |  |  |  |  |  |
+| **FirstNameContainsNumbers** | FirstName | WARNING | ALL | First Name Contains Numbers | regexp(attributes.FirstName.value, '.*[0-9].*') |  |  |  |  |  |  |
+| **InvalidAreaCodeFormat** | AreaCode | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Phone.value.AreaCode.value) and not(regexp(attributes.Phone.value.AreaCode.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidBirthCountryFormat** | BirthCountry | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.BirthCountry.value) and not(regexp(attributes.BirthCountry.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidCommentsFormat** | Comments | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.StatusInformation.value.Comments.value) and not(regexp(attributes.StatusInformation.value.Comments.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidCountryCodeFormat** | CountryCode | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Phone.value.CountryCode.value) and not(regexp(attributes.Phone.value.CountryCode.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidCountryOfCitizenshipFormat** | CountryOfCitizenship | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.CountryOfCitizenship.value) and not(regexp(attributes.CountryOfCitizenship.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidCountryOfTaxResidenceFormat** | CountryOfTaxResidence | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.CountryOfTaxResidence.value) and not(regexp(attributes.CountryOfTaxResidence.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidCreditReportingCompanyFormat** | CreditReportingCompany | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.CreditScore.value.CreditReportingCompany.value) and not(regexp(attributes.CreditScore.value.CreditReportingCompany.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidDeactivationReasonFormat** | DeactivationReason | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Identifiers.value.DeactivationReason.value) and not(regexp(attributes.Identifiers.value.DeactivationReason.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidDomainFormat** | Domain | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Email.value.Domain.value) and not(regexp(attributes.Email.value.Domain.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidDomainTypeFormat** | DomainType | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Email.value.DomainType.value) and not(regexp(attributes.Email.value.DomainType.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidEmailFormat** | Email | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Email.value.Email.value) and not(regexp(attributes.Email.value.Email.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidExtensionFormat** | Extension | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Phone.value.Extension.value) and not(regexp(attributes.Phone.value.Extension.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidFatcaStatusFormat** | fatcaStatus | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.fatcaStatus.value) and not(regexp(attributes.fatcaStatus.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidFirstNameFormat** | FirstName | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.FirstName.value) and not(regexp(attributes.FirstName.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidFormattedNumberFormat** | FormattedNumber | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Phone.value.FormattedNumber.value) and not(regexp(attributes.Phone.value.FormattedNumber.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidGenderFormat** | Gender | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Gender.value) and not(regexp(attributes.Gender.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidGovernmentIdIssuingCountryFormat** | governmentIdIssuingCountry | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.governmentIdIssuingCountry.value) and not(regexp(attributes.governmentIdIssuingCountry.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidGovernmentIdNumberFormat** | governmentIdNumber | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.governmentIdNumber.value) and not(regexp(attributes.governmentIdNumber.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidIndividualRoleFormat** | IndividualRole | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.IndividualRole.value) and not(regexp(attributes.IndividualRole.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidInternalCustomerIDFormat** | internalCustomerID | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.internalCustomerID.value) and not(regexp(attributes.internalCustomerID.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidIssuedByFormat** | IssuedBy | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Identifiers.value.IssuedBy.value) and not(regexp(attributes.Identifiers.value.IssuedBy.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidIssuedRegionFormat** | IssuedRegion | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Identifiers.value.IssuedRegion.value) and not(regexp(attributes.Identifiers.value.IssuedRegion.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidLanguageFormat** | Language | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Communication.value.Language.value) and not(regexp(attributes.Communication.value.Language.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidLastNameFormat** | LastName | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.LastName.value) and not(regexp(attributes.LastName.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidLineTypeFormat** | LineType | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Phone.value.LineType.value) and not(regexp(attributes.Phone.value.LineType.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidLocalNumberFormat** | LocalNumber | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Phone.value.LocalNumber.value) and not(regexp(attributes.Phone.value.LocalNumber.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidMaritalStatusFormat** | MaritalStatus | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.MaritalStatus.value) and not(regexp(attributes.MaritalStatus.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidMiddleNameFormat** | MiddleName | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.MiddleName.value) and not(regexp(attributes.MiddleName.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidNameSuffixFormat** | NameSuffix | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.NameSuffix.value) and not(regexp(attributes.NameSuffix.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidNumberFormat** | Number | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Phone.value.Number.value) and not(regexp(attributes.Phone.value.Number.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidPhoneNumber** | ValidationStatus | WARNING | ALL | Invalid Phone Number | exists(attributes.Phone.value) and not(equals(attributes.Phone.value.ValidationStatus.value, 'VALID')) |  |  |  |  |  |  |
+| **InvalidPrefixFormat** | Prefix | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.NamePrefix.value.Prefix.value) and not(regexp(attributes.NamePrefix.value.Prefix.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidRiskRatingFormat** | riskRating | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.riskRating.value) and not(regexp(attributes.riskRating.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidScoreRangeFormat** | ScoreRange | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.CreditScore.value.ScoreRange.value) and not(regexp(attributes.CreditScore.value.ScoreRange.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidScoreValueFormat** | ScoreValue | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.CreditScore.value.ScoreValue.value) and not(regexp(attributes.CreditScore.value.ScoreValue.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidScoringModelFormat** | ScoringModel | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.CreditScore.value.ScoringModel.value) and not(regexp(attributes.CreditScore.value.ScoringModel.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidScreeningStatusFormat** | screeningStatus | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.screeningStatus.value) and not(regexp(attributes.screeningStatus.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidStatusFormat** | Status | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Identifiers.value.Status.value) and not(regexp(attributes.Identifiers.value.Status.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidStatusReasonFormat** | StatusReason | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.StatusInformation.value.StatusReason.value) and not(regexp(attributes.StatusInformation.value.StatusReason.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidTaxIdentificationNumberFormat** | taxIdentificationNumber | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.taxIdentificationNumber.value) and not(regexp(attributes.taxIdentificationNumber.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidTypeFormat** | Type | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Email.value.Type.value) and not(regexp(attributes.Email.value.Type.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidUsernameFormat** | Username | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Email.value.Username.value) and not(regexp(attributes.Email.value.Username.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidValidationStatusFormat** | ValidationStatus | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Email.value.ValidationStatus.value) and not(regexp(attributes.Email.value.ValidationStatus.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidValueFormat** | Value | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Identifiers.value.Value.value) and not(regexp(attributes.Identifiers.value.Value.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **LastNameContainsNumbers** | LastName | WARNING | ALL | Last Name Contains Numbers | regexp(attributes.LastName.value, '.*[0-9].*') |  |  |  |  |  |  |
+| **MissingFirstOrLastName** | FirstName | WARNING | ALL | Missing First or Last Name | missing(attributes.FirstName.value) or missing(attributes.LastName.value) |  |  |  |  |  |  |
+| **SuspiciousDateOfBirth** | DoB | WARNING | ALL | Suspicious Date of Birth | exists(attributes.DoB.value) and lt(attributes.DoB.value, '1920-01-01') |  |  |  |  |  |  |
+
+> **Note:** On the table above, the top level attributes are represented in bold.
+
+
+
+---
+
+# Location entity type for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > SAP Reltio's velocity pack for Banking > Data Model for SAP Reltio's velocity pack for Banking > Entity types for SAP Reltio's velocity pack for Banking
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/data-model-for-sap-reltios-velocity-pack-for-banking/entity-types-for-sap-reltios-velocity-pack-for-banking/location-entity-type-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** location entity type in banking, master location data in reltio mdm, configure location entity type in reltio console, location match rules and survivorship configuration, banking velocity pack location attributes, model location entity type attributes in reltio, location, entity types, survivorship
+
+
+Learn about the Location entity type preconfigured in SAP Reltio's velocity pack for Banking data model.
+
+The Location entity type is the address master, and it serves two purposes, it holds customer addresses and the bank's own sites. A branch is an address with staff and opening hours, and keeping both in one type means proximity search, address cleansing, and geocoding work the same way for each. Each address is stored twice over, once as the source supplied it and once parsed into its components, so records survive the round trip through an address-verification service.
+
+This table identifies the properties for the Location entity type specified in the SAP Reltio's velocity pack for Banking configuration and lists the attributes preconfigured in the order they appear in the Data Modeler.
+
+**Location**
+- **URI:** configuration/entityTypes/Location
+- **Label:** Location
+- **Description:** Canonical address master inherited from L1; extend with industry-specific location attributes in L3 only when required. Canonical address master inherited from L1; extend with industry-specific location attributes in L3 only when required. Extends L1 Location with branch-specific attributes (branchCode, branchManager, hoursOfOperation, locationType) for physical and virtual service locations in retail and commercial banking.
+- **Abstract:** false
+- **Data Label Pattern:** {City}, {Country}
+
+
+| Name | Label | Type | Description | Survivorship | Hidden | Important | System | Searchable | Faceted | Lookup Code | URI |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **AddressLine1** | Address Line 1 | String |  | LUD | false | false | false | true | false |  | configuration/entityTypes/Location/attributes/AddressLine1 |
+| **City** | City | String |  | LUD | false | false | false | true | true |  | configuration/entityTypes/Location/attributes/City |
+| **StateProvince** | State / Province | String |  | LUD | false | false | false | false | true |  | configuration/entityTypes/Location/attributes/StateProvince |
+| **PostalCode** | Postal Code | String |  | LUD | false | false | false | true | false |  | configuration/entityTypes/Location/attributes/PostalCode |
+| **Country** | Country | String |  | SRC_SYS [INT] | false | false | false | false | true | rdm/lookupTypes/Countries | configuration/entityTypes/Location/attributes/Country |
+| **branchCode** | Branch Code | String | Internal branch identifier for routing and reporting; used for transaction routing and regulatory reporting per ISO 9362 BIC structure conventions. | LUD | false | false | false | true | false |  | configuration/entityTypes/Location/attributes/branchCode |
+| **locationType** | Location Type | String | Discriminator for service channel type: branch (physical retail location), ATM (automated teller machine), online (digital banking portal), or mobile (mobile banking app). | LUD | false | false | false | false | true | rdm/lookupTypes/LocationType | configuration/entityTypes/Location/attributes/locationType |
+| **branchManager** | Location Has Branch Manager | Reference | Banker accountable for this location's operations and customer relationships. | LUD | false | false | false | false | false |  | configuration/entityTypes/Location/attributes/branchManager |
+| **hoursOfOperation** | Hours of Operation | String | Service availability schedule for customer scheduling and channel planning; format: 'Mon-Fri 9:00-17:00, Sat 9:00-13:00' or similar structured text. | LUD | false | false | false | false | false |  | configuration/entityTypes/Location/attributes/hoursOfOperation |
+| **phoneNumber** | Phone Number | String | Primary contact phone number for this location; format per ITU-T E.164 international numbering plan. | LUD | false | false | false | true | false |  | configuration/entityTypes/Location/attributes/phoneNumber |
+| **status** | Status | String | Operational status of the location: ACTIVE (open for service), TEMPORARILY_CLOSED (planned reopening), PERMANENTLY_CLOSED (decommissioned). | LUD | false | false | false | false | true | rdm/lookupTypes/LocationStatus | configuration/entityTypes/Location/attributes/status |
+| **AddressInput** | Address Input | Blob | Full address block consolidated into a single attribute, as received from the source before parsing. | LUD | false | false | false | false | false |  | configuration/entityTypes/Location/attributes/AddressInput |
+| **AddressLine2** | Address Line 2 | String | Second line of the location's postal address. | LUD | false | false | false | true | false |  | configuration/entityTypes/Location/attributes/AddressLine2 |
+| **Street** | Street | String | Name of the most common thoroughfare, street, or block data element of the location's postal address. | LUD | false | false | false | true | false |  | configuration/entityTypes/Location/attributes/Street |
+| **Locality** | Locality | String | Most common population center data element within a country (e.g. US city, Canadian municipality). Parsed counterpart to the denormalized City attribute. | LUD | false | false | false | false | false |  | configuration/entityTypes/Location/attributes/Locality |
+| **DependentThoroughfare** | Dependent Thoroughfare | String | Dependent street or block data element within a country (e.g. UK dependent street). | LUD | false | false | false | false | false |  | configuration/entityTypes/Location/attributes/DependentThoroughfare |
+| **DoubleDependentLocality** | Double Dependent Locality | String | Smallest population center data element, dependent on both the Locality and DependentLocality values (e.g. UK village). | LUD | false | false | false | false | false |  | configuration/entityTypes/Location/attributes/DoubleDependentLocality |
+| **Neighborhood** | Neighborhood | String | Unofficial identifier for the sub-area in which the location's postal address sits. | LUD | false | false | false | false | false |  | configuration/entityTypes/Location/attributes/Neighborhood |
+| **SuperAdministrativeArea** | Super Admin Area | String | The largest geographic data element within a country. | LUD | false | false | false | false | false |  | configuration/entityTypes/Location/attributes/SuperAdministrativeArea |
+| **AdministrativeArea** | Administrative Area | String | Most common geographic data element within a country (e.g. US state, Canadian province). Parsed counterpart to the denormalized StateProvince attribute. | LUD | false | false | false | false | false |  | configuration/entityTypes/Location/attributes/AdministrativeArea |
+| **SubAdministrativeArea** | Sub-administrative Area | String | Smallest geographic data element within a country (e.g. US county). | LUD | false | false | false | false | false |  | configuration/entityTypes/Location/attributes/SubAdministrativeArea |
+| **County** | County | String | Name of the county, for countries where county is the smallest geographic data element. | LUD | false | false | false | false | false |  | configuration/entityTypes/Location/attributes/County |
+| **Premise** | Premise | String | Type and number of the premise for the location's postal address. | LUD | false | false | false | false | false |  | configuration/entityTypes/Location/attributes/Premise |
+| **Building** | Building | String | Descriptive name identifying an individual location or building at the location's postal address. | LUD | false | false | false | false | false |  | configuration/entityTypes/Location/attributes/Building |
+| **SubBuilding** | Sub Building | String | Descriptive name identifying an individual sub-location or sub-building at the location's postal address. | LUD | false | false | false | false | false |  | configuration/entityTypes/Location/attributes/SubBuilding |
+| **Floor** | Floor | String | Alphanumeric value assigned to the floor at the delivery point of the location's postal address. | LUD | false | false | false | false | false |  | configuration/entityTypes/Location/attributes/Floor |
+| **POBox** | PO Box | String | Uniquely addressable post office box identifier for the location's postal address. | LUD | false | false | false | false | false |  | configuration/entityTypes/Location/attributes/POBox |
+| **Unit** | Unit | Nested | Details of the unit at the delivery point of the location's postal address. | LUD | false | false | false | true | true |  | configuration/entityTypes/Location/attributes/Unit |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ UnitName | Unit Name | String | Name describing the type of unit at the delivery point (e.g. Suite, Apartment). | LUD | false | false | false | false | false |  | configuration/entityTypes/Location/attributes/Unit/attributes/UnitName |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ UnitValue | Unit Value | String | Alphanumeric value assigned to the unit at the delivery point. | LUD | false | false | false | false | false |  | configuration/entityTypes/Location/attributes/Unit/attributes/UnitValue |
+| **Zip5** | Zip5 | String | 5-digit US ZIP code for a particular delivery point. | LUD | false | false | false | false | false |  | configuration/entityTypes/Location/attributes/Zip5 |
+| **Zip4** | Zip4 | String | 4-digit US ZIP+4 suffix for a particular delivery point. | LUD | false | false | false | false | false |  | configuration/entityTypes/Location/attributes/Zip4 |
+| **ISO3166Alpha2** | ISO 3166-1 Alpha-2 | String | ISO-compliant 2-character country code of the location's postal address. | LUD | false | false | false | false | false |  | configuration/entityTypes/Location/attributes/ISO3166Alpha2 |
+| **ISO3166Alpha3** | ISO 3166-1 Alpha-3 | String | ISO-compliant 3-character country code of the location's postal address. | LUD | false | false | false | false | false |  | configuration/entityTypes/Location/attributes/ISO3166Alpha3 |
+| **ISO3166Numeric** | ISO 3166-1 Numeric | String | ISO-compliant numeric country code of the location's postal address. | LUD | false | false | false | false | false |  | configuration/entityTypes/Location/attributes/ISO3166Numeric |
+| **OrganizationName** | Organization | String | Business name associated with a particular delivery point. | LUD | false | false | false | false | false |  | configuration/entityTypes/Location/attributes/OrganizationName |
+| **Unmatched** | Unmatched | String | Input data that could not be parsed, or was confidently determined not to be part of an address. | LUD | false | false | false | false | false |  | configuration/entityTypes/Location/attributes/Unmatched |
+| **GeoLocation** | GeoLocation | Nested | Position of the real-world geographic location, including the accuracy with which the coordinates were assigned. | LUD | false | false | false | true | true |  | configuration/entityTypes/Location/attributes/GeoLocation |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Latitude | Latitude | Number | Latitudinal coordinate in decimal degrees (WGS84 datum) for mapping and proximity search. | LUD | false | false | false | false | false |  | configuration/entityTypes/Location/attributes/GeoLocation/attributes/Latitude |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Longitude | Longitude | Number | Longitudinal coordinate in decimal degrees (WGS84 datum) for mapping and proximity search. | LUD | false | false | false | false | false |  | configuration/entityTypes/Location/attributes/GeoLocation/attributes/Longitude |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ GeoAccuracy | GeoAccuracy | String | Codified value describing the overall level of accuracy with which the coordinates were assigned. | LUD | false | false | false | false | false |  | configuration/entityTypes/Location/attributes/GeoLocation/attributes/GeoAccuracy |
+
+
+| Match Rules |  |  |  |  |  |  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **Rule Name** | Type | Scope | Description |  |  |  |  |  |  |  |  |
+| **LocationRule01** | automatic | ALL | Auto-merge on address line and postal code |  |  |  |  |  |  |  |  |
+| **exact_branch_code** | automatic | ALL | Auto-merge on branch code |  |  |  |  |  |  |  |  |
+
+
+| DVFs |  |  |  |  |  |  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **Function Name** | Attribute | Action | Validation Event | Message | Expression |  |  |  |  |  |  |
+| **InvalidAddressLine1Format** | AddressLine1 | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.AddressLine1.value) and not(regexp(attributes.AddressLine1.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidAddressLine2Format** | AddressLine2 | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.AddressLine2.value) and not(regexp(attributes.AddressLine2.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidAdministrativeAreaFormat** | AdministrativeArea | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.AdministrativeArea.value) and not(regexp(attributes.AdministrativeArea.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidBranchCodeFormat** | branchCode | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.branchCode.value) and not(regexp(attributes.branchCode.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidBuildingFormat** | Building | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Building.value) and not(regexp(attributes.Building.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidCityFormat** | City | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.City.value) and not(regexp(attributes.City.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidCountryFormat** | Country | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Country.value) and not(regexp(attributes.Country.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidCountyFormat** | County | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.County.value) and not(regexp(attributes.County.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidDependentThoroughfareFormat** | DependentThoroughfare | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.DependentThoroughfare.value) and not(regexp(attributes.DependentThoroughfare.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidDoubleDependentLocalityFormat** | DoubleDependentLocality | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.DoubleDependentLocality.value) and not(regexp(attributes.DoubleDependentLocality.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidFloorFormat** | Floor | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Floor.value) and not(regexp(attributes.Floor.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidGeoAccuracyFormat** | GeoAccuracy | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.GeoLocation.value.GeoAccuracy.value) and not(regexp(attributes.GeoLocation.value.GeoAccuracy.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidHoursOfOperationFormat** | hoursOfOperation | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.hoursOfOperation.value) and not(regexp(attributes.hoursOfOperation.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidISO3166Alpha2Format** | ISO3166Alpha2 | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.ISO3166Alpha2.value) and not(regexp(attributes.ISO3166Alpha2.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidISO3166Alpha3Format** | ISO3166Alpha3 | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.ISO3166Alpha3.value) and not(regexp(attributes.ISO3166Alpha3.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidISO3166NumericFormat** | ISO3166Numeric | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.ISO3166Numeric.value) and not(regexp(attributes.ISO3166Numeric.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidLocalityFormat** | Locality | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Locality.value) and not(regexp(attributes.Locality.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidLocationTypeFormat** | locationType | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.locationType.value) and not(regexp(attributes.locationType.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidNeighborhoodFormat** | Neighborhood | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Neighborhood.value) and not(regexp(attributes.Neighborhood.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidOrganizationNameFormat** | OrganizationName | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.OrganizationName.value) and not(regexp(attributes.OrganizationName.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidPOBoxFormat** | POBox | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.POBox.value) and not(regexp(attributes.POBox.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidPhoneNumberFormat** | phoneNumber | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.phoneNumber.value) and not(regexp(attributes.phoneNumber.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidPostalCodeFormat** | PostalCode | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.PostalCode.value) and not(regexp(attributes.PostalCode.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidPremiseFormat** | Premise | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Premise.value) and not(regexp(attributes.Premise.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidStateProvinceFormat** | StateProvince | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.StateProvince.value) and not(regexp(attributes.StateProvince.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidStatusFormat** | status | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.status.value) and not(regexp(attributes.status.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidStreetFormat** | Street | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Street.value) and not(regexp(attributes.Street.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidSubAdministrativeAreaFormat** | SubAdministrativeArea | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.SubAdministrativeArea.value) and not(regexp(attributes.SubAdministrativeArea.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidSubBuildingFormat** | SubBuilding | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.SubBuilding.value) and not(regexp(attributes.SubBuilding.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidSuperAdministrativeAreaFormat** | SuperAdministrativeArea | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.SuperAdministrativeArea.value) and not(regexp(attributes.SuperAdministrativeArea.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidUnitNameFormat** | UnitName | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Unit.value.UnitName.value) and not(regexp(attributes.Unit.value.UnitName.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidUnitValueFormat** | UnitValue | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Unit.value.UnitValue.value) and not(regexp(attributes.Unit.value.UnitValue.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidUnmatchedFormat** | Unmatched | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Unmatched.value) and not(regexp(attributes.Unmatched.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidZip4Format** | Zip4 | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Zip4.value) and not(regexp(attributes.Zip4.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidZip5Format** | Zip5 | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Zip5.value) and not(regexp(attributes.Zip5.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+
+> **Note:** On the table above, the top level attributes are represented in bold.
+
+
+
+---
+
+# Organization entity type for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > SAP Reltio's velocity pack for Banking > Data Model for SAP Reltio's velocity pack for Banking > Entity types for SAP Reltio's velocity pack for Banking
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/data-model-for-sap-reltios-velocity-pack-for-banking/entity-types-for-sap-reltios-velocity-pack-for-banking/organization-entity-type-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** organization entity type in banking, master organization data in reltio mdm, configure organization entity type in reltio console, organization match rules and survivorship configuration, banking velocity pack organization attributes, model organization entity type attributes in reltio, lei attributes on the organization entity, organization, lei, duns, entity types, survivorship
+
+
+Learn about the Organization entity type preconfigured in SAP Reltio's velocity pack for Banking data model.
+
+The Organization entity type is the legal-entity master behind every commercial banking relationship. Beyond the registry identifiers a bank needs to recognize a company, the Organization entity type also carries the firmographics that decide what the bank will sell and at what price: industry classification, headcount, reported financials, trade activity, and listed securities. Parent and subsidiary structure lives on the OrganizationHierarchy relationship rather than on this entity.
+
+This table identifies the properties for the Organization entity type specified in the SAP Reltio's velocity pack for Banking configuration and lists the attributes preconfigured in the order they appear in the Data Modeler.
+
+**Organization**
+- **URI:** configuration/entityTypes/Organization
+- **Label:** Organization
+- **Description:** Legal-entity party master from L1. Corporate hierarchy uses OrganizationHierarchy relation, not a Relationship entity. Legal-entity party master from L1. Corporate hierarchy uses OrganizationHierarchy relation, not a Relationship entity. Extends foundation Organization with banking-specific identifiers (LEI, Tax ID, DUNS), industry classification, legal entity type, registration jurisdiction, and comprehensive due-diligence attributes (PEP flag, sanctions flag, screening status, risk rating, FATCA status, verification lifecycle) for commercial banking customer mastering and regulatory compliance.
+- **Abstract:** false
+- **Data Label Pattern:** {Name}
+
+
+| Name | Label | Type | Description | Survivorship | Hidden | Important | System | Searchable | Faceted | Lookup Code | URI |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **Name** | Name | String |  | SRC_SYS [GLEIF,D&B,INT] | false | false | false | true | false |  | configuration/entityTypes/Organization/attributes/Name |
+| **Address** | Organization Has Address | Reference | Reference to Location via OrganizationHasAddress. | Aggregation | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/Address |
+| **lei** | Legal Entity Identifier | String | GLEIF-issued Legal Entity Identifier (ISO 17442) for global financial transaction reporting and regulatory compliance. | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/lei |
+| **taxID** | Tax Identification Number | String | Tax identifier (EIN for US entities, VAT for EU) used for tax reporting and due diligence. | LUD | false | false | false | true | false |  | configuration/entityTypes/Organization/attributes/taxID |
+| **dunsNumber** | D&B DUNS Number | String | Dun & Bradstreet Data Universal Numbering System identifier for credit and firmographic enrichment. | LUD | false | false | false | true | false |  | configuration/entityTypes/Organization/attributes/dunsNumber |
+| **industryClassification** | Industry Classification | String | NAICS or SIC code for risk segmentation and product eligibility assessment. | LUD | false | false | false | false | true | rdm/lookupTypes/NAICS | configuration/entityTypes/Organization/attributes/industryClassification |
+| **legalEntityType** | Legal Entity Type | String | Legal structure (corporation, LLC, partnership, sole proprietorship) for regulatory reporting and credit underwriting. | LUD | false | false | false | false | true | rdm/lookupTypes/LegalEntityTypes | configuration/entityTypes/Organization/attributes/legalEntityType |
+| **registrationJurisdiction** | Registration Jurisdiction | String | Legal domicile jurisdiction for regulatory compliance and tax residency determination. | LUD | false | false | false | false | true | rdm/lookupTypes/Jurisdictions | configuration/entityTypes/Organization/attributes/registrationJurisdiction |
+| **establishedDate** | Established Date | Date | Date of incorporation or registration for entity age calculation and risk assessment. | OldestValue | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/establishedDate |
+| **creditRating** | Credit Rating | String | Commercial credit rating from D&B or other credit bureau for risk assessment. | LUD | false | false | false | false | false | rdm/lookupTypes/CreditRatings | configuration/entityTypes/Organization/attributes/creditRating |
+| **pepFlag** | PEP Flag | Boolean | Politically Exposed Person flag indicating heightened AML/KYC due diligence requirements. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/pepFlag |
+| **sanctionsFlag** | Sanctions Flag | Boolean | OFAC or other sanctions list match flag for compliance screening. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/sanctionsFlag |
+| **screeningStatus** | Screening Status | String | KYC/AML screening status (pending, cleared, flagged, escalated) for compliance workflow. | LUD | false | false | false | false | true |  | configuration/entityTypes/Organization/attributes/screeningStatus |
+| **riskRating** | Risk Rating | String | Overall risk rating (low, medium, high, prohibited) for relationship management and monitoring frequency. | LUD | false | false | false | false | true |  | configuration/entityTypes/Organization/attributes/riskRating |
+| **fatcaStatus** | FATCA Status | String | Foreign Account Tax Compliance Act status for US tax reporting obligations. | LUD | false | false | false | false | false | rdm/lookupTypes/FATCAStatuses | configuration/entityTypes/Organization/attributes/fatcaStatus |
+| **taxResidency** | Tax Residency | String | Primary tax residency jurisdiction for CRS and FATCA reporting. | LUD | false | false | false | false | false | rdm/lookupTypes/Countries | configuration/entityTypes/Organization/attributes/taxResidency |
+| **verificationStatus** | Verification Status | String | Due diligence verification status (unverified, verified, expired, pending_renewal) for compliance lifecycle. | LUD | false | false | false | false | true | rdm/lookupTypes/VerificationStatuses | configuration/entityTypes/Organization/attributes/verificationStatus |
+| **verificationDate** | Verification Date | Date | Date of most recent KYC/AML verification for compliance audit trail. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/verificationDate |
+| **nextReviewDue** | Next Review Due | Date | Scheduled date for next periodic compliance review based on risk rating. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/nextReviewDue |
+| **DoingBusinessAsName** | Doing Business As (DBA) Name | String | Name the organization operates under when it differs from its legal name. Commercial onboarding routinely receives the DBA rather than the registered name. | LUD | false | false | false | true | false |  | configuration/entityTypes/Organization/attributes/DoingBusinessAsName |
+| **TradestyleNames** | Tradestyle Names | Nested | Tradestyle names used by the organization, with the language each is presented in and the period it was in active use. | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/TradestyleNames |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Type | Type | String | Type of tradestyle name used by the organization. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/TradestyleNames/attributes/Type |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Language | Language | String | Language the tradestyle name is presented in, as an ISO 639-1 alpha-2 code. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/TradestyleNames/attributes/Language |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Name | Name | String | Value of the tradestyle name. | LUD | false | false | false | true | false |  | configuration/entityTypes/Organization/attributes/TradestyleNames/attributes/Name |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ DisplaySequence | Display Sequence | Int | Order in which this name is displayed relative to others. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/TradestyleNames/attributes/DisplaySequence |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ StartDate | Start Date | Date | Date the tradestyle name went into active use. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/TradestyleNames/attributes/StartDate |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ EndDate | End Date | Date | Date the tradestyle name ceased being used. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/TradestyleNames/attributes/EndDate |
+| **CompanyType** | Company Type | String | Operational type of company the organization runs. Not to be confused with `legalEntityType`, which is the registered legal form. | LUD | false | false | false | false | true |  | configuration/entityTypes/Organization/attributes/CompanyType |
+| **LegalStatus** | Legal Status | String | Status of the legal entity the company operates through (active, dissolved, in administration, struck off). | LUD | false | false | false | false | true |  | configuration/entityTypes/Organization/attributes/LegalStatus |
+| **StatusInformation** | Status Information | Nested | Status of the organization over time, including what changed, why, and when. Mirrors the same group on Individual. | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/StatusInformation |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Status | Status | String | Status of the organization. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/StatusInformation/attributes/Status |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ StatusReason | Status Reason | String | Rationale for the status applied. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/StatusInformation/attributes/StatusReason |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ UpdateDate | Update Date | Date | Date the organization's status was updated. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/StatusInformation/attributes/UpdateDate |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Comments | Comments | String | Comments related to the organization's status. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/StatusInformation/attributes/Comments |
+| **Phone** | Phone | Nested | Phone numbers used to contact the organization. The pack previously had no contact model for Organization at all. | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Phone |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Type | Type | String | Type of phone number (main, switchboard, treasury desk). | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/Phone/attributes/Type |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Number | Number | String | Phone number as supplied by the source. | LUD | false | false | false | true | false |  | configuration/entityTypes/Organization/attributes/Phone/attributes/Number |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ CountryCode | Country Code | String | Country dialling code. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/Phone/attributes/CountryCode |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ FormattedNumber | Formatted Number | String | Number normalized to ITU-T E.164 format. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/Phone/attributes/FormattedNumber |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Extension | Extension | String | Extension at which the organization can be reached. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/Phone/attributes/Extension |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ AreaCode | Area Code | String | Area code for the phone number. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/Phone/attributes/AreaCode |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ LocalNumber | Local Number | String | Number in the local service format of the calling area. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/Phone/attributes/LocalNumber |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ LineType | Line Type | String | Line type of the phone number. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/Phone/attributes/LineType |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ ValidationStatus | Validation Status | String | Validation status from a verification service. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/Phone/attributes/ValidationStatus |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ PrimaryPhoneFlag | Primary Phone Flag | Boolean | Primary number for reaching the organization. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/Phone/attributes/PrimaryPhoneFlag |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Active | Active | Boolean | Whether the number is active. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/Phone/attributes/Active |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Unreachable | Unreachable | Boolean | Organization has been unreachable at this number. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/Phone/attributes/Unreachable |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Rank | Rank | Int | Ordinal ranking of this number. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/Phone/attributes/Rank |
+| **Email** | Email | Nested | Email addresses used to contact the organization. | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Email |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Type | Type | String | Type of email address. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/Email/attributes/Type |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Email | Email | String | Full email address including local-part and domain. | LUD | false | false | false | true | false |  | configuration/entityTypes/Organization/attributes/Email/attributes/Email |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Domain | Domain | String | Domain of the email address. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/Email/attributes/Domain |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ DomainType | Domain Type | String | Domain type of the email address. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/Email/attributes/DomainType |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Username | Username | String | Local-part of the email address. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/Email/attributes/Username |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ ValidationStatus | Validation Status | String | Validation status from a verification service. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/Email/attributes/ValidationStatus |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Active | Active | Boolean | Whether the address is active. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/Email/attributes/Active |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Rank | Rank | Int | Ordinal rank of this address. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/Email/attributes/Rank |
+| **WebsiteURL** | Website URL | URL | URL to a site related to the organization. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/WebsiteURL |
+| **Identifiers** | Identifiers | Nested | Identifiers assigned to the organization. Multi-valued — a corporate customer carries registry numbers across several jurisdictions. The flat `lei`, `taxID`, and `dunsNumber` remain as the top-level match spine (Reltio match rules accept only top-level simple attributes, error 375); this group is the system of record. | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Identifiers |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Type | Type | String | Type of identifier issued to the organization. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/Identifiers/attributes/Type |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Value | Value | String | Value of the identifier. | LUD | false | false | false | true | false |  | configuration/entityTypes/Organization/attributes/Identifiers/attributes/Value |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Status | Status | String | Current status of the identifier. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/Identifiers/attributes/Status |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ IssuedBy | Issued By | String | Authority or agency that issued the identifier. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/Identifiers/attributes/IssuedBy |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ IssuedRegion | Issued Region | String | Region over which the identifier has domain. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/Identifiers/attributes/IssuedRegion |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ IssuedDate | Issued Date | Date | Date the identifier was issued. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/Identifiers/attributes/IssuedDate |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ ExpirationDate | Expiration Date | Date | Date the identifier expires. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/Identifiers/attributes/ExpirationDate |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ DeactivationDate | Deactivation Date | Date | Date the identifier was deactivated. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/Identifiers/attributes/DeactivationDate |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ DeactivationReason | Deactivation Reason | String | Rationale for deactivation. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/Identifiers/attributes/DeactivationReason |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Rank | Rank | Int | Ordinal ranking of the identifier. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/Identifiers/attributes/Rank |
+| **Ticker** | Ticker | Nested | Symbol and exchange for the organization's traded securities. Multi-valued because a single issuer is commonly listed on more than one exchange. | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Ticker |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Symbol | Symbol | String | Ticker symbol used with the traded security. | LUD | false | false | false | true | false |  | configuration/entityTypes/Organization/attributes/Ticker/attributes/Symbol |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Exchange | Exchange | String | Stock exchange where the ticker symbol is used, ideally an ISO 10383 MIC. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/Ticker/attributes/Exchange |
+| **CUSIP** | CUSIP | String | Nine-character identifier assigned to a security by CUSIP Global Services. | LUD | false | false | false | true | false |  | configuration/entityTypes/Organization/attributes/CUSIP |
+| **IndustryClassifications** | Industry Classification | Nested | Business-activity classifications across schemes. The flat `industryClassification` stays bound to NAICS as the primary code; this group carries SIC, ISIC, and any additional schemes along with the share of revenue each represents. | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/IndustryClassifications |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Type | Type | String | Industry classification scheme (NAICS, SIC, ISIC). | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/IndustryClassifications/attributes/Type |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Code | Code | String | Code assigned under the scheme. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/IndustryClassifications/attributes/Code |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Value | Value | String | Text describing the business activity for the code. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/IndustryClassifications/attributes/Value |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ CodeLanguage | Code Language | String | Language of the code description. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/IndustryClassifications/attributes/CodeLanguage |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ DisplaySequence | Display Sequence | Int | Display order for this entry. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/IndustryClassifications/attributes/DisplaySequence |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ SalesPercentage | Sales Percentage | Number | Share of annual sales associated with the code. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/IndustryClassifications/attributes/SalesPercentage |
+| **ActivitiesAndOperations** | Activities And Operations | Nested | Import, export, and agency activity indicators — relevant to trade-finance eligibility and cross-border risk. | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/ActivitiesAndOperations |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ ImportIndicator | Import Indicator | Boolean | Organization imports goods from other countries. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/ActivitiesAndOperations/attributes/ImportIndicator |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ ExportIndicator | Export Indicator | Boolean | Organization exports goods to other countries. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/ActivitiesAndOperations/attributes/ExportIndicator |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ AgentIndicator | Agent Indicator | Boolean | Organization promotes the goods or services of another entity. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/ActivitiesAndOperations/attributes/AgentIndicator |
+| **OrganizationDetails** | Organization Details | Nested | Age, ownership, and operating-status summary for the organization. | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/OrganizationDetails |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ OrganizationSummaryText | Organization Summary Text | Blob | Brief statement or account of the organization. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/OrganizationDetails/attributes/OrganizationSummaryText |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ OperatingStatus | Operating Status | String | The organization's functional state. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/OrganizationDetails/attributes/OperatingStatus |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ OperatingStatusComment | Operating Status Comment | String | Free-text detail on the functional state. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/OrganizationDetails/attributes/OperatingStatusComment |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ OwnershipStatus | Ownership Status | String | The organization's ownership status. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/OrganizationDetails/attributes/OwnershipStatus |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ OwnershipType | Ownership Type | String | Applicable type of controlling ownership. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/OrganizationDetails/attributes/OwnershipType |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ OwnershipDate | Ownership Date | Date | Date current owners took over the organization. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/OrganizationDetails/attributes/OwnershipDate |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ EmailDomain | Email Domain | String | Domain used for email addresses issued by the organization. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/OrganizationDetails/attributes/EmailDomain |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ DomicileState | Domicile State | String | State of legal domicile. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/OrganizationDetails/attributes/DomicileState |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ StartYear | Start Year | Int | Year the organization commenced operations. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/OrganizationDetails/attributes/StartYear |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ IPOYear | IPO Year | Int | Year the organization completed its initial public offering. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/OrganizationDetails/attributes/IPOYear |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ EndYear | End Year | Int | Year the organization ceased operations. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/OrganizationDetails/attributes/EndYear |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ MemberRole | Member Role | String | Role the organization plays in a family tree of ownership. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/OrganizationDetails/attributes/MemberRole |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ FranchiseOperationType | Franchise Operation Type | String | Franchise rights of the organization. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/OrganizationDetails/attributes/FranchiseOperationType |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Standalone | Standalone | Boolean | Organization operates outside any legal family tree. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/OrganizationDetails/attributes/Standalone |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ MarketabilityIndicator | Marketability Indicator | Boolean | Whether the organization is marketable. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/OrganizationDetails/attributes/MarketabilityIndicator |
+| **EmployeeDetails** | Employee Details | Nested | Employee headcount for the organization, separating the consolidated figure across the hierarchy from the figure for this entity alone, plus how the number was derived. | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/EmployeeDetails |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ NumberOfEmployees | Number of Employees | Int | Employees across all related organizations in the hierarchy. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/EmployeeDetails/attributes/NumberOfEmployees |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ IndividualTotalEmployeeQuantity | Individual Total Employee Quantity | Int | Employees belonging to this organization alone. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/EmployeeDetails/attributes/IndividualTotalEmployeeQuantity |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ IndividualReliabilityText | Individual Reliability Text | String | Method used to calculate the headcount, and by extension how reliable it is. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/EmployeeDetails/attributes/IndividualReliabilityText |
+| **KeyFinancialFiguresOverview** | Key Financial Figures Overview | Nested | Reported financial statement figures for the organization, carrying the currency, unit of size, and reporting period alongside the amounts so figures are comparable across entities. | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/KeyFinancialFiguresOverview |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Currency | Currency | String | ISO 4217 currency the figures are reported in. | LUD | false | false | false | false | false | rdm/lookupTypes/Currencies | configuration/entityTypes/Organization/attributes/KeyFinancialFiguresOverview/attributes/Currency |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ CurrencyUnitOfSize | Currency Unit Of Size | String | Unit the figures are reported in (units, thousands, millions). | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/KeyFinancialFiguresOverview/attributes/CurrencyUnitOfSize |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ SalesRevenueAmount | Total Sales/Revenue | Number | Top-line income from the sale of goods and services. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/KeyFinancialFiguresOverview/attributes/SalesRevenueAmount |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ TotalAssetsAmount | Total Assets | Number | Value of current and long-term assets reported. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/KeyFinancialFiguresOverview/attributes/TotalAssetsAmount |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ TotalLiabilitiesAmount | Total Liabilities | Number | Value of current and long-term liabilities reported. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/KeyFinancialFiguresOverview/attributes/TotalLiabilitiesAmount |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ FinancialStatementFromDate | Financial Statement From Date | Date | Start of the reported financial period. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/KeyFinancialFiguresOverview/attributes/FinancialStatementFromDate |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ FinancialStatementToDate | Financial Statement To Date | Date | End of the reported financial period. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/KeyFinancialFiguresOverview/attributes/FinancialStatementToDate |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ FinancialPeriodDuration | Financial Period Duration | String | Time interval covered by the statement. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/KeyFinancialFiguresOverview/attributes/FinancialPeriodDuration |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ FinancialStatementYear | Financial Statement Year | Int | Year covered by the reported figures. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/KeyFinancialFiguresOverview/attributes/FinancialStatementYear |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ FinancialStatementDescription | Financial Statement Description | String | Description of the statement's content and scope. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/KeyFinancialFiguresOverview/attributes/FinancialStatementDescription |
+
+
+| Match Rules |  |  |  |  |  |  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **Rule Name** | Type | Scope | Description |  |  |  |  |  |  |  |  |
+| **exact_lei** | automatic | ALL | Auto-merge on LEI |  |  |  |  |  |  |  |  |
+| **exact_tax_id** | automatic | ALL | Auto-merge on Tax ID |  |  |  |  |  |  |  |  |
+| **exact_duns** | automatic | ALL | Auto-merge on DUNS Number |  |  |  |  |  |  |  |  |
+| **fuzzy_name_jurisdiction** | suspect | ALL | Suspect match on name and jurisdiction |  |  |  |  |  |  |  |  |
+
+
+| DVFs |  |  |  |  |  |  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **Function Name** | Attribute | Action | Validation Event | Message | Expression |  |  |  |  |  |  |
+| **InvalidAreaCodeFormat** | AreaCode | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Phone.value.AreaCode.value) and not(regexp(attributes.Phone.value.AreaCode.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidCUSIPFormat** | CUSIP | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.CUSIP.value) and not(regexp(attributes.CUSIP.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidCodeFormat** | Code | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.IndustryClassifications.value.Code.value) and not(regexp(attributes.IndustryClassifications.value.Code.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidCodeLanguageFormat** | CodeLanguage | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.IndustryClassifications.value.CodeLanguage.value) and not(regexp(attributes.IndustryClassifications.value.CodeLanguage.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidCommentsFormat** | Comments | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.StatusInformation.value.Comments.value) and not(regexp(attributes.StatusInformation.value.Comments.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidCompanyTypeFormat** | CompanyType | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.CompanyType.value) and not(regexp(attributes.CompanyType.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidCountryCodeFormat** | CountryCode | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Phone.value.CountryCode.value) and not(regexp(attributes.Phone.value.CountryCode.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidCreditRatingFormat** | creditRating | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.creditRating.value) and not(regexp(attributes.creditRating.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidCurrency** | Currency | WARNING | ALL | Must be a 3-letter ISO 4217 code | (exists(attributes.KeyFinancialFiguresOverview.value.Currency.lookupCode) and not(regexp(attributes.KeyFinancialFiguresOverview.value.Currency.lookupCode, '^[A-Z]{3}$'))) or (not(exists(attributes.KeyFinancialFiguresOverview.value.Currency.lookupCode)) and exists(attributes.KeyFinancialFiguresOverview.value.Currency.value) and not(regexp(attributes.KeyFinancialFiguresOverview.value.Currency.value, '^[A-Z]{3}$'))) |  |  |  |  |  |  |
+| **InvalidCurrencyFormat** | Currency | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.KeyFinancialFiguresOverview.value.Currency.value) and not(regexp(attributes.KeyFinancialFiguresOverview.value.Currency.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidCurrencyUnitOfSizeFormat** | CurrencyUnitOfSize | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.KeyFinancialFiguresOverview.value.CurrencyUnitOfSize.value) and not(regexp(attributes.KeyFinancialFiguresOverview.value.CurrencyUnitOfSize.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidDeactivationReasonFormat** | DeactivationReason | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Identifiers.value.DeactivationReason.value) and not(regexp(attributes.Identifiers.value.DeactivationReason.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidDoingBusinessAsNameFormat** | DoingBusinessAsName | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.DoingBusinessAsName.value) and not(regexp(attributes.DoingBusinessAsName.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidDomainFormat** | Domain | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Email.value.Domain.value) and not(regexp(attributes.Email.value.Domain.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidDomainTypeFormat** | DomainType | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Email.value.DomainType.value) and not(regexp(attributes.Email.value.DomainType.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidDomicileStateFormat** | DomicileState | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.OrganizationDetails.value.DomicileState.value) and not(regexp(attributes.OrganizationDetails.value.DomicileState.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidDunsNumberFormat** | dunsNumber | WARNING | ALL | DUNS number must be 9 numeric digits | exists(attributes.dunsNumber.value) and not(regexp(attributes.dunsNumber.value, '^[0-9]{9}$')) |  |  |  |  |  |  |
+| **InvalidEmailDomainFormat** | EmailDomain | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.OrganizationDetails.value.EmailDomain.value) and not(regexp(attributes.OrganizationDetails.value.EmailDomain.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidEmailFormat** | Email | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Email.value.Email.value) and not(regexp(attributes.Email.value.Email.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidExchangeFormat** | Exchange | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Ticker.value.Exchange.value) and not(regexp(attributes.Ticker.value.Exchange.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidExtensionFormat** | Extension | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Phone.value.Extension.value) and not(regexp(attributes.Phone.value.Extension.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidFatcaStatusFormat** | fatcaStatus | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.fatcaStatus.value) and not(regexp(attributes.fatcaStatus.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidFinancialPeriodDurationFormat** | FinancialPeriodDuration | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.KeyFinancialFiguresOverview.value.FinancialPeriodDuration.value) and not(regexp(attributes.KeyFinancialFiguresOverview.value.FinancialPeriodDuration.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidFinancialStatementDescriptionFormat** | FinancialStatementDescription | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.KeyFinancialFiguresOverview.value.FinancialStatementDescription.value) and not(regexp(attributes.KeyFinancialFiguresOverview.value.FinancialStatementDescription.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidFormattedNumberFormat** | FormattedNumber | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Phone.value.FormattedNumber.value) and not(regexp(attributes.Phone.value.FormattedNumber.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidFranchiseOperationTypeFormat** | FranchiseOperationType | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.OrganizationDetails.value.FranchiseOperationType.value) and not(regexp(attributes.OrganizationDetails.value.FranchiseOperationType.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidIndividualReliabilityTextFormat** | IndividualReliabilityText | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.EmployeeDetails.value.IndividualReliabilityText.value) and not(regexp(attributes.EmployeeDetails.value.IndividualReliabilityText.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidIndustryClassificationFormat** | industryClassification | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.industryClassification.value) and not(regexp(attributes.industryClassification.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidIssuedByFormat** | IssuedBy | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Identifiers.value.IssuedBy.value) and not(regexp(attributes.Identifiers.value.IssuedBy.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidIssuedRegionFormat** | IssuedRegion | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Identifiers.value.IssuedRegion.value) and not(regexp(attributes.Identifiers.value.IssuedRegion.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidLanguageFormat** | Language | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.TradestyleNames.value.Language.value) and not(regexp(attributes.TradestyleNames.value.Language.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidLegalEntityTypeFormat** | legalEntityType | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.legalEntityType.value) and not(regexp(attributes.legalEntityType.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidLegalStatusFormat** | LegalStatus | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.LegalStatus.value) and not(regexp(attributes.LegalStatus.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidLeiFormat** | lei | ERROR | ALL | LEI must be 20 uppercase alphanumeric characters | (exists(attributes.lei.lookupCode) and not(regexp(attributes.lei.lookupCode, '^[A-Z0-9]{20}$'))) or (not(exists(attributes.lei.lookupCode)) and exists(attributes.lei.value) and not(regexp(attributes.lei.value, '^[A-Z0-9]{20}$'))) |  |  |  |  |  |  |
+| **InvalidLineTypeFormat** | LineType | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Phone.value.LineType.value) and not(regexp(attributes.Phone.value.LineType.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidLocalNumberFormat** | LocalNumber | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Phone.value.LocalNumber.value) and not(regexp(attributes.Phone.value.LocalNumber.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidMemberRoleFormat** | MemberRole | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.OrganizationDetails.value.MemberRole.value) and not(regexp(attributes.OrganizationDetails.value.MemberRole.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidNameFormat** | Name | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Name.value) and not(regexp(attributes.Name.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidNumberFormat** | Number | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Phone.value.Number.value) and not(regexp(attributes.Phone.value.Number.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidOperatingStatusCommentFormat** | OperatingStatusComment | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.OrganizationDetails.value.OperatingStatusComment.value) and not(regexp(attributes.OrganizationDetails.value.OperatingStatusComment.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidOperatingStatusFormat** | OperatingStatus | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.OrganizationDetails.value.OperatingStatus.value) and not(regexp(attributes.OrganizationDetails.value.OperatingStatus.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidOwnershipStatusFormat** | OwnershipStatus | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.OrganizationDetails.value.OwnershipStatus.value) and not(regexp(attributes.OrganizationDetails.value.OwnershipStatus.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidOwnershipTypeFormat** | OwnershipType | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.OrganizationDetails.value.OwnershipType.value) and not(regexp(attributes.OrganizationDetails.value.OwnershipType.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidPhoneNumber** | ValidationStatus | WARNING | ALL | Invalid Phone Number | exists(attributes.Phone.value) and not(equals(attributes.Phone.value.ValidationStatus.value, 'VALID')) |  |  |  |  |  |  |
+| **InvalidRegistrationJurisdictionFormat** | registrationJurisdiction | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.registrationJurisdiction.value) and not(regexp(attributes.registrationJurisdiction.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidRiskRatingFormat** | riskRating | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.riskRating.value) and not(regexp(attributes.riskRating.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidScreeningStatusFormat** | screeningStatus | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.screeningStatus.value) and not(regexp(attributes.screeningStatus.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidStatusFormat** | Status | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Identifiers.value.Status.value) and not(regexp(attributes.Identifiers.value.Status.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidStatusReasonFormat** | StatusReason | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.StatusInformation.value.StatusReason.value) and not(regexp(attributes.StatusInformation.value.StatusReason.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidSymbolFormat** | Symbol | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Ticker.value.Symbol.value) and not(regexp(attributes.Ticker.value.Symbol.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidTaxIDFormat** | taxID | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.taxID.value) and not(regexp(attributes.taxID.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidTaxResidencyFormat** | taxResidency | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.taxResidency.value) and not(regexp(attributes.taxResidency.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidTypeFormat** | Type | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Email.value.Type.value) and not(regexp(attributes.Email.value.Type.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidUsernameFormat** | Username | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Email.value.Username.value) and not(regexp(attributes.Email.value.Username.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidValidationStatusFormat** | ValidationStatus | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Email.value.ValidationStatus.value) and not(regexp(attributes.Email.value.ValidationStatus.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidValueFormat** | Value | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.Identifiers.value.Value.value) and not(regexp(attributes.Identifiers.value.Value.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidVerificationStatusFormat** | verificationStatus | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.verificationStatus.value) and not(regexp(attributes.verificationStatus.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **SuspiciouslyShortName** | Name | WARNING | ALL | Suspiciously Short Name | exists(attributes.Name.value) and regexp(attributes.Name.value, '^.{1,3}$') |  |  |  |  |  |  |
+
+> **Note:** On the table above, the top level attributes are represented in bold.
+
+
+
+---
+
+# Product entity type for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > SAP Reltio's velocity pack for Banking > Data Model for SAP Reltio's velocity pack for Banking > Entity types for SAP Reltio's velocity pack for Banking
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/data-model-for-sap-reltios-velocity-pack-for-banking/entity-types-for-sap-reltios-velocity-pack-for-banking/product-entity-type-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** product entity type in banking, master product data in reltio mdm, configure product entity type in reltio console, product match rules and survivorship configuration, banking velocity pack product attributes, model product entity type attributes in reltio, product, entity types, survivorship
+
+
+Learn about the Product entity type preconfigured in SAP Reltio's velocity pack for Banking data model.
+
+The Product entity type is the catalog. It represents one record per offering the bank sells, across deposits, cards, lending, and mortgages. It holds the terms that belong to the offering rather than to any one customer so a rate change is made once and every account on that product inherits it. FinancialAccount and Application both reference Product, which is what lets the bank answer what a customer holds as well as what they hold it under.
+
+This table identifies the properties for the Product entity type specified in the SAP Reltio's velocity pack for Banking configuration and lists the attributes preconfigured in the order they appear in the Data Modeler.
+
+**Product**
+- **URI:** configuration/entityTypes/Product
+- **Label:** Product
+- **Description:** Banking product catalog master for deposits, cards, lending, and mortgage offerings. Carries features, pricing (interest rates, fees), eligibility rules, and productType discriminator. Applications and accounts link to Product for product-definition reference.
+- **Abstract:** false
+- **Data Label Pattern:** {productName}
+- **Secondary Label Pattern:** {productType}
+
+
+| Name | Label | Type | Description | Survivorship | Hidden | Important | System | Searchable | Faceted | Lookup Code | URI |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **productCode** | Product Code | String | Internal product identifier for catalog management; primary key per plan's identifier strategy (productCode primary, internalProductID internal). | SRC_SYS [CBS,INT] | false | false | false | true | false |  | configuration/entityTypes/Product/attributes/productCode |
+| **internalProductID** | Internal Product ID | String | Internal warehouse product identifier; fallback identifier for cross-system reconciliation. | LUD | false | false | false | true | false |  | configuration/entityTypes/Product/attributes/internalProductID |
+| **productName** | Product Name | String | Customer-facing product label used in marketing materials and account statements. | LUD | false | false | false | true | false |  | configuration/entityTypes/Product/attributes/productName |
+| **productType** | Product Type | String | Specific product type within the line of business, bound to the ProductType lookup: Checking Account, Savings Account, Money Market, Certificate of Deposit, Personal Loan, Auto Loan, Fixed Mortgage, ARM Mortgage, Home Equity Line, Credit Card, Debit Card, Business Loan, Line of Credit, Investment Account, or Retirement Account. This is the finer level beneath productCategory and is what account-opening, eligibility rules, and terms-and-conditions key off. | LUD | false | false | false | false | true | rdm/lookupTypes/ProductType | configuration/entityTypes/Product/attributes/productType |
+| **productCategory** | Product Category | String | Line-of-business grouping the product belongs to, bound to the ProductCategory lookup: Deposit, Lending, Investment, Payment, Card, Mortgage, Wealth Management, Insurance, Treasury, Trade Finance, Foreign Exchange, or Derivatives. This is the coarsest level of the product taxonomy — it groups many product types and drives portfolio rollups, cross-sell reporting, and product-catalog facets. | LUD | false | false | false | false | false | rdm/lookupTypes/ProductCategory | configuration/entityTypes/Product/attributes/productCategory |
+| **description** | Description | String | Free-text description of product features and benefits for customer-facing materials. | LUD | false | false | false | false | false |  | configuration/entityTypes/Product/attributes/description |
+| **status** | Status | String | Lifecycle status — ACTIVE (available for new accounts), INACTIVE (closed to new accounts but existing accounts remain), RETIRED (fully discontinued). | ValueBasedPriority | false | false | false | false | true | rdm/lookupTypes/ProductStatus | configuration/entityTypes/Product/attributes/status |
+| **currency** | Currency | String | Base currency for product pricing and account balances (ISO 4217). | LUD | false | false | false | false | true | rdm/lookupTypes/Currencies | configuration/entityTypes/Product/attributes/currency |
+| **interestRate** | Interest Rate | Number | Annual percentage rate (APR) for deposit products (interest earned) or loan/card products (interest charged); expressed as decimal (e.g., 0.0325 for 3.25%). | LUD | false | false | false | false | false |  | configuration/entityTypes/Product/attributes/interestRate |
+| **annualFee** | Annual Fee | Number | Annual maintenance fee charged to account holder; zero for fee-free products. | LUD | false | false | false | false | false |  | configuration/entityTypes/Product/attributes/annualFee |
+| **originationFee** | Origination Fee | Number | One-time fee charged at account opening or loan origination; applicable to loan and mortgage products. | LUD | false | false | false | false | false |  | configuration/entityTypes/Product/attributes/originationFee |
+| **maintenanceFee** | Monthly Maintenance Fee | Number | Recurring monthly fee for account maintenance; may be waived based on balance or activity thresholds. | LUD | false | false | false | false | false |  | configuration/entityTypes/Product/attributes/maintenanceFee |
+| **minimumBalance** | Minimum Balance | Number | Minimum balance required to avoid fees or earn interest; applicable to deposit products. | LUD | false | false | false | false | false |  | configuration/entityTypes/Product/attributes/minimumBalance |
+| **maximumBalance** | Maximum Balance | Number | Maximum balance allowed for deposit products; regulatory or operational limit. | LUD | false | false | false | false | false |  | configuration/entityTypes/Product/attributes/maximumBalance |
+| **creditLimit** | Credit Limit | Number | Maximum credit line for card products; set at product level as default, overridden at account level based on underwriting. | LUD | false | false | false | false | false |  | configuration/entityTypes/Product/attributes/creditLimit |
+| **loanTerm** | Loan Term (Months) | Number | Standard loan term in months for loan and mortgage products; actual term set at account level. | LUD | false | false | false | false | false |  | configuration/entityTypes/Product/attributes/loanTerm |
+| **minimumIncome** | Minimum Income | Number | Minimum annual income required for product eligibility; underwriting rule for application decisioning. | LUD | false | false | false | false | false |  | configuration/entityTypes/Product/attributes/minimumIncome |
+| **minimumCreditScore** | Minimum Credit Score | Number | Minimum credit score required for product eligibility; underwriting rule for application decisioning. | LUD | false | false | false | false | false |  | configuration/entityTypes/Product/attributes/minimumCreditScore |
+| **eligibilityCriteria** | Eligibility Criteria | String | Free-text description of additional eligibility requirements (e.g., employment status, residency, existing customer relationship). | LUD | false | false | false | false | false |  | configuration/entityTypes/Product/attributes/eligibilityCriteria |
+| **features** | Features | Nested | Product features and benefits (rewards, cashback, overdraft protection, mobile banking) for differentiation and cross-sell. | Aggregation | false | false | false | true | true |  | configuration/entityTypes/Product/attributes/features |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ featureName | Feature Name | String | Name of product feature (e.g., CASHBACK, REWARDS_POINTS, OVERDRAFT_PROTECTION). | LUD | false | false | false | false | false |  | configuration/entityTypes/Product/attributes/features/attributes/featureName |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ featureDescription | Feature Description | String | Free-text description of feature benefits and terms. | LUD | false | false | false | false | false |  | configuration/entityTypes/Product/attributes/features/attributes/featureDescription |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ featureValue | Feature Value | String | Quantified value of feature (e.g., '2% cashback', '50,000 bonus points', '$500 overdraft limit'). | LUD | false | false | false | false | false |  | configuration/entityTypes/Product/attributes/features/attributes/featureValue |
+| **rewardProgram** | Reward Program | String | Name of associated rewards program for card products (e.g., 'Travel Rewards', 'Cash Back Plus'). | LUD | false | false | false | false | false |  | configuration/entityTypes/Product/attributes/rewardProgram |
+| **overdraftProtection** | Overdraft Protection | Boolean | Flag indicating whether overdraft protection is available for deposit products. | LUD | false | false | false | false | false |  | configuration/entityTypes/Product/attributes/overdraftProtection |
+| **mobileDepositEnabled** | Mobile Deposit Enabled | Boolean | Flag indicating whether mobile check deposit is enabled for deposit products. | LUD | false | false | false | false | false |  | configuration/entityTypes/Product/attributes/mobileDepositEnabled |
+| **atmFeeWaiver** | ATM Fee Waiver | Boolean | Flag indicating whether ATM fees are waived for deposit and card products. | LUD | false | false | false | false | false |  | configuration/entityTypes/Product/attributes/atmFeeWaiver |
+| **foreignTransactionFee** | Foreign Transaction Fee | Number | Fee charged for foreign currency transactions on card products; expressed as percentage (e.g., 0.03 for 3%). | LUD | false | false | false | false | false |  | configuration/entityTypes/Product/attributes/foreignTransactionFee |
+| **latePaymentFee** | Late Payment Fee | Number | Fee charged for late payment on card and loan products. | LUD | false | false | false | false | false |  | configuration/entityTypes/Product/attributes/latePaymentFee |
+| **effectiveDate** | Effective Date | Date | Date the product became available for new accounts; used for product lifecycle tracking. | OldestValue | false | false | false | false | false |  | configuration/entityTypes/Product/attributes/effectiveDate |
+| **discontinuedDate** | Discontinued Date | Date | Date the product was closed to new accounts; null while active. | LUD | false | false | false | false | false |  | configuration/entityTypes/Product/attributes/discontinuedDate |
+
+
+| Match Rules |  |  |  |  |  |  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **Rule Name** | Type | Scope | Description |  |  |  |  |  |  |  |  |
+| **exact_product_code** | automatic | ALL | Auto-merge: exact product code |  |  |  |  |  |  |  |  |
+
+
+| DVFs |  |  |  |  |  |  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **Function Name** | Attribute | Action | Validation Event | Message | Expression |  |  |  |  |  |  |
+| **InvalidCurrency** | currency | WARNING | ALL | Must be a 3-letter ISO 4217 code | (exists(attributes.currency.lookupCode) and not(regexp(attributes.currency.lookupCode, '^[A-Z]{3}$'))) or (not(exists(attributes.currency.lookupCode)) and exists(attributes.currency.value) and not(regexp(attributes.currency.value, '^[A-Z]{3}$'))) |  |  |  |  |  |  |
+| **InvalidCurrencyFormat** | currency | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.currency.value) and not(regexp(attributes.currency.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidDescriptionFormat** | description | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.description.value) and not(regexp(attributes.description.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidEligibilityCriteriaFormat** | eligibilityCriteria | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.eligibilityCriteria.value) and not(regexp(attributes.eligibilityCriteria.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidFeatureDescriptionFormat** | featureDescription | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.features.value.featureDescription.value) and not(regexp(attributes.features.value.featureDescription.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidFeatureNameFormat** | featureName | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.features.value.featureName.value) and not(regexp(attributes.features.value.featureName.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidFeatureValueFormat** | featureValue | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.features.value.featureValue.value) and not(regexp(attributes.features.value.featureValue.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidInternalProductIDFormat** | internalProductID | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.internalProductID.value) and not(regexp(attributes.internalProductID.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidProductCategoryFormat** | productCategory | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.productCategory.value) and not(regexp(attributes.productCategory.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidProductCodeFormat** | productCode | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.productCode.value) and not(regexp(attributes.productCode.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidProductNameFormat** | productName | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.productName.value) and not(regexp(attributes.productName.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidProductTypeFormat** | productType | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.productType.value) and not(regexp(attributes.productType.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidRewardProgramFormat** | rewardProgram | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.rewardProgram.value) and not(regexp(attributes.rewardProgram.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+| **InvalidStatusFormat** | status | ERROR | ALL | IBAN must match ISO 13616 format (15–34 characters) | exists(attributes.status.value) and not(regexp(attributes.status.value, '^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$')) |  |  |  |  |  |  |
+
+> **Note:** On the table above, the top level attributes are represented in bold.
+
+
+
+---
+
+# Account Holder To Financial Account relationship type for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > SAP Reltio's velocity pack for Banking > Data Model for SAP Reltio's velocity pack for Banking > Relationship types for SAP Reltio's velocity pack for Banking
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/data-model-for-sap-reltios-velocity-pack-for-banking/relationship-types-for-sap-reltios-velocity-pack-for-banking/account-holder-to-financial-account-relationship-type-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** account holder to financial account relationship type in banking, banking velocity pack relationship types, configure account holder to financial account relationship in reltio console, model account holder to financial account relationship type attributes in reltio, connect account holder and financial account in reltio, account holder to financial account, relationship types, account holder, financial account
+
+
+Learn about the Account Holder To Financial Account relationship type preconfigured in entity types in SAP Reltio's velocity pack for Banking.
+
+Relationship types contain metadata properties and attributes that define the connection between two specific entities.
+
+This table identifies the preconfigured Account Holder To Financial Account relationship type that comes with SAP Reltio's velocity pack for Banking. Use this relationship type when you want to identify connections between AccountHolder and FinancialAccount entity types.
+
+**AccountHolderToFinancialAccount**
+- **URI:** configuration/relationTypes/AccountHolderToFinancialAccount
+- **Label:** Account Holder To Financial Account
+- **Description:** Resolves the AccountHolder relationship record to the FinancialAccount being held. Supports joint account ownership percentage tracking per ISO 20022 account structure.
+- **Type:** 
+- **Direction:** directed
+- **Implicit:** false
+- **Start Object:** configuration/entityTypes/AccountHolder
+- **Start Label:** Account Holder
+- **End Object:** configuration/entityTypes/FinancialAccount
+- **End Label:** Financial Account
+
+> **Note:** On the table above, the top level attributes are represented in bold.
+
+
+
+---
+
+# Account Holder To Individual relationship type for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > SAP Reltio's velocity pack for Banking > Data Model for SAP Reltio's velocity pack for Banking > Relationship types for SAP Reltio's velocity pack for Banking
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/data-model-for-sap-reltios-velocity-pack-for-banking/relationship-types-for-sap-reltios-velocity-pack-for-banking/account-holder-to-individual-relationship-type-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** account holder to individual relationship type in banking, banking velocity pack relationship types, configure account holder to individual relationship in reltio console, model account holder to individual relationship type attributes in reltio, connect account holder and individual in reltio, account holder to individual, relationship types, account holder, individual
+
+
+Learn about the Account Holder To Individual relationship type preconfigured in entity types in SAP Reltio's velocity pack for Banking.
+
+Relationship types contain metadata properties and attributes that define the connection between two specific entities.
+
+This table identifies the preconfigured Account Holder To Individual relationship type that comes with SAP Reltio's velocity pack for Banking. Use this relationship type when you want to identify connections between AccountHolder and Individual entity types.
+
+**AccountHolderToIndividual**
+- **URI:** configuration/relationTypes/AccountHolderToIndividual
+- **Label:** Account Holder To Individual
+- **Description:** Resolves the AccountHolder relationship record to the Individual holding the account (primary, joint, custodian roles).
+- **Type:** 
+- **Direction:** directed
+- **Implicit:** false
+- **Start Object:** configuration/entityTypes/AccountHolder
+- **Start Label:** Account Holder
+- **End Object:** configuration/entityTypes/Individual
+- **End Label:** Individual
+
+> **Note:** On the table above, the top level attributes are represented in bold.
+
+
+
+---
+
+# Account Holder To Organization relationship type for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > SAP Reltio's velocity pack for Banking > Data Model for SAP Reltio's velocity pack for Banking > Relationship types for SAP Reltio's velocity pack for Banking
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/data-model-for-sap-reltios-velocity-pack-for-banking/relationship-types-for-sap-reltios-velocity-pack-for-banking/account-holder-to-organization-relationship-type-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** account holder to organization relationship type in banking, banking velocity pack relationship types, configure account holder to organization relationship in reltio console, model account holder to organization relationship type attributes in reltio, connect account holder and organization in reltio, account holder to organization, relationship types, account holder, organization
+
+
+Learn about the Account Holder To Organization relationship type preconfigured in entity types in SAP Reltio's velocity pack for Banking.
+
+Relationship types contain metadata properties and attributes that define the connection between two specific entities.
+
+This table identifies the preconfigured Account Holder To Organization relationship type that comes with SAP Reltio's velocity pack for Banking. Use this relationship type when you want to identify connections between AccountHolder and Organization entity types.
+
+**AccountHolderToOrganization**
+- **URI:** configuration/relationTypes/AccountHolderToOrganization
+- **Label:** Account Holder To Organization
+- **Description:** Resolves the AccountHolder relationship record to the Organization holding the account for commercial banking relationships.
+- **Type:** 
+- **Direction:** directed
+- **Implicit:** false
+- **Start Object:** configuration/entityTypes/AccountHolder
+- **Start Label:** Account Holder
+- **End Object:** configuration/entityTypes/Organization
+- **End Label:** Organization
+
+> **Note:** On the table above, the top level attributes are represented in bold.
+
+
+
+---
+
+# Account To Product relationship type for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > SAP Reltio's velocity pack for Banking > Data Model for SAP Reltio's velocity pack for Banking > Relationship types for SAP Reltio's velocity pack for Banking
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/data-model-for-sap-reltios-velocity-pack-for-banking/relationship-types-for-sap-reltios-velocity-pack-for-banking/account-to-product-relationship-type-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** account to product relationship type in banking, banking velocity pack relationship types, configure account to product relationship in reltio console, model account to product relationship type attributes in reltio, connect financial account and product in reltio, account to product, relationship types, financial account, product
+
+
+Learn about the Account To Product relationship type preconfigured in entity types in SAP Reltio's velocity pack for Banking.
+
+Relationship types contain metadata properties and attributes that define the connection between two specific entities.
+
+This table identifies the preconfigured Account To Product relationship type that comes with SAP Reltio's velocity pack for Banking. Use this relationship type when you want to identify connections between FinancialAccount and Product entity types.
+
+**AccountToProduct**
+- **URI:** configuration/relationTypes/AccountToProduct
+- **Label:** Account To Product
+- **Description:** Links a FinancialAccount to the Product catalog entry defining its features, pricing, and eligibility rules. Enables product-level reporting and cross-sell analytics.
+- **Type:** 
+- **Direction:** directed
+- **Implicit:** false
+- **Start Object:** configuration/entityTypes/FinancialAccount
+- **Start Label:** Financial Account
+- **End Object:** configuration/entityTypes/Product
+- **End Label:** Product
+
+> **Note:** On the table above, the top level attributes are represented in bold.
+
+
+
+---
+
+# Account To Servicing Branch relationship type for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > SAP Reltio's velocity pack for Banking > Data Model for SAP Reltio's velocity pack for Banking > Relationship types for SAP Reltio's velocity pack for Banking
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/data-model-for-sap-reltios-velocity-pack-for-banking/relationship-types-for-sap-reltios-velocity-pack-for-banking/account-to-servicing-branch-relationship-type-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** account to servicing branch relationship type in banking, banking velocity pack relationship types, configure account to servicing branch relationship in reltio console, model account to servicing branch relationship type attributes in reltio, connect financial account and location in reltio, account to servicing branch, relationship types, financial account, location
+
+
+Learn about the Account To Servicing Branch relationship type preconfigured in entity types in SAP Reltio's velocity pack for Banking.
+
+Relationship types contain metadata properties and attributes that define the connection between two specific entities.
+
+This table identifies the preconfigured Account To Servicing Branch relationship type that comes with SAP Reltio's velocity pack for Banking. Use this relationship type when you want to identify connections between FinancialAccount and Location entity types.
+
+**AccountToServicingBranch**
+- **URI:** configuration/relationTypes/AccountToServicingBranch
+- **Label:** Account To Servicing Branch
+- **Description:** Links a FinancialAccount to its servicing branch Location for operational routing and branch-level performance reporting.
+- **Type:** 
+- **Direction:** directed
+- **Implicit:** false
+- **Start Object:** configuration/entityTypes/FinancialAccount
+- **Start Label:** Financial Account
+- **End Object:** configuration/entityTypes/Location
+- **End Label:** Location
+
+> **Note:** On the table above, the top level attributes are represented in bold.
+
+
+
+---
+
+# Application To Assigned Banker relationship type for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > SAP Reltio's velocity pack for Banking > Data Model for SAP Reltio's velocity pack for Banking > Relationship types for SAP Reltio's velocity pack for Banking
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/data-model-for-sap-reltios-velocity-pack-for-banking/relationship-types-for-sap-reltios-velocity-pack-for-banking/application-to-assigned-banker-relationship-type-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** application to assigned banker relationship type in banking, banking velocity pack relationship types, configure application to assigned banker relationship in reltio console, model application to assigned banker relationship type attributes in reltio, connect application and banker in reltio, application to assigned banker, relationship types, application, banker
+
+
+Learn about the Application To Assigned Banker relationship type preconfigured in entity types in SAP Reltio's velocity pack for Banking.
+
+Relationship types contain metadata properties and attributes that define the connection between two specific entities.
+
+This table identifies the preconfigured Application To Assigned Banker relationship type that comes with SAP Reltio's velocity pack for Banking. Use this relationship type when you want to identify connections between Application and Banker entity types.
+
+**ApplicationToAssignedBanker**
+- **URI:** configuration/relationTypes/ApplicationToAssignedBanker
+- **Label:** Application To Assigned Banker
+- **Description:** Links an Application to the Banker assigned for underwriting and decision workflow routing.
+- **Type:** 
+- **Direction:** directed
+- **Implicit:** false
+- **Start Object:** configuration/entityTypes/Application
+- **Start Label:** Application
+- **End Object:** configuration/entityTypes/Banker
+- **End Label:** Banker
+
+
+| Name | Label | Type | Description | Survivorship | Hidden | Important | System | Searchable | Faceted | Lookup Code | URI |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **AssignmentRole** | Assignment Role | String | Capacity in which the banker is assigned (Originator, Processor, Underwriter, Approver, Reviewer). | LUD | false | false | false | false | true |  | configuration/relationTypes/ApplicationToAssignedBanker/attributes/AssignmentRole |
+| **AssignedDate** | Assigned Date | Date | Date the application was assigned. | LUD | false | false | false | false | false |  | configuration/relationTypes/ApplicationToAssignedBanker/attributes/AssignedDate |
+| **UnassignedDate** | Unassigned Date | Date | Date the assignment ended or was handed off. Open-ended while current. | LUD | false | false | false | false | false |  | configuration/relationTypes/ApplicationToAssignedBanker/attributes/UnassignedDate |
+
+> **Note:** On the table above, the top level attributes are represented in bold.
+
+
+
+---
+
+# Application To Co-Applicant relationship type for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > SAP Reltio's velocity pack for Banking > Data Model for SAP Reltio's velocity pack for Banking > Relationship types for SAP Reltio's velocity pack for Banking
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/data-model-for-sap-reltios-velocity-pack-for-banking/relationship-types-for-sap-reltios-velocity-pack-for-banking/application-to-co-applicant-relationship-type-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** application to co- applicant relationship type in banking, banking velocity pack relationship types, configure application to co- applicant relationship in reltio console, model application to co- applicant relationship type attributes in reltio, connect application and individual in reltio, application to co- applicant, relationship types, application, individual
+
+
+Learn about the Application To Co-Applicant relationship type preconfigured in entity types in SAP Reltio's velocity pack for Banking.
+
+Relationship types contain metadata properties and attributes that define the connection between two specific entities.
+
+This table identifies the preconfigured Application To Co-Applicant relationship type that comes with SAP Reltio's velocity pack for Banking. Use this relationship type when you want to identify connections between Application and Individual entity types.
+
+**ApplicationToCoApplicant**
+- **URI:** configuration/relationTypes/ApplicationToCoApplicant
+- **Label:** Application To Co-Applicant
+- **Description:** Links an Application to a secondary Individual co-applicant for joint applications (mortgages, joint accounts) with combined credit assessment.
+- **Type:** 
+- **Direction:** directed
+- **Implicit:** false
+- **Start Object:** configuration/entityTypes/Application
+- **Start Label:** Application
+- **End Object:** configuration/entityTypes/Individual
+- **End Label:** Individual
+
+
+| Name | Label | Type | Description | Survivorship | Hidden | Important | System | Searchable | Faceted | Lookup Code | URI |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **CoApplicantRole** | Co-Applicant Role | String | Legal position of the co-applicant (Joint Borrower, Guarantor, Co-Signer, Authorized User). Determines recourse and whether the obligation reports on their credit file. | LUD | false | false | false | false | true |  | configuration/relationTypes/ApplicationToCoApplicant/attributes/CoApplicantRole |
+| **LiabilityShare** | Liability Share | Number | Share of the obligation attributable to this co-applicant, as a percentage. | LUD | false | false | false | false | false |  | configuration/relationTypes/ApplicationToCoApplicant/attributes/LiabilityShare |
+| **AddedDate** | Added Date | Date | Date the co-applicant joined the application. | LUD | false | false | false | false | false |  | configuration/relationTypes/ApplicationToCoApplicant/attributes/AddedDate |
+
+> **Note:** On the table above, the top level attributes are represented in bold.
+
+
+
+---
+
+# Application To Individual Applicant relationship type for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > SAP Reltio's velocity pack for Banking > Data Model for SAP Reltio's velocity pack for Banking > Relationship types for SAP Reltio's velocity pack for Banking
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/data-model-for-sap-reltios-velocity-pack-for-banking/relationship-types-for-sap-reltios-velocity-pack-for-banking/application-to-individual-applicant-relationship-type-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** application to individual applicant relationship type in banking, banking velocity pack relationship types, configure application to individual applicant relationship in reltio console, model application to individual applicant relationship type attributes in reltio, connect application and individual in reltio, application to individual applicant, relationship types, application, individual
+
+
+Learn about the Application To Individual Applicant relationship type preconfigured in entity types in SAP Reltio's velocity pack for Banking.
+
+Relationship types contain metadata properties and attributes that define the connection between two specific entities.
+
+This table identifies the preconfigured Application To Individual Applicant relationship type that comes with SAP Reltio's velocity pack for Banking. Use this relationship type when you want to identify connections between Application and Individual entity types.
+
+**ApplicationToIndividualApplicant**
+- **URI:** configuration/relationTypes/ApplicationToIndividualApplicant
+- **Label:** Application To Individual Applicant
+- **Description:** Links an Application to the Individual applicant for match-before-create workflow and duplicate profile prevention during origination.
+- **Type:** 
+- **Direction:** directed
+- **Implicit:** false
+- **Start Object:** configuration/entityTypes/Application
+- **Start Label:** Application
+- **End Object:** configuration/entityTypes/Individual
+- **End Label:** Individual
+
+> **Note:** On the table above, the top level attributes are represented in bold.
+
+
+
+---
+
+# Application To Linked Account relationship type for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > SAP Reltio's velocity pack for Banking > Data Model for SAP Reltio's velocity pack for Banking > Relationship types for SAP Reltio's velocity pack for Banking
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/data-model-for-sap-reltios-velocity-pack-for-banking/relationship-types-for-sap-reltios-velocity-pack-for-banking/application-to-linked-account-relationship-type-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** application to linked account relationship type in banking, banking velocity pack relationship types, configure application to linked account relationship in reltio console, model application to linked account relationship type attributes in reltio, connect application and financial account in reltio, application to linked account, relationship types, application, financial account
+
+
+Learn about the Application To Linked Account relationship type preconfigured in entity types in SAP Reltio's velocity pack for Banking.
+
+Relationship types contain metadata properties and attributes that define the connection between two specific entities.
+
+This table identifies the preconfigured Application To Linked Account relationship type that comes with SAP Reltio's velocity pack for Banking. Use this relationship type when you want to identify connections between Application and FinancialAccount entity types.
+
+**ApplicationToLinkedAccount**
+- **URI:** configuration/relationTypes/ApplicationToLinkedAccount
+- **Label:** Application To Linked Account
+- **Description:** Links an approved Application to the resulting FinancialAccount created upon approval for origination-to-account lifecycle tracking.
+- **Type:** 
+- **Direction:** directed
+- **Implicit:** false
+- **Start Object:** configuration/entityTypes/Application
+- **Start Label:** Application
+- **End Object:** configuration/entityTypes/FinancialAccount
+- **End Label:** Financial Account
+
+> **Note:** On the table above, the top level attributes are represented in bold.
+
+
+
+---
+
+# Application To Organization Applicant relationship type for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > SAP Reltio's velocity pack for Banking > Data Model for SAP Reltio's velocity pack for Banking > Relationship types for SAP Reltio's velocity pack for Banking
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/data-model-for-sap-reltios-velocity-pack-for-banking/relationship-types-for-sap-reltios-velocity-pack-for-banking/application-to-organization-applicant-relationship-type-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** application to organization applicant relationship type in banking, banking velocity pack relationship types, configure application to organization applicant relationship in reltio console, model application to organization applicant relationship type attributes in reltio, connect application and organization in reltio, application to organization applicant, relationship types, application, organization
+
+
+Learn about the Application To Organization Applicant relationship type preconfigured in entity types in SAP Reltio's velocity pack for Banking.
+
+Relationship types contain metadata properties and attributes that define the connection between two specific entities.
+
+This table identifies the preconfigured Application To Organization Applicant relationship type that comes with SAP Reltio's velocity pack for Banking. Use this relationship type when you want to identify connections between Application and Organization entity types.
+
+**ApplicationToOrganizationApplicant**
+- **URI:** configuration/relationTypes/ApplicationToOrganizationApplicant
+- **Label:** Application To Organization Applicant
+- **Description:** Links an Application to the Organization applicant for commercial lending and business account origination with match-before-create workflow.
+- **Type:** 
+- **Direction:** directed
+- **Implicit:** false
+- **Start Object:** configuration/entityTypes/Application
+- **Start Label:** Application
+- **End Object:** configuration/entityTypes/Organization
+- **End Label:** Organization
+
+> **Note:** On the table above, the top level attributes are represented in bold.
+
+
+
+---
+
+# Application To Requested Product relationship type for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > SAP Reltio's velocity pack for Banking > Data Model for SAP Reltio's velocity pack for Banking > Relationship types for SAP Reltio's velocity pack for Banking
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/data-model-for-sap-reltios-velocity-pack-for-banking/relationship-types-for-sap-reltios-velocity-pack-for-banking/application-to-requested-product-relationship-type-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** application to requested product relationship type in banking, banking velocity pack relationship types, configure application to requested product relationship in reltio console, model application to requested product relationship type attributes in reltio, connect application and product in reltio, application to requested product, relationship types, application, product
+
+
+Learn about the Application To Requested Product relationship type preconfigured in entity types in SAP Reltio's velocity pack for Banking.
+
+Relationship types contain metadata properties and attributes that define the connection between two specific entities.
+
+This table identifies the preconfigured Application To Requested Product relationship type that comes with SAP Reltio's velocity pack for Banking. Use this relationship type when you want to identify connections between Application and Product entity types.
+
+**ApplicationToRequestedProduct**
+- **URI:** configuration/relationTypes/ApplicationToRequestedProduct
+- **Label:** Application To Requested Product
+- **Description:** Links an Application to the Product catalog entry being requested for product-level origination analytics and eligibility rule enforcement.
+- **Type:** 
+- **Direction:** directed
+- **Implicit:** false
+- **Start Object:** configuration/entityTypes/Application
+- **Start Label:** Application
+- **End Object:** configuration/entityTypes/Product
+- **End Label:** Product
+
+> **Note:** On the table above, the top level attributes are represented in bold.
+
+
+
+---
+
+# Application To Servicing Branch relationship type for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > SAP Reltio's velocity pack for Banking > Data Model for SAP Reltio's velocity pack for Banking > Relationship types for SAP Reltio's velocity pack for Banking
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/data-model-for-sap-reltios-velocity-pack-for-banking/relationship-types-for-sap-reltios-velocity-pack-for-banking/application-to-servicing-branch-relationship-type-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** application to servicing branch relationship type in banking, banking velocity pack relationship types, configure application to servicing branch relationship in reltio console, model application to servicing branch relationship type attributes in reltio, connect application and location in reltio, application to servicing branch, relationship types, application, location
+
+
+Learn about the Application To Servicing Branch relationship type preconfigured in entity types in SAP Reltio's velocity pack for Banking.
+
+Relationship types contain metadata properties and attributes that define the connection between two specific entities.
+
+This table identifies the preconfigured Application To Servicing Branch relationship type that comes with SAP Reltio's velocity pack for Banking. Use this relationship type when you want to identify connections between Application and Location entity types.
+
+**ApplicationToServicingBranch**
+- **URI:** configuration/relationTypes/ApplicationToServicingBranch
+- **Label:** Application To Servicing Branch
+- **Description:** Links an Application to the branch Location where it was submitted for operational routing and branch-level origination reporting.
+- **Type:** 
+- **Direction:** directed
+- **Implicit:** false
+- **Start Object:** configuration/entityTypes/Application
+- **Start Label:** Application
+- **End Object:** configuration/entityTypes/Location
+- **End Label:** Location
+
+> **Note:** On the table above, the top level attributes are represented in bold.
+
+
+
+---
+
+# Authorized Signer To Individual relationship type for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > SAP Reltio's velocity pack for Banking > Data Model for SAP Reltio's velocity pack for Banking > Relationship types for SAP Reltio's velocity pack for Banking
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/data-model-for-sap-reltios-velocity-pack-for-banking/relationship-types-for-sap-reltios-velocity-pack-for-banking/authorized-signer-to-individual-relationship-type-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** authorized signer to individual relationship type in banking, banking velocity pack relationship types, configure authorized signer to individual relationship in reltio console, model authorized signer to individual relationship type attributes in reltio, connect authorized signer and individual in reltio, authorized signer to individual, relationship types, authorized signer, individual
+
+
+Learn about the Authorized Signer To Individual relationship type preconfigured in entity types in SAP Reltio's velocity pack for Banking.
+
+Relationship types contain metadata properties and attributes that define the connection between two specific entities.
+
+This table identifies the preconfigured Authorized Signer To Individual relationship type that comes with SAP Reltio's velocity pack for Banking. Use this relationship type when you want to identify connections between AuthorizedSigner and Individual entity types.
+
+**AuthorizedSignerToIndividual**
+- **URI:** configuration/relationTypes/AuthorizedSignerToIndividual
+- **Label:** Authorized Signer To Individual
+- **Description:** Resolves the AuthorizedSigner relationship record to the Individual granted signing authority (view, transact, full permission levels).
+- **Type:** 
+- **Direction:** directed
+- **Implicit:** false
+- **Start Object:** configuration/entityTypes/AuthorizedSigner
+- **Start Label:** Authorized Signer
+- **End Object:** configuration/entityTypes/Individual
+- **End Label:** Individual
+
+> **Note:** On the table above, the top level attributes are represented in bold.
+
+
+
+---
+
+# Authorized Signer To Financial Account relationship type for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > SAP Reltio's velocity pack for Banking > Data Model for SAP Reltio's velocity pack for Banking > Relationship types for SAP Reltio's velocity pack for Banking
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/data-model-for-sap-reltios-velocity-pack-for-banking/relationship-types-for-sap-reltios-velocity-pack-for-banking/authorized-signer-to-financial-account-relationship-type-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** authorized signer to financial account relationship type in banking, banking velocity pack relationship types, configure authorized signer to financial account relationship in reltio console, model authorized signer to financial account relationship type attributes in reltio, connect authorized signer and financial account in reltio, authorized signer to financial account, relationship types, authorized signer, financial account
+
+
+Learn about the Authorized Signer To Financial Account relationship type preconfigured in entity types in SAP Reltio's velocity pack for Banking.
+
+Relationship types contain metadata properties and attributes that define the connection between two specific entities.
+
+This table identifies the preconfigured Authorized Signer To Financial Account relationship type that comes with SAP Reltio's velocity pack for Banking. Use this relationship type when you want to identify connections between AuthorizedSigner and FinancialAccount entity types.
+
+**AuthorizedSignerToFinancialAccount**
+- **URI:** configuration/relationTypes/AuthorizedSignerToFinancialAccount
+- **Label:** Authorized Signer To Financial Account
+- **Description:** Resolves the AuthorizedSigner relationship record to the FinancialAccount for which signing authority is granted. Supports non-owner authorization for commercial accounts.
+- **Type:** 
+- **Direction:** directed
+- **Implicit:** false
+- **Start Object:** configuration/entityTypes/AuthorizedSigner
+- **Start Label:** Authorized Signer
+- **End Object:** configuration/entityTypes/FinancialAccount
+- **End Label:** Financial Account
+
+> **Note:** On the table above, the top level attributes are represented in bold.
+
+
+
+---
+
+# Banker Has Address relationship type for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > SAP Reltio's velocity pack for Banking > Data Model for SAP Reltio's velocity pack for Banking > Relationship types for SAP Reltio's velocity pack for Banking
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/data-model-for-sap-reltios-velocity-pack-for-banking/relationship-types-for-sap-reltios-velocity-pack-for-banking/banker-has-address-relationship-type-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** banker has address relationship type in banking, banking velocity pack relationship types, configure banker has address relationship in reltio console, model banker has address relationship type attributes in reltio, connect banker and location in reltio, banker has address, relationship types, banker, location
+
+
+Learn about the Banker Has Address relationship type preconfigured in entity types in SAP Reltio's velocity pack for Banking.
+
+Relationship types contain metadata properties and attributes that define the connection between two specific entities.
+
+This table identifies the preconfigured Banker Has Address relationship type that comes with SAP Reltio's velocity pack for Banking. Use this relationship type when you want to identify connections between Banker and Location entity types.
+
+**BankerHasAddress**
+- **URI:** configuration/relationTypes/BankerHasAddress
+- **Label:** Banker Has Address
+- **Description:** Links a Banker to their own Location master. Distinct from BankerToHomeBranch, which records the branch they are based out of rather than a mailing address.
+- **Type:** 
+- **Direction:** 
+- **Implicit:** false
+- **Start Object:** configuration/entityTypes/Banker
+- **Start Label:** banker
+- **End Object:** configuration/entityTypes/Location
+- **End Label:** location
+
+
+| Name | Label | Type | Description | Survivorship | Hidden | Important | System | Searchable | Faceted | Lookup Code | URI |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **AddressType** | Address Type | String | Type or category of the address for this party (Home, Mailing, Billing, Registered, Work, Seasonal). Without it, a party holding several addresses gives no way to tell which is which. | LUD | false | false | false | false | true |  | configuration/relationTypes/BankerHasAddress/attributes/AddressType |
+| **Status** | Status | String | Status of the address relative to this party. | LUD | false | false | false | false | false |  | configuration/relationTypes/BankerHasAddress/attributes/Status |
+| **AddressRank** | Address Rank | Int | Ordinal ranking of this address for contacting the party. | LUD | false | false | false | false | false |  | configuration/relationTypes/BankerHasAddress/attributes/AddressRank |
+| **CareOf** | Care Of | String | C/O instructions, if applicable. | LUD | false | false | false | false | false |  | configuration/relationTypes/BankerHasAddress/attributes/CareOf |
+| **Primary** | Primary | Boolean | Whether this is the primary address for the party. | LUD | false | false | false | false | false |  | configuration/relationTypes/BankerHasAddress/attributes/Primary |
+| **Active** | Active | Boolean | Whether the address is currently active. | LUD | false | false | false | false | false |  | configuration/relationTypes/BankerHasAddress/attributes/Active |
+| **Registered** | Registered | Boolean | Whether this is a registered address for the party. | LUD | false | false | false | false | false |  | configuration/relationTypes/BankerHasAddress/attributes/Registered |
+| **Business** | Business | Boolean | Whether this is a business address. | LUD | false | false | false | false | false |  | configuration/relationTypes/BankerHasAddress/attributes/Business |
+| **Residential** | Residential | Boolean | Whether this is a residential address. | LUD | false | false | false | false | false |  | configuration/relationTypes/BankerHasAddress/attributes/Residential |
+
+> **Note:** On the table above, the top level attributes are represented in bold.
+
+
+
+---
+
+# Banker To Home Branch relationship type for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > SAP Reltio's velocity pack for Banking > Data Model for SAP Reltio's velocity pack for Banking > Relationship types for SAP Reltio's velocity pack for Banking
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/data-model-for-sap-reltios-velocity-pack-for-banking/relationship-types-for-sap-reltios-velocity-pack-for-banking/banker-to-home-branch-relationship-type-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** banker to home branch relationship type in banking, banking velocity pack relationship types, configure banker to home branch relationship in reltio console, model banker to home branch relationship type attributes in reltio, connect banker and location in reltio, banker to home branch, relationship types, banker, location
+
+
+Learn about the Banker To Home Branch relationship type preconfigured in entity types in SAP Reltio's velocity pack for Banking.
+
+Relationship types contain metadata properties and attributes that define the connection between two specific entities.
+
+This table identifies the preconfigured Banker To Home Branch relationship type that comes with SAP Reltio's velocity pack for Banking. Use this relationship type when you want to identify connections between Banker and Location entity types.
+
+**BankerToHomeBranch**
+- **URI:** configuration/relationTypes/BankerToHomeBranch
+- **Label:** Banker To Home Branch
+- **Description:** Links a Banker to their home branch Location for organizational hierarchy and territory management.
+- **Type:** 
+- **Direction:** directed
+- **Implicit:** false
+- **Start Object:** configuration/entityTypes/Banker
+- **Start Label:** Banker
+- **End Object:** configuration/entityTypes/Location
+- **End Label:** Location
+
+> **Note:** On the table above, the top level attributes are represented in bold.
+
+
+
+---
+
+# Beneficial Owner To Individual relationship type for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > SAP Reltio's velocity pack for Banking > Data Model for SAP Reltio's velocity pack for Banking > Relationship types for SAP Reltio's velocity pack for Banking
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/data-model-for-sap-reltios-velocity-pack-for-banking/relationship-types-for-sap-reltios-velocity-pack-for-banking/beneficial-owner-to-individual-relationship-type-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** beneficial owner to individual relationship type in banking, banking velocity pack relationship types, configure beneficial owner to individual relationship in reltio console, model beneficial owner to individual relationship type attributes in reltio, connect beneficial owner and individual in reltio, beneficial owner to individual, relationship types, beneficial owner, individual
+
+
+Learn about the Beneficial Owner To Individual relationship type preconfigured in entity types in SAP Reltio's velocity pack for Banking.
+
+Relationship types contain metadata properties and attributes that define the connection between two specific entities.
+
+This table identifies the preconfigured Beneficial Owner To Individual relationship type that comes with SAP Reltio's velocity pack for Banking. Use this relationship type when you want to identify connections between BeneficialOwner and Individual entity types.
+
+**BeneficialOwnerToIndividual**
+- **URI:** configuration/relationTypes/BeneficialOwnerToIndividual
+- **Label:** Beneficial Owner To Individual
+- **Description:** Resolves the BeneficialOwner relationship record to the Individual who holds beneficial ownership. Supports UBO traversal for regulatory compliance.
+- **Type:** 
+- **Direction:** directed
+- **Implicit:** false
+- **Start Object:** configuration/entityTypes/BeneficialOwner
+- **Start Label:** Beneficial Owner
+- **End Object:** configuration/entityTypes/Individual
+- **End Label:** Individual
+
+> **Note:** On the table above, the top level attributes are represented in bold.
+
+
+
+---
+
+# Beneficial Owner To Organization relationship type for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > SAP Reltio's velocity pack for Banking > Data Model for SAP Reltio's velocity pack for Banking > Relationship types for SAP Reltio's velocity pack for Banking
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/data-model-for-sap-reltios-velocity-pack-for-banking/relationship-types-for-sap-reltios-velocity-pack-for-banking/beneficial-owner-to-organization-relationship-type-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** beneficial owner to organization relationship type in banking, banking velocity pack relationship types, configure beneficial owner to organization relationship in reltio console, model beneficial owner to organization relationship type attributes in reltio, connect beneficial owner and organization in reltio, beneficial owner to organization, relationship types, beneficial owner, organization
+
+
+Learn about the Beneficial Owner To Organization relationship type preconfigured in entity types in SAP Reltio's velocity pack for Banking.
+
+Relationship types contain metadata properties and attributes that define the connection between two specific entities.
+
+This table identifies the preconfigured Beneficial Owner To Organization relationship type that comes with SAP Reltio's velocity pack for Banking. Use this relationship type when you want to identify connections between BeneficialOwner and Organization entity types.
+
+**BeneficialOwnerToOrganization**
+- **URI:** configuration/relationTypes/BeneficialOwnerToOrganization
+- **Label:** Beneficial Owner To Organization
+- **Description:** Resolves the BeneficialOwner relationship record to the Organization being owned. Enables percentage-based ownership aggregation for UBO identification.
+- **Type:** 
+- **Direction:** directed
+- **Implicit:** false
+- **Start Object:** configuration/entityTypes/BeneficialOwner
+- **Start Label:** Beneficial Owner
+- **End Object:** configuration/entityTypes/Organization
+- **End Label:** Organization
+
+> **Note:** On the table above, the top level attributes are represented in bold.
+
+
+
+---
+
+# Child relationship type for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > SAP Reltio's velocity pack for Banking > Data Model for SAP Reltio's velocity pack for Banking > Relationship types for SAP Reltio's velocity pack for Banking
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/data-model-for-sap-reltios-velocity-pack-for-banking/relationship-types-for-sap-reltios-velocity-pack-for-banking/child-relationship-type-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** child relationship type in banking, banking velocity pack relationship types, configure child relationship in reltio console, model child relationship type attributes in reltio, connect two individual entities in reltio, child, relationship types, individual
+
+
+Learn about the Child relationship type preconfigured in entity types in SAP Reltio's velocity pack for Banking.
+
+Relationship types contain metadata properties and attributes that define the connection between two specific entities.
+
+This table identifies the preconfigured Child relationship type that comes with SAP Reltio's velocity pack for Banking. Use this relationship type when you want to identify connections between two Individual entity types.
+
+**Child**
+- **URI:** configuration/relationTypes/Child
+- **Label:** Child
+- **Description:** Parent-child family relation between Individuals.
+- **Type:** 
+- **Direction:** 
+- **Implicit:** false
+- **Start Object:** configuration/entityTypes/Individual
+- **Start Label:** parent
+- **End Object:** configuration/entityTypes/Individual
+- **End Label:** child
+
+> **Note:** On the table above, the top level attributes are represented in bold.
+
+
+
+---
+
+# Controlling Party To Controlled Entity relationship type for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > SAP Reltio's velocity pack for Banking > Data Model for SAP Reltio's velocity pack for Banking > Relationship types for SAP Reltio's velocity pack for Banking
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/data-model-for-sap-reltios-velocity-pack-for-banking/relationship-types-for-sap-reltios-velocity-pack-for-banking/controlling-party-to-controlled-entity-relationship-type-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** controlling party to controlled entity relationship type in banking, banking velocity pack relationship types, configure controlling party to controlled entity relationship in reltio console, model controlling party to controlled entity relationship type attributes in reltio, connect controlling party and organization in reltio, controlling party to controlled entity, relationship types, controlling party, organization
+
+
+Learn about the Controlling Party To Controlled Entity relationship type preconfigured in entity types in SAP Reltio's velocity pack for Banking.
+
+Relationship types contain metadata properties and attributes that define the connection between two specific entities.
+
+This table identifies the preconfigured Controlling Party To Controlled Entity relationship type that comes with SAP Reltio's velocity pack for Banking. Use this relationship type when you want to identify connections between ControllingParty and Organization entity types.
+
+**ControllingPartyToControlledEntity**
+- **URI:** configuration/relationTypes/ControllingPartyToControlledEntity
+- **Label:** Controlling Party To Controlled Entity
+- **Description:** Resolves the ControllingParty relationship record to the Organization being controlled. Supports regulatory reporting of non-ownership control structures.
+- **Type:** 
+- **Direction:** directed
+- **Implicit:** false
+- **Start Object:** configuration/entityTypes/ControllingParty
+- **Start Label:** Controlling Party
+- **End Object:** configuration/entityTypes/Organization
+- **End Label:** Controlled Organization
+
+> **Note:** On the table above, the top level attributes are represented in bold.
+
+
+
+---
+
+# Controlling Party To Individual relationship type for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > SAP Reltio's velocity pack for Banking > Data Model for SAP Reltio's velocity pack for Banking > Relationship types for SAP Reltio's velocity pack for Banking
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/data-model-for-sap-reltios-velocity-pack-for-banking/relationship-types-for-sap-reltios-velocity-pack-for-banking/controlling-party-to-individual-relationship-type-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** controlling party to individual relationship type in banking, banking velocity pack relationship types, configure controlling party to individual relationship in reltio console, model controlling party to individual relationship type attributes in reltio, connect controlling party and individual in reltio, controlling party to individual, relationship types, controlling party, individual
+
+
+Learn about the Controlling Party To Individual relationship type preconfigured in entity types in SAP Reltio's velocity pack for Banking.
+
+Relationship types contain metadata properties and attributes that define the connection between two specific entities.
+
+This table identifies the preconfigured Controlling Party To Individual relationship type that comes with SAP Reltio's velocity pack for Banking. Use this relationship type when you want to identify connections between ControllingParty and Individual entity types.
+
+**ControllingPartyToIndividual**
+- **URI:** configuration/relationTypes/ControllingPartyToIndividual
+- **Label:** Controlling Party To Individual
+- **Description:** Resolves the ControllingParty relationship record to the Individual exercising control (voting rights, board seats, management authority).
+- **Type:** 
+- **Direction:** directed
+- **Implicit:** false
+- **Start Object:** configuration/entityTypes/ControllingParty
+- **Start Label:** Controlling Party
+- **End Object:** configuration/entityTypes/Individual
+- **End Label:** Individual
+
+> **Note:** On the table above, the top level attributes are represented in bold.
+
+
+
+---
+
+# Controlling Party To Controlling Organization relationship type for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > SAP Reltio's velocity pack for Banking > Data Model for SAP Reltio's velocity pack for Banking > Relationship types for SAP Reltio's velocity pack for Banking
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/data-model-for-sap-reltios-velocity-pack-for-banking/relationship-types-for-sap-reltios-velocity-pack-for-banking/controlling-party-to-controlling-organization-relationship-type-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** Controlling Party To Controlling Organization relationship type in banking, banking velocity pack relationship types, configure Controlling Party To Controlling Organization relationship in reltio console, model Controlling Party To Controlling Organization relationship type attributes in reltio, connect controlling party and organization in reltio, Controlling Party To Controlling Organization, relationship types, controlling party, organization
+
+
+Learn about the Controlling Party To Controlling Organization relationship type preconfigured in entity types in SAP Reltio's velocity pack for Banking.
+
+Relationship types contain metadata properties and attributes that define the connection between two specific entities.
+
+This table identifies the preconfigured Controlling Party To Controlling Organization relationship type that comes with SAP Reltio's velocity pack for Banking. Use this relationship type when you want to identify connections between ControllingParty and Organization entity types.
+
+**ControllingPartyToControllingOrganization**
+- **URI:** configuration/relationTypes/ControllingPartyToControllingOrganization
+- **Label:** Controlling Party To Controlling Organization
+- **Description:** Resolves the ControllingParty relationship record to the Organization exercising control when the controlling party is itself a legal entity.
+- **Type:** 
+- **Direction:** directed
+- **Implicit:** false
+- **Start Object:** configuration/entityTypes/ControllingParty
+- **Start Label:** Controlling Party
+- **End Object:** configuration/entityTypes/Organization
+- **End Label:** Controlling Organization
+
+> **Note:** On the table above, the top level attributes are represented in bold.
+
+
+
+---
+
+# Dependent relationship type for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > SAP Reltio's velocity pack for Banking > Data Model for SAP Reltio's velocity pack for Banking > Relationship types for SAP Reltio's velocity pack for Banking
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/data-model-for-sap-reltios-velocity-pack-for-banking/relationship-types-for-sap-reltios-velocity-pack-for-banking/dependent-relationship-type-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** dependent relationship type in banking, banking velocity pack relationship types, configure dependent relationship in reltio console, model dependent relationship type attributes in reltio, connect two individual entities in reltio, dependent, relationship types, individual
+
+
+Learn about the Dependent relationship type preconfigured in entity types in SAP Reltio's velocity pack for Banking.
+
+Relationship types contain metadata properties and attributes that define the connection between two specific entities.
+
+This table identifies the preconfigured Dependent relationship type that comes with SAP Reltio's velocity pack for Banking. Use this relationship type when you want to identify connections between two Individual entity types.
+
+**Dependent**
+- **URI:** configuration/relationTypes/Dependent
+- **Label:** Dependent
+- **Description:** Dependent relationship between Individuals.
+- **Type:** 
+- **Direction:** 
+- **Implicit:** false
+- **Start Object:** configuration/entityTypes/Individual
+- **Start Label:** dependent
+- **End Object:** configuration/entityTypes/Individual
+- **End Label:** guardian
+
+
+| Name | Label | Type | Description | Survivorship | Hidden | Important | System | Searchable | Faceted | Lookup Code | URI |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **DependencyType** | Dependency Type | String | Basis of the dependency (Tax Dependent, Financial Dependent, Minor Child, Disabled Adult, Elder Care). | LUD | false | false | false | false | true |  | configuration/relationTypes/Dependent/attributes/DependencyType |
+| **StartDate** | Start Date | Date | Date the dependency began. | LUD | false | false | false | false | false |  | configuration/relationTypes/Dependent/attributes/StartDate |
+| **EndDate** | End Date | Date | Date the dependency ended. Open-ended while current. | LUD | false | false | false | false | false |  | configuration/relationTypes/Dependent/attributes/EndDate |
+
+> **Note:** On the table above, the top level attributes are represented in bold.
+
+
+
+---
+
+# Household Has Address relationship type for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > SAP Reltio's velocity pack for Banking > Data Model for SAP Reltio's velocity pack for Banking > Relationship types for SAP Reltio's velocity pack for Banking
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/data-model-for-sap-reltios-velocity-pack-for-banking/relationship-types-for-sap-reltios-velocity-pack-for-banking/household-has-address-relationship-type-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** household has address relationship type in banking, banking velocity pack relationship types, configure household has address relationship in reltio console, model household has address relationship type attributes in reltio, connect household and location in reltio, household has address, relationship types, household, location
+
+
+Learn about the Household Has Address relationship type preconfigured in entity types in SAP Reltio's velocity pack for Banking.
+
+Relationship types contain metadata properties and attributes that define the connection between two specific entities.
+
+This table identifies the preconfigured Household Has Address relationship type that comes with SAP Reltio's velocity pack for Banking. Use this relationship type when you want to identify connections between Household and Location entity types.
+
+**HouseholdHasAddress**
+- **URI:** configuration/relationTypes/HouseholdHasAddress
+- **Label:** Household Has Address
+- **Description:** Links a Household to a Location master.
+- **Type:** 
+- **Direction:** 
+- **Implicit:** false
+- **Start Object:** configuration/entityTypes/Household
+- **Start Label:** household
+- **End Object:** configuration/entityTypes/Location
+- **End Label:** location
+
+
+| Name | Label | Type | Description | Survivorship | Hidden | Important | System | Searchable | Faceted | Lookup Code | URI |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **AddressType** | Address Type | String | Type or category of the address for this party (Home, Mailing, Billing, Registered, Work, Seasonal). Without it, a party holding several addresses gives no way to tell which is which. | LUD | false | false | false | false | true |  | configuration/relationTypes/HouseholdHasAddress/attributes/AddressType |
+| **Status** | Status | String | Status of the address relative to this party. | LUD | false | false | false | false | false |  | configuration/relationTypes/HouseholdHasAddress/attributes/Status |
+| **AddressRank** | Address Rank | Int | Ordinal ranking of this address for contacting the party. | LUD | false | false | false | false | false |  | configuration/relationTypes/HouseholdHasAddress/attributes/AddressRank |
+| **CareOf** | Care Of | String | C/O instructions, if applicable. | LUD | false | false | false | false | false |  | configuration/relationTypes/HouseholdHasAddress/attributes/CareOf |
+| **Primary** | Primary | Boolean | Whether this is the primary address for the party. | LUD | false | false | false | false | false |  | configuration/relationTypes/HouseholdHasAddress/attributes/Primary |
+| **Active** | Active | Boolean | Whether the address is currently active. | LUD | false | false | false | false | false |  | configuration/relationTypes/HouseholdHasAddress/attributes/Active |
+| **Registered** | Registered | Boolean | Whether this is a registered address for the party. | LUD | false | false | false | false | false |  | configuration/relationTypes/HouseholdHasAddress/attributes/Registered |
+| **Business** | Business | Boolean | Whether this is a business address. | LUD | false | false | false | false | false |  | configuration/relationTypes/HouseholdHasAddress/attributes/Business |
+| **Residential** | Residential | Boolean | Whether this is a residential address. | LUD | false | false | false | false | false |  | configuration/relationTypes/HouseholdHasAddress/attributes/Residential |
+
+> **Note:** On the table above, the top level attributes are represented in bold.
+
+
+
+---
+
+# Household Membership relationship type for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > SAP Reltio's velocity pack for Banking > Data Model for SAP Reltio's velocity pack for Banking > Relationship types for SAP Reltio's velocity pack for Banking
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/data-model-for-sap-reltios-velocity-pack-for-banking/relationship-types-for-sap-reltios-velocity-pack-for-banking/household-membership-relationship-type-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** household membership relationship type in banking, banking velocity pack relationship types, configure household membership relationship in reltio console, model household membership relationship type attributes in reltio, connect individual and household in reltio, household membership, relationship types, individual, household
+
+
+Learn about the Household Membership relationship type preconfigured in entity types in SAP Reltio's velocity pack for Banking.
+
+Relationship types contain metadata properties and attributes that define the connection between two specific entities.
+
+This table identifies the preconfigured Household Membership relationship type that comes with SAP Reltio's velocity pack for Banking. Use this relationship type when you want to identify connections between Individual and Household entity types.
+
+**HouseholdMembership**
+- **URI:** configuration/relationTypes/HouseholdMembership
+- **Label:** Household Membership
+- **Description:** Links an Individual to a Household.
+- **Type:** 
+- **Direction:** 
+- **Implicit:** false
+- **Start Object:** configuration/entityTypes/Individual
+- **Start Label:** member
+- **End Object:** configuration/entityTypes/Household
+- **End Label:** household
+
+
+| Name | Label | Type | Description | Survivorship | Hidden | Important | System | Searchable | Faceted | Lookup Code | URI |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **MembershipRole** | Membership Role | String | Role this individual holds within the household (Head of Household, Spouse/Partner, Child, Dependent, Other Member). | LUD | false | false | false | false | true |  | configuration/relationTypes/HouseholdMembership/attributes/MembershipRole |
+| **StartDate** | Start Date | Date | Date the individual joined the household. | LUD | false | false | false | false | false |  | configuration/relationTypes/HouseholdMembership/attributes/StartDate |
+| **EndDate** | End Date | Date | Date the individual left the household. Open-ended when membership is current. | LUD | false | false | false | false | false |  | configuration/relationTypes/HouseholdMembership/attributes/EndDate |
+
+> **Note:** On the table above, the top level attributes are represented in bold.
+
+
+
+---
+
+# Household Has Primary Member relationship type for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > SAP Reltio's velocity pack for Banking > Data Model for SAP Reltio's velocity pack for Banking > Relationship types for SAP Reltio's velocity pack for Banking
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/data-model-for-sap-reltios-velocity-pack-for-banking/relationship-types-for-sap-reltios-velocity-pack-for-banking/household-has-primary-member-relationship-type-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** household has primary member relationship type in banking, banking velocity pack relationship types, configure household has primary member relationship in reltio console, model household has primary member relationship type attributes in reltio, connect household and individual in reltio, household has primary member, relationship types, household, individual
+
+
+Learn about the Household Has Primary Member relationship type preconfigured in entity types in SAP Reltio's velocity pack for Banking.
+
+Relationship types contain metadata properties and attributes that define the connection between two specific entities.
+
+This table identifies the preconfigured Household Has Primary Member relationship type that comes with SAP Reltio's velocity pack for Banking. Use this relationship type when you want to identify connections between Household and Individual entity types.
+
+**HouseholdHasPrimaryMember**
+- **URI:** configuration/relationTypes/HouseholdHasPrimaryMember
+- **Label:** Household Has Primary Member
+- **Description:** Links a Household to the Individual designated as its primary account holder for communications and relationship management. Distinct from HouseholdMembership, which carries every member.
+- **Type:** 
+- **Direction:** directed
+- **Implicit:** false
+- **Start Object:** configuration/entityTypes/Household
+- **Start Label:** household
+- **End Object:** configuration/entityTypes/Individual
+- **End Label:** primaryMember
+
+> **Note:** On the table above, the top level attributes are represented in bold.
+
+
+
+---
+
+# Individual Has Address relationship type for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > SAP Reltio's velocity pack for Banking > Data Model for SAP Reltio's velocity pack for Banking > Relationship types for SAP Reltio's velocity pack for Banking
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/data-model-for-sap-reltios-velocity-pack-for-banking/relationship-types-for-sap-reltios-velocity-pack-for-banking/individual-has-address-relationship-type-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** individual has address relationship type in banking, banking velocity pack relationship types, configure individual has address relationship in reltio console, model individual has address relationship type attributes in reltio, connect individual and location in reltio, individual has address, relationship types, individual, location
+
+
+Learn about the Individual Has Address relationship type preconfigured in entity types in SAP Reltio's velocity pack for Banking.
+
+Relationship types contain metadata properties and attributes that define the connection between two specific entities.
+
+This table identifies the preconfigured Individual Has Address relationship type that comes with SAP Reltio's velocity pack for Banking. Use this relationship type when you want to identify connections between Individual and Location entity types.
+
+**IndividualHasAddress**
+- **URI:** configuration/relationTypes/IndividualHasAddress
+- **Label:** Individual Has Address
+- **Description:** Links an Individual to a Location master per L1 HasAddress pattern.
+- **Type:** 
+- **Direction:** 
+- **Implicit:** false
+- **Start Object:** configuration/entityTypes/Individual
+- **Start Label:** individual
+- **End Object:** configuration/entityTypes/Location
+- **End Label:** location
+
+
+| Name | Label | Type | Description | Survivorship | Hidden | Important | System | Searchable | Faceted | Lookup Code | URI |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **AddressType** | Address Type | String | Type or category of the address for this party (Home, Mailing, Billing, Registered, Work, Seasonal). Without it, a party holding several addresses gives no way to tell which is which. | LUD | false | false | false | false | true |  | configuration/relationTypes/IndividualHasAddress/attributes/AddressType |
+| **Status** | Status | String | Status of the address relative to this party. | LUD | false | false | false | false | false |  | configuration/relationTypes/IndividualHasAddress/attributes/Status |
+| **AddressRank** | Address Rank | Int | Ordinal ranking of this address for contacting the party. | LUD | false | false | false | false | false |  | configuration/relationTypes/IndividualHasAddress/attributes/AddressRank |
+| **CareOf** | Care Of | String | C/O instructions, if applicable. | LUD | false | false | false | false | false |  | configuration/relationTypes/IndividualHasAddress/attributes/CareOf |
+| **Primary** | Primary | Boolean | Whether this is the primary address for the party. | LUD | false | false | false | false | false |  | configuration/relationTypes/IndividualHasAddress/attributes/Primary |
+| **Active** | Active | Boolean | Whether the address is currently active. | LUD | false | false | false | false | false |  | configuration/relationTypes/IndividualHasAddress/attributes/Active |
+| **Registered** | Registered | Boolean | Whether this is a registered address for the party. | LUD | false | false | false | false | false |  | configuration/relationTypes/IndividualHasAddress/attributes/Registered |
+| **Business** | Business | Boolean | Whether this is a business address. | LUD | false | false | false | false | false |  | configuration/relationTypes/IndividualHasAddress/attributes/Business |
+| **Residential** | Residential | Boolean | Whether this is a residential address. | LUD | false | false | false | false | false |  | configuration/relationTypes/IndividualHasAddress/attributes/Residential |
+
+> **Note:** On the table above, the top level attributes are represented in bold.
+
+
+
+---
+
+# Individual To Banker relationship type for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > SAP Reltio's velocity pack for Banking > Data Model for SAP Reltio's velocity pack for Banking > Relationship types for SAP Reltio's velocity pack for Banking
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/data-model-for-sap-reltios-velocity-pack-for-banking/relationship-types-for-sap-reltios-velocity-pack-for-banking/individual-to-banker-relationship-type-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** individual to banker relationship type in banking, banking velocity pack relationship types, configure individual to banker relationship in reltio console, model individual to banker relationship type attributes in reltio, connect individual and banker in reltio, individual to banker, relationship types, individual, banker
+
+
+Learn about the Individual To Banker relationship type preconfigured in entity types in SAP Reltio's velocity pack for Banking.
+
+Relationship types contain metadata properties and attributes that define the connection between two specific entities.
+
+This table identifies the preconfigured Individual To Banker relationship type that comes with SAP Reltio's velocity pack for Banking. Use this relationship type when you want to identify connections between Individual and Banker entity types.
+
+**IndividualToBanker**
+- **URI:** configuration/relationTypes/IndividualToBanker
+- **Label:** Individual To Banker
+- **Description:** Assigns an Individual customer to their relationship manager or loan officer for book-of-business management and service continuity.
+- **Type:** 
+- **Direction:** directed
+- **Implicit:** false
+- **Start Object:** configuration/entityTypes/Individual
+- **Start Label:** Individual
+- **End Object:** configuration/entityTypes/Banker
+- **End Label:** Banker
+
+
+| Name | Label | Type | Description | Survivorship | Hidden | Important | System | Searchable | Faceted | Lookup Code | URI |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **PersonalClientRepType** | Representative Type | String | Type of assigned role the representative holds in operating on behalf of the individual client. | LUD | false | false | false | false | true |  | configuration/relationTypes/IndividualToBanker/attributes/PersonalClientRepType |
+
+> **Note:** On the table above, the top level attributes are represented in bold.
+
+
+
+---
+
+# Individual To Servicing Branch relationship type for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > SAP Reltio's velocity pack for Banking > Data Model for SAP Reltio's velocity pack for Banking > Relationship types for SAP Reltio's velocity pack for Banking
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/data-model-for-sap-reltios-velocity-pack-for-banking/relationship-types-for-sap-reltios-velocity-pack-for-banking/individual-to-servicing-branch-relationship-type-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** individual to servicing branch relationship type in banking, banking velocity pack relationship types, configure individual to servicing branch relationship in reltio console, model individual to servicing branch relationship type attributes in reltio, connect individual and location in reltio, individual to servicing branch, relationship types, individual, location
+
+
+Learn about the Individual To Servicing Branch relationship type preconfigured in entity types in SAP Reltio's velocity pack for Banking.
+
+Relationship types contain metadata properties and attributes that define the connection between two specific entities.
+
+This table identifies the preconfigured Individual To Servicing Branch relationship type that comes with SAP Reltio's velocity pack for Banking. Use this relationship type when you want to identify connections between Individual and Location entity types.
+
+**IndividualToServicingBranch**
+- **URI:** configuration/relationTypes/IndividualToServicingBranch
+- **Label:** Individual To Servicing Branch
+- **Description:** Links an Individual customer to their primary servicing branch Location for operational routing and branch-level relationship tracking.
+- **Type:** 
+- **Direction:** directed
+- **Implicit:** false
+- **Start Object:** configuration/entityTypes/Individual
+- **Start Label:** Individual
+- **End Object:** configuration/entityTypes/Location
+- **End Label:** Location
+
+
+| Name | Label | Type | Description | Survivorship | Hidden | Important | System | Searchable | Faceted | Lookup Code | URI |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **AssignmentReason** | Assignment Reason | String | Why this branch serves the party (Relationship Branch, Branch of Account Opening, Nearest Branch, Customer Preference, Portfolio Transfer). Disambiguates this edge from the account-level servicing branch. | LUD | false | false | false | false | true |  | configuration/relationTypes/IndividualToServicingBranch/attributes/AssignmentReason |
+| **AssignmentDate** | Assignment Date | Date | Date the branch was assigned to the party. | LUD | false | false | false | false | false |  | configuration/relationTypes/IndividualToServicingBranch/attributes/AssignmentDate |
+| **EndDate** | End Date | Date | Date the assignment ended. Open-ended while current. | LUD | false | false | false | false | false |  | configuration/relationTypes/IndividualToServicingBranch/attributes/EndDate |
+
+> **Note:** On the table above, the top level attributes are represented in bold.
+
+
+
+---
+
+# Location Has Branch Manager relationship type for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > SAP Reltio's velocity pack for Banking > Data Model for SAP Reltio's velocity pack for Banking > Relationship types for SAP Reltio's velocity pack for Banking
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/data-model-for-sap-reltios-velocity-pack-for-banking/relationship-types-for-sap-reltios-velocity-pack-for-banking/location-has-branch-manager-relationship-type-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** location has branch manager relationship type in banking, banking velocity pack relationship types, configure location has branch manager relationship in reltio console, model location has branch manager relationship type attributes in reltio, connect location and banker in reltio, location has branch manager, relationship types, location, banker
+
+
+Learn about the Location Has Branch Manager relationship type preconfigured in entity types in SAP Reltio's velocity pack for Banking.
+
+Relationship types contain metadata properties and attributes that define the connection between two specific entities.
+
+This table identifies the preconfigured Location Has Branch Manager relationship type that comes with SAP Reltio's velocity pack for Banking. Use this relationship type when you want to identify connections between Location and Banker entity types.
+
+**LocationHasBranchManager**
+- **URI:** configuration/relationTypes/LocationHasBranchManager
+- **Label:** Location Has Branch Manager
+- **Description:** Links a branch Location to the Banker accountable for its operations. Distinct from BankerToHomeBranch, which records where a Banker is based rather than who manages the branch.
+- **Type:** 
+- **Direction:** directed
+- **Implicit:** false
+- **Start Object:** configuration/entityTypes/Location
+- **Start Label:** location
+- **End Object:** configuration/entityTypes/Banker
+- **End Label:** branchManager
+
+> **Note:** On the table above, the top level attributes are represented in bold.
+
+
+
+---
+
+# Organization Has Address relationship type for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > SAP Reltio's velocity pack for Banking > Data Model for SAP Reltio's velocity pack for Banking > Relationship types for SAP Reltio's velocity pack for Banking
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/data-model-for-sap-reltios-velocity-pack-for-banking/relationship-types-for-sap-reltios-velocity-pack-for-banking/organization-has-address-relationship-type-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** organization has address relationship type in banking, banking velocity pack relationship types, configure organization has address relationship in reltio console, model organization has address relationship type attributes in reltio, connect organization and location in reltio, organization has address, relationship types, organization, location
+
+
+Learn about the Organization Has Address relationship type preconfigured in entity types in SAP Reltio's velocity pack for Banking.
+
+Relationship types contain metadata properties and attributes that define the connection between two specific entities.
+
+This table identifies the preconfigured Organization Has Address relationship type that comes with SAP Reltio's velocity pack for Banking. Use this relationship type when you want to identify connections between Organization and Location entity types.
+
+**OrganizationHasAddress**
+- **URI:** configuration/relationTypes/OrganizationHasAddress
+- **Label:** Organization Has Address
+- **Description:** Links an Organization to a Location master.
+- **Type:** 
+- **Direction:** 
+- **Implicit:** false
+- **Start Object:** configuration/entityTypes/Organization
+- **Start Label:** organization
+- **End Object:** configuration/entityTypes/Location
+- **End Label:** location
+
+
+| Name | Label | Type | Description | Survivorship | Hidden | Important | System | Searchable | Faceted | Lookup Code | URI |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **AddressType** | Address Type | String | Type or category of the address for this party (Home, Mailing, Billing, Registered, Work, Seasonal). Without it, a party holding several addresses gives no way to tell which is which. | LUD | false | false | false | false | true |  | configuration/relationTypes/OrganizationHasAddress/attributes/AddressType |
+| **Status** | Status | String | Status of the address relative to this party. | LUD | false | false | false | false | false |  | configuration/relationTypes/OrganizationHasAddress/attributes/Status |
+| **AddressRank** | Address Rank | Int | Ordinal ranking of this address for contacting the party. | LUD | false | false | false | false | false |  | configuration/relationTypes/OrganizationHasAddress/attributes/AddressRank |
+| **CareOf** | Care Of | String | C/O instructions, if applicable. | LUD | false | false | false | false | false |  | configuration/relationTypes/OrganizationHasAddress/attributes/CareOf |
+| **Primary** | Primary | Boolean | Whether this is the primary address for the party. | LUD | false | false | false | false | false |  | configuration/relationTypes/OrganizationHasAddress/attributes/Primary |
+| **Active** | Active | Boolean | Whether the address is currently active. | LUD | false | false | false | false | false |  | configuration/relationTypes/OrganizationHasAddress/attributes/Active |
+| **Registered** | Registered | Boolean | Whether this is a registered address for the party. | LUD | false | false | false | false | false |  | configuration/relationTypes/OrganizationHasAddress/attributes/Registered |
+| **Business** | Business | Boolean | Whether this is a business address. | LUD | false | false | false | false | false |  | configuration/relationTypes/OrganizationHasAddress/attributes/Business |
+| **Residential** | Residential | Boolean | Whether this is a residential address. | LUD | false | false | false | false | false |  | configuration/relationTypes/OrganizationHasAddress/attributes/Residential |
+
+> **Note:** On the table above, the top level attributes are represented in bold.
+
+
+
+---
+
+# Organization Affiliation relationship type for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > SAP Reltio's velocity pack for Banking > Data Model for SAP Reltio's velocity pack for Banking > Relationship types for SAP Reltio's velocity pack for Banking
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/data-model-for-sap-reltios-velocity-pack-for-banking/relationship-types-for-sap-reltios-velocity-pack-for-banking/organization-affiliation-relationship-type-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** organization affiliation relationship type in banking, banking velocity pack relationship types, configure organization affiliation relationship in reltio console, model organization affiliation relationship type attributes in reltio, connect two organization entities in reltio, organization affiliation, relationship types, organization
+
+
+Learn about the Organization Affiliation relationship type preconfigured in entity types in SAP Reltio's velocity pack for Banking.
+
+Relationship types contain metadata properties and attributes that define the connection between two specific entities.
+
+This table identifies the preconfigured Organization Affiliation relationship type that comes with SAP Reltio's velocity pack for Banking. Use this relationship type when you want to identify connections between two Organization entity types.
+
+**OrganizationAffiliation**
+- **URI:** configuration/relationTypes/OrganizationAffiliation
+- **Label:** Organization Affiliation
+- **Description:** Non-ownership affiliation between organizations.
+- **Type:** 
+- **Direction:** 
+- **Implicit:** false
+- **Start Object:** configuration/entityTypes/Organization
+- **Start Label:** organization
+- **End Object:** configuration/entityTypes/Organization
+- **End Label:** affiliated organization
+
+
+| Name | Label | Type | Description | Survivorship | Hidden | Important | System | Searchable | Faceted | Lookup Code | URI |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **AffiliationType** | Affiliation Type | String | Nature of the affiliation between the two related organizations. | LUD | false | false | false | false | true |  | configuration/relationTypes/OrganizationAffiliation/attributes/AffiliationType |
+| **StartDate** | Start Date | Date | Date the affiliation began. | LUD | false | false | false | false | false |  | configuration/relationTypes/OrganizationAffiliation/attributes/StartDate |
+| **EndDate** | End Date | Date | Date the affiliation ended. | LUD | false | false | false | false | false |  | configuration/relationTypes/OrganizationAffiliation/attributes/EndDate |
+
+> **Note:** On the table above, the top level attributes are represented in bold.
+
+
+
+---
+
+# Organization To Banker relationship type for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > SAP Reltio's velocity pack for Banking > Data Model for SAP Reltio's velocity pack for Banking > Relationship types for SAP Reltio's velocity pack for Banking
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/data-model-for-sap-reltios-velocity-pack-for-banking/relationship-types-for-sap-reltios-velocity-pack-for-banking/organization-to-banker-relationship-type-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** organization to banker relationship type in banking, banking velocity pack relationship types, configure organization to banker relationship in reltio console, model organization to banker relationship type attributes in reltio, connect organization and banker in reltio, organization to banker, relationship types, organization, banker
+
+
+Learn about the Organization To Banker relationship type preconfigured in entity types in SAP Reltio's velocity pack for Banking.
+
+Relationship types contain metadata properties and attributes that define the connection between two specific entities.
+
+This table identifies the preconfigured Organization To Banker relationship type that comes with SAP Reltio's velocity pack for Banking. Use this relationship type when you want to identify connections between Organization and Banker entity types.
+
+**OrganizationToBanker**
+- **URI:** configuration/relationTypes/OrganizationToBanker
+- **Label:** Organization To Banker
+- **Description:** Assigns an Organization customer to their commercial relationship manager for book-of-business management and service continuity.
+- **Type:** 
+- **Direction:** directed
+- **Implicit:** false
+- **Start Object:** configuration/entityTypes/Organization
+- **Start Label:** Organization
+- **End Object:** configuration/entityTypes/Banker
+- **End Label:** Banker
+
+
+| Name | Label | Type | Description | Survivorship | Hidden | Important | System | Searchable | Faceted | Lookup Code | URI |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **CommercialClientRepType** | Representative Type | String | Type of assigned role the representative holds in operating on behalf of the commercial client. | LUD | false | false | false | false | true |  | configuration/relationTypes/OrganizationToBanker/attributes/CommercialClientRepType |
+
+> **Note:** On the table above, the top level attributes are represented in bold.
+
+
+
+---
+
+# Organization Hierarchy relationship type for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > SAP Reltio's velocity pack for Banking > Data Model for SAP Reltio's velocity pack for Banking > Relationship types for SAP Reltio's velocity pack for Banking
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/data-model-for-sap-reltios-velocity-pack-for-banking/relationship-types-for-sap-reltios-velocity-pack-for-banking/organization-hierarchy-relationship-type-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** organization hierarchy relationship type in banking, banking velocity pack relationship types, configure organization hierarchy relationship in reltio console, model organization hierarchy relationship type attributes in reltio, connect two organization entities in reltio, organization hierarchy, relationship types, organization
+
+
+Learn about the Organization Hierarchy relationship type preconfigured in entity types in SAP Reltio's velocity pack for Banking.
+
+Relationship types contain metadata properties and attributes that define the connection between two specific entities.
+
+This table identifies the preconfigured Organization Hierarchy relationship type that comes with SAP Reltio's velocity pack for Banking. Use this relationship type when you want to identify connections between two Organization entity types.
+
+**OrganizationHierarchy**
+- **URI:** configuration/relationTypes/OrganizationHierarchy
+- **Label:** Organization Hierarchy
+- **Description:** Parent/subsidiary corporate structure (Organization → Organization). Author as a relation, never as a mastered link entity.
+- **Type:** 
+- **Direction:** 
+- **Implicit:** false
+- **Start Object:** configuration/entityTypes/Organization
+- **Start Label:** parent
+- **End Object:** configuration/entityTypes/Organization
+- **End Label:** subsidiary
+
+
+| Name | Label | Type | Description | Survivorship | Hidden | Important | System | Searchable | Faceted | Lookup Code | URI |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **WhollyOwnedSubsidiary** | Wholly Owned Subsidiary | Boolean | The parent company is the sole shareholder of the subsidiary. | LUD | false | false | false | false | false |  | configuration/relationTypes/OrganizationHierarchy/attributes/WhollyOwnedSubsidiary |
+| **IndirectSubsidiary** | Partly Owned / Indirect Subsidiary | Boolean | The parent partially owns but retains controlling influence over the subsidiary. | LUD | false | false | false | false | false |  | configuration/relationTypes/OrganizationHierarchy/attributes/IndirectSubsidiary |
+| **JointVenture** | Joint Venture | Boolean | The parent's interest in the subsidiary is part of a joint venture with a third partner organization. | LUD | false | false | false | false | false |  | configuration/relationTypes/OrganizationHierarchy/attributes/JointVenture |
+
+> **Note:** On the table above, the top level attributes are represented in bold.
+
+
+
+---
+
+# Organization To Servicing Branch relationship type for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > SAP Reltio's velocity pack for Banking > Data Model for SAP Reltio's velocity pack for Banking > Relationship types for SAP Reltio's velocity pack for Banking
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/data-model-for-sap-reltios-velocity-pack-for-banking/relationship-types-for-sap-reltios-velocity-pack-for-banking/organization-to-servicing-branch-relationship-type-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** organization to servicing branch relationship type in banking, banking velocity pack relationship types, configure organization to servicing branch relationship in reltio console, model organization to servicing branch relationship type attributes in reltio, connect organization and location in reltio, organization to servicing branch, relationship types, organization, location
+
+
+Learn about the Organization To Servicing Branch relationship type preconfigured in entity types in SAP Reltio's velocity pack for Banking.
+
+Relationship types contain metadata properties and attributes that define the connection between two specific entities.
+
+This table identifies the preconfigured Organization To Servicing Branch relationship type that comes with SAP Reltio's velocity pack for Banking. Use this relationship type when you want to identify connections between Organization and Location entity types.
+
+**OrganizationToServicingBranch**
+- **URI:** configuration/relationTypes/OrganizationToServicingBranch
+- **Label:** Organization To Servicing Branch
+- **Description:** Links an Organization customer to their primary servicing branch Location for commercial banking operational routing and branch-level relationship tracking.
+- **Type:** 
+- **Direction:** directed
+- **Implicit:** false
+- **Start Object:** configuration/entityTypes/Organization
+- **Start Label:** Organization
+- **End Object:** configuration/entityTypes/Location
+- **End Label:** Location
+
+
+| Name | Label | Type | Description | Survivorship | Hidden | Important | System | Searchable | Faceted | Lookup Code | URI |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **AssignmentReason** | Assignment Reason | String | Why this branch serves the party (Relationship Branch, Branch of Account Opening, Nearest Branch, Customer Preference, Portfolio Transfer). Disambiguates this edge from the account-level servicing branch. | LUD | false | false | false | false | true |  | configuration/relationTypes/OrganizationToServicingBranch/attributes/AssignmentReason |
+| **AssignmentDate** | Assignment Date | Date | Date the branch was assigned to the party. | LUD | false | false | false | false | false |  | configuration/relationTypes/OrganizationToServicingBranch/attributes/AssignmentDate |
+| **EndDate** | End Date | Date | Date the assignment ended. Open-ended while current. | LUD | false | false | false | false | false |  | configuration/relationTypes/OrganizationToServicingBranch/attributes/EndDate |
+
+> **Note:** On the table above, the top level attributes are represented in bold.
+
+
+
+---
+
+# Spouse relationship type for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > SAP Reltio's velocity pack for Banking > Data Model for SAP Reltio's velocity pack for Banking > Relationship types for SAP Reltio's velocity pack for Banking
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/data-model-for-sap-reltios-velocity-pack-for-banking/relationship-types-for-sap-reltios-velocity-pack-for-banking/spouse-relationship-type-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** spouse relationship type in banking, banking velocity pack relationship types, configure spouse relationship in reltio console, model spouse relationship type attributes in reltio, connect two individual entities in reltio, spouse, relationship types, individual
+
+
+Learn about the Spouse relationship type preconfigured in entity types in SAP Reltio's velocity pack for Banking.
+
+Relationship types contain metadata properties and attributes that define the connection between two specific entities.
+
+This table identifies the preconfigured Spouse relationship type that comes with SAP Reltio's velocity pack for Banking. Use this relationship type when you want to identify connections between two Individual entity types.
+
+**Spouse**
+- **URI:** configuration/relationTypes/Spouse
+- **Label:** Spouse
+- **Description:** Symmetric family relation between two Individuals.
+- **Type:** 
+- **Direction:** 
+- **Implicit:** false
+- **Start Object:** configuration/entityTypes/Individual
+- **Start Label:** individual
+- **End Object:** configuration/entityTypes/Individual
+- **End Label:** spouse
+
+
+| Name | Label | Type | Description | Survivorship | Hidden | Important | System | Searchable | Faceted | Lookup Code | URI |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **Anniversary** | Wedding Anniversary | Date | Date on which the two individuals were wed. | LUD | false | false | false | false | false |  | configuration/relationTypes/Spouse/attributes/Anniversary |
+
+> **Note:** On the table above, the top level attributes are represented in bold.
+
+
+
+---
+
+# Reference data for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > SAP Reltio's velocity pack for Banking > Configurations for SAP Reltio's velocity pack for Banking
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/configurations-for-sap-reltios-velocity-pack-for-banking/reference-data-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** preconfigured lookup types for banking velocity pack, standardize reference data values in reltio, reltio reference data management overview, rdm lookup types for banking industry, configure lookup types in reltio console, reference data, lookup types, rdm
+
+
+Learn about the reference data (lookups) predefined for SAP Reltio's velocity pack for Banking.
+
+Reference data is static data typically found in transactional system fields, such as account branch assignment reasons, account holder roles, or account identifier schemes. Different data systems may each use their own values for these static data fields. SAP Reltio's velocity pack for Banking comes with these preconfigured lookup types that standardize various values from external systems into a single value you can reference in Reltio.
+
+For general information on lookup types, see [Lookups and canonical values](https://docs.reltio.com/en/applications/rdm/rdm-at-a-glance/rdm-operation/lookups-and-canonical-values?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). For a list of these, see the section below.
+
+## Lookup types (SAP Reltio's velocity pack for Banking)
+
+SAP Reltio's velocity pack for Banking comes with these preconfigured reference data lookup types:
+
+- AccountBranchAssignmentReasons
+- AccountHolderRoles
+- AccountIdentifierSchemes
+- AccountStatuses
+- AccountTypes
+- AddressStatuses
+- AddressTypes
+- AffiliationTypes
+- ApplicationChannels
+- ApplicationInitialStatuses
+- ApplicationStatuses
+- ApplicationTypes
+- AuthorizationStatuses
+- AuthorizationTypes
+- BalanceTypes
+- BankerRoles
+- BankingDepartments
+- BranchAssignmentReasons
+- CardNetworks
+- CollateralTypes
+- CompanyTypes
+- ComplianceReviewOutcomes
+- ComplianceReviewTypes
+- ControlMechanisms
+- ControlTypes
+- Countries
+- CreditBureaus
+- CreditDebitIndicators
+- CreditRatings
+- Currencies
+- DecisionOutcomes
+- DelinquencyStatuses
+- DependencyTypes
+- EmailTypes
+- EmployeeStatuses
+- EmploymentStatuses
+- FATCAEntityStatuses
+- FATCAIndividualStatuses
+- GovernmentIdTypes
+- HouseholdMembershipRoles
+- HouseholdTypes
+- IdentifierSchemes
+- IndividualRoles
+- InterestRateTypes
+- Jurisdictions
+- LegalEntityTypes
+- LegalStatuses
+- LoanPurposes
+- LocationStatuses
+- LocationTypes
+- MaritalStatuses
+- NAICS
+- OwnershipChangeTypes
+- OwnershipSources
+- OwnershipStatuses
+- PermissionLevels
+- PhoneTypes
+- ProductCategories
+- ProductStatuses
+- ProductTypes
+- RelationshipTiers
+- ReviewTriggerReasons
+- RiskRatings
+- ScreeningMatchResults
+- ScreeningProviders
+- ScreeningReviewOutcomes
+- ScreeningStatuses
+- ScreeningTypes
+- ServiceChannels
+- ServiceOutcomes
+- ServiceTypes
+- StatusChangeReasons
+- TransactionChannels
+- TransactionStatuses
+- TransactionTypes
+- VerificationStatuses
+
+
+
+---
+
+# Cleansers for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > SAP Reltio's velocity pack for Banking > Configurations for SAP Reltio's velocity pack for Banking
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/configurations-for-sap-reltios-velocity-pack-for-banking/cleansers-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** how to configure cleansers in reltio, prebuilt cleansers for banking velocity pack, standardize address and phone data in reltio, clean and deduplicate banking data with reltio, reltio cleanser functions for entity types, cleansers, phone cleanser, email cleanser, address cleanser
+
+
+Learn about the SAP Reltio's velocity pack for Banking includes prebuilt cleansers.
+
+The SAP Reltio's velocity pack for Banking data model includes cleansers for some entity types. Use cleansers to remove duplicate and irrelevant data, identify and resolve structural issues, and flag missing or incomplete data within a dataset.
+
+Take a look at the cleansers defined for a specific entity in **Console > Data Modeler > Entity Types > entity > Cleanse**.
+
+The SAP Reltio's velocity pack for Banking solution includes the following prebuilt cleansers:
+
+**SAP Reltio's velocity pack for Banking Cleansers**
+
+| Cleanser | Function |
+| --- | --- |
+| EmailCleanserFn | Email cleanser that validates and standardizes contact email addresses. Used on the following entity types: Banker, Individual, Organization. |
+| Loqate | Address cleanser that verifies, standardizes, and geocodes street addresses. Used on the following entity types: Location. |
+| PhoneCleanserFn | Phone cleanser that validates and standardizes phone numbers. Used on the following entity types: Banker, Individual, Location, Organization. |
+
+
+
+---
+
+# Match rules for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > SAP Reltio's velocity pack for Banking > Configurations for SAP Reltio's velocity pack for Banking
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/configurations-for-sap-reltios-velocity-pack-for-banking/match-rules-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** how to configure match rules in reltio, predefined match rules for banking velocity pack, automatic and suspect match rules in reltio, reduce duplicate records with match rules, exact and fuzzy matching in reltio mdm, match rules, fuzzy matching, exact matching, duplicate detection
+
+
+Learn about the match rules used in SAP Reltio's velocity pack for Banking that are defined out-of-the-box.
+
+SAP Reltio's velocity pack for Banking brings together systems and most of these systems duplicate customer information. Match rules define the criteria Reltio uses to determine whether two records are duplicates.
+
+SAP Reltio's velocity pack for Banking comes with predefined match rules specific to the industry. Take a look at the match rules types defined for a specific entity in **Console > Data Modeler > Entity Types > <entity> > Match rules**.
+
+For general information on match rules, see [Reltio match and merge](https://docs.reltio.com/en/reltio/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). For information on working with match rules, see [Configure match rules overview](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-navigation/configure-match-rules-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). For descriptions of the match rules that come with SAP Reltio's velocity pack for Banking, see the following sections.
+
+## Individual entity type match rules
+
+This table identifies the SAP Reltio's velocity pack for Banking match rules used to master data for the Individual entity type. Use these match rules to create a record for a person master for retail banking customers, applicants, beneficial owners, and authorized signers. Carries KYC and AML due-diligence attributes: tax identifiers (SSN/TIN), government-issued ID documents, citizenship and tax residency for FATCA/CRS reporting, PEP and sanctions flags, screening status, risk rating, and credit score from the primary bureau. Use Organization for legal entities.
+
+| Label | Description | Match queries |
+| --- | --- | --- |
+| Exact (Suspect Match On Name) | Creates a potential match | `( Exact on Suspect Match On Name )` |
+| Exact (Match On Tax ID) | Automatically merges records | `( Exact on Match On Tax ID )` |
+| Exact (Match On Government ID) | Automatically merges records | `( Exact on Match On Government ID )` |
+| Exact (Suspect Match On Name And Date Of Birth) | Creates a potential match | `( Exact on Suspect Match On Name And Date Of Birth )` |
+
+## Organization entity type match rules
+
+This table identifies the SAP Reltio's velocity pack for Banking match rules used to master data for the Organization entity type. Use these match rules to create a record for a legal-entity master for commercial banking customers and their corporate families. Carries banking identifiers (LEI, Tax ID, DUNS), industry classification, legal entity type, registration jurisdiction, and due-diligence attributes (PEP flag, sanctions flag, screening status, risk rating, FATCA status, verification lifecycle) for regulatory compliance. Parent and subsidiary structure is modeled by the OrganizationHierarchy relation, not by a separate entity.
+
+| Label | Description | Match queries |
+| --- | --- | --- |
+| Exact (Auto-merge On LEI) | Automatically merges records | `( Exact on Auto-merge On LEI )` |
+| Exact (Auto-merge On Tax ID) | Automatically merges records | `( Exact on Auto-merge On Tax ID )` |
+| Exact (Auto-merge On DUNS Number) | Automatically merges records | `( Exact on Auto-merge On DUNS Number )` |
+| Exact (Suspect Match On Name And Jurisdiction) | Creates a potential match | `( Exact on Suspect Match On Name And Jurisdiction )` |
+
+## Household entity type match rules
+
+This table identifies the SAP Reltio's velocity pack for Banking match rules used to master data for the Household entity type. Use these match rules to create a record for a family and economic grouping of individuals, aggregating the customer relationship across its members: internal identifier, primary member reference, total assets, relationship tier, and aggregated risk rating for cross-sell and compliance.
+
+| Label | Description | Match queries |
+| --- | --- | --- |
+| Exact (Auto-merge On Household ID) | Automatically merges records | `( Exact on Auto-merge On Household ID )` |
+
+## FinancialAccount entity type match rules
+
+This table identifies the SAP Reltio's velocity pack for Banking match rules used to master data for the FinancialAccount entity type. Use these match rules to create a record for a polymorphic account master covering deposits, cards, loans, and mortgages, with the terms specific to each subtype held in their own nested groups — overdraft terms, card terms, loan terms, mortgage terms. Balances are multi-valued and typed, so ledger, available, and pending amounts coexist on one record. Consolidates a customer's full relationship across every line of business into a single best-version profile.
+
+| Label | Description | Match queries |
+| --- | --- | --- |
+| Exact (Account Number At The Same Institution) | Automatically merges records | `( Exact on Account Number At The Same Institution )` |
+| Exact (Internal Account ID) | Automatically merges records | `( Exact on Internal Account ID )` |
+
+## Product entity type match rules
+
+This table identifies the SAP Reltio's velocity pack for Banking match rules used to master data for the Product entity type. Use these match rules to create a record for a banking product catalog master for deposits, cards, lending, and mortgage offerings. Carries features, pricing (interest rates, fees), eligibility rules, and productType discriminator. Applications and accounts link to Product for product-definition reference.
+
+| Label | Description | Match queries |
+| --- | --- | --- |
+| Exact (Product Code) | Automatically merges records | `( Exact on Product Code )` |
+
+## Banker entity type match rules
+
+This table identifies the SAP Reltio's velocity pack for Banking match rules used to master data for the Banker entity type. Use these match rules to create a record for a bank employee (relationship manager, loan officer, branch staff) with book-of-business assignments to customers and accounts. Posted to a branch via BankerToHomeBranch, which groups staff by branch for reporting and service routing. Job function is carried by `role` and business line by `department`; the pack models no reporting lines between bankers.
+
+| Label | Description | Match queries |
+| --- | --- | --- |
+| Exact (Employee ID) | Automatically merges records | `( Exact on Employee ID )` |
+| Fuzzy (Name And Role) | Creates a potential match | `( Fuzzy on Name And Role )` |
+
+## Location entity type match rules
+
+This table identifies the SAP Reltio's velocity pack for Banking match rules used to master data for the Location entity type. Use these match rules to create a record for an address master covering both customer addresses and bank branches. Carries branch-specific attributes (branchCode, branchManager, hoursOfOperation, locationType) for physical and virtual service locations in retail and commercial banking.
+
+| Label | Description | Match queries |
+| --- | --- | --- |
+| Exact (Auto-merge On Address Line And Postal Code) | Automatically merges records | `( Exact on Auto-merge On Address Line And Postal Code )` |
+| Exact (Auto-merge On Branch Code) | Automatically merges records | `( Exact on Auto-merge On Branch Code )` |
+
+## Application entity type match rules
+
+This table identifies the SAP Reltio's velocity pack for Banking match rules used to master data for the Application entity type. Use these match rules to create a record for an account or loan application, from submission through underwriting decision to the account it opens. Carries the product requested, the decision and its reason, and the underwriting inputs (credit score, income, collateral, ratios). A first-class entity rather than an Interaction subtype, so an application persists as a record in its own right with its own identity and match rules. The applicant resolves to an Individual or Organization profile, and it is that entity's match groups, not this one's, that determine whether the applicant is someone already on the books.
+
+| Label | Description | Match queries |
+| --- | --- | --- |
+| Exact (Application ID) | Automatically merges records | `( Exact on Application ID )` |
+| Exact (Internal Application ID) | Automatically merges records | `( Exact on Internal Application ID )` |
+| Exact (Submission Date, Type, and Amount) | Creates a potential match | `( Exact on Submission Date and Type and Amount )` |
+
+## BeneficialOwner entity type match rules
+
+This table identifies the SAP Reltio's velocity pack for Banking match rules used to master data for the BeneficialOwner entity type. Use these match rules to create a record for a beneficial ownership relationship between Individual and Organization with ownership percentage and control type for UBO traversal. Relationship-as-entity with independent lifecycle tracking effective dates, verification status, and regulatory reporting requirements. Supports AML/KYC compliance and ultimate beneficial owner (UBO) identification per FATF recommendations.
+
+| Label | Description | Match queries |
+| --- | --- | --- |
+| Exact (Ownership ID) | Automatically merges records | `( Exact on Ownership ID )` |
+| Exact (Internal Ownership ID) | Automatically merges records | `( Exact on Internal Ownership ID )` |
+
+## ControllingParty entity type match rules
+
+This table identifies the SAP Reltio's velocity pack for Banking match rules used to master data for the ControllingParty entity type. Use these match rules to create a record for a relationship-as-entity recording who controls a company and on what basis, with the mechanism, percentage, chain depth, dates, and evidence needed for regulatory reporting. The controlling party is an Individual or an Organization, never both on one record. Distinct from BeneficialOwner, which carries stakes: use this entity where an equity stake alone does not explain the control, and see the ControlMechanism lookup for the full range, which runs well past voting rights and board seats to contractual arrangements, trusts, proxies, and veto rights. Feeds the OrganizationOwnershipHierarchy graph and FinCEN customer due diligence reporting.
+
+| Label | Description | Match queries |
+| --- | --- | --- |
+| Exact (Ownership ID) | Automatically merges records | `( Exact on Ownership ID )` |
+| Exact (Internal Ownership ID) | Automatically merges records | `( Exact on Internal Ownership ID )` |
+
+## AccountHolder entity type match rules
+
+This table identifies the SAP Reltio's velocity pack for Banking match rules used to master data for the AccountHolder entity type. Use these match rules to create a record for a relationship-as-entity linking an Individual or Organization to a FinancialAccount. The capacity in which the account is held is carried by `role`, and for jointly held accounts each holder's share by `ownershipPercentage`. Independent lifecycle attributes — effective and expiration dates, authorization status — let a holding be opened, closed, and reopened without losing what went before, which is what account authorization and tax reporting need.
+
+| Label | Description | Match queries |
+| --- | --- | --- |
+| Exact (Authorization ID) | Automatically merges records | `( Exact on Authorization ID )` |
+| Exact (Holder, Account, and Effective Date) | Creates a potential match | `( Exact on Holder and Account and Effective Date )` |
+| Exact (Account Number); Fuzzy (Holder Name) | Creates a potential match | `( Exact on Account Number ) and Fuzzy on Holder Name` |
+| Exact (Internal Authorization ID) | Automatically merges records | `( Exact on Internal Authorization ID )` |
+
+## AuthorizedSigner entity type match rules
+
+This table identifies the SAP Reltio's velocity pack for Banking match rules used to master data for the AuthorizedSigner entity type. Use these match rules to create a record for a relationship-as-entity linking an Individual to a FinancialAccount they may act on without owning it. Carries what they may do in `permissionLevel`, the legal instrument conferring it in `authorizationType`, monetary ceilings in `transactionLimit` and `dailyLimit`, and the dates and evidence that the authority was granted and remains valid. Distinct from AccountHolder, which records ownership rather than delegated authority.
+
+| Label | Description | Match queries |
+| --- | --- | --- |
+| Exact (Authorization ID) | Automatically merges records | `( Exact on Authorization ID )` |
+| Exact (Internal Authorization ID) | Automatically merges records | `( Exact on Internal Authorization ID )` |
+
+
+
+---
+
+# Relationship types for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > SAP Reltio's velocity pack for Banking > Data Model for SAP Reltio's velocity pack for Banking
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/data-model-for-sap-reltios-velocity-pack-for-banking/relationship-types-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** relationship types in banking velocity pack, preconfigured relationship types for banking, connect entities with relationship types in reltio, view relationship type attributes for banking, configure relationship types in reltio data modeler, relationship types, data modeler
+
+
+Learn about the SAP Reltio's velocity pack for Banking prebuilt relationship types.
+
+Relationship types contain metadata properties and attributes that define the connection between two specific entities. Like entity types, relationship types contain attributes. Relationship types have a start object and an end object, and a defined direction in which the relationship works: directed, bidirectional, and unidirectional. Think of these relationship types as nodes in a web of interconnected data that enable you to make best use of the entities in your data model.
+
+For general information on relationship types, see topic [Reltio relationship types](https://docs.reltio.com/en/reltio/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-information-model/data-model/reltio-object-types/reltio-relationship-types?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). For details on the preconfigured entity types that come with SAP Reltio's velocity pack for Banking, see [Entity types for SAP Reltio's velocity pack for Banking](https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/data-model-for-sap-reltios-velocity-pack-for-banking/entity-types-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). For information on working with the preconfigured relationship types that come with SAP Reltio's velocity pack for Banking, see topic [Preconfigured User Interface for SAP Reltio's velocity pack for Banking](https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/preconfigured-user-interface-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). For information on the preconfigured relationship types that come with SAP Reltio's velocity pack for Banking, see the following sections.
+
+
+
+---
+
+# Survivorship groups for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > SAP Reltio's velocity pack for Banking > Configurations for SAP Reltio's velocity pack for Banking
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/configurations-for-sap-reltios-velocity-pack-for-banking/survivorship-groups-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** how survivorship groups work in reltio, preconfigured survivorship groups for banking velocity pack, define golden record rules in reltio, recency and source system survivorship strategies, configure survivorship rules in reltio console, survivorship, golden record, source priority
+
+
+Learn what survivorship groups are preconfigured in entity types for SAP Reltio's velocity pack for Banking.
+
+The SAP Reltio's velocity pack for Banking data model includes survivorship groups for some entity types which help you define the golden record of any object that your business considers important.
+
+For general information on survivorship, see [Survivorship groups](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-navigation/design-survivorship-rules/survivorship-groups?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). For details on the preconfigured entity types that come with SAP Reltio's velocity pack for Banking, see [Entity types for SAP Reltio's velocity pack for Banking](https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/data-model-for-sap-reltios-velocity-pack-for-banking/entity-types-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+## Individual entity type survivorship groups
+
+This table identifies the SAP Reltio's velocity pack for Banking default survivorship group for the Individual entity type.
+
+| Rule attribute | Strategy |
+| --- | --- |
+| FirstName | Source system |
+| LastName | Source system |
+| Address | Aggregation |
+| taxIdentificationNumber | Recency |
+| governmentIdNumber | Recency |
+| governmentIdIssuingCountry | Recency |
+| fatcaStatus | Recency |
+| pepFlag | Recency |
+| sanctionsFlag | Recency |
+| screeningStatus | Recency |
+| riskRating | Recency |
+| internalCustomerID | Recency |
+| MiddleName | Recency |
+| NameSuffix | Recency |
+| NamePrefix | Recency |
+| Phone | Aggregation |
+| Type | Recency |
+| Number | Recency |
+| CountryCode | Recency |
+| FormattedNumber | Recency |
+| Extension | Recency |
+| AreaCode | Recency |
+| LocalNumber | Recency |
+| LineType | Recency |
+| ValidationStatus | Recency |
+| PrimaryPhoneFlag | Recency |
+| Active | Recency |
+| Unreachable | Recency |
+| Rank | Recency |
+| Email | Aggregation |
+| Type | Recency |
+| Email | Recency |
+| Domain | Recency |
+| DomainType | Recency |
+| Username | Recency |
+| ValidationStatus | Recency |
+| Active | Recency |
+| Rank | Recency |
+| DoB | Recency |
+| YoB | Recency |
+| BirthCountry | Recency |
+| CountryOfCitizenship | Recency |
+| CountryOfTaxResidence | Recency |
+| Identifiers | Aggregation |
+| Type | Recency |
+| Value | Recency |
+| Status | Recency |
+| IssuedBy | Recency |
+| IssuedRegion | Recency |
+| IssuedDate | Recency |
+| ExpirationDate | Recency |
+| DeactivationDate | Recency |
+| DeactivationReason | Recency |
+| Rank | Recency |
+| CreditScore | Aggregation |
+| CreditReportingCompany | Recency |
+| ScoringModel | Recency |
+| ScoreValue | Recency |
+| ScoreRange | Recency |
+| ScoreAsOfDate | Recency |
+| IndividualRole | Recency |
+| StatusInformation | Aggregation |
+| Status | Recency |
+| StatusReason | Recency |
+| UpdateDate | Recency |
+| Comments | Recency |
+| DeceasedIndicator | Recency |
+| DoD | Recency |
+| MaritalStatus | Recency |
+| Gender | Recency |
+| Communication | Aggregation |
+| Language | Recency |
+| Preferred | Recency |
+| PrivacyPreferences | Recency |
+| DoNotProcess | Recency |
+| DoNotProfile | Recency |
+| DoNotTrack | Recency |
+| DoNotMarket | Recency |
+| DoNotContact | Recency |
+| ForgetIndividual | Recency |
+| OktoStorePIIDataElsewhere | Recency |
+| screeningDate | Recency |
+| verificationStatus | Recency |
+| verificationDate | Recency |
+| nextReviewDue | Recency |
+| Commenters | Recency |
+
+## Organization entity type survivorship groups
+
+This table identifies the SAP Reltio's velocity pack for Banking default survivorship group for the Organization entity type.
+
+| Rule attribute | Strategy |
+| --- | --- |
+| Name | Source system |
+| Address | Aggregation |
+| lei | Source system |
+| taxID | Recency |
+| dunsNumber | Recency |
+| industryClassification | Recency |
+| legalEntityType | Recency |
+| registrationJurisdiction | Recency |
+| establishedDate | Oldest Value |
+| creditRating | Recency |
+| pepFlag | Recency |
+| sanctionsFlag | Recency |
+| screeningStatus | Recency |
+| riskRating | Recency |
+| fatcaStatus | Recency |
+| taxResidency | Recency |
+| verificationStatus | Recency |
+| verificationDate | Recency |
+| nextReviewDue | Recency |
+| screeningDate | Recency |
+| DoingBusinessAsName | Recency |
+| TradestyleNames | Aggregation |
+| Type | Recency |
+| Language | Recency |
+| Name | Recency |
+| DisplaySequence | Recency |
+| StartDate | Recency |
+| EndDate | Recency |
+| CompanyType | Recency |
+| LegalStatus | Recency |
+| StatusInformation | Aggregation |
+| Status | Recency |
+| StatusReason | Recency |
+| UpdateDate | Recency |
+| Comments | Recency |
+| Phone | Aggregation |
+| Type | Recency |
+| Number | Recency |
+| CountryCode | Recency |
+| FormattedNumber | Recency |
+| Extension | Recency |
+| AreaCode | Recency |
+| LocalNumber | Recency |
+| LineType | Recency |
+| ValidationStatus | Recency |
+| PrimaryPhoneFlag | Recency |
+| Active | Recency |
+| Unreachable | Recency |
+| Rank | Recency |
+| Email | Aggregation |
+| Type | Recency |
+| Email | Recency |
+| Domain | Recency |
+| DomainType | Recency |
+| Username | Recency |
+| ValidationStatus | Recency |
+| Active | Recency |
+| Rank | Recency |
+| WebsiteURL | Recency |
+| Identifiers | Aggregation |
+| Type | Recency |
+| Value | Recency |
+| Status | Recency |
+| IssuedBy | Recency |
+| IssuedRegion | Recency |
+| IssuedDate | Recency |
+| ExpirationDate | Recency |
+| DeactivationDate | Recency |
+| DeactivationReason | Recency |
+| Rank | Recency |
+| Ticker | Source system |
+| Symbol | Recency |
+| Exchange | Recency |
+| CUSIP | Source system |
+| IndustryClassifications | Aggregation |
+| Type | Recency |
+| Code | Recency |
+| Value | Recency |
+| CodeLanguage | Recency |
+| DisplaySequence | Recency |
+| SalesPercentage | Recency |
+| ActivitiesAndOperations | Recency |
+| ImportIndicator | Recency |
+| ExportIndicator | Recency |
+| AgentIndicator | Recency |
+| OrganizationDetails | Recency |
+| OrganizationSummaryText | Recency |
+| OperatingStatus | Recency |
+| OperatingStatusComment | Recency |
+| OwnershipStatus | Recency |
+| OwnershipType | Recency |
+| OwnershipDate | Recency |
+| EmailDomain | Recency |
+| DomicileState | Recency |
+| StartYear | Recency |
+| IPOYear | Recency |
+| EndYear | Recency |
+| MemberRole | Recency |
+| FranchiseOperationType | Recency |
+| Standalone | Recency |
+| MarketabilityIndicator | Recency |
+| EmployeeDetails | Recency |
+| NumberOfEmployees | Recency |
+| IndividualTotalEmployeeQuantity | Recency |
+| IndividualReliabilityText | Recency |
+| KeyFinancialFiguresOverview | Recency |
+| Currency | Recency |
+| CurrencyUnitOfSize | Recency |
+| SalesRevenueAmount | Recency |
+| TotalAssetsAmount | Recency |
+| TotalLiabilitiesAmount | Recency |
+| FinancialStatementFromDate | Recency |
+| FinancialStatementToDate | Recency |
+| FinancialPeriodDuration | Recency |
+| FinancialStatementYear | Recency |
+| FinancialStatementDescription | Recency |
+| Commenters | Recency |
+
+## Household entity type survivorship groups
+
+This table identifies the SAP Reltio's velocity pack for Banking default survivorship group for the Household entity type.
+
+| Rule attribute | Strategy |
+| --- | --- |
+| HouseholdName | Recency |
+| Address | Aggregation |
+| householdID | Recency |
+| householdType | Recency |
+| relationshipTier | Recency |
+| establishedDate | Oldest Value |
+| riskRating | Recency |
+| HHDescription | Recency |
+| TotalHouseholdAssets | Recency |
+| Amount | Recency |
+| Currency | Recency |
+| AsOfDate | Recency |
+| NumberOfAccounts | Recency |
+| PrimaryMember | Recency |
+| Commenters | Recency |
+
+## FinancialAccount entity type survivorship groups
+
+This table identifies the SAP Reltio's velocity pack for Banking default survivorship group for the FinancialAccount entity type.
+
+| Rule attribute | Strategy |
+| --- | --- |
+| accountNumber | Source system |
+| internalAccountID | Recency |
+| accountType | Recency |
+| accountStatus | Recency |
+| accountName | Recency |
+| currency | Recency |
+| openingDate | Oldest Value |
+| closingDate | Recency |
+| interestRate | Recency |
+| productRef | Recency |
+| servicingBranchRef | Recency |
+| balances | Aggregation |
+| balanceType | Recency |
+| amount | Recency |
+| currency | Recency |
+| creditDebitIndicator | Recency |
+| balanceDate | Recency |
+| overdraftTerms | Recency |
+| overdraftLimit | Recency |
+| overdraftInterestRate | Recency |
+| overdraftFee | Recency |
+| cardTerms | Recency |
+| creditLimit | Recency |
+| availableCredit | Recency |
+| minimumPayment | Recency |
+| billingCycle | Recency |
+| cardNetwork | Recency |
+| lastStatementDate | Recency |
+| loanTerms | Recency |
+| principal | Recency |
+| outstandingBalance | Recency |
+| paymentSchedule | Recency |
+| paymentAmount | Recency |
+| maturityDate | Recency |
+| collateralReference | Recency |
+| delinquencyStatus | Recency |
+| nextPaymentDueDate | Recency |
+| mortgageTerms | Recency |
+| propertyAddress | Recency |
+| loanToValueRatio | Recency |
+| escrowAccountFlag | Recency |
+| propertyTaxAmount | Recency |
+| insurancePremium | Recency |
+| Identifiers | Aggregation |
+| scheme | Recency |
+| Value | Recency |
+| source | Recency |
+| accountStatusChange | Aggregation |
+| statusChangeDate | Recency |
+| fromStatus | Recency |
+| toStatus | Recency |
+| comments | Recency |
+| custodianBic | Source system |
+| interestRateType | Recency |
+| settlementCurrency | Recency |
+| electronicStatementDelivery | Recency |
+| Commenters | Recency |
+
+## Product entity type survivorship groups
+
+This table identifies the SAP Reltio's velocity pack for Banking default survivorship group for the Product entity type.
+
+| Rule attribute | Strategy |
+| --- | --- |
+| productCode | Source system |
+| internalProductID | Recency |
+| productName | Recency |
+| productType | Recency |
+| productCategory | Recency |
+| description | Recency |
+| status | Value Based Priority |
+| currency | Recency |
+| interestRate | Recency |
+| annualFee | Recency |
+| originationFee | Recency |
+| maintenanceFee | Recency |
+| minimumBalance | Recency |
+| maximumBalance | Recency |
+| creditLimit | Recency |
+| loanTerm | Recency |
+| minimumIncome | Recency |
+| minimumCreditScore | Recency |
+| eligibilityCriteria | Recency |
+| features | Aggregation |
+| featureName | Recency |
+| featureDescription | Recency |
+| featureValue | Recency |
+| rewardProgram | Recency |
+| overdraftProtection | Recency |
+| mobileDepositEnabled | Recency |
+| atmFeeWaiver | Recency |
+| foreignTransactionFee | Recency |
+| latePaymentFee | Recency |
+| effectiveDate | Oldest Value |
+| discontinuedDate | Recency |
+| Commenters | Recency |
+
+## Banker entity type survivorship groups
+
+This table identifies the SAP Reltio's velocity pack for Banking default survivorship group for the Banker entity type.
+
+| Rule attribute | Strategy |
+| --- | --- |
+| employeeID | Source system |
+| internalEmployeeID | Recency |
+| FirstName | Source system |
+| LastName | Source system |
+| MiddleName | Recency |
+| preferredName | Recency |
+| role | Recency |
+| title | Recency |
+| status | Recency |
+| hireDate | Oldest Value |
+| terminationDate | Recency |
+| homeBranch | Aggregation |
+| department | Recency |
+| SRORegistration | Aggregation |
+| IndividualCRDNumber | Recency |
+| RegisteredRepStatus | Recency |
+| YearsBDRepExperience | Recency |
+| NumOfFirmsBDRepExperience | Recency |
+| HasBDRepDisclosures | Recency |
+| IARepStatus | Recency |
+| YearsIARepExperience | Recency |
+| NumOfFirmsIARepExperience | Recency |
+| HasIARepDisclosures | Recency |
+| Licenses | Aggregation |
+| Category | Recency |
+| Type | Recency |
+| LicenseId | Recency |
+| Status | Recency |
+| IssuedBy | Recency |
+| IssuedRegion | Recency |
+| IssuedDate | Recency |
+| ExpirationDate | Recency |
+| LicenseURL | Recency |
+| Certificates | Aggregation |
+| Category | Recency |
+| Type | Recency |
+| CertId | Recency |
+| Status | Recency |
+| IssuedBy | Recency |
+| IssuedRegion | Recency |
+| IssuedDate | Recency |
+| ExpirationDate | Recency |
+| CertificateURL | Recency |
+| ProfDesignation | Aggregation |
+| Type | Recency |
+| Designation | Recency |
+| DisplaySequence | Recency |
+| NamePrefix | Recency |
+| NameSuffix | Recency |
+| StatusInformation | Aggregation |
+| Status | Recency |
+| StatusReason | Recency |
+| UpdateDate | Recency |
+| Comments | Recency |
+| Phone | Aggregation |
+| Type | Recency |
+| Number | Recency |
+| CountryCode | Recency |
+| FormattedNumber | Recency |
+| Extension | Recency |
+| AreaCode | Recency |
+| LocalNumber | Recency |
+| LineType | Recency |
+| ValidationStatus | Recency |
+| PrimaryPhoneFlag | Recency |
+| Active | Recency |
+| Unreachable | Recency |
+| Rank | Recency |
+| Email | Aggregation |
+| Type | Recency |
+| Email | Recency |
+| Domain | Recency |
+| DomainType | Recency |
+| Username | Recency |
+| ValidationStatus | Recency |
+| Active | Recency |
+| Rank | Recency |
+| WebsiteURL | Recency |
+| Address | Aggregation |
+| Communication | Aggregation |
+| Language | Recency |
+| Preferred | Recency |
+| EmploymentHistory | Aggregation |
+| EmployerName | Recency |
+| EmploymentType | Recency |
+| Title | Recency |
+| Department | Recency |
+| CurrentEmployee | Recency |
+| StartDate | Recency |
+| EndDate | Recency |
+| Commenters | Recency |
+
+## Location entity type survivorship groups
+
+This table identifies the SAP Reltio's velocity pack for Banking default survivorship group for the Location entity type.
+
+| Rule attribute | Strategy |
+| --- | --- |
+| AddressLine1 | Recency |
+| City | Recency |
+| StateProvince | Recency |
+| PostalCode | Recency |
+| PostalCode | Recency |
+| Zip5 | Recency |
+| Zip4 | Recency |
+| Country | Source system |
+| branchCode | Recency |
+| locationType | Recency |
+| branchManager | Recency |
+| hoursOfOperation | Recency |
+| status | Recency |
+| AddressInput | Recency |
+| AddressLine2 | Recency |
+| Street | Recency |
+| Locality | Recency |
+| DependentThoroughfare | Recency |
+| DoubleDependentLocality | Recency |
+| Neighborhood | Recency |
+| SuperAdministrativeArea | Recency |
+| AdministrativeArea | Recency |
+| SubAdministrativeArea | Recency |
+| County | Recency |
+| Premise | Recency |
+| Building | Recency |
+| SubBuilding | Recency |
+| Floor | Recency |
+| POBox | Recency |
+| Unit | Recency |
+| UnitName | Recency |
+| UnitValue | Recency |
+| postalCodeMatchKey | Recency |
+| ISO3166Alpha2 | Recency |
+| ISO3166Alpha3 | Recency |
+| ISO3166Numeric | Recency |
+| OrganizationName | Recency |
+| Unmatched | Recency |
+| GeoLocation | Recency |
+| Latitude | Recency |
+| Longitude | Recency |
+| GeoAccuracy | Recency |
+| Phone | Aggregation |
+| Type | Recency |
+| Number | Recency |
+| CountryCode | Recency |
+| FormattedNumber | Recency |
+| Extension | Recency |
+| AreaCode | Recency |
+| LocalNumber | Recency |
+| LineType | Recency |
+| ValidationStatus | Recency |
+| PrimaryPhoneFlag | Recency |
+| Active | Recency |
+| Unreachable | Recency |
+| Rank | Recency |
+| Commenters | Recency |
+
+## Application entity type survivorship groups
+
+This table identifies the SAP Reltio's velocity pack for Banking default survivorship group for the Application entity type.
+
+| Rule attribute | Strategy |
+| --- | --- |
+| applicationID | Source system |
+| internalApplicationID | Source system |
+| applicationType | Recency |
+| requestedProduct | Recency |
+| applicant | Recency |
+| organizationApplicant | Recency |
+| coApplicant | Recency |
+| submissionDate | Oldest Value |
+| decisionDate | Recency |
+| status | Value Based Priority |
+| decisionOutcome | Recency |
+| decisionReason | Recency |
+| requestedAmount | Recency |
+| approvedAmount | Recency |
+| requestedCurrency | Recency |
+| creditScoreAtApplication | Source system |
+| creditBureau | Recency |
+| submissionChannel | Recency |
+| assignedBanker | Recency |
+| servicingBranch | Recency |
+| loanPurpose | Recency |
+| collateralType | Recency |
+| collateralValue | Recency |
+| loanToValueRatio | Recency |
+| debtToIncomeRatio | Recency |
+| employmentStatus | Recency |
+| annualIncome | Recency |
+| applicationNotes | Recency |
+| expirationDate | Recency |
+| linkedAccount | Recency |
+| Commenters | Recency |
+
+## BeneficialOwner entity type survivorship groups
+
+This table identifies the SAP Reltio's velocity pack for Banking default survivorship group for the BeneficialOwner entity type.
+
+| Rule attribute | Strategy |
+| --- | --- |
+| ownershipID | Source system |
+| internalOwnershipID | Recency |
+| owner | Recency |
+| ownedEntity | Recency |
+| ownershipPercentage | Recency |
+| controlType | Recency |
+| effectiveDate | Oldest Value |
+| endDate | Recency |
+| ownershipStatus | Recency |
+| votingRights | Recency |
+| isUltimateBeneficialOwner | Recency |
+| ownershipSource | Recency |
+| filingReference | Recency |
+| filingDate | Recency |
+| ownershipNotes | Recency |
+| Identifiers | Aggregation |
+| scheme | Recency |
+| Value | Recency |
+| source | Recency |
+| verificationStatus | Value Based Priority |
+| verificationDate | Recency |
+| Commenters | Recency |
+
+## ControllingParty entity type survivorship groups
+
+This table identifies the SAP Reltio's velocity pack for Banking default survivorship group for the ControllingParty entity type.
+
+| Rule attribute | Strategy |
+| --- | --- |
+| ownershipID | Source system |
+| internalOwnershipID | Recency |
+| controllingParty | Recency |
+| controllingPartyOrganization | Recency |
+| controllingPartyName | Recency |
+| controlledEntity | Recency |
+| controlledEntityName | Recency |
+| controlPercentage | Recency |
+| controlMechanism | Recency |
+| controlType | Recency |
+| effectiveDate | Oldest Value |
+| expirationDate | Recency |
+| status | Recency |
+| sourceDocument | Recency |
+| regulatoryFilingReference | Recency |
+| notes | Recency |
+| isUltimateBeneficialOwner | Recency |
+| controlChainDepth | Recency |
+| verificationStatus | Value Based Priority |
+| verificationDate | Recency |
+| Commenters | Recency |
+
+## AccountHolder entity type survivorship groups
+
+This table identifies the SAP Reltio's velocity pack for Banking default survivorship group for the AccountHolder entity type.
+
+| Rule attribute | Strategy |
+| --- | --- |
+| authorizationID | Source system |
+| internalAuthorizationID | Recency |
+| role | Recency |
+| ownershipPercentage | Recency |
+| authorizationStatus | Value Based Priority |
+| effectiveDate | Oldest Value |
+| expirationDate | Recency |
+| revocationDate | Recency |
+| holder | Recency |
+| holderOrganization | Recency |
+| account | Recency |
+| holderName | Recency |
+| accountNumber | Recency |
+| taxReportingFlag | Recency |
+| beneficiaryDesignation | Recency |
+| authorizationSource | Recency |
+| authorizationDocumentID | Recency |
+| notes | Recency |
+| Commenters | Recency |
+
+## AuthorizedSigner entity type survivorship groups
+
+This table identifies the SAP Reltio's velocity pack for Banking default survivorship group for the AuthorizedSigner entity type.
+
+| Rule attribute | Strategy |
+| --- | --- |
+| authorizationID | Source system |
+| internalAuthorizationID | Recency |
+| signer | Recency |
+| account | Recency |
+| permissionLevel | Recency |
+| authorizationType | Recency |
+| transactionLimit | Recency |
+| dailyLimit | Recency |
+| effectiveDate | Oldest Value |
+| expirationDate | Recency |
+| status | Value Based Priority |
+| revocationDate | Recency |
+| revocationReason | Recency |
+| documentReference | Recency |
+| verificationStatus | Value Based Priority |
+| verificationDate | Recency |
+| verifiedBy | Recency |
+| nextReviewDue | Recency |
+| notes | Recency |
+| agentCompensated | Recency |
+| Commenters | Recency |
+
+## AccountToServicingBranch relationship type survivorship groups
+
+This table identifies the SAP Reltio's velocity pack for Banking default survivorship group for the AccountToServicingBranch relationship type.
+
+| Rule attribute | Strategy |
+| --- | --- |
+| AssignmentReason | Recency |
+| AssignmentDate | Recency |
+| EndDate | Recency |
+
+## IndividualToBanker relationship type survivorship groups
+
+This table identifies the SAP Reltio's velocity pack for Banking default survivorship group for the IndividualToBanker relationship type.
+
+| Rule attribute | Strategy |
+| --- | --- |
+| PersonalClientRepType | Recency |
+| RelationshipRank | Recency |
+| AssignmentDate | Recency |
+| EndDate | Recency |
+
+## OrganizationToBanker relationship type survivorship groups
+
+This table identifies the SAP Reltio's velocity pack for Banking default survivorship group for the OrganizationToBanker relationship type.
+
+| Rule attribute | Strategy |
+| --- | --- |
+| CommercialClientRepType | Recency |
+| RelationshipRank | Recency |
+| AssignmentDate | Recency |
+| EndDate | Recency |
+
+## IndividualToServicingBranch relationship type survivorship groups
+
+This table identifies the SAP Reltio's velocity pack for Banking default survivorship group for the IndividualToServicingBranch relationship type.
+
+| Rule attribute | Strategy |
+| --- | --- |
+| AssignmentReason | Recency |
+| AssignmentDate | Recency |
+| EndDate | Recency |
+
+## OrganizationToServicingBranch relationship type survivorship groups
+
+This table identifies the SAP Reltio's velocity pack for Banking default survivorship group for the OrganizationToServicingBranch relationship type.
+
+| Rule attribute | Strategy |
+| --- | --- |
+| AssignmentReason | Recency |
+| AssignmentDate | Recency |
+| EndDate | Recency |
+
+## BankerToHomeBranch relationship type survivorship groups
+
+This table identifies the SAP Reltio's velocity pack for Banking default survivorship group for the BankerToHomeBranch relationship type.
+
+| Rule attribute | Strategy |
+| --- | --- |
+| AssignmentReason | Recency |
+| AssignmentDate | Recency |
+| EndDate | Recency |
+
+## ApplicationToCoApplicant relationship type survivorship groups
+
+This table identifies the SAP Reltio's velocity pack for Banking default survivorship group for the ApplicationToCoApplicant relationship type.
+
+| Rule attribute | Strategy |
+| --- | --- |
+| CoApplicantRole | Recency |
+| LiabilityShare | Recency |
+| AddedDate | Recency |
+
+## ApplicationToAssignedBanker relationship type survivorship groups
+
+This table identifies the SAP Reltio's velocity pack for Banking default survivorship group for the ApplicationToAssignedBanker relationship type.
+
+| Rule attribute | Strategy |
+| --- | --- |
+| AssignmentRole | Recency |
+| AssignedDate | Recency |
+| UnassignedDate | Recency |
+
+## Dependent relationship type survivorship groups
+
+This table identifies the SAP Reltio's velocity pack for Banking default survivorship group for the Dependent relationship type.
+
+| Rule attribute | Strategy |
+| --- | --- |
+| DependencyType | Recency |
+| StartDate | Recency |
+| EndDate | Recency |
+
+## HouseholdHasAddress relationship type survivorship groups
+
+This table identifies the SAP Reltio's velocity pack for Banking default survivorship group for the HouseholdHasAddress relationship type.
+
+| Rule attribute | Strategy |
+| --- | --- |
+| AddressType | Recency |
+| Status | Recency |
+| AddressRank | Recency |
+| CareOf | Recency |
+
+## HouseholdMembership relationship type survivorship groups
+
+This table identifies the SAP Reltio's velocity pack for Banking default survivorship group for the HouseholdMembership relationship type.
+
+| Rule attribute | Strategy |
+| --- | --- |
+| MembershipRole | Recency |
+| StartDate | Recency |
+| EndDate | Recency |
+
+## IndividualHasAddress relationship type survivorship groups
+
+This table identifies the SAP Reltio's velocity pack for Banking default survivorship group for the IndividualHasAddress relationship type.
+
+| Rule attribute | Strategy |
+| --- | --- |
+| AddressType | Recency |
+| Status | Recency |
+| AddressRank | Recency |
+| CareOf | Recency |
+
+## OrganizationAffiliation relationship type survivorship groups
+
+This table identifies the SAP Reltio's velocity pack for Banking default survivorship group for the OrganizationAffiliation relationship type.
+
+| Rule attribute | Strategy |
+| --- | --- |
+| AffiliationType | Recency |
+| StartDate | Recency |
+| EndDate | Recency |
+
+## OrganizationHasAddress relationship type survivorship groups
+
+This table identifies the SAP Reltio's velocity pack for Banking default survivorship group for the OrganizationHasAddress relationship type.
+
+| Rule attribute | Strategy |
+| --- | --- |
+| AddressType | Recency |
+| Status | Recency |
+| AddressRank | Recency |
+| CareOf | Recency |
+
+## OrganizationHierarchy relationship type survivorship groups
+
+This table identifies the SAP Reltio's velocity pack for Banking default survivorship group for the OrganizationHierarchy relationship type.
+
+| Rule attribute | Strategy |
+| --- | --- |
+| OwnershipPercentage | Recency |
+| VotingRightsPercentage | Recency |
+| IndirectSubsidiary | Recency |
+| JointVenture | Recency |
+
+## Spouse relationship type survivorship groups
+
+This table identifies the SAP Reltio's velocity pack for Banking default survivorship group for the Spouse relationship type.
+
+| Rule attribute | Strategy |
+| --- | --- |
+| Anniversary | Recency |
+| EndDate | Recency |
+
+## LocationHasBranchManager relationship type survivorship groups
+
+This table identifies the SAP Reltio's velocity pack for Banking default survivorship group for the LocationHasBranchManager relationship type.
+
+| Rule attribute | Strategy |
+| --- | --- |
+| AssignmentDate | Recency |
+| EndDate | Recency |
+
+## BankerHasAddress relationship type survivorship groups
+
+This table identifies the SAP Reltio's velocity pack for Banking default survivorship group for the BankerHasAddress relationship type.
+
+| Rule attribute | Strategy |
+| --- | --- |
+| AddressType | Recency |
+| Status | Recency |
+| AddressRank | Recency |
+| CareOf | Recency |
+
+
+
+---
+
+# Validation functions for SAP Reltio's velocity pack for Banking
+
+> **Section:** Products > Reltio Multidomain Master Data Management (MDM) > Reltio Multidomain Master Data Management (MDM) at a glance > Reltio Multidomain Master Data Management (MDM) reference > Reltio Multidomain Master Data Management (MDM) velocity packs > SAP Reltio's velocity pack for Banking > Configurations for SAP Reltio's velocity pack for Banking
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/configurations-for-sap-reltios-velocity-pack-for-banking/validation-functions-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** how to configure validation functions in reltio, preconfigured validation functions for banking velocity pack, improve data quality with validation rules, check data accuracy in reltio mdm, configure validation functions in reltio console, validation functions, data quality, validation rules
+
+
+Learn what validation functions are preconfigured in entity types for SAP Reltio's velocity pack for Banking.
+
+The SAP Reltio's velocity pack for Banking data model includes validation functions for some entity types. Use validation functions to ensure data accuracy and improve data quality by checking data ingested into the Reltio platform against a set of validation functions defined for an entity type and then report the correctness of the data.
+
+For general information on validation functions, see [Define Data Validation Functions](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-operation/define-data-validation-functions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). For details on the preconfigured entity types that come with SAP Reltio's velocity pack for Banking, see [Entity types for SAP Reltio's velocity pack for Banking](https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/sap-reltios-velocity-pack-for-banking/data-model-for-sap-reltios-velocity-pack-for-banking/entity-types-for-sap-reltios-velocity-pack-for-banking?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+## Individual entity type validation functions
+
+This table identifies the SAP Reltio's velocity pack for Banking validation functions for the Individual entity type.
+
+| Attribute to validate | Description | Validation warning message |
+| --- | --- | --- |
+| `FirstName` | Reports an invalid format if FirstName doesn't match the criteria .*[0-9].*. | `First Name Contains Numbers` |
+| `Email.ValidationStatus` | Reports an invalid value for Email.ValidationStatus. | `Invalid Email Format` |
+| `Phone.ValidationStatus` | Reports an invalid value for Phone.ValidationStatus. | `Invalid Phone Number` |
+| `LastName` | Reports an invalid format if LastName doesn't match the criteria .*[0-9].*. | `Last Name Contains Numbers` |
+| `DoD` | Reports an invalid date order for DoD based on the configured rule. | `Date of birth is later than date of death` |
+| `FirstName` | Reports a missing value if FirstName is not provided. | `Missing First or Last Name` |
+| `DoB` | Reports an invalid value for DoB. | `Suspicious Date of Birth` |
+
+## Organization entity type validation functions
+
+This table identifies the SAP Reltio's velocity pack for Banking validation functions for the Organization entity type.
+
+| Attribute to validate | Description | Validation warning message |
+| --- | --- | --- |
+| `KeyFinancialFiguresOverview.Currency` | Reports an invalid format if KeyFinancialFiguresOverview.Currency doesn't match the criteria ^[A-Z]{3}$. | `Must be a 3-letter ISO 4217 code` |
+| `dunsNumber` | Reports an invalid format if dunsNumber doesn't match the criteria ^[0-9]{9}$. | `DUNS number must be 9 numeric digits` |
+| `Email.ValidationStatus` | Reports an invalid value for Email.ValidationStatus. | `Invalid Email Format` |
+| `lei` | Reports an invalid format if lei doesn't match the criteria ^[A-Z0-9]{20}$. | `LEI must be 20 uppercase alphanumeric characters` |
+| `Phone.ValidationStatus` | Reports an invalid value for Phone.ValidationStatus. | `Invalid Phone Number` |
+| `Name` | Reports an invalid format if Name doesn't match the criteria ^.{1,3}$. | `Suspiciously Short Name` |
+
+## Household entity type validation functions
+
+This table identifies the SAP Reltio's velocity pack for Banking validation functions for the Household entity type.
+
+| Attribute to validate | Description | Validation warning message |
+| --- | --- | --- |
+| `TotalHouseholdAssets.Currency` | Reports an invalid format if TotalHouseholdAssets.Currency doesn't match the criteria ^[A-Z]{3}$. | `Must be a 3-letter ISO 4217 code` |
+
+## FinancialAccount entity type validation functions
+
+This table identifies the SAP Reltio's velocity pack for Banking validation functions for the FinancialAccount entity type.
+
+| Attribute to validate | Description | Validation warning message |
+| --- | --- | --- |
+| `closingDate` | Reports an invalid date order for closingDate based on the configured rule. | `Account opening date is later than its closing date` |
+| `balances.currency` | Reports an invalid format if balances.currency doesn't match the criteria ^[A-Z]{3}$. | `Must be a 3-letter ISO 4217 code` |
+| `custodianBic` | Reports an invalid format if custodianBic doesn't match the criteria ^[A-Z]{4}[A-Z]{2}[A-Z0-9]{2}([A-Z0-9]{3})?$. | `BIC must be 8 or 11 characters (ISO 9362)` |
+| `Identifiers.Value` | Reports an invalid format if Identifiers.Value doesn't match the criteria ^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$. | `IBAN must match ISO 13616 format (15-34 characters)` |
+| `settlementCurrency` | Reports an invalid format if settlementCurrency doesn't match the criteria ^[A-Z]{3}$. | `Must be a 3-letter ISO 4217 code` |
+
+## Product entity type validation functions
+
+This table identifies the SAP Reltio's velocity pack for Banking validation functions for the Product entity type.
+
+| Attribute to validate | Description | Validation warning message |
+| --- | --- | --- |
+| `currency` | Reports an invalid format if currency doesn't match the criteria ^[A-Z]{3}$. | `Must be a 3-letter ISO 4217 code` |
+| `discontinuedDate` | Reports an invalid date order for discontinuedDate based on the configured rule. | `Product effective date is later than its discontinued date` |
+
+## Banker entity type validation functions
+
+This table identifies the SAP Reltio's velocity pack for Banking validation functions for the Banker entity type.
+
+| Attribute to validate | Description | Validation warning message |
+| --- | --- | --- |
+| `terminationDate` | Reports an invalid date order for terminationDate based on the configured rule. | `Hire date is later than the termination date` |
+
+## Location entity type validation functions
+
+This table identifies the SAP Reltio's velocity pack for Banking validation functions for the Location entity type.
+
+| Attribute to validate | Description | Validation warning message |
+| --- | --- | --- |
+| `GeoLocation.Latitude` | Reports an invalid date order for GeoLocation.Latitude based on the configured rule. | `Latitude is greater than 90 degrees` |
+| `GeoLocation.Latitude` | Reports an invalid value for GeoLocation.Latitude. | `Latitude is less than -90 degrees` |
+| `GeoLocation.Longitude` | Reports an invalid date order for GeoLocation.Longitude based on the configured rule. | `Longitude is greater than 180 degrees` |
+| `GeoLocation.Longitude` | Reports an invalid value for GeoLocation.Longitude. | `Longitude is less than -180 degrees` |
+
+## Application entity type validation functions
+
+This table identifies the SAP Reltio's velocity pack for Banking validation functions for the Application entity type.
+
+| Attribute to validate | Description | Validation warning message |
+| --- | --- | --- |
+| `decisionReason` | Reports an invalid value for decisionReason. | `Declined applications must record a decisionReason` |
+| `requestedCurrency` | Reports an invalid format if requestedCurrency doesn't match the criteria ^[A-Z]{3}$. | `Must be a 3-letter ISO 4217 code` |
+
+## BeneficialOwner entity type validation functions
+
+This table identifies the SAP Reltio's velocity pack for Banking validation functions for the BeneficialOwner entity type.
+
+| Attribute to validate | Description | Validation warning message |
+| --- | --- | --- |
+| `endDate` | Reports an invalid date order for endDate based on the configured rule. | `Ownership effective date is later than its end date` |
+| `ownershipPercentage` | Reports an invalid value for ownershipPercentage. | `Ownership percentage must be 0 or higher` |
+| `ownershipPercentage` | Reports an invalid date order for ownershipPercentage based on the configured rule. | `Ownership percentage must be between 0 and 100` |
+| `isUltimateBeneficialOwner` | Reports an invalid value for isUltimateBeneficialOwner. | `UBO flag set below the 25% threshold on this stake alone with no qualifying control type — confirm the designation, including whether the party's other holdings in this company take the total above it` |
+| `votingRights` | Reports an invalid value for votingRights. | `Voting rights must be 0 or higher` |
+| `votingRights` | Reports an invalid date order for votingRights based on the configured rule. | `Voting rights must be between 0 and 100` |
+
+## ControllingParty entity type validation functions
+
+This table identifies the SAP Reltio's velocity pack for Banking validation functions for the ControllingParty entity type.
+
+| Attribute to validate | Description | Validation warning message |
+| --- | --- | --- |
+| `controlChainDepth` | Reports an invalid value for controlChainDepth. | `Control chain depth cannot be negative` |
+| `expirationDate` | Reports an invalid date order for expirationDate based on the configured rule. | `Control record effective date is later than its expiration date` |
+| `controlPercentage` | Reports an invalid value for controlPercentage. | `Control percentage must be 0 or higher` |
+| `controlPercentage` | Reports an invalid date order for controlPercentage based on the configured rule. | `Control percentage must be between 0 and 100` |
+| `controllingPartyOrganization` | Reports an invalid value for controllingPartyOrganization. | `Both controllingParty and controllingPartyOrganization are set — a control record names one party, not two` |
+| `controllingParty` | Reports a missing value if controllingParty is not provided. | `Supply either controllingParty (Individual) or controllingPartyOrganization (Organization)` |
+| `controlChainDepth` | Reports an invalid date order for controlChainDepth based on the configured rule. | `Control type is DIRECT but the chain depth counts intermediary entities — correct one or the other` |
+| `controlChainDepth` | Reports an invalid value for controlChainDepth. | `Control type is INDIRECT but the chain depth records no intermediary entities — correct one or the other` |
+| `isUltimateBeneficialOwner` | Reports an invalid value for isUltimateBeneficialOwner. | `An ultimate beneficial owner is a natural person — clear isUltimateBeneficialOwner or name an Individual in controllingParty` |
+
+## AccountHolder entity type validation functions
+
+This table identifies the SAP Reltio's velocity pack for Banking validation functions for the AccountHolder entity type.
+
+| Attribute to validate | Description | Validation warning message |
+| --- | --- | --- |
+| `expirationDate` | Reports an invalid date order for expirationDate based on the configured rule. | `Account holding effective date is later than its expiration date` |
+| `holder` | Reports a missing value if holder is not provided. | `Supply either holder (Individual) or holderOrganization (Organization)` |
+| `ownershipPercentage` | Reports an invalid value for ownershipPercentage. | `Ownership percentage must be 0 or higher` |
+| `ownershipPercentage` | Reports an invalid date order for ownershipPercentage based on the configured rule. | `Ownership percentage must be between 0 and 100` |
+
+## AuthorizedSigner entity type validation functions
+
+This table identifies the SAP Reltio's velocity pack for Banking validation functions for the AuthorizedSigner entity type.
+
+| Attribute to validate | Description | Validation warning message |
+| --- | --- | --- |
+| `expirationDate` | Reports an invalid date order for expirationDate based on the configured rule. | `Signing authority effective date is later than its expiration date` |
 
 
 
@@ -73789,9 +78316,7 @@ Body:
 
 ## Interaction permissions
 
-Use RBAC to manage access to interaction types and corresponding attributes. Interaction permissions ensures that users can view and manage only the interaction data that their role permits, while protecting sensitive information from unauthorized access.
-
-Use the [Set Permissions](#metadatasecurity/setpermissions) endpoint to configure access for interaction types and interaction attributes.
+Use RBAC to manage access to interaction types and corresponding attributes. Interaction permissions ensure that users can view and manage only the interaction data that their roles permit, whether Reltio retrieves the interactions from tenant storage or through [Zero Copy Integration](https://docs.reltio.com/en/applications/data-integrations/zero-copy-integration-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 The following table lists the supported permissions.
 
@@ -73799,6 +78324,10 @@ The following table lists the supported permissions.
 | --- | --- |
 | Interaction types | - `READ`: View interactions of the specified type. - `CREATE`: Create interactions of the specified type. - `DELETE`: Delete interactions of the specified type. |
 | Interaction attributes | - `READ`: View the attribute and its value. - `READ_MASKED`: View the attribute with its value masked. - `CREATE`: Create the attribute when creating an interaction. |
+
+When Reltio uses Zero Copy data to display a profile or evaluate a segment, it checks permissions for the entity type and attributes involved. Reltio returns or masks entity attributes according to the configured `READ` and `READ_MASKED` permissions.
+
+When Reltio creates an interaction, Reltio checks that you have `READ` access for each [member](https://docs.reltio.com/en/developer-resources/interaction-management-apis/interaction-apis-at-a-glance/interactions-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). For a member identified by `objectURI` or crosswalk, Reltio checks that you have `READ` access to the member's entity type. For a member resolved through `attributeMapping`, Reltio checks that you have `READ` access to the mapped entity attribute. If you lack `READ` access to any member, Reltio rejects the interaction. Use [Set Permissions](#metadatasecurity/setpermissions) to grant `READ` access to the entity types and entity attributes of the members for the roles that create interactions.
 
 ## Securing an interaction type
 
@@ -73864,7 +78393,7 @@ POST {env_uri}/reltio/permissions/{tenant}
 
 ## Interaction permissions for segment rules
 
-A segment rule references entity types, interaction types, and their attributes. When you create or run a segment, Reltio requires `READ` access to every entity type, interaction type, and attribute referenced in the rule.
+A segment rule references entity types, interaction types, and their attributes. Before Reltio evaluates or saves a segment, it checks `READ` access to every entity type, interaction type, and attribute referenced in the rule. Reltio checks READ access to the referenced types and attributes whether the rule uses data from tenant storage or data retrieved through [Zero Copy Integration](https://docs.reltio.com/en/applications/data-integrations/zero-copy-integration-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 Reltio checks these references:
 
@@ -95721,6 +100250,7 @@ The wildcard (*) means you can combine multiple conditions with the logical oper
 | `regexp` | `regexp(attributes.Identifiers.ID, value)`: This condition type is passed if `attributes.Identifiers.ID` satisfies a regular expression (case sensitive). | Filter by first name: `filter=regexp(attributes.Name, 'Mat.*')` |
 | `insideCategoryTree` | `insideCategoryTree(category, <category URI>)`: This condition type filters all entities that have a category inside the category tree specified by `category URI`. By being inside the category tree, it implies that the entity belongs to the specified category or to any child category of the specified category. | Filter by `category URI`: `filter=insideCategorytree(category, <category URI>)` |
 | `changes` | `changes(attribute)`: This condition type matches the changes for a specific attribute. This condition type is used in the entity history operation and on data streams with : This condition type matches the changes for a specific attribute. This condition type is used in the entity history operation and on data streams with `DELTAS` or or `SNAPSHOT_WITH_DELTA` payload type.payload type.**Note:** The behavior of the `changes()` operator depends on both the payload type and the argument structure used in the filter expression. If the payload type is `DELTAS`, only the `changes()` operator is supported. Other operators, such as `equals`, `lt`, and `gt`, are not supported because DELTAS only provides information about modifications, not the full entity state.If you need additional filtering flexibility, use `SNAPSHOT_WITH_DELTA`.Some event types, such as `ENTITY_CREATED` and `RELATIONSHIP_CREATED`, do not generate a `delta` collection. These events will be excluded when using forms of `changes()` that depend on the presence of a delta. You can use different argument formats in `changes()`: `changes(attributes.Name)` — checks for the attribute in the full object.`changes(attributes)` — checks for any attribute in the full object.`changes(delta.attributes.Name)` — checks for the attribute in the delta. Events without a delta collection (like `ENTITY_CREATED`) are excluded.`changes(configuration/entityTypes/HCP/attributes/Name)` — checks for the attribute in the delta; if there isn't a delta, searches the full object.`changes(configuration/entityTypes/HCP/attributes)` — checks for any attribute in the delta. Events without a delta collection are excluded. | Filter historical events with changes of the first name attribute made by 'test.user': `filter= changes(configuration/entityTypes/HCP/attributes/FirstName) and equals(user, 'test.user')` |
+| `hasDelta` | `hasDelta(property)`: This condition type checks for the existence of : This condition type checks for the existence of `property` on the delta collection. This condition type is used on data streams with on the delta collection. This condition type is used on data streams with `DELTAS` or or `SNAPSHOT_WITH_DELTA` payload types; using it with any other payload type returns a validation error.payload types; using it with any other payload type returns a validation error.**Note:** Unlike `changes()`, `hasDelta()` can query all event types. It resolves either `oldValue` or `newValue` depending on the delta type, so event types that contain only one of the two are queried on whichever value is present. When both values are present, `newValue` takes precedence.You can use the same argument formats in `hasDelta()` as in as in `changes()`: : - `hasDelta(attributes.Name)` — checks for the property in the full object. - `hasDelta(delta.attributes.Name)` — checks for the property in the delta. - `hasDelta(configuration/entityTypes/HCP/attributes/Name)` — checks for the property in the delta; if there isn't a delta, searches the full object. | Filter historical events that have a delta for the first name attribute, regardless of event type: `filter=hasDelta(configuration/entityTypes/HCP/attributes/FirstName)` |
 | `not` | This operator negates a condition and can be used with other operators. | Filter all entities with the `Association_Status` attribute that do not start with `TEMP_`: `filter=not(startsWith(attributes.Association_Status, 'TEMP_'))` |
 
 > **Note:** Consider the following points when using the condition types:
@@ -116573,6 +121103,14 @@ The following request headers must be included.
 | --- | --- | --- |
 | `Authorization` | `Bearer <token>` | Yes |
 
+## Query parameters
+
+The following table describes the query parameters and their values.
+
+| Parameter | Type | Required | Description | Accepted values / Default |
+| --- | --- | --- | --- | --- |
+| `options` | String | No | Controls whether the connections in the request are validated against the structural rules configured for the hierarchy type. If you omit this option, the operation validates the requested connections and returns an error if any of them violate a structural rule. Existing structural rule violations elsewhere in the hierarchy don't prevent the requested connections from being created. | `ignoreValidation` skips structural validation. By default, validation is performed. |
+
 ## Request body
 
 The request body is a JSON array of connection definition objects.
@@ -116707,6 +121245,14 @@ The following request headers must be included.
 | Header | Value | Required |
 | --- | --- | --- |
 | `Authorization` | `Bearer <token>` | Yes |
+
+## Query parameters
+
+The following table describes the query parameters and their values.
+
+| Parameter | Type | Required | Description | Accepted values / Default |
+| --- | --- | --- | --- | --- |
+| `options` | String | No | Controls whether the connections in the request are validated against the structural rules configured for the hierarchy type. If you omit this option, the operation validates the requested connections and returns an error if any of them violate a structural rule. | `ignoreValidation` skips structural validation. By default, validation is performed. |
 
 ## Request body
 
@@ -116888,6 +121434,14 @@ The following request headers must be included.
 | --- | --- | --- |
 | `Authorization` | `Bearer <token>` | Yes |
 
+## Query parameters
+
+The following table describes the query parameters and their values.
+
+| Parameter | Type | Required | Description | Accepted values / Default |
+| --- | --- | --- | --- | --- |
+| `options` | String | No | Controls whether the connections in the request are validated against the structural rules configured for the hierarchy type. If you omit this option, the operation validates the requested connections and returns an error if any of them violate a structural rule. | `ignoreValidation` skips structural validation. By default, validation is performed. |
+
 ## Request body
 
 The request body is a JSON array of connection definition objects.
@@ -117045,6 +121599,14 @@ The following request headers must be included.
 | --- | --- | --- |
 | `Authorization` | `Bearer <token>` | Yes |
 
+## Query parameters
+
+The following table describes the query parameters and their values.
+
+| Parameter | Type | Required | Description | Accepted values / Default |
+| --- | --- | --- | --- | --- |
+| `options` | String | No | Controls whether the connections in the request are validated against the structural rules configured for the hierarchy type. If you omit this option, the operation validates the requested connections and returns an error if any of them violate a structural rule. Existing structural rule violations elsewhere in the hierarchy don't prevent the requested connections from being deleted. | `ignoreValidation` skips structural validation. By default, validation is performed. |
+
 ## Request body
 
 The request body is a JSON array of connection definition objects.
@@ -117075,7 +121637,7 @@ The following table describes the fields returned in the response body, which is
 | Field | Type | Description |
 | --- | --- | --- |
 | `connectionId` | String | The connection ID for the deleted connection. |
-| `status` | String | The result of the delete operation. The documented value is `DELETED`. |
+| `status` | String | The result of the delete operation. |
 
 ## Example response
 
@@ -117515,6 +122077,7 @@ The following table describes the fields returned in the response body.
 | `selected` | Boolean | Optional. Indicates whether this is the object specified in the request. Default: `false`. |
 | `connectionId` | String | The connection ID between the object and its parent. For the root object, this value is `null`. |
 | `children` | Array of objects | The list of child nodes. Each child repeats the same response structure recursively. |
+| `validationViolations` | Array of strings | [Optional] Lists the violations of the hierarchy type's structural rules that were detected for this child object. This field is present only when at least one rule is violated. For more information, see [Structural validation messages for materialized hierarchy](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/structural-validation-messages-for-materialized-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). Example: `["parent has multiple children of type HCO when it's allowed to have only 1"]`. |
 
 ## Example response
 
@@ -117812,6 +122375,7 @@ The following table describes the fields returned in the response body.
 | `selected` | Boolean | Optional. Indicates whether this is the object specified in the request. |
 | `connectionId` | String | The connection ID between the object and its parent. For the root object, this value is `null`. |
 | `children` | Array of objects | The list of child nodes. Each child repeats the same response structure recursively. |
+| `validationViolations` | Array of strings | [Optional] Lists the violations of the hierarchy type's structural rules that were detected for this child object. This field is present only when at least one rule is violated. For more information, see [Structural validation messages for materialized hierarchy](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/structural-validation-messages-for-materialized-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). Example: `["parent has multiple children of type HCO when it's allowed to have only 1"]`. |
 
 ## Example response
 
@@ -118232,6 +122796,7 @@ The following table describes the fields returned in the response body.
 | `hasMoreChildren` | Boolean | Indicates whether the child object has more children than are returned in the current view. |
 | `hasManyParents` | Boolean | Optional. Indicates whether the child object has multiple parents. Default: `false`. |
 | `connectionId` | String | The connection ID between the requested object and this child object. |
+| `validationViolations` | Array of strings | [Optional] Lists the violations of the hierarchy type's structural rules that were detected for this child object.. This field is present only when at least one rule is violated. For more information, see [Structural validation messages for materialized hierarchy](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/structural-validation-messages-for-materialized-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). Example: `["parent has multiple children of type HCO when it's allowed to have only 1"]`. |
 
 ## Example response
 
@@ -118245,6 +122810,7 @@ The following example shows the response body.
     "label": "Child 1",
     "hasMoreChildren": true,
     "connectionId": "objectToChild1Id"
+ 	
   },
   {
     "entityId": "child2Id",
@@ -118335,6 +122901,7 @@ The following table describes the fields returned in the response body.
 | `hasMoreChildren` | Boolean | Indicates whether the parent object has additional child objects. |
 | `hasManyParents` | Boolean | Optional. Indicates whether the parent object has multiple parents. Default: `false`. |
 | `connectionId` | String | The connection ID between the requested object and this parent object. |
+| `validationViolations` | Array of strings | [Optional] Lists the violations of the hierarchy type's structural rules that were detected for this child object. This field is present only when at least one rule is violated. For more information, see [Structural validation messages for materialized hierarchy](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/structural-validation-messages-for-materialized-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). Example: `["parent has multiple children of type HCO when it's allowed to have only 1"]`. |
 
 ## Example response
 
@@ -118927,6 +123494,51 @@ The following example shows the response body.
 **Related links**
 
 - [Materialized Hierarchy Management APIs](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+
+
+---
+
+# Structural validation messages for materialized hierarchy
+
+> **Section:** Developer resources > Materialized Hierarchy Management APIs > Materialized Hierarchy Management APIs
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/structural-validation-messages-for-materialized-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** hierarchy validation violation messages, structural hierarchy validation, validationViolations response field, hierarchy cardinality errors, hierarchy parent child validation
+
+
+Learn more about structural validation violation messages for materialized hierarchies.
+
+Hierarchy read APIs can return a `validationViolations` array for an object that violates the structural rules configured for its hierarchy type. Each array item describes a violation of a parent, child, or child-cardinality rule.
+
+For information about configuring these rules, see [Configure tenant business settings for hierarchy](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/configure-tenant-business-settings-for-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+## Message templates
+
+The following table lists each validation message template with the reason and condition that produce it.
+
+| Reason | Condition | Message template |
+| --- | --- | --- |
+| Entity type cannot be a child | The entity type has `canBeChild: false`. | `entity type {entityType} is not allowed to act as a child under hierarchy type {hierarchyTypeUri}` |
+| Entity type cannot be a parent | The entity type has `canBeParent: false`. | `entity type {entityType} is not allowed to act as a parent under hierarchy type {hierarchyTypeUri}` |
+| Child type is not allowed | A parent has one or more children of a type whose cardinality is `0`. | `parent has {count} children of type {childType}, when it's not allowed to have any` |
+| Too many children for an at-most-one rule | A parent has more than one child of a type whose cardinality is `1-`. | `parent has multiple children of type {childType}, when it's allowed to have only 1` |
+| Too many children for an exactly-one rule | A parent has more than one child of a type whose cardinality is `1`. | `parent has multiple children of type {childType}, when it's allowed to have only 1` |
+| Missing child for an exactly-one rule | A parent has no children of a type whose cardinality is `1`. | `parent has no children of type {childType}, when exactly 1 is required` |
+| Missing child for an at-least-one rule | A parent has no children of a type whose cardinality is `1+`. | `parent has no children of type {childType}, when at least 1 is required` |
+
+## Message placeholders
+
+The following placeholders in the message templates are replaced with values from the violation.
+
+| Placeholder | Description |
+| --- | --- |
+| `{entityType}` | Entity type that isn't permitted to be a parent or child. |
+| `{hierarchyTypeUri}` | URI of the hierarchy type associated with the violated rule. |
+| `{count}` | Number of children found for a parent-child type pairing that isn't allowed. |
+| `{childType}` | Entity type of the children involved in the cardinality violation. |
 
 
 
@@ -137011,7 +141623,11 @@ Learn more about how to create interactions in Reltio Platform.
 
 Reltio Intelligent 360
 
-Use `Interactions API` to create interactions in Reltio Platform. Specify interaction members by `objectURI`, `crosswalk`, or `attributeMapping`. Review the [Interactions API](https://docs.reltio.com/en/developer-resources/interaction-management-apis/interaction-apis-at-a-glance/interactions-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) overview to understand the interaction object structure before making requests.
+The `Interactions API` creates interactions in Reltio Platform. Specify interaction members by `objectURI`, `crosswalk`, or `attributeMapping`. Review the [Interactions API](https://docs.reltio.com/en/developer-resources/interaction-management-apis/interaction-apis-at-a-glance/interactions-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) overview to understand the interaction object structure before making requests.
+
+When you create an interaction, Reltio checks that you have `READ` access to each member. For a member identified by `objectURI` or crosswalk, Reltio checks that you have `READ` access to the member's entity type. For a member resolved through `attributeMapping`, Reltio checks that you have `READ` access to the mapped entity attribute.
+
+If you lack `READ` access to any member, Reltio rejects the interaction. Use the [Set Permissions](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/configuration-api/role-based-security/metadata-security?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) endpoint to grant READ access to the members for the roles that create interactions.
 
 ## HTTP method and endpoint
 
@@ -272171,6 +276787,7 @@ The following table describes how materialized hierarchies are updated when enti
 | The entities have conflicting hierarchy metadata | The winning entity's hierarchy metadata takes precedence, including labels, localized labels, display information, and ordering-related metadata. |
 | The entities have conflicting inherited attribute rules | Inherited attributes and attribute applicability are recalculated using the winning entity's final position. The losing entity's inherited context no longer applies. |
 | The merged entity is a hierarchy root | The winning entity becomes the surviving root entity. If the merge would create a cycle, Reltio does not apply the hierarchy remap. |
+| The winning and losing entities belong to the same hierarchy | Only the winning entity remains as a hierarchy node after the merge. Connections from the winning and losing entities are combined under the winner, and the crosswalks of those connections are retained for split processing. |
 
 ## Unmerge scenarios
 
@@ -272184,6 +276801,8 @@ The following table describes how a materialized hierarchy is updated when a con
 | Child nodes originated from the losing entity | Source or crosswalk information identifies child nodes that originated from the losing entity. Those nodes move back to the restored entity, while child nodes that originated from the winner remain with the winner. If ownership cannot be determined, the subtree remains with the winner. |
 | The unmerged entity has effective dates | Historical temporal information is used to restore the split entity's effective dates. If this information is unavailable, the restored entity uses the winning entity's current effective dates. |
 | The unmerged entity was a hierarchy root | Root-level unmerge is not automatically restorable. The root entity is not returned to its previous hierarchy placement. |
+| Stored parent and child crosswalk pairs resolve to different entities | During a split, the stored parent and child crosswalks determine the final entity for each connection. If the crosswalk pairs resolve to different entities, the split can create multiple connections, multiple nodes, or both. |
+| Restored connections form disconnected trees | If split processing results in disconnected trees, the main connected tree remains in the original hierarchy. Each detached tree becomes a separate hierarchy with a unique name, such as `Hierarchy Name - 2`. |
 
 ## Unlink and delete scenarios
 
@@ -272210,7 +276829,7 @@ The following table describes how unlink and delete operations affect materializ
 
 Learn more about the tenant business configuration settings used to define hierarchy types and control which entity types can use them.
 
-Define hierarchy types in tenant business configuration so they are available for use in the tenant. To enable hierarchy for an entity type, add a `hierarchyTypes` section to the tenant business configuration. Each hierarchy type entry can include a URI, a label, and a list of allowed entity types.
+Define hierarchy types in tenant business configuration so they are available for use in the tenant. To enable hierarchy for an entity type, add a `hierarchyTypes` section to the tenant business configuration. Each hierarchy type entry can include a URI, a label, a list of allowed entity types and structural validation rules.
 
 Use `allowedEntityTypes` to restrict a hierarchy type to specific existing entity types. If `allowedEntityTypes` is not provided, the hierarchy type can use entities from any entity type.
 
@@ -272225,6 +276844,7 @@ A hierarchy type includes the following fields:
 | `uri` | URI of the hierarchy type. This value must use the pattern `configuration/hierarchyTypes/{{HierarchyTypeName}}`. |
 | `label` | Label of the hierarchy type used in the UI. This field is optional. |
 | `allowedEntityTypes` | List of entity type URIs that can use the hierarchy type. This field is optional. If this field is omitted, the hierarchy type can use any entity type. |
+| entityType | [Optional] Maps entity type URIs to structural validation rules. For each entity type, you can specify whether it can be a parent or child and the number of children allowed for specified entity types. If an entity type does not have an entry and does not inherit an entry from another entity type,, no restrictions apply to its parent or child role or to the number of children it can have. |
 
 ## Business configuration example
 
@@ -272233,21 +276853,48 @@ The following example shows a `hierarchyTypes` section in tenant business config
 ```
 "hierarchyTypes": [
   {
-    "uri": "configuration/hierarchyTypes/CommonHierarchy"
-  },
-  {
-    "uri": "configuration/hierarchyTypes/LocationHierarchy",
+    "uri": "configuration/hierarchyTypes/CommonHierarchy",
+    "label": "Common Hierarchy",
     "allowedEntityTypes": [
-      "configuration/entityTypes/Location"
-    ]
-  },
-  {
-    "uri": "configuration/hierarchyTypes/EntityHierarchy",
-    "label": "Hierarchy type for Entity",
-    "allowedEntityTypes": [
-      "configuration/entityTypes/HCP",
-      "configuration/entityTypes/HCO"
-    ]
+      "configuration/entityTypes/Catalog",
+      "configuration/entityTypes/Category",
+      "configuration/entityTypes/Product",
+      "configuration/entityTypes/SKU"
+    ],
+    "entityType": {
+      "configuration/entityTypes/Catalog": {
+        "canBeParent": true,
+        "canBeChild": false,
+        "cardinalityChildren": {
+          "configuration/entityTypes/Catalog": "0",
+          "configuration/entityTypes/Category": "1+",
+          "configuration/entityTypes/Product": "0",
+          "configuration/entityTypes/SKU": "0"
+        }
+      },
+      "configuration/entityTypes/Category": {
+        "canBeParent": true,
+        "canBeChild": true,
+        "cardinalityChildren": {
+          "configuration/entityTypes/Catalog": "0",
+          "configuration/entityTypes/SKU": "0"
+        }
+      },
+      "configuration/entityTypes/Product": {
+        "canBeParent": true,
+        "canBeChild": true,
+        "cardinalityChildren": {
+          "configuration/entityTypes/Catalog": "0",
+          "configuration/entityTypes/Category": "0",
+          "configuration/entityTypes/Product": "0",
+          "configuration/entityTypes/SKU": "1+"
+        }
+      },
+      "configuration/entityTypes/SKU": {
+        "canBeParent": false,
+        "canBeChild": true
+      }
+    }
   }
 ]
 ```
@@ -272258,6 +276905,72 @@ When `hierarchyTypes` entries with the same `uri` are inherited, the values are 
 
 - `label` from L3 overrides the inherited value.
 - `allowedEntityTypes` is merged from L2 and L3.
+
+## Structural validation rules
+
+The optional `entityType` map defines structural rules for entities in this hierarchy type. Each entry maps an entity type URI to its `canBeParent`, `canBeChild`, and `cardinalityChildren` settings for that entity type.
+
+If an entity type is included in `allowedEntityTypes` but does not have an `entityType` entry and does not inherit an entry from another entity type, no parent, child, or child-cardinality restrictions apply.
+
+For the messages that hierarchy read APIs return when a hierarchy connection violates these rules., see [Structural validation messages for materialized hierarchy](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/structural-validation-messages-for-materialized-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+**Parent and child permissions**
+
+The following fields control whether an entity type can be a parent or child in a hierarchy connection.
+
+| Field | Type | Default | Description |
+| --- | --- | --- | --- |
+| `canBeParent` | Boolean | `true` | Determines whether entities of this type can be parents. |
+| `canBeChild` | Boolean | `true` | Determines whether entities of this type can be children. |
+
+Specify these fields only when you want to restrict whether the entity type can be a parent or child.
+
+**Child cardinality**
+
+The `cardinalityChildren` map defines the number of children allowed or required for each child entity type. Each key is a child entity type URI. The value is one of the following tokens.
+
+| Token | Description |
+| --- | --- |
+| `0` | The parent-child type pairing is not allowed. |
+| `0+` | Any number of children is allowed. This is the implicit default. |
+| `1-` | At most one child is allowed. |
+| `1` | Exactly one child is required. |
+| `1+` | At least one child is required. |
+
+If an allowed child entity type isn't included in the parent's `cardinalityChildren` map, it is treated as `0+`.
+
+.The business configuration is rejected if `cardinalityChildren` contains a value other than these tokens.
+
+**Entity-type inheritance**
+
+An `entityType` entry applies to the named entity type and its subtypes unless a subtype has its own entry.
+
+For example, a rule defined for `Individual` also applies to its `HCP` and `Contact` subtypes. If `HCP` has its own entry, an HCP entity uses that entry instead of the `Individual` entry.
+
+An entity type uses its own entityType entry if it has one. Otherwise, it uses the entry of the nearest entity type it inherits from.
+
+**Configuration validation**
+
+The business configuration is rejected if any of the following conditions applies:
+
+- 
+
+  An entity type referenced by `entityType` or `cardinalityChildren` does not exist.
+- 
+
+  A referenced entity type is not in `allowedEntityTypes` and is not a subtype of an allowed entity type. This condition does not apply when `allowedEntityTypes` is omitted or empty.
+- 
+
+  An entry with `canBeParent: false` defines a nonempty `cardinalityChildren` map.
+- 
+
+  .A `cardinalityChildren` map lists an entity type that has `canBeChild: false` with a value other than 0.
+- 
+
+  Required cardinality relationships (`1` or `1+`) form a cycle. For example, For example, an entity type requires itself as a child, or two entity types require each other as children.
+- 
+
+  An `entityType` or `cardinalityChildren` map contains he number of children allowed or required for each child entity type. For the supported values, see [Child cardinality](#reference-2695/1234).
 
 
 
