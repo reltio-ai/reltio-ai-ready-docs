@@ -1,5 +1,5 @@
 # Reltio Documentation Index
-_Generated: 2026-10-07 02:27 UTC — 3665 topics (3610 unique)_
+_Generated: 2026-10-09 02:28 UTC — 3665 topics (3610 unique)_
 
 This file is a structured navigation index of the Reltio documentation portal.
 It contains the full parent-child hierarchy, topic URLs, keywords, summaries,
@@ -11460,12 +11460,12 @@ _Topics in this section: Reltio Model Context Protocol (MCP) Server at a glance,
 - **Summary:** Overview of the Crosswalk Dates APIs.
 - **See also:** [Get Source Publish Date for Source System](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/configuration-api/get-source-publish-date-for-source-system?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Set Source Publish Date for Source System](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/configuration-api/set-source-publish-date-for-source-system?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
-#### Delete a Source System
+#### Delete a source system
 
 - **URL:** https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/configuration-api/delete-a-source-system?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > System Administration APIs > System Administration APIs at a glance > Configuration API
 - **Summary:** Learn how to delete an existing source system in a configuration.
-- **See also:** [Get Task by ID for Tenant](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/get-task-by-id-for-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **Keywords:** how to delete source system, delete source system configuration, purge source type attributes, remove source system crosswalks, use purge all data, schedule source purge task, delete inherited source type, crosswalks, purge, configuration
 
 #### GET Configuration
 

@@ -1,6 +1,6 @@
 # Reltio Documentation
 
-_Generated: 2026-10-07 02:27 UTC_
+_Generated: 2026-10-09 02:28 UTC_
 
 _Topics: 3794_
 
@@ -2875,6 +2875,12 @@ For sign-in steps, see [Sign in to Reltio Docs for You](https://docs.reltio.com/
 - 
 
   **Get your guide**: a personalized guide, formatted for your learning style, that you can download as Markdown or print as a PDF.
+
+## Watch how Reltio Docs for You works
+
+The following video demonstrates how to sign in to **Reltio Docs for You**, answer the four questions about your role, goal, learning style, and experience with Reltio, and generate a personalized guide. It also shows what a finished guide contains, including key term definitions, links to the source topics, and the section on questions the guide doesn't answer.
+
+*Video: v-docs-for-you-app-demo.mp4*
 
 ## Limitations
 
@@ -79998,74 +80004,149 @@ This table lists the metadata properties for an entity type that you can configu
 
 ---
 
-# Delete a Source System
+# Delete a source system
 
 > **Section:** Developer resources > System Administration APIs > System Administration APIs at a glance > Configuration API
 
 
 **Source:** https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/configuration-api/delete-a-source-system?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
+**Keywords:** how to delete source system, delete source system configuration, purge source type attributes, remove source system crosswalks, use purge all data, schedule source purge task, delete inherited source type, crosswalks, purge, configuration
+
 
 Learn how to delete an existing source system in a configuration.
 
-You can delete the source system by posting a request. The response returns a JSON that displays the attributes of the removed source type and the result of the deletion request.
+Use the Delete a source system operation to remove a source type's data, crosswalks, and configuration from a tenant. The `option` query parameter determines whether the operation deletes only attribute values or also deletes crosswalks and the source type definition. When the deletion requires processing existing records, Reltio schedules a background task and returns its identifiers so you can track progress.
 
-## Request
+> **Note:** When you use `option=purgeAllData`, the operation removes the source type definition and then validates the tenant configuration. If other configuration properties still reference the deleted source, the request fails with the error `SURVIVORSHIP_SOURCE_NOT_FOUND`. 
+> For example, if you're deleting `configuration/sources/AHA`, remove its URI from all configuration properties that reference it, such as `sourcesUriOrder`, `sourcesForOv`, and `winnerSourceType`, before sending the DELETE request. If the URI remains in any of these properties, the request fails validation. This cleanup isn't required when you use `option=purgeAttributes`, because the operation retains the source type definition.
+
+## HTTP method and endpoint
+
+Use the following HTTP method and endpoint path to delete a source system.
 
 ```
-DELETE {TenantURL}/{source system URI}
+DELETE {TenantURL}/configuration/sources/{sourceType}
 ```
 
-## Parameters
+Replace `{TenantURL}` with your tenant's base URL.
 
-| Type | Name | Required | Description |
+The following table describes the endpoint path parameters.
+
+| Parameter | Type | Required | Description |
 | --- | --- | --- | --- |
-| Header | Content-Type | Yes | The value should be "Content-Type: application/json" |
-| Header | Authorization | Yes | The value should be "Content-Type: application/json" |
-| Tasks | option | No | Valid values include   **`purgeAttributes`**  (default) Deletes all attribute values for a source, but preserves the crosswalks and the source used for the configuration.  **`purgeAllData`**  Deletes all attribute values and crosswalks for a source, and the source used for the configuration. |
+| `sourceType` | String | Yes | The short name of the source system to delete, such as `AHA`. |
 
-> **Note:** To avoid the validation exception, if the source that you want to delete exists in any other section apart from the *sources* section, you must manually delete the source before posting the `Delete Source API` API request. For example, the `sourcesUriOrder` or `immutableForSources` section.
+## Query parameters
 
-## Response
+The following table describes the query parameters and their values.
 
-If the source type is deleted successfully, then the response contains a JSON with the details of the deleted source type. The JSON will also contain a `Response` field, which displays a comment about the delete operation and the response definition of the background task that has started.
+| Parameter | Type | Required | Description | Accepted values / Default |
+| --- | --- | --- | --- | --- |
+| `option` | String | No | Determines whether the operation deletes only attribute values or also deletes crosswalks and the source type definition. | `purgeAttributes` (default value): Deletes attribute values but retains crosswalks and the source type definition  `purgeAllData` (accepted value): Deletes attribute values and crosswalks and removes the source type definition. |
+| `acceptInheritedTypes` | Boolean | No | Determines whether the operation can purge a source type defined in a parent tenant configuration layer. | `true` or `false`  Default: `false` |
 
-> **Note:** The response contains the definition of the background task only if the `purgeAllData` task is set to true.
+## Request headers
 
-The task status can be retrieved using the `Get Tasks History for Tenant API` API. For more information, see [Get Task by ID for Tenant](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/get-task-by-id-for-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+The following request headers must be included.
 
-## Example Request
+| Header | Value | Required |
+| --- | --- | --- |
+| `Content-Type` | application/json | Yes |
+| `Authorization` | Bearer `<access_token>` | Yes |
+
+## Request body
+
+This operation does not require a request body.
+
+## Example request
+
+Use the following example to see how a complete request is structured.
 
 ```
-DELETE {TenantURL}/configuration/sources/AHA?option=purgeAttributes
+DELETE {TenantURL}/configuration/sources/AHA?option=purgeAllData&acceptInheritedTypes=false
 ```
 
-**Example Response**
+## Response body
+
+The following table describes the fields returned in the response body.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `sourceType` | Object | Source type that the operation deletes. |
+| `sourceType.uri` | String | URI of the deleted Source type |
+| `sourceType.label` | String | Display label of the deleted source type. |
+| `sourceType.description` | String | Description of the source type, as defined in the tenant's configuration. |
+| `sourceType.abbreviation` | String | Abbreviation of the source type. |
+| `sourceType.icon` | String | Relative path to the icon image associated with the source type. |
+| `Response` | String | Message describing the result of the operation and, when applicable, indicating that a background task was scheduled. |
+| `Background task` | Object | Definition of the background task that has started. Returned only when `purgeAllData` is used. |
+| `Background task.id` | String | Unique identifier of the background task. Empty until the task is scheduled. |
+| `Background task.groupId` | String | Identifier of the task group to which the background task belongs. |
+| `Background task.createdTime` | UTC timestamp, ms | Time the background task was created. |
+| `Background task.createdBy` | String | ID of the user or process that started the background task. |
+| `Background task.updatedTime` | UTC timestamp, ms | Time when the background task was last updated. |
+| `Background task.updatedBy` | String | ID of the user or process that last updated the task, such as the user who canceled or paused it. |
+| `Background task.type` | String | Fully qualified task type. For this operation, the value is always `com.reltio.businesslogic.tasks.delete.PurgeSourceDataTask`. |
+| `Background task.status` | String | Current status of the background task. |
+| `Background task.name` | String | Generated name of the background task. |
+| `Background task.createdOnHost` | String | Host name of the API node where the task was created. |
+| `Background task.parallelExecution` | Boolean | Indicates whether the task can run simultaneously with another task for the same tenant. The default is `false`. |
+| `Background task.nodesGroup` | String | Node group where the task runs. |
+| `Background task.parameters.tenantId` | String | ID of the tenant against which the operation was run. This value is taken from the request path and is not a separate input. |
+| `Background task.parameters.sourceType` | String | Full URI of the source being deleted (for example, `configuration/sources/AHA`). This value is taken from the request path and is not a separate input. |
+| `Background task.parameters.purgeDataOnly` | String (`"true"` /`"false"`) | Indicates whether the operation purges only attribute values. The value is `"true"` when `option=purgeAttributes` or when the `option` parameter is omitted. The value is `"false"` when `option=purgeAllData`. |
+| `Background task.parameters.metadataTypes` | Strings | Object types that reference the source type and were processed by the task, such as `entities`, `relations`, `groups`, and `interactions`. |
+| `Background task.currentState` | Object | Current progress information for the task, such as `numberOfProcessedObjects`. The object is empty (`{}`) while the task is `SCHEDULED`. |
+| `Background task.duration` | String | Elapsed time of the background task. |
+
+## Example response
+
+The following example shows a response for a source deletion that scheduled a background purge task.
 
 ```
 {
-   "sourceType":{
-      "URI":"configuration/sources/AHA",
-      "label":"AHA",
-      "description":"AMERICAN HOSPITAL association",
-      "abbreviation":"AHA",
-      "icon":"images/source/source_s.png"
+   "sourceType": {
+      "uri": "configuration/sources/AHA",
+      "label": "AHA",
+      "description": "AMERICAN HOSPITAL association",
+      "abbreviation": "AHA",
+      "icon": "images/source/source_s.png"
    },
-   "Response":"Source type 'AHA' deletion background task scheduled. To see its
-status please use the tasks endpoints.",
-   "Background task":{
-      "numberOfProcessedObjects":0,
-      "name":"Purge data by 'AHA' source type background task. Started by mike",
-      "tenant":"tenant",
-      "started":"05-27-2014 13.55",
-      "throughput":0,
-      "current":"05-27-2014 13.55",
-      "purgeDataOnly"="true"
- }
+   "Response": "Source type 'configuration/sources/AHA' deletion background task scheduled. To see its status please use the tasks endpoints.",
+   "Background task": {
+      "id": "{taskId}",
+      "groupId": "{groupId}",
+      "createdTime": 1687803875041,
+      "createdBy": "{user}",
+      "updatedTime": 1687803875041,
+      "updatedBy": "{user}",
+      "type": "com.reltio.businesslogic.tasks.delete.PurgeSourceDataTask",
+      "status": "SCHEDULED",
+      "name": "Purge data by 'AHA' source type background task. Started by {user}",
+      "createdOnHost": "{host}",
+      "parallelExecution": false,
+      "nodesGroup": "default",
+      "parameters": {
+         "tenantId": "{tenantId}",
+         "sourceType": "configuration/sources/AHA",
+         "purgeDataOnly": "false",
+         "metadataTypes": "[\"entities\",\"groups\",\"relations\",\"interactions\"]"
+      },
+      "currentState": {},
+      "duration": "0s"
+   }
 }
 ```
 
-> **Note:** In the request, if you haven't included any options, or have included `option=purgeAttributes`, then the response displays the `purgeDataOnly` as `true` to denote only values are deleted. If you included the `option=purgeAllData`, then the response displays the `purgeDataOnly` as `false` to denote that data and crosswalks are deleted.
+## Error codes and recommended actions
+
+The following table lists the possible error responses returned by this API.
+
+| HTTP status | Error code | Description | Recommended action |
+| --- | --- | --- | --- |
+| `400 Bad Request` | `INVALID_REQUEST_ERROR` (`2003`) | Returned when `option` is set to a value other than `purgeAttributes` or `purgeAllData`. Also returned when `option` is `purgeAllData`, the source type is inherited from a parent tenant configuration, and `acceptInheritedTypes` is `false`. | Provide a valid `option` value. If the source type is inherited, set `acceptInheritedTypes` to `true`. |
+| `400 Bad Request` | `119 TYPE_IS_NOT_FOUND` | Returned when the specified source system is not found in the tenant configuration. | Verify the source system URI in the tenant configuration before you retry the delete. |
 
 
 
