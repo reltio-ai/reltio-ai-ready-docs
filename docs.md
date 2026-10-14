@@ -1,18 +1,12 @@
 # Reltio Documentation
 
-_Generated: 2026-10-09 02:28 UTC_
+_Generated: 2026-10-14 02:29 UTC_
 
-_Topics: 3794_
+_Topics: 3795_
 
 ---
 
 # Delete History Records Task
-
-> **Section:** Developer resources > System Administration APIs > System Administration APIs at a glance > Tasks API
-
-
-**Source:** https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/delete-history-records-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
 
 Learn about the DeleteHistoryRecordsTask and how it removes history records in Reltio within a specified date range.
 
@@ -15927,13 +15921,19 @@ For more information, see [Lookups and canonical values](https://docs.reltio.com
 
 Learn about the new features and enhancements introduced in this 2026.1.12.0 release.
 
+> **Note:** Stage 3 deployment to the Production (PRD) tenant has been rescheduled from October 9, 2026 to October 10, 2026.
+
+
+
+
+
 **Deployment dates**
 
 | Stage | Tenant type | When |
 | --- | --- | --- |
 | 1 | Development (DEV) | October 2, 2026 |
 | 2 | Test (TEST) | October 2, 2026 |
-| 3 | Production (PRD) | October 9, 2026 |
+| 3 | Production (PRD) | October 10, 2026 |
 
 ## Introducing SAP Reltio's velocity pack for Banking
 
@@ -15960,6 +15960,14 @@ Materialized hierarchies organize related profiles into parent-child structures 
 If unmerge processing produces a disconnected tree, the detached tree is moved to a separate hierarchy with a unique name.
 
 For more information, see [Effects of entity operations on materialized hierarchies](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/effects-of-entity-operations-on-materialized-hierarchies?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+## Five new languages added to the Reltio Documentation Portal
+
+The Reltio Documentation Portal now supports machine-translated content in five additional languages — Hindi, Hebrew, Arabic, Danish, and Indonesian. You can choose your preferred language using the language selector in the upper-right corner of the portal.
+
+Translated content may contain inaccuracies. The English (US) version remains the authoritative source for technical accuracy. The following items are not translated: product names, company names, roles, branded terms, code phrases, code blocks, images, videos, GIFs, and other non-text media.
+
+For more information, see [View documentation in your preferred language](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/internationalization-and-localization/view-documentation-in-your-preferred-language?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Localization Disclaimer](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/internationalization-and-localization/localization-disclaimer?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
@@ -24526,7 +24534,9 @@ Here's a list of features from the Hub and their availability across products.
 
 Learn how automated long-running tasks let supported agents process high-volume work in the background using policy-based automation and route low-confidence items for review.
 
-Reltio AgentFlow™ Task Management lets you create long-running tasks that enable agents to run autonomously in the background. It also supports recurring jobs that run without human intervention. In **Task Management**, create a task and choose how it runs - once or on a recurring schedule. Each task runs in the background, which makes this feature useful for work that takes longer to complete or needs to run repeatedly. This allows you to automate ongoing work instead of manually starting the same process each time.
+Reltio AgentFlow™ Task Management lets you create long-running tasks that enable agents to run autonomously in the background. It also supports recurring jobs that run without human intervention. In **Task Management**, create a task and choose how it runs - once or on a recurring schedule. Each task runs in the background, which makes this feature useful for work that takes longer to complete or needs to run repeatedly. This allows you to automate ongoing work instead of manually starting the same process each time. This allows you to automate ongoing work instead of manually starting the same process each time.
+
+To use a custom agent for long-running tasks, first enable Long Running Tasks for the agent. For more information, see [Enable long-running tasks for an agent](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agent-builder-for-agentflow-at-a-glance/enable-long-running-tasks-for-an-agent?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 This feature is designed for users who need to schedule agent-driven work such as enrichment, match and merge processing, and other high-volume operations. It supports both one-time and recurring schedules and provides visibility into job status, progress, and outcomes.
 
@@ -25428,7 +25438,7 @@ The following diagram shows the end-to-end process for building and publishing a
 
 *Image: Diagram showing the agent publishing process flow from Create Agent Draft through security scan, approver review, and Agent Published*
 
-An agent author writes a system prompt, selects the tools the agent is allowed to use, and tests the agent interactively before submitting it for review. When a publish request is submitted, the system automatically scans the system prompt for security violations. If a violation is detected, the request is auto-blocked before it reaches a reviewer. Valid requests move to a reviewer for approval. Once approved, the agent is published and immediately available in **Discover Agents**. End users can find it in the catalog and start a conversation with it right away.
+An agent author writes a system prompt, selects the tools the agent is allowed to use, turns on capabilities such as **Long Running Tasks**, and tests the agent interactively before submitting it for review. If an agent has **Long Running Tasks** turned on, it must also pass an eligibility check before it can be submitted. For more information, see [Enable long-running tasks for an agent](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agent-builder-for-agentflow-at-a-glance/enable-long-running-tasks-for-an-agent?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). When a publish request is submitted, the system automatically scans the system prompt for security violations. If a violation is detected, the request is auto-blocked before it reaches a reviewer. Valid requests move to a reviewer for approval. Once approved, the agent is published and immediately available in **Discover Agents**. End users can find it in the catalog and start a conversation with it right away.
 
 While a request is pending review, the agent is locked. If an author needs to make changes, they can withdraw the pending request at any time. Withdrawing returns the agent to **Draft** state and unlocks the editor. If an agent already has a published version, that version remains live while the new version is under review.
 
@@ -25451,6 +25461,7 @@ Use Agent Builder when you need to:
 - Create and iterate on a custom AI agent
 - Test an agent before submitting it for review
 - Apply a governed review process before an agent reaches users
+- Let a custom agent process large sets of records in the background by [enabling long-running tasks](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agent-builder-for-agentflow-at-a-glance/enable-long-running-tasks-for-an-agent?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 For more information about creating and publishing an agent, see [Create, test, and submit an agent for review](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agent-builder-for-agentflow-at-a-glance/create-test-and-submit-an-agent-for-review?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
@@ -27125,6 +27136,273 @@ If an agent already has a published version when a new publish request is submit
 
 ---
 
+# Long-running task eligibility check issues
+
+> **Section:** Products > Reltio AgentFlow™ > Reltio AgentFlow™ overview > Agent Builder for AgentFlow at a glance
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agent-builder-for-agentflow-at-a-glance/long-running-task-eligibility-check-issues?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** long-running task eligibility check issues agentflow, not eligible for LRT agent builder, long running tasks check failed validate again, agent builder submit blocked long running tasks, this doesn't look like a record-processing task, selected tools can't do this work agentflow, long-running tasks, eligibility check, agentflow
+
+
+Learn how to resolve long-running task eligibility check issues in Agent Builder, including checks that do not pass, checks that fail, and submissions that are blocked.
+
+When you turn on **Long Running Tasks** in Agent Builder, an eligibility check evaluates the saved system prompt and the selected tools. If the agent does not qualify, the switch returns to off, and the **Long Running Tasks** panel shows a status tag and a message that explains the reason. If the check cannot finish, the panel shows the **Check failed** status tag and a **Validate again** button.
+
+For the conditions that an agent must meet, see [Enable long-running tasks for an agent](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agent-builder-for-agentflow-at-a-glance/enable-long-running-tasks-for-an-agent?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+## Agent is not a record-processing task
+
+**Error:**`This doesn’t look like a record-processing task`
+
+**What this error means**
+
+The panel shows the **Not eligible for LRT** status tag and a red message with this heading. The message describes what the check found in the system prompt, such as a read-only conversational assistant that presents data to users. It then explains that long-running tasks suit agents that change or resolve records, not agents that write an answer for someone to read, and asks you to describe what each record should end up with. The switch returns to off, and the capability row shows **Not eligible**.
+
+*Image: Capabilities step with the Not eligible for LRT status tag and a red message that reads: This doesn't look like a record-processing task*
+
+**Why the error occurs**
+
+This occurs when the agent produces an answer for a person to read, does not operate on records, or writes only to configuration.
+
+**How to fix the issue**
+
+To resolve the issue, update the system prompt and run the check again:
+
+- 
+
+  Go back to the step where you enter the system prompt.
+- 
+
+  State which records the agent processes and what each record should end up with, such as the agent creating, updating, merging, classifying, relating, or resolving the record.
+- 
+
+  Save the draft, return to the **Capabilities** step, and turn on **Long Running Tasks** again.
+
+**Preventive measures**
+
+To avoid this issue, follow these recommendations:
+
+- 
+
+  Describe the agent's work as an operation on records that produces a data outcome.
+- 
+
+  For more information about writing the system prompt, see [AgentFlow system prompt guidelines](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agent-builder-for-agentflow-at-a-glance/agentflow-system-prompt-guidelines?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+## Every record requires a human decision
+
+**Error:** REQUIRES_PER_RECORD_HUMAN_DECISION
+
+**What this error means**
+
+The panel shows the **Not eligible for LRT** status tag and a red message that explains the reason. The switch returns to off.
+
+**Why the error occurs**
+
+This occurs when every record needs human judgement, the system prompt states no rule for making that decision, and the system prompt does not describe an automated mode.
+
+**How to fix the issue**
+
+To resolve the issue, update the system prompt and run the check again:
+
+- 
+
+  State the rule that the agent uses to decide what to do with each record.
+- 
+
+  If the agent asks for confirmation before it acts, describe an unattended or automated mode in which the agent proceeds without confirmation.
+- 
+
+  Save the draft, return to the **Capabilities** step, and turn on **Long Running Tasks** again.
+
+**Preventive measures**
+
+To avoid this issue, follow these recommendations:
+
+- 
+
+  If the agent asks for confirmation, describe in the system prompt how the agent proceeds when it runs unattended.
+
+## Instructions do not say what to do with each record
+
+**Error:** NO_PER_RECORD_ACTION
+
+**What this error means**
+
+The panel shows the **Not eligible for LRT** status tag and a red message that says what is missing. The switch returns to off.
+
+**Why the error occurs**
+
+This occurs when the system prompt shows that the agent operates on records, but does not say which steps the agent applies to one record.
+
+**How to fix the issue**
+
+To resolve the issue, update the system prompt and run the check again:
+
+- 
+
+  List the steps that the agent applies to one record, in order.
+- 
+
+  State that the agent repeats the same steps for each record.
+- 
+
+  Save the draft, return to the **Capabilities** step, and turn on **Long Running Tasks** again.
+
+**Preventive measures**
+
+To avoid this issue, follow these recommendations:
+
+- 
+
+  Write the per-record steps as a numbered workflow in the system prompt. For more information, see [AgentFlow system prompt guidelines](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agent-builder-for-agentflow-at-a-glance/agentflow-system-prompt-guidelines?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+## Selected tools cannot do the work
+
+**Error:**`MISSING_REQUIRED_TOOLS`
+
+**What this error means**
+
+The panel shows the **Not eligible for LRT** status tag and a red message with this heading. The message tells you that your instructions describe work that the current tool selection cannot carry out. The switch returns to off.
+
+**Why the error occurs**
+
+This occurs when the system prompt describes work on records, but no selected tool can perform that work. For example, no tools are selected.
+
+**How to fix the issue**
+
+To resolve the issue, update the tool selection and run the check again:
+
+- 
+
+  Go to the **Tools** step.
+- 
+
+  Select the tools that can read and act on the records that the task needs.
+- 
+
+  Save the draft, return to the **Capabilities** step, and turn on **Long Running Tasks** again.
+
+**Preventive measures**
+
+To avoid this issue, follow these recommendations:
+
+- 
+
+  Select the tools before you turn on **Long Running Tasks**.
+- 
+
+  Run the check again after you add or remove tools, because the check result applies to the tools that were selected when the check ran.
+
+## Eligibility check could not complete
+
+**Error:**`EVALUATION_SERVICE_UNAVAILABLE` (Transport error, or a reply that will not parse)
+
+**Error:**`EVALUATION_TIMED_OUT` (The 150-second server deadline elapsed)
+
+**Error:**`TOOL_CATALOG_UNAVAILABLE` (Tool descriptions could not be loaded)
+
+**What this error means**
+
+The panel shows the **Check failed** status tag, a red message with this heading, and a **Validate again** button. The message adds a reason and asks you to try again in a moment. For example: “We couldn’t load your tool list to check against. Try again in a moment.” The switch returns to off.
+
+**Why the error occurs**
+
+This occurs when the check service is unavailable, the tool list cannot be loaded, or the check does not finish within 3 minutes.
+
+**How to fix the issue**
+
+To resolve the issue, run the check again:
+
+- 
+
+  Wait a moment, and then select **Validate again**.
+- 
+
+  If the check continues to fail, contact [Reltio Support](https://support.reltio.com). Include your tenant ID, the agent ID, the exact message, the time of the failure, and the steps that you already tried.
+
+**Preventive measures**
+
+To avoid this issue, follow these recommendations:
+
+- 
+
+  Select **Validate again** once, and wait for the result. Only one check runs at a time for an agent.
+
+## Instructions and tools selection changed
+
+**Error:**`Your instructions and tools selection changed`
+
+**What this error means**
+
+The panel shows a red message with this heading, the text “Run validate again”, and a **Validate again** button. The switch stays on, but the last check result is out of date.
+
+**Why the error occurs**
+
+This occurs when the draft changed after the last check ran.
+
+**How to fix the issue**
+
+To resolve the issue, run the check again:
+
+- 
+
+  Select **Validate again**, and wait for the check to finish.
+- 
+
+  If the check does not pass, resolve the issue that the panel shows, and then run the check again.
+
+**Preventive measures**
+
+To avoid this issue, follow these recommendations:
+
+- 
+
+  Finish editing the system prompt and the tool selection before you run the check.
+- 
+
+  After you edit the system prompt or the tools on another step, return to the **Capabilities** step and run the check again.
+
+## Submit for review is blocked
+
+**Error:**`Long Running Tasks is on, but the draft changed after the last eligibility check. Run the check again before submitting.`
+
+**What this error means**
+
+Agent Builder does not submit the agent for review. The agent stays in **Draft** state, and the security scan does not run.
+
+**Why the error occurs**
+
+This occurs when you submit an agent that has **Long Running Tasks** turned on and the check result is out of date. Agent Builder also blocks the submission when a check is still running, when no check has run, or when the check has failed.
+
+**How to fix the issue**
+
+To resolve the issue, run the check and submit the agent again:
+
+- 
+
+  Go to the **Capabilities** step.
+- 
+
+  Select **Validate again**, and wait for the status tag to read **Eligible for LRT**.
+- 
+
+  Submit the agent for review again. For more information, see [Create, test, and submit an agent for review](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agent-builder-for-agentflow-at-a-glance/create-test-and-submit-an-agent-for-review?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+**Preventive measures**
+
+To avoid this issue, follow these recommendations:
+
+- 
+
+  Run the check after your last edit and before you submit the agent for review.
+
+
+
+---
+
 # System prompt security scan
 
 > **Section:** Products > Reltio AgentFlow™ > Reltio AgentFlow™ overview > Agent Builder for AgentFlow at a glance
@@ -27538,8 +27816,9 @@ Agent Builder provides you with the following structured authoring workflow:
 - **Step 1: Agent & Prompt information**: Define the agent and create its system prompt. In this step, you can perform either of the following:
   - Enter the agent information and system prompt [manually](#concept-9378/p-3135).
   - Select [Generate Agent Blueprint](#concept-9378/p-3261) to generate the system prompt and recommended tools based on your requirements.
-- **Step 2: Tools & capabilities**: Enable Web search and select the tools the agent is allowed to use.
-- **Step 3: Test & publish**: Verify behavior in the test panel and submit a publish request for review.
+- **Step 2: Tools**: Select the tools the agent is allowed to use.
+- **Step 3: Capabilities**: Turn on the capabilities that the agent uses, such as Web search and Long Running Tasks.
+- **Step 4: Test & publish**: Verify behavior in the test panel and submit a publish request for review.
 
 The system scans the prompt automatically before routing the request to a reviewer.
 
@@ -27587,7 +27866,7 @@ Use this path when you are building a new agent manually from scratch.
    If a field contains an invalid value, an inline error appears below it. Correct the value before continuing.
 4. Write the **System prompt**. The system prompt defines the agent's:
 
-   *Image: Create New Agent dialog with name, description, and tags input fields and a Create Agent button*
+   *Image: Agent editor showing Agent details, System prompt panel, and character limit*
 
    For more information about structuring an effective system prompt, see [AgentFlow system prompt guidelines](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agent-builder-for-agentflow-at-a-glance/agentflow-system-prompt-guidelines?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
    1. Identity
@@ -27629,34 +27908,47 @@ Follow these steps when you want AI to generate a first draft of the system prom
    Agent Builder automatically selects tools based on your requirements. You can add or remove tools as required.
 
    Each tool includes a confidence score of **High**, **Medium**, or **Low**.
-10. On reviewing all the details of the agent, select **Done**.
+10. Review the list of capabilities suggested for the agent.*Image: Verify capabilities screen in Agent Blueprint showing the Long Running Tasks and Web Search capabilities, each with a High confidence tag*
+
+   Agent Builder suggests capabilities, such as **Long Running Tasks**, based on your requirements. You can clear a capability that the agent does not need. Each capability includes a confidence score of **High**, **Medium**, or **Low**.
+
+   The capabilities that you leave selected are turned on in [Step 3: Capabilities](#concept-9378/select_capabilities). If Agent Builder does not suggest any capabilities, this screen does not appear.
+11. On reviewing all the details of the agent, select **Done**.
 
    The **Build an agent** page appears.
-11. 
+12. 
 
    Select **Save & continue**.
 
    After the agent is created, the **Agent ID** appears in the **AGENT DETAILS** section. Select the copy icon next to the **Agent ID** to copy it to your clipboard.
 
-To continue, see [Step 3: Test & publish the agent](#concept-9378/title-2074)
+To continue, see [Step 4: Test & publish the agent](#concept-9378/title-2074)
 
-## Step 2: Tools & capabilities
+## Step 2: Tools
 
-1. [Optional] Enable **Web search**.
-
-   > **Note:** Enabling **Web search** during agent creation is not sufficient. End users must also enable **Web search** in their own settings before they can use this capability at runtime.
-2. **Enable server** and select each of the tools you want to add. The selected tools form the agent's allowlist — the agent cannot call tools outside this selection.
+1. **Enable server** and select each of the tools you want to add. The selected tools form the agent's allowlist — the agent cannot call tools outside this selection.
 
    > **Note:** If you proceed without selecting any tools, Agent Builder displays a warning before you can submit for review. You can still proceed, but the agent will have no approved actions available at runtime.
 
    *Image: Agent editor Tools tab with MCP Servers and Tools panel on the left and tool selection list with checkboxes on the right*
-3. Select **Save & continue**.
+2. Select **Save & continue**.
 
-## Step 3: Test and publish the agent
+## Step 3: Capabilities
+
+To turn on the capabilities that the agent uses, optionally toggle on the following to:
+
+1. Select knowledge bases
+2. Enable **Web search**.
+
+   > **Note:** Enabling **Web search** during agent creation is not sufficient. End users must also enable **Web search** in their own settings before they can use this capability at runtime.
+3. Let the agent process large sets of records in the background through **Long Running Tasks**. Agent Builder runs an eligibility check on the saved system prompt and the selected tools. For more information, see [Enable long-running tasks for an agent](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agent-builder-for-agentflow-at-a-glance/enable-long-running-tasks-for-an-agent?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+4. Select **Save & continue**.
+
+## Step 4: Test and publish the agent
 
 To test and publish an agent, perform the following steps:
 
-1. (Optional) Toggle on **Custom Instructions** to set instructions for your agent to follow during the test.*Image: Test and Publish view showing the Custom Instructions toggle and the Add custom instructions link*
+1. [Optional] Toggle on **Custom Instructions** to set instructions for your agent to follow during the test.*Image: Test and Publish view showing the Custom Instructions toggle and the Add custom instructions link*
 
    > **Note:** Custom instructions are valid only for the current test session.
    1. Select **+ Add custom instructions**. 
@@ -27671,12 +27963,12 @@ The custom instructions are now saved for the agent.
    > **Note:** If a violation is detected in the system prompt, the test run is blocked. Revise the prompt before testing again.
 3. Review the run summary after each test. It shows latency, credits, and tool calls for that run. Testing in Agent Builder does not consume AgentFlow credits. Credits are consumed when users interact with a published agent in AgentFlow. For more information, see [AgentFlow billing and credit usage](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agentflow-billing-and-credit-usage?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 4. Iterate on the prompt and tool selection as needed.
-
-   *Image: Agent editor Test tab with Test and Publish chat panel on the left and Execution Log on the right*
 5. Select **Submit for review**.
 6. Confirm the submission.
 
    A **Confirm submit for review** dialog appears. Select **Submit for review** to proceed, or **Back** to return to the test panel.
+
+   If **Long Running Tasks** is turned on for the agent, Agent Builder first checks that the eligibility result is current. If the result is out of date, or the check is running, has not run, or has failed, Agent Builder does not submit the agent. The agent stays in **Draft** state, and the security scan does not run. For more information, see [Long-running task eligibility check issues](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agent-builder-for-agentflow-at-a-glance/long-running-task-eligibility-check-issues?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
    The system automatically scans the system prompt. Two outcomes are possible:
 
@@ -27694,8 +27986,6 @@ To view the agent history, perform the following steps:
 1. Go to **AgentFlow** > **Agent Builder**.
 2. Select the required agent.
 3. Select **See History**.
-
-*Image: i-agent-history.png*
 
 The history panel displays events in chronological order for the selected agent version.
 
@@ -27715,7 +28005,11 @@ To update an agent, perform the following steps:
 3. Select **Create New Draft** / **Edit Draft**.
 
    On updating the agent, Agent Builder creates a new draft version. The latest published version is still available in the **Discover Agents** page while you update the agent.
+
+   > **Note:** If the agent was created in Agent Builder 1.0 and you create a new version of it by selecting **Create New Draft**, the context of earlier conversations with that agent is not available to the new version. You can continue the conversation, but the agent does not have the context of the earlier conversation.
 4. Update the system prompt and select the required tools. See [#concept-9378/select_tools](#concept-9378/select_tools).
+
+   > **Note:** If **Long Running Tasks** is turned on for the agent and you change the system prompt or the selected tools, run the eligibility check again on the **Capabilities** step before you submit the draft for review. For more information, see [Enable long-running tasks for an agent](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agent-builder-for-agentflow-at-a-glance/enable-long-running-tasks-for-an-agent?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 5. Select **Save & Continue**.
 
 **Result**
@@ -27781,6 +28075,88 @@ You can download a published agent as an encrypted blueprint file and use it to 
 **Result**
 
 The agent blueprint downloads to your device as an `.agent` file. The file name follows the format `agent-{AgentName}-v{VersionNumber}.agent`. To use this file in another tenant, see [Upload an agent from another tenant](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agent-builder-for-agentflow-at-a-glance/upload-an-agent-from-another-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+
+
+---
+
+# Enable long-running tasks for an agent
+
+> **Section:** Products > Reltio AgentFlow™ > Reltio AgentFlow™ overview > Agent Builder for AgentFlow at a glance
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agent-builder-for-agentflow-at-a-glance/enable-long-running-tasks-for-an-agent?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** enable long-running tasks agent builder, agentflow custom agent long-running task, long-running task eligibility check agentflow, agent builder capabilities step long running tasks, validate again long-running task eligibility, process large sets of records with a custom agent, long-running tasks, agent builder, agentflow
+
+
+Learn how to enable long-running tasks for an agent in Agent Builder so that the agent can process large sets of records in the background.
+
+Long-running tasks let an agent repeat the same work across a large set of records in the background, without holding up a live chat. Agent Builder turns on long-running tasks only after an eligibility check confirms that the agent qualifies. For more information, see [Automated long-running tasks](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/automated-long-running-tasks?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+The following roles can enable long-running tasks for an agent:
+
+- 
+
+  [Agent Author](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agent-builder-for-agentflow-at-a-glance/assign-agent-builder-roles-to-users?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- 
+
+  [Agent Admin](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agent-builder-for-agentflow-at-a-glance/assign-agent-builder-roles-to-users?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+For more information, see [Assign Agent Builder roles to users](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agent-builder-for-agentflow-at-a-glance/assign-agent-builder-roles-to-users?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+**Prerequisites**
+
+Before you begin, confirm the following requirements:
+
+- 
+
+  You must be the author of the agent draft or an Agent Admin. Only the draft author and Agent Admins can start or cancel the eligibility check.
+- 
+
+  The agent must be in **Draft** state, and you must have saved the system prompt and the tools that you want the agent to use. The check evaluates the saved draft, not unsaved changes.
+- 
+
+  The system prompt and the selected tools must meet the following conditions:
+  - The agent performs an operation on records that produces a data outcome, such as creating, updating, merging, classifying, relating, or resolving records. Text for a person to read does not qualify.
+  - The agent repeats the same steps for each record. A confirmation step is acceptable if the system prompt also describes an unattended or automated mode.
+  - The selected tools can read and act on records at that scale.
+
+
+To enable long-running tasks for an agent
+
+1. Open **AgentFlow** and go to **Agent Builder**.
+2. Open the draft agent that you want to enable long-running tasks for.
+3. Go to the **Capabilities** step.
+   *Image: Verify capabilities screen in Agent Blueprint showing the Long Running Tasks and Web Search capabilities, each with a High confidence tag*
+4. Under **Capabilities**, toggle on **Long Running Tasks**.*Image: Capabilities step with the Long Running Tasks panel showing the Checking eligibility status tag*
+   Agent Builder saves the draft and starts the eligibility check. The panel shows the **Checking eligibility** status tag; the switch is unavailable, and **Save & continue** is unavailable until the check finishes. If the check runs longer than 3 minutes, the panel shows the **Check failed** status tag.
+   > **Note:** If you turn the switch off while the check is running, Agent Builder cancels the check.
+5. Review the status tag in the **Long Running Tasks** panel.
+   If the status tag is not **Eligible for LRT**, see [Long-running task eligibility check issues](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agent-builder-for-agentflow-at-a-glance/long-running-task-eligibility-check-issues?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+   *Image: Capabilities step with the Long Running Tasks switch on and the Eligible for LRT status tag*
+6. Select **Save & continue** to go to the **Test & publish** step.
+7. Select **Submit for Review**, and then confirm in the **Confirm submit for review** dialog.
+   For more information, see [Create, test, and submit an agent for review](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agent-builder-for-agentflow-at-a-glance/create-test-and-submit-an-agent-for-review?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+**Result**
+
+When the check passes, the **Long Running Tasks** panel shows the **Eligible for LRT** status tag, and the switch stays on. If the check does not pass, the switch returns to off, and a message in the panel explains the reason.
+
+If you change the system prompt or the selected tools after a check passes, the switch stays on, but the panel shows a message that your instructions and tools selection changed, with a **Validate again** button. Select **Validate again** before you submit the agent for review.
+
+Agent Builder does not submit an agent that has long-running tasks turned on when the check result is out of date, the check is still running, no check has run, or the check has failed. The agent stays in **Draft** state.
+
+**Verification steps**
+
+To confirm that long-running tasks are enabled, perform the following steps:
+
+1. 
+
+   On the **Capabilities** step, confirm that the **Long Running Tasks** row in the capability list shows **Enabled**.
+2. 
+
+   Select **Long Running Tasks**, and confirm that the status tag reads **Eligible for LRT**.
 
 
 
@@ -27885,10 +28261,12 @@ You can upload an agent blueprint file to create a new agent in your tenant. The
    > **Note:** Parsing may take some time. Do not close the browser tab while parsing is in progress.
 5. On the **Agent & Prompt information** step, review the pre-populated agent name, description, tags, and system prompt. Edit any fields as needed for the target tenant.
 6. Select **Save & continue**.
-7. On the **Tools & capabilities** step, review the pre-selected tools and MCP server connections. Add or remove tools as required for the target tenant.
+7. On the **Tools** step, review the pre-selected tools and MCP server connections. Add or remove tools as required for the target tenant.
 8. Select **Save & continue**.
-9. On the **Test & publish** step, test the agent and select **Save & continue**.
-10. In the **Confirm submit for review** dialog, select **Submit for review**.
+9. On the **Capabilities** step, review the capabilities and change them as required for the target tenant.
+10. Select **Save & continue**.
+11. On the **Test & publish** step, test the agent and select **Save & continue**.
+12. In the **Confirm submit for review** dialog, select **Submit for review**.
 
 **Result**
 
@@ -80005,12 +80383,6 @@ This table lists the metadata properties for an entity type that you can configu
 ---
 
 # Delete a source system
-
-> **Section:** Developer resources > System Administration APIs > System Administration APIs at a glance > Configuration API
-
-
-**Source:** https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/configuration-api/delete-a-source-system?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
 **Keywords:** how to delete source system, delete source system configuration, purge source type attributes, remove source system crosswalks, use purge all data, schedule source purge task, delete inherited source type, crosswalks, purge, configuration
 
 
@@ -89496,48 +89868,6 @@ Before using this filter take the following scenarios in consideration:
 
 ---
 
-# Merge Auto Matches Task
-
-> **Section:** Developer resources > System Administration APIs > System Administration APIs at a glance > Tasks API
-
-
-**Source:** https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/merge-auto-matches-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
-**Keywords:** initiate a merge process for records, merge process, initiate for records, auto matches table, RIQ Match Job
-
-
-This task gets all records from the auto matches table and initiates a merge process for them.
-
-It is assumed that auto matches table is already populated. Currently, RIQ Match Job is used to populate it for the entities matched by automatic match rules.
-
-Stop and Pause are supported.
-
-**Requests**
-
-Tenant admin role is required:
-
-```
-POST {ApplicationURL}/mergeAutoMatches
-```
-
-Tenant admin role is required:
-
-```
-POST {ApplicationURL}/api/{tenantId}/mergeAutoMatches
-```
-
-**Parameters**
-
-| Parameter | Required | Description |
-| --- | --- | --- |
-| `tenantId` | Yes | ID of the tenant to process for auto matches. |
-| `distributed` | No |  |
-| `taskPartsCount` | No |  |
-
-
-
----
-
 # Migrate History Attributes Delta Task
 
 > **Section:** Developer resources > System Administration APIs > System Administration APIs at a glance > Tasks API
@@ -90742,12 +91072,6 @@ The JSON array of entity URIs to be check and fix inconsistencies.
 ---
 
 # Cleanup Matches Task
-
-> **Section:** Developer resources > System Administration APIs > System Administration APIs at a glance > Tasks API
-
-
-**Source:** https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/cleanup-matches-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
 **Keywords:** cleanup matches task, delete match data by group, remove auto not matches, clean potential matches from table, cleanup grouping match records, run background match cleanup job, match group cleanup operation, match cleanup API, match rules, grouping matches, merge logic
 
 
@@ -93086,12 +93410,6 @@ Here's a simple example of a check for two specific URIs, scanning winners, lose
 ---
 
 # Merge Tree Consistency Based on Relations Task
-
-> **Section:** Developer resources > System Administration APIs > System Administration APIs at a glance > Tasks API
-
-
-**Source:** https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/merge-tree-consistency-based-on-relations-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
 **Keywords:** merge tree consistency based on relations task, merge tree consistency relations, merge tree consistency check for relations, relations merge tree task, fix relation merge tree inconsistencies, distributed merge tree consistency task, merge tree consistency task api, relation consistency task, produce events relation fix, relationsToCheck request body
 
 
@@ -93355,12 +93673,6 @@ JSON Array of entity URIs to be processed. This is optional. For example:
 ---
 
 # Rebuild Grouping Task
-
-> **Section:** Developer resources > System Administration APIs > System Administration APIs at a glance > Tasks API
-
-
-**Source:** https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/rebuild-grouping-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
 **Keywords:** rebuild grouping task, advanced grouping rebuild, segmented grouping task, rebuildGrouping endpoint
 
 
@@ -151031,18 +151343,20 @@ POST {{dataloader_uri}}/dataloader/api/{{tenantId}}/project/{{projectId}}/jobs/r
 
 **Source:** https://docs.reltio.com/en/developer-resources/load-and-export-apis/load-and-export-apis-at-a-glance/export-service-apis/secure-export-aws-authentication?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
-**Keywords:** export AWS authentication, securing, assumed AWS IAM roles, AWS S3 bucket, create, AWS access policy, create, AWS role, create, CLI/API session duration, set, policy, assign to the role, HTTP headers, Export service, Securing export AWS authentication, AWS IAM assumed roles, Create an AWS S3 bucket, Create an AWS access policy, Create an AWS role, Set the CLI/API session duration, Assign policy to the role, Export Service HTTP Headers
+**Keywords:** export AWS authentication, securing, assumed AWS IAM roles, AWS S3 bucket, create, AWS access policy, create, AWS role, create, CLI/API session duration, set, policy, assign to the role, HTTP headers, Export service
 
 
 Learn how to export data to your S3 bucket without providing AWS static credentials.
-
-[Contact Support](https://docs.reltio.com/en/reltio/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) to obtain the Reltio AWS Account ID, which you'll need to configure AWS authentication.to obtain the Reltio AWS Account ID, which you'll need to configure AWS authentication.
 
 The Reltio Export service enables you to write export output files in your own storage buckets using export API calls.
 
 Reltio uses a secure approach for AWS customers based on the use of AWS IAM assumed roles. You must use AWS IAM AssumeRole based security while calling the Reltio Export service. This eliminates the need to provide static credentials. To achieve this, you need an additional one-time configuration in both the Reltio account and your AWS account to set up roles and a trusted relationship.
 
 > **Note:** AWS access key and secret are being deprecated. For more details see this deprecation notice: [AWS access key and secret in favor of IAM roles for Reltio-owned resources](https://docs.reltio.com/en/reltio/deprecation-notices-at-a-glance/aws-access-key-and-secret-in-favor-of-iam-roles-for-reltio-owned-resources?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+**Prerequisites**
+
+Before you begin, [create a support request](https://docs.reltio.com/en/reltio/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) to obtain the Reltio AWS Account ID and the Reltio principal ARNs to add to your role's trust policy. In the support request, specify whether your export is HIPAA or non-HIPAA compliant.
 
 
 To configure secure AWS authentication:
@@ -151065,14 +151379,16 @@ To configure secure AWS authentication:
 5. Set the **maximum CLI/API session duration** to 12 hours.
    This provides the Reltio export service sufficient time to complete writing to an S3 bucket for larger exports.
 6. Enter the credentials:
-   - Add the Account ID.
+   - Add the Reltio AWS Account ID.
      For example, *111122223333*.
-   - Add the **ARN Number**.
-     For example, `arn:aws:iam::123456789876: user/reltio.platform.jobs`****.
+   - Add the Reltio principal **ARN Number**.
+     Use the Reltio principal ARN you received from Reltio Support.
+
+For example, `arn:aws:iam::123456789876:user/reltio.platform.jobs`.
 7. Assign the policy to the role.
    For example, you can assign policy s3-reltio-export-policy to the role reltio-exporter.
-8. Provide the role ARN to Reltio Customer Support.
-   Reltio will then configure an AWS role within the trusted account to assume the customer’s role when it needs to write to the customer’s S3 bucket.
+8. Specify your IAM role in each export API request.
+   Once your role's trust policy includes the Reltio principals, the Reltio export service assumes the role when it needs to write to your S3 bucket. Use the `roleArn` HTTP header to specify the role, along with the other Export service HTTP headers.
    **Export Service HTTP headers**
    **HTTP headers**
 
@@ -151081,7 +151397,7 @@ To configure secure AWS authentication:
 | `s3Bucket` | Customer S3 bucket. | `mys3bucket` |
 | `s3Path` | Customer S3 path where the export output files are placed. | `/reltio-export-output/mypath/` |
 | `roleArn` | Customer IAM role where the trust relationship was defined for Reltio to assume the role. | `arn:aws:iam:999999999999:role/reltio-exporter` |
-| `externalId` | Customer’s unique identifier for granular control over role access. | `5ez83245-6b31-4df3-9bd2-0a0t25b3f9c9zz` |
+| `externalId` | Customer's unique identifier for granular control over role access. | `5ez83245-6b31-4df3-9bd2-0a0t25b3f9c9zz` |
 
 
 
@@ -260141,6 +260457,11 @@ The following table lists the locales and languages available in the language se
 | ru-RU | Russian |
 | tr-TR | Turkish |
 | vi-VN | Vietnamese |
+| da-DK | Danish |
+| he-IL | Hebrew |
+| ar-SA | Arabic |
+| hi-IN | Hindi |
+| id-ID | Indonesian |
 
 ## Translation considerations
 

@@ -1,5 +1,5 @@
 # Reltio Documentation Index
-_Generated: 2026-10-09 02:28 UTC — 3665 topics (3610 unique)_
+_Generated: 2026-10-14 02:29 UTC — 3661 topics (3606 unique)_
 
 This file is a structured navigation index of the Reltio documentation portal.
 It contains the full parent-child hierarchy, topic URLs, keywords, summaries,
@@ -2052,7 +2052,7 @@ _Topics in this section: Reltio AgentFlow™ overview, Reltio AgentFlow™ Mobil
 - **Path:** Reltio Documentation Portal v2 sitemap > Products > Reltio AgentFlow™ > Reltio AgentFlow™ overview
 - **Summary:** Learn about how Agent Builder enables governed authoring, testing, and publishing of AI agents in AgentFlow.
 - **Keywords:** agent builder overview agentflow, create and publish ai agents reltio, agentflow agent authoring and governance, agent lifecycle agentflow builder, agentflow agent approval workflow overview, agent builder roles and permissions overview, agentflow agent publishing governance, agent builder, governance, agentflow
-- **See also:** [AgentFlow billing and credit usage](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agentflow-billing-and-credit-usage?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Assign Agent Builder roles to users](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agent-builder-for-agentflow-at-a-glance/assign-agent-builder-roles-to-users?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Download an agent](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agent-builder-for-agentflow-at-a-glance/download-an-agent?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Upload an agent from another tenant](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agent-builder-for-agentflow-at-a-glance/upload-an-agent-from-another-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [System prompt security scan](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agent-builder-for-agentflow-at-a-glance/system-prompt-security-scan?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Create, test, and submit an agent for review](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agent-builder-for-agentflow-at-a-glance/create-test-and-submit-an-agent-for-review?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [AgentFlow billing and credit usage](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agentflow-billing-and-credit-usage?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Assign Agent Builder roles to users](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agent-builder-for-agentflow-at-a-glance/assign-agent-builder-roles-to-users?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Enable long-running tasks for an agent](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agent-builder-for-agentflow-at-a-glance/enable-long-running-tasks-for-an-agent?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Download an agent](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agent-builder-for-agentflow-at-a-glance/download-an-agent?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Upload an agent from another tenant](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agent-builder-for-agentflow-at-a-glance/upload-an-agent-from-another-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [System prompt security scan](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agent-builder-for-agentflow-at-a-glance/system-prompt-security-scan?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Create, test, and submit an agent for review](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agent-builder-for-agentflow-at-a-glance/create-test-and-submit-an-agent-for-review?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Create, test, and submit an agent for review
 
@@ -2060,7 +2060,23 @@ _Topics in this section: Reltio AgentFlow™ overview, Reltio AgentFlow™ Mobil
 - **Path:** Reltio Documentation Portal v2 sitemap > Products > Reltio AgentFlow™ > Reltio AgentFlow™ overview > Agent Builder for AgentFlow at a glance
 - **Summary:** Learn how to create a new agent or update a published agent in Agent Builder, verify its behavior in the test panel, and submit the agent for governance review.
 - **Keywords:** create agent reltio agentflow builder, edit published agent agentflow builder, test draft agent agentflow builder, submit agent for review agentflow, write system prompt agentflow agent, select tools agentflow agent builder, agentflow agent draft and publish workflow, agent builder author workflow, publish, agentflow
-- **See also:** [Agent Builder for AgentFlow at a glance](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agent-builder-for-agentflow-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [AgentFlow system prompt guidelines](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agent-builder-for-agentflow-at-a-glance/agentflow-system-prompt-guidelines?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Upload an agent from another tenant](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agent-builder-for-agentflow-at-a-glance/upload-an-agent-from-another-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Assign Agent Builder roles to users](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agent-builder-for-agentflow-at-a-glance/assign-agent-builder-roles-to-users?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [AgentFlow billing and credit usage](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agentflow-billing-and-credit-usage?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Agent states in Agent Builder](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agent-builder-for-agentflow-at-a-glance/agent-states-in-agent-builder?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Review and act on a publish request](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agent-builder-for-agentflow-at-a-glance/review-and-act-on-a-publish-request?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [Agent Builder for AgentFlow at a glance](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agent-builder-for-agentflow-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [AgentFlow system prompt guidelines](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agent-builder-for-agentflow-at-a-glance/agentflow-system-prompt-guidelines?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Upload an agent from another tenant](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agent-builder-for-agentflow-at-a-glance/upload-an-agent-from-another-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Assign Agent Builder roles to users](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agent-builder-for-agentflow-at-a-glance/assign-agent-builder-roles-to-users?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Enable long-running tasks for an agent](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agent-builder-for-agentflow-at-a-glance/enable-long-running-tasks-for-an-agent?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [AgentFlow billing and credit usage](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agentflow-billing-and-credit-usage?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Long-running task eligibility check issues](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agent-builder-for-agentflow-at-a-glance/long-running-task-eligibility-check-issues?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Agent states in Agent Builder](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agent-builder-for-agentflow-at-a-glance/agent-states-in-agent-builder?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Review and act on a publish request](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agent-builder-for-agentflow-at-a-glance/review-and-act-on-a-publish-request?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Enable long-running tasks for an agent
+
+- **URL:** https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agent-builder-for-agentflow-at-a-glance/enable-long-running-tasks-for-an-agent?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Products > Reltio AgentFlow™ > Reltio AgentFlow™ overview > Agent Builder for AgentFlow at a glance
+- **Summary:** Learn how to enable long-running tasks for an agent in Agent Builder so that the agent can process large sets of records in the background.
+- **Keywords:** enable long-running tasks agent builder, agentflow custom agent long-running task, long-running task eligibility check agentflow, agent builder capabilities step long running tasks, validate again long-running task eligibility, process large sets of records with a custom agent, long-running tasks, agent builder, agentflow
+- **See also:** [Automated long-running tasks](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/automated-long-running-tasks?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Agent Author](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agent-builder-for-agentflow-at-a-glance/assign-agent-builder-roles-to-users?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Long-running task eligibility check issues](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agent-builder-for-agentflow-at-a-glance/long-running-task-eligibility-check-issues?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Create, test, and submit an agent for review](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agent-builder-for-agentflow-at-a-glance/create-test-and-submit-an-agent-for-review?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Long-running task eligibility check issues
+
+- **URL:** https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agent-builder-for-agentflow-at-a-glance/long-running-task-eligibility-check-issues?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Products > Reltio AgentFlow™ > Reltio AgentFlow™ overview > Agent Builder for AgentFlow at a glance
+- **Summary:** Learn how to resolve long-running task eligibility check issues in Agent Builder, including checks that do not pass, checks that fail, and submissions that are blocked.
+- **Keywords:** long-running task eligibility check issues agentflow, not eligible for LRT agent builder, long running tasks check failed validate again, agent builder submit blocked long running tasks, this doesn't look like a record-processing task, selected tools can't do this work agentflow, long-running tasks, eligibility check, agentflow
+- **See also:** [Enable long-running tasks for an agent](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agent-builder-for-agentflow-at-a-glance/enable-long-running-tasks-for-an-agent?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [AgentFlow system prompt guidelines](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agent-builder-for-agentflow-at-a-glance/agentflow-system-prompt-guidelines?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Create, test, and submit an agent for review](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agent-builder-for-agentflow-at-a-glance/create-test-and-submit-an-agent-for-review?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Download an agent
 
@@ -2186,6 +2202,7 @@ _Topics in this section: Reltio AgentFlow™ overview, Reltio AgentFlow™ Mobil
 - **Path:** Reltio Documentation Portal v2 sitemap > Products > Reltio AgentFlow™ > Reltio AgentFlow™ overview
 - **Summary:** Learn how automated long-running tasks let supported agents process high-volume work in the background using policy-based automation and route low-confidence items for review.
 - **Keywords:** Reltio AgentFlow, automated long-running tasks, Task management, task, job, conversation, scheduled run, auto-accepted items, items that require review, execution steps
+- **See also:** [Enable long-running tasks for an agent](https://docs.reltio.com/en/products/reltio-agentflow/reltio-agentflow-overview/agent-builder-for-agentflow-at-a-glance/enable-long-running-tasks-for-an-agent?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Schedule an automated long-running task
 
@@ -9748,7 +9765,7 @@ _Topics in this section: Reltio Model Context Protocol (MCP) Server at a glance,
 - **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Load and Export APIs > Load and Export APIs at a glance > Export Service APIs
 - **Summary:** Learn how to export data to your S3 bucket without providing AWS static credentials.
 - **Keywords:** export AWS authentication, securing, assumed AWS IAM roles, AWS S3 bucket, create, AWS access policy, create, AWS role, create, CLI/API session duration
-- **See also:** [Contact Support](https://docs.reltio.com/en/reltio/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [AWS access key and secret in favor of IAM roles for Reltio-owned resources](https://docs.reltio.com/en/reltio/deprecation-notices-at-a-glance/aws-access-key-and-secret-in-favor-of-iam-roles-for-reltio-owned-resources?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [AWS access key and secret in favor of IAM roles for Reltio-owned resources](https://docs.reltio.com/en/reltio/deprecation-notices-at-a-glance/aws-access-key-and-secret-in-favor-of-iam-roles-for-reltio-owned-resources?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [create a support request](https://docs.reltio.com/en/reltio/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Setting the skipPostprocessing Parameter
 
@@ -11460,13 +11477,6 @@ _Topics in this section: Reltio Model Context Protocol (MCP) Server at a glance,
 - **Summary:** Overview of the Crosswalk Dates APIs.
 - **See also:** [Get Source Publish Date for Source System](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/configuration-api/get-source-publish-date-for-source-system?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Set Source Publish Date for Source System](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/configuration-api/set-source-publish-date-for-source-system?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
-#### Delete a source system
-
-- **URL:** https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/configuration-api/delete-a-source-system?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > System Administration APIs > System Administration APIs at a glance > Configuration API
-- **Summary:** Learn how to delete an existing source system in a configuration.
-- **Keywords:** how to delete source system, delete source system configuration, purge source type attributes, remove source system crosswalks, use purge all data, schedule source purge task, delete inherited source type, crosswalks, purge, configuration
-
 #### GET Configuration
 
 - **URL:** https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/configuration-api/get-configuration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
@@ -12301,14 +12311,6 @@ _Topics in this section: Reltio Model Context Protocol (MCP) Server at a glance,
 - **Summary:** This task checks a tenant for relations that have the same crosswalks and/or same start/end Entity URIs.
 - **Keywords:** find all relations with same crosswalks, find all relations with same start/end Entity URIs, merge all relations with same crosswalks, merge all relations with same start/end Entity URIs
 
-#### Cleanup Matches Task
-
-- **URL:** https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/cleanup-matches-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > System Administration APIs > System Administration APIs at a glance > Tasks API
-- **Summary:** Learn about the Cleanup Matches Task, which removes specified match data from the MATCHES table for specified match groups.
-- **Keywords:** cleanup matches task, delete match data by group, remove auto not matches, clean potential matches from table, cleanup grouping match records, run background match cleanup job, match group cleanup operation, match cleanup API, match rules, grouping matches
-- **See also:** [Potential Matches Reindex Task](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/potential-matches-reindex-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Delete Entities Task](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/delete-entities-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-
 #### Data Cleanse Task (Asynchronous)
 
 - **URL:** https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/data-cleanse-task-asynchronous?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
@@ -12321,12 +12323,6 @@ _Topics in this section: Reltio Model Context Protocol (MCP) Server at a glance,
 - **URL:** https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/delete-entities-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > System Administration APIs > System Administration APIs at a glance > Tasks API
 - **Summary:** Learn about the DeleteEntitiesTask task
-
-#### Delete History Records Task
-
-- **URL:** https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/delete-history-records-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > System Administration APIs > System Administration APIs at a glance > Tasks API
-- **Summary:** Learn about the DeleteHistoryRecordsTask and how it removes history records in Reltio within a specified date range.
 
 #### Distributed mode
 
@@ -12460,13 +12456,6 @@ _Topics in this section: Reltio Model Context Protocol (MCP) Server at a glance,
 - **Summary:** Compares potential matches in the main and search storages
 - **Keywords:** comparing potential matches, memory safe potential matches cassandra es consistency task, resolving inconsistencies between potential matches, Memory Safe Potential Matches Cassandra Es Consistency Task, potential matches
 
-#### Merge Auto Matches Task
-
-- **URL:** https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/merge-auto-matches-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > System Administration APIs > System Administration APIs at a glance > Tasks API
-- **Summary:** This task gets all records from the auto matches table and initiates a merge process for them.
-- **Keywords:** initiate a merge process for records, merge process, initiate for records, auto matches table, RIQ Match Job
-
 #### Merge Tree Consistency Based on Entities Task
 
 - **URL:** https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/merge-tree-consistency-based-on-entities-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
@@ -12480,14 +12469,6 @@ _Topics in this section: Reltio Model Context Protocol (MCP) Server at a glance,
 - **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > System Administration APIs > System Administration APIs at a glance > Tasks API
 - **Summary:** Learn about the task to check and fix merge tree inconsistencies in the ENTITIES_MERGE_TREE column family.
 - **Keywords:** Merge tree consistency task, ENTITIES_MERGE_TREE column family, fix mode, Merge tree consistency based on records
-
-#### Merge Tree Consistency Based on Relations Task
-
-- **URL:** https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/merge-tree-consistency-based-on-relations-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > System Administration APIs > System Administration APIs at a glance > Tasks API
-- **Summary:** Learn more about how the Merge Tree Consistency Based on Relations Task checks inconsistencies in relation merge tree structure and optionally fixes the inconsistencies it finds.
-- **Keywords:** merge tree consistency based on relations task, merge tree consistency relations, merge tree consistency check for relations, relations merge tree task, fix relation merge tree inconsistencies, distributed merge tree consistency task, merge tree consistency task api, relation consistency task, produce events relation fix, relationsToCheck request body
-- **See also:** [Tasks API](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Merge Tree Consistency Based on Records Task](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/merge-tree-consistency-based-on-records-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Merge Tree Consistency Based on Entities Task](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/merge-tree-consistency-based-on-entities-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Migrate History Attributes Delta Task
 
@@ -12566,14 +12547,6 @@ _Topics in this section: Reltio Model Context Protocol (MCP) Server at a glance,
 - **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > System Administration APIs > System Administration APIs at a glance > Tasks API
 - **Summary:** Information about when and how to run this task.
 - **Keywords:** Process Rebuilt Match Task, process rebuilt match task, rebuilt match task, match task, rebuilt task
-
-#### Rebuild Grouping Task
-
-- **URL:** https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/rebuild-grouping-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > System Administration APIs > System Administration APIs at a glance > Tasks API
-- **Summary:** Learn more about rebuilding grouping structures for Advanced mode.
-- **Keywords:** rebuild grouping task, advanced grouping rebuild, segmented grouping task, rebuildGrouping endpoint
-- **See also:** [Get Active Tasks for Tenant](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/get-active-tasks-for-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Rebuild Match Table Task
 
