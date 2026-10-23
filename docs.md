@@ -1,12 +1,18 @@
 # Reltio Documentation
 
-_Generated: 2026-10-21 02:34 UTC_
+_Generated: 2026-10-23 02:34 UTC_
 
 _Topics: 4075_
 
 ---
 
 # Delete History Records Task
+
+> **Section:** Developer resources > System Administration APIs > System Administration APIs at a glance > Tasks API
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/delete-history-records-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
 
 Learn about the DeleteHistoryRecordsTask and how it removes history records in Reltio within a specified date range.
 
@@ -15796,7 +15802,7 @@ An entity in a hierarchy can have more than one parent, resulting in multiple pa
 
 The **Hierarchy** tab now lets you view every parent path for that entity. Profile details lists each shortened path, including the parent name, so you can switch the tree to a different path without leaving the hierarchy.
 
-For more information, see [View multiple parent paths in a hierarchy](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/view-multiple-parent-paths-in-a-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+For more information, see [View multiple parent paths in a hierarchy](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/view-multiple-parent-paths-in-a-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 ## Identify hierarchy parents and children by crosswalk
 
@@ -15905,10 +15911,10 @@ Materialized hierarchies organize related profiles into parent-child structures 
 
 - 
 
-  **Cycle protection and notifications for entity merges:** A hierarchy integrity violation occurs when a merge would cause a profile to appear above itself in the hierarchy. For example, if Profile A is above Profile B, and Profile B is above Profile C, merging Profile A with Profile C would create an invalid hierarchy structure. In this case, Reltio completes the entity merge but does not apply the hierarchy remap that would create the invalid structure. When hierarchy notifications are configured, recipients receive a notification identifying the affected hierarchy, version, and profile. For more information, see [Hierarchy perspective](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/hierarchy-perspective?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Notification Management at a glance](https://docs.reltio.com/en/applications/console/configuration-applications/notification-management-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), and [Hierarchy notifications](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/hierarchy-notifications?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+  **Cycle protection and notifications for entity merges:** A hierarchy integrity violation occurs when a merge would cause a profile to appear above itself in the hierarchy. For example, if Profile A is above Profile B, and Profile B is above Profile C, merging Profile A with Profile C would create an invalid hierarchy structure. In this case, Reltio completes the entity merge but does not apply the hierarchy remap that would create the invalid structure. When hierarchy notifications are configured, recipients receive a notification identifying the affected hierarchy, version, and profile. For more information, see [Hierarchy perspective](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/hierarchy-perspective?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Notification Management at a glance](https://docs.reltio.com/en/applications/console/configuration-applications/notification-management-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), and [Hierarchy notifications](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/hierarchy-notifications?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 - 
 
-  **Reorganize hierarchy nodes with drag and drop:** The **Hierarchy** tab lets you drag a node and its descendants to another position within the same hierarchy, making the structure easier to reorganize. For more information, see [Move or copy hierarchy nodes](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/move-or-copy-hierarchy-nodes?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+  **Reorganize hierarchy nodes with drag and drop:** The **Hierarchy** tab lets you drag a node and its descendants to another position within the same hierarchy, making the structure easier to reorganize. For more information, see [Move or copy hierarchy nodes](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/move-or-copy-hierarchy-nodes?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 ## Introducing SAP Reltio's velocity pack for SAP S/4HANA
 
@@ -16002,7 +16008,7 @@ Materialized hierarchies organize entities into parent and child connections bas
 
 Materialized Hierarchy Management APIs now validate hierarchy structures against configured parent, child, and child-cardinality rules. Read operations return validation details for affected hierarchy connections, while write operations reject changes that introduce structural violations. In exceptional cases, you can apply a change even if it introduces structural violations..
 
-For more information, see [Materialized Hierarchy Management APIs](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Configure tenant business settings for hierarchy](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/configure-tenant-business-settings-for-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+For more information, see [Materialized Hierarchy Management APIs](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Configure tenant business settings for hierarchy](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/configure-tenant-business-settings-for-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 ## Preserve hierarchy connections during merge and unmerge
 
@@ -16010,7 +16016,7 @@ Materialized hierarchies organize related profiles into parent-child structures 
 
 If unmerge processing produces a disconnected tree, the detached tree is moved to a separate hierarchy with a unique name.
 
-For more information, see [Effects of entity operations on materialized hierarchies](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/effects-of-entity-operations-on-materialized-hierarchies?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+For more information, see [Effects of entity operations in Advanced hierarchy management](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/effects-of-entity-operations-in-advanced-hierarchy-management?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 ## Five new languages added to the Reltio Documentation Portal
 
@@ -16252,7 +16258,7 @@ Cloning creates a new hierarchy instance with the same node structure. This enha
 
 You can also export hierarchy instance data, including the hierarchy structure and related hierarchy details, in> CSV and JSON output formats. Export request submits an export job that you can track on the Export page.
 
-For more information, see [Materialized hierarchy](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Clone a hierarchy in the Profile view](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/clone-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), and [Export a hierarchy in the Profile view](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/export-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+For more information, see [Advanced hierarchy management](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Clone a hierarchy in the Profile view](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/clone-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), and [Export a hierarchy in the Profile view](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/export-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 ## LCA and DVF errors are now easier to understand and resolve
 
@@ -16382,7 +16388,7 @@ Learn about the new features and enhancements introduced in this 2026.1.8.0 rele
 
 Hierarchy names must now be unique within each tenant, and version names must be unique within each hierarchy. Reltio validates uniqueness when you create, clone, or edit a hierarchy or version. When you split a hierarchy, the resulting hierarchies and versions receive numbered suffixes, such as VersionName_1 and VersionName_2, to ensure the generated names are unique..
 
-For more information, see [Add a hierarchy in the Profile view](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/add-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Clone a hierarchy in the Profile view](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/clone-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), and [Import a hierarchy in the Profile view](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/import-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+For more information, see [Add a hierarchy in the Profile view](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/add-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Clone a hierarchy in the Profile view](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/clone-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), and [Import a hierarchy in the Profile view](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/import-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
@@ -16463,7 +16469,7 @@ A materialized hierarchy represents the hierarchy structure of related profiles 
 
 The **Hierarchy** tab now lets you edit a hierarchy's metadata, including its name, versioning settings, and version start and end dates. This helps you keep hierarchy metadata up to date as the structure evolves, without recreating the hierarchy or its structure.
 
-For more information, see [Edit hierarchy details in the Profile view](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/edit-hierarchy-details-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+For more information, see [Edit hierarchy details in the Profile view](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/edit-hierarchy-details-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 ## Credential expiry alerts for Reltio Data Pipelines
 
@@ -16747,7 +16753,9 @@ Find the new velocity pack that best suits your needs:
 
 Each guide is tailored to the learning style you select. You can regenerate it, share a link to it with colleagues who have Reltio credentials, download it as Markdown, or print it as a PDF. Docs for You is not a chatbot and doesn't connect to your tenant. Any Reltio customer with a tenant ID and valid user credentials can use this application.
 
-Find it in the top-left corner of the [Documentation Portal](https://docs.reltio.com/en?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) or go straight to the [Docs for you](https://reltio-docs-for-you.reltio.build/login) application.*Image: i-docs-for-you-preview.gif*
+Find it in the top-left corner of the [Documentation Portal](https://docs.reltio.com/en?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) or go straight to the [Docs for you](https://reltio-docs-for-you.reltio.build/login) application. 
+
+*Video: v-docs-for-you-release-note.mp4*
 
 | Get going with this feature | Get going with this feature |
 | --- | --- |
@@ -16758,9 +16766,9 @@ Find it in the top-left corner of the [Documentation Portal](https://docs.reltio
 | Additional subscription required | No |
 | Find out more | [Reltio Docs for You overview](https://docs.reltio.com/en/reltio/whats-in-the-box-at-a-glance/reltio-docs-for-you-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
 
-## Materialized hierarchy management including attribute inheritance
+## Advanced hierarchy management including attribute inheritance
 
-Materialized hierarchy helps organizations create, govern, and maintain complex business structures for customers, products, territories, organizations, and financial data.
+Advanced hierarchy helps organizations create, govern, and maintain complex business structures for customers, products, territories, organizations, and financial data.
 
 Organizations can maintain current, future, and historical hierarchy versions while preparing changes without disrupting the hierarchy used by current business operations. Structural validation helps prevent invalid hierarchy changes from reaching downstream consumers. Attribute inheritance applies common business values through a hierarchy, while allowing overriding a local value for individual nodes or branches.
 
@@ -16792,7 +16800,7 @@ The following capabilities are available:
 | Target roles | , , |
 | Configuration required | Yes |
 | Additional subscription required | No |
-| Find out more | [Materialized hierarchy](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
+| Find out more | [Advanced hierarchy management](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
 
 ## Flexible entity resolution network (FERN)
 
@@ -72996,17 +73004,7 @@ Relationship types contain metadata properties and attributes that define the co
 
 This table identifies the preconfigured Lot Hierarchy relationship type that comes with SAP Reltio's velocity pack for Industrial Manufacturing. Use this relationship type when you want to identify connections between two MaterialLot entity types.
 
-**LotHierarchy**
-- **URI:** configuration/relationTypes/LotHierarchy
-- **Label:** Lot Hierarchy
-- **Description:** Supports sub-batch splitting for traceability.
-- **Type:** 
-- **Direction:** 
-- **Implicit:** false
-- **Start Object:** configuration/entityTypes/MaterialLot
-- **Start Label:** materiallot
-- **End Object:** configuration/entityTypes/MaterialLot
-- **End Label:** materiallot
+*[Embedded content: https://docs.google.com/spreadsheets/d/e/2PACX-1vQco5_x6vseZeHI97uMQb-v2Uj_tRd2PSxcAZ4bmM39TvqzKVm3deOTRrgDGH8Y5us07-MinAyL_Ory/pubhtml?gid=1137677466&single=true&widget=true&headers=false&chrome=false]*
 
 > **Note:** On the table above, the top level attributes are represented in bold.
 
@@ -73030,17 +73028,7 @@ Relationship types contain metadata properties and attributes that define the co
 
 This table identifies the preconfigured Lot Received From Supplier relationship type that comes with SAP Reltio's velocity pack for Industrial Manufacturing. Use this relationship type when you want to identify connections between MaterialLot and Supplier entity types.
 
-**LotReceivedFromSupplier**
-- **URI:** configuration/relationTypes/LotReceivedFromSupplier
-- **Label:** Lot Received From Supplier
-- **Description:** Traces a batch back to the supplier — critical for recall investigation.
-- **Type:** 
-- **Direction:** 
-- **Implicit:** false
-- **Start Object:** configuration/entityTypes/MaterialLot
-- **Start Label:** materiallot
-- **End Object:** configuration/entityTypes/Supplier
-- **End Label:** supplier
+*[Embedded content: https://docs.google.com/spreadsheets/d/e/2PACX-1vQco5_x6vseZeHI97uMQb-v2Uj_tRd2PSxcAZ4bmM39TvqzKVm3deOTRrgDGH8Y5us07-MinAyL_Ory/pubhtml?gid=54393932&single=true&widget=true&headers=false&chrome=false]*
 
 > **Note:** On the table above, the top level attributes are represented in bold.
 
@@ -108413,6 +108401,12 @@ The JSON array of entity URIs to be check and fix inconsistencies.
 ---
 
 # Cleanup Matches Task
+
+> **Section:** Developer resources > System Administration APIs > System Administration APIs at a glance > Tasks API
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/cleanup-matches-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
 **Keywords:** cleanup matches task, delete match data by group, remove auto not matches, clean potential matches from table, cleanup grouping match records, run background match cleanup job, match group cleanup operation, match cleanup API, match rules, grouping matches, merge logic
 
 
@@ -111020,6 +111014,12 @@ JSON Array of entity URIs to be processed. This is optional. For example:
 ---
 
 # Rebuild Grouping Task
+
+> **Section:** Developer resources > System Administration APIs > System Administration APIs at a glance > Tasks API
+
+
+**Source:** https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/rebuild-grouping-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
 **Keywords:** rebuild grouping task, advanced grouping rebuild, segmented grouping task, rebuildGrouping endpoint
 
 
@@ -129782,9 +129782,9 @@ This API selects one entity as the resulting "survivor" and combines all attribu
 
 > **Note:** In case of a manual merge, if one or both entities are changed during the merge operation, the API throws an exception.
 
-**Impact of Entity Merging on Materialized Hierarchy**
+**Impact of Entity Merging in Advanced hierarchy management**
 
-When entities in the same or different materialized hierarchies are merged, the merge can affect their hierarchy placement, connections, metadata, and effective dates. For information about the outcome of each scenario, see [Effects of entity operations on materialized hierarchies](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/effects-of-entity-operations-on-materialized-hierarchies?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+When entities in the same or different hierarchies are merged, the merge can affect their hierarchy placement, connections, metadata, and effective dates. For information about the outcome of each scenario, see [Effects of entity operations in Advanced hierarchy management](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/effects-of-entity-operations-in-advanced-hierarchy-management?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 ## Request
 
@@ -139816,7 +139816,7 @@ The following table describes the fields returned in the response body.
 | `selected` | Boolean | Optional. Indicates whether this is the object specified in the request. Default: `false`. |
 | `connectionId` | String | The connection ID between the object and its parent. For the root object, this value is `null`. |
 | `children` | Array of objects | The list of child nodes. Each child repeats the same response structure recursively. |
-| `validationViolations` | Array of strings | [Optional] Lists the violations of the hierarchy type's structural rules that were detected for this child object. This field is present only when at least one rule is violated. For more information, see [Structural validation messages for materialized hierarchy](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/structural-validation-messages-for-materialized-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). Example: `["parent has multiple children of type HCO when it's allowed to have only 1"]`. |
+| `validationViolations` | Array of strings | [Optional] Lists the violations of the hierarchy type's structural rules that were detected for this child object. This field is present only when at least one rule is violated. For more information, see [Structural validation messages for Advanced hierarchy management](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/structural-validation-messages-for-advanced-hierarchy-management?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). Example: `["parent has multiple children of type HCO when it's allowed to have only 1"]`. |
 
 ## Example response
 
@@ -140114,7 +140114,7 @@ The following table describes the fields returned in the response body.
 | `selected` | Boolean | Optional. Indicates whether this is the object specified in the request. |
 | `connectionId` | String | The connection ID between the object and its parent. For the root object, this value is `null`. |
 | `children` | Array of objects | The list of child nodes. Each child repeats the same response structure recursively. |
-| `validationViolations` | Array of strings | [Optional] Lists the violations of the hierarchy type's structural rules that were detected for this child object. This field is present only when at least one rule is violated. For more information, see [Structural validation messages for materialized hierarchy](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/structural-validation-messages-for-materialized-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). Example: `["parent has multiple children of type HCO when it's allowed to have only 1"]`. |
+| `validationViolations` | Array of strings | [Optional] Lists the violations of the hierarchy type's structural rules that were detected for this child object. This field is present only when at least one rule is violated. For more information, see [Structural validation messages for Advanced hierarchy management](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/structural-validation-messages-for-advanced-hierarchy-management?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). Example: `["parent has multiple children of type HCO when it's allowed to have only 1"]`. |
 
 ## Example response
 
@@ -140537,7 +140537,7 @@ The following table describes the fields returned in the response body.
 | `hasMoreChildren` | Boolean | Indicates whether the child object has more children than are returned in the current view. |
 | `hasManyParents` | Boolean | Optional. Indicates whether the child object has multiple parents. Default: `false`. |
 | `connectionId` | String | The connection ID between the requested object and this child object. |
-| `validationViolations` | Array of strings | [Optional] Lists the violations of the hierarchy type's structural rules that were detected for this child object.. This field is present only when at least one rule is violated. For more information, see [Structural validation messages for materialized hierarchy](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/structural-validation-messages-for-materialized-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). Example: `["parent has multiple children of type HCO when it's allowed to have only 1"]`. |
+| `validationViolations` | Array of strings | [Optional] Lists the violations of the hierarchy type's structural rules that were detected for this child object.. This field is present only when at least one rule is violated. For more information, see [Structural validation messages for Advanced hierarchy management](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/structural-validation-messages-for-advanced-hierarchy-management?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). Example: `["parent has multiple children of type HCO when it's allowed to have only 1"]`. |
 
 ## Example response
 
@@ -140642,7 +140642,7 @@ The following table describes the fields returned in the response body.
 | `hasMoreChildren` | Boolean | Indicates whether the parent object has additional child objects. |
 | `hasManyParents` | Boolean | Optional. Indicates whether the parent object has multiple parents. Default: `false`. |
 | `connectionId` | String | The connection ID between the requested object and this parent object. |
-| `validationViolations` | Array of strings | [Optional] Lists the violations of the hierarchy type's structural rules that were detected for this child object. This field is present only when at least one rule is violated. For more information, see [Structural validation messages for materialized hierarchy](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/structural-validation-messages-for-materialized-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). Example: `["parent has multiple children of type HCO when it's allowed to have only 1"]`. |
+| `validationViolations` | Array of strings | [Optional] Lists the violations of the hierarchy type's structural rules that were detected for this child object. This field is present only when at least one rule is violated. For more information, see [Structural validation messages for Advanced hierarchy management](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/structural-validation-messages-for-advanced-hierarchy-management?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). Example: `["parent has multiple children of type HCO when it's allowed to have only 1"]`. |
 
 ## Example response
 
@@ -141240,21 +141240,21 @@ The following example shows the response body.
 
 ---
 
-# Structural validation messages for materialized hierarchy
+# Structural validation messages for Advanced hierarchy management
 
 > **Section:** Developer resources > Materialized Hierarchy Management APIs > Materialized Hierarchy Management APIs
 
 
-**Source:** https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/structural-validation-messages-for-materialized-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/structural-validation-messages-for-advanced-hierarchy-management?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** hierarchy validation violation messages, structural hierarchy validation, validationViolations response field, hierarchy cardinality errors, hierarchy parent child validation
 
 
-Learn more about structural validation violation messages for materialized hierarchies.
+Learn more about structural validation violation messages for hierarchies in Advanced hierarchy management.
 
 Hierarchy read APIs can return a `validationViolations` array for an object that violates the structural rules configured for its hierarchy type. Each array item describes a violation of a parent, child, or child-cardinality rule.
 
-For information about configuring these rules, see [Configure tenant business settings for hierarchy](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/configure-tenant-business-settings-for-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+For information about configuring these rules, see [Configure tenant business settings for hierarchy](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/configure-tenant-business-settings-for-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 ## Message templates
 
@@ -200801,10 +200801,10 @@ To confirm FERN data selection, perform the following steps:
 
 # Hierarchy notifications
 
-> **Section:** Objectives > Manage profiles > Profile management at a glance > Profile management operation > Materialized hierarchy
+> **Section:** Objectives > Manage profiles > Profile management at a glance > Profile management operation > Advanced hierarchy management
 
 
-**Source:** https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/hierarchy-notifications?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/hierarchy-notifications?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 
 Learn about hierarchy notifications and how to configure recipients.
@@ -200819,7 +200819,7 @@ For role definitions, see [About roles](https://docs.reltio.com/en/roles/about-r
 
 ## Cycle notification
 
-When an operation would create a cycle in a materialized hierarchy, configured recipients receive a `HIERARCHY_CYCLE_DETECTED` notification. A cycle occurs when the operation would cause a profile to become its own ancestor. The connection that would create the cycle is not saved. The hierarchy remap that would create the cycle is not applied.
+When an operation in Advanced hierarchy management would create a cycle, configured recipients receive a `HIERARCHY_CYCLE_DETECTED` notification. A cycle occurs when the operation would cause a profile to become its own ancestor. The connection that would create the cycle is not saved. The hierarchy remap that would create the cycle is not applied.
 
 If a cycle is detected during a profile merge, the entity merge completes, but the hierarchy remap that would create the cycle isn't applied. The notification identifies the affected hierarchy, version, and profile.
 
@@ -264202,6 +264202,12 @@ The ROLE_USAGE_REPORTING system role doesn't have any access permissions for Rel
 
 # ROLE_USER_MATCHIQ_EXTERNAL_MATCH Access permissions
 
+> **Section:** Objectives > Administer system > System administration at a glance > Access management at a glance > Access management reference > Authorization > System roles > Resource-specific roles
+
+
+**Source:** https://docs.reltio.com/en/objectives/administer-system/system-administration-at-a-glance/access-management-at-a-glance/access-management-reference/authorization/system-roles/resource-specific-roles/role_user_matchiq_external_match-access-permissions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+
 Learn about ROLE_USER_MATCHIQ_EXTERNAL_MATCH role to manage access permissions for Reltio Match IQ.
 
 You assign roles to user and group accounts to grant them permissions (access rights and privileges). For more information, see topic [System roles](https://docs.reltio.com/en/objectives/administer-system/system-administration-at-a-glance/access-management-at-a-glance/access-management-reference/authorization/system-roles?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
@@ -264224,6 +264230,12 @@ This table identifies the Reltio access permissions for Reltio services, resourc
 
 # ROLE_USER_MATCHIQ_PUBLISH_MODEL Access permissions
 
+> **Section:** Objectives > Administer system > System administration at a glance > Access management at a glance > Access management reference > Authorization > System roles > Resource-specific roles
+
+
+**Source:** https://docs.reltio.com/en/objectives/administer-system/system-administration-at-a-glance/access-management-at-a-glance/access-management-reference/authorization/system-roles/resource-specific-roles/role_user_matchiq_publish_model-access-permissions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+
 Learn about ROLE_USER_MATCHIQ_PUBLISH_MODEL role to manage access permissions for Reltio Match IQ.
 
 You assign roles to user and group accounts to grant them permissions (access rights and privileges). For more information, see topic [System roles](https://docs.reltio.com/en/objectives/administer-system/system-administration-at-a-glance/access-management-at-a-glance/access-management-reference/authorization/system-roles?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
@@ -264244,6 +264256,12 @@ This table identifies the Reltio access permissions for Reltio services, resourc
 ---
 
 # ROLE_USER_MATCHIQ_SHARE_MODEL Access permissions
+
+> **Section:** Objectives > Administer system > System administration at a glance > Access management at a glance > Access management reference > Authorization > System roles > Resource-specific roles
+
+
+**Source:** https://docs.reltio.com/en/objectives/administer-system/system-administration-at-a-glance/access-management-at-a-glance/access-management-reference/authorization/system-roles/resource-specific-roles/role_user_matchiq_share_model-access-permissions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
 
 Learn about ROLE_USER_MATCHIQ_SHARE_MODEL role to manage access permissions for Reltio Match IQ.
 
@@ -264267,6 +264285,12 @@ This table identifies the Reltio access permissions for Reltio services, resourc
 ---
 
 # ROLE_USER_MATCHIQ_TRAIN_MODEL Access permissions
+
+> **Section:** Objectives > Administer system > System administration at a glance > Access management at a glance > Access management reference > Authorization > System roles > Resource-specific roles
+
+
+**Source:** https://docs.reltio.com/en/objectives/administer-system/system-administration-at-a-glance/access-management-at-a-glance/access-management-reference/authorization/system-roles/resource-specific-roles/role_user_matchiq_train_model-access-permissions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
 
 Learn about ROLE_USER_MATCHIQ_TRAIN_MODEL role to manage access permissions for Reltio Match IQ.
 
@@ -264418,6 +264442,12 @@ This table identifies the Reltio access permissions for Reltio services, resourc
 ---
 
 # Configuration service access permissions service access permissions
+
+> **Section:** Objectives > Administer system > System administration at a glance > Access management at a glance > Access management reference > Authorization > Custom roles > Service access permissions
+
+
+**Source:** https://docs.reltio.com/en/objectives/administer-system/system-administration-at-a-glance/access-management-at-a-glance/access-management-reference/authorization/custom-roles/service-access-permissions/configuration-service-access-permissions-service-access-permissions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
 **Keywords:** Configuration service access permissions
 
 
@@ -287052,11 +287082,11 @@ To merge profiles
    2. Select the **Insert row above** option to insert an attribute above the current row. You’ll see a dialog box, with a list of attributes. Select the attribute that you want to add. A new row is added above the current row, with the newly selected attribute value displayed for the profile.
    3. Select the **Hide row** hide the current row from the display.
 7. To merge a profile with the main entity, hover over the profile name in the column and select the **Merge** button. The profile details are merged with the main entity details and the merged profile no longer exists.
-   If merging the entities would create a cycle in a materialized hierarchy, Reltio completes the entity merge but does not apply the hierarchy remap. The existing hierarchy structure remains unchanged. For more information, see Effects of entity operations on materialized hierarchies.
+   If merging the entities would create a cycle in a hierarchy in Advanced hierarchy management, Reltio completes the entity merge but does not apply the hierarchy remap. The existing hierarchy structure remains unchanged. For more information, see [Effects of entity operations in Advanced hierarchy management](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/effects-of-entity-operations-in-advanced-hierarchy-management?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
    *Image: pm_pmnewmergebutton.png*
-   > **Note:** For more information, see [Effects of entity operations on materialized hierarchies](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/effects-of-entity-operations-on-materialized-hierarchies?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
-   > A profile merge can also affect [materialized hierarchy data](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). If each profile belongs to a different unversioned hierarchy of the same type, the two hierarchies are combined. The hierarchy for the winning entity keeps its name and receives the connections from the other profile. If both hierarchies contain the same parent-child connections, their effective dates are combined.
-   > If Hierarchy cycle detection notifications are configured for the tenant, assigned recipients receive a notification when a hierarchy change would create a cycle. For more information, see [Notification Management at a glance](https://docs.reltio.com/en/applications/console/configuration-applications/notification-management-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Hierarchy notifications](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/hierarchy-notifications?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+   > **Note:** For more information, see [Effects of entity operations in Advanced hierarchy management](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/effects-of-entity-operations-in-advanced-hierarchy-management?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+   > A profile merge can also affect [materialized hierarchy data](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). If each profile belongs to a different unversioned hierarchy of the same type, the two hierarchies are combined. The hierarchy for the winning entity keeps its name and receives the connections from the other profile. If both hierarchies contain the same parent-child connections, their effective dates are combined.
+   > If Hierarchy cycle detection notifications are configured for the tenant, assigned recipients receive a notification when a hierarchy change would create a cycle. For more information, see [Notification Management at a glance](https://docs.reltio.com/en/applications/console/configuration-applications/notification-management-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Hierarchy notifications](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/hierarchy-notifications?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 8. To mark the profile as not a match, hover over the profile name and select the **Not a match** button. The profile is removed from this page and will be available in the **Not a Match** tab.
    *Image: pm_pmnewnotamatchbutton.png*
    > **Note:** You’ll find the **Merge** and **Not a Match** buttons on top of the table. Clicking on these will either merge all the profiles in the page with the main entity or mark all of them as not a match.
@@ -289253,7 +289283,7 @@ Learn about hierarchy types and how they define the entity structures used to bu
 
 A hierarchy type defines a structural relationship between entity types, such as an organization structure or an employee reporting line.
 
-In the **Data Modeler**, configure the hierarchy types that use the Materialized hierarchy structure. Each hierarchy type requires a name, a display name, and the entity types that can use the hierarchy type. You can have multiple hierarchy types for different structural views, like an organization hierarchy and an employee hierarchy.
+In the **Data Modeler**, configure the hierarchy types for Advanced hierarchy management. Each hierarchy type requires a name, a display name, and the entity types that can use the hierarchy type. You can have multiple hierarchy types for different structural views, like an organization hierarchy and an employee hierarchy.
 
 From the **Hierarchy types** page, you can:
 
@@ -289276,9 +289306,9 @@ From the **Hierarchy types** page, you can:
 **Keywords:** create hierarchy type, data modeler hierarchy, materialized hierarchy, hierarchy type setup, hierarchy type creation, entity type mapping, hierarchy display name, hierarchy type uri, data modeler, entity types
 
 
-Learn how to create a hierarchy type so that it is available for Materialized hierarchy in the tenant.
+Learn how to create a hierarchy type so that it is available for Advanced hierarchy management in the tenant.
 
-You can define a new materialized hierarchy type in **Data Modeler** for a specific set of entity types.
+You can define a new hierarchy type for Advanced hierarchy management in **Data Modeler** for a specific set of entity types.
 
 **Prerequisites**Before you continue, make sure the following prerequisites are met: 
 
@@ -289336,7 +289366,7 @@ To add a hierarchy type:
 
 Learn how to delete a hierarchy type.
 
-In the **Data Modeler**, you can delete a hierarchy type so that it is no longer available for Materialized hierarchy.
+In the **Data Modeler**, you can delete a hierarchy type so that it is no longer available for Advanced hierarchy management.
 
 **Prerequisites**Before you continue, make sure the following prerequisites are met: 
 
@@ -289352,7 +289382,7 @@ To delete a hierarchy type:
    *Image: dm-deletehierarchytype.png*
 4. In the confirmation dialog, select **Yes**. A confirmation message appears indicating that the hierarchy type was successfully deleted.
 
-**Result**The hierarchy type is removed from the **Hierarchy types** list and is no longer available for Materialized hierarchy.
+**Result**The hierarchy type is removed from the **Hierarchy types** list and is no longer available for Advanced hierarchy management.
 
 
 
@@ -292770,13 +292800,13 @@ The Hierarchy perspective supports the following actions:
   View the hierarchy instances associated with an entity.
 - 
 
-  [Create](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/add-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) or [import](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/import-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) a hierarchy structure.
+  [Create](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/add-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) or [import](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/import-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) a hierarchy structure.
 - 
 
-  [Add parent and child connections](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/add-parent-and-child-nodes-in-a-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) to extend a hierarchy, along with their start and end dates
+  [Add parent and child connections](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/add-parent-and-child-nodes-in-a-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) to extend a hierarchy, along with their start and end dates
 - 
 
-  [Move or copy a hierarchy branch](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/move-or-copy-hierarchy-nodes?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) from one one node to another within the same hierarchy instance.
+  [Move or copy a hierarchy branch](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/move-or-copy-hierarchy-nodes?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) from one one node to another within the same hierarchy instance.
 - 
 
   Delete a hierarchy or a node in the hierarchy.
@@ -292786,14 +292816,14 @@ The Hierarchy perspective supports the following actions:
 - 
 
   Review hierarchy data using an effective date so that the displayed structure matches the required business timeframe.
-- [Clone a hierarchy](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/clone-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) to create a copy of an existing hierarchy structure.
-- [Export a hierarchy](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/export-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) to download the hierarchy structure for external use.
+- [Clone a hierarchy](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/clone-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) to create a copy of an existing hierarchy structure.
+- [Export a hierarchy](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/export-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) to download the hierarchy structure for external use.
 
-The **Hierarchy** perspective depends on both backend and UI setup. Tenant business configuration defines the hierarchy types available to the tenant and the entity types that can use them. UI configuration controls whether and where the Hierarchy tab appears in the Profile view for a given entity type and which users can access it. For more information, see [Configure tenant business settings for hierarchy](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/configure-tenant-business-settings-for-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Configure UI settings for the Hierarchy tab](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/configure-ui-settings-for-the-hierarchy-tab?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+The **Hierarchy** perspective depends on both backend and UI setup. Tenant business configuration defines the hierarchy types available to the tenant and the entity types that can use them. UI configuration controls whether and where the Hierarchy tab appears in the Profile view for a given entity type and which users can access it. For more information, see [Configure tenant business settings for hierarchy](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/configure-tenant-business-settings-for-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Configure UI settings for the Hierarchy tab](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/configure-ui-settings-for-the-hierarchy-tab?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 ## Merging profiles and hierarchies
 
-When entities in the same or different materialized hierarchies are merged, the merge can affect their hierarchy placement, connections, metadata, and effective dates. For information about the outcome of each scenario, see [Effects of entity operations on materialized hierarchies](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/effects-of-entity-operations-on-materialized-hierarchies?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+When entities in the same or different hierarchies in Advanced hierarchy management are merged, the merge can affect their hierarchy placement, connections, metadata, and effective dates. For information about the outcome of each scenario, see [Effects of entity operations in Advanced hierarchy management](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/effects-of-entity-operations-in-advanced-hierarchy-management?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 [Notification Management at a glance](https://docs.reltio.com/en/applications/console/configuration-applications/notification-management-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)## Watch how Hierarchy perspective works
 
@@ -293587,27 +293617,27 @@ The following sections explain the APIs used for the Activation service. Ensure 
 
 ---
 
-# Materialized hierarchy
+# Advanced hierarchy management
 
 > **Section:** Objectives > Manage profiles > Profile management at a glance > Profile management operation
 
 
-**Source:** https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** materialized hierarchy, hierarchy management, profile hierarchies, hierarchy versions, effective date hierarchy, hierarchy perspective, parent child hierarchy, hierarchy structures, versioning, profiles
 
 
 Learn about how Materialized hierarchy helps you create, view, and manage hierarchy structures for profiles in Hub.
 
-Materialized hierarchy is a feature that organizes related profiles into parent-child structures. It helps represent business relationships in a clear hierarchy, such as organizational, account, or product structures.
+Advanced hierarchy management is a feature that organizes related profiles into parent-child structures. It helps represent business relationships in a clear hierarchy, such as organizational, account, or product structures.
 
-Materialized hierarchy is node based. Profiles are connected within the hierarchy structure itself, so a separate relationship object is not required between connected entities.
+Advanced hierarchy management is node based. Profiles are connected within the hierarchy structure itself, so a separate relationship object is not required between connected entities.
 
-Materialized hierarchy also supports changes over time. It can include hierarchy versions and effective dates, which makes it possible to work with current, future, or historical hierarchy structures without replacing existing hierarchy data.
+Advanced hierarchy management also supports changes over time. It can include hierarchy versions and effective dates, which makes it possible to work with current, future, or historical hierarchy structures without replacing existing hierarchy data.
 
-In Hub, Materialized hierarchy is available through the [Hierarchy perspective](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/hierarchy-perspective?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) in the **Profile** view. This perspective shows the hierarchy instances associated with a selected profile and provides the context for reviewing and managing hierarchy data.
+In **Hub**, Advanced hierarchy management is available through the [Hierarchy perspective](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/hierarchy-perspective?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) in the **Profile** view. This perspective shows the hierarchy instances associated with a selected profile and provides the context for reviewing and managing hierarchy data.
 
-Materialized hierarchy depends on both tenant and UI configuration. [Tenant business configuration](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/configure-tenant-business-settings-for-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) defines the hierarchy types available in the tenant and the entity types that can use them. [UI configuration](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/configure-ui-settings-for-the-hierarchy-tab?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) controls whether the Hierarchy perspective appears in the Profile view for a given entity type and which roles can access it.
+Advanced hierarchy management depends on both tenant and UI configuration. [Tenant business configuration](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/configure-tenant-business-settings-for-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) defines the hierarchy types available in the tenant and the entity types that can use them. [UI configuration](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/configure-ui-settings-for-the-hierarchy-tab?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) controls whether the Hierarchy perspective appears in the Profile view for a given entity type and which roles can access it.
 
 
 
@@ -294040,10 +294070,10 @@ Your modifications are saved.You can also use the API to update a segment. For m
 
 # Add a hierarchy in the Profile view
 
-> **Section:** Objectives > Manage profiles > Profile management at a glance > Profile management operation > Materialized hierarchy
+> **Section:** Objectives > Manage profiles > Profile management at a glance > Profile management operation > Advanced hierarchy management
 
 
-**Source:** https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/add-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/add-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** add hierarchy profile view, create hierarchy instance, new hierarchy setup, hierarchy creation flow, hierarchy versioning setup, hierarchy type selection, initial hierarchy connection, create versioned hierarchy, hierarchy, versioning
 
@@ -294056,10 +294086,10 @@ Create a new hierarchy when you need to organize an entity within a hierarchy ty
 
 - 
 
-  You must enable hierarchy in the tenant configuration. For more information, see [Configure tenant business settings for hierarchy](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/configure-tenant-business-settings-for-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+  You must enable hierarchy in the tenant configuration. For more information, see [Configure tenant business settings for hierarchy](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/configure-tenant-business-settings-for-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 - 
 
-  You must enable hierarchy in the UI configuration. For more information, see [Configure UI settings for the Hierarchy tab](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/configure-ui-settings-for-the-hierarchy-tab?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+  You must enable hierarchy in the UI configuration. For more information, see [Configure UI settings for the Hierarchy tab](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/configure-ui-settings-for-the-hierarchy-tab?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 To add a hierarchy:
@@ -294090,10 +294120,10 @@ The new hierarchy instance is created and is available in the **Hierarchy** tab 
 
 # Add parent and child nodes in a hierarchy
 
-> **Section:** Objectives > Manage profiles > Profile management at a glance > Profile management operation > Materialized hierarchy
+> **Section:** Objectives > Manage profiles > Profile management at a glance > Profile management operation > Advanced hierarchy management
 
 
-**Source:** https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/add-parent-and-child-nodes-in-a-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/add-parent-and-child-nodes-in-a-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** add hierarchy nodes, add parent node, add child node, expand hierarchy structure, update hierarchy tree, select parent profile, select child profile, hierarchy node actions, parent node, child node
 
@@ -294109,13 +294139,13 @@ Connect another profile to an existing hierarchy as a parent or child node.
   You must have the ROLE_API or MDM.Data.Hr permission (for custom roles) assigned to you
 - 
 
-  You must enable hierarchy in the tenant configuration. For more information, see [Configure tenant business settings for hierarchy](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/configure-tenant-business-settings-for-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+  You must enable hierarchy in the tenant configuration. For more information, see [Configure tenant business settings for hierarchy](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/configure-tenant-business-settings-for-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 - 
 
-  You must enable hierarchy in the UI configuration. For more information, see [Configure UI settings for the Hierarchy tab](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/configure-ui-settings-for-the-hierarchy-tab?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+  You must enable hierarchy in the UI configuration. For more information, see [Configure UI settings for the Hierarchy tab](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/configure-ui-settings-for-the-hierarchy-tab?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 - 
 
-  You must create a hierarchy for a profile. For more information, see [Add a hierarchy in the Profile view](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/add-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+  You must create a hierarchy for a profile. For more information, see [Add a hierarchy in the Profile view](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/add-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 To add a parent or child node
@@ -294143,10 +294173,10 @@ Repeat this task to continue building the hierarchy.
 
 # Clone a hierarchy in the Profile view
 
-> **Section:** Objectives > Manage profiles > Profile management at a glance > Profile management operation > Materialized hierarchy
+> **Section:** Objectives > Manage profiles > Profile management at a glance > Profile management operation > Advanced hierarchy management
 
 
-**Source:** https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/clone-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/clone-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** clone hierarchy in profile view, clone an existing hierarchy in hub, create a new hierarchy from existing structure, use the hierarchy tab to clone, clone hierarchy with versioning, create a versioned hierarchy from a clone, hierarchy, cloning, versioning
 
@@ -294157,9 +294187,9 @@ In the Hierarchy tab, you can create a new hierarchy by reusing an existing hier
 
 **Prerequisites**Before you continue, make sure the following prerequisites are met: 
 
-- You must [enable hierarchy in the tenant configuration](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/configure-tenant-business-settings-for-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
-- You must [enable hierarchy in the UI configuration](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/configure-ui-settings-for-the-hierarchy-tab?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
-- [Add a hierarchy](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/add-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) in the Hierarchy tab.
+- You must [enable hierarchy in the tenant configuration](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/configure-tenant-business-settings-for-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+- You must [enable hierarchy in the UI configuration](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/configure-ui-settings-for-the-hierarchy-tab?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+- [Add a hierarchy](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/add-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) in the Hierarchy tab.
 
 
 To clone an existing hierarchy:
@@ -294193,10 +294223,10 @@ To clone an existing hierarchy:
 
 # Edit hierarchy details in the Profile view
 
-> **Section:** Objectives > Manage profiles > Profile management at a glance > Profile management operation > Materialized hierarchy
+> **Section:** Objectives > Manage profiles > Profile management at a glance > Profile management operation > Advanced hierarchy management
 
 
-**Source:** https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/edit-hierarchy-details-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/edit-hierarchy-details-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** edit hierarchy details in the profile view, enable versioning hierarchy hub, hierarchy version start date end date, materialized hierarchy edit metadata, edit details more options hierarchy tab
 
@@ -294219,13 +294249,13 @@ Before you begin, make sure you have met the following requirements:
 
 - 
 
-  You must [enable hierarchy in the tenant configuration](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/configure-tenant-business-settings-for-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+  You must [enable hierarchy in the tenant configuration](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/configure-tenant-business-settings-for-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 - 
 
-  You must [enable hierarchy in the UI configuration](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/configure-ui-settings-for-the-hierarchy-tab?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+  You must [enable hierarchy in the UI configuration](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/configure-ui-settings-for-the-hierarchy-tab?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 - 
 
-  You must have [added a hierarchy for the profile](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/add-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+  You must have [added a hierarchy for the profile](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/add-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 To edit hierarchy details in the Profile view
@@ -294264,10 +294294,10 @@ To confirm the hierarchy details are updated, perform the following steps:
 
 # Export a hierarchy in the Profile view
 
-> **Section:** Objectives > Manage profiles > Profile management at a glance > Profile management operation > Materialized hierarchy
+> **Section:** Objectives > Manage profiles > Profile management at a glance > Profile management operation > Advanced hierarchy management
 
 
-**Source:** https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/export-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/export-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** export hierarchy in profile view, export hierarchy from hierarchy tab, export hierarchy as csv file, export hierarchy as json file, download hierarchy structure from hub, track hierarchy export job status, hierarchy, export, csv, json
 
@@ -294278,9 +294308,9 @@ You can extract the hierarchy structure from the Profile view. Download it as a 
 
 **Prerequisites**Before you continue, make sure the following prerequisites are met: 
 
-- You must [enable hierarchy in the tenant configuration](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/configure-tenant-business-settings-for-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
-- You must [enable hierarchy in the UI configuration](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/configure-ui-settings-for-the-hierarchy-tab?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
-- [Add a hierarchy](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/add-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) in the Hierarchy tab.
+- You must [enable hierarchy in the tenant configuration](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/configure-tenant-business-settings-for-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+- You must [enable hierarchy in the UI configuration](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/configure-ui-settings-for-the-hierarchy-tab?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+- [Add a hierarchy](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/add-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) in the Hierarchy tab.
 
 
 To export a hierarchy structure:
@@ -294302,10 +294332,10 @@ When the export job finishes, you will receive an email notification confirming 
 
 # Import a hierarchy in the Profile view
 
-> **Section:** Objectives > Manage profiles > Profile management at a glance > Profile management operation > Materialized hierarchy
+> **Section:** Objectives > Manage profiles > Profile management at a glance > Profile management operation > Advanced hierarchy management
 
 
-**Source:** https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/import-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/import-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** import hierarchy profile view, hierarchy import workflow, import hierarchy file, download hierarchy template, upload hierarchy template, hierarchy import dialog, create hierarchy import, hierarchy file upload, import hierarchy, template
 
@@ -294321,10 +294351,10 @@ Use this task when a profile does not yet have a hierarchy and you want to load 
   You must have the `ROLE_API` or `MDM.Data.Hr` permission (for custom roles) assigned to you
 - 
 
-  You must enable hierarchy in the tenant configuration. For more information, see [Configure tenant business settings for hierarchy](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/configure-tenant-business-settings-for-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+  You must enable hierarchy in the tenant configuration. For more information, see [Configure tenant business settings for hierarchy](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/configure-tenant-business-settings-for-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 - 
 
-  You must enable hierarchy in the UI configuration. For more information, see [Configure UI settings for the Hierarchy tab](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/configure-ui-settings-for-the-hierarchy-tab?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+  You must enable hierarchy in the UI configuration. For more information, see [Configure UI settings for the Hierarchy tab](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/configure-ui-settings-for-the-hierarchy-tab?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 - 
 
   You must have access to a hierarchy template.
@@ -294353,10 +294383,10 @@ After the import is complete, the hierarchy instance appears in the **Hierarchy*
 
 # Move or copy hierarchy nodes
 
-> **Section:** Objectives > Manage profiles > Profile management at a glance > Profile management operation > Materialized hierarchy
+> **Section:** Objectives > Manage profiles > Profile management at a glance > Profile management operation > Advanced hierarchy management
 
 
-**Source:** https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/move-or-copy-hierarchy-nodes?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/move-or-copy-hierarchy-nodes?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** move hierarchy nodes, copy hierarchy nodes, reorganize hierarchy branches, move hierarchy branch, copy hierarchy branch, paste as child, hierarchy node actions, hierarchy tree update, move nodes, copy nodes
 
@@ -294372,13 +294402,13 @@ Relocate a node from one place in the hierarchy to another or reuse the same nod
   You must have the ROLE_API or MDM.Data.Hr permission (for custom roles) assigned to you
 - 
 
-  You must enable hierarchy in the tenant configuration. For more information, see [Configure tenant business settings for hierarchy](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/configure-tenant-business-settings-for-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+  You must enable hierarchy in the tenant configuration. For more information, see [Configure tenant business settings for hierarchy](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/configure-tenant-business-settings-for-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 - 
 
-  You must enable hierarchy in the UI configuration. For more information, see [Configure UI settings for the Hierarchy tab](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/configure-ui-settings-for-the-hierarchy-tab?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+  You must enable hierarchy in the UI configuration. For more information, see [Configure UI settings for the Hierarchy tab](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/configure-ui-settings-for-the-hierarchy-tab?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 - 
 
-  You must create a hierarchy structure for a profile. For more information, see [Add a hierarchy in the Profile view](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/add-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+  You must create a hierarchy structure for a profile. For more information, see [Add a hierarchy in the Profile view](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/add-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 To copy or move hierarchy nodes
@@ -294415,15 +294445,15 @@ The selected node and its descendant nodes appear in the new location. The previ
 
 # View multiple parent paths in a hierarchy
 
-> **Section:** Objectives > Manage profiles > Profile management at a glance > Profile management operation > Materialized hierarchy
+> **Section:** Objectives > Manage profiles > Profile management at a glance > Profile management operation > Advanced hierarchy management
 
 
-**Source:** https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/view-multiple-parent-paths-in-a-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/view-multiple-parent-paths-in-a-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 
 Learn how to view multiple parent paths in a hierarchy to understand how an entity is connected to its parent entities.
 
-An entity in a [hierarchy](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) can have more than one parent, resulting in multiple paths to the same entity. Viewing these paths helps you understand the entity's relationships with its parent entities and its position within the hierarchy.
+An entity in a [hierarchy](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) can have more than one parent, resulting in multiple paths to the same entity. Viewing these paths helps you understand the entity's relationships with its parent entities and its position within the hierarchy.
 
 The **Hierarchy** tab displays one of these paths in the hierarchy tree. For entities with multiple parents, you can view the available parent paths and select the path you want to display in the hierarchy tree.
 
@@ -294439,13 +294469,13 @@ Before you begin, ensure that you meet the following requirements:
 
 - 
 
-  You must [enable hierarchy in the tenant configuration](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/configure-tenant-business-settings-for-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+  You must [enable hierarchy in the tenant configuration](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/configure-tenant-business-settings-for-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 - 
 
-  You must [enable hierarchy in the UI configuration](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/configure-ui-settings-for-the-hierarchy-tab?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+  You must [enable hierarchy in the UI configuration](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/configure-ui-settings-for-the-hierarchy-tab?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 - 
 
-  You must [add a hierarchy for the profile](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/add-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+  You must [add a hierarchy for the profile](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/add-a-hierarchy-in-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 To view multiple parent paths in a hierarchy
@@ -296803,23 +296833,23 @@ See the following topics in this section for additional reference information on
 
 ---
 
-# Effects of entity operations on materialized hierarchies
+# Effects of entity operations in Advanced hierarchy management
 
-> **Section:** Objectives > Manage profiles > Profile management at a glance > Profile management operation > Materialized hierarchy
+> **Section:** Objectives > Manage profiles > Profile management at a glance > Profile management operation > Advanced hierarchy management
 
 
-**Source:** https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/effects-of-entity-operations-on-materialized-hierarchies?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/effects-of-entity-operations-in-advanced-hierarchy-management?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** entity operations on materialized hierarchies, materialized hierarchy merge behavior, materialized hierarchy unmerge behavior, materialized hierarchy unlink behavior, materialized hierarchy delete behavior, hierarchy behavior after entity merge, restore hierarchy after entity unmerge, hierarchy cycle, crosswalks, unmerge, hierarchies
 
 
-Learn more about how merge, unmerge, unlink, and delete operations affect materialized hierarchies.
+Learn more about how merge, unmerge, unlink, and delete operations affect hierarchies in Advanced hierarchy management.
 
-Entity merge, unmerge, unlink, and delete operations affect materialized hierarchy placement, branches, effective dates, and metadata. Unmerge behavior can depend on whether hierarchy connections were created with entity IDs or crosswalks.
+In Advanced hierarchy management, entity merge, unmerge, unlink, and delete operations affect hierarchy placement, branches, effective dates, and metadata. Unmerge behavior can depend on whether hierarchy connections were created with entity IDs or crosswalks.
 
 ## Merge scenarios
 
-The following table describes how materialized hierarchies are updated when entities are merged.
+The following table describes how hierarchies are updated when entities are merged.
 
 | Scenario | Hierarchy behavior |
 | --- | --- |
@@ -296836,7 +296866,7 @@ The following table describes how materialized hierarchies are updated when enti
 
 ## Unmerge scenarios
 
-The following table describes how a materialized hierarchy is updated when a contributor entity is unmerged.
+The following table describes how a hierarchy is updated when a contributor entity is unmerged.
 
 | Scenario | Hierarchy behavior |
 | --- | --- |
@@ -296851,7 +296881,7 @@ The following table describes how a materialized hierarchy is updated when a con
 
 ## Unlink and delete scenarios
 
-The following table describes how unlink and delete operations affect materialized hierarchies.
+The following table describes how unlink and delete operations affect hierarchies.
 
 | Scenario | Hierarchy behavior |
 | --- | --- |
@@ -296864,10 +296894,10 @@ The following table describes how unlink and delete operations affect materializ
 
 # Configure tenant business settings for hierarchy
 
-> **Section:** Objectives > Manage profiles > Profile management at a glance > Profile management operation > Materialized hierarchy
+> **Section:** Objectives > Manage profiles > Profile management at a glance > Profile management operation > Advanced hierarchy management
 
 
-**Source:** https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/configure-tenant-business-settings-for-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/configure-tenant-business-settings-for-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** tenant hierarchy settings, hierarchy type configuration, allowed entity types, hierarchy type uri, tenant business configuration, hierarchy type inheritance, configure hierarchy types, hierarchyTypes settings, hierarchyTypes, inheritance
 
@@ -296957,7 +296987,7 @@ The optional `entityType` map defines structural rules for entities in this hier
 
 If an entity type is included in `allowedEntityTypes` but does not have an `entityType` entry and does not inherit an entry from another entity type, no parent, child, or child-cardinality restrictions apply.
 
-For the messages that hierarchy read APIs return when a hierarchy connection violates these rules., see [Structural validation messages for materialized hierarchy](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/structural-validation-messages-for-materialized-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+For the messages that hierarchy read APIs return when a hierarchy connection violates these rules., see [Structural validation messages for Advanced hierarchy management](https://docs.reltio.com/en/developer-resources/materialized-hierarchy-management-apis/materialized-hierarchy-management-apis/structural-validation-messages-for-advanced-hierarchy-management?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 **Parent and child permissions**
 
@@ -297529,10 +297559,10 @@ Based on the above example, only a user who is assigned the `ROLE_A360_STEWARD` 
 
 # Configure UI settings for the Hierarchy tab
 
-> **Section:** Objectives > Manage profiles > Profile management at a glance > Profile management operation > Materialized hierarchy
+> **Section:** Objectives > Manage profiles > Profile management at a glance > Profile management operation > Advanced hierarchy management
 
 
-**Source:** https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/configure-ui-settings-for-the-hierarchy-tab?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+**Source:** https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/configure-ui-settings-for-the-hierarchy-tab?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 **Keywords:** hierarchy tab settings, hierarchy tab configuration, profile tab configuration, config json hierarchy, hierarchy tab visibility, hierarchy tab roles, import template url, profile array settings, canRead, visible
 
@@ -297541,7 +297571,7 @@ Learn more about the UI configuration settings used to display the Hierarchy tab
 
 The Hierarchy tab is configured in the new UI configuration format in `config.json` as a profile screen with `class: "Hierarchy"`. Hierarchy is a profile tab, like Relationships, Interactions, and Activity. To display the Hierarchy tab for an entity type, add a Hierarchy screen object to the top-level `profile` array in the UI configuration. For more information, see [Configure profile screens](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/configure-reltio-ui-with-the-configuration-file/configure-profile-screens?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
-Before you configure the tab, make sure the required [tenant business configuration](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/materialized-hierarchy/configure-tenant-business-settings-for-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and tenant physical configuration for hierarchy are in place.
+Before you configure the tab, make sure the required [tenant business configuration](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/configure-tenant-business-settings-for-hierarchy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and tenant physical configuration for hierarchy are in place.
 
 Add the Hierarchy screen object to the top-level `profile` array in `config.json`.
 
