@@ -1,9 +1,9 @@
 # Reltio AI-Ready Documentation
 
-> The complete Reltio product documentation corpus — 3,950 topics — optimized for AI consumption and available as structured Markdown. No authentication required.
+> The complete Reltio product documentation corpus — 3,966 topics — optimized for AI consumption and available as structured Markdown. No authentication required.
 
-![Last synced](https://img.shields.io/badge/Last%20synced-2026--10--23-blue)
-![Topics](https://img.shields.io/badge/Topics-3%2C950-green)
+![Last synced](https://img.shields.io/badge/Last%20synced-2026--10--28-blue)
+![Topics](https://img.shields.io/badge/Topics-3%2C966-green)
 ![Format](https://img.shields.io/badge/Format-Markdown-lightgrey)
 ![Access](https://img.shields.io/badge/Access-Public%2C%20no%20auth-brightgreen)
 
@@ -36,7 +36,7 @@ That's it — you now have the full Reltio documentation corpus locally. See [Ho
 
 ### `docs.md` — Documentation corpus (<!-- DOCS_SIZE -->~20.1 MB<!-- /DOCS_SIZE -->)
 
-The complete Reltio documentation corpus compiled into a single Markdown file. It covers 3,950 topics across all Reltio products and documentation categories:
+The complete Reltio documentation corpus compiled into a single Markdown file. It covers 3,966 topics across all Reltio products and documentation categories:
 
 - **Reltio MDM** — entity modeling, matching, merging, survivorship, data quality, APIs, and connectors
 - **Reltio I360** — customer intelligence, analytics, and identity resolution
@@ -50,7 +50,7 @@ The complete Reltio documentation corpus compiled into a single Markdown file. I
 
 ---
 
-### `index.md` — Contextual retrieval index (<!-- INDEX_SIZE -->~4.8 MB<!-- /INDEX_SIZE -->)
+### `index.md` — Contextual retrieval index (<!-- INDEX_SIZE -->~4.9 MB<!-- /INDEX_SIZE -->)
 
 A structured index of every published Reltio topic. For each topic, the index provides:
 
@@ -73,7 +73,7 @@ GitHub's web interface has file size limits for preview and rendering:
 | File | Size | GitHub behavior |
 |---|---|---|
 | `docs.md` | <!-- DOCS_SIZE -->~20.1 MB<!-- /DOCS_SIZE --> | "Sorry, this file is too large to display." |
-| `index.md` | <!-- INDEX_SIZE -->~4.8 MB<!-- /INDEX_SIZE --> | Shown as plain text; Markdown not rendered |
+| `index.md` | <!-- INDEX_SIZE -->~4.9 MB<!-- /INDEX_SIZE --> | Shown as plain text; Markdown not rendered |
 
 Both files exceed GitHub's 512 KB Markdown rendering limit, and `docs.md` exceeds the 5 MB display limit entirely.
 
