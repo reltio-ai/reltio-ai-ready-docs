@@ -1,6 +1,6 @@
 # Reltio Documentation
 
-_Generated: 2026-10-28 02:33 UTC_
+_Generated: 2026-10-30 02:33 UTC_
 
 _Topics: 4090_
 
@@ -8217,6 +8217,87 @@ The following GDH (Geographic Data Hierarchy) updates were applied:
 - 
 
   **Turkiye (TR)**: Verify now returns Hanak as `SubAdministrativeArea` instead of `Locality`.
+
+
+
+---
+
+# Reltio Address Cleanser update - October 2026
+
+> **Section:** Reltio > Platform changes at a glance
+
+
+**Source:** https://docs.reltio.com/en/reltio/platform-changes-at-a-glance/reltio-address-cleanser-update---october-2026?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** Reltio Address Cleanser October 2026 update, address cleanser global data refresh, address parsing and verification accuracy, Verify API address cleanse updates
+
+
+Learn about the updates to the Reltio Address Cleanser in October 2026.
+
+Here are the updates to the [Reltio Address Cleanser](https://docs.reltio.com/en/objectives/cleanse-and-verify-data/data-cleansing-at-a-glance/data-cleansing-reference/out-of-the-box-cleanse-functions/address-cleanser?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) in October 2026.
+
+## Global data refreshes
+
+The following countries had a data refresh during the October 2026 cycle:
+
+| Andorra (AD) | Argentina (AR) | Australia (AU) |
+| --- | --- | --- |
+| Austria (AT) | Belgium (BE) | Bermuda (BM) |
+| Bonaire, Sint Eustatius and Saba (BQ) | Brazil (BR) | Bulgaria (BG) |
+| Canada (CA) | Chile (CL) | China (CN) |
+| Colombia (CO) | Croatia (HR) | Cyprus (CY) |
+| Czechia (CZ) | Denmark (DK) | Dominican Republic (DO) |
+| Ecuador (EC) | Estonia (EE) | Finland (FI) |
+| France (FR) | Germany (DE) | Greece (GR) |
+| Guernsey (GG) | Hong Kong (HK) | Hungary (HU) |
+| India (IN) | Ireland (IE) | Isle of Man (IM) |
+| Italy (IT) | Japan (JP) | Jersey (JE) |
+| Kazakhstan (KZ) | Korea, Republic of (KR) | Kosovo (XK) |
+| Kyrgyzstan (KG) | Latvia (LV) | Lithuania (LT) |
+| Malta (MT) | Mexico (MX) | Netherlands (NL) |
+| Norway (NO) | Peru (PE) | Philippines (PH) |
+| Poland (PL) | Portugal (PT) | Puerto Rico (PR) |
+| Romania (RO) | Saint Barthélemy (BL) | Saint Kitts and Nevis (KN) |
+| Serbia (RS) | Singapore (SG) | Slovakia (SK) |
+| Slovenia (SI) | Spain (ES) | Suriname (SR) |
+| Sweden (SE) | Switzerland (CH) | Tanzania (TZ) |
+| Ukraine (UA) | United Kingdom (GB) | United States (US) |
+| Uruguay (UY) |  |  |
+
+## Data improvements
+
+The October 2026 release includes several data improvements that enhance address parsing and verification accuracy. These improvements include:
+
+- Philippines: Added support for Negros Island Region.
+- Philippines: Corrected Sulu region output to Zamboanga Peninsula.
+- Philippines: Corrected Siquijor, Negros Occidental, and Negros Oriental region output to Negros Island Region.
+- Philippines: Corrected Cotabato City region output to the Autonomous Region in Muslim Mindanao.
+- Philippines: Corrected Makati barangay output to Taguig.
+- Philippines: Corrected Manila barangay output from `DependentLocality` to `DoubleDependentLocality`.
+- Australia: Added support for Parcel Locker and Parcel Collect addresses.
+- Greece: Added support for returning floor information in Greek.
+- India: District values no longer appear in `AdministrativeArea`.
+- Belgium: Improved parsing and matching of apartment numbers.
+- Korea, Republic of: Added `KR-12` as an interim code for Jeonnam-Gwangju.
+- Jamaica: Corrected `AdministrativeAreaISO2` output.
+- United Arab Emirates: Improved address parsing.
+- Canada: Added missing postal codes for Regina and Laval.
+- Canada: `PostalCode` values are no longer associated with the `AdministrativeArea` level.
+- Estonia: `PostalCode` values are no longer associated with the `AdministrativeArea` level.
+- Paraguay: Added Asunción as a valid `AdministrativeArea` alias.
+- Mexico: Corrected hierarchy output for postal codes 32737, 11570, and 35108.
+- Tanzania: Corrected `Locality` output.
+
+## Verify API updates
+
+The Verify API release includes the following fixes and enhancements:
+
+- All countries: Fixed an issue where match score calculation returned incorrect results.
+- All countries: Fixed an issue where premise numbers in alphanumeric grid addresses did not match reference data.
+- All countries: Fixed an issue where the Enhance process returned incorrect `AdministrativeAreaISO2` values.
+- All countries: Added support for the `PreserveInputValue` server option.
+
+These updates improve address parsing, verification accuracy, and reference data during address cleansing.
 
 
 
@@ -16813,7 +16894,7 @@ The following capabilities are available:
   **Lifecycle management and activation**: Manage hierarchy versions over time and activate the appropriate structure based on business timelines.
 - 
 
-  **Structural validation**: Apply hierarchy rules and validations to help prevent structurally invalid changes from propagating to downstream systems.
+  **Structural validation**: Apply hierarchy rules and validations to help prevent structurally invalid changes from propagating to downstream systems. Receive notifications about hierarchy issues.
 - 
 
   **Attribute inheritance and overrides**: Apply common attribute values through hierarchy levels while allowing to override a local value for individual nodes or branches.
@@ -16822,7 +16903,9 @@ The following capabilities are available:
   **Hierarchy replacement during import:** Replace the complete content of an existing hierarchy or version when imported names match. The hierarchy instance ID is retained, connection IDs may change, and unmatched names create a new hierarchy or version.
 - 
 
-  **Advanced hierarchy maintenance**: Manage complex, multi-level structures with drag-and-drop sibling ordering, identify hierarchy nodes using crosswalks instead of entity ids, and receive notifications about hierarchy issues.
+  **Simplified hierarchy maintenance**: Manage complex, multi-level structures with drag-and-drop node move or sibling ordering, cloning a hierarchy, and copying a node to another parent within the hierarchy.
+
+  *Video: hierarchy_releasenote.mp4*
 
 | Get going with this feature | Get going with this feature |
 | --- | --- |
@@ -16852,7 +16935,9 @@ Reltio's Flexible Entity Resolution Network (FERN) is an AI-powered matching cap
 
 **Match precision**
 
-**Review****Bulk Match Review****Agree****Disagree**| Get going with this feature | Get going with this feature |
+**Review****Bulk Match Review****Agree****Disagree***Video: v-fern-release-note.mp4*
+
+| Get going with this feature | Get going with this feature |
 | --- | --- |
 | Availability | GA |
 | Capabilities | Reltio Multidomain MDM, |
@@ -16977,7 +17062,7 @@ With this added context, teams can better understand where values came from, wha
 
 ## Reltio AgentFlow is now Autonomous agents
 
-Autonomous agents is the new name for AgentFlow, and each capability now has a name that describes its function.
+Autonomous agents is the new name for AgentFlow, and each capability now has a name that describes its function.\
 
 Here are the name changes introduced for AgentFlow in 2026.2. 
 
@@ -16991,6 +17076,8 @@ Here are the name changes introduced for AgentFlow in 2026.2.
 | Address Enricher | Address enricher |
 | Work Assigner | Work assigner |
 | Product Recommender | Product recommender |
+
+*Video: v-onebrand-RN.mp4*
 
 | Get going with this feature | Get going with this feature |
 | --- | --- |
@@ -17068,6 +17155,34 @@ The following table shows which Reltio products include the key features introdu
 Learn about the new features and enhancements introduced in the 2026.2 release.
 
 Learn about the new features and enhancements introduced in the 2026.2 release and subsequent weekly releases.
+
+
+
+---
+
+# 2026.2 emergency bug fix release notes
+
+> **Section:** Reltio > Release Notes at a glance > 2026.2 Release Notes
+
+
+**Source:** https://docs.reltio.com/en/reltio/release-notes-at-a-glance/2026.2-release-notes/2026.2-emergency-bug-fix-release-notes?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** 2023.3 release, 2023.3 weekly releases
+
+
+Review what’s added as an emergency bug fix on the Reltio platform.
+
+Find out what's been urgently addressed in Reltio Data Cloud 2026.2 through emergency bug fix (EBF) releases. These updates are NOT part of the regular bi-weekly cadence. Follow the topic links here to see what was fixed and when it became available.
+
+## 2026.2.0.2 Emergency bug fix release notes | 28-Oct-2026
+
+**Reltio Address Cleanser update**
+
+The Reltio Address Cleanser is updated with the latest data refresh and verification enhancements. These updates include data improvements and issue fixes across multiple countries, along with Verify API fixes.
+
+Key improvements include updated region handling for the Philippines and support for Parcel Locker and Parcel Collect addresses in Australia. The Verify API fixes cover match scoring, premise matching, and administrative area codes. Together, these changes support more accurate and consistent address data and more reliable verification results.
+
+For more information, see [Reltio Address Cleanser update - October 2026](https://docs.reltio.com/en/reltio/platform-changes-at-a-glance/reltio-address-cleanser-update---october-2026?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
@@ -17839,10 +17954,10 @@ How does the test for similarity at the attribute level rollup to one directive 
 
 **Source:** https://docs.reltio.com/en/reltio/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/additional-topics-on-matching?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
-**Keywords:** Additional Topics on Matching, stripDiacritics, Resolve Lookup Strategy, matching on non-latin characters, tenant level match strategy, matching on proximity, match strategy, tenant match strategy, cross attribute matching, ignore diacritical marks, resolvelookupstrategy
+**Keywords:** Additional Topics on Matching, stripDiacritics, Resolve Lookup Strategy, matching on non-latin characters, tenant level match strategy, matching on proximity, match strategy, tenant match strategy, cross attribute matching, ignore diacritical marks, resolvelookupstrategy, operational values for reference attributes, calculateovforreferences
 
 
-Learn more about matching.
+Learn about additional topics on matching.
 
 For a complete understanding of matching at Reltio, familiarize yourself with some additional topics on matching. The following sections give information on those topics.
 
@@ -17871,6 +17986,19 @@ To change the tenant-level Match Strategy parameter, file a support ticket to su
 ## Ignoring diacritical marks
 
 `stripDiacritics` - When the `stripDiacritics` parameter is enabled, diacritical marks in words are ignored. This function provides improved match results with international data sets where diacritical marks on characters are common. Examples of diacritical marks include apostrophe, cedilla, tilde, circumflex, or macron. For example, the string "Praça Dr João Mendes São Paulo" is transformed to "Praca Dr Joao Mendes Sao Paulo".
+
+This parameter is disabled by default. To enable it, contact support.
+
+## Calculating operational values for reference attributes
+
+`calculateOvForReferences` - When this tenant-level parameter is enabled, the crosswalks of input entities are also applied to the entities and relationships behind their reference attributes. This lets survivorship rules that depend on the source system calculate operational values for reference sub-attributes, such as `Address.City`, before matching. The setting applies to external match and to the matching APIs that accept entity JSON in the request body:
+
+- External Match Task API. For more information, see [External match API](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/potential-matches-api/external-match-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+- POST _matches API. For more information, see [Search For Potential Matches for Entity Specified in JSON](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/potential-matches-api/search-for-potential-matches-for-entity-specified-in-json?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+- POST _scoredMatches API. For more information, see [Search for potential matches for entity specified in JSON with scoring](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/potential-matches-api/search-for-potential-matches-for-entity-specified-in-json-with-scoring?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+- POST _verifyMatches API. For more information, see [Verifying matches](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/potential-matches-api/verifying-matches?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+The `calculateOvForReferences` request parameter of these APIs overrides the tenant-level setting for a single request or task.
 
 This parameter is disabled by default. To enable it, contact support.
 
@@ -26367,162 +26495,6 @@ The following behaviors apply when BYO LLM is enabled for your tenant:
 
 ---
 
-# AI data processing and privacy in
-
-> **Section:** Products > Autonomous agents > Autonomous agents overview
-
-
-**Source:** https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/ai-data-processing-and-privacy-in-autonomous-agents?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
-**Keywords:** autonomous agents data privacy, autonomous agents data processing, AI data residency, Amazon Bedrock data handling, Customer Dataplane, autonomous agents web search privacy, LLM training and data retention
-
-
-Learn about how  processes data through AI services, where processing takes place, and how Reltio handles model training and your data.
-
-process requests through AI services to interpret user input, perform agent tasks, and generate responses. Understanding how these services process data helps organizations evaluate their AI privacy and data governance requirements.
-
-## How processes data
-
-uses Reltio-managed AI services to process requests. The data processing behavior depends on the service involved:
-
-- **Agent operations:** sends requests to Anthropic Claude models through Amazon Bedrock for agent conversations, long-running tasks, specialized agents, custom instructions, and custom agents.
-- **Guardrails:** use Anthropic Claude models through Amazon Bedrock to evaluate prompts and responses against the autonomous agents usage policy.
-- **Web search:** When enabled,  sends web search requests to Google Cloud Vertex AI or Parallel.
-
-Web search is optional and disabled by default. For information about the models used by each capability, see [Large language models and AI services in](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/large-language-models-and-ai-services-in-autonomous-agents?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
-
-## Where AI data processing takes place
-
-uses Amazon Bedrock in AWS US regions for Reltio-managed LLM processing. The processing environment includes:
-
-- **Amazon Bedrock:** use Amazon Bedrock cross-region inference, which allows AWS to route a request to any AWS US region to balance capacity. Requests are not routed outside the United States.
-- **Customer Dataplane:** When Customer Dataplane is enabled,  guardrail checks run in your organization's AWS account.
-- **Optional web search services:** Web search requests are processed by Google Cloud Vertex AI or Parallel when web search is enabled.
-
-## How Amazon Bedrock handles your data
-
-Reltio-managed LLM processing through Amazon Bedrock follows these data-handling practices:
-
-- Amazon Bedrock does not store prompts or model responses.
-- Amazon Bedrock does not share prompts or responses with Anthropic.
-- Amazon Bedrock does not use prompts or responses to train models.
-
-Retention of that data is described in [security, audit, and compliance architecture](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-security-audit-and-compliance-architecture?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-
-For more information, see[Data protection in Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/data-protection.html).
-
-## Data shared with web search services
-
-When web search is enabled,  may send the following information to Google Cloud Vertex AI or Parallel:
-
-- Search queries generated during an agent task.
-- Webpage addresses that the agent needs to read.
-- Your data included in a search query or webpage-reading request.
-
-Because these requests may include your data, web search introduces an additional external data-processing path beyond Amazon Bedrock. If your organization does not allow data to be sent to these services, keep web search disabled.
-
-## Model training and data usage
-
-Reltio does not use your data to develop or customize the LLMs used by . Specifically, Reltio does not:
-
-- Train LLMs using customer data.
-- Fine-tune LLMs using customer data.
-- Create embeddings or vector indexes from customer data as part of the described  LLM processing.
-
-
-
----
-
-# Large language models and AI services in
-
-> **Section:** Products > Autonomous agents > Autonomous agents overview
-
-
-**Source:** https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/large-language-models-and-ai-services-in-autonomous-agents?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
-**Keywords:** large language models used by autonomous agents, default llm models in autonomous agents, autonomous agents model usage by capability, anthropic claude models in autonomous agents, autonomous agents ai services and providers, bring your own llm in autonomous agents, supported byo llm providers, autonomous agents, anthropic, guardrails
-
-
-Learn about the large language models (LLMs) and AI services that Reltio  uses, the capabilities they support, and the option to use your organization's own LLM.
-
-use large language models (LLMs) to understand requests, plan tasks, interact with Reltio tools, and generate responses. By default,  uses Anthropic Claude models through Amazon Bedrock.
-
-also supports [Bring Your Own LLM](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/bring-your-own-llm-for-autonomous-agents-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) (BYO LLM), which allows organizations to use their own approved LLM providers for supported agent capabilities.
-
-## Default LLMs and AI services
-
-use the following models and AI services by default.
-
-| Model or service | Developer | Hosted on | Used for |
-| --- | --- | --- | --- |
-| Claude Sonnet 4.6 | Anthropic | Amazon Bedrock | Agent conversations, long-running tasks, specialized agents, reports, summaries, custom instructions, and . |
-| Claude Haiku 4.5 | Anthropic | Amazon Bedrock | Guardrails that check prompts and agent responses against the  usage policy, and system prompt security scans in . |
-| Gemini 2.5 Flash | Google | Google Cloud Vertex AI | Web search and webpage reading when web search is enabled for an agent. |
-| Parallel | Parallel Web Systems | Parallel web search service | Web search and webpage reading when web search is enabled for an agent. |
-
-Web search is disabled by default. When enabled,  uses either Google Cloud Vertex AI or Parallel to process web search requests.
-
-Reltio periodically updates its default models to newer versions.
-
-## How uses LLMs
-
-use different LLMs and AI services for agent operations, task execution, agent creation, security checks, and web search.
-
-The following table describes how each capability uses an LLM or AI service and whether it supports BYO LLM.
-
-| Capability | What the LLM does | Default model or service | Supports BYO LLM |
-| --- | --- | --- | --- |
-| Agent conversations | Understands requests, determines which tools to call, and generates responses. | Claude Sonnet 4.6 | Yes |
-| Long-running tasks | Plans and executes tasks using Reltio tools and generates task reports. | Claude Sonnet 4.6 | Yes |
-| Long-running task eligibility check | Determines whether a request is suitable for execution as a long-running task. | Claude Sonnet 4.6 | No |
-| Specialized agents | Performs multi-step workflows such as record analysis, address verification, web research, scoring, and data correction. | Claude Sonnet 4.6 | Yes, except for certain capabilities, such as guardrails and long-running task eligibility checks. |
-| Custom instructions | Determines which custom instructions apply to a request and follows them. | Claude Sonnet 4.6 | Yes |
-|  | Generates agent designs from descriptions and drafts supervisor prompts. | Claude Sonnet 4.6 | No |
-| Guardrails and system prompt security scan | Checks prompts, responses, and agent system prompts against the  usage policy. | Claude Haiku 4.5 | No |
-| Web search | Searches the web and reads webpages when web search is enabled. | Gemini 2.5 Flash or Parallel | No |
-
-## Models does not use by default
-
-do not use the following models or model categories as part of its default configuration:
-
-- **Self-hosted and open-weight models:** does not self-host or run open-weight models as part of its default configuration.
-- **Models from other providers:** does not use models from the following providers by default:
-  - DeepSeek
-  - Qwen (Alibaba)
-  - Kimi (Moonshot AI)
-  - GLM (Zhipu AI)
-  - MiniMax
-  - ERNIE (Baidu)
-  - Hunyuan (Tencent)
-  - Doubao (ByteDance)
-  - OpenAI
-  - Meta (Llama)
-  - Mistral
-  - Cohere
-  - Amazon (Nova or Titan)
-
-These exclusions apply to Reltio-managed models. Organizations using Bring Your Own LLM (BYO LLM) can select models available through their configured providers and endpoints.
-
-## Bring Your Own LLM
-
-[Bring Your Own LLM](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/bring-your-own-llm-for-autonomous-agents-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) (BYO LLM) allows your organization to use its own LLM endpoints instead of Reltio-managed models for supported  capabilities.
-
-BYO LLM supports agent conversations, long-running tasks, custom instructions, and actions in specialized agents. Certain capabilities, including guardrails, , long-running task eligibility checks, and web search, continue to use Reltio-managed models or services.
-
-support the following BYO LLM providers and authentication methods.
-
-| Provider | Supported authentication |
-| --- | --- |
-| Amazon Bedrock in your organization's AWS account | IAM role, or access key and secret key |
-| Anthropic | API key |
-| OpenAI-compatible endpoints, such as OpenAI or your organization's LLM gateway | API key, OAuth, or OAuth with mutual TLS |
-
-Reltio configures BYO LLM for your tenant through a [support request](https://docs.reltio.com/en/reltio/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
-
-
-
----
-
 # Reltio AgentFlow™ Mobile overview
 
 > **Section:** Products > Autonomous agents
@@ -28511,54 +28483,6 @@ To set up LLM access, submit a request through [Reltio Support](https://support.
 | Agent service or model endpoint unreachable (503) | Message in conversation | *The agent service is temporarily unavailable. Please try again later.* |
 | Authentication failure, model error, or other issue | Message in conversation | *Something went wrong. Try again later.* |
 | No LLM configurations exist (System Administrator view) | **Admin Settings > Large Language Model Config** section | *No LLM configurations available, please contact support.* |
-
-
-
----
-
-# Frequently asked questions about AI models and data privacy
-
-> **Section:** Products > Autonomous agents > Autonomous agents overview
-
-
-**Source:** https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/frequently-asked-questions-about-ai-models-and-data-privacy?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
-**Keywords:** autonomous agents FAQ, AI models, data privacy, model training, data processing, BYO LLM, web search, default models
-
-
-Learn more about AI model usage, data processing, privacy, and Bring Your Own LLM (BYO LLM) in .
-
-The following frequently asked questions explain AI model usage, data processing, privacy, and model configuration in .
-
-**Which model providers do  not use by default?**
-
-do not use models from DeepSeek, Qwen, Kimi, GLM, MiniMax, ERNIE, Hunyuan, Doubao, OpenAI, Meta, Mistral, Cohere, or Amazon Nova and Titan by default.
-
-For details on the supported models, see [Large language models and AI services in](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/large-language-models-and-ai-services-in-autonomous-agents?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
-
-**Does Reltio train AI models using customer data?**
-
-No. Reltio does not train or fine-tune the LLMs used by  with customer data. Reltio also does not create embeddings or vector indexes from customer data as part of the described  LLM processing.
-
-For more information, see [AI data processing and privacy in](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/ai-data-processing-and-privacy-in-autonomous-agents?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
-
-**Where do  process AI requests?**
-
-process Reltio-managed LLM requests through Amazon Bedrock using cross-region inference within AWS US regions. When Customer Dataplane is enabled, guardrails operate in the customer's AWS account.
-
-Optional web search requests are processed through Google Cloud Vertex AI or Parallel.
-
-**Can I use  without Reltio-managed LLMs?**
-
-BYO LLM allows your organization to use its own LLM endpoints for supported capabilities. However, guardrails, , and long-running task eligibility checks continue to use Reltio-managed models.
-
-**Can I disable web search in  ?**
-
-Yes. Web search is disabled by default. When web search is not enabled,  do not use its optional web search services for agent web searches.
-
-**Can the default AI models used by  change?**
-
-Yes. Reltio periodically updates the default models used by  to newer versions. The current defaults are listed in [Large language models and AI services in](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/large-language-models-and-ai-services-in-autonomous-agents?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
@@ -132665,10 +132589,10 @@ Content-Type: application/json
 
 **Source:** https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/potential-matches-api/external-match-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
-**Keywords:** External match API, entities as JSON array in S3 file, External match API, entity JSON on separate line in S3 file, External match API, limitations for External matches, example of External match API, External match API, entities as JSON array in S3 file, External match API, entity JSON on separate line in S3 file, External matches limitations, External match API, example
+**Keywords:** use the external match api, match external file records, external match input file format, external match output file format, external match cloud storage file, external match job statistics, external match limitations, add crosswalks to external match, operational values for reference attributes, crosswalks, survivorship, calculateovforreferences
 
 
-Learn about the external match API operation to get information on potential matches in a tenant for entities that are added to the tenant from an external file.
+Learn more about using the external match API operation to get information on potential matches in a tenant for entities that are added to the tenant from an external file.
 
 Use the external match API operation to match records stored externally in a file with entities in a Reltio tenant. To use this API operation, you must provide an input file that contains the records to be matched. This API operation counts towards your monthly API quota based on the number of records in the input file. For example, if you have 10,000 records in the input file the platform will report 10,000 API calls towards the monthly quota. The input file can be stored in AWS S3, GCP, or Azure blob storage.
 
@@ -132710,6 +132634,7 @@ These are the path and query request parameters:
 | `rules` | No | Defines a comma separated set of match group URIs which must take part in the matching process. All other match groups will be ignored if this parameter is defined. Sample format: `rules=configuration/entityTypes/HCP/matchGroups/MatchByMiddleName,configuration/entityTypes/HCP/matchGroups/MatchByMiddleNameAndLastName` |
 | `cleanse` | No | If set to true, the API enriches the entities with the cleansed values for attributes. The cleansed entities are then matched with the entities in the tenant. The default value is false. |
 | `resolveLookups` | No | If set to `true`, then lookups are resolved for entities in the input file. The default value is `false`. |
+| `calculateOvForReferences` | No | If set to `true`, the crosswalks of each input entity are also applied to the entities and relationships behind its reference attributes, so that operational values of reference sub-attributes are calculated with the tenant's survivorship rules. Referenced objects that already have crosswalks in the input keep them. If omitted, the tenant-level setting applies. It is `false` unless Support has enabled it for your tenant. |
 
 **Body**
 
@@ -132745,6 +132670,12 @@ The input file can also be in the following format:
 {"uri":"entities/bbb","type":"configuration/entityTypes/HCP","attributes":{"Name":[{"value":"NAME_HHH"}],"FirstName":[{"value":"FIRST_HHH"}],"LastName":[{"value":"LAST_HHH"}],"MiddleName":[{"value":"VAN"}],"Employment":[{"value":{"Title":[{"value":"TITLE_HHH"},{"value":"TITLE_HHH"}],"Summary":[{"value":"SUMMARY_HHH"}]}}],"Address":[{"value":{"City":[{"value":"CITY_HHH"}]}}],"Identifiers":[{"value":{"Type":[{"value":"TYPE2"}],"ID":[{"value":"ID1"}]}}]},"crosswalks":[{"value":"CROSSWALK_bbb","sourceTable":"SOURCE_TABLE_HHH","type":"configuration/sources/LNKD"}]}
 ]
 ```
+
+
+
+
+
+> **Note:** External match calculates operational values for input entities with your tenant's survivorship rules before matching. If those rules depend on the source system, include a `crosswalks` array with a valid source `type` in each input entity. To apply the same crosswalks to reference attributes, such as `Address`, set `calculateOvForReferences` to `true`. Otherwise those attributes may have no operational value, and match rules with `useOvOnly` set to `true` skip them.
 
 ## Output file format
 
@@ -133094,6 +133025,22 @@ A new `matchRuleActionLabel` field is added to the external match output. If no 
   ]
 }
 ```
+
+## Example - external match with reference attributes
+
+**Request:**
+
+```
+POST {ApplicationURL}/api/{tenantId}/externalMatch?entityType=HCP&fileFormat=json_v2&calculateOvForReferences=true
+```
+
+**Input file (one entity per line):**
+
+```
+{"uri":"entities/rec1","type":"configuration/entityTypes/HCP","attributes":{"FirstName":[{"value":"Claire"}],"LastName":[{"value":"Barker"}],"Address":[{"value":{"AddressLine1":[{"value":"Wilmslow Road"}],"City":[{"value":"Manchester"}]}}]},"crosswalks":[{"type":"configuration/sources/CRM","value":"CRM-1001"}]}
+```
+
+`Address` is a reference attribute. With `calculateOvForReferences=true`, the `configuration/sources/CRM` crosswalk is also applied to the referenced location and the relationship. Survivorship rules for `AddressLine1` and `City` that depend on the source system can then calculate their operational values, and match rules with `useOvOnly` set to `true` compare them.
 
 
 
@@ -137127,8 +137074,10 @@ GET /entities?filter=gte(potentialMatches.matchScore, 15)&select=uri&max=5
 
 **Source:** https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/potential-matches-api/search-for-potential-matches-for-entity-specified-in-json-with-scoring?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
+**Keywords:** scored matches for json entity, use the scored matches api, calculate total match score, limit scored matches to rules, return partial entity in matches, paginate scored matches response, operational values for reference attributes, crosswalks, survivorship, calculateovforreferences
 
-Learn how the Scored Matches API returns potential matches with scoring for entities provided in the JSON request body, based on rules in the entity type configuration.
+
+Learn more about how the Scored Matches API returns potential matches with scoring for entities provided in the JSON request body, based on rules in the entity type configuration.
 
 The Scored Matches API returns potential matches with scoring for entities provided in the JSON request body, based on rules in the entity type configuration.
 
@@ -137154,6 +137103,7 @@ POST {TenantURL}/entities/_scoredmatches
 | Query | `select` |  | Comma-separated list of properties from the entity structure that must be returned in a response. Allows you to return a partial entity object.  Example: `select=uri,label,attributes,crosswalks from the referenced object`  To ensure improved performance of `_scoredMatches`, properly define the properties list in the select parameter. The possible variants are:  - `uri and/or type (select=uri,type)`. No objects are loaded. The most efficient and recommended way. - Simple or nested attributes from the object are specified. A lightweight operation is performed to retrieve the object without references. - `no select; select=attributes`, contains some reference attributes that are loaded with the object.    The above mentioned optimizations work only if there is no configured data security for the entity type, else the object is loaded fully. If there are a a large number of matches for input entities, then the response size can be very large. The size is limited to 100 MB. In such a case, it is recommended to reduce the number of input entities and decrease the value of the 'max' parameter.  If the Request has the select parameter, there must not be any space between the query parameters. |
 | Query | `offset` | No | Integer value that can be used to organize pagination in the response. The default value is 0. |
 | Query | `cleanse` | No | When it is set to *true*, the API cleanses the attribute values of the entities. Then the cleansed entities are matched with the entities in the tenant. The default value is *false*. |
+| Query | `calculateOvForReferences` | No | When it is set to*true*, the crosswalks of each entity in the request body are also applied to the entities and relationships behind its reference attributes, so that operational values of reference sub-attributes are calculated with the tenant's survivorship rules. If omitted, the tenant-level setting applies. It is`false` unless Support has enabled it for your tenant. |
 
 **Response**
 
@@ -137375,6 +137325,10 @@ Post {TenantURL}/entities/_matches/_searchOvercollisioned
 
 **Source:** https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/potential-matches-api/search-for-potential-matches-for-entity-specified-in-json?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
+**Keywords:** search matches for json entity, match entities in request body, use the matches api, cleanse entities before matching, limit matches to specific rules, matches grouped by match group, operational values for reference attributes, crosswalks, survivorship, calculateovforreferences
+
+
+Learn more about getting potential matches, based on the rules in the entity type configuration, for entities that you provide as JSON in the request body.
 
 Returns potential matches based on rules in entity type configuration for entities provided inside request body as JSON.
 
@@ -137392,6 +137346,7 @@ POST {TenantURL}/_matches
 |  | `Body` | Yes | JSON array with objects representing entity objects to be matched. |
 | Query | `activeness` | No | When it is set to `active`, only active entities are listed in the response for the potential matches. Otherwise, all entities are listed as potential matches. |
 |  | `cleanse` | No | When it is set to *true*, the API cleanses the attribute values of the entities. Then the cleansed entities are matched with the entities in the tenant. The default value is *false*. |
+|  | `calculateOvForReferences` | No | When it is set to `true`, the crosswalks of each entity in the request body are also applied to the entities and relationships behind its reference attributes, so that operational values of reference sub-attributes are calculated with the tenant's survivorship rules. If omitted, the tenant-level setting applies. It is `false` unless Support has enabled it for your tenant. |
 |  | `max` | No | Defines the maximum number of returned matches. |
 |  | `options` | No | Comma-separated list of different options, which affect entity's JSON content in the response. Available options:   - `ov=false` - disabled by default, entity's JSON will contain hidden attributes if this option is enabled. - `ovOnly` - return only attribute values that have `ov=true` flag. - `nonOvOnly` - return only attribute values that have `ov=false` flag. If you have a nested or reference attribute value where `ov=true`, but sub-attributes where `ov=false`, then these sub-attributes will not appear in the response. |
 |  | `rules` | No | Defines match rule `URI` s to be used in matching. This parameter can be used several times in a request. Each time the parameter must specify one match rule URI, for example: `rules=configuration/entityTypes/Individual/matchGroups/matchGroup1&rules= configuration/entityTypes/Individual/matchGroups/matchGroup2` |
@@ -138098,7 +138053,7 @@ application/json
 
 **Source:** https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/potential-matches-api/verifying-matches?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
-**Keywords:** verify matches api reltio, explain entity matching behavior, simulate match rules evaluation, analyze potential matches between entities, understand match explanation response, test custom match groups, review candidate discovery results, match rules, candidate discovery, entity resolution, match tokens, matching behavior, potential matches
+**Keywords:** verify matches api reltio, explain entity matching behavior, simulate match rules evaluation, analyze potential matches between entities, understand match explanation response, test custom match groups, review candidate discovery results, match rules, candidate discovery, entity resolution, match tokens, matching behavior, potential matches, operational values for reference attributes, calculateovforreferences
 
 
 Learn more about how to use the Verify Matches API to explain matching behavior for either two entities or two raw serialized match documents.
@@ -138149,6 +138104,7 @@ The specification of this operation is available on the [Developer Portal](https
 |  | `documentsFromDatabase` | Optional | The default value is false. In entity mode, if set to `true`, the operation uses persisted match documents for existing entities instead of regenerating them in memory. This parameter does not apply to raw match-document mode. | — |
 |  | `checkOvercollisionedTokens` | Optional | The default value is `true`. When set to `true`, the operation checks whether match-token phrases are marked as overcollisioned in the database. Overcollisioned phrases are removed from the intersection list. If set to `false`, the token list can include overcollisioned tokens. | — |
 |  | `time` | Optional | If this parameter is specified, it returns the match document and the match token phrases built for the entity according to the entity state and business configuration state at the specified time. If you specify the `time` parameter, then the `db` parameter is ignored and effectively set to `false`. When the `time` parameter is specified, the operation results may show some discrepancy based on the following:  - The match documents and match tokens are generated in real time because the historical information about match documents and match tokens is not available. - The explanation is built by using the current state of the operation. As a result, if the match or survivorship rules have changed after the specified time, then the results of the explanation might differ from the actual results for the specified time. - If an entity refers to data that may change over time, such as lookups or environment configuration, user preferences, or permissions, then the currently available data or configuration is taken. The auto-generated values might not correspond to the actual ones. - The L3 configuration is selected by the timestamp of the history entry. - If an entity or the tenant configuration does not exist, then the request fails with a 404 error. | — |
+|  | `calculateOvForReferences` | Optional | Applies in entity mode when `first` or `second` is inline entity JSON. If set to `true`, the crosswalks of the inline entity are also applied to the entities and relationships behind its reference attributes, so that operational values of reference sub-attributes are calculated with the tenant's survivorship rules. Inputs given as entity URIs and raw match-document mode are not affected. If omitted, the tenant-level setting applies. It is `false` unless Support has enabled it for your tenant. | `calculateOvForReferences=true` |
 
 ## Request body
 
@@ -207037,7 +206993,7 @@ Create and run jobs to manage your tenant data in the **Jobs** page of the **Ten
 
 **Source:** https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-operation/external-match-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
-**Keywords:** External Matching, Rule-Based External Match, External Match, external match, external matching, external match application, rule-based external matching, rule-based matching
+**Keywords:** external match, external matching, external match application, rule-based external matching, rule-based matching, rule-based external match, external match crosswalks
 
 
 Learn about the Console External Match application to match records stored externally in a file with entities within the Reltio platform.
@@ -207046,11 +207002,11 @@ Reltio Entity ResolutionReltio Multidomain MDMReltio Intelligent 360
 
 Use the Console External Match application to match records stored in an external file with entities in the Reltio platform.
 
-To perform this matching, you need to upload the file with entities, map the file columns to an entity's attributes in Reltio tenant, and choose an appropriate match rule to run the match. It is also possible to do cleansing as an option before matching.
+To perform this matching, you need to upload the file with entities, map the file columns to an entity's attributes in Reltio tenant, and choose an appropriate match rule to run the match. You can also add crosswalks to the input records so that source-based survivorship rules apply to them, and cleanse the records before matching.
 
 > **Note:** Be aware of these source file considerations:
 >
-> - You can only upload CSV files to the Console External March application. The maximum size of the CSV file that you can upload from a local file system is 50 MB.
+> - You can only upload CSV files to the Console External Match application. The maximum size of the CSV file that you can upload from a local file system is 50 MB.
 > - The `External Match API` provides additional capabilities not available in this Console External Match application, such as the ability to resolve lookups in the source data file. For more information, see topic [External match API](https://docs.reltio.com/en/developer-resources/entity-management-apis/entity-management-apis-at-a-glance/potential-matches-api/external-match-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 > - You can upload JSON files and CSV files using the `External Match API`. The maximum size of the JSON file that you can upload is 50 MB, whether it's from the local file system or remote storage.
 
@@ -207061,6 +207017,7 @@ The following sections provide information about how to use rule-based matching:
 - [Selecting External Entities for Matching](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-operation/external-match-at-a-glance/selecting-external-entities-for-matching?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 - [Mapping File Columns to Attributes](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-operation/external-match-at-a-glance/mapping-file-columns-to-attributes?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 - [Mapping Multiple Nested Attributes](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-operation/external-match-at-a-glance/mapping-multiple-nested-attributes?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Adding Crosswalks to an External Match Job](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-operation/external-match-at-a-glance/adding-crosswalks-to-an-external-match-job?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 - [Sorting and Filtering Jobs](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-operation/external-match-at-a-glance/sorting-and-filtering-jobs?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 - [Viewing the History of a Job Definition](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-operation/external-match-at-a-glance/viewing-the-history-of-a-job-definition?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 - [Exporting Match Results](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-operation/external-match-at-a-glance/exporting-match-results?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
@@ -207076,17 +207033,17 @@ The following sections provide information about how to use rule-based matching:
 
 **Source:** https://docs.reltio.com/en/applications/console/tenant-management-applications/external-match-at-a-glance/external-match-workflow?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
-**Keywords:** External Match Workflow, Rule-Based External Matching Workflow, external match workflow, external matching workflow, match workflow, rule based external matching workflow
+**Keywords:** external match workflow, external matching workflow, match workflow, rule based external matching workflow, external match steps, add crosswalks in external match workflow
 
 
-The workflow is a sequence of steps for matching the entities from a file with the data in the tenant.
+Learn about the sequence of steps for matching the entities from a file with the data in the tenant.
 
 The workflow of how entities from a file are matched is as follows:
 
 1. Create a new job or duplicate an existing job definition.
 2. Select the input file from the required source system.
 3. Define new mappings or use an existing mapping to map file columns to the entity attributes (part of the entity model). The user can map multiple attributes to one column, if required.
-4. Add crosswalks, if required.
+4. Add crosswalks if your survivorship rules depend on the source system. A crosswalk assigns a source type and a source record ID to each input record, so that operational values are calculated the same way as for records loaded into the tenant. For more information, see [Adding Crosswalks to an External Match Job](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-operation/external-match-at-a-glance/adding-crosswalks-to-an-external-match-job?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 5. Review and start Matching.
 
 
@@ -288251,19 +288208,21 @@ Learn how to map file columns to Reltio entity attributes, set a record identifi
 16. Select **Show mapped columns only**. The mapped columns are displayed.
    *Image: em_new_map_15.png*
 17. Define mapping.
-18. Click **SAVE**.
-19. Click **CONTINUE**.
-   The **Define Output** page is displayed which explains *Entity type*, **Total No of records**, **File Uploaded**, and the **Mapping Summary**.
+18. Optional: If your tenant's survivorship rules depend on the source system, click the **Crosswalks** tab and add crosswalks to the input records. For more information, see [Adding Crosswalks to an External Match Job](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-operation/external-match-at-a-glance/adding-crosswalks-to-an-external-match-job?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+19. Select **SAVE**.
+   > **Note:** You can't save the mapping while a crosswalk is missing its **Type** or its **Value** column.
+20. Select **CONTINUE**.
+   The **Define Output** page is displayed, which explains *Entity type*, **Total No of records**, **File Uploaded**, and the **Mapping Summary**. The **Mapping Summary** includes the crosswalks you added.
    *Image: em_new_map_16.png*
-20. Click **SELECT ATTRIBUTES**.
+21. Click **SELECT ATTRIBUTES**.
    Additional attributes are included in the exported file. The file contains the match results.
    *Image: em_new_map_16a.png*
-21. Click **SAVE**.
-22. Click **MATCH** to initiate matching.
+22. Click **SAVE**.
+23. Click **MATCH** to initiate matching.
    > **Note:** By default, the records from the input files are cleansed before matching with the entities in the tenant.
-23. Go to the **Job Status** page.
+24. Go to the **Job Status** page.
    Under the **IN PROGRESS** tab the job is displayed. When the job is completed it is displayed under the **COMPLETED** tab.
-24. Sort and filter jobs as required.
+25. Sort and filter jobs as required.
    For more information, see [Sorting and Filtering Jobs](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-operation/external-match-at-a-glance/sorting-and-filtering-jobs?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
@@ -288393,6 +288352,88 @@ While setting the **Record Identifier**, you must remember the following informa
 - Select a unique column as the record identifier. You can verify the match results easily.
 - Any column that is mapped with an attribute cannot be set as a record identifier. A mapped column can be set as a record identifier after unmapping it.
 - If the column with a record identifier is chosen for mapping, the record identifier property is removed from that column. The column gets mapped to the respective attribute now. The record identifier moves back to the default column.
+
+
+
+---
+
+# Adding Crosswalks to an External Match Job
+
+> **Section:** Objectives > Resolve potential matches > Potential matching at a glance > Potential matching operation > External Match at a glance
+
+
+**Source:** https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-operation/external-match-at-a-glance/adding-crosswalks-to-an-external-match-job?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** add crosswalks to external match job, external match crosswalk type and value, external match source system survivorship rules, external match operational values useOvOnly, map source URI column external match
+
+
+Learn how to add crosswalks to the records in an external match input file, so that source-based survivorship rules can calculate operational values before matching.
+
+Before External Match compares an input record with entities in your tenant, it calculates the operational values (OVs) of the record's attributes with your tenant's survivorship rules. The records are not loaded into the tenant.
+
+Some survivorship rules calculate an OV from the source system of each value. These rules need each input record to carry a crosswalk with a source type. Without one, the attribute has no OV, and match rules with `useOvOnly` set to `true` ignore it. For more information, see [Survivorship Rules](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-navigation/design-survivorship-rules/survivorship-rules?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Match Group Elements - Description and Configuration](https://docs.reltio.com/en/reltio/what-does-reltio-do/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance/data-unification-and-mdm-in-detail/reltio-match-and-merge/match-group-elements---description-and-configuration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+A crosswalk assigns a source type and a source record ID to an input record. Each crosswalk has a **Type** and a **Value**, and both are required. Add crosswalks when your survivorship rules depend on the source of a value. If your survivorship rules don't use the source system, you don't need crosswalks for external matching.
+
+**Prerequisites**
+
+Before you begin, confirm the following requirements:
+
+- 
+
+  You must have mapped the file columns to attributes on the **Create new external match job** page. For more information, see [Mapping File Columns to Attributes](https://docs.reltio.com/en/objectives/resolve-potential-matches/potential-matching-at-a-glance/potential-matching-operation/external-match-at-a-glance/mapping-file-columns-to-attributes?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+- 
+
+  The input file must have a column that uniquely identifies each record in its source system, such as a CRM record ID. You map this column to the crosswalk **Value**.
+- 
+
+  If the records in the file come from different sources, the file must have a column that contains the full source URI for each row, for example `configuration/sources/CRM`. A short source name such as `CRM` is not converted to a source URI.
+
+> **Note:** External Match supports only the **Type** and **Value** crosswalk fields. The advanced crosswalk settings of the Data Loader are not available, including **Source table**, **External info**, **Create date**, **Update date**, **Delete date**, and **Data Provider** or **Contributor Provider**. The **Value** must come from an input column. You can't enter a fixed value or generate one. For more information, see [Add Crosswalks](https://docs.reltio.com/en/objectives/load-and-export-data/data-loading-at-a-glance/data-loading-operation/load-data-with-data-loader/load-entities-into-a-tenant/map-source-columns-to-attributes/add-crosswalks?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+
+To add crosswalks to an external match job
+
+1. On the **Create new external match job** page, click the **Crosswalks** tab next to **Match methods**.
+   If you reuse a mapping or change the input file, a crosswalk field that points to a column the file doesn't have is cleared. Select another column for that field. The other field and the crosswalk are kept.
+2. Select **ADD**.
+   A crosswalk is displayed, for example **Crosswalk 1**.
+3. Set the **Type** in one of the following ways:
+   - Select a source from the list.
+     The list shows the sources defined in your tenant by their short labels, for example *CRM*. The application saves the full source URI, for example `configuration/sources/CRM`, with the mapping.
+   - Map a column from the input file.
+     Each value in the column must be a full source URI, for example `configuration/sources/CRM`. A reminder of this requirement appears under the field while a column is mapped.
+   An input file has the following columns:
+   | RecordID | Source | FirstName | LastName | City |
+| --- | --- | --- | --- | --- |
+| 1001 | configuration/sources/CRM | Claire | Barker | Manchester |
+| 1002 | configuration/sources/OneKey | John | Smith | Leeds |
+   For **Crosswalk 1**, map the **Type** to the *Source* column and the **Value** to the *RecordID* column. If every record comes from CRM, select *CRM* as the **Type** instead of mapping the *Source* column.
+4. Map the **Value** field to the column that holds the record's identifier in the source system.
+   > **Important:** Rows that have the same crosswalk are combined into one input record before matching. Map the **Value** to a column whose values are unique for each record. If every row has the same value, all rows are combined into a single record and the match results are incorrect.
+   Columns mapped to a crosswalk show a pink mapping indicator in the column list.
+5. Optional: To add another crosswalk, click **ADD** and repeat steps 3 and 4.
+6. Optional: To remove a crosswalk, click the **Delete** icon next to it.
+7. Click **SAVE**.
+   If a crosswalk has no **Type**, no **Value** column, or neither, you can't save the mapping. The message lists the incomplete crosswalks by number, for example *Crosswalk 2*, and the crosswalk header names the missing fields.
+
+**Result**
+
+The External Match application saves the crosswalks with the mapping. When the job runs, External Match uses the crosswalks to calculate the operational values of the input records with your tenant's survivorship rules before it matches them. The **Mapping Summary** on the **Define Output** page includes the crosswalks.
+
+**Verification steps**
+
+To confirm the crosswalks are mapped, perform the following steps:
+
+1. 
+
+   In the column list, check that the columns mapped to the crosswalk **Type** and **Value** show a pink mapping indicator.
+2. 
+
+   Click **CONTINUE**.
+3. 
+
+   On the **Define Output** page, check that the **Mapping Summary** lists the crosswalks.
 
 
 
