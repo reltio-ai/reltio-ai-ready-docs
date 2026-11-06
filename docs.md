@@ -1,6 +1,6 @@
 # Reltio Documentation
 
-_Generated: 2026-11-04 02:36 UTC_
+_Generated: 2026-11-06 00:13 UTC_
 
 _Topics: 4213_
 
@@ -3357,7 +3357,7 @@ To avoid request failures and ensure optimal API performance:
 
 Quota limits can be defined for Cleansers in Reltio Context Intelligence Platform.
 
-**Reltio Context Intelligence Platform**
+**Reltio Context Intelligence Platform - Cleansers Quota Details**
 
 | Item | Definition | Quota Limit | Request Quota Increase |
 | --- | --- | --- | --- |
@@ -3416,7 +3416,7 @@ You can add the `dataModelerConstraints` tenant property to the tenant physical 
 
 Quota limits can be defined for Data Tenants in Reltio Context Intelligence Platform.
 
-**Reltio Context Intelligence Platform**
+**Reltio Context Intelligence Platform - Data Tenants Quota Details**
 
 | Item | Definition | Quota Limit | Request Quota Increase |
 | --- | --- | --- | --- |
@@ -4132,7 +4132,7 @@ After you receive the email from Reltio, you can run the heavy operations API to
 
 Quota limits can be defined for Storage on Reltio Context Intelligence Platform.
 
-**Reltio Context Intelligence Platform**
+**Reltio Context Intelligence Platform - Storage**
 
 | Item | Definition | Quota Limit | Request Quota Increase |
 | --- | --- | --- | --- |
@@ -4166,7 +4166,7 @@ For more information, see [Tenant cloning, backups, and snapshots](https://docs.
 
 Quota limits can be defined for Tenants on Reltio Context Intelligence Platform.
 
-**Reltio Context Intelligence Platform**
+**Reltio Context Intelligence Platform - Tenants Quota Details**
 
 | Item | Definition | Quota Limit | Request Quota Increase |
 | --- | --- | --- | --- |
@@ -4195,7 +4195,7 @@ Learn about the quotas and limits on the platform's resources.
 
 **Reltio** enforces quota limits on resource usage for various reasons. For example, quotas protect the community of Reltio Platform users by preventing unforeseen spikes in usage.
 
-**Reltio Context Intelligence Platform**
+**Reltio Context Intelligence Platform quota details**
 
 | Item | Definition | Quota Limit | Request Quota Increase |
 | --- | --- | --- | --- |
@@ -6420,7 +6420,7 @@ Any business operating in China needs an Internet Content Provider (ICP) license
 
 As per the Chinese regulations, the ICP license number must be visible to users in the UI. To comply with this rule, we display our Reltio ICP license on the following pages on our platform.
 
-- **Login page**: When you sign in to Reltio, you can see the license number at the footer of the page. For more information, see topic [Sign in to](https://docs.reltio.com/en/applications/reltio-context-intelligence-platform/sign-in-to-reltio-context-intelligence-platform?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+- **Login page**: When you sign in to Reltio, you can see the license number at the footer of the page. For more information, see topic [Sign in to Reltio Context Intelligence Platform](https://docs.reltio.com/en/applications/reltio-context-intelligence-platform/sign-in-to-reltio-context-intelligence-platform?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
   *Image: ui_chinaupdateicplogin.png*
 - In the **Profile Settings**, in the **Hub**:
@@ -12181,7 +12181,7 @@ Wonder no more about the organization and representation of the responses RIA gi
 | Target users/roles | Business Data User |
 | Configuration required | No |
 | Additional subscription required | No |
-| Find out more | [RIA for operation](https://docs.reltio.com/en/applications/ria/ria-reltio-intelligent-assistant-at-a-glance/ria-for-reltio-intelligent-360/ria-for-reltio-intelligent-360-operation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
+| Find out more | [RIA for Reltio Intelligent 360 operation](https://docs.reltio.com/en/applications/ria/ria-reltio-intelligent-assistant-at-a-glance/ria-for-reltio-intelligent-360/ria-for-reltio-intelligent-360-operation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
 
 ## Collaborative Profile Creation
 
@@ -12810,7 +12810,7 @@ Have you used the Collaborative Profile Creation feature, and its authoring work
 | Target users/roles | Data Steward |
 | Configuration required | Please check details for each enhancement |
 | Additional subscription required | No |
-| Find out more | [Hub navigation in Reltio Multidomain Master Data Management (MDM)](https://docs.reltio.com/en/applications/hub/hub-at-a-glance/hub-navigation/hub-navigation-in-reltio-multidomain-master-data-management-mdm?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)  [Hub navigation in](https://docs.reltio.com/en/applications/hub/hub-at-a-glance/hub-navigation/hub-navigation-in-reltio-intelligent-360?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
+| Find out more | [Hub navigation in Reltio Multidomain Master Data Management (MDM)](https://docs.reltio.com/en/applications/hub/hub-at-a-glance/hub-navigation/hub-navigation-in-reltio-multidomain-master-data-management-mdm?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)  [Hub navigation in Reltio Intelligent 360](https://docs.reltio.com/en/applications/hub/hub-at-a-glance/hub-navigation/hub-navigation-in-reltio-intelligent-360?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
 
 ## Survivorship filter additions
 
@@ -14083,7 +14083,7 @@ With this release, you now have two options:
 
 
 
-For more information, see [Reltio Model Context Protocol (MCP) Server at a glance](https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-model-context-protocol-mcp-server-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [MCP Server](https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-model-context-protocol-mcp-server-at-a-glance/autonomous-agents-mcp-server?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Authentication flow for the MCP Server](https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-model-context-protocol-mcp-server-at-a-glance/authentication-flow-for-the-autonomous-agents-mcp-server?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), and [MCP tools](https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-model-context-protocol-mcp-server-at-a-glance/mcp-tools?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+For more information, see [Reltio Model Context Protocol (MCP) Server at a glance](https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-model-context-protocol-mcp-server-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Autonomous agents MCP Server](https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-model-context-protocol-mcp-server-at-a-glance/autonomous-agents-mcp-server?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Authentication flow for the autonomous agents MCP Server](https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-model-context-protocol-mcp-server-at-a-glance/authentication-flow-for-the-autonomous-agents-mcp-server?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), and [MCP tools](https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-model-context-protocol-mcp-server-at-a-glance/mcp-tools?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
@@ -14149,19 +14149,19 @@ In the meantime, we've added new documentation to help you make the most of the 
 
 We've published new documentation and Python-based examples to help developers connect to the Reltio AgentFlow MCP Server. You'll learn how to configure the server endpoint, authenticate using OAuth 2.0, and use streamable HTTP to build lightweight, production-ready clients.
 
-For more information, see [Build a custom MCP client for](https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-model-context-protocol-mcp-server-at-a-glance/build-a-custom-mcp-client-for-autonomous-agents?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+For more information, see [Build a custom MCP client for autonomous agents](https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-model-context-protocol-mcp-server-at-a-glance/build-a-custom-mcp-client-for-autonomous-agents?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 **Configure the Claude app to connect to Reltio AgentFlow MCP Server**
 
 You can now configure the Claude desktop app to securely connect to the Reltio MCP Server using a bearer token and npx-based invocation. Setup instructions include endpoint formatting, environment variables, JSON configuration, and troubleshooting for common errors like token expiry and IP allowlisting.
 
-For more information, see [Configure Claude to connect with MCP Server](https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-model-context-protocol-mcp-server-at-a-glance/configure-claude-to-connect-with-autonomous-agents-mcp-server?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+For more information, see [Configure Claude to connect with autonomous agents MCP Server](https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-model-context-protocol-mcp-server-at-a-glance/configure-claude-to-connect-with-autonomous-agents-mcp-server?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 **Explore all velocity packs for Intelligent 360**
 
 Customer 360 is now Intelligent 360, and it ships with Velocity Packs for B2B, B2C, Financial Services, Healthcare, Insurance, and Life Sciences. These velocity packs reuse the same data model from MDM Velocity Packs, but now include Interaction types for added customer insight.
 
-Go live faster with prebuilt entities, relationships, and interactions, all in one place. For more information, see [velocity packs](https://docs.reltio.com/en/products/reltio-intelligent-360/reltio-intelligent-360-at-a-glance/reltio-intelligent-360-reference/reltio-intelligent-360-velocity-packs?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+Go live faster with prebuilt entities, relationships, and interactions, all in one place. For more information, see [Reltio Intelligent 360 velocity packs](https://docs.reltio.com/en/products/reltio-intelligent-360/reltio-intelligent-360-at-a-glance/reltio-intelligent-360-reference/reltio-intelligent-360-velocity-packs?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
@@ -14589,7 +14589,7 @@ The following agents are part of this release:
 | Target roles | Data StewardSolution ArchitectSystem AdministratorData Product Owner |
 | Configuration required | Yes (MCP Server and AgentFlow setup) |
 | Additional subscription required | Yes (**Data Explorer Agent** included; other agents require credits) |
-| Find out more | [overview](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)  [catalog](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-catalog?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
+| Find out more | [Autonomous agents overview](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)  [Autonomous agents catalog](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-catalog?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
 
 ## Reltio Integration for Veeva Vault CRM™
 
@@ -15469,7 +15469,7 @@ Unlike traditional Intelligent document processing tools that stop at extraction
 | Target roles | Business UserData StewardData Product OwnerReltio ConfiguratorSystem AdministratorSolution Architect |
 | Configuration required | Yes |
 | Additional subscription required | Included in AgentFlow Plus |
-| Find out more | [overview](https://docs.reltio.com/en/products/autonomous-agents/unstructured-augmentation-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
+| Find out more | [Unstructured augmentation overview](https://docs.reltio.com/en/products/autonomous-agents/unstructured-augmentation-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
 
 ## Reltio AgentFlow™ Agent Builder
 
@@ -15484,7 +15484,7 @@ Unlike traditional Intelligent document processing tools that stop at extraction
 | Target roles | Business UserSolution ArchitectSystem AdministratorData Product OwnerReltio ConfiguratorDeveloper |
 | Configuration required | Yes |
 | Additional subscription required | Included in AgentFlow™ Plus |
-| Find out more | [at a glance](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/custom-agents-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
+| Find out more | [Custom agents at a glance](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/custom-agents-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
 
 ## Reltio AgentFlow™ Profiler
 
@@ -15544,7 +15544,7 @@ A new usage dashboard, accessible to users with the required permissions, displa
 | Target roles | System AdministratorData Product Owner |
 | Configuration required | Yes. Assign `ROLE_AGENT_BILLING` to users who need usage dashboard access. |
 | Additional subscription required | Yes. AgentFlow Plus package (Essentials only include the [Data explorer](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-catalog/data-explorer?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Profiler](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-catalog/profiler?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) agents). |
-| Find out more | [usage through Reltio](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-usage-dashboard/autonomous-agents-usage-through-reltio?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
+| Find out more | [Autonomous agents usage through Reltio](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-usage-dashboard/autonomous-agents-usage-through-reltio?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
 
 ## Bring your own LLM to Reltio AgentFlow™
 
@@ -15559,7 +15559,7 @@ A new usage dashboard, accessible to users with the required permissions, displa
 | Target roles | System AdministratorSolution ArchitectDeveloper |
 | Configuration required | Yes |
 | Additional subscription required | No |
-| Find out more | [Bring Your Own LLM for at a glance](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/bring-your-own-llm-for-autonomous-agents-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
+| Find out more | [Bring Your Own LLM for autonomous agents at a glance](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/bring-your-own-llm-for-autonomous-agents-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
 
 ## Reltio AI-Ready Documentation on GitHub
 
@@ -15887,7 +15887,7 @@ The **Applications** menu lets you switch between Reltio applications. This menu
 
 You can now select the **Unstructured** option in the **Applications** menu to switch directly to **AgentFlow Unstructured** without extra navigation.
 
-For more information, see [Navigate between and other Reltio applications](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/navigate-between-autonomous-agents-and-other-reltio-applications?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+For more information, see [Navigate between autonomous agents and other Reltio applications](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/navigate-between-autonomous-agents-and-other-reltio-applications?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 ## View multiple parent paths in a hierarchy
 
@@ -16237,7 +16237,7 @@ AgentFlow now analyzes your prompts and contextually displays charts or graphs w
 
 This enhancement is available for all Reltio agents available in **AgentFlow**.
 
-For more information, see [Charts and Diagrams in](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/charts-and-diagrams-in-autonomous-agents?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+For more information, see [Charts and Diagrams in autonomous agents](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/charts-and-diagrams-in-autonomous-agents?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 ## Materialized hierarchy support for GCP and Azure
 
@@ -16406,7 +16406,7 @@ With Reltio IDE, you can:
 
 Reltio IDE is available as a `.vsix` file from the [Reltio GitHub repository](https://github.com/reltio-ai/reltio-ide/) for VS Code and Cursor.
 
-For more information, see [overview](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+For more information, see [Integrated development experience overview](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 ## Reltio AgentFlow mobile app now available for iOS and Android
 
@@ -16606,7 +16606,7 @@ With Git repository support, teams can:
 - Review and govern every change: Use familiar Git workflows before applying business configuration updates to a Reltio tenant.
 - Accelerate reliable delivery: Integrating business configuration into existing development and DevOps processes.
 
-For more information, see [overview](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+For more information, see [Integrated development experience overview](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
@@ -16802,7 +16802,7 @@ Unstructured search reduces the need to manually search policies, contracts, pro
 | Target roles | , , |
 | Configuration required | Yes |
 | Additional subscription required | No |
-| Find out more | [overview](https://docs.reltio.com/en/products/autonomous-agents/unstructured-augmentation-overview/unstructured-search-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
+| Find out more | [Unstructured search overview](https://docs.reltio.com/en/products/autonomous-agents/unstructured-augmentation-overview/unstructured-search-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
 
 ## New velocity packs for faster implementation
 
@@ -17030,7 +17030,7 @@ Integrated development experience now supports workflows and Life Cycle Actions 
 | Target roles | , , |
 | Configuration required | Yes |
 | Additional subscription required | No |
-| Find out more | [Workflows in the](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/workflows-in-the-integrated-development-experience?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Life Cycle Actions in](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/life-cycle-actions-in-integrated-development-experience?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) (Available in GA on October 30, 2026) |
+| Find out more | [Workflows in the integrated development experience](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/workflows-in-the-integrated-development-experience?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Life Cycle Actions in integrated development experience](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/life-cycle-actions-in-integrated-development-experience?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) (Available in GA on October 30, 2026) |
 
 ## Data sharing - essentials
 
@@ -17075,7 +17075,7 @@ Here are the name changes introduced for AgentFlow in 2026.2.
 | Target roles | , , , , |
 | Configuration required | No |
 | Additional subscription required | No |
-| Find out more | [overview](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [overview](https://docs.reltio.com/en/products/autonomous-agents/unstructured-augmentation-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
+| Find out more | [Autonomous agents overview](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Unstructured augmentation overview](https://docs.reltio.com/en/products/autonomous-agents/unstructured-augmentation-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
 
 
 
@@ -17151,7 +17151,7 @@ Organizations that provision Reltio through SAP Business Data Cloud (BDC) use a 
 
 The **Usage Dashboard** in autonomous agents now displays CU consumption for organizations provisioned through SAP BDC. You can monitor agent runs, track daily consumption, and review usage by agent and tenant.
 
-For more information, see [usage through SAP Business Data Cloud](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-usage-dashboard/autonomous-agents-usage-through-sap-business-data-cloud?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+For more information, see [Autonomous agents usage through SAP Business Data Cloud](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-usage-dashboard/autonomous-agents-usage-through-sap-business-data-cloud?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 ## Credit-balance throttling no longer restrict tenant operations
 
@@ -17209,15 +17209,15 @@ Advanced hierarchy management organizes related profiles into parent-child struc
 
 For more information, see [List all hierarchies in a tenant](https://docs.reltio.com/en/developer-resources/advanced-hierarchy-management-apis/advanced-hierarchy-management-apis/list-all-hierarchies-in-a-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Bulk update hierarchy connections](https://docs.reltio.com/en/developer-resources/advanced-hierarchy-management-apis/advanced-hierarchy-management-apis/bulk-update-hierarchy-connections?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Create a hierarchy type](https://docs.reltio.com/en/objectives/model-data/data-modeling-at-a-glance/data-modeling-operation/hierarchy-types-in-data-modeler/create-a-hierarchy-type?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Structural validation in Advanced hierarchy management](https://docs.reltio.com/en/objectives/manage-profiles/profile-management-at-a-glance/profile-management-operation/advanced-hierarchy-management/structural-validation-in-advanced-hierarchy-management?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), and [Hierarchy perspective](https://docs.reltio.com/en/applications/hub/profiles-at-a-glance/profile-perspectives-tabs/profile-perspectives-navigation/hierarchy-perspective?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
-## Manage workflows, LCAs and match rules in the
+## Manage workflows, LCAs and match rules in the integrated development experience
 
-The  for VS Code and Cursor now supports workflows, Life Cycle Actions (LCAs), and AI-assisted generation of match rules. Author and review changes in your preferred editor, then deploy them to your Reltio tenant or push them to your Git repository.
+The integrated development experience for VS Code and Cursor now supports workflows, Life Cycle Actions (LCAs), and AI-assisted generation of match rules. Author and review changes in your preferred editor, then deploy them to your Reltio tenant or push them to your Git repository.
 
 - Create and edit workflows: Create a workflow from a template or duplicate an existing workflow, then visualize it and edit its BPMN with live validation. Review the changes before deploying the workflow to your Reltio tenant or committing it to your Reltio-provisioned Bitbucket repository.
 - Develop LCAs: Review existing LCA configurations or use natural language prompts to create new LCAs and generate their code with an AI agent. After deploying the code to your AWS, Google Cloud, or Azure environment, link the deployed function in your tenant business configuration. After reviewing the changes, apply the configuration to your tenant.
 - Create match rules: Describe the match rule you need in a natural language prompt. The AI agent builds the rule and tests it against your tenant before adding it to your business configuration for review. After reviewing the rule, apply the configuration to your tenant.
 
-For more information [overview](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), see [Life Cycle Actions in](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/life-cycle-actions-in-integrated-development-experience?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Workflows in the](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/workflows-in-the-integrated-development-experience?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+For more information [Integrated development experience overview](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), see [Life Cycle Actions in integrated development experience](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/life-cycle-actions-in-integrated-development-experience?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Workflows in the integrated development experience](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/workflows-in-the-integrated-development-experience?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 ## 15 additional languages added to the Reltio Documentation Portal
 
@@ -20644,7 +20644,7 @@ The following table shows how to perform a relevance calculation. S1 and S2 repr
 | `BasicTokenizedOrganizationNameComparator` | The relevance calculation includes the next steps:  1. Split the lines by words. 2. Remove all `noiseWords` from noise dictionary **organizationName**). If the line consists of the noise words only, this step would be skipped. 3. The relevance would be a **ratio of common words count to count of all unique words in compared lines**.      **Ncommon/S1wordsCount+S2wordsCount - Ncommon** |
 | `CrossMultiComparator` | Relevance is calculated for each combination of attributes. The biggest value is chosen as a result.  For each combination of attributes the relevance is a sum of relevances per each attribute R attribute divided by count of attributes Nattributes  **R attribute1+ R attribute2+.…... R attributeN/Nattributes** |
 | `DamerauLevenshteinDistance` | This comparator counts the minimum number of single-character operations (insert, delete, replace) required to convert string S1 to S2 most efficiently.  The relevance counts as **1 - distance /max (S1_length, S2_length)**.  The smaller the distance, the closer the relevance is to 1. |
-| `DistinctWordsComparator` | The algorithm is based on the following:  1. Split the value into distinct words according to the specified regexp pattern. 2. Construct a sorted set of lowercase words. 3. Apply stemmer to the words (if enabled). 4. Remove noise words if noise dictionary is specified. 5. Replace words with soundex codes (if enabled). 6. Compare sets of words.      The relevance is a ratio of common words count N common to the bigger value of the words count**N common/ / max (S1 _wordsCount , S2 wordsCount )**  *Additional Case:* If the `thresholdChars` value is specified, then relevance calculation is performed by character histograms. For both sets of words, the character histogram is calculated (characters are 0-9 and a-z).  The relevance is a ratio of common chars count **N****common** to the bigger chars count S1charsCount, S2charsCount  **N/ max(S1 commoncharsCount, S2 charsCount)**  In this case relevance will be the bigger one between relevance by words and relevance by chars. |
+| `DistinctWordsComparator` | The algorithm is based on the following:  1. Split the value into distinct words according to the specified regexp pattern. 2. Construct a sorted set of lowercase words. 3. Apply stemmer to the words (if enabled). 4. Remove noise words if noise dictionary is specified. 5. Replace words with soundex codes (if enabled). 6. Compare sets of words.      The relevance is a ratio of common words count N common to the bigger value of the words count**N common/ / max (S1 _wordsCount , S2 wordsCount )**  *Additional Case:* If the `thresholdChars` value is specified, then relevance calculation is performed by character histograms. For both sets of words, the character histogram is calculated (characters are 0-9 and a-z).  The relevance is a ratio of common chars count **N****common** to the bigger chars count S1charsCount, S2charsCount  **Ncommon/ max(S1 charsCount, S2 charsCount)**  In this case relevance will be the bigger one between relevance by words and relevance by chars. |
 | `DoubleMetaphoneComparator` | The comparator returns 1 if the two strings are phonetically equal based on the Double Metaphone algorithm, otherwise the relevance is 0.  The Double Metaphone algorithm is thought to be an improvement of the Metaphone algorithm. |
 | `DynamicDamerauLevenshteinDistance` | This comparator counts the minimum number of single-character operations (insert, delete, replace) required to convert string S1 to S2 most efficiently.  The relevance counts as **1 - sqr(distance) / sqr(max (S1_length, S2_length))**.  The smaller the distance, the closer the relevance is to 1. |
 | `ExactMultiComparator` | Returns 1 if all compared attributes are equals, otherwise returns 0 |
@@ -25601,7 +25601,7 @@ Job details and summaries distinguish between items that were auto-accepted and 
 
 **Tasks, jobs, and conversations**
 
-In , a task is the scheduled definition of the work to be done. A job is one execution of that task. For recurring tasks, each scheduled run creates a new job.
+In autonomous agents, a task is the scheduled definition of the work to be done. A job is one execution of that task. For recurring tasks, each scheduled run creates a new job.
 
 Each job has its own conversation. When a job is complete, Reltio sends an email summary with processed and error counts and a link to the Task Management dashboard, where you can review detailed results. In the dashboard, you can monitor scheduled, in-progress, and completed jobs, and cancel a scheduled job before execution begins.
 
@@ -25619,11 +25619,11 @@ Each job has its own conversation. When a job is complete, Reltio sends an email
 **Keywords:** Reltio autonomous agents, automated long-running tasks, failed automated long-running task, update and rerun failed task, Task management, failed job, Fix Prompt, Update Prompt, Go to Conversation, job details
 
 
-Learn how to review and update a failed automated long-running task in  so that you can review the failure, correct the prompt, and prepare the task for the next run.
+Learn how to review and update a failed automated long-running task in autonomous agents so that you can review the failure, correct the prompt, and prepare the task for the next run.
 
 **Prerequisites**::- 
 
-  You need an active Reltio agent with  enabled.
+  You need an active Reltio agent with autonomous agents enabled.
 - 
 
   You must have [role-based access control (RBAC) permissions](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-capabilities-and-permissions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
@@ -25636,7 +25636,7 @@ Use **Task Management** to review failed jobs, inspect related conversations, an
 
 To follow up on a failed automated long-running task
 
-1. In ****, select **Task Management** from the left navigation pane. The **Task Management** page is displayed with a list of available tasks.
+1. In **autonomous agents**, select **Task Management** from the left navigation pane. The **Task Management** page is displayed with a list of available tasks.
 2. Select the task that contains the failed job. The **Details** tab shows the task configuration, including the task name, status, agent, user prompt, and schedule information.
 3. Select the **Jobs** tab and locate the failed job that you want to review.
    *Image: ui-lrt-failedjob.png*
@@ -25668,11 +25668,11 @@ After the next run, verify that the job completed successfully and review the up
 **Keywords:** Reltio autonomous agents, automated long-running task, monitor automated long-running task, review automated long-running task, Task management, Jobs tab, Job Details, runtime metrics, Execution Process, Go to Conversation, download job record report, export job results, View Downloads, Include Conversation
 
 
-Learn how to monitor long-running task executions and review job details in .
+Learn how to monitor long-running task executions and review job details in Autonomous agents.
 
 **Prerequisites**- 
 
-  You need an active Reltio agent with  enabled.
+  You need an active Reltio agent with autonomous agents enabled.
 - 
 
   You must have [role-based access control (RBAC) permissions](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-capabilities-and-permissions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
@@ -25682,7 +25682,7 @@ Use **Task Management** to monitor the jobs created by your long-running tasks. 
 
 To monitor and review an automated long-running task
 
-1. Log in to ****.
+1. Log in to **autonomous agents**.
 2. Select your profile icon, and then select **Task Management**.*Image: i-lrt-task-management.png*
    The Task Management page opens.
 3. Select the task you want to review.
@@ -25739,14 +25739,14 @@ To review the conversation associated with a job:
 
 Reltio sends email notifications to the user who created the job at key stages of an automated long-running task. Emails are sent at the following stages of a long-running task:
 
-- **Started**: The task is running. The email includes a link to track progress in .
+- **Started**: The task is running. The email includes a link to track progress in autonomous agents.
 - **Stopped**: The task stopped before all records were processed. The email includes a summary of the partial results.
 - **Completed**: The task completed successfully. The email includes a summary of the results.
 - 
 
   **Failed**: A problem prevented the task from completing. The email includes a summary of the results.
 
-In the email, select **View Job** to open the job in , where you can review execution details, results, and the conversation associated with the job.
+In the email, select **View Job** to open the job in autonomous agents, where you can review execution details, results, and the conversation associated with the job.
 
 
 
@@ -25762,11 +25762,11 @@ In the email, select **View Job** to open the job in , where you can review exec
 **Keywords:** Reltio autonomous agents, automated long-running tasks, Task management, schedule automated long-running task, user prompt, run once, recurring schedule, job
 
 
-*Learn how to create and schedule a long-running task in so that you can automate repeatable agent work in the background.*
+*Learn how to create and schedule a long-running task in autonomous agents so that you can automate repeatable agent work in the background.*
 
 **Prerequisites**::- 
 
-  You need an active Reltio agent with  enabled.
+  You need an active Reltio agent with autonomous agents enabled.
 - 
 
   You must have [role-based access control (RBAC) permissions](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-capabilities-and-permissions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
@@ -25776,7 +25776,7 @@ Schedule an automated long-running task in **Task management** to allow an agent
 
 To schedule an automated long-running task
 
-1. In Reltio , select **Task management** from the left navigation pane. The **Task Management** page is displayed with a list of scheduled tasks.
+1. In Reltio autonomous agents, select **Task management** from the left navigation pane. The **Task Management** page is displayed with a list of scheduled tasks.
    *Image: ui-lrt-tasklist.png*
 2. Select **+Schedule Task** to schedule a new automated long-running task.
    *Image: ui-lrt-schedulenewtask.png*
@@ -25847,7 +25847,7 @@ For more information about these user roles, see [About roles](https://docs.relt
 
 ## Key capabilities
 
-Segmenter supports conversational audience segmentation workflows in . The following capabilities support segmentation workflows from request through follow-up actions.
+Segmenter supports conversational audience segmentation workflows in autonomous agents. The following capabilities support segmentation workflows from request through follow-up actions.
 
 - Create new segments from natural language requests by translating business language into supported segmentation criteria.
 - Define segment criteria by using attribute filters, supported behavioral conditions, and segment details as part of the requested audience definition.
@@ -25869,14 +25869,14 @@ You can also move from an initial request to the next relevant action, such as r
 
 ## Use Segmenter for conversational segmentation
 
-Segmenter brings a conversational, agentic experience to segmentation work in . It lets you express audience intent in natural language, refine the request through guided interaction, and carry out supported segmentation tasks within the same workflow.
+Segmenter brings a conversational, agentic experience to segmentation work in autonomous agents. It lets you express audience intent in natural language, refine the request through guided interaction, and carry out supported segmentation tasks within the same workflow.
 
 By combining natural language input with guided segmentation workflows, Segmenter helps users move from audience intent to execution more naturally while keeping the work aligned with supported product behavior in Reltio.
 
 **Related links**
 
-- [catalog](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-catalog?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- [Use the workspace in](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/use-the-workspace-in-autonomous-agents?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Autonomous agents catalog](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-catalog?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Use the workspace in autonomous agents](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/use-the-workspace-in-autonomous-agents?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 - [Segmentation at a glance](https://docs.reltio.com/en/applications/hub/segmentation-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 
@@ -25897,7 +25897,7 @@ Learn how to create and manage segments with Segmenter by describing the audienc
 
 > **Note:** This feature is available to limited users through the Reltio Early Access (EA) program. Interested in finding out more about this feature or participating in our EA program? Get details in topic Early Access (EA) features.
 
-Segmenter supports a guided conversational flow for segmentation in , allowing you to define an audience, review the interpreted request, add segment details, and save the segment, all within a single interaction.
+Segmenter supports a guided conversational flow for segmentation in autonomous agents, allowing you to define an audience, review the interpreted request, add segment details, and save the segment, all within a single interaction.
 
 Use this topic to create a new segment or manage segment tasks within the same conversation, such as reviewing results, inspecting the segment, updating details, or moving to another supported segmentation task.
 
@@ -25905,8 +25905,8 @@ If Segmenter needs more information, it asks clarifying questions so you can ref
 
 ## Create a segment in Segmenter
 
-1. Login to the [workspace](https://reltio.ai/agent-flow) in your browser, then select your tenant and environment to open .
-2. In , open **Segmenter** from the left navigation pane if it is already available. Otherwise, go to the left navigation panel, select **Discover agents**, locate **Segmenter** on the Discover Agents page, and launch it.
+1. Login to the [autonomous agents workspace](https://reltio.ai/agent-flow) in your browser, then select your tenant and environment to open autonomous agents.
+2. In autonomous agents, open **Segmenter** from the left navigation pane if it is already available. Otherwise, go to the left navigation panel, select **Discover agents**, locate **Segmenter** on the Discover Agents page, and launch it.
 3. Enter a natural language request that describes the segment you want to create or the audience you want to include.
 
    Example requests:
@@ -25928,8 +25928,8 @@ Depending on the returned results, you can continue the conversation to inspect 
 
 ## Manage a segment in Segmenter
 
-1. Login to the [workspace](https://reltio.ai/agent-flow) in your browser, then select your tenant and environment to open .
-2. In , open Segmenter from the left navigation pane if you've accessed it before. Otherwise, go to the left navigation panel, select **Discover agents**, then locate **Segmenter** on the Discover Agents page and launch it.
+1. Login to the [autonomous agents workspace](https://reltio.ai/agent-flow) in your browser, then select your tenant and environment to open autonomous agents.
+2. In autonomous agents, open Segmenter from the left navigation pane if you've accessed it before. Otherwise, go to the left navigation panel, select **Discover agents**, then locate **Segmenter** on the Discover Agents page and launch it.
 3. Enter a request that describes the segment you want to review or the change you want to make.
 
    Example requests:
@@ -25951,7 +25951,7 @@ Depending on the action you complete and the returned results, you can continue 
 
 **Related links**
 
-- [overview](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Autonomous agents overview](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 - [Segmenter](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-catalog/segmenter?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 - [Segmentation at a glance](https://docs.reltio.com/en/applications/hub/segmentation-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
@@ -25959,7 +25959,7 @@ Depending on the action you complete and the returned results, you can continue 
 
 ---
 
-# Enable and Access Segmenter in
+# Enable and Access Segmenter in Autonomous agents
 
 > **Section:** Products > Autonomous agents > Autonomous agents overview > Autonomous agents catalog > Segmenter
 
@@ -25969,7 +25969,7 @@ Depending on the action you complete and the returned results, you can continue 
 **Keywords:** enable segmenter in autonomous agents, access segmenter in autonomous agents, launch segmenter from discover agents, get started with segmenter, use segmenter in autonomous agents, autonomous agents segmenter access, segmenter availability intelligent 360, segmenter permissions in autonomous agents, segmenter, autonomous agents, permissions
 
 
-Learn how to enable Segmenter for your tenant, access it in , and launch it from the agent catalog.
+Learn how to enable Segmenter for your tenant, access it in autonomous agents, and launch it from the agent catalog.
 
 > **Note:** This feature is available to limited users through the Reltio Early Access (EA) program. Interested in finding out more about this feature or participating in our EA program? Get details in topic Early Access (EA) features.
 
@@ -25980,15 +25980,15 @@ Segmenter is a prebuilt Reltio agent that supports conversational segmentation w
 Before you begin, ensure that you have completed the following requirements.
 
 - Segmenter is available for your Reltio Intelligent 360 environment.
-- is enabled for your tenant and you are able to sign in to [reltio.ai](https://reltio.ai/login) and access the  workspace. For more information, see [Use the workspace in](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/use-the-workspace-in-autonomous-agents?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
-- You have the required  execution roles. For role details, see [capabilities and permissions](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-capabilities-and-permissions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+- Autonomous agents is enabled for your tenant and you are able to sign in to [reltio.ai](https://reltio.ai/login) and access the autonomous agents workspace. For more information, see [Use the workspace in autonomous agents](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/use-the-workspace-in-autonomous-agents?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+- You have the required autonomous agents execution roles. For role details, see [Autonomous agents capabilities and permissions](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-capabilities-and-permissions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
-## Launch Segmenter in
+## Launch Segmenter in autonomous agents
 
 To launch Segmenter, follow the steps below.
 
 1. Sign in to [reltio.ai](https://reltio.ai/login).
-2. Open the  workspace and select your tenant and environment from the top left corner.
+2. Open the autonomous agents workspace and select your tenant and environment from the top left corner.
 3. In the left navigation panel, select **Discover agents**.
 4. On the Discover agents page, review the available agents and find **Segmenter**, and then review the agent card details.
 5. Select **Launch**.
@@ -26035,7 +26035,7 @@ Learn how to interact with Segmenter by using clear natural language prompts for
 
 > **Note:** This feature is available to limited users through the Reltio Early Access (EA) program. Interested in finding out more about this feature or participating in our EA program? Get details in topic Early Access (EA) features.
 
-Segmenter is a prebuilt Reltio agent in  that supports conversational segmentation workflows.
+Segmenter is a prebuilt Reltio agent in autonomous agents that supports conversational segmentation workflows.
 
 This topic provides sample prompts for common segment creation, review, and management tasks and shows how to phrase requests clearly so Segmenter can interpret the intent and continue the workflow.
 
@@ -26139,7 +26139,7 @@ Use prompts that follow these guidelines:
 
 ---
 
-# usage through SAP Business Data Cloud
+# Autonomous agents usage through SAP Business Data Cloud
 
 > **Section:** Products > Autonomous agents > Autonomous agents overview > Autonomous agents Usage Dashboard
 
@@ -26149,19 +26149,19 @@ Use prompts that follow these guidelines:
 **Keywords:** autonomous agents billing through sap bdc, autonomous agents capacity unit consumption, sap business data cloud billing, monitor autonomous agents capacity units, autonomous agents bdc usage dashboard, autonomous agents capacity usage monitoring, autonomous agents bdc usage policies, capacity units, billing, consumption
 
 
-Learn about how  usage is measured in Capacity Units (CUs) for SAP Business Data Cloud customers, including consumption policies and usage monitoring.
+Learn about how autonomous agents usage is measured in Capacity Units (CUs) for SAP Business Data Cloud customers, including consumption policies and usage monitoring.
 
-When your organization provisions  through SAP Business Data Cloud (BDC), usage is measured in Capacity Units (CUs). Agent usage draws from the shared pool of CUs that your organization uses across BDC products. There's no separate entitlement for .
+When your organization provisions autonomous agents through SAP Business Data Cloud (BDC), usage is measured in Capacity Units (CUs). Agent usage draws from the shared pool of CUs that your organization uses across BDC products. There's no separate entitlement for autonomous agents.
 
 You can use the **Usage Dashboard** to monitor agent activity and CU consumption across your tenants.
 
 ## How Capacity Units (CUs) are consumed
 
-CUs are consumed when agents run, including in conversations, long-running tasks, and scheduled jobs. The units consumed by a run depends on the agent and on the amount of work the agent performs. You can see each agent's CU rate per run on the Discover agents page in the  UI.
+CUs are consumed when agents run, including in conversations, long-running tasks, and scheduled jobs. The units consumed by a run depends on the agent and on the amount of work the agent performs. You can see each agent's CU rate per run on the Discover agents page in the autonomous agents UI.
 
 [Data explorer](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-catalog/data-explorer?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Profiler](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-catalog/profiler?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) agents do not consume CUs.
 
-Building, testing, and configuring agents in [at a glance](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/custom-agents-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) doesn't consume CUs.
+Building, testing, and configuring agents in [custom agents](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/custom-agents-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) doesn't consume CUs.
 
 ## Usage limits
 
@@ -26169,12 +26169,12 @@ When your organization's purchased CUs are used up, agent interactions are not b
 
 ## Monitor Capacity Unit usage
 
-The Usage Dashboard displays  CU consumption for the selected month. Usage data is updated once a day and includes usage up to the previous day.
+The Usage Dashboard displays autonomous agents CU consumption for the selected month. Usage data is updated once a day and includes usage up to the previous day.
 
 The dashboard provides the following information:
 
 - **Agent runs:** Total number of agent runs.
-- **CUs consumed:** Total CUs consumed by .
+- **CUs consumed:** Total CUs consumed by autonomous agents.
 - **Daily CU usage:** CUs consumed each day of the selected month.
 - **Agent usage:** The number of CUs that a run consumes depends by each agent, and each agent's share of total CU consumption.
 - **Tenant usage:** Displays the environment and CUs consumed by each tenant, and each tenant's share of total CU consumption.
@@ -26183,7 +26183,7 @@ The dashboard provides the following information:
 
 ---
 
-# usage through Reltio
+# Autonomous agents usage through Reltio
 
 > **Section:** Products > Autonomous agents > Autonomous agents overview > Autonomous agents Usage Dashboard
 
@@ -26193,21 +26193,21 @@ The dashboard provides the following information:
 **Keywords:** agentflow billing through reltio, annual credit entitlement autonomous agents, autonomous agents base package credits, pooled credit consumption autonomous agents, autonomous agents credit thresholds 75 90 100, autonomous agents credit exhaustion behavior, agentflow billing role access, autonomous agents usage governance, credits, entitlement, thresholds
 
 
-Learn about how  credits work, how usage is calculated against your annual entitlement, and what happens when usage reaches defined thresholds.
+Learn about how autonomous agents credits work, how usage is calculated against your annual entitlement, and what happens when usage reaches defined thresholds.
 
-When your organization provisions  through Reltio, agent usage is measured in credits against your annual entitlement. Understanding how credits are allocated and consumed helps you monitor usage, manage your credit balance, and anticipate restrictions when consumption reaches defined thresholds.
+When your organization provisions autonomous agents through Reltio, agent usage is measured in credits against your annual entitlement. Understanding how credits are allocated and consumed helps you monitor usage, manage your credit balance, and anticipate restrictions when consumption reaches defined thresholds.
 
-## What credits are
+## What autonomous agents credits are
 
-use credits to measure AI agent usage. Each agent execution consumes credits.
+Autonomous agents use credits to measure AI agent usage. Each agent execution consumes credits.
 
-[Data explorer](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-catalog/data-explorer?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Profiler](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-catalog/profiler?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) agents do not consume credits, and are available to all  users. Their activity does not deduct credits from your balance and is not visible in the Usage Dashboard.
+[Data explorer](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-catalog/data-explorer?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Profiler](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-catalog/profiler?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) agents do not consume credits, and are available to all autonomous agents users. Their activity does not deduct credits from your balance and is not visible in the Usage Dashboard.
 
 Building, testing, and configuring agents in [Custom agents](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/custom-agents-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) does not consume credits. Credits are consumed only when users interact with agents in conversations.
 
 ## Subscription models
 
-Reltio supports two subscription models. Your subscription model determines what  credits cover and who pays for LLM inference costs.
+Reltio supports two subscription models. Your subscription model determines what autonomous agents credits cover and who pays for LLM inference costs.
 
 Your organization may have one or both subscription models active, depending on your contract. The three possible configurations are:
 
@@ -26257,21 +26257,21 @@ If a Base Package reaches 100% credit usage:
 - The message composer is disabled.
 - A notification appears in the interface.
 
-An Admin must replenish credits before new  messages can be sent.
+An Admin must replenish credits before new autonomous agents messages can be sent.
 
 ## Who can view the Usage Dashboard
 
 Only users assigned the `ROLE_AGENT_BILLING` can access the Usage Dashboard to view credit balances, contract details, and tenant and agent level usage.
 
-Regular  users can continue using agents but will see warnings when usage thresholds are reached.
+Regular autonomous agents users can continue using agents but will see warnings when usage thresholds are reached.
 
-For more information about monitoring usage, see [View usage and credit balance](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-usage-dashboard/view-autonomous-agents-usage-and-credit-balance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+For more information about monitoring usage, see [View autonomous agents usage and credit balance](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-usage-dashboard/view-autonomous-agents-usage-and-credit-balance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
 ---
 
-# Usage Dashboard
+# Autonomous agents Usage Dashboard
 
 > **Section:** Products > Autonomous agents > Autonomous agents overview
 
@@ -26281,9 +26281,9 @@ For more information about monitoring usage, see [View usage and credit balance]
 **Keywords:** autonomous agents usage dashboard, autonomous agents usage monitoring, autonomous agents sap bdc usage, autonomous agents reltio credits, autonomous agents capacity unit usage, monitor autonomous agents consumption, autonomous agents usage measurement, capacity units, credits, usage
 
 
-Learn about the  Usage Dashboard and how to monitor consumption based on how  are provisioned for your organization.
+Learn about the autonomous agents Usage Dashboard and how to monitor consumption based on how autonomous agents are provisioned for your organization.
 
-The  Usage Dashboard helps you monitor consumption and review usage across agents and tenants. Depending on how autonomous agents are provisioned for your organization, usage is measured in Reltio credits or Capacity Units (CUs) in SAP Business Data Cloud (BDC) .
+The autonomous agents Usage Dashboard helps you monitor consumption and review usage across agents and tenants. Depending on how autonomous agents are provisioned for your organization, usage is measured in Reltio credits or Capacity Units (CUs) in SAP Business Data Cloud (BDC) .
 
 Only users who are assigned the `ROLE_AGENT_BILLING` system role can access the **Usage Dashboard**.
 
@@ -26298,7 +26298,7 @@ The Usage Dashboard displays consumption information based on how autonomous age
 
 ---
 
-# system prompt guidelines
+# Autonomous agents system prompt guidelines
 
 > **Section:** Products > Autonomous agents > Autonomous agents overview > Custom agents at a glance
 
@@ -26308,7 +26308,7 @@ The Usage Dashboard displays consumption information based on how autonomous age
 **Keywords:** autonomous agents system prompt engineering, write system prompt for autonomous agents agent, autonomous agents agent prompt structure, autonomous agents prompt guardrails and safety, autonomous agents agent type templates, autonomous agents tool documentation in prompt, autonomous agents prompt anti-patterns, autonomous agents first-turn behavior prompt, system prompt, guardrails, autonomous agents
 
 
-Learn about best practices for writing production-ready system prompts for , including recommended structure, safety guardrails, and common anti-patterns.
+Learn about best practices for writing production-ready system prompts for autonomous agents, including recommended structure, safety guardrails, and common anti-patterns.
 
 A system prompt is the complete instruction set that the model evaluates when an agent starts. System prompts are limited to a maximum length of 100,000 characters, including spaces. These guidelines are intended for developers and prompt engineers who build and maintain AI agents. They cover recommended structure, agent-type patterns, safety guardrails, and common mistakes to avoid.
 
@@ -26328,7 +26328,7 @@ We recommend following these five rules for every system prompt, regardless of a
 
 ## Recommended prompt structure
 
-> **Note:** The sections below represent a recommended convention — a framework for what to include and in what order. The  authoring surface does not enforce this structure automatically. You apply it yourself in the system prompt text area.
+> **Note:** The sections below represent a recommended convention — a framework for what to include and in what order. The custom agents authoring surface does not enforce this structure automatically. You apply it yourself in the system prompt text area.
 
 We recommend the following structure as the default starting point for production-ready system prompts:
 
@@ -26351,7 +26351,7 @@ The identity section establishes a clear persona and boundaries for the agent. I
 
 We recommend this pattern:
 
-- You are the **[Agent Name]** in . Your purpose is to [primary mission in one clear sentence].
+- You are the **[Agent Name]** in Autonomous agents. Your purpose is to [primary mission in one clear sentence].
 - You [capability 1], [capability 2], and [capability 3].
 - You do **not** [explicit limitation 1] or [explicit limitation 2].
 
@@ -26514,7 +26514,7 @@ For more information about how to publish an agent after the prompt passes this 
 
 ---
 
-# at a glance
+# Custom agents at a glance
 
 > **Section:** Products > Autonomous agents > Autonomous agents overview
 
@@ -26524,21 +26524,21 @@ For more information about how to publish an agent after the prompt passes this 
 **Keywords:** agent builder overview agentflow, create and publish ai agents reltio, agentflow agent authoring and governance, agent lifecycle agentflow builder, agentflow agent approval workflow overview, agent builder roles and permissions overview, agentflow agent publishing governance, agent builder, governance, agentflow
 
 
-Learn about how  enables governed authoring, testing, and publishing of AI agents in .
+Learn about how custom agents enables governed authoring, testing, and publishing of AI agents in autonomous agents.
 
-is the authoring and governance surface within . It gives authors a structured way to create, test, and publish AI agents. Approvers get a governed workflow to review and control what reaches end users.
+Custom agents is the authoring and governance surface within autonomous agents. It gives authors a structured way to create, test, and publish AI agents. Approvers get a governed workflow to review and control what reaches end users.
 
-Building, testing, and publishing agents in  does not consume  credits. Credits are consumed when users interact with a published agent in . For more information, see [usage through Reltio](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-usage-dashboard/autonomous-agents-usage-through-reltio?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+Building, testing, and publishing agents in custom agents does not consume autonomous agents credits. Credits are consumed when users interact with a published agent in autonomous agents. For more information, see [Autonomous agents usage through Reltio](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-usage-dashboard/autonomous-agents-usage-through-reltio?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
-is used by the following roles:
+Custom agents is used by the following roles:
 
 - Agent Author
 - Agent Approver
 - Agent Admin
 
-For more information about assigning these roles to users, see [Assign roles to users](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/custom-agents-at-a-glance/assign-custom-agents-roles-to-users?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+For more information about assigning these roles to users, see [Assign custom agents roles to users](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/custom-agents-at-a-glance/assign-custom-agents-roles-to-users?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
-## How works
+## How custom agents works
 
 The following diagram shows the end-to-end process for building and publishing an agent, from creating a draft through security scanning, approver review, and final publication.
 
@@ -26562,7 +26562,7 @@ For more information, see [System prompt security scan](https://docs.reltio.com/
 
 ## When to use it
 
-Use  when you need to:
+Use custom agents when you need to:
 
 - Create and iterate on a custom AI agent
 - Test an agent before submitting it for review
@@ -26571,9 +26571,9 @@ Use  when you need to:
 
 For more information about creating and publishing an agent, see [Create, test, and submit an agent for review](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/custom-agents-at-a-glance/create-test-and-submit-an-agent-for-review?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
-## Watch how for works
+## Watch how custom agents for autonomous agents works
 
-The following video demonstrates how  enables governed authoring, testing, and publishing of AI agents in .
+The following video demonstrates how custom agents enables governed authoring, testing, and publishing of AI agents in autonomous agents.
 
 *Video: v-reltio-agent-builder-demo.mp4*
 
@@ -26581,7 +26581,7 @@ The following video demonstrates how  enables governed authoring, testing, and p
 
 ---
 
-# Bring Your Own LLM for at a glance
+# Bring Your Own LLM for autonomous agents at a glance
 
 > **Section:** Products > Autonomous agents > Autonomous agents overview
 
@@ -26591,9 +26591,9 @@ The following video demonstrates how  enables governed authoring, testing, and p
 **Keywords:** bring your own llm autonomous agents overview, byo llm reltio autonomous agents, custom llm endpoint autonomous agents, use own llm with reltio autonomous agents, autonomous agents llm routing and control, model selection per conversation autonomous agents, reltio autonomous agents llm data residency, byo llm, autonomous agents, llm endpoint, model governance
 
 
-Learn about how Bring Your Own LLM (BYO LLM) lets your organization use its own LLM endpoints with  instead of the default Reltio-managed LLM.
+Learn about how Bring Your Own LLM (BYO LLM) lets your organization use its own LLM endpoints with autonomous agents instead of the default Reltio-managed LLM.
 
-Bring Your Own LLM (BYO LLM) allows your organization to use its own Large Language Model endpoints with  instead of the default Reltio-managed LLM. When BYO LLM is enabled for your tenant, all agent conversations are routed through your organization's LLM infrastructure, giving you full control over model selection, data residency, and compliance.
+Bring Your Own LLM (BYO LLM) allows your organization to use its own Large Language Model endpoints with autonomous agents instead of the default Reltio-managed LLM. When BYO LLM is enabled for your tenant, all agent conversations are routed through your organization's LLM infrastructure, giving you full control over model selection, data residency, and compliance.
 
 BYO LLM is configured by the Reltio team on your behalf. You request the setup, provide the necessary credentials, and the Reltio team handles configuration, validation, and activation. Once enabled, System Administrators can view the LLM configuration, and Data Stewards and Data Product Owners can select from your organization's available models when starting a conversation.
 
@@ -26601,7 +26601,7 @@ BYO LLM is configured by the Reltio team on your behalf. You request the setup, 
 
 When BYO LLM is enabled, all agent LLM calls route exclusively through your organization's endpoints. Reltio-managed models are not used.
 
-Setup is initiated through a Reltio support request. After you provide credentials and endpoint details, the Reltio team configures, validates, and activates the integration. Once active, System Administrators can view the LLM configurations in , and Data Stewards and Data Product Owners can select from the available models when starting a new conversation.
+Setup is initiated through a Reltio support request. After you provide credentials and endpoint details, the Reltio team configures, validates, and activates the integration. Once active, System Administrators can view the LLM configurations in autonomous agents, and Data Stewards and Data Product Owners can select from the available models when starting a new conversation.
 
 ## Key behaviors
 
@@ -26688,7 +26688,7 @@ Reltio AgentFlow Mobile allows you to chat with Reltio agents and custom agents 
 
 ---
 
-# catalog
+# Autonomous agents catalog
 
 > **Section:** Products > Autonomous agents > Autonomous agents overview
 
@@ -26698,9 +26698,9 @@ Reltio AgentFlow Mobile allows you to chat with Reltio agents and custom agents 
 **Keywords:** autonomous agents agent catalogue, available agents in autonomous agents, explore data with autonomous agents, resolve matches in autonomous agents, intelligent workflow distribution, autonomous agents match resolver, autonomous agents data explorer, workflow assignment agent in reltio, autonomous agents, workflow, match rules, crosswalks
 
 
-Learn more about the available  agents and how they support real-time, governed workflows for interacting with master data.
+Learn more about the available autonomous agents agents and how they support real-time, governed workflows for interacting with master data.
 
-enable you to interact with your organization's master data using conversational, task-specific AI interfaces. Each agent supports a specific workflow — such as exploring entity profiles, resolving duplicates, or reassigning tasks — and operates using governed APIs routed through the Reltio Model Context Protocol (MCP) server. For more information, see [overview](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+Autonomous agents enable you to interact with your organization's master data using conversational, task-specific AI interfaces. Each agent supports a specific workflow — such as exploring entity profiles, resolving duplicates, or reassigning tasks — and operates using governed APIs routed through the Reltio Model Context Protocol (MCP) server. For more information, see [Autonomous agents overview](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 This catalog lists available agents in Reltio.
 
@@ -26733,7 +26733,7 @@ Learn how to interact with the Data explorer agent using effective prompts.
 
 ## What is it?
 
-The **Data explorer** agent is a read-only  assistant that lets you search, filter, and explore your Reltio data using natural language prompts. It focuses on entity details, relationships, match analytics, tenant metadata, and lineage — without modifying any records.
+The **Data explorer** agent is a read-only autonomous agents assistant that lets you search, filter, and explore your Reltio data using natural language prompts. It focuses on entity details, relationships, match analytics, tenant metadata, and lineage — without modifying any records.
 
 You can ask questions like *"How many customers do we have in New York City?"* or *"Show me the merge history for this entity"*, and the agent translates them into governed API calls, always respecting your role-based access and masking rules.
 
@@ -26851,7 +26851,7 @@ Use this agent when you need to:
 - Investigate potential duplicates and match statistics
 - Understand your tenant’s data model, configuration, and permissions
 
-The agent runs in  through the MCP Server in read-only mode.
+The agent runs in autonomous agents through the MCP Server in read-only mode.
 
 ## How does it support business goals?
 
@@ -26902,9 +26902,9 @@ For more information, see [Prompt samples for Data explorer](https://docs.reltio
 ## Related topics
 
 - [Prompt samples for Data explorer](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-catalog/data-explorer/prompt-samples-for-data-explorer?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- [overview](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Autonomous agents overview](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 - [Agent catalog](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-catalog?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- [Use the workspace in](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/use-the-workspace-in-autonomous-agents?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Use the workspace in autonomous agents](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/use-the-workspace-in-autonomous-agents?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 
 
@@ -26926,7 +26926,7 @@ Learn how to interact with the Data Profiler agent using effective prompts.
 
 The **Profiler** agent is a pre-ingestion data quality assistant for Reltio. It automatically scans and validates incoming source data from cloud file sources such as AWS S3, Google Cloud Storage, Azure Blob Storage, and SFTP, then aligns it with your Reltio tenant schema before ingestion.
 
-This agent computes metrics such as completeness, uniqueness, and validity, identifies mismatches, missing fields, and pattern deviations, and uses tenant metadata to map source columns to entity attributes. By validating data against your schema and preparing load-ready mappings for Reltio Data Loader, it helps prevent ingestion failures, reduces rework, and accelerates data onboarding across clouds. The agent runs within the  framework in your Reltio environment and is detection-only: it analyzes and reports data quality issues but does not modify source data.
+This agent computes metrics such as completeness, uniqueness, and validity, identifies mismatches, missing fields, and pattern deviations, and uses tenant metadata to map source columns to entity attributes. By validating data against your schema and preparing load-ready mappings for Reltio Data Loader, it helps prevent ingestion failures, reduces rework, and accelerates data onboarding across clouds. The agent runs within the autonomous agents framework in your Reltio environment and is detection-only: it analyzes and reports data quality issues but does not modify source data.
 
 For more information, see [Profiler](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-catalog/profiler?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
@@ -27079,7 +27079,7 @@ Learn how to interact with the Address enricher agent using effective prompts.
 
 ## What is it?
 
-The **Enricher** agent in  validates and corrects problematic addresses in Organization (or equivalent) profiles using evidence from authoritative external sources. It can search for entities with addresses marked as **Partially Verified** or **Ambiguous**, retrieve full profiles, research addresses across multiple sources, and then propose corrections or new Locations with a clear before-and-after summary.
+The **Enricher** agent in autonomous agents validates and corrects problematic addresses in Organization (or equivalent) profiles using evidence from authoritative external sources. It can search for entities with addresses marked as **Partially Verified** or **Ambiguous**, retrieve full profiles, research addresses across multiple sources, and then propose corrections or new Locations with a clear before-and-after summary.
 
 When you approve its recommendations, the agent updates **Location** entities using auditable writes under the Agent source, helping you maintain a trusted address baseline for downstream matching, segmentation, and reporting.
 
@@ -27162,7 +27162,7 @@ To ensure address accuracy and resolve issues with ambiguous or incomplete locat
 
 ## When and where would I use it?
 
-Run the agent when addresses are flagged as Partially Verified" or "Ambiguous". Operates within .
+Run the agent when addresses are flagged as Partially Verified" or "Ambiguous". Operates within autonomous agents.
 
 ## How does it support business goals?
 
@@ -27181,7 +27181,7 @@ Improves data trust and downstream reliability for matching, segmentation, and c
 
 ## Watch how it works
 
-Watch how the **Address enricher** agent helps you investigate and update incomplete and/or incorrect addresses in your profiles. This short demo shows how the agent uses evidence from multiple trusted sources to validate, compare, and apply accurate address data. You'll learn how to resolve flagged locations in  without overwriting system-managed fields. 
+Watch how the **Address enricher** agent helps you investigate and update incomplete and/or incorrect addresses in your profiles. This short demo shows how the agent uses evidence from multiple trusted sources to validate, compare, and apply accurate address data. You'll learn how to resolve flagged locations in autonomous agents without overwriting system-managed fields. 
 
 *Video: v-agentflow-enricher-demo.mp4*
 
@@ -27207,9 +27207,9 @@ For more information, see [Prompt samples for Address enricher](https://docs.rel
 ## Related topics
 
 - [Prompt samples for Address enricher](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-catalog/address-enricher/prompt-samples-for-address-enricher?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- [overview](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Autonomous agents overview](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 - [Agent catalog](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-catalog?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- [Use the workspace in](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/use-the-workspace-in-autonomous-agents?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Use the workspace in autonomous agents](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/use-the-workspace-in-autonomous-agents?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 
 
@@ -27369,7 +27369,7 @@ Use the **Product recommender** agent to generate accurate, explainable product 
 
 ## When and where would I use it?
 
-Use this agent during digital engagements, support follow-ups, or campaign preparation. It runs in  and leverages the MCP Server to analyze one customer at a time.
+Use this agent during digital engagements, support follow-ups, or campaign preparation. It runs in autonomous agents and leverages the MCP Server to analyze one customer at a time.
 
 ## How does it support business goals?
 
@@ -27387,7 +27387,7 @@ It helps improve conversion, retention, and upsell effectiveness by aligning pro
 
 ## Watch how it works
 
-Watch how the **Product recommender** agent analyzes a customer's profile, interactions, and relationships to generate product suggestions with confidence scores. This short demo shows how the agent surfaces relevant recommendations backed by explainable signals from your unified data model. You'll learn how to review predictions in  without modifying customer records. 
+Watch how the **Product recommender** agent analyzes a customer's profile, interactions, and relationships to generate product suggestions with confidence scores. This short demo shows how the agent surfaces relevant recommendations backed by explainable signals from your unified data model. You'll learn how to review predictions in autonomous agents without modifying customer records. 
 
 *Video: v-agentflow-product-recommender-demo.mp4*
 
@@ -27414,9 +27414,9 @@ For more information, see [Prompt samples for Product recommender](https://docs.
 ## Related topics
 
 - [Prompt samples for Product recommender](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-catalog/product-recommender/prompt-samples-for-product-recommender?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- [overview](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Autonomous agents overview](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 - [Agent catalog](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-catalog?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- [Use the workspace in](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/use-the-workspace-in-autonomous-agents?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Use the workspace in autonomous agents](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/use-the-workspace-in-autonomous-agents?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 
 
@@ -27436,7 +27436,7 @@ Learn how to interact with the Resolver agent using effective prompts.
 
 ## What is it?
 
-The **Resolver** agent in  helps you review, enrich, and resolve potential duplicate entities at scale. It works with your existing match configuration to surface potential matches, compare records, recommend actions, and execute merge or “not a match” decisions with full auditability.
+The **Resolver** agent in autonomous agents helps you review, enrich, and resolve potential duplicate entities at scale. It works with your existing match configuration to surface potential matches, compare records, recommend actions, and execute merge or “not a match” decisions with full auditability.
 
 Resolver can also use external web research (when enabled) to verify addresses, company information, and other attributes before it recommends an action.
 
@@ -27522,7 +27522,7 @@ It helps you confirm, reject, or revisit entity matches while optionally enrichi
 
 Use this agent after a match job, during data clean-up efforts, or when reviewing match accuracy.
 
-The **Resolver** agent runs in  and communicates securely through the MCP Server.
+The **Resolver** agent runs in autonomous agents and communicates securely through the MCP Server.
 
 ## How does it support business goals?
 
@@ -27575,9 +27575,9 @@ For more information, see [Prompt samples for Resolver](https://docs.reltio.com/
 
 - [Prompt samples for Resolver](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-catalog/resolver/prompt-samples-for-resolver?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 - [Resolve matches with Resolver](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-catalog/resolver/resolve-matches-with-resolver?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- [overview](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Autonomous agents overview](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 - [Agent catalog](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-catalog?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- [Use the workspace in](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/use-the-workspace-in-autonomous-agents?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Use the workspace in autonomous agents](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/use-the-workspace-in-autonomous-agents?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 
 
@@ -27597,7 +27597,7 @@ Learn how to interact with the Unmerger agent using effective prompts.
 
 ## What is it?
 
-The **Unmerger** agent in  specializes in fixing incorrect merges. It helps you investigate merge history for specific entities, analyze whether contributors should remain merged or be separated, and execute safe unmerge operations with your explicit confirmation. When appropriate, it can also suggest better merge targets and help you re-merge entities into the correct record.
+The **Unmerger** agent in autonomous agents specializes in fixing incorrect merges. It helps you investigate merge history for specific entities, analyze whether contributors should remain merged or be separated, and execute safe unmerge operations with your explicit confirmation. When appropriate, it can also suggest better merge targets and help you re-merge entities into the correct record.
 
 For more information, see [Unmerger](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-catalog/unmerger?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
@@ -27705,7 +27705,7 @@ Use this agent to discover when two or more entities were merged incorrectly. It
 
 Use the **Unmerger** after resolving potential match issues, during data quality audits, or when you receive feedback from downstream systems or business users.
 
-The **Unmerger** agent runs in  and communicates securely through the MCP Server.
+The **Unmerger** agent runs in autonomous agents and communicates securely through the MCP Server.
 
 ## How does it support business goals?
 
@@ -27730,7 +27730,7 @@ It improves data quality and reduces risk by fixing incorrect merges without dat
 
 ## Watch how it works
 
-Watch how the **Unmerger** agent helps you identify and reverse incorrect merges in your tenant. This short demo shows how the agent retrieves merge history, compares contributing records, and proposes safe unmerge plans based on lineage and survivorship. You'll learn how to confirm each unmerge with full audit traceability in .
+Watch how the **Unmerger** agent helps you identify and reverse incorrect merges in your tenant. This short demo shows how the agent retrieves merge history, compares contributing records, and proposes safe unmerge plans based on lineage and survivorship. You'll learn how to confirm each unmerge with full audit traceability in autonomous agents.
 
 *Video: v-agentflow-unmerger-demo.mp4*
 
@@ -27758,9 +27758,9 @@ For more information, see [Prompt samples for Unmerger](https://docs.reltio.com/
 ## Related topics
 
 - [Prompt samples for Unmerger](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-catalog/unmerger/prompt-samples-for-unmerger?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- [overview](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Autonomous agents overview](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 - [Agent catalog](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-catalog?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- [Use the workspace in](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/use-the-workspace-in-autonomous-agents?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Use the workspace in autonomous agents](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/use-the-workspace-in-autonomous-agents?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 
 
@@ -27896,7 +27896,7 @@ Use the Work assigner to reduce bottlenecks and improve review time by ensuring 
 
 ## When and where would I use it?
 
-Run the agent in  to manage backlogged tasks, especially after staffing changes or increases in task volume.
+Run the agent in Autonomous agents to manage backlogged tasks, especially after staffing changes or increases in task volume.
 
 ## How does it support business goals?
 
@@ -27918,7 +27918,7 @@ It improves operational efficiency and governance by reducing idle or stale work
 
 ## Watch how it works
 
-Watch how the **Work assigner** agent helps you rebalance workflow tasks across active users in your tenant. This short demo shows how the agent detects task bottlenecks, evaluates user availability, and redistributes assignments fairly — all within . You'll learn how to preview changes with a dry run and avoid locked or terminal tasks.
+Watch how the **Work assigner** agent helps you rebalance workflow tasks across active users in your tenant. This short demo shows how the agent detects task bottlenecks, evaluates user availability, and redistributes assignments fairly — all within autonomous agents. You'll learn how to preview changes with a dry run and avoid locked or terminal tasks.
 
 *Video: v-agentflow-work-assigner-demo.mp4*
 
@@ -27945,15 +27945,15 @@ For more information, see [Prompt samples for Work assigner](https://docs.reltio
 ## Related topics
 
 - [Prompt samples for Work assigner](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-catalog/work-assigner/prompt-samples-for-work-assigner?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- [overview](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Autonomous agents overview](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 - [Agent catalog](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-catalog?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- [Use the workspace in](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/use-the-workspace-in-autonomous-agents?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Use the workspace in autonomous agents](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/use-the-workspace-in-autonomous-agents?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 
 
 ---
 
-# overview
+# Autonomous agents overview
 
 > **Section:** Products > Autonomous agents
 
@@ -27963,11 +27963,11 @@ For more information, see [Prompt samples for Work assigner](https://docs.reltio
 **Keywords:** autonomous agents overview, autonomous agents at a glance, conversational data stewardship, ai agents in reltio, mcp server capabilities, secure data interaction, live data workflows, workflow, mcp, governance
 
 
-Learn about how  enables real-time, AI-driven data stewardship through secure, governed conversations with purpose-built agents......
+Learn about how autonomous agents enables real-time, AI-driven data stewardship through secure, governed conversations with purpose-built agents......
 
-is Reltio's conversational interface for working with your master data. Built on the Model Context Protocol (MCP) server, it allows you to explore, validate, and manage entity records through chat-based interactions with AI agents. These agents operate on live production data while honoring your organization role-based access control (RBAC), data masking, and audit policies.
+Autonomous agents is Reltio's conversational interface for working with your master data. Built on the Model Context Protocol (MCP) server, it allows you to explore, validate, and manage entity records through chat-based interactions with AI agents. These agents operate on live production data while honoring your organization role-based access control (RBAC), data masking, and audit policies.
 
-are designed for the following business and technical users who need to manage and govern master data in real time:
+Autonomous agents are designed for the following business and technical users who need to manage and govern master data in real time:
 
 Data StewardSolution ArchitectSystem AdministratorData Product Owner
 
@@ -27975,13 +27975,13 @@ For more information about each of these user roles, see [About roles](https://d
 
 ## How it works
 
-You launch a conversation with a selected agent in the  workspace. Agents use governed APIs (called tools) to read and act on entity data. Each interaction — whether it's a lookup, enrichment request, or merge action is scoped to your access level and fully auditable.
+You launch a conversation with a selected agent in the autonomous agents workspace. Agents use governed APIs (called tools) to read and act on entity data. Each interaction — whether it's a lookup, enrichment request, or merge action is scoped to your access level and fully auditable.
 
 *Video: v-autonomous-agents-overview.mp4*
 
 ## Discover agents
 
-If you're logging in to  for the first time, the `Data explorer` agent appears by default in the left panel under **RELTIO AGENTS**. To explore and launch additional agents, go to the **Discover agents** tab.
+If you're logging in to autonomous agents for the first time, the `Data explorer` agent appears by default in the left panel under **RELTIO AGENTS**. To explore and launch additional agents, go to the **Discover agents** tab.
 
 *Image: i-agentflow-homepage.png*
 
@@ -28002,14 +28002,14 @@ After you launch an agent, it appears in the left panel under **RELTIO AGENTS** 
 
 Reltio supports two categories of agents:
 
-- **Included agents**: [Data explorer](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-catalog/data-explorer?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Profiler](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-catalog/profiler?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) agents do not consume credits, and are available to all  users.
+- **Included agents**: [Data explorer](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-catalog/data-explorer?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Profiler](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-catalog/profiler?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) agents do not consume credits, and are available to all autonomous agents users.
 - **Licensed agents**: Such as the [Resolver](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-catalog/resolver?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) agent, operate on a credits-per-call basis.
 
-For more information, see [catalog](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-catalog?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [usage through Reltio](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-usage-dashboard/autonomous-agents-usage-through-reltio?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+For more information, see [Autonomous agents catalog](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-catalog?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Autonomous agents usage through Reltio](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-usage-dashboard/autonomous-agents-usage-through-reltio?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 ## Core concepts
 
-rely on a few key concepts that shape how you interact with your data:
+Autonomous agents rely on a few key concepts that shape how you interact with your data:
 
 - **Conversation**: A chat session between you and one agent, scoped to a specific task. The conversation retains context as you continue interacting.
 - **Agent**: A software entity with agency: it can perceive context, reason about goals, and take actions on behalf of a user or system. Each agent uses approved tools to read, compare, or update data — depending on your permissions.
@@ -28026,7 +28026,7 @@ Every action an agent performs is routed through the MCP server. This ensures:
 
 ## When to use it
 
-Use  when you need to:
+Use autonomous agents when you need to:
 
 - Search and review profiles using natural language
 - Investigate possible duplicates and match history
@@ -28035,9 +28035,9 @@ Use  when you need to:
 - Enrich profiles with validated external data (optional)
 - Maintain governance traceability while working faster
 
-To begin using the interface, see [Use the workspace in](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/use-the-workspace-in-autonomous-agents?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+To begin using the interface, see [Use the workspace in autonomous agents](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/use-the-workspace-in-autonomous-agents?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
-To navigate between  and other Reltio applications, see [Navigate between and other Reltio applications](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/navigate-between-autonomous-agents-and-other-reltio-applications?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+To navigate between autonomous agents and other Reltio applications, see [Navigate between autonomous agents and other Reltio applications](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/navigate-between-autonomous-agents-and-other-reltio-applications?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
@@ -28055,7 +28055,7 @@ To navigate between  and other Reltio applications, see [Navigate between and ot
 
 Learn about the way in which the Profiler Agent helps you assess source data quality before loading it into Reltio and optionally guides you through loading validated data using Data Loader.
 
-The **Profiler** agent is a conversational assistant that runs in , Reltio's agent execution environment. It evaluates structured source files for schema alignment and data quality before loading, minimizing failed loads and manual preparation.
+The **Profiler** agent is a conversational assistant that runs in autonomous agents, Reltio's agent execution environment. It evaluates structured source files for schema alignment and data quality before loading, minimizing failed loads and manual preparation.
 
 The agent connects to structured files in remote locations, such as cloud storage or Secure File Transfer Protocol (SFTP) servers. It previews the file structure, computes column-level quality scores, and identifies issues with ranked suggestions. You review and confirm the schema and mappings before continuing. If the data meets your standards, you can use the same workflow to load it into Reltio using Data Loader.
 
@@ -28098,7 +28098,7 @@ For more information about each of these user roles, see [About roles](https://d
 
 ## Watch how it works
 
-Watch how the **Profiler Agent** helps you evaluate the quality of a source file and load high-quality data into Reltio. This short demo walks through file preview, schema confirmation, profiling results, and optional loading using Data Loader. You'll see how  guides the process step-by-step through a conversational interface. 
+Watch how the **Profiler Agent** helps you evaluate the quality of a source file and load high-quality data into Reltio. This short demo walks through file preview, schema confirmation, profiling results, and optional loading using Data Loader. You'll see how autonomous agents guides the process step-by-step through a conversational interface. 
 
 *Video: v-agentflow-profiler-demo.mp4*
 
@@ -28133,15 +28133,15 @@ For more information, see [Prompt samples for Data Profiler Agent](https://docs.
 - [Data Loader at a glance](https://docs.reltio.com/en/applications/console/tenant-management-applications/data-loader-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 - [Data Loader API](https://docs.reltio.com/en/developer-resources/load-and-export-apis/load-and-export-apis-at-a-glance/data-loader-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 - [Prompt samples for Profiler](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-catalog/profiler/prompt-samples-for-profiler?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- [overview](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Autonomous agents overview](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 - [Agent catalog](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-catalog?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- [Use the workspace in](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/use-the-workspace-in-autonomous-agents?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Use the workspace in autonomous agents](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/use-the-workspace-in-autonomous-agents?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 
 
 ---
 
-# security, audit, and compliance architecture
+# Autonomous agents security, audit, and compliance architecture
 
 > **Section:** Products > Autonomous agents > Autonomous agents overview
 
@@ -28151,11 +28151,11 @@ For more information, see [Prompt samples for Data Profiler Agent](https://docs.
 **Keywords:** autonomous agents security, autonomous agents audit logging, mcp server security, autonomous agents compliance architecture, oauth and rbac reltio, tls and aes encryption, siem export reltio, gdpr ccpa compliance, security, audit, governance
 
 
-Learn about how  protects data, enforces access control, and supports audit and compliance through the Reltio MCP framework.
+Learn about how autonomous agents protects data, enforces access control, and supports audit and compliance through the Reltio MCP framework.
 
 ## Identity and access control
 
-authenticates users through your organization's identity provider (IdP) using single sign-on (SSO) and multifactor authentication (MFA). Each action in the workspace is executed on behalf of the signed-in user using OAuth 2.0 tokens. Role-based access control (RBAC) is enforced at two layers: the MCP tool level and the underlying Reltio APIs. Session policies, including idle timeouts and device restrictions, are governed by your tenant configuration.
+Autonomous agents authenticates users through your organization's identity provider (IdP) using single sign-on (SSO) and multifactor authentication (MFA). Each action in the workspace is executed on behalf of the signed-in user using OAuth 2.0 tokens. Role-based access control (RBAC) is enforced at two layers: the MCP tool level and the underlying Reltio APIs. Session policies, including idle timeouts and device restrictions, are governed by your tenant configuration.
 
 ## Tool governance and enforcement
 
@@ -28168,11 +28168,11 @@ Agents don’t interact directly with databases. Instead, all operations go thro
 
 ## Encryption and data protection
 
-All traffic between  and MCP is encrypted in transit using TLS 1.2 or higher. Data at rest in the Reltio Context Intelligence Platform is encrypted using AES-256. If your organization uses Reltio Shield, you can bring your own encryption key (BYOK) and manage key rotation independently. Agent prompts, context, and tool inputs do not persist any secrets or credentials.
+All traffic between Autonomous agents and MCP is encrypted in transit using TLS 1.2 or higher. Data at rest in the Reltio Context Intelligence Platform is encrypted using AES-256. If your organization uses Reltio Shield, you can bring your own encryption key (BYOK) and manage key rotation independently. Agent prompts, context, and tool inputs do not persist any secrets or credentials.
 
 ## Privacy and compliance alignment
 
-supports regional data residency and complies with global privacy frameworks, including General Data Protection Regulation (GDPR) and California Consumer Privacy Act (CCPA). Conversation context is scoped to each session and not retained across interactions. Action and chat history retention follows your tenant-defined schedules. Agent enrichment is limited to allowlisted public sources only, and content is never persisted outside audit logs.
+Autonomous agents supports regional data residency and complies with global privacy frameworks, including General Data Protection Regulation (GDPR) and California Consumer Privacy Act (CCPA). Conversation context is scoped to each session and not retained across interactions. Action and chat history retention follows your tenant-defined schedules. Agent enrichment is limited to allowlisted public sources only, and content is never persisted outside audit logs.
 
 ## Audit and observability
 
@@ -28184,13 +28184,13 @@ Every tool invocation and agent recommendation is recorded. Audit logs include t
 
 To see how match resolution activity is logged, see [Resolve matches with Resolver](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-catalog/resolver/resolve-matches-with-resolver?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
-For agent access and feature-level licensing, see [capabilities and permissions](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-capabilities-and-permissions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+For agent access and feature-level licensing, see [Autonomous agents capabilities and permissions](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-capabilities-and-permissions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
 ---
 
-# Agent states in
+# Agent states in custom agents
 
 > **Section:** Products > Autonomous agents > Autonomous agents overview > Custom agents at a glance
 
@@ -28200,9 +28200,9 @@ For agent access and feature-level licensing, see [capabilities and permissions]
 **Keywords:** custom agents lifecycle states autonomous agents, autonomous agents agent draft published archived states, agent state definitions reltio builder, pending review auto-blocked autonomous agents, autonomous agents agent status reference, autonomous agents publish request lifecycle, custom agents state transitions, lifecycle, states, autonomous agents
 
 
-Learn more about the states an agent moves through in , from draft to published.
+Learn more about the states an agent moves through in custom agents, from draft to published.
 
-tracks the state of each agent throughout its lifecycle. The state determines what actions are available to the author, reviewer, and admin at any point.
+Custom agents tracks the state of each agent throughout its lifecycle. The state determines what actions are available to the author, reviewer, and admin at any point.
 
 ## States in Your Drafts and Requests
 
@@ -28218,7 +28218,7 @@ The following states appear in the **Your Drafts & Requests** tab.
 
 ## States in All Agents
 
-The following states appear in the **All Agents** tab and are visible to all  users.
+The following states appear in the **All Agents** tab and are visible to all custom agents users.
 
 | State | Description |
 | --- | --- |
@@ -28252,9 +28252,9 @@ If an agent already has a published version when a new publish request is submit
 **Keywords:** long-running task eligibility check issues autonomous agents, not eligible for LRT custom agents, long running tasks check failed validate again, custom agents submit blocked long running tasks, this doesn't look like a record-processing task, selected tools can't do this work autonomous agents, long-running tasks, eligibility check, autonomous agents
 
 
-Learn how to resolve long-running task eligibility check issues in , including checks that do not pass, checks that fail, and submissions that are blocked.
+Learn how to resolve long-running task eligibility check issues in custom agents, including checks that do not pass, checks that fail, and submissions that are blocked.
 
-When you turn on **Long Running Tasks** in , an eligibility check evaluates the saved system prompt and the selected tools. If the agent does not qualify, the switch returns to off, and the **Long Running Tasks** panel shows a status tag and a message that explains the reason. If the check cannot finish, the panel shows the **Check failed** status tag and a **Validate again** button.
+When you turn on **Long Running Tasks** in custom agents, an eligibility check evaluates the saved system prompt and the selected tools. If the agent does not qualify, the switch returns to off, and the **Long Running Tasks** panel shows a status tag and a message that explains the reason. If the check cannot finish, the panel shows the **Check failed** status tag and a **Validate again** button.
 
 For the conditions that an agent must meet, see [Enable long-running tasks for an agent](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/custom-agents-at-a-glance/enable-long-running-tasks-for-an-agent?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
@@ -28295,7 +28295,7 @@ To avoid this issue, follow these recommendations:
   Describe the agent's work as an operation on records that produces a data outcome.
 - 
 
-  For more information about writing the system prompt, see [system prompt guidelines](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/custom-agents-at-a-glance/autonomous-agents-system-prompt-guidelines?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+  For more information about writing the system prompt, see [Autonomous agents system prompt guidelines](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/custom-agents-at-a-glance/autonomous-agents-system-prompt-guidelines?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 ## Every record requires a human decision
 
@@ -28363,7 +28363,7 @@ To avoid this issue, follow these recommendations:
 
 - 
 
-  Write the per-record steps as a numbered workflow in the system prompt. For more information, see [system prompt guidelines](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/custom-agents-at-a-glance/autonomous-agents-system-prompt-guidelines?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+  Write the per-record steps as a numbered workflow in the system prompt. For more information, see [Autonomous agents system prompt guidelines](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/custom-agents-at-a-glance/autonomous-agents-system-prompt-guidelines?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 ## Selected tools cannot do the work
 
@@ -28477,11 +28477,11 @@ To avoid this issue, follow these recommendations:
 
 **What this error means**
 
-does not submit the agent for review. The agent stays in **Draft** state, and the security scan does not run.
+Custom agents does not submit the agent for review. The agent stays in **Draft** state, and the security scan does not run.
 
 **Why the error occurs**
 
-This occurs when you submit an agent that has **Long Running Tasks** turned on and the check result is out of date.  also blocks the submission when a check is still running, when no check has run, or when the check has failed.
+This occurs when you submit an agent that has **Long Running Tasks** turned on and the check result is out of date. Custom agents also blocks the submission when a check is still running, when no check has run, or when the check has failed.
 
 **How to fix the issue**
 
@@ -28519,9 +28519,9 @@ To avoid this issue, follow these recommendations:
 **Keywords:** custom agents system prompt scan, autonomous agents prompt security scanning, auto-block scan findings autonomous agents, system prompt scan blocked pass, prompt security scan reltio custom agents, autonomous agents scan policy category, system prompt scan, security, governance
 
 
-Learn more about how  scans system prompts for security violations on every publish request and test run, and what the scan result includes.
+Learn more about how custom agents scans system prompts for security violations on every publish request and test run, and what the scan result includes.
 
-automatically scans the system prompt on every publish request and every test run. The scan evaluates the prompt for security violations and produces a result of either pass or blocked.
+Custom agents automatically scans the system prompt on every publish request and every test run. The scan evaluates the prompt for security violations and produces a result of either pass or blocked.
 
 ## When scans run
 
@@ -28557,9 +28557,9 @@ When the scan result is `blocked`, the result includes a `policy_category` value
 **Keywords:** byo llm error messages autonomous agents, autonomous agents llm provider disabled error, no models available autonomous agents byo llm, autonomous agents service temporarily unavailable error, byo llm general error autonomous agents conversation, no llm configurations autonomous agents admin settings, autonomous agents byo llm error reference, byo llm, error messages, autonomous agents, llm errors
 
 
-Learn more about the error messages  displays when the selected LLM is unavailable or encounters an issue during a conversation.
+Learn more about the error messages Autonomous agents displays when the selected LLM is unavailable or encounters an issue during a conversation.
 
-If the selected LLM is unavailable or encounters an issue, Reltio displays a message in the conversation.  do not silently fall back to a different model. For transient errors such as temporary unavailability or rate limiting, the platform automatically retries the request before surfacing an error to you.
+If the selected LLM is unavailable or encounters an issue, Reltio displays a message in the conversation. Autonomous agents do not silently fall back to a different model. For transient errors such as temporary unavailability or rate limiting, the platform automatically retries the request before surfacing an error to you.
 
 ## LLM provider disabled
 
@@ -28625,9 +28625,9 @@ To set up LLM access, submit a request through [Reltio Support](https://support.
 **Keywords:** agent instructions settings in autonomous agents, global instruction mode autonomous agents, tenant-wide agent instructions, allow user-defined instructions autonomous agents, web search toggle autonomous agents, locked agent instructions, user customisation controls autonomous agents, autonomous agents settings, web search, governance, tenant admin
 
 
-Learn how  applies agent-specific instructions, tenant-wide defaults, and web search controls, and what it means when settings are prefilled or disabled.
+Learn how autonomous agents applies agent-specific instructions, tenant-wide defaults, and web search controls, and what it means when settings are prefilled or disabled.
 
-Custom instructions allows you to define how an agent responds, including its tone, focus, format, and constraints. In , you can configure custom instructions for each agent. Depending on your role, you can set the following level of instructions:
+Custom instructions allows you to define how an agent responds, including its tone, focus, format, and constraints. In autonomous agents, you can configure custom instructions for each agent. Depending on your role, you can set the following level of instructions:
 
 - **Admins:** Set tenant-wide instructions for a selected agent and can control whether users can override them.
 - **Users:** Set personal instructions for a selected agent.
@@ -28665,7 +28665,7 @@ The following table describes how the agent determines which instructions to app
 
 ---
 
-# capabilities and permissions
+# Autonomous agents capabilities and permissions
 
 > **Section:** Products > Autonomous agents > Autonomous agents overview
 
@@ -28675,11 +28675,11 @@ The following table describes how the agent determines which instructions to app
 **Keywords:** agent types in autonomous agents, agent capabilities matrix, autonomous agents permissions, agent feature comparison, data explorer agent access, match resolver agent access, rbac autonomous agents, agent licensing, permissions, licensing, agent
 
 
-Learn more about the different , what actions each supports, and the permissions and licenses required to use them.
+Learn more about the different autonomous agents, what actions each supports, and the permissions and licenses required to use them.
 
-## access and actions
+## Autonomous agents access and actions
 
-This table describes  based on access level, supported actions, and licensing requirements.
+This table describes autonomous agents based on access level, supported actions, and licensing requirements.
 
 | Agent | Included | Supported actions | Requires write access | Web enrichment | License required |
 | --- | --- | --- | --- | --- | --- |
@@ -28705,18 +28705,18 @@ Here's how access typically maps to user roles:
 
 To learn more about merging and match resolution, see [Resolve matches with Resolver](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-catalog/resolver/resolve-matches-with-resolver?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
-## execution privileges
+## Autonomous agents execution privileges
 
-In addition to the standard role mappings shown above,  enforce a dedicated set of permissions for the MCP server and agents. These permissions give tenant administrators precise control over who can execute functions through , beyond the basic read/write checks at the API level.
+In addition to the standard role mappings shown above, autonomous agents enforce a dedicated set of permissions for the MCP server and agents. These permissions give tenant administrators precise control over who can execute functions through autonomous agents, beyond the basic read/write checks at the API level.
 
-**Permissions**
+**Autonomous agents Permissions**
 
 | Service name | Resource | Available permissions | Description |
 | --- | --- | --- | --- |
 | `agentflow` | `mcp` | CREATE, READ, UPDATE, DELETE, EXECUTE | Controls access to Model Context Protocol (MCP) server functionality. |
-| `agentflow` | `agents` | CREATE, READ, UPDATE, DELETE, EXECUTE | Controls access to . |
+| `agentflow` | `agents` | CREATE, READ, UPDATE, DELETE, EXECUTE | Controls access to autonomous agents. |
 
-**system roles**
+**Autonomous agents system roles**
 
 | Role | Access Privileges |
 | --- | --- |
@@ -28738,7 +28738,7 @@ In addition to the standard role mappings shown above,  enforce a dedicated set 
 
 ---
 
-# View usage and Capacity Unit (CU) consumption
+# View Autonomous agents usage and Capacity Unit (CU) consumption
 
 > **Section:** Products > Autonomous agents > Autonomous agents overview > Autonomous agents Usage Dashboard
 
@@ -28750,15 +28750,15 @@ In addition to the standard role mappings shown above,  enforce a dedicated set 
 
 Learn how to access the Usage Dashboard to monitor Capacity Unit (CU) consumption and review agent and tenant usage.
 
-When your organization provisions  through SAP Business Data Cloud (BDC), the Usage Dashboard helps you monitor agent consumption in Capacity Units (CUs). You can track daily consumption and review usage by agent and tenant to see how each contributes to your organization's total CU consumption.
+When your organization provisions autonomous agents through SAP Business Data Cloud (BDC), the Usage Dashboard helps you monitor agent consumption in Capacity Units (CUs). You can track daily consumption and review usage by agent and tenant to see how each contributes to your organization's total CU consumption.
 
 **Prerequisites**
 
 You must be assigned the `ROLE_AGENT_BILLING` system role to access the **Usage Dashboard**.
 
-To review your  usageusage
+To review your autonomous agents usageusage
 
-1. Log in to .
+1. Log in to Autonomous agents.
 2. In the lower-left corner, select your profile name.
 3. Select **Settings**.
    *Image: i-af-bdc-settings.png*
@@ -28766,7 +28766,7 @@ To review your  usageusage
    The Usage Dashboard appears.*Image: i-af-bdc-dashboard.png*
 5. Review the usage summary and daily consumption.
    - **Agent runs:** Total number of agent runs.
-   - **CUs consumed:** Total CUs consumed by .
+   - **CUs consumed:** Total CUs consumed by autonomous agents.
    - **Daily CU usage:** CUs consumed each day for the selected month.
 6. Review the agent usage breakdown.
    For each agent, the dashboard shows the number of runs, CUs consumed, and share of total CU consumption.
@@ -28786,7 +28786,7 @@ You can monitor CU consumption over time and see how each agent and tenant contr
 
 ---
 
-# Charts and Diagrams in
+# Charts and Diagrams in autonomous agents
 
 > **Section:** Products > Autonomous agents > Autonomous agents overview
 
@@ -28796,11 +28796,11 @@ You can monitor CU consumption over time and see how each agent and tenant contr
 **Keywords:** autonomous agents graphs, inline graphs in autonomous agents, autonomous agents graph types, autonomous agents graph examples, bar chart in autonomous agents, line chart in autonomous agents, donut chart in autonomous agents, gauge chart in autonomous agents, graph chart in autonomous agents, set overlap chart in autonomous agents, visualization, charts in autonomous agents
 
 
-Learn more about the charts that  can display in conversations and example prompts that can produce them.
+Learn more about the charts that autonomous agents can display in conversations and example prompts that can produce them.
 
-contextually display charts, graphs, or diagrams in a conversation when information is easier to understand visually than through text. These contextual visualizations help you identify patterns, compare results, and explore relationships more efficiently.
+Autonomous agents contextually display charts, graphs, or diagrams in a conversation when information is easier to understand visually than through text. These contextual visualizations help you identify patterns, compare results, and explore relationships more efficiently.
 
-Charts and diagrams are available by default in all conversations, including conversations with , [at a glance](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/custom-agents-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), and agents used for [automated long-running tasks](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/automated-long-running-tasks?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) (LRTs).
+Charts and diagrams are available by default in all conversations, including conversations with autonomous agents, [custom agents](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/custom-agents-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), and agents used for [automated long-running tasks](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/automated-long-running-tasks?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) (LRTs).
 
 The following types of charts are supported:
 
@@ -28854,7 +28854,7 @@ Use a set overlap chart to understand how records are distributed across overlap
 
 ## Diagrams
 
-display diagrams such as relationship maps, flowcharts, and timelines to help you visualize connections and processes in a conversation.
+Autonomous agents display diagrams such as relationship maps, flowcharts, and timelines to help you visualize connections and processes in a conversation.
 
 Show supported diagram types
 
@@ -28898,7 +28898,7 @@ Use the following controls to interact with a diagram:
 
 ---
 
-# Assign roles to users
+# Assign custom agents roles to users
 
 > **Section:** Products > Autonomous agents > Autonomous agents overview > Custom agents at a glance
 
@@ -28908,24 +28908,24 @@ Use the following controls to interact with a diagram:
 **Keywords:** assign custom agents roles reltio console, grant agent author role autonomous agents, grant agent approver role autonomous agents, custom agents role assignment console ui, configure custom agents access reltio tenant, role agent author role agent approver, custom agents admin role assignment, custom agents, role assignment, console, autonomous agents
 
 
-Learn how to assign  roles to users in the Reltio Console so they can create or approve agents within a tenant.
+Learn how to assign custom agents roles to users in the Reltio Console so they can create or approve agents within a tenant.
 
-uses four roles to control who can create and approve agents. As an admin, you assign these roles to users in the **Console** on a per-tenant basis. A user can hold different roles across different tenants.
+Custom agents uses four roles to control who can create and approve agents. As an admin, you assign these roles to users in the **Console** on a per-tenant basis. A user can hold different roles across different tenants.
 
-For more information about  and how the workflow works, see [at a glance](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/custom-agents-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+For more information about custom agents and how the workflow works, see [Custom agents at a glance](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/custom-agents-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
-## roles
+## Custom agents roles
 
-The following roles control access to :
+The following roles control access to custom agents:
 
 | Role | What the user can do |
 | --- | --- |
-| `ROLE_ADMIN_TENANT` | Grants admin access to the tenant. Required in combination with `ROLE_ADMIN_AGENTS` to act as an  admin. |
-| `ROLE_ADMIN_AGENTS` | Grants  admin access. Required in combination with `ROLE_ADMIN_TENANT` to act as an  admin. |
+| `ROLE_ADMIN_TENANT` | Grants admin access to the tenant. Required in combination with `ROLE_ADMIN_AGENTS` to act as an custom agents admin. |
+| `ROLE_ADMIN_AGENTS` | Grants custom agents admin access. Required in combination with `ROLE_ADMIN_TENANT` to act as an custom agents admin. |
 | `ROLE_AGENT_AUTHOR` | Allows the user to create agents for the assigned tenant. |
 | `ROLE_AGENT_APPROVER` | Allows the user to approve agents for the assigned tenant. |
 
-> **Important:** An admin is a user who holds both `ROLE_ADMIN_TENANT` and `ROLE_ADMIN_AGENTS`. Only admins can assign  roles to other users.
+> **Important:** An admin is a user who holds both `ROLE_ADMIN_TENANT` and `ROLE_ADMIN_AGENTS`. Only admins can assign custom agents roles to other users.
 
 ## Prerequisites
 
@@ -28963,9 +28963,9 @@ You can assign different roles to the same user across different tenants. For ex
 **Keywords:** create agent reltio agentflow builder, edit published agent agentflow builder, test draft agent agentflow builder, submit agent for review agentflow, write system prompt agentflow agent, select tools agentflow agent builder, agentflow agent draft and publish workflow, agent builder author workflow, publish, agentflow, governance
 
 
-Learn how to create a new agent or update a published agent in , verify its behavior in the test panel, and submit the agent for governance review.
+Learn how to create a new agent or update a published agent in custom agents, verify its behavior in the test panel, and submit the agent for governance review.
 
-provides you with the following structured authoring workflow:
+Custom agents provides you with the following structured authoring workflow:
 
 - **Step 1: Agent & Prompt information**: Define the agent and create its system prompt. In this step, you can perform either of the following:
   - Enter the agent information and system prompt [manually](#concept-9378/p-3135).
@@ -28976,9 +28976,9 @@ provides you with the following structured authoring workflow:
 
 The system scans the prompt automatically before routing the request to a reviewer.
 
-For more information about  and how the lifecycle works, see [at a glance](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/custom-agents-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+For more information about custom agents and how the lifecycle works, see [Custom agents at a glance](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/custom-agents-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
-For more information about writing an effective system prompt, see [system prompt guidelines](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/custom-agents-at-a-glance/autonomous-agents-system-prompt-guidelines?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+For more information about writing an effective system prompt, see [Autonomous agents system prompt guidelines](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/custom-agents-at-a-glance/autonomous-agents-system-prompt-guidelines?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 > **Note:** To recreate an existing agent from another tenant instead of building from scratch, see [Upload an agent from another tenant](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/custom-agents-at-a-glance/upload-an-agent-from-another-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
@@ -28986,7 +28986,7 @@ For more information about writing an effective system prompt, see [system promp
 
 Before you begin, confirm that:
 
-- You have the `ROLE_AGENT_AUTHOR` on the target tenant. For more information about how to get this role, see [Assign roles to users](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/custom-agents-at-a-glance/assign-custom-agents-roles-to-users?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+- You have the `ROLE_AGENT_AUTHOR` on the target tenant. For more information about how to get this role, see [Assign custom agents roles to users](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/custom-agents-at-a-glance/assign-custom-agents-roles-to-users?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 - At least one user on the tenant must have the `ROLE_AGENT_AUTHOR` role (PUBLISH permission). Publishing requires an approver with PUBLISH permission.
 - The tools you plan to use must be in the tenant-approved tool catalog.
 
@@ -29001,7 +29001,7 @@ In this step, define the agent and create its system prompt. You can either ente
 
 Use this path when you are building a new agent manually from scratch.
 
-1. Open **** and go to .
+1. Open **Autonomous agents** and go to Custom agents.
 2. Select **+ Build new agent**.
 
    *Image: Create New Agent dialog with name, description, and tags input fields and a Create Agent button*
@@ -29022,7 +29022,7 @@ Use this path when you are building a new agent manually from scratch.
 
    *Image: Agent editor showing Agent details, System prompt panel, and character limit*
 
-   For more information about structuring an effective system prompt, see [system prompt guidelines](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/custom-agents-at-a-glance/autonomous-agents-system-prompt-guidelines?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+   For more information about structuring an effective system prompt, see [Autonomous agents system prompt guidelines](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/custom-agents-at-a-glance/autonomous-agents-system-prompt-guidelines?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
    1. Identity
    2. Objectives
    3. Tool usage rules
@@ -29034,13 +29034,13 @@ Use this path when you are building a new agent manually from scratch.
 
    After the agent is created, the **Agent ID** appears in the **AGENT DETAILS** section. Select the copy icon next to the **Agent ID** to copy it to your clipboard.
 
-> **Note:** While you have unsaved changes, an **Unsaved changes** indicator appears in the page header. If you navigate away — by selecting the back icon, selecting **Cancel**, or using your browser's back button —  displays a warning before discarding your changes. If you reload the page, your browser displays its own native dialog. Select **Save as draft** at any time to preserve your work.
+> **Note:** While you have unsaved changes, an **Unsaved changes** indicator appears in the page header. If you navigate away — by selecting the back icon, selecting **Cancel**, or using your browser's back button — custom agents displays a warning before discarding your changes. If you reload the page, your browser displays its own native dialog. Select **Save as draft** at any time to preserve your work.
 
 **Generate a system prompt using Agent Blueprint**
 
 Follow these steps when you want AI to generate a first draft of the system prompt and select the required tools based on your requirements:
 
-1. Open  and select .
+1. Open Autonomous agents and select Custom agents.
 2. Select **+ Build new agent** and select **Build new agent from scratch**.*Image: i-blueprint-select-agent.png*
 3. Select **Generate Agent Blueprint**.*Image: i-generate-agent-blueprint.png*
 4. Enter the required details in the following fields:
@@ -29053,20 +29053,20 @@ Follow these steps when you want AI to generate a first draft of the system prom
    - **Notes**: Enter any additional instructions, preferences, or context that helps improve the generated prompt.*Image: i-generate-agent-blueprint-2.png*
 5. Select **Generate**.
 
-   generates a system prompt draft based on the information you entered. On completion, the **Generate agent blueprint** pop-up appears.
+   Custom agents generates a system prompt draft based on the information you entered. On completion, the **Generate agent blueprint** pop-up appears.
 6. Review the generated system prompt and verify the details.*Image: i-blueprint-prompt.png*
 7. Select **See assumptions made** to review the inputs used to generate the system prompt.
 8. Select **Next**.
 9. Review the list of MCP tools selected for the agent.
 
-   automatically selects tools based on your requirements. You can add or remove tools as required.
+   Custom agents automatically selects tools based on your requirements. You can add or remove tools as required.
 
    Each tool includes a confidence score of **High**, **Medium**, or **Low**.
 10. Review the list of capabilities suggested for the agent.*Image: Verify capabilities screen in Agent Blueprint showing the Long Running Tasks and Web Search capabilities, each with a High confidence tag*
 
-   suggests capabilities, such as **Long Running Tasks**, based on your requirements. You can clear a capability that the agent does not need. Each capability includes a confidence score of **High**, **Medium**, or **Low**.
+   Custom agents suggests capabilities, such as **Long Running Tasks**, based on your requirements. You can clear a capability that the agent does not need. Each capability includes a confidence score of **High**, **Medium**, or **Low**.
 
-   The capabilities that you leave selected are turned on in [Step 3: Capabilities](#concept-9378/select_capabilities). If  does not suggest any capabilities, this screen does not appear.
+   The capabilities that you leave selected are turned on in [Step 3: Capabilities](#concept-9378/select_capabilities). If custom agents does not suggest any capabilities, this screen does not appear.
 11. On reviewing all the details of the agent, select **Done**.
 
    The **Build an agent** page appears.
@@ -29082,7 +29082,7 @@ To continue, see [Step 4: Test & publish the agent](#concept-9378/title-2074)
 
 1. **Enable server** and select each of the tools you want to add. The selected tools form the agent's allowlist — the agent cannot call tools outside this selection.
 
-   > **Note:** If you proceed without selecting any tools,  displays a warning before you can submit for review. You can still proceed, but the agent will have no approved actions available at runtime.
+   > **Note:** If you proceed without selecting any tools, custom agents displays a warning before you can submit for review. You can still proceed, but the agent will have no approved actions available at runtime.
 
    *Image: Agent editor Tools tab with MCP Servers and Tools panel on the left and tool selection list with checkboxes on the right*
 2. Select **Save & continue**.
@@ -29095,7 +29095,7 @@ To turn on the capabilities that the agent uses, optionally toggle on the follow
 2. Enable **Web search**.
 
    > **Note:** Enabling **Web search** during agent creation is not sufficient. End users must also enable **Web search** in their own settings before they can use this capability at runtime.
-3. Let the agent process large sets of records in the background through **Long Running Tasks**.  runs an eligibility check on the saved system prompt and the selected tools. For more information, see [Enable long-running tasks for an agent](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/custom-agents-at-a-glance/enable-long-running-tasks-for-an-agent?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+3. Let the agent process large sets of records in the background through **Long Running Tasks**. Custom agents runs an eligibility check on the saved system prompt and the selected tools. For more information, see [Enable long-running tasks for an agent](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/custom-agents-at-a-glance/enable-long-running-tasks-for-an-agent?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 4. Select **Save & continue**.
 
 ## Step 4: Test and publish the agent
@@ -29115,14 +29115,14 @@ The custom instructions are now saved for the agent.
 2. Enter a prompt and review the streaming response.
 
    > **Note:** If a violation is detected in the system prompt, the test run is blocked. Revise the prompt before testing again.
-3. Review the run summary after each test. It shows latency, credits, and tool calls for that run. Testing in  does not consume  credits. Credits are consumed when users interact with a published agent in . For more information, see [billing and credit usage](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-usage-dashboard/autonomous-agents-usage-through-reltio?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+3. Review the run summary after each test. It shows latency, credits, and tool calls for that run. Testing in custom agents does not consume Autonomous agents credits. Credits are consumed when users interact with a published agent in Autonomous agents. For more information, see [Autonomous agents billing and credit usage](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-usage-dashboard/autonomous-agents-usage-through-reltio?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 4. Iterate on the prompt and tool selection as needed.
 5. Select **Submit for review**.
 6. Confirm the submission.
 
    A **Confirm submit for review** dialog appears. Select **Submit for review** to proceed, or **Back** to return to the test panel.
 
-   If **Long Running Tasks** is turned on for the agent,  first checks that the eligibility result is current. If the result is out of date, or the check is running, has not run, or has failed,  does not submit the agent. The agent stays in **Draft** state, and the security scan does not run. For more information, see [Long-running task eligibility check issues](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/custom-agents-at-a-glance/long-running-task-eligibility-check-issues?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+   If **Long Running Tasks** is turned on for the agent, custom agents first checks that the eligibility result is current. If the result is out of date, or the check is running, has not run, or has failed, custom agents does not submit the agent. The agent stays in **Draft** state, and the security scan does not run. For more information, see [Long-running task eligibility check issues](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/custom-agents-at-a-glance/long-running-task-eligibility-check-issues?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
    The system automatically scans the system prompt. Two outcomes are possible:
 
@@ -29133,11 +29133,11 @@ The custom instructions are now saved for the agent.
 
 ## View agent history
 
-After you submit a publish request, you can review the audit logs in  to track the history of changes made to an agent. The agent history displays events such as approvals or rejections, along with key details such as who performed the action, when it occurred, and the resulting status.
+After you submit a publish request, you can review the audit logs in custom agents to track the history of changes made to an agent. The agent history displays events such as approvals or rejections, along with key details such as who performed the action, when it occurred, and the resulting status.
 
 To view the agent history, perform the following steps:
 
-1. Go to  > .
+1. Go to Autonomous agents > Custom agents.
 2. Select the required agent.
 3. Select **See History**.
 
@@ -29152,15 +29152,15 @@ To update a published agent, create a new draft from the published version. This
 
 To update an agent, perform the following steps:
 
-1. Log in to **** and go to ****.
+1. Log in to **Autonomous agents** and go to **Custom agents**.
 2. Select the required agent.
 
    The agent details page appears.
 3. Select **Create New Draft** / **Edit Draft**.
 
-   On updating the agent,  creates a new draft version. The latest published version is still available in the **Discover Agents** page while you update the agent.
+   On updating the agent, custom agents creates a new draft version. The latest published version is still available in the **Discover Agents** page while you update the agent.
 
-   > **Note:** If the agent was created in  1.0 and you create a new version of it by selecting **Create New Draft**, the context of earlier conversations with that agent is not available to the new version. You can continue the conversation, but the agent does not have the context of the earlier conversation.
+   > **Note:** If the agent was created in custom agents 1.0 and you create a new version of it by selecting **Create New Draft**, the context of earlier conversations with that agent is not available to the new version. You can continue the conversation, but the agent does not have the context of the earlier conversation.
 4. Update the system prompt and select the required tools. See [#concept-9378/select_tools](#concept-9378/select_tools).
 
    > **Note:** If **Long Running Tasks** is turned on for the agent and you change the system prompt or the selected tools, run the eligibility check again on the **Capabilities** step before you submit the draft for review. For more information, see [Enable long-running tasks for an agent](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/custom-agents-at-a-glance/enable-long-running-tasks-for-an-agent?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
@@ -29168,11 +29168,11 @@ To update an agent, perform the following steps:
 
 **Result**
 
-Your agent is updated, and  maintains [version history](#concept-9378/section-234) across all draft and published versions.
+Your agent is updated, and custom agents maintains [version history](#concept-9378/section-234) across all draft and published versions.
 
 **Handling save conflicts**
 
-If another user saves changes to the agent after you make your own changes,  blocks your next save and displays a conflict error.
+If another user saves changes to the agent after you make your own changes, custom agents blocks your next save and displays a conflict error.
 
 Refreshing the page loads the latest version and allows you to continue editing, but it also discards your unsaved changes. To avoid losing your progress, perform the following steps:
 
@@ -29183,13 +29183,13 @@ Refreshing the page loads the latest version and allows you to continue editing,
 
 ## Result
 
-The publish request is now in the reviewer queue. For more information about what each state means, see [Agent states in](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/custom-agents-at-a-glance/agent-states-in-custom-agents?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+The publish request is now in the reviewer queue. For more information about what each state means, see [Agent states in custom agents](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/custom-agents-at-a-glance/agent-states-in-custom-agents?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 For more information about what happens next, see [Review and act on a publish request](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/custom-agents-at-a-glance/review-and-act-on-a-publish-request?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 ## Validation steps
 
-- Confirm the agent shows **Pending review** status in .
+- Confirm the agent shows **Pending review** status in custom agents.
 
 
 
@@ -29205,7 +29205,7 @@ For more information about what happens next, see [Review and act on a publish r
 **Keywords:** download agent autonomous agents, export agent blueprint reltio, autonomous agents agent blueprint download, download agent to reuse in another tenant, custom agent download agent option, autonomous agents agent file format, transfer agent between reltio tenants, download published agent autonomous agents, agent, blueprint, export
 
 
-Learn how to download an agent blueprint from  to reuse it in a different tenant.
+Learn how to download an agent blueprint from custom agents to reuse it in a different tenant.
 
 **Prerequisites**
 
@@ -29216,11 +29216,11 @@ Before you begin, make sure you meet the following requirements:
   The agent must have a **Published** status.
 - 
 
-  You must have access to  in the source tenant.
+  You must have access to custom agents in the source tenant.
 
 You can download a published agent as an encrypted blueprint file and use it to recreate the agent in a different Reltio tenant.
 
-1. In , locate the agent you want to download in the agents list.
+1. In Custom agents, locate the agent you want to download in the agents list.
 2. Select the **⋮** (more options) menu at the end of the agent row.
 3. Select **Download agent**.
 4. In the confirmation dialog, select **Yes, Download**.
@@ -29244,9 +29244,9 @@ The agent blueprint downloads to your device as an `.agent` file. The file name 
 **Keywords:** enable long-running tasks custom agents, autonomous agents custom agent long-running task, long-running task eligibility check autonomous agents, custom agents capabilities step long running tasks, validate again long-running task eligibility, process large sets of records with a custom agent, long-running tasks, custom agents, autonomous agents
 
 
-Learn how to enable long-running tasks for an agent in  so that the agent can process large sets of records in the background.
+Learn how to enable long-running tasks for an agent in custom agents so that the agent can process large sets of records in the background.
 
-Long-running tasks let an agent repeat the same work across a large set of records in the background, without holding up a live chat.  turns on long-running tasks only after an eligibility check confirms that the agent qualifies. For more information, see [Automated long-running tasks](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/automated-long-running-tasks?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+Long-running tasks let an agent repeat the same work across a large set of records in the background, without holding up a live chat. Custom agents turns on long-running tasks only after an eligibility check confirms that the agent qualifies. For more information, see [Automated long-running tasks](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/automated-long-running-tasks?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 The following roles can enable long-running tasks for an agent:
 
@@ -29257,7 +29257,7 @@ The following roles can enable long-running tasks for an agent:
 
   [Agent Admin](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/custom-agents-at-a-glance/assign-custom-agents-roles-to-users?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
-For more information, see [Assign roles to users](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/custom-agents-at-a-glance/assign-custom-agents-roles-to-users?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+For more information, see [Assign custom agents roles to users](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/custom-agents-at-a-glance/assign-custom-agents-roles-to-users?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 **Prerequisites**
 
@@ -29279,13 +29279,13 @@ Before you begin, confirm the following requirements:
 
 To enable long-running tasks for an agent
 
-1. Open  and go to .
+1. Open Autonomous agents and go to Custom agents.
 2. Open the draft agent that you want to enable long-running tasks for.
 3. Go to the **Capabilities** step.
    *Image: Verify capabilities screen in Agent Blueprint showing the Long Running Tasks and Web Search capabilities, each with a High confidence tag*
 4. Under **Capabilities**, toggle on **Long Running Tasks**.*Image: Capabilities step with the Long Running Tasks panel showing the Checking eligibility status tag*
-   saves the draft and starts the eligibility check. The panel shows the **Checking eligibility** status tag; the switch is unavailable, and **Save & continue** is unavailable until the check finishes. If the check runs longer than 3 minutes, the panel shows the **Check failed** status tag.
-   > **Note:** If you turn the switch off while the check is running,  cancels the check.
+   Custom agents saves the draft and starts the eligibility check. The panel shows the **Checking eligibility** status tag; the switch is unavailable, and **Save & continue** is unavailable until the check finishes. If the check runs longer than 3 minutes, the panel shows the **Check failed** status tag.
+   > **Note:** If you turn the switch off while the check is running, custom agents cancels the check.
 5. Review the status tag in the **Long Running Tasks** panel.
    If the status tag is not **Eligible for LRT**, see [Long-running task eligibility check issues](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/custom-agents-at-a-glance/long-running-task-eligibility-check-issues?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
    *Image: Capabilities step with the Long Running Tasks switch on and the Eligible for LRT status tag*
@@ -29299,7 +29299,7 @@ When the check passes, the **Long Running Tasks** panel shows the **Eligible for
 
 If you change the system prompt or the selected tools after a check passes, the switch stays on, but the panel shows a message that your instructions and tools selection changed, with a **Validate again** button. Select **Validate again** before you submit the agent for review.
 
-does not submit an agent that has long-running tasks turned on when the check result is out of date, the check is still running, no check has run, or the check has failed. The agent stays in **Draft** state.
+Custom agents does not submit an agent that has long-running tasks turned on when the check result is out of date, the check is still running, no check has run, or the check has failed. The agent stays in **Draft** state.
 
 **Verification steps**
 
@@ -29326,11 +29326,11 @@ To confirm that long-running tasks are enabled, perform the following steps:
 **Keywords:** review agent publish request autonomous agents, approve agent publish request reltio, reject agent publish request autonomous agents, autonomous agents agent approver workflow, inspect scan results custom agents, custom agents approver review queue, autonomous agents publish request approval, approve, governance, autonomous agents
 
 
-Learn how to review an agent publish request in , inspect the scan results and configuration, and approve or reject the request.
+Learn how to review an agent publish request in custom agents, inspect the scan results and configuration, and approve or reject the request.
 
 When an author submits a publish request, it enters a review queue after passing the automated system prompt scan. As an approver, you review the agent configuration and scan results, then approve or reject the request.
 
-For more information about the full publish lifecycle, see [at a glance](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/custom-agents-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+For more information about the full publish lifecycle, see [Custom agents at a glance](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/custom-agents-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 For more information about scan categories and what findings mean, see [System prompt security scan](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/custom-agents-at-a-glance/system-prompt-security-scan?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
@@ -29338,13 +29338,13 @@ For more information about scan categories and what findings mean, see [System p
 
 Before you begin, confirm that:
 
-- You must have the `ROLE_AGENT_APPROVER` on the target tenant. For more information about how to get this role, see [Assign roles to users](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/custom-agents-at-a-glance/assign-custom-agents-roles-to-users?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+- You must have the `ROLE_AGENT_APPROVER` on the target tenant. For more information about how to get this role, see [Assign custom agents roles to users](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/custom-agents-at-a-glance/assign-custom-agents-roles-to-users?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 - A publish request is in **Pending review** state in the review queue.
 
 ## Open and review a publish request
 
-1. Log in to
-2. From the left side panel, select .
+1. Log in to Autonomous agents
+2. From the left side panel, select Custom agents.
 3. Select the **Review requests** tab. The queue lists all pending requests with the agent name, submitter, and submission timestamp.
 4. Select a request to open the detail view.
 5. Review the agent configuration:
@@ -29360,7 +29360,7 @@ Before you begin, confirm that:
 
 1. To approve:
    1. Select the approve action.
-   2. Confirm the approval.  publishes the agent as an immutable version, makes it discoverable in Discover Agents, and records an audit entry with your identity and the decision.
+   2. Confirm the approval. Custom agents publishes the agent as an immutable version, makes it discoverable in Discover Agents, and records an audit entry with your identity and the decision.
 2. To reject:
    1. Select the reject action.
    2. Enter a reason. The reason is visible to the author when they see the review request details.
@@ -29368,7 +29368,7 @@ Before you begin, confirm that:
 
 ## Result
 
-On approval,  creates a new immutable published version. The agent is immediately available to users with EXECUTE permission in Discover Agents. If the agent already had a published version, the newly approved version becomes the active published version.
+On approval, custom agents creates a new immutable published version. The agent is immediately available to users with EXECUTE permission in Discover Agents. If the agent already had a published version, the newly approved version becomes the active published version.
 
 On rejection, the agent returns to the author with the reason. The previously published version, if one exists, remains live.
 
@@ -29376,7 +29376,7 @@ On rejection, the agent returns to the author with the reason. The previously pu
 
 ## Validation steps
 
-- Confirm the agent status shows **Published** in  after approval.
+- Confirm the agent status shows **Published** in custom agents after approval.
 - Open **Discover Agents** and confirm the agent appears with the correct name and description.
 
 
@@ -29408,7 +29408,7 @@ Before you begin, make sure you meet the following requirements:
 
 You can upload an agent blueprint file to create a new agent in your tenant. The upload pre-populates the agent name, description, tags, system prompt, and tool selections from the blueprint. You then review the configuration and submit the agent for review.
 
-1. In , select the dropdown arrow on **Build new agent**.
+1. In Custom agents, select the dropdown arrow on **Build new agent**.
 2. Select **Upload from an existing tenant**.
 3. In the file picker, select your `.agent` file and select **Open**.
 4. Wait for the system to finish parsing the file.
@@ -29428,7 +29428,7 @@ The agent is submitted for review. You receive a notification when the administr
 
 **Validation**
 
-To confirm the agent was submitted successfully, select **Your drafts & requests** in . The agent appears in the list with a **Pending approval** status.
+To confirm the agent was submitted successfully, select **Your drafts & requests** in Custom agents. The agent appears in the list with a **Pending approval** status.
 
 
 
@@ -29454,7 +29454,7 @@ Your LLM endpoint must meet the following technical requirements before it can b
 
 | Requirement | Details |
 | --- | --- |
-| **OpenAI-compatible API** | Your endpoint must expose an **OpenAI-compatible chat completions API** (`/v1/chat/completions` or equivalent).  send requests in the OpenAI chat completions format and expects responses in the same format. |
+| **OpenAI-compatible API** | Your endpoint must expose an **OpenAI-compatible chat completions API** (`/v1/chat/completions` or equivalent). Autonomous agents send requests in the OpenAI chat completions format and expects responses in the same format. |
 | **TLS / HTTPS** | All endpoints must be served over HTTPS with valid TLS certificates. Production environments require certificates issued by a trusted certificate authority. |
 | **Authentication** | Supported authentication types: **OAuth2 client credentials**, **API key**, or **AWS access key/secret key (AKSK)**. If your endpoint uses OAuth2, you must provide a token URL and client credentials. |
 | **Network accessibility** | Your endpoint must be reachable from Reltio's cloud infrastructure over the public internet using HTTPS. If your endpoint requires IP allowlisting, Reltio will provide the egress IP addresses to add to your allowlist. |
@@ -29515,16 +29515,16 @@ If any issues arise during validation (for example: authentication failures, net
 
 Once validation is complete, the Reltio team enables BYO LLM for your tenant. You will be notified when the configuration is active and ready for use. At this point:
 
-- Your System Administrator can view the LLM configuration in  Admin Settings.
+- Your System Administrator can view the LLM configuration in autonomous agents Admin Settings.
 - Data Stewards and Data Product Owners can select from the configured models when starting new conversations. For more information, see [Select a model in a conversation](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/bring-your-own-llm-for-autonomous-agents-at-a-glance/select-a-model-in-a-conversation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 ## View LLM configurations (System Administrator)
 
-After BYO LLM is enabled, System Administrators can view the current LLM configurations in .
+After BYO LLM is enabled, System Administrators can view the current LLM configurations in autonomous agents.
 
 > **Note:** The **Admin Controls** tab is only visible to System Administrators on BYO LLM-enabled tenants. If you do not see this tab, BYO LLM has not been activated for your tenant.
 
-1. Open **** and navigate to **Settings > Admin Controls**.
+1. Open **Autonomous agents** and navigate to **Settings > Admin Controls**.
 2. Locate the **Large Language Model Config** section.
 
 An information banner displays at the top of the section:
@@ -29570,7 +29570,7 @@ All changes to BYO LLM configurations are handled by the Reltio team. To request
 | Role | What they can do |
 | --- | --- |
 | **System Administrator** (`ROLE_TENANT_ADMIN`) | View LLM configurations and their status in Admin Settings (read-only). Cannot create, edit, enable, disable, or delete configurations. |
-| **user** (any authenticated user) | Select a model in the chat input area when starting a new conversation. |
+| **Autonomous agents user** (any authenticated user) | Select a model in the chat input area when starting a new conversation. |
 | **Reltio delivery / engineering** (internal) | Create, edit, enable, disable, and delete LLM configurations via backend tooling. |
 
 ## Technical details
@@ -29581,7 +29581,7 @@ BYO LLM is a **one-time setup per environment** (DEV, TEST, PROD). Once configur
 
 **Billing**
 
-BYO LLM has separate, lower-cost pricing. Your organization bears its own LLM provider costs (inference, tokens, API usage). Reltio charges only for platform usage (compute, networking, observability). For more information about how credits are allocated and consumed under each subscription model, see [usage through Reltio](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-usage-dashboard/autonomous-agents-usage-through-reltio?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+BYO LLM has separate, lower-cost pricing. Your organization bears its own LLM provider costs (inference, tokens, API usage). Reltio charges only for platform usage (compute, networking, observability). For more information about how credits are allocated and consumed under each subscription model, see [Autonomous agents usage through Reltio](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-usage-dashboard/autonomous-agents-usage-through-reltio?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
@@ -29597,7 +29597,7 @@ BYO LLM has separate, lower-cost pricing. Your organization bears its own LLM pr
 **Keywords:** select llm model autonomous agents conversation, choose model autonomous agents byo llm, model selector autonomous agents conversation, start new conversation autonomous agents byo llm, lock model selection autonomous agents, byo llm end user model selection, resume conversation autonomous agents model, byo llm, autonomous agents, model selector, conversation
 
 
-Learn how to select an LLM at the start of a new conversation in  when Bring Your Own LLM is enabled for your tenant.
+Learn how to select an LLM at the start of a new conversation in autonomous agents when Bring Your Own LLM is enabled for your tenant.
 
 When BYO LLM is enabled for your tenant, you select which model to use each time you start a new conversation with an agent. Once you send the first message, the model selection is locked for the remainder of that conversation.
 
@@ -29608,7 +29608,7 @@ When BYO LLM is enabled for your tenant, you select which model to use each time
 
 ## Select a model and start a new conversation
 
-1. Open an agent in .
+1. Open an agent in Autonomous agents.
 2. In the chat input area, locate the **model selector** dropdown.
 3. Select the model you want to use for this conversation. The selector shows the model name and provider (for example: `gpt-4o / Acme Corp`).
 4. Send your first message.
@@ -29629,7 +29629,7 @@ If no active LLM configuration exists for your tenant, the chat input area is di
 
 ---
 
-# Navigate between and other Reltio applications
+# Navigate between autonomous agents and other Reltio applications
 
 > **Section:** Products > Autonomous agents > Autonomous agents overview
 
@@ -29639,11 +29639,11 @@ If no active LLM configuration exists for your tenant, the chat input area is di
 **Keywords:** navigate to autonomous agents from reltio hub, open autonomous agents from app selector, switch between autonomous agents and reltio applications, access autonomous agents from hub or console, navigate from autonomous agents to hub, reltio app selector autonomous agents, autonomous agents navigation between applications, app selector, autonomous agents, navigation
 
 
-Learn how to switch between  and other Reltio applications using the Applications menu.
+Learn how to switch between autonomous agents and other Reltio applications using the Applications menu.
 
-You can switch between  and other Reltio applications at any time using the **Applications** menu.
+You can switch between autonomous agents and other Reltio applications at any time using the **Applications** menu.
 
-The **Applications** menu is available in both the  workspace and all Reltio applications:
+The **Applications** menu is available in both the autonomous agents workspace and all Reltio applications:
 
 - **Hub**
 - **Console**
@@ -29656,23 +29656,23 @@ The **Applications** menu is available in both the  workspace and all Reltio app
 
 Before you begin, make sure you have the following access and permissions:
 
-- An active Reltio tenant with  enabled
+- An active Reltio tenant with autonomous agents enabled
 - The appropriate role-based access control (RBAC) permissions for the applications you want to access
 
-For more information, see [capabilities and permissions](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-capabilities-and-permissions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+For more information, see [Autonomous agents capabilities and permissions](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-capabilities-and-permissions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
-## Open from the Hub or another Reltio application
+## Open autonomous agents from the Hub or another Reltio application
 
 1. In the Reltio application, select the **Applications** icon in the navigation bar.
-2. Select **** or ****.
+2. Select **Autonomous agents** or **Unstructured augmentation**.
 
-   If you selected , **** opens in your browser. If you selected ****, **** opens in your browser.
+   If you selected Autonomous agents, **Autonomous agents** opens in your browser. If you selected **Unstructured augmentation**, **Unstructured augmentation** opens in your browser.
 
 *Image: i-agentflow-app-selec-tenant-to-agentflow.png*
 
-## Navigate from to another Reltio application
+## Navigate from autonomous agents to another Reltio application
 
-1. In ****, Select the **Applications** icon at the bottom of the left navigation panel.
+1. In **Autonomous agents**, Select the **Applications** icon at the bottom of the left navigation panel.
 2. Under **Applications**, select the application you want to open. For example, **Hub**, **Console**, or **RDM**.
 
 The selected application opens in your browser.
@@ -29681,19 +29681,19 @@ The selected application opens in your browser.
 
 ## Result
 
-The application you selected opens in your browser. Your  session remains active. Your tenant context is preserved across applications.
+The application you selected opens in your browser. Your autonomous agents session remains active. Your tenant context is preserved across applications.
 
 ## Related topics
 
-- [Use the workspace in](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/use-the-workspace-in-autonomous-agents?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- [overview](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- [overview](https://docs.reltio.com/en/products/autonomous-agents/unstructured-augmentation-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Use the workspace in autonomous agents](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/use-the-workspace-in-autonomous-agents?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Autonomous agents overview](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Unstructured augmentation overview](https://docs.reltio.com/en/products/autonomous-agents/unstructured-augmentation-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 
 
 ---
 
-# View usage and credit balance
+# View autonomous agents usage and credit balance
 
 > **Section:** Products > Autonomous agents > Autonomous agents overview > Autonomous agents Usage Dashboard
 
@@ -29705,13 +29705,13 @@ The application you selected opens in your browser. Your  session remains active
 
 Learn how to access the Usage Dashboard to monitor annual credit consumption and contract details.
 
-The Usage Dashboard in  helps you monitor credit consumption against your organization's annual entitlement. You can review your remaining credit balance, contract details, and usage across Base Packages and tenants to track consumption and manage your available credits.
+The Usage Dashboard in autonomous agents helps you monitor credit consumption against your organization's annual entitlement. You can review your remaining credit balance, contract details, and usage across Base Packages and tenants to track consumption and manage your available credits.
 
 **Prerequisites**
 
 `ROLE_AGENT_BILLING`**Usage Dashboard**## Open the Usage Dashboard
 
-1. Log in to ****.
+1. Log in to **Autonomous agents**.
 2. In the lower-left corner, select your profile name.
 3. Select **Usage Dashboard**.*Image: i-agentflow-usage-dashboard.png*
 4. If your organization has both subscription models active, select **Customer Model** or **Reltio Model** from the dropdown in the upper-right area of the dashboard to view entitlements and usage for that subscription.
@@ -29740,7 +29740,7 @@ The Usage Dashboard displays credit and usage information for the selected subsc
 
 ## See how to do this
 
-Use the following video to see how to open the **Usage Dashboard** in  and review: 
+Use the following video to see how to open the **Usage Dashboard** in Autonomous agents and review: 
 
 - contract details,
 - credit balance,
@@ -29786,7 +29786,7 @@ Use the **Match Resolver** agent to resolve duplicate records. You can explore m
 - To use data enrichment features, turn on the Web Search toggle in the agent settings.
 
 
-Follow these steps to resolve matches in using the Match Resolver Agent:
+Follow these steps to resolve matches in autonomous agents using the Match Resolver Agent:
 
 1. Start a new conversation and select **Match Resolver Agent**.
    The agent shows a match inventory summary based on your tenant's data.
@@ -29822,7 +29822,7 @@ Follow these steps to resolve matches in using the Match Resolver Agent:
 
 **Audit and traceability**
 
-logs every tool call and decision in your tenant's Activity Log. You can stream this data to your Security Information and Event Management (SIEM) system for compliance reporting.
+Autonomous agents logs every tool call and decision in your tenant's Activity Log. You can stream this data to your Security Information and Event Management (SIEM) system for compliance reporting.
 
 - User ID and timestamp
 - Tool used (for example, `merge_entities`)
@@ -29832,13 +29832,13 @@ logs every tool call and decision in your tenant's Activity Log. You can stream 
 
 
 
-To check access requirements and agent availability, see[capabilities and permissions](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-capabilities-and-permissions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+To check access requirements and agent availability, see[Autonomous agents capabilities and permissions](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-capabilities-and-permissions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
 ---
 
-# Use the workspace in
+# Use the workspace in autonomous agents
 
 > **Section:** Products > Autonomous agents > Autonomous agents overview
 
@@ -29848,9 +29848,9 @@ To check access requirements and agent availability, see[capabilities and permis
 **Keywords:** autonomous agents workspace, how to use autonomous agents ui, agent selection in reltio, navigate autonomous agents interface, input field and conversation, autonomous agents settings, rbac access autonomous agents, data explorer interface, chat ui, agent
 
 
-Learn how to navigate the  interface, select agents, and interact with your data through a conversational workspace.
+Learn how to navigate the autonomous agents interface, select agents, and interact with your data through a conversational workspace.
 
-The workspace in  is a chat interface, where each conversation is scoped to one agent and one task. You can't switch agents mid-conversation.
+The workspace in autonomous agents is a chat interface, where each conversation is scoped to one agent and one task. You can't switch agents mid-conversation.
 
 The authentication model for your tenants is specified in the Welcome to Reltio email you received when your organization was provisioned:
 
@@ -29863,12 +29863,12 @@ The authentication model for your tenants is specified in the Welcome to Reltio 
 
 **Prerequisites**
 
-You need an active Reltio tenant with  enabled and the appropriate role-based access control (RBAC) permissions to use assigned agents. For more information, see [capabilities and permissions](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-capabilities-and-permissions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+You need an active Reltio tenant with autonomous agents enabled and the appropriate role-based access control (RBAC) permissions to use assigned agents. For more information, see [Autonomous agents capabilities and permissions](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-capabilities-and-permissions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 
-To sign in to (Single authentication environment):
+To sign in to Autonomous agents (Single authentication environment):
 
-1. Open the [workspace](https://reltio.ai/agent-flow) in your browser.
+1. Open the [autonomous agents workspace](https://reltio.ai/agent-flow) in your browser.
 2. Enter your Tenant ID.
    *Image: i-auth-tenant.png* The **Sign In** page appears.
 3. On the **Sign In** page, enter the following details:
@@ -29884,9 +29884,9 @@ If you do not recall your password, you can reset it. For more information, see 
 6. Select **Verify**.
    The welcome panel appears.
 
-To sign in to (Multi-staged authentication environments):
+To sign in to Autonomous agents (Multi-staged authentication environments):
 
-7. Open the [workspace](https://reltio.ai/agent-flow) in your browser.
+7. Open the [autonomous agents workspace](https://reltio.ai/agent-flow) in your browser.
 8. Enter your tenant ID.
    Your tenant ID determines which environment — Development (DEV), Test (TEST), or Production (PROD) — you sign in to. After you sign in, you can switch between tenants only within that environment; for example, if you sign in with a TEST tenant, DEV and PROD tenants are not available in that session. To access a tenant in another environment, sign out and sign in again with the required tenant ID.
    *Image: i-auth-tenant.png*
@@ -29906,12 +29906,12 @@ The sign-in page displays the environment associated with your tenant; for examp
 12. Select **Verify**.
    The welcome panel appears.
 
-To use the workspace in
+To use the workspace in autonomous agents
 
 13. Use the tenant selector to switch to another tenant in the same environment, if needed.*Image: i-af-tenant-selector.png*
    If the required tenant is not listed, it may belong to a different environment. To switch environments, sign out and repeat [the tenant ID step](#task-1515/step-390) using the tenant ID for the required environment.
 14. Choose an agent.
-   If you're logging in to  for the first time, the **Data explorer** agent appears by default in the left panel under **RELTIO AGENTS**. To explore and launch additional agents, select **Discover agents** in the left navigation panel.*Image: i-agentflow-discover-agents.png*
+   If you're logging in to autonomous agents for the first time, the **Data explorer** agent appears by default in the left panel under **RELTIO AGENTS**. To explore and launch additional agents, select **Discover agents** in the left navigation panel.*Image: i-agentflow-discover-agents.png*
    On the Discover Agents page, agents are organized into two groups:
    - **Reltio autonomous agents:** Prebuilt agents shipped by Reltio
    - **Custom agents:** Agents built by or for your organization
@@ -29938,10 +29938,10 @@ Use **Search Chat** in the left navigation panel to search for previous conversa
 
 **Related topics**
 
-- [Navigate between and other Reltio applications](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/navigate-between-autonomous-agents-and-other-reltio-applications?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- [overview](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- [catalog](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-catalog?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- [overview](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Navigate between autonomous agents and other Reltio applications](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/navigate-between-autonomous-agents-and-other-reltio-applications?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Autonomous agents overview](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Autonomous agents catalog](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-catalog?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Autonomous agents overview](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 
 
@@ -30053,7 +30053,7 @@ The Profiler agent can assume the IAM role using AWS STS and securely read files
 
 ## Validation steps
 
-- Start a profiling job in .
+- Start a profiling job in autonomous agents.
 - Provide the role ARN, External ID, and region when prompted.
 - Confirm that the job starts without access errors.
 
@@ -30071,7 +30071,7 @@ The Profiler agent can assume the IAM role using AWS STS and securely read files
 **Keywords:** run data profiling job in autonomous agents, analyze csv file using profiler agent, start data quality check in reltio, execute profiling job with s3 file, review column level quality metrics, autonomous agents, profiling, workspace
 
 
-Learn how to use the Profiler agent in  to analyze a CSV file stored in cloud or remote storage.
+Learn how to use the Profiler agent in autonomous agents to analyze a CSV file stored in cloud or remote storage.
 
 ## Prerequisites
 
@@ -30086,7 +30086,7 @@ Learn how to use the Profiler agent in  to analyze a CSV file stored in cloud or
 
 ## Start profiling
 
-1. Log in to .
+1. Log in to autonomous agents.
 2. Select **Profiler**.
 3. Provide the CSV file path and the corresponding access details required for your storage provider (for example, [role ARN, external ID, and region for AWS S3](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-catalog/profiler/configure-an-aws-iam-role-for-profiler?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)).
 
@@ -30110,7 +30110,7 @@ A profiling workspace is created and column-level quality metrics are displayed.
 
 ## Avoid entering credentials each time
 
-Watch the following video to learn how to save default credentials for the **Profiler** agent in . After you save these credentials, the agent reuses them for future profiling jobs so that you do not need to enter the same access details each time.
+Watch the following video to learn how to save default credentials for the **Profiler** agent in autonomous agents. After you save these credentials, the agent reuses them for future profiling jobs so that you do not need to enter the same access details each time.
 
 *Video: v-agentflow-profiler-credentials.mp4*
 
@@ -30132,8 +30132,8 @@ Learn how to enable the Data Profiler agent in so that you can run data profilin
 
 ## Prerequisites
 
-- You can sign in to [reltio.ai](https://reltio.ai/login) and access the  workspace. For more information, see [Use the workspace in](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/use-the-workspace-in-autonomous-agents?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
-- You have the required  execution roles. For role details, see [capabilities and permissions](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-capabilities-and-permissions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+- You can sign in to [reltio.ai](https://reltio.ai/login) and access the autonomous agents workspace. For more information, see [Use the workspace in autonomous agents](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/use-the-workspace-in-autonomous-agents?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+- You have the required autonomous agents execution roles. For role details, see [Autonomous agents capabilities and permissions](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-capabilities-and-permissions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 ## Assign required roles
 
@@ -30144,16 +30144,16 @@ Assign roles to user and group accounts to grant them permissions (access rights
 3. Assign ROLE_EXECUTE_MCP.
 4. Assign ROLE_DATALOADER.
 
-## Add the Profiler agent in
+## Add the Profiler agent in autonomous agents
 
 1. Sign in to [reltio.ai](https://reltio.ai/login).
-2. Open
+2. Open autonomous agents
 3. Select Discover agents
 4. Launch **Profiler**
 
 ## Result
 
-The Profiler agent appears in  and you can start profiling jobs.
+The Profiler agent appears in autonomous agents and you can start profiling jobs.
 
 ## Postrequisites
 
@@ -30166,13 +30166,13 @@ Configure cloud storage access before running profiling jobs. See [Configure an 
 
 ## Next steps
 
-After enabling the agent, start a profiling job in . See [Run your first data profiling job](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-catalog/profiler/run-your-first-data-profiling-job?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+After enabling the agent, start a profiling job in autonomous agents. See [Run your first data profiling job](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-catalog/profiler/run-your-first-data-profiling-job?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
 ---
 
-# Share a conversation in
+# Share a conversation in autonomous agents
 
 > **Section:** Products > Autonomous agents > Autonomous agents overview
 
@@ -30182,9 +30182,9 @@ After enabling the agent, start a profiling job in . See [Run your first data pr
 **Keywords:** share an autonomous agents conversation, create an autonomous agents share link, update a shared conversation link, read-only autonomous agents conversation
 
 
-Learn how to share a read-only  conversation with other users in your tenant.
+Learn how to share a read-only autonomous agents conversation with other users in your tenant.
 
-Sharing an  conversation makes it easier to collaborate with other users in your tenant. You can create and send a shareable link that provides a read-only view of the conversation. This allows you to share the complete context of a conversation without relying on screenshots or copied messages.
+Sharing an autonomous agents conversation makes it easier to collaborate with other users in your tenant. You can create and send a shareable link that provides a read-only view of the conversation. This allows you to share the complete context of a conversation without relying on screenshots or copied messages.
 
 A shared conversation link preserves the prompts, agent responses, and supporting context available at the time you create the link. This gives recipients a complete view of the conversation and reduces the risk of missing important information.
 
@@ -30196,15 +30196,15 @@ Before you begin, ensure you meet the following requirements:
 
 - 
 
-  You are [signed in](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/use-the-workspace-in-autonomous-agents?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) to .
+  You are [signed in](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/use-the-workspace-in-autonomous-agents?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) to Autonomous agents.
 - 
 
-  All recipients are signed in to  and have access to the same tenant.
+  All recipients are signed in to autonomous agents and have access to the same tenant.
 
 
 To share a conversation
 
-1. Log in to ****.
+1. Log in to **autonomous agents**.
 2. In the left navigation panel, select the conversation you want to share.
 3. Review the conversation carefully for private or sensitive data.
    Do not share a conversation if it contains information the recipient shouldn't access.
@@ -30219,9 +30219,9 @@ To update the link of a shared conversation
 7. Select **Share**.
    A dialog box opens displaying the existing link.
 8. Select **Update link**.
-   updates the shared snapshot:
-   - If new messages were added since the last share,  generates a new link and disables the previous one.
-   - If no new messages were added,  returns the existing link.
+   Autonomous agents updates the shared snapshot:
+   - If new messages were added since the last share, autonomous agents generates a new link and disables the previous one.
+   - If no new messages were added, autonomous agents returns the existing link.
    > **Important:** When a new link is generated, the previous link is disabled. Recipients must use the new link to access the updated snapshot.
 9. Select **Copy link**.
 10. Send the updated link to the required recipients.
@@ -33986,7 +33986,27 @@ Interaction types define the kinds of transactional events that have an associat
 
 This table identifies the preconfigured Consent Changed interaction type that comes with the SAP Reltio's velocity pack for Retail. Use this interaction type when you want to track Consent Changed events.
 
-*[Embedded content: https://docs.google.com/spreadsheets/d/e/2PACX-1vRRqY1Fib-4oXg4ISsXr5vMmb3wyxCx3pdpEUR9Q4Fc3LxDUDRZoIBUmJk4YGI4Z79p_ywD-U0VZ_pD/pubhtml?gid=1769194013&single=true&widget=true&headers=false&chrome=false]*
+**Consent Changed**
+- **URI:** configuration/interactionTypes/ConsentChanged
+- **Label:** Consent Changed
+- **Has Members:** true
+- **Ignore Uniqueness:** true
+
+
+| Member Types |  |  |  |  |  |  |  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **Name** | Label | Object Type | URI |  |  |  |  |  |  |  |  |  |
+| **individual** | Individual | Individual | configuration/interactionTypes/ConsentChanged/memberTypes/individual |  |  |  |  |  |  |  |  |  |
+
+
+| Name | Label | Type | Description | Survivorship | Match Fields (nested) | Hidden | Important | System | Searchable | Faceted | Lookup Code | URI |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **Purpose** | Purpose | String | Processing purpose whose consent changed. |  |  | false | false | false | false | false |  | configuration/interactionTypes/ConsentChanged/attributes/Purpose |
+| **Channel** | Channel | String | Communication channel whose consent changed. |  |  | false | false | false | false | false |  | configuration/interactionTypes/ConsentChanged/attributes/Channel |
+| **OldStatus** | Old Status | String | Consent status before the change. |  |  | false | false | false | false | false |  | configuration/interactionTypes/ConsentChanged/attributes/OldStatus |
+| **NewStatus** | New Status | String | Consent status after the change. |  |  | false | false | false | false | false |  | configuration/interactionTypes/ConsentChanged/attributes/NewStatus |
+| **ChangeDate** | Change Date | Date | Date the consent changed. |  |  | false | false | false | false | false |  | configuration/interactionTypes/ConsentChanged/attributes/ChangeDate |
+| **ChangedBy** | Changed By | String | Actor or system that changed the consent. |  |  | false | false | false | false | false |  | configuration/interactionTypes/ConsentChanged/attributes/ChangedBy |
 
 > **Note:** On the table above, the top level attributes are represented in bold.
 
@@ -34051,7 +34071,27 @@ Interaction types define the kinds of transactional events that have an associat
 
 This table identifies the preconfigured Loyalty Point Earn interaction type that comes with the SAP Reltio's velocity pack for Retail. Use this interaction type when you want to track Loyalty Point Earn events.
 
-*[Embedded content: https://docs.google.com/spreadsheets/d/e/2PACX-1vRRqY1Fib-4oXg4ISsXr5vMmb3wyxCx3pdpEUR9Q4Fc3LxDUDRZoIBUmJk4YGI4Z79p_ywD-U0VZ_pD/pubhtml?gid=1406521228&single=true&widget=true&headers=false&chrome=false]*
+**Loyalty Point Earn**
+- **URI:** configuration/interactionTypes/LoyaltyPointEarn
+- **Label:** Loyalty Point Earn
+- **Has Members:** true
+- **Ignore Uniqueness:** true
+
+
+| Member Types |  |  |  |  |  |  |  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **Name** | Label | Object Type | URI |  |  |  |  |  |  |  |  |  |
+| **individual** | Individual | Individual | configuration/interactionTypes/LoyaltyPointEarn/memberTypes/individual |  |  |  |  |  |  |  |  |  |
+| **program** | Loyalty Program | LoyaltyProgram | configuration/interactionTypes/LoyaltyPointEarn/memberTypes/program |  |  |  |  |  |  |  |  |  |
+| **organization** | Organization | Organization | configuration/interactionTypes/LoyaltyPointEarn/memberTypes/organization |  |  |  |  |  |  |  |  |  |
+
+
+| Name | Label | Type | Description | Survivorship | Match Fields (nested) | Hidden | Important | System | Searchable | Faceted | Lookup Code | URI |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **PointsEarned** | Points Earned | Int | Number of loyalty points earned. |  |  | false | false | false | false | false |  | configuration/interactionTypes/LoyaltyPointEarn/attributes/PointsEarned |
+| **EarnReason** | Earn Reason | String | Reason points were earned (purchase, bonus, promotion). |  |  | false | false | false | false | false |  | configuration/interactionTypes/LoyaltyPointEarn/attributes/EarnReason |
+| **ReferenceTransactionId** | Reference Transaction ID | String | Transaction that generated the points. |  |  | false | false | false | false | false |  | configuration/interactionTypes/LoyaltyPointEarn/attributes/ReferenceTransactionId |
+| **ActivityDate** | Activity Date | Date | Date the points were earned. |  |  | false | false | false | false | false |  | configuration/interactionTypes/LoyaltyPointEarn/attributes/ActivityDate |
 
 > **Note:** On the table above, the top level attributes are represented in bold.
 
@@ -34417,7 +34457,25 @@ Interaction types define the kinds of transactional events that have an associat
 
 This table identifies the preconfigured Account Registered interaction type that comes with the SAP Reltio's velocity pack for Retail. Use this interaction type when you want to track Account Registered events.
 
-*[Embedded content: https://docs.google.com/spreadsheets/d/e/2PACX-1vRRqY1Fib-4oXg4ISsXr5vMmb3wyxCx3pdpEUR9Q4Fc3LxDUDRZoIBUmJk4YGI4Z79p_ywD-U0VZ_pD/pubhtml?gid=1904315204&single=true&widget=true&headers=false&chrome=false]*
+**Account Registered**
+- **URI:** configuration/interactionTypes/AccountRegistered
+- **Label:** Account Registered
+- **Has Members:** true
+- **Ignore Uniqueness:** true
+
+
+| Member Types |  |  |  |  |  |  |  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **Name** | Label | Object Type | URI |  |  |  |  |  |  |  |  |  |
+| **individual** | Individual | Individual | configuration/interactionTypes/AccountRegistered/memberTypes/individual |  |  |  |  |  |  |  |  |  |
+| **organization** | Organization | Organization | configuration/interactionTypes/AccountRegistered/memberTypes/organization |  |  |  |  |  |  |  |  |  |
+
+
+| Name | Label | Type | Description | Survivorship | Match Fields (nested) | Hidden | Important | System | Searchable | Faceted | Lookup Code | URI |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **RegistrationDate** | Registration Date | Date | Date the customer account was registered. |  |  | false | false | false | false | false |  | configuration/interactionTypes/AccountRegistered/attributes/RegistrationDate |
+| **RegistrationChannel** | Registration Channel | String | Channel the account was registered through. |  |  | false | false | false | false | false |  | configuration/interactionTypes/AccountRegistered/attributes/RegistrationChannel |
+| **RegistrationSource** | Registration Source | String | Source that drove the registration. |  |  | false | false | false | false | false |  | configuration/interactionTypes/AccountRegistered/attributes/RegistrationSource |
 
 > **Note:** On the table above, the top level attributes are represented in bold.
 
@@ -90765,7 +90823,82 @@ The Organization entity type contains a business account and party spine: a B2B 
 
 This table identifies the properties for the Organization entity type specified in the SAP Reltio's velocity pack for Retail configuration and lists the attributes preconfigured in the order they appear in the Data Modeler.
 
-*[Embedded content: https://docs.google.com/spreadsheets/d/e/2PACX-1vRRqY1Fib-4oXg4ISsXr5vMmb3wyxCx3pdpEUR9Q4Fc3LxDUDRZoIBUmJk4YGI4Z79p_ywD-U0VZ_pD/pubhtml?gid=1479424665&single=true&widget=true&headers=false&chrome=false]*
+**Organization**
+- **URI:** configuration/entityTypes/Organization
+- **Label:** Organization
+- **Description:** Business account and party spine: a B2B customer/account that transacts, and the brand/banner owner, franchisor, wholesale distributor, or retail chain operator.
+- **Abstract:** false
+- **Data Label Pattern:** {Name}
+- **Secondary Label Pattern:** {AccountType}
+
+
+| Name | Label | Type | Description | Survivorship | Match Fields (nested) | Hidden | Important | System | Searchable | Faceted | Lookup Code | URI |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **Name** | Name | String | Legal or registered name of the organization | LUD |  | false | false | false | true | false |  | configuration/entityTypes/Organization/attributes/Name |
+| **DUNSNumber** | D-U-N-S Number | String | The D-U-N-S Number is D&B's identification number, which provides unique identification of this organization, in accordance with the Data Universal Numbering System (D-U-N-S) | SRC_SYS (source order: Reltio > SAP > DnB > Salesforce > ERP > GLEIF > GS1 > GDSN > RegulatorPortal > Amazon > Walmart) |  | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/DUNSNumber |
+| **LEI** | Legal Entity Identifier (LEI) | String | ISO 17442 Legal Entity Identifier for the organization. | SRC_SYS (source order: Reltio > SAP > DnB > Salesforce > ERP > GLEIF > GS1 > GDSN > RegulatorPortal > Amazon > Walmart) |  | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/LEI |
+| **GLN** | Global Location Number (GLN) | String | GS1 Global Location Number identifying the party or location. | SRC_SYS (source order: Reltio > SAP > DnB > Salesforce > ERP > GLEIF > GS1 > GDSN > RegulatorPortal > Amazon > Walmart) |  | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/GLN |
+| **VATNumber** | Value Added Tax Number (VAT) | String | Value Added Tax registration number. | SRC_SYS (source order: Reltio > SAP > DnB > Salesforce > ERP > GLEIF > GS1 > GDSN > RegulatorPortal > Amazon > Walmart) |  | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/VATNumber |
+| **TaxID** | Tax Identification Number | String | Identifier assigned to the organization by their local tax authority | LUD |  | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/TaxID |
+| **CUSIP** | CUSIP | String | Unique, 9-digit identifier assigned to a security by CUSIP Global Services (CGS) | LUD |  | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/CUSIP |
+| **WebsiteURL** | Website URL | URL | URL to a site related to the organization | LUD |  | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/WebsiteURL |
+| **Industry** | Industry | String | Industry | LUD |  | false | false | false | false | false | rdm/lookupTypes/IndustryTypes | configuration/entityTypes/Organization/attributes/Industry |
+| **CompanyType** | Company Type | String | Operational defiinition of the type of company operated by the organization entity; not to be confused with its legal entity type | LUD |  | false | false | false | false | false | rdm/lookupTypes/CompanyTypes | configuration/entityTypes/Organization/attributes/CompanyType |
+| **AccountType** | Account Type | String | Commercial relationship type for the organization (e.g. banner owner, franchisor, wholesaler). | LUD |  | false | false | false | false | false | rdm/lookupTypes/AccountTypes | configuration/entityTypes/Organization/attributes/AccountType |
+| **BannerBrand** | Banner Brand | String | Retail banner or brand the organization operates under. | LUD |  | false | false | false | true | false |  | configuration/entityTypes/Organization/attributes/BannerBrand |
+| **ChannelType** | Channel Type | String | Primary sales channel the organization operates in. | LUD |  | false | false | false | false | false | rdm/lookupTypes/ChannelTypes | configuration/entityTypes/Organization/attributes/ChannelType |
+| **StatusCode** | Status Code | String | Status Code | LUD |  | false | false | false | false | false | rdm/lookupTypes/Statuses | configuration/entityTypes/Organization/attributes/StatusCode |
+| **Email** | Email | Nested | Email address(es) used to contact the organization | Aggregation | matchFields: Type, Email \| matchOvOnly: true \| dataLabelPattern: {Type} - {Email} | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Email |
+| **Email.Type** | Type | String | Type of email address | LUD |  | false | false | false | true | true | rdm/lookupTypes/EmailTypes | configuration/entityTypes/Organization/attributes/Email/attributes/Type |
+| **Email.Email** | Email | String | Full email address including both the local-part (e.g., a username) and domain | LUD |  | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Email/attributes/Email |
+| **Email.Domain** | Domain | String | Domain of the email address | Aggregation |  | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Email/attributes/Domain |
+| **Email.DomainType** | Domain Type | String | Domain type of the email address | Aggregation |  | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Email/attributes/DomainType |
+| **Email.Username** | Username | String | Username of the email address | Aggregation |  | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Email/attributes/Username |
+| **Email.Rank** | Rank | Int | Ordinal ranking of the email address | Aggregation |  | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Email/attributes/Rank |
+| **Email.ValidationStatus** | Validation Status | String | Validation status of the email address | Aggregation |  | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Email/attributes/ValidationStatus |
+| **Email.Active** | Active | Boolean | Indicates whether or not the email address is active | Aggregation |  | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Email/attributes/Active |
+| **Phone** | Phone | Nested | Phone number(s) used to contact the organization | Aggregation | matchFields: Type, Number \| matchOvOnly: true \| dataLabelPattern: {Type} - {Number} | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Phone |
+| **Phone.Type** | Type | String | Type of phone number used by the organization | LUD |  | false | false | false | true | true | rdm/lookupTypes/PhoneTypes | configuration/entityTypes/Organization/attributes/Phone/attributes/Type |
+| **Phone.Number** | Number | String | Phone number used by the organization | LUD |  | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Phone/attributes/Number |
+| **Phone.CountryCode** | Country Code | String | Indicates the country of the phone number | Aggregation |  | false | false | false | true | true | rdm/lookupTypes/telephoneCountryCodes | configuration/entityTypes/Organization/attributes/Phone/attributes/CountryCode |
+| **Phone.FormattedNumber** | Formatted Number | String | Formatted version of the phone number | Aggregation |  | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Phone/attributes/FormattedNumber |
+| **Phone.Extension** | Extension | String | Extension at which the organization can be reached | Aggregation |  | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Phone/attributes/Extension |
+| **Phone.Rank** | Rank | Int | Ordinal ranking of the phone number | Aggregation |  | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Phone/attributes/Rank |
+| **Phone.AreaCode** | Area Code | String | Area code of the phone number | Aggregation |  | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Phone/attributes/AreaCode |
+| **Phone.LocalNumber** | Local Number | String | Phone number in the local service format of the calling area | Aggregation |  | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Phone/attributes/LocalNumber |
+| **Phone.ValidationStatus** | Validation Status | String | Validation status of the phone number | Aggregation |  | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Phone/attributes/ValidationStatus |
+| **Phone.LineType** | Line Type | String | Line type of the phone number | Aggregation |  | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Phone/attributes/LineType |
+| **Phone.FormatMask** | Format Mask | String | Format mask applied to the phone number | Aggregation |  | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Phone/attributes/FormatMask |
+| **Phone.DigitCount** | Digit Count | Int | Number of digits in the phone number | Aggregation |  | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Phone/attributes/DigitCount |
+| **Phone.GeoArea** | Geo Area | String | Geographic area associated with the phone number | Aggregation |  | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Phone/attributes/GeoArea |
+| **Phone.GeoCountry** | Geo Country | String | Geographic country associated with the phone number | Aggregation |  | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Phone/attributes/GeoCountry |
+| **Phone.PrimaryPhoneFlag** | Primary Phone Flag | Boolean | Indicates whether or not the phone number is the primary number that should be used to reach the organization | Aggregation |  | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Phone/attributes/PrimaryPhoneFlag |
+| **Phone.Active** | Active | Boolean | Indicates whether or not the phone number is active | Aggregation |  | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Phone/attributes/Active |
+| **Phone.Unreachable** | Unreachable | Boolean | Indicates whether or not the organization has been unreachable at this phone number | Aggregation |  | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Phone/attributes/Unreachable |
+| **FinancialTerms** | Financial Terms | Nested | Commercial and credit terms agreed with the organization. | Aggregation | matchFields: CreditTerms, PaymentTerms \| matchOvOnly: true \| dataLabelPattern: {CreditTerms} - {PaymentTerms} | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/FinancialTerms |
+| **FinancialTerms.CreditTerms** | Credit Terms | String | Credit terms extended to the organization. | LUD |  | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/FinancialTerms/attributes/CreditTerms |
+| **FinancialTerms.PaymentTerms** | Payment Terms | String | Agreed payment terms for the organization. | LUD |  | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/FinancialTerms/attributes/PaymentTerms |
+| **FinancialTerms.CreditLimit** | Credit Limit | Number | Approved credit limit for the organization. | LUD |  | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/FinancialTerms/attributes/CreditLimit |
+| **FinancialTerms.CreditLimitCurrency** | CreditLimit Currency | String | Currency of CreditLimit. | Aggregation |  | false | false | false | false | false | rdm/lookupTypes/Currencies | configuration/entityTypes/Organization/attributes/FinancialTerms/attributes/CreditLimitCurrency |
+| **DUNSHierarchy** | DUNS Hierarchy | Nested | Dun & Bradstreet corporate hierarchy linkage for the organization. | Aggregation | matchFields: ParentDUNS, GlobalUltimateDUNS \| matchOvOnly: true \| dataLabelPattern: {ParentDUNS} - {GlobalUltimateDUNS} | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/DUNSHierarchy |
+| **DUNSHierarchy.ParentDUNS** | Parent DUNS | String | D-U-N-S Number of the immediate parent organization. | LUD |  | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/DUNSHierarchy/attributes/ParentDUNS |
+| **DUNSHierarchy.GlobalUltimateDUNS** | Global Ultimate DUNS | String | D-U-N-S Number of the global ultimate parent. | LUD |  | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/DUNSHierarchy/attributes/GlobalUltimateDUNS |
+| **DUNSHierarchy.HierarchyLevel** | Hierarchy Level | String | Level of the organization within the corporate hierarchy. | LUD |  | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/DUNSHierarchy/attributes/HierarchyLevel |
+| **Address** | Address | Reference | Address of the Organization | Aggregation |  | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Address |
+| **Address.AddressType** | (referenced attribute) | → ref | Surfaced from OrganizationHasAddress:AddressType |  |  |  |  |  |  |  |  | configuration/relationTypes/OrganizationHasAddress/attributes/AddressType |
+| **Address.AddressRank** | (referenced attribute) | → ref | Surfaced from OrganizationHasAddress:AddressRank |  |  |  |  |  |  |  |  | configuration/relationTypes/OrganizationHasAddress/attributes/AddressRank |
+| **Address.CareOf** | (referenced attribute) | → ref | Surfaced from OrganizationHasAddress:CareOf |  |  |  |  |  |  |  |  | configuration/relationTypes/OrganizationHasAddress/attributes/CareOf |
+| **Address.Active** | (referenced attribute) | → ref | Surfaced from OrganizationHasAddress:Active |  |  |  |  |  |  |  |  | configuration/relationTypes/OrganizationHasAddress/attributes/Active |
+| **Address.AddressInput** | (referenced attribute) | → ref | Surfaced from Location:AddressInput |  |  |  |  |  |  |  |  | configuration/entityTypes/Location/attributes/AddressInput |
+| **Address.AddressLine1** | (referenced attribute) | → ref | Surfaced from Location:AddressLine1 |  |  |  |  |  |  |  |  | configuration/entityTypes/Location/attributes/AddressLine1 |
+| **Address.AddressLine2** | (referenced attribute) | → ref | Surfaced from Location:AddressLine2 |  |  |  |  |  |  |  |  | configuration/entityTypes/Location/attributes/AddressLine2 |
+| **Address.City** | (referenced attribute) | → ref | Surfaced from Location:City |  |  |  |  |  |  |  |  | configuration/entityTypes/Location/attributes/City |
+| **Address.StateProvince** | (referenced attribute) | → ref | Surfaced from Location:StateProvince |  |  |  |  |  |  |  |  | configuration/entityTypes/Location/attributes/StateProvince |
+| **Address.PostalCode** | (referenced attribute) | → ref | Surfaced from Location:PostalCode |  |  |  |  |  |  |  |  | configuration/entityTypes/Location/attributes/PostalCode |
+| **Address.Country** | (referenced attribute) | → ref | Surfaced from Location:Country |  |  |  |  |  |  |  |  | configuration/entityTypes/Location/attributes/Country |
+| **Address.GeoLocation** | (referenced attribute) | → ref | Surfaced from Location:GeoLocation |  |  |  |  |  |  |  |  | configuration/entityTypes/Location/attributes/GeoLocation |
+| **Address.POBox** | (referenced attribute) | → ref | Surfaced from Location:POBox |  |  |  |  |  |  |  |  | configuration/entityTypes/Location/attributes/POBox |
+| **Address.VerificationStatus** | (referenced attribute) | → ref | Surfaced from Location:VerificationStatus |  |  |  |  |  |  |  |  | configuration/entityTypes/Location/attributes/VerificationStatus |
 
 > **Note:** On the table above, the top level attributes are represented in bold.
 
@@ -91161,7 +91294,27 @@ The Warranty entity type contains a warranty or service plan covering a product 
 
 This table identifies the properties for the Warranty entity type specified in the SAP Reltio's velocity pack for Retail configuration and lists the attributes preconfigured in the order they appear in the Data Modeler.
 
-*[Embedded content: https://docs.google.com/spreadsheets/d/e/2PACX-1vRRqY1Fib-4oXg4ISsXr5vMmb3wyxCx3pdpEUR9Q4Fc3LxDUDRZoIBUmJk4YGI4Z79p_ywD-U0VZ_pD/pubhtml?gid=1454134854&single=true&widget=true&headers=false&chrome=false]*
+**Warranty**
+- **URI:** configuration/entityTypes/Warranty
+- **Label:** Warranty
+- **Description:** Warranty or service plan covering a product owned by a customer. Supports warranty registration, claims, and service.
+- **Abstract:** false
+- **Data Label Pattern:** {WarrantyType} ({WarrantyId})
+
+
+| Name | Label | Type | Description | Survivorship | Match Fields (nested) | Hidden | Important | System | Searchable | Faceted | Lookup Code | URI |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **WarrantyId** | Warranty ID | String | Unique identifier of the warranty. | SRC_SYS (source order: Reltio > SAP > DnB > Salesforce > ERP > GLEIF > GS1 > GDSN > RegulatorPortal > Amazon > Walmart) |  | false | false | false | false | false |  | configuration/entityTypes/Warranty/attributes/WarrantyId |
+| **WarrantyType** | Warranty Type | String | Type of warranty (manufacturer, extended, accidental). | LUD |  | false | false | false | false | false | rdm/lookupTypes/WarrantyTypes | configuration/entityTypes/Warranty/attributes/WarrantyType |
+| **Status** | Status | String | Current status of the warranty. | LUD |  | false | false | false | false | false | rdm/lookupTypes/Statuses | configuration/entityTypes/Warranty/attributes/Status |
+| **CoverageType** | Coverage Type | String | What the warranty covers (parts, labor, parts and labor). | LUD |  | false | false | false | false | false |  | configuration/entityTypes/Warranty/attributes/CoverageType |
+| **Provider** | Provider | String | Party providing the warranty (manufacturer, retailer, third party). | LUD |  | false | false | false | false | false |  | configuration/entityTypes/Warranty/attributes/Provider |
+| **SerialNumber** | Serial Number | String | Serial number of the covered item. | LUD |  | false | false | false | false | false |  | configuration/entityTypes/Warranty/attributes/SerialNumber |
+| **StartDate** | Start Date | Date | Warranty start date. | LUD |  | false | false | false | false | false |  | configuration/entityTypes/Warranty/attributes/StartDate |
+| **EndDate** | End Date | Date | Warranty end date. | LUD |  | false | false | false | false | false |  | configuration/entityTypes/Warranty/attributes/EndDate |
+| **DurationMonths** | Duration (Months) | Int | Warranty duration in months. | LUD |  | false | false | false | false | false |  | configuration/entityTypes/Warranty/attributes/DurationMonths |
+| **RegistrationDate** | Registration Date | Date | Date the warranty was registered. | LUD |  | false | false | false | false | false |  | configuration/entityTypes/Warranty/attributes/RegistrationDate |
+| **TermsURL** | Terms URL | String | URL of the warranty terms and conditions. | LUD |  | false | false | false | false | false |  | configuration/entityTypes/Warranty/attributes/TermsURL |
 
 > **Note:** On the table above, the top level attributes are represented in bold.
 
@@ -91247,7 +91400,29 @@ Relationship types contain metadata properties and attributes that define the co
 
 This table identifies the preconfigured Category to Category relationship type that comes with the SAP Reltio's velocity pack for Retail. Use this relationship type when you want to identify connections between two ProductCategory entity types.
 
-*[Embedded content: https://docs.google.com/spreadsheets/d/e/2PACX-1vRRqY1Fib-4oXg4ISsXr5vMmb3wyxCx3pdpEUR9Q4Fc3LxDUDRZoIBUmJk4YGI4Z79p_ywD-U0VZ_pD/pubhtml?gid=2019403819&single=true&widget=true&headers=false&chrome=false]*
+**Category to Category**
+- **URI:** configuration/relationTypes/CategorytoCategory
+- **Label:** Category to Category
+- **Description:** Self-referential ProductCategory relationship establishing the parent-child merchandise hierarchy. Effective dating preserves historical reporting through a reclassification.
+- **Type:** 
+- **Direction:** 
+- **Implicit:** false
+- **Start Object:** ProductCategory
+- **Start Label:** CategoryHasCategory
+- **End Object:** ProductCategory
+- **End Label:** ProductCategory
+
+
+| Name | Label | Type | Description | Survivorship | Match Fields (nested) | Hidden | Important | System | Searchable | Faceted | Lookup Code | URI |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **CategoryID** | Category ID | String | Identifier of the child category. | LUD |  | false | false | false | false | false |  | configuration/relationTypes/CategorytoCategory/attributes/CategoryID |
+| **CategoryName** | Category Name | String | Name of the child category. | LUD |  | false | false | false | false | false |  | configuration/relationTypes/CategorytoCategory/attributes/CategoryName |
+| **Description** | Description | String | Description of the link. | LUD |  | false | false | false | false | false |  | configuration/relationTypes/CategorytoCategory/attributes/Description |
+| **ParentCategoryID** | Parent Category ID | String | Identifier of the parent category. | LUD |  | false | false | false | false | false |  | configuration/relationTypes/CategorytoCategory/attributes/ParentCategoryID |
+| **HierarchyLevel** | Hierarchy Level | String | Depth of the child node within the hierarchy. | LUD |  | false | false | false | false | false |  | configuration/relationTypes/CategorytoCategory/attributes/HierarchyLevel |
+| **IsActive** | Is Active | String | Whether the link is currently in effect. | LUD |  | false | false | false | false | false |  | configuration/relationTypes/CategorytoCategory/attributes/IsActive |
+| **StartDate** | Start Date | Timestamp | Start of the link validity. | LUD |  | false | false | false | false | false |  | configuration/relationTypes/CategorytoCategory/attributes/StartDate |
+| **EndDate** | End Date | Timestamp | End of the link validity. | LUD |  | false | false | false | false | false |  | configuration/relationTypes/CategorytoCategory/attributes/EndDate |
 
 > **Note:** On the table above, the top level attributes are represented in bold.
 
@@ -91269,7 +91444,29 @@ Relationship types contain metadata properties and attributes that define the co
 
 This table identifies the preconfigured Category to Product relationship type that comes with the SAP Reltio's velocity pack for Retail. Use this relationship type when you want to identify connections between ProductCategory and Product entity types.
 
-*[Embedded content: https://docs.google.com/spreadsheets/d/e/2PACX-1vRRqY1Fib-4oXg4ISsXr5vMmb3wyxCx3pdpEUR9Q4Fc3LxDUDRZoIBUmJk4YGI4Z79p_ywD-U0VZ_pD/pubhtml?gid=392808963&single=true&widget=true&headers=false&chrome=false]*
+**Category to Product**
+- **URI:** configuration/relationTypes/CategorytoProduct
+- **Label:** Category to Product
+- **Description:** Assigns an article to a merchandise category. CategoryPath carries the resolved hierarchy path for reporting. Maps to SAP MARA-MATKL.
+- **Type:** 
+- **Direction:** 
+- **Implicit:** false
+- **Start Object:** ProductCategory
+- **Start Label:** CategorytoProduct
+- **End Object:** Product
+- **End Label:** Product
+
+
+| Name | Label | Type | Description | Survivorship | Match Fields (nested) | Hidden | Important | System | Searchable | Faceted | Lookup Code | URI |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **ProductID** | Product ID | String | Identifier of the assigned product. | LUD |  | false | false | false | false | false |  | configuration/relationTypes/CategorytoProduct/attributes/ProductID |
+| **ProductName** | Product Name | String | Name of the assigned product. | LUD |  | false | false | false | false | false |  | configuration/relationTypes/CategorytoProduct/attributes/ProductName |
+| **ProductSKU** | Product SKU | String | SKU of the assigned product. | LUD |  | false | false | false | false | false |  | configuration/relationTypes/CategorytoProduct/attributes/ProductSKU |
+| **CategoryID** | Category ID | String | Identifier of the category. | LUD |  | false | false | false | false | false |  | configuration/relationTypes/CategorytoProduct/attributes/CategoryID |
+| **CategoryName** | Category Name | String | Name of the category. | LUD |  | false | false | false | false | false |  | configuration/relationTypes/CategorytoProduct/attributes/CategoryName |
+| **CategoryPath** | Category Path | String | Full path from the top of the hierarchy down to this category. | LUD |  | false | false | false | false | false |  | configuration/relationTypes/CategorytoProduct/attributes/CategoryPath |
+| **StartDate** | Start Date | Timestamp | Start of the assignment validity. | LUD |  | false | false | false | false | false |  | configuration/relationTypes/CategorytoProduct/attributes/StartDate |
+| **EndDate** | End Date | Timestamp | End of the assignment validity. | LUD |  | false | false | false | false | false |  | configuration/relationTypes/CategorytoProduct/attributes/EndDate |
 
 > **Note:** On the table above, the top level attributes are represented in bold.
 
@@ -91509,7 +91706,38 @@ Relationship types contain metadata properties and attributes that define the co
 
 This table identifies the preconfigured Individual Enrolled In Loyalty Program relationship type that comes with the SAP Reltio's velocity pack for Retail. Use this relationship type when you want to identify connections between Individual and LoyaltyProgram entity types.
 
-*[Embedded content: https://docs.google.com/spreadsheets/d/e/2PACX-1vRRqY1Fib-4oXg4ISsXr5vMmb3wyxCx3pdpEUR9Q4Fc3LxDUDRZoIBUmJk4YGI4Z79p_ywD-U0VZ_pD/pubhtml?gid=1076593441&single=true&widget=true&headers=false&chrome=false]*
+**IndividualEnrolledInLoyaltyProgram**
+- **URI:** configuration/relationTypes/IndividualEnrolledInLoyaltyProgram
+- **Label:** Individual Enrolled In Loyalty Program
+- **Description:** Relationship: Individual Enrolled In Loyalty Program.
+- **Type:** 
+- **Direction:** 
+- **Implicit:** false
+- **Start Object:** Individual
+- **Start Label:** member
+- **End Object:** LoyaltyProgram
+- **End Label:** program
+
+
+| Name | Label | Type | Description | Survivorship | Match Fields (nested) | Hidden | Important | System | Searchable | Faceted | Lookup Code | URI |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **MembershipNumber** | Membership Number | String | Loyalty membership number. | LUD |  | false | false | false | true | false |  | configuration/relationTypes/IndividualEnrolledInLoyaltyProgram/attributes/MembershipNumber |
+| **MemberStatus** | Member Status | String | Membership status within the loyalty program. | LUD |  | false | false | false | false | false |  | configuration/relationTypes/IndividualEnrolledInLoyaltyProgram/attributes/MemberStatus |
+| **CurrentTier** | Current Tier | String | Member's current loyalty tier. | LUD |  | false | false | false | false | false | rdm/lookupTypes/LoyaltyTiers | configuration/relationTypes/IndividualEnrolledInLoyaltyProgram/attributes/CurrentTier |
+| **PointsBalance** | Points Balance | Int | Current redeemable points balance. | LUD |  | false | false | false | false | false |  | configuration/relationTypes/IndividualEnrolledInLoyaltyProgram/attributes/PointsBalance |
+| **LifetimePoints** | Lifetime Points | Int | Total points earned over the membership lifetime. | LUD |  | false | false | false | false | false |  | configuration/relationTypes/IndividualEnrolledInLoyaltyProgram/attributes/LifetimePoints |
+| **LifetimeSpend** | Lifetime Spend | Number | Total spend over the membership lifetime. | LUD |  | false | false | false | false | false |  | configuration/relationTypes/IndividualEnrolledInLoyaltyProgram/attributes/LifetimeSpend |
+| **LifetimeSpendCurrency** | LifetimeSpend Currency | String | Currency of LifetimeSpend. |  |  | false | false | false | false | false | rdm/lookupTypes/Currencies | configuration/relationTypes/IndividualEnrolledInLoyaltyProgram/attributes/LifetimeSpendCurrency |
+| **TransactionCount** | Transaction Count | Int | Number of transactions recorded. | LUD |  | false | false | false | false | false |  | configuration/relationTypes/IndividualEnrolledInLoyaltyProgram/attributes/TransactionCount |
+| **EnrollmentDate** | Enrollment Date | Date | Date the member enrolled. | LUD |  | false | false | false | false | false |  | configuration/relationTypes/IndividualEnrolledInLoyaltyProgram/attributes/EnrollmentDate |
+| **EnrollmentChannel** | Enrollment Channel | String | Channel the member enrolled through. | LUD |  | false | false | false | false | false |  | configuration/relationTypes/IndividualEnrolledInLoyaltyProgram/attributes/EnrollmentChannel |
+| **LastActivityDate** | Last Activity Date | Date | Date of the member's most recent activity. | LUD |  | false | false | false | false | false |  | configuration/relationTypes/IndividualEnrolledInLoyaltyProgram/attributes/LastActivityDate |
+| **LoyaltyCard** | Loyalty Card | Nested | Physical or digital loyalty card issued to the member. | Aggregation | matchFields: Number, Type \| matchOvOnly: true \| dataLabelPattern: [{Number} - ][{Status}] | false | false | false | true | true |  | configuration/relationTypes/IndividualEnrolledInLoyaltyProgram/attributes/LoyaltyCard |
+| **LoyaltyCard.Number** | Card Number | String | Card number. | Aggregation |  | false | false | false | false | false |  | configuration/relationTypes/IndividualEnrolledInLoyaltyProgram/attributes/LoyaltyCard/attributes/Number |
+| **LoyaltyCard.Type** | Card Type | String | Type or category. | Aggregation |  | false | false | false | false | false |  | configuration/relationTypes/IndividualEnrolledInLoyaltyProgram/attributes/LoyaltyCard/attributes/Type |
+| **LoyaltyCard.Status** | Card Status | String | Card Status. | Aggregation |  | false | false | false | false | false | rdm/lookupTypes/Statuses | configuration/relationTypes/IndividualEnrolledInLoyaltyProgram/attributes/LoyaltyCard/attributes/Status |
+| **LoyaltyCard.IssueDate** | Issue Date | Date | Date the card was issued. | Aggregation |  | false | false | false | false | false |  | configuration/relationTypes/IndividualEnrolledInLoyaltyProgram/attributes/LoyaltyCard/attributes/IssueDate |
+| **LoyaltyCard.ExpiryDate** | Expiry Date | Date | Card expiry date. | Aggregation |  | false | false | false | false | false |  | configuration/relationTypes/IndividualEnrolledInLoyaltyProgram/attributes/LoyaltyCard/attributes/ExpiryDate |
 
 > **Note:** On the table above, the top level attributes are represented in bold.
 
@@ -91950,7 +92178,17 @@ Relationship types contain metadata properties and attributes that define the co
 
 This table identifies the preconfigured Product Governed By Regulatory Document relationship type that comes with the SAP Reltio's velocity pack for Retail. Use this relationship type when you want to identify connections between Product and RegulatoryDocument entity types.
 
-*[Embedded content: https://docs.google.com/spreadsheets/d/e/2PACX-1vRRqY1Fib-4oXg4ISsXr5vMmb3wyxCx3pdpEUR9Q4Fc3LxDUDRZoIBUmJk4YGI4Z79p_ywD-U0VZ_pD/pubhtml?gid=1518924676&single=true&widget=true&headers=false&chrome=false]*
+**Product Governed By Regulatory Document**
+- **URI:** configuration/relationTypes/ProductGovernedByRegulatoryDocument
+- **Label:** Product Governed By Regulatory Document
+- **Description:** Relationship: Product Governed By Regulatory Document.
+- **Type:** 
+- **Direction:** 
+- **Implicit:** false
+- **Start Object:** Product
+- **Start Label:** product
+- **End Object:** RegulatoryDocument
+- **End Label:** regulation
 
 > **Note:** On the table above, the top level attributes are represented in bold.
 
@@ -92048,7 +92286,23 @@ Relationship types contain metadata properties and attributes that define the co
 
 This table identifies the preconfigured Promotion Applies To Product relationship type that comes with the SAP Reltio's velocity pack for Retail. Use this relationship type when you want to identify connections between Promotion and Product entity types.
 
-*[Embedded content: https://docs.google.com/spreadsheets/d/e/2PACX-1vRRqY1Fib-4oXg4ISsXr5vMmb3wyxCx3pdpEUR9Q4Fc3LxDUDRZoIBUmJk4YGI4Z79p_ywD-U0VZ_pD/pubhtml?gid=118586203&single=true&widget=true&headers=false&chrome=false]*
+**Promotion Applies To Product**
+- **URI:** configuration/relationTypes/PromotionAppliesToProduct
+- **Label:** Promotion Applies To Product
+- **Description:** Relationship: Promotion Applies To Product.
+- **Type:** 
+- **Direction:** 
+- **Implicit:** false
+- **Start Object:** Promotion
+- **Start Label:** promotion
+- **End Object:** Product
+- **End Label:** product
+
+
+| Name | Label | Type | Description | Survivorship | Match Fields (nested) | Hidden | Important | System | Searchable | Faceted | Lookup Code | URI |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **Priority** | Priority | Int | Apply/display priority when multiple promotions match this product. | LUD |  | false | false | false | false | false |  | configuration/relationTypes/PromotionAppliesToProduct/attributes/Priority |
+| **IsFeaturedProduct** | Is Featured Product | Boolean | Whether this product is featured in the promotion. | LUD |  | false | false | false | false | false |  | configuration/relationTypes/PromotionAppliesToProduct/attributes/IsFeaturedProduct |
 
 > **Note:** On the table above, the top level attributes are represented in bold.
 
@@ -92140,7 +92394,30 @@ Relationship types contain metadata properties and attributes that define the co
 
 This table identifies the preconfigured Store Stocks Product relationship type that comes with the SAP Reltio's velocity pack for Retail. Use this relationship type when you want to identify connections between Store and Product entity types.
 
-*[Embedded content: https://docs.google.com/spreadsheets/d/e/2PACX-1vRRqY1Fib-4oXg4ISsXr5vMmb3wyxCx3pdpEUR9Q4Fc3LxDUDRZoIBUmJk4YGI4Z79p_ywD-U0VZ_pD/pubhtml?gid=913543618&single=true&widget=true&headers=false&chrome=false]*
+**Store Stocks Product**
+- **URI:** configuration/relationTypes/StoreStocksProduct
+- **Label:** Store Stocks Product
+- **Description:** Relationship: Store Stocks Product.
+- **Type:** 
+- **Direction:** 
+- **Implicit:** false
+- **Start Object:** Store
+- **Start Label:** store
+- **End Object:** Product
+- **End Label:** product
+
+
+| Name | Label | Type | Description | Survivorship | Match Fields (nested) | Hidden | Important | System | Searchable | Faceted | Lookup Code | URI |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **ListingStatus** | Listing Status | String | Listing Status. | LUD |  | false | false | false | false | false |  | configuration/relationTypes/StoreStocksProduct/attributes/ListingStatus |
+| **ListingStartDate** | Listing Start Date | Date | Listing Start Date. | LUD |  | false | false | false | false | false |  | configuration/relationTypes/StoreStocksProduct/attributes/ListingStartDate |
+| **ListingEndDate** | Listing End Date | Date | Listing End Date. | LUD |  | false | false | false | false | false |  | configuration/relationTypes/StoreStocksProduct/attributes/ListingEndDate |
+| **ReorderPoint** | Reorder Point (units) | Int | Reorder Point (units). | LUD |  | false | false | false | false | false |  | configuration/relationTypes/StoreStocksProduct/attributes/ReorderPoint |
+| **SafetyStockQty** | Safety Stock Quantity | Int | Safety Stock Quantity. | LUD |  | false | false | false | false | false |  | configuration/relationTypes/StoreStocksProduct/attributes/SafetyStockQty |
+| **MinOrderQty** | Minimum Order Quantity | Int | Minimum Order Quantity. | LUD |  | false | false | false | false | false |  | configuration/relationTypes/StoreStocksProduct/attributes/MinOrderQty |
+| **AssortmentGrade** | Assortment Grade | String | Assortment grade separating core range from tail at this site. | LUD |  | false | false | false | false | false | rdm/lookupTypes/AssortmentGrades | configuration/relationTypes/StoreStocksProduct/attributes/AssortmentGrade |
+| **MRPType** | MRP Type | String | Planning type driving replenishment for this article at this site. | LUD |  | false | false | false | false | false | rdm/lookupTypes/MRPTypes | configuration/relationTypes/StoreStocksProduct/attributes/MRPType |
+| **GRProcessingDays** | GR Processing Days | Int | Days added to lead time for inbound goods receipt processing at this site. | LUD |  | false | false | false | false | false |  | configuration/relationTypes/StoreStocksProduct/attributes/GRProcessingDays |
 
 > **Note:** On the table above, the top level attributes are represented in bold.
 
@@ -97491,17 +97768,17 @@ Get a high-level view of Reltio Intelligent 360.
 
 Take it from the top with Reltio Intelligent 360TM. Get the overview here, then see the sub topics in this section to drill down to the details.
 
-## What is Reltio Intelligent 360
+## What is Reltio Intelligent 360?
 
 Reltio Intelligent 360 is an AI-powered product offering that unifies, enriches, segments, and mobilizes comprehensive, ready-to-consume 360-degree views in real time. It captures interactions and derived attributes for individuals and organizations, and it provides Reltio Intelligent Assistant (RIA) for data exploration in addition to the core capabilities of Reltio Multidomain MDM and Reltio Entity Resolution products.
 
-## Who is Reltio Intelligent 360
+## Who is Reltio Intelligent 360 for?
 
 This content is curated for these Reltio user roles defined in topic [About roles](https://docs.reltio.com/en/roles/about-roles?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs):
 
 Business UserData Product OwnerData StewardDeveloperReltio ConfiguratorSolution ArchitectSystem Administrator
 
-## Why would I use Reltio Intelligent 360
+## Why would I use Reltio Intelligent 360?
 
 Reltio Intelligent 360 gives you genAI-powered 360 views of customer data in real time:
 
@@ -97515,15 +97792,15 @@ Reltio Intelligent 360 gives you genAI-powered 360 views of customer data in rea
 
   With genAI-powered capabilities as part of its cloud-native SaaS platform, it accelerates data unification for enterprise-wide use cases.
 
-## When would I use Reltio Intelligent 360
+## When would I use Reltio Intelligent 360?
 
 Use Reltio Intelligent 360 if you need additional capabilities that Reltio Multidomain MDM can't provide. If you need to create segments in your data to strategize marketing campaigns, need an intelligent assistant like RIA, or even manage interactions, you should use Reltio Intelligent 360.
 
 Reltio Intelligent 360 is a product that can help you during the whole process of unifying data.
 
-## Where do I find Reltio Intelligent 360
+## Where do I find Reltio Intelligent 360?
 
-Reltio Intelligent 360 is provisioned on your tenants. For more information on accessing reltio tenants, see topic [Sign in to](https://docs.reltio.com/en/applications/reltio-context-intelligence-platform/sign-in-to-reltio-context-intelligence-platform?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+Reltio Intelligent 360 is provisioned on your tenants. For more information on accessing reltio tenants, see topic [Sign in to Reltio Context Intelligence Platform](https://docs.reltio.com/en/applications/reltio-context-intelligence-platform/sign-in-to-reltio-context-intelligence-platform?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
@@ -97629,7 +97906,7 @@ Get a high-level view of Reltio Context Intelligence Platform.
 
 Take it from the top with the Reltio Context Intelligence Platform platform. Get the overview here, then see the sub topics in this section to drill down to the details.
 
-## What is Reltio Context Intelligence Platform
+## What is Reltio Context Intelligence Platform?
 
 The Reltio Context Intelligence Platform ™ is a cloud-native platform that delivers the trusted context needed for AI and digital transformation. It connects enterprise data, relationships, interactions, and business meaning into a unified system of context so teams, applications, and AI agents can work from a more complete and consistent view of the business. By combining data unification, context enrichment, and governed real-time activation, the platform helps organizations improve decision-making, support intelligent operations, and scale AI initiatives with confidence.
 
@@ -97647,13 +97924,13 @@ A genAI-powered, cloud-native SaaS platform that provides best source of truth f
 
 An AI-powered product that uniquely identifies customers or other entities. It uses Large Language Model (LLM) based on Flexible Entity Resolution Network (FERN) models to identify and match records that refer to the same entity across different data sources.
 
-## Who is Reltio Context Intelligence Platform
+## Who is Reltio Context Intelligence Platform for?
 
 This content is curated for these Reltio user roles defined in topic [About roles](https://docs.reltio.com/en/roles/about-roles?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs):
 
 Business UserData Product OwnerData StewardDeveloperReltio ConfiguratorSolution ArchitectSystem Administrator
 
-## Why would I use Reltio Context Intelligence Platform
+## Why would I use Reltio Context Intelligence Platform?
 
 Reltio Context Intelligence Platform provides unmatched business responsiveness, driven by a mission to deliver unified, interoperable data that enterprises can trust.
 
@@ -97667,11 +97944,11 @@ Reltio Context Intelligence Platform provides unmatched business responsiveness,
 
   Unified data that will help you increase efficiency, manage risk, and drive growth
 
-## When would I use Reltio Context Intelligence Platform
+## When would I use Reltio Context Intelligence Platform?
 
 Use Reltio Context Intelligence Platform when you want to unify and manage your organization's master data. For more information, see topic [Data unification and MDM at a glance](https://docs.reltio.com/en/reltio/what-reltio-does-at-a-glance/data-unification-and-mdm-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
-## Where do I find Reltio Context Intelligence Platform
+## Where do I find Reltio Context Intelligence Platform?
 
 If you're here in the Reltio Documentation Portal, you may already have Reltio Context Intelligence Platform. If not, find out more about the platform and how we can implement it for you at [https://www.reltio.com/](https://www.reltio.com/).
 
@@ -97700,16 +97977,16 @@ The following roles use Automated bulk extraction:
 Automated Bulk Extraction combines the following configurations:
 
 - An[extraction template](https://docs.reltio.com/en/products/autonomous-agents/unstructured-augmentation-overview/unstructured-extraction-overview/create-and-publish-an-extraction-template?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) defines what information to extract and how the extracted data maps to Reltio entities and attributes.
-- A [document source](https://docs.reltio.com/en/products/autonomous-agents/unstructured-augmentation-overview/configure-document-sources-for-unstructured-augmentation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) connects  to the cloud storage location that contains the files to process.
+- A [document source](https://docs.reltio.com/en/products/autonomous-agents/unstructured-augmentation-overview/configure-document-sources-for-unstructured-augmentation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) connects Unstructured augmentation to the cloud storage location that contains the files to process.
 - A [pipeline](https://docs.reltio.com/en/products/autonomous-agents/unstructured-augmentation-overview/unstructured-extraction-overview/set-up-automated-pipelines?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) combines a published extraction template and a document source. It also defines the crosswalk source and an optional schedule for pipeline runs. In addition, it determines whether to create a data change request before publishing the extracted data to Reltio.
 
-For the complete processing sequence and diagram, see [workflow](https://docs.reltio.com/en/products/autonomous-agents/unstructured-augmentation-overview/unstructured-augmentation-workflow?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+For the complete processing sequence and diagram, see [Unstructured augmentation workflow](https://docs.reltio.com/en/products/autonomous-agents/unstructured-augmentation-overview/unstructured-augmentation-workflow?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
 ---
 
-# overview
+# Unstructured extraction overview
 
 > **Section:** Products > Autonomous agents > Unstructured augmentation overview
 
@@ -97719,11 +97996,11 @@ For the complete processing sequence and diagram, see [workflow](https://docs.re
 **Keywords:** Document AI, AgentFlow Unstructured document extraction, extract document data into Reltio, automated bulk extraction
 
 
-Learn about  and how it extracts and maps information from documents to Reltio data.
+Learn about Unstructured extraction and how it extracts and maps information from documents to Reltio data.
 
-is a capability in  that converts information from documents into structured Reltio data. It extracts entities, attributes, and relationships, maps them to your tenant data model, and lets you review the results before using them in downstream processes.
+Unstructured extraction is a capability in Unstructured augmentation that converts information from documents into structured Reltio data. It extracts entities, attributes, and relationships, maps them to your tenant data model, and lets you review the results before using them in downstream processes.
 
-The following roles use :
+The following roles use Unstructured extraction:
 
 - 
 
@@ -97740,36 +98017,36 @@ The following roles use :
 
 For role definitions, see [About roles](https://docs.reltio.com/en/roles/about-roles?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
-## How works
+## How Unstructured extraction works
 
-processes PDF, DOC, DOCX, PPTX, HTML, RTF, TXT, JPEG, and PNG files. It analyzes a document and extracts information identified by an extraction template or by the One time upload workflow. It maps the extracted information to Reltio entities, attributes, and relationships.
+Unstructured extraction processes PDF, DOC, DOCX, PPTX, HTML, RTF, TXT, JPEG, and PNG files. It analyzes a document and extracts information identified by an extraction template or by the One time upload workflow. It maps the extracted information to Reltio entities, attributes, and relationships.
 
 You can review the source document, extracted JSON, and field mappings before using the output in Reltio. This review helps you identify incorrect or incomplete values and correct their mappings before the information is published according to the selected workflow.
 
 **OCR Support**
 
-uses optical character recognition (OCR) to extract text from scanned, handwritten, image-based, PDFs and from JPEG and PNG image files.
+Unstructured extraction uses optical character recognition (OCR) to extract text from scanned, handwritten, image-based, PDFs and from JPEG and PNG image files.
 
-During extraction-template creation,  analyzes the uploaded sample document and recommends OCR when the document contains scanned text or images.
+During extraction-template creation, Unstructured extraction analyzes the uploaded sample document and recommends OCR when the document contains scanned text or images.
 
-You can accept the recommendation or override it by turning the **Use OCR for scanned/handwritten documents toggle** toggle on or off when you upload the sample document.  saves the selected OCR setting with the extraction template and applies it when automated pipelines process documents with that template.
+You can accept the recommendation or override it by turning the **Use OCR for scanned/handwritten documents toggle** toggle on or off when you upload the sample document. Unstructured extraction saves the selected OCR setting with the extraction template and applies it when automated pipelines process documents with that template.
 
-## workflows
+## Unstructured extraction workflows
 
-supports the following workflows:
+Unstructured extraction supports the following workflows:
 
 - 
 
-  **One time upload:** Upload and process a single document without first creating an extraction template or pipeline.  extracts its information and maps it to the selected Reltio tenant.
+  **One time upload:** Upload and process a single document without first creating an extraction template or pipeline. Unstructured extraction extracts its information and maps it to the selected Reltio tenant.
 - 
 
   **Automated bulk extraction:** Use a published extraction template, configured document source, and pipeline to process multiple documents manually or on a schedule.
 
-For more information, see [workflow](https://docs.reltio.com/en/products/autonomous-agents/unstructured-augmentation-overview/unstructured-augmentation-workflow?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+For more information, see [Unstructured augmentation workflow](https://docs.reltio.com/en/products/autonomous-agents/unstructured-augmentation-overview/unstructured-augmentation-workflow?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
-## When to use
+## When to use Unstructured extraction
 
-Use  when information stored in documents needs to become structured Reltio data. Common uses include:
+Use Unstructured extraction when information stored in documents needs to become structured Reltio data. Common uses include:
 
 - 
 
@@ -97788,7 +98065,7 @@ Use  when information stored in documents needs to become structured Reltio data
 
 ---
 
-# overview
+# Unstructured search overview
 
 > **Section:** Products > Autonomous agents > Unstructured augmentation overview
 
@@ -97798,11 +98075,11 @@ Use  when information stored in documents needs to become structured Reltio data
 **Keywords:** Knowledge AI, AgentFlow Unstructured knowledge base, search unstructured documents, grounded answers from documents, knowledge bases in Agent Builder
 
 
-Learn about  and how it turns unstructured documents into searchable context for .
+Learn about Unstructured search and how it turns unstructured documents into searchable context for autonomous agents.
 
-is a capability in  that turns enterprise documents into searchable knowledge bases. A knowledge base contains document content that has been processed and indexed for search, making it accessible to AI agents. When you ask a question through an agent,  retrieves relevant document sections from the knowledge base and uses them to generate an answer based on the source documents.
+Unstructured search is a capability in Unstructured augmentation that turns enterprise documents into searchable knowledge bases. A knowledge base contains document content that has been processed and indexed for search, making it accessible to AI agents. When you ask a question through an agent, Unstructured search retrieves relevant document sections from the knowledge base and uses them to generate an answer based on the source documents.
 
-The following roles use :
+The following roles use Unstructured search:
 
 - 
 
@@ -97822,15 +98099,18 @@ The following roles use :
 
 For role definitions, see [About roles](https://docs.reltio.com/en/roles/about-roles?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
-## How works
+## How Unstructured search works
 
-creates a search index over documents from a configured source. Supported sources include Amazon S3, Google Cloud Storage, and Google Drive.
+Unstructured search creates a search index over documents from a configured source. Supported sources include Amazon S3, Google Cloud Storage, and Google Drive.
 
-When you ask a question,  retrieves relevant document sections, called chunks. It passes these chunks to Reltio-provided AI models to generate an answer grounded in your organizational knowledge.
+When you ask a question, Unstructured search retrieves relevant document sections, called chunks. It passes these chunks to Reltio-provided AI models to generate an answer grounded in your organizational knowledge.
 
 Before indexing the full document source, you can evaluate the retrieval configuration with a sample document. In the test playground, you can ask questions, review answers and retrieved chunks, and confirm that the configuration returns relevant content. You can then apply the configuration to the complete source and create the knowledge base index.
 
-## Key concepts
+> **Important:** Content you ingest into a knowledge base may contain sensitive and personal data. Unstructured search parses the content, splits it into chunks, creates vector embeddings, and stores the chunks and embeddings for retrieval.
+> Unstructured search does not automatically detect or remove sensitive or personal data during ingestion. Ensure that you have the legal right to process the data, and remove or mask information you do not want to be retrievable. Retrieved content may appear in responses generated for users who have access to the knowledge base.
+
+## Key Unstructured search concepts
 
 **Source**
 
@@ -97838,15 +98118,15 @@ The configured Amazon S3, Google Cloud Storage, or Google Drive location that co
 
 **Retrieval configuration**
 
-The search method and number of results returned for a query.  supports semantic search and hybrid search, which combines semantic and keyword retrieval.
+The search method and number of results returned for a query. Unstructured search supports semantic search and hybrid search, which combines semantic and keyword retrieval.
 
 **Search index**
 
-The stored, searchable representation of the processed document corpus. It contains the information  uses to locate relevant chunks efficiently.
+The stored, searchable representation of the processed document corpus. It contains the information Unstructured search uses to locate relevant chunks efficiently.
 
 **Retrieved chunks**
 
-Sections of document content that  identifies as relevant to a question.  retrieves chunks instead of sending every complete document to an agent for each question.
+Sections of document content that Unstructured search identifies as relevant to a question. Unstructured search retrieves chunks instead of sending every complete document to an agent for each question.
 
 **Test playground**
 
@@ -97856,9 +98136,9 @@ A pane on the **Create knowledge base** page for evaluating retrieval quality ag
 
 The schedule for processing documents from the configured source: Manual, Daily, or Weekly.
 
-## When to use
+## When to use Unstructured search
 
-Use  when users or agents need to answer questions from approved enterprise documents or authoritative knowledge sources of an organization. Common uses include:
+Use Unstructured search when users or agents need to answer questions from approved enterprise documents or authoritative knowledge sources of an organization. Common uses include:
 
 - 
 
@@ -97873,7 +98153,7 @@ Use  when users or agents need to answer questions from approved enterprise docu
 
   Answering questions from product manuals and other operational documents.
 
-When used with ,  also supports data unification scenarios such as:
+When used with custom agents, Unstructured search also supports data unification scenarios such as:
 
 - 
 
@@ -97885,21 +98165,21 @@ When used with ,  also supports data unification scenarios such as:
 
   Using customer or vendor context together with onboarding documents to answer operational questions.
 
-keeps answers grounded in the selected document corpus instead of relying only on general model knowledge.
+Unstructured search keeps answers grounded in the selected document corpus instead of relying only on general model knowledge.
 
-## Knowledge bases in
+## Knowledge bases in Custom agents
 
-can use one or more  knowledge bases. The agent author selects an accessible  tenant and chooses the knowledge bases available in that tenant.
+Custom agents can use one or more Unstructured search knowledge bases. The agent author selects an accessible Unstructured augmentation tenant and chooses the knowledge bases available in that tenant.
 
 During testing and conversations, the agent retrieves relevant document content and uses it to answer questions according to its system prompt and other enabled capabilities.
 
-To get started, see [Add knowledge bases to a custom agent](https://docs.reltio.com/en/products/autonomous-agents/unstructured-augmentation-overview/unstructured-search-overview/add-unstructured-search-knowledge-bases-to-a-custom-agent?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Create, test, and submit an agent for review](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/custom-agents-at-a-glance/create-test-and-submit-an-agent-for-review?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+To get started, see [Add Unstructured search knowledge bases to a custom agent](https://docs.reltio.com/en/products/autonomous-agents/unstructured-augmentation-overview/unstructured-search-overview/add-unstructured-search-knowledge-bases-to-a-custom-agent?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Create, test, and submit an agent for review](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/custom-agents-at-a-glance/create-test-and-submit-an-agent-for-review?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
 ---
 
-# workflow
+# Unstructured augmentation workflow
 
 > **Section:** Products > Autonomous agents > Unstructured augmentation overview
 
@@ -97909,9 +98189,9 @@ To get started, see [Add knowledge bases to a custom agent](https://docs.reltio.
 **Keywords:** unstructured augmentation workflow, document extraction workflow, extraction validation workflow, template preparation workflow, template publishing workflow, document source configuration, pipeline execution review, structured output publishing, document processing pipeline, reltio data workflows
 
 
-Learn about the  and  workflows in .
+Learn about the Unstructured extraction and Unstructured search workflows in Unstructured augmentation.
 
-helps you turn unstructured documents into usable Reltio data or searchable knowledge bases through the following workflows:
+Unstructured augmentation helps you turn unstructured documents into usable Reltio data or searchable knowledge bases through the following workflows:
 
 - 
 
@@ -97921,15 +98201,15 @@ helps you turn unstructured documents into usable Reltio data or searchable know
   **Automated bulk extraction**: Create a reusable extraction template, connect a document source, and set up a pipeline to process multiple files manually or on a schedule.
 - 
 
-  ****: Test retrieval against a sample document, create a searchable knowledge base from a configured source, and make it available to custom agents.
+  **Unstructured search**: Test retrieval against a sample document, create a searchable knowledge base from a configured source, and make it available to custom agents.
 
 For One time upload and Automated bulk extraction, the extracted data becomes available in Reltio for review, matching, and downstream use.
 
-For , documents from the configured source are processed into a search index. The resulting knowledge base becomes available for natural-language questions through custom agents created in .
+For Unstructured search, documents from the configured source are processed into a search index. The resulting knowledge base becomes available for natural-language questions through custom agents created in Custom agents.
 
-## workflows
+## Unstructured extraction workflows
 
-supports two workflows: One-time upload, which processes a single document, and Automated bulk extraction, which processes multiple documents from a configured source manually or on a schedule.
+Unstructured extraction supports two workflows: One-time upload, which processes a single document, and Automated bulk extraction, which processes multiple documents from a configured source manually or on a schedule.
 
 The following diagram describes the workflow for **One time upload**, which processes a single document.
 
@@ -97942,8 +98222,8 @@ The following table explains each stage of the One time upload workflow:
 | Stage | Task | Description |
 | --- | --- | --- |
 | 1 | Document upload | Upload a single document containing the information that you want to extract. |
-| 2 | Data extraction | processes the document and extracts structured information from its content. |
-| 3 | Data mapping | maps the extracted information to the corresponding Reltio entities and attributes in the selected tenant.. |
+| 2 | Data extraction | Unstructured augmentation processes the document and extracts structured information from its content. |
+| 3 | Data mapping | Unstructured augmentation maps the extracted information to the corresponding Reltio entities and attributes in the selected tenant.. |
 | 4 | Output review | Review the extracted and mapped data before it becomes available for matching and downstream use in Reltio. |
 
 The following diagram describes the workflow for **Automated Bulk Extraction**, which processes multiple documents from a configured source manually or on a schedule.
@@ -97956,41 +98236,41 @@ The following table explains each stage of the workflow:
 
 | Stage | Task | Description |
 | --- | --- | --- |
-| 1 | Template creation | The workflow begins with template creation. A template defines what structured data  must extract and how the extracted output maps to Reltio entities and attributes in your data model. You can create templates for specific document types and reuse them across processing runs. For example, create a template for contracts and use it to process a set of contracts that share a similar structure, which supports more consistent and efficient extraction. |
-| 2 | Extraction and validation | As part of template creation,  processes a sample document and generates extracted output for review. You then review the document, examine the extracted JSON, and verify how the extracted fields map to Reltio entities and attributes. This validation stage ensures that the extraction output is complete, accurate, and suitable for repeated use. |
+| 1 | Template creation | The workflow begins with template creation. A template defines what structured data Unstructured augmentation must extract and how the extracted output maps to Reltio entities and attributes in your data model. You can create templates for specific document types and reuse them across processing runs. For example, create a template for contracts and use it to process a set of contracts that share a similar structure, which supports more consistent and efficient extraction. |
+| 2 | Extraction and validation | As part of template creation, Unstructured augmentation processes a sample document and generates extracted output for review. You then review the document, examine the extracted JSON, and verify how the extracted fields map to Reltio entities and attributes. This validation stage ensures that the extraction output is complete, accurate, and suitable for repeated use. |
 | 3 | Publish template | After reviewing the extraction results, publish the template. Publishing makes the template available for use in pipelines, enabling consistent and reliable processing across future document runs of similar type and structure. |
-| 4 | Source configuration | Sources define where  retrieves files for processing. You can configure sources for supported cloud storage services, such as AWS S3 and Google Cloud Storage.  document pipelines use these source definitions to access files for processing. |
+| 4 | Source configuration | Sources define where Unstructured augmentation retrieves files for processing. You can configure sources for supported cloud storage services, such as AWS S3 and Google Cloud Storage. Unstructured augmentation document pipelines use these source definitions to access files for processing. |
 | 5 | Pipeline configuration | A pipeline is configured to use a selected source and a published template to process documents. It allows you to define the following settings:  - Crosswalk source, which defaults to the cloud source -     Whether to create a data change request before publishing extracted data to Reltio, if needed -     The schedule for pipeline runs |
-| 6 | Pipeline execution | When a pipeline is executed,  begins processing documents from the selected source. The system creates a new execution record per run. Each execution captures run-level details, documents processed, including start time, end time, status, and processing outcomes. |
+| 6 | Pipeline execution | When a pipeline is executed, Unstructured augmentation begins processing documents from the selected source. The system creates a new execution record per run. Each execution captures run-level details, documents processed, including start time, end time, status, and processing outcomes. |
 | 7 | Execution review | After a pipeline runs, you can review execution results at both the pipeline level and the document level. Execution views show overall run status, success and failure counts, and the extracted entities associated with processed documents. This helps you confirm outcomes and identify runs that need follow-up. |
-| 8 | Publishing structured output to Reltio | As part of this workflow,  processes extracted and approved data for use in Reltio. Depending on the configured mappings and processing outcome, the results will contribute to entity creation, linkage, and downstream master data workflows. |
+| 8 | Publishing structured output to Reltio | As part of this workflow, Unstructured augmentation processes extracted and approved data for use in Reltio. Depending on the configured mappings and processing outcome, the results will contribute to entity creation, linkage, and downstream master data workflows. |
 
-## workflow
+## Unstructured search workflow
 
-processes documents from a configured source and makes their content searchable through a knowledge base. The following diagram describes the  workflow.
+Unstructured search processes documents from a configured source and makes their content searchable through a knowledge base. The following diagram describes the Unstructured search workflow.
 
 *Image: uds-knowledgeaiworkflow.png*
 
-The following table explains each stage of the  workflow:
+The following table explains each stage of the Unstructured search workflow:
 
-**workflow**
+**Unstructured search workflow**
 
 | Stage | Task | Description |
 | --- | --- | --- |
 | 1 | Source configuration | Configure AWS S3, Google Cloud Storage, or Google Drive as the source containing the documents that you want to make searchable. |
-| 2 | Sample document upload | Upload a representative document from the source content.  uses the sample to prepare the test playground and evaluate the retrieval configuration. |
+| 2 | Sample document upload | Upload a representative document from the source content. Unstructured search uses the sample to prepare the test playground and evaluate the retrieval configuration. |
 | 3 | Retrieval configuration | Use the recommended configuration or customize the search method and number of document chunks returned for each question. |
 | 4 | Retrieval testing | Ask representative questions in the test playground. Review the generated answers and retrieved chunks to confirm that the configuration returns relevant content. |
 | 5 | Knowledge base configuration | Apply the tested configuration to the complete document source. Select the source, enter the knowledge base name and description, and choose a Manual, Daily, or Weekly schedule. |
-| 6 | Index creation | Create the knowledge base index.  processes the documents in the selected source and makes their content searchable. |
+| 6 | Index creation | Create the knowledge base index. Unstructured search processes the documents in the selected source and makes their content searchable. |
 | 7 | Index monitoring | Review the document count, last run, execution frequency, indexing dates, and indexing statuses to confirm that the documents are ready for retrieval. |
-| 8 | integration | In , enable the **Knowledge bases** capability and select one or more knowledge bases that the custom agent can use. |
+| 8 | Custom agents integration | In Custom agents, enable the **Knowledge bases** capability and select one or more knowledge bases that the custom agent can use. |
 
 
 
 ---
 
-# overview
+# Unstructured augmentation overview
 
 > **Section:** Products > Autonomous agents
 
@@ -98000,16 +98280,16 @@ The following table explains each stage of the  workflow:
 **Keywords:** unstructured augmentation overview, unstructured data extraction, document to entity mapping, human validation workflow, structured content in reltio, document data processing, document review and validation, unstructured document processing, business document extraction, downstream data use
 
 
-Learn about  and how it uses documents for structured extraction and searchable knowledge bases.
+Learn about Unstructured augmentation and how it uses documents for structured extraction and searchable knowledge bases.
 
-helps you process and use unstructured information contained in documents and images. Unstructured content is information that is not organized according to predefined fields, attributes, rows, or records. Examples include contract clauses, onboarding forms, invoices, compliance records, scanned PDFs, presentations, and image files.
+Unstructured augmentation helps you process and use unstructured information contained in documents and images. Unstructured content is information that is not organized according to predefined fields, attributes, rows, or records. Examples include contract clauses, onboarding forms, invoices, compliance records, scanned PDFs, presentations, and image files.
 
-provides the following two ways to use document content:
+Unstructured augmentation provides the following two ways to use document content:
 
-- extracts information from documents and maps it to structured Reltio entities, relationships, and attributes.
-- prepares document content for search so agents can retrieve relevant information and provide answers grounded in the source documents.
+- Unstructured extraction extracts information from documents and maps it to structured Reltio entities, relationships, and attributes.
+- Unstructured search prepares document content for search so agents can retrieve relevant information and provide answers grounded in the source documents.
 
-The following roles use :
+The following roles use Unstructured augmentation:
 
 - 
 
@@ -98032,23 +98312,23 @@ The following roles use :
 
 For role definitions, see [About roles](https://docs.reltio.com/en/roles/about-roles?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
-## 
+## Unstructured extraction
 
-extracts data from unstructured content and converts it into structured content in Reltio Context Intelligence Platform. It extracts data from files such as PDF, PPTX, DOCX, HTML, RTF, TXT, JPEG, and PNG files, and maps the extracted data to Reltio entities for review and downstream use such as golden record creation, segmentation, and enhanced context for . The feature also supports human in the loop reviews, so you can review and correct extracted values before the data is used for downstream processes.
+Unstructured extraction extracts data from unstructured content and converts it into structured content in Reltio Context Intelligence Platform. It extracts data from files such as PDF, PPTX, DOCX, HTML, RTF, TXT, JPEG, and PNG files, and maps the extracted data to Reltio entities for review and downstream use such as golden record creation, segmentation, and enhanced context for autonomous agents. The feature also supports human in the loop reviews, so you can review and correct extracted values before the data is used for downstream processes.
 
-## 
+## Unstructured search
 
-**** makes information contained in documents searchable by agents. It processes documents from a [supported source](https://docs.reltio.com/en/products/autonomous-agents/unstructured-augmentation-overview/configure-document-sources-for-unstructured-augmentation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and creates a knowledge base that an agent can query.  divides the content into smaller passages, known as chunks, and creates numerical representations, known as embeddings. The index uses these representations and document metadata to locate relevant passages without sending every source document to the agent.
+**Unstructured search** makes information contained in documents searchable by agents. It processes documents from a [supported source](https://docs.reltio.com/en/products/autonomous-agents/unstructured-augmentation-overview/configure-document-sources-for-unstructured-augmentation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and creates a knowledge base that an agent can query. Unstructured search divides the content into smaller passages, known as chunks, and creates numerical representations, known as embeddings. The index uses these representations and document metadata to locate relevant passages without sending every source document to the agent.
 
-## Why would I use ?
+## Why would I use Unstructured augmentation?
 
 Many business processes rely on information stored in documents such as contracts, onboarding forms, invoices, and compliance records. When this information stays in documents, teams often have to review it manually and enter the data into business systems. This slows down work, increases the risk of errors, and makes it harder to use document data alongside structured master data.
 
-in  helps solve this by extracting key information from documents and converting it into data that can be reviewed and mapped to Reltio entities. You can review and validate this data before creation of the entities and their attributes in Reltio.
+Unstructured extraction in Unstructured augmentation helps solve this by extracting key information from documents and converting it into data that can be reviewed and mapped to Reltio entities. You can review and validate this data before creation of the entities and their attributes in Reltio.
 
-creates searchable knowledge bases that your custom agents and  agents can query through natural-language questions.
+Unstructured search creates searchable knowledge bases that your custom agents and autonomous agents agents can query through natural-language questions.
 
-provides the following benefits:
+Unstructured augmentation provides the following benefits:
 
 - It improves productivity by automating the and enabling natural-language search across large volumes of internal document content.
 - It reduces reliance on manual document review and data entry, so teams can focus on higher-value work.
@@ -98058,24 +98338,24 @@ provides the following benefits:
 - It makes information across documents searchable by organizing the content into knowledge bases.
 - It enables agents to ask questions in natural language and receive answers grounded in the source documents.
 
-## Watch how works
+## Watch how Unstructured extraction works
 
-The following video explains how to create a template, configure a source, and run a document pipeline in .
+The following video explains how to create a template, configure a source, and run a document pipeline in Unstructured extraction.
 
 *Video: reltio_agentflow_unstructured.mp4*
 
 **Related links**
 
-- [workflow](https://docs.reltio.com/en/products/autonomous-agents/unstructured-augmentation-overview/unstructured-augmentation-workflow?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Unstructured augmentation workflow](https://docs.reltio.com/en/products/autonomous-agents/unstructured-augmentation-overview/unstructured-augmentation-workflow?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 - [Create and publish an extraction template](https://docs.reltio.com/en/products/autonomous-agents/unstructured-augmentation-overview/unstructured-extraction-overview/create-and-publish-an-extraction-template?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- [Configure document sources for](https://docs.reltio.com/en/products/autonomous-agents/unstructured-augmentation-overview/configure-document-sources-for-unstructured-augmentation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Configure document sources for Unstructured augmentation](https://docs.reltio.com/en/products/autonomous-agents/unstructured-augmentation-overview/configure-document-sources-for-unstructured-augmentation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 - [Set up automated pipelines](https://docs.reltio.com/en/products/autonomous-agents/unstructured-augmentation-overview/unstructured-extraction-overview/set-up-automated-pipelines?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 
 
 ---
 
-# billing and credit usage
+# Unstructured augmentation billing and credit usage
 
 > **Section:** Products > Autonomous agents > Unstructured augmentation overview
 
@@ -98085,9 +98365,9 @@ The following video explains how to create a template, configure a source, and r
 **Keywords:** AgentFlow Unstructured credits, document page processing credits, AgentFlow Unstructured billing, Document AI credit usage, Knowledge AI credit usage
 
 
-Learn how  credits are consumed when processing documents.
+Learn how Unstructured augmentation credits are consumed when processing documents.
 
-uses credits to measure document-processing usage across its workflows. Credit consumption is based on the total number of document pages processed.
+Unstructured augmentation uses credits to measure document-processing usage across its workflows. Credit consumption is based on the total number of document pages processed.
 
 This topic is intended for the following roles:
 
@@ -98100,20 +98380,20 @@ This topic is intended for the following roles:
 
 For role definitions, see [About roles](https://docs.reltio.com/en/roles/about-roles?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
-## credits
+## Unstructured augmentation credits
 
-processes pages from uploaded documents and configured document sources to:
+Unstructured augmentation processes pages from uploaded documents and configured document sources to:
 
 - 
 
   Extract information from documents and map it to entities and attributes in your Reltio tenant.
 - 
 
-  Create or update searchable knowledge bases for .
+  Create or update searchable knowledge bases for custom agents.
 
 ## Credits consumed per page processed
 
-Credits are consumed according to the number of pages processed across  workflows, including:
+Credits are consumed according to the number of pages processed across Unstructured augmentation workflows, including:
 
 - 
 
@@ -98125,25 +98405,25 @@ Credits are consumed according to the number of pages processed across  workflow
 
   Knowledge base indexing
 
-processes pages to extract structured information and map it to entities and attributes in your Reltio tenant.
+Unstructured extraction processes pages to extract structured information and map it to entities and attributes in your Reltio tenant.
 
-processes pages to create a searchable index that  can use when answering questions.
+Unstructured search processes pages to create a searchable index that autonomous agents can use when answering questions.
 
 ## Agent and document-processing credits
 
-page processing and  conversations represent different types of usage.
+Unstructured augmentation page processing and autonomous agents conversations represent different types of usage.
 
-Processing documents uses the  page-based credit model. When users interact with a published agent, the interaction follows the standard  credit model.
+Processing documents uses the Unstructured augmentation page-based credit model. When users interact with a published agent, the interaction follows the standard autonomous agents credit model.
 
-For more information, see [billing and credit usage](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-usage-dashboard/autonomous-agents-usage-through-reltio?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+For more information, see [autonomous agents billing and credit usage](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-usage-dashboard/autonomous-agents-usage-through-reltio?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 ## Credit entitlement and monitoring
 
-credits are deducted from your organization's  credit entitlement. Credits are allocated for a defined contract period and do not reset monthly. Unused credits expire at the end of the contract period.
+Unstructured augmentation credits are deducted from your organization's Autonomous agents credit entitlement. Credits are allocated for a defined contract period and do not reset monthly. Unused credits expire at the end of the contract period.
 
 Users assigned `ROLE_AGENT_BILLING` can use the Usage Dashboard to monitor credit balances and consumption.
 
-Notifications for  appear at the following thresholds:
+Notifications for Autonomous agents appear at the following thresholds:
 
 - 
 
@@ -98159,7 +98439,7 @@ Notifications for  appear at the following thresholds:
 
 ---
 
-# Roles and permissions for
+# Roles and permissions for Unstructured augmentation
 
 > **Section:** Products > Autonomous agents > Unstructured augmentation overview
 
@@ -98169,13 +98449,13 @@ Notifications for  appear at the following thresholds:
 **Keywords:** Unstructured augmentation roles, Unstructured augmentation permissions, document source permissions, Unstructured augmentation role access matrix, Google Drive source permissions
 
 
-Learn more about the roles and permissions that control access to templates, sources, pipelines, batch runs and knowledge bases in .
+Learn more about the roles and permissions that control access to templates, sources, pipelines, batch runs and knowledge bases in Unstructured augmentation.
 
-uses role-based access control to manage user permissions across the various components of the feature. Assigned roles determine whether users can create extraction templates, manage document sources, configure pipelines, run batch jobs, and review processing results. Roles also control whether users can configure and run knowledge base ingestion, monitor knowledge bases, and query indexed content.
+Unstructured augmentation uses role-based access control to manage user permissions across the various components of the feature. Assigned roles determine whether users can create extraction templates, manage document sources, configure pipelines, run batch jobs, and review processing results. Roles also control whether users can configure and run knowledge base ingestion, monitor knowledge bases, and query indexed content.
 
 ## Access areas
 
-The following table describes the main access areas in .
+The following table describes the main access areas in Unstructured augmentation.
 
 | Area | What it covers |
 | --- | --- |
@@ -98187,7 +98467,7 @@ The following table describes the main access areas in .
 
 ## Permission types
 
-The following table describes the permissions used across  resources.
+The following table describes the permissions used across Unstructured augmentation resources.
 
 | Permission | Meaning |
 | --- | --- |
@@ -98199,7 +98479,7 @@ The following table describes the permissions used across  resources.
 
 ## Role access matrix
 
-The following table summarizes the customer-facing roles for .
+The following table summarizes the customer-facing roles for Unstructured augmentation.
 
 | Role | Templates | Sources | Pipelines | Batch runs | Knowledge bases |
 | --- | --- | --- | --- | --- | --- |
@@ -98220,17 +98500,17 @@ The following table summarizes the customer-facing roles for .
 
 ## Role access details
 
-The following table describes access behavior for specific  roles.
+The following table describes access behavior for specific Unstructured augmentation roles.
 
 | Role or area | Access behavior |
 | --- | --- |
-| `ROLE_ADMIN_AFU` | Applies to customer-facing  resources only |
+| `ROLE_ADMIN_AFU` | Applies to customer-facing Unstructured augmentation resources only |
 | `ROLE_AFU_TEMPLATE_DESIGNER` | Includes read access to sources so template authors can review source configurations while working with sample documents |
 | `ROLE_AFU_PIPELINE_MANAGER` | Includes read access to sources so pipeline configurators can select and review source configurations |
 | `ROLE_AFU_PIPELINE_OPERATOR` | Includes read access to sources so operators can review the source used by a batch run |
 | `ROLE_AFU_PIPELINE_OPERATOR` | Does not include delete access for batch run history |
 | `ROLE_AFU_PIPELINE_VIEWER` | Can view templates, pipelines, and batch runs, but cannot view sources |
-| `ROLE_AFU_VIEWER` | Provides read-only access across customer-facing  resources |
+| `ROLE_AFU_VIEWER` | Provides read-only access across customer-facing Unstructured augmentation resources |
 
 ## Common role assignments
 
@@ -98247,17 +98527,17 @@ The following table lists common role combinations for typical users.
 
 ## Assigning roles and tenants to users
 
-Use the **User Management** application in Console to assign  roles to users. [User Management](https://docs.reltio.com/en/applications/console/security-applications/user-management-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) lets you create user accounts, assign roles, and assign tenant access.
+Use the **User Management** application in Console to assign Unstructured augmentation roles to users. [User Management](https://docs.reltio.com/en/applications/console/security-applications/user-management-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) lets you create user accounts, assign roles, and assign tenant access.
 
-For a new user, [create the new user account](https://docs.reltio.com/en/applications/console/security-applications/user-management-at-a-glance/managing-user-accounts/creating-a-new-user-account?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), select the  roles, and then assign the relevant  tenant or tenants.
+For a new user, [create the new user account](https://docs.reltio.com/en/applications/console/security-applications/user-management-at-a-glance/managing-user-accounts/creating-a-new-user-account?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), select the Unstructured augmentation roles, and then assign the relevant Unstructured augmentation tenant or tenants.
 
-For an existing user, [edit the user account](https://docs.reltio.com/en/applications/console/security-applications/user-management-at-a-glance/managing-user-accounts/working-with-existing-user-accounts?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and then update the assigned  roles and  tenant access on the **Edit user** page.
+For an existing user, [edit the user account](https://docs.reltio.com/en/applications/console/security-applications/user-management-at-a-glance/managing-user-accounts/working-with-existing-user-accounts?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and then update the assigned Unstructured augmentation roles and Unstructured augmentation tenant access on the **Edit user** page.
 
 
 
 ---
 
-# Add knowledge bases to a custom agent
+# Add Unstructured search knowledge bases to a custom agent
 
 > **Section:** Products > Autonomous agents > Unstructured augmentation overview > Unstructured search overview
 
@@ -98267,17 +98547,17 @@ For an existing user, [edit the user account](https://docs.reltio.com/en/applica
 **Keywords:** add Knowledge AI knowledge bases to an agent, custom agents Knowledge bases capability, ground a custom agent in documents, select autonomous agents Unstructured knowledge bases, test a knowledge-grounded agent
 
 
-Learn how to add one or more  knowledge bases to a custom agent.
+Learn how to add one or more Unstructured search knowledge bases to a custom agent.
 
-You can add  knowledge bases to a custom agent so that it can answer questions using indexed organizational documents. You can select knowledge bases from any  tenant that you can access.
+You can add Unstructured search knowledge bases to a custom agent so that it can answer questions using indexed organizational documents. You can select knowledge bases from any Unstructured augmentation tenant that you can access.
 
-The following  role can perform this task:
+The following custom agents role can perform this task:
 
 - 
 
   Agent Author
 
-For more information, see [Assign roles to users](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/custom-agents-at-a-glance/assign-custom-agents-roles-to-users?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+For more information, see [Assign custom agents roles to users](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/custom-agents-at-a-glance/assign-custom-agents-roles-to-users?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 **Prerequisites**
 
@@ -98285,31 +98565,31 @@ Before you begin, confirm the following requirements:
 
 - 
 
-  You must have `ROLE_AGENT_AUTHOR` on the  tenant.
+  You must have `ROLE_AGENT_AUTHOR` on the custom agents tenant.
 - 
 
-  At least one  knowledge base must exist in an  tenant that you can access.
+  At least one Unstructured search knowledge base must exist in an Unstructured augmentation tenant that you can access.
 - 
 
-  You must have access to the  tenant containing the knowledge base.
+  You must have access to the Unstructured augmentation tenant containing the knowledge base.
 
 
-To add knowledge bases to a custom agent
+To add Unstructured search knowledge bases to a custom agent
 
-1. From , open .
+1. From Autonomous agents, open Custom agents.
 2. Create a new agent draft or open an existing draft.
 3. Complete **Agent & Prompt information**, then select **Save & continue**.
 4. In **Tools**, select any MCP tools that the agent requires, then select **Save & continue**. If the agent only uses knowledge bases, you can continue without selecting an MCP tool.
 5. In **Capabilities**, turn on **Knowledge bases**.
    *Image: uds-enableknowledgebase.png*
 6. Under **KNOWLEDGE BASES**, in the **from unstructured tenant**, select **change**. A list of tenants is displayed.
-7. Select the  tenant containing the required knowledge bases you want to add.
+7. Select the Unstructured augmentation tenant containing the required knowledge bases you want to add.
    The **KNOWLEDGE BASES PRESENT** list refreshes to show the knowledge bases available in the selected tenant.
 8. Select one or more knowledge bases.
 9. Select **Save & continue**.
 10. In **Test & publish**, enter a question related to the documents in the selected knowledge bases.
    *Image: uds-testknowledgebase.png*
-   The execution log shows the credits used for each response. For more information, see [billing and credit usage](https://docs.reltio.com/en/products/autonomous-agents/unstructured-augmentation-overview/unstructured-augmentation-billing-and-credit-usage?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+   The execution log shows the credits used for each response. For more information, see [Unstructured augmentation billing and credit usage](https://docs.reltio.com/en/products/autonomous-agents/unstructured-augmentation-overview/unstructured-augmentation-billing-and-credit-usage?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 11. Review the response and confirm that it reflects the indexed document content.
 12. Optionally, ask additional questions to evaluate the agent's responses.
 13. When the results meet your requirements, select **Submit for Review**.
@@ -98318,7 +98598,7 @@ For more information about testing, security scanning, and the review workflow, 
 
 **Result**
 
-add the selected  knowledge bases to the custom agent. After a reviewer approves the agent,  publishes it, and the agent can use content retrieved from those knowledge bases when answering questions..
+Autonomous agents add the selected Unstructured search knowledge bases to the custom agent. After a reviewer approves the agent, autonomous agents publishes it, and the agent can use content retrieved from those knowledge bases when answering questions..
 
 
 
@@ -98334,11 +98614,11 @@ add the selected  knowledge bases to the custom agent. After a reviewer approves
 **Keywords:** prepare Google Drive for AgentFlow Unstructured, enable Google Drive API, create Google Drive service account, share Google Drive folder with service account
 
 
-Learn how to prepare Google Drive as a document source for .
+Learn how to prepare Google Drive as a document source for Unstructured augmentation.
 
-Set up Google Drive for  by enabling the Google Drive API, creating a service account and JSON key, and granting the service account read access to the folder or Shared Drive that contains the documents. After completing this task, add Google Drive as a document source in .
+Set up Google Drive for Unstructured augmentation by enabling the Google Drive API, creating a service account and JSON key, and granting the service account read access to the folder or Shared Drive that contains the documents. After completing this task, add Google Drive as a document source in Unstructured augmentation.
 
-The following roles can prepare Google Drive for :
+The following roles can prepare Google Drive for Unstructured augmentation:
 
 - 
 
@@ -98364,7 +98644,7 @@ Before you begin, confirm the following requirements:
   You must have permission to share the Google Drive folder or Shared Drive that contains the documents.
 - 
 
-  You must have `ROLE_AFU_SOURCE_MANAGER` or `ROLE_ADMIN_AFU` in the Reltio tenant that has  enabled.
+  You must have `ROLE_AFU_SOURCE_MANAGER` or `ROLE_ADMIN_AFU` in the Reltio tenant that has Unstructured augmentation enabled.
 
 
 To enable the Google Drive API and create a service account with a JSON key
@@ -98396,11 +98676,11 @@ To grant the service account access in Google Drive
 
 **Result**
 
-The Google Drive API is enabled, the service account key is available, and the service account can read documents from the shared folder or Shared Drive. To add Google Drive as a document source, see [Configure document sources for](https://docs.reltio.com/en/products/autonomous-agents/unstructured-augmentation-overview/configure-document-sources-for-unstructured-augmentation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+The Google Drive API is enabled, the service account key is available, and the service account can read documents from the shared folder or Shared Drive. To add Google Drive as a document source, see [Configure document sources for Unstructured augmentation](https://docs.reltio.com/en/products/autonomous-agents/unstructured-augmentation-overview/configure-document-sources-for-unstructured-augmentation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 **Verification steps**
 
-To confirm that Google Drive is ready for , perform the following steps:
+To confirm that Google Drive is ready for Unstructured augmentation, perform the following steps:
 
 1. 
 
@@ -98426,15 +98706,17 @@ To confirm that Google Drive is ready for , perform the following steps:
 **Keywords:** create a Knowledge AI knowledge base, test knowledge base retrieval, Knowledge AI test playground, hybrid and semantic search, create knowledge base search index
 
 
-Learn how to create and test an  knowledge base.
+Learn how to create and test an Unstructured search knowledge base.
 
-A [knowledge base](https://docs.reltio.com/en/products/autonomous-agents/unstructured-augmentation-overview/unstructured-search-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) makes the documents in a [configured source](https://docs.reltio.com/en/products/autonomous-agents/unstructured-augmentation-overview/configure-document-sources-for-unstructured-augmentation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) searchable so that agents can answer questions from the document content. Before you create the knowledge base, validate how well  retrieves information from your documents. Use a sample document in the **Test playground** pane to ask representative questions and review the answers and retrieved chunks. When the answers are correct and relevant, create the knowledge base to apply the retrieval settings that you tested to the selected source..
+A [knowledge base](https://docs.reltio.com/en/products/autonomous-agents/unstructured-augmentation-overview/unstructured-search-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) makes the documents in a [configured source](https://docs.reltio.com/en/products/autonomous-agents/unstructured-augmentation-overview/configure-document-sources-for-unstructured-augmentation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) searchable so that agents can answer questions from the document content. Before you create the knowledge base, validate how well Unstructured search retrieves information from your documents. Use a sample document in the **Test playground** pane to ask representative questions and review the answers and retrieved chunks. When the answers are correct and relevant, create the knowledge base to apply the retrieval settings that you tested to the selected source.
+
+> **Important:** Content you ingest into a knowledge base may contain personal or sensitive information. Unstructured search does not automatically detect or remove sensitive or personal data during ingestion.. Ensure that you have the legal right to process the data, and remove or mask information you do not want to be retrievable. Retrieved content may appear in responses generated for users who have access to the knowledge base.
 
 The following roles can create and test a knowledge base:
 
 - 
 
-  Tenant Administrator (). For more information, see [Roles and permissions for](https://docs.reltio.com/en/products/autonomous-agents/unstructured-augmentation-overview/roles-and-permissions-for-unstructured-augmentation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+  Tenant Administrator (autonomous agents). For more information, see [Roles and permissions for Unstructured augmentation](https://docs.reltio.com/en/products/autonomous-agents/unstructured-augmentation-overview/roles-and-permissions-for-unstructured-augmentation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 **Prerequisites**
 
@@ -98442,7 +98724,7 @@ Before you begin, confirm the following requirements:
 
 - 
 
-  You must have access to an  tenant and .
+  You must have access to an Unstructured augmentation tenant and Unstructured search.
 - 
 
   You must have a configured Amazon S3, Google Cloud Storage, or Google Drive source.
@@ -98453,7 +98735,7 @@ Before you begin, confirm the following requirements:
 
 To create and test a knowledge base
 
-1. In , select .
+1. In Unstructured augmentation, select Unstructured search.
    *Image: uds-knowledgeaimain.png*
 2. Select **Create knowledge base**. You must first upload and configure the sample file and then create the knowledge base search index.
    *Image: uds-knowledgeaicreatenew.png*
@@ -98465,7 +98747,7 @@ To create and test a knowledge base
    - Select **Apply**. The **Create knowledge base** page is displayed.
 5. Select **Test in playground**. The **Test playground** pane is displayed.
    *Image: uds-knowledgeaitestplayground.png*
-   - In the **Test playground** pane, enter a question that the sample document should answer.  generates an answer from the sample document and displays it..
+   - In the **Test playground** pane, enter a question that the sample document should answer. Unstructured search generates an answer from the sample document and displays it..
      *Image: uds-knowledgeaianswers.png*
    - Review the generated answer to confirm that it is correct and relevant.
    - Select **Show retrieved chunks** to review the document content used to generate the answer.
@@ -98481,7 +98763,7 @@ To create and test a knowledge base
 
 **Result**
 
-creates the knowledge base and begins indexing the documents from the selected source. After indexing completes, you can add the knowledge base to . The custom agent can then retrieve indexed content when answering questions.. For more information, see [Add knowledge bases to a custom agent](https://docs.reltio.com/en/products/autonomous-agents/unstructured-augmentation-overview/unstructured-search-overview/add-unstructured-search-knowledge-bases-to-a-custom-agent?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+Unstructured search creates the knowledge base and begins indexing the documents from the selected source. After indexing completes, you can add the knowledge base to custom agents. The custom agent can then retrieve indexed content when answering questions.. For more information, see [Add Unstructured search knowledge bases to a custom agent](https://docs.reltio.com/en/products/autonomous-agents/unstructured-augmentation-overview/unstructured-search-overview/add-unstructured-search-knowledge-bases-to-a-custom-agent?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 **Verification steps**
 
@@ -98489,7 +98771,7 @@ To confirm that the knowledge base was created successfully, perform the followi
 
 1. 
 
-   Return to the  landing page.
+   Return to the Unstructured search landing page.
 2. 
 
    Confirm that the knowledge base appears in the table.
@@ -98511,7 +98793,7 @@ To confirm that the knowledge base was created successfully, perform the followi
 **Keywords:** set up automated pipelines, create document pipeline, configure pipeline source, select published template, schedule document pipeline, save pipeline configuration, unstructured augmentation pipeline, document processing workflow, pipeline schedule configuration, published extraction template
 
 
-Learn how to create a document pipeline so  can process documents from a configured source by using a published extraction template.
+Learn how to create a document pipeline so Unstructured augmentation can process documents from a configured source by using a published extraction template.
 
 A pipeline is configured to use a selected source and a published template to process documents. It also lets you define the following settings:
 
@@ -98537,7 +98819,7 @@ Before you begin, ensure you meet the following requirements:
 
 - 
 
-  You must have an active Reltio tenant with  enabled.
+  You must have an active Reltio tenant with Unstructured augmentation enabled.
 - 
 
   You must have a [published extraction template](https://docs.reltio.com/en/products/autonomous-agents/unstructured-augmentation-overview/unstructured-extraction-overview/create-and-publish-an-extraction-template?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and a [configured document source](https://docs.reltio.com/en/products/autonomous-agents/unstructured-augmentation-overview/configure-document-sources-for-unstructured-augmentation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) for the pipeline.
@@ -98548,7 +98830,7 @@ Before you begin, ensure you meet the following requirements:
 
 To set up a pipeline
 
-1. In ****, select .
+1. In **Unstructured augmentation**, select Unstructured extraction.
 2. Under **Automated Bulk Extraction**, in the **Setup automated pipelines** section, select **Let's get started**. The **Create New Pipeline** page is displayed.
    *Image: uds-createpipeline.png*
 3. In **Select Source**, select the source type you want to use: **AWS S3**, **GCS** or **Google Drive**.
@@ -98607,18 +98889,18 @@ Before you begin, ensure you meet the following requirements:
 
 - 
 
-  You need an active Reltio tenant with  enabled.
+  You need an active Reltio tenant with Unstructured augmentation enabled.
 - 
 
-  You need [permissions](https://docs.reltio.com/en/products/autonomous-agents/unstructured-augmentation-overview/roles-and-permissions-for-unstructured-augmentation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) to use .
+  You need [permissions](https://docs.reltio.com/en/products/autonomous-agents/unstructured-augmentation-overview/roles-and-permissions-for-unstructured-augmentation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) to use Unstructured augmentation.
 - 
 
-  You must create and save a document pipeline in .
+  You must create and save a document pipeline in Unstructured augmentation.
 
 
 To execute a pipeline
 
-1. In ****, select .
+1. In **Unstructured augmentation**, select Unstructured extraction.
 2. Select **Pipeline configs** from the left navigation pane. The **Pipelines** page is displayed with a list of existing pipelines.
    *Image: uds-pipelineslist.png*
 3. From the list of pipelines, select the pipeline you want to execute.
@@ -98652,9 +98934,9 @@ The pipeline runs and displays execution details. If the pipeline was scheduled 
 **Keywords:** view a Knowledge AI knowledge base, monitor knowledge base indexing, Knowledge AI document status, rerun knowledge base index
 
 
-Learn how to view a  knowledge base and monitor document indexing.
+Learn how to view a Unstructured search knowledge base and monitor document indexing.
 
-After creating a knowledge base, use  to track its indexing activity and check which documents in the source are available for retrieval. The knowledge base list shows each knowledge base's source, document count, last run, and execution frequency. The details show the indexed documents and the indexing status of each.
+After creating a knowledge base, use Unstructured search to track its indexing activity and check which documents in the source are available for retrieval. The knowledge base list shows each knowledge base's source, document count, last run, and execution frequency. The details show the indexed documents and the indexing status of each.
 
 The following roles can view and monitor a knowledge base:
 
@@ -98672,7 +98954,7 @@ The following roles can view and monitor a knowledge base:
 
 - 
 
-  Tenant admin (). For more information, see [Roles and permissions for](https://docs.reltio.com/en/products/autonomous-agents/unstructured-augmentation-overview/roles-and-permissions-for-unstructured-augmentation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+  Tenant admin (Autonomous agents). For more information, see [Roles and permissions for Unstructured augmentation](https://docs.reltio.com/en/products/autonomous-agents/unstructured-augmentation-overview/roles-and-permissions-for-unstructured-augmentation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 For role definitions, see [About roles](https://docs.reltio.com/en/roles/about-roles?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
@@ -98682,12 +98964,12 @@ Before you begin, confirm the following requirements:
 
 - 
 
-  A knowledge base must exist in an  tenant that you can access..
+  A knowledge base must exist in an Unstructured augmentation tenant that you can access..
 
 
 To view and monitor a knowledge base
 
-1. In , select .
+1. In Unstructured augmentation, select Unstructured search.
    *Image: uds-knowledgeaimain.png*
 2. Locate the knowledge base in the table. Use **Search** to find the knowledge base, if needed.
 3. Select the knowledge base name to view its details.
@@ -98731,18 +99013,18 @@ Before you begin, ensure you meet the following requirements:
 
 - 
 
-  You need an active Reltio tenant with  enabled.
+  You need an active Reltio tenant with Unstructured augmentation enabled.
 - 
 
-  You need [permissions](https://docs.reltio.com/en/products/autonomous-agents/unstructured-augmentation-overview/roles-and-permissions-for-unstructured-augmentation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) to use .
+  You need [permissions](https://docs.reltio.com/en/products/autonomous-agents/unstructured-augmentation-overview/roles-and-permissions-for-unstructured-augmentation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) to use Unstructured augmentation.
 - 
 
-  You must create and save a document pipeline in .For more information, see [Set up automated pipelines](https://docs.reltio.com/en/products/autonomous-agents/unstructured-augmentation-overview/unstructured-extraction-overview/set-up-automated-pipelines?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+  You must create and save a document pipeline in Unstructured augmentation.For more information, see [Set up automated pipelines](https://docs.reltio.com/en/products/autonomous-agents/unstructured-augmentation-overview/unstructured-extraction-overview/set-up-automated-pipelines?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 
 To monitor pipeline executions
 
-1. In ****, select  > **Pipeline executions** from the left navigation pane. The **Pipeline executions** page is displayed.
+1. In **Unstructured augmentation**, select Unstructured extraction > **Pipeline executions** from the left navigation pane. The **Pipeline executions** page is displayed.
    *Image: uds-pipelineexecutions.png*
 2. Filter the list of pipeline executions based on the name of the pipeline, template, source, start time, and status.
 3. From the filtered list, select the pipeline execution you want to review.
@@ -98758,7 +99040,7 @@ Review both pipeline-level execution status and document-level extraction result
 
 ---
 
-# Configure document sources for
+# Configure document sources for Unstructured augmentation
 
 > **Section:** Products > Autonomous agents > Unstructured augmentation overview
 
@@ -98768,18 +99050,18 @@ Review both pipeline-level execution status and document-level extraction result
 **Keywords:** configure document sources, unstructured augmentation sources, set up source access, connect aws s3 source, connect google cloud storage, test document source connection, save source configuration, document source authentication, configure source settings, pipeline source configuration
 
 
-Learn how to configure document sources so  can access the files you want to process.
+Learn how to configure document sources so Unstructured augmentation can access the files you want to process.
 
-Configure a document source so that  can access files from a supported storage location for document processing.
+Configure a document source so that Unstructured augmentation can access files from a supported storage location for document processing.
 
 **Prerequisites**Before you begin, ensure you have met the following requirements:
 
 - 
 
-  You need an active Reltio tenant with  enabled.
+  You need an active Reltio tenant with Unstructured augmentation enabled.
 - 
 
-  A [published extraction template](https://docs.reltio.com/en/products/autonomous-agents/unstructured-augmentation-overview/unstructured-extraction-overview/create-and-publish-an-extraction-template?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) must be available if you plan to use the source in a  pipeline. A template is not required to configure a source for .
+  A [published extraction template](https://docs.reltio.com/en/products/autonomous-agents/unstructured-augmentation-overview/unstructured-extraction-overview/create-and-publish-an-extraction-template?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) must be available if you plan to use the source in a Unstructured extraction pipeline. A template is not required to configure a source for Unstructured search.
 - 
 
   You have the required authentication details for the source you want to configure.
@@ -98796,7 +99078,7 @@ Configure a document source so that  can access files from a supported storage l
 
 To configure a document source
 
-1. In ****, select **Sources** from the left navigation pane. The **Sources** page is displayed.
+1. In **Unstructured augmentation**, select **Sources** from the left navigation pane. The **Sources** page is displayed.
    *Image: uds-configuresourcesmain.png*
 2. Select **+ Configure Source** to add a new source.
    *Image: uds-configurenewsource.png*
@@ -98831,16 +99113,16 @@ To configure a document source
    - In the **Source Configuration Name** field, enter a unique name for the source.
    - For **AWS S3** source type, confirm the **Authentication Type** and enter **Role ARN**, **Bucket Region**, and **Bucket Name**.
      > **Note:** The IAM role you enter in **Role ARN** must have access to the selected AWS S3 bucket.
-   - In the **Account ID** field, enter the bucket owner's AWS account ID. This is required only if the AWS S3 source is used by .
+   - In the **Account ID** field, enter the bucket owner's AWS account ID. This is required only if the AWS S3 source is used by Unstructured search.
    - For **Google Cloud Storage** storage type, paste the service account JSON credentials into **Service Account JSON**, enter **Bucket Name**, and **Location**.
    - For Google Drive storage type, paste the complete contents of the service account JSON key into Service Account JSON.
-     > **Note:** Store the key securely. Paste it only into , and don't share it through email, chat, or other unsecured channels.
+     > **Note:** Store the key securely. Paste it only into Unstructured augmentation, and don't share it through email, chat, or other unsecured channels.
    - Select **Test Connection** to verify that the source is accessible.
    - Select **Save**.
 
 **Result**
 
-The document source is configured. You can use the source when you create or configure a [pipeline](https://docs.reltio.com/en/products/autonomous-agents/unstructured-augmentation-overview/unstructured-extraction-overview/set-up-automated-pipelines?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) or or [create a knowledge base for](https://docs.reltio.com/en/products/autonomous-agents/unstructured-augmentation-overview/unstructured-search-overview/create-and-test-a-knowledge-base?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). .
+The document source is configured. You can use the source when you create or configure a Unstructured extraction[pipeline](https://docs.reltio.com/en/products/autonomous-agents/unstructured-augmentation-overview/unstructured-extraction-overview/set-up-automated-pipelines?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) or or [create a knowledge base for Unstructured search](https://docs.reltio.com/en/products/autonomous-agents/unstructured-augmentation-overview/unstructured-search-overview/create-and-test-a-knowledge-base?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). .
 
 
 
@@ -98856,9 +99138,9 @@ The document source is configured. You can use the source when you create or con
 **Keywords:** create extraction template, publish extraction template, extract structured data, review extraction output, verify mapping details, validate extracted values, map document fields, publish template workflow, unstructured augmentation template, document extraction mapping
 
 
-Learn how to create an extraction template to extract structured data from documents in .
+Learn how to create an extraction template to extract structured data from documents in Unstructured augmentation.
 
-Create, validate, and publish a template to define what information  must extract from your documents and how the extracted output maps to Reltio entities and attributes. During this process, you review the extracted JSON, verify the mapped fields, and publish the template for use in document pipelines.
+Create, validate, and publish a template to define what information Unstructured augmentation must extract from your documents and how the extracted output maps to Reltio entities and attributes. During this process, you review the extracted JSON, verify the mapped fields, and publish the template for use in document pipelines.
 
 Use this procedure to create a reusable template for automated bulk extraction. To process a single document without configuring a source or pipeline, see [One Time Upload.](https://docs.reltio.com/en/products/autonomous-agents/unstructured-augmentation-overview/unstructured-extraction-overview/process-a-single-document-using-one-time-upload?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
@@ -98866,7 +99148,7 @@ Use this procedure to create a reusable template for automated bulk extraction. 
 
 - 
 
-  You need an active Reltio tenant with access to .
+  You need an active Reltio tenant with access to Unstructured augmentation.
 - 
 
   You must have a source document that contains data to extract in one of these formats:
@@ -98879,7 +99161,7 @@ Use this procedure to create a reusable template for automated bulk extraction. 
 
 To create and publish an extraction template
 
-1. In ****, select .
+1. In **Unstructured augmentation**, select Unstructured extraction.
    *Image: uds-mainscreen.png*
 2. Under **Automated Bulk Extraction**, in the **Create template** section, select **Create template**. The **Create new template** page is displayed.
    > **Note:** To process a single document instead, under One Time Upload, select Proceed. For more information, see
@@ -98895,8 +99177,8 @@ To create and publish an extraction template
    - Enter text in the **Search** bar to find specific fields or values in the extracted JSON output, if needed.
    - Select **Finetune extraction** to open the AI Chat Extraction box.
      *Image: uds-finetuneextraction.png*
-   - Add instructions for any additional data you want to extract and select **Extract information**.  updates the extracted JSON.
-4. Select **Next** to go to the **Verify Mappings** step. A **Mapping Fields...** message appears while  maps the extracted JSON to the data model of your target tenant.
+   - Add instructions for any additional data you want to extract and select **Extract information**. Unstructured augmentation updates the extracted JSON.
+4. Select **Next** to go to the **Verify Mappings** step. A **Mapping Fields...** message appears while Unstructured augmentation maps the extracted JSON to the data model of your target tenant.
    *Image: uds-verifymappings.png*
    - Use **File View** or **JSON View** to inspect the source content and extracted structure.
    - Use **Search** to find specific values, if needed.
@@ -98915,7 +99197,7 @@ To create and publish an extraction template
 
 **Result**
 
- publishes the template. You can select it when you create or configure a document pipeline. For more information, see publishes the template. You can select it when you create or configure a document pipeline. For more information, see [Configure document sources for](https://docs.reltio.com/en/products/autonomous-agents/unstructured-augmentation-overview/configure-document-sources-for-unstructured-augmentation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and and [Set up automated pipelines](https://docs.reltio.com/en/products/autonomous-agents/unstructured-augmentation-overview/unstructured-extraction-overview/set-up-automated-pipelines?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)..
+Unstructured augmentation publishes the template. You can select it when you create or configure a document pipeline. For more information, see publishes the template. You can select it when you create or configure a document pipeline. For more information, see [Configure document sources for Unstructured augmentation](https://docs.reltio.com/en/products/autonomous-agents/unstructured-augmentation-overview/configure-document-sources-for-unstructured-augmentation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and and [Set up automated pipelines](https://docs.reltio.com/en/products/autonomous-agents/unstructured-augmentation-overview/unstructured-extraction-overview/set-up-automated-pipelines?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)..
 
 
 
@@ -98931,9 +99213,9 @@ To create and publish an extraction template
 **Keywords:** AgentFlow Unstructured One Time Upload, upload and extract a single document, process document with published template, map extracted document data to Reltio
 
 
-Learn how to process a single document by using One time upload in .
+Learn how to process a single document by using One time upload in Unstructured augmentation.
 
-On the home page of , use the **One Time Upload** option to upload a single document, extract and map its data, and push the mapped output to a Reltio tenant. You can reuse an published extraction template. This workflow does not require a configured document source or a pipeline.
+On the home page of Unstructured extraction, use the **One Time Upload** option to upload a single document, extract and map its data, and push the mapped output to a Reltio tenant. You can reuse an published extraction template. This workflow does not require a configured document source or a pipeline.
 
 The following roles can upload and extract a document:
 
@@ -98949,7 +99231,7 @@ Before you begin, ensure you meet the following requirements:
 
 - 
 
-  You must have an active Reltio tenant with  enabled.
+  You must have an active Reltio tenant with Unstructured augmentation enabled.
 - 
 
   You must have permission to create document-processing runs.
@@ -98960,14 +99242,14 @@ Before you begin, ensure you meet the following requirements:
 
 To process a single document using One Time Upload
 
-1. In the , select  from the left navigation pane.
+1. In the Unstructured augmentation, select Unstructured extraction from the left navigation pane.
    *Image: uds-mainscreen.png*
 2. Under **One Time Upload**, in the **Upload and extract** section, select **Proceed**. The **Upload & select target** tab is displayed.
    *Image: uds-onetimeupload.png*
    - In the **Upload a file** section, upload the document that you want to process.
    - Turn on the **Use OCR for scanned/handwritten documents** toggle if the document is scanned, handwritten, or contains images. Otherwise, turn it off. By default, this is turned off.
    - Optionally, under **Select an Existing Template**, in the **Template** field, select a published extraction template.
-     The template determines the target tenant and defines how  extracts and maps the document data. If you select a template, its OCR setting is applied and you cannot change the **Use OCR for scanned/handwritten documents** toggle.
+     The template determines the target tenant and defines how Unstructured augmentation extracts and maps the document data. If you select a template, its OCR setting is applied and you cannot change the **Use OCR for scanned/handwritten documents** toggle.
    - Under **Select target tenant**, in the **Target** field, select the tenant to receive the extracted data from the document. This field is disabled when you select a template..
 3. Select **Next**. The **Review extraction** tab is displayed.
    *Image: uds-onetimeuploadreviewextraction.png*
@@ -98992,7 +99274,7 @@ To process a single document using One Time Upload
 
 **Result**
 
-parses the uploaded document, extracts and maps its data, and pushes the mapped entities and relationships to the target tenant.
+Unstructured augmentation parses the uploaded document, extracts and maps its data, and pushes the mapped entities and relationships to the target tenant.
 
 **Verification steps**
 
@@ -99072,7 +99354,7 @@ The following table describes the endpoint path parameters.
 | Parameter | Type | Required | Description |
 | --- | --- | --- | --- |
 | `tenant_id` | String | Yes | Your tenant's unique identifier. |
-| `agent_id` | String | Yes | Identifier of the agent. Built-in agent IDs use uppercase letters, for example, `MRA` or `EPRA2`. IDs for  use lowercase UUIDs. |
+| `agent_id` | String | Yes | Identifier of the agent. Built-in agent IDs use uppercase letters, for example, `MRA` or `EPRA2`. IDs for custom agents use lowercase UUIDs. |
 
 ## Request headers
 
@@ -99160,7 +99442,7 @@ The following table describes the endpoint path parameters.
 | Parameter | Type | Required | Description |
 | --- | --- | --- | --- |
 | `tenant_id` | String | Yes | Your tenant identifier. |
-| `agent_id` | String | Yes | Identifier of the agent whose instruction you want to update. Built-in agent IDs use uppercase letters, such as `MRA`. IDs for  use lowercase UUIDs. |
+| `agent_id` | String | Yes | Identifier of the agent whose instruction you want to update. Built-in agent IDs use uppercase letters, such as `MRA`. IDs for custom agents use lowercase UUIDs. |
 
 ## Request headers
 
@@ -99318,7 +99600,7 @@ Learn about the Long-Running Tasks APIs used to manage agents, schedules, and lo
 
 The `Long-Running Tasks API` provides access to automated long-running task data in Reltio. These APIs let you find agents, schedule them to run, and review the schedule executions. They also let you create and monitor LRT jobs. You can then review and export the job results.
 
-Long-Running Tasks APIs complement the [Task Management](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/automated-long-running-tasks?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) experience in the UI. While the UI helps business users explore and manage tasks interactively, these APIs provide a programmatic way to retrieve the same structures and apply controlled changes at scale.
+Long-Running Tasks APIs complement the autonomous agents[Task Management](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/automated-long-running-tasks?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) experience in the UI. While the UI helps business users explore and manage tasks interactively, these APIs provide a programmatic way to retrieve the same structures and apply controlled changes at scale.
 
 These APIs are intended for the following user roles:
 
@@ -99337,7 +99619,7 @@ These APIs are intended for the following user roles:
 
 ## What you can do with these APIs
 
-The  Long-Running Tasks APIs support the following use cases:
+The autonomous agents Long-Running Tasks APIs support the following use cases:
 
 - 
 
@@ -119314,12 +119596,6 @@ The JSON array of entity URIs to be check and fix inconsistencies.
 ---
 
 # Cleanup Matches Task
-
-> **Section:** Developer resources > System Administration APIs > System Administration APIs at a glance > Tasks API
-
-
-**Source:** https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/cleanup-matches-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
 **Keywords:** cleanup matches task, delete match data by group, remove auto not matches, clean potential matches from table, cleanup grouping match records, run background match cleanup job, match group cleanup operation, match cleanup API, match rules, grouping matches, merge logic
 
 
@@ -121927,12 +122203,6 @@ JSON Array of entity URIs to be processed. This is optional. For example:
 ---
 
 # Rebuild Grouping Task
-
-> **Section:** Developer resources > System Administration APIs > System Administration APIs at a glance > Tasks API
-
-
-**Source:** https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/tasks-api/rebuild-grouping-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
 **Keywords:** rebuild grouping task, advanced grouping rebuild, segmented grouping task, rebuildGrouping endpoint
 
 
@@ -152680,7 +152950,7 @@ The following placeholders in the message templates are replaced with values fro
 
 ---
 
-# overview
+# Integrated development experience overview
 
 > **Section:** Developer resources > AI Integrations
 
@@ -152690,17 +152960,17 @@ The following placeholders in the message templates are replaced with values fro
 **Keywords:** Reltio's integrated development experience overview, metadata modeling, l3 configuration editor, ai-assisted business configuration, ontology visualization, configuration version history, entity types relationship types attributes, reference attributes, vsix extension reltio, Reltio's integrated development experience roles, reltio configurator, solution architect, data modeler comparison, intelligent json editor, Reltio's integrated development experience workflow
 
 
-Learn how the  brings business configuration modeling into a modern development workflow, with intelligent navigation, AI-assisted authoring, vvalidation, ontology visualization, version history, and development of Life Cycle Actions and workflows.
+Learn how the integrated development experience brings business configuration modeling into a modern development workflow, with intelligent navigation, AI-assisted authoring, vvalidation, ontology visualization, version history, and development of Life Cycle Actions and workflows.
 
-The  transforms how teams design and manage Reltio business configurations by making data modeling faster, simpler, and more intuitive. From AI-assisted configuration to safe deployment and version tracking, it helps you accelerate implementation while maintaining quality and control.
+The integrated development experience transforms how teams design and manage Reltio business configurations by making data modeling faster, simpler, and more intuitive. From AI-assisted configuration to safe deployment and version tracking, it helps you accelerate implementation while maintaining quality and control.
 
 ## Build business configurations faster with AI
 
 Business configuration is foundational to every Reltio implementation. Whether you're introducing new business entities, extending an existing data model, or evolving your organization's configuration over time, you need tools that help you move quickly without compromising quality or control.
 
-The  is an AI-powered editor extension for VS Code and Cursor that simplifies how teams design, manage, validate, and deploy Reltio business configurations. It brings together AI-assisted authoring, intelligent navigation, ontology visualization, real-time validation, version history, and deployment in one place. You can also develop and deploy Life Cycle Actions (LCAs) and Reltio workflows with the AI agent. The result is a faster way to build and evolve your Reltio data model.
+The integrated development experience is an AI-powered editor extension for VS Code and Cursor that simplifies how teams design, manage, validate, and deploy Reltio business configurations. It brings together AI-assisted authoring, intelligent navigation, ontology visualization, real-time validation, version history, and deployment in one place. You can also develop and deploy Life Cycle Actions (LCAs) and Reltio workflows with the AI agent. The result is a faster way to build and evolve your Reltio data model.
 
-You can connect the  to the following business configuration sources:
+You can connect the integrated development experience to the following business configuration sources:
 
 - 
 
@@ -152713,12 +152983,9 @@ You can connect the  to the following business configuration sources:
 
 
 
-> **Note:** While using the , you can connect to one of the two sources at a given time.
+> **Note:** While using the integrated development experience, you can connect to one of the two sources at a given time.
 
-The  is intended for the following roles:
-
-- 
-
+The integrated development experience is intended for the following roles:
 
 - 
 
@@ -152729,10 +152996,13 @@ The  is intended for the following roles:
 - 
 
 
+- 
 
-## How the helps your team
 
-The  offers you the following benefits:
+
+## How the integrated development experience helps your team
+
+The integrated development experience offers you the following benefits:
 
 - **Build business configurations faster** with AI-assisted authoring and automation.
 - **Reduce manual effort** through guided authoring, automatic dependency creation, and code completion.
@@ -152743,11 +153013,11 @@ The  offers you the following benefits:
 - **Understand complex data models** with ontology visualization and intelligent navigation across business configuration objects.
 - **Collaborate more effectively** with built-in version history and change tracking.
 
-Whether you're implementing Reltio for the first time or continuously evolving an existing data model, the  helps your team spend less time managing configuration and more time delivering trusted, AI-ready data.
+Whether you're implementing Reltio for the first time or continuously evolving an existing data model, the integrated development experience helps your team spend less time managing configuration and more time delivering trusted, AI-ready data.
 
 ## Key capabilities
 
-The  provides the following capabilities across the modeling workflow:
+The integrated development experience provides the following capabilities across the modeling workflow:
 
 | Capability | Description |
 | --- | --- |
@@ -152756,7 +153026,7 @@ The  provides the following capabilities across the modeling workflow:
 | Intelligent navigation | Browse the complete business configuration and navigate among entity, relationship, interaction, hierarchy, and other object types. |
 | AI-assisted authoring | Create different object types through guided actions or natural-language prompts. |
 | Code completion and validation | Get context-aware suggestions and real-time validation while you edit metadata. |
-| Automatic dependency management | When you add a reference attribute, the  creates the required relation type automatically. |
+| Automatic dependency management | When you add a reference attribute, the integrated development experience creates the required relation type automatically. |
 | Ontology visualization | Visualize your business configuration to understand entities, relationships, and their connections. |
 | Safe deployment | Review your changes with a comparison before you apply them to your tenant. |
 | Version history | View configuration history, compare versions, and see who changed what and when. |
@@ -152765,20 +153035,20 @@ The  provides the following capabilities across the modeling workflow:
 
 ## Workflow overview
 
-Working in the  involves the following stages:
+Working in the integrated development experience involves the following stages:
 
-1. **Install and connect:** Install the  extension for [Cursor](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/install-the-integrated-development-experience-in-cursor?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) or [VS Code](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/install-the-integrated-development-experience-in-vs-code?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). To connect to a tenant, authenticate with your Reltio environment, select a tenant, and open your business configuration in the editor. To work from version control, connect to a [Git repository](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/connect-the-integrated-development-experience-to-a-git-repository?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) by entering the Git URL or opening a Git folder, select a business configuration, and open it in the editor.
-2. **Create and edit:** Add new objects through the context menu or natural-language prompts in your editor's AI assistant. The  validates changes inline and highlights errors.
+1. **Install and connect:** Install the integrated development experience extension for [Cursor](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/install-the-integrated-development-experience-in-cursor?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) or [VS Code](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/install-the-integrated-development-experience-in-vs-code?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). To connect to a tenant, authenticate with your Reltio environment, select a tenant, and open your business configuration in the editor. To work from version control, connect to a [Git repository](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/connect-the-integrated-development-experience-to-a-git-repository?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) by entering the Git URL or opening a Git folder, select a business configuration, and open it in the editor.
+2. **Create and edit:** Add new objects through the context menu or natural-language prompts in your editor's AI assistant. The integrated development experience validates changes inline and highlights errors.
 3. **Visualize:** Open the [ontology view](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/visualize-the-ontology-in-the-integrated-development-experience?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) to review entity types and the relationships between them.
 4. **Review and save:** If you work from a tenant, review the differences and [apply your configuration to the tenant](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/apply-configuration-and-track-changes-in-the-integrated-development-experience?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). If you work from a Git repository, review, commit, and push your changes through the editor's Source Control view.
 
-To develop Life Cycle Actions or workflows, see [Life Cycle Actions in](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/life-cycle-actions-in-integrated-development-experience?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Workflows in the](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/workflows-in-the-integrated-development-experience?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+To develop Life Cycle Actions or workflows, see [Life Cycle Actions in integrated development experience](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/life-cycle-actions-in-integrated-development-experience?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Workflows in the integrated development experience](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/workflows-in-the-integrated-development-experience?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
 ---
 
-# Life Cycle Actions in
+# Life Cycle Actions in integrated development experience
 
 > **Section:** Developer resources > AI Integrations > Integrated development experience overview
 
@@ -152788,13 +153058,13 @@ To develop Life Cycle Actions or workflows, see [Life Cycle Actions in](https://
 **Keywords:** Life Cycle Actions, AI-assisted LCA development, lifecycleActions configuration, LCA configuration tree, LCA cloud deployment
 
 
-Learn about developing Life Cycle Actions with the .
+Learn about developing Life Cycle Actions with the integrated development experience.
 
-enables AI-assisted development of [Life Cycle Actions (LCAs)](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) through the business configuration tree of the **Reltio IDE** extension view, which displays existing LCA definitions from the [connected tenant](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/connect-the-integrated-development-experience-to-your-reltio-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) or [Git repository](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/connect-the-integrated-development-experience-to-a-git-repository?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and the AI agent that enables the required LCAs development for the specific entity and relationship types.
+Integrated development experience enables AI-assisted development of [Life Cycle Actions (LCAs)](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) through the business configuration tree of the **Reltio IDE** extension view, which displays existing LCA definitions from the [connected tenant](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/connect-the-integrated-development-experience-to-your-reltio-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) or [Git repository](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/connect-the-integrated-development-experience-to-a-git-repository?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and the AI agent that enables the required LCAs development for the specific entity and relationship types.
 
 ## Workspace experience
 
-When you connect to your Reltio [tenant](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/connect-the-integrated-development-experience-to-your-reltio-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) in the , the business configuration tree shows `lifecycleActions` under each entity or relationship type that already has LCA(s) configured. Selecting it takes you to the `lifecycleActions` section for that specific entity or relationship type in the business configuration file.
+When you connect to your Reltio [tenant](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/connect-the-integrated-development-experience-to-your-reltio-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) in the integrated development experience, the business configuration tree shows `lifecycleActions` under each entity or relationship type that already has LCA(s) configured. Selecting it takes you to the `lifecycleActions` section for that specific entity or relationship type in the business configuration file.
 
 *Image: i-LCA_configuration_in_the_tree_and_AI_assistant.png*
 
@@ -152833,18 +153103,18 @@ LCA development takes place through natural language prompts to the AI agent, wi
   Creation and updates: Create and update LCAs by describing what you need to the AI agent in natural language prompts.
 - 
 
-  Existing source code: To change or review a deployed LCA, connect its Git project in the . Then ask the AI agent to review the project or make the change. The AI agent can build the project and deploy the updated function to your cloud environment.
+  Existing source code: To change or review a deployed LCA, connect its Git project in the integrated development experience. Then ask the AI agent to review the project or make the change. The AI agent can build the project and deploy the updated function to your cloud environment.
 - 
 
   Framework version: Use the `com.reltio:life-cycle-framework` version that matches the latest Reltio release. The version is set in the `lca-version` property in the project's `pom.xml` file. If you are not sure which version to use, contact [Reltio Support](https://docs.reltio.com/en/reltio/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
-Configure your environment in [Configure LCA development](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/life-cycle-actions-in-integrated-development-experience/configure-lca-development?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). Then, [Create and deploy an LCA](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/life-cycle-actions-in-integrated-development-experience/create-and-deploy-an-lca?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). To resolve issues, see [Troubleshoot LCA development in](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/life-cycle-actions-in-integrated-development-experience/troubleshoot-lca-development-in-integrated-development-experience?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+Configure your environment in [Configure LCA development](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/life-cycle-actions-in-integrated-development-experience/configure-lca-development?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). Then, [Create and deploy an LCA](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/life-cycle-actions-in-integrated-development-experience/create-and-deploy-an-lca?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). To resolve issues, see [Troubleshoot LCA development in integrated development experience](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/life-cycle-actions-in-integrated-development-experience/troubleshoot-lca-development-in-integrated-development-experience?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
 ---
 
-# Troubleshoot LCA development in
+# Troubleshoot LCA development in integrated development experience
 
 > **Section:** Developer resources > AI Integrations > Integrated development experience overview > Life Cycle Actions in integrated development experience
 
@@ -152870,7 +153140,7 @@ The AI agent needs the business configuration to check entity types, relation ty
 
 **Why the error occurs**
 
-The  is not connected to a tenant or Git repository, or the tenant's configuration was not fetched.
+The integrated development experience is not connected to a tenant or Git repository, or the tenant's configuration was not fetched.
 
 **How to fix the issue**
 
@@ -152887,7 +153157,7 @@ Use the method that applies to you:
   If the tenant is connected but the business configuration tree is empty, select **Get Configuration**.
 - 
 
-  To work from a Git repository instead, see [Connect the to a Git repository](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/connect-the-integrated-development-experience-to-a-git-repository?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+  To work from a Git repository instead, see [Connect the integrated development experience to a Git repository](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/connect-the-integrated-development-experience-to-a-git-repository?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 **Preventive measures**
 
@@ -153153,7 +153423,7 @@ If you cannot resolve the issue using the sections above, contact [Reltio Suppor
   Your tenant ID
 - 
 
-  The  version, shown in the Extensions view of Cursor or VS Code
+  The integrated development experience version, shown in the Extensions view of Cursor or VS Code
 - 
 
   The cloud provider and region
@@ -153183,7 +153453,7 @@ If you cannot resolve the issue using the sections above, contact [Reltio Suppor
 
 Learn how to configure the tools, credentials, and connectivity required for LCA development.
 
-Configure the tools, cloud credentials, and Reltio-to-cloud connectivity required to build, deploy, and register [Life Cycle Actions (LCAs)](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) with the .
+Configure the tools, cloud credentials, and Reltio-to-cloud connectivity required to build, deploy, and register [Life Cycle Actions (LCAs)](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) with the integrated development experience.
 
 You need a connected Reltio tenant or Git repository to ask the AI agent questions or generate LCA code. Maven credentials, environment variables, and Reltio-to-cloud connectivity are required to build, deploy, and register an LCA.
 
@@ -153193,7 +153463,7 @@ Before you begin, confirm the following requirements:
 
 - 
 
-  You have the  installed in [Cursor](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/install-the-integrated-development-experience-in-cursor?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) or [VS Code](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/install-the-integrated-development-experience-in-vs-code?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+  You have the integrated development experience installed in [Cursor](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/install-the-integrated-development-experience-in-cursor?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) or [VS Code](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/install-the-integrated-development-experience-in-vs-code?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 - 
 
   You have access to a Reltio tenant or a Git repository that contains `BusinessConfig.json` or `L3.reltio.json`.
@@ -153294,7 +153564,7 @@ To confirm the LCA development environment is configured, perform the following 
 
 Learn how to design an LCA with the AI agent, build and deploy the function, and update business configuration so Reltio invokes the LCA at the specified lifecycle hook.
 
-Use the AI agent in the  to create a [Life Cycle Action (LCA)](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), generate a Java project, build and deploy the function, and update business configuration so Reltio invokes it at the specified lifecycle hook.
+Use the AI agent in the integrated development experience to create a [Life Cycle Action (LCA)](https://docs.reltio.com/en/developer-resources/about-developer-resources/developer-resources-at-a-glance/customize-data-tasks-with-lcas?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), generate a Java project, build and deploy the function, and update business configuration so Reltio invokes it at the specified lifecycle hook.
 
 **Prerequisites**
 
@@ -153305,7 +153575,7 @@ Before you begin, confirm the following requirements are met:
   You completed [Configure LCA development](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/life-cycle-actions-in-integrated-development-experience/configure-lca-development?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), including Maven setup, the command-line tool for your cloud, Reltio-to-cloud connectivity in Reltio Console, and collection of the environment variables required for deployment.
 - 
 
-  The  is connected to a [Reltio tenant](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/connect-the-integrated-development-experience-to-your-reltio-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) or a [Git repository](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/connect-the-integrated-development-experience-to-a-git-repository?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) that contains `BusinessConfig.json` or `L3.reltio.json`.
+  The integrated development experience is connected to a [Reltio tenant](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/connect-the-integrated-development-experience-to-your-reltio-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) or a [Git repository](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/connect-the-integrated-development-experience-to-a-git-repository?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) that contains `BusinessConfig.json` or `L3.reltio.json`.
 
 
 To create and deploy an LCA
@@ -153396,9 +153666,9 @@ To verify the deployment, perform the following steps:
 **Keywords:** create workflow, update workflow, BPMN file, Java logic, deploy workflow
 
 
-Learn what a workflow requires in the , and the tasks that you complete to create or update it.
+Learn what a workflow requires in the integrated development experience, and the tasks that you complete to create or update it.
 
-A workflow consists of a BPMN file, which defines the steps and their order, and the Java logic that runs each step. For how workflows, process IDs, and Java logic work, see [Workflows in the](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/workflows-in-the-integrated-development-experience?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+A workflow consists of a BPMN file, which defines the steps and their order, and the Java logic that runs each step. For how workflows, process IDs, and Java logic work, see [Workflows in the integrated development experience](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/workflows-in-the-integrated-development-experience?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 Before you start, fetch the workflows of the tenant, as described in [View the workflows](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/workflows-in-the-integrated-development-experience/view-the-workflows?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
@@ -153435,7 +153705,7 @@ Create or update the BPMN file and the Java logic yourself, or describe your req
 
 ---
 
-# Workflows in the
+# Workflows in the integrated development experience
 
 > **Section:** Developer resources > AI Integrations > Integrated development experience overview
 
@@ -153445,9 +153715,9 @@ Create or update the BPMN file and the Java logic yourself, or describe your req
 **Keywords:** Reltio workflows, BPMN workflow, deploy workflow, custom workflow repository, register JAR, workflow process ID
 
 
-Learn what a Reltio workflow consists of in the , how process IDs work, and when a workflow requires Java development.
+Learn what a Reltio workflow consists of in the integrated development experience, how process IDs work, and when a workflow requires Java development.
 
-A [Reltio workflow](https://docs.reltio.com/en/objectives/manage-workflow-tasks/workflow-management-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) runs a business process such as data change request (DCR), potential match, and delete reviews as a series of steps. Reltio provides out-of-the-box (OOTB) workflows for each tenant, and your team can also create custom workflows based on your business requirements. In the , you can create, update, and deploy these workflows to your Reltio tenant.
+A [Reltio workflow](https://docs.reltio.com/en/objectives/manage-workflow-tasks/workflow-management-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) runs a business process such as data change request (DCR), potential match, and delete reviews as a series of steps. Reltio provides out-of-the-box (OOTB) workflows for each tenant, and your team can also create custom workflows based on your business requirements. In the integrated development experience, you can create, update, and deploy these workflows to your Reltio tenant.
 
 A workflow consists of a BPMN (Business Process Model and Notation) file and the Java logic that its steps call. The following table describes the components:
 
@@ -153474,7 +153744,7 @@ OOTB and custom workflows use different icons. Hover over a workflow to see **OO
 
 ## Process IDs
 
-Each workflow has a process ID, which identifies the workflow on the tenant. In the , you enter the process ID when you create or duplicate a workflow. The process ID must meet the following rules:
+Each workflow has a process ID, which identifies the workflow on the tenant. In the integrated development experience, you enter the process ID when you create or duplicate a workflow. The process ID must meet the following rules:
 
 - It starts with a letter or an underscore.
 - It contains only letters, digits, underscores, dots, and hyphens.
@@ -153508,7 +153778,7 @@ For the steps, see [Create or update the Java logic](https://docs.reltio.com/en/
 
 ## Create workflows with the AI agent
 
-The AI agent in the  includes Reltio workflow guidance, so it can create workflows for you from a description you provide.
+The AI agent in the integrated development experience includes Reltio workflow guidance, so it can create workflows for you from a description you provide.
 
 When you describe a workflow to the AI agent in a natural language prompt, the AI agent works through these steps:
 
@@ -153521,7 +153791,7 @@ If a Reltio skill is missing, the AI agent tells you before it creates anything.
 
 ## Get started with workflows
 
-To work with workflows in the , complete the following tasks:
+To work with workflows in the integrated development experience, complete the following tasks:
 
 1. 
 
@@ -153549,7 +153819,7 @@ If a step fails, see [Troubleshoot workflows](https://docs.reltio.com/en/develop
 **Keywords:** troubleshoot workflows, Workflow Adapter, Deploy to Tenant, custom workflow repository, Register JAR
 
 
-Learn how to resolve common problems when you fetch, create, update, and deploy workflows in the .
+Learn how to resolve common problems when you fetch, create, update, and deploy workflows in the integrated development experience.
 
 This topic describes the problems that you can encounter when you fetch, create, update, and deploy workflows, and when you work with the custom workflow repository, JAR files, and the AI agent. Each section starts with the error, message, or problem that you see, and then explains what it means, why it occurs, and how to fix it.
 
@@ -153569,7 +153839,7 @@ This topic describes the problems that you can encounter when you fetch, create,
 
 **Error:** In the business configuration tree of the **Reltio IDE** extension view, the **Workflows** folder does not show **Process Definitions** or **JAR Deployments**, and a connection error appears with an **Edit Adapter URL** button.
 
-**What this error means:** The  cannot reach the Workflow Adapter at the saved URL.
+**What this error means:** The integrated development experience cannot reach the Workflow Adapter at the saved URL.
 
 **Why the error occurs:**
 
@@ -153582,7 +153852,7 @@ This topic describes the problems that you can encounter when you fetch, create,
 2. Enter the correct host for the tenant's environment, without a path. If you do not know the host, ask your Reltio contact.
 3. Right-click **Workflows**, and select **Refresh Workflows**.
 
-**Preventive measures:** When the  asks you to choose between two Workflow Adapter hosts, confirm the host for your environment with your Reltio contact.
+**Preventive measures:** When the integrated development experience asks you to choose between two Workflow Adapter hosts, confirm the host for your environment with your Reltio contact.
 
 ## The Workflow Adapter URL is rejected
 
@@ -153590,7 +153860,7 @@ This topic describes the problems that you can encounter when you fetch, create,
 
 `Refusing to contact untrusted host "<host>". If this is a sanctioned Reltio environment, add it to the "reltio.trustedHostSuffixes" setting.`
 
-**What this error means:** The host is not in the list of trusted hosts. The  does not send your credentials to a host outside this list.
+**What this error means:** The host is not in the list of trusted hosts. The integrated development experience does not send your credentials to a host outside this list.
 
 **Why the error occurs:** The host does not end with a suffix that the `reltio.trustedHostSuffixes` setting lists. For example, some environments use hosts outside `reltio.com`.
 
@@ -153608,13 +153878,13 @@ This topic describes the problems that you can encounter when you fetch, create,
 - The message `Provide a token for this environment before fetching workflows.`
 - The text **Sign in to continue** beside the environment in the business configuration tree.
 
-**What this error means:** The  has no valid session for the environment, so the Workflow Adapter refuses the request (error 401).
+**What this error means:** The integrated development experience has no valid session for the environment, so the Workflow Adapter refuses the request (error 401).
 
 **Why the error occurs:** Your session expired, or you have not signed in to the environment.
 
 **How to fix the issue:**
 
-1. Sign in to the environment again. For the steps, see [Connect the to your Reltio tenant](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/connect-the-integrated-development-experience-to-your-reltio-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+1. Sign in to the environment again. For the steps, see [Connect the integrated development experience to your Reltio tenant](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/connect-the-integrated-development-experience-to-your-reltio-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 2. Right-click **Workflows**, and select **Refresh Workflows**.
 
 ## Access is denied
@@ -153702,7 +153972,7 @@ If you select a workflow while a different workflow has local changes, a similar
 
 **Problem:** You updated a deployed workflow, and your changes no longer appear.
 
-**What this problem means:** The  replaced your local changes with the version from the tenant.
+**What this problem means:** The integrated development experience replaced your local changes with the version from the tenant.
 
 **Why the problem occurs:** You selected **Discard Local Changes**, or **Discard and fetch fresh** when you opened the workflow. Local changes exist only on your computer until you deploy them.
 
@@ -153767,7 +154037,7 @@ If you select a workflow while a different workflow has local changes, a similar
 
 ## The diagram is blank in Reltio Console
 
-**Problem:** The workflow appears as a blank canvas, or with missing steps, in Reltio Console or another BPMN viewer. **Show BPMN Diagram** in the  may still show the workflow.
+**Problem:** The workflow appears as a blank canvas, or with missing steps, in Reltio Console or another BPMN viewer. **Show BPMN Diagram** in the integrated development experience may still show the workflow.
 
 **What this problem means:** The diagram section of the BPMN file is missing, incomplete, or refers to a different process ID.
 
@@ -153781,7 +154051,7 @@ If you select a workflow while a different workflow has local changes, a similar
 
 `Git executable not found. Install Git (https://git-scm.com/downloads) and ensure it is on your PATH, then try again.`
 
-**What this error means:** The  cannot find Git on your computer.
+**What this error means:** The integrated development experience cannot find Git on your computer.
 
 **Why the error occurs:** Git is not installed, or its folder is not in the `PATH` environment variable of your system.
 
@@ -153801,7 +154071,7 @@ If you select a workflow while a different workflow has local changes, a similar
 - `A git URL must not contain spaces or control characters.`
 - `Use an https://, ssh://, or git@host:path URL.`
 
-**What this error means:** The URL is not in a form that the  accepts.
+**What this error means:** The URL is not in a form that the integrated development experience accepts.
 
 **Why the error occurs:** The URL contains a password, contains spaces, or does not use one of the accepted forms.
 
@@ -153813,7 +154083,7 @@ If you select a workflow while a different workflow has local changes, a similar
 
 `Workflows/ already has files that the repository also contains: <files>. Nothing was changed. Move or rename them, then connect again.`
 
-**What this error means:** The  copies the repository into the `Workflows` folder of the tenant. It does not overwrite files that are already there, so it stops without changing anything.
+**What this error means:** The integrated development experience copies the repository into the `Workflows` folder of the tenant. It does not overwrite files that are already there, so it stops without changing anything.
 
 **Why the error occurs:** The `Workflows` folder of the tenant in your workspace contains files with the same names and locations as files in the repository. For example, repository files that had uncommitted changes remain after you select **Disconnect Custom Workflow Repository**, which keeps them.
 
@@ -153908,19 +154178,19 @@ If you cannot resolve the problem, contact [Reltio Support](https://docs.reltio.
 **Keywords:** view workflows, load workflows, Workflow Adapter URL, refresh workflows
 
 
-Learn how to view a tenant's workflows in the .
+Learn how to view a tenant's workflows in the integrated development experience.
 
-When you expand a connected tenant, the  loads its workflows automatically.
+When you expand a connected tenant, the integrated development experience loads its workflows automatically.
 
 **Prerequisites**
 
-Before you begin, confirm that the  is connected to the tenant through **Connect your Reltio Tenant**, and that you are signed in.
+Before you begin, confirm that the integrated development experience is connected to the tenant through **Connect your Reltio Tenant**, and that you are signed in.
 
 
 To view the workflows of a tenant
 
 1. In the business configuration tree of the **Reltio IDE** extension view, under the environment, select the arrow next to the tenant name to expand the tenant.
-   The tenant shows **Business Config** and **Workflows**. The  loads the workflows, and a notification shows `Fetching workflows for <tenant ID>…`. **Workflows** then shows **Process Definitions** and **JAR Deployments**, each with the number of items. 
+   The tenant shows **Business Config** and **Workflows**. The integrated development experience loads the workflows, and a notification shows `Fetching workflows for <tenant ID>…`. **Workflows** then shows **Process Definitions** and **JAR Deployments**, each with the number of items. 
 
 *Image: i-workflow_icon.png*
 2. (Optional) Right-click **Workflows**, and select one of the following actions:
@@ -153965,7 +154235,7 @@ To create or update a workflow, see [Create or update a workflow](https://docs.r
 **Keywords:** connect custom workflow repository, custom workflow repository, Bitbucket, Refresh Sync Status, Disconnect Custom Workflow Repository
 
 
-Learn how to connect the Bitbucket repository that Reltio provides for your custom workflows to the , and review the files in it.
+Learn how to connect the Bitbucket repository that Reltio provides for your custom workflows to the integrated development experience, and review the files in it.
 
 The custom workflow repository is a Bitbucket repository that Reltio provides for your custom workflows. It stores the Java code that your custom workflow steps call, along with any BPMN files you add. After a pull request is merged, a Reltio pipeline builds the Java code into a JAR file. Reltio owns and manages the repository, and grants access to your team. For more information, see [configure custom workflows](https://docs.reltio.com/en/objectives/manage-workflow-tasks/workflow-management-at-a-glance/workflow-management-set-up/overview-of-workflow-customizations/overview-of-workflow-configuration/configure-custom-workflows?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and the [Workflow FAQ](https://docs.reltio.com/en/objectives/manage-workflow-tasks/workflow-management-at-a-glance/workflow-management-reference/workflow-faq?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
@@ -154003,7 +154273,7 @@ To connect the custom workflow repository
 - `git@bitbucket.org:acme/acme-workflows.git`
    - It does not contain a password. To sign in, use SSH or your Git credential manager.
    - It does not contain spaces.
-   The  starts to copy the repository to your computer, into the `Workflows` folder under the tenant's folder in your workspace. A notification titled **Cloning Custom Workflow Repository...** shows the progress. In the rest of this topic, the copy is called your copy of the repository.
+   The integrated development experience starts to copy the repository to your computer, into the `Workflows` folder under the tenant's folder in your workspace. A notification titled **Cloning Custom Workflow Repository...** shows the progress. In the rest of this topic, the copy is called your copy of the repository.
    New workflows that you have not deployed yet are in `Workflows/bpmn/`. They stay there and become part of your copy of the repository, so the next commit includes them. A message tells you when this applies. If one of these files has the same name as a file in the repository, your file is kept, and the message names it.
 3. (Optional) If Git asks you to sign in, sign in.
    Git asks you to sign in when the repository requires it. Sign in with your Git credential manager or your SSH key, depending on how you set up Git. When the copy finishes, a notification confirms the connection: `Connected the Custom Workflow Repository for "<tenant ID>". If it built a new JAR, use Refresh JARs to pick it up.` The business configuration tree updates, and you review it in the next step.
@@ -154055,7 +154325,7 @@ When you select **Disconnect Custom Workflow Repository**, a confirmation box li
 
   Commits that you have not pushed are lost.
 
-If the  cannot read the repository, every file in the `Workflows` folder stays in place, and only the connection and the local Git history are removed.
+If the integrated development experience cannot read the repository, every file in the `Workflows` folder stays in place, and only the connection and the local Git history are removed.
 
 A notification confirms the result: `Tenant "<tenant ID>" is no longer connected to a Custom Workflow Repository, and its files were removed from Workflows/.` The **Connect Custom Workflow Repository...** row appears again.
 
@@ -154093,11 +154363,11 @@ To create or update a workflow, see [Create or update a workflow](https://docs.r
 **Keywords:** BPMN file, create workflow, update workflow, New Workflow, Duplicate as Draft, process ID, Show BPMN Diagram
 
 
-Learn how to start a new workflow or open a deployed workflow in the , and then edit, check, and preview its BPMN file.
+Learn how to start a new workflow or open a deployed workflow in the integrated development experience, and then edit, check, and preview its BPMN file.
 
 The BPMN file of a workflow defines the steps of the workflow and their order. Each step calls Java logic that runs it, for example to assign a review task to a reviewer or to apply an approved change. To create a workflow, you start a new BPMN file. To update a workflow, you edit the BPMN file of a deployed workflow or of a workflow in the custom workflow repository.
 
-Edit the BPMN file yourself, or describe your requirements to the AI agent in a natural language prompt. Your edits stay on your computer until you deploy the workflow. For how workflows and process IDs work, see [Workflows in the](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/workflows-in-the-integrated-development-experience?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+Edit the BPMN file yourself, or describe your requirements to the AI agent in a natural language prompt. Your edits stay on your computer until you deploy the workflow. For how workflows and process IDs work, see [Workflows in the integrated development experience](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/workflows-in-the-integrated-development-experience?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 **Prerequisites**
 
@@ -154120,7 +154390,7 @@ To create the workflow
 | Create a workflow from a copy of a deployed workflow | Expand **Process Definitions**, right-click the workflow, and select **Duplicate as Draft...**. The new workflow is a copy of the deployed workflow. | [Enter the process ID and the name](#task-7512/step-2047). |
 | Update a deployed workflow | Expand **Process Definitions**, and select the workflow. The BPMN file of the workflow opens in a new editor tab. | [Edit the BPMN file](#task-7512/step-2180). |
 | Update a workflow in the custom workflow repository | Expand **Process Definitions**, and select the BPMN file marked **repository**. The BPMN file opens in a new editor tab. | [Edit the BPMN file](#task-7512/step-2180). |
-   **Process Definitions** lists the workflows that are deployed on the tenant, both built-in and custom. The  downloads a copy of each deployed workflow to the `Workflows/bpmn/` folder of your tenant folder. The tenant folder is `<environment>/<tenant ID>/` in your workspace, the same folder that contains `Business Config`. When you update a workflow in the custom workflow repository, update it there, so that the repository stays the source of the workflow.
+   **Process Definitions** lists the workflows that are deployed on the tenant, both built-in and custom. The integrated development experience downloads a copy of each deployed workflow to the `Workflows/bpmn/` folder of your tenant folder. The tenant folder is `<environment>/<tenant ID>/` in your workspace, the same folder that contains `Business Config`. When you update a workflow in the custom workflow repository, update it there, so that the repository stays the source of the workflow.
    *Image: i-new_workflow_icon_and_menu.png*
    *Image: i-duplicate_the_existing_workflow_to_create_a_new_draft.png*
    *Image: i-deployed_workflow_open_in_the_editor.png*
@@ -154176,7 +154446,7 @@ To edit and check the BPMN file
 5. (Optional) For a deployed workflow, to review or undo your changes, right-click the workflow under **Process Definitions**, and select one of the following actions:
    | Action | What it does |
 | --- | --- |
-| **Compare with Last Fetch** | Opens a side-by-side view of your file and the version that the  last fetched from the tenant. |
+| **Compare with Last Fetch** | Opens a side-by-side view of your file and the version that the integrated development experience last fetched from the tenant. |
 | **Discard Local Changes** | Asks you to confirm, and then restores the version that was last fetched from the tenant. Your changes are lost. |
    *Image: i-actions_for_a_workflow_with_local_changes.png*
 6. (Optional) Preview the workflow as a diagram to check that the steps are in the order that you designed.
@@ -154244,7 +154514,7 @@ Before you begin, confirm the following requirements:
   Your Reltio user has the `ROLE_WORKFLOW_MANAGER` role on the tenant. This role is required to register the JAR file.
 - 
 
-  To build and test the Java logic on your computer, JDK 17 and Maven are installed. The  does not run the build. You run it in a terminal.
+  To build and test the Java logic on your computer, JDK 17 and Maven are installed. The integrated development experience does not run the build. You run it in a terminal.
 
 
 To write and check the Java logic
@@ -154264,7 +154534,7 @@ To write and check the Java logic
 To submit the Java logic for review
 
 4. Commit your changes to a new branch, push the branch to the repository, and then create a pull request to the `master` branch in Bitbucket.
-   Reltio builds the JAR file from the code in the `master` branch. You cannot update the `master` branch directly, so create the pull request from your branch. Commit the Java classes, the tests, and the BPMN file of the workflow. The `Workflows/bpmn/` folder also contains the workflows that the  downloads from the tenant, so stage only the files that belong to your change.
+   Reltio builds the JAR file from the code in the `master` branch. You cannot update the `master` branch directly, so create the pull request from your branch. Commit the Java classes, the tests, and the BPMN file of the workflow. The `Workflows/bpmn/` folder also contains the workflows that the integrated development experience downloads from the tenant, so stage only the files that belong to your change.
    To open the repository in your browser, right-click **Workflows**, and select **Open Repository in Browser**. If the AI agent wrote the Java logic, it asks whether to open the pull request. Confirm, and the AI agent opens the pull request for you. This requires that your editor has access to the repository.
 5. Respond to the review, and then merge the pull request.
    When you create the pull request, Reltio assigns reviewers to it automatically, and automated tools check your code. A requirement of the checklist that is not met blocks the merge.
@@ -154315,9 +154585,9 @@ Deploy the workflow, as described in [Deploy a workflow](https://docs.reltio.com
 **Keywords:** deploy workflow, Deploy to Tenant, Deploy new version, process ID, workflow version
 
 
-Learn how to deploy the BPMN file of a new or updated workflow from the  to the tenant, and how to respond to the confirmations that appear.
+Learn how to deploy the BPMN file of a new or updated workflow from the integrated development experience to the tenant, and how to respond to the confirmations that appear.
 
-When you deploy a workflow, the  sends its BPMN file to the tenant. The process ID in the file determines what the deploy does. A new process ID adds a separate workflow. A process ID that is already deployed adds a new version of that workflow. New instances of the workflow use the deployed version, and instances that are already running are not changed. For details, see [Process IDs](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/workflows-in-the-integrated-development-experience?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+When you deploy a workflow, the integrated development experience sends its BPMN file to the tenant. The process ID in the file determines what the deploy does. A new process ID adds a separate workflow. A process ID that is already deployed adds a new version of that workflow. New instances of the workflow use the deployed version, and instances that are already running are not changed. For details, see [Process IDs](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/workflows-in-the-integrated-development-experience?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 **Prerequisites**
 
@@ -154334,7 +154604,7 @@ Before you begin, confirm the following requirements:
   Your Reltio user has the `ROLE_WORKFLOW_MANAGER` role on the tenant. This role is required to deploy a workflow.
 
 1. In the business configuration tree of the **Reltio IDE** extension view, under **Workflows > Process Definitions**, right-click the workflow, and select **Deploy to Tenant**. Alternatively, select the **Deploy to Tenant** icon on the row or in the editor toolbar.
-   For a workflow in the custom workflow repository, deploy the BPMN file from its own row, marked **repository**. For a deployed workflow, **Deploy to Tenant** is available only when the workflow has local changes. If the file has unsaved changes, the  saves them before it deploys.
+   For a workflow in the custom workflow repository, deploy the BPMN file from its own row, marked **repository**. For a deployed workflow, **Deploy to Tenant** is available only when the workflow has local changes. If the file has unsaved changes, the integrated development experience saves them before it deploys.
    If the process ID is already deployed on the tenant, a confirmation dialog opens. Respond to it in the next step. Otherwise, the deploy starts.
    *Image: i-deploy-workflow.png*
 2. (Optional) If a confirmation dialog opens, respond to it.
@@ -154354,7 +154624,7 @@ Before you begin, confirm the following requirements:
 
 **Result**
 
-The  deploys the workflow to the tenant, and a notification shows `Deployed "<process ID>" to <tenant ID>.` If the Workflow Adapter returns a warning, a second notification shows it.
+The integrated development experience deploys the workflow to the tenant, and a notification shows `Deployed "<process ID>" to <tenant ID>.` If the Workflow Adapter returns a warning, a second notification shows it.
 
 Under **Process Definitions**, a new workflow no longer shows **• draft**, and an updated workflow no longer shows **local changes**. If the workflow does not appear, right-click **Workflows**, and select **Refresh Workflows**.
 
@@ -154382,7 +154652,7 @@ A workflow with a new process ID is not started by existing triggers, such as da
 
 ---
 
-# Install the in Cursor
+# Install the integrated development experience in Cursor
 
 > **Section:** Developer resources > AI Integrations > Integrated development experience overview
 
@@ -154392,35 +154662,35 @@ A workflow with a new process ID is not started by existing triggers, such as da
 **Keywords:** install reltio ide cursor, reltio ide vsix installation, reltio ide setup cursor
 
 
-Learn how to install the  extension in Cursor from a `.vsix` file.
+Learn how to install the integrated development experience extension in Cursor from a `.vsix` file.
 
 **Prerequisites**
 
-Before you install the , make sure you have the following requirements:
+Before you install the integrated development experience, make sure you have the following requirements:
 
-- The `.vsix` file from the [GitHub repository](https://github.com/reltio-ai/reltio-ide). Download the file from the **Assets** section on the [Releases](https://github.com/reltio-ai/reltio-ide/releases) page.
+- The integrated development experience`.vsix` file from the [integrated development experience GitHub repository](https://github.com/reltio-ai/reltio-ide). Download the file from the **Assets** section on the [Releases](https://github.com/reltio-ai/reltio-ide/releases) page.
 
 
-To install the in Cursor
+To install the integrated development experience in Cursor
 
-1. Open Cursor and open a folder. The  uses the folder as your local workspace for downloading and managing business configurations.
+1. Open Cursor and open a folder. The integrated development experience uses the folder as your local workspace for downloading and managing business configurations.
 2. Press Cmd+Shift+P on macOS, or Ctrl+Shift+P on Windows and Linux, to open the Command Palette.
 3. Type **Install from VSIX**, and then select **Extensions: Install from VSIX...**.
    *Image: cursor-install-vsix.png*
 4. Browse to the location where you downloaded the `.vsix` file. Select the .`vsix` file and click **Install**.
-5. Open the Extensions view and confirm that the  appears in the list of installed extensions.
+5. Open the Extensions view and confirm that the integrated development experience appears in the list of installed extensions.
 
 **Result**
 
-The  appears in your installed extensions, and the Reltio icon appears in the activity bar.
+The integrated development experience appears in your installed extensions, and the Reltio icon appears in the activity bar.
 
-Once installed, connect the  to either [your Reltio tenant](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/connect-the-integrated-development-experience-to-your-reltio-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) or a [Git repository](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/connect-the-integrated-development-experience-to-a-git-repository?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+Once installed, connect the integrated development experience to either [your Reltio tenant](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/connect-the-integrated-development-experience-to-your-reltio-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) or a [Git repository](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/connect-the-integrated-development-experience-to-a-git-repository?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
 ---
 
-# Install the in VS Code
+# Install the integrated development experience in VS Code
 
 > **Section:** Developer resources > AI Integrations > Integrated development experience overview
 
@@ -154430,43 +154700,43 @@ Once installed, connect the  to either [your Reltio tenant](https://docs.reltio.
 **Keywords:** install reltio ide vs code, reltio ide vsix installation, reltio ide setup vs code
 
 
-Learn how to install the  extension in VS Code from a `.vsix` file, using either the Extensions view or the Command Palette.
+Learn how to install the integrated development experience extension in VS Code from a `.vsix` file, using either the Extensions view or the Command Palette.
 
 **Prerequisites**
 
-Before you install the , make sure you have the following requirements:
+Before you install the integrated development experience, make sure you have the following requirements:
 
-- The `.vsix` file from the [GitHub repository](https://github.com/reltio-ai/reltio-ide). Download the file from the **Assets** section on the [Releases](https://github.com/reltio-ai/reltio-ide/releases) page.
+- The integrated development experience`.vsix` file from the [integrated development experience GitHub repository](https://github.com/reltio-ai/reltio-ide). Download the file from the **Assets** section on the [Releases](https://github.com/reltio-ai/reltio-ide/releases) page.
 
 
-To install the in VS Code using the Extensions view
+To install the integrated development experience in VS Code using the Extensions view
 
-1. Open VS Code and open a folder. The  uses the folder as your local workspace for downloading and managing business configurations.
+1. Open VS Code and open a folder. The integrated development experience uses the folder as your local workspace for downloading and managing business configurations.
 2. Select the **Extensions** icon in the activity bar to open the Extensions view.
 3. Select the **...** (More Actions) menu at the top of the Extensions view, and then select **Install from VSIX...**.
 4. Browse to the location where you downloaded the `.vsix` file. Select the `.vsix` file and click **Install**.
-5. Open the Extensions view and confirm that the  appears in the list of installed extensions.
+5. Open the Extensions view and confirm that the integrated development experience appears in the list of installed extensions.
 
-To install the in VS Code using the Command Palette
+To install the integrated development experience in VS Code using the Command Palette
 
-6. Open VS Code and open a folder. The  uses the folder as your local workspace for downloading and managing business configurations.
+6. Open VS Code and open a folder. The integrated development experience uses the folder as your local workspace for downloading and managing business configurations.
 7. Press Cmd+Shift+P on macOS, or Ctrl+Shift+P on Windows and Linux, to open the Command Palette.
 8. Type **Install from VSIX**, and then select **Extensions: Install from VSIX...**.
    *Image: cursor-install-vsix.png*
 9. Browse to the location where you downloaded the `.vsix` file. Select the `.vsix` file and select **Install**.
-10. Open the Extensions view and confirm that the  appears in the list of installed extensions.
+10. Open the Extensions view and confirm that the integrated development experience appears in the list of installed extensions.
 
 **Result**
 
-The  appears in your installed extensions, and the Reltio icon appears in the activity bar.
+The integrated development experience appears in your installed extensions, and the Reltio icon appears in the activity bar.
 
-Once installed, connect the  to either [your Reltio tenant](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/connect-the-integrated-development-experience-to-your-reltio-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) or a [Git repository](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/connect-the-integrated-development-experience-to-a-git-repository?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+Once installed, connect the integrated development experience to either [your Reltio tenant](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/connect-the-integrated-development-experience-to-your-reltio-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) or a [Git repository](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/connect-the-integrated-development-experience-to-a-git-repository?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
 ---
 
-# Apply configuration and track changes in the
+# Apply configuration and track changes in the integrated development experience
 
 > **Section:** Developer resources > AI Integrations > Integrated development experience overview
 
@@ -154476,15 +154746,15 @@ Once installed, connect the  to either [your Reltio tenant](https://docs.reltio.
 **Keywords:** apply configuration to tenant reltio ide, fetch configuration reltio ide, fetching l3 configuration, configuration history reltio ide, who changed what reltio ide, version history reltio ide, deploy l3 configuration reltio ide, compare configuration versions reltio ide
 
 
-Learn how to fetch the latest tenant configuration, apply your changes to the tenant, and review configuration history in the .
+Learn how to fetch the latest tenant configuration, apply your changes to the tenant, and review configuration history in the integrated development experience.
 
-The  provides tenant configuration workflows for workspaces connected to a Reltio tenant. If your configuration is stored in Git, use the editor's Source Control view to review, commit, and push your changes.
+The integrated development experience provides tenant configuration workflows for workspaces connected to a Reltio tenant. If your configuration is stored in Git, use the editor's Source Control view to review, commit, and push your changes.
 
-The  supports the following tenant configuration workflows:
+The integrated development experience supports the following tenant configuration workflows:
 
 - 
 
-  Use **Fetch Configuration** to fetch the configuration from your tenant and overwrite the local changes you made in the .
+  Use **Fetch Configuration** to fetch the configuration from your tenant and overwrite the local changes you made in the integrated development experience.
 - 
 
   Use **Apply Configuration to Tenant** to deploy your local configuration to the tenant.
@@ -154495,12 +154765,12 @@ The  supports the following tenant configuration workflows:
 
 To fetch and apply configuration
 
-1. Right-click your tenant in the **Reltio IDE** view and select **Fetch Configuration** to retrieve the latest configuration from the tenant. A **Fetching L3 configuration...** indicator appears in the status bar while the fetch is in progress. The  updates your local configuration file with the retrieved configuration once complete.
+1. Right-click your tenant in the **Reltio IDE** view and select **Fetch Configuration** to retrieve the latest configuration from the tenant. A **Fetching L3 configuration...** indicator appears in the status bar while the fetch is in progress. The integrated development experience updates your local configuration file with the retrieved configuration once complete.
 2. If your editor detects that your local file was overwritten while you had unsaved changes, select **Keep File** to retain your local edits, or **Undo File** to accept the fetched version.
 3. Edit the configuration file with the changes you want to apply to the tenant.
 4. Right-click your tenant in the **Reltio IDE** view and select **Apply Configuration to Tenant**.
    *Image: Apply_Configuration_to_Tenant.png*
-   The  displays a confirmation dialog to view changes before applying.
+   The integrated development experience displays a confirmation dialog to view changes before applying.
    *Image: Apply_configuration_confirmation.png*
 5. Review and respond to the confirmation dialog using one of the following options:
    - Select **Yes** to apply your local configuration changes to the tenant.
@@ -154521,7 +154791,7 @@ To review configuration history and compare versions
 
 **Result**
 
-The  applies your configuration to the tenant, and the configuration history records who changed what and when, and supports version comparison.
+The integrated development experience applies your configuration to the tenant, and the configuration history records who changed what and when, and supports version comparison.
 
 **Validation**
 
@@ -154534,7 +154804,7 @@ To confirm that the configuration was applied and that history is available:
 
 ---
 
-# Connect the to a Git repository
+# Connect the integrated development experience to a Git repository
 
 > **Section:** Developer resources > AI Integrations > Integrated development experience overview
 
@@ -154544,7 +154814,7 @@ To confirm that the configuration was applied and that history is available:
 **Keywords:** connect reltio ide to git repository, reltio ide github integration, clone business configuration repository, businessconfig json discovery, reltio ide private repository, git executable not found, reltio ide configuration source
 
 
-Learn how to connect the  to the Git repository that holds your business configuration, and open your configuration files in the editor.
+Learn how to connect the integrated development experience to the Git repository that holds your business configuration, and open your configuration files in the editor.
 
 **Prerequisites**
 
@@ -154552,7 +154822,7 @@ Before you connect a Git repository, make sure you have the following requiremen
 
 - 
 
-  The  installed in [Cursor](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/install-the-integrated-development-experience-in-cursor?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) or [VS Code](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/install-the-integrated-development-experience-in-vs-code?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+  The integrated development experience installed in [Cursor](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/install-the-integrated-development-experience-in-cursor?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) or [VS Code](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/install-the-integrated-development-experience-in-vs-code?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 - 
 
   Git installed on your machine and available on your system path. Download Git from [git-scm.com/downloads](https://git-scm.com/downloads).
@@ -154561,7 +154831,7 @@ Before you connect a Git repository, make sure you have the following requiremen
   The URL of the Git repository that holds your business configuration. Read access to the repository. You also need write access if you need to commit and push changes.
 - 
 
-  An empty folder open in your editor. The  clones your business configuration repository into that folder. If the repository is already cloned on your machine, open the folder that contains the clone instead.
+  An empty folder open in your editor. The integrated development experience clones your business configuration repository into that folder. If the repository is already cloned on your machine, open the folder that contains the clone instead.
 
 
 To connect a Git repository
@@ -154570,15 +154840,15 @@ To connect a Git repository
 2. Select **Connect your Repository**.
 3. Enter the Git remote URL to clone, for example `https://github.com/org/repo.git`, and press Enter.
    *Image: Connect_your_Repository_prompt_for_a_Git_remote_URL.png*
-   If the folder already contains a Git clone, the  detects the repository and skips this step.
-4. Complete any sign-in that Git requests. The prompts depend on the Git provider and authentication method. While the repository is being cloned, the  displays a `Cloning repository...` notification.
+   If the folder already contains a Git clone, the integrated development experience detects the repository and skips this step.
+4. Complete any sign-in that Git requests. The prompts depend on the Git provider and authentication method. While the repository is being cloned, the integrated development experience displays a `Cloning repository...` notification.
    A public repository does not require additional sign-in. For a private repository, Git displays **Select an account**:
    - Select an account that has access to the repository, and then select **Continue**.
    - If none of the listed accounts has access to the repository, select **Add a new account** and sign in through your browser. The clone continues after you sign in.
    *Image: Select_an_account_during_a_clone.png*
-   If the  displays an error instead of cloning the repository, refer to the [Troubleshooting](#task-35/tasktroubleshooting-670) steps for the message displayed.
+   If the integrated development experience displays an error instead of cloning the repository, refer to the [Troubleshooting](#task-35/tasktroubleshooting-670) steps for the message displayed.
 5. Verify that the repository and its configurations appear in the **RELTIO IDE** view.
-   The  automatically searches up to 10 folder levels in the repository for files named `BusinessConfig.json`. The file-name search is not case-sensitive. If the repository does not contain a `BusinessConfig.json` file, the  displays the message `No BusinessConfig.json found. Locate the L3 configuration file` and opens a file picker. Select the configuration file you want to open.
+   The integrated development experience automatically searches up to 10 folder levels in the repository for files named `BusinessConfig.json`. The file-name search is not case-sensitive. If the repository does not contain a `BusinessConfig.json` file, the integrated development experience displays the message `No BusinessConfig.json found. Locate the L3 configuration file` and opens a file picker. Select the configuration file you want to open.
    *Image: Connected_repository_in_RELTIO_IDE.png*
    The **RELTIO IDE** view reflects the repository folder structure and automatically discovers files named `BusinessConfig.json`. To add a configuration file with a different name, such as `L3.json`, right-click the `.json` file in Explorer and select **Add Config**. The file must contain a valid Reltio business configuration.
 
@@ -154592,17 +154862,17 @@ To open and manage your configuration
    - Adding a new attribute
    - Viewing the ontology
    These actions work the same way as they do for a tenant. To view the ontology, right-click the **Entity Types** or **Relation Types** folder and select **Show in Ontology**.
-10. To remove a configuration from the **RELTIO IDE** view, right-click the configuration and select **Remove Configuration**. This removes the configuration from the tree but does not delete the file from the Git repository. To disconnect the Git repository from the current workspace, right-click the repository and select **Remove Repository**. The  removes the repository connection and deletes the cloned repository contents from the workspace folder.
+10. To remove a configuration from the **RELTIO IDE** view, right-click the configuration and select **Remove Configuration**. This removes the configuration from the tree but does not delete the file from the Git repository. To disconnect the Git repository from the current workspace, right-click the repository and select **Remove Repository**. The integrated development experience removes the repository connection and deletes the cloned repository contents from the workspace folder.
 
 **Result**
 
-The  connects to the Git repository and displays the discovered business configuration files in the **RELTIO IDE** view. You can open a configuration, browse its objects, perform supported modeling actions, add configuration files that are not named `BusinessConfig.json`, and remove configurations or disconnect the repository when needed.
+The integrated development experience connects to the Git repository and displays the discovered business configuration files in the **RELTIO IDE** view. You can open a configuration, browse its objects, perform supported modeling actions, add configuration files that are not named `BusinessConfig.json`, and remove configurations or disconnect the repository when needed.
 
-The  uses Git to clone or detect the repository and open the business configuration files hosted in it. After that, your edits are saved as regular file changes. Use the built-in **Source Control** view in VS Code or Cursor to review diffs, stage changes, commit, and push them to the repository.
+The integrated development experience uses Git to clone or detect the repository and open the business configuration files hosted in it. After that, your edits are saved as regular file changes. Use the built-in **Source Control** view in VS Code or Cursor to review diffs, stage changes, commit, and push them to the repository.
 
 **Troubleshooting**
 
-If the  cannot clone the repository, use the following troubleshooting steps:
+If the integrated development experience cannot clone the repository, use the following troubleshooting steps:
 
 - 
 
@@ -154615,7 +154885,7 @@ If the  cannot clone the repository, use the following troubleshooting steps:
 
 ---
 
-# Connect the to your Reltio tenant
+# Connect the integrated development experience to your Reltio tenant
 
 > **Section:** Developer resources > AI Integrations > Integrated development experience overview
 
@@ -154625,27 +154895,27 @@ If the  cannot clone the repository, use the following troubleshooting steps:
 **Keywords:** connect reltio ide to tenant, reltio ide oauth bearer token, add environment add tenant, open l3 configuration editor, reltio metadata editor connection
 
 
-Learn how to connect the  to your Reltio tenant and open your business configuration in the editor.
+Learn how to connect the integrated development experience to your Reltio tenant and open your business configuration in the editor.
 
 **Prerequisites**
 
 Before you connect to your Reltio tenant, make sure you have the following requirements:
 
-- The  installed in [Cursor](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/install-the-integrated-development-experience-in-cursor?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) or [VS Code](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/install-the-integrated-development-experience-in-vs-code?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
-- A folder open in your editor. The  uses the folder as your local workspace for downloading and managing business configurations.
+- The integrated development experience installed in [Cursor](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/install-the-integrated-development-experience-in-cursor?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) or [VS Code](https://docs.reltio.com/en/developer-resources/ai-integrations/integrated-development-experience-overview/install-the-integrated-development-experience-in-vs-code?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+- A folder open in your editor. The integrated development experience uses the folder as your local workspace for downloading and managing business configurations.
 - A Reltio tenant and valid credentials, copied and ready to paste: an OAuth Client ID and Client secret (with your SSO routing tenant ID) from your identity provider, or a bearer token from the Reltio authentication API or your tenant administrator.
 
 
 To connect to your tenant
 
-1. Select the **Reltio** icon in the activity bar or the  from the extensions to open the **RELTIO IDE** view.
+1. Select the **Reltio** icon in the activity bar or the integrated development experience from the extensions to open the **RELTIO IDE** view.
 2. Select **Connect your Reltio Tenant** to start setup.
 3. Select **Add Environment**, and then enter your environment ID (for example, `test-usg.reltio.com`).
    *Image: add-env-dialog-vscode.png.png*
 4. Authenticate using one of the following methods, using the credentials you copied in the prerequisites.
    *Image: sign-in-vscode.png*
-   - Select **Sign in with browser (recommended)**. Enter your **Client ID** and **Client secret**, and then enter your **SSO routing tenant ID** when prompted. The  opens your browser to complete single sign-on. Your editor stores these credentials in your operating system's secure credential store.
-   - Select **Paste a Bearer token**, and then paste the token you kept ready and press Enter. The  keeps the token in memory for the current session only.
+   - Select **Sign in with browser (recommended)**. Enter your **Client ID** and **Client secret**, and then enter your **SSO routing tenant ID** when prompted. The integrated development experience opens your browser to complete single sign-on. Your editor stores these credentials in your operating system's secure credential store.
+   - Select **Paste a Bearer token**, and then paste the token you kept ready and press Enter. The integrated development experience keeps the token in memory for the current session only.
 5. After authentication, select your tenant from the tenant list.
 6. After you select the tenant, open and edit its local business configuration.
 
@@ -154663,7 +154933,7 @@ To open and navigate your configuration
 
 **Result**
 
-The  connects to your tenant, and your configuration file opens in the editor. Your tenant appears in the RELTIO IDE view, and you can expand it to browse its configuration. You are ready to add or modify configuration objects.
+The integrated development experience connects to your tenant, and your configuration file opens in the editor. Your tenant appears in the RELTIO IDE view, and you can expand it to browse its configuration. You are ready to add or modify configuration objects.
 
 **Validation**
 
@@ -154677,7 +154947,7 @@ To confirm that the connection was successful:
 
 ---
 
-# Create configuration objects in the
+# Create configuration objects in the integrated development experience
 
 > **Section:** Developer resources > AI Integrations > Integrated development experience overview
 
@@ -154687,11 +154957,11 @@ To confirm that the connection was successful:
 **Keywords:** create configuration objects reltio ide, insert entity type reltio ide, insert relation type, ai-assisted authoring reltio ide, natural language configuration authoring, reference attribute relation type, automatic dependency creation, edit l3 reltio json
 
 
-Learn how to create configuration objects in the  by adding them manually or through natural language prompts with AI-assisted authoring.
+Learn how to create configuration objects in the integrated development experience by adding them manually or through natural language prompts with AI-assisted authoring.
 
-The  adds objects to the local configuration file in both Reltio tenant-connected and Git-connected workspaces. In a tenant-connected workspace, apply the changes to the tenant when you are ready. In a Git-connected workspace, save the file, and then commit and push your changes in your editor's Source Control view.
+The integrated development experience adds objects to the local configuration file in both Reltio tenant-connected and Git-connected workspaces. In a tenant-connected workspace, apply the changes to the tenant when you are ready. In a Git-connected workspace, save the file, and then commit and push your changes in your editor's Source Control view.
 
-The  supports two ways to create configuration objects such as entity types, relation types, and others:
+The integrated development experience supports two ways to create configuration objects such as entity types, relation types, and others:
 
 - Add an object using the context menu, and then complete its definition in the configuration file.
 - Describe the object you want using natural language in your editor's AI assistant and have it generate the object for you.
@@ -154708,19 +154978,19 @@ To add an object through the context menu
    - **Add a new Graph Type**
    - **Add a new Source**
    - **Add a new Hierarchy Type**
-2. Locate the new object in the configuration file. The  adds the object with default values.
+2. Locate the new object in the configuration file. The integrated development experience adds the object with default values.
    The following image shows a new entity type added to the configuration with default values.
 
 *Image: new-entity-type.png*
 3. Edit the object in the editor to complete its definition.
-4. The  validates your changes and highlights errors in the editor so that you can fix them before applying the configuration to a tenant or committing the changes to Git.
+4. The integrated development experience validates your changes and highlights errors in the editor so that you can fix them before applying the configuration to a tenant or committing the changes to Git.
 
 To create an object with AI-assisted authoring
 
 5. Open the AI assistant in your editor: Cursor or VS Code.
 6. Describe the object you want to create. For example, *Create an Employee entity type with the relevant attributes and a reference attribute to Organization*.
-7. Review the configuration that the  generates. In this example, the  creates the Employee entity type, adds relevant attributes, adds the reference attribute to the Organization entity type, and creates the required relation type that connects Employee to Organization.
-   When a reference attribute requires a relation type, the  creates the relation type automatically, so you do not have to create it as a separate step.
+7. Review the configuration that the integrated development experience generates. In this example, the integrated development experience creates the Employee entity type, adds relevant attributes, adds the reference attribute to the Organization entity type, and creates the required relation type that connects Employee to Organization.
+   When a reference attribute requires a relation type, the integrated development experience creates the relation type automatically, so you do not have to create it as a separate step.
 
 *Image: Screenshot_2026-08-11_160319.png*
 8. Review and manually edit the generated object to complete any remaining details, and then select **Yes** to apply the generated changes to the local configuration file.
@@ -154744,7 +155014,7 @@ To confirm that the objects were created:
 
 ---
 
-# Visualize the ontology in the
+# Visualize the ontology in the integrated development experience
 
 > **Section:** Developer resources > AI Integrations > Integrated development experience overview
 
@@ -154754,9 +155024,9 @@ To confirm that the objects were created:
 **Keywords:** ontology view reltio ide, visualize data model reltio ide, entity types relationships diagram, ontology visualization reltio, show ontology preview reltio ide, reltio ide ontology diagram, l3 configuration visualization
 
 
-Learn how to open the ontology view in the  to see the entity types in your configuration and the relationships between them.
+Learn how to open the ontology view in the integrated development experience to see the entity types in your configuration and the relationships between them.
 
-The ontology view in the  displays entity types and the relationships between them. Use the ontology view to understand how your entity types relate to each other after you create or change configuration objects. The ontology view reflects your local configuration file, not the live tenant configuration.
+The ontology view in the integrated development experience displays entity types and the relationships between them. Use the ontology view to understand how your entity types relate to each other after you create or change configuration objects. The ontology view reflects your local configuration file, not the live tenant configuration.
 
 
 To open the ontology view
@@ -171181,7 +171451,7 @@ After submitting the request, monitor the reindex job using the following APIs.
 
 ---
 
-# Build a custom MCP client for
+# Build a custom MCP client for autonomous agents
 
 > **Section:** Developer resources > AI Integrations > Reltio Model Context Protocol (MCP) Server at a glance
 
@@ -171189,9 +171459,9 @@ After submitting the request, monitor the reindex job using the following APIs.
 **Source:** https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-model-context-protocol-mcp-server-at-a-glance/build-a-custom-mcp-client-for-autonomous-agents?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 
-Learn how to build a custom client to interface with the  MCP Server for tool orchestration and AI agent integration.
+Learn how to build a custom client to interface with the autonomous agents MCP Server for tool orchestration and AI agent integration.
 
-This topic shows you how to integrate with the  MCP Server using a custom MCP client, following the [Model Context Protocol specification](https://modelcontextprotocol.io/specification/2025-06-18/basic/authorization). Although the MCP Server adheres to the protocol and OAuth 2.0 standards, you'll need to handle a few key integration details explicitly when building your client.
+This topic shows you how to integrate with the autonomous agents MCP Server using a custom MCP client, following the [Model Context Protocol specification](https://modelcontextprotocol.io/specification/2025-06-18/basic/authorization). Although the MCP Server adheres to the protocol and OAuth 2.0 standards, you'll need to handle a few key integration details explicitly when building your client.
 
 This topic is for a Developer who needs to:
 
@@ -171207,7 +171477,7 @@ For more information, see[Developer at a glance](https://docs.reltio.com/en/role
 
 By following this guide, you'll create a custom MCP client that:
 
-- Sends requests to  MCP server
+- Sends requests to autonomous agents MCP server
 - Handles tool invocations
 - Processes responses from the server
 
@@ -171235,7 +171505,7 @@ pip install requests
 
 To connect your custom MCP client, you must first obtain an access token using OAuth 2.0 authentication.
 
-For more information about supported authentication flows, header formats, and endpoint discovery, see [Custom MCP client for API reference](https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-model-context-protocol-mcp-server-at-a-glance/custom-mcp-client-for-autonomous-agents-api-reference?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+For more information about supported authentication flows, header formats, and endpoint discovery, see [Custom MCP client for autonomous agents API reference](https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-model-context-protocol-mcp-server-at-a-glance/custom-mcp-client-for-autonomous-agents-api-reference?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 ## Configure the client
 
@@ -171258,7 +171528,7 @@ Your client implementation must include appropriate error handling logic to catc
 
 ## Result
 
-Your custom MCP client can now send requests to the MCP  server and handle responses.
+Your custom MCP client can now send requests to the MCP autonomous agents server and handle responses.
 
 You can retrieve the list of available tools and their metadata using the [MCP Metadata API](https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-model-context-protocol-mcp-server-at-a-glance/mcp-metadata-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
@@ -171271,7 +171541,7 @@ You can retrieve the list of available tools and their metadata using the [MCP M
 
 ## Use streamable HTTP using Anthropic python SDK for MCP
 
-You can also integrate with MCP  Server using Anthropic python SDK for MCP and streamable HTTP transport:
+You can also integrate with MCP autonomous agents Server using Anthropic python SDK for MCP and streamable HTTP transport:
 
 ```
 from typing import Optional
@@ -171305,7 +171575,7 @@ For more information, see[python-sdk](https://github.com/modelcontextprotocol/py
 
 ---
 
-# Authentication flow for the MCP Server
+# Authentication flow for the autonomous agents MCP Server
 
 > **Section:** Developer resources > AI Integrations > Reltio Model Context Protocol (MCP) Server at a glance
 
@@ -171315,9 +171585,9 @@ For more information, see[python-sdk](https://github.com/modelcontextprotocol/py
 **Keywords:** oauth 2 authorization pkce, authorize mcp tools pkce, autonomous agents mcp token validation, tenant scoped access tokens, required system roles autonomous agents, browser and headless pkce flow, checktoken endpoint token validation, activity log mcp access, oauth, pkce, rbac, authorization
 
 
-Learn how the  MCP Server uses OAuth 2.0 with PKCE to authorize client access to context-aware tools.
+Learn how the autonomous agents MCP Server uses OAuth 2.0 with PKCE to authorize client access to context-aware tools.
 
-The  MCP Server uses OAuth 2.0 Authorization Code Flow with PKCE to authenticate users and agents. This flow ensures secure, auditable, and context-aware access to Reltio APIs. All interactions with MCP tools require a valid access token issued by the Reltio Authentication Server.
+The autonomous agents MCP Server uses OAuth 2.0 Authorization Code Flow with PKCE to authenticate users and agents. This flow ensures secure, auditable, and context-aware access to Reltio APIs. All interactions with MCP tools require a valid access token issued by the Reltio Authentication Server.
 
 The following are the key behaviors:
 
@@ -171351,7 +171621,7 @@ The following sequence explains each step in the diagram above, illustrating how
    **Tool discovery:** The MCP client communicates with the LLM to find an appropriate tool using the Tool Find API (Message API). Once identified, the MCP tool is selected.
 3. 
 
-   **MCP tool access attempt (without token):** The MCP client tries to invoke the MCP tool by calling the  MCP Server. Since no token is provided, it receives a `401 Unauthorized` response with a `WWW-Authenticate` header pointing to the OAuth discovery endpoint.
+   **MCP tool access attempt (without token):** The MCP client tries to invoke the MCP tool by calling the autonomous agents MCP Server. Since no token is provided, it receives a `401 Unauthorized` response with a `WWW-Authenticate` header pointing to the OAuth discovery endpoint.
 4. 
 
    **OAuth discovery:** The MCP client sends a `GET` request to the OAuth metadata endpoint. The server responds with supported endpoints and methods.
@@ -171390,7 +171660,7 @@ The following sequence explains each step in the diagram above, illustrating how
 | **User Agent** (Browser) | Handles the user-facing portion of the OAuth flow, including login and consent via the Auth Server. |
 | **MCP Client** | Initiates tool discovery, generates PKCE values, redirects users to authenticate, and exchanges codes for tokens. Examples include LangChain apps, Jupyter notebooks, and command-line scripts using the MCP SDK. |
 | **LLM** | Assists in tool discovery based on the user prompt. Examples include Claude and ChatGPT integrated into agent workflows. |
-| **Reltio MCP Server** | Processes tool requests, validates tokens, and invokes Reltio APIs on behalf of authenticated clients. |
+| **Reltio autonomous agents MCP Server** | Processes tool requests, validates tokens, and invokes Reltio APIs on behalf of authenticated clients. |
 | **Reltio Auth Server** | Authenticates users, issues tokens, and validates access tokens during MCP requests. |
 | **Reltio API** | Secured downstream endpoints that provide core MDM functions such as entity resolution and data enrichment. |
 
@@ -171398,7 +171668,7 @@ The following sequence explains each step in the diagram above, illustrating how
 
 ---
 
-# MCP Server
+# Autonomous agents MCP Server
 
 > **Section:** Developer resources > AI Integrations > Reltio Model Context Protocol (MCP) Server at a glance
 
@@ -171408,13 +171678,13 @@ The following sequence explains each step in the diagram above, illustrating how
 **Keywords:** enterprise mcp, mcp server, model context protocol, job orchestration, distributed processing, multi-tenant server, kafka event pipeline, stateless worker, job retry, dead letter queue, data processing architecture, scalable job engine, event-driven processing, oauth authentication, identity propagation
 
 
-Learn about the  MCP Server and how it enables secure, governed, and role-aware access to trusted data for modern AI agents and enterprise applications.
+Learn about the Autonomous agents MCP Server and how it enables secure, governed, and role-aware access to trusted data for modern AI agents and enterprise applications.
 
-The  Model Context Protocol (MCP) Server is the enterprise-grade, Reltio-hosted edition of the MCP Server. It delivers secure, role-aware access to trusted master data through open-standard APIs. Designed for AI agents, orchestration tools, and business-critical automations, it helps organizations control what data is accessed, how, and by whom—without compromising context, governance, or compliance.
+The Autonomous agents Model Context Protocol (MCP) Server is the enterprise-grade, Reltio-hosted edition of the MCP Server. It delivers secure, role-aware access to trusted master data through open-standard APIs. Designed for AI agents, orchestration tools, and business-critical automations, it helps organizations control what data is accessed, how, and by whom—without compromising context, governance, or compliance.
 
-## What is the MCP Server?
+## What is the Autonomous agents MCP Server?
 
-The  MCP Server is a managed, production-grade service that exposes Reltio's unified data via permission-aware APIs. It governs requests by filtering, transforming, and routing data to agents and applications based on role, purpose, and policy. It doesn’t just expose data—it interprets it through context-aware logic, so AI systems act with the right understanding.
+The Autonomous agents MCP Server is a managed, production-grade service that exposes Reltio's unified data via permission-aware APIs. It governs requests by filtering, transforming, and routing data to agents and applications based on role, purpose, and policy. It doesn’t just expose data—it interprets it through context-aware logic, so AI systems act with the right understanding.
 
 The diagram below shows how AI-based applications and agents securely access trusted data entities in Reltio through the MCP Server:
 
@@ -171422,7 +171692,7 @@ The diagram below shows how AI-based applications and agents securely access tru
 
 ## Who is it for?
 
-The  MCP Server is designed for teams building intelligent, automated experiences using Reltio data. This content is curated for these Reltio user roles defined in [About Reltio user roles](https://docs.reltio.com/en/roles/about-roles?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs):
+The autonomous agents MCP Server is designed for teams building intelligent, automated experiences using Reltio data. This content is curated for these Reltio user roles defined in [About Reltio user roles](https://docs.reltio.com/en/roles/about-roles?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs):
 
 - Reltio Configurator manages match rules, survivorship, and job configurations.
 - System Administrator monitors system throughput and tenant job performance.
@@ -171431,7 +171701,7 @@ The  MCP Server is designed for teams building intelligent, automated experience
 
 ## Why would I use it?
 
-The  MCP Server helps organizations accelerate their AI and automation strategies with:
+The autonomous agents MCP Server helps organizations accelerate their AI and automation strategies with:
 
 - Governed access to Reltio-managed data via open-standard APIs
 - Support for identity propagation and policy-aware routing
@@ -171441,7 +171711,7 @@ The  MCP Server helps organizations accelerate their AI and automation strategie
 
 ## When and where would I use it?
 
-Use the  MCP Server whenever AI agents, AI Assistants, or GenAI Apps require controlled access to Reltio data in near real time. Common use cases include:
+Use the autonomous agents MCP Server whenever AI agents, AI Assistants, or GenAI Apps require controlled access to Reltio data in near real time. Common use cases include:
 
 - Customer support bots retrieving and interpreting trusted profile data
 - AI agents generating summaries or actions based on unified entity views
@@ -171449,7 +171719,7 @@ Use the  MCP Server whenever AI agents, AI Assistants, or GenAI Apps require con
 
 ## How does it support my business goals?
 
-The  MCP Server bridges AI innovation and enterprise-grade data governance. It ensures:
+The autonomous agents MCP Server bridges AI innovation and enterprise-grade data governance. It ensures:
 
 - AI and automation systems rely on accurate, contextual data
 - Risk is reduced through fine-grained access control and logging
@@ -171462,9 +171732,9 @@ The diagram below illustrates how MCP enables AI agents, copilots, and digital s
 
 ## Integration guides and configuration tasks
 
-The following topics show how to connect AI agents, orchestration tools, and other clients to the  MCP Server. These task-based guides walk you through authentication, configuration, and verification steps for common integration scenarios.
+The following topics show how to connect AI agents, orchestration tools, and other clients to the autonomous agents MCP Server. These task-based guides walk you through authentication, configuration, and verification steps for common integration scenarios.
 
-- [Configure Claude to connect with MCP Server](https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-model-context-protocol-mcp-server-at-a-glance/configure-claude-to-connect-with-autonomous-agents-mcp-server?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Configure Claude to connect with autonomous agents MCP Server](https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-model-context-protocol-mcp-server-at-a-glance/configure-claude-to-connect-with-autonomous-agents-mcp-server?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 
 
@@ -171548,9 +171818,9 @@ The Reltio MCP Server is available in two editions:
 | Edition | Description | Resources |
 | --- | --- | --- |
 | **Reltio Developer MCP Server** | Open‑source and self‑hosted. Run it in your own infrastructure using containers. | See   [reltio-mcp-server](https://github.com/reltio-ai/reltio-mcp-server/) |
-| **Reltio's MCP Server** | Fully managed by Reltio—no hosting or infrastructure management required. New capabilities will be introduced continuously. | See [Authentication flow for the MCP Server](https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-model-context-protocol-mcp-server-at-a-glance/authentication-flow-for-the-autonomous-agents-mcp-server?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
+| **Reltio's autonomous agents MCP Server** | Fully managed by Reltio—no hosting or infrastructure management required. New capabilities will be introduced continuously. | See [Authentication flow for the autonomous agents MCP Server](https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-model-context-protocol-mcp-server-at-a-glance/authentication-flow-for-the-autonomous-agents-mcp-server?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
 
-We recommend you start with the **Reltio Developer MCP Server** to get up and running immediately, create some proof of concepts and get familiarized with MCP. Then, for full support, scalability, and more Reltio capabilities, you should get the **Reltio's ™ MCP Server**.
+We recommend you start with the **Reltio Developer MCP Server** to get up and running immediately, create some proof of concepts and get familiarized with MCP. Then, for full support, scalability, and more Reltio capabilities, you should get the **Reltio's autonomous agents™ MCP Server**.
 
 ## How does it support my business goals?
 
@@ -171598,7 +171868,7 @@ The Use the Reltio REST API for batch and on-demand integrations:
 
 ---
 
-# Custom MCP client for API reference
+# Custom MCP client for autonomous agents API reference
 
 > **Section:** Developer resources > AI Integrations > Reltio Model Context Protocol (MCP) Server at a glance
 
@@ -171606,9 +171876,9 @@ The Use the Reltio REST API for batch and on-demand integrations:
 **Source:** https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-model-context-protocol-mcp-server-at-a-glance/custom-mcp-client-for-autonomous-agents-api-reference?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
 
-Learn more about request parameters, response structures, and API specifications for building custom clients that interface with the  MCP Server.
+Learn more about request parameters, response structures, and API specifications for building custom clients that interface with the autonomous agents MCP Server.
 
-This reference provides the request parameters, response structures, and API specifications required to build custom clients that interface with the  MCP Server. For implementation instructions, see [Build a custom MCP client for](https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-model-context-protocol-mcp-server-at-a-glance/build-a-custom-mcp-client-for-autonomous-agents?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+This reference provides the request parameters, response structures, and API specifications required to build custom clients that interface with the autonomous agents MCP Server. For implementation instructions, see [Build a custom MCP client for autonomous agents](https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-model-context-protocol-mcp-server-at-a-glance/build-a-custom-mcp-client-for-autonomous-agents?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 This topic is intended for a Developer who needs to configure and interact with the MCP Server using secure access. For more information, see [Developer at a glance](https://docs.reltio.com/en/roles/developer/developer-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
@@ -171724,10 +171994,10 @@ These are the key features:
 
 ## Related topics
 
-- [Build a custom MCP client for](https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-model-context-protocol-mcp-server-at-a-glance/build-a-custom-mcp-client-for-autonomous-agents?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- [MCP Server](https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-model-context-protocol-mcp-server-at-a-glance/autonomous-agents-mcp-server?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Build a custom MCP client for autonomous agents](https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-model-context-protocol-mcp-server-at-a-glance/build-a-custom-mcp-client-for-autonomous-agents?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Autonomous agents MCP Server](https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-model-context-protocol-mcp-server-at-a-glance/autonomous-agents-mcp-server?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 - [MCP Metadata API](https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-model-context-protocol-mcp-server-at-a-glance/mcp-metadata-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- [Authentication flow for the MCP Server](https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-model-context-protocol-mcp-server-at-a-glance/authentication-flow-for-the-autonomous-agents-mcp-server?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Authentication flow for the autonomous agents MCP Server](https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-model-context-protocol-mcp-server-at-a-glance/authentication-flow-for-the-autonomous-agents-mcp-server?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 - [MCP tools](https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-model-context-protocol-mcp-server-at-a-glance/mcp-tools?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 - [FAQ on Reltio MCP Server](https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-model-context-protocol-mcp-server-at-a-glance/faq-on-reltio-mcp-server?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
@@ -172005,7 +172275,7 @@ An open-source, self-hosted version of MCP that allows customers and partners to
 
 **Is there a cost associated with MCP?**
 
-The Developer Edition is free. The  MCP Server (cloud-hosted) is subject to a platform fee. Contact your Reltio Account Executive for pricing.
+The Developer Edition is free. The autonomous agents MCP Server (cloud-hosted) is subject to a platform fee. Contact your Reltio Account Executive for pricing.
 
 ## Strategic value and platform integration
 
@@ -172130,7 +172400,7 @@ Select a model that supports tools and repeat the process. Search[Ollama](https:
 
 ---
 
-# Configure Claude to connect with MCP Server
+# Configure Claude to connect with autonomous agents MCP Server
 
 > **Section:** Developer resources > AI Integrations > Reltio Model Context Protocol (MCP) Server at a glance
 
@@ -172140,7 +172410,7 @@ Select a model that supports tools and repeat the process. Search[Ollama](https:
 **Keywords:** configure claude mcp connection, connect claude to autonomous agents, add reltio mcp server to claude, integrate claude with reltio data, setup claude for reltio mcp, authentication for mcp server in claude, how to add third-party mcp server, desktop agent integration, mcp configuration, autonomous agents, authentication, integration
 
 
-Learn how to configure the Claude desktop application to securely connect to the  MCP Server so that Claude can access governed, context aware data.
+Learn how to configure the Claude desktop application to securely connect to the autonomous agents MCP Server so that Claude can access governed, context aware data.
 
 **Prerequisites**
 
@@ -172150,13 +172420,13 @@ Before you begin, make sure you have:
 - One of the following roles in your tenant:
   - ROLE_EXECUTE_MCP, or
   - ROLE_ADMIN_MCP
-- The  MCP server endpoint
+- The autonomous agents MCP server endpoint
 - Claude desktop app (version 0.7.0 or later)
 - Permission to access and edit Claude's configuration file on your local machine
 - Node.js is installed
 
 
-To configure Claude to connect to MCP Server:
+To configure Claude to connect to autonomous agents MCP Server:
 
 1. Locate the configuration file for Claude desktop based on your OS:
    | Operating system | Configuration file path |
@@ -172168,7 +172438,7 @@ To configure Claude to connect to MCP Server:
    ```
 { "mcpServers": {} }
    ```
-3. Add the  MCP Server connection under the `mcpServers` object using the correct `command` path for your operating system.
+3. Add the autonomous agents MCP Server connection under the `mcpServers` object using the correct `command` path for your operating system.
    **Windows configuration**
    ```
 { "mcpServers": { "ReltioMcpServer": { "command": "C:\\PROGRA~1\\nodejs\\npx.cmd", "args": [ "mcp-remote", "https://<Env>.reltio.com/ai/tools/mcp/", "9696", "--debug" ] } } }
@@ -172182,7 +172452,7 @@ To configure Claude to connect to MCP Server:
    - Completely exit Claude, ensuring no background processes are running.
    - Reopen Claude to apply your configuration.
 
-**Result**After restart, Claude should connect to the configured  MCP Server. Confirm connectivity by:
+**Result**After restart, Claude should connect to the configured autonomous agents MCP Server. Confirm connectivity by:
 
 - Checking for the server name in the Claude interface
 - Running a tool or request that invokes the server
@@ -172193,7 +172463,7 @@ To configure Claude to connect to MCP Server:
   | **Windows** | `%APPDATA%\Claude\logs\` |
   | **macOS** | `~/Library/Logs/Claude/` |
 
-**Troubleshooting**Use this section to identify and resolve common issues that can prevent Claude from connecting to the  MCP Server or executing tools correctly.
+**Troubleshooting**Use this section to identify and resolve common issues that can prevent Claude from connecting to the autonomous agents MCP Server or executing tools correctly.
 
 **Bearer token expires and Claude fails to connect**
 
@@ -172201,7 +172471,7 @@ To configure Claude to connect to MCP Server:
 
 **Clear cached MCP authentication data**
 
-**Cause** — Cached authentication data in the local MCP authentication directory may prevent Claude from connecting to the  MCP Server or completing tool execution.
+**Cause** — Cached authentication data in the local MCP authentication directory may prevent Claude from connecting to the autonomous agents MCP Server or completing tool execution.
 
 
 
@@ -172214,7 +172484,7 @@ To configure Claude to connect to MCP Server:
 
 **Source:** https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-model-context-protocol-mcp-server-at-a-glance/create-a-microsoft-copilot-agent-to-run-reltio-mcp-tools?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
-**Keywords:** create copilot agent reltio, connect copilot to reltio mcp, configure mcp server in copilot, copilot mcp oauth setup, test copilot agent mcp, manage copilot tools reltio, add mcp tool copilot, copilot agent tools configuration, reltio autonomous agents mcp connection, mcp, copilot, authentication
+**Keywords:** create copilot agent reltio, connect copilot to reltio mcp, configure mcp server in copilot, copilot mcp oauth setup, test copilot agent mcp, manage copilot tools reltio, add mcp tool copilot, copilot agent tools configuration, reltio autonomous agents mcp connection, mcp, copilot, authentication, custom agents
 
 
 Learn how to create a Microsoft Copilot agent that connects to Reltio MCP so that the agent can discover and run Reltio MCP tools in your Reltio environment.
@@ -172228,11 +172498,11 @@ Use Microsoft Copilot to connect to the Reltio MCP server when you want to view 
 - You are signed in using a **Microsoft ID**.
 - You have permission to **create and manage agents** in the Copilot environment, or administrator approval if agent creation is restricted.
 - An administrator has enabled **Copilot features** in your Microsoft 365 tenant.
-- You have access to a Reltio environment that exposes its MCP server endpoint. For more information, see [Authentication flow for the MCP Server](https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-model-context-protocol-mcp-server-at-a-glance/authentication-flow-for-the-autonomous-agents-mcp-server?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+- You have access to a Reltio environment that exposes its MCP server endpoint. For more information, see [Authentication flow for the autonomous agents MCP Server](https://docs.reltio.com/en/developer-resources/ai-integrations/reltio-model-context-protocol-mcp-server-at-a-glance/authentication-flow-for-the-autonomous-agents-mcp-server?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 ## Create a Microsoft Copilot agent
 
-To create a Microsoft Copilot agent and connect it to the  MCP server, follow these steps: 
+To create a Microsoft Copilot agent and connect it to the autonomous agents MCP server, follow these steps: 
 
 1. Go to Microsoft Copilot Studio (`copilotstudio.microsoft.com`) and sign in using your **Microsoft ID** account.
 2. Select **+ New agent**.
@@ -196594,7 +196864,7 @@ Format for the filter query parameter: `filter=({Condition Type}[AND/OR {Conditi
 | `gt` | `gt(property, value)`: This condition type indicates the `greater than` condition. | Examples:  - Filter relationships updated later than '1540805153527': `filter=gt(updatedTime, 1540805153527)` - Filter historical events with a timestamp greater than a specified value: `filter=gt(timestamp, '1428309071535')` |
 | `contains` | `contains(property, *value or ?value)`: This condition type is passed if `property` satisfies a wildcard record. The supported wildcards are as follows:  - `*` - Matches any character sequence (including the empty one) - `?` - Matches any single character (not case sensitive) | Filter by a specific attribute: `filter=contains(attributes.Commenters, '*Johnson*')` |
 | `in` | `in(property, value)`: The `value` must contain a comma-separated value for the `in` filter clause. | Filter relationships with `Commenters` Janaki or Titilayo: `filter=in(attributes.Commenters, "Janaki,Titilayo")` |
-| `listEquals` | This condition type has the following variants: - `listEquals(property, file URL)` - This condition type returns relationships that have a conditional property with conditional values from the file (one value in each row). This condition type returns an empty result if the file is unavailable or is deleted. The supported file formats are `TXT` and `CSV`. You can specify a file with public access in the filter or can upload a file to Reltio bucket. For more information, see [Uploading a File for File-based Search](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/search-api/uploading-a-file-for-file-based-search?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).The input file can contain a maximum of **5000** rows only. The maximum file size is 10 MB. > **Note:** The CSV format for file-based search is supported provided: > - It has a single column. > - The input CSV must not have a header row. - `listEquals(property, value, value)` - This condition type is passed if the conditional property is equal to one of the comma-separated values. **Note:** The case of the values is not considered when filtering using any of the variants. Therefore, filtering for both these variants is not case sensitive. | Example of the two variants:  - Find all relationships having a value from a public file: `filter=listEquals(attributes.Title, 'URL:')https://reltio.com/example.txt` - Find all relationships having a value from uploaded to Reltio bucket file: `filter=listEquals(attributes.Title,'URL:s3://reltio-search-data/test/valueListFiles/06-Sep-2021/tenantId/data104359926.csv')` - Find all relationships having a value from a list: `filter=listEquals(attributes.Commenters, Steve, Peter, John)` |
+| `listEquals` | This condition type has the following variants: - `listEquals(property, file URL)` - This condition type returns relationships that have a conditional property with conditional values from the file (one value in each row). This condition type returns an empty result if the file is unavailable or is deleted. The supported file formats are `TXT` and `CSV`. You can specify a file with public access in the filter or can upload a file to Reltio bucket. For more information, see [Uploading a File for File-based Search](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/search-api/uploading-a-file-for-file-based-search?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).The input file can contain a maximum of **5000** rows only. The maximum file size is 10 MB. > **Note:** The CSV format for file-based search is supported provided: > - It has a single column. > - The input CSV must not have a header row. - `listEquals(property, value, value)` - This condition type is passed if the conditional property is equal to one of the comma-separated values. **Note:** The case of the values is not considered when filtering using any of the variants. Therefore, filtering for both these variants is not case sensitive. | Example of the two variants:  - Find all relationships having a value from a public file: `filter=listEquals(attributes.Title, 'URL:https://reltio.com/example.txt')` - Find all relationships having a value from uploaded to Reltio bucket file: `filter=listEquals(attributes.Title,'URL:s3://reltio-search-data/test/valueListFiles/06-Sep-2021/tenantId/data104359926.csv')` - Find all relationships having a value from a list: `filter=listEquals(attributes.Commenters, Steve, Peter, John)` |
 | `listEqualsCaseSensitive` | This condition type has the following variants: - `listEqualsCaseSensitive(property, file URL)` - This condition type returns relationships that have a conditional property with conditional values from the file (one value in each row). This condition type returns an empty result if the file is unavailable or is deleted. The supported file formats are `TXT` and `CSV`. You can specify a file with public access in the filter or can upload a file to Reltio bucket. For more information, see [Uploading a File for File-based Search](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/search-api/uploading-a-file-for-file-based-search?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).The input file can contain a maximum of **5000** rows only. > **Note:** The CSV format for file-based search is supported provided: > - It has a single column. > - The input CSV must not have a header row. - `listEqualsCaseSensitive(property, value, value)` - This condition type is passed if the conditional property is equal to one of the comma-separated values. **Note:** The case of the values is considered when filtering using any of the variants. Therefore, filtering for both these variants is case sensitive. | Example of the two variants:  - Find all relationships having a value from a file:    `filter=listEqualsCaseSensitive(attributes.Title,'URL:s3://reltio-search-data/test/valueListFiles/06-Sep-2021/tenantId/data104359926.csv')` - Find all relationships having a value from a list:    `filter=listEqualsCaseSensitive(attributes.Commenters, Steve, Peter)` |
 | `not` | This operator negates a condition and can be used with other operators. | Filter all entities with the `Title` attribute that does not start with `New`: `filter=not(startsWith(attributes.Title, 'New'))` |
 
@@ -220795,7 +221065,7 @@ Hover your mouse pointer over the left navigation drawer and select one of these
 
 - 
 
-  **Reltio Intelligent Assistant**: Opens RIA. For more information, see topic [RIA for operation](https://docs.reltio.com/en/applications/ria/ria-reltio-intelligent-assistant-at-a-glance/ria-for-reltio-intelligent-360/ria-for-reltio-intelligent-360-operation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+  **Reltio Intelligent Assistant**: Opens RIA. For more information, see topic [RIA for Reltio Intelligent 360 operation](https://docs.reltio.com/en/applications/ria/ria-reltio-intelligent-assistant-at-a-glance/ria-for-reltio-intelligent-360/ria-for-reltio-intelligent-360-operation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 - 
 
   **Profile Stats**: Displays the Profile Stats charts for the tenant. For more information, see topic [Profile Stats dashboard navigation](https://docs.reltio.com/en/applications/hub/profile-stats-dashboard-at-a-glance/profile-stats-dashboard-navigation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
@@ -257378,7 +257648,7 @@ Create a custom role that has the permissions required to access the bucket and 
    - **Title**: Enter the role name.
    - **Description**: Enter the role description.
    - Select **+ ADD PERMISSIONS**.
-   - In the **Add permissions** window, select the `storage.buckets.get`, `, storage.objects.get` and `storage.objects.list` permissions to include in the role by searching for the permission in the **Enter property name or value** field. The assigned permissions are displayed in the **assigned permissions** section.
+   - In the **Add permissions** window, select the `storage.buckets.get`, `storage.objects.get,` and `storage.objects.list` permissions to include in the role by searching for the permission in the **Enter property name or value** field. The assigned permissions are displayed in the **assigned permissions** section.
    - Select the permissions.
    - Select **ADD**.
 6. Select **CREATE**.
@@ -270755,7 +271025,7 @@ Before you begin, confirm that you have the **Reltio tenant URL** and **Username
 If you didn't receive this email when you registered as a Reltio user, or you don't have an account, contact [Reltio Support](https://docs.reltio.com/en/reltio/whats-in-the-box-at-a-glance/technical-assistance-at-a-glance/technical-assistance-operations/get-help-in-support-portal?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
-To sign in to Reltio Context Intelligence Platform
+To sign in to Reltio Context Intelligence Platform (single authentication environment):
 
 1. In your web browser address bar, enter your Reltio tenant URL.
 2. Enter your Tenant ID.
@@ -270773,7 +271043,7 @@ If you do not recall your password, you can reset it. For more information, see 
 6. Select **Verify**.
    The page refreshes to display the **Hub**.
 
-To sign in to Reltio Context Intelligence Platform
+To sign in to Reltio Context Intelligence Platform (multi-staged authentication environments):
 
 7. In your web browser address bar, enter your Reltio tenant URL.
 8. Enter your tenant ID.*Image: i-auth-tenant.png*
@@ -272783,7 +273053,7 @@ Here's an example of how a chat interaction using RIA can be a way to access and
 
 *Image: dp_ria_convo.png*
 
-For more information on how to use RIA, see topic [RIA for operation](https://docs.reltio.com/en/applications/ria/ria-reltio-intelligent-assistant-at-a-glance/ria-for-reltio-intelligent-360/ria-for-reltio-intelligent-360-operation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+For more information on how to use RIA, see topic [RIA for Reltio Intelligent 360 operation](https://docs.reltio.com/en/applications/ria/ria-reltio-intelligent-assistant-at-a-glance/ria-for-reltio-intelligent-360/ria-for-reltio-intelligent-360-operation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
@@ -304738,7 +305008,7 @@ Monitor your data quality to:
 
 You monitor the quality of data after you have loaded it to the Reltio Context Intelligence Platform and integrated any third-party data with it.
 
-## Where do I monitor data quality in the Reltio Context Intelligence Platform
+## Where do I monitor data quality in the Reltio Context Intelligence Platform?
 
 Reltio Multidomain MDMReltio Intelligent 360
 
