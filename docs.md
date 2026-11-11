@@ -1,8 +1,8 @@
 # Reltio Documentation
 
-_Generated: 2026-11-06 16:56 UTC_
+_Generated: 2026-11-11 02:37 UTC_
 
-_Topics: 4288_
+_Topics: 4283_
 
 ---
 
@@ -655,7 +655,6 @@ Images are in SVG format. Use the icons on their own or with text labels as appr
 | *Image: icon_app_hub.svg* | Hub | icon_app_hub |
 | *Image: icon_app_console.svg* | Console | icon_app_console |
 | *Image: icon_app_rdm.svg* | RDM | icon_app_rdm |
-| *Image: icon_app_ria.svg* | RIA | icon_app_ria |
 | *Image: icon_app_search.svg* | Search | icon_app_search |
 | *Image: icon_app_rih.svg* | RIH | icon_app_rih |
 | *Image: icon_app_dintg.svg* | Data integration | icon_app_dintg |
@@ -670,7 +669,6 @@ Images are in SVG format. Use the icons on their own or with text labels as appr
 | Hub | icon_app_hub_labeled |
 | Console | icon_app_console_labeled |
 | RDM | icon_app_rdm_labeled |
-| RIA | icon_app_ria_labeled |
 | Search | icon_app_search_labeled |
 | RIH | icon_app_rih_labeled |
 | Data integration | icon_app_dintg_labeled |
@@ -822,7 +820,7 @@ You can always take it from the top:
 - Select the Reltio Documentation logo at the top left of this page to return to the Documentation Portal home page
 - Select an item from the top menu bar to navigate to another landing page
 - Enter a term in the Search box to locate specific content
-- Ask RIA a question on a subject of interest
+- Create a personalized guide in Reltio Docs for You about a subject of interest.
 
 
 
@@ -7336,7 +7334,7 @@ Customers using native LCAs will receive an email notification. For help or furt
 
 ---
 
-# RIA Data Explorer deprecation – Apr 2026
+# RIA Data explorer deprecation – Apr 2026
 
 > **Section:** Reltio > Deprecation Notices at a glance
 
@@ -7346,15 +7344,17 @@ Customers using native LCAs will receive an email notification. For help or furt
 **Keywords:** ria data explorer deprecation, reltio intelligent assistant data explorer, ria data exploration end of support, agentflow data explorer agent, ria documentation explorer, deprecation
 
 
-Learn about the RIA Data Explorer being deprecated.
+Learn about the RIA Data explorer being deprecated.
 
-RIA (Reltio Intelligent Assistant) is Reltio's genAI assistant. It has two distinct components: a documentation and configuration explorer, available to all users of the Reltio Context Intelligence Platform, and Data Explorer, available only to customers with Reltio Intelligent 360 entitlements.
+> **Note:** Update, November 2026: The RIA documentation and configuration explorer in the Reltio Documentation Portal is also deprecated and no longer available. To find information in the documentation, use the Search box or create a personalized guide using the [Reltio Docs for You](https://docs.reltio.com/en/reltio/whats-in-the-box-at-a-glance/reltio-docs-for-you-overview?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) application.
+
+
+
+RIA (Reltio Intelligent Assistant) was Reltio's genAI assistant. It had two distinct components: a documentation and configuration explorer, which was available to all users of the Reltio Context Intelligence Platform, and Data explorer, which was available only to customers with Reltio Intelligent 360 entitlements.
 
 ## What are we deprecating?
 
-We're deprecating RIA Data Explorer, the component, in the **Hub**, that lets you explore and analyze your tenant data through conversational prompts.
-
-Only the data exploration capability is deprecated. The RIA documentation and configuration explorer, in the Documentation Portal, is not deprecated and remains available to all platform users.
+We're deprecating RIA Data explorer, the component, in the **Hub**, that lets you explore and analyze your tenant data through conversational prompts.
 
 ## Why are we deprecating it?
 
@@ -7370,37 +7370,31 @@ Since the initial release of RIA, customer feedback and usage insights helped us
 
   Support configurable, task-based automation rather than limited conversational guidance.
 
-To meet these needs, we invested in Reltio AgentFlow, an extensible AI framework that delivers intelligence, automation, and flexibility beyond the scope of RIA. The Data Explorer agent in Reltio AgentFlow meets these requirements.
+To meet these needs, we invested in Reltio AgentFlow, an extensible AI framework that delivers intelligence, automation, and flexibility beyond the scope of RIA. The Data explorer agent in Reltio AgentFlow meets these requirements.
 
 ## When are we deprecating it?
 
-RIA Data Explorer reached end of support on April 24, 2026, with the 2026.1 release. The [Data explorer](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-catalog/data-explorer?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) agent in Reltio AgentFlow became generally available on the same date.
+RIA Data explorer reached end of support on April 24, 2026, with the 2026.1 release. The [Data explorer](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-catalog/data-explorer?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) agent in Reltio AgentFlow became generally available on the same date.
 
 ## What does this mean to you?
 
-This affects customers with Reltio Intelligent 360 entitlements who used RIA Data Explorer.
+This affects customers with Reltio Intelligent 360 entitlements who used RIA Data explorer.
 
 - 
 
-  RIA Data Explorer is no longer available in any tenant. Newly provisioned tenants don't include it.
+  RIA Data explorer is no longer available in any tenant. Newly provisioned tenants don't include it.
 - 
 
-  RIA documentation and configuration exploration is unaffected and remains available to all platform users.
-- 
-
-  The Data Explorer agent in Reltio AgentFlow is available to all customers who previously had RIA Data Explorer.
+  The Data explorer agent in Reltio AgentFlow is available to all customers who previously had RIA Data explorer.
 
 ## What action do you need to take?
 
 - 
 
-  If you used RIA Data Explorer, adopt the Data Explorer agent in Reltio AgentFlow. For more information, see [Data Explorer](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-catalog/data-explorer?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+  If you used RIA Data explorer, adopt the Data explorer agent in Reltio AgentFlow. For more information, see [Data explorer](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-catalog/data-explorer?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 - 
 
   Contact your Reltio Customer Success Manager for guidance on migration and enablement.
-- 
-
-  No action is required to continue using RIA for documentation and configuration exploration.
 
 ## Still have questions?
 
@@ -10979,7 +10973,7 @@ Find out what's new and notable each week in the Reltio Connected Data Platform 
 
 **I'm RIA, too**
 
-| *Image: logo-RIA-white-on-blue-circle.png* | You met me before in your tenant's UI. Now, I can give you a helping hand here in the Doc Portal, too! Tap me on the lower-right side of the screen to let me know when you have a question. For more information, see topic [RIA architecture](https://docs.reltio.com/en/applications/ria/ria-reltio-intelligent-assistant-at-a-glance/ria-architecture?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
+| *Image: logo-RIA-white-on-blue-circle.png* | You met me before in your tenant's UI. Now, I can give you a helping hand here in the Doc Portal, too! Tap me on the lower-right side of the screen to let me know when you have a question. For more information, see topic [RIA Data explorer deprecation – Apr 2026](https://docs.reltio.com/en/reltio/deprecation-notices-at-a-glance/ria-data-explorer-deprecation--apr-2026?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). |
 | --- | --- |
 
 **Understand reference attribute OVs in Entities API**
@@ -11233,7 +11227,7 @@ As an AI/ML widget, I can comb through Reltio's digital content and share Docume
 | Target users/roles |  |
 | Configuration required | No |
 | Additional subscription required | No |
-| Find out more | [RIA architecture](https://docs.reltio.com/en/applications/ria/ria-reltio-intelligent-assistant-at-a-glance/ria-architecture?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
+| Find out more | [RIA Data explorer deprecation – Apr 2026](https://docs.reltio.com/en/reltio/deprecation-notices-at-a-glance/ria-data-explorer-deprecation--apr-2026?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
 
 ## Analyze your platform usage with the new Usage reporting app
 
@@ -12201,7 +12195,7 @@ Wonder no more about the organization and representation of the responses RIA gi
 | Target users/roles | Business Data User |
 | Configuration required | No |
 | Additional subscription required | No |
-| Find out more | [RIA for Reltio Intelligent 360 operation](https://docs.reltio.com/en/applications/ria/ria-reltio-intelligent-assistant-at-a-glance/ria-for-reltio-intelligent-360/ria-for-reltio-intelligent-360-operation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
+| Find out more | [RIA Data explorer deprecation – Apr 2026](https://docs.reltio.com/en/reltio/deprecation-notices-at-a-glance/ria-data-explorer-deprecation--apr-2026?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
 
 ## Collaborative Profile Creation
 
@@ -25561,6 +25555,8 @@ Each path leads to the same content — choose the one that works best for you.
 
 **Source:** https://docs.reltio.com/en/products/reltio-context-intelligence-platform/reltio-context-intelligence-platform-at-a-glance/application-features-available-across-products?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
+**Keywords:** application features available across products, which applications are in each reltio product, compare hub features across products, compare console features across products, reltio intelligent 360 features, reltio multidomain mdm features, availability across products, feature availability table
+
 
 Learn about which applications are available across products.
 
@@ -25570,30 +25566,28 @@ This table outlines the availability of applications and features across multipl
 
 Here's a list of features from the Hub and their availability across products.
 
-| Application/Features |  |  |  |
-| --- | --- | --- | --- |
-| Application/Features | Reltio Entity Resolution | Reltio Multidomain Master Data Management (MDM) | Reltio Intelligent 360 |
-| Application/Features | Reltio Intelligent Assistant (RIA) - Data Exploration | 🚫 | 🚫 |
-| Application/Features | Reltio Intelligent Assistant (RIA) - Search in Help portal | 🚫 | ✅ |
-| Segmentation | 🚫 | 🚫 | ✅ |
-| Interactions management | 🚫 | 🚫 | ✅ |
-| Profile Stats Dashboard | ✅ | ✅ | ✅ |
-| DQ Dashboard | 🚫 | ✅ | ✅ |
-| Search | ✅ | ✅ | ✅ |
-| Data Model | 🚫 | 🚫 | ✅ |
-| Create a new profile | 🚫 | ✅ | ✅ |
-| Notifications | 🚫 | ✅ | ✅ |
-| Applications | ✅ | ✅ | ✅ |
-| Profile Settings | ✅ | ✅ | ✅ |
+| Application/Features | Reltio Multidomain Master Data Management (MDM) |  |
+| --- | --- | --- |
+| Application/Features | Reltio Multidomain Master Data Management (MDM) | Reltio Intelligent 360 |
+| Application/Features | Segmentation | 🚫 |
+| Application/Features | Interactions management | 🚫 |
+| Profile Stats Dashboard | ✅ | ✅ |
+| DQ Dashboard | ✅ | ✅ |
+| Search | ✅ | ✅ |
+| Data Model | 🚫 | ✅ |
+| Create a new profile | ✅ | ✅ |
+| Notifications | ✅ | ✅ |
+| Applications | ✅ | ✅ |
+| Profile Settings | ✅ | ✅ |
 
 ## Console
 
-| Application/Features |  |  |  |
-| --- | --- | --- | --- |
-| Application/Features | Reltio Entity Resolution | Reltio Multidomain Master Data Management (MDM) | Reltio Intelligent 360 |
-| Application/Features | Data Modeler - Creating Interactions type | 🚫 | 🚫 |
-| Application/Features | Data Modeler - Create derived attributres | 🚫 | 🚫 |
-| Data Loader - Load interactions into a tenant | 🚫 | 🚫 | ✅ |
+| Application/Features |  |  |
+| --- | --- | --- |
+| Application/Features | Reltio Multidomain Master Data Management (MDM) | Reltio Intelligent 360 |
+| Application/Features | Data Modeler - Creating Interactions type | 🚫 |
+| Application/Features | Data Modeler - Create derived attributres | 🚫 |
+| Data Loader - Load interactions into a tenant | 🚫 | ✅ |
 
 
 
@@ -30674,6 +30668,82 @@ A new conversation opens in the workspace.
 Select **Share***Image: i-icon-afmobile-share.svg*.
 
 You can share the conversation as a PDF or Markdown file, based on your [user preference settings](#task-8261/postreq-1443).
+
+
+
+---
+
+# Reltio Intelligent 360 at a glance
+
+> **Section:** Products > Reltio Intelligent 360
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-intelligent-360/reltio-intelligent-360-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+
+Get a high-level view of Reltio Intelligent 360.
+
+Take it from the top with Reltio Intelligent 360TM. Get the overview here, then see the sub topics in this section to drill down to the details.
+
+## What is Reltio Intelligent 360?
+
+Reltio Intelligent 360 is an AI-powered product offering that unifies, enriches, segments, and mobilizes comprehensive, ready-to-consume 360-degree views in real time. It captures interactions and derived attributes for individuals and organizations, in addition to the core capabilities of Reltio Multidomain MDM and Reltio Entity Resolution products.
+
+## Who is Reltio Intelligent 360 for?
+
+This content is curated for these Reltio user roles defined in topic [About roles](https://docs.reltio.com/en/roles/about-roles?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs):
+
+Business UserData Product OwnerData StewardDeveloperReltio ConfiguratorSolution ArchitectSystem Administrator
+
+## Why would I use Reltio Intelligent 360?
+
+Reltio Intelligent 360 gives you genAI-powered 360 views of customer data in real time:
+
+- 
+
+  Provides real-time 360 profiles of individuals and organizations, integrating data from multiple sources and mobilizing in milliseconds.
+- 
+
+  Continuously curates and segments trusted customer profiles with interactions and derived attributes.
+- 
+
+  With genAI-powered capabilities as part of its cloud-native SaaS platform, it accelerates data unification for enterprise-wide use cases.
+
+## When would I use Reltio Intelligent 360?
+
+Use Reltio Intelligent 360 if you need additional capabilities that Reltio Multidomain MDM can't provide. If you need to create segments in your data to strategize marketing campaigns or even manage interactions, you should use Reltio Intelligent 360.
+
+Reltio Intelligent 360 is a product that can help you during the whole process of unifying data.
+
+## Where do I find Reltio Intelligent 360?
+
+Reltio Intelligent 360 is provisioned on your tenants. For more information on accessing reltio tenants, see topic [Sign in to Reltio Context Intelligence Platform](https://docs.reltio.com/en/applications/reltio-context-intelligence-platform/sign-in-to-reltio-context-intelligence-platform?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+
+
+---
+
+# Reltio Intelligent 360 navigation
+
+> **Section:** Products > Reltio Intelligent 360 > Reltio Intelligent 360 at a glance
+
+
+**Source:** https://docs.reltio.com/en/products/reltio-intelligent-360/reltio-intelligent-360-at-a-glance/reltio-intelligent-360-navigation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** reltio intelligent 360 navigation, navigate reltio intelligent 360, access reltio intelligent 360 from app selector, open hub from reltio app selector, reltio intelligent 360 anatomy, reltio intelligent 360 tools and options, manage customer data and data quality, hub navigation
+
+
+Learn how to find your way around with Reltio Intelligent 360.
+
+Let's take you around the Reltio Intelligent 360, where you can manage customer data and enhance data quality.
+
+## Reltio Intelligent 360 access
+
+Access Reltio Intelligent 360 from here in the UI: **Reltio App Selector > Hub**.
+
+## Reltio Intelligent 360 anatomy
+
+The Reltio Intelligent 360 includes a variety of tools that help you maintain your data. Some options are common across other products while some are exclusive only to Reltio Intelligent 360. For more information, see topic [Application features available across products](https://docs.reltio.com/en/products/reltio-context-intelligence-platform/reltio-context-intelligence-platform-at-a-glance/application-features-available-across-products?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
@@ -103727,84 +103797,6 @@ This table identifies the validation functions for the Register entity type.
 
 ---
 
-# Reltio Intelligent 360 at a glance
-
-> **Section:** Products > Reltio Intelligent 360
-
-
-**Source:** https://docs.reltio.com/en/products/reltio-intelligent-360/reltio-intelligent-360-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
-
-Get a high-level view of Reltio Intelligent 360.
-
-Take it from the top with Reltio Intelligent 360TM. Get the overview here, then see the sub topics in this section to drill down to the details.
-
-## What is Reltio Intelligent 360?
-
-Reltio Intelligent 360 is an AI-powered product offering that unifies, enriches, segments, and mobilizes comprehensive, ready-to-consume 360-degree views in real time. It captures interactions and derived attributes for individuals and organizations, and it provides Reltio Intelligent Assistant (RIA) for data exploration in addition to the core capabilities of Reltio Multidomain MDM and Reltio Entity Resolution products.
-
-## Who is Reltio Intelligent 360 for?
-
-This content is curated for these Reltio user roles defined in topic [About roles](https://docs.reltio.com/en/roles/about-roles?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs):
-
-Business UserData Product OwnerData StewardDeveloperReltio ConfiguratorSolution ArchitectSystem Administrator
-
-## Why would I use Reltio Intelligent 360?
-
-Reltio Intelligent 360 gives you genAI-powered 360 views of customer data in real time:
-
-- 
-
-  Provides real-time 360 profiles of individuals and organizations, integrating data from multiple sources and mobilizing in milliseconds.
-- 
-
-  Continuously curates and segments trusted customer profiles with interactions and derived attributes.
-- 
-
-  With genAI-powered capabilities as part of its cloud-native SaaS platform, it accelerates data unification for enterprise-wide use cases.
-
-## When would I use Reltio Intelligent 360?
-
-Use Reltio Intelligent 360 if you need additional capabilities that Reltio Multidomain MDM can't provide. If you need to create segments in your data to strategize marketing campaigns, need an intelligent assistant like RIA, or even manage interactions, you should use Reltio Intelligent 360.
-
-Reltio Intelligent 360 is a product that can help you during the whole process of unifying data.
-
-## Where do I find Reltio Intelligent 360?
-
-Reltio Intelligent 360 is provisioned on your tenants. For more information on accessing reltio tenants, see topic [Sign in to Reltio Context Intelligence Platform](https://docs.reltio.com/en/applications/reltio-context-intelligence-platform/sign-in-to-reltio-context-intelligence-platform?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
-
-
-
----
-
-# Reltio Intelligent 360 navigation
-
-> **Section:** Products > Reltio Intelligent 360 > Reltio Intelligent 360 at a glance
-
-
-**Source:** https://docs.reltio.com/en/products/reltio-intelligent-360/reltio-intelligent-360-at-a-glance/reltio-intelligent-360-navigation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
-
-Learn how to find your way around with Reltio Intelligent 360.
-
-Let's take you around the Reltio Intelligent 360, where you can manage customer data and enhance data quality.
-
-## Reltio Intelligent 360 access
-
-Access Reltio Intelligent 360 from here in the UI: **Reltio App Selector > Hub**.
-
-## Reltio Intelligent 360 anatomy
-
-When you log into the Hub, you see the Reltio Intelligent Assistant (RIA), as shown below:
-
-*Image: dp_hub_anatomy.png*
-
-The Reltio Intelligent 360 includes a variety of tools that help you maintain your data. Some options are common across other products while some are exclusive only to Reltio Intelligent 360. For more information, see topic [Application features available across products](https://docs.reltio.com/en/products/reltio-context-intelligence-platform/reltio-context-intelligence-platform-at-a-glance/application-features-available-across-products?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
-
-
-
----
-
 # Derived attributes
 
 > **Section:** Products > Reltio Intelligent 360 > Reltio Intelligent 360 at a glance > Reltio Intelligent 360 navigation
@@ -103849,22 +103841,6 @@ In Reltio Intelligent 360, you can track, manage, and analyze interactions acros
 
 ---
 
-# Reltio Intelligent Assistant (RIA)
-
-> **Section:** Products > Reltio Intelligent 360 > Reltio Intelligent 360 at a glance > Reltio Intelligent 360 navigation
-
-
-**Source:** https://docs.reltio.com/en/products/reltio-intelligent-360/reltio-intelligent-360-at-a-glance/reltio-intelligent-360-navigation/reltio-intelligent-assistant-ria?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
-
-Learn about RIA for Intelligent 360.
-
-Reltio Intelligent Assistant (RIA) is the primary way to explore Reltio Intelligent 360. As a business user, it can be difficult to find the right data-set from cross-functional data. RIA serves as an interface to fill that gap. For more information about RIA, see topic [RIA (Reltio Intelligent Assistant) at a glance](https://docs.reltio.com/en/applications/ria/ria-reltio-intelligent-assistant-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
-
-
-
----
-
 # Reltio Context Intelligence Platform at a glance
 
 > **Section:** Products > Reltio Context Intelligence Platform
@@ -103885,15 +103861,11 @@ Reltio Context Intelligence Platform is on our cloud platform encompassing our e
 
 **Reltio Intelligent 360TM**
 
-A genAI-powered product offering that unifies, enriches, segments, and mobilizes comprehensive, ready-to-consume 360-degree views in real time. It captures interactions and derived attributes for individuals and organizations, and it provides Reltio Intelligent Assistant (RIA) for data exploration in addition to the core capabilities of Reltio Multidomain MDM and Reltio Entity Resolution products.
+A genAI-powered product offering that unifies, enriches, segments, and mobilizes comprehensive, ready-to-consume 360-degree views in real time. It captures interactions and derived attributes for individuals and organizations, in addition to the core capabilities of Reltio Multidomain MDM and Reltio Entity Resolution products.
 
 **Reltio Multidomain MDM**
 
 A genAI-powered, cloud-native SaaS platform that provides best source of truth for various core data, such as customers, products, and locations—unifying, standardizing, enriching it into secure, trusted, interoperable data. It includes data quality, data governance, reference data management, and relationship views. It collects, processes, and mobilizes core data in milliseconds to support operational use cases..
-
-**Reltio Entity Resolution**
-
-An AI-powered product that uniquely identifies customers or other entities. It uses Large Language Model (LLM) based on Flexible Entity Resolution Network (FERN) models to identify and match records that refer to the same entity across different data sources.
 
 ## Who is Reltio Context Intelligence Platform for?
 
@@ -154268,7 +154240,7 @@ application/json
 
 Learn more about how to use the Verify Matches API to explain matching behavior for either two entities or two raw serialized match documents.
 
-Use the `verify matches API` to simulate how your match rules evaluate two inputs. You can compare two entities by using `first` and `second` request parameters, or two raw serialized match documents by using `firstDocument` and `secondDocument` request parameters. The operation supports the default match rules in your configuration, specific match-group URIs through the `rules` query parameter, or custom match groups defined in the request body. Use this operation to adjust match rules rules, diagnose issues, and understand match outcomes.
+Use the `verify matches API` to simulate how your match rules evaluate two inputs. You can compare two entities by using `first` and `second` request parameters, or two raw serialized match documents by using `firstDocument` and `secondDocument` request parameters. The operation supports the default match rules in your configuration, specific match-group URIs through the `rules` query parameter, or custom match groups defined in the request body. Use this operation to adjust match rules, diagnose issues, and understand match outcomes.
 
 To optimize matching performance, the operation performs matching in this order: 
 
@@ -154310,7 +154282,7 @@ The specification of this operation is available on the [Developer Portal](https
 | **Headers** | `CustomerTenant` | Yes | Customer Tenant ID. | — |
 | **Headers** | `DataTenant` | Yes | Data Tenant ID. | — |
 | **Query Parameters** | `rules` | Optional | A comma-separated list of match group URIs. If omitted, the default match groups are used. You can also define custom rules directly in the request body using the `matchGroups` parameter. Rule filtering works the same way in entity mode and raw match-document mode. | `POST {TenantURL}/entities/_verifyMatches?rules=configuration/entityTypes/HCP/matchGroups/PersonByNPISuspect2` |
-|  | `show` | Optional | Determines the information available in the response. Use one of the following values:  - `brief`: Returns rule explanations only. - `full`: Returns additional explanation details. In entity mode, this includes match-document values and entity versions. In raw match-document mode, entity-only sections are returned as `null`. | If entity mode, if `show` is set to is set to `full`, the output has the following format:, the output has the following format:`{ "matchDocuments": { "first": { "areEqual": true/false, "databaseDocument": {...}, "generatedDocument": {...} }, "second": { "areEqual": true/false, "databaseDocument": {...}, "generatedDocument": {...} } }, "versions": { "first": { "EntityVersion": value, "MatchDocumentVersion": value }, "second": { "EntityVersion": value, "MatchDocumentVersion": value } }, "rules": { "Rule1": {explanation}, "Rule2": {explanation}, ... } }` |
+|  | `show` | Optional | Determines the information available in the response. Use one of the following values:  - `brief`: Returns rule explanations only. - `full`: Returns additional explanation details. In entity mode, this includes match-document values and entity versions. In raw match-document mode, entity-only sections are returned as `null`. | In entity mode, if `show` is set to is set to `full`, the output has the following format:, the output has the following format:`{ "matchDocuments": { "first": { "areEqual": true/false, "databaseDocument": {...}, "generatedDocument": {...} }, "second": { "areEqual": true/false, "databaseDocument": {...}, "generatedDocument": {...} } }, "versions": { "first": { "EntityVersion": value, "MatchDocumentVersion": value }, "second": { "EntityVersion": value, "MatchDocumentVersion": value } }, "rules": { "Rule1": {explanation}, "Rule2": {explanation}, ... } }` |
 |  | `documentsFromDatabase` | Optional | The default value is false. In entity mode, if set to `true`, the operation uses persisted match documents for existing entities instead of regenerating them in memory. This parameter does not apply to raw match-document mode. | — |
 |  | `checkOvercollisionedTokens` | Optional | The default value is `true`. When set to `true`, the operation checks whether match-token phrases are marked as overcollisioned in the database. Overcollisioned phrases are removed from the intersection list. If set to `false`, the token list can include overcollisioned tokens. | — |
 |  | `time` | Optional | If this parameter is specified, it returns the match document and the match token phrases built for the entity according to the entity state and business configuration state at the specified time. If you specify the `time` parameter, then the `db` parameter is ignored and effectively set to `false`. When the `time` parameter is specified, the operation results may show some discrepancy based on the following:  - The match documents and match tokens are generated in real time because the historical information about match documents and match tokens is not available. - The explanation is built by using the current state of the operation. As a result, if the match or survivorship rules have changed after the specified time, then the results of the explanation might differ from the actual results for the specified time. - If an entity refers to data that may change over time, such as lookups or environment configuration, user preferences, or permissions, then the currently available data or configuration is taken. The auto-generated values might not correspond to the actual ones. - The L3 configuration is selected by the timestamp of the history entry. - If an entity or the tenant configuration does not exist, then the request fails with a 404 error. | — |
@@ -154832,7 +154804,7 @@ To help you understand how a negative rule influenced the outcome, the response 
 - One entry retains the **original match group name**, but has a modified label such as: `"label": "… combined with negative groups"`
 - A second entry uses the **same URI with a "1" appended**, and shows the behavior of the rule *without* the effect of the negative rule. This entry uses a label such as: `"label": "HCP by ME and Fuzzy name without negative rules"`
 
-Here's a sample configuration:
+Here's a sample response:
 
 ```
 {
@@ -154999,7 +154971,7 @@ Here's a sample configuration:
                     }
                 ]
             }
-        },
+        }
     },
     "manualMatches": {}
 }
@@ -204663,16 +204635,10 @@ Relation Management APIs are particularly useful in scenarios where:
 ---
 
 # Statistics Reporting Services APIs
-
-> **Section:** Developer resources > Statistics Reporting Services APIs
-
-
-**Source:** https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
 **Keywords:** statistics reporting services apis, overview of reporting apis, api suite for usage and performance metrics, reporting services endpoints and capabilities, api group for statistics retrieval, fetch metrics using reporting apis, monitor usage trends and failures, latency and queue metrics apis, reporting, latency, metrics, usage
 
 
-Learn about the purpose, structure, and capabilities of the Statistics Reporting Services API.
+Learn about the purpose, structure, and capabilities of the Statistics Reporting Services API
 
 The Statistics Reporting Service provides comprehensive visibility into tenant level operational metrics through a set of RESTful APIs. It acts as a centralized data access layer that aggregates and exposes real time and historical performance data from multiple sources. The insights returned by these APIs can be used to identify performance bottlenecks, optimize system resources, and ensure adherence to service level objectives.
 
@@ -204697,43 +204663,37 @@ The following table lists all APIs documented under Statistics Reporting Service
 
 | API | Method | Description | See topic |
 | --- | --- | --- | --- |
-| /statistics-reporting/{tenantId}/API/latencyStats/_byInterval | POST | Aggregated API metrics by filter and time interval | [Retrieve API metrics grouped by factor and time interval](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-api-metrics-grouped-by-factor-and-time-interval?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
-| /statistics-reporting/{tenantId}/API/getMostUsedApis | POST | Returns API usage statistics for the most frequently called endpoints | [Retrieve most used API endpoints](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-most-used-api-endpoints?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
-| /statistics-reporting/{tenantId}/API/getMostTimeConsumingApis | POST | Returns API endpoints with the highest execution time during the specified time period | [Retrieve most time-consuming API endpoints](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-most-time-consuming-api-endpoints?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
-| /statistics-reporting/{tenantId}/API/getMostActiveUsers | POST | API usage statistics per user | [Retrieve most active users](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-most-active-users?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
-| /statistics-reporting/{tenantId}/API/failedRequestsByEndpoint | POST | Failed request counts by endpoint and status | [Retrieve failed API requests by endpoint](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-failed-api-requests-by-endpoint?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
-| /statistics-reporting/{tenantId}/API/failedRequestsByStatus | POST | Failed request totals grouped by HTTP status | [Retrieve failed API requests by status code](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-failed-api-requests-by-status-code?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
-| /statistics-reporting/{tenantId}/API/getFailedRequests | POST | Timestamped records of failed requests with metadata | [Retrieve detailed failed API requests](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-detailed-failed-api-requests?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
-| /statistics-reporting/{tenantId}/API/getDailyTaskUsage | POST | Daily task totals (success, failed) | [Retrieve daily task usage summary](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-daily-task-usage-summary?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
-| /statistics-reporting/{tenantId}/API/eventStreamingProcessor/sentMessages | POST | Messages sent by Event Streaming Processor | [Retrieve messages sent by Event Streaming Processor](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-messages-sent-by-event-streaming-processor?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
-| /statistics-reporting/{tenantId}/API/queueMetrics/queueSize | POST | Queue size at regular intervals | [Retrieve queue size metrics by time interval](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-queue-size-metrics-by-time-interval?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
-| /statistics-reporting/{tenantId}/API/queueMetrics/queueProcessingSpeed | POST | Messages processed per topic over time | [Retrieve queue processing speed by time interval](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-queue-processing-speed-by-time-interval?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
-| /statistics-reporting/{tenantId}/API/queueMetrics/failedMessages | POST | Failed messages per topic and time interval | [Retrieve failed queue messages by time interval](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-failed-queue-messages-by-time-interval?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
-| /statistics-reporting/{tenantId}/API/queueMetrics/deadLetterQueueSize | POST | Dead-letter queue size by topic and interval | [Retrieve dead-letter queue size by time interval](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-dead-letter-queue-size-by-time-interval?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
-| /statistics-reporting/{tenantId}/API/queueMetrics/minTimeInQueue | POST | Minimum time messages spent in queue per interval | [Retrieve minimum queue dwell time by interval](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-minimum-queue-dwell-time-by-interval?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
-| /statistics-reporting/{tenantId}/API/queueMetrics/maxTimeInQueue | POST | Maximum time messages spent in queue per interval | [Retrieve maximum queue dwell time by interval](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-maximum-queue-dwell-time-by-interval?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
-| /statistics-reporting/{tenantId}/API/queueMetrics/avgTimeInQueue | POST | Average dwell time of messages in queue per interval | [Retrieve average queue dwell time by interval](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-average-queue-dwell-time-by-interval?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
-| /statistics-reporting/{tenantId}/API/queueMetrics/totalEvents | POST | Total event counts by topic and interval | [Retrieve total event counts by time interval](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-total-event-counts-by-time-interval?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
+| /statistics-reporting/{tenantId}/API/latencyStats/_byInterval | POST | Aggregated API metrics by filter and time interval | [Retrieve API metrics grouped by factor and time interval](https://docs.reltio.com/search?q=r-retrieve-api-metrics-grouped-by-factor-and-time-interval&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
+| /statistics-reporting/{tenantId}/API/getMostUsedApis | POST | Returns API usage statistics for the most frequently called endpoints | [Retrieve most used API endpoints](https://docs.reltio.com/search?q=r-retrieve-most-used-api-endpoints&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
+| /statistics-reporting/{tenantId}/API/getMostTimeConsumingApis | POST | Returns API endpoints with the highest execution time during the specified time period | [Retrieve most time-consuming API endpoints](https://docs.reltio.com/search?q=r-retrieve-most-time-consuming-api-endpoints&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
+| /statistics-reporting/{tenantId}/API/getMostActiveUsers | POST | API usage statistics per user | [Retrieve most active users](https://docs.reltio.com/search?q=r-retrieve-most-active-users&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
+| /statistics-reporting/{tenantId}/API/failedRequestsByEndpoint | POST | Failed request counts by endpoint and status | [Retrieve failed API requests by endpoint](https://docs.reltio.com/search?q=r-retrieve-failed-api-requests-by-endpoint&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
+| /statistics-reporting/{tenantId}/API/failedRequestsByStatus | POST | Failed request totals grouped by HTTP status | [Retrieve failed API requests by status code](https://docs.reltio.com/search?q=r-retrieve-failed-api-requests-by-status-code&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
+| /statistics-reporting/{tenantId}/API/getFailedRequests | POST | Timestamped records of failed requests with metadata | [Retrieve detailed failed API requests](https://docs.reltio.com/search?q=r-retrieve-detailed-failed-api-requests&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
+| /statistics-reporting/{tenantId}/API/getDailyTaskUsage | POST | Daily task totals (success, failed) | [Retrieve daily task usage summary](https://docs.reltio.com/search?q=r-retrieve-daily-task-usage-summary&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
+| /statistics-reporting/{tenantId}/API/eventStreamingProcessor/sentMessages | POST | Messages sent by Event Streaming Processor | [Retrieve messages sent by Event Streaming Processor](https://docs.reltio.com/search?q=r-retrieve-messages-sent-by-event-streaming-processor&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
+| /statistics-reporting/{tenantId}/API/queueMetrics/queueSize | POST | Queue size at regular intervals | [Retrieve queue size metrics by time interval](https://docs.reltio.com/search?q=r-retrieve-queue-size-metrics-by-time-interval&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
+| /statistics-reporting/{tenantId}/API/queueMetrics/queueProcessingSpeed | POST | Messages processed per topic over time | [Retrieve queue processing speed by time interval](https://docs.reltio.com/search?q=r-retrieve-queue-processing-speed-by-time-interval&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
+| /statistics-reporting/{tenantId}/API/queueMetrics/failedMessages | POST | Failed messages per topic and time interval | [Retrieve failed queue messages by time interval](https://docs.reltio.com/search?q=r-retrieve-failed-queue-messages-by-time-interval&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
+| /statistics-reporting/{tenantId}/API/queueMetrics/deadLetterQueueSize | POST | Dead-letter queue size by topic and interval | [Retrieve dead-letter queue size by time interval](https://docs.reltio.com/search?q=r-retrieve-dead-letter-queue-size-by-time-interval&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
+| /statistics-reporting/{tenantId}/API/queueMetrics/minTimeInQueue | POST | Minimum time messages spent in queue per interval | [Retrieve minimum queue dwell time by interval](https://docs.reltio.com/search?q=r-retrieve-minimum-queue-dwell-time-by-interval&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
+| /statistics-reporting/{tenantId}/API/queueMetrics/maxTimeInQueue | POST | Maximum time messages spent in queue per interval | [Retrieve maximum queue dwell time by interval](https://docs.reltio.com/search?q=r-retrieve-maximum-queue-dwell-time-by-interval&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
+| /statistics-reporting/{tenantId}/API/queueMetrics/avgTimeInQueue | POST | Average dwell time of messages in queue per interval | [Retrieve average queue dwell time by interval](https://docs.reltio.com/search?q=r-retrieve-average-queue-dwell-time-by-interval&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
+| /statistics-reporting/{tenantId}/API/queueMetrics/totalEvents | POST | Total event counts by topic and interval | [Retrieve total event counts by time interval](https://docs.reltio.com/search?q=r-retrieve-total-event-counts-by-time-interval&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) |
 
 **Related links**
 
-- [Authenticate and access the Statistics Reporting Services API](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/authenticate-and-access-the-statistics-reporting-services-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- Authenticate and access the Statistics Reporting Services API
 
 
 
 ---
 
 # Authenticate and access the Statistics Reporting Services API
-
-> **Section:** Developer resources > Statistics Reporting Services APIs > Statistics Reporting Services APIs
-
-
-**Source:** https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/authenticate-and-access-the-statistics-reporting-services-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
 **Keywords:** authenticate with statistics reporting api, statistics reporting gateway url, statistics reporting base url, api authentication using bearer token, authorization headers for api access, ROLE_STATISTICS_REPORTING, api gateway authentication flow, bearer token, access token
 
 
-Learn how to authenticate and access the Statistics Reporting Services API, including the required Gateway URL, authorization headers, and role-based access requirements.
+Learn how to authenticate and access the Statistics Reporting Services API, including the required Gateway URL, authorization headers, and role-based access requirements
 
 Use the `Statistics Reporting Services API` to retrieve reporting and monitoring data for a specific tenant. All requests must be authenticated and authorized before accessing any endpoint.
 
@@ -204830,21 +204790,17 @@ Common HTTP status codes include:
 
 ## Related concepts
 
-- [Statistics Reporting Services APIs](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- [Statistics Reporting Services APIs](https://docs.reltio.com/search?q=Statistics_Reporting_Services_APIs&utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 
 
 ---
 
 # Retrieve API metrics grouped by factor and time interval
-
-> **Section:** Developer resources > Statistics Reporting Services APIs > Statistics Reporting Services APIs
-
-
-**Source:** https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-api-metrics-grouped-by-factor-and-time-interval?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
 **Keywords:** retrieve api stats by interval, grouped latency metrics by factors, fetch performance data over time, api usage trends by query type, analyze endpoint performance by minute, monitor api traffic by time, generate usage breakdown by filters, track endpoint performance over time, latency, metrics, queryTypes, apiEndPoints
 
+
+Retrieve API performance metrics for a tenant, including latency, request volume, and errors, grouped by time interval and filters
 
 Use this API to retrieve aggregated API performance metrics for a tenant. The API groups results based on time intervals and filters such as HTTP methods, endpoint paths, users, or query types.
 
@@ -204876,7 +204832,7 @@ The following table describes the request body parameters, including accepted va
 | --- | --- | --- | --- | --- |
 | `from`(1) | Long | Yes | Start time in epoch milliseconds | — |
 | `to`(1) | Long | Yes | End time in epoch milliseconds | — |
-| `env` | String | Yes | Target environment | Example: `prod`, `qa`, `dev`. Default: none |
+| `env` | String | Yes | Target environment | Example: `361`, `tst-01`, `na07-prod`, `na07-test`, `na07-dev`  Default: none |
 | `intervalMinutes` | Integer | No | Time interval for aggregation | Default: `15` minutes |
 | `queryTypes` | Array | No | Filter by query type | `Read`, `Write`, `Search`, `Merge`, `Graphs` |
 | `httpMethods` | Array | No | Filter by HTTP methods | Example: `POST` |
@@ -204956,22 +204912,18 @@ The following example shows a response that includes two time intervals with lat
 
 **Related links**
 
-- [Statistics Reporting Services APIs](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- [Authenticate and access the Statistics Reporting Services API](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/authenticate-and-access-the-statistics-reporting-services-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- Statistics Reporting Services APIs
+- Authenticate and access the Statistics Reporting Services API
 
 
 
 ---
 
 # Retrieve average queue dwell time by interval
-
-> **Section:** Developer resources > Statistics Reporting Services APIs > Statistics Reporting Services APIs
-
-
-**Source:** https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-average-queue-dwell-time-by-interval?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
 **Keywords:** retrieve average queue dwell time, get average time in queue, monitor message queue delay, analyze average queue wait duration, track queue dwell metrics by interval, queue dwell averages per timestamp, time in queue by topic, evaluate message latency per interval, timestamp, values, name, value
 
+
+Learn more about using this API to retrieve the average time that messages remained in the queue during each time interval
 
 Use this API to retrieve the average time that messages remained in the queue during each time interval. The response includes average dwell time values grouped by topic and timestamp across the specified time range.
 
@@ -205066,22 +205018,18 @@ The following example shows the average queue dwell time recorded for two time i
 
 **Related links**
 
-- [Statistics Reporting Services APIs](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- [Authenticate and access the Statistics Reporting Services API](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/authenticate-and-access-the-statistics-reporting-services-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- Statistics Reporting Services APIs
+- Authenticate and access the Statistics Reporting Services API
 
 
 
 ---
 
 # Retrieve daily task usage summary
-
-> **Section:** Developer resources > Statistics Reporting Services APIs > Statistics Reporting Services APIs
-
-
-**Source:** https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-daily-task-usage-summary?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
 **Keywords:** retrieve daily task usage, get task success and failure stats, fetch task usage summary by day, daily task execution breakdown, analyze task success rate, track failed tasks by date, report daily task totals, monitor task completion stats, reportdate, total, success, failed
 
+
+Learn more about using this API to to retrieve a summary of task usage for each day in the specified time range
 
 Use this API to retrieve a summary of task usage for each day in the specified time range. The response includes total tasks executed, successful tasks, and failed tasks for each report date.
 
@@ -205167,22 +205115,18 @@ The following example shows task usage statistics for two days, including succes
 
 **Related links**
 
-- [Statistics Reporting Services APIs](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- [Authenticate and access the Statistics Reporting Services API](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/authenticate-and-access-the-statistics-reporting-services-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- Statistics Reporting Services APIs
+- Authenticate and access the Statistics Reporting Services API
 
 
 
 ---
 
 # Retrieve dead-letter queue size by time interval
-
-> **Section:** Developer resources > Statistics Reporting Services APIs > Statistics Reporting Services APIs
-
-
-**Source:** https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-dead-letter-queue-size-by-time-interval?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
 **Keywords:** retrieve dead-letter queue size, monitor dlq size by interval, get dead-letter queue stats, aggregate dlq message counts, track queue backlog by time, analyze failed message accumulation, dlq metrics by timestamp, subscription queue size tracking, timestamp, values, name, value
 
+
+Learn more about using this API to retrieve the number of messages in the dead-letter queue for each time interval within a specified time range
 
 Use this API to retrieve the number of messages in the dead-letter queue for each time interval within a specified time range. The response returns aggregated queue size values grouped by subscription topic and timestamp.
 
@@ -205278,22 +205222,18 @@ The following example shows the size of the dead-letter queue over two time inte
 
 **Related links**
 
-- [Statistics Reporting Services APIs](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- [Authenticate and access the Statistics Reporting Services API](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/authenticate-and-access-the-statistics-reporting-services-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- Statistics Reporting Services APIs
+- Authenticate and access the Statistics Reporting Services API
 
 
 
 ---
 
 # Retrieve detailed failed API requests
-
-> **Section:** Developer resources > Statistics Reporting Services APIs > Statistics Reporting Services APIs
-
-
-**Source:** https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-detailed-failed-api-requests?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
 **Keywords:** retrieve detailed failed api requests, get full failure request logs, track individual api errors, log failed request metadata, inspect request errors by timestamp, get error latency and user details, analyze failed request details, debug api call failures, requesttimestamp, globalid, latency, status
 
+
+Learn more about using this API to retrieve detailed information about failed API requests
 
 Use this API to retrieve detailed information about failed API requests. The response includes failure timestamps, endpoint paths, HTTP status codes, latency, user identifiers, and global request IDs.
 
@@ -205399,22 +205339,18 @@ The following example shows detailed information for multiple failed API request
 
 **Related links**
 
-- [Statistics Reporting Services APIs](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- [Authenticate and access the Statistics Reporting Services API](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/authenticate-and-access-the-statistics-reporting-services-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- Statistics Reporting Services APIs
+- Authenticate and access the Statistics Reporting Services API
 
 
 
 ---
 
 # Retrieve failed API requests by endpoint
-
-> **Section:** Developer resources > Statistics Reporting Services APIs > Statistics Reporting Services APIs
-
-
-**Source:** https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-failed-api-requests-by-endpoint?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
 **Keywords:** retrieve failed api requests, get error count by endpoint, track failed api calls, api failures by status code, http error stats per endpoint, monitor request failures over time, identify high-failure apis, analyze error codes by path, errorCount, status, api
 
+
+Learn more about using this API to retrieve failed request statistics by endpoint and HTTP status code
 
 Use this API to retrieve failed request statistics by endpoint and HTTP status code. The response includes the number of errors for each endpoint and status combination during the specified time period.
 
@@ -205523,24 +205459,18 @@ The following example shows failed request counts for multiple API endpoints by 
 
 **Related links**
 
-- [Statistics Reporting Services APIs](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- [Authenticate and access the Statistics Reporting Services API](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/authenticate-and-access-the-statistics-reporting-services-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- Statistics Reporting Services APIs
+- Authenticate and access the Statistics Reporting Services API
 
 
 
 ---
 
 # Retrieve failed API requests by status code
-
-> **Section:** Developer resources > Statistics Reporting Services APIs > Statistics Reporting Services APIs
-
-
-**Source:** https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-failed-api-requests-by-status-code?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
 **Keywords:** retrieve api errors by status, get failed requests by http code, track request failures by error code, group failed calls by status, report error counts per status, http status code error tracking, analyze api failure patterns, aggregate api error responses, status, errorcount, failure, http errors
 
 
-Learn how to use the failedRequestsByStatus API to retrieve aggregated counts of failed API requests grouped by HTTP status code for a specified time range.
+Learn how to use the failedRequestsByStatus API to retrieve aggregated counts of failed API requests grouped by HTTP status code for a specified time range
 
 Use this API to retrieve the total number of failed API requests grouped by HTTP status code. The results reflect failure counts for each error code within the selected time period.
 
@@ -205653,22 +205583,18 @@ The following example shows error counts grouped by HTTP status code.
 
 **Related links**
 
-- [Statistics Reporting Services APIs](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- [Authenticate and access the Statistics Reporting Services API](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/authenticate-and-access-the-statistics-reporting-services-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- Statistics Reporting Services APIs
+- Authenticate and access the Statistics Reporting Services API
 
 
 
 ---
 
 # Retrieve failed queue messages by time interval
-
-> **Section:** Developer resources > Statistics Reporting Services APIs > Statistics Reporting Services APIs
-
-
-**Source:** https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-failed-queue-messages-by-time-interval?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
 **Keywords:** retrieve failed queue messages, track message failures by topic, monitor failed queue message rate, get failure counts by interval, fetch failed messages by timestamp, failed messages grouped by time, queue error tracking by subscription, analyze queue failure metrics, timestamp, values, name, value
 
+
+Learn more about using this API to retrieve the number of failed messages in the queue over a defined time range
 
 Use this API to retrieve the number of failed messages in the queue over a defined time range. The response includes failure counts grouped by subscription topic and timestamp.
 
@@ -205764,22 +205690,18 @@ The following example shows the number of failed messages in the queue for two t
 
 **Related links**
 
-- [Statistics Reporting Services APIs](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- [Authenticate and access the Statistics Reporting Services API](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/authenticate-and-access-the-statistics-reporting-services-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- Statistics Reporting Services APIs
+- Authenticate and access the Statistics Reporting Services API
 
 
 
 ---
 
 # Retrieve maximum queue dwell time by interval
-
-> **Section:** Developer resources > Statistics Reporting Services APIs > Statistics Reporting Services APIs
-
-
-**Source:** https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-maximum-queue-dwell-time-by-interval?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
 **Keywords:** retrieve maximum queue dwell time, get longest message queue duration, monitor queue dwell time by interval, analyze maximum time in queue, track longest queue wait time, queue time metrics by timestamp, queue latency tracking per interval, evaluate message delay per topic, timestamp, values, name, value
 
+
+Learn more about using this API to retrieve the longest time a message remained in the queue during each time interval
 
 Use this API to retrieve the longest time a message remained in the queue during each time interval. The response includes maximum dwell time values grouped by topic and timestamp across the specified time range.
 
@@ -205874,22 +205796,18 @@ The following example shows the maximum queue dwell time recorded for two time i
 
 **Related links**
 
-- [Statistics Reporting Services APIs](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- [Authenticate and access the Statistics Reporting Services API](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/authenticate-and-access-the-statistics-reporting-services-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- Statistics Reporting Services APIs
+- Authenticate and access the Statistics Reporting Services API
 
 
 
 ---
 
 # Retrieve messages sent by Event Streaming Processor
-
-> **Section:** Developer resources > Statistics Reporting Services APIs > Statistics Reporting Services APIs
-
-
-**Source:** https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-messages-sent-by-event-streaming-processor?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
 **Keywords:** retrieve messages sent by event streaming processor, get event stream message counts, track messages per topic, fetch streaming processor output volume, monitor message delivery per interval, aggregate messages by topic and time, streaming processor statistics, event message counts by resolution, timestamp, values, name, value
 
+
+Learn more about using this API to retrieve the number of messages sent by the Event Streaming Processor for each destination topic during specific time intervals
 
 Use this API to retrieve the number of messages sent by the Event Streaming Processor for each destination topic during specific time intervals. The response includes message counts grouped by topic name and timestamp.
 
@@ -205983,22 +205901,18 @@ The following example shows message counts grouped by destination topic and time
 
 **Related links**
 
-- [Statistics Reporting Services APIs](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- [Authenticate and access the Statistics Reporting Services API](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/authenticate-and-access-the-statistics-reporting-services-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- Statistics Reporting Services APIs
+- Authenticate and access the Statistics Reporting Services API
 
 
 
 ---
 
 # Retrieve minimum queue dwell time by interval
-
-> **Section:** Developer resources > Statistics Reporting Services APIs > Statistics Reporting Services APIs
-
-
-**Source:** https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-minimum-queue-dwell-time-by-interval?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
 **Keywords:** retrieve minimum queue dwell time, get shortest queue wait duration, monitor queue dwell time by interval, analyze minimum time in queue, fetch lowest message queue time, queue latency metrics by timestamp, queue dwell tracking per interval, time in queue by topic, timestamp, values, name, value
 
+
+Learn more about using this API to retrieve the shortest time a message remained in the queue during each time interval
 
 Use this API to retrieve the shortest time a message remained in the queue during each time interval. The response includes minimum dwell time values grouped by topic and timestamp across the specified time range.
 
@@ -206093,22 +206007,18 @@ The following example shows the minimum queue time recorded for two time interva
 
 **Related links**
 
-- [Statistics Reporting Services APIs](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- [Authenticate and access the Statistics Reporting Services API](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/authenticate-and-access-the-statistics-reporting-services-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- Statistics Reporting Services APIs
+- Authenticate and access the Statistics Reporting Services API
 
 
 
 ---
 
 # Retrieve most active users
-
-> **Section:** Developer resources > Statistics Reporting Services APIs > Statistics Reporting Services APIs
-
-
-**Source:** https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-most-active-users?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
 **Keywords:** retrieve most active users, get api usage by user, fetch user-level request metrics, track top api users, analyze api usage per user, identify high-volume api users, user request count breakdown, user api request statistics, requestCount, rcuTotal, rcuAvg, requestCountPercent
 
+
+Learn more about using this API to retrieve usage statistics by user, showing which users have made the most API calls during a selected time period
 
 Use this API to retrieve usage statistics by user, showing which users have made the most API calls during a selected time period. The response includes total requests, compute unit usage, and request share for each user.
 
@@ -206215,22 +206125,18 @@ The following example shows usage statistics for three users, including request 
 
 **Related links**
 
-- [Statistics Reporting Services APIs](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- [Authenticate and access the Statistics Reporting Services API](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/authenticate-and-access-the-statistics-reporting-services-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- Statistics Reporting Services APIs
+- Authenticate and access the Statistics Reporting Services API
 
 
 
 ---
 
 # Retrieve most time-consuming API endpoints
-
-> **Section:** Developer resources > Statistics Reporting Services APIs > Statistics Reporting Services APIs
-
-
-**Source:** https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-most-time-consuming-api-endpoints?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
 **Keywords:** retrieve most time consuming apis, get api latency metrics, retrieve api execution time, track api request latency, rcu usage by endpoint, find slowest api calls, latency stats per endpoint, most expensive api operations, latency, rcu, performance, api monitoring
 
+
+Learn more about using this API to retrieve latency metrics for the most time-consuming API endpoints in a Reltio tenant
 
 Use this API to retrieve latency metrics for the most time-consuming API endpoints in a Reltio tenant. The response includes execution times, operation types, and compute usage by day.
 
@@ -206341,22 +206247,18 @@ The following example shows a response with multiple API calls, their execution 
 
 **Related links**
 
-- [Statistics Reporting Services APIs](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- [Authenticate and access the Statistics Reporting Services API](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/authenticate-and-access-the-statistics-reporting-services-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- Statistics Reporting Services APIs
+- Authenticate and access the Statistics Reporting Services API
 
 
 
 ---
 
 # Retrieve most used API endpoints
-
-> **Section:** Developer resources > Statistics Reporting Services APIs > Statistics Reporting Services APIs
-
-
-**Source:** https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-most-used-api-endpoints?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
 **Keywords:** retrieve most used api endpoints, get frequently called apis, fetch top api usage statistics, track high traffic api calls, monitor api usage by endpoint, report api request counts, api endpoint usage trends, analyze top endpoints over time, requestCount, successRate, avgLatency, errorCount
 
+
+Learn more about retrieving usage statistics for the most frequently called API endpoints in a Reltio environment
 
 Use this API to retrieve usage statistics for the most frequently called API endpoints in a Reltio environment. The results include request volume, error count, average latency, and success rate for each endpoint.
 
@@ -206460,22 +206362,18 @@ The following example shows usage statistics for three API endpoints including l
 
 **Related links**
 
-- [Statistics Reporting Services APIs](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- [Authenticate and access the Statistics Reporting Services API](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/authenticate-and-access-the-statistics-reporting-services-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- Statistics Reporting Services APIs
+- Authenticate and access the Statistics Reporting Services API
 
 
 
 ---
 
 # Retrieve queue processing speed by time interval
-
-> **Section:** Developer resources > Statistics Reporting Services APIs > Statistics Reporting Services APIs
-
-
-**Source:** https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-queue-processing-speed-by-time-interval?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
 **Keywords:** retrieve queue processing speed, monitor message processing rate, fetch processing speed by topic, queue speed metrics by time, aggregate processing rate per interval, queue throughput over time, processing performance by subscription, stream message rate by timestamp, timestamp, values, name, value
 
+
+Learn more about using this API to retrieve queue processing speed metrics over a defined time range
 
 Use this API to retrieve queue processing speed metrics over a defined time range. The response returns the number of messages processed during each time interval, grouped by subscription topic.
 
@@ -206571,22 +206469,18 @@ The following example shows the queue processing speed for two time intervals, w
 
 **Related links**
 
-- [Statistics Reporting Services APIs](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- [Authenticate and access the Statistics Reporting Services API](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/authenticate-and-access-the-statistics-reporting-services-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- Statistics Reporting Services APIs
+- Authenticate and access the Statistics Reporting Services API
 
 
 
 ---
 
 # Retrieve queue size metrics by time interval
-
-> **Section:** Developer resources > Statistics Reporting Services APIs > Statistics Reporting Services APIs
-
-
-**Source:** https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-queue-size-metrics-by-time-interval?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
 **Keywords:** retrieve queue size by interval, get aggregated queue metrics, monitor message queue size, queue size over time, track queue values by timestamp, fetch periodic queue stats, queue resolution data metrics, message backlog over time, timestamp, values, name, value
 
+
+Learn more about using this API to to retrieve queue size metrics over a defined time range
 
 Use this API to retrieve queue size metrics over a defined time range. The response returns the size of the message queue at regular time intervals based on the specified resolution.
 
@@ -206680,22 +206574,18 @@ The following example shows the aggregated queue size for two time intervals.
 
 **Related links**
 
-- [Statistics Reporting Services APIs](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- [Authenticate and access the Statistics Reporting Services API](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/authenticate-and-access-the-statistics-reporting-services-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- Statistics Reporting Services APIs
+- Authenticate and access the Statistics Reporting Services API
 
 
 
 ---
 
 # Retrieve total event counts by time interval
-
-> **Section:** Developer resources > Statistics Reporting Services APIs > Statistics Reporting Services APIs
-
-
-**Source:** https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-total-event-counts-by-time-interval?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
 **Keywords:** retrieve total event counts, get event totals by interval, monitor event activity over time, track event messages by timestamp, analyze event volume by queue, event delivery totals per topic, event message tracking per interval, aggregate total queue events, timestamp, values, name
 
+
+Learn more about using this API to retrieve the total number of events during each time interval within a specified time range
 
 Use this API to retrieve the total number of events during each time interval within a specified time range. The response includes event counts grouped by topic and timestamp.
 
@@ -206790,8 +206680,8 @@ The following example shows total event counts for two time intervals.
 
 **Related links**
 
-- [Statistics Reporting Services APIs](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
-- [Authenticate and access the Statistics Reporting Services API](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/authenticate-and-access-the-statistics-reporting-services-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- Statistics Reporting Services APIs
+- Authenticate and access the Statistics Reporting Services API
 
 
 
@@ -218876,7 +218766,7 @@ You play a pivotal role in maintaining data quality and governance while enablin
 
 Through these partnerships, you enhance the effectiveness of campaigns, ensuring they are data-driven, targeted, and aligned with business objectives.
 
-## What Reltio products and applications do Data Steward use?
+## What Reltio products and applications do Data Stewards use?
 
 Here are the tools of the trade for Data Stewards.
 
@@ -218885,7 +218775,6 @@ Here are the tools of the trade for Data Stewards.
 | Application | Reltio Entity Resolution | Reltio Multidomain Master Data Management (MDM) | Reltio Intelligent 360 |
 | Application | [Hub](https://docs.reltio.com/en/applications/hub/hub-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | ✅ | ✅ |
 | Application | [Console](https://docs.reltio.com/en/applications/console/console-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)  - Data Loader - Export - External Match | 🚫 | ✅ |
-| [RIA (Reltio Intelligent Assistant)](https://docs.reltio.com/en/applications/ria/ria-reltio-intelligent-assistant-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | 🚫 | ✅ | ✅ |
 | [Search](https://docs.reltio.com/en/applications/search/search-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | ✅ | ✅ | ✅ |
 
 ## What external applications does a Data Steward work with?
@@ -227856,8 +227745,6 @@ To apply filter options:
 
 Learn how to navigate Reltio Intelligent 360
 
-When you log into the Reltio Intelligent 360 Hub, you see the Reltio Intelligent Assistant (RIA) - your virtual assistant that helps you find data and information with a simple conversation. Start here by asking RIA for help, or navigate to other sections of the Hub.
-
 Let's see what's in the store for you in the Reltio Intelligent 360 Hub.
 
 *Image: dp_hub_anatomy.png*
@@ -227877,9 +227764,6 @@ The bar on the top of the screen that displays the Reltio logo, the tenant you a
 
 Hover your mouse pointer over the left navigation drawer and select one of these options from the slide-out menu:
 
-- 
-
-  **Reltio Intelligent Assistant**: Opens RIA. For more information, see topic [RIA for Reltio Intelligent 360 operation](https://docs.reltio.com/en/applications/ria/ria-reltio-intelligent-assistant-at-a-glance/ria-for-reltio-intelligent-360/ria-for-reltio-intelligent-360-operation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 - 
 
   **Profile Stats**: Displays the Profile Stats charts for the tenant. For more information, see topic [Profile Stats dashboard navigation](https://docs.reltio.com/en/applications/hub/profile-stats-dashboard-at-a-glance/profile-stats-dashboard-navigation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
@@ -227907,7 +227791,7 @@ Hover your mouse pointer over the left navigation drawer and select one of these
 
 **Page body**
 
-Displays information based on the menu option selected in the left navigation drawer. For example, select the **Reltio Intelligent Assistant** menu option to open RIA, where you enter a prompt to ask RIA for help.
+Displays information based on the menu option selected in the left navigation drawer.
 
 
 
@@ -229406,12 +229290,6 @@ Take it from the top with Hub. Get the overview here, then see the sub topics in
 ## What is Hub?
 
 The Hub is the user interface for managing data in the Reltio Context Intelligence Platform.
-
-**RIA - Reltio Intelligent Assistant**
-
-Reltio Intelligent 360
-
-Get answers to questions about Reltio features and functions as well as the data on your tenant.
 
 **Dashboards**
 
@@ -279847,193 +279725,6 @@ Access RDM from here in the UI: **Reltio App Selector > RDM**.
 
 ---
 
-# RIA for Reltio Intelligent 360
-
-> **Section:** Applications > RIA > RIA (Reltio Intelligent Assistant) at a glance
-
-
-**Source:** https://docs.reltio.com/en/applications/ria/ria-reltio-intelligent-assistant-at-a-glance/ria-for-reltio-intelligent-360?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
-
-Learn about the Reltio Intelligent Assistant (RIA) for Reltio Intelligent 360.
-
-Reltio Intelligent Assistant (RIA) the primary way to explore Reltio Intelligent 360.
-
-As a business user, it can be difficult to query, segment and get insights from cross-functional data. RIA serves as an interface to fill that gap.
-
-Use RIA to provide you with information about your data.
-
-Here's an example of how a chat interaction using RIA can be a way to access and visualize information:
-
-*Image: dp_ria_convo.png*
-
-For more information on how to use RIA, see topic [RIA for Reltio Intelligent 360 operation](https://docs.reltio.com/en/applications/ria/ria-reltio-intelligent-assistant-at-a-glance/ria-for-reltio-intelligent-360/ria-for-reltio-intelligent-360-operation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
-
-
-
----
-
-# RIA for Reltio Intelligent 360 operation
-
-> **Section:** Applications > RIA > RIA (Reltio Intelligent Assistant) at a glance > RIA for Reltio Intelligent 360
-
-
-**Source:** https://docs.reltio.com/en/applications/ria/ria-reltio-intelligent-assistant-at-a-glance/ria-for-reltio-intelligent-360/ria-for-reltio-intelligent-360-operation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
-
-Learn how to use Reltio Intelligent Assistant (RIA) for Reltio Intelligent 360 in the Reltio Context Intelligence Platform
-
-Reltio Intelligent 360
-
-Watch the following video to learn how to access and use Reltio Intelligent Assistance (RIA) on the Reltio Intelligent 360 Hub.
-
-## Ask RIA!
-
-You can access RIA for Reltio 360 DP every time you log into Reltio Hub or by selecting the button **RIA** on the left navigation panel of the Hub.
-
-*Image: dp_ria_button_2.png*
-
-Here, you'll find a search bar at the center of the page, displaying the message "Explore Reltio and your data. Let's chat..." to guide your queries.
-
-You'll see four default prompts on the landing page, located below the search bar. These prompts are designed to provide accurate responses to your queries to help you get started with RIA.
-
-Submit a query by typing a question, and selecting either the **Enter** button or the arrow icon to the right of the search bar.
-
-*Image: dp_ria_query.png*
-
-After submitting a query, the search bar refreshes and moves to the bottom of the screen.
-
-Your query and its corresponding answer appear above the search bar. The responses RIA gives you display the fields that you mention in the your queries as a table.
-
-You can continue to ask more questions, and a log of your previous queries is displayed in a window with a scroll bar.
-
-Ask follow-up questions and RIA provides contextual responses according to the ongoing conversation.
-
-*Image: dp_ria_graph.png*
-
-## Conversation history
-
-Your conversation history appears as a list of threads on the left side of the page.
-
-*Image: dp_conversation_history.png*
-
-These threads are divided chronologically, with sections created or updated on the current day, in the last 30 days or in the month prior to those 30 days. By default, the name of the thread is the first question you asked RIA. To rename or delete the thread, hover your mouse on top of the name and select the option icon on the right. Select **Rename** and edit the name field of the thread or select **Delete** to delete the thread.
-
-*Image: dp_conversation_history_edit.png*
-
-To start a new thread, hover over the RIA icon next to the search bar on the bottom of the page, and select the **New thread** button. The queries from your current thread are moved to the history panel on the left.
-
-## Feedback mechanism
-
-Provide feedback on the responses RIA gives you. Hover over a response and you will see two icons:
-
-| *Image: dp_ria_thumbsup.png* | An icon with thumbs up, for positive feedback, if the response is helpful. |
-| --- | --- |
-| *Image: dp_ria_thumbsdown.png* | An icon with thumbs down, for negative feedback, if the response isn't satisfactory. |
-
-The icons disappear if you move your mouse away from the response. If you selected the thumbs up or the thumbs down icons these remain visible. For the latest response, the icons are always visible as well.
-
-*Image: dp_ria_feedback.png*
-
-## Security measures
-
-Reltio values the integrity of your data. We take security measures seriously.
-
-RIA uses a third-party Large Language Model (LLM), which uses your query and tenant metadata configuration and information to generate a search filter. The LLM will not access or use your tenant data for training the model after the response is complete.
-
-RIA preserves your queries for analytics and future performance and feature improvements.
-
-
-
----
-
-# RIA (Reltio Intelligent Assistant) at a glance
-
-> **Section:** Applications > RIA
-
-
-**Source:** https://docs.reltio.com/en/applications/ria/ria-reltio-intelligent-assistant-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
-
-Get a high-level view of RIA.
-
-Take it from the top with RIA (Reltio Intelligent Assistant). Get the overview here, then see the sub topics in this section to drill down to the details.
-
-## What is RIA?
-
-RIA is an AI-powered conversational interface that helps users with Reltio-related queries and data discovery, enabling seamless and efficient interaction with the Reltio Context Intelligence platform.
-
-## Who is RIA for?
-
-This content is curated for these Reltio user roles defined in topic [About roles](https://docs.reltio.com/en/roles/about-roles?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs):
-
-Business UserData Product OwnerData StewardDeveloperReltio ConfiguratorSolution ArchitectSystem Administrator
-
-## Why would I use RIA?
-
-RIA is designed to enhance efficiency by enabling users to interact with the Reltio Context Intelligence Platform through natural language prompts and AI-powered assistance:
-
-- Quickly search for profiles and retrieve relevant data.
-- Create data visualizations directly from existing data.
-- Ask questions and get instant answers about Reltio's features and configurations.
-
-## When would I use RIA?
-
-Use RIA whenever you need a quick and efficient way to interact with the Reltio Context Intelligence Platform through conversational prompts.
-
-## Where do I find RIA?
-
-Reltio Multidomain MDMReltio Intelligent 360
-
-## How do I access RIA?
-
-You have two ways to access it:
-
-- In the Hub, by selecting the icon , on the top-right corner of the header.
-- Here, in the  Documentation Portal, by selecting the icon , on the bottom-right of the page.
-
-
-
----
-
-# RIA architecture
-
-> **Section:** Applications > RIA > RIA (Reltio Intelligent Assistant) at a glance
-
-
-**Source:** https://docs.reltio.com/en/applications/ria/ria-reltio-intelligent-assistant-at-a-glance/ria-architecture?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
-
-
-Learn about the Reltio Intelligent Assistant (RIA)
-
-## Hi, I'm RIA
-
-*Image: i-ria-presentation.png*
-
-*Image: RIA_image_01.png* Just ask me anything. After you're done with my answers to your queries, select the **X** to hide your searches.*Image: RIA_image_03.png*
-
-I'm here for a chat! If you're unsure where to start, I've got some inspiration to spark our conversation.
-
-*Image: RIA_gif_2.gif*
-
-Have a peek above, and you'll see I've given a short context, and links to our documentation portal.
-
-## I'm RIA, too
-
-*Image: i-ria-presentation-doc.png*
-
-*Image: i-ria-open-docportal.png*
-
-Ask me where to find information in the Documentation portal or how to use a feature, and I'll give you an answer along with links to relevant topics.
-
-When you're done, select **X** to hide your searches.
-
-*Image: i-ria-close-docportal.png*
-
-
-
----
-
 # Integration Hub at a glance
 
 > **Section:** Applications > Integration Hub
@@ -281138,6 +280829,8 @@ The Search comes out of the box with Reltio Multidomain Master Data Management (
 
 **Source:** https://docs.reltio.com/en/applications/about-applications?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 
+**Keywords:** about applications, reltio applications overview, which applications are in reltio, list of reltio applications, hub console rdm search rih, reltio integration hub, data integrations, reltio application purpose
+
 
 Learn about the content curated for applications in the Reltio Context Intelligence Platform
 
@@ -281160,7 +280853,6 @@ The content in this section is curated for you to navigate this site based on Re
 | Hub | Visit the one-stop-shop for managing your data |
 | Console | Configure your tenant, model your data, and secure your system |
 | Reference Data management (RDM) | Enhance data consistency using reference lookups across systems |
-| Reltio Intelligent Assistant (RIA) | Get answers to your questions about Reltio |
 | Search | Find the profiles you need |
 | Reltio Integration Hub (RIH) | Choose from 1000+ prebuilt connectors or build your own with our low-code/no-code platform |
 | Data Integrations | Find the profiles you need integrate Reltio data with external sources |
