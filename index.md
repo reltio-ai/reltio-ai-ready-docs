@@ -1,5 +1,5 @@
 # Reltio Documentation Index
-_Generated: 2026-11-11 02:37 UTC — 4139 topics (4084 unique)_
+_Generated: 2026-11-13 02:38 UTC — 4158 topics (4103 unique)_
 
 This file is a structured navigation index of the Reltio documentation portal.
 It contains the full parent-child hierarchy, topic URLs, keywords, summaries,
@@ -16772,6 +16772,158 @@ _Topics in this section: Reltio Model Context Protocol (MCP) Server at a glance,
 - **See also:** [Role Management APIs](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/role-management-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 ### Statistics Reporting Services APIs
+
+#### Statistics Reporting Services APIs
+
+- **URL:** https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Statistics Reporting Services APIs
+- **Summary:** Learn about the purpose, structure, and capabilities of the Statistics Reporting Services API
+- **Keywords:** statistics reporting services apis, overview of reporting apis, api suite for usage and performance metrics, reporting services endpoints and capabilities, api group for statistics retrieval, fetch metrics using reporting apis, monitor usage trends and failures, latency and queue metrics apis, reporting, latency
+- **See also:** [Retrieve API metrics grouped by factor and time interval](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-api-metrics-grouped-by-factor-and-time-interval?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Retrieve most used API endpoints](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-most-used-api-endpoints?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Retrieve most time-consuming API endpoints](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-most-time-consuming-api-endpoints?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Retrieve most active users](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-most-active-users?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Retrieve failed API requests by endpoint](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-failed-api-requests-by-endpoint?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Retrieve failed API requests by status code](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-failed-api-requests-by-status-code?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Retrieve detailed failed API requests](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-detailed-failed-api-requests?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Retrieve daily task usage summary](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-daily-task-usage-summary?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Retrieve messages sent by Event Streaming Processor](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-messages-sent-by-event-streaming-processor?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Retrieve queue size metrics by time interval](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-queue-size-metrics-by-time-interval?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Retrieve queue processing speed by time interval](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-queue-processing-speed-by-time-interval?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Retrieve failed queue messages by time interval](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-failed-queue-messages-by-time-interval?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Retrieve dead-letter queue size by time interval](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-dead-letter-queue-size-by-time-interval?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Retrieve minimum queue dwell time by interval](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-minimum-queue-dwell-time-by-interval?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Retrieve maximum queue dwell time by interval](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-maximum-queue-dwell-time-by-interval?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Authenticate and access the Statistics Reporting Services API
+
+- **URL:** https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/authenticate-and-access-the-statistics-reporting-services-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Statistics Reporting Services APIs > Statistics Reporting Services APIs
+- **Summary:** Learn how to authenticate and access the Statistics Reporting Services API, including the required Gateway URL, authorization headers, and role-based access requirements
+- **Keywords:** authenticate with statistics reporting api, statistics reporting gateway url, statistics reporting base url, api authentication using bearer token, authorization headers for api access, ROLE_STATISTICS_REPORTING, api gateway authentication flow, bearer token, access token
+- **See also:** [Authentication API](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/authentication-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Statistics Reporting Services APIs](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Retrieve API metrics grouped by factor and time interval
+
+- **URL:** https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-api-metrics-grouped-by-factor-and-time-interval?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Statistics Reporting Services APIs > Statistics Reporting Services APIs
+- **Summary:** Retrieve API performance metrics for a tenant, including latency, request volume, and errors, grouped by time interval and filters
+- **Keywords:** retrieve api stats by interval, grouped latency metrics by factors, fetch performance data over time, api usage trends by query type, analyze endpoint performance by minute, monitor api traffic by time, generate usage breakdown by filters, track endpoint performance over time, latency, metrics
+- **See also:** [Statistics Reporting Services APIs](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Authenticate and access the Statistics Reporting Services API](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/authenticate-and-access-the-statistics-reporting-services-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Retrieve most used API endpoints
+
+- **URL:** https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-most-used-api-endpoints?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Statistics Reporting Services APIs > Statistics Reporting Services APIs
+- **Summary:** Learn more about retrieving usage statistics for the most frequently called API endpoints in a Reltio environment
+- **Keywords:** retrieve most used api endpoints, get frequently called apis, fetch top api usage statistics, track high traffic api calls, monitor api usage by endpoint, report api request counts, api endpoint usage trends, analyze top endpoints over time, requestCount, successRate
+- **See also:** [Statistics Reporting Services APIs](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Authenticate and access the Statistics Reporting Services API](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/authenticate-and-access-the-statistics-reporting-services-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Retrieve most time-consuming API endpoints
+
+- **URL:** https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-most-time-consuming-api-endpoints?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Statistics Reporting Services APIs > Statistics Reporting Services APIs
+- **Summary:** Learn more about using this API to retrieve latency metrics for the most time-consuming API endpoints in a Reltio tenant
+- **Keywords:** retrieve most time consuming apis, get api latency metrics, retrieve api execution time, track api request latency, rcu usage by endpoint, find slowest api calls, latency stats per endpoint, most expensive api operations, latency, rcu
+- **See also:** [Statistics Reporting Services APIs](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Authenticate and access the Statistics Reporting Services API](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/authenticate-and-access-the-statistics-reporting-services-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Retrieve most active users
+
+- **URL:** https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-most-active-users?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Statistics Reporting Services APIs > Statistics Reporting Services APIs
+- **Summary:** Learn more about using this API to retrieve usage statistics by user, showing which users have made the most API calls during a selected time period
+- **Keywords:** retrieve most active users, get api usage by user, fetch user-level request metrics, track top api users, analyze api usage per user, identify high-volume api users, user request count breakdown, user api request statistics, requestCount, rcuTotal
+- **See also:** [Statistics Reporting Services APIs](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Authenticate and access the Statistics Reporting Services API](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/authenticate-and-access-the-statistics-reporting-services-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Retrieve failed API requests by endpoint
+
+- **URL:** https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-failed-api-requests-by-endpoint?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Statistics Reporting Services APIs > Statistics Reporting Services APIs
+- **Summary:** Learn more about using this API to retrieve failed request statistics by endpoint and HTTP status code
+- **Keywords:** retrieve failed api requests, get error count by endpoint, track failed api calls, api failures by status code, http error stats per endpoint, monitor request failures over time, identify high-failure apis, analyze error codes by path, errorCount, status
+- **See also:** [Statistics Reporting Services APIs](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Authenticate and access the Statistics Reporting Services API](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/authenticate-and-access-the-statistics-reporting-services-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Retrieve failed API requests by status code
+
+- **URL:** https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-failed-api-requests-by-status-code?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Statistics Reporting Services APIs > Statistics Reporting Services APIs
+- **Summary:** Learn how to use the failedRequestsByStatus API to retrieve aggregated counts of failed API requests grouped by HTTP status code for a specified time range
+- **Keywords:** retrieve api errors by status, get failed requests by http code, track request failures by error code, group failed calls by status, report error counts per status, http status code error tracking, analyze api failure patterns, aggregate api error responses, status, errorcount
+- **See also:** [Statistics Reporting Services APIs](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Authenticate and access the Statistics Reporting Services API](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/authenticate-and-access-the-statistics-reporting-services-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Retrieve detailed failed API requests
+
+- **URL:** https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-detailed-failed-api-requests?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Statistics Reporting Services APIs > Statistics Reporting Services APIs
+- **Summary:** Learn more about using this API to retrieve detailed information about failed API requests
+- **Keywords:** retrieve detailed failed api requests, get full failure request logs, track individual api errors, log failed request metadata, inspect request errors by timestamp, get error latency and user details, analyze failed request details, debug api call failures, requesttimestamp, globalid
+- **See also:** [Statistics Reporting Services APIs](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Authenticate and access the Statistics Reporting Services API](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/authenticate-and-access-the-statistics-reporting-services-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Retrieve daily task usage summary
+
+- **URL:** https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-daily-task-usage-summary?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Statistics Reporting Services APIs > Statistics Reporting Services APIs
+- **Summary:** Learn more about using this API to to retrieve a summary of task usage for each day in the specified time range
+- **Keywords:** retrieve daily task usage, get task success and failure stats, fetch task usage summary by day, daily task execution breakdown, analyze task success rate, track failed tasks by date, report daily task totals, monitor task completion stats, reportdate, total
+- **See also:** [Statistics Reporting Services APIs](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Authenticate and access the Statistics Reporting Services API](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/authenticate-and-access-the-statistics-reporting-services-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Retrieve messages sent by Event Streaming Processor
+
+- **URL:** https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-messages-sent-by-event-streaming-processor?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Statistics Reporting Services APIs > Statistics Reporting Services APIs
+- **Summary:** Learn more about using this API to retrieve the number of messages sent by the Event Streaming Processor for each destination topic during specific time intervals
+- **Keywords:** retrieve messages sent by event streaming processor, get event stream message counts, track messages per topic, fetch streaming processor output volume, monitor message delivery per interval, aggregate messages by topic and time, streaming processor statistics, event message counts by resolution, timestamp, values
+- **See also:** [Statistics Reporting Services APIs](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Authenticate and access the Statistics Reporting Services API](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/authenticate-and-access-the-statistics-reporting-services-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Retrieve queue size metrics by time interval
+
+- **URL:** https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-queue-size-metrics-by-time-interval?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Statistics Reporting Services APIs > Statistics Reporting Services APIs
+- **Summary:** Learn more about using this API to to retrieve queue size metrics over a defined time range
+- **Keywords:** retrieve queue size by interval, get aggregated queue metrics, monitor message queue size, queue size over time, track queue values by timestamp, fetch periodic queue stats, queue resolution data metrics, message backlog over time, timestamp, values
+- **See also:** [Statistics Reporting Services APIs](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Authenticate and access the Statistics Reporting Services API](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/authenticate-and-access-the-statistics-reporting-services-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Retrieve queue processing speed by time interval
+
+- **URL:** https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-queue-processing-speed-by-time-interval?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Statistics Reporting Services APIs > Statistics Reporting Services APIs
+- **Summary:** Learn more about using this API to retrieve queue processing speed metrics over a defined time range
+- **Keywords:** retrieve queue processing speed, monitor message processing rate, fetch processing speed by topic, queue speed metrics by time, aggregate processing rate per interval, queue throughput over time, processing performance by subscription, stream message rate by timestamp, timestamp, values
+- **See also:** [Statistics Reporting Services APIs](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Authenticate and access the Statistics Reporting Services API](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/authenticate-and-access-the-statistics-reporting-services-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Retrieve failed queue messages by time interval
+
+- **URL:** https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-failed-queue-messages-by-time-interval?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Statistics Reporting Services APIs > Statistics Reporting Services APIs
+- **Summary:** Learn more about using this API to retrieve the number of failed messages in the queue over a defined time range
+- **Keywords:** retrieve failed queue messages, track message failures by topic, monitor failed queue message rate, get failure counts by interval, fetch failed messages by timestamp, failed messages grouped by time, queue error tracking by subscription, analyze queue failure metrics, timestamp, values
+- **See also:** [Statistics Reporting Services APIs](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Authenticate and access the Statistics Reporting Services API](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/authenticate-and-access-the-statistics-reporting-services-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Retrieve dead-letter queue size by time interval
+
+- **URL:** https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-dead-letter-queue-size-by-time-interval?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Statistics Reporting Services APIs > Statistics Reporting Services APIs
+- **Summary:** Learn more about using this API to retrieve the number of messages in the dead-letter queue for each time interval within a specified time range
+- **Keywords:** retrieve dead-letter queue size, monitor dlq size by interval, get dead-letter queue stats, aggregate dlq message counts, track queue backlog by time, analyze failed message accumulation, dlq metrics by timestamp, subscription queue size tracking, timestamp, values
+- **See also:** [Statistics Reporting Services APIs](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Authenticate and access the Statistics Reporting Services API](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/authenticate-and-access-the-statistics-reporting-services-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Retrieve minimum queue dwell time by interval
+
+- **URL:** https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-minimum-queue-dwell-time-by-interval?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Statistics Reporting Services APIs > Statistics Reporting Services APIs
+- **Summary:** Learn more about using this API to retrieve the shortest time a message remained in the queue during each time interval
+- **Keywords:** retrieve minimum queue dwell time, get shortest queue wait duration, monitor queue dwell time by interval, analyze minimum time in queue, fetch lowest message queue time, queue latency metrics by timestamp, queue dwell tracking per interval, time in queue by topic, timestamp, values
+- **See also:** [Statistics Reporting Services APIs](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Authenticate and access the Statistics Reporting Services API](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/authenticate-and-access-the-statistics-reporting-services-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Retrieve maximum queue dwell time by interval
+
+- **URL:** https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-maximum-queue-dwell-time-by-interval?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Statistics Reporting Services APIs > Statistics Reporting Services APIs
+- **Summary:** Learn more about using this API to retrieve the longest time a message remained in the queue during each time interval
+- **Keywords:** retrieve maximum queue dwell time, get longest message queue duration, monitor queue dwell time by interval, analyze maximum time in queue, track longest queue wait time, queue time metrics by timestamp, queue latency tracking per interval, evaluate message delay per topic, timestamp, values
+- **See also:** [Statistics Reporting Services APIs](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Authenticate and access the Statistics Reporting Services API](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/authenticate-and-access-the-statistics-reporting-services-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Retrieve average queue dwell time by interval
+
+- **URL:** https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-average-queue-dwell-time-by-interval?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Statistics Reporting Services APIs > Statistics Reporting Services APIs
+- **Summary:** Learn more about using this API to retrieve the average time that messages remained in the queue during each time interval
+- **Keywords:** retrieve average queue dwell time, get average time in queue, monitor message queue delay, analyze average queue wait duration, track queue dwell metrics by interval, queue dwell averages per timestamp, time in queue by topic, evaluate message latency per interval, timestamp, values
+- **See also:** [Statistics Reporting Services APIs](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Authenticate and access the Statistics Reporting Services API](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/authenticate-and-access-the-statistics-reporting-services-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Retrieve total event counts by time interval
+
+- **URL:** https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/retrieve-total-event-counts-by-time-interval?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > Statistics Reporting Services APIs > Statistics Reporting Services APIs
+- **Summary:** Learn more about using this API to retrieve the total number of events during each time interval within a specified time range
+- **Keywords:** retrieve total event counts, get event totals by interval, monitor event activity over time, track event messages by timestamp, analyze event volume by queue, event delivery totals per topic, event message tracking per interval, aggregate total queue events, timestamp, values
+- **See also:** [Statistics Reporting Services APIs](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Authenticate and access the Statistics Reporting Services API](https://docs.reltio.com/en/developer-resources/statistics-reporting-services-apis/statistics-reporting-services-apis/authenticate-and-access-the-statistics-reporting-services-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 ### Data Validation APIs
 
