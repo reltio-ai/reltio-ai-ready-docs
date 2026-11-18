@@ -1,5 +1,5 @@
 # Reltio Documentation Index
-_Generated: 2026-11-13 02:38 UTC — 4158 topics (4103 unique)_
+_Generated: 2026-11-18 02:36 UTC — 4159 topics (4104 unique)_
 
 This file is a structured navigation index of the Reltio documentation portal.
 It contains the full parent-child hierarchy, topic URLs, keywords, summaries,
@@ -2279,8 +2279,9 @@ _Topics in this section: Autonomous agents overview, Unstructured augmentation o
 
 - **URL:** https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-usage-dashboard/view-autonomous-agents-usage-and-credit-balance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
 - **Path:** Reltio Documentation Portal v2 sitemap > Products > Autonomous agents > Autonomous agents overview > Autonomous agents Usage Dashboard
-- **Summary:** Learn how to access the Usage Dashboard to monitor annual credit consumption and contract details.
+- **Summary:** Learn how to access the Usage billing dashboard to monitor annual credit consumption and contract details.
 - **Keywords:** view autonomous agents usage dashboard, monitor annual credit balance autonomous agents, check autonomous agents credits remaining, usage dashboard navigation autonomous agents, autonomous agents billing admin dashboard, base package usage breakdown, tenant usage drill down, contract period credit visibility, autonomous agents subscription model selector, customer model usage dashboard autonomous agents
+- **See also:** [long-running tasks (LRTs)](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/automated-long-running-tasks?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Job details](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/automated-long-running-tasks/monitor-an-automated-long-running-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Autonomous agents usage through SAP Business Data Cloud
 
@@ -14915,7 +14916,7 @@ _Topics in this section: Reltio Model Context Protocol (MCP) Server at a glance,
 - **Path:** Reltio Documentation Portal v2 sitemap > Developer resources > System Administration APIs > System Administration APIs at a glance > Configuration API > Role-Based Security
 - **Summary:** Learn about how the Reltio platform uses role-based metadata security to control access to entity types, relationship types, and attributes.
 - **Keywords:** role based metadata security, configure tenant permissions, update permissions with put, delete permissions with body, metadata security api examples, check tenant configuration access, filter permissions by role, control access to attributes, permissions, authorization
-- **See also:** [Data Security](https://docs.reltio.com/en/applications/integration-hub/integration-hub-at-a-glance/integration-hub/data-security?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Authentication API](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/authentication-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Zero Copy Integration](https://docs.reltio.com/en/applications/data-integrations/zero-copy-integration-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [member](https://docs.reltio.com/en/developer-resources/interaction-management-apis/interaction-apis-at-a-glance/interactions-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Role-Based Security](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/configuration-api/role-based-security?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [GET Configuration](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/configuration-api/get-configuration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- **See also:** [Data Security](https://docs.reltio.com/en/applications/integration-hub/integration-hub-at-a-glance/integration-hub/data-security?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Authentication API](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/authentication-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Zero Copy Integration](https://docs.reltio.com/en/applications/data-integrations/zero-copy-integration-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Configuration API](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/configuration-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [member](https://docs.reltio.com/en/developer-resources/interaction-management-apis/interaction-apis-at-a-glance/interactions-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Role-Based Security](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/configuration-api/role-based-security?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [GET Configuration](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/configuration-api/get-configuration?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Access restrictions to data sources
 
@@ -17342,7 +17343,7 @@ _Topics in this section: Reltio Context Intelligence Platform overview, Reltio t
 
 ### Hub
 
-_Topics in this section: Hub at a glance, Profile Stats dashboard at a glance, Data Quality dashboard a glance, Search at a glance, Bulk match review at a glance, Profiles at a glance, Segmentation at a glance, Data Model at a glance_
+_Topics in this section: Hub at a glance, Profile Stats dashboard at a glance, Data Quality dashboard a glance, Search at a glance, Bulk match review at a glance, Profiles at a glance, Segmentation at a glance, Interact with autonomous agents in Hub, Data Model at a glance_
 
 #### Hub at a glance
 
@@ -17762,6 +17763,14 @@ _Topics in this section: Hub at a glance, Profile Stats dashboard at a glance, D
 - **Path:** Reltio Documentation Portal v2 sitemap > Applications > Hub > Segmentation at a glance
 - **Summary:** Learn how to get around the Segmentation page in the Hub.
 - **See also:** [Configure the Segments facet for the Profile view](https://docs.reltio.com/en/objectives/configure-the-reltio-ui/ui-configuration-at-a-glance/configure-the-segments-facet-for-the-profile-view?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+#### Interact with autonomous agents in Hub
+
+- **URL:** https://docs.reltio.com/en/applications/hub/interact-with-autonomous-agents-in-hub?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+- **Path:** Reltio Documentation Portal v2 sitemap > Applications > Hub
+- **Summary:** Learn about conversations with autonomous agents in Hub, the available conversation views, and the conversation features available in Hub.
+- **Keywords:** autonomous agents in hub, agent conversations in hub, floating agent chat in hub, sidebar agent chat view, full screen agent conversation, search agent chat history, switch agent conversation views, autonomous agents, conversations, chat history
+- **See also:** [Business Users](https://docs.reltio.com/en/roles/business-user/business-user-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Data Product Owners](https://docs.reltio.com/en/roles/data-product-owner/data-product-owner-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [Data Stewards](https://docs.reltio.com/en/roles/data-steward/data-steward-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs), [About roles](https://docs.reltio.com/en/roles/about-roles?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
 
 #### Data Model at a glance
 

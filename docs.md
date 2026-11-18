@@ -1,8 +1,8 @@
 # Reltio Documentation
 
-_Generated: 2026-11-13 02:38 UTC_
+_Generated: 2026-11-18 02:36 UTC_
 
-_Topics: 4283_
+_Topics: 4285_
 
 ---
 
@@ -2220,7 +2220,7 @@ Reltio Private Link integrates seamlessly with private connectivity solutions fr
 - **AWS PrivateLink (Supported):** Provides private connectivity between VPCs, AWS services, and on-premises applications, ensuring secure interactions over the AWS backbone network.
 
   Also provides private connectivity between Reltio data pipelines and your Snowflake accounts, ensuring secure data transfer over the AWS backbone without traversing the public internet.
-- **Google Cloud Private Service Connect (In Development):** Enables private, secure communication between Google Cloud services and your VPC, keeping data within Google's network infrastructure.
+- **Google Cloud Private Service Connect (Supported):** Enables private, secure communication between Google Cloud services and your VPC, keeping data within Google's network infrastructure.
 - **Azure Private Link (Supported):** Facilitates private access to Azure services and customer-owned services over a private endpoint in your virtual network, enhancing security and reliability.
 
 Each of these solutions offers unique features and benefits, tailored to their respective cloud environments. By leveraging Reltio Private Link, you can ensure that your data interactions remain secure, private, and performant, regardless of your chosen cloud provider.
@@ -9633,9 +9633,6 @@ We build on each GA release with a steady stream of bi-weekly updates that deliv
 
 | Release Name | Stage | Tenant Type | Release Date |
 | --- | --- | --- | --- |
-| 2026.2.2.0 | 1 | Development (DEV) | November 13, 2026 |
-| 2026.2.2.0 | 2 | Test (TEST) | November 13, 2026 |
-| 2026.2.2.0 | 3 | Production (PROD) | November 20, 2026 |
 | Release pause[*](#concept-7gg01bdz/Note) | 1 | Development (DEV) | November 27, 2026 |
 | Release pause[*](#concept-7gg01bdz/Note) | 2 | Test (TEST) | November 27, 2026 |
 | Release pause[*](#concept-7gg01bdz/Note) | 3 | Production (PROD) | December 4, 2026 |
@@ -17278,6 +17275,60 @@ A guest who books directly, stays at the property, and redeems loyalty points th
 The pack gives you a ready-to-use data model that connects your guests to their stays and loyalty activity, your properties to the companies that own, operate, brand, and franchise them, and your corporate, travel-agency, and event-planner accounts to the management and rate agreements that govern them. Matching and survivorship rules reconcile guest profiles across booking and stay channels using identifiers specific to hospitality, such as loyalty membership numbers and shared-address households, so a single guest profile carries a consistent view of loyalty status, consent, and preferences. The pack comes with reference data, validation, and cleansing already configured for these entities, so you can start from a working golden record and realize value in as few as 90 days.
 
 For more information, see [Velocity pack for Travel & Entertainment (Hotels)](https://docs.reltio.com/en/products/reltio-multidomain-master-data-management-mdm/reltio-multidomain-master-data-management-mdm-at-a-glance/reltio-multidomain-master-data-management-mdm-reference/reltio-multidomain-master-data-management-mdm-velocity-packs/velocity-pack-for-travel--entertainment-hotels?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+
+
+---
+
+# 2026.2.2.0 RN | 20-Nov-2026
+
+Learn about the new features and enhancements introduced in this 2026.2.2.0 release.
+
+**Deployment dates**
+
+| Stage | Tenant type | When |
+| --- | --- | --- |
+| 1 | Development (DEV) | November 17, 2026 |
+| 2 | Test (TEST) | November 17, 2026 |
+| 3 | Production (PRD) | November 20, 2026 |
+
+## Interact with autonomous agents in Hub
+
+When you work with records or dashboards in Hub, navigating to a separate page to interact with autonomous agents interrupts your workflow and separates you from your data.
+
+Reltio now lets you interact with the **Data explorer agent** directly in Hub, so you can ask questions and retrieve insights without leaving your current page. Hub displays the conversation in one of the following views:
+
+- **Floating:** Displays the conversation in a window over the current Hub page. This is the default view.
+- **Sidebar:** Displays the conversation in a panel on the right side of the current Hub page.
+- **Full screen:** Displays the conversation in a full-page workspace.
+
+When you change the view, the current conversation continues in the new view.
+
+For more information, see [Interact with autonomous agents in Hub](https://docs.reltio.com/en/applications/hub/interact-with-autonomous-agents-in-hub?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+## Task-level credit usage monitoring for autonomous agents
+
+The **Usage billing** dashboard in autonomous agents helps you track how your organization's credits are consumed across agents and tenants.
+
+The **Usage billing** dashboard now displays credit consumption for long-running tasks (LRTs) executed by autonomous agents. You can view the total credits consumed by each task, expand tasks to see credit usage for individual jobs, and filter results by agent or tenant. This update helps you monitor and compare credit consumption across tasks and jobs.
+
+For more information, see [View autonomous agent usage and credit balance](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-usage-dashboard/view-autonomous-agents-usage-and-credit-balance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+## Interaction types require READ permission to retrieve their configuration
+
+Interaction permissions determine which roles can read, create, and delete interactions of each type. These permissions now also apply when you retrieve the configuration of an interaction type through the [Configuration API](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/configuration-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) so each role sees the configuration of only the interaction types it is permitted to access. This keeps interaction types consistent with entity types and relationship types. Applications and integrations that use the Configuration API can identify the interaction types that each role is permitted to access.
+
+When you request the configuration of interaction types, the [Configuration API](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/configuration-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) responds as follows:
+
+- 
+
+  `GET /configuration/interactionTypes/{type}` returns `403 METADATA_TYPE_FORBIDDEN` if you do not have `READ` permission on the requested interaction type.
+- When you add `options=showAccess` to `GET /configuration`, the response includes an `access` field for each configured interaction type. The field lists the operations that your role can perform on the type, such as `["READ"]`. It is an empty array (`[]`) if your role has no access to the type.
+- 
+
+  For an interaction type that does not exist, the API returns `403 METADATA_TYPE_FORBIDDEN` or `400 TYPE_IS_NOT_FOUND`, depending on the permissions configured for the tenant.
+
+For more information, see [Metadata Security](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/configuration-api/role-based-security/metadata-security?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 
 
@@ -29939,18 +29990,19 @@ The application you selected opens in your browser. Your autonomous agents sessi
 **Keywords:** view autonomous agents usage dashboard, monitor annual credit balance autonomous agents, check autonomous agents credits remaining, usage dashboard navigation autonomous agents, autonomous agents billing admin dashboard, base package usage breakdown, tenant usage drill down, contract period credit visibility, autonomous agents subscription model selector, customer model usage dashboard autonomous agents, reltio model usage dashboard autonomous agents, autonomous agents byo llm credit visibility, switch subscription model autonomous agents dashboard, dashboard, credit balance, usage
 
 
-Learn how to access the Usage Dashboard to monitor annual credit consumption and contract details.
+Learn how to access the Usage billing dashboard to monitor annual credit consumption and contract details.
 
-The Usage Dashboard in autonomous agents helps you monitor credit consumption against your organization's annual entitlement. You can review your remaining credit balance, contract details, and usage across Base Packages and tenants to track consumption and manage your available credits.
+The **Usage billing** dashboard in autonomous agents helps you monitor credit consumption against your organization's annual entitlement. You can review your remaining credit balance, contract details, and usage across Base Packages and tenants to track consumption and manage your available credits.
 
 **Prerequisites**
 
-`ROLE_AGENT_BILLING`**Usage Dashboard**## Open the Usage Dashboard
+`ROLE_AGENT_BILLING`**Usage billing**## Open the Usage billing dashboard
 
 1. Log in to **Autonomous agents**.
 2. In the lower-left corner, select your profile name.
-3. Select **Usage Dashboard**.*Image: i-agentflow-usage-dashboard.png*
-4. If your organization has both subscription models active, select **Customer Model** or **Reltio Model** from the dropdown in the upper-right area of the dashboard to view entitlements and usage for that subscription.
+3. Select **Settings**.*Image: i-agentflow-usage-dashboard.png*
+4. Select **Usage billing**.
+5. If your organization has both subscription models active, select **Customer Model** or **Reltio Model** from the dropdown in the upper-right area of the dashboard to view entitlements and usage for that subscription.
 
    *Image: Usage Dashboard showing the subscription model dropdown with Customer Model selected and Reltio Model as an available option*
 
@@ -29960,7 +30012,7 @@ The Usage Dashboard in autonomous agents helps you monitor credit consumption ag
 
 ## Credit and usage information
 
-The Usage Dashboard displays credit and usage information for the selected subscription model. If your organization has both subscription models active, the data updates when you switch between the **Customer Model** and the **Reltio Model**:
+The **Usage billing** dashboard displays credit and usage information for the selected subscription model. If your organization has both subscription models active, the data updates when you switch between the **Customer Model** and the **Reltio Model**:
 
 - **Total Credits:** Annual credits allocated at the start of the contract period
 - **Credits Used:** Credits consumed to date
@@ -29968,15 +30020,48 @@ The Usage Dashboard displays credit and usage information for the selected subsc
 - **Usage Percentage:** Percentage of annual credits consumed
 - **Contract Period:** Contract start and end dates
 - **Base Package usage:** Per-agent credit consumption and usage percentage
-- **Tenant-level usage breakdown:** Per-tenant credit consumption, purpose, and usage percentage
 
-*Image: AgentFlow Usage Dashboard showing total credits, credits used, credits remaining, and usage percentage*
+*Image: i-agentflow-usage-billing.png*
 
-*Image: Tenant usage breakdown showing tenant ID, purpose, credits used, and usage percentage*
+## Tenant-level usage
+
+The **Tenant Usage** section displays credit consumption across your organization's tenants. You can review the following information for each tenant:
+
+- **Tenant ID:** Unique identifier of the tenant.
+- **Tenant Purpose:** Purpose of the tenant, such as DEV, TEST, or PROD.
+- **Credits Used:** Total credits consumed by the tenant.
+- **Tenant Usage Share (%):** Percentage of total credits consumed by the tenant, represented by a progress bar.
+
+*Image: i-agentflow-usage-dashboard-per-tenants.png*
+
+## Task-level usage
+
+The **Task level usage** section displays credit consumption for [long-running tasks (LRTs)](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/automated-long-running-tasks?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) executed by agents in autonomous agents. Each execution of a long-running task creates a job. You can view the total credits used by each task and expand it to see credit consumption for individual jobs. This breakdown helps you identify tasks with the highest credit usage and compare consumption across their jobs.
+
+The section displays the following information:
+
+- **Task/Job details:** Name of the task. Select a task to view its associated job IDs and start dates.
+- **Agent used:** Agent used to execute the task or job.
+- **Created by:** Name of the user who created the task.
+- **Jobs:** Number of jobs associated with the task.
+- **Credits used:** Total credits consumed by the task or individual job.
+- **Usage %:** Percentage of credit consumption attributed to the task or job, represented by a progress bar.
+
+You can use the following options to filter and review task/job usage:
+
+- **Search:** Find a task by its name.
+- **All Agents:** Filter tasks by agent.
+- **All Tenants:** Select a tenant to view its task and job usage.
+- **Expand task:** View individual jobs, including their IDs, dates, credits used, and usage percentages.
+- **Job ID:** Select a job ID to open the [Job details](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/automated-long-running-tasks/monitor-an-automated-long-running-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) page in **Task Management**.
+
+> **Note:** For running jobs, the dashboard displays the credits consumed so far and marks the usage as **Partial**. Credit consumption may increase as the job continues. After the job completes, the dashboard displays the total credits consumed in the next daily usage update.
+
+*Image: i-task-level-usage.png*
 
 ## See how to do this
 
-Use the following video to see how to open the **Usage Dashboard** in Autonomous agents and review: 
+Use the following video to see how to open the **Usage billing** dashboard in Autonomous agents and review: 
 
 - contract details,
 - credit balance,
@@ -95166,7 +95251,369 @@ The Organization entity type represents a company that interacts with the hotel 
 
 This table identifies the properties for the Organization entity type specified in the Travel & Entertainment (Hotels) velocity pack configuration and lists the attributes preconfigured in the order they appear in the Data Modeler.
 
-*[Embedded content: https://docs.google.com/spreadsheets/d/e/2PACX-1vSuKSXigZ0gy0xudbOxhmRz7pRxAxY0lXXSMEGEREhwptti7xJgrJGTD2XYggA0qrhJYg1F_s3ZgCHZ/pubhtml?gid=489304398&single=true&widget=true&headers=false&chrome=false]*
+**Organization**
+- **URI:** configuration/entityTypes/Organization
+- **Label:** Organization
+- **Description:** Organization details such as corporate hierarchy, financials, ownership etc.
+- **Abstract:** false
+- **Data Label Pattern:** {Name}[, ({OrganizationType})]
+- **Secondary Label Pattern:** {City} {StateProvince}
+
+
+| Name | Label | Type | Description | Survivorship | Hidden | Important | System | Searchable | Faceted | Lookup Code | URI |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **Commenters** | Commenters | String | Commenters | LUD | true | false | false | false | false |  | configuration/entityTypes/Organization/attributes/Commenters |
+| **StatusInformation** | Status Information | Nested | Status of an organization over time, including changes in status, why, and when they occurred | Aggregation | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/StatusInformation |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Status | Status | String | Status of the organization | LUD | false | false | false | true | true | rdm/lookupTypes/OrganizationStatuses | configuration/entityTypes/Organization/attributes/StatusInformation/attributes/Status |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ StatusReason | Status Reason | String | Additional information or details regarding the rationale for the status applied to the organization | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/StatusInformation/attributes/StatusReason |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ UpdateDate | Update Date | Date | Date on which the organization's status was updated | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/StatusInformation/attributes/UpdateDate |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Comments | Comments | String | Comments related to the organization's status | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/StatusInformation/attributes/Comments |
+| **Name** | Name | String | Legal or registered name of the organization | SRC_SYS [D&B,BvD,Reltio,Salesforce,CRS,PMS,CONTRACTS,LOYALTY,ERP,SAP,SN,ZI,ANALYTICS] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Name |
+| **DoingBusinessAsName** | Doing Business As (DBA) Name | String | Name used by organization, if operating under a name that is different than its legal name | SRC_SYS [D&B,ZI,Reltio,Salesforce,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/DoingBusinessAsName |
+| **TradestyleNames** | Tradestyle Names | Nested | Contains details of the tradestyle names used by and associated with an organization, such as the names, their respective languages, and when they were actively in use | Aggregation | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/TradestyleNames |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Type | Type | String | Describes the type of tradestyle name used by the organization | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/TradestyleNames/attributes/Type |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Language | Language | String | Language in which the tradestyle name is presented | LUD | false | false | false | true | true | rdm/lookupTypes/LanguageCode | configuration/entityTypes/Organization/attributes/TradestyleNames/attributes/Language |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Name | Name | String | Value of the tradestyle name used by the organization | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/TradestyleNames/attributes/Name |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ DisplaySequence | Display Sequence | Int | Defines the order in which this name is to be displayed relative to others | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/TradestyleNames/attributes/DisplaySequence |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ StartDate | Start Date | Date | Date on which the tradestyle name went into active use | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/TradestyleNames/attributes/StartDate |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ EndDate | End Date | Date | Date on which the tradestyle name ceased being used | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/TradestyleNames/attributes/EndDate |
+| **CompanyType** | Company Type | String | Operational defiinition of the type of company operated by the organization entity; not to be confused with its legal entity type | Aggregation | false | false | false | true | true | rdm/lookupTypes/CompanyTypes | configuration/entityTypes/Organization/attributes/CompanyType |
+| **LegalEntityType** | Legal Entity Type | String | Type of legal entity the company uses to operate | LUD | false | false | false | true | true | rdm/lookupTypes/LegalEntityTypes | configuration/entityTypes/Organization/attributes/LegalEntityType |
+| **LegalStatus** | Legal Status | String | Status of the legal entity the company uses to operate | LUD | false | false | false | true | true | rdm/lookupTypes/LegalStatuses | configuration/entityTypes/Organization/attributes/LegalStatus |
+| **Addresses** | Has Address (Organization) | Reference | Address of the Organization | Aggregation | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Address |
+| **Phone** | Phone | Nested | Phone number(s) used to contact the organization | Aggregation | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Phone |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Type | Type | String | Type of phone number used by the organization | LUD | false | false | false | true | true | rdm/lookupTypes/PhoneTypes | configuration/entityTypes/Organization/attributes/Phone/attributes/Type |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Number | Number | String | Phone number used by the organization | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Phone/attributes/Number |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ CountryCode | Country Code | String | Indicates the country of the phone number | LUD | false | false | false | true | true | rdm/lookupTypes/telephoneCountryCodes | configuration/entityTypes/Organization/attributes/Phone/attributes/CountryCode |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ FormattedNumber | Formatted Number | String | Formatted version of the phone number | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Phone/attributes/FormattedNumber |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Extension | Extension | String | Extension at which the organization can be reached | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Phone/attributes/Extension |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Rank | Rank | Int | Ordinal ranking of the phone number | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Phone/attributes/Rank |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ AreaCode | Area Code | String | Area code of the phone number | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Phone/attributes/AreaCode |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ LocalNumber | Local Number | String | Phone number in the local service format of the calling area | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Phone/attributes/LocalNumber |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ ValidationStatus | Validation Status | String | Validation status of the phone number | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Phone/attributes/ValidationStatus |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ LineType | Line Type | String | Line type of the phone number | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Phone/attributes/LineType |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ FormatMask | Format Mask | String | Format mask applied to the phone number | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Phone/attributes/FormatMask |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ DigitCount | Digit Count | Int | Number of digits in the phone number | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Phone/attributes/DigitCount |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ GeoArea | Geo Area | String | Geographic area associated with the phone number | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Phone/attributes/GeoArea |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ GeoCountry | Geo Country | String | Geographic country associated with the phone number | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Phone/attributes/GeoCountry |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ PrimaryPhoneFlag | Primary Phone Flag | Boolean | Indicates whether or not the phone number is the primary number that should be used to reach the organization | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Phone/attributes/PrimaryPhoneFlag |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Active | Active | Boolean | Indicates whether or not the phone number is active | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Phone/attributes/Active |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Unreachable | Unreachable | Boolean | Indicates whether or not the organization has been unreachable at this phone number | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Phone/attributes/Unreachable |
+| **Email** | Email | Nested | Email address(es) used to contact the organization | Aggregation | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Email |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Type | Type | String | Type of email address | LUD | false | false | false | true | true | rdm/lookupTypes/EmailTypes | configuration/entityTypes/Organization/attributes/Email/attributes/Type |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Email | Email | String | Full email address including both the local-part (e.g., a username) and domain | SRC_SYS [ReltioCleanser,Salesforce,D&B,ZI,Reltio] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Email/attributes/Email |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Domain | Domain | String | Domain of the email address | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Email/attributes/Domain |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ DomainType | Domain Type | String | Domain type of the email address | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Email/attributes/DomainType |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Username | Username | String | Username of the email address | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Email/attributes/Username |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Rank | Rank | Int | Ordinal ranking of the email address | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Email/attributes/Rank |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ ValidationStatus | Validation Status | String | Validation status of the email address | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Email/attributes/ValidationStatus |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Active | Active | Boolean | Indicates whether or not the email address is active | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Email/attributes/Active |
+| **WebsiteURL** | Website URL | URL | URL to a site related to the organization | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/WebsiteURL |
+| **ImageURL** | Image URL | URL | URL to a site with image asset(s) related to the organization | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/ImageURL |
+| **VideoURL** | Video URL | URL | URL to a site with video asset(s) related to the organization | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/VideoURL |
+| **DocumentURL** | Document URL | URL | URL to a site with document asset(s) related to the organization | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/DocumentURL |
+| **DataProviderName** | Data Provider Name | String | The name of the data provider used to provide enrichment data for the organization | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/DataProviderName |
+| **DataProviderLastUpdateDate** | Data Provider Last Update Date | Date | The most recent date on which the data provider modified their records with new or updated data for the organization | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/DataProviderLastUpdateDate |
+| **DataProviderOrgID** | Data Provider Organization ID | String | Unique identifier assigned to the organization by a third-party data enrichment provider | SRC_SYS [D&B,ZI,Reltio,Salesforce,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/DataProviderOrgID |
+| **DUNSNumber** | DUNS Number | String | The D-U-N-S Number is D&B's identification number, which provides unique identification of this organization, in accordance with the Data Universal Numbering System (D-U-N-S) | SRC_SYS [D&B,Salesforce,Reltio] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/DUNSNumber |
+| **DataProviderEnrichmentType** | Data Provider Enrichment Type | String | Type of method used to update the organization profile with record from a data provider or other external source | SRC_SYS [D&B,ZI,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/DataProviderEnrichmentType |
+| **Verification** | Verification | Nested | Verification status of the organization as provided by an integrated data provider or other external source | Aggregation | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Verification |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ DataProviderName | Data Provider Name | String | The name of the data provider used to provide enrichment data for the organization | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Verification/attributes/DataProviderName |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ DataProviderVerificationStatus | Data Provider Verification Status | String | Recent verification status as returned by an integrated data provider or other external source | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Verification/attributes/DataProviderVerificationStatus |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ DataProviderOrganizationType | Data Provider Organization Type | String | Organization type as assigned by an integrated data provider or other external source | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Verification/attributes/DataProviderOrganizationType |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ DataProviderVerificationDate | Data Provider Verification Date | Date | Date on which the organization's verification details were updated by an integrated data provider or other external source | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Verification/attributes/DataProviderVerificationDate |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ DataProviderVerificationDetails | Data Provider Verification Details | String | Additional details regarding verification of the organization by an integrated data provider or other external source | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Verification/attributes/DataProviderVerificationDetails |
+| **TaxID** | Tax ID | String | Identifier assigned to the organization by their local tax authority | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/TaxID |
+| **Identifiers** | Identifiers | Nested | One or more identifier(s) assigned to the organization | Aggregation | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Identifiers |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Type | Type | String | Type of identifier issued to the organization | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Identifiers/attributes/Type |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Value | Value | String | Value of the identifier issued to the organization | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Identifiers/attributes/Value |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Status | Status | String | Current status of the identifier | LUD | false | false | false | true | false |  | configuration/entityTypes/Organization/attributes/Identifiers/attributes/Status |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ IssuedBy | Issued By | String | Authority, agency, or other group that issued the identifier to the organization (aka, Issuer) | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Identifiers/attributes/IssuedBy |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ IssuedRegion | Issued Region | String | Region or locality over/in which the identifier has domain (e.g., state name for state-issued commerce license) | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Identifiers/attributes/IssuedRegion |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ CreatedDate | Created Date | Date | Date on which the identifier was created | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Identifiers/attributes/CreatedDate |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ IssuedDate | Issued Date | Date | Date on which the identifier was issued to the organization | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Identifiers/attributes/IssuedDate |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ ActivationDate | Activation Date | Date | Date on which the identifier was activated for use by/with the organization | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Identifiers/attributes/ActivationDate |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ ExpirationDate | Expiration Date | Date | Date on which the identifier will expire | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Identifiers/attributes/ExpirationDate |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ DeactivationDate | Deactivation Date | Date | Date on which the identifier was deactivated | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Identifiers/attributes/DeactivationDate |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ DeactivationReason | Deactivation Reason | String | Additional information or details regarding the rationale for the deactivation of the identifier | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Identifiers/attributes/DeactivationReason |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ ReactivationDate | Reactivation Date | Date | Date on which the identifier was reactivated or reinstated | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Identifiers/attributes/ReactivationDate |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ UpdateDate | Update Date | Date | Date on which the details of the identifier were updated | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Identifiers/attributes/UpdateDate |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Rank | Rank | Int | Ordinal ranking of the identifier | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Identifiers/attributes/Rank |
+| **Ticker** | Ticker | Nested | Symbol and stock exchange comprising the ticker for the organization's traded securities | Aggregation | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Ticker |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Symbol | Symbol | String | Ticker symbol used with the organization's traded security | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Ticker/attributes/Symbol |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Exchange | Exchange | String | Stock exchange where the corresponding ticker symbol is used | LUD | false | false | false | true | true | rdm/lookupTypes/StockExchanges | configuration/entityTypes/Organization/attributes/Ticker/attributes/Exchange |
+| **CUSIP** | CUSIP | String | Unique, 9-digit identifier assigned to a security by CUSIP Global Services (CGS) | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/CUSIP |
+| **IndustryClassification** | Industry Classification | Nested | Classification of business activity for a given industry classification schema | SRC_SYS [D&B,ZI,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/IndustryClassification |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Type | Type | String | Operative type of industry classification schema | SRC_SYS [D&B,ZI,Salesforce,Reltio,SAP,SN] | false | false | false | true | true | rdm/lookupTypes/IndustryClassificationTypes | configuration/entityTypes/Organization/attributes/IndustryClassification/attributes/Type |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Code | Code | String | Alphanumeric value assigned to the organization's business activity under the operative industry classification scheme | SRC_SYS [D&B,ZI,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/IndustryClassification/attributes/Code |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Value | Value | String | Text that describes the business activity associated with the industry code | SRC_SYS [D&B,ZI,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/IndustryClassification/attributes/Value |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Description | Description | String | Description of Classification | SRC_SYS [D&B,ZI,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/IndustryClassification/attributes/Description |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ CodeLanguage | Code Language | String | Language associated with the industry code and its description | SRC_SYS [D&B,ZI,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/IndustryClassification/attributes/CodeLanguage |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ CodeWritingScript | Code Writing Script | String | Type of script (aka, writing system) associated with the industry code and its description | SRC_SYS [D&B,ZI,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/IndustryClassification/attributes/CodeWritingScript |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ DisplaySequence | Display Sequence | Int | Order in which the value from the current nest of data for this attribute is intended to be displayed | SRC_SYS [D&B,ZI,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/IndustryClassification/attributes/DisplaySequence |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ SalesPercentage | SalesPercentage | String | Percentage value of annual sales associated with the industry code | SRC_SYS [D&B,ZI,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/IndustryClassification/attributes/SalesPercentage |
+| **ActivitiesAndOperations** | Activities And Operations | Nested | Basic indicators of import, export, and agency activities undertaken by the organization | SRC_SYS [D&B,ZI,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/ActivitiesAndOperations |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ ImportIndicator | Import Indicator | Boolean | Indicates whether or not the organization imports goods from other countries | SRC_SYS [D&B,ZI,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/ActivitiesAndOperations/attributes/ImportIndicator |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ ExportIndicator | Export Indicator | Boolean | Indicates whether or not the organization exports goods to other countries | SRC_SYS [D&B,ZI,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/ActivitiesAndOperations/attributes/ExportIndicator |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ AgentIndicator | Agent Indicator | Boolean | Indicates whether or not the organization promotes the goods/services of another entity | SRC_SYS [D&B,ZI,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/ActivitiesAndOperations/attributes/AgentIndicator |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ CommodityCodes | Commodity Codes | String | Community codes for operations | SRC_SYS [D&B,ZI,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/ActivitiesAndOperations/attributes/CommodityCodes |
+| **OrganizationDetails** | Organization Details | Nested | Summary information about the age, ownership, and operating status of the organization | SRC_SYS [D&B,ZI,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/OrganizationDetails |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ OrganizationSummaryText | Organization Summary Text | Blob | Brief statement or account of the organization | SRC_SYS [D&B,ZI,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/OrganizationDetails/attributes/OrganizationSummaryText |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ OperatingStatus | Operating Status | String | Description of the organization's functional state | SRC_SYS [D&B,ZI,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/OrganizationDetails/attributes/OperatingStatus |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ OperatingStatusComment | Operating Status Comment | String | Freeform text describing the current functional state with additional detail provided | SRC_SYS [D&B,ZI,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/OrganizationDetails/attributes/OperatingStatusComment |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ OwnershipStatus | Ownership Status | String | Description of the organization's ownership status | SRC_SYS [D&B,ZI,Salesforce,Reltio,SAP,SN] | false | false | false | true | true | rdm/lookupTypes/OwnershipStatuses | configuration/entityTypes/Organization/attributes/OrganizationDetails/attributes/OwnershipStatus |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ OwnershipType | Ownership Type | String | Applicable type of controlling ownership | SRC_SYS [D&B,ZI,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/OrganizationDetails/attributes/OwnershipType |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ OwnershipDate | Ownership Date | String | Date on which current owners took over ownership of the organization (type String for D&B enrichment) | SRC_SYS [D&B,ZI,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/OrganizationDetails/attributes/OwnershipDate |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ EmailDomain | Email Domain | String | Domain used for email addresses issued by the organization | SRC_SYS [D&B,ZI,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/OrganizationDetails/attributes/EmailDomain |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ DomicileState | Domicile State | String | State of Legal Domicile | SRC_SYS [D&B,ZI,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/OrganizationDetails/attributes/DomicileState |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ StartYear | Start Year | String | Year in which the organization commenced operations (type String for D&B enrichment) | SRC_SYS [D&B,ZI,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/OrganizationDetails/attributes/StartYear |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ IPOYear | IPO Year | String | Year in which the organization completed their initial public offering (type String for D&B enrichment) | SRC_SYS [D&B,ZI,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/OrganizationDetails/attributes/IPOYear |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ EndYear | End Year | String | Year in which the organization ceased operations (type String for D&B enrichment) | SRC_SYS [D&B,ZI,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/OrganizationDetails/attributes/EndYear |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ MemberRole | Member Role | String | Role the organization plays as a member in the structured family tree of ownership across other, related organizations | SRC_SYS [D&B,ZI,SN,Salesforce,Reltio,SAP] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/OrganizationDetails/attributes/MemberRole |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ FranchiseOperationType | Franchise Operation Type | String | Defines franchise rights of the organization | SRC_SYS [D&B,ZI,SN,Salesforce,Reltio,SAP] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/OrganizationDetails/attributes/FranchiseOperationType |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ FranchiseOperationTypeCode | Franchise Operation Type Code | String | Defines franchise rights of the organization | SRC_SYS [D&B,ZI,SN,Salesforce,Reltio,SAP] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/OrganizationDetails/attributes/FranchiseOperationTypeCode |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ CommodityCodes | Commodity Codes | String | Community codes for organization | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/OrganizationDetails/attributes/CommodityCodes |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Standalone | Standalone | Boolean | Indicates whether or not the organization operates as a member of a legal family tree | SRC_SYS [D&B,ZI,SN,Salesforce,Reltio,SAP] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/OrganizationDetails/attributes/Standalone |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ MarketabilityIndicator | Marketability Indicator | Boolean | Indicates whether or not the organization is marketable | SRC_SYS [D&B,ZI,SN,Salesforce,Reltio,SAP] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/OrganizationDetails/attributes/MarketabilityIndicator |
+| **EmployeeDetails** | Employee Details | Nested | Employee Details | SRC_SYS [D&B,ZI,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/EmployeeDetails |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ NumberOfEmployees | Number of Employees | Int | Number of employees employed by the organization across all related organizations in its hierarchy | SRC_SYS [D&B,ZI,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/EmployeeDetails/attributes/NumberOfEmployees |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ IndividualReliabilityText | Individual Reliability Text | String | Describes the method used (and its reliability, by extension) to calculate the number of employees at the organization | SRC_SYS [D&B,ZI,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/EmployeeDetails/attributes/IndividualReliabilityText |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ IndividualReliabilityCode | Individual Reliability Code | String |  | SRC_SYS [D&B,ZI,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/EmployeeDetails/attributes/IndividualReliabilityCode |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ IndividualTotalEmployeeQuantity | Individual Employees | Int | Number of employees calculated as belonging to the organization | SRC_SYS [D&B,ZI,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/EmployeeDetails/attributes/IndividualTotalEmployeeQuantity |
+| **KeyFinancialFiguresOverview** | Key Financial Figures Overview | Nested | Data from the reported financial statements of the organization | Aggregation | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/KeyFinancialFiguresOverview |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Currency | Currency | String | Currency in which financial figures are reported | LUD | false | false | false | true | true | rdm/lookupTypes/Currencies | configuration/entityTypes/Organization/attributes/KeyFinancialFiguresOverview/attributes/Currency |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ CurrencyUnitOfSize | Currency Unit Of Size | String | Unit size (e.g., thousands, millions) in which financial figures are reported | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/KeyFinancialFiguresOverview/attributes/CurrencyUnitOfSize |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ SalesRevenueAmount | Total Sales/Revenue | String | Top-line income generated from the sale of goods and services | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/KeyFinancialFiguresOverview/attributes/SalesRevenueAmount |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ SalesReliabilityText | Sales Reliability Text | String |  | SRC_SYS [D&B,ZI,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/KeyFinancialFiguresOverview/attributes/SalesReliabilityText |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ SalesReliabilityCode | Sales Reliability Code | String |  | SRC_SYS [D&B,ZI,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/KeyFinancialFiguresOverview/attributes/SalesReliabilityCode |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ TotalAssetsAmount | Total Assets | Long | Value of current and long-term assets reported by the organization | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/KeyFinancialFiguresOverview/attributes/TotalAssetsAmount |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ TotalLiabilitiesAmount | Total Liabilities | Long | Value of current and long-term liabilities reported by the organization | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/KeyFinancialFiguresOverview/attributes/TotalLiabilitiesAmount |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ FinancialStatementFromDate | Financial Statement From Date | String | Date that serves as the starting point of the financial period on which results are being reported (type String for D&B enrichment) | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/KeyFinancialFiguresOverview/attributes/FinancialStatementFromDate |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ FinancialStatementToDate | Financial Statement To Date | String | Date that serves as the ending point of the financial period on which results are being reported (type String for D&B enrichment) | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/KeyFinancialFiguresOverview/attributes/FinancialStatementToDate |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ FinancialPeriodDuration | Financial Period Duration | String | Time interval of the period covered by the financial statement reporting | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/KeyFinancialFiguresOverview/attributes/FinancialPeriodDuration |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ FinancialStatementYear | Financial Statement Year | String | Year covered by the financial statement reporting figures (type String for D&B enrichment) | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/KeyFinancialFiguresOverview/attributes/FinancialStatementYear |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ FinancialStatementDescription | Financial Statement Description | String | Description of the content/scope of the financial statement | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/KeyFinancialFiguresOverview/attributes/FinancialStatementDescription |
+| **DataProviderHierarchy** | Data Provider Hierarchy | Nested | Names and identifers assigned to the family member organizations that comprise the family tree hierarchy of the organization | SRC_SYS [D&B,ZI,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/DataProviderHierarchy |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ GlobalUltimateDataProviderId | Global Ultimate Data Provider ID | String | Data provider ID assigned to the global ultimate parent company of the organization | SRC_SYS [D&B,ZI,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/DataProviderHierarchy/attributes/GlobalUltimateDataProviderId |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ GlobalUltimateOrgName | Global Ultimate Org Name | String | Name of the global ultimate parent company of the organization | SRC_SYS [D&B,ZI,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/DataProviderHierarchy/attributes/GlobalUltimateOrgName |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ HasChangeInGlobalUltimate | Change In Global Ultimate Indicator | Boolean | Data provider ID assigned to the domestic ultimate parent company of the organization | SRC_SYS [D&B,ZI,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/DataProviderHierarchy/attributes/HasChangeInGlobalUltimate |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ DomesticUltimateDataProviderId | Domestic Ultimate Data Provider ID | String | Data provider ID assigned to the domestic ultimate parent company of the organization | SRC_SYS [D&B,ZI,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/DataProviderHierarchy/attributes/DomesticUltimateDataProviderId |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ DomesticUltimateOrgName | Domestic Ultimate Org Name | String | Name of the domestic ultimate parent company of the organization | SRC_SYS [D&B,ZI,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/DataProviderHierarchy/attributes/DomesticUltimateOrgName |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ ParentDataProviderId | Parent Data Provider ID | String | Data provider ID assigned to the immediate parent company of the organization | SRC_SYS [D&B,ZI,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/DataProviderHierarchy/attributes/ParentDataProviderId |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ ParentOrgName | Parent Org Name | String | Name of the immediate parent company of the organization | SRC_SYS [D&B,ZI,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/DataProviderHierarchy/attributes/ParentOrgName |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ HeadquartersDataProviderId | Headquarters Data Provider ID | String | Data provider ID assigned to the organization that serves as the administrative office for branches of the organization | SRC_SYS [D&B,ZI,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/DataProviderHierarchy/attributes/HeadquartersDataProviderId |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ HeadquartersOrgName | Headquarters Org Name | String | Name of the organization that serves as the administrative office for branches of the organization | SRC_SYS [D&B,ZI,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/DataProviderHierarchy/attributes/HeadquartersOrgName |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ DataProviderNumOfFamilyMembers | Count Of Org Family Members | Int | Total number of entities in the organizations family tree | SRC_SYS [D&B,ZI,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/DataProviderHierarchy/attributes/DataProviderNumOfFamilyMembers |
+| **AutoMatchFlag** | Auto Match Flag | Boolean | Indicates whether or not the confidence level of the match between the organization record and the data provider's reference data was above the threshold for automatic matching | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/AutoMatchFlag |
+| **SuspectMatchFlag** | Suspect Match Flag | Boolean | Indicates whether or not the confidence level of the match between the organization record and the data provider's reference data was above the threshold for suspected matching, but below the threshold for automatic matching | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/SuspectMatchFlag |
+| **ManualVerificationFlag** | Manual Verification Flag | Boolean | Indicates to the platform whether or not an organization record should be included in the next batch of enrichment processing | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/ManualVerificationFlag |
+| **DoNotEnrich** | Do Not Enrich | Boolean | Indicates to the platform whether or not an organization record should be excluded from inclusion in the next batch of enrichment processing | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/DoNotEnrich |
+| **entityURI** | Entity URI | String | URI assigned to the organization entity | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/entityURI |
+| **OrganizationType** | Organization Type | String | Organization Type | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/OrganizationType |
+| **OrganizationSummaryText** | Organization Summary Text | String | Text that records a brief statement or account of this organization | LUD | false | false | false | true | false |  | configuration/entityTypes/Organization/attributes/OrganizationSummaryText |
+| **DomicileState** | Domicile State | String | State of Legal Domicile | LUD | false | false | false | true | false |  | configuration/entityTypes/Organization/attributes/DomicileState |
+| **StatusUpdateDate** | Status Update Date | Date | Status Update Date | LUD | false | false | false | true | false |  | configuration/entityTypes/Organization/attributes/StatusUpdateDate |
+| **StatusReasonCode** | Status Reason Code | String | Status Reason Code | LUD | false | false | false | true | false |  | configuration/entityTypes/Organization/attributes/StatusReasonCode |
+| **OwnershipStatus** | Ownership Status | String | Ownership Status | LUD | false | false | false | true | true | rdm/lookupTypes/OwnershipStatuses | configuration/entityTypes/Organization/attributes/OwnershipStatus |
+| **LegalStatusDescription** | Legal Status Description | String | Legal Status Description | LUD | false | false | false | true | false |  | configuration/entityTypes/Organization/attributes/LegalStatusDescription |
+| **StatusCode** | Status Code | String | Status Code | LUD | false | false | false | true | false |  | configuration/entityTypes/Organization/attributes/StatusCode |
+| **MarketabilityIndicator** | Marketability Indicator | String | Marketability Indicator | LUD | false | false | false | true | false |  | configuration/entityTypes/Organization/attributes/MarketabilityIndicator |
+| **EnrichmentProviderID** | Enrichment Provider ID | String | The identifier assigned to the organization by the data provider used to provide enrichment data for the organization | SRC_SYS [D&B,ZI,Salesforce,Reltio] | false | false | false | true | false |  | configuration/entityTypes/Organization/attributes/EnrichmentProviderID |
+| **GlobalUltimateIndicator** | Global Ultimate Indicator | String | Global Ultimate Indicator. Possible values are Y=Global Ultimate, N=Not Global Ultimate | SRC_SYS [D&B,ZI,Salesforce,Reltio] | false | false | false | true | false |  | configuration/entityTypes/Organization/attributes/GlobalUltimateIndicator |
+| **NumberOfFamilyMembers** | Number Of Family Members | Int | DnB Number of Family Members | SRC_SYS [D&B,ZI,Salesforce,Reltio] | false | false | false | true | false |  | configuration/entityTypes/Organization/attributes/NumberOfFamilyMembers |
+| **TypeOfEnrichment** | Type Of Enrichment | String | Identifies the last DnB source used to update entity | SRC_SYS [D&B,ZI,Salesforce,Reltio] | false | false | false | true | false |  | configuration/entityTypes/Organization/attributes/TypeOfEnrichment |
+| **Industry** | Industry | String | Industry | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Industry |
+| **FoundedYear** | Founded Year | String | Founded Year (type String for D&B enrichment) | LUD | false | false | false | true | false |  | configuration/entityTypes/Organization/attributes/FoundedYear |
+| **IPOYear** | IPO Year | Int | IPO Year | LUD | false | false | false | true | false |  | configuration/entityTypes/Organization/attributes/IPOYear |
+| **EndYear** | End Year | Int | End Year | LUD | false | false | false | true | false |  | configuration/entityTypes/Organization/attributes/EndYear |
+| **MatchQuality** | Match Quality | Nested | Match Quality | SRC_SYS [D&B,ZI,Salesforce,Reltio] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/MatchQuality |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ ConfidenceCode | Confidence Code | String | Confidence Code | SRC_SYS [D&B,ZI,Salesforce,Reltio] | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/MatchQuality/attributes/ConfidenceCode |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ DisplaySequence | Display Sequence | Int | Display Sequence | SRC_SYS [D&B,ZI,Salesforce,Reltio] | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/MatchQuality/attributes/DisplaySequence |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ MatchCode | Match Code | String | Match Code | SRC_SYS [D&B,ZI,Salesforce,Reltio] | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/MatchQuality/attributes/MatchCode |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ BEMFAB | BEMFAB (Marketability) | String | BEMFAB | SRC_SYS [D&B,ZI,Salesforce,Reltio] | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/MatchQuality/attributes/BEMFAB |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ MatchGrade | Match Grade | String | Match Grade | SRC_SYS [D&B,ZI,Salesforce,Reltio] | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/MatchQuality/attributes/MatchGrade |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ NameProfileCode | Name Profile Code | String | Name Profile Code | SRC_SYS [D&B,ZI,Salesforce,Reltio] | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/MatchQuality/attributes/NameProfileCode |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ StreetNumberProfileCode | Street Number Profile Code | String | Street Number Profile Code | SRC_SYS [D&B,ZI,Salesforce,Reltio] | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/MatchQuality/attributes/StreetNumberProfileCode |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ StreetNameProfileCode | Street Name Profile Code | String | Street Name Profile Code | SRC_SYS [D&B,ZI,Salesforce,Reltio] | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/MatchQuality/attributes/StreetNameProfileCode |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ CityProfileCode | City Profile Code | String | City Profile Code | SRC_SYS [D&B,ZI,Salesforce,Reltio] | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/MatchQuality/attributes/CityProfileCode |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ StateProvinceProfileCode | State Province Profile Code | String | State Province Profile Code | SRC_SYS [D&B,ZI,Salesforce,Reltio] | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/MatchQuality/attributes/StateProvinceProfileCode |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ POBoxProfileCode | PO Box Profile Code | String | POBox Profile Code | SRC_SYS [D&B,ZI,Salesforce,Reltio] | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/MatchQuality/attributes/POBoxProfileCode |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ PhoneProfileCode | Phone Profile Code | String | Phone Profile Cod | SRC_SYS [D&B,ZI,Salesforce,Reltio] | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/MatchQuality/attributes/PhoneProfileCode |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ ZIPProfileCode | ZIP Profile Code | String | ZIP Profile Code | SRC_SYS [D&B,ZI,Salesforce,Reltio] | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/MatchQuality/attributes/ZIPProfileCode |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ SICProfileCode | SIC Profile Code | String | SIC Profile Code | SRC_SYS [D&B,ZI,Salesforce,Reltio] | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/MatchQuality/attributes/SICProfileCode |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ SICDescription | SIC Description | String | SIC Description | SRC_SYS [D&B,ZI,Salesforce,Reltio] | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/MatchQuality/attributes/SICDescription |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ DensityProfileCode | Density Profile Code | String | Density Profile Code | SRC_SYS [D&B,ZI,Salesforce,Reltio] | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/MatchQuality/attributes/DensityProfileCode |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ UniquenessProfileCode | Uniqueness Profile Code | String | Uniqueness Profile Code | SRC_SYS [D&B,ZI,Salesforce,Reltio] | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/MatchQuality/attributes/UniquenessProfileCode |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ ProfileCode | Profile Code | String |  | SRC_SYS [D&B,ZI,Salesforce,Reltio] | false | false | false | true | false |  | configuration/entityTypes/Organization/attributes/MatchQuality/attributes/ProfileCode |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ NationalIDProfileCode | National ID Profile Code | String |  | SRC_SYS [D&B,ZI,Salesforce,Reltio] | false | false | false | true | false |  | configuration/entityTypes/Organization/attributes/MatchQuality/attributes/NationalIDProfileCode |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ URLProfileCode | URL Profile Code | String |  | SRC_SYS [D&B,ZI,Salesforce,Reltio] | false | false | false | true | false |  | configuration/entityTypes/Organization/attributes/MatchQuality/attributes/URLProfileCode |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ DUNSProfileCode | DUNS Profile Code | String |  | SRC_SYS [D&B,ZI,Salesforce,Reltio] | false | false | false | true | false |  | configuration/entityTypes/Organization/attributes/MatchQuality/attributes/DUNSProfileCode |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ MatchDataProfile | Match Data Profile | String |  | SRC_SYS [D&B,ZI,Salesforce,Reltio] | false | false | false | true | false |  | configuration/entityTypes/Organization/attributes/MatchQuality/attributes/MatchDataProfile |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ NameMatchDataCode | Name Match Data Code | String |  | SRC_SYS [D&B,ZI,Salesforce,Reltio] | false | false | false | true | false |  | configuration/entityTypes/Organization/attributes/MatchQuality/attributes/NameMatchDataCode |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ StreetNumberMatchDataCode | Street Number Match Data Code | String |  | SRC_SYS [D&B,ZI,Salesforce,Reltio] | false | false | false | true | false |  | configuration/entityTypes/Organization/attributes/MatchQuality/attributes/StreetNumberMatchDataCode |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ StreetNameMatchDataCode | Street Name Match Data Code | String |  | SRC_SYS [D&B,ZI,Salesforce,Reltio] | false | false | false | true | false |  | configuration/entityTypes/Organization/attributes/MatchQuality/attributes/StreetNameMatchDataCode |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ CityMatchDataCode | City Match Data Code | String |  | SRC_SYS [D&B,ZI,Salesforce,Reltio] | false | false | false | true | false |  | configuration/entityTypes/Organization/attributes/MatchQuality/attributes/CityMatchDataCode |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ StateProvinceMatchDataCode | State Province Match Data Code | String |  | SRC_SYS [D&B,ZI,Salesforce,Reltio] | false | false | false | true | false |  | configuration/entityTypes/Organization/attributes/MatchQuality/attributes/StateProvinceMatchDataCode |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ ZIPMatchDataCode | ZIP Match Data Code | String |  | SRC_SYS [D&B,ZI,Salesforce,Reltio] | false | false | false | true | false |  | configuration/entityTypes/Organization/attributes/MatchQuality/attributes/ZIPMatchDataCode |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ PhoneMatchDataCode | Phone Match Data Code | String |  | SRC_SYS [D&B,ZI,Salesforce,Reltio] | false | false | false | true | false |  | configuration/entityTypes/Organization/attributes/MatchQuality/attributes/PhoneMatchDataCode |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ POBoxMatchDataCode | PO Box Match Data Code | String |  | SRC_SYS [D&B,ZI,Salesforce,Reltio] | false | false | false | true | false |  | configuration/entityTypes/Organization/attributes/MatchQuality/attributes/POBoxMatchDataCode |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ SICMatchDataCode | SIC Match Data Code | String |  | SRC_SYS [D&B,ZI,Salesforce,Reltio] | false | false | false | true | false |  | configuration/entityTypes/Organization/attributes/MatchQuality/attributes/SICMatchDataCode |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ DensityMatchDataCode | Density Match Data Code | String |  | SRC_SYS [D&B,ZI,Salesforce,Reltio] | false | false | false | true | false |  | configuration/entityTypes/Organization/attributes/MatchQuality/attributes/DensityMatchDataCode |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ UniquenessMatchDataCode | Uniqueness Match Data Code | String |  | SRC_SYS [D&B,ZI,Salesforce,Reltio] | false | false | false | true | false |  | configuration/entityTypes/Organization/attributes/MatchQuality/attributes/UniquenessMatchDataCode |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ URLMatchDataCode | URL Match Data Code | String |  | SRC_SYS [D&B,ZI,Salesforce,Reltio] | false | false | false | true | false |  | configuration/entityTypes/Organization/attributes/MatchQuality/attributes/URLMatchDataCode |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ DUNSMatchDataCode | DUNS Match Data Code | String |  | SRC_SYS [D&B,ZI,Salesforce,Reltio] | false | false | false | true | false |  | configuration/entityTypes/Organization/attributes/MatchQuality/attributes/DUNSMatchDataCode |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ NationalIDMatchDataCode | National ID Match Data Code | String |  | SRC_SYS [D&B,ZI,Salesforce,Reltio] | false | false | false | true | false |  | configuration/entityTypes/Organization/attributes/MatchQuality/attributes/NationalIDMatchDataCode |
+| **PriorDUNSNumber** | Prior DUNS Number | Nested |  | SRC_SYS [D&B,Salesforce,Reltio] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/PriorDUNSNumber |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ TransferReasonText | Reason | String | Text identifying the reason that the D-U-N-S Number was deleted and possibly a new D-U-N-S Number was assigned to the subject | SRC_SYS [D&B,Salesforce,Reltio] | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/PriorDUNSNumber/attributes/TransferReasonText |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ ReasonCode | Reason Code | String |  | SRC_SYS [D&B,Salesforce,Reltio] | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/PriorDUNSNumber/attributes/ReasonCode |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ TransferDate | Transfer Date | Date | Date on which the D-U-N-S Number was deleted and possibly a new D-U-N-S Number was assigned to the subject | SRC_SYS [D&B,Salesforce,Reltio] | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/PriorDUNSNumber/attributes/TransferDate |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ TransferredFromDUNSNumber | Transferred From DUNS Number | String | This is the D-U-N-S number of the subject that is deleted from the host database | SRC_SYS [D&B,Salesforce,Reltio] | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/PriorDUNSNumber/attributes/TransferredFromDUNSNumber |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ TransferredToDUNSNumber | Transferred To DUNS Number | String | This is the D-U-N-S number of the subject that is retained on the host database | SRC_SYS [D&B,Salesforce,Reltio] | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/PriorDUNSNumber/attributes/TransferredToDUNSNumber |
+| **LastUpdateDate** | LastUpdateDate | Date |  | SRC_SYS [D&B,ZI,Salesforce,Reltio] | false | false | false | true | false |  | configuration/entityTypes/Organization/attributes/LastUpdateDate |
+| **RegulatoryRegistrations** | Regulatory Registrations | Nested |  | Aggregation | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/RegulatoryRegistrations |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ RegulatorName | Regulator Name | String |  | SRC_SYS [D&B,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/RegulatoryRegistrations/attributes/RegulatorName |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ RegulatorId | Regulator ID | String |  | SRC_SYS [D&B,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/RegulatoryRegistrations/attributes/RegulatorId |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ RegulatorRegion | Regulator Region | String |  | SRC_SYS [D&B,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/RegulatoryRegistrations/attributes/RegulatorRegion |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ OrganizationRegistrationId | Organization Registration ID | String |  | SRC_SYS [D&B,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/RegulatoryRegistrations/attributes/OrganizationRegistrationId |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ RegulatorRegistryURL | Regulator Registry URL | URL |  | SRC_SYS [D&B,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/RegulatoryRegistrations/attributes/RegulatorRegistryURL |
+| **ThirdPartyAssessment** | Third Party Assessment | Nested |  | Aggregation | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/ThirdPartyAssessment |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Type | Type | String |  | SRC_SYS [D&B,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/ThirdPartyAssessment/attributes/Type |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Date | Date | Date |  | SRC_SYS [D&B,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/ThirdPartyAssessment/attributes/Date |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Value | Value | String |  | SRC_SYS [D&B,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/ThirdPartyAssessment/attributes/Value |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Code | Code | String |  | SRC_SYS [D&B,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/ThirdPartyAssessment/attributes/Code |
+| **Competition** | Competition | Nested |  | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Competition |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ CompetitorDetails | CompetitorDetails | Nested |  | Aggregation | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Competition/attributes/CompetitorDetails |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ CompetitorDataProviderId | Competitor Data Provider ID | String |  | SRC_SYS [D&B,ZI,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Competition/attributes/CompetitorDetails/attributes/CompetitorDataProviderId |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ CompetitorOrgName | Competitor Org Name | String |  | SRC_SYS [D&B,ZI,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Competition/attributes/CompetitorDetails/attributes/CompetitorOrgName |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ IndividualEmployeeCount | Individual Employee Count | Int |  | SRC_SYS [D&B,ZI,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Competition/attributes/CompetitorDetails/attributes/IndividualEmployeeCount |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ SalesRevenueAmount | Sales Revenue Amount | String |  | SRC_SYS [D&B,ZI,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Competition/attributes/CompetitorDetails/attributes/SalesRevenueAmount |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ IssuedShareCapitalAmount | Issued Share Capital Amount | String |  | SRC_SYS [D&B,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Competition/attributes/CompetitorDetails/attributes/IssuedShareCapitalAmount |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ OtherCompetitorsDataProviderIds | Other Competitors Data Provider ID(s) | String |  | SRC_SYS [D&B,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/Competition/attributes/OtherCompetitorsDataProviderIds |
+| **PhysicalLocationDetails** | Physical Location Details | Nested |  | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/PhysicalLocationDetails |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ EmployeeCount | Employee Count | String |  | SRC_SYS [D&B,ZI,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/PhysicalLocationDetails/attributes/EmployeeCount |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ SalesRevenueAmount | Sales Revenue Amount | String |  | SRC_SYS [D&B,ZI,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/PhysicalLocationDetails/attributes/SalesRevenueAmount |
+| **LinkedCompaniesDetails** | Linked Companies' Details | Nested |  | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/LinkedCompaniesDetails |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ EmployeeCount | Employee Count | String |  | SRC_SYS [D&B,ZI,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/LinkedCompaniesDetails/attributes/EmployeeCount |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ SalesRevenueAmount | Sales Revenue Amount | String |  | SRC_SYS [D&B,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/LinkedCompaniesDetails/attributes/SalesRevenueAmount |
+| **CountryGroupDetails** | Country Group Details | Nested |  | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/CountryGroupDetails |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ EmployeeCount | Employee Count | String |  | SRC_SYS [D&B,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/CountryGroupDetails/attributes/EmployeeCount |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ SalesRevenueAmount | Sales Revenue Amount | String |  | SRC_SYS [D&B,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/CountryGroupDetails/attributes/SalesRevenueAmount |
+| **GlobalUltimateDetails** | Global Ultimate Details | Nested |  | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/GlobalUltimateDetails |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ EmployeeCount | Employee Count | String |  | SRC_SYS [D&B,ZI,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/GlobalUltimateDetails/attributes/EmployeeCount |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ SalesRevenueAmount | Sales Revenue Amount | String |  | SRC_SYS [D&B,ZI,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/GlobalUltimateDetails/attributes/SalesRevenueAmount |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ NumOfFamilyMembers | Number Of Family Members | String |  | SRC_SYS [D&B,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/GlobalUltimateDetails/attributes/NumOfFamilyMembers |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ IndustryClassification | Industry Classification | Nested |  | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/GlobalUltimateDetails/attributes/IndustryClassification |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ NumOfIndustrySectors | Number Of Industry Sectors | String |  | SRC_SYS [D&B,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/GlobalUltimateDetails/attributes/IndustryClassification/attributes/NumOfIndustrySectors |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ PrimaryIndustrySectorClassificationType | Primary Industry Sector Classification Type | String |  | SRC_SYS [D&B,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/GlobalUltimateDetails/attributes/IndustryClassification/attributes/PrimaryIndustrySectorClassificationType |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ PrimaryIndustrySector | Primary Industry Sector | String |  | SRC_SYS [D&B,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/GlobalUltimateDetails/attributes/IndustryClassification/attributes/PrimaryIndustrySector |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ PrimaryIndustrySectorSalesPercentage | Primary Industry Sector Sales Percentage | String |  | SRC_SYS [D&B,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/GlobalUltimateDetails/attributes/IndustryClassification/attributes/PrimaryIndustrySectorSalesPercentage |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ PrimaryIndustrySectorCode | Primary Industry Sector Code | String |  | SRC_SYS [D&B,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/GlobalUltimateDetails/attributes/IndustryClassification/attributes/PrimaryIndustrySectorCode |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ PrimaryIndustrySectorDataProviderCode | Primary Industry Sector Data Provider Code | String |  | SRC_SYS [D&B,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/GlobalUltimateDetails/attributes/IndustryClassification/attributes/PrimaryIndustrySectorDataProviderCode |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ SecondaryIndustrySectorClassificationType | Secondary Industry Sector Classification Type | String |  | SRC_SYS [Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/GlobalUltimateDetails/attributes/IndustryClassification/attributes/SecondaryIndustrySectorClassificationType |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ SecondaryIndustrySector | Secondary Industry Sector | String |  | SRC_SYS [D&B,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/GlobalUltimateDetails/attributes/IndustryClassification/attributes/SecondaryIndustrySector |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ SecondaryIndustrySectorSalesPercentage | Secondary Industry Sector Sales Percentage | String |  | SRC_SYS [D&B,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/GlobalUltimateDetails/attributes/IndustryClassification/attributes/SecondaryIndustrySectorSalesPercentage |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ SecondaryIndustrySectorCode | Secondary Industry Sector Code | String |  | SRC_SYS [D&B,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/GlobalUltimateDetails/attributes/IndustryClassification/attributes/SecondaryIndustrySectorCode |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ SecondaryIndustrySectorDataProviderCode | Secondary Industry Sector Data Provider Code | String |  | SRC_SYS [D&B,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/GlobalUltimateDetails/attributes/IndustryClassification/attributes/SecondaryIndustrySectorDataProviderCode |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ UnclassifiedIndustrySectorSalesPercentage | Unclassified Industry Sector Sales Percentage | String |  | SRC_SYS [D&B,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/GlobalUltimateDetails/attributes/IndustryClassification/attributes/UnclassifiedIndustrySectorSalesPercentage |
+| **DomesticUltimateDetails** | Domestic Ultimate Details | Nested |  | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/DomesticUltimateDetails |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ EmployeeCount | Employee Count | String |  | SRC_SYS [D&B,ZI,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/DomesticUltimateDetails/attributes/EmployeeCount |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ SalesRevenueAmount | Sales Revenue Amount | String |  | SRC_SYS [D&B,ZI,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/DomesticUltimateDetails/attributes/SalesRevenueAmount |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ NumOfFamilyMembers | Number Of Family Members | String |  | SRC_SYS [D&B,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/DomesticUltimateDetails/attributes/NumOfFamilyMembers |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ IndustryClassification | Industry Classification | Nested |  | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/DomesticUltimateDetails/attributes/IndustryClassification |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ NumOfIndustrySectors | Number Of Industry Sectors | String |  | SRC_SYS [D&B,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/DomesticUltimateDetails/attributes/IndustryClassification/attributes/NumOfIndustrySectors |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ PrimaryIndustrySectorClassificationType | Primary Industry Sector Classification Type | String |  | SRC_SYS [D&B,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/DomesticUltimateDetails/attributes/IndustryClassification/attributes/PrimaryIndustrySectorClassificationType |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ PrimaryIndustrySector | Primary Industry Sector | String |  | SRC_SYS [D&B,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/DomesticUltimateDetails/attributes/IndustryClassification/attributes/PrimaryIndustrySector |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ PrimaryIndustrySectorSalesPercentage | Primary Industry Sector Sales Percentage | String |  | SRC_SYS [D&B,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/DomesticUltimateDetails/attributes/IndustryClassification/attributes/PrimaryIndustrySectorSalesPercentage |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ PrimaryIndustrySectorCode | Primary Industry Sector Code | String |  | SRC_SYS [D&B,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/DomesticUltimateDetails/attributes/IndustryClassification/attributes/PrimaryIndustrySectorCode |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ PrimaryIndustrySectorDataProviderCode | Primary Industry Sector Data Provider Code | String |  | SRC_SYS [D&B,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/DomesticUltimateDetails/attributes/IndustryClassification/attributes/PrimaryIndustrySectorDataProviderCode |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ SecondaryIndustrySectorClassificationType | Secondary Industry Sector Classification Type | String |  | SRC_SYS [D&B,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/DomesticUltimateDetails/attributes/IndustryClassification/attributes/SecondaryIndustrySectorClassificationType |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ SecondaryIndustrySector | Secondary Industry Sector | String |  | SRC_SYS [D&B,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/DomesticUltimateDetails/attributes/IndustryClassification/attributes/SecondaryIndustrySector |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ SecondaryIndustrySectorSalesPercentage | Secondary Industry Sector Sales Percentage | String |  | SRC_SYS [D&B,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/DomesticUltimateDetails/attributes/IndustryClassification/attributes/SecondaryIndustrySectorSalesPercentage |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ SecondaryIndustrySectorCode | Secondary Industry Sector Code | String |  | SRC_SYS [D&B,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/DomesticUltimateDetails/attributes/IndustryClassification/attributes/SecondaryIndustrySectorCode |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ SecondaryIndustrySectorDataProviderCode | Secondary Industry Sector Data Provider Code | String |  | SRC_SYS [D&B,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/DomesticUltimateDetails/attributes/IndustryClassification/attributes/SecondaryIndustrySectorDataProviderCode |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ UnclassifiedIndustrySectorSalesPercentage | Unclassified Industry Sector Sales Percentage | String |  | SRC_SYS [D&B,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/DomesticUltimateDetails/attributes/IndustryClassification/attributes/UnclassifiedIndustrySectorSalesPercentage |
+| **SocioeconomicInfo** | Socioeconomic Information | Nested |  | LUD | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/SocioeconomicInfo |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Is8ACertifiedBusiness | 8A Certified Business Indicator | Boolean |  | SRC_SYS [D&B,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/SocioeconomicInfo/attributes/Is8ACertifiedBusiness |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ IsWomanOwned | Woman-owned Business Indicator | Boolean |  | SRC_SYS [D&B,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/SocioeconomicInfo/attributes/IsWomanOwned |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ IsMinorityOwned | Minority-owned Business Indicator | Boolean |  | SRC_SYS [D&B,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/SocioeconomicInfo/attributes/IsMinorityOwned |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ IsVeteranOwned | Veteran-owned Business Indicator | Boolean |  | SRC_SYS [D&B,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/SocioeconomicInfo/attributes/IsVeteranOwned |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ OwnershipPrimaryEthnicityDescription | Primary Ethnicity of Ownership | String |  | SRC_SYS [D&B,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/SocioeconomicInfo/attributes/OwnershipPrimaryEthnicityDescription |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ OwnershipPrimaryEthnicityCode | Primary Ethnicity of Ownership Code | String |  | SRC_SYS [D&B,Salesforce,Reltio,SAP,SN] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/SocioeconomicInfo/attributes/OwnershipPrimaryEthnicityCode |
+| **SFDC_sync_flag** | SFDC sync flag | String | Set this flag to sync the record with a downstream system. | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/SFDC_sync_flag |
+| **AccountRoles** | Account Roles | Nested | One company can play several roles: corporate, travel agency, owner, operator and so on. | Aggregation | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/AccountRoles |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Role | Role | String | Role the company plays | LUD | false | false | false | true | true | rdm/lookupTypes/AccountRoleTypes | configuration/entityTypes/Organization/attributes/AccountRoles/attributes/Role |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Status | Status | String | Status of the role | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/AccountRoles/attributes/Status |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ StartDate | Start Date | Date | Date the role began | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/AccountRoles/attributes/StartDate |
+| **MarketSegment** | Market Segment | String | Market segment | SRC_SYS [Salesforce,CONTRACTS,Reltio] | false | false | false | true | true | rdm/lookupTypes/MarketSegments | configuration/entityTypes/Organization/attributes/MarketSegment |
+| **MarketSubSegment** | Market Sub-Segment | String | Market sub-segment | SRC_SYS [Salesforce,CONTRACTS,Reltio] | false | false | false | false | false | rdm/lookupTypes/MarketSubSegments | configuration/entityTypes/Organization/attributes/MarketSubSegment |
+| **SalesRegion** | Sales Region | String | Sales region | SRC_SYS [Salesforce,CONTRACTS,Reltio] | false | false | false | false | true | rdm/lookupTypes/SalesRegions | configuration/entityTypes/Organization/attributes/SalesRegion |
+| **KeyAccountFlag** | Key Account | Boolean | Account is prioritised for sales | SRC_SYS [Salesforce,CONTRACTS,Reltio] | false | false | false | false | true |  | configuration/entityTypes/Organization/attributes/KeyAccountFlag |
+| **BookingStatus** | Booking Status | String | Open or historic bookings. Merge protection | SRC_SYS [ANALYTICS] | false | false | false | false | false | rdm/lookupTypes/AccountBookingStatuses | configuration/entityTypes/Organization/attributes/BookingStatus |
+| **ContractStatus** | Contract Status | String | Contract status. Merge protection | SRC_SYS [Salesforce,CONTRACTS,Reltio] | false | false | false | false | false | rdm/lookupTypes/AccountContractStatuses | configuration/entityTypes/Organization/attributes/ContractStatus |
+| **AccountLifecycleStage** | Account Lifecycle Stage | String | Prospect, active or inactive | SRC_SYS [Salesforce,CONTRACTS,Reltio] | false | false | false | false | true | rdm/lookupTypes/AccountLifecycleStages | configuration/entityTypes/Organization/attributes/AccountLifecycleStage |
+| **AccountRevenue** | Account Revenue | Nested | Revenue by year to prioritise accounts. Written by finance and business intelligence only. | SRC_SYS [FINBI] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/AccountRevenue |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Year | Year | Int | Revenue year | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/AccountRevenue/attributes/Year |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ RevenueType | Revenue Type | String | Kind of revenue | LUD | false | false | false | false | false | rdm/lookupTypes/RevenueTypes | configuration/entityTypes/Organization/attributes/AccountRevenue/attributes/RevenueType |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Amount | Amount | Number | Revenue amount | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/AccountRevenue/attributes/Amount |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Currency | Currency | String | ISO 4217 currency code | LUD | false | false | false | false | false | rdm/lookupTypes/Currencies | configuration/entityTypes/Organization/attributes/AccountRevenue/attributes/Currency |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ AsOf | As Of | Date | Date the figure was calculated | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/AccountRevenue/attributes/AsOf |
+| **GlobalPotential** | Global Potential | String | Sales potential band of the account | SRC_SYS [Salesforce,CONTRACTS,Reltio] | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/GlobalPotential |
+| **LeadSource** | Lead Source | Nested | Where the account came from, for sales attribution. | Aggregation | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/LeadSource |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Code | Code | String | Lead source code | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/LeadSource/attributes/Code |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Name | Name | String | Lead source name | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/LeadSource/attributes/Name |
+| **RecordOrigin** | Record Origin | Nested | Many duplicate accounts start as profiles at individual hotels; this records where. | Aggregation | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/RecordOrigin |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ OriginatingProperty | Originating Property | String | Code of the property that created the profile | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/RecordOrigin/attributes/OriginatingProperty |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ CreatedBy | Created By | String | User or process that created the profile | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/RecordOrigin/attributes/CreatedBy |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ CreationDate | Creation Date | Date | Date the profile was created | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/RecordOrigin/attributes/CreationDate |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ CreationID | Creation ID | String | Identifier of the creating record in the source system | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/RecordOrigin/attributes/CreationID |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ LastUpdatedBy | Last Updated By | String | Employee or process that last updated the profile in the source | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/RecordOrigin/attributes/LastUpdatedBy |
+| **RecordGovernance** | Record Governance | Nested | Steward control and audit of changes. | Aggregation | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/RecordGovernance |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ ApprovalStatus | Approval Status | String | Approval status of a change | LUD | false | false | false | false | false | rdm/lookupTypes/ApprovalStatuses | configuration/entityTypes/Organization/attributes/RecordGovernance/attributes/ApprovalStatus |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ QCStatus | QC Status | String | Quality-control status | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/RecordGovernance/attributes/QCStatus |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ ChangeJustification | Change Justification | String | Reason for the change | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/RecordGovernance/attributes/ChangeJustification |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ EffectiveDate | Effective Date | Date | Date the change takes effect | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/RecordGovernance/attributes/EffectiveDate |
+| **DoNotMerge** | Do Not Merge | Boolean | Steward block: keeps the account out of automatic matching | SRC_SYS [Reltio,Salesforce,CONTRACTS] | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/DoNotMerge |
+| **LoyaltyProgram** | Loyalty Program | Nested | Business loyalty memberships, for programmes such as rewards for business. | SRC_SYS [LOYALTY,Reltio,Salesforce,CONTRACTS] | false | false | false | true | true |  | configuration/entityTypes/Organization/attributes/LoyaltyProgram |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ ProgramName | Program Name | String | Business loyalty programme name | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/LoyaltyProgram/attributes/ProgramName |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ ProgramId | Program ID | String | Business loyalty programme identifier | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/LoyaltyProgram/attributes/ProgramId |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ ProgramType | Program Type | String | Guest, business or travel-agent programme | LUD | false | false | false | false | false | rdm/lookupTypes/LoyaltyProgramTypes | configuration/entityTypes/Organization/attributes/LoyaltyProgram/attributes/ProgramType |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ MembershipNumber | Membership Number | String | Member number in the programme | LUD | false | false | false | true | false |  | configuration/entityTypes/Organization/attributes/LoyaltyProgram/attributes/MembershipNumber |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ MemberStatus | Member Status | String | Membership status | LUD | false | false | false | false | false | rdm/lookupTypes/LoyaltyMemberStatuses | configuration/entityTypes/Organization/attributes/LoyaltyProgram/attributes/MemberStatus |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ SubProgram | Sub-Program | String | Sub-programme | LUD | false | false | false | false | false | rdm/lookupTypes/LoyaltySubPrograms | configuration/entityTypes/Organization/attributes/LoyaltyProgram/attributes/SubProgram |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ EnrollmentDate | Enrollment Date | Date | Date the account enrolled | LUD | false | false | false | false | false |  | configuration/entityTypes/Organization/attributes/LoyaltyProgram/attributes/EnrollmentDate |
+| **TradeStyleName** | Trade Style Name | Nested | The name an organization uses for its day-to-day operations (as written by D&B's Company Information data block); distinct from the TradestyleNames history list | SRC_SYS [D&B,Salesforce,Reltio] | false | false | false | true | false |  | configuration/entityTypes/Organization/attributes/TradeStyleName |
+| &nbsp;&nbsp;&nbsp;&nbsp;↳ Name | Name | String | The organization's trade style name, as written by D&B's Company Information data block | SRC_SYS [D&B,Salesforce,Reltio] | false | false | false | true | false |  | configuration/entityTypes/Organization/attributes/TradeStyleName/attributes/Name |
+| **VendorOrganizationType** | Vendor Organization Type | String | Classification of the organization's role/type as a vendor, as provided by D&B | SRC_SYS [D&B,Salesforce,Reltio] | false | false | false | true | false |  | configuration/entityTypes/Organization/attributes/VendorOrganizationType |
+| **DnBSource** | D&B Source | String | Identifies the D&B data block/source that supplied or last updated this organization record | SRC_SYS [D&B,Salesforce,Reltio] | false | false | false | true | false |  | configuration/entityTypes/Organization/attributes/DnBSource |
+
+
+| Match Rules |  |  |  |  |  |  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **Rule Name** | Type | Scope | Description |  |  |  |  |  |  |  |  |
+| **BaseRule01** | suspect | INTERNAL | BaseRule01: Exact(DUNSNumber) + do-not-merge guard |  |  |  |  |  |  |  |  |
+| **BaseRule02** | suspect | INTERNAL | BaseRule02: Fuzzy(Name); EOAN(Identifier); EON(Phone); Exact(Address1, TaxID) + do-not-merge guard |  |  |  |  |  |  |  |  |
+| **BaseRule03** | suspect | ALL | BaseRule03: Exact(Name, Identifier) + do-not-merge guard |  |  |  |  |  |  |  |  |
+| **BaseRule04** | suspect | ALL | BaseRule04: Fuzzy(Name); Exact(TaxID) + do-not-merge guard |  |  |  |  |  |  |  |  |
+| **BaseRule05** | suspect | ALL | BaseRule05: Fuzzy(Name); Exact(Address1, City) + do-not-merge guard |  |  |  |  |  |  |  |  |
+| **BaseRule06** | suspect | ALL | BaseRule06: Fuzzy(Name Metaphone); Exact(Address1, City) + do-not-merge guard |  |  |  |  |  |  |  |  |
+| **BaseRule07** | automatic | ALL | BaseRule07: Exact(Name, Address, Phone) + do-not-merge guard |  |  |  |  |  |  |  |  |
+| **BaseRule08** | suspect | ALL | BaseRule08: Fuzzy(Name); Exact(Address1) + do-not-merge guard |  |  |  |  |  |  |  |  |
+| **BaseRule09** | suspect | ALL | BaseRule09: Fuzzy(Name); Exact(Address1, State) + do-not-merge guard |  |  |  |  |  |  |  |  |
+| **BaseRule10** | suspect | INTERNAL | BaseRule10: Exact (entityURI) D&B Enrichment Match + do-not-merge guard |  |  |  |  |  |  |  |  |
+| **HotelAccountRule01** | suspect | ALL | H-A1 (steward queue): exact D-U-N-S; never automatic because chain and agency branches share the head-office D-U-N-S; blocked when either account has open bookings or do-not-merge; negative D-U-N-S rule added after emit |  |  |  |  |  |  |  |  |
+| **HotelAccountRule02** | suspect | ALL | H-A2: travel agency; same IATA, ARC or CLIA number; fuzzy name (pseudo-IATA is excluded); do-not-merge guard |  |  |  |  |  |  |  |  |
+| **HotelAccountRule03** | suspect | ALL | H-A3: chain client, CRM or sales-system ID; fuzzy name; do-not-merge guard |  |  |  |  |  |  |  |  |
+| **HotelAccountRule04** | suspect | ALL | H-A4: VAT or tax identifier; fuzzy name; do-not-merge guard |  |  |  |  |  |  |  |  |
+| **HotelAccountNegativeDUNS** | automatic |  | HotelAccountNegativeDUNS : Negative match by D-U-N-S number |  |  |  |  |  |  |  |  |
+
+
+| DVFs |  |  |  |  |  |  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **Function Name** | Attribute | Action | Validation Event | Message | Expression |  |  |  |  |  |  |
+| **InvalidDunsNumberFormat** | DUNSNumber | WARNING | ALL | Invalid DUNS Number Format | exists(attributes.DUNSNumber.value) and not(regexp(attributes.DUNSNumber.value, '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]')) |  |  |  |  |  |  |
+| **InvalidEmailFormat** | ValidationStatus | WARNING | ALL | Invalid Email Format | exists(attributes.Email.value) and not(equals(attributes.Email.value.ValidationStatus.value, 'VALID')) |  |  |  |  |  |  |
+| **InvalidPhoneNumber** | ValidationStatus | WARNING | ALL | Invalid Phone Number | exists(attributes.Phone.value) and not(equals(attributes.Phone.value.ValidationStatus.value, 'VALID')) |  |  |  |  |  |  |
+| **SuspiciouslyShortName** | Name | WARNING | ALL | Suspiciously Short Name | exists(attributes.Name.value) and regexp(attributes.Name.value, '^.{1,3}$') |  |  |  |  |  |  |
 
 > **Note:** On the table above, the top level attributes are represented in bold.
 
@@ -96023,7 +96470,24 @@ Relationship types contain metadata properties and attributes that define the co
 
 This table identifies the preconfigured Account Team relationship type that comes with the Travel & Entertainment (Hotels) velocity pack. Use this relationship type when you want to identify connections between Organization and Individual entity types.
 
-*[Embedded content: https://docs.google.com/spreadsheets/d/e/2PACX-1vSuKSXigZ0gy0xudbOxhmRz7pRxAxY0lXXSMEGEREhwptti7xJgrJGTD2XYggA0qrhJYg1F_s3ZgCHZ/pubhtml?gid=1157039554&single=true&widget=true&headers=false&chrome=false]*
+**AccountTeam**
+- **URI:** configuration/relationTypes/AccountTeam
+- **Label:** Account Team
+- **Description:** Chain staff who look after an account
+- **Type:** 
+- **Direction:** directed
+- **Implicit:** false
+- **Start Object:** configuration/entityTypes/Organization
+- **Start Label:** has account team member
+- **End Object:** configuration/entityTypes/Individual
+- **End Label:** is on account team of
+
+
+| Name | Label | Type | Description | Survivorship | Hidden | Important | System | Searchable | Faceted | Lookup Code | URI |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **Role** | Role | String | Sales, catering or service manager | LUD | false | false | false | false | false | rdm/lookupTypes/AccountTeamRoles | configuration/relationTypes/AccountTeam/attributes/Role |
+| **StartDate** | Start Date | Date | Date the assignment began | LUD | false | false | false | false | false |  | configuration/relationTypes/AccountTeam/attributes/StartDate |
+| **EndDate** | End Date | Date | Date the assignment ended | LUD | false | false | false | false | false |  | configuration/relationTypes/AccountTeam/attributes/EndDate |
 
 > **Note:** On the table above, the top level attributes are represented in bold.
 
@@ -96410,7 +96874,30 @@ Relationship types contain metadata properties and attributes that define the co
 
 This table identifies the preconfigured Has Address (Individual) relationship type that comes with the Travel & Entertainment (Hotels) velocity pack. Use this relationship type when you want to identify connections between Individual and Location entity types.
 
-*[Embedded content: https://docs.google.com/spreadsheets/d/e/2PACX-1vSuKSXigZ0gy0xudbOxhmRz7pRxAxY0lXXSMEGEREhwptti7xJgrJGTD2XYggA0qrhJYg1F_s3ZgCHZ/pubhtml?gid=1463988711&single=true&widget=true&headers=false&chrome=false]*
+**IndividualHasAddress**
+- **URI:** configuration/relationTypes/IndividualHasAddress
+- **Label:** Has Address (Individual)
+- **Description:** Defines a relationship between an individual and a location
+- **Type:** 
+- **Direction:** directed
+- **Implicit:** false
+- **Start Object:** configuration/entityTypes/Individual
+- **Start Label:** has an address at
+- **End Object:** configuration/entityTypes/Location
+- **End Label:** is an address for
+
+
+| Name | Label | Type | Description | Survivorship | Hidden | Important | System | Searchable | Faceted | Lookup Code | URI |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **AddressType** | Address Type | String |  | LUD | false | false | false | true | false | rdm/lookupTypes/AddressTypes | configuration/relationTypes/IndividualHasAddress/attributes/AddressType |
+| **Status** | Status | String |  | LUD | false | false | false | true | false |  | configuration/relationTypes/IndividualHasAddress/attributes/Status |
+| **AddressRank** | Address Rank | Int |  | LUD | false | false | false | true | false |  | configuration/relationTypes/IndividualHasAddress/attributes/AddressRank |
+| **CareOf** | Care Of | String |  | LUD | false | false | false | true | false |  | configuration/relationTypes/IndividualHasAddress/attributes/CareOf |
+| **Primary** | Primary | Boolean |  | LUD | false | false | false | true | false |  | configuration/relationTypes/IndividualHasAddress/attributes/Primary |
+| **Active** | Active | Boolean |  | LUD | false | false | false | true | false |  | configuration/relationTypes/IndividualHasAddress/attributes/Active |
+| **Registered** | Registered | Boolean |  | LUD | false | false | false | true | false |  | configuration/relationTypes/IndividualHasAddress/attributes/Registered |
+| **Business** | Business | Boolean |  | LUD | false | false | false | true | false |  | configuration/relationTypes/IndividualHasAddress/attributes/Business |
+| **Residential** | Residential | Boolean |  | LUD | false | false | false | true | false |  | configuration/relationTypes/IndividualHasAddress/attributes/Residential |
 
 > **Note:** On the table above, the top level attributes are represented in bold.
 
@@ -96652,7 +97139,24 @@ Relationship types contain metadata properties and attributes that define the co
 
 This table identifies the preconfigured Parent Client relationship type that comes with the Travel & Entertainment (Hotels) velocity pack. Use this relationship type when you want to identify connections between two Organization entity types.
 
-*[Embedded content: https://docs.google.com/spreadsheets/d/e/2PACX-1vSuKSXigZ0gy0xudbOxhmRz7pRxAxY0lXXSMEGEREhwptti7xJgrJGTD2XYggA0qrhJYg1F_s3ZgCHZ/pubhtml?gid=1458250769&single=true&widget=true&headers=false&chrome=false]*
+**ParentClient**
+- **URI:** configuration/relationTypes/ParentClient
+- **Label:** Parent Client
+- **Description:** How the chain groups a client, and which agency is the parent
+- **Type:** 
+- **Direction:** directed
+- **Implicit:** false
+- **Start Object:** configuration/entityTypes/Organization
+- **Start Label:** is parent client of
+- **End Object:** configuration/entityTypes/Organization
+- **End Label:** is child client of
+
+
+| Name | Label | Type | Description | Survivorship | Hidden | Important | System | Searchable | Faceted | Lookup Code | URI |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **Type** | Type | String | Sales parent or agency parent | LUD | false | false | false | false | false | rdm/lookupTypes/ParentClientTypes | configuration/relationTypes/ParentClient/attributes/Type |
+| **StartDate** | Start Date | Date | Date the tie began | LUD | false | false | false | false | false |  | configuration/relationTypes/ParentClient/attributes/StartDate |
+| **EndDate** | End Date | Date | Date the tie ended | LUD | false | false | false | false | false |  | configuration/relationTypes/ParentClient/attributes/EndDate |
 
 > **Note:** On the table above, the top level attributes are represented in bold.
 
@@ -96717,7 +97221,24 @@ Relationship types contain metadata properties and attributes that define the co
 
 This table identifies the preconfigured Professional Supplier Affiliation relationship type that comes with the Travel & Entertainment (Hotels) velocity pack. Use this relationship type when you want to identify connections between Individual and Supplier entity types.
 
-*[Embedded content: https://docs.google.com/spreadsheets/d/e/2PACX-1vSuKSXigZ0gy0xudbOxhmRz7pRxAxY0lXXSMEGEREhwptti7xJgrJGTD2XYggA0qrhJYg1F_s3ZgCHZ/pubhtml?gid=1341907081&single=true&widget=true&headers=false&chrome=false]*
+**ProfessionalSupplierAffiliation**
+- **URI:** configuration/relationTypes/ProfessionalSupplierAffiliation
+- **Label:** Professional Supplier Affiliation
+- **Description:** Defines a professional, non-employment relationship between an individual and an organization
+- **Type:** 
+- **Direction:** directed
+- **Implicit:** false
+- **Start Object:** configuration/entityTypes/Individual
+- **Start Label:** affiliates with
+- **End Object:** configuration/entityTypes/Supplier
+- **End Label:** is affiliated to
+
+
+| Name | Label | Type | Description | Survivorship | Hidden | Important | System | Searchable | Faceted | Lookup Code | URI |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **AffiliationType** | Affiliation Type | String | Defines the nature of the affiliation between an individual and an organization | LUD | false | false | false | true | false |  | configuration/relationTypes/ProfessionalSupplierAffiliation/attributes/AffiliationType |
+| **StartDate** | Start Date | Date |  | LUD | false | false | false | true | false |  | configuration/relationTypes/ProfessionalSupplierAffiliation/attributes/StartDate |
+| **EndDate** | End Date | Date |  | LUD | false | false | false | true | false |  | configuration/relationTypes/ProfessionalSupplierAffiliation/attributes/EndDate |
 
 > **Note:** On the table above, the top level attributes are represented in bold.
 
@@ -105156,6 +105677,8 @@ The autonomous agents Long-Running Tasks APIs support the following use cases:
 
   Export per-entity results for a conversation job and retrieve the download URL
 
+> **Note:** When you invoke a custom agent, include the `x-refresh-token` header in addition to the `Authorization` header.
+
 ## List of APIs
 
 The following table lists the APIs and describes the purpose of each.
@@ -105164,28 +105687,28 @@ The following table lists the APIs and describes the purpose of each.
 | --- | --- |
 | [List available agents](https://docs.reltio.com/en/developer-resources/ai-integrations/long-running-tasks-lrt-apis/list-available-agents?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Returns the catalog of published agents available for scheduling and invocation. Only active, published agents are returned. |
 | [Get agent details](https://docs.reltio.com/en/developer-resources/ai-integrations/long-running-tasks-lrt-apis/get-agent-details?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Returns details for a specific agent by ID. |
-| [List schedules](https://docs.reltio.com/en/developer-resources/ai-integrations/long-running-tasks-lrt-apis/list-schedules?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | List all schedules for the current tenant with optional filtering. |
-| [Create a schedule](https://docs.reltio.com/en/developer-resources/ai-integrations/long-running-tasks-lrt-apis/create-a-schedule?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Create a new schedule to run an agent on a recurring or one-time basis. |
-| [Run agent immediately](https://docs.reltio.com/en/developer-resources/ai-integrations/long-running-tasks-lrt-apis/run-agent-immediately?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Execute an agent immediately without creating a persistent schedule. |
+| [List schedules](https://docs.reltio.com/en/developer-resources/ai-integrations/long-running-tasks-lrt-apis/list-schedules?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Lists all schedules for the current tenant with optional filtering. |
+| [Create a schedule](https://docs.reltio.com/en/developer-resources/ai-integrations/long-running-tasks-lrt-apis/create-a-schedule?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Creates a new schedule to run an agent on a recurring or one-time basis. |
+| [Run agent immediately](https://docs.reltio.com/en/developer-resources/ai-integrations/long-running-tasks-lrt-apis/run-agent-immediately?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Executes an agent immediately without creating a persistent schedule. |
 | [Get schedule details](https://docs.reltio.com/en/developer-resources/ai-integrations/long-running-tasks-lrt-apis/get-schedule-details?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Returns the details of a schedule. |
-| [Update schedule](https://docs.reltio.com/en/developer-resources/ai-integrations/long-running-tasks-lrt-apis/update-schedule?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Partially update an existing schedule. All fields are optional. |
+| [Update schedule](https://docs.reltio.com/en/developer-resources/ai-integrations/long-running-tasks-lrt-apis/update-schedule?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Partially updates an existing schedule. All fields are optional. |
 | [Delete schedule](https://docs.reltio.com/en/developer-resources/ai-integrations/long-running-tasks-lrt-apis/delete-schedule?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Deletes a schedule. |
-| [List schedule executions](https://docs.reltio.com/en/developer-resources/ai-integrations/long-running-tasks-lrt-apis/list-schedule-executions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | List conversations (executions) from a schedule. |
+| [List schedule executions](https://docs.reltio.com/en/developer-resources/ai-integrations/long-running-tasks-lrt-apis/list-schedule-executions?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Lists conversations (executions) from a schedule. |
 | [Get conversation status](https://docs.reltio.com/en/developer-resources/ai-integrations/long-running-tasks-lrt-apis/get-conversation-status?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Returns the status of a single schedule execution. |
 | [List jobs for the authenticated tenant](https://docs.reltio.com/en/developer-resources/ai-integrations/long-running-tasks-lrt-apis/list-jobs-for-the-authenticated-tenant?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Returns the LRT jobs for the tenant. |
-| [Create and optionally trigger a new LRT job](https://docs.reltio.com/en/developer-resources/ai-integrations/long-running-tasks-lrt-apis/create-and-optionally-trigger-a-new-lrt-job?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Create a one-off LRT conversation job. |
+| [Create and optionally trigger a new LRT job](https://docs.reltio.com/en/developer-resources/ai-integrations/long-running-tasks-lrt-apis/create-and-optionally-trigger-a-new-lrt-job?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Creates a one-off LRT conversation job. |
 | [Get LRT job status](https://docs.reltio.com/en/developer-resources/ai-integrations/long-running-tasks-lrt-apis/get-lrt-job-status?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Returns only the status of an LRT job, without its result. |
 | [Get job status and result](https://docs.reltio.com/en/developer-resources/ai-integrations/long-running-tasks-lrt-apis/get-job-status-and-result?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Returns the status and result of an LRT job. |
 | [Cancel a pending or running job](https://docs.reltio.com/en/developer-resources/ai-integrations/long-running-tasks-lrt-apis/cancel-a-pending-or-running-job?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Cancels a pending or running LRT job. |
 | [Trigger immediate execution of an existing job](https://docs.reltio.com/en/developer-resources/ai-integrations/long-running-tasks-lrt-apis/trigger-immediate-execution-of-an-existing-job?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Triggers immediate execution of an existing LRT job. |
-| [Add a follow-up message to an LRT job conversation](https://docs.reltio.com/en/developer-resources/ai-integrations/long-running-tasks-lrt-apis/add-a-follow-up-message-to-an-lrt-job-conversation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Append a follow-up turn to an existing LRT job's conversation. |
+| [Add a follow-up message to an LRT job conversation](https://docs.reltio.com/en/developer-resources/ai-integrations/long-running-tasks-lrt-apis/add-a-follow-up-message-to-an-lrt-job-conversation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Appends a follow-up turn to an existing LRT job's conversation. |
 | [List all agent runs for a conversation](https://docs.reltio.com/en/developer-resources/ai-integrations/long-running-tasks-lrt-apis/list-all-agent-runs-for-a-conversation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Returns the agent runs for a conversation. |
 | [Get details of a specific agent run](https://docs.reltio.com/en/developer-resources/ai-integrations/long-running-tasks-lrt-apis/get-details-of-a-specific-agent-run?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Returns the details of a single agent run. |
 | [Entity status counts for a conversation](https://docs.reltio.com/en/developer-resources/ai-integrations/long-running-tasks-lrt-apis/entity-status-counts-for-a-conversation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Returns the number of processed, failed, and `needs_review` entities for a conversation, with a breakdown by entity type. Use this API when you need counts, instead of listing every entity. |
 | [Paginated per-entity results for a conversation](https://docs.reltio.com/en/developer-resources/ai-integrations/long-running-tasks-lrt-apis/paginated-per-entity-results-for-a-conversation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Returns one page of per-entity results, each with a short reason. You can filter the results by entity type, entity ID, or status. |
 | [Full detail for a single entity in a conversation](https://docs.reltio.com/en/developer-resources/ai-integrations/long-running-tasks-lrt-apis/full-detail-for-a-single-entity-in-a-conversation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Returns the complete stored record for one entity, including its full summary, error text, and other attributes. |
 | [Cancel all active worker runs for a conversation](https://docs.reltio.com/en/developer-resources/ai-integrations/long-running-tasks-lrt-apis/cancel-all-active-worker-runs-for-a-conversation?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Cancels all active worker runs for a conversation. |
-| [List entity exports for a conversation job](https://docs.reltio.com/en/developer-resources/ai-integrations/long-running-tasks-lrt-apis/list-entity-exports-for-a-conversation-job?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | List exports created by the authenticated user for this conversation. |
+| [List entity exports for a conversation job](https://docs.reltio.com/en/developer-resources/ai-integrations/long-running-tasks-lrt-apis/list-entity-exports-for-a-conversation-job?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Lists exports created by the authenticated user for this conversation. |
 | [Create an entity export for a conversation job](https://docs.reltio.com/en/developer-resources/ai-integrations/long-running-tasks-lrt-apis/create-an-entity-export-for-a-conversation-job?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Creates an entity export for a conversation job. |
 | [Get entity export status and download URL](https://docs.reltio.com/en/developer-resources/ai-integrations/long-running-tasks-lrt-apis/get-entity-export-status-and-download-url?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) | Returns the status and download URL of an entity export. |
 
@@ -106847,6 +107370,7 @@ The following request headers must be included.
 | Header | Value | Required |
 | --- | --- | --- |
 | `Authorization` | `<access_token>` | Yes |
+| `x-refresh-token` | `<refresh_token>` | Yes |
 | `Content-Type` | application/json | Yes |
 
 ## Request body
@@ -106869,6 +107393,7 @@ Use the following example to see how a complete request is structured, with head
 ```
 PATCH {TenantURL}/ai/agentflow/api/v202605/tenant-xyz/schedules/example-id
 Authorization: <access_token>
+x-refresh-token: <refresh_token>
 Content-Type: application/json
 
 {
@@ -107949,6 +108474,7 @@ The following request headers must be included.
 | Header | Value | Required |
 | --- | --- | --- |
 | `Authorization` | `<access_token>` | Yes |
+| `x-refresh-token` | `<refresh_token>` | Yes |
 | `Content-Type` | application/json | Yes |
 
 ## Request body
@@ -107957,7 +108483,7 @@ The following table describes the request body parameters.
 
 | Parameter | Type | Required | Description | Accepted values / Default |
 | --- | --- | --- | --- | --- |
-| name | String | No | The display name for this run. | — |
+| name | String | No | The display name for this run. | Maximum length: 256 characters. |
 | query | String | Yes | The prompt or query to send to the agent. | — |
 | agent_id | String | Yes | The unique identifier of the agent to run. | — |
 
@@ -107968,6 +108494,7 @@ Use the following example to see how a complete request is structured, with head
 ```
 POST {TenantURL}/ai/agentflow/api/v202605/tenant-xyz/schedules/run-now
 Authorization: <access_token>
+x-refresh-token: <refresh_token>
 Content-Type: application/json
 
 {
@@ -107986,7 +108513,7 @@ The following table describes the fields returned in the response body.
 | `schedule_id` | String | The unique identifier of the schedule. |
 | `tenant_id` | String | The unique identifier of the tenant. |
 | `agent_id` | String | The unique identifier of the agent that theschedule runs. |
-| `name` | String | The display name. |
+| `name` | String | The display name of the schedule. |
 | `query` | String | The prompt or query sent to the agent on each run. |
 | `schedule_type` | String | The type of schedule: recurring or run-once. |
 | `cron_expression` | String | The cron expression for the schedule, when schedule_type is recurring. |
@@ -108077,7 +108604,7 @@ The following table lists the possible error responses returned by this API.
 
 Learn more about create a schedule.
 
-Use the `Create a schedule API` to create a schedule. This lets you automate recurring agent runs so you do not have to trigger them manually.
+Use the `Create a schedule API` to automate recurring agent runs so you do not have to trigger them manually.
 
 > **Note:** The `Create a schedule API` does not support bulk file upload.
 
@@ -108114,7 +108641,7 @@ The following table describes the request body parameters.
 | --- | --- | --- | --- | --- |
 | name | String | Yes | The display name for the schedule. | — |
 | query | String | Yes | The prompt or query to send to the agent on each run. | — |
-| agent_id | String | Yes | The unique identifier of the agent to run. Get this from the List available agents operation. | — |
+| agent_id | String | Yes | The unique identifier of the agent to run. Get this from the List available agents API. | — |
 | schedule_type | String | No | How the schedule runs: recurring (on a cron expression or interval) or run-once (a single immediate run). | `recurring`, `run-once`. Default: `recurring` |
 | cron_expression | String | No | The cron expression that defines when the agent runs, in the format minute hour day-of-month month day-of-week. Required when schedule_type is recurring and interval_minutes is not set. | — |
 | interval_minutes | Integer | No | Runs the agent every N minutes. Required when schedule_type is recurring and cron_expression is not set. | — |
@@ -108148,24 +108675,24 @@ The following table describes the fields returned in the response body.
 | `schedule_id` | String | The unique identifier of the schedule. |
 | `tenant_id` | String | The unique identifier of the tenant. |
 | `agent_id` | String | The unique identifier of the agent that the job or schedule runs. |
-| `name` | String | The display name. |
+| `name` | String | The display name of the schedule. |
 | `query` | String | The prompt or query sent to the agent on each run. |
 | `schedule_type` | String | The type of schedule: recurring or run-once. |
-| `cron_expression` | String | The cron expression for the schedule, when schedule_type is recurring. |
+| `cron_expression` | String | The 5-field cron expression for the schedule, when schedule_type is recurring. |
 | `interval_minutes` | Integer | The interval in minutes between runs, when schedule_type is recurring. |
 | `status` | String | The status of the schedule: active, paused, running, cancelled, completed, or failed. |
 | `next_run_at` | String | The date and time of the next scheduled run. |
 | `last_run_at` | String | The date and time of the last run. |
 | `run_count` | Integer | The number of times this schedule has run. |
-| `run_once` | Boolean | Whether this is a one-time (run-once) schedule. |
+| `run_once` | Boolean | Whether this is a one-time (run-once) schedule. When true, the schedule runs once. When false, the schedule is recurring. |
 | `last_conversation_id` | String | The unique identifier of the conversation from the most recent run. |
 | `created_by` | String | The unique identifier of the user who created the schedule. |
-| `created_at` | String | The date and time when the job or schedule was created. |
+| `created_at` | String | The date and time when the schedule was created. |
 | `updated_at` | String | The date and time when the record was last updated. |
 
 ## Example response
 
-The following example shows a response with successful response.
+The following example shows a successful response.
 
 ```
 {
@@ -112086,7 +112613,9 @@ For more information, see [Data Security](https://docs.reltio.com/en/application
 
 ## Get Tenant Configuration
 
-The tenant configuration API request supports option `showAccess`. If this option is enabled, the business model configuration of a tenant is returned along with access level specifications for all entity types, relationship types, and attributes.
+The tenant configuration API request supports option `showAccess`. If this option is enabled, the business model configuration of a tenant is returned along with access level specifications for all entity types, relationship types, interaction types, and attributes.
+
+For each interaction type, the `access` field lists the operations that your role can perform on it, such as `READ`, `CREATE`, and `DELETE`. The field is an empty array if your role has no access to the interaction type. Interaction types are included only if the tenant has them configured.
 
 ## Getting Tenant Configuration with Access
 
@@ -112734,7 +113263,14 @@ The following table lists the supported permissions.
 | Interaction types | - `READ`: View interactions of the specified type. - `CREATE`: Create interactions of the specified type. - `DELETE`: Delete interactions of the specified type. |
 | Interaction attributes | - `READ`: View the attribute and its value. - `READ_MASKED`: View the attribute with its value masked. - `CREATE`: Create the attribute when creating an interaction. |
 
-When Reltio uses Zero Copy data to display a profile or evaluate a segment, it checks permissions for the entity type and attributes involved. Reltio returns or masks entity attributes according to the configured `READ` and `READ_MASKED` permissions.
+`READ` access to an interaction type also determines whether you can retrieve its business configuration. If you retrieve the configuration of an interaction type using the [Configuration API](https://docs.reltio.com/en/developer-resources/system-administration-apis/system-administration-apis-at-a-glance/configuration-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) without `READ` access to the interaction type, the request returns `403 METADATA_TYPE_FORBIDDEN`. To resolve the error, ask your administrator to [grant your role](#metadatasecurity/setpermissions)`READ`access to the interaction type.
+
+If you request the configuration of an interaction type that does not exist, the response depends on the permissions configured for the tenant and on your role:
+
+- The API returns `403 METADATA_TYPE_FORBIDDEN` when the tenant has permissions configured for at least one interaction type or interaction attribute, and your role does not have `READ` access to any interaction type.
+- The API returns `400 TYPE_IS_NOT_FOUND` when the tenant has no interaction type or interaction attribute permissions configured, or when you are an administrator.
+
+When Reltio uses Zero copy data to display a profile or evaluate a segment, it checks permissions for the entity type and attributes involved. Reltio returns or masks entity attributes according to the configured `READ` and `READ_MASKED` permissions.
 
 When Reltio creates an interaction, Reltio checks that you have `READ` access for each [member](https://docs.reltio.com/en/developer-resources/interaction-management-apis/interaction-apis-at-a-glance/interactions-api?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). For a member identified by `objectURI` or crosswalk, Reltio checks that you have `READ` access to the member's entity type. For a member resolved through `attributeMapping`, Reltio checks that you have `READ` access to the mapped entity attribute. If you lack `READ` access to any member, Reltio rejects the interaction. Use [Set Permissions](#metadatasecurity/setpermissions) to grant `READ` access to the entity types and entity attributes of the members for the roles that create interactions.
 
@@ -226510,6 +227046,72 @@ Console applications are divided in these categories:
 *Image: i-apps-console-nav.png*
 
 For more information on these application categories and associated applications, see the subtopics in this section.
+
+
+
+---
+
+# Interact with autonomous agents in Hub
+
+> **Section:** Applications > Hub
+
+
+**Source:** https://docs.reltio.com/en/applications/hub/interact-with-autonomous-agents-in-hub?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs
+
+**Keywords:** autonomous agents in hub, agent conversations in hub, floating agent chat in hub, sidebar agent chat view, full screen agent conversation, search agent chat history, switch agent conversation views, autonomous agents, conversations, chat history
+
+
+Learn about conversations with autonomous agents in Hub, the available conversation views, and the conversation features available in Hub.
+
+Autonomous agents in Hub let you interact with the **Data explorer agent** without navigating away from the records, workflows, or dashboards you are currently working on. The chat icon in the lower-right corner of Hub opens a conversation in a floating window by default.
+
+*Image: i-hub-af-chat-icon.png*
+
+You can ask questions, review responses, and switch between the available conversation views.
+
+The following user roles work with autonomous agents in Hub:
+
+- 
+
+  [Business Users](https://docs.reltio.com/en/roles/business-user/business-user-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- 
+
+  [Data Product Owners](https://docs.reltio.com/en/roles/data-product-owner/data-product-owner-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- 
+
+  [Data Stewards](https://docs.reltio.com/en/roles/data-steward/data-steward-at-a-glance?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+For role definitions, see [About roles](https://docs.reltio.com/en/roles/about-roles?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+## Conversation views
+
+Hub offers different ways to display conversations with autonomous agents, depending on how you want to work with your data. Select the **Switch** icon to change the conversation view. The current conversation continues in the new view without starting a new conversation.
+
+*Image: i-hub-af-switch-view.png*
+
+The following table describes the available conversation views.
+
+| View | Description | Image |
+| --- | --- | --- |
+| Floating | Displays the conversation in a window that overlays the current Hub page. This is the default view when you select the chat icon. | *Image: i-hub-af-floating.png* |
+| Sidebar | Displays the conversation in a panel on the right side of the current Hub page. | *Image: i-hub-af-sidebar.png* |
+| Full screen | Displays the conversation in a full-page workspace within Hub. You can also open this view by selecting **Data explorer agent** in the left navigation panel. | *Image: i-hub-af-fullscreen.png* |
+
+## Conversation features in Hub
+
+The conversation interface in Hub lets you interact with the Data explorer agent and manage your conversations.
+
+*Image: i-hub-af-features.png*
+
+The conversation interface includes the following features in every view:
+
+| Number | Feature | Description |
+| --- | --- | --- |
+| 1 | Ask Reltio | Enter prompts and review responses from the Data explorer agent. |
+| 2 | New chat | Start a new conversation in the current view. You can return to the previous conversation from the **Recents** section. |
+| 3 | Search chat | Search previous conversations and open a selected conversation in the current view. |
+| 4 | Recents | View your recent conversations and open a selected conversation in the current view. |
+| 5 | Discover agents | Open the autonomous agents application in a different browser tab to explore other available agents. You can return to the current conversation from the **Recents** section. |
 
 
 
