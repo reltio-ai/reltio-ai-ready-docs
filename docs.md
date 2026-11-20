@@ -1,6 +1,6 @@
 # Reltio Documentation
 
-_Generated: 2026-11-18 02:36 UTC_
+_Generated: 2026-11-20 02:36 UTC_
 
 _Topics: 4285_
 
@@ -25658,7 +25658,18 @@ Learn how automated long-running tasks let supported agents process high-volume 
 
 Task Management lets you create long-running tasks that enable agents to run autonomously in the background. It also supports recurring jobs that run without human intervention. In **Task Management**, create a task and choose how it runs - once or on a recurring schedule. Each task runs in the background, which makes this feature useful for work that takes longer to complete or needs to run repeatedly. This allows you to automate ongoing work instead of manually starting the same process each time. This allows you to automate ongoing work instead of manually starting the same process each time.
 
-To use a custom agent for long-running tasks, first enable Long Running Tasks for the agent. For more information, see [Enable long-running tasks for an agent](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/custom-agents-at-a-glance/enable-long-running-tasks-for-an-agent?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+Automated long-running tasks are available for the following Reltio autonomous agents: 
+
+- 
+
+  [Resolver](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-catalog/resolver?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+- 
+
+  [Address enricher](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-catalog/address-enricher?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs)
+
+
+
+To use a custom agent for long-running tasks, first enable Long Running Tasks for the agent. For more information, see[Enable long-running tasks for an agent](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/custom-agents-at-a-glance/enable-long-running-tasks-for-an-agent?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 This feature is designed for users who need to schedule agent-driven work such as enrichment, match and merge processing, and other high-volume operations. It supports both one-time and recurring schedules and provides visibility into job status, progress, and outcomes.
 
@@ -25864,7 +25875,7 @@ To schedule an automated long-running task
 2. Select **+Schedule Task** to schedule a new automated long-running task.
    *Image: ui-lrt-schedulenewtask.png*
    - In the **Task Name** field, enter a descriptive name for the task.
-   - From the list of agents displayed, select the agent that you want to use for the task.
+   - From the list of agents displayed, select the agent that you want to use for the task.The list includes [Resolver](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-catalog/resolver?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Address enricher](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-catalog/address-enricher?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 3. Select **Continue**.
    *Image: ui-lrt-schedulenewtaskprompt.png*
    - In the **User prompt** field, enter the instructions that the agent uses for the scheduled run. Use the prompt to identify which records to process and any rules, conditions, or actions the agent must apply.
@@ -27432,6 +27443,10 @@ It includes both effective prompt samples and ones that don't work well, with ex
 
 For more information, see [Prompt samples for Address enricher](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-catalog/address-enricher/prompt-samples-for-address-enricher?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
+## Automated long-running tasks
+
+The **Address enricher** agent is available for automated long-running tasks. Schedule it in **Task management** to process flagged addresses in the background. Each scheduled run creates a job, and you review items that the agent routes for approval. For more information, see [Automated long-running tasks](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/automated-long-running-tasks?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
 ## Safeguards, permissions, and governance
 
 - Requires ≥3 corroborating sources
@@ -27796,6 +27811,10 @@ To get comfortable using the **Resolver** agent, review concrete prompt samples 
 It includes prompt samples that highlight what works well (for example, using clear segments, match confidence ranges, and entity IDs) and where the agent might struggle, with guidance on how to rephrase prompts. It also shows how to combine internal match scores with optional **Web Search** so you can explain and justify merge decisions with confidence.
 
 For more information, see [Prompt samples for Resolver](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-catalog/resolver/prompt-samples-for-resolver?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
+
+## Automated long-running tasks
+
+The **Resolver** agent is available for automated long-running tasks. Schedule it in **Task management** to process potential matches in the background. Each scheduled run creates a job, and you review items that the agent routes for approval. For details, see [Automated long-running tasks](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/automated-long-running-tasks?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
 
 ## Safeguards, permissions, and governance
 
@@ -30040,9 +30059,9 @@ The **Task level usage** section displays credit consumption for [long-running t
 
 The section displays the following information:
 
-- **Task/Job details:** Name of the task. Select a task to view its associated job IDs and start dates.
+- **Task/Job details:** Name of the task and its job details.. Select a task to view its associated job IDs and start dates.
 - **Agent used:** Agent used to execute the task or job.
-- **Created by:** Name of the user who created the task.
+- **Created by:** Email address of the user who created the task.
 - **Jobs:** Number of jobs associated with the task.
 - **Credits used:** Total credits consumed by the task or individual job.
 - **Usage %:** Percentage of credit consumption attributed to the task or job, represented by a progress bar.
@@ -30055,7 +30074,7 @@ You can use the following options to filter and review task/job usage:
 - **Expand task:** View individual jobs, including their IDs, dates, credits used, and usage percentages.
 - **Job ID:** Select a job ID to open the [Job details](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/automated-long-running-tasks/monitor-an-automated-long-running-task?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) page in **Task Management**.
 
-> **Note:** For running jobs, the dashboard displays the credits consumed so far and marks the usage as **Partial**. Credit consumption may increase as the job continues. After the job completes, the dashboard displays the total credits consumed in the next daily usage update.
+> **Note:** For running jobs, the dashboard displays the credits consumed so far and marks the credit used as **Partial**. Credit consumption may increase as the job continues. After the job completes, the dashboard displays the total credits consumed in the next daily usage update.
 
 *Image: i-task-level-usage.png*
 
@@ -30236,6 +30255,7 @@ To use the workspace in autonomous agents
    On the Discover Agents page, agents are organized into two groups:
    - **Reltio autonomous agents:** Prebuilt agents shipped by Reltio
    - **Custom agents:** Agents built by or for your organization
+   Automated long-running tasks are available for [Resolver](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-catalog/resolver?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs) and [Address enricher](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/autonomous-agents-catalog/address-enricher?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs). For more information, see [Automated long-running tasks](https://docs.reltio.com/en/products/autonomous-agents/autonomous-agents-overview/automated-long-running-tasks?utm_source=ai-corpus&utm_medium=markdown&utm_campaign=reltio-ai-ready-docs).
    Each agent appears as a card that includes:
    *Image: i-agentflow-agent-cards.png*
    **The agent name, provider, and a short description**
